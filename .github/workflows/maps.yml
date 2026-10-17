@@ -1,7 +1,7 @@
 name: Build historical map overlays
 on:
   workflow_dispatch: {}
-  push: { branches: [main], paths: [archive/maps/overlays.json, scripts/build-overlays.sh, .github/workflows/maps.yml] }
+  push: { branches: [main], paths: [archive/maps/overlays.json, scripts/build-overlays.sh, scripts/discover-maps.mjs, .github/workflows/maps.yml] }
 permissions: { contents: write }
 concurrency: { group: maps, cancel-in-progress: false }
 jobs:
@@ -11,7 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq gdal-bin python3-gdal jq unzip file >/dev/null
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/discover-maps.mjs
+        continue-on-error: true
       - run: ./scripts/build-overlays.sh
+        continue-on-error: true
       - if: always()
         run: |
           git config user.name "github-actions[bot]"

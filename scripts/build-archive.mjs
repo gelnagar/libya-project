@@ -132,6 +132,29 @@ for (const f of await list('archive/fbis')) {
     p: tag(body.slice(0, 20000)), m: 'Libya section of the daily report: ' + (heads.length ? heads.join('; ').toLowerCase() : 'translated Libyan radio, JANA and press items') + '. Machine-read scan; errors likely.', r: 'public-domain', rt: 'Public domain', rn: 'U.S. government translation, public domain. OCR text: errors are likely.', f: true });
   fulltext.set(id, head + '\n' + url + '\n\n' + body);
 }
+// 5. Government documents: Reagan and Bush libraries, JPRS Near East/North Africa Report (Libya sections)
+try {
+  const gov = JSON.parse(await read('archive/gov/catalog.json'));
+  for (const g of gov) {
+    if (!g.file) continue;
+    let txt = await read('archive/gov/' + g.file);
+    const isJ = g.id.startsWith('jprs-');
+    if (isJ) txt = txt.replace(/[ \t]{2,}/g, ' ');
+    const lines = txt.split('\n');
+    const body = lines.slice(isJ ? 5 : 0).join('\n').trim();
+    let d = '';
+    if (isJ) {
+      const ys = {}; for (const m of body.matchAll(/\b\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{2,4})\b/g)) { const y = +(m[1].length === 2 ? '19' + m[1] : m[1]); if (y >= 1969 && y <= 1996) ys[y] = (ys[y] || 0) + 1; }
+      const top = Object.entries(ys).sort((a, b) => b[1] - a[1])[0]; if (top) d = top[0];
+    }
+    const first = isJ ? (body.split('\n').map((l) => l.trim()).find((l) => l.length > 15 && l.length < 140) || '') : '';
+    const t = isJ ? 'JPRS ' + (g.title || 'Near East/North Africa Report').replace(/^DTIC \w+:\s*/, '').replace(/\.$/, '') + ' — Libya: ' + first : g.title + ' (' + g.collection.split(',')[0] + ')';
+    const id = 'gov-' + g.id;
+    out.push({ i: id, y: isJ ? 'report' : 'government document', t, d, s: g.source, c: g.collection, u: g.url || g.page, a: g.page && g.page !== g.url ? g.page : undefined,
+      p: tag(body.slice(0, 20000)), m: isJ ? 'Libya section of a JPRS translation volume (Libyan radio, JANA and press items). Date estimated from the items inside; OCR errors likely.' : 'Digitised U.S. government record, scanned and text-read. Date not verified; OCR errors likely.', r: 'public-domain', rt: 'Public domain', rn: 'U.S. government work, public domain. OCR text: errors are likely.', f: true });
+    fulltext.set(id, t + '\n' + (g.url || '') + '\n\n' + body.slice(0, 400000));
+  }
+} catch (e) { console.log('gov skipped', e.message); }
 out.sort((a, b) => (a.d || '9999').localeCompare(b.d || '9999') || a.i.localeCompare(b.i));
 // Drop undefined keys to keep the file small
 const clean = out.map((r) => Object.fromEntries(Object.entries(r).filter(([, v]) => v !== undefined && v !== '' && !(Array.isArray(v) && !v.length))));

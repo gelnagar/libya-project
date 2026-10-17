@@ -8,30 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p archive/research
-          UA="TripoliOpenSource/1.0 (github.com/gelnagar/libya-project)"
-          python3 - <<'PY'
-          import json, urllib.request, urllib.parse
-          UA="TripoliOpenSource/1.0 (github.com/gelnagar/libya-project)"
-          def api(**p):
-              p.update(action='query', format='json', prop='imageinfo', iiprop='url|size|extmetadata', iiurlwidth=500)
-              r=urllib.request.Request('https://commons.wikimedia.org/w/api.php?'+urllib.parse.urlencode(p), headers={'User-Agent':UA})
-              return json.load(urllib.request.urlopen(r))
-          out={}
-          for kw in [dict(generator='categorymembers', gcmtitle='Category:Muammar al-Gaddafi', gcmtype='file', gcmlimit=500),
-                     dict(generator='search', gsrsearch='Gaddafi 1970s OR 1971 OR 1972 OR 1973 OR 1974 OR 1975 OR 1976 OR 1977 OR 1978 OR 1979', gsrnamespace=6, gsrlimit=50),
-                     dict(generator='search', gsrsearch='Gaddafi Sadat OR Assad OR Tito OR Nasser OR Boumediene', gsrnamespace=6, gsrlimit=50)]:
-              try:
-                  d=api(**kw)
-                  for p in d.get('query',{}).get('pages',{}).values():
-                      ii=(p.get('imageinfo') or [{}])[0]; m=ii.get('extmetadata',{})
-                      out[p['title']]=dict(w=ii.get('width'),h=ii.get('height'),lic=m.get('LicenseShortName',{}).get('value'),date=m.get('DateTimeOriginal',{}).get('value'),desc=(m.get('ImageDescription',{}).get('value') or '')[:140],thumb=ii.get('thumburl'))
-              except Exception as e: print('ERR',e)
-          json.dump(out, open('archive/research/photo-candidates.json','w'), indent=1)
-          print(len(out))
-          PY
+          mkdir -p public/img
+          curl -sSL -A "TripoliOpenSource/1.0 (github.com/gelnagar/libya-project)" -o public/img/federation-1971.jpg "https://commons.wikimedia.org/wiki/Special:FilePath/Sadat_Qaddafi_Assad_1971.jpg?width=900"
+          file public/img/federation-1971.jpg
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add archive/research/photo-candidates.json
-          if git diff --cached --quiet; then echo none; else git commit -m "Photo candidates" && git pull --rebase && git push; fi
+          git add public/img
+          if git diff --cached --quiet; then echo none; else git commit -m "1971 photo" && git pull --rebase && git push; fi

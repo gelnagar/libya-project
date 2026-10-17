@@ -1,6 +1,8 @@
 # Libya project
 
-## Tripoli detention sites, 1969–1989
+## Tripoli: Open Source
+
+Prisons, security sites and attacks around Tripoli, 1969–1989.
 
 **Live map:** https://gelnagar.github.io/libya-project/
 

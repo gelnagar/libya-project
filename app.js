@@ -546,7 +546,7 @@
     body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: s.ref }), h('span', { text: s.lat.toFixed(4) + ', ' + s.lon.toFixed(4) })]));
     body.appendChild(h('div', { class: 'tags' }, [
       h('span', { class: 'tag', style: '--c:' + lay.color, text: lay.label }),
-      h('span', { class: 'tag', style: '--c:#4d5d65', text: LEVELS[s.level] }),
+      h('span', { class: 'tag', style: '--c:#abb3bf', text: LEVELS[s.level] }),
       outside ? h('span', { class: 'tag', style: '--c:#f2b33d', text: 'Outside 1969–1989' }) : null
     ]));
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: s.name }), s.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: s.ar }) : null]));
@@ -596,7 +596,7 @@
     var lat = el.lat || (el.bounds ? (el.bounds.minlat + el.bounds.maxlat) / 2 : null);
     var lon = el.lon || (el.bounds ? (el.bounds.minlon + el.bounds.maxlon) / 2 : null);
     body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: 'OSM ' + el.type.toUpperCase() + ' ' + el.id }), lat ? h('span', { text: lat.toFixed(4) + ', ' + lon.toFixed(4) }) : null]));
-    body.appendChild(h('div', { class: 'tags' }, [h('span', { class: 'tag', style: '--c:#8c2f3b', text: 'OpenStreetMap, today' })]));
+    body.appendChild(h('div', { class: 'tags' }, [h('span', { class: 'tag', style: '--c:#4c90f0', text: 'OpenStreetMap, today' })]));
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: name }), t.name && t.name !== name ? h('div', { class: 'd-ar', text: t.name }) : null]));
     body.appendChild(h('p', { class: 'brief', text: KIND[k](t) + '. ' + EXPLAIN[k] }));
     var rows = Object.keys(t).filter(function (x) { return !/^(source|note|fixme|wikidata|created_by)/.test(x); }).slice(0, 12);

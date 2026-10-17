@@ -933,25 +933,26 @@
   AREAS.forEach(function (a) { AREA_BY_ID[a.id] = a; });
 
   /* researched landmarks and buildings: one marker each, opening the full profile */
-  var profGroup = L.layerGroup(), profOn = store.get('prof', true);
+  var profGroup = L.layerGroup(), profOn = store.get('prof', true), milGroup = L.layerGroup(), milOn = store.get('milprof', true);
   var PROF_SVG = '<path d="M12 2 2 7v2h20V7zM4 11v8H2v3h20v-3h-2v-8h-3v8h-2v-8h-4v8H9v-8z"/>';
   function drawProfiles() {
-    profGroup.clearLayers();
-    AREAS.filter(function (a) { return (['landmark', 'government', 'prison'].indexOf(a.kind) >= 0 || /^wp-/.test(a.id)) && a.lat && a.lon; }).forEach(function (a) {
+    profGroup.clearLayers(); milGroup.clearLayers();
+    AREAS.filter(function (a) { return ['landmark', 'government', 'prison', 'military'].indexOf(a.kind) >= 0 && a.lat && a.lon; }).forEach(function (a) {
       var dup = SITES.some(function (s) { return map.distance([a.lat, a.lon], [s.lat, s.lon]) < 120 && (s.layer === 'landmark' || s.layer === 'power') && fold(s.name).split(' ')[0] === fold(a.name).split(' ')[0]; });
       if (dup) return;
       var m = L.marker([a.lat, a.lon], { keyboard: false, title: a.name, zIndexOffset: -200, icon: L.divIcon({ className: '', iconSize: [28, 28], iconAnchor: [14, 14],
-        html: '<div class="osm-ic prof" style="--c:' + (/^wp-/.test(a.id) ? '#ec9a3c' : '#e0b95a') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + PROF_SVG + '</svg></div>' }) });
+        html: '<div class="osm-ic prof" style="--c:' + (a.kind === 'military' || /^wp-/.test(a.id) ? '#ec9a3c' : '#e0b95a') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + PROF_SVG + '</svg></div>' }) });
       m.bindTooltip(a.name, { direction: 'top', offset: [0, -12], className: 'site-label' });
       m.on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openArea(a); });
-      m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], /^wp-/.test(a.id) ? '#ec9a3c' : '#e0b95a', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar], ['About', (a.summary || '').length > 90 ? a.summary.slice(0, 88) + '…' : a.summary]], [0, -16]); });
+      m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], a.kind === 'military' || /^wp-/.test(a.id) ? '#ec9a3c' : '#e0b95a', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar], ['About', (a.summary || '').length > 90 ? a.summary.slice(0, 88) + '…' : a.summary]], [0, -16]); });
       m.on('mouseout', hideCard);
-      m.addTo(profGroup);
+      m.addTo(a.kind === 'military' || /^wp-/.test(a.id) ? milGroup : profGroup);
     });
   }
-  function syncProfiles() { if (profOn && map.getZoom() >= 14) map.addLayer(profGroup); else map.removeLayer(profGroup); }
+  function syncProfiles() { if (profOn && map.getZoom() >= 14) map.addLayer(profGroup); else map.removeLayer(profGroup); if (milOn && map.getZoom() >= 11) map.addLayer(milGroup); else map.removeLayer(milGroup); }
   map.on('zoomend', syncProfiles);
   $('hist-toggles').appendChild(toggleRow('profiles', 'Researched landmarks & buildings', 'Ministries, hospitals, mosques, old city and historic sites, with histories', profOn, function (v) { profOn = v; store.set('prof', v); syncProfiles(); }));
+  $('hist-toggles').appendChild(toggleRow('milprof', 'Camps & weapons sites', 'Researched military camps, missile and weapons-programme sites', milOn, function (v) { milOn = v; store.set('milprof', v); syncProfiles(); }));
   setTimeout(function () { drawProfiles(); syncProfiles(); }, 0);
   var RECORDS = null, recordsWaiting = null, REC_BY_ID = {};
   function loadRecords() {
@@ -1311,7 +1312,7 @@
   /* ---------- grouped layer chooser: history and today side by side, one row per subject ---------- */
   var GROUPS = [
     { t: 'Prisons, police & security', n: 'Prisons, security services, police', parts: [['detention', 'Prisons', 'then'], ['security', 'Security services', 'then'], ['osm-police', 'Police stations', 'now']] },
-    { t: 'Military & weapons', n: 'Bases, camps, missile and weapons sites', parts: [['military', 'Bases', 'then'], ['osm-military', 'Military areas', 'now']] },
+    { t: 'Military & weapons', n: 'Bases, camps, missile and weapons sites', parts: [['military', 'Bases', 'then'], ['milprof', 'Camps & weapons sites', 'then'], ['osm-military', 'Military areas', 'now']] },
     { t: 'Killings & attacks', n: 'Massacres, executions, the 1986 raid', parts: [['massacre', 'Massacres', 'then'], ['airstrike', '1986 US raid', 'then']] },
     { t: 'Power & government', n: "Gaddafi's compounds, ministries, courts, embassies", parts: [['power', 'Seats of power', 'then'], ['osm-govt', 'Offices & courts', 'now'], ['osm-embassies', 'Embassies', 'now']] },
     { t: 'Landmarks & history', n: 'Squares, old city, researched buildings, monuments', parts: [['landmark', 'Events & squares', 'then'], ['profiles', 'Researched buildings', 'then'], ['osm-sights', 'Monuments & sights', 'now'], ['osm-mosques', 'Mosques', 'now'], ['osm-cemeteries', 'Cemeteries', 'now']] },
@@ -1319,7 +1320,7 @@
     { t: 'The city today', n: 'Zones, buildings, water, oil', parts: [['osm-landuse', 'Zones', 'now'], ['osm-buildings', 'Buildings', 'now'], ['osm-water', 'Water', 'now'], ['osm-oil', 'Oil & gas', 'now']] }
   ];
   var groupEls = [];
-  function partColor(k) { if (LAYERS[k]) return LAYERS[k].color; if (k === 'profiles') return '#e0b95a'; if (k === 'reports') return '#d1980b'; var o = OSM[k.replace(/^osm-/, '')]; return o ? (o.point || o.swatch) : '#888'; }
+  function partColor(k) { if (LAYERS[k]) return LAYERS[k].color; if (k === 'profiles') return '#e0b95a'; if (k === 'milprof') return '#ec9a3c'; if (k === 'reports') return '#d1980b'; var o = OSM[k.replace(/^osm-/, '')]; return o ? (o.point || o.swatch) : '#888'; }
   function syncGroups() {
     (groupEls || []).forEach(function (g) {
       var on = 0;

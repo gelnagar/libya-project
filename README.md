@@ -26,12 +26,55 @@ erDiagram
   REPORT }o--o| AREA : "note about (target)"
   ERA ||--o{ SITE : "filters (y0..y1)"
   OVERLAY }o--|| ERA : "dated (year)"
-  SITE { string id; string layer; string level; float lat; float lon; float r_km; int y0; int y1 }
-  AREA { string id; string kind; string summary; string history; string era; string today; list sources }
-  RECORD { string i; string y_type; string d_date; string s_source; string r_rights; list p_places }
-  REPORT { string id; string cat; string title; string text; string how; float lat; float lon; string target }
-  OVERLAY { string id; int year; string tiles; bbox bounds }
-  OSM_FEATURE { int id; string k_kind; map t_tags; geom g }
+  SITE {
+    string id
+    string layer
+    string level
+    float lat
+    float lon
+    float r_km
+    int y0
+    int y1
+  }
+  AREA {
+    string id
+    string kind
+    string summary
+    string history
+    string era
+    string today
+    list sources
+  }
+  RECORD {
+    string i
+    string y_type
+    string d_date
+    string s_source
+    string r_rights
+    list p_places
+  }
+  REPORT {
+    string id
+    string cat
+    string title
+    string text
+    string how
+    float lat
+    float lon
+    string target
+  }
+  OVERLAY {
+    string id
+    int year
+    string tiles
+    bbox bounds
+  }
+  OSM_FEATURE {
+    int id
+    string k_kind
+    map t_tags
+    geom g
+  }
 ```
 
 | Entity | File | Count |
@@ -74,7 +117,7 @@ flowchart TD
   A1 & A2 & S --> RC[records tagged with these places, or whose words match]
   P --> FR[family reports within 1.5 km<br/>never homes]
   RC & FR --> CTX[context, at most 15k characters]
-  CTX --> W[Worker: system prompt + last 5 Q&A<br/>+ up to 3 web searches]
+  CTX --> W[Worker: system prompt + last 5 questions and answers<br/>+ up to 3 web searches]
   W --> ANS[answer + 3 follow-up questions + sources]
 ```
 

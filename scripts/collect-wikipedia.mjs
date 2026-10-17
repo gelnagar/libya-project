@@ -33,19 +33,20 @@ for (const l of lines) {
 }
 console.log('articles wanted:', want.size);
 let saved = 0;
-for (const key of want.keys()) {
+const keys = [...want.keys()];
+async function fetchOne(key) {
   const [lang, title] = [key.slice(0, 2), key.slice(3)];
   const file = `archive/wikipedia/${lang}/${safe(title)}.json`;
-  try { await access(file); continue; } catch {}
+  try { await access(file); return; } catch {}
   const j = await api(lang, { action: 'query', prop: 'extracts|coordinates|info|langlinks', explaintext: '1', redirects: '1', titles: title, inprop: 'url', lllang: lang === 'en' ? 'ar' : 'en' });
   const p = j.query?.pages?.[0];
-  if (!p || p.missing || !p.extract) continue;
+  if (!p || p.missing || !p.extract) return;
   await mkdir(`archive/wikipedia/${lang}`, { recursive: true });
   await writeFile(`archive/wikipedia/${lang}/${safe(p.title)}.json`, JSON.stringify({
     title: p.title, lang, url: p.fullurl, revid: p.lastrevid, coords: p.coordinates?.[0] ? [p.coordinates[0].lat, p.coordinates[0].lon] : null,
     other_language: p.langlinks?.[0]?.title || null, license: 'CC BY-SA 4.0', fetched: new Date().toISOString().slice(0, 10), text: p.extract
   }, null, 1));
   saved++;
-  await sleep(120);
 }
+await Promise.all(Array.from({ length: 4 }, async () => { while (keys.length) { await fetchOne(keys.shift()); if (saved % 50 === 0) console.log('saved', saved); await sleep(100); } }));
 console.log('saved', saved);

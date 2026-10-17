@@ -18,10 +18,10 @@ for f in sorted(glob.glob(os.path.join(ROOT, 'archive', 'areas', 'landmarks_batc
         key = norm(a.get('name'))
         if a.get('id') in seen or key in names: skipped.append((a.get('name'), 'duplicate')); continue
         lat, lon = a.get('lat'), a.get('lon')
-        if not (isinstance(lat, (int, float)) and isinstance(lon, (int, float)) and 32.55 <= lat <= 33.05 and 12.85 <= lon <= 13.55): skipped.append((a.get('name'), 'no coordinates')); continue
+        if not (isinstance(lat, (int, float)) and isinstance(lon, (int, float)) and 32.0 <= lat <= 33.4 and 12.2 <= lon <= 14.3): skipped.append((a.get('name'), 'no coordinates')); continue
         if not a.get('summary'): skipped.append((a.get('name'), 'no summary')); continue
         a = {k: v for k, v in a.items() if v not in (None, '', []) and k not in ('category', 'built', 'period')}
-        a['kind'] = a.get('kind') if a.get('kind') in ('landmark', 'government', 'prison') else 'landmark'
+        a['kind'] = a.get('kind') if a.get('kind') in ('landmark', 'government', 'prison', 'military') else 'landmark'
         seen.add(a['id']); names.add(key); areas.append(a)
 if skipped: print('skipped', len(skipped), skipped[:40])
 json.dump(areas, open(os.path.join(ROOT, 'archive', 'areas', 'areas.json'), 'w'), ensure_ascii=False, indent=1)

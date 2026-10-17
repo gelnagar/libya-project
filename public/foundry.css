@@ -313,3 +313,7 @@ html #periods button { min-height: 40px; padding: 4px 8px; text-align: left; dis
 #periods button small { font-weight: 400; color: var(--fy-muted); font-size: .85em; }
 #periods button[aria-pressed="true"] small { color: var(--fy-sel-text); }
 #periods button[data-era="all"] { grid-column: 1 / -1; min-height: 34px; }
+html #term-src { padding: 8px 14px; gap: 4px; border-bottom: 1px solid var(--fy-border); background: var(--fy-panel); }
+html #term-src button { min-height: 28px; padding: 0 10px; border-radius: 3px; font-size: .8em; background: #edeff2; box-shadow: none; color: var(--fy-text); }
+html.dark #term-src button { background: #383e47; }
+html #term-src button[aria-pressed="true"] { background: var(--fy-sel); color: var(--fy-sel-text); box-shadow: inset 0 0 0 1px rgba(45,114,210,.6); }

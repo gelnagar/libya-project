@@ -1185,6 +1185,17 @@
 
   /* ---------- search terminal ---------- */
   var TERM_KINDS = [['all', 'All'], ['place', 'Places'], ['area', 'Areas'], ['doc', 'Documents'], ['event', 'Events']];
+  var TERM_SRCS = [['all', 'All sources'], ['us', 'US diplomatic papers'], ['radio', 'Libyan radio & press (translated)'], ['decl', 'Presidential & declassified files'], ['rights', 'Human rights & UN'], ['law', 'Libyan laws'], ['ref', 'Reference & encyclopedias']];
+  var termSrc = 'all';
+  function srcGroup(r) {
+    var s = r.s || '';
+    if (/^FRUS/.test(s)) return 'us';
+    if (/^(FBIS|JPRS)/.test(s)) return 'radio';
+    if (/Reagan|Bush|Thatcher|Wilson Center|National Security Archive|Nixon|Carter/i.test(s)) return 'decl';
+    if (r.y === 'law' || /security-legislation|legislation/i.test(s + ' ' + (r.c || ''))) return 'law';
+    if (/Wikipedia|Library of Congress|country study/i.test(s)) return 'ref';
+    return 'rights';
+  }
   var termKind = 'all';
   function openTerm(q) {
     $('term').hidden = false;
@@ -1212,11 +1223,12 @@
     if (termKind !== 'place' && termKind !== 'area') (RECORDS || []).forEach(function (r) {
       if (termKind === 'event' && r.y !== 'event') return;
       if (termKind === 'doc' && r.y === 'event') return;
+      if (termKind === 'doc' && termSrc !== 'all' && srcGroup(r) !== termSrc) return;
       var y = +(r.d || '0').slice(0, 4); if (yf && (y < yf || y > yt)) return;
       if (words.length && !match(r.t + ' ' + (r.m || '') + ' ' + (r.s || '') + ' ' + (r.k || []).join(' '))) return;
       out.push({ k: r.y === 'event' ? 'event' : 'doc', sort: r.y === 'event' ? 1.5 : 2, sc: rel(r.t, (r.m || '') + ' ' + (r.s || '')), d: r.d, t: r.t, sub: (TYPE_LABEL[r.y] || r.y) + ' · ' + (r.s || '') + ' · ' + String(r.m || '').slice(0, 160), go: function () { closeTerm(); openRecord(r); } });
     });
-    if (!words.length && !yf) out = out.filter(function (x) { return x.k !== 'doc'; });
+    if (!words.length && !yf && termKind === 'all') out = out.filter(function (x) { return x.k !== 'doc'; });
     out.sort(function (a, b) { return words.length ? (b.sc - a.sc || a.sort - b.sort || String(a.d || '').localeCompare(String(b.d || ''))) : (a.sort - b.sort || String(a.d || '').localeCompare(String(b.d || ''))); });
     return out;
   }
@@ -1228,11 +1240,15 @@
     res.slice(0, 200).forEach(function (x) {
       list.appendChild(h('button', { class: 'trow k-' + x.k, onclick: x.go }, [h('span', { class: 'tk', text: { place: 'PLACE', area: 'AREA', doc: 'DOC', event: 'EVENT' }[x.k] }), h('span', { class: 'td', text: x.d || '' }), h('span', { class: 'tt' }, [h('b', { text: x.t }), h('small', { text: x.sub })])]));
     });
-    if (res.length > 200) list.appendChild(h('p', { class: 'd-text muted', text: 'Showing the first 200. Add words or a year to narrow it down.' }));
+    if (res.length > 200) list.appendChild(h('p', { class: 'd-text muted', text: 'Showing the first 200 of ' + res.length + '. Type a word, a name or a year, or pick a source above, to narrow it down. Add words or a year to narrow it down.' }));
   }
   TERM_KINDS.forEach(function (k) {
     $('term-kinds').appendChild(h('button', { 'aria-pressed': k[0] === termKind ? 'true' : 'false', 'data-k': k[0], text: k[1], onclick: function () {
-      termKind = k[0]; document.querySelectorAll('#term-kinds button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === termKind ? 'true' : 'false'); }); runTerm(); } }));
+      termKind = k[0]; document.querySelectorAll('#term-kinds button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === termKind ? 'true' : 'false'); }); $('term-src').hidden = termKind !== 'doc'; runTerm(); } }));
+  });
+  TERM_SRCS.forEach(function (k) {
+    $('term-src').appendChild(h('button', { 'aria-pressed': k[0] === termSrc ? 'true' : 'false', 'data-k': k[0], text: k[1], onclick: function () {
+      termSrc = k[0]; document.querySelectorAll('#term-src button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === termSrc ? 'true' : 'false'); }); runTerm(); } }));
   });
   var termTimer;
   $('term-q').addEventListener('input', function () { clearTimeout(termTimer); termTimer = setTimeout(runTerm, 120); });

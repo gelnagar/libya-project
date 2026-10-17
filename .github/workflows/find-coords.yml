@@ -4,7 +4,7 @@ permissions: { contents: write }
 jobs:
   coords:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/find-coords.py

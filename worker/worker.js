@@ -7,6 +7,11 @@
     FAMILY_CODE        (secret)  the code family members type once on their phone
     ALLOWED_ORIGINS    (text)    https://gelnagar.github.io
     MODEL              (text)    optional, defaults to claude-sonnet-5-5
+
+  Optional low-credit warning (needs a KV namespace bound as ATLAS_KV):
+    CREDIT_LOADED      (text)    total dollars you have ever added, e.g. 20
+    LOW_CREDIT_WARNING (text)    warn below this many dollars, default 10
+    PRICE_IN, PRICE_OUT (text)   dollars per million tokens, default 2 and 10
 */
 
 const SYSTEM = `You explain places on a historical map of Tripoli, Libya, focused on 1969–1989 under Muammar Gaddafi.
@@ -19,6 +24,23 @@ If the reader writes in Arabic, answer in Arabic.`;
 
 const MAX_PER_MINUTE = 8;
 const hits = new Map();
+
+async function creditInfo(env) {
+  const loaded = parseFloat(env.CREDIT_LOADED);
+  if (!env.ATLAS_KV || !(loaded > 0)) return { tracked: false };
+  const spent = parseFloat(await env.ATLAS_KV.get('spent_usd')) || 0;
+  const remaining = Math.max(0, loaded - spent);
+  const warnBelow = parseFloat(env.LOW_CREDIT_WARNING) || 10;
+  return { tracked: true, remaining: Math.round(remaining * 100) / 100, low: remaining < warnBelow, out: remaining <= 0.05 };
+}
+
+async function recordSpend(env, usage) {
+  if (!env.ATLAS_KV || !usage) return;
+  const pin = parseFloat(env.PRICE_IN) || 2, pout = parseFloat(env.PRICE_OUT) || 10;
+  const cost = ((usage.input_tokens || 0) * pin + (usage.output_tokens || 0) * pout) / 1e6;
+  const spent = parseFloat(await env.ATLAS_KV.get('spent_usd')) || 0;
+  await env.ATLAS_KV.put('spent_usd', String(spent + cost));
+}
 
 function json(body, status, headers) {
   return new Response(JSON.stringify(body), { status, headers: { ...headers, 'Content-Type': 'application/json' } });
@@ -52,6 +74,7 @@ export default {
 
     let body;
     try { body = await request.json(); } catch { return json({ error: 'Bad request' }, 400, cors); }
+    if (body.status) return json({ credit: await creditInfo(env) }, 200, cors);
     const question = String(body.question || 'Why does this place matter?').slice(0, 500);
     const place = JSON.stringify(body.place || {}).slice(0, 4000);
 
@@ -70,9 +93,14 @@ export default {
       })
     });
 
-    if (!r.ok) return json({ error: 'AI service error ' + r.status }, 502, cors);
+    if (!r.ok) {
+      const err = await r.text();
+      if (/credit balance/i.test(err)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
+      return json({ error: 'AI service error ' + r.status }, 502, cors);
+    }
     const data = await r.json();
+    await recordSpend(env, data.usage);
     const text = (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('\n').trim();
-    return json({ text }, 200, cors);
+    return json({ text, credit: await creditInfo(env) }, 200, cors);
   }
 };

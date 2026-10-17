@@ -306,6 +306,32 @@
   }
 
   /* ---------- AI answers (through the family relay) ---------- */
+  var creditHidden = false;
+  function showCredit(c) {
+    var b = $('credit');
+    if (!c || !c.tracked || !c.low || creditHidden) { b.hidden = true; fitBanner(); return; }
+    b.classList.toggle('out', !!c.out);
+    $('credit-msg').textContent = c.out
+      ? 'AI answers are paused: the AI credit has run out. Let the person who shared this map know.'
+      : 'AI credit is running low: about $' + Number(c.remaining).toFixed(2) + ' left. Let the person who shared this map know.';
+    b.hidden = false;
+    fitBanner();
+  }
+  function fitBanner() {
+    var b = $('credit');
+    document.documentElement.style.setProperty('--banner-h', b.hidden ? '0px' : b.offsetHeight + 'px');
+    map.invalidateSize();
+  }
+  window.addEventListener('resize', fitBanner);
+  $('credit-x').onclick = function () { creditHidden = true; $('credit').hidden = true; fitBanner(); };
+  function checkCredit() {
+    var code = store.get('code', '');
+    if (!CFG.aiEndpoint || !code) return;
+    fetch(CFG.aiEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Family-Code': code }, body: JSON.stringify({ status: true }) })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (j) showCredit(j.credit); })
+      .catch(function () {});
+  }
   function aiBox(place) {
     if (!CFG.aiEndpoint) return null;
     var q = h('textarea', { 'aria-label': 'Your question', id: 'ai-q' });
@@ -322,12 +348,12 @@
       btn.disabled = true; btn.textContent = 'Thinking…';
       out.hidden = false; out.classList.remove('err'); out.textContent = '';
       fetch(CFG.aiEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Family-Code': code }, body: JSON.stringify({ place: place, question: q.value.slice(0, 500) }) })
-        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) { var e = new Error(j.error || ('Error ' + r.status)); e.code = r.status; throw e; } return j; }); })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (j && j.credit) showCredit(j.credit); if (!r.ok) { var e = new Error(j.error || ('Error ' + r.status)); e.code = r.status; throw e; } return j; }); })
         .then(function (j) { out.textContent = j.text || 'No answer came back. Try again.'; })
         .catch(function (e) {
           out.classList.add('err');
           if (e.code === 401) { store.set('code', ''); pw.value = ''; pwWrap.hidden = false; }
-          out.textContent = e.code === 401 ? 'That password was not accepted. Please type it again.' : e.code === 429 ? 'Too many questions just now. Wait a minute and try again.' : 'Could not reach the AI right now. Check your connection and try again.';
+          out.textContent = e.code === 401 ? 'That password was not accepted. Please type it again.' : e.code === 402 ? 'AI answers are paused because the AI credit has run out.' : e.code === 429 ? 'Too many questions just now. Wait a minute and try again.' : 'Could not reach the AI right now. Check your connection and try again.';
         })
         .then(function () { btn.disabled = false; btn.textContent = 'Ask AI'; });
     });
@@ -371,4 +397,5 @@
   refreshOSM();
   if (DESKTOP.matches) openPanel('drawer');
   if (!store.get('tipSeen', false)) $('tip').hidden = false;
+  checkCredit();
 })();

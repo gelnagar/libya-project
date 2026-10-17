@@ -21,7 +21,16 @@ In the Anthropic Console (console.anthropic.com), open **Settings → Limits** a
 | `FAMILY_CODE` | Secret | the family password (capitals and spaces are ignored) |
 | `ALLOWED_ORIGINS` | Text | `https://gelnagar.github.io` |
 
-5. Copy the worker's address. It looks like `https://tripoli-atlas-ai.YOURNAME.workers.dev`.
+5. Optional low-credit warning: go to **Storage & Databases → KV → Create**, name it `ATLAS_KV`. Back in the worker, open **Bindings → Add → KV namespace**, set the variable name to `ATLAS_KV` and pick the namespace you just made. Then add two more variables:
+
+| Name | Type | Value |
+| --- | --- | --- |
+| `CREDIT_LOADED` | Text | total dollars you have added to your Anthropic account, e.g. `20` |
+| `LOW_CREDIT_WARNING` | Text | `10` |
+
+Each time you add money in the Anthropic console, raise `CREDIT_LOADED` by the same amount. The map shows a yellow warning at the top when the estimated balance falls below `LOW_CREDIT_WARNING`, and a red one if the credit runs out. The estimate assumes $2 per million input tokens and $10 per million output tokens; if Anthropic's prices change, set `PRICE_IN` and `PRICE_OUT` to the new numbers.
+
+6. Copy the worker's address. It looks like `https://tripoli-atlas-ai.YOURNAME.workers.dev`.
 
 ## 3. Connect the map
 

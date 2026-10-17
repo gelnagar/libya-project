@@ -39,7 +39,8 @@ export default {
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
     if (request.method !== 'POST') return json({ error: 'Not found' }, 404, cors);
     if (!allowed.includes(origin)) return json({ error: 'Not allowed' }, 403, cors);
-    if (!env.FAMILY_CODE || request.headers.get('X-Family-Code') !== env.FAMILY_CODE) return json({ error: 'Wrong family code' }, 401, cors);
+    const norm = (v) => String(v || '').trim().toLowerCase();
+    if (!env.FAMILY_CODE || norm(request.headers.get('X-Family-Code')) !== norm(env.FAMILY_CODE)) return json({ error: 'Wrong family code' }, 401, cors);
 
     // Light per-visitor limit (resets when Cloudflare recycles the worker).
     const ip = request.headers.get('CF-Connecting-IP') || 'unknown';

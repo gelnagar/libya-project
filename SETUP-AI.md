@@ -18,7 +18,7 @@ In the Anthropic Console (console.anthropic.com), open **Settings → Limits** a
 | Name | Type | Value |
 | --- | --- | --- |
 | `ANTHROPIC_API_KEY` | Secret | your Anthropic API key |
-| `FAMILY_CODE` | Secret | a code you choose, such as a short phrase |
+| `FAMILY_CODE` | Secret | the family password (capitals and spaces are ignored) |
 | `ALLOWED_ORIGINS` | Text | `https://gelnagar.github.io` |
 
 5. Copy the worker's address. It looks like `https://tripoli-atlas-ai.YOURNAME.workers.dev`.

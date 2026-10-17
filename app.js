@@ -311,10 +311,14 @@
     var q = h('textarea', { 'aria-label': 'Your question', id: 'ai-q' });
     q.value = 'Why does this place matter, and what is still uncertain?';
     var out = h('p', { class: 'ai-out', hidden: '' });
+    var pw = h('input', { type: 'password', id: 'ai-pw', autocomplete: 'off', 'aria-label': 'Family password' });
+    var pwWrap = h('div', { class: 'field' }, [h('label', { for: 'ai-pw', text: 'Family password' }), pw, h('small', { text: 'Only needed once on this phone.' })]);
+    pwWrap.hidden = !!store.get('code', '');
     var btn = h('button', { class: 'btn primary', text: 'Ask AI' });
     btn.addEventListener('click', function () {
-      var code = store.get('code', '');
-      if (!code) { openSettings(true); return; }
+      var code = store.get('code', '') || (pw.value || '').trim();
+      if (!code) { pwWrap.hidden = false; pw.focus(); return; }
+      store.set('code', code); pwWrap.hidden = true;
       btn.disabled = true; btn.textContent = 'Thinking…';
       out.hidden = false; out.classList.remove('err'); out.textContent = '';
       fetch(CFG.aiEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Family-Code': code }, body: JSON.stringify({ place: place, question: q.value.slice(0, 500) }) })
@@ -322,11 +326,12 @@
         .then(function (j) { out.textContent = j.text || 'No answer came back. Try again.'; })
         .catch(function (e) {
           out.classList.add('err');
-          out.textContent = e.code === 401 ? 'The family code was not accepted. Check it in Settings (⚙).' : e.code === 429 ? 'Too many questions just now. Wait a minute and try again.' : 'Could not reach the AI right now. Check your connection and try again.';
+          if (e.code === 401) { store.set('code', ''); pw.value = ''; pwWrap.hidden = false; }
+          out.textContent = e.code === 401 ? 'That password was not accepted. Please type it again.' : e.code === 429 ? 'Too many questions just now. Wait a minute and try again.' : 'Could not reach the AI right now. Check your connection and try again.';
         })
         .then(function () { btn.disabled = false; btn.textContent = 'Ask AI'; });
     });
-    return h('div', { class: 'ai' }, [h('h3', { style: 'margin:0;font:500 .7em var(--f-data);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)', text: 'Ask AI about this place' }), q, btn, out]);
+    return h('div', { class: 'ai' }, [h('h3', { style: 'margin:0;font:500 .7em var(--f-data);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)', text: 'Ask AI about this place' }), q, pwWrap, btn, out]);
   }
 
   /* ---------- settings, tip, text size ---------- */

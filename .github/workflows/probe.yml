@@ -1,5 +1,5 @@
 name: Probe source sites
-on: { workflow_dispatch: {}, push: { branches: [main], paths: [scripts/probe.mjs, scripts/probe-urls.txt, .github/workflows/probe.yml] } }
+on: { workflow_dispatch: {}, push: { branches: [main], paths: [scripts/probe.mjs, scripts/probe-fbis.mjs, scripts/probe-urls.txt, .github/workflows/probe.yml] } }
 permissions: { contents: write }
 jobs:
   probe:
@@ -8,9 +8,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
-      - run: node scripts/probe.mjs $(cat scripts/probe-urls.txt) > archive-probe.txt
+      - run: node scripts/probe-fbis.mjs
       - run: |
-          mkdir -p archive && mv archive-probe.txt archive/probe.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add archive/probe.txt && git commit -m "Probe results" && git pull --rebase && git push
+          git add archive/probe-fbis.json && git commit -m "Probe results" && git pull --rebase && git push

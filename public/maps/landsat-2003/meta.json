@@ -1,0 +1,17 @@
+{
+ "id": "landsat-2003",
+ "year": 2003,
+ "date": "2004-06-27",
+ "scene": "LT05_L2SP_188037_20040627_02_T1",
+ "note": "Landsat 5/7, natural colour",
+ "bbox": [
+  12.95,
+  32.7,
+  13.45,
+  32.95
+ ],
+ "maxZoom": 14,
+ "title": "Satellite image, 2004 (Landsat)",
+ "source": "USGS Landsat via Microsoft Planetary Computer",
+ "license": "Public domain (USGS)"
+}

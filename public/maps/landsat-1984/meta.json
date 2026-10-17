@@ -1,0 +1,17 @@
+{
+ "id": "landsat-1984",
+ "year": 1984,
+ "date": "1985-06-23",
+ "scene": "LT05_L2SP_188037_19850623_02_T1",
+ "note": "Landsat 5 TM, natural colour",
+ "bbox": [
+  12.95,
+  32.7,
+  13.45,
+  32.95
+ ],
+ "maxZoom": 14,
+ "title": "Satellite image, 1985 (Landsat)",
+ "source": "USGS Landsat via Microsoft Planetary Computer",
+ "license": "Public domain (USGS)"
+}

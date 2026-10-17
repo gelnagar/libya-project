@@ -1,0 +1,17 @@
+{
+ "id": "landsat-1972",
+ "year": 1972,
+ "date": "1976-07-18",
+ "scene": "LM01_L1TP_203037_19760718_02_T2",
+ "note": "Landsat 1\u20132 MSS, false colour (vegetation shows red)",
+ "bbox": [
+  12.95,
+  32.7,
+  13.45,
+  32.95
+ ],
+ "maxZoom": 14,
+ "title": "Satellite image, 1976 (Landsat)",
+ "source": "USGS Landsat via Microsoft Planetary Computer",
+ "license": "Public domain (USGS)"
+}

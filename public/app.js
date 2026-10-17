@@ -247,7 +247,7 @@
   map.on('move zoom resize viewreset zoomend moveend', clipOverlays);
   if (OVERLAYS.length) {
     var hb = h('button', { 'data-key': 'historical', style: 'grid-column:1 / -1', 'aria-pressed': 'false', 'aria-haspopup': 'dialog', onclick: function () { $('hist-modal').hidden = false; $('hist-close').focus(); } },
-      [h('span', { class: 'thumb', style: 'background:#14171c url(img/gaddafi-1972.jpg) center / auto 100% no-repeat;height:130px' }), h('span', { class: 'nm', text: 'Historical' }), h('small', { text: 'Old maps and satellite, 1943–1990' })]);
+      [h('span', { class: 'thumb', style: 'background:#14171c url(img/federation-1971.jpg) 60% 40% / cover no-repeat;height:170px' }), h('span', { class: 'nm', text: 'Historical' }), h('small', { text: 'Old maps and satellite, 1943–1990' })]);
     $('basemaps').appendChild(hb);
     var closeHist = function () { $('hist-modal').hidden = true; };
     $('hist-close').onclick = closeHist;

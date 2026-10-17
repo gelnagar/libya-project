@@ -2,9 +2,9 @@
 
 ## Tripoli detention sites, 1969–1989
 
-**Live map:** https://gelnagar.github.io/libya-project/ (once GitHub Pages is turned on for this repo, see below).
+**Live map:** https://gelnagar.github.io/libya-project/.
 
-`index.html` is a single-file interactive map of known and suspected prisons and detention sites in and near Tripoli during the first two decades of Gaddafi's rule. Open it in any browser. No build step is needed.
+`index.html` is a single-file interactive map of known and suspected prisons and detention sites in and near Tripoli during the first two decades of Gaddafi's rule. Open it in any browser.
 
 The base map is a rough schematic of the coastline and a few landmarks. It is not survey-grade. Dashed rings around each marker show how uncertain its position is.
 
@@ -44,9 +44,3 @@ Site data lives in the `SITES` array near the top of the script in `index.html`.
 - Human Rights Watch, Tripoli arrests (2011): https://www.hrw.org/node/97287
 - USIP, Prisons and Detention in Libya: https://www.usip.org/sites/default/files/PW119-Prisons-and-Detention-in-Libya.pdf
 - Amnesty International, Libya: gross human rights violations (1997): https://www.refworld.org/reference/countryrep/amnesty/1997/91542
-
-Check any site against primary sources before relying on it for research or legal work.
-
-### Publishing the live map
-
-GitHub shows `index.html` as source code. To run it as a page, open the repo's Settings → Pages, set Source to "Deploy from a branch", choose branch `main` and folder `/ (root)`, and save. The page appears at the live-map link above within a minute or two.

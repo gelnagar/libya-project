@@ -1,0 +1,181 @@
+{
+"summary_for_owner": "'Day of Judgement' almost certainly means 7 April. English Wikipedia (Human rights in Libya under Muammar Gaddafi; also Human rights violations during the Gaddafi regime) says Gaddafi called the anniversary of the 7 April 1976 student protests 'The Day of Judgement', and that on 7 April 1977 detained students were hanged in public in Benghazi before thousands of spectators, broadcast live on television. I could not find an Arabic original of the phrase or a second independent source using it, so confidence is moderate: high that 7 April is the day, moderate on the exact name. Note the famous 7 April 1977 hangings were in Benghazi (Socialist Union Square, now Two Martyrs' Square), not Tripoli, although the military tribunal sat in Tripoli. Documented Tripoli links: the April 1976 protests and crackdown at Tripoli educational institutions (the university was renamed Al-Fateh University afterwards), and the April 1984 hanging of student Rashid Kabar at the University of Tripoli Faculty of Pharmacy. Claims that public hangings recurred every 7 April until the late 1980s are disputed: Canada's IRB (citing a professor) says they stopped by the late 1980s, and I found no source naming a Tripoli stadium or neighbourhood for any 7 April hanging. The Sadiq Shwehdy basketball-stadium hanging (1984) was in Benghazi, in May/June, not 7 April. Other candidates checked and rejected as the phrase: 26 Oct 'Day of Revenge' (Yawm al-Intiqam, 1970 expulsion of Italians, no deaths reported), Abu Salim 29 June 1996, 17 Feb 2011 'Day of Revolt/Rage'. I could not read the CIA reading-room article 'Hangings in Tripoli focus attention on Libyan dissent' (the cia.gov link returned only the site homepage; a Washington Post version dated 23 April 1984 exists but failed to load), so its details are unverified.",
+"events": [
+{
+"id": "tripoli-student-protests-1976-04-07",
+"name": "7 April 1976 student protests and crackdown, Tripoli",
+"ar": "أحداث السابع من أبريل 1976",
+"date": "1976-04-07",
+"tripoli_location": "University of Tripoli (then renamed Al-Fateh University) and Tripoli schools",
+"lat": 32.8557519,
+"lon": 13.2212842,
+"coord_basis": "University of Tripoli main campus coordinates from https://en.wikipedia.org/wiki/University_of_Tripoli (campus, not a specific building)",
+"summary": "Students in Tripoli and Benghazi protested against military control of civilian life and demanded free elections. Pro-Gaddafi students and regime forces attacked the demonstrators, and many students were detained for months. The date later became an annual occasion for reprisals, which Gaddafi reportedly called 'The Day of Judgement'.",
+"deaths": "No reliable death figure found; Wikipedia's 1976 page reports none. Later executions are separate events.",
+"details": [
+"IRB Canada: pro-Gaddafi students attacked demonstrators at educational institutions in Tripoli and Benghazi.",
+"Asharq Al-Awsat: on 7 April 1976 Gaddafi reportedly said writers of anti-regime slogans must be 'eliminated'.",
+"University renamed Al Fateh University in 1976 after the unrest (Wikipedia)."
+],
+"sources": [
+{"t":"1976 Libyan protests (Wikipedia)","u":"https://en.wikipedia.org/wiki/1976_Libyan_protests"},
+{"t":"IRB Canada via ecoi.net: significance of 7 April","u":"https://www.ecoi.net/de/dokument/185092"},
+{"t":"Asharq Al-Awsat: execution of students and opponents","u":"https://aawsat.com/node/4263251"},
+{"t":"University of Tripoli (Wikipedia)","u":"https://en.wikipedia.org/wiki/University_of_Tripoli"}
+],
+"confidence": "documented"
+},
+{
+"id": "day-of-judgement-1977-04-07-benghazi",
+"name": "7 April 1977 public hangings ('Day of Judgement'), Benghazi - trial in Tripoli",
+"ar": "إعدامات 7 أبريل 1977",
+"date": "1977-04-07",
+"tripoli_location": "Military tribunal in Tripoli (venue not named); hangings took place in Benghazi, not Tripoli",
+"lat": null,
+"lon": null,
+"coord_basis": "unknown - tribunal venue not given in sources",
+"summary": "Students Omar Dabboub and Mohamed Ben Saoud were hanged in public in Benghazi on the anniversary of the 1976 protests, broadcast on television. Dabboub's daughter says a military tribunal in Tripoli sentenced her father, then he was taken to Benghazi. Include on the map only as a linked event, with the Tripoli tribunal and a note that the hangings were in Benghazi.",
+"deaths": "At least 2 students named by all sources; Asharq Al-Awsat adds Omar al-Warfali al-Makhzoumi and Ahmed Fouad Fathallah (Egyptian) per one historian; officers were also hanged that week (Organizing Committee claim, unverified). No total.",
+"details": [
+"Wikipedia: Gaddafi called the anniversary 'The Day of Judgement'; thousands attended; live on TV.",
+"Site: Socialist Union Square (Cathedral Square), Benghazi, later renamed Two Martyrs' Square (Dabboub interview).",
+"Bodies left hanging about eight hours (Dabboub interview)."
+],
+"sources": [
+{"t":"Human rights in Libya under Muammar Gaddafi (Wikipedia)","u":"https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi"},
+{"t":"Ilham Dabboub interview, Tarikhi","u":"https://tarikhi.org/interview/ilham-dabboub/"},
+{"t":"Asharq Al-Awsat","u":"https://aawsat.com/node/4263251"},
+{"t":"IRB Canada via ecoi.net","u":"https://www.ecoi.net/de/dokument/185092"}
+],
+"confidence": "documented"
+},
+{
+"id": "tripoli-university-hanging-1984-04",
+"name": "April 1984 hanging of a student at the University of Tripoli",
+"ar": "إعدام رشيد كعبار - كلية الصيدلة",
+"date": "1984-04-16",
+"tripoli_location": "Faculty of Pharmacy courtyard, University of Tripoli (Al-Fateh University)",
+"lat": 32.8557519,
+"lon": 13.2212842,
+"coord_basis": "Main campus coordinates only, https://en.wikipedia.org/wiki/University_of_Tripoli; faculty position unknown",
+"summary": "Student Rashid Kabar (Kaabar) was hanged in April 1984 at the Faculty of Pharmacy while fellow students were made to watch. Another student, Mustafa al-Nuwairi, was hanged at Benghazi University in the same month. These were not on 7 April: one source gives 16 April.",
+"deaths": "1 in Tripoli (Rashid Mansour Kaabar); a Washington Post headline of 22 April 1984 speaks of 2 students hanged 'Monday' (16 April), which likely matches the two named, but I could not read the article.",
+"details": [
+"Date 16 April: Revolve Media (a Tripoli University provost's account); Asharq Al-Awsat says 'April 1984' without day.",
+"An auditorium once called the 'Green Room' was renamed for Kabar.",
+"No source found for a Tripoli stadium or neighbourhood hanging on 7 April 1984."
+],
+"sources": [
+{"t":"Libya: Bye-Bye Brother Leader (Revolve)","u":"https://revolve.media/?p=71032"},
+{"t":"Asharq Al-Awsat","u":"https://aawsat.com/node/4263251"},
+{"t":"Washington Post, 22 Apr 1984 (headline seen in search results, text not read)","u":"https://www.washingtonpost.com/archive/politics/1984/04/22/libya-hanged-2-students-monday-for-treason/f639373f-d89a-4259-bd91-11ffbfbc2fab/"},
+{"t":"Washington Post, 23 Apr 1984 'Hangings in Tripoli focus attention on Libyan dissent' (headline only)","u":"https://www.washingtonpost.com/archive/politics/1984/04/23/hangings-in-tripoli-focus-attention-on-libyan-dissent/9c2481e3-1b2d-4b74-8d69-4304afe24ed1/"}
+],
+"confidence": "reported"
+},
+{
+"id": "annual-7-april-hangings-1977-late-1980s",
+"name": "Annual 7 April public executions, 1977 to late 1980s",
+"ar": "حفلات الإعدام السنوية في 7 أبريل",
+"date": "1977",
+"tripoli_location": "Not specified; first ones in Benghazi, later at universities including Tripoli",
+"lat": null,
+"lon": null,
+"coord_basis": "unknown",
+"summary": "Wikipedia and a historian quoted by Asharq Al-Awsat say executions marked 7 April each year under Gaddafi, until the late 1980s. A Canadian government review cites a professor saying the practice had stopped by then, and the claim of executions every year is contested.",
+"deaths": "No total found.",
+"details": [
+"Historian Shukri al-Senki: public executions every 7 April; Libyans call them a 'massacre' (Asharq Al-Awsat).",
+"IRB Canada notes the Organizing Committee claim conflicts with the professor's account.",
+"No named Tripoli stadium or neighbourhood found."
+],
+"sources": [
+{"t":"IRB Canada via ecoi.net","u":"https://www.ecoi.net/de/dokument/185092"},
+{"t":"Asharq Al-Awsat","u":"https://aawsat.com/node/4263251"},
+{"t":"1976 Libyan protests (Wikipedia)","u":"https://en.wikipedia.org/wiki/1976_Libyan_protests"}
+],
+"confidence": "disputed"
+},
+{
+"id": "bab-al-azizia-attack-1984-05-08",
+"name": "Attack on Bab al-Azizia and reprisal hangings, May 1984",
+"ar": "هجوم باب العزيزية 1984",
+"date": "1984-05-08",
+"tripoli_location": "Bab al-Azizia barracks, southern outskirts of Tripoli",
+"lat": null,
+"lon": null,
+"coord_basis": "unknown - no coordinates in the page read",
+"summary": "Armed opponents attacked Gaddafi's compound on 8 May 1984. Wikipedia lists about 80 killed; officials said all 20-30 gunmen died. Reprisals followed, including arrests and televised hangings; Abu Salim prison took its first prisoners then.",
+"deaths": "About 80 (Wikipedia infobox, uncertain); NFSL claimed 7 executed without trial and up to 3,000 arrests, which Western diplomats put at up to 200 arrests.",
+"details": [
+"Twelve people were publicly hanged in home towns afterwards (Wikipedia, Shuwehdy page).",
+"Dissident Sadiq Shuwehdy was hanged in Benghazi, not Tripoli."
+],
+"sources": [
+{"t":"1984 Libyan coup attempt (Wikipedia)","u":"https://en.wikipedia.org/wiki/1984_Libyan_coup_attempt"},
+{"t":"Execution of Al-Sadek Hamed Al-Shuwehdy (Wikipedia)","u":"https://en.wikipedia.org/wiki/Execution_of_Al-Sadek_Hamed_Al-Shuwehdy"},
+{"t":"Abu Salim massacre (Wikipedia)","u":"https://en.wikipedia.org/wiki/Abu_Salim_massacre"}
+],
+"confidence": "reported"
+},
+{
+"id": "tripoli-crackdown-2011-02-20",
+"name": "Tripoli protest crackdown, 20-25 February 2011",
+"ar": "قمع احتجاجات طرابلس فبراير 2011",
+"date": "2011-02-20",
+"tripoli_location": "Green Square, Fashloum, Tajoura, Ben Ashour; bodies at Abu Salim Hospital and Tripoli Central Hospital",
+"lat": null,
+"lon": null,
+"coord_basis": "unknown - area event",
+"summary": "Security forces fired on protesters from 20 February. HRW counted at least 62 bodies at two hospital morgues by 22 February, but could not verify the cause for each. Gunfire was reported through the night of 21 February in Fashloum and Tajoura.",
+"deaths": "HRW: at least 62 in two morgues (unverified, 20-22 Feb). Wikipedia cites 25 killed at Tajoura on 25 Feb and activist claims of up to 80 at Bab al-Azizia on 21 Feb. Wikipedia infobox range 300-700 killed.",
+"details": [
+"Green Square 21 Feb: residents saw bodies; anyone trying to retrieve them was shot (HRW).",
+"Ben Ashour 22 Feb: shooting at passers-by (HRW).",
+"Abu Salim Hospital morgue: at least 50 bodies (witnesses)."
+],
+"sources": [
+{"t":"HRW: Libya commanders should face justice for killings","u":"https://www.hrw.org/news/2011/02/22/libya-commanders-should-face-justice-killings"},
+{"t":"HRW: end violent crackdown in Tripoli","u":"https://www.hrw.org/news/2011/03/13/libya-end-violent-crackdown-tripoli"},
+{"t":"Tripoli protests and clashes (February 2011), Wikipedia","u":"https://en.wikipedia.org/wiki/Tripoli_protests_and_clashes_(February_2011)"}
+],
+"confidence": "reported"
+},
+{
+"id": "tripoli-firing-squad-2010-05-30",
+"name": "Firing-squad executions, 30 May 2010",
+"ar": "",
+"date": "2010-05-30",
+"tripoli_location": "Tripoli (venue not named)",
+"lat": null,
+"lon": null,
+"coord_basis": "unknown",
+"summary": "Eighteen people were shot by firing squad, 14 in Tripoli and 4 in Benghazi. Many were foreign nationals. Amnesty International and the European Parliament condemned the executions.",
+"deaths": "14 in Tripoli (18 total), per Wikipedia.",
+"details": ["Not a massacre in the usual sense; judicial executions."],
+"sources": [
+{"t":"Human rights violations during the Gaddafi regime (Wikipedia)","u":"https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime"},
+{"t":"Human rights in Libya under Muammar Gaddafi (Wikipedia)","u":"https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi"}
+],
+"confidence": "documented"
+},
+{
+"id": "bab-al-azizia-camp-killings-2011-08",
+"name": "Camp outside Bab al-Azizia killings, August 2011",
+"ar": "",
+"date": "2011-08",
+"tripoli_location": "Camp outside Bab al-Azizia compound",
+"lat": null,
+"lon": null,
+"coord_basis": "unknown",
+"summary": "Wikipedia's list of massacres in Libya gives at least 29 killed at a camp outside the Bab al-Azizia compound in August 2011. I opened only the list entry, no primary report, so treat details as unconfirmed.",
+"deaths": "At least 29 (Wikipedia list only).",
+"details": ["Amnesty (26 Aug 2011, cited on Wikipedia) reported detainees killed at Khilit al-Ferjan and Qasr bin Ghashir loyalist camps; no toll."],
+"sources": [
+{"t":"List of massacres in Libya (Wikipedia)","u":"https://en.wikipedia.org/wiki/List_of_massacres_in_Libya"},
+{"t":"Battle of Tripoli (2011), Wikipedia","u":"https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"}
+],
+"confidence": "reported"
+}
+]
+}

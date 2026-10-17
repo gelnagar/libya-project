@@ -205,9 +205,33 @@ window.ATLAS_SITES = [
     id: 'fateh', layer: 'landmark', level: 'context', y0: 1976, y1: 1989,
     name: 'Al-Fateh University', ar: 'جامعة الفاتح',
     lat: 32.8565, lon: 13.2257, r: 1, period: '1976–1989',
-    relevance: "Universities were closely watched, and students were among those attacked and arrested for political or religious activity.",
-    text: "Tripoli's main university, now the University of Tripoli. In April 1976 police and government loyalists attacked protesting students, according to a former student. Amnesty International reports that security forces arrested religious students here in 1989. Position is approximate.",
-    sources: [SRC.sahli, SRC.ai1992]
+    relevance: "Universities were closely watched. Students were attacked on 7 April 1976, and 7 April became a date of reprisals that Gaddafi reportedly called the “Day of Judgement”.",
+    text: "Tripoli's main university, now the University of Tripoli. On 7 April 1976 police and government loyalists attacked protesting students, according to a former student. English Wikipedia reports that Gaddafi named the anniversary the “Day of Judgement”; the best-known hangings that followed, on 7 April 1977, were in Benghazi, after a military tribunal in Tripoli. In April 1984 a student, Rashid Kaabar, was hanged at the Faculty of Pharmacy while students were made to watch. Amnesty International reports that security forces arrested religious students here in 1989. Position is approximate.",
+    sources: [SRC.sahli, SRC.ai1992, { t: 'Human rights in Libya under Muammar Gaddafi, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi' }]
+  },
+  {
+    id: 'mk-hang-1984', layer: 'massacre', level: 'testimony', y0: 1984, y1: 1984,
+    name: 'University of Tripoli hanging, April 1984', ar: 'إعدام طالب في جامعة الفاتح',
+    lat: 32.8558, lon: 13.2213, r: 0.4, period: 'April 1984 (probably 16 April)',
+    relevance: "A public hanging of a student on campus, with other students forced to watch, during the April 1984 wave of executions.",
+    text: "Student Rashid Mansour Kaabar was hanged at the Faculty of Pharmacy, University of Tripoli (then Al-Fateh University). Another student, Mustafa al-Nuwairi, was hanged at Benghazi University the same month. A Washington Post report of 22 April 1984 speaks of two students hanged on Monday for treason, which probably means 16 April. The date is not 7 April. Accounts rest on newspapers and exile sources; the exact venue on campus is from a single account.",
+    sources: [{ t: 'Washington Post, 22 Apr 1984: Libya hanged 2 students Monday for treason', u: 'https://www.washingtonpost.com/archive/politics/1984/04/22/libya-hanged-2-students-monday-for-treason/f639373f-d89a-4259-bd91-11ffbfbc2fab/' }, { t: 'Asharq Al-Awsat on the 7 April hangings', u: 'https://aawsat.com/node/4263251' }]
+  },
+  {
+    id: 'mk-feb2011', layer: 'massacre', level: 'documented', y0: 2011, y1: 2011,
+    name: 'Tripoli crackdown, 20–25 February 2011', ar: 'قمع احتجاجات طرابلس',
+    lat: 32.8963, lon: 13.1806, r: 3, period: '20–25 February 2011',
+    relevance: "Security forces fired on protesters in several districts as the uprising reached Tripoli.",
+    text: "Shooting was reported around Green Square, Fashloum, Tajoura and Ben Ashour. Human Rights Watch counted at least 62 bodies at two Tripoli hospital morgues by 22 February but could not confirm the cause for each. Figures for the whole week vary widely, from about 300 to 700 killed. The marker is centred on Green Square, but events happened in many districts.",
+    sources: [{ t: 'HRW, 22 Feb 2011: Libya commanders should face justice for killings', u: 'https://www.hrw.org/news/2011/02/22/libya-commanders-should-face-justice-killings' }, { t: 'HRW, 13 Mar 2011: End violent crackdown in Tripoli', u: 'https://www.hrw.org/news/2011/03/13/libya-end-violent-crackdown-tripoli' }]
+  },
+  {
+    id: 'mk-babcamp-2011', layer: 'massacre', level: 'suspected', y0: 2011, y1: 2011,
+    name: 'Camp near Bab al-Aziziya, August 2011 (reported)', 
+    lat: 32.848, lon: 13.151, r: 1.2, period: 'August 2011',
+    relevance: "A reported killing of at least 29 people at a camp outside the compound during the fall of Tripoli.",
+    text: "Wikipedia's list of massacres in Libya gives at least 29 killed at a camp outside the Bab al-Aziziya compound in August 2011. I found no primary report, so the place and the toll are unconfirmed.",
+    sources: [{ t: 'List of massacres in Libya, Wikipedia', u: 'https://en.wikipedia.org/wiki/List_of_massacres_in_Libya' }]
   }
 ];
 
@@ -233,7 +257,9 @@ window.ATLAS_UNPLACED = [
   { name: 'Police stations and checkpoints', when: '1969–1989', text: 'No published source maps Tripoli’s police posts or checkpoints for this period.' },
   { name: 'Military intelligence prison, Tripoli', when: '1984', text: 'A former detainee describes being held there after the May 1984 arrests. Its location is not given.', src: SRC.shareef },
   { name: 'Black Horse prison', when: 'Until 1984', text: 'Italian-era prison replaced by Abu Salim. No source places it on a map.', src: SRC.hrsly },
-  { name: 'Public executions', when: 'Late 1970s–1980s', text: 'Public hangings were staged on 7 April anniversaries, including at universities and a sports stadium. The documented cases with places are in Benghazi, outside this map.', src: { t: 'Human rights violations during the Gaddafi regime, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime' } }
+  { name: '7 April, the “Day of Judgement”', when: '1976–1980s', text: 'English Wikipedia says Gaddafi called the anniversary of the 7 April 1976 student protests the “Day of Judgement”. On 7 April 1977 students Omar Dabboub and Mohamed Ben Saoud were hanged in public in Benghazi after a military tribunal in Tripoli; the broadcast was shown on television. Some sources say executions were repeated every 7 April until the late 1980s; that is disputed and no Tripoli venue is named. The University of Tripoli, where students were attacked in 1976 and a student was hanged in April 1984, is on the map.', src: { t: 'Human rights in Libya under Muammar Gaddafi, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi' } },
+  { name: 'Firing-squad executions', when: '30 May 2010', text: 'Eighteen people were shot by firing squad: 14 in Tripoli and 4 in Benghazi, many of them foreign nationals. The Tripoli venue is not named. Amnesty International and the European Parliament condemned the executions.', src: { t: 'Human rights violations during the Gaddafi regime, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime' } },
+  { name: 'Public executions', when: 'Late 1970s–1980s', text: 'Public hangings were staged around 7 April anniversaries, including at universities and a sports arena. The documented cases with places are in Benghazi, outside this map, except the April 1984 hanging at the University of Tripoli.', src: { t: 'Human rights violations during the Gaddafi regime, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime' } }
 ];
 
 window.ATLAS_DISTRICTS = [

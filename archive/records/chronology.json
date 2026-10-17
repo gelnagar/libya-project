@@ -230,18 +230,71 @@
   "added": "2026-10-17"
  },
  {
-  "id": "ev-1977-04-07-public-hangings-of-students",
+  "id": "ev-1977-04-07-day-of-judgement---students-hanged-in-p",
   "type": "event",
-  "title": "Public hangings of students",
+  "title": "“Day of Judgement”: students hanged in public",
   "date": "1977-04-07",
   "source": "Chronology",
   "source_short": "Chronology · Wikipedia",
   "collection": "Tripoli: Open Source chronology",
-  "summary": "Students were hanged in public in Benghazi; public executions were held on the 7 April anniversary in later years until the late 1980s.",
+  "summary": "On the anniversary of the 1976 protests, which Gaddafi reportedly called the “Day of Judgement”, students Omar Dabboub and Mohamed Ben Saoud were hanged in public in Benghazi after a military tribunal in Tripoli. Some sources say 7 April executions continued until the late 1980s; that is disputed.",
   "places": [
+   "furnaj",
+   "fateh"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1984-04-16-student-hanged-at-the-university-of-trip",
+  "type": "event",
+  "title": "Student hanged at the University of Tripoli",
+  "date": "1984-04-16",
+  "source": "Chronology",
+  "source_short": "Chronology · washingtonpost.com",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Student Rashid Kaabar was hanged at the Faculty of Pharmacy while other students were made to watch; another student was hanged at Benghazi University the same month. The date is probably 16 April, not 7 April.",
+  "places": [
+   "fateh",
    "furnaj"
   ],
-  "link": "https://en.wikipedia.org/wiki/1976_Libyan_protests",
+  "link": "https://www.washingtonpost.com/archive/politics/1984/04/22/libya-hanged-2-students-monday-for-treason/f639373f-d89a-4259-bd91-11ffbfbc2fab/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1984-05-08-attack-on-bab-al-aziziya-and-reprisals",
+  "type": "event",
+  "title": "Attack on Bab al-Aziziya and reprisals",
+  "date": "1984-05-08",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Armed opponents attacked Gaddafi’s compound; reports of the toll vary (about 80 in Wikipedia, officials said all 20 to 30 gunmen died). Mass arrests and televised hangings followed, and Abu Salim prison took its first prisoners.",
+  "places": [
+   "bab-aziziya-area"
+  ],
+  "link": "https://en.wikipedia.org/wiki/1984_Libyan_coup_attempt",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2010-05-30-firing-squad-executions",
+  "type": "event",
+  "title": "Firing-squad executions",
+  "date": "2010-05-30",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Eighteen people were shot by firing squad, 14 in Tripoli and 4 in Benghazi, many of them foreign nationals.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime",
   "rights": "link-only",
   "rights_note": "Summary written for this map; follow the link for the source.",
   "added": "2026-10-17"

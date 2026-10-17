@@ -855,6 +855,26 @@
   var AREAS = window.ATLAS_AREAS || [];
   var AREA_BY_ID = {};
   AREAS.forEach(function (a) { AREA_BY_ID[a.id] = a; });
+
+  /* researched landmarks and buildings: one marker each, opening the full profile */
+  var profGroup = L.layerGroup(), profOn = store.get('prof', true);
+  var PROF_SVG = '<path d="M12 2 2 7v2h20V7zM4 11v8H2v3h20v-3h-2v-8h-3v8h-2v-8h-4v8H9v-8z"/>';
+  function drawProfiles() {
+    profGroup.clearLayers();
+    AREAS.filter(function (a) { return ['landmark', 'government', 'prison'].indexOf(a.kind) >= 0 && a.lat && a.lon; }).forEach(function (a) {
+      var dup = SITES.some(function (s) { return map.distance([a.lat, a.lon], [s.lat, s.lon]) < 120 && (s.layer === 'landmark' || s.layer === 'power') && fold(s.name).split(' ')[0] === fold(a.name).split(' ')[0]; });
+      if (dup) return;
+      var m = L.marker([a.lat, a.lon], { keyboard: false, title: a.name, zIndexOffset: -200, icon: L.divIcon({ className: '', iconSize: [28, 28], iconAnchor: [14, 14],
+        html: '<div class="osm-ic prof" style="--c:#e0b95a"><svg viewBox="0 0 24 24" aria-hidden="true">' + PROF_SVG + '</svg></div>' }) });
+      m.bindTooltip(a.name, { direction: 'top', offset: [0, -12], className: 'site-label' });
+      m.on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openArea(a); });
+      m.addTo(profGroup);
+    });
+  }
+  function syncProfiles() { if (profOn && map.getZoom() >= 12) map.addLayer(profGroup); else map.removeLayer(profGroup); }
+  map.on('zoomend', syncProfiles);
+  $('hist-toggles').appendChild(toggleRow('profiles', 'Researched landmarks & buildings', 'Ministries, hospitals, mosques, old city and historic sites, with histories', profOn, function (v) { profOn = v; store.set('prof', v); syncProfiles(); }));
+  setTimeout(function () { drawProfiles(); syncProfiles(); }, 0);
   var RECORDS = null, recordsWaiting = null, REC_BY_ID = {};
   function loadRecords() {
     if (RECORDS) return Promise.resolve(RECORDS);

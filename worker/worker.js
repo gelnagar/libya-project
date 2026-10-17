@@ -70,7 +70,7 @@ Never invent places, coordinates, documents, names or numbers. Never give home a
 }
 
 const HIST = ['detention', 'security', 'military', 'airstrike', 'massacre', 'power', 'landmark'];
-const TODAY = ['landuse', 'buildings', 'military', 'water', 'oil'];
+const TODAY = ['landuse', 'buildings', 'military', 'water', 'oil', 'hospitals', 'schools', 'govt', 'police', 'embassies', 'mosques', 'sights', 'cemeteries'];
 const arr = (items) => ({ type: 'array', items });
 
 const TOOLS = [
@@ -79,7 +79,7 @@ const TOOLS = [
   { name: 'get_place', description: 'Full details of one mapped place: description, evidence level, accuracy, linked places and sources.', input_schema: { type: 'object', properties: { id: { type: 'string' } }, required: ['id'] } },
   { name: 'describe_spot', description: 'Look up any point: address, neighbourhood, nearest district and mapped places nearby.', input_schema: { type: 'object', properties: { lat: { type: 'number' }, lon: { type: 'number' } }, required: ['lat', 'lon'] } },
   { name: 'set_layers', description: 'Change the historical layers. "only" shows exactly these and hides all others. "show" turns layers on; "hide" turns them off.', input_schema: { type: 'object', properties: { only: arr({ type: 'string', enum: HIST }), show: arr({ type: 'string', enum: HIST }), hide: arr({ type: 'string', enum: HIST }) } } },
-  { name: 'set_today_layers', description: 'Turn present-day OpenStreetMap layers on or off: land-use zones, buildings, military areas today, water infrastructure, oil and gas.', input_schema: { type: 'object', properties: { show: arr({ type: 'string', enum: TODAY }), hide: arr({ type: 'string', enum: TODAY }) } } },
+  { name: 'set_today_layers', description: 'Turn present-day OpenStreetMap layers on or off: land-use zones, buildings, military areas today, water infrastructure, oil and gas, hospitals, universities, government offices and courts (govt), police stations, embassies, mosques, monuments and sights, cemeteries.', input_schema: { type: 'object', properties: { show: arr({ type: 'string', enum: TODAY }), hide: arr({ type: 'string', enum: TODAY }) } } },
   { name: 'set_basemap', description: 'Change the map style.', input_schema: { type: 'object', properties: { style: { type: 'string', enum: ['dark', 'satellite', 'street', 'terrain'] } }, required: ['style'] } },
   { name: 'set_periods', description: 'Choose which time periods are shown. Omitted periods stay as they are.', input_schema: { type: 'object', properties: { before_1969: { type: 'boolean' }, from_1969_to_1989: { type: 'boolean' }, after_1989: { type: 'boolean' } } } },
   { name: 'set_display', description: 'Turn display options on or off. Omitted options stay as they are.', input_schema: { type: 'object', properties: { district_names: { type: 'boolean' }, uncertainty_rings: { type: 'boolean' }, place_names: { type: 'boolean' }, grid: { type: 'boolean' }, timeline: { type: 'boolean' } } } },

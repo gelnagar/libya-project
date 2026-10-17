@@ -53,3 +53,6 @@ for (const [name, q] of Object.entries(LAYERS)) {
   await writeFile(`public/data/osm/${name}.json`, JSON.stringify({ generated: new Date().toISOString().slice(0, 10), bbox: BBOX, source: 'OpenStreetMap contributors (ODbL)', features }));
   console.log(name, features.length, 'features');
 }
+
+import { splitLandmarks } from "./split-landmarks.mjs";
+await splitLandmarks();

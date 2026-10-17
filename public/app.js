@@ -370,6 +370,23 @@
   function osmIconHtml(k) { return '<div class="osm-ic" style="--c:' + OSM[k].point + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + OSM_ICONS[k] + '</svg></div>'; }
   function osmIcon(k) { return L.divIcon({ className: '', iconSize: [26, 26], iconAnchor: [13, 13], html: osmIconHtml(k) }); }
   var ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
+
+  /* more present-day places, saved from OpenStreetMap: hospitals, campuses, government offices, police, embassies, mosques, sights, cemeteries */
+  var EXTRA = [['hospitals', 'Hospitals & clinics', 11, 'Public and private hospitals', '#ff6b81', '<path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/>', function (t) { return t.healthcare === 'clinic' ? 'Clinic' : 'Hospital'; }, 'A hospital or clinic mapped today. Many of these were rebuilt or reopened after 2011; during the 2011 fighting and the 2019–2020 war some received the dead and wounded.'],
+   ['schools', 'Universities & colleges', 11, 'University of Tripoli, institutes, colleges', '#9ad17f', '<path d="M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z"/>', function () { return 'University or college'; }, 'A university or college site mapped today. Under Gaddafi, the University of Tripoli was called Al-Fateh University and student opposition was often crushed there.'],
+   ['govt', 'Government offices & courts', 13, 'Ministries, courts, civil registries, offices', '#b4a1e0', '<path d="M12 2 2 7v2h20V7zM4 11v8H2v3h20v-3h-2v-8h-3v8h-2v-8h-4v8H9v-8z"/>', function (t) { return t.amenity === 'courthouse' ? 'Court' : t.amenity === 'townhall' ? 'Town hall' : 'Government office'; }, 'A government office or court mapped today. Many ministries moved or changed name after 2011, so the use of a building may differ from the Gaddafi era.'],
+   ['police', 'Police stations', 12, 'Police stations and checkpoints', '#5fd0c0', '<path fill-rule="evenodd" d="M12 2 4 5v6c0 5.2 3.4 9.4 8 11 4.6-1.6 8-5.8 8-11V5zm0 5 1.2 2.6 2.8.3-2.1 1.9.6 2.8L12 13l-2.5 1.6.6-2.8L8 9.9l2.8-.3z"/>', function () { return 'Police station'; }, 'A police station mapped today. Policing in Tripoli is now shared between the Interior Ministry and armed groups, and the Gaddafi-era security network was organised differently.'],
+   ['embassies', 'Embassies & consulates', 11, 'Foreign embassies, today', '#f2c94c', '<path d="M5 2h2v20H5zm3 1h11l-3 4 3 4H8z"/>', function () { return 'Embassy or diplomatic office'; }, 'A diplomatic site mapped today. Many embassies closed in 2011 or 2014 and some reopened later, so the building may not match the Gaddafi-era embassy.'],
+   ['mosques', 'Mosques & places of worship', 14, 'Hundreds of mosques; zoom in', '#c8d6a0', '<path d="M12 2c-.8 1-1.5 2-1.5 3.2 0 .6.2 1.1.5 1.6C7.8 7.7 6 10 6 12.5V14H4v8h16v-8h-2v-1.5c0-2.5-1.8-4.8-5-5.7.3-.5.5-1 .5-1.6C13.5 4 12.8 3 12 2z"/>', function (t) { return t.religion === 'christian' ? 'Church' : 'Mosque or place of worship'; }, 'A place of worship mapped today.'],
+   ['sights', 'Monuments, sights & stadiums', 11, 'Castle, memorials, museums, stadiums, airports', '#7fd3ff', '<path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.5 5.8 21l1.4-7L2 9.3l7-.8z"/>', function (t) { return t.aeroway ? 'Airport' : t.leisure === 'stadium' ? 'Stadium' : t.tourism === 'museum' ? 'Museum' : t.historic ? 'Historic site' : 'Sight'; }, 'A historic site, memorial, museum, stadium or sight mapped today.'],
+   ['cemeteries', 'Cemeteries', 12, 'Muslim, Christian and war cemeteries', '#a0a8b5', '<path d="M9 2h6v4h4v4h-4v12H9V10H5V6h4z"/>', function (t) { return 'Cemetery'; }, 'A cemetery mapped today. Tripoli has Muslim, Italian-era Christian and Commonwealth war cemeteries.']
+  ];
+  EXTRA.forEach(function (d) {
+    var k = d[0];
+    OSM[k] = { label: d[1], minZoom: d[2], note: d[3], saved: true, q: function () { return ''; }, point: d[4],
+      style: function () { return { color: d[4], weight: 1.5, fillColor: d[4], fillOpacity: 0.15 }; } };
+    OSM_ICONS[k] = d[5];
+  });
   var osmActive = store.get('osm', {});
   var osmGroups = {}, osmCache = {}, osmAbort = {}, savedData = {}, savedState = {};
   var canvas = L.canvas({ padding: 0.4 });
@@ -572,7 +589,7 @@
   function preload() {
     var conn = navigator.connection || {};
     if (conn.saveData || /2g/.test(conn.effectiveType || '')) return;
-    ['landuse', 'military', 'water', 'oil'].forEach(function (k) {
+    ['landuse', 'military', 'water', 'oil', 'hospitals', 'embassies'].forEach(function (k) {
       if (savedState[k]) return;
       fetch('data/osm/' + k + '.json', { cache: 'force-cache' }).then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
         .then(function (j) { if (!savedState[k]) { savedData[k] = { elements: (j.features || []).map(expand), generated: j.generated }; savedState[k] = 'ready'; } }).catch(function () {});
@@ -681,6 +698,7 @@
     water: 'Part of the water supply as mapped today. Before the Great Man-Made River reached the city, Tripoli depended heavily on local groundwater wells.',
     oil: 'An oil or gas facility mapped today. Tripoli has no major oil fields; Libya’s main fields lie far to the south and east.'
   };
+  EXTRA.forEach(function (d) { KIND[d[0]] = d[6]; EXPLAIN[d[0]] = d[7]; });
   function openFeature(k, el) {
     var t = el.tags || {};
     var body = newSheet('Present-day map data');

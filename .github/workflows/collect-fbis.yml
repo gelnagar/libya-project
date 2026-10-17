@@ -1,0 +1,18 @@
+name: Collect FBIS Libya reports
+on: { workflow_dispatch: {}, push: { branches: [main], paths: [scripts/collect-fbis.mjs, .github/workflows/collect-fbis.yml] } }
+permissions: { contents: write }
+concurrency: { group: collect-fbis, cancel-in-progress: false }
+jobs:
+  fbis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/collect-fbis.mjs
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/fbis
+          if git diff --cached --quiet; then echo "No changes"; else git commit -m "Collect FBIS Libya reports" && git pull --rebase && git push; fi

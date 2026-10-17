@@ -281,6 +281,10 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
 @media (min-width: 900px) { .tip { bottom: 130px; } }
 
 .modal { position: fixed; inset: 0; z-index: 1300; background: rgba(0,0,0,.65); display: grid; place-items: center; padding: 16px; }
+.modal.float { background: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; pointer-events: none; place-items: start center; padding-top: 80px; }
+.modal.float .modal-box { pointer-events: auto; position: relative; max-width: 380px; max-height: 70vh; box-shadow: 0 18px 50px rgba(0,0,0,.5); }
+.modal.float .panel-head { cursor: grab; touch-action: none; user-select: none; }
+.modal.float .panel-head.dragging { cursor: grabbing; }
 .modal-box { width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto; background: var(--panel); border: 1.5px solid var(--edge); }
 .modal-box .lead { margin: 0; font-size: 1.1em; }
 .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
@@ -495,10 +499,10 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
   </div>
 </div>
 
-<div id="hist-modal" class="modal" hidden>
+<div id="hist-modal" class="modal float" hidden>
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="hist-title">
-    <div class="panel-head"><h2 id="hist-title">Historical maps</h2><button class="btn" id="hist-close">Done</button></div>
-    <div class="panel-body"><div id="old-maps"></div></div>
+    <div class="panel-head"><h2 id="hist-title">Historical maps <small style="font-weight:400;opacity:.7;font-size:.6em">drag to move</small></h2><button class="btn" id="hist-close">Done</button></div>
+    <div class="panel-body"><div id="old-maps"></div><p class="d-text muted" style="font-size:.8em">Map tile icon: Muammar al-Gaddafi, 2009, photo by MC2 Jesse B. Awalt, U.S. Navy (public domain).</p></div>
   </div>
 </div>
 

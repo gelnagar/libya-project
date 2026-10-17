@@ -247,11 +247,16 @@
   map.on('move zoom resize viewreset zoomend moveend', clipOverlays);
   if (OVERLAYS.length) {
     var hb = h('button', { 'data-key': 'historical', 'aria-pressed': 'false', 'aria-haspopup': 'dialog', onclick: function () { $('hist-modal').hidden = false; $('hist-close').focus(); } },
-      [h('span', { class: 'thumb', style: 'background:#2a2f36 url(maps/ams-1962/12/2197/1650.webp) center / cover' }), h('span', { class: 'nm', text: 'Historical' }), h('small', { text: 'Old maps and satellite, 1943–1990' })]);
+      [h('span', { class: 'thumb', style: 'background:#2a2f36 url(img/gaddafi-thumb.jpg) center 18% / cover' }), h('span', { class: 'nm', text: 'Historical' }), h('small', { text: 'Old maps and satellite, 1943–1990' })]);
     $('basemaps').appendChild(hb);
     var closeHist = function () { $('hist-modal').hidden = true; };
     $('hist-close').onclick = closeHist;
-    $('hist-modal').addEventListener('click', function (e) { if (e.target.id === 'hist-modal') closeHist(); });
+    (function () {
+      var box = $('hist-modal').querySelector('.modal-box'), head = box.querySelector('.panel-head'), dx = 0, dy = 0, sx, sy, ox, oy;
+      var move = function (e) { dx = ox + e.clientX - sx; dy = oy + e.clientY - sy; box.style.transform = 'translate(' + dx + 'px,' + dy + 'px)'; };
+      var up = function () { head.classList.remove('dragging'); document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up); };
+      head.addEventListener('pointerdown', function (e) { if (e.target.closest('button')) return; e.preventDefault(); sx = e.clientX; sy = e.clientY; ox = dx; oy = dy; head.classList.add('dragging'); document.addEventListener('pointermove', move); document.addEventListener('pointerup', up); });
+    })();
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('hist-modal').hidden) closeHist(); });
     OVERLAYS.forEach(function (o) {
       var cb = h('input', { type: 'checkbox', id: 'om-' + o.id }); inputs['om-' + o.id] = cb;

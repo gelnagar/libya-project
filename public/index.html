@@ -217,7 +217,7 @@ table.kv td:first-child { color: var(--muted); width: 40%; }
 /* HUD + timeline (desktop) */
 .hud { position: fixed; z-index: 1040; top: calc(var(--map-top) + 10px); left: 50%; transform: translateX(-50%); font-size: 12.5px; color: var(--muted); background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); padding: 4px 12px; white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none; }
 .hud b { color: var(--text); font-weight: 700; }
-#timeline { position: fixed; z-index: 1030; bottom: 10px; left: 10px; right: 10px; height: 132px; background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); }
+#timeline { position: fixed; z-index: 1030; bottom: 10px; left: 10px; right: 10px; height: 146px; background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); }
 body.drawer-open #timeline { left: 360px; }
 body.sheet-open #timeline { right: 440px; }
 #timeline .tl-title { position: absolute; left: 10px; top: 5px; font-size: 12px; font-weight: 700; color: var(--muted); }
@@ -274,16 +274,16 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
   html.has-chat .tip { bottom: calc(var(--chat-h) + 12px); }
 }
 @media (min-width: 900px) {
-  .chat { left: 10px; right: 10px; bottom: 148px; max-width: 640px; margin: 0 auto; }
+  .chat { left: 10px; right: 10px; bottom: 162px; max-width: 640px; margin: 0 auto; }
   body.drawer-open .chat { left: 360px; }
   body.sheet-open .chat { right: 440px; }
   body.no-timeline .chat { bottom: 10px; }
   body.chat-open .chat { height: min(60vh, 560px); }
-  html.has-chat .tip { bottom: 224px; }
+  html.has-chat .tip { bottom: 238px; }
 }
 .tip { position: fixed; z-index: 1200; left: 12px; right: 12px; bottom: calc(16px + var(--bot)); max-width: 480px; margin: 0 auto; background: var(--panel); color: var(--text); border: 1.5px solid var(--edge); border-left: 6px solid var(--accent); padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
 .tip p { margin: 0; flex: 1; }
-@media (min-width: 900px) { .tip { bottom: 154px; } }
+@media (min-width: 900px) { .tip { bottom: 168px; } }
 
 .modal { position: fixed; inset: 0; z-index: 1300; background: rgba(0,0,0,.65); display: grid; place-items: center; padding: 16px; }
 .modal.float { background: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; pointer-events: none; place-items: start center; padding-top: 80px; }
@@ -434,7 +434,7 @@ details.more[open] > summary::after { content: '–'; }
     <div><b>Tripoli: Open Source</b><small>Leveraging AI to Map Gaddafi’s Capital of Terror</small></div>
   </div>
   <div class="bar-actions">
-    <button class="btn" id="btn-search" aria-controls="term" title="Search everything (press /)"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 1a5.5 5.5 0 0 1 4.38 8.83l3.65 3.64-1.06 1.06-3.64-3.65A5.5 5.5 0 1 1 6.5 1zm0 1.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg><span class="lbl">Search</span></button>
+    <button class="btn" id="btn-search" aria-controls="term" title="Encyclopedia: every place, area, document and event (press /)"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 1.5h4.5A2.5 2.5 0 0 1 8 2.3a2.5 2.5 0 0 1 1.5-.8H14v11H9.5c-.6 0-1.1.2-1.5.6-.4-.4-.9-.6-1.5-.6H2zm1.5 1.5v8h3c.3 0 .5 0 .75.1V3.6c0-.3-.3-.6-.75-.6zm9 0h-3c-.4 0-.75.3-.75.6v7.5c.25-.1.5-.1.75-.1h3z"/></svg><span class="lbl">Encyclopedia</span></button>
     <button class="btn" id="btn-layers" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 0 5l8 4 8-4zM1.6 7.8 0 8.6l8 4 8-4-1.6-.8L8 11zm0 3.4L0 12l8 4 8-4-1.6-.8L8 14.4z"/></svg><span class="lbl">Layers</span></button>
     <button class="btn primary" id="btn-report" title="Add a place or a note to the map"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a5.5 5.5 0 0 1 5.5 5.5C13.5 10 8 16 8 16S2.5 10 2.5 5.5A5.5 5.5 0 0 1 8 0zm-.75 2.75v2h-2v1.5h2v2h1.5v-2h2v-1.5h-2v-2z"/></svg><span class="lbl">Add to map</span></button>
     <button class="btn" id="btn-settings" title="Settings" aria-label="Settings"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9.2 0l.4 2a6 6 0 0 1 1.5.9l1.9-.7 1.2 2.1-1.5 1.3a6 6 0 0 1 0 1.8l1.5 1.3-1.2 2.1-1.9-.7a6 6 0 0 1-1.5.9l-.4 2H6.8l-.4-2a6 6 0 0 1-1.5-.9l-1.9.7-1.2-2.1 1.5-1.3a6 6 0 0 1 0-1.8L1.8 4.3 3 2.2l1.9.7A6 6 0 0 1 6.4 2l.4-2zM8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/></svg></button>
@@ -502,8 +502,9 @@ details.more[open] > summary::after { content: '–'; }
 </section>
 
 <div id="term" class="term" hidden>
-  <div class="term-box" role="dialog" aria-modal="true" aria-label="Search places, areas and documents">
-    <div class="term-head"><input id="term-q" type="search" placeholder="Search places, areas, documents, years…" autocomplete="off" enterkeyhint="search" aria-label="Search"><button class="btn" id="term-close" type="button">Close</button></div>
+  <div class="term-box" role="dialog" aria-modal="true" aria-labelledby="term-title">
+    <div class="term-top"><div class="term-ic"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 1.5h4.5A2.5 2.5 0 0 1 8 2.3a2.5 2.5 0 0 1 1.5-.8H14v11H9.5c-.6 0-1.1.2-1.5.6-.4-.4-.9-.6-1.5-.6H2zm1.5 1.5v8h3c.3 0 .5 0 .75.1V3.6c0-.3-.3-.6-.75-.6zm9 0h-3c-.4 0-.75.3-.75.6v7.5c.25-.1.5-.1.75-.1h3z"/></svg></div><div><h2 id="term-title">Encyclopedia</h2><small>Places, neighbourhoods, buildings, documents and events</small></div><button class="btn" id="term-close" type="button">Close</button></div>
+    <div class="term-head"><input id="term-q" type="search" placeholder="Look up a place, person, year or topic…" autocomplete="off" enterkeyhint="search" aria-label="Look up"></div>
     <div class="chips" id="term-kinds"></div>
     <div class="term-meta" id="term-meta" aria-live="polite"></div>
     <div class="term-list" id="term-list"></div>

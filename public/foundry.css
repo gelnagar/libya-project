@@ -267,3 +267,43 @@ html .basemaps .thumb { height: 40px; }
 .basemaps .nm { font-size: .82em; padding-top: 3px; }
 .basemaps button[data-key="historical"] .thumb { height: 84px !important; }
 .basemaps button[data-key="historical"] small { display: block; }
+/* eras strip on the timeline */
+#timeline .tl-era { position: absolute; top: 20px; height: 17px; padding: 0 4px; border: 0; border-radius: 2px; background: #e5e8eb; color: #404854; font: 600 10.5px var(--f-ui); white-space: nowrap; overflow: hidden; text-overflow: clip; cursor: pointer; z-index: 2; }
+#timeline .tl-era.alt { background: #d3d8de; }
+#timeline .tl-era:hover { background: var(--fy-sel); color: var(--fy-sel-text); }
+#timeline .tl-era.sel { background: var(--fy-accent); color: #fff; }
+html.dark #timeline .tl-era { background: #383e47; color: #c5cbd3; }
+html.dark #timeline .tl-era.alt { background: #404854; }
+#timeline .tl-grid { position: absolute; width: 1px; background: rgba(17,20,24,.08); pointer-events: none; }
+html.dark #timeline .tl-grid { background: rgba(255,255,255,.08); }
+#timeline .tl-hint { top: 3px; }
+/* Encyclopedia (search) in Foundry dress */
+html .term { background: rgba(17,20,24,.35); -webkit-backdrop-filter: none; backdrop-filter: none; padding-top: calc(var(--map-top) + 8px); }
+html .term-box { background: var(--fy-panel); color: var(--fy-text); border: 1px solid var(--fy-border); border-radius: var(--fy-r); box-shadow: var(--fy-shadow); -webkit-backdrop-filter: none; backdrop-filter: none; padding: 0; gap: 0; overflow: hidden; }
+.term-top { display: flex; align-items: center; gap: 12px; padding: 12px 12px 12px 14px; border-bottom: 1px solid var(--fy-border); }
+.term-top > div:nth-child(2) { flex: 1; min-width: 0; }
+.term-top h2 { margin: 0; font: 700 1.15em var(--f-ui); }
+.term-top small { color: var(--fy-muted); font: .82em var(--f-ui); }
+.term-ic { width: 40px; height: 40px; border-radius: var(--fy-r); background: var(--fy-accent); display: grid; place-items: center; flex: none; }
+.term-ic svg { width: 22px; height: 22px; fill: #fff; }
+html .term-head { padding: 12px 14px 8px; }
+html .term-head input { min-height: 42px; border-radius: 3px; background: var(--fy-panel); border: 1px solid var(--fy-input); box-shadow: inset 0 1px 1px rgba(17,20,24,.12); font: 1em var(--f-ui); padding: 0 12px; }
+html #term-kinds { padding: 0 14px 8px; gap: 2px; border-bottom: 1px solid var(--fy-border); }
+html #term-kinds button { min-height: 32px; padding: 0 12px; border-radius: 3px; background: none; box-shadow: none; color: var(--fy-muted); font: 600 .9em var(--f-ui); }
+html #term-kinds button[aria-pressed="true"] { background: var(--fy-sel); color: var(--fy-sel-text); box-shadow: none; }
+html .term-meta { padding: 8px 14px; background: var(--fy-head); border-bottom: 1px solid var(--fy-border); color: var(--fy-muted); }
+html .term-list { padding: 0 6px 6px; }
+html .trow { border-bottom: 1px solid var(--fy-line); padding: 9px 8px; color: var(--fy-text); }
+html .trow:hover, html .trow:focus-visible { background: var(--fy-bg); }
+html .trow .tk { border-radius: 3px; font-size: .66em; background: #d3e2f7; color: #184a90; }
+html .trow.k-area .tk { background: #d1f2df; color: #1c6e42; }
+html .trow.k-doc .tk { background: #fbe9cf; color: #77450d; }
+html .trow.k-event .tk { background: #fbdce8; color: #9b1e4b; }
+html.dark .trow .tk { background: rgba(76,144,240,.25); color: #cfe0ff; }
+html.dark .trow.k-area .tk { background: rgba(114,202,155,.22); color: #c6f0d8; }
+html.dark .trow.k-doc .tk { background: rgba(251,179,96,.2); color: #ffe0b8; }
+html.dark .trow.k-event .tk { background: rgba(245,73,139,.22); color: #ffc6dc; }
+html .trow .tt b { font-family: var(--f-ui); font-weight: 600; }
+html .trow .td, html .trow .tt small { color: var(--fy-muted); }
+.lbl-hide { visibility: hidden !important; }
+#timeline .tl-era { font-size: 10px; }

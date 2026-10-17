@@ -171,7 +171,7 @@
   function esc(t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function refresh() {
     SITES.forEach(function (s) {
-      var on = visible(s) && (timeYear == null || span(s)[0] <= timeYear);
+      var on = visible(s) && (timeYear == null || span(s)[0] <= timeYear) && (!timeRange || (span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1]));
       if (on) { if (!siteLayer.hasLayer(markers[s.id])) siteLayer.addLayer(markers[s.id]); markers[s.id].setOpacity(timeYear == null || activeAt(s, timeYear) ? 1 : 0.3); }
       else siteLayer.removeLayer(markers[s.id]);
       if (on && active.rings) { if (!ringLayer.hasLayer(rings[s.id])) ringLayer.addLayer(rings[s.id]); }
@@ -183,9 +183,28 @@
     document.body.classList.toggle('no-timeline', !active.timeline);
     zoomClasses();
     drawTimeline();
+    declutter();
     if (selected) markSelected(selected);
     save();
   }
+  /* keep map labels from overlapping: place labels in priority order and hide any that would collide */
+  var declutterTimer;
+  function declutter() {
+    clearTimeout(declutterTimer);
+    declutterTimer = setTimeout(function () {
+      var c = map.getContainer();
+      var els = [].slice.call(c.querySelectorAll('.leaflet-tooltip.site-label')).concat([].slice.call(c.querySelectorAll('.district')));
+      els.forEach(function (e) { e.classList.remove('lbl-hide'); });
+      var placed = [], marks = [].slice.call(c.querySelectorAll('.leaflet-marker-icon .mk')).map(function (m) { return m.getBoundingClientRect(); });
+      var hit = function (r, list, pad) { return list.some(function (q) { return r.left < q.right + pad && r.right > q.left - pad && r.top < q.bottom + pad && r.bottom > q.top - pad; }); };
+      els.forEach(function (e) {
+        var r = e.getBoundingClientRect(); if (!r.width) return;
+        var isDistrict = e.classList.contains('district');
+        if (hit(r, placed, 3) || (isDistrict && hit(r, marks, 0))) e.classList.add('lbl-hide'); else placed.push(r);
+      });
+    }, 60);
+  }
+  map.on('zoomend moveend', declutter);
   function zoomClasses() {
     var z = map.getZoom(), el = map.getContainer();
     el.classList.toggle('hide-labels', !active.labels || z < 14);
@@ -322,17 +341,29 @@
   /* ---------- timeline (desktop) ---------- */
   /* timeline: one lane per subject, years run left to right; spans show how long a place was in use */
   function tx(y) {
-    if (y < 1969) return 0.10 * Math.max(0, y - 1905) / 64;
-    if (y <= 2012) return 0.10 + 0.82 * (y - 1969) / 43;
+    if (y < 1969) return 0.17 * Math.max(0, y - 1905) / 64;
+    if (y <= 2012) return 0.17 + 0.75 * (y - 1969) / 43;
     return 0.92 + 0.08 * (Math.min(y, 2026) - 2012) / 14;
   }
+  var ERAS = [[1905, 1911, 'Ottoman', 'Ott.'], [1911, 1943, 'Italian colony', 'Italian'], [1943, 1951, 'British rule', 'UK'], [1951, 1969, 'Kingdom of Libya', 'Kingdom'],
+    [1969, 1977, 'Revolution', 'Revolution'], [1977, 1986, 'Jamahiriya and terror', 'Jamahiriya'], [1986, 1992, 'US raid and Lockerbie', '1986–92'],
+    [1992, 2003, 'UN sanctions', 'Sanctions'], [2003, 2011, 'Opening to the West', 'Opening'], [2011, 2012, '2011 uprising and war', '2011'], [2012, 2026, 'After Gaddafi', 'After']];
+  var timeRange = null;
   function pos(f) { return 'calc(14px + ' + f.toFixed(4) + ' * (100% - 28px))'; }
   var TL_LANES = [['Prisons & security', ['detention', 'security']], ['Military', ['military', 'airstrike']], ['Killings', ['massacre']], ['Power', ['power']], ['Landmarks', ['landmark']]];
   function drawTimeline() {
     var tl = $('timeline');
-    tl.querySelectorAll('.tl-lane,.tl-lab,.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-span,.tl-bar,.tl-hint,.tl-hit,.tl-cursor,.tl-ctrl').forEach(function (e) { e.remove(); });
-    var L0 = 118, R0 = 14, W = Math.max(200, tl.clientWidth - L0 - R0), TOP = 27, LH = 15;
+    tl.querySelectorAll('.tl-lane,.tl-lab,.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-span,.tl-bar,.tl-hint,.tl-hit,.tl-cursor,.tl-ctrl,.tl-era,.tl-grid').forEach(function (e) { e.remove(); });
+    var L0 = 118, R0 = 14, W = Math.max(200, tl.clientWidth - L0 - R0), TOP = 42, LH = 15;
     var X = function (y) { return L0 + tx(y) * W; };
+    tl.querySelectorAll('.tl-era,.tl-grid').forEach(function (e) { e.remove(); });
+    ERAS.forEach(function (e, i) {
+      var x0 = X(e[0]), w = X(e[1]) - x0, sel = timeRange && timeRange[0] === e[0] && timeRange[1] === e[1];
+      var label = w > e[2].length * 5.6 + 10 ? e[2] : w > e[3].length * 5.4 + 4 ? e[3] : w > 22 ? e[3].slice(0, 3) + '.' : '';
+      tl.appendChild(h('button', { class: 'tl-era' + (i % 2 ? ' alt' : '') + (sel ? ' sel' : ''), style: 'left:' + x0.toFixed(1) + 'px;width:' + Math.max(2, w - 1).toFixed(1) + 'px', title: e[2] + ', ' + e[0] + '–' + e[1] + '. Click to show only this period.', 'aria-pressed': sel ? 'true' : 'false',
+        text: label, onclick: function () { stopPlay(); timeYear = null; timeRange = sel ? null : [e[0], e[1]]; refresh(); } }));
+      if (i) tl.appendChild(h('div', { class: 'tl-grid', style: 'left:' + x0.toFixed(1) + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 8) + 'px' }));
+    });
     tl.appendChild(h('div', { class: 'tl-band', style: 'left:' + X(1969).toFixed(1) + 'px;width:' + (X(2011.7) - X(1969)).toFixed(1) + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 6) + 'px', title: 'Gaddafi era, 1969–2011' }));
     TL_LANES.forEach(function (lane, li) {
       var y = TOP + li * LH;
@@ -342,11 +373,11 @@
       SITES.filter(function (s) { return lane[1].indexOf(s.layer) >= 0 && s.y0 != null && visible(s); }).sort(function (a, b) { return a.y0 - b.y0; }).forEach(function (s) {
         var lay = LAYERS[s.layer], x0 = X(s.y0);
         if (s.y1 != null && s.y1 > s.y0) {
-          tl.appendChild(h('div', { class: 'tl-span', title: s.name + ', ' + s.y0 + '–' + s.y1, style: 'left:' + x0.toFixed(1) + 'px;width:' + Math.max(2, X(s.y1) - x0).toFixed(1) + 'px;top:' + (y + 4) + 'px;background:' + lay.color }));
+          tl.appendChild(h('div', { class: 'tl-span', title: s.name + ', ' + s.y0 + '–' + s.y1, style: 'left:' + x0.toFixed(1) + 'px;width:' + Math.max(2, X(s.y1) - x0).toFixed(1) + 'px;top:' + (y + 4) + 'px;background:' + lay.color + (timeRange && !(s.y1 >= timeRange[0] && s.y0 <= timeRange[1]) ? ';opacity:.12' : '') }));
         }
         var slot = Math.round(x0 / 9), n = 0; while (used[slot + n]) n++; used[slot + n] = 1;
         tl.appendChild(h('button', { class: 'tl-dot ' + lay.shape + (selected === s.id ? ' sel' : ''), title: s.y0 + (s.y1 && s.y1 > s.y0 ? '–' + s.y1 : '') + ' · ' + s.name, 'aria-label': s.y0 + ', ' + s.name,
-          style: 'left:' + (x0 + n * 9).toFixed(1) + 'px;top:' + (y + 1) + 'px;background:' + lay.color, onclick: function () { focusSite(s); } }));
+          style: 'left:' + (x0 + n * 9).toFixed(1) + 'px;top:' + (y + 1) + 'px;background:' + lay.color + (timeRange && !(span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1]) ? ';opacity:.15' : ''), onclick: function () { focusSite(s); } }));
       });
     });
     var axisY = TOP + TL_LANES.length * LH + 4;
@@ -354,12 +385,12 @@
     var last = -99;
     [1911, 1945, 1951, 1969, 1975, 1980, 1985, 1990, 1996, 2000, 2005, 2011, 2020].forEach(function (yr) {
       var x = X(yr); if (x - last < 34) return; last = x;
-      tl.appendChild(h('button', { class: 'tl-tick', style: 'left:' + x.toFixed(1) + 'px;top:' + (axisY + 3) + 'px', text: String(yr), title: 'Search the archive for ' + yr, onclick: function () { openTerm(String(yr)); } }));
+      tl.appendChild(h('button', { class: 'tl-tick', style: 'left:' + x.toFixed(1) + 'px;top:' + (axisY + 3) + 'px', text: String(yr), title: 'Look up ' + yr + ' in the Encyclopedia', onclick: function () { openTerm(String(yr)); } }));
     });
-    tl.appendChild(h('div', { class: 'tl-hint', text: timeYear == null ? 'Click or drag along the lanes to step through time · tap a dot to open a place · tap a year to search documents' : 'Showing ' + timeYear + ': bright = active that year, faded = earlier, hidden = not yet' }));
+    tl.appendChild(h('div', { class: 'tl-hint', text: timeRange ? 'Showing ' + timeRange[0] + '–' + timeRange[1] + ' only. Click the period again or “All years” to show everything.' : timeYear == null ? 'Click a period to show only it · drag along the lanes to step through time · tap a dot to open a place · tap a year to look it up' : 'Showing ' + timeYear + ': bright = active that year, faded = earlier, hidden = not yet' }));
     var hit = h('div', { class: 'tl-hit', style: 'left:' + L0 + 'px;width:' + W + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 6) + 'px', title: 'Click or drag to pick a year' });
     var yearAt = function (cx) { var r = tl.getBoundingClientRect(), f = (cx - r.left - L0) / W; f = Math.max(0, Math.min(1, f));
-      var y = f < 0.10 ? 1905 + f / 0.10 * 64 : f <= 0.92 ? 1969 + (f - 0.10) / 0.82 * 43 : 2012 + (f - 0.92) / 0.08 * 14; return Math.round(y); };
+      var y = f < 0.17 ? 1905 + f / 0.17 * 64 : f <= 0.92 ? 1969 + (f - 0.17) / 0.75 * 43 : 2012 + (f - 0.92) / 0.08 * 14; return Math.round(y); };
     hit.addEventListener('pointerdown', function (e) {
       e.preventDefault(); stopPlay(); setYear(yearAt(e.clientX));
       var mv = function (ev) { var y = yearAt(ev.clientX); if (y !== timeYear) setYear(y); };
@@ -370,11 +401,11 @@
     if (timeYear != null) tl.appendChild(h('div', { class: 'tl-cursor', style: 'left:' + (X(timeYear) - 1).toFixed(1) + 'px;top:' + (TOP + 2) + 'px;height:' + (TL_LANES.length * LH) + 'px' }, [h('b', { text: String(timeYear) })]));
     tl.appendChild(h('div', { class: 'tl-ctrl' }, [
       h('button', { 'aria-pressed': playTimer ? 'true' : 'false', text: playTimer ? 'Pause' : 'Play 1969–2011', onclick: function () { playTimer ? stopPlay() : startPlay(); } }),
-      timeYear != null ? h('button', { text: 'All years', onclick: function () { stopPlay(); setYear(null); } }) : null
+      timeYear != null || timeRange ? h('button', { text: 'All years', onclick: function () { stopPlay(); timeRange = null; setYear(null); } }) : null
     ]));
-    tl.querySelectorAll('.tl-dot').forEach(function (d) { var y = +d.getAttribute('aria-label').slice(0, 4); d.style.opacity = timeYear == null || y <= timeYear ? '' : '.15'; });
+    if (timeYear != null) tl.querySelectorAll('.tl-dot').forEach(function (d) { var y = +d.getAttribute('aria-label').slice(0, 4); d.style.opacity = y <= timeYear ? '' : '.15'; });
   }
-  function setYear(y) { timeYear = y; refresh(); }
+  function setYear(y) { timeYear = y; if (y != null) timeRange = null; refresh(); }
   function startPlay() { if (timeYear == null || timeYear >= 2011) timeYear = 1968; playTimer = setInterval(function () { if (timeYear >= 2011) { stopPlay(); return; } setYear(timeYear + 1); }, 700); setYear(timeYear + 1); }
   function stopPlay() { if (playTimer) { clearInterval(playTimer); playTimer = null; drawTimeline(); } }
   window.addEventListener('resize', function () { clearTimeout(drawTimeline.t); drawTimeline.t = setTimeout(drawTimeline, 150); });
@@ -1064,7 +1095,7 @@
     recs.forEach(function (r) {
       box.appendChild(h('button', { onclick: function () { openRecord(r); } }, [h('span', { class: 'dtag', text: TYPE_LABEL[r.y] || r.y }), h('span', {}, [r.t, h('small', { text: (r.d || 'undated') + ' · ' + (r.s || '') })])]));
     });
-    if (more) box.appendChild(h('button', { class: 'more', onclick: function () { openTerm(more); } }, [h('span', { text: 'Search the archive for “' + more + '”' })]));
+    if (more) box.appendChild(h('button', { class: 'more', onclick: function () { openTerm(more); } }, [h('span', { text: 'Look up “' + more + '” in the Encyclopedia' })]));
     return box;
   }
   function docsSection(sec, opts, label, more) {

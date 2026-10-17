@@ -430,10 +430,6 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
       <h3>Today, from OpenStreetMap</h3>
       <div id="osm-toggles"></div>
     </div>
-    <div class="sec" id="old-maps-sec" hidden>
-      <h3>Historical maps</h3>
-      <div id="old-maps"></div>
-    </div>
     <div class="sec">
       <h3>Display</h3>
       <div id="display-toggles"></div>
@@ -496,6 +492,13 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
         <button type="submit" class="btn primary" id="wel-go">Continue</button>
       </div>
     </form>
+  </div>
+</div>
+
+<div id="hist-modal" class="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="hist-title">
+    <div class="panel-head"><h2 id="hist-title">Historical maps</h2><button class="btn" id="hist-close">Done</button></div>
+    <div class="panel-body"><div id="old-maps"></div></div>
   </div>
 </div>
 

@@ -206,13 +206,14 @@
     $('yearbadge').hidden = !on.length;
     $('yearbadge').textContent = on.map(function (o) { return o.year + ' map'; }).join(' · ');
   }
+  function markHistButton() { var b = document.querySelector('#basemaps [data-key="historical"]'); if (b) b.setAttribute('aria-pressed', OVERLAYS.some(function (o) { return overlayOn[o.id]; }) ? 'true' : 'false'); }
   function setOverlay(id, on) {
     var o = OVERLAYS.filter(function (x) { return x.id === id; })[0]; if (!o) return false;
     overlayOn[id] = !!on; store.set('omaps', overlayOn);
     if (!overlayLayers[id]) overlayLayers[id] = L.tileLayer(o.tiles, { bounds: L.latLngBounds(o.bounds), minZoom: 9, maxNativeZoom: o.maxZoom, maxZoom: 19, opacity: overlayOpacity[id] != null ? overlayOpacity[id] : 0.85, attribution: o.attribution, zIndex: 50 });
     if (on) overlayLayers[id].addTo(map); else map.removeLayer(overlayLayers[id]);
     if (inputs['om-' + id]) inputs['om-' + id].checked = !!on;
-    syncYearBadge();
+    syncYearBadge(); markHistButton();
     if (typeof setSwipe === 'function' && swipeOn) setSwipe(true);
     return true;
   }
@@ -245,7 +246,13 @@
   }
   map.on('move zoom resize viewreset zoomend moveend', clipOverlays);
   if (OVERLAYS.length) {
-    $('old-maps-sec').hidden = false;
+    var hb = h('button', { 'data-key': 'historical', 'aria-pressed': 'false', 'aria-haspopup': 'dialog', onclick: function () { $('hist-modal').hidden = false; $('hist-close').focus(); } },
+      [h('span', { class: 'thumb', style: 'background:#2a2f36 url(maps/ams-1962/12/2197/1650.webp) center / cover' }), h('span', { class: 'nm', text: 'Historical' }), h('small', { text: 'Old maps and satellite, 1943–1990' })]);
+    $('basemaps').appendChild(hb);
+    var closeHist = function () { $('hist-modal').hidden = true; };
+    $('hist-close').onclick = closeHist;
+    $('hist-modal').addEventListener('click', function (e) { if (e.target.id === 'hist-modal') closeHist(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('hist-modal').hidden) closeHist(); });
     OVERLAYS.forEach(function (o) {
       var cb = h('input', { type: 'checkbox', id: 'om-' + o.id }); inputs['om-' + o.id] = cb;
       var rng = h('input', { type: 'range', min: '0.2', max: '1', step: '0.05', value: String(overlayOpacity[o.id] != null ? overlayOpacity[o.id] : 0.85), 'aria-label': 'See-through amount for the ' + o.year + ' map' });

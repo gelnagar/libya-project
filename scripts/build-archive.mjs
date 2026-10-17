@@ -116,6 +116,22 @@ for (const f of await list('archive/countrystudy')) {
     p: tag(title + ' ' + body), m: first.slice(0, 700), r: 'public-domain', rt: 'Public domain', rn: 'U.S. government work, public domain.', f: true });
   fulltext.set(id, title + '\n' + url + '\n\n' + body);
 }
+// 4. FBIS Daily Reports: Libya sections, 1978-1987 (U.S. government translations, public domain)
+for (const f of await list('archive/fbis')) {
+  if (!/^\d{4}-\d{2}-\d{2}-\d+\.txt$/.test(f)) continue;
+  const txt = await read('archive/fbis/' + f);
+  const [head, url, , ...rest] = txt.split('\n');
+  const body = rest.join('\n').trim();
+  if (body.length < 300) continue;
+  const date = f.slice(0, 10);
+  const lines = body.split('\n').map((l) => l.trim());
+  const heads = lines.filter((l, i) => i > 0 && l.length >= 12 && l.length <= 140 && /[A-Z]/.test(l) && l === l.toUpperCase() && !/^[A-Z]{2,4}\d/.test(l) && !/LIBYA/.test(l)).slice(0, 6);
+  const id = 'fbis-' + f.replace('.txt', '');
+  const vol = (/Vol\.[^,]*No\.\s*\d+/.exec(head) || [''])[0];
+  out.push({ i: id, y: 'report', t: 'FBIS Daily Report, Libya: ' + (heads[0] ? heads[0].toLowerCase().replace(/(^|[ -])([a-z])/g, (m, a, b) => a + b.toUpperCase()) : date), d: date, s: 'FBIS Daily Report' + (vol ? ' ' + vol : ''), c: 'Foreign Broadcast Information Service, Daily Report: Middle East & Africa (Internet Archive scan)', u: url,
+    p: tag(body.slice(0, 20000)), m: 'Libya section of the daily report: ' + (heads.length ? heads.join('; ').toLowerCase() : 'translated Libyan radio, JANA and press items') + '. Machine-read scan; errors likely.', r: 'public-domain', rt: 'Public domain', rn: 'U.S. government translation, public domain. OCR text: errors are likely.', f: true });
+  fulltext.set(id, head + '\n' + url + '\n\n' + body);
+}
 out.sort((a, b) => (a.d || '9999').localeCompare(b.d || '9999') || a.i.localeCompare(b.i));
 // Drop undefined keys to keep the file small
 const clean = out.map((r) => Object.fromEntries(Object.entries(r).filter(([, v]) => v !== undefined && v !== '' && !(Array.isArray(v) && !v.length))));

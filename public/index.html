@@ -216,14 +216,17 @@ table.kv td:first-child { color: var(--muted); width: 40%; }
 /* HUD + timeline (desktop) */
 .hud { position: fixed; z-index: 1040; top: calc(var(--map-top) + 10px); left: 50%; transform: translateX(-50%); font-size: 12.5px; color: var(--muted); background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); padding: 4px 12px; white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none; }
 .hud b { color: var(--text); font-weight: 700; }
-#timeline { position: fixed; z-index: 1030; bottom: 10px; left: 10px; right: 10px; height: 74px; background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); }
+#timeline { position: fixed; z-index: 1030; bottom: 10px; left: 10px; right: 10px; height: 104px; background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); }
 body.drawer-open #timeline { left: 360px; }
 body.sheet-open #timeline { right: 440px; }
 #timeline .tl-title { position: absolute; left: 10px; top: 5px; font-size: 12px; font-weight: 700; color: var(--muted); }
-#timeline .tl-axis { position: absolute; left: 14px; right: 14px; bottom: 18px; height: 1px; background: var(--line); }
-#timeline .tl-band { position: absolute; bottom: 18px; height: 40px; background: rgba(76,144,240,.08); border-left: 1px solid rgba(76,144,240,.5); border-right: 1px solid rgba(76,144,240,.5); }
-#timeline .tl-tick { position: absolute; bottom: 3px; transform: translateX(-50%); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
-#timeline .tl-dot { position: absolute; width: 12px; height: 12px; transform: translate(-50%, 50%); border: 2px solid var(--ink); padding: 0; }
+#timeline .tl-axis { position: absolute; left: 14px; right: 14px; bottom: 24px; height: 1px; background: var(--line); }
+#timeline .tl-band { position: absolute; bottom: 24px; height: 64px; background: rgba(76,144,240,.08); border-left: 1px solid rgba(76,144,240,.5); border-right: 1px solid rgba(76,144,240,.5); }
+#timeline .tl-tick { position: absolute; bottom: 4px; transform: translateX(-50%); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+#timeline .tl-bar { position: absolute; bottom: 25px; min-width: 3px; padding: 0; border: 0; border-radius: 3px 3px 0 0; background: rgba(150,170,200,.28); cursor: pointer; }
+#timeline .tl-bar:hover, #timeline .tl-bar:focus-visible { background: rgba(104,193,238,.7); }
+#timeline .tl-hint { position: absolute; left: 80px; top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; right: 12px; font-size: 11px; color: var(--muted); }
+#timeline .tl-dot { position: absolute; z-index: 2; width: 12px; height: 12px; transform: translate(-50%, 50%); border: 2px solid var(--ink); padding: 0; }
 #timeline .tl-dot.circle { border-radius: 50%; }
 #timeline .tl-dot.square { border-radius: 0; }
 #timeline .tl-dot.diamond { transform: translate(-50%, 50%) rotate(45deg); }
@@ -266,16 +269,16 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
   html.has-chat .tip { bottom: calc(var(--chat-h) + 12px); }
 }
 @media (min-width: 900px) {
-  .chat { left: 10px; right: 10px; bottom: 94px; max-width: 640px; margin: 0 auto; }
+  .chat { left: 10px; right: 10px; bottom: 124px; max-width: 640px; margin: 0 auto; }
   body.drawer-open .chat { left: 360px; }
   body.sheet-open .chat { right: 440px; }
   body.no-timeline .chat { bottom: 10px; }
   body.chat-open .chat { height: min(60vh, 560px); }
-  html.has-chat .tip { bottom: 170px; }
+  html.has-chat .tip { bottom: 200px; }
 }
 .tip { position: fixed; z-index: 1200; left: 12px; right: 12px; bottom: calc(16px + var(--bot)); max-width: 480px; margin: 0 auto; background: var(--panel); color: var(--text); border: 1.5px solid var(--edge); border-left: 6px solid var(--accent); padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
 .tip p { margin: 0; flex: 1; }
-@media (min-width: 900px) { .tip { bottom: 100px; } }
+@media (min-width: 900px) { .tip { bottom: 130px; } }
 
 .modal { position: fixed; inset: 0; z-index: 1300; background: rgba(0,0,0,.65); display: grid; place-items: center; padding: 16px; }
 .modal-box { width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto; background: var(--panel); border: 1.5px solid var(--edge); }

@@ -296,17 +296,31 @@
   function pos(f) { return 'calc(14px + ' + f.toFixed(4) + ' * (100% - 28px))'; }
   function drawTimeline() {
     var tl = $('timeline');
-    tl.querySelectorAll('.tl-axis,.tl-band,.tl-tick,.tl-dot').forEach(function (e) { e.remove(); });
+    tl.querySelectorAll('.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-bar,.tl-hint').forEach(function (e) { e.remove(); });
+    var W = Math.max(200, tl.clientWidth - 28);
+    var yearX = function (y) { return tx(y) * W; };
+    /* documents per year, drawn as bars behind the events; tap a bar to search that year */
+    if (RECORDS) {
+      var counts = {}, max = 1;
+      RECORDS.forEach(function (r) { var y = +(r.d || '0').slice(0, 4); if (y >= 1905 && y <= 2011 && r.y !== 'event') { counts[y] = (counts[y] || 0) + 1; if (counts[y] > max) max = counts[y]; } });
+      Object.keys(counts).forEach(function (k) {
+        var y = +k, left = yearX(y), w = Math.max(3, yearX(y + 1) - left - 2);
+        tl.appendChild(h('button', { class: 'tl-bar', title: y + ': ' + counts[y] + ' document' + (counts[y] === 1 ? '' : 's') + '. Tap to search.', 'aria-label': y + ', ' + counts[y] + ' documents',
+          style: 'left:' + (14 + left).toFixed(1) + 'px;width:' + w.toFixed(1) + 'px;height:' + Math.max(3, Math.round(46 * Math.sqrt(counts[y] / max))) + 'px', onclick: function () { openTerm(String(y)); } }));
+      });
+    }
     tl.appendChild(h('div', { class: 'tl-axis' }));
     tl.appendChild(h('div', { class: 'tl-band', style: 'left:' + pos(tx(1969)) + ';width:calc(' + (tx(1989) - tx(1969)).toFixed(4) + ' * (100% - 28px))' }));
-    [1911, 1945, 1969, 1974, 1979, 1984, 1989, 2011].forEach(function (y) { tl.appendChild(h('div', { class: 'tl-tick', style: 'left:' + pos(tx(y)), text: String(y) })); });
+    [1911, 1945, 1969, 1974, 1979, 1984, 1989, 1996, 2011].forEach(function (y) { tl.appendChild(h('div', { class: 'tl-tick', style: 'left:' + pos(tx(y)), text: String(y) })); });
     var stack = {};
     SITES.filter(function (s) { return s.y0 != null && visible(s); }).sort(function (a, b) { return a.y0 - b.y0; }).forEach(function (s) {
       var lay = LAYERS[s.layer], n = stack[s.y0] = (stack[s.y0] || 0) + 1;
       tl.appendChild(h('button', { class: 'tl-dot ' + lay.shape + (selected === s.id ? ' sel' : ''), title: s.y0 + ' · ' + s.name, 'aria-label': s.y0 + ', ' + s.name,
-        style: 'left:' + pos(tx(s.y0)) + ';bottom:' + (18 + (n - 1) * 13) + 'px;background:' + lay.color, onclick: function () { focusSite(s); } }));
+        style: 'left:calc(' + pos(tx(s.y0)).slice(5, -1) + ' + ' + (Math.floor((n - 1) / 4) * 14) + 'px);bottom:' + (30 + ((n - 1) % 4) * 13) + 'px;background:' + lay.color, onclick: function () { focusSite(s); } }));
     });
+    tl.appendChild(h('div', { class: 'tl-hint', text: 'Dots: places on the map. Bars: documents per year (tap one to search it).' }));
   }
+  window.addEventListener('resize', function () { clearTimeout(drawTimeline.t); drawTimeline.t = setTimeout(drawTimeline, 150); });
 
   /* ---------- HUD ---------- */
   function hud(ll) {
@@ -818,7 +832,7 @@
     recordsWaiting = new Promise(function (ok) {
       var sc = document.createElement('script');
       sc.src = 'data/records.js';
-      sc.onload = function () { RECORDS = window.ATLAS_RECORDS || []; RECORDS.forEach(function (r) { REC_BY_ID[r.i] = r; }); ok(RECORDS); };
+      sc.onload = function () { RECORDS = window.ATLAS_RECORDS || []; RECORDS.forEach(function (r) { REC_BY_ID[r.i] = r; }); ok(RECORDS); try { drawTimeline(); } catch (e) {} };
       sc.onerror = function () { RECORDS = []; ok(RECORDS); };
       document.head.appendChild(sc);
     });

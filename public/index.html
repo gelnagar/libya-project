@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1c2127">
+<meta name="theme-color" content="#ffffff">
+<script>try{if(JSON.parse(localStorage.getItem("atlas.theme"))==="dark")document.documentElement.classList.add("dark")}catch(e){}</script>
 <title>Tripoli: Open Source</title>
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap">
 <style>
 /* Layout: full-screen map. Phones: layers and details slide up from the bottom. Desktop: layers dock left, details dock right, event timeline runs along the bottom.
    Look: flat paper panels over the dark map, ink bars, one serif for reading, one hyperlegible sans for controls. Marker colours are category codes and stay as they are. */
@@ -425,6 +426,7 @@ details.more > summary::-webkit-details-marker { display: none; }
 details.more > summary::after { content: '+'; margin-left: auto; font-size: 1.3em; color: var(--muted); }
 details.more[open] > summary::after { content: '–'; }
 </style>
+<link rel="stylesheet" href="foundry.css">
 </head>
 <body>
 <header class="bar">
@@ -432,9 +434,10 @@ details.more[open] > summary::after { content: '–'; }
     <div><b>Tripoli: Open Source</b><small>Leveraging AI to Map Gaddafi’s Capital of Terror</small></div>
   </div>
   <div class="bar-actions">
-    <button class="btn" id="btn-search" aria-controls="term" title="Search everything (press /)">Search</button>
-    <button class="btn" id="btn-layers" aria-controls="drawer" aria-expanded="false">Layers</button>
-    <button class="btn" id="btn-settings">Settings</button>
+    <button class="btn" id="btn-search" aria-controls="term" title="Search everything (press /)"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 1a5.5 5.5 0 0 1 4.38 8.83l3.65 3.64-1.06 1.06-3.64-3.65A5.5 5.5 0 1 1 6.5 1zm0 1.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg><span class="lbl">Search</span></button>
+    <button class="btn" id="btn-layers" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 0 5l8 4 8-4zM1.6 7.8 0 8.6l8 4 8-4-1.6-.8L8 11zm0 3.4L0 12l8 4 8-4-1.6-.8L8 14.4z"/></svg><span class="lbl">Layers</span></button>
+    <button class="btn primary" id="btn-report" title="Add a place or a note to the map"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a5.5 5.5 0 0 1 5.5 5.5C13.5 10 8 16 8 16S2.5 10 2.5 5.5A5.5 5.5 0 0 1 8 0zm-.75 2.75v2h-2v1.5h2v2h1.5v-2h2v-1.5h-2v-2z"/></svg><span class="lbl">Add to map</span></button>
+    <button class="btn" id="btn-settings" title="Settings" aria-label="Settings"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9.2 0l.4 2a6 6 0 0 1 1.5.9l1.9-.7 1.2 2.1-1.5 1.3a6 6 0 0 1 0 1.8l1.5 1.3-1.2 2.1-1.9-.7a6 6 0 0 1-1.5.9l-.4 2H6.8l-.4-2a6 6 0 0 1-1.5-.9l-1.9.7-1.2-2.1 1.5-1.3a6 6 0 0 1 0-1.8L1.8 4.3 3 2.2l1.9.7A6 6 0 0 1 6.4 2l.4-2zM8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/></svg></button>
   </div>
 </header>
 
@@ -447,8 +450,9 @@ details.more[open] > summary::after { content: '–'; }
 
 <aside id="drawer" class="panel" aria-label="Map layers">
   <div class="grab" aria-hidden="true"></div>
-  <div class="panel-head"><h2>Layers</h2><button class="btn" id="drawer-close">Done</button></div>
-  <div class="panel-body">
+  <div class="panel-head"><div class="fy-tabs" role="tablist"><button role="tab" id="tab-layers" aria-selected="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 0 5l8 4 8-4zM1.6 7.8 0 8.6l8 4 8-4-1.6-.8L8 11zm0 3.4L0 12l8 4 8-4-1.6-.8L8 14.4z"/></svg>Layers</button><button role="tab" id="tab-legend" aria-selected="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2h3v3H1zm5 .75h9v1.5H6zM1 6.5h3v3H1zm5 .75h9v1.5H6zM1 11h3v3H1zm5 .75h9v1.5H6z"/></svg>Legend</button></div><button class="btn" id="drawer-close">Done</button></div>
+  <div class="panel-body" id="legend-body" hidden><div class="legend" id="legend"></div></div>
+  <div class="panel-body" id="layers-body">
     <div class="sec">
       <h3>Map style</h3>
       <div class="basemaps" id="basemaps"></div>
@@ -536,6 +540,28 @@ details.more[open] > summary::after { content: '–'; }
   </div>
 </div>
 
+<div id="report" class="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="rep-title" style="max-width:520px">
+    <div class="panel-head"><h2 id="rep-title">Add to the map</h2><button class="btn" id="rep-close" type="button">Cancel</button></div>
+    <form class="panel-body fy-form" id="rep-form" autocomplete="off">
+      <div id="rep-where" class="idrow"></div>
+      <div><label>What is it?</label><div class="fy-cats" id="rep-cats"></div></div>
+      <div><label for="rep-name">Name or title</label><input id="rep-name" maxlength="140" required placeholder="e.g. Checkpoint on the airport road"></div>
+      <div><label for="rep-when">When</label><input id="rep-when" maxlength="60" placeholder="e.g. 1980s, 1986, 1977–1990, today"></div>
+      <div><label for="rep-text">What do you know?</label><textarea id="rep-text" maxlength="3000" required placeholder="What it was, what happened there, who used it, how it looked."></textarea></div>
+      <div><label for="rep-how">How do you know?</label>
+        <select id="rep-how"><option value="saw">I saw it myself</option><option value="family">Family or friends told me</option><option value="read">I read or heard it (give the source below)</option><option value="unsure">Not sure</option></select>
+        <input id="rep-src" maxlength="400" placeholder="Source, link or who told you (optional)" style="margin-top:6px"></div>
+      <div><label for="rep-by">Your name</label><input id="rep-by" maxlength="60" placeholder="So others know who added it"></div>
+      <p class="fy-note" id="rep-private" hidden>Homes and family places are visible to everyone with the family password, and are never sent to the AI. Leave out anything that could put someone at risk.</p>
+      <p class="fy-note">Everyone with the family password will see this, marked “Family report, not verified”.</p>
+      <p class="d-text" id="rep-msg" role="status"></p>
+      <div class="row-btns"><button class="btn" type="button" id="rep-move">Change location</button><button class="btn primary" type="submit" id="rep-save">Add to map</button></div>
+    </form>
+  </div>
+</div>
+<div id="pick-banner" class="picking-banner" hidden><span id="pick-text">Tap the map where it is</span><button class="btn" id="pick-cancel" type="button">Cancel</button></div>
+
 <div id="settings" class="modal" hidden>
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="set-title">
     <div class="panel-head"><h2 id="set-title">Settings</h2><button class="btn" id="set-close">Done</button></div>
@@ -546,6 +572,13 @@ details.more[open] > summary::after { content: '–'; }
           <button data-size="normal">Normal</button>
           <button data-size="big">Large</button>
           <button data-size="huge">Larger</button>
+        </div>
+      </div>
+      <div class="sec">
+        <h3>Look</h3>
+        <div class="seg" id="themes" style="grid-template-columns:1fr 1fr">
+          <button data-theme="light">Light</button>
+          <button data-theme="dark">Dark</button>
         </div>
       </div>
       <div class="sec field" id="code-field" hidden>

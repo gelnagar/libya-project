@@ -46,6 +46,9 @@ button.primary { background: var(--accent); border-color: var(--accent); color: 
   <section id="list" hidden>
     <div class="bar"><p id="count"></p><div><button id="reload" type="button">Refresh</button> <button id="logout" type="button">Sign out</button></div></div>
     <div id="items" style="display:flex;flex-direction:column;gap:12px;margin-top:12px"></div>
+    <h2 style="margin-top:28px">Family reports on the map</h2>
+    <p id="rcount"></p>
+    <div id="reps" style="display:flex;flex-direction:column;gap:12px;margin-top:12px"></div>
   </section>
 </main>
 <script src="data/config.js"></script>
@@ -79,13 +82,31 @@ button.primary { background: var(--accent); border-color: var(--accent); color: 
       box.appendChild(c);
     });
   }
+  function renderReports(reps, code) {
+    var box = document.getElementById('reps'); box.innerHTML = '';
+    document.getElementById('rcount').textContent = reps.length ? reps.length + ' report' + (reps.length > 1 ? 's' : '') + ' added by family.' : 'No family reports yet.';
+    reps.forEach(function (it) {
+      var c = el('article', 'card'), meta = el('div', 'meta');
+      meta.appendChild(el('span', null, new Date(it.at).toLocaleString()));
+      meta.appendChild(el('span', null, (it.by ? 'From ' + it.by : 'No name given') + ' · ' + it.cat));
+      c.appendChild(meta);
+      c.appendChild(el('h2', null, it.title + (it.when ? ' (' + it.when + ')' : '')));
+      c.appendChild(el('p', 'details', it.text));
+      if (it.src) c.appendChild(el('p', 'ctx', 'Source: ' + it.src));
+      if (it.targetName) c.appendChild(el('p', 'ctx', 'About: ' + it.targetName));
+      if (it.lat != null) c.appendChild(el('p', 'ctx', 'Position: ' + it.lat + ', ' + it.lon));
+      var rm = el('button', null, 'Remove from map');
+      rm.onclick = function () { if (!confirm('Remove “' + it.title + '” from the map?')) return; rm.disabled = true; call(code, { removeReport: it.id }).then(function () { c.remove(); }).catch(function () { rm.disabled = false; }); };
+      c.appendChild(rm); box.appendChild(c);
+    });
+  }
   function load(code) {
     var msg = document.getElementById('login-msg');
     msg.textContent = 'Loading…';
     return call(code, {}).then(function (j) {
       set(code); msg.textContent = '';
       document.getElementById('login').hidden = true; document.getElementById('list').hidden = false;
-      render(j.items || [], code);
+      render(j.items || [], code); renderReports(j.reports || [], code);
     }).catch(function (e) {
       document.getElementById('login').hidden = false; document.getElementById('list').hidden = true;
       msg.textContent = e.code === 401 ? 'That owner password is not right.' : e.code === 503 ? 'Storage is not set up in Cloudflare yet (ATLAS_KV).' : 'Could not reach the relay. Check your connection.';

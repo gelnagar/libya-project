@@ -62,6 +62,10 @@
   var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
   var BASEMAPS = {
+    light: { name: 'Light', note: 'Clean grey map', layers: [
+      L.tileLayer(ESRI + 'Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, attribution: 'Basemap &copy; Esri, HERE, Garmin, ' + OSM_ATTR }),
+      L.tileLayer(ESRI + 'Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19 })
+    ] },
     dark: { name: 'Dark', note: 'Night view', layers: [
       L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, attribution: 'Basemap &copy; Esri, HERE, Garmin, ' + OSM_ATTR }),
       L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19 })
@@ -75,16 +79,16 @@
   };
   var currentBase = null;
   function setBase(key) {
-    if (!BASEMAPS[key]) key = 'dark';
+    if (!BASEMAPS[key]) key = 'light';
     if (currentBase) BASEMAPS[currentBase].layers.forEach(function (l) { map.removeLayer(l); });
     BASEMAPS[key].layers.forEach(function (l) { l.addTo(map); });
-    currentBase = key; store.set('base', key);
+    currentBase = key; store.set('base2', key);
     document.querySelectorAll('#basemaps button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === key ? 'true' : 'false'); });
   }
   Object.keys(BASEMAPS).forEach(function (k) {
     var tz = 12, tx = Math.floor((13.19 + 180) / 360 * Math.pow(2, tz)), la = 32.885 * Math.PI / 180,
         ty = Math.floor((1 - Math.log(Math.tan(la) + 1 / Math.cos(la)) / Math.PI) / 2 * Math.pow(2, tz));
-    var tile = { dark: ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/' + tz + '/' + ty + '/' + tx,
+    var tile = { light: ESRI + 'Canvas/World_Light_Gray_Base/MapServer/tile/' + tz + '/' + ty + '/' + tx, dark: ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/' + tz + '/' + ty + '/' + tx,
       satellite: ESRI + 'World_Imagery/MapServer/tile/' + tz + '/' + ty + '/' + tx,
       street: 'https://tile.openstreetmap.org/' + tz + '/' + tx + '/' + ty + '.png',
       terrain: 'https://a.tile.opentopomap.org/' + tz + '/' + tx + '/' + ty + '.png' }[k];
@@ -127,11 +131,13 @@
 
   SITES.forEach(function (s) {
     var lay = LAYERS[s.layer];
-    var icon = L.divIcon({ className: '', iconSize: [32, 32], iconAnchor: [16 - s.dx, 16 - s.dy],
+    var icon = L.divIcon({ className: '', iconSize: [28, 36], iconAnchor: [14 - s.dx, 36 - s.dy],
       html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '"><b>' + lay.code + '</b></div>' });
     markers[s.id] = L.marker([s.lat, s.lon], { icon: icon, title: s.name, keyboard: true, riseOnHover: true })
-      .bindTooltip(s.name, { permanent: true, direction: 'right', offset: [18 + s.dx, s.dy], className: 'site-label', interactive: false })
-      .on('click', function () { openSite(s); });
+      .bindTooltip(s.name, { permanent: true, direction: 'right', offset: [16 + s.dx, -22 + s.dy], className: 'site-label', interactive: false })
+      .on('click', function () { openSite(s); })
+      .on('mouseover', function () { hoverCard([s.lat, s.lon], lay.color, lay.code, s.name, [['When', s.period], ['Type', lay.label], ['Evidence', LEVELS[s.level]], ['Accuracy', '± ' + s.r + ' km']], [-s.dx, -36 + s.dy]); })
+      .on('mouseout', hideCard);
     rings[s.id] = L.circle([s.lat, s.lon], { radius: s.r * 1000, color: lay.color, weight: 1.2, dashArray: '5 5', fillColor: lay.color, fillOpacity: 0.03, interactive: false });
   });
 
@@ -149,10 +155,24 @@
     for (var lon = 12.8; lon <= 13.6001; lon += 0.05) L.polyline([[32.5, lon], [33.05, lon]], st).addTo(gridLayer);
   })();
 
+  /* opacity by time: drag the timeline cursor; places appear when they occur, are bright while active and fade after */
+  var timeYear = null, playTimer = null;
+  function activeAt(s, y) { var r = span(s); return y >= r[0] && y <= r[1] + (r[1] === r[0] ? 1 : 0); }
+  var cardTip = null;
+  function hoverCard(ll, color, code, title, rows, off) {
+    if (!DESKTOP.matches) return;
+    var html = '<div class="fy-card" style="--c:' + color + '"><div class="ch"><i>' + esc(code) + '</i>' + esc(title) + '</div>' +
+      rows.filter(function (r) { return r[1]; }).map(function (r) { return '<div class="cr"><span>' + esc(r[0]) + '</span><span>' + esc(r[1]) + '</span></div>'; }).join('') + '</div>';
+    if (!cardTip) cardTip = L.tooltip({ direction: 'top', className: 'fy-tip', opacity: 1, interactive: false });
+    cardTip.options.offset = off || [0, -20];
+    cardTip.setLatLng(ll).setContent(html); map.openTooltip(cardTip);
+  }
+  function hideCard() { if (cardTip) map.closeTooltip(cardTip); }
+  function esc(t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function refresh() {
     SITES.forEach(function (s) {
-      var on = visible(s);
-      if (on) { if (!siteLayer.hasLayer(markers[s.id])) siteLayer.addLayer(markers[s.id]); }
+      var on = visible(s) && (timeYear == null || span(s)[0] <= timeYear);
+      if (on) { if (!siteLayer.hasLayer(markers[s.id])) siteLayer.addLayer(markers[s.id]); markers[s.id].setOpacity(timeYear == null || activeAt(s, timeYear) ? 1 : 0.3); }
       else siteLayer.removeLayer(markers[s.id]);
       if (on && active.rings) { if (!ringLayer.hasLayer(rings[s.id])) ringLayer.addLayer(rings[s.id]); }
       else ringLayer.removeLayer(rings[s.id]);
@@ -310,7 +330,7 @@
   var TL_LANES = [['Prisons & security', ['detention', 'security']], ['Military', ['military', 'airstrike']], ['Killings', ['massacre']], ['Power', ['power']], ['Landmarks', ['landmark']]];
   function drawTimeline() {
     var tl = $('timeline');
-    tl.querySelectorAll('.tl-lane,.tl-lab,.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-span,.tl-bar,.tl-hint').forEach(function (e) { e.remove(); });
+    tl.querySelectorAll('.tl-lane,.tl-lab,.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-span,.tl-bar,.tl-hint,.tl-hit,.tl-cursor,.tl-ctrl').forEach(function (e) { e.remove(); });
     var L0 = 118, R0 = 14, W = Math.max(200, tl.clientWidth - L0 - R0), TOP = 27, LH = 15;
     var X = function (y) { return L0 + tx(y) * W; };
     tl.appendChild(h('div', { class: 'tl-band', style: 'left:' + X(1969).toFixed(1) + 'px;width:' + (X(2011.7) - X(1969)).toFixed(1) + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 6) + 'px', title: 'Gaddafi era, 1969–2011' }));
@@ -336,8 +356,27 @@
       var x = X(yr); if (x - last < 34) return; last = x;
       tl.appendChild(h('button', { class: 'tl-tick', style: 'left:' + x.toFixed(1) + 'px;top:' + (axisY + 3) + 'px', text: String(yr), title: 'Search the archive for ' + yr, onclick: function () { openTerm(String(yr)); } }));
     });
-    tl.appendChild(h('div', { class: 'tl-hint', text: 'Tap a dot to see the place · bars show how long it was in use · tap a year to search documents' }));
+    tl.appendChild(h('div', { class: 'tl-hint', text: timeYear == null ? 'Click or drag along the lanes to step through time · tap a dot to open a place · tap a year to search documents' : 'Showing ' + timeYear + ': bright = active that year, faded = earlier, hidden = not yet' }));
+    var hit = h('div', { class: 'tl-hit', style: 'left:' + L0 + 'px;width:' + W + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 6) + 'px', title: 'Click or drag to pick a year' });
+    var yearAt = function (cx) { var r = tl.getBoundingClientRect(), f = (cx - r.left - L0) / W; f = Math.max(0, Math.min(1, f));
+      var y = f < 0.10 ? 1905 + f / 0.10 * 64 : f <= 0.92 ? 1969 + (f - 0.10) / 0.82 * 43 : 2012 + (f - 0.92) / 0.08 * 14; return Math.round(y); };
+    hit.addEventListener('pointerdown', function (e) {
+      e.preventDefault(); stopPlay(); setYear(yearAt(e.clientX));
+      var mv = function (ev) { var y = yearAt(ev.clientX); if (y !== timeYear) setYear(y); };
+      var up = function () { document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', up); };
+      document.addEventListener('pointermove', mv); document.addEventListener('pointerup', up);
+    });
+    tl.insertBefore(hit, tl.firstChild);
+    if (timeYear != null) tl.appendChild(h('div', { class: 'tl-cursor', style: 'left:' + (X(timeYear) - 1).toFixed(1) + 'px;top:' + (TOP + 2) + 'px;height:' + (TL_LANES.length * LH) + 'px' }, [h('b', { text: String(timeYear) })]));
+    tl.appendChild(h('div', { class: 'tl-ctrl' }, [
+      h('button', { 'aria-pressed': playTimer ? 'true' : 'false', text: playTimer ? 'Pause' : 'Play 1969–2011', onclick: function () { playTimer ? stopPlay() : startPlay(); } }),
+      timeYear != null ? h('button', { text: 'All years', onclick: function () { stopPlay(); setYear(null); } }) : null
+    ]));
+    tl.querySelectorAll('.tl-dot').forEach(function (d) { var y = +d.getAttribute('aria-label').slice(0, 4); d.style.opacity = timeYear == null || y <= timeYear ? '' : '.15'; });
   }
+  function setYear(y) { timeYear = y; refresh(); }
+  function startPlay() { if (timeYear == null || timeYear >= 2011) timeYear = 1968; playTimer = setInterval(function () { if (timeYear >= 2011) { stopPlay(); return; } setYear(timeYear + 1); }, 700); setYear(timeYear + 1); }
+  function stopPlay() { if (playTimer) { clearInterval(playTimer); playTimer = null; drawTimeline(); } }
   window.addEventListener('resize', function () { clearTimeout(drawTimeline.t); drawTimeline.t = setTimeout(drawTimeline, 150); });
 
   /* ---------- HUD ---------- */
@@ -621,7 +660,7 @@
   }
   function openPanel(id) {
     $(id).classList.add('open');
-    if (id === 'sheet') { $('sheet-body').scrollTop = 0; requestAnimationFrame(function () { $('sheet-body').scrollTop = 0; }); }
+    if (id === 'sheet') { decorateSheet(); $('sheet-body').scrollTop = 0; requestAnimationFrame(function () { $('sheet-body').scrollTop = 0; }); }
     if (id === 'drawer') { $('btn-layers').setAttribute('aria-expanded', 'true'); syncGroups(); }
     if (!DESKTOP.matches) { if (id === 'sheet') closePanel('drawer'); if (id === 'drawer') closePanel('sheet'); if (!$('chat-panel').hidden) closeChat(); }
     syncBody();
@@ -874,10 +913,12 @@
         html: '<div class="osm-ic prof" style="--c:' + (/^wp-/.test(a.id) ? '#ec9a3c' : '#e0b95a') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + PROF_SVG + '</svg></div>' }) });
       m.bindTooltip(a.name, { direction: 'top', offset: [0, -12], className: 'site-label' });
       m.on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openArea(a); });
+      m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], /^wp-/.test(a.id) ? '#ec9a3c' : '#e0b95a', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar], ['About', (a.summary || '').length > 90 ? a.summary.slice(0, 88) + '…' : a.summary]], [0, -16]); });
+      m.on('mouseout', hideCard);
       m.addTo(profGroup);
     });
   }
-  function syncProfiles() { if (profOn && map.getZoom() >= 12) map.addLayer(profGroup); else map.removeLayer(profGroup); }
+  function syncProfiles() { if (profOn && map.getZoom() >= 14) map.addLayer(profGroup); else map.removeLayer(profGroup); }
   map.on('zoomend', syncProfiles);
   $('hist-toggles').appendChild(toggleRow('profiles', 'Researched landmarks & buildings', 'Ministries, hospitals, mosques, old city and historic sites, with histories', profOn, function (v) { profOn = v; store.set('prof', v); syncProfiles(); }));
   setTimeout(function () { drawProfiles(); syncProfiles(); }, 0);
@@ -1247,7 +1288,7 @@
     { t: 'The city today', n: 'Zones, buildings, water, oil', parts: [['osm-landuse', 'Zones', 'now'], ['osm-buildings', 'Buildings', 'now'], ['osm-water', 'Water', 'now'], ['osm-oil', 'Oil & gas', 'now']] }
   ];
   var groupEls = [];
-  function partColor(k) { if (LAYERS[k]) return LAYERS[k].color; if (k === 'profiles') return '#e0b95a'; var o = OSM[k.replace(/^osm-/, '')]; return o ? (o.point || o.swatch) : '#888'; }
+  function partColor(k) { if (LAYERS[k]) return LAYERS[k].color; if (k === 'profiles') return '#e0b95a'; if (k === 'reports') return '#d1980b'; var o = OSM[k.replace(/^osm-/, '')]; return o ? (o.point || o.swatch) : '#888'; }
   function syncGroups() {
     (groupEls || []).forEach(function (g) {
       var on = 0;
@@ -1602,14 +1643,201 @@
     else closePanel('drawer');
   });
 
+
+  /* ---------- Foundry workspace: theme, legend tab, selection header ---------- */
+  function setTheme(t, keepBase) {
+    var dark = t === 'dark';
+    document.documentElement.classList.toggle('dark', dark); store.set('theme', dark ? 'dark' : 'light');
+    document.querySelectorAll('#themes button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.theme === (dark ? 'dark' : 'light') ? 'true' : 'false'); });
+    var m = document.querySelector('meta[name=theme-color]'); if (m) m.content = dark ? '#252a31' : '#ffffff';
+    if (!keepBase && (currentBase === 'light' || currentBase === 'dark')) setBase(dark ? 'dark' : 'light');
+  }
+  document.querySelectorAll('#themes button').forEach(function (b) { b.addEventListener('click', function () { setTheme(b.dataset.theme); }); });
+
+  function showTab(which) {
+    var lg = which === 'legend';
+    $('tab-layers').setAttribute('aria-selected', lg ? 'false' : 'true'); $('tab-legend').setAttribute('aria-selected', lg ? 'true' : 'false');
+    $('layers-body').hidden = lg; $('legend-body').hidden = !lg;
+    if (lg) drawLegend();
+  }
+  $('tab-layers').onclick = function () { showTab('layers'); };
+  $('tab-legend').onclick = function () { showTab('legend'); };
+  function drawLegend() {
+    var box = $('legend'); box.innerHTML = '';
+    var row = function (color, label, n, shape) { return h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:' + color + (shape === 'ring' ? ';background:none;border:2px dashed ' + color + ';border-radius:50%' : '') }), label, n != null ? h('small', { text: String(n) }) : null]); };
+    box.appendChild(h('h4', { text: 'Shown on the map' }));
+    var any = false;
+    GROUPS.forEach(function (g) { g.parts.forEach(function (p) {
+      var i = inputs[p[0]]; if (!i || !i.checked) return; any = true;
+      var n = LAYERS[p[0]] ? SITES.filter(function (s) { return s.layer === p[0] && visible(s); }).length : p[0] === 'profiles' ? AREAS.filter(function (x) { return ['landmark', 'government', 'prison'].indexOf(x.kind) >= 0 || /^wp-/.test(x.id); }).length : p[0] === 'reports' ? REPORTS.length : (savedData[p[0].replace(/^osm-/, '')] ? savedData[p[0].replace(/^osm-/, '')].elements.length : null);
+      box.appendChild(row(partColor(p[0]), p[1] + (p[2] === 'now' ? ' (today)' : ''), n));
+    }); });
+    if (!any) box.appendChild(h('p', { text: 'Nothing is switched on. Open the Layers tab to choose.' }));
+    box.appendChild(h('h4', { text: 'How to read the pins' }));
+    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:#e76a6e' }), 'Solid pin: documented']));
+    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:#fff;border:2px solid #e76a6e' }), 'White pin: reported, not confirmed']));
+    box.appendChild(row('#e76a6e', 'Dashed circle: how far off the position could be', null, 'ring'));
+    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:#e0b95a' }), 'Gold building: researched profile']));
+    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:#d1980b;border-radius:50% 50% 50% 0' }), 'Teardrop: added by family, not verified']));
+    if (timeYear != null) box.appendChild(h('p', { text: 'Time filter: ' + timeYear + '. Faded pins were active earlier; later ones are hidden.' }));
+  }
+
+  var curTarget = null;
+  function decorateSheet() {
+    var b = $('sheet-body'), t = b.querySelector('.d-title');
+    if (t && !b.querySelector('.selhead')) {
+      var wrap = t.parentNode, tag = b.querySelector('.tag'), c = tag ? (tag.style.getPropertyValue('--c') || '') : '';
+      var kind = $('sheet-kind').textContent || '';
+      var head = h('div', { class: 'selhead' }, [h('div', { class: 'ic', style: c ? '--c:' + c : '', text: curTarget && curTarget.code ? curTarget.code : (kind.charAt(0) || '•') }), h('div', { class: 'tt' })]);
+      var tt = head.querySelector('.tt'); tt.appendChild(t); var ar = wrap.querySelector('.d-ar'); if (ar) tt.appendChild(ar); tt.appendChild(h('div', { class: 'sub', text: kind }));
+      if (wrap !== b && !wrap.children.length) wrap.remove();
+      b.insertBefore(head, b.firstChild);
+    }
+    familyNotesSection(b);
+  }
+
+  /* ---------- family reports: anyone with the password can add a place or a note ---------- */
+  var REPORT_CATS = [
+    { k: 'military', t: 'Military site', c: '#ec9a3c' }, { k: 'checkpoint', t: 'Checkpoint', c: '#14a3a3' },
+    { k: 'prison', t: 'Prison or detention', c: '#e76a6e' }, { k: 'security', t: 'Security or police', c: '#3fa36b' },
+    { k: 'event', t: 'Something happened here', c: '#f5498b' }, { k: 'landmark', t: 'Landmark or building', c: '#2d72d2' },
+    { k: 'home', t: 'Family or friends’ place', c: '#8f6bd6' }, { k: 'other', t: 'Other', c: '#738091' }];
+  var CAT_BY = {}; REPORT_CATS.forEach(function (c) { CAT_BY[c.k] = c; });
+  var HOW = { saw: 'Saw it myself', family: 'Told by family or friends', read: 'Read or heard it', unsure: 'Not sure' };
+  var REPORTS = [], reportLayer = L.layerGroup(), mine = store.get('myReports', {});
+  var PIN_SVG = '<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="3.2"/></svg>';
+  var canReport = !!CFG.aiEndpoint;
+  $('hist-toggles').appendChild(toggleRow('reports', 'Family reports', 'Places and notes added by family', store.get('repOn', true), function (v) { store.set('repOn', v); if (v) reportLayer.addTo(map); else map.removeLayer(reportLayer); }));
+  GROUPS.splice(0, 0, { t: 'Family reports', n: 'Places and notes added by family, not verified', parts: [['reports', 'Family reports', 'now']] });
+  if (store.get('repOn', true)) reportLayer.addTo(map);
+  function drawReports() {
+    reportLayer.clearLayers();
+    REPORTS.forEach(function (r) {
+      if (r.lat == null) return;
+      var c = (CAT_BY[r.cat] || CAT_BY.other).c;
+      var m = L.marker([r.lat, r.lon], { title: r.title, keyboard: true, icon: L.divIcon({ className: '', iconSize: [26, 26], iconAnchor: [13, 30], html: '<div class="rep-pin" style="--c:' + c + '">' + PIN_SVG + '</div>' }) });
+      m.on('click', function (ev) { L.DomEvent.stop(ev); openReport(r); });
+      m.on('mouseover', function () { hoverCard([r.lat, r.lon], c, '+', r.title, [['Type', (CAT_BY[r.cat] || CAT_BY.other).t], ['When', r.when], ['Added by', r.by || 'family member'], ['Status', 'Not verified']], [0, -30]); });
+      m.on('mouseout', hideCard);
+      m.addTo(reportLayer);
+    });
+  }
+  function loadReports() {
+    if (!canReport) return;
+    relay(store.get('code', ''), { reports: true }).then(function (j) { REPORTS = (j.reports || []).sort(function (x, y) { return y.at - x.at; }); drawReports(); }).catch(function () {});
+  }
+  function notesFor(t) {
+    if (!t) return [];
+    return REPORTS.filter(function (r) { return (t.id && r.target === t.id) || (!r.target && t.lat != null && r.lat != null && map.distance([t.lat, t.lon], [r.lat, r.lon]) < 150); });
+  }
+  function familyNotesSection(b) {
+    if (!canReport || !curTarget || curTarget.isReport) return;
+    var old = b.querySelector('.fam-sec'); if (old) old.remove();
+    var notes = notesFor(curTarget);
+    var list = h('div', { class: 'fam-notes' });
+    notes.forEach(function (r) { list.appendChild(h('div', { class: 'fam-note' }, [h('b', { text: r.title }), h('small', { text: [r.when, (r.by || 'Family member') + ', ' + new Date(r.at).toLocaleDateString(), HOW[r.how]].filter(Boolean).join(' · ') }), h('div', { text: r.text })])); });
+    if (!notes.length) list.appendChild(h('p', { class: 'd-text muted', text: 'No family notes yet. Know something about this place?' }));
+    list.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: curTarget.id ? 'Add a note about this' : 'Add something here', onclick: function () { openReportForm({ lat: curTarget.lat, lon: curTarget.lon, target: curTarget.id || '', targetName: curTarget.name || '', cat: curTarget.id ? 'event' : '' }); } })]));
+    var sec = h('div', { class: 'sec fam-sec' }, [h('h3', { text: 'Family notes (' + notes.length + ')' }), list]);
+    var ai = b.querySelector('.ai'); if (ai) b.insertBefore(sec, ai); else b.appendChild(sec);
+  }
+  function openReport(r) {
+    var cat = CAT_BY[r.cat] || CAT_BY.other;
+    var body = newSheet('Family report');
+    markSelected(null); curTarget = { isReport: true, code: '+' };
+    body.appendChild(h('div', { class: 'tags' }, [h('span', { class: 'tag', style: '--c:' + cat.c, text: cat.t }), h('span', { class: 'tag', style: '--c:#d1980b', text: 'Added by family, not verified' })]));
+    body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: r.title })]));
+    var dl = h('dl', { class: 'meta' });
+    [['When', r.when], ['How they know', HOW[r.how]], ['Source', r.src], ['Added by', r.by || 'Family member'], ['Added on', new Date(r.at).toLocaleDateString()], ['About', r.targetName], ['Position', r.lat != null ? r.lat.toFixed(5) + ', ' + r.lon.toFixed(5) : null]]
+      .forEach(function (x) { if (x[1]) { dl.appendChild(h('dt', { text: x[0] })); dl.appendChild(h('dd', { text: x[1] })); } });
+    body.appendChild(dl);
+    body.appendChild(h('p', { class: 'd-text', text: r.text }));
+    var btns = [];
+    if (r.target && (BY_ID[r.target] || AREA_BY_ID[r.target])) btns.push(h('button', { class: 'btn', text: 'Open ' + (r.targetName || 'the place'), onclick: function () { if (BY_ID[r.target]) focusSite(BY_ID[r.target]); else openArea(AREA_BY_ID[r.target]); } }));
+    if (mine[r.id]) btns.push(h('button', { class: 'btn', text: 'Remove my report', onclick: function () {
+      relay(store.get('code', ''), { reportDelete: { id: r.id, token: mine[r.id] } }).then(function () {
+        REPORTS = REPORTS.filter(function (x) { return x.id !== r.id; }); delete mine[r.id]; store.set('myReports', mine); drawReports(); closePanel('sheet'); status('Removed.', 3000);
+      }).catch(function (e) { status(e.message, 4000); });
+    } }));
+    if (btns.length) body.appendChild(h('div', { class: 'row-btns' }, btns));
+    if (r.lat != null) map.flyTo([r.lat, r.lon], Math.max(map.getZoom(), 15), { duration: 0.6 });
+    openPanel('sheet');
+  }
+  // remember what each sheet is about, so notes can be attached to it
+  var _openSite = openSite; openSite = function (s) { curTarget = { id: s.id, name: s.name, lat: s.lat, lon: s.lon, code: LAYERS[s.layer].code }; _openSite(s); };
+  var _openArea = openArea; openArea = function (x) { curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon }; _openArea(x); };
+  var _openSpot = openSpot; openSpot = function (ll) { curTarget = { lat: ll.lat, lon: ll.lng, name: '' }; _openSpot(ll); };
+  var _openFeature = openFeature; openFeature = function (k, el) { var lat = el.lat || (el.bounds ? (el.bounds.minlat + el.bounds.maxlat) / 2 : null), lon = el.lon || (el.bounds ? (el.bounds.minlon + el.bounds.maxlon) / 2 : null); curTarget = lat != null ? { id: 'osm-' + el.type + '-' + el.id, name: (el.tags && (el.tags['name:en'] || el.tags.name)) || '', lat: lat, lon: lon } : null; _openFeature(k, el); };
+  var _openRecord = openRecord; openRecord = function (r) { curTarget = null; _openRecord(r); };
+  // the AI sees family notes too (never homes), marked as unverified
+  var _contextFor = contextFor; contextFor = function (o) {
+    var base = _contextFor(o), ll = o.lat != null ? [o.lat, o.lon] : null, ids = (o.places || []).concat((o.areas || []).map(function (x) { return x && x.id; }));
+    var notes = REPORTS.filter(function (r) { return r.cat !== 'home' && ((r.target && ids.indexOf(r.target) >= 0) || (ll && r.lat != null && map.distance(ll, [r.lat, r.lon]) < 1500)); }).slice(0, 8);
+    if (!notes.length) return base;
+    return (base + '\n\nFAMILY REPORTS (added by family members, NOT verified; say so if you use them)\n' + notes.map(function (r) { return '- ' + r.title + (r.when ? ' (' + r.when + ')' : '') + ': ' + r.text.slice(0, 500) + ' [' + HOW[r.how] + (r.src ? '; source: ' + r.src : '') + ']'; }).join('\n')).slice(0, 16000);
+  };
+
+  // the form
+  var repState = {};
+  REPORT_CATS.forEach(function (c) {
+    $('rep-cats').appendChild(h('button', { type: 'button', 'data-k': c.k, 'aria-pressed': 'false', style: '--c:' + c.c, onclick: function () { pickCat(c.k); } }, [h('i'), c.t]));
+  });
+  function pickCat(k) { repState.cat = k; document.querySelectorAll('#rep-cats button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === k ? 'true' : 'false'); }); $('rep-private').hidden = k !== 'home'; }
+  function openReportForm(o) {
+    if (!canReport) { status('Adding to the map works on the online, password-protected version.', 5000); return; }
+    repState = Object.assign({ cat: '' }, repState.keep || {}, o || {});
+    if (repState.lat == null) { startPick(); return; }
+    $('rep-where').innerHTML = '';
+    $('rep-where').appendChild(h('span', { text: repState.targetName ? 'About: ' + repState.targetName : 'Location' }));
+    $('rep-where').appendChild(h('span', { text: repState.lat.toFixed(5) + ', ' + repState.lon.toFixed(5) }));
+    $('rep-by').value = store.get('repBy', '');
+    pickCat(repState.cat || '');
+    $('rep-msg').textContent = '';
+    $('report').hidden = false; setTimeout(function () { $('rep-name').focus(); }, 30);
+  }
+  function closeReportForm() { $('report').hidden = true; }
+  var repPicking = false;
+  function startPick() {
+    closeReportForm(); repPicking = true; $('pick-banner').hidden = false; document.body.classList.add('picking');
+    if (!DESKTOP.matches) { closePanel('sheet'); closePanel('drawer'); }
+  }
+  function stopPick() { repPicking = false; $('pick-banner').hidden = true; document.body.classList.remove('picking'); }
+  map.on('click', function (e) { if (!repPicking) return; stopPick(); repState.lat = e.latlng.lat; repState.lon = e.latlng.lng; openReportForm(repState); });
+  $('pick-cancel').onclick = stopPick;
+  $('btn-report').onclick = function () { repState = {}; openReportForm(curTarget && $('sheet').classList.contains('open') && !curTarget.isReport ? { lat: curTarget.lat, lon: curTarget.lon, target: curTarget.id || '', targetName: curTarget.name || '' } : {}); };
+  $('rep-close').onclick = closeReportForm;
+  $('rep-move').onclick = function () { repState.keep = { title: $('rep-name').value }; repState.target = ''; repState.targetName = ''; startPick(); };
+  $('report').addEventListener('click', function (e) { if (e.target.id === 'report') closeReportForm(); });
+  $('rep-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!repState.cat) { $('rep-msg').textContent = 'Pick what it is first.'; return; }
+    var payload = { cat: repState.cat, title: $('rep-name').value.trim(), when: $('rep-when').value.trim(), text: $('rep-text').value.trim(), how: $('rep-how').value, src: $('rep-src').value.trim(), by: $('rep-by').value.trim(), lat: repState.lat, lon: repState.lon, target: repState.target || '', targetName: repState.targetName || '' };
+    if (!payload.title || !payload.text) { $('rep-msg').textContent = 'Add a title and what you know.'; return; }
+    store.set('repBy', payload.by);
+    $('rep-save').disabled = true; $('rep-msg').textContent = 'Saving…';
+    relay(store.get('code', ''), { report: payload }).then(function (j) {
+      mine[j.report.id] = j.token; store.set('myReports', mine);
+      REPORTS.unshift(j.report); drawReports();
+      ['rep-name', 'rep-when', 'rep-text', 'rep-src'].forEach(function (id) { $(id).value = ''; });
+      closeReportForm(); repState = {};
+      if (!inputs.reports.checked) inputs.reports.click();
+      openReport(j.report); status('Added to the map. Thank you.', 4000);
+    }).catch(function (err) { $('rep-msg').textContent = 'Could not save: ' + err.message; })
+      .then(function () { $('rep-save').disabled = false; });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (repPicking) stopPick(); else if (!$('report').hidden) closeReportForm(); } });
+  if (!canReport) $('btn-report').title = 'Adding to the map works on the online version';
+
   /* ---------- start ---------- */
   setSize(store.get('size', 'normal'));
-  setBase(store.get('base', 'dark'));
+  setBase(store.get('base2', document.documentElement.classList.contains('dark') ? 'dark' : 'light'));
   refresh();
   refreshOSM();
   hud(map.getCenter());
   if (DESKTOP.matches) openPanel('drawer');
   maybeWelcome();
+  setTheme(store.get('theme', 'light'), true);
+  loadReports();
   var code = store.get('code', '');
   if (CFG.aiEndpoint && code) relay(code, { status: true }).catch(function () {});
 })();

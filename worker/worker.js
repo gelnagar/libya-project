@@ -343,6 +343,11 @@ async function api(request, env, url) {
     if (!env.OWNER_CODE || norm(request.headers.get('X-Owner-Code')) !== norm(env.OWNER_CODE)) { await noteFail(env, ipo); return json({ error: 'Wrong owner password' }, 401, cors); }
     if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
     if (body.done) { await env.ATLAS_KV.delete(String(body.done)); return json({ ok: true }, 200, cors); }
+    if (body.removeReport) {
+      let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
+      await env.ATLAS_KV.put('reports:v1', JSON.stringify(reps.filter((x) => x.id !== String(body.removeReport))));
+      return json({ ok: true }, 200, cors);
+    }
     const list = await env.ATLAS_KV.list({ prefix: 'req:', limit: 200 });
     const items = [];
     for (const k of list.keys) {
@@ -350,7 +355,8 @@ async function api(request, env, url) {
       if (v) { try { items.push({ key: k.name, ...JSON.parse(v) }); } catch {} }
     }
     items.sort((a, b) => (b.at || 0) - (a.at || 0));
-    return json({ items, credit: await creditInfo(env) }, 200, cors);
+    let reports = []; try { reports = (JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []).map(({ tk, ...x }) => x).reverse(); } catch {}
+    return json({ items, reports, credit: await creditInfo(env) }, 200, cors);
   }
 
   /* ----- everything else needs the family password ----- */
@@ -377,6 +383,46 @@ async function api(request, env, url) {
     if (!item.title && !item.details) return json({ error: 'Empty request' }, 400, cors);
     await env.ATLAS_KV.put('req:' + now + '-' + Math.random().toString(36).slice(2, 8), JSON.stringify(item));
     return json({ ok: true }, 200, cors);
+  }
+
+  /* ----- family reports: places and notes added by family members ----- */
+  if (body.reports || body.report || body.reportDelete) {
+    if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
+    const KEY = 'reports:v1';
+    let list = [];
+    try { list = JSON.parse(await env.ATLAS_KV.get(KEY)) || []; } catch { list = []; }
+    const hash = async (t) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(t || ''))))].map((b) => b.toString(16).padStart(2, '0')).join('');
+    if (body.report) {
+      const r = body.report;
+      const CATS = ['military', 'checkpoint', 'prison', 'security', 'event', 'landmark', 'home', 'other'];
+      const lat = Number(r.lat), lon = Number(r.lon);
+      const placed = Number.isFinite(lat) && Number.isFinite(lon) && lat > 30 && lat < 35 && lon > 10 && lon < 16;
+      const item = { id: now.toString(36) + Math.random().toString(36).slice(2, 7), at: now,
+        cat: CATS.includes(r.cat) ? r.cat : 'other', title: clip(r.title, 140), when: clip(r.when, 60), text: clip(r.text, 3000),
+        how: ['saw', 'family', 'read', 'unsure'].includes(r.how) ? r.how : 'unsure', src: clip(r.src, 400), by: clip(r.by, 60),
+        lat: placed ? Math.round(lat * 1e5) / 1e5 : null, lon: placed ? Math.round(lon * 1e5) / 1e5 : null,
+        target: clip(r.target, 80), targetName: clip(r.targetName, 140) };
+      if (!item.title || !item.text) return json({ error: 'Add a title and what you know.' }, 400, cors);
+      if (!placed && !item.target) return json({ error: 'Pick a place on the map first.' }, 400, cors);
+      const token = [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, '0')).join('');
+      item.tk = await hash(token);
+      list.push(item);
+      if (list.length > 3000) list = list.slice(-3000);
+      await env.ATLAS_KV.put(KEY, JSON.stringify(list));
+      const { tk, ...pub } = item;
+      return json({ ok: true, report: pub, token }, 200, cors);
+    }
+    if (body.reportDelete) {
+      const id = String(body.reportDelete.id || ''), t = await hash(body.reportDelete.token);
+      const isOwner = env.OWNER_CODE && norm(request.headers.get('X-Owner-Code')) === norm(env.OWNER_CODE);
+      const i = list.findIndex((x) => x.id === id);
+      if (i < 0) return json({ error: 'Not found' }, 404, cors);
+      if (!isOwner && list[i].tk !== t) return json({ error: 'Only the person who added it can remove it.' }, 403, cors);
+      list.splice(i, 1);
+      await env.ATLAS_KV.put(KEY, JSON.stringify(list));
+      return json({ ok: true }, 200, cors);
+    }
+    return json({ reports: list.map(({ tk, ...x }) => x) }, 200, cors);
   }
 
   /* ----- chat guide: one step of the agent loop ----- */

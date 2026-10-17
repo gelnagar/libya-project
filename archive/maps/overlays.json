@@ -8,7 +8,48 @@
   "page": "https://maps.princeton.edu/catalog/princeton-zk51vj17s",
   "url": "https://figgy.princeton.edu/downloads/0aa70729-22a2-40ab-b2e1-657c02c5f093/file/7040120d-b080-408a-8ea9-34a6df94fa09",
   "license": "U.S. government work, public domain",
-  "bbox": [13.15, 32.8667, 13.2167, 32.90],
-  "zooms": "12-17"
+  "bbox": [
+   13.15,
+   32.8667,
+   13.2167,
+   32.9
+  ],
+  "zooms": "12-17",
+  "crops": [
+   [
+    0,
+    9800,
+    1500
+   ],
+   [
+    13246,
+    9800,
+    1500
+   ],
+   [
+    6600,
+    0,
+    1400
+   ],
+   [
+    6600,
+    9800,
+    1400
+   ]
+  ],
+  "gcps_found": {
+   "nw": [
+    629,
+    535,
+    "13°09'29\"E",
+    "32°54'59\"N"
+   ],
+   "ne": [
+    14154,
+    613,
+    "13°13'37\"E",
+    "32°54'36\"N"
+   ]
+  }
  }
 ]

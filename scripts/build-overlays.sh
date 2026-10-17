@@ -28,6 +28,10 @@ jq -c '.[]' archive/maps/overlays.json | while read -r m; do
     gdal_translate -q -of PNG -srcwin 0 $((H-c)) $c $c "work/$id.rgb.tif" "archive/maps/preview/$id-sw.png"
     gdal_translate -q -of PNG -srcwin $((W-c)) $((H-c)) $c $c "work/$id.rgb.tif" "archive/maps/preview/$id-se.png"
     echo "{\"id\":\"$id\",\"width\":$W,\"height\":$H,\"crop\":$c}" > "archive/maps/preview/$id.json"
+    jq -c '.crops // [] | .[]' <<<"$m" | while read -r cr; do
+      x=$(jq '.[0]' <<<"$cr"); y=$(jq '.[1]' <<<"$cr"); s=$(jq '.[2]' <<<"$cr")
+      gdal_translate -q -of PNG -srcwin $x $y $s $s "work/$id.rgb.tif" "archive/maps/preview/$id-crop-$x-$y.png"
+    done
     continue
   fi
   in="work/$id.rgb.tif"

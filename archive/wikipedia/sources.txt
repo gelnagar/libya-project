@@ -1,0 +1,208 @@
+# Wikipedia articles to keep in the archive. "en|Title", "ar|Title", "en|search:words", "en|category:Name"
+en|Tripoli, Libya
+en|History of Tripoli, Libya
+en|Old City of Tripoli
+en|Martyrs' Square, Tripoli
+en|Red Castle of Tripoli
+en|Bab al-Azizia
+en|Abu Salim prison
+en|Abu Salim prison massacre
+en|1986 United States bombing of Libya
+en|Operation El Dorado Canyon
+en|Wheelus Air Base
+en|Mitiga International Airport
+en|Tripoli International Airport
+en|Tajura
+en|Tajoura Nuclear Research Center
+en|Janzour
+en|Souq al-Juma
+en|Gargaresh
+en|Ain Zara
+en|Battle of Ain Zara
+en|Hay al-Andalus
+en|Zawiyat al-Dahmani
+en|Fashloom
+en|Qasr bin Ghashir
+en|Battle and massacre at Shar al-Shatt
+en|University of Tripoli
+en|Tripoli Cathedral
+en|Algeria Square Mosque
+en|Gurgi Mosque
+en|Ahmed Pasha Karamanli Mosque
+en|Draghut Mosque
+en|Arch of Marcus Aurelius, Tripoli
+en|Tripoli International Fair
+en|Tripoli Zoo
+en|Corinthia Hotel Tripoli
+en|Khamis Brigade
+en|Yarmuk massacre
+en|Libyan Navy
+en|Libyan Air Force
+en|Libyan Army (1951–2011)
+en|1969 Libyan coup d'état
+en|Revolutionary Command Council (Libya)
+en|Libyan Cultural Revolution
+en|Revolutionary committees
+en|Popular committees
+en|Green Book (Muammar Gaddafi)
+en|Jamahiriya
+en|Muammar Gaddafi
+en|Abdessalam Jalloud
+en|Human rights in Libya under Muammar Gaddafi
+en|Human rights violations during the Gaddafi regime
+en|Libyan dissidents assassination campaign
+en|1984 St James's Square shooting
+en|Murder of Yvonne Fletcher
+en|National Front for the Salvation of Libya
+en|1984 Bab al-Azizia attack
+en|Libyan Islamic Fighting Group
+en|Chadian–Libyan war
+en|Toyota War
+en|Libyan–Egyptian war
+en|Gulf of Sidra incident (1981)
+en|Action in the Gulf of Sidra (1986)
+en|1986 Berlin discotheque bombing
+en|Pan Am Flight 103
+en|UTA Flight 772
+en|Libya–United States relations
+en|Libya–United Kingdom relations
+en|Italy–Libya relations
+en|Italian settlers in Libya
+en|History of the Jews in Libya
+en|1967 Tripoli pogrom
+en|Great Man-Made River
+en|Libyan Arab Jamahiriya
+en|Kingdom of Libya
+en|Idris of Libya
+en|Libyan Arab Republic
+en|Economy of Libya
+en|Libyan National Oil Corporation
+en|Nationalization of oil in Libya
+en|Mansour Rashid El-Kikhia
+en|Omar Mukhtar
+en|Italian Libya
+en|Italian Tripolitania
+en|Italo-Turkish War
+en|Tripoli Grand Prix
+en|Mellaha Air Base
+en|Tripoli Harbour
+en|Port of Tripoli
+en|Libya Hilton
+en|Bab al-Bahr
+en|Souq al-Mushir
+en|Galleria De Bono
+en|Tripoli Castle Museum
+en|Assaraya al-Hamra
+en|Libyan Broadcasting Corporation
+en|Jamahiriya News Agency
+en|Al Zahf Al Akhdar
+en|Libya: A Country Study
+en|Mustafa Ben Halim
+en|Wanis al-Qaddafi
+en|Libyan Arab Airlines
+en|Libyan Arab Airlines Flight 114
+en|Abd al-Fattah Yunis
+en|Abdullah Senussi
+en|Moussa Koussa
+en|Ahmed Gaddaf al-Dam
+en|Libyan Intelligence Service
+en|Jamahiriya Security Organization
+en|People's Bureau
+en|1980 Libyan People's Bureau
+en|1979 Tripoli United States embassy attack
+en|Embassy of the United States, Tripoli
+en|Libyan People's Bureau, London
+en|Hana Gaddafi
+en|Rabta chemical weapons plant
+en|Tarhuna chemical weapons plant
+en|Libya and weapons of mass destruction
+en|Abu Nidal Organization
+en|Rome and Vienna airport attacks
+en|Imam Musa al-Sadr
+en|Disappearance of Musa al-Sadr
+en|Ali Abdussalam Treki
+en|Libya at the Olympics
+en|11 June Stadium
+en|Tripoli Stadium
+en|category:History of Tripoli, Libya
+en|category:Buildings and structures in Tripoli, Libya
+en|category:Neighbourhoods of Tripoli, Libya
+en|category:Populated places in Tripoli District, Libya
+en|category:Military installations of Libya
+en|category:Prisons in Libya
+en|category:Mosques in Tripoli, Libya
+en|category:1986 United States bombing of Libya
+en|category:Libya–United States relations
+en|category:Political repression in Libya
+en|category:Terrorism in Libya
+en|category:Libyan dissidents
+en|category:Mass murder in Libya
+en|category:Conflicts in 1986
+en|search:Tripoli Libya 1970s
+en|search:Tripoli Libya 1980s Gaddafi
+en|search:Tripoli Libya neighbourhood
+en|search:Tripoli Libya military camp
+en|search:Tripoli Libya prison
+en|search:Libya public execution 1984
+en|search:Libya 1977 executions students
+en|search:Libya Revolutionary Committees Tripoli
+en|search:Libyan Jamahiriya security services
+en|search:Tripoli Libya massacre
+en|search:Tripoli Libya bombing 1986 civilian
+en|search:Libya 1970 expulsion Italians
+en|search:Libya oil nationalization 1973
+en|search:Libya Chad war 1987
+en|search:Libyan opposition 1980s
+ar|طرابلس (ليبيا)
+ar|المدينة القديمة (طرابلس)
+ar|ميدان الشهداء (طرابلس)
+ar|باب العزيزية
+ar|سجن أبو سليم
+ar|مذبحة سجن أبو سليم
+ar|الغارة الأمريكية على ليبيا 1986
+ar|قاعدة معيتيقة الجوية
+ar|مطار امعيتيقة الدولي
+ar|تاجوراء
+ar|جنزور
+ar|سوق الجمعة
+ar|قرقارش
+ar|عين زارة
+ar|حي الأندلس
+ar|أبو سليم
+ar|الهضبة الخضراء
+ar|فشلوم
+ar|بن عاشور
+ar|الظهرة (طرابلس)
+ar|زاوية الدهماني
+ar|قصر بن غشير
+ar|جامعة طرابلس
+ar|السراي الحمراء
+ar|اللجان الثورية
+ar|الثورة الثقافية في ليبيا
+ar|انقلاب 1969 في ليبيا
+ar|مجلس قيادة الثورة (ليبيا)
+ar|معمر القذافي
+ar|محاولة اقتحام باب العزيزية 1984
+ar|الجبهة الوطنية لإنقاذ ليبيا
+ar|السابع من أبريل (ليبيا)
+ar|إعدامات السابع من أبريل
+ar|الصادق الشويهدي
+ar|الحرب الليبية التشادية
+ar|الحرب الليبية المصرية
+ar|كتيبة خميس
+ar|مذبحة اليرموك
+ar|معسكر اليرموك
+ar|البحرية الليبية
+ar|search:طرابلس معسكر
+ar|search:معسكر طرابلس القذافي
+ar|search:أحياء طرابلس ليبيا
+ar|search:سجن طرابلس القذافي
+ar|search:إعدام علني ليبيا 1984
+ar|search:طرابلس الغارة الأمريكية 1986
+ar|search:ثورة الفاتح طرابلس 1969
+ar|search:الشنق في الجامعة ليبيا
+ar|category:أحياء طرابلس (ليبيا)
+ar|category:تاريخ طرابلس (ليبيا)
+ar|category:مباني ومنشآت في طرابلس (ليبيا)
+ar|category:سجون ليبيا
+ar|category:قواعد عسكرية في ليبيا

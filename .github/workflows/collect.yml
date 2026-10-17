@@ -1,0 +1,22 @@
+name: Collect open sources
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: [archive/wikipedia/sources.txt, scripts/collect-wikipedia.mjs, .github/workflows/collect.yml]
+permissions: { contents: write }
+concurrency: { group: collect, cancel-in-progress: false }
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/collect-wikipedia.mjs
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/wikipedia
+          if git diff --cached --quiet; then echo "No changes"; else git commit -m "Collect open sources" && git pull --rebase && git push; fi

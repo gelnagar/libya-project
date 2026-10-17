@@ -60,3 +60,4 @@ Band 1 Block=14746x512 Type=Byte, ColorInterp=Palette
    37: 122,106,106,255
    38: 188,172,147,255
    39: 139,131,131,255
+work/ams-1962.src: TIFF image data, little-endian, direntries=22

@@ -37,7 +37,8 @@ jq -c '.[]' archive/maps/overlays.json | while read -r m; do
   in="work/$id.rgb.tif"
   if [ "$ngcp" -ge 3 ]; then
     args=$(jq -r '.gcps[] | "-gcp \(.[0]) \(.[1]) \(.[2]) \(.[3])"' <<<"$m" | tr '\n' ' ')
-    gdal_translate -q -a_srs EPSG:4326 $args "$in" "work/$id.gcp.tif"
+    gsrs=$(jq -r '.gcp_srs // "EPSG:4326"' <<<"$m")
+    gdal_translate -q -a_srs "$gsrs" $args "$in" "work/$id.gcp.tif"
     in="work/$id.gcp.tif"
     order=$([ "$ngcp" -ge 6 ] && echo 2 || echo 1)
     gdalwarp -q -order $order -t_srs EPSG:3857 -r bilinear -dstalpha -overwrite "$in" "work/$id.3857.tif"
@@ -45,9 +46,7 @@ jq -c '.[]' archive/maps/overlays.json | while read -r m; do
     gdalwarp -q -t_srs EPSG:3857 -r bilinear -dstalpha -overwrite "$in" "work/$id.3857.tif"
   fi
   rm -rf "public/maps/$id"
-  gdal2tiles.py -q --xyz -z "$zooms" -w none -r bilinear --processes=2 "work/$id.3857.tif" "public/maps/$id"
-  # keep repository size sensible: convert tiles to palette PNGs if pngquant exists
-  command -v pngquant >/dev/null && find "public/maps/$id" -name '*.png' -exec pngquant --force --skip-if-larger --ext .png 128 {} \; || true
+  gdal2tiles.py -q --xyz -z "$zooms" -w none -r bilinear --tiledriver=WEBP --webp-quality=80 --processes=2 "work/$id.3857.tif" "public/maps/$id"
   gdalinfo -json "work/$id.3857.tif" | jq '.wgs84Extent' > "public/maps/$id/extent.json" || true
   find "public/maps/$id" -name '*.png' | wc -l > "public/maps/$id/done"
 done

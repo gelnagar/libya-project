@@ -184,6 +184,7 @@
     zoomClasses();
     drawTimeline();
     declutter();
+    if (typeof syncEraChips === 'function') syncEraChips();
     if (selected) markSelected(selected);
     save();
   }
@@ -310,13 +311,24 @@
     });
     $('old-maps').appendChild(toggleRow('swipe', 'Compare with today', 'Drag the handle across the map: old map on the left, today on the right', false, function (v) { setSwipe(v); }));
   }
-  Object.keys(PERIODS).forEach(function (k) {
-    var b = h('button', { 'aria-pressed': periods[k] ? 'true' : 'false', 'data-k': k, text: PERIODS[k] });
-    b.addEventListener('click', function () { periods[k] = !periods[k]; b.setAttribute('aria-pressed', periods[k] ? 'true' : 'false'); refresh(); });
-    $('periods').appendChild(b);
-  });
+  // Time period: the same historical periods as the timeline; one at a time, or all years
+  periods.pre = periods.main = periods.post = true;
+  function buildEraChips() {
+    var box = $('periods'); box.innerHTML = '';
+    box.appendChild(h('button', { 'data-era': 'all', 'aria-pressed': 'true', text: 'All years', onclick: function () { stopPlay(); timeRange = null; timeYear = null; refresh(); } }));
+    ERAS.forEach(function (e) {
+      box.appendChild(h('button', { 'data-era': e[0] + '-' + e[1], 'aria-pressed': 'false', title: e[2] + ', ' + e[0] + '–' + e[1], onclick: function () { stopPlay(); timeYear = null; timeRange = timeRange && timeRange[0] === e[0] && timeRange[1] === e[1] ? null : [e[0], e[1]]; refresh(); } },
+        [e[2], h('small', { text: e[0] + '–' + (e[1] === 2026 ? 'today' : e[1]) })]));
+    });
+  }
+  function syncEraChips() {
+    var key = timeRange ? timeRange[0] + '-' + timeRange[1] : 'all';
+    document.querySelectorAll('#periods button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.era === key ? 'true' : 'false'); });
+  }
+  setTimeout(buildEraChips, 0);
   function ensureVisible(s) {
     var changed = false;
+    if ((timeRange && !(span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1])) || (timeYear != null && span(s)[0] > timeYear)) { timeRange = null; timeYear = null; stopPlay(); changed = true; }
     if (!active[s.layer]) { active[s.layer] = true; inputs[s.layer].checked = true; changed = true; if (typeof syncGroups === 'function') setTimeout(syncGroups, 0); }
     if (!inPeriod(s)) {
       var r = span(s), k = r[0] < 1969 ? 'pre' : r[0] > 1989 ? 'post' : 'main';

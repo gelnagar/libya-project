@@ -307,3 +307,9 @@ html .trow .tt b { font-family: var(--f-ui); font-weight: 600; }
 html .trow .td, html .trow .tt small { color: var(--fy-muted); }
 .lbl-hide { visibility: hidden !important; }
 #timeline .tl-era { font-size: 10px; }
+/* time period chips = the timeline's historical periods */
+#periods { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+html #periods button { min-height: 40px; padding: 4px 8px; text-align: left; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; line-height: 1.2; font-size: .85em; }
+#periods button small { font-weight: 400; color: var(--fy-muted); font-size: .85em; }
+#periods button[aria-pressed="true"] small { color: var(--fy-sel-text); }
+#periods button[data-era="all"] { grid-column: 1 / -1; min-height: 34px; }

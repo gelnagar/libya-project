@@ -99,8 +99,8 @@
   "r": 0.15,
   "summary": "A four-storey trauma hospital in the Abu Salim district, the site of one of the worst scenes of the 2011 Battle of Tripoli.",
   "era": "On 25 August 2011 MSF found dozens of bodies in the compound and 22 patients and five staff trapped by fighting; the two most critical patients were moved to Tripoli Medical Centre. Reporters on 26 August found about 41 decomposing bodies (21 in one room, 20 in the courtyard); MSF reported over 200, and Airwars records estimates between 39 and 200. Pro-Gaddafi snipers were reported to have used the building until rebels secured it. In the 13 November 2013 Gharghour shootings, Human Rights Watch named Abu Salim Trauma Hospital as one of the hospitals that received the wounded; officials counted 43 dead and 460 wounded in all.",
-  "today": "Its emergency departments were again busy during the 2018 and 2019-2020 fighting in southern Tripoli, but no hospital-specific figures were found.",
-  "uncertain": "How and when the 2011 victims died is not established by the sources; reports describe both rebels and loyalists among them. The 2018-2020 line is general context, not a sourced hospital event.",
+  "today": "No post-2013 hospital-specific events were found.",
+  "uncertain": "How and when the 2011 victims died is not established by the sources; reports describe both rebels and loyalists among them.",
   "sources": [
    {
     "t": "Gulf News - Piles of dead bodies at empty Tripoli hospital",
@@ -215,8 +215,8 @@
   "lon": 13.26886,
   "r": 0.2,
   "summary": "A hospital in the Mitiga area on the eastern edge of Tripoli, near the former Wheelus air base.",
-  "era": "On 26 August 2011, during the Battle of Tripoli, an eight-person MSF team began supporting 'Matiga hospital', where more than 60 patients including frontline wounded were being treated. MSF donated anaesthetics, antibiotics, dressings and surgical equipment.",
-  "today": "No current-status source found.",
+  "era": "",
+  "today": "History: On 26 August 2011, during the Battle of Tripoli, an eight-person MSF team began supporting 'Matiga hospital', where more than 60 patients including frontline wounded were being treated. MSF donated anaesthetics, antibiotics, dressings and surgical equipment. No current-status source found.",
   "uncertain": "MSF's 'Matiga hospital' is matched to this OSM-mapped facility by name only.",
   "sources": [
    {
@@ -462,8 +462,8 @@
   "lon": 13.22167,
   "r": 0.3,
   "summary": "The first engineering faculty in Libya, now part of the University of Tripoli campus in the south-east of the city.",
-  "era": "It was founded as the Faculty of High Technical Studies under a UNESCO programme and grew from four departments to fourteen, becoming a faculty of the University of Tripoli when the university was created in 1973.",
-  "today": "It remains a major faculty of the University of Tripoli.",
+  "era": "",
+  "today": "History: It was founded as the Faculty of High Technical Studies under a UNESCO programme and grew from four departments to fourteen, becoming a faculty of the University of Tripoli when the university was created in 1973. It remains a major faculty of the University of Tripoli.",
   "uncertain": "Position is the centre of four OSM-mapped engineering department points (chemical, computer, nuclear, metals and materials); the faculty building outline is not mapped.",
   "sources": [
    {
@@ -589,8 +589,8 @@
   "lon": null,
   "r": 0.5,
   "summary": "A distance-learning university based in Tripoli, established in 1987.",
-  "era": "Established in 1987 as an education foundation affiliated with the Ministry of Higher Education, it began scientific activity in the 1989/1990 academic year. Its mission was to spread distance learning without limits of place, time or age.",
-  "today": "It lists itself as a member of the Arab Universities Union and the Arab Network for Open Education Learning.",
+  "era": "",
+  "today": "History: Established in 1987 as an education foundation affiliated with the Ministry of Higher Education, it began scientific activity in the 1989/1990 academic year. Its mission was to spread distance learning without limits of place, time or age. It lists itself as a member of the Arab Universities Union and the Arab Network for Open Education Learning.",
   "uncertain": "No street address or coordinates found; only a Tripoli P.O. box was listed. Naser University and Libyan International Medical University could not be sourced (the latter is generally a Benghazi institution).",
   "sources": [
    {
@@ -649,8 +649,8 @@
   "lon": null,
   "r": 0.5,
   "summary": "An 8,000-capacity football ground in Tripoli, home of Al-Madina SC.",
-  "era": "A timeline of Tripoli dates its opening to 2000. Al-Madina SC was founded on 29 October 1953 and is the only Libyan club never relegated.",
-  "today": "Al-Madina plays in the Libyan Premier League western group in 2025-26.",
+  "era": "",
+  "today": "History: A timeline of Tripoli dates its opening to 2000. Al-Madina SC was founded on 29 October 1953 and is the only Libyan club never relegated. Al-Madina plays in the Libyan Premier League western group in 2025-26.",
   "uncertain": "No coordinates found. No sources were found for an Al-Ahli Tripoli club ground other than the national stadium, or for an indoor basketball arena.",
   "sources": [
    {
@@ -677,8 +677,8 @@
   "lon": 13.17556,
   "r": 0.1,
   "summary": "An Ottoman-style mosque in Tripoli's old city, completed in 1834 and funded by naval captain Mustafa Gurgi.",
-  "era": "No Gaddafi-era events were found for this mosque. Wikipedia describes a marble interior, fifteen domes and a 25-metre minaret, with the founder buried in a courtyard mausoleum.",
-  "today": "It is an active mosque beside the Arch of Marcus Aurelius in the Bab al-Bahr quarter.",
+  "era": "",
+  "today": "History: No Gaddafi-era events were found for this mosque. Wikipedia describes a marble interior, fifteen domes and a 25-metre minaret, with the founder buried in a courtyard mausoleum. It is an active mosque beside the Arch of Marcus Aurelius in the Bab al-Bahr quarter.",
   "uncertain": "A scholarly paper dates the foundation inscription to 1833-1834; Wikipedia's text on the ruling pasha is confusing.",
   "sources": [
    {
@@ -704,8 +704,8 @@
   "lon": null,
   "r": 0.5,
   "summary": "An 18th-century mosque complex in Tripoli's old city founded by Ahmed Karamanli, with a madrasa and tombs of the dynasty.",
-  "era": "Construction began in 1736 (inscriptions suggest 1737-38). No Gaddafi-era events were found.",
-  "today": "It was vandalised in 2014 during the civil war: ceramic tiles and marble decoration were damaged, and UNESCO condemned the attack. It is listed as active.",
+  "era": "",
+  "today": "History: Construction began in 1736 (inscriptions suggest 1737-38). No Gaddafi-era events were found. It was vandalised in 2014 during the civil war: ceramic tiles and marble decoration were damaged, and UNESCO condemned the attack. It is listed as active.",
   "uncertain": "No coordinates found.",
   "sources": [
    {
@@ -732,8 +732,8 @@
   "lon": 13.34028,
   "r": 0.1,
   "summary": "A mid-16th-century Ottoman mosque in Tajoura, east of Tripoli, founded by the first Ottoman governor Murad Agha.",
-  "era": "Declared a historic monument by the Italian administration on 12 April 1922. In 2011, before the civil war began, anti-Gaddafi protests were held outside it.",
-  "today": "Murad's tomb outside the mosque was destroyed by an explosion in 2013, condemned by Libya's prime minister Ali Zeidan and UNESCO. Its present condition was not stated.",
+  "era": "",
+  "today": "History: Declared a historic monument by the Italian administration on 12 April 1922. In 2011, before the civil war began, anti-Gaddafi protests were held outside it. Murad's tomb outside the mosque was destroyed by an explosion in 2013, condemned by Libya's prime minister Ali Zeidan and UNESCO. Its present condition was not stated.",
   "uncertain": "Construction date is given as 1552 or about 1553-1556.",
   "sources": [
    {
@@ -756,8 +756,8 @@
   "lon": 13.16315,
   "r": 0.15,
   "summary": "A Commonwealth War Graves Commission cemetery with 1,369 Second World War burials, in the Mansura district.",
-  "era": "Tripoli fell to Montgomery's army on 23 January 1943 and became a hospital centre; most burials came from British general hospitals there. The adjacent Italian cemetery was unguarded for years while the British one was reported well kept.",
-  "today": "A rocket fell on the adjacent British cemetery on 31 May 2020. The CWGC says maintenance is limited by conditions in Libya and a major renovation to replace eroded headstones is planned.",
+  "era": "",
+  "today": "History: Tripoli fell to Montgomery's army on 23 January 1943 and became a hospital centre; most burials came from British general hospitals there. The adjacent Italian cemetery was unguarded for years while the British one was reported well kept. A rocket fell on the adjacent British cemetery on 31 May 2020. The CWGC says maintenance is limited by conditions in Libya and a major renovation to replace eroded headstones is planned.",
   "uncertain": "",
   "sources": [
    {
@@ -901,16 +901,15 @@
   "aliases": [
    "Green Square",
    "Independence Square",
-   "Piazza Italia",
-   "Algeria Square"
+   "Piazza Italia"
   ],
   "kind": "landmark",
   "lat": 32.895,
   "lon": 13.18111,
   "r": 0.15,
   "summary": "Tripoli's central square at the bay, beside the Red Castle.",
-  "era": "Piazza Italia under Italy, Independence Square under the monarchy, and Green Square under Gaddafi, named for his Green Book. The Royal Miramare Theatre opposite the Red Castle was demolished after the 1960s to make room for large demonstrations.",
-  "today": "Rebels took it on the night of 21-22 August 2011 and renamed it Martyrs' Square; tens of thousands celebrated there on 31 August and 2 September 2011. It is a commercial centre and tourist site.",
+  "era": "",
+  "today": "History: Piazza Italia under Italy, Independence Square under the monarchy, and Green Square under Gaddafi, named for his Green Book. The Royal Miramare Theatre opposite the Red Castle was demolished after the 1960s to make room for large demonstrations. Rebels took it on the night of 21-22 August 2011 and renamed it Martyrs' Square; tens of thousands celebrated there on 31 August and 2 September 2011. It is a commercial centre and tourist site.",
   "uncertain": "",
   "sources": [
    {
@@ -934,8 +933,8 @@
   "lon": 13.18111,
   "r": 0.15,
   "summary": "The museum inside Tripoli's Red Castle, reopened as the National Museum of Libya in December 2025.",
-  "era": "Reopened to the public in 1988 as the Assaraya Alhamra Museum, also called the Jamahiriya Museum, and held some Gaddafi-related items.",
-  "today": "Closed for security after the 2011 war; rebels entered and damaged a few Gaddafi items, and staff moved the most valuable pieces to another place. It officially reopened on 12 December 2025 as the National Museum of Libya, at first only to school groups.",
+  "era": "",
+  "today": "History: Reopened to the public in 1988 as the Assaraya Alhamra Museum, also called the Jamahiriya Museum, and held some Gaddafi-related items. Closed for security after the 2011 war; rebels entered and damaged a few Gaddafi items, and staff moved the most valuable pieces to another place. It officially reopened on 12 December 2025 as the National Museum of Libya, at first only to school groups.",
   "uncertain": "",
   "sources": [
    {
@@ -983,18 +982,17 @@
  {
   "id": "lb-libyan-studies-centre",
   "name": "Libyan Studies Centre",
-  "ar": "مركز دراسات الجهاد الليبي",
+  "ar": "",
   "aliases": [
-   "Centre for Libyan Studies",
-   "Jihad Centre"
+   "Centre for Libyan Studies"
   ],
   "kind": "government",
   "lat": null,
   "lon": null,
   "r": 0.5,
   "summary": "A research and historical documentation centre in Tripoli that opened in 1978.",
-  "era": "A timeline of Tripoli records that the Libyan Studies Center opened in 1978.",
-  "today": "",
+  "era": "",
+  "today": "History: A timeline of Tripoli records that the Libyan Studies Center opened in 1978.",
   "uncertain": "Only the opening date was found; the Arabic name and the location are not confirmed here. The National Library was not found in the sources.",
   "sources": [
    {
@@ -1048,7 +1046,7 @@
   "r": 0.5,
   "summary": "The US diplomatic mission in Libya, burned by a mob in December 1979 and closed until 2004.",
   "era": "The US had already withdrawn its ambassador in 1972. On 2 December 1979 protesters set fire to the embassy, angry over false claims of US involvement in the seizure of the Grand Mosque in Mecca. The US withdrew its remaining staff and closed the embassy. A US Interests Section returned on 8 February 2004 and became a Liaison Office on 24 June 2004.",
-  "today": "In September 2011 an American flag was raised over the embassy compound in Tripoli. The embassy was later evacuated during the 2014 fighting (not detailed in the sources consulted).",
+  "today": "In September 2011 an American flag was raised over the embassy compound in Tripoli.",
   "uncertain": "OpenStreetMap places the US embassy in the south of the city; the 1979 building may have been in a different place.",
   "sources": [
    {
@@ -1113,8 +1111,8 @@
   "lon": 13.19239,
   "r": 0.5,
   "summary": "Italy's embassy in Tripoli, burned by a mob on 1 May 2011.",
-  "era": "On 1 May 2011, after a NATO strike on Gaddafi's compound, the embassy was burned. Italy had withdrawn its diplomats weeks earlier and blamed the Gaddafi regime for failing to protect foreign missions.",
-  "today": "Italy's ambassador oversaw the 2019-2020 restoration of the Hammangi Italian cemetery. The embassy's current premises were not documented here.",
+  "era": "",
+  "today": "History: On 1 May 2011, after a NATO strike on Gaddafi's compound, the embassy was burned. Italy had withdrawn its diplomats weeks earlier and blamed the Gaddafi regime for failing to protect foreign missions. Italy's ambassador oversaw the 2019-2020 restoration of the Hammangi Italian cemetery. The embassy's current premises were not documented here.",
   "uncertain": "The building burned in 2011 may not be this mapped location. French and Turkish embassies were not researched.",
   "sources": [
    {

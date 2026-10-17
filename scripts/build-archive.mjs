@@ -68,15 +68,22 @@ const shortSource = (r) => {
 };
 
 const out = [], fulltext = new Map();
+let SUMS = {};
+try { SUMS = JSON.parse(await read('archive/records/frus-summaries.json')); } catch {}
 // 1. records files
 for (const f of await list('archive/records')) {
-  if (!f.endsWith('.json')) continue;
+  if (!f.endsWith('.json') || f === 'frus-summaries.json') continue;
   const recs = JSON.parse(await read('archive/records/' + f));
   for (const r of recs) {
     let ft = '';
     if (r.fulltext) { try { ft = await read('archive/fulltext/' + r.id + '.txt'); } catch {} }
     if (typeof r.fulltext === 'string') ft = r.fulltext;
     const rights = RIGHTS[r.rights] || RIGHTS['link-only'];
+    const sm = SUMS[r.id];
+    if (sm && sm.summary) {
+      r.summary = sm.summary + (sm.tripoli_details ? ' Tripoli: ' + sm.tripoli_details : '');
+      r.keywords = [...(r.keywords || []), ...(sm.people || []), ...(sm.topics || [])].filter((x) => typeof x === 'string');
+    }
     out.push({ i: r.id, y: r.type, t: r.title, d: r.date || '', s: shortSource(r), c: r.collection || r.source || '', a: r.archive_ref || undefined, u: r.link || undefined,
       p: tag([r.title, r.summary, ft.slice(0, 30000), (r.places || []).join(' ')].join(' '), r.places), m: r.summary || '', r: r.rights, rt: rights.label,
       rn: r.rights_note || '', f: !!(ft && rights.show), k: r.keywords || undefined });

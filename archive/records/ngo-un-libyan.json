@@ -95,9 +95,12 @@
   "date": "1991-05-31",
   "source": "Amnesty International",
   "collection": "AI Index MDE 19/002/1991",
-  "summary": "Amnesty states that despite the March 1988 amnesty and subsequent legal reforms, at least 467 political prisoners remained detained, some possibly prisoners of conscience. It singles out continuing arbitrary arrest and incommunicado detention and names five cases. Appendices list detainees and outline the legislation used to restrict expression. The catalogue page does not give Tripoli place details; the full PDF should be consulted.",
+  "summary": "Amnesty states that despite the March 1988 amnesty of 400 political prisoners and later legal reforms, at least 467 political prisoners remained held (details on 427), some possibly prisoners of conscience; the catalogue page gives the date 31 May 1991. The full text (a separate PDF copy) lists Tripoli detention places: Abu Salim Prison, Tripoli Central Prison, Judayda prison, a Tripoli military prison and a hospital on al-Zawiya Street. It says 392 people arrested January 1989-April 1990 were reportedly held incommunicado, at least 211 of them in Tripoli and nearby towns after demonstrations at al-Fatih University. It criticises the retained Permanent Revolutionary Court.",
   "places": [
-   "tripoli"
+   "tripoli",
+   "abusalim",
+   "jdeida",
+   "fateh"
   ],
   "link": "https://www.amnesty.org/en/documents/MDE19/002/1991/en/",
   "rights": "link-only",
@@ -220,6 +223,1379 @@
    "abusalim"
   ],
   "link": "https://www.hrw.org/news/2006/06/27/libya-june-1996-killings-abu-salim-prison",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2009-12-repressive-001",
+  "type": "report",
+  "title": "Libya: In Repressive Atmosphere, Pockets of Improvement",
+  "date": "2009-12-12",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2009 (78-page report from a 10-day April 2009 visit)",
+  "summary": "HRW presented its findings at a Tripoli news conference and met the Tripoli Bar Association and Journalists' Syndicate. It says about 500 prisoners were still held by the Internal Security Agency after serving sentences or acquittal, and that Abu Salim and Ain Zara prisons are under the agency's full control. On the 1996 Abu Salim killings (about 1,200 dead, per HRW), it notes offers of up to 200,000 dinars to families who drop claims and a seven-judge investigation panel formed in September 2009. It also reports up to 30 unresolved disappearance cases.",
+  "places": [
+   "tripoli",
+   "abusalim",
+   "ainzara"
+  ],
+  "link": "https://www.hrw.org/news/2009/12/12/libya-repressive-atmosphere-pockets-improvement",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2006-06-independent-inquiry-001",
+  "type": "report",
+  "title": "Libya: 1996 Prison Killings Need Independent Inquiry",
+  "date": "2006-06-27",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2006",
+  "summary": "HRW calls for an independent inquiry into the 28-29 June 1996 killings at Abu Salim prison, Tripoli. A former kitchen worker estimated up to 1,200 killed from meal counts, and said prisoners revolted on 28 June, killing a guard, before security forces fired on courtyards the next day. HRW could not verify the toll. The government had acknowledged killings, and the internal security chief said in May 2005 that an inquiry was open and that over 400 prisoners escaped in four break-outs. A Swiss-based group counted 112 families notified of deaths and 238 who had lost contact.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.hrw.org/news/2006/06/27/libya-1996-prison-killings-need-independent-inquiry",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-hrc-1998-ccpr-79-add101-001",
+  "type": "report",
+  "title": "Concluding Observations of the Human Rights Committee: Libyan Arab Jamahiriya (CCPR/C/79/Add.101)",
+  "date": "1998-11-02",
+  "source": "UN Human Rights Committee",
+  "collection": "UN treaty body concluding observations (mirrored by University of Minnesota Human Rights Library)",
+  "summary": "Concluding observations adopted 2 November 1998 after the third periodic report was considered on 27 October 1998. The Committee expresses concern about reported extrajudicial killings, arbitrary arrest and prolonged detention without trial, vague death-penalty provisions, torture, flogging and amputation, and the 1997 Charter of Honour permitting collective punishment. It also questions judicial independence, long remand periods, the Revolutionary Security Courts, and press limits under the 1972 Publication Act. It does not name Tripoli places.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://hrlibrary.umn.edu/hrcommittee/libya1998.html",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "icc-2014-senussi-appeals-001",
+  "type": "legal",
+  "title": "Al-Senussi case: Appeals Chamber confirms case is inadmissible before ICC",
+  "date": "2014-07-24",
+  "source": "International Criminal Court",
+  "collection": "ICC press releases, Situation in Libya",
+  "summary": "ICC Appeals Chamber unanimously upheld the October 2013 finding that the case against Abdullah Al-Senussi is inadmissible because Libya is genuinely prosecuting him. The ICC warrant (27 June 2011) alleged murder and persecution as crimes against humanity committed through state forces across Libya from 15 to 28 February 2011. Libya had challenged admissibility on 2 April 2013. The release does not mention Tripoli sites.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.icc-cpi.int/news/al-senussi-case-appeals-chamber-confirms-case-inadmissible-icc",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-2018-ohchr-unsmil-detention-001",
+  "type": "report",
+  "title": "UN report documents horrors faced by thousands held in arbitrary detention in Libya",
+  "date": "2018-04",
+  "source": "UN News (OHCHR/UNSMIL report)",
+  "collection": "UN News",
+  "summary": "UN News summarises an OHCHR/UNSMIL report saying armed groups across Libya hold thousands in arbitrary detention with torture and other abuse, often based on tribe, family or perceived politics. About 6,500 people were in official prisons, with thousands more in nominally state or militia-run facilities, one large western facility holding about 2,600. The news item names no specific Tripoli facility; the exact day is not shown in the extract.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://news.un.org/feed/view/en/story/2018/04/1006981",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "mee-2018-04-torture-prisons-001",
+  "type": "news",
+  "title": "Torture and arbitrary detention widespread across Libyan prisons: UN",
+  "date": "2018-04-10",
+  "source": "Middle East Eye",
+  "collection": "News (coverage of OHCHR/UNSMIL report)",
+  "summary": "Reports the UN finding that torture is common in Libyan detention, including facilities linked to the UN-backed government. It says Mitiga facility, at the Tripoli airbase and run by the Special Deterrence Force (Rada), held 2,600 detainees at end of November 2017 according to the prosecutor general's office, and notes about 6,500 in official prisons. Abu Salim jail is mentioned only in a photo caption about a mural.",
+  "places": [
+   "tripoli",
+   "mitiga",
+   "abusalim"
+  ],
+  "link": "https://www.middleeasteye.net/news/torture-and-arbitrary-detention-widespread-across-libyan-prisons-un",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "sl-1962-law-19-prisons-001",
+  "type": "law",
+  "title": "Law on Prisons (Law No. 19 of 1962)",
+  "date": "1962-05-01",
+  "source": "Kingdom of Libya (via DCAF security-legislation.ly)",
+  "collection": "security-legislation.ly (unofficial DCAF English translation)",
+  "summary": "Monarchy-era prisons law issued by King Idris I (1 May 1962; no gazette issue number in the translation). It sets principal, central and special prisons, written admission orders, a separation of Category A prisoners (including political offenders) from others, and doctors, visits, discipline and judicial inspection. It limits firearm use by guards. It was repealed by Law 47 of 1975, so it is the baseline regime inherited in 1969.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://security-legislation.ly/sites/default/files/lois/251-Law%20No.%20%2819%29%20of%201962_EN.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "sl-1974-law-87-crimproc-001",
+  "type": "law",
+  "title": "Law No. (87) of 1974 adding certain provisions to the Code of Criminal Procedure",
+  "date": "1974-11-20",
+  "source": "Revolutionary Command Council (via DCAF security-legislation.ly)",
+  "collection": "security-legislation.ly (unofficial DCAF English translation)",
+  "summary": "RCC law of 20 November 1974 for offences against state security (Penal Code Book 2, Part 1). Arrestees must be brought before the Public Prosecution within seven days; the Prosecution holds the powers of the investigating magistrate and indictment chamber; initial detention orders run 15 days, extendable once, then by court in 45-day periods. Defence counsel is appointed by the Court of Appeal head. No gazette number is given in the translation.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://security-legislation.ly/wp-content/uploads/2021/07/1442-Law-No.-87-of-1974_EN.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "sl-1975-law-47-prisons-001",
+  "type": "law",
+  "title": "Law No. (47) of 1975 on Prisons",
+  "date": "1975-05-22",
+  "source": "Libyan Arab Republic (via DCAF security-legislation.ly)",
+  "collection": "security-legislation.ly (unofficial DCAF English translation)",
+  "summary": "Replaced the 1962 prisons law. It defines prisons as places of reform, requires a written prosecution order for detention, segregates inmates by category and sex, mandates work, education and a doctor in each prison, regulates visits and discipline (restraints generally limited to 72 hours), allows firearms only after a warning shot, and sets procedures for executions. Prosecutors may inspect prisons. No gazette issue is given.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://security-legislation.ly/wp-content/uploads/2021/07/334-Law-No.-47-of-1975_EN_0-1.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "sl-2012-law-50-compensation-001",
+  "type": "law",
+  "title": "Law No. (50) of 2012 on Compensation of Political Prisoners",
+  "date": "2012-06-11",
+  "source": "Interim National Transitional Council (via DCAF security-legislation.ly)",
+  "collection": "security-legislation.ly (unofficial DCAF English translation)",
+  "summary": "Issued in Tripoli, this law covers civilians and military personnel held in prisons or special detention camps between 1 September 1969 and 15 February 2011 for opposing the former regime. It sets compensation of 8,000 dinars a month of detention, deducts sums already paid, and revokes the convictions concerned. The Cabinet was to issue implementing rules.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://security-legislation.ly/wp-content/uploads/2021/07/309-Law-No.50-of-2012_EN-1.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "sl-2012-law-61-detainees-001",
+  "type": "law",
+  "title": "Law No. (61) of 2012 amending Law No. (38) of 2012 Establishing Some Provisions of the Transitional Phase",
+  "date": "2012-07-31",
+  "source": "Interim National Transitional Council (via DCAF security-legislation.ly)",
+  "collection": "security-legislation.ly (unofficial DCAF English translation)",
+  "summary": "Issued in Tripoli on 31 July 2012, it amends Article 1 of Law 38/2012 to require the Interior and Defence ministers to refer detained former-regime senior officials to prosecutors where evidence exists, and otherwise release them no later than 30 August 2012. It shows how the interim authorities tried to put revolutionary detention under legal process.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://security-legislation.ly/sites/default/files/lois/74-Law%20No.%2861%29%20of%202012_EN.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "sl-2013-law-3-crimproc-001",
+  "type": "law",
+  "title": "Law No. (3) of 2013 on the Amendment of the Code of Criminal Procedure",
+  "date": "2013-02-24",
+  "source": "General National Congress (via DCAF security-legislation.ly)",
+  "collection": "security-legislation.ly (unofficial DCAF English translation)",
+  "summary": "Adopted 12 February 2013 and issued in Tripoli 24 February 2013. It amends Arts. 187 bis (A) and (B): arrestees go to the Public Prosecution within seven days, are questioned within three days, prosecution detention orders last two weeks, and a judge may extend in 45-day periods. It updates the 1974 regime for state-security offences.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://security-legislation.ly/wp-content/uploads/2021/07/294-Law-No.-3-of-2013_EN-1.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "sl-2013-decree-513-compensation-001",
+  "type": "law",
+  "title": "Cabinet Decree No. (513) of 2013 issuing the Executive Regulation for Law No. (50) of 2012 on compensation of political prisoners",
+  "date": "2013-09-03",
+  "source": "Libyan Cabinet (via DCAF security-legislation.ly)",
+  "collection": "security-legislation.ly (unofficial DCAF English translation)",
+  "summary": "Implementing regulation for the 2012 compensation law. Eligibility is checked against records of four former bodies: Internal Security, External Security, Intelligence and Military Police. Applicants lacking records may use a sworn statement with two witnesses over 40, ideally former inmates of the same facility. It excludes espionage, illegal immigration, rioting and sports-demonstration cases, and caps instalments at 300,000 dinars.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://security-legislation.ly/sites/default/files/lois/724-Decree%20No.%20%28513%29%20of%202013_EN.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "sl-2014-law-9-transitional-justice-001",
+  "type": "law",
+  "title": "Law No. (9) of 2014 amending Law No. (29) of 2013 on transitional justice",
+  "date": "2014-03-24",
+  "source": "General National Congress (via DCAF security-legislation.ly)",
+  "collection": "security-legislation.ly (unofficial DCAF English translation)",
+  "summary": "Issued in Tripoli 24 March 2014. It amends Article 26 of the transitional justice law, directing the Justice, Interior and Defence ministries to end within 120 days the detention of people accused of crimes under the former regime, either by referral to prosecution where evidence exists or by release. Referral does not itself invalidate earlier detention.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://security-legislation.ly/wp-content/uploads/2021/07/745-Law-No.-9-of-2014_EN.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2011-09-halt-exhumations-001",
+  "type": "report",
+  "title": "Libya: Halt Exhumations of Mass Graves",
+  "date": "2011-09-22",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2011",
+  "summary": "HRW urges the NTC to stop ad hoc exhumations until forensic experts are present. A tractor driver told HRW he buried several hundred bodies from across Tripoli at a cemetery around 20 August 2011. ICRC reportedly handled 125 bodies from 12 sites, and new mass graves were found weekly. HRW warns that graves of an estimated 1,200 prisoners killed in the 1996 Abu Salim massacre are at risk.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.hrw.org/news/2011/09/22/libya-halt-exhumations-mass-graves",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2011-09-forensic-grave-001",
+  "type": "report",
+  "title": "Libya: Use Forensic Experts to Exhume Prison Grave",
+  "date": "2011-09-26",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2011",
+  "summary": "HRW says a reported Tripoli grave may hold about 1,200 prisoners killed in June 1996 at Abu Salim. The provisional government said on 25 September 2011 that it was in a field outside the prison wall; HRW could not confirm the exact spot. It asks for the site to be guarded and for a moratorium until forensic experts arrive, noting the ICRC has only two forensic experts and does not gather legal evidence.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.hrw.org/news/2011/09/26/libya-use-forensic-experts-exhume-prison-grave",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "icj-2025-05-abusalim-graves-001",
+  "type": "legal",
+  "title": "Libya: Investigate unidentified bodies and reported mass graves in Abu Salim",
+  "date": "2025-05-27",
+  "source": "International Commission of Jurists",
+  "collection": "ICJ news, Libya",
+  "summary": "ICJ urges investigation after fighting in May 2025 following the 12 May killing of SSA head Abdelghani al-Kikli. It says the General Authority for the Search and Identification of Missing Persons (established 2018) reported on 15 May information on mass graves at the Abu Salim zoo, and the Interior Ministry reported 50 more unidentified bodies in the Abu Salim hospital morgue on 19 May. As of 27 May no public prosecutor investigation had been announced; the exact body count differs between sources.",
+  "places": [
+   "tripoli",
+   "abu-salim",
+   "zoo"
+  ],
+  "link": "https://www.icj.org/libya-investigate-unidentified-bodies-and-reported-mass-graves-in-abu-salim/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "achpr-2025-05-abusalim-graves-001",
+  "type": "legal",
+  "title": "Press Statement on the discovery of several mass graves and unidentified bodies in the locality of Abu Salim, Tripoli",
+  "date": "2025-05-29",
+  "source": "African Commission on Human and Peoples' Rights",
+  "collection": "ACHPR press releases",
+  "summary": "Dated Banjul 29 May 2025 (posted 31 May). The Commission voices concern at reports of several mass graves in Abu Salim, an area previously controlled by the al-Kikli militia. It cites 9 unidentified bodies in Alkhdra hospital morgue and more than 50 at Alhawadith hospital, plus the missing-persons authority's information about graves in the Abu Salim zoo. It calls for prompt, independent investigation.",
+  "places": [
+   "tripoli",
+   "abu-salim",
+   "zoo"
+  ],
+  "link": "https://achpr.au.int/en/news/press-releases/2025-05-31/mass-graves-discovery-libya",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "lsm-2024-02-abusalim-killings-001",
+  "type": "news",
+  "title": "Abu Salim killings perpetrators identified, says Attorney General",
+  "date": "2024-02-21",
+  "source": "Libya Security Monitor",
+  "collection": "News",
+  "summary": "Reports that at least ten men were killed in a house in Abu Salim, Tripoli, on 17 February 2024. The Interior Minister promised accountability; on 24 February the Attorney General's Office said perpetrators were identified and arrest warrants issued, leaving arrests to the Tripoli Security Directorate. On 26 February four arrests were ordered, including a relative of Stability Support Agency commander al-Kikli (as reported). Unrelated to the 1996 case, it shows recent violence in the same district.",
+  "places": [
+   "tripoli",
+   "abu-salim"
+  ],
+  "link": "https://libyasecuritymonitor.com/?p=8148",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "afp-2022-06-abusalim-military-001",
+  "type": "news",
+  "title": "Libyan court passes jail massacre case to military tribunals",
+  "date": "2022-06-16",
+  "source": "Agence France-Presse (via Jordan News)",
+  "collection": "News",
+  "summary": "AFP reports a Tripoli court declined to rule on the 1996 Abu Salim prison massacre and transferred it to a military tribunal, calling it a case of 'military character'. It had been before a Tripoli appeals court since May 2021 after the Supreme Court overturned a 2019 inadmissibility ruling. AFP gives 1,269 inmates killed in 1996; named main suspects are Abdullah al-Senussi and Mansour Daou.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.jordannews.jo/Section-91/Africa/Libyan-court-passes-jail-massacre-case-to-military-tribunals-18127",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "lsm-2026-05-senussi-acquitted-001",
+  "type": "news",
+  "title": "Qadhafi's intelligence chief al-Senussi acquitted in 2011 crackdown case",
+  "date": "2026-05-18",
+  "source": "Libya Security Monitor",
+  "collection": "News",
+  "summary": "Reports that on 18 May 2026 the Tripoli Court of Appeal acquitted Abdullah al-Senussi of all charges in the 2011 crackdown case (No. 630), with lawyer Ahmed Nashad saying the ruling also cleared Mansour Dhao and Saif al-Islam Qadhafi. Al-Senussi faced about 26 charges and had not been released. The separate Abu Salim 1996 case reportedly remained under review without final judgment. The account rests on his lawyer and a single outlet; treat as unconfirmed pending court sources.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://libyasecuritymonitor.com/qadhafis-intelligence-chief-al-senussi-acquitted-in-2011-crackdown-case/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2019-07-tajoura-001",
+  "type": "report",
+  "title": "Libya: Deadly Attack Highlights Disregard for Civilians",
+  "date": "2019-07-03",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2019",
+  "summary": "HRW reports an airstrike on a compound in Tajoura, east of Tripoli, that killed at least 44 migrants and asylum seekers; it held at least 600 people. HRW says about 5,800 migrants were held without charge in GNA-controlled facilities, about 3,300 of them in greater Tripoli, and criticises the GNA for not evacuating centres near military sites. The GNA blamed Haftar forces, which denied responsibility.",
+  "places": [
+   "tripoli",
+   "tajura"
+  ],
+  "link": "https://www.hrw.org/news/2019/07/03/libya-deadly-attack-highlights-disregard-civilians",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-hrc-2012-ahrc-19-68-001",
+  "type": "report",
+  "title": "Report of the International Commission of Inquiry on Libya (A/HRC/19/68)",
+  "date": "2012-03",
+  "source": "UN Human Rights Council",
+  "collection": "Commission of Inquiry on Libya (RightDocs mirror; page metadata shows a different posting date; report presented February 2012)",
+  "summary": "The Commission visited more than 20 official and unofficial detention sites and interviewed 150 people. For Tripoli it records over 200 bodies at morgues on 20-21 February 2011 (according to doctors) and describes the Yarmouk warehouse beside the 32nd Brigade base, where on 23 August 2011 guards threw grenades and shot detainees; of 157 detainees only 51 survivors were confirmed. It cites 21 shot dead at the Gargur detention centre and 15 bodies near Bab al-Aziziya. It also reports torture and sexual violence against men in Abu Salim, attacks on Tawerghans in Tripoli, and about 8,000 detainees held by new authorities.",
+  "places": [
+   "tripoli",
+   "abusalim",
+   "yarmouk-camp",
+   "bab"
+  ],
+  "link": "https://right-docs.org/doc/a-hrc-19-68",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-hrc-2011-ahrc-17-44-001",
+  "type": "report",
+  "title": "Report of the International Commission of Inquiry to investigate all alleged violations of international human rights law in the Libyan Arab Jamahiriya (A/HRC/17/44)",
+  "date": "2011-06",
+  "source": "UN Human Rights Council",
+  "collection": "Commission of Inquiry on Libya (RightDocs mirror; metadata lists January 2012)",
+  "summary": "First report of the Commission of Inquiry. For Tripoli it describes security forces dispersing demonstrators in Green Square and Algeria Square on 17 February 2011 and larger clashes on 20-21 February, with indiscriminate force and apparent shoot-to-kill patterns. It cites HRW's count of at least 62 bodies in Tripoli morgues on 20-22 February and information on about 15 killed on 20 February in Fashloum, Tajoura and al-Dibri. Witnesses described security forces removing bodies, raiding hospitals and arresting organisers on 16 February. The Commission visited Tripoli and met 30 detainees held in Tripoli and Benghazi.",
+  "places": [
+   "tripoli",
+   "green",
+   "fashloum",
+   "tajura"
+  ],
+  "link": "https://www.right-docs.org/doc/a-hrc-17-44/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-ohchr-2011-ahrc-17-45-001",
+  "type": "report",
+  "title": "Report of the High Commissioner under Human Rights Council resolution S-15/1: Situation of human rights in the Libyan Arab Jamahiriya (A/HRC/17/45)",
+  "date": "2011-06-07",
+  "source": "UN OHCHR",
+  "collection": "UN Human Rights Council, 17th session (copy hosted at hrvoices.org)",
+  "summary": "High Commissioner's report prepared without staff on the ground, so all allegations are unverified. Tripoli references include the reported dragging of a law student out of the Rixos hotel on 26 March 2011 after she told journalists she had been raped at a checkpoint, the government's claim that Gaddafi's son and three grandchildren died in a NATO strike in Tripoli on 30 April 2011, a migrant boat leaving Tripoli with 72 people of whom 61 reportedly died, and fuel queues. It has no dedicated Tripoli section.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://hrvoices.org/assets/attachments/documents/pillayreportlibya17thsession.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "icc-2020-saif-admissible-001",
+  "type": "legal",
+  "title": "Saif Al-Islam Gaddafi case: ICC Appeals Chamber confirms case is admissible before the ICC",
+  "date": "2020-03-09",
+  "source": "International Criminal Court",
+  "collection": "ICC press releases, Situation in Libya",
+  "summary": "The Appeals Chamber unanimously rejected Saif Al-Islam Gaddafi's appeal, holding that his July 2015 conviction by a Tripoli court was in absentia and so not final under Libyan law, and that Libya's 2015 amnesty law (Law No. 6) did not cover the crimes charged. The release also recalls the 2011 Security Council referral, the 2011 warrants for Gaddafi and Abdullah Al-Senussi, and the later inadmissibility rulings in the Senussi case.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://icc-cpi.int/news/saif-al-islam-gaddafi-case-icc-appeals-chamber-confirms-case-admissible-icc",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "unsmil-2016-09-hrc33-001",
+  "type": "report",
+  "title": "33th session of the Human Rights Council (UNSMIL press release)",
+  "date": "2016-09-27",
+  "source": "UNSMIL",
+  "collection": "UNSMIL press releases",
+  "summary": "UNSMIL statement to the Human Rights Council. It reports that 12 prisoners released by court order from al-Ruwaimi prison in Tripoli in June 2016 were found dead about 24 hours later, beaten and shot, with perpetrators unidentified. It describes severe overcrowding at Mitiga detention facility, women guarded by men, children held with adults, and two deaths since March allegedly from torture. It notes the Tripoli-based National Council for Civil Liberties and Human Rights was effectively shut by intimidation.",
+  "places": [
+   "tripoli",
+   "mitiga"
+  ],
+  "link": "https://unsmil.unmissions.org/en/node/54952",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "unsmil-2013-10-torture-001",
+  "type": "report",
+  "title": "Press Release: UN Report on Torture in Libya",
+  "date": "2013-10-01",
+  "source": "UNSMIL",
+  "collection": "UNSMIL press releases (OHCHR/UNSMIL report 'Torture and Deaths in Detention in Libya')",
+  "summary": "Datelined Tripoli. The joint report is based on visits to nearly 30 detention centres over two years. It estimates about 8,000 conflict-related detainees, mostly without due process, and 27 deaths in custody since late 2011 likely caused by torture, 11 in 2013 at brigade-run centres. It notes an April 2013 law criminalising torture and a September 2013 transitional justice law requiring detainee screening within 90 days. The release does not name specific Tripoli facilities.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://unsmil.unmissions.org/en/node/53740",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ecchr-2026-07-elhishri-001",
+  "type": "legal",
+  "title": "Crimes against humanity and war crimes in Libya finally before the ICC",
+  "date": "2026-07-17",
+  "source": "European Center for Constitutional and Human Rights (ECCHR)",
+  "collection": "ECCHR case pages, ICC Libya situation",
+  "summary": "ECCHR reports that on 16 July 2026 ICC Pre-Trial Chamber confirmed all 17 counts and committed Khaled Mohamed Ali El Hishri (Al Buti) to trial. He is described as a senior figure in the Tripoli militia formerly known as SDF/RADA, allegedly in post at Mitiga Prison between 1 May 2014 and 30 June 2020. Germany arrested him in Berlin on 16 July 2025 and surrendered him on 1 December 2025. Charges include torture, imprisonment, rape and sexual violence, murder, enslavement and persecution of Libyan detainees and migrants. This is an NGO account of the Court's decision.",
+  "places": [
+   "tripoli",
+   "mitiga"
+  ],
+  "link": "https://www.ecchr.eu/en/case/crimes-against-humanity-and-war-crimes-in-libya-finally-before-the-icc/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "icj-2025-12-elhishri-surrender-001",
+  "type": "legal",
+  "title": "Civil Society Joint Statement: Germany's surrender of El Hishri to the ICC is a turning point for accountability in the Libya Situation",
+  "date": "2025-12-03",
+  "source": "International Commission of Jurists (joint NGO statement)",
+  "collection": "ICJ joint statements",
+  "summary": "Joint statement welcoming Germany's 1 December 2025 surrender of Khaled El Hishri to the ICC after his 16 July 2025 arrest in Berlin. He is alleged to hold a senior role at Mitiga Prison in Tripoli within the Special Deterrence Force (Al-Radaa). The warrant alleges crimes between 2015 and early 2020. Signatories criticise the exclusion of sub-Saharan African detainees from the charges and Italy's failure in January 2025 to surrender another suspect, Osama Elmasry Njeem.",
+  "places": [
+   "tripoli",
+   "mitiga"
+  ],
+  "link": "https://www.icj.org/civil-society-joint-statement-germanys-surrender-of-el-hishri-to-the-icc-is-a-turning-point-for-accountability-in-the-libya-situation/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "rrl-1986-03-25-newssummary-001",
+  "type": "news",
+  "title": "White House News Summary, 25 March 1986 (Gulf of Sidra clash)",
+  "date": "1986-03-25",
+  "source": "Ronald Reagan Presidential Library",
+  "collection": "News Summary Office, White House News Summaries, Box 387",
+  "summary": "Daily digest of press coverage compiled by White House staff after the Gulf of Sidra clash. It reports US strikes on a Libyan missile site and two patrol boats, Libya's disputed claim of three downed aircraft, and Libyan radio calls for attacks on Americans abroad. A CBS report from Tripoli described Green Square lit festively with no visible tension. It also notes that Reagan learned only afterwards of envoy William Wilson's January trip to Tripoli.",
+  "places": [
+   "tripoli",
+   "green"
+  ],
+  "link": "https://www.reaganlibrary.gov/sites/default/files/2025-03/40-399-5730359-387-012-2025.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "rrl-1986-04-15-newssummary-001",
+  "type": "news",
+  "title": "White House News Summary, 15 April 1986 (strikes on Tripoli and Benghazi)",
+  "date": "1986-04-15",
+  "source": "Ronald Reagan Presidential Library",
+  "collection": "News Summary Office, White House News Summaries, Box 387",
+  "summary": "Press digest covering the overnight US air strike on targets in Tripoli and Benghazi including training camps, airfields and command posts. It reports Reagan tying Libya to the 5 April West Berlin disco bombing, one F-111 unaccounted for, Libyan claims of casualties including Gaddafi relatives, and Soviet condemnation and mixed European reactions. It also records reported internal debate between Shultz and Weinberger.",
+  "places": [
+   "tripoli",
+   "bab",
+   "wheelus"
+  ],
+  "link": "https://www.reaganlibrary.gov/sites/default/files/2025-03/40-399-5730359-387-023-2025.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "rrl-1986-04-18-newssummary-001",
+  "type": "news",
+  "title": "White House News Summary, 18 April 1986 (aftermath of Tripoli raid)",
+  "date": "1986-04-18",
+  "source": "Ronald Reagan Presidential Library",
+  "collection": "News Summary Office, White House News Summaries, Box 387",
+  "summary": "Press digest three days after the raid. Officials said the main target was Gaddafi's command post and that all five Libyan targets were heavily damaged, though nearly a third of the F-111s aborted. Anti-aircraft fire lit the sky over Tripoli with a blackout. Intelligence sources said Gaddafi had retreated to Sabha; Shultz said a coup would be 'all to the good'. These are press-reported claims.",
+  "places": [
+   "tripoli",
+   "bab"
+  ],
+  "link": "https://www.reaganlibrary.gov/sites/default/files/2025-03/40-399-5730359-387-026-2025.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "mtf-1984-04-17-siege-001",
+  "type": "government document",
+  "title": "Libyan Embassy siege began after murder of WPC Fletcher (ended 27 Apr)",
+  "date": "1984-04-17",
+  "source": "Margaret Thatcher Foundation",
+  "collection": "Margaret Thatcher Foundation document archive",
+  "summary": "Catalogue entry only: the Foundation lists an item dated 17 April 1984 about the siege of the Libyan People's Bureau in London, which began after the shooting of WPC Yvonne Fletcher and ended on 27 April. The page marks the document as unavailable, so only the date and themes (Middle East foreign policy, terrorism) are confirmed.",
+  "places": [],
+  "link": "https://www.margaretthatcher.org/document/108823",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "mtf-1986-04-15-reagan-mubarak-001",
+  "type": "government document",
+  "title": "Libya: President Reagan letter to Egyptian President Mubarak (Libyan terrorism) [explains US action] [declassified 2005]",
+  "date": "1986-04-15",
+  "source": "Margaret Thatcher Foundation",
+  "collection": "Margaret Thatcher Foundation document archive",
+  "summary": "Catalogue entry for a two-page Reagan letter to Mubarak explaining the US action against Libya in the El Dorado Canyon period. The date is estimated from the raid; the page offers a PDF but its text was not read here.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.margaretthatcher.org/document/143447",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "mtf-1980-04-26-mt-gaddafi-001",
+  "type": "government document",
+  "title": "Libya: MT letter to Colonel Gaddafi (MT requests withdrawal of suspect Libyan diplomats) [released 2011]",
+  "date": "1980-04-26",
+  "source": "Margaret Thatcher Foundation",
+  "collection": "Margaret Thatcher Foundation document archive",
+  "summary": "Catalogue entry for a three-page letter from Prime Minister Thatcher to Gaddafi asking Libya to withdraw diplomats the UK suspected of wrongdoing, released in 2011. The page does not reproduce the text. It is background to the later Libyan People's Bureau tensions in London.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.margaretthatcher.org/document/119678",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "mtf-1986-04-17-fco-sitrep-001",
+  "type": "government document",
+  "title": "Libya: FCO situation report (Sitrep No.7: 17 April 1986, 0630Z)",
+  "date": "1986-04-17",
+  "source": "Margaret Thatcher Foundation (Thatcher Papers, Churchill Archive Centre)",
+  "collection": "Margaret Thatcher Foundation document archive",
+  "summary": "Catalogue entry for a three-page Foreign Office situation report released in January 2017, issued two days after the US raid. Tags indicate coverage of Tripoli, European reactions, Libyans in the UK and British hostages in Beirut. The summary page gives metadata only; the full text is in the linked PDF.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.margaretthatcher.org/document/149553",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ai-1997-mde19-08-001",
+  "type": "report",
+  "title": "Libya: Gross human rights violations amid secrecy and isolation",
+  "date": "1997-06",
+  "source": "Amnesty International",
+  "collection": "AI Index MDE 19/08/97 (embargoed 25 June 1997)",
+  "summary": "The full report describes arbitrary arrest, torture, disappearances, extrajudicial executions and unfair trials. Tripoli-area places named: Abu Salim Prison (hundreds held, some up to 15 years without charge; underground interrogation rooms beneath the administration building; a July 1996 revolt with 30-40 reported killed, after which visits were banned), Tajura Prison (businessmen held after a 1996 anti-corruption sweep), al-Jdayda Prison (24 students tortured and sentenced in 1995 after a secret trial), al-'Ataba Prison (African workers held in mid-1996) and Tripoli Central Hospital. It counts at least 38 announced executions between November 1992 and March 1997, including eight men on 2 January 1997.",
+  "places": [
+   "tripoli",
+   "abusalim",
+   "jdeida",
+   "tajura",
+   "furnaj"
+  ],
+  "link": "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190081997en.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ai-2011-09-battle-for-libya-001",
+  "type": "report",
+  "title": "The Battle for Libya: Killings, Disappearances and Torture",
+  "date": "2011-09-13",
+  "source": "Amnesty International",
+  "collection": "Press release for a 107-page report (AI Index MDE 19/025/2011)",
+  "summary": "Press release launching a 107-page report on the six-month conflict, based mainly on a fact-finding visit of 26 February to 28 May 2011 to al-Bayda, Ajdabiya, Brega, Benghazi, Misratah and Ras Lanouf, with a return in late August. The release itself names no Tripoli sites; it is included as context for the 2011 documentation and as a pointer to the full report. It was issued with a 'Human Rights Agenda for Change' for the new authorities.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.amnesty.org/en/latest/press-release/2011/09/amnesty-international-report-battle-libya-killings-disappearances-and-tortu/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ai-2011-10-detention-abuses-001",
+  "type": "report",
+  "title": "New Libya 'stained' by detainee abuse (Libya: Detention abuses staining the new Libya)",
+  "date": "2011-10",
+  "source": "Amnesty International",
+  "collection": "Press release and briefing (AI Index MDE 19/036/2011); publication day not shown on the page",
+  "summary": "Amnesty reports that militias arrested as many as 2,500 people in Tripoli and al-Zawiya after late August 2011. Based on 11 detention facilities visited between 18 August and 21 September and about 300 detainee interviews, it found none had seen an arrest warrant, some showed clear signs of torture, and two guards admitted beating detainees to obtain confessions faster. Sub-Saharan Africans suspected of being mercenaries were a third to a half of detainees; children were held with adults. It asks the NTC to place centres under the Justice Minister.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.amnesty.org/en/latest/press-release/2011/10/new-libya-e28099stainede28099-detainee-abuse/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ai-2012-07-militia-001",
+  "type": "report",
+  "title": "Libya: Militia stranglehold corrosive for rule of law (report: Libya - rule of law or rule of militias?)",
+  "date": "2012-07",
+  "source": "Amnesty International",
+  "collection": "Press release (exact day not shown in the extract)",
+  "summary": "Issued just before the July 2012 elections, based on May-June 2012 research in Benghazi, Kufra, Nafousa, Sabha, Tripoli and al-Zawiya. Amnesty says about 4,000 detainees were held in centres outside central control, abuse was documented in 12 of 15 centres where private interviews took place, and at least 20 detainees had died in custody from torture since late August 2011. The Interior Ministry said it dismantled only four militias in Tripoli. It also cites a May 2012 law granting revolutionaries immunity and the continued exclusion of Tawergha's roughly 30,000 people.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.amnesty.org/en/press-releases/2012/07/libya-militia-stranglehold-corrosive-rule-law/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2011-03-tripoli-crackdown-001",
+  "type": "report",
+  "title": "Libya: End Violent Crackdown in Tripoli",
+  "date": "2011-03-13",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2011",
+  "summary": "HRW documents arrests and disappearances in Tripoli after the February 2011 protests, saying residents described detention of protesters, critics and people who spoke to foreign media, some reportedly tortured. Security forces opened fire on a protest in Green Square around 20 February and deployed heavily in Tajoura and Fashloum, with arrests beginning that night. Wounded protesters were reportedly seized from hospitals. Detainees were feared held at Jdeida, Ain Zara and Abu Salim prisons. It cites the detention of the Sewehli family from 28 February and three BBC journalists held for 21 hours on 7 March.",
+  "places": [
+   "tripoli",
+   "green",
+   "tajura",
+   "fashloum",
+   "jdeida",
+   "ainzara",
+   "abusalim"
+  ],
+  "link": "https://www.hrw.org/news/2011/03/13/libya-end-violent-crackdown-tripoli",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2011-02-commanders-justice-001",
+  "type": "report",
+  "title": "Libya: Commanders Should Face Justice for Killings",
+  "date": "2011-02-22",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2011",
+  "summary": "HRW reports witness accounts of forces firing randomly at protesters in Tripoli on 21-22 February 2011, and hospital sources saying at least 62 people were brought to two Tripoli hospitals since 20 February. It names Ben Ashour (shooting at passers-by), Abu Salim (at least 50 bodies reportedly in the hospital morgue), Green Square (12 dead taken to Central Hospital), Fashloum and Tajoura, and the 20 February break-up of a professionals' protest at the Tripoli courthouse. HRW could not independently verify the accounts.",
+  "places": [
+   "tripoli",
+   "ben-ashour",
+   "abu-salim",
+   "green",
+   "fashloum",
+   "tajura"
+  ],
+  "link": "https://www.hrw.org/news/2011/02/22/libya-commanders-should-face-justice-killings",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2012-02-brebesh-001",
+  "type": "report",
+  "title": "Libya: Diplomat Dies in Militia Custody",
+  "date": "2012-02-02",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2012",
+  "summary": "HRW reports that Omar Brebesh, a 62-year-old former ambassador to France, died on 20 January 2012 less than 24 hours after going to a Zintan-based militia base in the Crimea neighbourhood of Tripoli for questioning on 19 January. Preliminary autopsy findings and photographs indicated torture, and a judicial police report reportedly gave torture as the cause of death. HRW cites the ICRC count of about 8,500 detainees in roughly 60 facilities, mostly militia-run, and called for an independent investigation.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.hrw.org/news/2012/02/02/libya-diplomat-dies-militia-custody",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2013-11-militias-protesters-001",
+  "type": "report",
+  "title": "Libya: Militias Kill Unarmed Protesters",
+  "date": "2013-11-17",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2013",
+  "summary": "HRW reports that on 15 November 2013 Misrata militias fired on a largely peaceful march called by the Tripoli Local Council against illegal armed groups, which went from al-Quds Square toward Gharghour where militias occupied villas formerly belonging to Gaddafi officials. Government figures cited 43 dead and at least 460 wounded. HRW counted 18 bodies at Abu Salim Trauma Hospital and 7 at Zawiya Street Hospital and saw armed militiamen moving freely inside both. An ambulance was fired on. A related attack on al-Fallah displaced camp on 16 November killed at least one.",
+  "places": [
+   "tripoli",
+   "abu-salim"
+  ],
+  "link": "https://www.hrw.org/news/2013/11/17/libya-militias-kill-unarmed-protesters",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2013-12-scant-action-001",
+  "type": "report",
+  "title": "Libya: 6 Months On, Scant Action on Protester Killings",
+  "date": "2013-12-08",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2013",
+  "summary": "HRW says at least 46 people were killed and about 500 injured when militias fired on the 15 November 2013 Tripoli protest, and that police and military police present did not intervene. A seven-member prosecution committee led by Omar Zinbeel was investigating 47 deaths; media reported one suspect from a Gharghour-based Misrata militia held by a Tripoli unit. It contrasts this with the lack of arrests six months after the 8 June 2013 Benghazi clash that killed 32.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.hrw.org/news/2013/12/08/libya-6-months-scant-action-protester-killings",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2012-03-tawergha-camps-001",
+  "type": "report",
+  "title": "Libya: Bolster Security at Tawergha Camps",
+  "date": "2012-03-05",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2012",
+  "summary": "HRW urges security for about 12,000 displaced Tawerghans in western Libya, most in Tripoli. Militias raided the Janzur camp at the Marine/Naval Academy on 6 February 2012, killing seven, including a 12-year-old girl, with no evidence of investigation. About 300 people at the Airport Road camp in Tripoli were raided twice in February, with three men detained. UNHCR counted about 35,000 displaced Tawerghans nationwide.",
+  "places": [
+   "tripoli",
+   "janzour"
+  ],
+  "link": "https://www.hrw.org/news/2012/03/05/libya-bolster-security-tawergha-camps",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2013-03-revenge-crimes-001",
+  "type": "report",
+  "title": "Libya: Stop Revenge Crimes Against Displaced Persons",
+  "date": "2013-03-20",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2013 (satellite imagery analysis of Tawergha)",
+  "summary": "HRW says forced displacement of about 40,000 Tawerghans, arbitrary detention, torture and killings may amount to crimes against humanity, and that satellite imagery shows 1,690 structures damaged or destroyed in Tawergha, over 90 percent burned. It lists four Tripoli camps (Naval Academy in Janzur, Airport Road, al-Fallah, Sarraj) with about 13,000 Tawerghans, and the 6 February 2012 Janzur raid that killed seven. It could not verify claims of up to 1,300 dead, detained or missing.",
+  "places": [
+   "tripoli",
+   "janzour"
+  ],
+  "link": "https://www.hrw.org/news/2013/03/20/libya-stop-revenge-crimes-against-displaced-persons",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-cat-1999-libya-001",
+  "type": "report",
+  "title": "Conclusions and recommendations of the Committee against Torture: Libyan Arab Jamahiriya (A/54/44, paras. 176-189)",
+  "date": "1999-05-10",
+  "source": "UN Committee against Torture",
+  "collection": "UN treaty body conclusions (University of Minnesota Human Rights Library)",
+  "summary": "Committee against Torture conclusions after considering Libya's third periodic report on 5, 6 and 10 May 1999 (22nd session). It says Libya's report did not answer concerns raised in 1994, warns that prolonged incommunicado detention may breach the Convention, notes continuing torture allegations, criticises extradition of persons to a state where they risked torture, and flags Penal Code Article 206 as an obstacle to independent NGOs. It does not name Tripoli places. Date given is the last meeting date.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://hrlibrary.umn.edu/cat/observations/libya1999.html",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ai-2010-mde19-008-001",
+  "type": "report",
+  "title": "Long Struggle for Truth: Enforced Disappearances in Libya",
+  "date": "2010-06",
+  "source": "Amnesty International",
+  "collection": "AI Index MDE 19/008/2010",
+  "summary": "Amnesty says thousands of families lack answers about relatives disappeared or killed by state agents in past decades. For Abu Salim Prison it repeats that up to 1,200 were killed in June 1996, that a committee formed in September 2009 had published nothing, and that at least 1,167 victim families were identified. It cites the 1980 case of Amer Deghayes, whose body was released from the Zawiya Hospital morgue in Tripoli with a suicide certificate, and the 2009 compensation offer of about 200,000 dinars refused by Miloud Boushasha's family. It records 37 attacks on exiles in 1980-1987, 25 fatal.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.amnesty.org/es/wp-content/uploads/2021/06/mde190082010en.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "omct-2007-11-elhassy-001",
+  "type": "legal",
+  "title": "United Nations Finds Libya Responsible for Torture and Orders Compensation to Victim's Family (El Hassy v. Libya)",
+  "date": "2007-11-27",
+  "source": "World Organisation Against Torture (OMCT), on UN Human Rights Committee views",
+  "collection": "OMCT statements (Communication No. 1422/2005)",
+  "summary": "OMCT reports the UN Human Rights Committee found Libya responsible for torture and other violations in El Hassy v. Libya: Mr El Hassy was arrested in 1995, held incommunicado at Abu Salim prison outside Tripoli, tortured and disappeared. The Committee ordered investigation, prosecution and compensation and gave Libya 180 days to report. The case is linked to the 1996 Abu Salim killings. OMCT and Human Rights Solidarity represented the complainant.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.omct.org/en/resources/statements/united-nations-finds-libya-responsible-for-torture-and-orders-compensation-to-victims-family",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "nixon-lib-libya-guide-001",
+  "type": "government document",
+  "title": "Libya: research guide to holdings (Richard Nixon Presidential Library)",
+  "date": "2023-08",
+  "source": "Richard Nixon Presidential Library",
+  "collection": "Nixon Library research guides (date from file path; holdings cover 1953-1973)",
+  "summary": "Finding aid, not the records themselves, listing Libya-related holdings: Nixon's 1953 and 1957 Tripoli stops, NSC files on Libya for June 1969-July 1970, a 24 November 1969 WSAG meeting, NSSM 87 (January 1970), 1971 tapes on Libya and Qaddafi, and 1973 material including tapes on the Libyan airliner incident, NSSM 185 'Policy Toward Libya' (5 June 1973) and an August 1973 SRG meeting. It does not mention Wheelus Air Base.",
+  "places": [
+   "tripoli",
+   "wheelus"
+  ],
+  "link": "https://www.nixonlibrary.gov/sites/default/files/2023-08/libya.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-ohchr-2016-ahrc-31-47-001",
+  "type": "report",
+  "title": "Investigation by the Office of the United Nations High Commissioner for Human Rights on Libya (A/HRC/31/47)",
+  "date": "2016-02",
+  "source": "UN OHCHR",
+  "collection": "Human Rights Council, 31st session (RightDocs mirror)",
+  "summary": "OHCHR investigation under HRC resolution 28/30 into 2014-2015, finding widespread violations by all parties, including arbitrary detention and torture. It reports about 9,000 people held in Justice and Interior ministry facilities and 6,200 in Justice Ministry facilities as of March 2014, only 10 percent sentenced after trial, and 3,245 migrants detained in western Libya in May 2015. The team met over 250 interlocutors. The page text does not name Mitiga, Abu Salim or Ain Zara, but mentions Tripoli Medical Centre and the Tripoli Revolutionaries Brigade.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.right-docs.org/doc/a-hrc-31-47/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-ohchr-2017-ahrc-34-42-001",
+  "type": "report",
+  "title": "Report of the High Commissioner on the human rights situation in Libya and technical assistance (A/HRC/34/42)",
+  "date": "2017-01",
+  "source": "UN OHCHR / UNSMIL",
+  "collection": "Human Rights Council, 34th session (RightDocs mirror)",
+  "summary": "Report naming Tripoli places: al-Ruwaimi prison, where 12 former Qadhafi-associated prisoners were found dead in June 2016 after release was ordered; Mitiga detention centre, visited May and July 2016, holding about 1,700 people including 200 women and 120 children with only 91 sentenced; and Abu Salim, Fursan Janzur, al-Hadhba and Military Intelligence facilities cited for torture and poor conditions. It also mentions the 3 April 2016 attack on the Al-Naba TV building, the Rixos complex takeover in October 2016, and case 630/2012 (nine death sentences by Tripoli Court of Assize in July 2015). It says 6,000-8,000 were in Justice Ministry prisons, over 90 percent pre-trial.",
+  "places": [
+   "tripoli",
+   "mitiga",
+   "abu-salim",
+   "hadba",
+   "furnaj"
+  ],
+  "link": "https://www.right-docs.org/doc/a-hrc-34-42/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-ffm-2022-ahrc-50-63-001",
+  "type": "report",
+  "title": "Report of the Independent Fact-Finding Mission on Libya (A/HRC/50/63)",
+  "date": "2022-08-31",
+  "source": "UN Independent Fact-Finding Mission on Libya",
+  "collection": "Human Rights Council, 50th session (UN Digital Library)",
+  "summary": "Covers 11 October 2021 to 27 June 2022. It calls Mitiga the largest prison in western Libya, estimated to hold up to 5,000, with over 40 first-hand accounts of abuse by the Special Deterrence Force (Radaa) and some people held up to seven years. At least 64 children were held with mothers in Mitiga, Jawiyyah and Al-Koweifya as of March 2022. It also covers Wagner/LNA mines near Ain Zara (35 locations on a tablet), the 2019 Tajoura detention-centre strike and April 2020 rocket strikes on the Weryemma polyclinic. Over 300 interviews underpin it.",
+  "places": [
+   "tripoli",
+   "mitiga",
+   "ainzara",
+   "tajura"
+  ],
+  "link": "https://digitallibrary.un.org/record/4022642/files/A_HRC_50_63-EN.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-ffm-2023-ahrc-52-83-001",
+  "type": "report",
+  "title": "Report of the Independent Fact-Finding Mission on Libya (A/HRC/52/83)",
+  "date": "2023-03-20",
+  "source": "UN Independent Fact-Finding Mission on Libya",
+  "collection": "Human Rights Council, 52nd session (UN Digital Library catalogue record)",
+  "summary": "Final report of the Mission under HRC resolution 50/23, dated 20 March 2023. The catalogue record carries no summary. Via Libya Security Monitor, the Mission found grounds to believe state forces and militias committed war crimes and crimes against humanity, including arbitrary detention, torture, enslavement and enforced disappearance, naming DACOT/Radaa, the LNA, the Internal Security Agency and the Stability Support Apparatus.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://digitallibrary.un.org/record/4014336",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "lsm-2023-03-ffm-final-001",
+  "type": "news",
+  "title": "UN Fact-Finding Mission issues final report on Libya's deteriorating human rights situation",
+  "date": "2023-03-27",
+  "source": "Libya Security Monitor",
+  "collection": "News",
+  "summary": "Summarises the Fact-Finding Mission's March 2023 final report: reasonable grounds of war crimes and crimes against humanity, 'overwhelming evidence' of systematic torture of migrants, restrictions on assembly and expression, and survivors' fear of filing complaints. It names DACOT, LNA, ISA and SSA as involved in detention-related abuses. The page names no Tripoli sites.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://libyasecuritymonitor.com/un-fact-finding-mission-issues-final-report-on-libyas-deteriorating-human-rights-situation/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2011-03-11-oped-abusalim-001",
+  "type": "report",
+  "title": "Events of 2 years ago sparked current uprising in Libya",
+  "date": "2011-03-11",
+  "source": "Human Rights Watch",
+  "collection": "Commentary by Jo Becker (also in GlobalPost)",
+  "summary": "HRW commentary tracing the 2011 uprising to the campaign by families of Abu Salim 1996 victims. It says over 1,200 prisoners were killed, with shooting lasting more than two hours, in a prison run by the Internal Security Agency. In March 2007 about 30 families filed a civil claim in the North Benghazi Court, which ruled for them but was ignored; weekly Saturday protests followed, and lawyer Fathi Terbil was detained in 2009. Officials later notified over 900 families and offered about 100,000 dollars per victim, which many refused.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.hrw.org/news/2011/03/11/events-2-years-ago-sparked-current-uprising-libya",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2009-08-40th-anniversary-001",
+  "type": "report",
+  "title": "Libya: Mark Anniversary by Restoring Rights",
+  "date": "2009-08-31",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2009",
+  "summary": "HRW urges Gaddafi, at 40 years in power, to repeal repressive laws and free political prisoners. About 200 prisoners were reportedly held despite completed sentences or acquittal; Law 19 requires 50 founders to form an association and decision 312/2009 requires 30 days' notice for meetings. It repeats that up to 1,200 prisoners were killed at Abu Salim on 29 June 1996, and that compensation of 200,000 dinars with death certificates is not accountability. HRW interviewed a prisoner at Abu Salim in April 2009 and was denied access to another detainee.",
+  "places": [
+   "tripoli",
+   "abusalim",
+   "ainzara"
+  ],
+  "link": "https://www.hrw.org/news/2009/08/31/libya-mark-anniversary-restoring-rights",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ai-2004-mde19-002-001",
+  "type": "report",
+  "title": "Libya: Time to make human rights a reality",
+  "date": "2004-04",
+  "source": "Amnesty International",
+  "collection": "AI Index MDE 19/002/2004",
+  "summary": "Report on a two-week February 2004 visit, Amnesty's first in years; delegates met Gaddafi on 29 February. It cites Abu Salim Prison (director Milad Daman said requested prisoners were 'terrorist' cases), 'Ayn Zara Prison on Tripoli's outskirts (where Fathi al-Jahmi was reportedly moved during the visit) and Jdeida Prison (a detainee beaten with wire in January 2004). It reports the Muslim Brothers case (152 tried, 73 life sentences, 66 acquitted) and prolonged incommunicado detention and torture to extract confessions. It urges abolition of the People's Court and a death-penalty moratorium.",
+  "places": [
+   "tripoli",
+   "abusalim",
+   "ainzara",
+   "jdeida"
+  ],
+  "link": "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190022004en.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ai-2004-02-towards-protection-001",
+  "type": "report",
+  "title": "Libya: Towards ensuring human rights protection (initial findings of an Amnesty International visit)",
+  "date": "2004-02",
+  "source": "Amnesty International",
+  "collection": "Press release (visit of 14-29 February 2004; no index shown in the extract)",
+  "summary": "Initial findings from the first Amnesty visit in 15 years, led by Claudio Cordone. Delegates held long interviews with several prisoners in Abu Salim prison, Tripoli, though others they requested were not produced, and met the Tripoli Bar Association's new Freedoms Committee. Gaddafi received them in Sirte. Amnesty notes Law 71 of 1972 was used to convict Muslim Brothers and proposes six immediate steps, including abolishing the People's Court and a moratorium on death sentences.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190052004en.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ai-2004-04-climate-of-fear-001",
+  "type": "report",
+  "title": "Libya: New report on human rights 'climate of fear' coincides with first Gaddafi visit to Europe for 15 years",
+  "date": "2004-04-26",
+  "source": "Amnesty International (UK section)",
+  "collection": "Press releases",
+  "summary": "Release launching Libya: Time to make human rights a reality, tied to Gaddafi's visit to the European Commission. It says nearly 300 prisoners were released in 2001 and 2002, hundreds of families still do not know whether relatives are alive, and enforced disappearances of political prisoners date from 1996. It urges the EU to condition partnership on human rights. The page names no Tripoli places.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://amnesty.org.uk/press-releases/libya-new-report-human-rights-climate-fear-coincides-first-gaddafi-visit-europe-15",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2005-05-reforms-welcome-001",
+  "type": "report",
+  "title": "Libya: Reforms Welcome, But Concerns Remain",
+  "date": "2005-05-22",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2005",
+  "summary": "After HRW's first Libya mission (three weeks, five prisons, over two dozen prisoners interviewed), it says Fathi al-Jahmi had been held over 13 months without trial at an internal security facility in Tripoli since 26 March 2004, and writer Abdul Rezak al-Mansouri was held incommunicado from 12 January. It notes the People's Court was closed in 2004, two Muslim Brotherhood leaders were on death row with 84 other members imprisoned, and that a security chief said an Abu Salim investigation was open and over 400 prisoners had escaped in four episodes.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.hrw.org/news/2005/05/22/libya-reforms-welcome-concerns-remain",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2010-03-202-released-001",
+  "type": "report",
+  "title": "Libya: 202 Prisoners Released But Hundreds Still Held Arbitrarily",
+  "date": "2010-03-25",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2010",
+  "summary": "HRW welcomes the 24 March 2010 release of at least 202 prisoners, including 80 who had been acquitted but kept in custody. Saif al-Islam al-Gaddafi announced 214 releases at a Tripoli news conference, said 409 prisoners remained in Abu Salim prison and that 232 would soon be freed. Reports said Abu Salim authorities refused to release 12 listed prisoners. In December 2009 the internal security head told HRW his agency held 330 prisoners at Abu Salim whose sentences had ended or who were acquitted.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.hrw.org/news/2010/03/25/libya-202-prisoners-released-hundreds-still-held-arbitrarily",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2009-05-jahmi-001",
+  "type": "report",
+  "title": "Libya: Libyan Dissident, Long Imprisoned, Is Dead",
+  "date": "2009-05-21",
+  "source": "Human Rights Watch",
+  "collection": "News releases, Libya 2009",
+  "summary": "HRW reports that Fathi al-Jahmi, 68, died in Amman on 20 May 2009 after about six and a half years in detention for calling for a free press and elections. After his March 2004 arrest he was held at a special facility on the coast near Tripoli, sent to a psychiatric hospital in September 2006 and moved to Tripoli Medical Centre in July 2007. HRW visited him there on 25-26 April 2009, found him very weak, and he said he was not free to leave. He went into a coma on 3 May and was flown to Amman.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.hrw.org/news/2009/05/21/libya-libyan-dissident-long-imprisoned-dead",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "lsm-2026-03-abusalim-grave-001",
+  "type": "news",
+  "title": "Two bodies discovered in mass grave in Abu Salim",
+  "date": "2026-03-09",
+  "source": "Libya Security Monitor",
+  "collection": "News",
+  "summary": "Reports that on 9 March 2026 a GNU Interior Ministry unit announced a grave in Abu Salim, Tripoli, holding two bodies, reportedly of people killed and buried by members of the now-defunct Stability Support Agency (SSA). The grave was in the al-Hadba project area, described as an SSA stronghold. Search continues with the Attorney General's Office and Criminal Investigation Department. It also says criminal groups linked to the SSA hid kidnapped, tortured and killed people there. Single-outlet account.",
+  "places": [
+   "tripoli",
+   "abu-salim",
+   "hadba"
+  ],
+  "link": "https://libyasecuritymonitor.com/two-bodies-discovered-in-mass-grave-in-abu-salim/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-2025-06-turk-ssa-graves-001",
+  "type": "news",
+  "title": "UN rights chief urges action on mass graves, abuse sites in Libya",
+  "date": "2025-06-04",
+  "source": "Anadolu Agency (reporting UN High Commissioner Volker Turk)",
+  "collection": "News",
+  "summary": "Reports that Volker Turk expressed shock at abuses at official and unofficial detention sites run by the Stabilization Support Apparatus in Tripoli. Between 18 and 21 May 2025 the UN received credible reports of 10 charred bodies at the SSA's Abu Salim headquarters, 67 bodies in refrigerators at Abu Salim and Al Khadra hospitals, and a burial site at the SSA-run Tripoli Zoo. Libyan forensic authorities had reportedly been barred from exhuming remains. He welcomed the attorney general's two investigative committees.",
+  "places": [
+   "tripoli",
+   "abu-salim",
+   "zoo"
+  ],
+  "link": "https://www.aa.com.tr/en/europe/un-rights-chief-urges-action-on-mass-graves-abuse-sites-in-libya/3588969",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "un-unsmil-2025-06-turk-sealed-001",
+  "type": "report",
+  "title": "Libya: Sites of gross human rights violations must be sealed and impartially investigated - Turk",
+  "date": "2025-06-04",
+  "source": "UNSMIL / UN High Commissioner for Human Rights",
+  "collection": "UNSMIL press releases",
+  "summary": "High Commissioner Volker Turk calls for sealing detention sites in Tripoli run by the Stabilization Support Apparatus. Reported 18-21 May 2025: 10 charred bodies excavated at the SSA headquarters in Abu Salim, 67 bodies in refrigerators at Abu Salim and Al Khadra hospitals (some decomposed after power outages), and a reported burial site at the SSA-run Tripoli Zoo. Forensic authorities had not been allowed to excavate. He noted the Attorney-General formed two committees and urged restraint after SSA leader al-Kikli's killing.",
+  "places": [
+   "tripoli",
+   "abu-salim",
+   "zoo"
+  ],
+  "link": "https://unsmil.unmissions.org/en/node/56475",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "lsm-2025-07-ag-mitiga-001",
+  "type": "news",
+  "title": "Attorney General and GNU release new details on Tripoli clashes",
+  "date": "2025-07-08",
+  "source": "Libya Security Monitor",
+  "collection": "News (reporting Attorney General's Office update of 9 July 2025)",
+  "summary": "Reports that an Attorney General committee found unlawful detention at Mitiga Prison, controlled by Rada, where some detainees had unexecuted release orders. The Office confirmed 15 civilian deaths in the May 2025 fighting and five deaths in correctional centres, with 461 inmates escaping, and ordered the arrest of 172 SSA suspects on murder, kidnapping and torture charges, of whom 11 were detained. The Justice Ministry aims to bring facilities under judicial oversight.",
+  "places": [
+   "tripoli",
+   "mitiga"
+  ],
+  "link": "https://libyasecuritymonitor.com/attorney-general-and-gnu-release-new-details-on-tripoli-clashes/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ap-2026-05-tripoli-31-acquitted-001",
+  "type": "news",
+  "title": "Libyan appeals court clears 31 Gaddafi-era officials over 2011 protest crackdown",
+  "date": "2026-05",
+  "source": "Associated Press (via Nordot)",
+  "collection": "News (exact day not shown; matches the May 2026 verdict)",
+  "summary": "A Tripoli court acquitted 31 former officials, including Abdullah al-Senussi and Baghdadi al-Mahmoudi, of charges (37 counts) tied to suppressing the 2011 uprising in a case that began in 2014. Proceedings were dropped for those who died, including Saif al-Islam Gaddafi, whom the article says was killed in February. In 2015 nine were sentenced to death, 23 jailed and four acquitted before the Supreme Court overturned the convictions. Al-Senussi still faces trial over Abu Salim 1996; rights groups said the trial risked entrenching impunity.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://nordot.app/1429749098879091142",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ai-2014-ior53-008-senussi-001",
+  "type": "legal",
+  "title": "ICC decision to allow Abdallah al-Senussi to stand trial in Libya 'deeply alarming' amidst overwhelming security vacuum",
+  "date": "2014-07-24",
+  "source": "Amnesty International",
+  "collection": "AI Index IOR 53/008/2014",
+  "summary": "Amnesty criticises the ICC Appeals Chamber ruling letting Libya try al-Senussi, citing about two years without a lawyer, prolonged solitary confinement and the death penalty risk. It describes the fighting between rival militias in Tripoli since 13 July 2014 around Tripoli International Airport, with at least 47 killed and more than 120 injured, damage to the airport and aircraft and to homes, mosques and a medical facility. UNSMIL staff had temporarily withdrawn, raising doubt that observers could attend the trial.",
+  "places": [
+   "tripoli",
+   "mitiga"
+  ],
+  "link": "https://www.amnesty.org/en/wp-content/uploads/2023/06/ior530082014en.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "c4-2015-07-hilsum-sentencing-001",
+  "type": "news",
+  "title": "Saif al Islam sentenced to death - but Libyan judicial system is far from fair",
+  "date": "2015-07-28",
+  "source": "Channel 4 News (Lindsey Hilsum)",
+  "collection": "News analysis",
+  "summary": "Reports that a Tripoli court sentenced eight Gaddafi-era officials to death, including Saif al-Islam (in absentia, held in Zintan) and Abdullah Senussi, who was convicted over the 2011 Benghazi killings, not Abu Salim. The author says former spy chief Abuzeid Dorda told the court confessions were extracted by torture and that the prison where the trial was held is controlled by a militia. The piece describes the proceedings as failing international standards.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.channel4.com/news/by/lindsey-hilsum/blogs/gaddafi-death-sentencing-shows-facade-justice",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "hrw-2011-01-world-report-001",
+  "type": "report",
+  "title": "World Report 2011: Libya (events of 2010)",
+  "date": "2011-01-24",
+  "source": "Human Rights Watch",
+  "collection": "World Report country chapters",
+  "summary": "States that the Internal Security Agency controls Ain Zara and Abu Salim prisons holding political and security detainees and that about 213 people stayed jailed after sentences ended or acquittal, with judicial release orders refused. Authorities freed 214 prisoners in March 2010, including 80 of 330 held despite acquittals. It repeats the 200,000-dinar offer to Abu Salim victims' families, most Benghazi families refusing. Its only explicit Tripoli reference is the December 2009 HRW news conference in the capital, the first by an independent rights group.",
+  "places": [
+   "tripoli",
+   "abusalim",
+   "ainzara"
+  ],
+  "link": "https://www.hrw.org/world-report/2011/country-chapters/libya",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "worthington-2011-08-abusalim-liberated-001",
+  "type": "news",
+  "title": "An End to Gaddafi's Tyranny: The Liberation of the Hated Abu Salim Prison",
+  "date": "2011-08-27",
+  "source": "Andy Worthington (blog; reprints Washington Post and CNN reports)",
+  "collection": "Personal website / news commentary",
+  "summary": "Blog post on the opposition's takeover of Abu Salim prison in Tripoli in August 2011. It reprints a Washington Post account of roughly 2,500 detainees freed and a CNN piece on Hussein Shafei, jailed 1988-2000. It links the prison to the 1996 massacre of about 1,200 inmates and to lawyer Fathi Terbil, whose 15 February 2011 arrest in Benghazi helped trigger the uprising. This is secondary commentary, not an official record.",
+  "places": [
+   "tripoli",
+   "abusalim"
+  ],
+  "link": "https://www.andyworthington.co.uk/2011/08/27/an-end-to-gaddafis-tyranny-the-liberation-of-the-hated-abu-salim-prison/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "wc-1977-11-honecker-qaddafi-001",
+  "type": "government document",
+  "title": "Letter, Erich Honecker to the General Secretary of the People's Congress of the Great Socialist People's Libyan Arab Jamahiriya, Colonel Muammar al-Qaddafi (29 November 1977)",
+  "date": "1977-11-29",
+  "source": "Wilson Center Digital Archive",
+  "collection": "Wilson Center Digital Archive (East German SED records)",
+  "summary": "East German leader Honecker, for the SED Politburo, asks Qaddafi to receive Politburo member Werner Lamberz as special envoy in Tripoli on 7 or 8 December 1977. The agenda is consultations on the Horn of Africa, talks with Palestinian representatives and development of bilateral ties under agreements signed in October 1977. It shows Tripoli as a venue for Eastern-bloc diplomacy during the Jamahiriya period.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://digitalarchive.umd.edu/node/86952",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "wc-1977-12-honecker-qaddafi-001",
+  "type": "government document",
+  "title": "Letter, Erich Honecker to the General Secretary of the People's Congress of the Great Socialist People's Libyan Arab Jamahiriya, Colonel Muammar al-Qaddafi (20 December 1977)",
+  "date": "1977-12-20",
+  "source": "Wilson Center Digital Archive",
+  "collection": "Wilson Center Digital Archive (East German SED records)",
+  "summary": "Honecker thanks Qaddafi after Lamberz's December 1977 talks in Tripoli, noting agreement on anti-imperialist positions in the Arab world and Africa and Politburo approval of wider political, economic, military, cultural and scientific cooperation. He announces a Libyan military delegation to East Germany, a first joint government committee in Berlin in mid-January 1978, and temporary dispatch of a GDR envoy to Tripoli.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://digitalarchive.umd.edu/document/letter-erich-honecker-general-secretary-peoples-congress-great-socialist-peoples-libyan-0",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "wc-1979-02-honecker-gaddafi-transcript-001",
+  "type": "government document",
+  "title": "Stenographic Transcript of the Official Talks between Comrade Erich Honecker and Comrade Colonel Muammar al-Gaddafi in Tripoli",
+  "date": "1979-02-15",
+  "source": "Wilson Center Digital Archive",
+  "collection": "Wilson Center Digital Archive (SAPMO-BA J IV 1857; translated by Bernd Schaefer)",
+  "summary": "Transcript of talks held in Tripoli between the East German leader and Gaddafi. They stressed opposition to imperialism, colonialism, racism and Zionism, discussed Southern Africa and the Middle East, and covered Libyan oil, an air route to Addis Ababa and joint commissions. The oil deal was still under negotiation. The text concerns diplomacy, not repression.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://digitalarchive.umd.edu/document/87007/download",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "wc-1982-06-qaddafi-socialist-envoys-001",
+  "type": "intelligence assessment",
+  "title": "Note on Qaddafi's reaction to socialist support for Arab countries in the war in Lebanon",
+  "date": "1982-06-28",
+  "source": "Wilson Center Digital Archive",
+  "collection": "Wilson Center Digital Archive (East German records, handwritten note by Honecker)",
+  "summary": "Records that on 26 June 1982 Qaddafi met in Tripoli the heads of mission of the USSR, Bulgaria, Poland, Czechoslovakia, Hungary, Romania and the GDR. He said Libya could not answer ordinary people asking about friendship with socialist states, derided Soviet arms purchases as 'toys', and said Libya had halted arms deals. The Soviet ambassador rejected this. The GDR embassy saw it as consistent with recent Libyan treatment of socialist diplomats.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://digitalarchive.umd.edu/node/89799",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "rrl-1986-01-terrorism-libya-3-001",
+  "type": "government document",
+  "title": "Terrorism and Libya (3), Donald Fortier files, RAC Box 8",
+  "date": "1986-01",
+  "source": "Ronald Reagan Presidential Library",
+  "collection": "NSC Political and Military Affairs, Fortier files (digitised folder)",
+  "summary": "Folder of January 1986 papers: a 7 January Poindexter memo transmitting a draft NSDD 'Acting Against Libyan Support of International Terrorism', State Department memos of 6 January with press themes on Libyan sanctions, and draft presidential report to Congress. The papers cite the 27 December 1985 Rome and Vienna attacks as grounds for emergency economic powers banning most trade, and mention moving Sixth Fleet carrier forces and Gulf of Sidra planning (annex withheld).",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.reaganlibrary.gov/public/digitallibrary/smof/nsc-politicalandmilitaryaffairs/fortierd/R8/terrorismandlibya3.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "rrl-1986-04-12-nsdd224-001",
+  "type": "government document",
+  "title": "National Security Decision Directive 224: Counter-Terrorist Operations Against Libya",
+  "date": "1986-04-12",
+  "source": "Ronald Reagan Presidential Library",
+  "collection": "Scanned NSDDs (declassified in part)",
+  "summary": "Top Secret directive citing evidence tying the 5 April 1986 West Berlin bombing to the Libyan People's Bureau in East Berlin and to Tripoli. It orders pre-emptive air strikes on terrorism-related targets in Libya no later than dawn on 15 April 1986, with efforts to limit civilian casualties and an initial exclusion of economic targets, two carrier groups to stay in the Mediterranean, and briefings of allies including the UK, France, West Germany, Italy, Spain and Canada.",
+  "places": [
+   "tripoli",
+   "bab"
+  ],
+  "link": "https://www.reaganlibrary.gov/public/archives/reference/scanned-nsdds/NSDD224.pdf",
+  "rights": "link-only",
+  "rights_note": "Summary written for this archive; follow the link for the original.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "mtf-prem19-1830-libya-001",
+  "type": "government document",
+  "title": "PREM19/1830: Libya - Internal situation; Anglo-Libyan relations; United States response to Libyan terrorism (Part 4B)",
+  "date": "1984-04-12",
+  "source": "Margaret Thatcher Foundation (The National Archives PREM 19)",
+  "collection": "Prime Ministerial Private Office files; covers 12 April 1984 to 16 April 1986",
+  "summary": "Catalogue page for a Prime Minister's Office file spanning the St James's Square siege period (April 1984) to the days after the April 1986 US raid. The page records 'Reconsideration 2018' and 'Retained Sec 3.4' and lists no individual documents ('file retained'), so contents are not viewable. Included as a pointer to a closed UK government file.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://www.margaretthatcher.org/source/prem19/prem19-1830",
   "rights": "link-only",
   "rights_note": "Summary written for this archive; follow the link for the original.",
   "added": "2026-10-17"

@@ -3,7 +3,7 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: [archive/wikipedia/sources.txt, scripts/collect-wikipedia.mjs, .github/workflows/collect.yml]
+    paths: [archive/wikipedia/sources.txt, 'scripts/collect-*.mjs', .github/workflows/collect.yml]
 permissions: { contents: write }
 concurrency: { group: collect, cancel-in-progress: false }
 jobs:
@@ -15,8 +15,12 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: node scripts/collect-wikipedia.mjs
+      - run: node scripts/collect-countrystudy.mjs
+        continue-on-error: true
+      - run: node scripts/collect-maps.mjs
+        continue-on-error: true
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add archive/wikipedia
+          git add archive/wikipedia archive/countrystudy archive/maps
           if git diff --cached --quiet; then echo "No changes"; else git commit -m "Collect open sources" && git pull --rebase && git push; fi

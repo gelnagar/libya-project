@@ -4,9 +4,30 @@
 
 **Live map:** https://gelnagar.github.io/libya-project/
 
-`index.html` is a single-file interactive map of known and suspected prisons and detention sites in and near Tripoli during the first two decades of Gaddafi's rule. Open it in any browser.
+The map runs full screen on phones and computers. Tap any marker to read why it matters, with sources.
 
-The base map is a rough schematic of the coastline and a few landmarks. It is not survey-grade. Dashed rings around each marker show how uncertain its position is.
+**Map styles:** dark, satellite, streets, terrain.
+
+**History, 1969–1989 (curated):** prisons and detention sites, military installations and 1986 strike targets, Gaddafi's residences and seats of power, landmarks and events, district names in English and Arabic, and uncertainty rings.
+
+**Today, from OpenStreetMap (loads live as you zoom in):** residential, commercial and industrial zones; buildings; present-day military areas; water wells, towers and reservoirs; oil and gas facilities.
+
+**Ask AI:** optional. See [SETUP-AI.md](SETUP-AI.md). The API key stays in a private Cloudflare relay and is never stored in this repository.
+
+Settings (⚙) has a larger-text option.
+
+`schematic.html` is the earlier single-image version of the map.
+
+### Files
+
+| File | What it holds |
+| --- | --- |
+| `index.html` | Page layout and styling |
+| `app.js` | Map behaviour |
+| `data/sites.js` | Historical sites, briefs and sources. Edit this to add or correct places |
+| `data/config.js` | Address of the AI relay |
+| `worker/worker.js` | The AI relay that holds the API key |
+| `vendor/leaflet/` | Leaflet 1.9.4 mapping library |
 
 ### Evidence levels
 
@@ -29,10 +50,6 @@ The base map is a rough schematic of the coastline and a few landmarks. It is no
 | Ain Zara prison | Suspected |
 
 Sites in the record with no usable location: the Black Horse prison (Italian era, replaced by Abu Salim), the military intelligence prison in Tripoli, the 7 April prison in Benghazi, and unnamed secret detention centres.
-
-### Editing
-
-Site data lives in the `SITES` array near the top of the script in `index.html`. Each entry has a name, evidence level, longitude, latitude, uncertainty radius in km, and descriptive text. Add or correct entries there.
 
 ### Sources
 

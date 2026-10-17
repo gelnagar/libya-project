@@ -1,301 +1,236 @@
-<title>Tripoli Detention Sites 1969–1989</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e13">
+<title>Tripoli Security Atlas 1969–1989</title>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Layout: schematic map on top with zoom controls, site detail panel beneath, legend and unlocated sites last. */
+/* Layout: full-screen map; layers panel slides up from the bottom on phones and docks left on desktop; site details slide up on phones and dock right on desktop. */
 :root {
-  --paper: #f3f1ec;
-  --ink: #1e2328;
-  --ink-soft: #566069;
-  --sea: #cfdde6;
-  --land: #ece8df;
-  --land-edge: #9aa5ad;
-  --grid: #d9d5cb;
-  --card: #fbfaf7;
-  --rule: #d2cec3;
-  --confirmed: #b3261e;
-  --testimony: #c27a0e;
-  --suspected: #5b5f97;
-  --context: #2f6f8f;
-  --font-display: "Source Serif 4", Georgia, serif;
-  --font-body: "IBM Plex Sans", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #14181c; --ink: #e6e3dc; --ink-soft: #9aa4ac; --sea: #1c2a34; --land: #242a2e;
-    --land-edge: #51606a; --grid: #2c3338; --card: #1b2024; --rule: #333b41;
-    --confirmed: #ff7b70; --testimony: #f0b04a; --suspected: #9ea3e6; --context: #6bb4d6;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #14181c; --ink: #e6e3dc; --ink-soft: #9aa4ac; --sea: #1c2a34; --land: #242a2e;
-  --land-edge: #51606a; --grid: #2c3338; --card: #1b2024; --rule: #333b41;
-  --confirmed: #ff7b70; --testimony: #f0b04a; --suspected: #9ea3e6; --context: #6bb4d6;
+  --bg: #0a0e13;
+  --panel: #10161e;
+  --panel-2: #161e28;
+  --line: #243142;
+  --text: #e8eef4;
+  --muted: #93a3b5;
+  --accent: #5ab8ff;
+  --focus: #ffd166;
+  --f-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-head: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-data: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --fs: 17px;
+  --bar-h: 56px;
+  --top: env(safe-area-inset-top, 0px);
+  --bot: env(safe-area-inset-bottom, 0px);
   color-scheme: dark;
 }
-body {
-  background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 24px 48px;
+html.big { --fs: 20px; }
+html.huge { --fs: 23px; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text); font-family: var(--f-ui); font-size: var(--fs); line-height: 1.5; -webkit-text-size-adjust: 100%; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+a { color: var(--accent); }
+
+.bar {
+  position: fixed; inset: 0 0 auto 0; z-index: 1000; height: calc(var(--bar-h) + var(--top));
+  padding: var(--top) max(12px, env(safe-area-inset-right, 0px)) 0 max(12px, env(safe-area-inset-left, 0px));
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  background: var(--panel); border-bottom: 1px solid var(--line);
 }
-.wrap { max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-h1 { font-family: var(--font-display); font-size: clamp(26px, 5vw, 38px); line-height: 1.1; margin: 0; text-wrap: balance; }
-.sub { color: var(--ink-soft); margin: 6px 0 0; max-width: 62ch; }
-.mapbox { position: relative; border: 1px solid var(--rule); background: var(--sea); }
-svg { display: block; width: 100%; height: auto; touch-action: none; cursor: grab; }
-svg:active { cursor: grabbing; }
-.ctrl { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 4px; }
-.ctrl button {
-  width: 36px; height: 36px; border: 1px solid var(--rule); background: var(--card); color: var(--ink);
-  font: 500 18px var(--font-body); cursor: pointer;
+.brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.brand i { width: 10px; height: 10px; background: var(--accent); box-shadow: 0 0 0 3px rgba(90,184,255,.2); flex: none; }
+.brand b { font-family: var(--f-head); font-weight: 600; letter-spacing: .06em; font-size: 1em; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand small { display: block; font-family: var(--f-data); font-size: .62em; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.bar-actions { display: flex; gap: 8px; flex: none; }
+.btn {
+  min-height: 44px; padding: 0 16px; border: 1px solid var(--line); background: var(--panel-2);
+  font-weight: 600; font-size: .9em; letter-spacing: .02em; border-radius: 3px;
 }
-.ctrl button:focus-visible, .chip:focus-visible, .site:focus-visible { outline: 2px solid var(--context); outline-offset: 2px; }
-.scalebar { position: absolute; left: 10px; bottom: 8px; font: 11px var(--font-mono); color: var(--ink); background: color-mix(in srgb, var(--card) 85%, transparent); padding: 2px 6px; }
-.note { position: absolute; left: 10px; top: 10px; font: 11px var(--font-mono); color: var(--ink-soft); background: color-mix(in srgb, var(--card) 85%, transparent); padding: 2px 6px; }
-.row { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; }
-@media (max-width: 720px) { .row { grid-template-columns: minmax(0, 1fr); } }
-.panel { border: 1px solid var(--rule); background: var(--card); padding: 16px; min-width: 0; }
-.panel h2 { font-family: var(--font-display); font-size: 21px; margin: 0 0 4px; }
-.tag { display: inline-block; font: 500 11px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border: 1px solid currentColor; }
-.coord { font: 12px var(--font-mono); color: var(--ink-soft); margin: 8px 0; }
-.panel p { margin: 8px 0 0; }
-.panel h3 { font: 600 12px var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 8px; }
-.legend { display: flex; flex-direction: column; gap: 8px; }
-.chip { display: flex; gap: 10px; align-items: flex-start; text-align: left; background: none; border: 0; padding: 4px 0; color: var(--ink); font: inherit; cursor: pointer; }
-.chip[aria-pressed="false"] { opacity: .4; }
-.chip svg { flex: none; width: 18px; height: 18px; margin-top: 3px; cursor: inherit; }
-.chip small { display: block; color: var(--ink-soft); font-size: 13px; }
-ul.plain { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
-.sources { font-size: 13px; color: var(--ink-soft); }
-.sources a { color: var(--context); }
-.sources ol { margin: 6px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 2px; }
-text.lbl { font: 600 11.5px var(--font-body); fill: var(--ink); paint-order: stroke; stroke: var(--land); stroke-width: 3px; }
-text.geo { font: italic 11px var(--font-display); fill: var(--ink-soft); paint-order: stroke; stroke: var(--land); stroke-width: 2.5px; }
-.site { cursor: pointer; }
+.btn:active { background: var(--line); }
+.btn.primary { background: var(--accent); color: #04121f; border-color: var(--accent); }
+.btn.icon { width: 44px; padding: 0; font-size: 1.1em; }
+
+#map { position: fixed; top: calc(var(--bar-h) + var(--top)); left: 0; right: 0; bottom: 0; background: #0d1218; }
+
+/* panels */
+.panel {
+  position: fixed; z-index: 1100; background: var(--panel); border: 1px solid var(--line);
+  display: flex; flex-direction: column; min-height: 0;
+}
+.panel-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); flex: none; }
+.panel-head h2 { margin: 0; font-family: var(--f-head); font-size: 1.05em; letter-spacing: .06em; text-transform: uppercase; }
+.panel-body { overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 14px 16px calc(20px + var(--bot)); display: flex; flex-direction: column; gap: 20px; min-height: 0; }
+.grab { display: none; width: 44px; height: 5px; border-radius: 3px; background: var(--line); margin: 8px auto 0; }
+
+@media (max-width: 899px) {
+  .panel { left: 0; right: 0; bottom: 0; border-radius: 12px 12px 0 0; border-bottom: 0; max-height: 78vh; transform: translateY(105%); transition: transform .25s ease; }
+  .panel.open { transform: none; }
+  #sheet { max-height: 64vh; }
+  .grab { display: block; }
+}
+@media (min-width: 900px) {
+  #drawer { top: calc(var(--bar-h) + var(--top) + 12px); left: 12px; bottom: 12px; width: 340px; border-radius: 4px; }
+  #drawer:not(.open) { display: none; }
+  #sheet { top: calc(var(--bar-h) + var(--top) + 12px); right: 12px; bottom: 12px; width: 410px; border-radius: 4px; }
+  #sheet:not(.open) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .panel { transition: none; } }
+
+.sec h3 { margin: 0 0 8px; font-family: var(--f-data); font-weight: 500; font-size: .7em; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.basemaps { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.basemaps button { min-height: 52px; border: 1px solid var(--line); background: var(--panel-2); border-radius: 3px; font-weight: 600; text-align: left; padding: 8px 12px; }
+.basemaps button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.basemaps small { display: block; font-weight: 400; color: var(--muted); font-size: .75em; }
+
+.toggle { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 6px 4px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.toggle:last-child { border-bottom: 0; }
+.toggle input { width: 26px; height: 26px; accent-color: var(--accent); flex: none; margin: 0; }
+.toggle .sw { width: 22px; height: 22px; flex: none; border-radius: 50%; display: grid; place-items: center; font: 600 12px var(--f-data); color: #0a0e13; }
+.toggle .sw.sq { border-radius: 3px; }
+.toggle span.t { flex: 1; min-width: 0; }
+.toggle small { display: block; color: var(--muted); font-size: .78em; line-height: 1.35; }
+
+.places { display: flex; flex-direction: column; }
+.places button { display: flex; align-items: center; gap: 12px; text-align: left; min-height: 48px; padding: 8px 4px; background: none; border: 0; border-bottom: 1px solid var(--line); }
+.places button:last-child { border-bottom: 0; }
+
+/* detail sheet */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font: 500 .68em var(--f-data); letter-spacing: .1em; text-transform: uppercase; padding: 4px 8px; border: 1px solid currentColor; border-radius: 2px; }
+.d-title { margin: 0; font-family: var(--f-head); font-size: 1.45em; line-height: 1.15; text-wrap: balance; }
+.d-ar { font-size: 1.05em; color: var(--muted); margin-top: 2px; }
+.meta { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font: .78em var(--f-data); color: var(--muted); margin: 0; }
+.meta dt { text-transform: uppercase; letter-spacing: .08em; }
+.meta dd { margin: 0; color: var(--text); font-variant-numeric: tabular-nums; }
+.brief { border-left: 3px solid var(--accent); padding: 4px 0 4px 12px; margin: 0; font-size: 1.02em; }
+.d-text { margin: 0; color: #d3dce6; }
+.srcs { margin: 0; padding-left: 20px; font-size: .88em; display: flex; flex-direction: column; gap: 6px; }
+.ai { border: 1px solid var(--line); background: var(--panel-2); padding: 12px; border-radius: 3px; display: flex; flex-direction: column; gap: 10px; }
+.ai textarea, .field input { width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 3px; padding: 10px; min-height: 48px; }
+.ai textarea { min-height: 76px; resize: vertical; }
+.ai-out { white-space: pre-wrap; margin: 0; }
+.ai-out.err { color: #ff9b94; }
+.row-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.row-btns .btn { flex: 1; }
+table.kv { width: 100%; border-collapse: collapse; font: .8em var(--f-data); }
+table.kv td { border-top: 1px solid var(--line); padding: 6px 4px; vertical-align: top; word-break: break-word; }
+table.kv td:first-child { color: var(--muted); width: 40%; }
+
+/* markers & labels */
+.mk { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--c); border: 3px solid #0a0e13; box-shadow: 0 0 0 1px var(--c), 0 2px 6px rgba(0,0,0,.6); font: 600 14px var(--f-data); color: #0a0e13; transition: transform .15s; }
+.mk.l-military, .mk.l-power { border-radius: 4px; }
+.mk.v-suspected { background: #0a0e13; color: var(--c); border-color: var(--c); box-shadow: 0 2px 6px rgba(0,0,0,.6); }
+.mk.v-testimony { box-shadow: 0 0 0 1px var(--c), 0 0 0 5px rgba(255,255,255,.18); }
+.mk.sel { transform: scale(1.3); box-shadow: 0 0 0 3px #fff, 0 0 0 7px var(--c); }
+.leaflet-tooltip.site-label { background: rgba(10,14,19,.88); color: var(--text); border: 1px solid var(--line); border-radius: 2px; font: 600 13px var(--f-ui); padding: 3px 7px; box-shadow: none; }
+.leaflet-tooltip.site-label::before { display: none; }
+.hide-labels .site-label { display: none; }
+.district { font: 600 11px var(--f-head); letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.78); text-shadow: 0 0 3px #000, 0 0 6px #000, 0 0 10px #000; white-space: nowrap; pointer-events: none; text-align: center; }
+.district span { display: block; font: 500 11px var(--f-ui); letter-spacing: 0; text-transform: none; opacity: .85; }
+.hide-districts .district { display: none; }
+
+/* leaflet chrome */
+.leaflet-container { font-family: var(--f-ui); background: #0d1218; }
+.leaflet-bar a { width: 44px !important; height: 44px !important; line-height: 44px !important; font-size: 22px !important; background: var(--panel) !important; color: var(--text) !important; border-color: var(--line) !important; }
+.leaflet-bar { border: 1px solid var(--line) !important; box-shadow: none !important; }
+.leaflet-control-attribution { background: rgba(10,14,19,.75) !important; color: var(--muted) !important; font-size: 10px; }
+.leaflet-control-attribution a { color: var(--muted) !important; }
+.leaflet-control-scale-line { background: rgba(10,14,19,.75); color: var(--text); border-color: var(--muted); font: 11px var(--f-data); }
+@media (max-width: 899px) { .leaflet-top.leaflet-right { margin-top: 6px; } }
+
+.status { position: fixed; z-index: 1050; top: calc(var(--bar-h) + var(--top) + 10px); left: 50%; transform: translateX(-50%); max-width: calc(100% - 120px); background: var(--panel); border: 1px solid var(--line); padding: 8px 14px; border-radius: 3px; font-size: .85em; text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,.5); }
+
+.tip { position: fixed; z-index: 1200; left: 12px; right: 12px; bottom: calc(16px + var(--bot)); max-width: 460px; margin: 0 auto; background: var(--panel); border: 1px solid var(--accent); padding: 14px 16px; border-radius: 6px; display: flex; gap: 12px; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.6); }
+.tip p { margin: 0; flex: 1; }
+
+.modal { position: fixed; inset: 0; z-index: 1300; background: rgba(0,0,0,.6); display: grid; place-items: center; padding: 16px; }
+.modal-box { width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.seg button { min-height: 48px; border: 1px solid var(--line); background: var(--panel-2); border-radius: 3px; font-weight: 600; }
+.seg button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.field label { display: block; font-weight: 600; margin-bottom: 6px; }
+.field small { display: block; color: var(--muted); margin-top: 6px; font-size: .8em; }
 </style>
-
-<div class="wrap">
-  <header>
-    <h1>Detention sites around Tripoli, 1969–1989</h1>
-    <p class="sub">Prisons and detention sites in and near Tripoli during the first two decades of Gaddafi's rule, compiled from published reports. Select a marker to see its sources.</p>
-  </header>
-
-  <div class="mapbox">
-    <svg id="map" viewBox="0 0 800 690" role="img" aria-label="Schematic map of Tripoli with detention sites marked"></svg>
-    <div class="note">Schematic base map, not survey-grade</div>
-    <div class="ctrl">
-      <button id="zin" aria-label="Zoom in">+</button>
-      <button id="zout" aria-label="Zoom out">−</button>
-      <button id="zreset" aria-label="Reset view" style="font-size:13px">⟲</button>
-    </div>
-    <div class="scalebar" id="scale">5 km</div>
+</head>
+<body>
+<header class="bar">
+  <div class="brand"><i aria-hidden="true"></i><div><b>TRIPOLI 1969–1989</b><small>Security &amp; detention atlas</small></div></div>
+  <div class="bar-actions">
+    <button class="btn" id="btn-layers" aria-controls="drawer" aria-expanded="false">Layers</button>
+    <button class="btn icon" id="btn-settings" aria-label="Settings">⚙</button>
   </div>
+</header>
 
-  <div class="row">
-    <div class="panel" id="detail" aria-live="polite"></div>
-    <div class="panel">
-      <h3>Evidence level (click to filter)</h3>
-      <div class="legend" id="legend"></div>
+<div id="map" aria-label="Map of Tripoli"></div>
+<div id="status" class="status" role="status" hidden></div>
+
+<aside id="drawer" class="panel" aria-label="Map layers">
+  <div class="grab" aria-hidden="true"></div>
+  <div class="panel-head"><h2>Layers</h2><button class="btn" id="drawer-close">Done</button></div>
+  <div class="panel-body">
+    <div class="sec">
+      <h3>Map style</h3>
+      <div class="basemaps" id="basemaps"></div>
     </div>
+    <div class="sec">
+      <h3>History · 1969–1989</h3>
+      <div id="hist-toggles"></div>
+    </div>
+    <div class="sec">
+      <h3>Today · OpenStreetMap</h3>
+      <div id="osm-toggles"></div>
+    </div>
+    <div class="sec">
+      <h3>All places</h3>
+      <div class="places" id="places"></div>
+    </div>
+    <button class="btn" id="reset-view">Show all of Tripoli</button>
   </div>
+</aside>
 
-  <div class="row">
-    <div class="panel">
-      <h3>Sites in the record with no usable location</h3>
-      <ul class="plain">
-        <li><strong>Black Horse prison (al-Hissan al-Aswad).</strong> A prison from the Italian colonial era that Abu Salim replaced after its completion in 1984. No published source places it on a map.</li>
-        <li><strong>Military intelligence prison, Tripoli.</strong> A former detainee describes being held there after the May 1984 arrests. The building's location is not given.</li>
-        <li><strong>7 April prison, Benghazi.</strong> Used for interrogations before detainees were moved to Jdeida in Tripoli. It lies outside this map.</li>
-        <li><strong>Secret detention centres.</strong> Amnesty International reports incommunicado detention in unnamed centres. They cannot be mapped.</li>
-      </ul>
-    </div>
-    <div class="panel">
-      <h3>Notes on positions</h3>
-      <p style="margin-top:0">Dashed rings show the possible margin of error for each marker. Abu Salim's position comes from a published coordinate. The other sites are placed by district or suburb only. "Suspected" marks a facility that existed in Tripoli with no source tying it to 1969–1989.</p>
-    </div>
-  </div>
+<section id="sheet" class="panel" aria-label="Details" aria-live="polite">
+  <div class="grab" aria-hidden="true"></div>
+  <div class="panel-head"><h2 id="sheet-kind">Details</h2><button class="btn" id="sheet-close">Close</button></div>
+  <div class="panel-body" id="sheet-body"></div>
+</section>
 
-  <div class="sources panel">
-    <h3>Sources</h3>
-    <ol>
-      <li><a href="https://en.wikipedia.org/wiki/Abu_Salim_prison" target="_blank" rel="noopener">Abu Salim prison, Wikipedia</a> (coordinates, 1988 amnesty)</li>
-      <li><a href="https://hrsly.com/en/annex-1-the-abu-salim-prison-massacre/" target="_blank" rel="noopener">Human Rights Solidarity Organization, Annex 1: The Abu Salim Prison Massacre</a> (1984 completion, Black Horse, Military Police Command compound)</li>
-      <li><a href="https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190031992en.pdf" target="_blank" rel="noopener">Amnesty International, Libya: further information on political detention (1992)</a> (May 1984 Bab al-Aziziya attack and arrests)</li>
-      <li><a href="https://tarikhi.org/interview/abubaker-shareef/" target="_blank" rel="noopener">Abubaker Shareef interview, Tarikhi</a> (Jdeida civilian prison, military intelligence prison)</li>
-      <li><a href="https://en.wikipedia.org/wiki/Maktab_al-Nasser_prison" target="_blank" rel="noopener">Maktab al-Nasser prison, Wikipedia</a></li>
-      <li><a href="https://www.hrw.org/node/97287" target="_blank" rel="noopener">Human Rights Watch, 2011 report on arrests in Tripoli</a> (names Abu Salim, Jdeida and Ain Zara as possible facilities in 2011)</li>
-      <li><a href="https://www.usip.org/sites/default/files/PW119-Prisons-and-Detention-in-Libya.pdf" target="_blank" rel="noopener">USIP, Prisons and Detention in Libya</a> (Ain Zara)</li>
-      <li><a href="https://www.refworld.org/reference/countryrep/amnesty/1997/91542" target="_blank" rel="noopener">Amnesty International, Libya: gross human rights violations (1997)</a></li>
-    </ol>
+<div id="tip" class="tip" hidden>
+  <p>Tap any marker to read about it. Tap <b>Layers</b> to choose what you see.</p>
+  <button class="btn primary" id="tip-ok">Got it</button>
+</div>
+
+<div id="settings" class="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="set-title">
+    <div class="panel-head"><h2 id="set-title">Settings</h2><button class="btn" id="set-close">Done</button></div>
+    <div class="panel-body">
+      <div class="sec">
+        <h3>Text size</h3>
+        <div class="seg" id="sizes">
+          <button data-size="normal">Normal</button>
+          <button data-size="big">Large</button>
+          <button data-size="huge">Larger</button>
+        </div>
+      </div>
+      <div class="sec field" id="code-field" hidden>
+        <label for="family-code">Family code for AI answers</label>
+        <input id="family-code" type="password" autocomplete="off" placeholder="Ask the person who shared this map">
+        <small>Saved on this device only.</small>
+      </div>
+      <button class="btn" id="tip-again">Show the welcome tip again</button>
+    </div>
   </div>
 </div>
 
-<script>
-(function () {
-  var W = 800, H = 690, LON0 = 13.00, LON1 = 13.40, LAT1 = 32.93, LAT0 = 32.64;
-  var PXLON = W / (LON1 - LON0), PXLAT = H / (LAT1 - LAT0);
-  var KM = PXLAT / 111.2;
-  function px(lon, lat) { return [(lon - LON0) * PXLON, (LAT1 - lat) * PXLAT]; }
-
-  var TYPES = {
-    confirmed: { label: 'Documented, 1969–1989', note: 'Reported for the period by Amnesty International or similar sources.', color: 'var(--confirmed)' },
-    testimony: { label: 'Testimony, area only', note: 'A former detainee names it for the 1980s. Position is approximate.', color: 'var(--testimony)' },
-    suspected: { label: 'Suspected, period unverified', note: 'A facility existed in Tripoli. No source ties it to 1969–1989.', color: 'var(--suspected)' },
-    context: { label: 'Context site, not a prison', note: 'Linked to arrests or detention but not itself a prison.', color: 'var(--context)' }
-  };
-
-  var SITES = [
-    { id: 'abusalim', name: 'Abu Salim prison', type: 'confirmed', lon: 13.1739, lat: 32.8333, r: 1, dx: -10, dy: 16, anchor: 'end',
-      when: 'Completed 1984',
-      text: 'Maximum-security prison in the Abu Salim district, inside the Military Police Command compound. It replaced the Black Horse prison. The first political prisoners were transferred here after the arrests that followed the May 1984 attack on Bab al-Aziziya. In March 1988, 426 of 530 political prisoners were released in an amnesty, but others stayed in custody. Amnesty International documented arrests of religious activists and suspected opponents here in 1989 and 1990. In June 1996 more than 1,000 prisoners were killed in the prison, outside this map\'s period.',
-      src: 'Wikipedia (coordinates); Human Rights Solidarity Organization; Amnesty International' },
-    { id: 'jdeida', name: 'Jdeida prison', type: 'testimony', lon: 13.10, lat: 32.73, r: 3.5, dx: 12, dy: 4, anchor: 'start',
-      when: 'Named for the 1980s',
-      text: 'A former detainee says he was interrogated in Benghazi for three months and then taken to the civilian prison of Jdeida in Tripoli. Human Rights Watch also lists Jdeida among possible detention facilities in Tripoli in 2011. The marker shows the Jdeida area only. The exact site is not documented.',
-      src: 'Abubaker Shareef interview (Tarikhi); Human Rights Watch 2011' },
-    { id: 'bab', name: 'Bab al-Aziziya compound', type: 'context', lon: 13.151, lat: 32.848, r: 0.8, dx: -10, dy: -10, anchor: 'end',
-      when: 'Attack on 8 May 1984',
-      text: 'Gaddafi\'s residence and the headquarters of the General Command. An armed group attacked it on 8 May 1984 and security forces repelled the attack within hours. The attack was followed by mass arrests across Libya, and people with a history of opposition were rounded up in Tripoli. Detainees were moved to Abu Salim and other sites. The compound is shown for context, not as a prison.',
-      src: 'Amnesty International (1992); Abubaker Shareef interview' },
-    { id: 'maktab', name: 'Maktab al-Nasser', type: 'suspected', lon: 13.179, lat: 32.840, r: 2, dx: 12, dy: -6, anchor: 'start',
-      when: 'Date range unverified',
-      text: 'A prison and internal security office in the Abu Salim district. Prisoners held there were often moved on to Abu Salim prison. The source describes its use before 2011 and does not give start dates, so operation between 1969 and 1989 is unconfirmed. The marker is placed only in the district.',
-      src: 'Wikipedia, citing Foreign Policy (2011)' },
-    { id: 'hadba', name: 'Hadba al-Khadra', type: 'suspected', lon: 13.191, lat: 32.8444, r: 1.8, dx: 12, dy: -14, anchor: 'start',
-      when: 'Date range unverified',
-      text: 'A Ministry of Defence facility in the Hadba al-Khadra area, known for holding senior officials of the former government after 2011. No source places it in use during 1969–1989, so it is shown as suspected only. Reports of its location vary by a kilometre or more.',
-      src: 'Reuters (2017); Human Rights Watch (2015)' },
-    { id: 'ainzara', name: 'Ain Zara prison', type: 'suspected', lon: 13.27, lat: 32.79, r: 3, dx: 12, dy: 4, anchor: 'start',
-      when: 'Date range unverified',
-      text: 'A long-standing Ministry of Justice prison in the Ain Zara suburb. Human Rights Watch lists it among possible detention facilities in Tripoli in 2011. No source confirms political detention there between 1969 and 1989. The marker shows the suburb only.',
-      src: 'USIP; Human Rights Watch 2011' }
-  ];
-
-  var LANDMARKS = [
-    { n: 'Martyrs\' Square / old city', lon: 13.1815, lat: 32.8978, dx: 8, dy: -8, a: 'start' },
-    { n: 'Mitiga airport', lon: 13.2761, lat: 32.8946, dx: 8, dy: -8, a: 'start' },
-    { n: 'Tripoli International (old)', lon: 13.159, lat: 32.6635, dx: 8, dy: 4, a: 'start' }
-  ];
-  var COAST = [[13.00,32.815],[13.04,32.835],[13.08,32.855],[13.115,32.872],[13.15,32.888],[13.172,32.899],[13.185,32.907],[13.2,32.899],[13.23,32.893],[13.255,32.897],[13.29,32.897],[13.33,32.887],[13.40,32.872]];
-
-  var svg = document.getElementById('map');
-  var NS = 'http://www.w3.org/2000/svg';
-  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
-
-  var vp = el('g', {}, svg);
-  var landPath = 'M0,0 L' + W + ',0 L' + W + ',' + H + ' L0,' + H + ' Z';
-  // sea first, then land polygon below the coast line
-  el('rect', { x: 0, y: 0, width: W, height: H, fill: 'var(--sea)' }, vp);
-  var pts = COAST.map(function (c) { return px(c[0], c[1]); });
-  var d = 'M' + pts[0][0] + ',' + pts[0][1];
-  for (var i = 1; i < pts.length; i++) d += ' L' + pts[i][0] + ',' + pts[i][1];
-  d += ' L' + W + ',' + H + ' L0,' + H + ' Z';
-  el('path', { d: d, fill: 'var(--land)', stroke: 'var(--land-edge)', 'stroke-width': 1.2, 'vector-effect': 'non-scaling-stroke' }, vp);
-  // graticule every 0.05 deg
-  for (var lo = 13.0; lo <= 13.4001; lo += 0.05) { var gx = px(lo, 0)[0]; el('line', { x1: gx, y1: 0, x2: gx, y2: H, stroke: 'var(--grid)', 'stroke-width': 0.8, 'vector-effect': 'non-scaling-stroke' }, vp); }
-  for (var la = 32.65; la <= 32.93; la += 0.05) { var gy = px(0, la)[1]; el('line', { x1: 0, y1: gy, x2: W, y2: gy, stroke: 'var(--grid)', 'stroke-width': 0.8, 'vector-effect': 'non-scaling-stroke' }, vp); }
-
-  var sea = px(13.06, 32.90); var seaT = el('text', { x: sea[0], y: sea[1], class: 'geo' }, vp); seaT.textContent = 'Mediterranean Sea';
-  var rings = el('g', {}, vp), marks = el('g', {}, vp), labels = el('g', {}, vp);
-
-  var state = { x: 0, y: 0, z: 1, hidden: {}, selected: 'abusalim' };
-
-  function shapeFor(type, color, size, parent) {
-    var s = size;
-    if (type === 'confirmed') return el('circle', { r: s, fill: color, stroke: 'var(--paper)', 'stroke-width': 2 }, parent);
-    if (type === 'testimony') return el('rect', { x: -s, y: -s, width: 2 * s, height: 2 * s, fill: color, stroke: 'var(--paper)', 'stroke-width': 2 }, parent);
-    if (type === 'suspected') return el('circle', { r: s, fill: 'var(--paper)', stroke: color, 'stroke-width': 2.5 }, parent);
-    return el('path', { d: 'M0,' + (-s - 2) + ' L' + (s + 2) + ',0 L0,' + (s + 2) + ' L' + (-s - 2) + ',0 Z', fill: color, stroke: 'var(--paper)', 'stroke-width': 2 }, parent);
-  }
-
-  function draw() {
-    while (rings.firstChild) rings.removeChild(rings.firstChild);
-    while (marks.firstChild) marks.removeChild(marks.firstChild);
-    while (labels.firstChild) labels.removeChild(labels.firstChild);
-    LANDMARKS.forEach(function (m) {
-      var p = px(m.lon, m.lat); var g = el('g', { transform: 'translate(' + p[0] + ',' + p[1] + ') scale(' + 1 / state.z + ')' }, labels);
-      el('rect', { x: -3, y: -3, width: 6, height: 6, fill: 'var(--ink-soft)' }, g);
-      var t = el('text', { x: m.dx, y: m.dy, class: 'geo', 'text-anchor': m.a }, g); t.textContent = m.n;
-    });
-    SITES.forEach(function (s) {
-      if (state.hidden[s.type]) return;
-      var p = px(s.lon, s.lat), c = TYPES[s.type].color;
-      el('circle', { cx: p[0], cy: p[1], r: s.r * KM, fill: c, 'fill-opacity': 0.08, stroke: c, 'stroke-dasharray': '4 3', 'stroke-width': 1.2, 'vector-effect': 'non-scaling-stroke' }, rings);
-      var g = el('g', { class: 'site', tabindex: 0, role: 'button', 'aria-label': s.name, transform: 'translate(' + p[0] + ',' + p[1] + ') scale(' + 1 / state.z + ')' }, marks);
-      el('circle', { r: 16, fill: 'transparent' }, g);
-      var sz = state.selected === s.id ? 8 : 6;
-      shapeFor(s.type, c, sz, g);
-      if (state.selected === s.id) el('circle', { r: 13, fill: 'none', stroke: c, 'stroke-width': 1.5 }, g);
-      g.addEventListener('click', function (e) { e.stopPropagation(); select(s.id); });
-      g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(s.id); } });
-      var lg = el('g', { transform: 'translate(' + p[0] + ',' + p[1] + ') scale(' + 1 / state.z + ')' }, labels);
-      var t = el('text', { x: s.dx, y: s.dy, class: 'lbl', 'text-anchor': s.anchor }, lg); t.textContent = s.name;
-    });
-    applyView();
-  }
-
-  function applyView() {
-    var w = W / state.z, h = H / state.z;
-    state.x = Math.max(0, Math.min(W - w, state.x)); state.y = Math.max(0, Math.min(H - h, state.y));
-    svg.setAttribute('viewBox', state.x + ' ' + state.y + ' ' + w + ' ' + h);
-    var km = 5, pxk = km * KM * state.z * (svg.getBoundingClientRect().width / W || 1);
-    var target = pxk < 40 ? 10 : 5; if (state.z >= 3) target = 2; if (state.z >= 6) target = 1;
-    document.getElementById('scale').textContent = '≈ ' + target + ' km per ' + Math.round(target * KM * state.z * (svg.getBoundingClientRect().width / W || 1)) + ' px';
-  }
-
-  function zoomAt(f, cx, cy) {
-    var nz = Math.max(1, Math.min(10, state.z * f)); if (nz === state.z) return;
-    var w0 = W / state.z, h0 = H / state.z, w1 = W / nz, h1 = H / nz;
-    var fx = (cx - state.x) / w0, fy = (cy - state.y) / h0;
-    state.x = cx - fx * w1; state.y = cy - fy * h1; state.z = nz; draw();
-  }
-  function centerOn(lon, lat, z) { var p = px(lon, lat); state.z = z; state.x = p[0] - W / z / 2; state.y = p[1] - H / z / 2; draw(); }
-
-  document.getElementById('zin').onclick = function () { zoomAt(1.6, state.x + W / state.z / 2, state.y + H / state.z / 2); };
-  document.getElementById('zout').onclick = function () { zoomAt(1 / 1.6, state.x + W / state.z / 2, state.y + H / state.z / 2); };
-  document.getElementById('zreset').onclick = function () { state.z = 1; state.x = 0; state.y = 0; draw(); };
-
-  function toSvg(e) { var r = svg.getBoundingClientRect(); return [state.x + (e.clientX - r.left) / r.width * (W / state.z), state.y + (e.clientY - r.top) / r.height * (H / state.z)]; }
-  svg.addEventListener('wheel', function (e) { e.preventDefault(); var p = toSvg(e); zoomAt(e.deltaY < 0 ? 1.25 : 0.8, p[0], p[1]); }, { passive: false });
-  var drag = null;
-  svg.addEventListener('pointerdown', function (e) { drag = { x: e.clientX, y: e.clientY, vx: state.x, vy: state.y, moved: false }; });
-  window.addEventListener('pointermove', function (e) {
-    if (!drag) return; var r = svg.getBoundingClientRect(); var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
-    if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true;
-    state.x = drag.vx - dx / r.width * (W / state.z); state.y = drag.vy - dy / r.height * (H / state.z); applyView();
-  });
-  window.addEventListener('pointerup', function () { drag = null; });
-  window.addEventListener('resize', applyView);
-
-  function select(id) {
-    state.selected = id; var s = SITES.filter(function (x) { return x.id === id; })[0];
-    var t = TYPES[s.type];
-    document.getElementById('detail').innerHTML =
-      '<span class="tag" style="color:' + t.color + '">' + t.label + '</span>' +
-      '<h2 style="margin-top:10px">' + s.name + '</h2>' +
-      '<div class="coord">' + s.lat.toFixed(4) + '° N, ' + s.lon.toFixed(4) + '° E · ±' + s.r + ' km · ' + s.when + '</div>' +
-      '<p>' + s.text + '</p>' +
-      '<p class="sources" style="margin-top:12px"><strong>Basis:</strong> ' + s.src + '</p>';
-    draw();
-  }
-
-  var lg = document.getElementById('legend');
-  Object.keys(TYPES).forEach(function (k) {
-    var t = TYPES[k];
-    var b = document.createElement('button'); b.className = 'chip'; b.setAttribute('aria-pressed', 'true');
-    var icon = document.createElementNS(NS, 'svg'); icon.setAttribute('viewBox', '-10 -10 20 20');
-    var g = el('g', {}, icon); shapeFor(k, t.color, 6, g);
-    b.appendChild(icon);
-    var sp = document.createElement('span'); sp.innerHTML = '<strong>' + t.label + '</strong><small>' + t.note + '</small>'; b.appendChild(sp);
-    b.onclick = function () { state.hidden[k] = !state.hidden[k]; b.setAttribute('aria-pressed', state.hidden[k] ? 'false' : 'true'); draw(); };
-    lg.appendChild(b);
-  });
-
-  svg.addEventListener('dblclick', function (e) { var p = toSvg(e); zoomAt(1.8, p[0], p[1]); });
-  // Open zoomed on the central Tripoli sites, with Abu Salim selected.
-  centerOn(13.185, 32.845, 2.6);
-  select('abusalim');
-})();
-</script>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="data/config.js"></script>
+<script src="data/sites.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

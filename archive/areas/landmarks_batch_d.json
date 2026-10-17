@@ -1,0 +1,528 @@
+[
+ {
+  "id": "wp-rabta-pharma-150-chemical-plant",
+  "name": "Rabta chemical plant (Pharma 150)",
+  "ar": "مصنع الرابطة للأدوية",
+  "aliases": [
+   "Rabta",
+   "Pharma 150",
+   "Qabilat az Zaribah"
+  ],
+  "kind": "military",
+  "lat": null,
+  "lon": null,
+  "r": 5,
+  "summary": "Reported chemical weapons plant at Rabta, south of Tripoli, publicly presented by Libya as a pharmaceutical factory; subject of the 1990 fire dispute.",
+  "history": "GlobalSecurity's compilation places the site at Qabilat az Zaribah (Rabta), about 60 miles south of Tripoli. It gives construction as 1984 to 1988. West Germany's intelligence service (BND) and government linked German firm Imhausen Chemie to the project from 1984 onward, and in 1987 the BND judged from satellite images that the plant was most likely for chemical weapons.",
+  "era": "The US assessed Rabta in 1990 as the largest chemical weapons plant in the developing world; Libya denied this and claimed a closure that was not confirmed. In March 1990 a fire occurred: Libya blamed the United States, while US officials said satellite imagery showed only minimal damage and called it a hoax; US officials later said production resumed by mid-May 1990. In 1995 Libya reopened it as a pharmaceutical plant, a joint venture with Egypt's Nasr Companies.",
+  "today": "Libya joined the Chemical Weapons Convention in early 2004. The OPCW stated that Libya declared several chemical weapons production facilities which were destroyed or converted to peaceful uses; the OPCW pages seen do not name Rabta, so its exact post-2004 use is not confirmed here.",
+  "uncertain": "Location approximate: no coordinates were seen on any page opened, so lat/lon are null. Distance is converted from a source figure of about 60 miles (about 97 km) and is rough; other accounts give different distances. Much of the 1980s-90s detail is Western intelligence or press assertion, denied by Libya.",
+  "sources": [
+   {
+    "t": "GlobalSecurity: Rabta",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/rabta.htm"
+   },
+   {
+    "t": "OPCW: Libya completes destruction of its Category 1 chemical weapons",
+    "u": "https://www.opcw.org/news/article/libya-completes-destruction-of-its-category-1-chemical-weapons"
+   }
+  ],
+  "distance_from_tripoli_km": 97
+ },
+ {
+  "id": "wp-tarhuna-underground-facility",
+  "name": "Tarhuna (Tarhunah) underground facility",
+  "ar": "منشأة ترهونة",
+  "aliases": [
+   "Tarhunah",
+   "Targhuna",
+   "Pharma 300"
+  ],
+  "kind": "military",
+  "lat": 32.47264,
+  "lon": 13.4288,
+  "r": 2,
+  "summary": "Underground complex in hills near Tarhuna that the US said in 1996 was a chemical weapons plant under construction; Libya denied it.",
+  "history": "Arms Control Wonk located the site by matching a Defense Department illustration in Google Earth at about 32.473 N, 13.429 E, noting a State Department description of about 60 km southeast of Tripoli. The State Department believed construction began around 1992. Tarhuna town itself lies about 65 km southeast of Tripoli (Wikipedia). The computed distance to the plotted point is about 52 km, so the 60 km figure is approximate.",
+  "era": "In February 1996 CIA director John Deutch accused Libya of building the world's largest underground chemical weapons plant near Tarhuna. In April 1996 the Defense Intelligence Agency said it was not yet operational, possibly within about a year. Gaddafi said the US photos were faked and described an irrigation project; Egyptian inspectors reportedly saw nothing threatening in late May. In December 1997 the US assessed the facility never became functional and construction had stopped.",
+  "today": "Present condition is not documented in the pages seen. The 2004 OPCW declaration process did not, in the sources opened, mention this site.",
+  "uncertain": "Coordinates come from a 2007 blogger's imagery match (Arms Control Wonk), not an official release, so treat as approximate (a few km). The purpose is based on US government claims that Libya disputed; the later US view was that it was never completed.",
+  "sources": [
+   {
+    "t": "Arms Control Wonk, 25 Mar 2007: Targhuna CW Facility",
+    "u": "https://www.armscontrolwonk.com/archive/201440/targhuna-cw-facility/"
+   },
+   {
+    "t": "Arms Control Wonk: Tarhuna archive page",
+    "u": "https://www.armscontrolwonk.com/page/709/?id=401"
+   },
+   {
+    "t": "GlobalSecurity: Tarhuna / Tarhunah",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/tarhuna.htm"
+   },
+   {
+    "t": "Wikipedia: Tarhuna",
+    "u": "https://en.wikipedia.org/wiki/Tarhuna"
+   }
+  ],
+  "distance_from_tripoli_km": 52.2
+ },
+ {
+  "id": "wp-tajoura-nuclear-research-centre",
+  "name": "Tajoura Nuclear Research Centre",
+  "ar": "مركز تاجوراء للبحوث النووية",
+  "aliases": [
+   "Tajura Nuclear Research Center",
+   "TNRC",
+   "IRT-1 reactor"
+  ],
+  "kind": "military",
+  "lat": 32.8818,
+  "lon": 13.3399,
+  "r": 4,
+  "summary": "Libya's civil nuclear research centre in Tajoura, east of Tripoli, with a Soviet-supplied research reactor under IAEA safeguards.",
+  "history": "The centre was established in 1983 around a 10 MW Soviet-built research reactor (reported as delivered 1979-81). It lies in Tajoura, roughly 10 miles east of Tripoli per GlobalSecurity. A 1998 contract with Russia's Atomenergoeksport covered a partial overhaul. It was the declared, safeguarded hub of Libya's nuclear work.",
+  "era": "In December 2003 Libya told the IAEA and the US and UK about an undeclared nuclear programme; the IAEA later reported that parts of it ran in and around Tajoura. In March 2004 the IAEA monitored packing of about 17 kg of highly enriched uranium fuel, flown to Russia (cost about 700,000 dollars, US-funded). Three kg of fresh fuel followed in July 2006, and reactor conversion to low-enriched fuel was announced.",
+  "today": "The centre still operates under Libya's atomic energy authority. Wikipedia reports a fire in an outbuilding in April 2024, stated by Libyan officials to be under control. No weapons-grade material remains in Libya per the 2004 and 2006 removals.",
+  "uncertain": "Coordinates are those of Tajoura city centre, not the reactor compound; location approximate (a few km). Claims of unsanctioned experiments at Tajoura come from IAEA/Western accounts summarised on Wikipedia; GlobalSecurity also records a 1986 BND report, never confirmed, of a mustard plant at Tajoura.",
+  "sources": [
+   {
+    "t": "GlobalSecurity: Tajura",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/tajura.htm"
+   },
+   {
+    "t": "IAEA news item: HEU removed from Tripoli research reactor",
+    "u": "https://iaea.org/node/5674"
+   },
+   {
+    "t": "Arms Control Association (ACT): Libya HEU returned to Russia",
+    "u": "https://www.armscontrol.org/index%2Ephp/node/2105"
+   },
+   {
+    "t": "Wikipedia: Tajoura",
+    "u": "https://en.wikipedia.org/wiki/Tajoura"
+   },
+   {
+    "t": "Wikipedia: Libya and weapons of mass destruction",
+    "u": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction"
+   },
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   }
+  ],
+  "distance_from_tripoli_km": 15.0
+ },
+ {
+  "id": "wp-undeclared-nuclear-sites-al-hashan-al-khalla",
+  "name": "Undeclared nuclear-programme sites (Al Hashan, Al-Khalla, Salah Eddin)",
+  "ar": "",
+  "aliases": [
+   "Al Hashan",
+   "Al-Khalla",
+   "Salah Eddin",
+   "Sawani",
+   "Al-Karamia",
+   "El-Ezeizia"
+  ],
+  "kind": "military",
+  "lat": null,
+  "lon": null,
+  "r": 5,
+  "summary": "Group of sites near Tripoli that Libya disclosed in 2003-04 as hosting its undeclared nuclear programme; later cleared by US, UK and IAEA teams.",
+  "history": "NTI's IAEA-based summary names Al-Hashan (operated 1997-2002), Al-Khalla (its successor), Salah Eddin, Janzour, Sawani, Al-Karamia and El-Ezeizia as undeclared sites, plus underground storage at Sabha. Wikipedia says that in October 2000 a single complete device was installed at Al Hashan. Exact addresses are not published in the pages seen.",
+  "era": "Libya's 19 December 2003 announcement ended its nuclear weapons efforts. The IAEA verified the sites in 2004, and NTI reports that the US and UK worked with the IAEA to remove all nuclear-related equipment and materials in three stages, with the most sensitive items first and the work done by September 2004. The IAEA then reported on the programme to its Board.",
+  "today": "The pages seen do not describe the present state of these buildings. Equipment was removed in 2004, so no weapons-related material is reported to remain, but the sites' current use is not documented here.",
+  "uncertain": "Location approximate: no coordinates were seen, so lat/lon are null; the sources give functions, not locations. Several are described only as being in the Tripoli area. This profile groups sites and should not be pinned to one spot.",
+  "sources": [
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   },
+   {
+    "t": "Wikipedia: Libya and weapons of mass destruction",
+    "u": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction"
+   }
+  ],
+  "distance_from_tripoli_km": null
+ },
+ {
+  "id": "wp-janzour-machine-shop",
+  "name": "Janzour (reported centrifuge machine shop site)",
+  "ar": "جنزور",
+  "aliases": [
+   "Janzour",
+   "Jenzur"
+  ],
+  "kind": "military",
+  "lat": 32.817,
+  "lon": 13.01111,
+  "r": 5,
+  "summary": "Western suburb of Tripoli named in IAEA-based summaries as the site of a machine shop used by the undeclared nuclear programme.",
+  "history": "Janzour lies west of central Tripoli, in the Tripoli built-up area and east of the town of Az-Zawiya. NTI's summary of IAEA findings lists a Janzour machine shop for centrifuge-related manufacturing, one of the undeclared sites Libya disclosed in 2003-04.",
+  "era": "Reported in IAEA-based and Western accounts after Libya's December 2003 announcement as part of the undeclared nuclear programme, which Libya said it had run without notifying the IAEA. The programme's equipment was removed under US, UK and IAEA supervision in three stages, completed in September 2004, according to the Nuclear Threat Initiative's summary.",
+  "today": "The pages seen do not describe the facility's current state. The area is an ordinary suburb with housing and businesses.",
+  "uncertain": "Coordinates are the Janzour town centre from Wikipedia (about 32.817 N, 13.011 E); the actual workshop address is not published in the pages seen. Location approximate (several km).",
+  "sources": [
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   },
+   {
+    "t": "Wikipedia: Janzour",
+    "u": "https://en.wikipedia.org/wiki/Janzour"
+   }
+  ],
+  "distance_from_tripoli_km": 17.9
+ },
+ {
+  "id": "wp-bab-al-azizia-compound",
+  "name": "Bab al-Azizia compound",
+  "ar": "باب العزيزية",
+  "aliases": [
+   "Bab al-Aziziya",
+   "Gaddafi compound"
+  ],
+  "kind": "military",
+  "lat": 32.87222,
+  "lon": 13.17361,
+  "r": 0.5,
+  "summary": "Gaddafi's fortified residential and command compound in Tripoli, bombed by the US in 1986 and by NATO in 2011.",
+  "history": "The compound stood in Tripoli's southern suburbs at the northern end of Airport Highway, about 2 km south of the city centre. It was Gaddafi's headquarters and home. The US described it as a command and control centre for overseas operations, and Wikipedia notes it was one of the last loyalist strongholds in 2011.",
+  "era": "On 15 April 1986 US F-111s bombed it in Operation El Dorado Canyon; of nine aircraft assigned, only three placed bombs on target. Gaddafi escaped; his claim that an adopted daughter died is disputed. Air-defence suppression with anti-radar missiles and jamming covered Tripoli. NATO bombed it repeatedly in 2011, and rebels took it on 23 August 2011.",
+  "today": "After capture it was opened to the public and looted; bulldozers began knocking down outer walls on 17 October 2011. Wikipedia's latest detail (February 2012) describes rubble and disrepair with families squatting; the plan was a public park. Present use not confirmed here.",
+  "uncertain": "The coordinates are from Wikipedia and are accurate to the compound. Details of casualties in 1986 differ between US and Libyan accounts.",
+  "sources": [
+   {
+    "t": "Wikipedia: Bab al-Azizia",
+    "u": "https://en.wikipedia.org/wiki/Bab_al-Azizia"
+   },
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   }
+  ],
+  "distance_from_tripoli_km": 2.2
+ },
+ {
+  "id": "wp-murat-sidi-bilal-camp",
+  "name": "Murat Sidi Bilal naval commando camp",
+  "ar": "معسكر مراد سيدي بلال",
+  "aliases": [
+   "Sidi Bilal",
+   "Sidi Bilal camp"
+  ],
+  "kind": "military",
+  "lat": 32.821,
+  "lon": 12.95711,
+  "r": 4,
+  "summary": "Coastal camp west of Tripoli bombed by the US in April 1986, described by the US as a naval commando and frogmen training site.",
+  "history": "Wikipedia's account of the 1986 raid places the Murat Sidi Bilal camp in the Tripoli area. OpenStreetMap maps a Sidi Bilal mosque at 32.821 N, 12.957 E and a Libyan naval academy nearby, which the project uses as the locator.",
+  "era": "On 15 April 1986 all three F-111s assigned to this camp bombed it, according to the account of the raid cited on Wikipedia. The US described the camp as a training site for naval commandos and combat frogmen, in the context of reprisals for the 5 April 1986 Berlin discotheque bombing.",
+  "today": "Not documented in the sources seen. The site lies in the western coastal area of Greater Tripoli, near built-up land and the naval academy mapped in OpenStreetMap, but its current use was not checked.",
+  "uncertain": "Location approximate: the point is a nearby mosque in OpenStreetMap, not the camp boundary. The camp's exact extent was not found. The US purpose description is the US government's, and Libya disputed civilian-versus-military framing.",
+  "sources": [
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   },
+   {
+    "t": "OpenStreetMap contributors (ODbL), project extract military.json",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ],
+  "distance_from_tripoli_km": 22.3
+ },
+ {
+  "id": "wp-mitiga-okba-ben-nafi-air-base",
+  "name": "Mitiga (Okba Ben Nafi) air base",
+  "ar": "قاعدة عقبة بن نافع الجوية / مطار معيتيقة",
+  "aliases": [
+   "Mitiga",
+   "Okba Ben Nafi",
+   "Wheelus Air Base",
+   "Tripoli military airfield"
+  ],
+  "kind": "military",
+  "lat": 32.90384,
+  "lon": 13.27368,
+  "r": 1.5,
+  "summary": "Former Wheelus Air Base and Libyan Air Force base east of Tripoli, struck by US aircraft on 15-16 April 1986.",
+  "history": "Founded by Italy in 1923 as Mellaha, later used by the Luftwaffe, the British and then US forces as Wheelus. US forces left by 1970 after the 1969 coup, and it became the Libyan air base Okba Ben Nafi, with Soviet aircraft and personnel also based there.",
+  "era": "Early on 15 April 1986 five US F-111s bombed the airfield, destroying two Il-76 transports, according to the account cited on Wikipedia. It was one of the five targets in Operation El Dorado Canyon, the others being Bab al-Azizia, Murat Sidi Bilal, and two sites at Benghazi. One F-111F was lost during the overall raid, according to Wikipedia's airport page.",
+  "today": "It became a civil airport in 1995 and is mixed civil and military. Since 2018 it has been Tripoli's only international airport after Tripoli International was damaged in 2014-2019 fighting. Runways are 3,376 m and 1,829 m.",
+  "uncertain": "Coordinates are the OpenStreetMap outline (the project data). Dates in sources vary between 15 and 16 April depending on time zone.",
+  "sources": [
+   {
+    "t": "Wikipedia: Mitiga International Airport",
+    "u": "https://en.wikipedia.org/wiki/Mitiga_International_Airport"
+   },
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   },
+   {
+    "t": "OpenStreetMap contributors (ODbL), project extract military.json",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ],
+  "distance_from_tripoli_km": 8.8
+ },
+ {
+  "id": "wp-tripoli-air-defence-1986",
+  "name": "Tripoli air-defence network (1986)",
+  "ar": "",
+  "aliases": [
+   "SA-2",
+   "SA-3",
+   "SA-5",
+   "SAM sites near Tripoli"
+  ],
+  "kind": "military",
+  "lat": null,
+  "lon": null,
+  "r": 5,
+  "summary": "Libya's surface-to-air missile network around Tripoli, suppressed in the 1986 US raid; individual sites are not publicly located in the sources used.",
+  "history": "The account of the 1986 raid cited on Wikipedia says Libyan defences in the whole country included four S-200 (SA-5) units and 86 S-75/S-125 (SA-2/SA-3) units, with Tripoli alone also holding SA-6, SA-8 and Crotale units. Individual battery locations around Tripoli are not given.",
+  "era": "In April 1986 US A-7E and F/A-18A aircraft fired anti-radar missiles at air defence networks in Tripoli and Benghazi while EF-111s and EA-6Bs jammed radars. The account says no SAM launches homed on US aircraft, and one SA-6 tracked an A-6, which evaded it. Libya claimed five major radars destroyed; this is a Libyan claim.",
+  "today": "Libya's air defences were again targeted by NATO in 2011. The pages seen do not state which sites survive, whether any are reused, or what their condition is today.",
+  "uncertain": "No coordinates or distance: location approximate and not published for individual batteries. The 'SA-5 near Tripoli' positions are widely repeated but I did not find a source with locations; treat as unverified.",
+  "sources": [
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   }
+  ],
+  "distance_from_tripoli_km": null
+ },
+ {
+  "id": "wp-osm-mapped-sam-site-south-of-tripoli",
+  "name": "SAM site (OpenStreetMap-mapped), south of Tripoli",
+  "ar": "موقع صواريخ أرض-جو",
+  "aliases": [
+   "SAM Site"
+  ],
+  "kind": "military",
+  "lat": 32.61458,
+  "lon": 13.34295,
+  "r": 1,
+  "summary": "Military land mapped in OpenStreetMap with the name 'SAM Site' about 30 km south of central Tripoli; its dates and use are not documented in the sources seen.",
+  "history": "OpenStreetMap volunteers label this military land-use area 'SAM Site'. No government, IAEA or press record was found to confirm what it housed or when. It sits near a mapped bunker. Libya built an extensive air-defence network in the 1970s and 1980s, but a link to this point is not shown.",
+  "era": "No report from 1969-2011 was found tying this location to a specific unit, to the 1986 raid or to 2011 strikes, so nothing about what it held or when is established. Libya's wider air-defence network, which did include several SAM types around the capital, is described under the separate Tripoli air-defence profile.",
+  "today": "Unknown. The area is still mapped as military land in OpenStreetMap, but nobody on this project has checked its current status, so it may be abandoned, reused or built over.",
+  "uncertain": "Single-source and community-mapped; the name may reflect satellite imagery interpretation. Whether it was active in 1986 is unknown. Included for map completeness only.",
+  "sources": [
+   {
+    "t": "OpenStreetMap contributors (ODbL), project extract military.json",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ],
+  "distance_from_tripoli_km": 34.5
+ },
+ {
+  "id": "wp-al-fatah-missile-project",
+  "name": "Al-Fatah missile project",
+  "ar": "مشروع الفتح",
+  "aliases": [
+   "Al Fatah",
+   "Al-Fateh missile"
+  ],
+  "kind": "military",
+  "lat": null,
+  "lon": null,
+  "r": 5,
+  "summary": "Libya's domestic ballistic missile development effort of the 1990s, publicly reported but with no confirmed location in the sources used.",
+  "history": "Reports summarised by GlobalSecurity and Wikipedia say Libya sought to build a domestic missile (reported range 950-1,000 km), drawing on earlier OTRAG work in the desert near Sebha from 1979. Foreign help from Iraq, Iran, Serbia and China was alleged. A test facility is mentioned but not located.",
+  "era": "Per GlobalSecurity, 1995 reports said Iraqi technicians were working on Al Fatah, and in 1999 US imagery satellites reportedly photographed an enlarged Al Fatah test facility. Reports of North Korean talks later proved false after 2003. In December 2003 Libya agreed to eliminate missiles beyond 300 km range and 500 kg payload.",
+  "today": "Libya largely abandoned the programme in 2004 in exchange for sanctions relief, per Wikipedia. No site is known to remain; nothing in the sources opened describes its present state.",
+  "uncertain": "No coordinates: the facility's location is not given in any source I opened, so lat/lon are null; location approximate. Much of the programme is reporting by intelligence-sourced press, and its real progress is unclear.",
+  "sources": [
+   {
+    "t": "GlobalSecurity: Libyan Missiles",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/missile.htm"
+   },
+   {
+    "t": "Wikipedia: Libya and weapons of mass destruction",
+    "u": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction"
+   }
+  ],
+  "distance_from_tripoli_km": null
+ },
+ {
+  "id": "wp-libyan-scud-units-and-storage",
+  "name": "Libyan Scud / short-range missile units",
+  "ar": "وحدات صواريخ سكود",
+  "aliases": [
+   "Scud-B",
+   "Scud-C",
+   "FROG-7",
+   "SRBM"
+  ],
+  "kind": "military",
+  "lat": null,
+  "lon": null,
+  "r": 5,
+  "summary": "Libya's Soviet- and North Korean-supplied short-range missiles; unit and storage locations near Tripoli, Sirte, Sebha and Al-Jufra are not published in the sources used.",
+  "history": "GlobalSecurity says Libya obtained Scud-B and FROG-7 missiles from the Soviet Union in the mid-1970s. GlobalSecurity also refers to North Korean Scud-C missiles. OpenStreetMap lists an 'Artillery and Missile School' near Tripoli at 32.766 N, 13.197 E, though no source ties it to Scuds.",
+  "era": "Two Scuds were fired at Lampedusa in April 1986 after the US raid. After the 19 December 2003 deal, Libya agreed to remove missiles over 300 km range, so it gave up Scud-C but not 300 km Scud-B, per GlobalSecurity. In 2011 Libyan forces reportedly fired Scud-B at rebel areas and missed; NATO strikes reportedly destroyed the rest.",
+  "today": "Not documented in the pages seen; some missiles are believed to have survived outside government control after 2011 but no source opened confirms this.",
+  "uncertain": "No base coordinates; distances not given. Claims about Scud storage near Sirte, Sebha, Al-Jufra are repeated in general press but were not confirmed in sources I opened.",
+  "sources": [
+   {
+    "t": "GlobalSecurity: Libyan Missiles",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/missile.htm"
+   },
+   {
+    "t": "Wikipedia: Libya and weapons of mass destruction",
+    "u": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction"
+   },
+   {
+    "t": "OpenStreetMap contributors (ODbL), project extract military.json",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ],
+  "distance_from_tripoli_km": null
+ },
+ {
+  "id": "wp-lampedusa-missile-attack-1986",
+  "name": "Lampedusa missile attack launch site (April 1986)",
+  "ar": "",
+  "aliases": [
+   "Lampedusa Scud attack",
+   "Capo Ponente"
+  ],
+  "kind": "military",
+  "lat": null,
+  "lon": null,
+  "r": 5,
+  "summary": "Libya's missile reprisal on 15 April 1986 against the US Coast Guard LORAN station on Lampedusa, Italy; launch site often said to be near Sirte but not confirmed.",
+  "history": "The reprisal followed Operation El Dorado Canyon. Wikipedia says Libya fired two Scud missiles at the NATO base at Capo Ponente, Lampedusa, at about 16:33 UTC on 15 April 1986. One exploded about 2 km northwest and the other about 2 km southwest of the base, in the sea.",
+  "era": "Libya later said it targeted a US-led NATO base, not Italy. The attack caused a diplomatic crisis with Italy. The page seen does not state the launch site; reports that it was near Sirte, east of Tripoli, were not confirmed in the sources I opened.",
+  "today": "Lampedusa is unchanged and is today an Italian island; the launch location remains unrecorded in the sources used here, and no site is mapped.",
+  "uncertain": "Launch site not confirmed by any page I opened; 'Sirte' is common in press but unverified here. Lat/lon null.",
+  "sources": [
+   {
+    "t": "Wikipedia: Libyan missile attack against Lampedusa",
+    "u": "https://en.wikipedia.org/wiki/Libyan_missile_attack_against_Lampedusa"
+   },
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   }
+  ],
+  "distance_from_tripoli_km": null
+ },
+ {
+  "id": "wp-ruwagha-chemical-depot",
+  "name": "Ruwagha chemical weapons depot",
+  "ar": "مستودع الرواغة",
+  "aliases": [
+   "Ruwagha",
+   "Rawagha",
+   "Waddan area"
+  ],
+  "kind": "military",
+  "lat": null,
+  "lon": null,
+  "r": 5,
+  "summary": "Remote desert depot in south-eastern Libya where Libya's declared mustard stockpile was stored and destroyed under OPCW monitoring (2010-2014).",
+  "history": "Libya joined the Chemical Weapons Convention in January 2004 and declared nearly 25 tonnes of bulk mustard agent and thousands of unfilled aerial bombs. The OPCW describes the depot at Ruwagha as being in remote south-eastern Libya, far outside the Tripoli area. Waddan is the nearest town named in the brief.",
+  "era": "Empty munitions were destroyed in March 2004. Destruction of the bulk mustard began in October 2010 and stopped in February 2011 after equipment failed and unrest began. OPCW inspectors confirmed the stockpile intact in November 2011. Work resumed on 20 April 2013 and ended 4 May 2013; the OPCW announced it on 6 May 2013. Libya completed destruction of its remaining mustard-loaded shells and bombs on 26 January 2014.",
+  "today": "Precursor chemicals (846 tonnes) remained and were later moved to Germany, completed in 2016-2017 per Wikipedia; the OPCW pages seen cover only the earlier steps. The site's state today is not documented in the pages opened.",
+  "uncertain": "No coordinates seen, so lat/lon null; far from Tripoli (distance not stated in the sources). Wikipedia also reports rebels finding a mustard stockpile in Jufra District in 2011; whether this is the same depot as Ruwagha is not established here.",
+  "sources": [
+   {
+    "t": "OPCW: Libya completes destruction of its Category 1 chemical weapons",
+    "u": "https://www.opcw.org/news/article/libya-completes-destruction-of-its-category-1-chemical-weapons"
+   },
+   {
+    "t": "OPCW: Libya completes destruction of its bulk sulfur mustard stockpile",
+    "u": "https://www.opcw.org/news/article/libya-completes-destruction-of-its-bulk-sulfur-mustard-stockpile"
+   },
+   {
+    "t": "Mail & Guardian, 4 Nov 2011: Libyan chemical weapons stockpile intact",
+    "u": "https://mg.co.za/article/2011-11-04-libyan-chemical-weapons-stockpile-intact/"
+   },
+   {
+    "t": "Wikipedia: Libya and weapons of mass destruction",
+    "u": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction"
+   }
+  ],
+  "distance_from_tripoli_km": null
+ },
+ {
+  "id": "wp-libya-2003-disarmament-and-2004-removals",
+  "name": "Libya's 2003 disarmament deal and 2004 removals",
+  "ar": "",
+  "aliases": [
+   "19 December 2003 announcement",
+   "Operation to remove Libyan WMD"
+  ],
+  "kind": "military",
+  "lat": null,
+  "lon": null,
+  "r": 5,
+  "summary": "Libya's December 2003 decision to end its weapons programmes and the 2004 US-UK-IAEA removals from sites around Tripoli.",
+  "history": "On 19 December 2003 Gaddafi announced Libya would voluntarily end its nuclear, chemical and long-range missile efforts. US and UK inspection teams had visited sites in October and December 2003. This is a national event, so no single location is mapped.",
+  "era": "The IAEA, with US and UK help, removed nuclear-related equipment and materials in three stages, completing the work in September 2004 (per NTI). Highly enriched uranium fuel left Tajoura for Russia in March 2004. Libya joined the Chemical Weapons Convention in early 2004 and made its first declaration; sanctions relief followed.",
+  "today": "Libya's weapons programmes were declared dismantled. After 2011 the sites were left lightly guarded; the OPCW found the Ruwagha stockpile intact in November 2011.",
+  "uncertain": "No location; the exact number of visited sites varies by account (GlobalSecurity cites 10 in one account and dozens in others). Dates on the Chemical Weapons Convention entry differ between 6 January and 5 February 2004 in Wikipedia.",
+  "sources": [
+   {
+    "t": "Wikipedia: Libya and weapons of mass destruction",
+    "u": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction"
+   },
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   },
+   {
+    "t": "GlobalSecurity: Libyan Missiles",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/missile.htm"
+   },
+   {
+    "t": "IAEA news item: HEU removed from Tripoli research reactor",
+    "u": "https://iaea.org/node/5674"
+   }
+  ],
+  "distance_from_tripoli_km": null
+ },
+ {
+  "id": "wp-sabha-yellowcake-and-jufra-stocks-post-2011",
+  "name": "Sabha yellowcake store and 2011 chemical stock reports",
+  "ar": "",
+  "aliases": [
+   "Sebha",
+   "Sabha",
+   "Jufra"
+  ],
+  "kind": "military",
+  "lat": null,
+  "lon": null,
+  "r": 5,
+  "summary": "Post-2011 concerns about Libyan stockpiles at Sabha (uranium ore concentrate) and chemical stocks reported in the Jufra area; far from Tripoli.",
+  "history": "NTI lists underground yellowcake storage at Sabha as one of the undeclared sites disclosed in 2004. The IAEA visited it and in December 2011 recommended a quick sale and transfer, warning that storage conditions were worsening. In 2013, the UN said 6,400 barrels were stored near Sabha.",
+  "era": "In September-November 2011 rebels and press reported chemical stocks near Jufra, and Libya told the OPCW on 1 November 2011 that more suspected stocks had been found. An OPCW team confirmed the declared mustard stockpile at Ruwagha intact in November 2011. On 9 December 2013 the UN's Tarek Mitri said an IAEA team would verify the Sabha stockpile.",
+  "today": "The pages seen do not give the present state. The 2013 account says the barrels remained under a Libyan army battalion at a former military installation near Sabha.",
+  "uncertain": "No coordinates (Sabha is in the far south, well outside the 100 km range; distance not stated in the sources, so null). I did not find a source seen for the Misrata or 2011 Rabta claims in the brief, so they are not covered. Jufra reports are press claims.",
+  "sources": [
+   {
+    "t": "Ahram/AFP, 9 Dec 2013: UN atomic agency to inspect Libyan yellowcake stockpile",
+    "u": "https://english.ahram.org.eg/News/88705.aspx"
+   },
+   {
+    "t": "Mail & Guardian, 4 Nov 2011: Libyan chemical weapons stockpile intact",
+    "u": "https://mg.co.za/article/2011-11-04-libyan-chemical-weapons-stockpile-intact/"
+   },
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   },
+   {
+    "t": "Wikipedia: Libya and weapons of mass destruction",
+    "u": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction"
+   }
+  ],
+  "distance_from_tripoli_km": null
+ }
+]

@@ -4,7 +4,7 @@
   var CFG = window.ATLAS_CONFIG || {};
   var LAYERS = window.ATLAS_LAYERS, LEVELS = window.ATLAS_LEVELS, SITES = window.ATLAS_SITES;
   var QS = window.ATLAS_QUESTIONS || {}, SPOTQ = window.ATLAS_SPOT_QUESTIONS || [], FEATQ = window.ATLAS_FEATURE_QUESTIONS || {};
-  var LINKS = window.ATLAS_LINKS || [], UNPLACED = window.ATLAS_UNPLACED || [], DISTRICTS = window.ATLAS_DISTRICTS;
+  var LINKS = window.ATLAS_LINKS || [], UNPLACED = (window.ATLAS_UNPLACED || []).concat(window.ATLAS_UNPLACED_MORE || []), DISTRICTS = window.ATLAS_DISTRICTS;
   var OWNER = CFG.ownerName || 'the person who shared this map';
   var HOME = L.latLngBounds([32.79, 13.08], [32.91, 13.30]);
   var DESKTOP = window.matchMedia('(min-width: 900px)');

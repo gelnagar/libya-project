@@ -1,58 +1,39 @@
-# Turning on "Ask AI"
+# Putting the site behind the family password
 
-The map works without this. These steps add an **Ask AI** button to every place, paid for by one Anthropic API key that stays secret.
+The whole site (map, data, AI) is served by one Cloudflare Worker. Nothing loads until someone types the family password, and the same password turns on "Ask AI". The Anthropic key lives only in Cloudflare.
 
-How it works: the map sends questions to a small relay on Cloudflare. The relay adds the API key and asks Claude. The key lives only in Cloudflare, never in this repository or on anyone's phone. Family members type a family code once, so strangers who find the map cannot use the key.
+How it works: `worker/worker.js` runs first on every request. No valid cookie means a login page (or a 401 for API calls). A correct password sets a signed cookie for 180 days. After 8 wrong guesses from one address, that address is locked out for 15 minutes. Changing `FAMILY_CODE` logs everyone out. Files in `public/` are the only ones served; `archive/`, `worker/` and `scripts/` are never reachable.
 
 ## 1. Set a spending limit first
 
-In the Anthropic Console (console.anthropic.com), open **Settings → Limits** and set a low monthly spend limit, for example $10. That caps the cost even if something goes wrong.
+In the Anthropic Console (console.anthropic.com) open **Settings → Limits** and set a low monthly limit, for example $10.
 
-## 2. Create the relay (free Cloudflare account)
+## 2. Deploy this repository as a Worker
 
-1. Sign up at dash.cloudflare.com.
-2. Go to **Workers & Pages → Create → Create Worker**. Name it `tripoli-atlas-ai` and click **Deploy**.
-3. Click **Edit code**, delete the sample, paste the contents of `worker/worker.js` from this repository, and click **Deploy**.
-4. Go to the worker's **Settings → Variables and Secrets** and add:
+1. Sign in at dash.cloudflare.com.
+2. **Workers & Pages → Create → Import a repository**, pick `gelnagar/libya-project`, and keep the defaults. The repo's `wrangler.jsonc` already tells Cloudflare to serve `public/` as static assets and run `worker/worker.js` in front of it.
+3. Open the new Worker's **Settings → Variables and Secrets** and add:
 
 | Name | Type | Value |
 | --- | --- | --- |
 | `ANTHROPIC_API_KEY` | Secret | your Anthropic API key |
-| `FAMILY_CODE` | Secret | the family password (capitals and spaces are ignored) |
-| `ALLOWED_ORIGINS` | Text | `https://gelnagar.github.io` |
-| `OWNER_CODE` | Secret | your own password for the requests page (different from the family password) |
+| `FAMILY_CODE` | Secret | `Nubie` (capitals and spaces are ignored) |
+| `OWNER_CODE` | Secret | your own password for the requests page (different from the family one) |
+| `SESSION_SECRET` | Secret | optional: any long random text |
 
-5. Optional low-credit warning: go to **Storage & Databases → KV → Create**, name it `ATLAS_KV`. Back in the worker, open **Bindings → Add → KV namespace**, set the variable name to `ATLAS_KV` and pick the namespace you just made. Then add two more variables:
+4. Optional low-credit warning: **Storage & Databases → KV → Create** (the repo already names the binding `ATLAS_KV`; if Cloudflare asks, bind your namespace to that name). Then add text variables `CREDIT_LOADED` (dollars you added in Anthropic's console) and `LOW_CREDIT_WARNING` (for example `10`).
+5. Open the Worker's address (`https://….workers.dev`) in a private window. You should see only the password page. Enter the family password to open the map.
 
-| Name | Type | Value |
-| --- | --- | --- |
-| `CREDIT_LOADED` | Text | total dollars you have added to your Anthropic account, e.g. `20` |
-| `LOW_CREDIT_WARNING` | Text | `10` |
+Every push to `main` redeploys automatically. Secrets stay as they are.
 
-Each time you add money in the Anthropic console, raise `CREDIT_LOADED` by the same amount. The map shows a yellow warning at the top when the estimated balance falls below `LOW_CREDIT_WARNING`, and a red one if the credit runs out. The estimate assumes $2 per million input tokens and $10 per million output tokens; if Anthropic's prices change, set `PRICE_IN` and `PRICE_OUT` to the new numbers.
+## 3. Close the old public copy
 
-6. Copy the worker's address. It looks like `https://tripoli-atlas-ai.YOURNAME.workers.dev`.
-
-## 3. Connect the map
-
-Open `data/config.js` and paste the worker address:
-
-```js
-window.ATLAS_CONFIG = {
-  aiEndpoint: 'https://tripoli-atlas-ai.YOURNAME.workers.dev'
-};
-```
-
-Commit the change. The worker address is safe to publish; the API key is not in it.
+The previous GitHub Pages copy (`gelnagar.github.io/libya-project`) has no password. Turn it off: repository **Settings → Pages → Unpublish site**. Better still, make the repository **private** (Settings → General → Danger zone → Change visibility). Cloudflare can still deploy a private repository. This also keeps the raw research files (`archive/`) out of public view.
 
 ## 4. Give family the code
 
-Tell family members the family code. The first time they tap **Ask AI**, the map asks for it and saves it on their phone.
-
-To cut off access, change `FAMILY_CODE` in Cloudflare. To stop all AI use, delete the worker or the API key.
+Share the family password. The first visit asks for it once; phones remember it for about six months. To cut off access, change `FAMILY_CODE`. To stop AI use, remove the API key.
 
 ## Requests from the family
 
-The chat at the bottom of the map can offer a **Send to Gordon** button when something is not on the map. Requests are saved in `ATLAS_KV`. Read them at `https://gelnagar.github.io/libya-project/requests.html` with your `OWNER_CODE`, and tap **Mark done** to clear one. The family password cannot open that page.
-
-When `worker/worker.js` changes, paste the new version into Cloudflare (**Edit code → select all → paste → Deploy**). Your secrets and settings stay as they are.
+The chat can offer a **Send to Gordon** button when something is not on the map. Requests are saved in KV. Read them at `/requests.html` on your Worker address with `OWNER_CODE`, and tap **Mark done** to clear one. The family password cannot open that page.

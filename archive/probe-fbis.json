@@ -1,0 +1,214 @@
+[
+ {
+  "query": "identifier:fbis-report*",
+  "numFound": 14,
+  "sample": [
+   {
+    "date": "1984-09-05T00:00:00Z",
+    "identifier": "fbis-reports_fbis-apa-84-173",
+    "title": "Unclassified-FBIS Daily Report-Asia & Pacific"
+   },
+   {
+    "date": "1984-05-09T00:00:00Z",
+    "identifier": "fbis-reports_fbis-chi-84-091",
+    "title": "Unclassified-FBIS Daily Report-China"
+   },
+   {
+    "identifier": "FBIS-ReportonCzechoslovakRadio-MartialLawDeclared1968-08-22k",
+    "title": "FBIS - Report on Czechoslovak Radio-Martial Law Declared 1968-08-22k"
+   },
+   {
+    "date": "1981-09-11T00:00:00Z",
+    "identifier": "fbis-report_prex-710fbis-weu-81-176",
+    "title": "Unclassified--FBIS Daily Report--Western Europe"
+   },
+   {
+    "identifier": "FBIS-ReportonWarsawPactTroops1968-08-26a",
+    "title": "FBIS - Report on Warsaw Pact Troops 1968-08-26a"
+   }
+  ],
+  "by": {
+   "apa 1984": 1,
+   "chi 1984": 1,
+   "other ??": 2,
+   "weu 1981": 1,
+   "other 1968": 1,
+   "reports ??": 8
+  }
+ },
+ {
+  "query": "identifier:fbis-reports*",
+  "numFound": 10,
+  "sample": [
+   {
+    "date": "1984-05-09T00:00:00Z",
+    "identifier": "fbis-reports_fbis-chi-84-091",
+    "title": "Unclassified-FBIS Daily Report-China"
+   },
+   {
+    "date": "1984-09-05T00:00:00Z",
+    "identifier": "fbis-reports_fbis-apa-84-173",
+    "title": "Unclassified-FBIS Daily Report-Asia & Pacific"
+   },
+   {
+    "identifier": "fbis-reports-sub-saharan-africa",
+    "title": "FBIS Reports: Sub-Saharan Africa"
+   },
+   {
+    "identifier": "fbis-reports-peoples-republic-china",
+    "title": "FBIS Reports: China"
+   },
+   {
+    "identifier": "fbis-reports-asia-pacific",
+    "title": "FBIS Reports: Asia & Pacific"
+   }
+  ],
+  "by": {
+   "chi 1984": 1,
+   "apa 1984": 1,
+   "reports ??": 8
+  }
+ },
+ {
+  "query": "identifier:jprs*",
+  "numFound": 24334,
+  "sample": [
+   {
+    "date": "1982-03-30T00:00:00Z",
+    "identifier": "jprs-report_jprs-80443",
+    "title": "USSR Report: Economic Affairs No. 1004"
+   },
+   {
+    "date": "1980-05-20T00:00:00Z",
+    "identifier": "jprs-report_jprs-75734",
+    "title": "Japan Report No. 98"
+   },
+   {
+    "date": "1981-05-18T00:00:00Z",
+    "identifier": "jprs-report_jprs-78095",
+    "title": "China Report Political, Sociological and Military Affairs, No. 192"
+   },
+   {
+    "date": "1982-08-02T00:00:00Z",
+    "identifier": "jprs-report_jprs-81423",
+    "title": "Latin America Report No. 2548"
+   },
+   {
+    "date": "1991-08-29T00:00:00Z",
+    "identifier": "jprs-report_jprs-ttp-91-005",
+    "title": "Telecommunications"
+   }
+  ],
+  "by": {
+   "jprs-report 1982": 1242,
+   "jprs-report 1980": 751,
+   "jprs-report 1981": 1059,
+   "jprs-report 1991": 277,
+   "jprs-report 1993": 211,
+   "jprs-report 1989": 356,
+   "afr 1991": 69,
+   "jprs-report 1979": 363,
+   "jprs-report 1996": 1,
+   "afr 1989": 43,
+   "afr 1990": 83,
+   "afr 1992": 53,
+   "afr 1993": 86,
+   "afr 1994": 84,
+   "afr 1995": 42,
+   "jprs-report 1987": 604,
+   "jprs-report 1988": 436,
+   "jprs-report 1994": 162,
+   "chi 1996": 17,
+   "sup 1990": 8,
+   "afr 1996": 41,
+   "jprs-report 1983": 994,
+   "jprs-report 1985": 787,
+   "jprs-report 1986": 700,
+   "jprs-report 1990": 309,
+   "jprs-report 1992": 310,
+   "jprs-report 1984": 860,
+   "jprs-report 1995": 28,
+   "other 2021": 1,
+   "sup 1991": 3,
+   "jprs-report 1978": 1,
+   "sup 1989": 5,
+   "other 2019": 1,
+   "other ??": 5,
+   "fr 1995": 1,
+   "jprs-report ??": 1,
+   "other 2014": 1,
+   "cst 1996": 1,
+   "wfr 1990": 1,
+   "jprs-korean ??": 1,
+   "afk 1989": 1,
+   "sup 1994": 1
+  }
+ },
+ {
+  "query": "collection:fbis-reports",
+  "numFound": 0,
+  "sample": [],
+  "by": {}
+ },
+ {
+  "query": "collection:fbis",
+  "numFound": 0,
+  "sample": [],
+  "by": {}
+ },
+ {
+  "query": "title:(FBIS Daily Report Middle East Africa)",
+  "numFound": 1758,
+  "sample": [
+   {
+    "date": "1983-06-15T00:00:00Z",
+    "identifier": "micro_IA1176909_0176",
+    "title": "FBIS Daily Report: Middle East & Africa, Vol. V No. 116, 15 June 1983"
+   },
+   {
+    "date": "1979-01-31T00:00:00Z",
+    "identifier": "micro_IA1176908_0276",
+    "title": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 022, 31 January 1979"
+   },
+   {
+    "date": "1979-02-13T00:00:00Z",
+    "identifier": "micro_IA1176908_0286",
+    "title": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 031, 13 February 1979"
+   },
+   {
+    "date": "1979-02-21T00:00:00Z",
+    "identifier": "micro_IA1176908_0290",
+    "title": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 036, 21 February 1979"
+   },
+   {
+    "date": "1979-03-01T00:00:00Z",
+    "identifier": "micro_IA1176908_0297",
+    "title": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 042, 1 March 1979"
+   }
+  ],
+  "by": {
+   "other 1983": 261,
+   "other 1979": 259,
+   "other 1980": 299,
+   "other 1981": 259,
+   "other 1982": 250,
+   "other 1984": 124,
+   "other 1985": 21,
+   "other 1978": 251,
+   "other 1986": 13,
+   "other 1987": 21
+  }
+ },
+ {
+  "query": "libya AND identifier:fbis*",
+  "numFound": 0,
+  "sample": [],
+  "by": {}
+ },
+ {
+  "query": "qadhafi AND identifier:fbis*",
+  "numFound": 0,
+  "sample": [],
+  "by": {}
+ }
+]

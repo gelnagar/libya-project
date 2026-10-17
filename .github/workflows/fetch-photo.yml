@@ -8,20 +8,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p public/img archive/research
+          mkdir -p archive/research
           UA="TripoliOpenSource/1.0 (github.com/gelnagar/libya-project)"
-          curl -sS -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=600&titles=File:Muammar_Gaddafi_in_1972.jpg%7CFile:Muammar_Gaddafi_in_1972_(cropped).jpg" -o archive/research/photo-meta.json
           python3 - <<'PY'
-          import json
-          d=json.load(open('archive/research/photo-meta.json'))
-          for p in d['query']['pages'].values():
-              ii=(p.get('imageinfo') or [{}])[0]; m=ii.get('extmetadata',{})
-              print(p['title'], ii.get('width'), ii.get('height'), '|', m.get('LicenseShortName',{}).get('value'), '|', m.get('Artist',{}).get('value','')[:120], '|', m.get('DateTimeOriginal',{}).get('value'), '|', ii.get('thumburl'))
+          import json, urllib.request, urllib.parse
+          UA="TripoliOpenSource/1.0 (github.com/gelnagar/libya-project)"
+          def api(**p):
+              p.update(action='query', format='json', prop='imageinfo', iiprop='url|size|extmetadata', iiurlwidth=500)
+              r=urllib.request.Request('https://commons.wikimedia.org/w/api.php?'+urllib.parse.urlencode(p), headers={'User-Agent':UA})
+              return json.load(urllib.request.urlopen(r))
+          out={}
+          for kw in [dict(generator='categorymembers', gcmtitle='Category:Muammar al-Gaddafi', gcmtype='file', gcmlimit=500),
+                     dict(generator='search', gsrsearch='Gaddafi 1970s OR 1971 OR 1972 OR 1973 OR 1974 OR 1975 OR 1976 OR 1977 OR 1978 OR 1979', gsrnamespace=6, gsrlimit=50),
+                     dict(generator='search', gsrsearch='Gaddafi Sadat OR Assad OR Tito OR Nasser OR Boumediene', gsrnamespace=6, gsrlimit=50)]:
+              try:
+                  d=api(**kw)
+                  for p in d.get('query',{}).get('pages',{}).values():
+                      ii=(p.get('imageinfo') or [{}])[0]; m=ii.get('extmetadata',{})
+                      out[p['title']]=dict(w=ii.get('width'),h=ii.get('height'),lic=m.get('LicenseShortName',{}).get('value'),date=m.get('DateTimeOriginal',{}).get('value'),desc=(m.get('ImageDescription',{}).get('value') or '')[:140],thumb=ii.get('thumburl'))
+              except Exception as e: print('ERR',e)
+          json.dump(out, open('archive/research/photo-candidates.json','w'), indent=1)
+          print(len(out))
           PY
-          curl -sSL -A "$UA" -o public/img/gaddafi-1972.jpg "https://commons.wikimedia.org/wiki/Special:FilePath/Muammar_Gaddafi_in_1972.jpg?width=600"
-          file public/img/gaddafi-1972.jpg
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/img archive/research/photo-meta.json
-          if git diff --cached --quiet; then echo none; else git commit -m "Candidate 1972 photo and licence data" && git pull --rebase && git push; fi
+          git add archive/research/photo-candidates.json
+          if git diff --cached --quiet; then echo none; else git commit -m "Photo candidates" && git pull --rebase && git push; fi

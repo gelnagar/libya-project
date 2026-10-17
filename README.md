@@ -16,7 +16,7 @@ The map runs full screen on phones and computers. Tap any marker to read why it 
 
 **Suggested questions:** 20 per place in `data/questions.js`, shown three at a time.
 
-**Today, from OpenStreetMap (loads live as you zoom in):** residential, commercial and industrial zones; buildings; present-day military areas; water wells, towers and reservoirs; oil and gas facilities.
+**Today, from OpenStreetMap:** residential, commercial and industrial zones; present-day military areas; water wells, towers and reservoirs; oil and gas facilities. These are saved in `data/osm/` by a GitHub Action (`.github/workflows/osm-data.yml`) that refreshes them monthly, so they load instantly. Buildings load live in ~1 km squares, nearest first, and are kept on the device for later visits; central Tripoli is preloaded in the background.
 
 **Ask AI:** optional. See [SETUP-AI.md](SETUP-AI.md). The API key stays in a private Cloudflare relay and is never stored in this repository.
 
@@ -35,6 +35,8 @@ Settings (⚙) has a larger-text option.
 | `data/config.js` | Address of the AI relay |
 | `worker/worker.js` | The AI relay that holds the API key and stores requests |
 | `requests.html` | Owner page for reading family requests |
+| `data/osm/` | Saved present-day OpenStreetMap layers (refreshed monthly) |
+| `scripts/fetch-osm.mjs` | Downloads those layers; run by the GitHub Action |
 | `vendor/leaflet/` | Leaflet 1.9.4 mapping library |
 
 ### Evidence levels

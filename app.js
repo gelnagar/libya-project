@@ -242,48 +242,86 @@
   map.on('mousemove', function (e) { hud(e.latlng); });
   map.on('moveend', function () { hud(map.getCenter()); });
 
-  /* ---------- present-day OpenStreetMap layers ---------- */
+  /* ---------- present-day OpenStreetMap layers ----------
+     Zones, military, water and oil come from files saved monthly in data/osm (fast).
+     Buildings, and any layer whose file is missing, are fetched live from Overpass,
+     racing several public servers and using whichever answers first. */
   var OSM = {
-    landuse: { label: 'Residential, commercial & industrial zones', minZoom: 13, note: 'Zoom in to see zones',
+    landuse: { label: 'Residential, commercial & industrial zones', minZoom: 11, note: 'Grey homes, blue shops, orange industry', saved: true,
       q: function (b) { return '(way["landuse"~"^(residential|commercial|retail|industrial)$"](' + b + ');relation["landuse"~"^(residential|commercial|retail|industrial)$"](' + b + '););out geom 4000;'; },
       style: function (t) { var c = { residential: '#8f99a8', commercial: '#68c1ee', retail: '#68c1ee', industrial: '#ec9a3c' }[t.landuse] || '#8f99a8'; return { color: c, weight: 1, fillColor: c, fillOpacity: 0.18 }; }, swatch: '#8f99a8' },
-    buildings: { label: 'Buildings', minZoom: 16, note: 'Zoom in close to see buildings',
-      q: function (b) { return 'way["building"](' + b + ');out geom 3000;'; },
+    buildings: { label: 'Buildings', minZoom: 16, note: 'Zoom in close; appears area by area', saved: false,
+      q: function (b) { return 'way["building"](' + b + ');out geom 2500;'; },
       style: function () { return { color: '#c5cbd3', weight: 0.6, fillColor: '#8f99a8', fillOpacity: 0.35 }; }, swatch: '#c5cbd3' },
-    military: { label: 'Military areas (today)', minZoom: 11, note: 'Areas tagged military now',
+    military: { label: 'Military areas (today)', minZoom: 9, note: 'Areas tagged military now', saved: true,
       q: function (b) { return '(way["landuse"="military"](' + b + ');relation["landuse"="military"](' + b + ');way["military"](' + b + ');node["military"](' + b + '););out geom 1500;'; },
       style: function () { return { color: '#ec9a3c', weight: 2, dashArray: '6 4', fillColor: '#ec9a3c', fillOpacity: 0.08 }; }, point: '#ec9a3c' },
-    water: { label: 'Water wells, towers & reservoirs', minZoom: 11, note: 'Water infrastructure',
+    water: { label: 'Water wells, towers & reservoirs', minZoom: 9, note: 'Water infrastructure', saved: true,
       q: function (b) { return '(node["man_made"~"^(water_well|water_tower|water_works|reservoir_covered)$"](' + b + ');way["man_made"~"^(water_tower|water_works|reservoir_covered)$"](' + b + ');way["landuse"="reservoir"](' + b + '););out geom 1500;'; },
       style: function () { return { color: '#4c90f0', weight: 1.5, fillColor: '#4c90f0', fillOpacity: 0.3 }; }, point: '#4c90f0' },
-    oil: { label: 'Oil & gas wells, depots, refineries', minZoom: 9, note: 'Few in Tripoli itself',
+    oil: { label: 'Oil & gas wells, depots, refineries', minZoom: 9, note: 'Few in Tripoli itself', saved: true,
       q: function (b) { return '(node["man_made"="petroleum_well"](' + b + ');way["man_made"="petroleum_well"](' + b + ');way["industrial"~"^(oil|refinery|fuel)$"](' + b + ');node["industrial"~"^(oil|refinery)$"](' + b + ');way["man_made"="storage_tank"]["content"~"oil|fuel|petrol|gas"](' + b + '););out geom 1500;'; },
       style: function () { return { color: '#d0b090', weight: 1.5, fillColor: '#d0b090', fillOpacity: 0.3 }; }, point: '#d0b090' }
   };
-  var ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
+  var ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
   var osmActive = store.get('osm', {});
-  var osmGroups = {}, osmCache = {}, osmAbort = {};
+  var osmGroups = {}, osmCache = {}, osmAbort = {}, savedData = {}, savedState = {};
   var canvas = L.canvas({ padding: 0.4 });
   Object.keys(OSM).forEach(function (k) {
-    osmGroups[k] = L.layerGroup().addTo(map);
+    osmGroups[k] = L.layerGroup();
     var o = OSM[k];
     var sw = h('span', { class: 'glyph square', style: 'background:' + (o.point || o.swatch) });
     $('osm-toggles').appendChild(toggleRow('osm-' + k, o.label, o.note, osmActive[k], function (v) {
       osmActive[k] = v; store.set('osm', osmActive);
-      if (!v) { osmGroups[k].clearLayers(); if (osmAbort[k]) osmAbort[k].abort(); }
-      refreshOSM();
+      if (!v) { map.removeLayer(osmGroups[k]); if (osmAbort[k]) osmAbort[k].abort(); if (k !== 'buildings' && (!o.saved || savedState[k] === 'missing')) osmGroups[k].clearLayers(); }
+      refreshOSM(true);
     }, sw));
   });
   function bboxKey() {
-    var b = map.getBounds().pad(0.15);
+    var b = map.getBounds().pad(0.1);
     function r(n) { return Math.round(n * 200) / 200; }
     return [r(b.getSouth()), r(b.getWest()), r(b.getNorth()), r(b.getEast())].join(',');
   }
-  function overpass(query, signal, i) {
-    i = i || 0;
-    return fetch(ENDPOINTS[i], { method: 'POST', body: 'data=' + encodeURIComponent('[out:json][timeout:25];' + query), headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, signal: signal })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-      .catch(function (e) { if (e.name === 'AbortError' || i + 1 >= ENDPOINTS.length) throw e; return overpass(query, signal, i + 1); });
+  function overpass(query, signal) {
+    var ctrls = ENDPOINTS.map(function () { return new AbortController(); });
+    function stopAll(except) { ctrls.forEach(function (c, i) { if (i !== except) c.abort(); }); }
+    if (signal) signal.addEventListener('abort', function () { stopAll(-1); });
+    var timer = setTimeout(function () { stopAll(-1); }, 30000);
+    var tries = ENDPOINTS.map(function (url, i) {
+      return fetch(url, { method: 'POST', body: 'data=' + encodeURIComponent('[out:json][timeout:25];' + query), headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, signal: ctrls[i].signal })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function (j) { stopAll(i); return j; });
+    });
+    return Promise.any(tries)
+      .then(function (j) { clearTimeout(timer); return j; })
+      .catch(function () { clearTimeout(timer); var e = new Error('All map servers failed'); if (signal && signal.aborted) e.name = 'AbortError'; throw e; });
+  }
+  // Expand the compact saved format into the same shape Overpass returns.
+  function expand(f) {
+    var id = f.i, tags = f.t || {};
+    if (f.k === 'n') return { type: 'node', id: id, tags: tags, lat: f.p[0], lon: f.p[1] };
+    var minlat = 90, maxlat = -90, minlon = 180, maxlon = -180;
+    f.g.forEach(function (ring) { ring.forEach(function (p) { if (p[0] < minlat) minlat = p[0]; if (p[0] > maxlat) maxlat = p[0]; if (p[1] < minlon) minlon = p[1]; if (p[1] > maxlon) maxlon = p[1]; }); });
+    var bounds = { minlat: minlat, maxlat: maxlat, minlon: minlon, maxlon: maxlon };
+    var geo = function (ring) { return ring.map(function (p) { return { lat: p[0], lon: p[1] }; }); };
+    if (f.k === 'w') return { type: 'way', id: id, tags: tags, geometry: geo(f.g[0]), bounds: bounds };
+    return { type: 'relation', id: id, tags: tags, bounds: bounds, members: f.g.map(function (ring) { return { role: 'outer', geometry: geo(ring) }; }) };
+  }
+  function loadSaved(k) {
+    if (savedState[k]) return savedState[k] === 'loading' ? null : savedData[k];
+    savedState[k] = 'loading';
+    status('Loading ' + OSM[k].label.toLowerCase() + '…');
+    fetch('data/osm/' + k + '.json', { cache: 'force-cache' })
+      .then(function (r) { if (!r.ok) throw new Error('missing'); return r.json(); })
+      .then(function (j) {
+        savedData[k] = { elements: (j.features || []).map(expand), generated: j.generated };
+        savedState[k] = 'ready';
+        drawOSM(k, savedData[k]);
+        status(savedData[k].elements.length ? null : 'No ' + OSM[k].label.toLowerCase() + ' mapped around Tripoli.', 3000);
+        refreshOSM(true);
+      })
+      .catch(function () { savedState[k] = 'missing'; refreshOSM(true); });
+    return null;
   }
   function drawOSM(k, data) {
     var o = OSM[k], g = osmGroups[k];
@@ -304,33 +342,135 @@
     });
   }
   var osmTimer;
-  function refreshOSM() {
+  function refreshOSM(now) {
     clearTimeout(osmTimer);
     osmTimer = setTimeout(function () {
       var z = map.getZoom(), key = bboxKey(), loading = false, tooFar = [];
       Object.keys(OSM).forEach(function (k) {
-        if (!osmActive[k]) return;
-        var o = OSM[k];
-        if (z < o.minZoom) { osmGroups[k].clearLayers(); tooFar.push(o.label.split(',')[0].split(' (')[0].toLowerCase()); return; }
+        var o = OSM[k], g = osmGroups[k];
+        if (k === 'buildings') { if (refreshBuildings()) loading = true; else if (osmActive[k] && z < o.minZoom) tooFar.push('buildings'); return; }
+        if (!osmActive[k]) { map.removeLayer(g); return; }
+        if (z < o.minZoom) { map.removeLayer(g); tooFar.push(o.label.split(',')[0].split(' (')[0].toLowerCase()); return; }
+        if (!map.hasLayer(g)) g.addTo(map);
+        if (o.saved && savedState[k] !== 'missing') { var d = loadSaved(k); if (!d) loading = true; else if (!g.getLayers().length) drawOSM(k, d); return; }
         var ck = k + '|' + key;
         if (osmCache[ck]) { drawOSM(k, osmCache[ck]); return; }
         if (osmAbort[k]) osmAbort[k].abort();
         var ac = new AbortController(); osmAbort[k] = ac;
         loading = true;
-        status('Loading ' + o.label.toLowerCase() + '…');
+        status('Loading ' + o.label.toLowerCase() + '… this can take up to 20 seconds.');
         overpass(o.q(key), ac.signal).then(function (data) {
           osmCache[ck] = data;
           if (osmActive[k]) drawOSM(k, data);
-          if ((data.elements || []).length) status(null); else status('No ' + o.label.toLowerCase() + ' mapped in this area.', 3000);
+          status((data.elements || []).length ? null : 'No ' + o.label.toLowerCase() + ' mapped in this area.', 3000);
         }).catch(function (e) {
           if (e.name === 'AbortError') return;
-          status('Could not load ' + o.label.toLowerCase() + ' right now. Move the map to try again.', 5000);
+          status('The OpenStreetMap servers are busy, so ' + o.label.toLowerCase() + ' could not load. Move the map a little to try again.', 6000);
         });
       });
       if (!loading && tooFar.length) status('Zoom in to see ' + tooFar.join(', ') + '.', 3500);
-    }, 600);
+    }, now === true ? 0 : 500);
   }
-  map.on('moveend', refreshOSM);
+  map.on('moveend', function () { refreshOSM(); });
+  /* ---------- buildings: loaded in ~1 km squares, drawn as each arrives ---------- */
+  var TILE = 0.01, bTiles = {}, bQueue = [], bRunning = 0, bTotal = 0, bDone = 0, bCacheName = 'atlas-buildings-v1';
+  function tileKey(i, j) { return i + '_' + j; }
+  function tileBox(i, j) { var s = i * TILE, w = j * TILE; return [s.toFixed(3), w.toFixed(3), (s + TILE).toFixed(3), (w + TILE).toFixed(3)].join(','); }
+  function cacheGet(key) {
+    if (!window.caches) return Promise.resolve(null);
+    return caches.open(bCacheName).then(function (c) { return c.match('https://atlas.local/b/' + key); }).then(function (r) { return r ? r.json() : null; }).catch(function () { return null; });
+  }
+  function cachePut(key, data) {
+    if (!window.caches) return;
+    try { caches.open(bCacheName).then(function (c) { return c.put('https://atlas.local/b/' + key, new Response(JSON.stringify(data), { headers: { 'Content-Type': 'application/json' } })); }).catch(function () {}); } catch (e) {}
+  }
+  function slimBuildings(data) {
+    return { elements: (data.elements || []).filter(function (e) { return e.type === 'way' && e.geometry; }).map(function (e) {
+      var t = {}; ['building', 'name', 'name:en', 'name:ar', 'building:levels', 'amenity'].forEach(function (k) { if (e.tags && e.tags[k]) t[k] = e.tags[k]; });
+      return { type: 'way', id: e.id, tags: t, bounds: e.bounds, geometry: e.geometry.map(function (p) { return { lat: Math.round(p.lat * 1e5) / 1e5, lon: Math.round(p.lon * 1e5) / 1e5 }; }) };
+    }) };
+  }
+  function drawTile(key) {
+    var t = bTiles[key];
+    if (!t || !t.data || t.layer) return;
+    var o = OSM.buildings, g = L.layerGroup();
+    t.data.elements.forEach(function (el) {
+      var pts = el.geometry.map(function (p) { return [p.lat, p.lon]; });
+      if (pts.length < 3) return;
+      L.polygon(pts, Object.assign({ renderer: canvas }, o.style(el.tags || {}))).on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openFeature('buildings', el); }).addTo(g);
+    });
+    t.layer = g;
+  }
+  function fetchTile(key, i, j, race) {
+    return cacheGet(key).then(function (hit) {
+      if (hit) return hit;
+      var q = 'way["building"](' + tileBox(i, j) + ');out geom;';
+      var p = race ? overpass(q) : fetch(ENDPOINTS[0], { method: 'POST', body: 'data=' + encodeURIComponent('[out:json][timeout:25];' + q), headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+      return p.then(function (d) { var s = slimBuildings(d); cachePut(key, s); return s; });
+    });
+  }
+  function pumpBuildings() {
+    while (bRunning < 3 && bQueue.length) {
+      (function (job) {
+        var t = bTiles[job.key];
+        if (t.state !== 'queued') return;
+        t.state = 'loading'; bRunning++;
+        fetchTile(job.key, job.i, job.j, true).then(function (d) {
+          t.data = d; t.state = 'ready'; drawTile(job.key);
+          if (osmActive.buildings && map.getZoom() >= OSM.buildings.minZoom && t.wanted) osmGroups.buildings.addLayer(t.layer);
+        }).catch(function () { t.state = 'failed'; }).then(function () {
+          bRunning--; bDone++;
+          if (bQueue.length || bRunning) status('Loading buildings… ' + bDone + ' of ' + bTotal + ' areas');
+          else {
+            var failed = Object.keys(bTiles).filter(function (k) { return bTiles[k].wanted && bTiles[k].state === 'failed'; }).length;
+            status(failed ? 'Some areas could not load because the map servers are busy. Move the map a little to try again.' : null, failed ? 6000 : 0);
+          }
+          pumpBuildings();
+        });
+      })(bQueue.shift());
+    }
+  }
+  function refreshBuildings() {
+    var g = osmGroups.buildings;
+    if (!osmActive.buildings || map.getZoom() < OSM.buildings.minZoom) { map.removeLayer(g); return false; }
+    if (!map.hasLayer(g)) g.addTo(map);
+    var b = map.getBounds().pad(0.15), c = map.getCenter();
+    var i0 = Math.floor(b.getSouth() / TILE), i1 = Math.floor(b.getNorth() / TILE), j0 = Math.floor(b.getWest() / TILE), j1 = Math.floor(b.getEast() / TILE);
+    var want = {}, jobs = [];
+    for (var i = i0; i <= i1; i++) for (var j = j0; j <= j1; j++) {
+      var key = tileKey(i, j); want[key] = 1;
+      var t = bTiles[key] || (bTiles[key] = { state: 'new' });
+      t.wanted = true;
+      if (t.state === 'ready') { drawTile(key); if (!g.hasLayer(t.layer)) g.addLayer(t.layer); }
+      else if (t.state === 'new' || t.state === 'failed') { t.state = 'queued'; jobs.push({ key: key, i: i, j: j, d: Math.pow((i + 0.5) * TILE - c.lat, 2) + Math.pow((j + 0.5) * TILE - c.lng, 2) }); }
+    }
+    Object.keys(bTiles).forEach(function (k) { if (!want[k]) { bTiles[k].wanted = false; if (bTiles[k].layer) g.removeLayer(bTiles[k].layer); if (bTiles[k].state === 'queued') bTiles[k].state = 'new'; } });
+    bQueue = bQueue.filter(function (q) { return want[q.key] && bTiles[q.key].state === 'queued'; });
+    jobs.sort(function (a, b2) { return a.d - b2.d; }).forEach(function (q) { bQueue.push(q); });
+    if (bQueue.length) { bTotal = bQueue.length + bRunning; bDone = 0; status('Loading buildings… 0 of ' + bTotal + ' areas'); pumpBuildings(); return true; }
+    return bRunning > 0;
+  }
+  // Quietly fetch central Tripoli's buildings and the saved layers after the page settles.
+  function preload() {
+    var conn = navigator.connection || {};
+    if (conn.saveData || /2g/.test(conn.effectiveType || '')) return;
+    ['landuse', 'military', 'water', 'oil'].forEach(function (k) {
+      if (savedState[k]) return;
+      fetch('data/osm/' + k + '.json', { cache: 'force-cache' }).then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+        .then(function (j) { if (!savedState[k]) { savedData[k] = { elements: (j.features || []).map(expand), generated: j.generated }; savedState[k] = 'ready'; } }).catch(function () {});
+    });
+    var c = L.latLng(32.888, 13.185), ci = Math.floor(c.lat / TILE), cj = Math.floor(c.lng / TILE), list = [];
+    for (var di = -1; di <= 1; di++) for (var dj = -1; dj <= 1; dj++) list.push([ci + di, cj + dj]);
+    (function next() {
+      var x = list.shift(); if (!x) return;
+      var key = tileKey(x[0], x[1]), t = bTiles[key] || (bTiles[key] = { state: 'new' });
+      if (t.state !== 'new') { next(); return; }
+      t.state = 'preloading';
+      fetchTile(key, x[0], x[1], false).then(function (d) { t.data = d; t.state = 'ready'; if (t.wanted) refreshBuildings(); })
+        .catch(function () { t.state = 'new'; }).then(function () { setTimeout(next, 1500); });
+    })();
+  }
+  setTimeout(function () { (window.requestIdleCallback || function (f) { f(); })(preload); }, 4000);
 
   /* ---------- panels ---------- */
   var selected = null;
@@ -722,7 +862,7 @@
       var bad = [].concat(a.show || [], a.hide || []).filter(function (k) { return !OSM[k]; });
       if (bad.length) return { error: 'Unknown layers: ' + bad.join(', ') };
       (a.show || []).forEach(function (k) { osmActive[k] = true; });
-      (a.hide || []).forEach(function (k) { osmActive[k] = false; osmGroups[k].clearLayers(); });
+      (a.hide || []).forEach(function (k) { osmActive[k] = false; map.removeLayer(osmGroups[k]); });
       store.set('osm', osmActive); syncInputs(); ui.mapChanged = true;
       var need = (a.show || []).map(function (k) { return OSM[k].minZoom; }).reduce(function (x, y) { return Math.max(x, y); }, 0);
       var note = '';

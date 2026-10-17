@@ -26,6 +26,10 @@
     return e;
   }
   function add(parent, child) { if (child) parent.appendChild(child); }
+  /* On Cloudflare the whole site sits behind the family password, so the AI is reached on the same
+     address and the login cookie does the checking. The old GitHub Pages copy still uses the relay. */
+  var GATED = location.protocol !== 'file:' && !/github\.io$/.test(location.hostname);
+  if (GATED) CFG.aiEndpoint = '/api';
   var store = {
     get: function (k, d) { try { var v = localStorage.getItem('atlas.' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
     set: function (k, v) { try { localStorage.setItem('atlas.' + k, JSON.stringify(v)); } catch (e) {} }
@@ -712,8 +716,9 @@
   window.addEventListener('resize', fitBanner);
   $('credit-x').onclick = function () { creditHidden = true; $('credit').hidden = true; fitBanner(); };
   function relay(code, payload) {
-    return fetch(CFG.aiEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Family-Code': code }, body: JSON.stringify(payload) })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (j && j.credit) showCredit(j.credit); if (!r.ok) { var e = new Error(j.error || ('Error ' + r.status)); e.code = r.status; throw e; } return j; }); });
+    var hd = { 'Content-Type': 'application/json' }; if (!GATED) hd['X-Family-Code'] = code;
+    return fetch(CFG.aiEndpoint, { method: 'POST', credentials: 'same-origin', headers: hd, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (j && j.credit) showCredit(j.credit); if (!r.ok) { if (GATED && r.status === 401) { location.href = '/login?next=' + encodeURIComponent(location.pathname); } var e = new Error(j.error || ('Error ' + r.status)); e.code = r.status; throw e; } return j; }); });
   }
   function aiBox(place, qs) {
     if (!CFG.aiEndpoint) return null;
@@ -1044,6 +1049,8 @@
     $('chat-suggest').onclick = function () { openChat(); requestCard('', ''); };
   }
 
+  if (GATED) store.set('code', 'session');
+
   /* ---------- welcome password ---------- */
   function showTip() { if (!store.get('tipSeen', false)) $('tip').hidden = false; }
   function closeWelcome() { $('welcome').hidden = true; showTip(); }
@@ -1079,11 +1086,12 @@
   document.querySelectorAll('#sizes button').forEach(function (b) { b.addEventListener('click', function () { setSize(b.dataset.size); }); });
   function openSettings() {
     $('settings').hidden = false;
-    $('code-field').hidden = !CFG.aiEndpoint;
+    $('code-field').hidden = !CFG.aiEndpoint || GATED;
+    $('sign-out').hidden = !GATED;
     $('family-code').value = store.get('code', '');
     $('set-close').focus();
   }
-  function closeSettings() { if (CFG.aiEndpoint) store.set('code', $('family-code').value.trim()); $('settings').hidden = true; }
+  function closeSettings() { if (CFG.aiEndpoint && !GATED) store.set('code', $('family-code').value.trim()); $('settings').hidden = true; }
   $('btn-settings').onclick = openSettings;
   $('set-close').onclick = closeSettings;
   $('settings').addEventListener('click', function (e) { if (e.target.id === 'settings') closeSettings(); });

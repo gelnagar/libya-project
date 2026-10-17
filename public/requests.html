@@ -56,7 +56,8 @@ button.primary { background: var(--accent); border-color: var(--accent); color: 
   function get() { try { return localStorage.getItem(KEY) || ''; } catch (e) { return ''; } }
   function set(v) { try { v ? localStorage.setItem(KEY, v) : localStorage.removeItem(KEY); } catch (e) {} }
   function call(code, body) {
-    return fetch(CFG.aiEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Owner-Code': code }, body: JSON.stringify(Object.assign({ owner: true }, body)) })
+    var url = (location.protocol !== 'file:' && !/github\.io$/.test(location.hostname)) ? '/api' : CFG.aiEndpoint;
+    return fetch(url, { credentials: 'same-origin', method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Owner-Code': code }, body: JSON.stringify(Object.assign({ owner: true }, body)) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) { var e = new Error(j.error || r.status); e.code = r.status; throw e; } return j; }); });
   }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }

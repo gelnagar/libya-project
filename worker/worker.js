@@ -1,12 +1,22 @@
 /*
-  Family AI relay for the Tripoli atlas (Cloudflare Worker).
-  Keeps the Anthropic API key secret: the map never sees it.
+  Tripoli: Open Source — the whole site, behind the family password (Cloudflare Worker).
+
+  - Every page, data file and the AI need the family password. Without it, visitors only
+    ever see the login page. The password check happens here, on Cloudflare; nothing in
+    the browser can skip it.
+  - After a correct password the browser gets a signed cookie for 180 days. Changing
+    FAMILY_CODE logs everyone out.
+  - Wrong guesses are limited to 8 per 15 minutes per connection.
+  - The map files are served from public/ (see wrangler.jsonc); nothing else in the
+    repository is ever served.
+  - Keeps the Anthropic API key secret: the map never sees it.
 
   Secrets / variables to set in Cloudflare (see SETUP-AI.md):
     ANTHROPIC_API_KEY  (secret)  your Anthropic API key
     FAMILY_CODE        (secret)  the password family members type once on their phone
     OWNER_CODE         (secret)  your own password for the requests page
-    ALLOWED_ORIGINS    (text)    https://gelnagar.github.io
+    ALLOWED_ORIGINS    (text)    optional, other sites allowed to call the AI (old GitHub Pages copy)
+    SESSION_SECRET     (secret)  optional; if missing, one is derived from the other secrets
     MODEL              (text)    optional, defaults to claude-sonnet-5-5
     OWNER_NAME         (text)    optional, defaults to Gordon
 
@@ -129,87 +139,209 @@ function cleanMessages(list) {
   return out;
 }
 
+/* ---------- the password gate ---------- */
+const COOKIE = 'tos_session';
+const SESSION_DAYS = 180;
+const MAX_FAILS = 8, FAIL_WINDOW = 900; // 8 wrong passwords per 15 minutes per connection
+const failMem = new Map();
+const norm = (v) => String(v || '').trim().toLowerCase();
+const enc = new TextEncoder();
+const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+
+async function sessionKey(env) {
+  const material = env.SESSION_SECRET || ('derived:' + (env.ANTHROPIC_API_KEY || '') + ':' + (env.OWNER_CODE || ''));
+  return crypto.subtle.importKey('raw', enc.encode(material), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+}
+async function signSession(env, exp) {
+  // The family password is part of what is signed, so changing it logs everyone out.
+  return hex(await crypto.subtle.sign('HMAC', await sessionKey(env), enc.encode('v1.' + exp + '.' + norm(env.FAMILY_CODE))));
+}
+function sameText(a, b) {
+  if (a.length !== b.length) return false;
+  let d = 0; for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return d === 0;
+}
+async function sessionOk(request, env) {
+  if (!env.FAMILY_CODE) return false;
+  const m = (request.headers.get('Cookie') || '').match(new RegExp('(?:^|;\\s*)' + COOKIE + '=v1\\.(\\d+)\\.([0-9a-f]{64})'));
+  if (!m || Number(m[1]) < Date.now()) return false;
+  return sameText(m[2], await signSession(env, m[1]));
+}
+async function failCount(env, ip) {
+  if (env.ATLAS_KV) return parseInt(await env.ATLAS_KV.get('fail:' + ip)) || 0;
+  const f = failMem.get(ip); return f && Date.now() - f.at < FAIL_WINDOW * 1000 ? f.n : 0;
+}
+async function noteFail(env, ip) {
+  const n = (await failCount(env, ip)) + 1;
+  if (env.ATLAS_KV) await env.ATLAS_KV.put('fail:' + ip, String(n), { expirationTtl: FAIL_WINDOW });
+  else failMem.set(ip, { n, at: Date.now() });
+}
+const SECURITY = {
+  'X-Robots-Tag': 'noindex, nofollow, noarchive',
+  'Referrer-Policy': 'same-origin',
+  'X-Frame-Options': 'DENY',
+  'X-Content-Type-Options': 'nosniff'
+};
+function safeNext(v) { v = String(v || '/'); return v.startsWith('/') && !v.startsWith('//') && !v.startsWith('/login') ? v : '/'; }
+const escHtml = (v) => String(v).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+function loginPage(env, msg, next, status) {
+  const owner = escHtml(env.OWNER_NAME || 'Gordon');
+  const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1c2127">
+<title>Tripoli: Open Source</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Newsreader:opsz,wght@6..72,600&display=swap">
+<style>
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { min-height: 100vh; display: grid; place-items: center; padding: 20px; color: #f6f7f9; font: 18px/1.5 "Atkinson Hyperlegible", system-ui, sans-serif;
+  background: radial-gradient(1200px 700px at 30% 20%, #1d2c40 0%, transparent 60%), radial-gradient(900px 600px at 80% 90%, #2a1d33 0%, transparent 60%), #111418; }
+.grid { position: fixed; inset: 0; background-image: linear-gradient(rgba(76,144,240,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(76,144,240,.07) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+form { position: relative; width: 100%; max-width: 400px; padding: 28px 24px; border-radius: 24px; background: rgba(26,32,40,.55);
+  -webkit-backdrop-filter: blur(26px) saturate(1.8); backdrop-filter: blur(26px) saturate(1.8); border: 1px solid rgba(255,255,255,.22);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 18px 50px rgba(0,0,0,.5); display: flex; flex-direction: column; gap: 14px; }
+h1 { margin: 0; font: 600 1.8em/1.1 Newsreader, Georgia, serif; }
+p { margin: 0; color: #abb3bf; }
+label { font-weight: 700; }
+input { width: 100%; min-height: 52px; padding: 0 14px; font: inherit; color: inherit; background: rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.26); border-radius: 14px; }
+input:focus-visible, button:focus-visible { outline: 3px solid #fbb360; outline-offset: 2px; }
+button { min-height: 52px; font: 700 1em inherit; font-family: inherit; color: #fff; background: rgba(76,144,240,.9); border: 1px solid rgba(190,215,255,.6); border-radius: 14px; cursor: pointer; box-shadow: inset 0 1px 0 rgba(255,255,255,.5); }
+.msg { color: #ffb4b0; font-weight: 700; }
+small { color: #abb3bf; }
+</style></head>
+<body><div class="grid" aria-hidden="true"></div>
+<form method="post" action="/login">
+  <h1>Tripoli: Open Source</h1>
+  <p>Prisons &amp; security, 1969–89</p>
+  ${msg ? `<p class="msg" role="alert">${escHtml(msg)}</p>` : ''}
+  <label for="code">Family password</label>
+  <input id="code" name="code" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required autofocus>
+  <input type="hidden" name="next" value="${escHtml(safeNext(next))}">
+  <button type="submit">Open the map</button>
+  <small>You only need to do this once on each device. Ask ${owner} if you don’t have the password.</small>
+</form></body></html>`;
+  return new Response(html, { status: status || 200, headers: { ...SECURITY, 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } });
+}
+
+async function handleLogin(request, env) {
+  const url = new URL(request.url);
+  if (request.method !== 'POST') return loginPage(env, '', url.searchParams.get('next'));
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if ((await failCount(env, ip)) >= MAX_FAILS) return loginPage(env, 'Too many wrong tries. Wait 15 minutes, then try again.', '/', 429);
+  let form; try { form = await request.formData(); } catch { form = new FormData(); }
+  const next = safeNext(form.get('next'));
+  if (!env.FAMILY_CODE || norm(form.get('code')) !== norm(env.FAMILY_CODE)) {
+    await noteFail(env, ip);
+    return loginPage(env, 'That password isn’t right. Try again.', next, 401);
+  }
+  const exp = Date.now() + SESSION_DAYS * 86400000;
+  const cookie = `${COOKIE}=v1.${exp}.${await signSession(env, exp)}; Path=/; Max-Age=${SESSION_DAYS * 86400}; HttpOnly; Secure; SameSite=Lax`;
+  return new Response(null, { status: 303, headers: { ...SECURITY, Location: next, 'Set-Cookie': cookie, 'Cache-Control': 'no-store' } });
+}
+
 export default {
   async fetch(request, env) {
-    const allowed = (env.ALLOWED_ORIGINS || 'https://gelnagar.github.io').split(',').map((s) => s.trim());
-    const origin = request.headers.get('Origin') || '';
-    const cors = {
-      'Access-Control-Allow-Origin': allowed.includes(origin) ? origin : allowed[0],
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, X-Family-Code, X-Owner-Code',
-      'Access-Control-Max-Age': '86400',
-      Vary: 'Origin'
-    };
+    const url = new URL(request.url);
+    const path = url.pathname;
 
-    if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
-    if (request.method !== 'POST') return json({ error: 'Not found' }, 404, cors);
-    if (!allowed.includes(origin)) return json({ error: 'Not allowed' }, 403, cors);
+    if (path === '/robots.txt') return new Response('User-agent: *\nDisallow: /\n', { headers: { ...SECURITY, 'Content-Type': 'text/plain' } });
+    if (path === '/login') return handleLogin(request, env);
+    if (path === '/logout') return new Response(null, { status: 303, headers: { ...SECURITY, Location: '/login', 'Set-Cookie': `${COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax` } });
+    if (path === '/api' || request.method === 'POST' || request.method === 'OPTIONS') return api(request, env, url);
 
-    let body;
-    try { body = await request.json(); } catch { return json({ error: 'Bad request' }, 400, cors); }
-    const norm = (v) => String(v || '').trim().toLowerCase();
-
-    /* ----- owner: read and clear requests ----- */
-    if (body.owner) {
-      if (!env.OWNER_CODE || norm(request.headers.get('X-Owner-Code')) !== norm(env.OWNER_CODE)) return json({ error: 'Wrong owner password' }, 401, cors);
-      if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
-      if (body.done) { await env.ATLAS_KV.delete(String(body.done)); return json({ ok: true }, 200, cors); }
-      const list = await env.ATLAS_KV.list({ prefix: 'req:', limit: 200 });
-      const items = [];
-      for (const k of list.keys) {
-        const v = await env.ATLAS_KV.get(k.name);
-        if (v) { try { items.push({ key: k.name, ...JSON.parse(v) }); } catch {} }
-      }
-      items.sort((a, b) => (b.at || 0) - (a.at || 0));
-      return json({ items, credit: await creditInfo(env) }, 200, cors);
+    if (!(await sessionOk(request, env))) {
+      const wantsPage = request.method === 'GET' && /text\/html/.test(request.headers.get('Accept') || '');
+      if (wantsPage) return new Response(null, { status: 303, headers: { ...SECURITY, Location: '/login?next=' + encodeURIComponent(path + url.search), 'Cache-Control': 'no-store' } });
+      return new Response('Password required', { status: 401, headers: { ...SECURITY, 'Cache-Control': 'no-store' } });
     }
+    if (!env.ASSETS) return new Response('Site files are not connected', { status: 500 });
+    const res = await env.ASSETS.fetch(request);
+    const out = new Response(res.body, res);
+    for (const [k, v] of Object.entries(SECURITY)) out.headers.set(k, v);
+    out.headers.set('Cache-Control', /\/(vendor|data\/osm)\//.test(path) ? 'private, max-age=86400' : 'private, no-cache');
+    return out;
+  }
+};
 
-    /* ----- everything else needs the family password ----- */
-    if (!env.FAMILY_CODE || norm(request.headers.get('X-Family-Code')) !== norm(env.FAMILY_CODE)) return json({ error: 'Wrong family code' }, 401, cors);
+/* ---------- the AI and requests API ---------- */
+async function api(request, env, url) {
+  const allowed = [url.origin].concat((env.ALLOWED_ORIGINS || 'https://gelnagar.github.io').split(',').map((s) => s.trim()).filter(Boolean));
+  const origin = request.headers.get('Origin') || '';
+  const cors = {
+    'Access-Control-Allow-Origin': allowed.includes(origin) ? origin : allowed[0],
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, X-Family-Code, X-Owner-Code',
+    'Access-Control-Max-Age': '86400',
+    Vary: 'Origin'
+  };
 
-    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-    const now = Date.now();
-    const recent = (hits.get(ip) || []).filter((t) => now - t < 60000);
-    if (recent.length >= MAX_PER_MINUTE) return json({ error: 'Too many requests' }, 429, cors);
-    recent.push(now);
-    hits.set(ip, recent);
+  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
+  if (request.method !== 'POST') return json({ error: 'Not found' }, 404, cors);
+  if (origin && !allowed.includes(origin)) return json({ error: 'Not allowed' }, 403, cors);
+  const viaSession = await sessionOk(request, env);
+  if (!origin && !viaSession) return json({ error: 'Not allowed' }, 403, cors);
 
-    if (body.status) return json({ credit: await creditInfo(env) }, 200, cors);
+  let body;
+  try { body = await request.json(); } catch { return json({ error: 'Bad request' }, 400, cors); }
 
-    /* ----- save a research request for the owner ----- */
-    if (body.request) {
-      if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
-      const r = body.request;
-      const item = { at: now, title: clip(r.title, 200), details: clip(r.details, 2000), name: clip(r.name, 80), context: clip(r.context, 1000) };
-      if (!item.title && !item.details) return json({ error: 'Empty request' }, 400, cors);
-      await env.ATLAS_KV.put('req:' + now + '-' + Math.random().toString(36).slice(2, 8), JSON.stringify(item));
-      return json({ ok: true }, 200, cors);
+  /* ----- owner: read and clear requests ----- */
+  if (body.owner) {
+    const ipo = request.headers.get('CF-Connecting-IP') || 'unknown';
+    if ((await failCount(env, ipo)) >= MAX_FAILS) return json({ error: 'Too many wrong passwords. Wait 15 minutes.' }, 429, cors);
+    if (!env.OWNER_CODE || norm(request.headers.get('X-Owner-Code')) !== norm(env.OWNER_CODE)) { await noteFail(env, ipo); return json({ error: 'Wrong owner password' }, 401, cors); }
+    if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
+    if (body.done) { await env.ATLAS_KV.delete(String(body.done)); return json({ ok: true }, 200, cors); }
+    const list = await env.ATLAS_KV.list({ prefix: 'req:', limit: 200 });
+    const items = [];
+    for (const k of list.keys) {
+      const v = await env.ATLAS_KV.get(k.name);
+      if (v) { try { items.push({ key: k.name, ...JSON.parse(v) }); } catch {} }
     }
+    items.sort((a, b) => (b.at || 0) - (a.at || 0));
+    return json({ items, credit: await creditInfo(env) }, 200, cors);
+  }
 
-    /* ----- chat guide: one step of the agent loop ----- */
-    if (body.agent) {
-      const owner = env.OWNER_NAME || 'Gordon';
-      const msgs = cleanMessages(body.messages);
-      if (!msgs.length || msgs[msgs.length - 1].role !== 'user') return json({ error: 'Bad request' }, 400, cors);
-      const system = [
-        { type: 'text', text: agentSystem(owner, clip(body.catalog, 9000)), cache_control: { type: 'ephemeral' } },
-        { type: 'text', text: 'Map state when this step started: ' + clip(body.state, 3000) }
-      ];
-      const r = await callClaude(env, { max_tokens: 1024, system, tools: TOOLS, messages: msgs });
-      if (!r.ok) {
-        const err = await r.text();
-        if (/credit balance/i.test(err)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
-        return json({ error: 'AI service error ' + r.status }, 502, cors);
-      }
-      const data = await r.json();
-      await recordSpend(env, data.usage);
-      return json({ content: data.content || [], stop_reason: data.stop_reason, credit: await creditInfo(env) }, 200, cors);
-    }
+  /* ----- everything else needs the family password ----- */
+  if (!viaSession) {
+    const ip0 = request.headers.get('CF-Connecting-IP') || 'unknown';
+    if ((await failCount(env, ip0)) >= MAX_FAILS) return json({ error: 'Too many wrong passwords. Wait 15 minutes.' }, 429, cors);
+    if (!env.FAMILY_CODE || norm(request.headers.get('X-Family-Code')) !== norm(env.FAMILY_CODE)) { await noteFail(env, ip0); return json({ error: 'Wrong family code' }, 401, cors); }
+  }
 
-    /* ----- single question about a place ----- */
-    const question = clip(body.question || 'Why does this place matter?', 500);
-    const place = JSON.stringify(body.place || {}).slice(0, 4000);
-    const r = await callClaude(env, { max_tokens: 600, system: PLACE_SYSTEM, messages: [{ role: 'user', content: `Place on the map:\n${place}\n\nQuestion: ${question}` }] });
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  const now = Date.now();
+  const recent = (hits.get(ip) || []).filter((t) => now - t < 60000);
+  if (recent.length >= MAX_PER_MINUTE) return json({ error: 'Too many requests' }, 429, cors);
+  recent.push(now);
+  hits.set(ip, recent);
+
+  if (body.status) return json({ credit: await creditInfo(env) }, 200, cors);
+
+  /* ----- save a research request for the owner ----- */
+  if (body.request) {
+    if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
+    const r = body.request;
+    const item = { at: now, title: clip(r.title, 200), details: clip(r.details, 2000), name: clip(r.name, 80), context: clip(r.context, 1000) };
+    if (!item.title && !item.details) return json({ error: 'Empty request' }, 400, cors);
+    await env.ATLAS_KV.put('req:' + now + '-' + Math.random().toString(36).slice(2, 8), JSON.stringify(item));
+    return json({ ok: true }, 200, cors);
+  }
+
+  /* ----- chat guide: one step of the agent loop ----- */
+  if (body.agent) {
+    const owner = env.OWNER_NAME || 'Gordon';
+    const msgs = cleanMessages(body.messages);
+    if (!msgs.length || msgs[msgs.length - 1].role !== 'user') return json({ error: 'Bad request' }, 400, cors);
+    const system = [
+      { type: 'text', text: agentSystem(owner, clip(body.catalog, 9000)), cache_control: { type: 'ephemeral' } },
+      { type: 'text', text: 'Map state when this step started: ' + clip(body.state, 3000) }
+    ];
+    const r = await callClaude(env, { max_tokens: 1024, system, tools: TOOLS, messages: msgs });
     if (!r.ok) {
       const err = await r.text();
       if (/credit balance/i.test(err)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
@@ -217,7 +349,20 @@ export default {
     }
     const data = await r.json();
     await recordSpend(env, data.usage);
-    const text = (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('\n').trim();
-    return json({ text, credit: await creditInfo(env) }, 200, cors);
+    return json({ content: data.content || [], stop_reason: data.stop_reason, credit: await creditInfo(env) }, 200, cors);
   }
-};
+
+  /* ----- single question about a place ----- */
+  const question = clip(body.question || 'Why does this place matter?', 500);
+  const place = JSON.stringify(body.place || {}).slice(0, 4000);
+  const r = await callClaude(env, { max_tokens: 600, system: PLACE_SYSTEM, messages: [{ role: 'user', content: `Place on the map:\n${place}\n\nQuestion: ${question}` }] });
+  if (!r.ok) {
+    const err = await r.text();
+    if (/credit balance/i.test(err)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
+    return json({ error: 'AI service error ' + r.status }, 502, cors);
+  }
+  const data = await r.json();
+  await recordSpend(env, data.usage);
+  const text = (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('\n').trim();
+  return json({ text, credit: await creditInfo(env) }, 200, cors);
+}

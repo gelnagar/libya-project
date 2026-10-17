@@ -52,7 +52,7 @@ a { color: var(--link); }
   position: fixed; inset: 0 0 auto 0; z-index: 1000; height: calc(var(--bar-h) + var(--top));
   padding: var(--top) max(14px, env(safe-area-inset-right, 0px)) 0 max(14px, env(safe-area-inset-left, 0px));
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  background: var(--panel); color: var(--text); border-bottom: 2px solid var(--accent);
+  background: rgba(28,33,39,.8); -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2); color: var(--text); border-bottom: 2px solid var(--accent);
 }
 .brand { min-width: 0; line-height: 1.15; }
 .brand b { font-family: var(--f-text); font-weight: 600; font-size: 1.3em; letter-spacing: -.005em; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -71,13 +71,12 @@ a { color: var(--link); }
 
 @media (max-width: 480px) {
   .brand b { font-size: 1.12em; }
-  .brand small { display: none; }
   .bar .btn { padding: 0 12px; }
   .bar-actions { gap: 6px; }
 }
 
 /* panels */
-.panel { position: fixed; z-index: 1100; background: var(--panel); border: 1.5px solid var(--edge); display: flex; flex-direction: column; min-height: 0; }
+.panel { position: fixed; z-index: 1100; background: rgba(28,33,39,.88); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); display: flex; flex-direction: column; min-height: 0; }
 .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px 10px 16px; border-bottom: 1.5px solid var(--edge); flex: none; }
 .panel-head h2 { margin: 0; font-family: var(--f-text); font-weight: 600; font-size: 1.25em; line-height: 1.2; }
 .panel-body { overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 16px 16px calc(22px + var(--bot)); display: flex; flex-direction: column; gap: 22px; min-height: 0; }
@@ -213,9 +212,9 @@ table.kv td:first-child { color: var(--muted); width: 40%; }
 }
 
 /* HUD + timeline (desktop) */
-.hud { position: fixed; z-index: 1040; top: calc(var(--map-top) + 10px); left: 50%; transform: translateX(-50%); font-size: 12.5px; color: var(--muted); background: var(--panel); border: 1.5px solid var(--edge); padding: 4px 12px; white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none; }
+.hud { position: fixed; z-index: 1040; top: calc(var(--map-top) + 10px); left: 50%; transform: translateX(-50%); font-size: 12.5px; color: var(--muted); background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); padding: 4px 12px; white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none; }
 .hud b { color: var(--text); font-weight: 700; }
-#timeline { position: fixed; z-index: 1030; bottom: 10px; left: 10px; right: 10px; height: 74px; background: var(--panel); border: 1.5px solid var(--edge); }
+#timeline { position: fixed; z-index: 1030; bottom: 10px; left: 10px; right: 10px; height: 74px; background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); }
 body.drawer-open #timeline { left: 360px; }
 body.sheet-open #timeline { right: 440px; }
 #timeline .tl-title { position: absolute; left: 10px; top: 5px; font-size: 12px; font-weight: 700; color: var(--muted); }
@@ -236,7 +235,7 @@ body.sheet-open #timeline { right: 440px; }
 .credit p { margin: 0; flex: 1; }
 .credit .btn { background: transparent; border-color: rgba(0,0,0,.45); color: inherit; }
 
-.chat { position: fixed; z-index: 1090; display: flex; flex-direction: column; background: var(--panel); border: 1.5px solid var(--edge); }
+.chat { position: fixed; z-index: 1090; display: flex; flex-direction: column; background: rgba(28,33,39,.88); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); }
 .chat-form { display: flex; gap: 8px; padding: 8px; flex: none; }
 .chat-form input { flex: 1; min-width: 0; min-height: 48px; background: var(--bg); border: 1.5px solid var(--edge); border-radius: 0; padding: 0 12px; font-family: var(--f-text); }
 .chat-panel { display: flex; flex-direction: column; min-height: 0; flex: 1; }
@@ -286,7 +285,7 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
 <body>
 <header class="bar">
   <div class="brand">
-    <div><b>Tripoli: Open Source</b><small>Detention sites, security forces, military bases, massacres and airstrikes in Tripoli, 1969–1989</small></div>
+    <div><b>Tripoli: Open Source</b><small>Prisons &amp; security, 1969–89</small></div>
   </div>
   <div class="bar-actions">
     <button class="btn" id="btn-layers" aria-controls="drawer" aria-expanded="false">Layers</button>

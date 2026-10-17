@@ -9,17 +9,19 @@ concurrency: { group: collect, cancel-in-progress: false }
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
-      - run: node scripts/collect-wikipedia.mjs
-      - run: node scripts/collect-countrystudy.mjs
+      - run: timeout 40m node scripts/collect-wikipedia.mjs
         continue-on-error: true
-      - run: node scripts/collect-maps.mjs
+      - run: timeout 15m node scripts/collect-countrystudy.mjs
         continue-on-error: true
-      - run: |
+      - run: timeout 20m node scripts/collect-maps.mjs
+        continue-on-error: true
+      - if: always()
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add archive/wikipedia archive/countrystudy archive/maps

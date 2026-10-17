@@ -92,17 +92,11 @@ Evidence level is one of `documented`, `testimony`, `suspected` or `context`. Re
 
 ```mermaid
 flowchart LR
-  subgraph Sources
-    F[FRUS TEI]:::s; FB[FBIS / JPRS<br/>Internet Archive]:::s; WP[Wikipedia en/ar]:::s
-    LC[LoC country study]:::s; NG[Amnesty, HRW, UN]:::s; PL[Reagan / Bush PDFs]:::s
-    OSM[Overpass]:::s; MP[AMS 1962 map<br/>Landsat]:::s
-  end
-  Sources -->|GitHub Actions| AR[(archive/)]
-  AR -->|build-archive.mjs| R[records.js + docs/*.txt]
-  AR -->|build-areas.py| AA[areas.js + unplaced.js]
-  OSM -->|fetch-osm.mjs + split| O[osm/*.json]
-  MP -->|build-overlays.sh<br/>GCP warp → WebP tiles| T[maps/*]
-  classDef s fill:#eef,stroke:#88a
+  D["Documents<br/>FRUS · FBIS/JPRS · Wikipedia<br/>LoC · Amnesty/HRW/UN · Reagan/Bush"] -->|GitHub Actions| AR[(archive/)]
+  AR -->|build-archive.mjs| R[records.js + docs]
+  AR -->|build-areas.py| AA[areas.js]
+  O["OpenStreetMap"] -->|fetch-osm.mjs| OJ[osm/*.json]
+  M["Old maps<br/>AMS 1962 · Landsat"] -->|warp → WebP tiles| T[maps/*]
 ```
 
 ## Algorithms
@@ -110,15 +104,12 @@ flowchart LR
 **Asking about a place** (`contextFor` → Worker → Claude):
 
 ```mermaid
-flowchart TD
-  P[place or spot] --> A1[area containing the point]
-  P --> A2[military, landmark and government profiles within 2.5 km]
-  P --> S[sites within 4 km]
-  A1 & A2 & S --> RC[records tagged with these places, or whose words match]
-  P --> FR[family reports within 1.5 km<br/>never homes]
-  RC & FR --> CTX[context, at most 15k characters]
-  CTX --> W[Worker: system prompt + last 5 questions and answers<br/>+ up to 3 web searches]
-  W --> ANS[answer + 3 follow-up questions + sources]
+flowchart LR
+  P[place] --> N["nearby: area, profiles ≤2.5 km,<br/>sites ≤4 km, family notes ≤1.5 km"]
+  N --> R[matching archive records]
+  R --> C[context ≤15k chars]
+  C --> W["Claude + 3 web searches<br/>+ last 5 questions and answers"]
+  W --> A[answer + 3 follow-ups + sources]
 ```
 
 **Search ranking (Encyclopedia):** each query word scores +3 if it is in the title and +1 if it is in the body, plus +4 if the whole phrase is in the title. A year or year range filters results. Ties break by kind (place, then area, then event, then document) and then by date.

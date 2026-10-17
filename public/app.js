@@ -213,8 +213,37 @@
     if (on) overlayLayers[id].addTo(map); else map.removeLayer(overlayLayers[id]);
     if (inputs['om-' + id]) inputs['om-' + id].checked = !!on;
     syncYearBadge();
+    if (typeof setSwipe === 'function' && swipeOn) setSwipe(true);
     return true;
   }
+  /* swipe: drag a handle across the map to compare an old map with today */
+  var swipeOn = false, swipeX = 0.5, swipeEl = null;
+  function clipOverlays() {
+    Object.keys(overlayLayers).forEach(function (id) {
+      var c = overlayLayers[id].getContainer && overlayLayers[id].getContainer(); if (!c) return;
+      if (!swipeOn || !overlayOn[id]) { c.style.clip = ''; return; }
+      var nw = map.containerPointToLayerPoint([0, 0]), se = map.containerPointToLayerPoint(map.getSize());
+      var x = nw.x + map.getSize().x * swipeX;
+      c.style.clip = 'rect(' + [nw.y, x, se.y, nw.x].join('px,') + 'px)';
+    });
+    if (swipeEl) swipeEl.style.left = (swipeX * 100) + '%';
+  }
+  function setSwipe(on) {
+    swipeOn = on && OVERLAYS.some(function (o) { return overlayOn[o.id]; });
+    if (swipeOn && !swipeEl) {
+      swipeEl = h('div', { class: 'swipe', role: 'slider', 'aria-label': 'Compare old map with today', 'aria-valuemin': '0', 'aria-valuemax': '100', tabindex: '0' }, [h('span', { class: 'swipe-l', text: 'Then' }), h('span', { class: 'swipe-r', text: 'Now' })]);
+      map.getContainer().appendChild(swipeEl);
+      L.DomEvent.disableClickPropagation(swipeEl);
+      var drag = function (e) { var r = map.getContainer().getBoundingClientRect(), cx = (e.touches ? e.touches[0].clientX : e.clientX); swipeX = Math.max(0.02, Math.min(0.98, (cx - r.left) / r.width)); swipeEl.setAttribute('aria-valuenow', Math.round(swipeX * 100)); clipOverlays(); };
+      var stop = function () { document.removeEventListener('pointermove', drag); document.removeEventListener('pointerup', stop); map.dragging.enable(); };
+      swipeEl.addEventListener('pointerdown', function (e) { e.preventDefault(); map.dragging.disable(); document.addEventListener('pointermove', drag); document.addEventListener('pointerup', stop); });
+      swipeEl.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { swipeX = Math.max(0.02, Math.min(0.98, swipeX + (e.key === 'ArrowLeft' ? -0.05 : 0.05))); clipOverlays(); e.preventDefault(); } });
+    }
+    if (swipeEl) swipeEl.hidden = !swipeOn;
+    if (inputs['swipe']) inputs['swipe'].checked = swipeOn;
+    clipOverlays();
+  }
+  map.on('move zoom resize viewreset zoomend moveend', clipOverlays);
   if (OVERLAYS.length) {
     $('old-maps-sec').hidden = false;
     OVERLAYS.forEach(function (o) {
@@ -228,6 +257,7 @@
       ]));
       if (overlayOn[o.id]) setOverlay(o.id, true);
     });
+    $('old-maps').appendChild(toggleRow('swipe', 'Compare with today', 'Drag the handle across the map: old map on the left, today on the right', false, function (v) { setSwipe(v); }));
   }
   Object.keys(PERIODS).forEach(function (k) {
     var b = h('button', { 'aria-pressed': periods[k] ? 'true' : 'false', 'data-k': k, text: PERIODS[k] });

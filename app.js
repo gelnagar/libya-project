@@ -82,11 +82,11 @@
   });
 
   /* ---------- state ---------- */
-  var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, massacre: true, power: true, landmark: true, districts: true, rings: false, labels: true, grid: true, timeline: true };
-  var active = Object.assign({}, DEFAULT_ON, store.get('layers2', {}));
+  var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, massacre: true, power: true, landmark: true, districts: true, rings: true, labels: true, grid: true, timeline: true };
+  var active = Object.assign({}, DEFAULT_ON, store.get('layers3', {}));
   var PERIODS = { pre: 'Before 1969', main: '1969–1989', post: 'After 1989' };
   var periods = Object.assign({ pre: true, main: true, post: true }, store.get('periods', {}));
-  function save() { store.set('layers2', active); store.set('periods', periods); }
+  function save() { store.set('layers3', active); store.set('periods', periods); }
 
   function span(s) {
     var a = s.y0 == null ? 1969 : s.y0, b = s.y1 == null ? (s.y0 == null ? 1989 : s.y0) : s.y1;
@@ -180,7 +180,7 @@
     $('hist-toggles').appendChild(toggleRow(k, LAYERS[k].label, NOTES[k], active[k], function (v) { active[k] = v; refresh(); }, glyph(k), n));
   });
   [['districts', 'District names', 'English and Arabic, approximate'],
-   ['rings', 'Uncertainty rings', 'How far off each marker could be (off by default)'],
+   ['rings', 'Uncertainty rings', 'How far off each marker could be'],
    ['labels', 'Place names on markers', 'Shown when zoomed in'],
    ['grid', 'Coordinate grid', 'Lines every 0.05°'],
    ['timeline', 'Timeline bar', 'Computer screens only']].forEach(function (d) {

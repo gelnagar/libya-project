@@ -2,7 +2,7 @@
 
 ## Tripoli detention sites, 1969–1989
 
-**Live map:** https://gelnagar.github.io/libya-project/.
+**Live map:** https://gelnagar.github.io/libya-project/
 
 `index.html` is a single-file interactive map of known and suspected prisons and detention sites in and near Tripoli during the first two decades of Gaddafi's rule. Open it in any browser.
 

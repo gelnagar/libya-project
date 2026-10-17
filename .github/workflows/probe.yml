@@ -1,5 +1,6 @@
 name: Probe source sites
 on: { workflow_dispatch: {}, push: { branches: [main], paths: [scripts/probe.mjs, .github/workflows/probe.yml] } }
+permissions: { contents: write }
 jobs:
   probe:
     runs-on: ubuntu-latest
@@ -8,7 +9,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: >
-          node scripts/probe.mjs
+          node scripts/probe.mjs > archive-probe.txt
           https://www.cia.gov/readingroom/docs/CIA-RDP90-00965R000807600013-0.pdf
           https://www.cia.gov/readingroom/document/cia-rdp90-00965r000807600013-0
           "https://www.cia.gov/readingroom/search/site/Tripoli%20Libya"
@@ -45,3 +46,8 @@ jobs:
           https://www.refworld.org/
           https://hrsly.com/en/
           https://libyaherald.com/
+      - run: |
+          mkdir -p archive && mv archive-probe.txt archive/probe.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/probe.txt && git commit -m "Probe results" && git pull --rebase && git push

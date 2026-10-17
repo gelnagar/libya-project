@@ -1,0 +1,773 @@
+[
+ {
+  "id": "ev-1911-10-23-battle-and-killings-at-shar-al-shatt",
+  "type": "event",
+  "title": "Battle and killings at Shar al-Shatt",
+  "date": "1911-10-23",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Ottoman and Libyan fighters attacked the Italian lines at Shar al-Shatt (today Zawiyat al-Dahmani) three weeks into the Italian invasion; Italian troops then killed hundreds of civilians in reprisal.",
+  "places": [
+   "mk-sharshatt",
+   "zawiyat-dahmani",
+   "hani"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Battle_and_massacre_at_Shar_al-Shatt",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1911-12-04-battle-of-ain-zara",
+  "type": "event",
+  "title": "Battle of Ain Zara",
+  "date": "1911-12-04",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Italian forces attacked the Ottoman–Libyan positions at the Ain Zara oasis south-east of Tripoli.",
+  "places": [
+   "ain-zara"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Battle_of_Ain_Zara",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1945-11-04-anti-jewish-riots-in-tripoli",
+  "type": "event",
+  "title": "Anti-Jewish riots in Tripoli",
+  "date": "1945-11-04",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Riots against Tripoli’s Jewish community, under British military administration, killed more than 100 Jews; further riots followed in 1948 and 1967, after which almost all Libyan Jews left.",
+  "places": [
+   "mk-riots",
+   "old-city"
+  ],
+  "link": "https://en.wikipedia.org/wiki/1945_anti-Jewish_riots_in_Tripolitania",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1951-12-24-independence-of-libya",
+  "type": "event",
+  "title": "Independence of Libya",
+  "date": "1951-12-24",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Libya became an independent kingdom under King Idris; Tripoli and Benghazi were joint capitals.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Kingdom_of_Libya",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1969-09-01-gaddafi-s-coup",
+  "type": "event",
+  "title": "Gaddafi’s coup",
+  "date": "1969-09-01",
+  "source": "Chronology",
+  "source_short": "Chronology · Office of the Historian (FRUS)",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Junior army officers led by Captain Muammar Gaddafi seized power while King Idris was abroad, ending the monarchy. A Revolutionary Command Council took charge and declared the Libyan Arab Republic. US officials in Tripoli reported the takeover as largely bloodless.",
+  "places": [
+   "tripoli",
+   "bab",
+   "palace"
+  ],
+  "link": "https://history.state.gov/historicaldocuments/frus1969-76ve05p2/d37",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1969-12-10-abortive-coup-against-the-new-regime",
+  "type": "event",
+  "title": "Abortive coup against the new regime",
+  "date": "1969-12-10",
+  "source": "Chronology",
+  "source_short": "Chronology · Office of the Historian (FRUS)",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Libyan radio announced the discovery of a plot by “reactionaries”; senior officers, including ministers from the new government, were arrested.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://history.state.gov/historicaldocuments/frus1969-76ve05p2/d46",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1970-06-11-united-states-hands-over-wheelus-air-bas",
+  "type": "event",
+  "title": "United States hands over Wheelus Air Base",
+  "date": "1970-06-11",
+  "source": "Chronology",
+  "source_short": "Chronology · Office of the Historian (FRUS)",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "The US left Wheelus Air Base, which became the Libyan Okba Ben Nafi air base. 11 June was celebrated afterwards as Evacuation Day.",
+  "places": [
+   "wheelus",
+   "mitiga",
+   "souq-al-juma"
+  ],
+  "link": "https://history.state.gov/historicaldocuments/frus1969-76ve05p2/d60",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1970-10-07-expulsion-of-italians",
+  "type": "event",
+  "title": "Expulsion of Italians",
+  "date": "1970-10-07",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "After a July 1970 decree confiscating their property, Libya expelled its remaining Italian community, about 20,000 people. 7 October became the “Day of Revenge” holiday. The Tripoli cathedral was turned into the Gamal Abdel Nasser Mosque.",
+  "places": [
+   "city-centre",
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Italian_settlers_in_Libya",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1971-12-07-british-petroleum-nationalised",
+  "type": "event",
+  "title": "British Petroleum nationalised",
+  "date": "1971-12-07",
+  "source": "Chronology",
+  "source_short": "Chronology · Office of the Historian (FRUS)",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Libyan radio announced the nationalisation of BP’s Libyan assets, the first of a series of takeovers of foreign oil interests.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://history.state.gov/historicaldocuments/frus1969-76ve05p2/d80",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1972-05-30-law-no--71-criminalising-party-politics",
+  "type": "event",
+  "title": "Law No. 71 criminalising party politics",
+  "date": "1972-05-30",
+  "source": "Chronology",
+  "source_short": "Chronology · security-legislation.ly",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "The Revolutionary Command Council made the Arab Socialist Union the only permitted political body and set the death penalty for founding, joining or funding any group opposed to the revolution.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://security-legislation.ly/?p=32378",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1973-04-15-zuwara-speech-launches-the--cultural-rev",
+  "type": "event",
+  "title": "Zuwara speech launches the “Cultural Revolution”",
+  "date": "1973-04-15",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Gaddafi announced the suspension of existing laws, a purge of “politically sick” people and the creation of popular committees; hundreds of Islamists, Marxists, Ba’athists and other suspected opponents were arrested in the following weeks.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Libyan_Cultural_Revolution",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1976-04-07-student-protests-crushed",
+  "type": "event",
+  "title": "Student protests crushed",
+  "date": "1976-04-07",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Students at the universities in Tripoli and Benghazi protested against military control and called for elections. They were attacked by regime supporters and many were imprisoned. 7 April became a date of repression in later years.",
+  "places": [
+   "fateh",
+   "furnaj"
+  ],
+  "link": "https://en.wikipedia.org/wiki/1976_Libyan_protests",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1977-03-02-jamahiriya-declared",
+  "type": "event",
+  "title": "Jamahiriya declared",
+  "date": "1977-03-02",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "At Sabha the General People’s Congress proclaimed the “Socialist People’s Libyan Arab Jamahiriya”, nominally government by people’s congresses and committees.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1977-04-07-public-hangings-of-students",
+  "type": "event",
+  "title": "Public hangings of students",
+  "date": "1977-04-07",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Students were hanged in public in Benghazi; public executions were held on the 7 April anniversary in later years until the late 1980s.",
+  "places": [
+   "furnaj"
+  ],
+  "link": "https://en.wikipedia.org/wiki/1976_Libyan_protests",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1977-07-21-egyptian-libyan-border-war",
+  "type": "event",
+  "title": "Egyptian–Libyan border war",
+  "date": "1977-07-21",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "A four-day border war between Egypt and Libya followed months of tension.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Libyan–Egyptian_war",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1979-12-02-us-embassy-in-tripoli-stormed-and-burned",
+  "type": "event",
+  "title": "US Embassy in Tripoli stormed and burned",
+  "date": "1979-12-02",
+  "source": "Chronology",
+  "source_short": "Chronology · Office of the Historian (FRUS)",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "A crowd of several hundred young men attacked the US Embassy in Tripoli, broke in and set it on fire; staff escaped. US officials concluded the attack had the knowledge of the highest levels of the Libyan government.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://history.state.gov/historicaldocuments/frus1977-80v17p3/d108",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1980-05-30-campaign-to-eliminate-opponents-abroad",
+  "type": "event",
+  "title": "Campaign to eliminate opponents abroad",
+  "date": "1980-05-30",
+  "source": "Chronology",
+  "source_short": "Chronology · Office of the Historian (FRUS)",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "US intelligence described Gaddafi’s purges at home and the killing of exiled dissidents in Europe (the “stray dogs” campaign) in spring 1980.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://history.state.gov/historicaldocuments/frus1977-80v17p3/d132",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1981-08-19-gulf-of-sidra-incident",
+  "type": "event",
+  "title": "Gulf of Sidra incident",
+  "date": "1981-08-19",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "US Navy jets shot down two Libyan fighters over the Gulf of Sidra, which Libya claimed as its waters.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Gulf_of_Sidra_incident_(1981)",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1984-04-17-shooting-at-the-libyan-people-s-bureau-i",
+  "type": "event",
+  "title": "Shooting at the Libyan People’s Bureau in London",
+  "date": "1984-04-17",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Shots fired from the Libyan embassy in London at protesting exiles killed police officer Yvonne Fletcher; Britain broke off relations.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Murder_of_Yvonne_Fletcher",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1984-04-23-hangings-in-tripoli-reported",
+  "type": "event",
+  "title": "Hangings in Tripoli reported",
+  "date": "1984-04-23",
+  "source": "Chronology",
+  "source_short": "Chronology · washingtonpost.com",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "The Washington Post reported on public hangings in Tripoli that drew attention to Libyan dissent.",
+  "places": [
+   "tripoli",
+   "furnaj"
+  ],
+  "link": "https://www.washingtonpost.com/archive/politics/1984/04/23/hangings-in-tripoli-focus-attention-on-libyan-dissent/9c2481e3-1b2d-4b74-8d69-4304afe24ed1/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1984-05-08-armed-attack-on-bab-al-aziziya",
+  "type": "event",
+  "title": "Armed attack on Bab al-Aziziya",
+  "date": "1984-05-08",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Fighters of the exiled National Front for the Salvation of Libya attacked Gaddafi’s Bab al-Aziziya compound; the attack failed and was followed by mass arrests and executions.",
+  "places": [
+   "bab"
+  ],
+  "link": "https://en.wikipedia.org/wiki/National_Front_for_the_Salvation_of_Libya",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1984-06-05-public-execution-of-al-sadek-al-shuwehdy",
+  "type": "event",
+  "title": "Public execution of al-Sadek al-Shuwehdy",
+  "date": "1984-06-05",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "The engineer al-Sadek Hamed al-Shuwehdy was hanged in a Benghazi basketball stadium after a televised show trial.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Execution_of_Al-Sadek_Hamed_Al-Shuwehdy",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1986-01-07-us-sanctions-on-libya",
+  "type": "event",
+  "title": "US sanctions on Libya",
+  "date": "1986-01-07",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "President Reagan announced a ban on trade with Libya and ordered Americans to leave, after the Rome and Vienna airport attacks.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Libya–United_States_relations",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1986-04-15-us-air-raid-on-tripoli-and-benghazi",
+  "type": "event",
+  "title": "US air raid on Tripoli and Benghazi",
+  "date": "1986-04-15",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "US aircraft bombed Bab al-Aziziya, the military side of Tripoli airport and the Sidi Bilal naval facility in Tripoli, and two targets in Benghazi, ten days after the Berlin disco bombing. Bombs also fell on homes in Ben Ashour and damaged the French embassy. Libya reported dozens of dead, including civilians.",
+  "places": [
+   "as-bab",
+   "bab",
+   "as-tip",
+   "tip",
+   "as-sidibilal",
+   "sidibilal",
+   "as-benashour",
+   "ben-ashour",
+   "naval-academy"
+  ],
+  "link": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1987-03-22-defeat-at-ouadi-doum-in-chad",
+  "type": "event",
+  "title": "Defeat at Ouadi Doum in Chad",
+  "date": "1987-03-22",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Chadian forces overran the main Libyan base in northern Chad, one of a string of defeats in the “Toyota War” in which thousands of Libyan soldiers, many of them conscripts, were killed or captured.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Toyota_War",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1988-03-political-prisoners-released",
+  "type": "event",
+  "title": "Political prisoners released",
+  "date": "1988-03",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Gaddafi staged the release of hundreds of political prisoners; Amnesty International later reported that 426 of the 530 political prisoners in Abu Salim were released in March 1988.",
+  "places": [
+   "abusalim",
+   "abu-salim"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Abu_Salim_prison",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1988-06-12-great-green-charter-of-human-rights",
+  "type": "event",
+  "title": "Great Green Charter of Human Rights",
+  "date": "1988-06-12",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "The General People’s Congress adopted a charter promising rights such as freedom from arbitrary arrest; abuses continued.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1988-12-21-bombing-of-pan-am-flight-103-over-locker",
+  "type": "event",
+  "title": "Bombing of Pan Am Flight 103 over Lockerbie",
+  "date": "1988-12-21",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "A bomb destroyed Pan Am 103 over Lockerbie, Scotland, killing 270 people; Libyan intelligence officers were later charged.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Pan_Am_Flight_103",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1989-09-19-bombing-of-uta-flight-772",
+  "type": "event",
+  "title": "Bombing of UTA Flight 772",
+  "date": "1989-09-19",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "A bomb destroyed the French airliner UTA 772 over Niger, killing 170 people; a French court later convicted six Libyans in absentia.",
+  "places": [
+   "tripoli"
+  ],
+  "link": "https://en.wikipedia.org/wiki/UTA_Flight_772",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1992-04-15-un-sanctions-take-effect",
+  "type": "event",
+  "title": "UN sanctions take effect",
+  "date": "1992-04-15",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "UN Security Council sanctions over Lockerbie banned flights to and from Libya; Tripoli airport closed to international flights until 1999.",
+  "places": [
+   "tip",
+   "qasr-ben-ghashir"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Libya–United_States_relations",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-1996-06-29-abu-salim-prison-massacre",
+  "type": "event",
+  "title": "Abu Salim prison massacre",
+  "date": "1996-06-29",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "About 1,270 prisoners were killed in Abu Salim prison after a protest over conditions. The regime did not acknowledge the deaths for years.",
+  "places": [
+   "mk-abusalim",
+   "abusalim",
+   "abu-salim"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Abu_Salim_prison_massacre",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2003-12-19-libya-gives-up-weapons-of-mass-destructi",
+  "type": "event",
+  "title": "Libya gives up weapons of mass destruction",
+  "date": "2003-12-19",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Libya announced it would abandon its nuclear, chemical and missile programmes, including work linked to the Tajoura centre.",
+  "places": [
+   "tajoura-nuclear",
+   "tajura"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2011-02-20-uprising-reaches-tripoli",
+  "type": "event",
+  "title": "Uprising reaches Tripoli",
+  "date": "2011-02-20",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Protests spread from Benghazi to Tripoli; security forces fired on protesters in Green Square and in districts such as Fashloum and Souq al-Juma.",
+  "places": [
+   "green",
+   "fashloum",
+   "souq-al-juma"
+  ],
+  "link": "https://en.wikipedia.org/wiki/2011_Tripoli_clashes",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2011-08-20-battle-of-tripoli",
+  "type": "event",
+  "title": "Battle of Tripoli",
+  "date": "2011-08-20",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "An uprising inside the city and rebel forces from the west took Tripoli; Bab al-Aziziya fell on 23 August.",
+  "places": [
+   "bab",
+   "abu-salim",
+   "souq-al-juma",
+   "salah-al-din"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2011-08-23-yarmuk-massacre",
+  "type": "event",
+  "title": "Yarmuk massacre",
+  "date": "2011-08-23",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "As Tripoli fell, dozens of detainees held in a warehouse near the Khamis Brigade base south of the city were killed; their burned remains were found days later.",
+  "places": [
+   "yarmouk-camp",
+   "salah-al-din"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Yarmuk_massacre",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2014-07-13-tripoli-international-airport-destroyed",
+  "type": "event",
+  "title": "Tripoli International Airport destroyed",
+  "date": "2014-07-13",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Fighting between rival armed coalitions wrecked Tripoli International Airport.",
+  "places": [
+   "tip",
+   "qasr-ben-ghashir"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Tripoli_International_Airport",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2016-03-30-presidential-council-lands-at-abu-sitta",
+  "type": "event",
+  "title": "Presidential Council lands at Abu Sitta",
+  "date": "2016-03-30",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "The UN-backed Presidential Council arrived in Tripoli by sea and set up at the Abu Sitta naval base.",
+  "places": [
+   "abu-sitta-base",
+   "abu-sitta"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Libyan_Navy",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2019-07-02-air-strike-on-the-tajoura-detention-cent",
+  "type": "event",
+  "title": "Air strike on the Tajoura detention centre",
+  "date": "2019-07-02",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "An air strike on a migrant detention centre in Tajoura killed more than 50 people during Haftar’s offensive on Tripoli.",
+  "places": [
+   "tajura"
+  ],
+  "link": "https://en.wikipedia.org/wiki/Tajoura_migrant_center_airstrike",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2020-01-04-air-strike-on-the-military-college",
+  "type": "event",
+  "title": "Air strike on the military college",
+  "date": "2020-01-04",
+  "source": "Chronology",
+  "source_short": "Chronology · aljazeera.com",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "An air strike killed about 30 cadets on the parade ground of the military college at al-Hadba.",
+  "places": [
+   "military-college",
+   "hadba"
+  ],
+  "link": "https://www.aljazeera.com/news/2020/1/5/dozens-killed-in-attack-on-military-academy-in-libyas-tripoli",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2020-05-23-southern-camps-retaken",
+  "type": "event",
+  "title": "Southern camps retaken",
+  "date": "2020-05-23",
+  "source": "Chronology",
+  "source_short": "Chronology · aljazeera.com",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Government forces said they retook the Yarmouk, Sawarikh and Hamza camps from Haftar’s forces.",
+  "places": [
+   "yarmouk-camp",
+   "artillery-school",
+   "hamza-camp"
+  ],
+  "link": "https://www.aljazeera.com/news/2020/5/23/libya-gna-retakes-military-camps-near-tripoli",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2025-05-12-killing-of-al-kikli-at-tekbali-camp-and",
+  "type": "event",
+  "title": "Killing of al-Kikli at Tekbali camp and the Tripoli clashes",
+  "date": "2025-05-12",
+  "source": "Chronology",
+  "source_short": "Chronology · Wikipedia",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "Abdel Ghani al-Kikli (“Ghnewa”), head of the Stability Support Apparatus, was killed at a meeting at Tekbali camp; days of fighting followed in Abu Salim, Salah al-Din, Ain Zara and around the port.",
+  "places": [
+   "tekbali-camp",
+   "abu-salim",
+   "salah-al-din",
+   "ain-zara",
+   "port"
+  ],
+  "link": "https://en.wikipedia.org/wiki/2025_Tripoli_clashes",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2025-05-19-unidentified-bodies-and-reported-graves",
+  "type": "event",
+  "title": "Unidentified bodies and reported graves in Abu Salim",
+  "date": "2025-05-19",
+  "source": "Chronology",
+  "source_short": "Chronology · icj.org",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "More than 50 unidentified bodies were found in the Abu Salim hospital morgue, and the missing-persons authority received reports of mass graves at the zoo.",
+  "places": [
+   "abu-salim",
+   "zoo"
+  ],
+  "link": "https://www.icj.org/libya-investigate-unidentified-bodies-and-reported-mass-graves-in-abu-salim/",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ },
+ {
+  "id": "ev-2026-05-18-al-senussi-acquitted-in-the-2011-crackdo",
+  "type": "event",
+  "title": "Al-Senussi acquitted in the 2011 crackdown case",
+  "date": "2026-05-18",
+  "source": "Chronology",
+  "source_short": "Chronology · libyaanalysis.substack.com",
+  "collection": "Tripoli: Open Source chronology",
+  "summary": "The Tripoli Court of Appeal acquitted Gaddafi’s former intelligence chief Abdullah al-Senussi in the 2011 protest-crackdown case; the 1996 Abu Salim case was still under judicial review.",
+  "places": [
+   "abu-salim",
+   "mk-abusalim"
+  ],
+  "link": "https://libyaanalysis.substack.com/p/20-may-2026-tripoli-court-sentences",
+  "rights": "link-only",
+  "rights_note": "Summary written for this map; follow the link for the source.",
+  "added": "2026-10-17"
+ }
+]

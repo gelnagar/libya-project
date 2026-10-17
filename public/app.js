@@ -137,8 +137,9 @@
 
   var districtLayer = L.layerGroup();
   DISTRICTS.forEach(function (d) {
-    L.marker([d[2], d[3]], { interactive: false, keyboard: false,
-      icon: L.divIcon({ className: '', iconSize: [160, 34], iconAnchor: [80, 17], html: '<div class="district">' + d[0] + '<span>' + d[1] + '</span></div>' }) }).addTo(districtLayer);
+    L.marker([d[2], d[3]], { keyboard: false, title: 'About ' + d[0],
+      icon: L.divIcon({ className: '', iconSize: [160, 34], iconAnchor: [80, 17], html: '<div class="district">' + d[0] + '<span>' + d[1] + '</span></div>' }) })
+      .on('click', function () { var a = areaByName(d[0]) || areaByName(d[1]); if (a) openArea(a); else openSpot(L.latLng(d[2], d[3])); }).addTo(districtLayer);
   });
 
   var gridLayer = L.layerGroup();
@@ -519,7 +520,7 @@
   function closePanel(id) {
     $(id).classList.remove('open');
     if (id === 'drawer') $('btn-layers').setAttribute('aria-expanded', 'false');
-    if (id === 'sheet') { markSelected(null); linkLayer.clearLayers(); if (spotMarker) { map.removeLayer(spotMarker); spotMarker = null; } }
+    if (id === 'sheet') { $('sheet').classList.remove('tall'); document.body.classList.remove('sheet-tall'); markSelected(null); linkLayer.clearLayers(); if (spotMarker) { map.removeLayer(spotMarker); spotMarker = null; } }
     syncBody();
   }
   function markSelected(id) {
@@ -534,7 +535,7 @@
     if (spotMarker && kind !== 'Selected spot') { map.removeLayer(spotMarker); spotMarker = null; }
     linkLayer.clearLayers();
     $('sheet-kind').textContent = kind;
-    var body = $('sheet-body'); body.innerHTML = ''; body.scrollTop = 0;
+    var body = $('sheet-body'); body.innerHTML = ''; body.scrollTop = 0; $('sheet').classList.remove('tall'); document.body.classList.remove('sheet-tall');
     return body;
   }
 
@@ -570,7 +571,9 @@
       });
       body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Linked places' }), box]));
     }
-    add(body, aiBox({ kind: 'historical site', name: s.name, arabic: s.ar, category: lay.label, evidence: LEVELS[s.level], period: s.period, summary: s.relevance + ' ' + s.text, lat: s.lat, lon: s.lon }, QS[s.id] || []));
+    add(body, aiBox({ kind: 'historical site', name: s.name, arabic: s.ar, category: lay.label, evidence: LEVELS[s.level], period: s.period, summary: s.relevance + ' ' + s.text, lat: s.lat, lon: s.lon }, QS[s.id] || [],
+      function () { return contextFor({ lat: s.lat, lon: s.lon, places: [s.id], words: [s.name].concat(s.ar ? [s.ar] : []).concat(s.aliases || []) }); }));
+    docsSection(body, { places: [s.id], words: [s.name].concat(s.aliases || []) }, 'In the archive', s.name);
     body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Sources' }), h('ol', { class: 'srcs' }, s.sources.map(function (x) { return h('li', {}, [h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t })]); }))]));
     body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Zoom to this place', onclick: function () { map.flyTo([s.lat, s.lon], 16, { duration: 0.8 }); } })]));
     openPanel('sheet');
@@ -602,10 +605,21 @@
     body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: 'OSM ' + el.type.toUpperCase() + ' ' + el.id }), lat ? h('span', { text: lat.toFixed(4) + ', ' + lon.toFixed(4) }) : null]));
     body.appendChild(h('div', { class: 'tags' }, [h('span', { class: 'tag', style: '--c:#4c90f0', text: 'OpenStreetMap, today' })]));
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: name }), t.name && t.name !== name ? h('div', { class: 'd-ar', text: t.name }) : null]));
-    body.appendChild(h('p', { class: 'brief', text: KIND[k](t) + '. ' + EXPLAIN[k] }));
+    var kb = (t['name:en'] && areaByName(t['name:en'])) || (t.name && areaByName(t.name)) || (t['name:ar'] && areaByName(t['name:ar']));
+    if (kb && (k === 'military' || k === 'water' || k === 'oil' || kb.kind === 'military' || kb.kind === 'landmark' || kb.kind === 'prison' || kb.kind === 'government')) {
+      body.appendChild(h('p', { class: 'brief', text: kb.summary }));
+      [['History', kb.history], ['Under Gaddafi, 1969–2011', kb.era], ['Today', kb.today], ['Still unclear', kb.uncertain]].forEach(function (x) { if (x[1]) body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: x[0] }), h('p', { class: 'd-text', text: x[1] })])); });
+      if ((kb.sources || []).length) body.appendChild(sourcesList(kb.sources));
+    } else {
+      body.appendChild(h('p', { class: 'brief', text: KIND[k](t) + '. ' + EXPLAIN[k] }));
+      var inA = lat ? areaAt(L.latLng(lat, lon)) : null;
+      if (inA) body.appendChild(h('div', { class: 'links' }, [h('button', { onclick: function () { openArea(inA.a); } }, [h('span', { class: 'dtag', text: KIND_LABEL[inA.a.kind] }), h('span', {}, ['In ' + inA.a.name, h('small', { text: inA.a.summary ? inA.a.summary.slice(0, 120) + '…' : '' })])])]));
+    }
     var rows = Object.keys(t).filter(function (x) { return !/^(source|note|fixme|wikidata|created_by)/.test(x); }).slice(0, 12);
     if (rows.length) body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Map details' }), h('table', { class: 'kv' }, [h('tbody', {}, rows.map(function (x) { return h('tr', {}, [h('td', { text: x.replace(/_/g, ' ') }), h('td', { text: t[x] })]); }))])]));
-    add(body, aiBox({ kind: 'present-day map feature', type: KIND[k](t), name: name, tags: t, lat: lat, lon: lon }, (FEATQ[k] || []).map(function (x) { return x.replace(/\{x\}/g, name); })));
+    add(body, aiBox({ kind: 'present-day map feature (OpenStreetMap)', type: KIND[k](t), name: name, tags: t, lat: lat, lon: lon }, kb ? areaQuestions(kb) : (FEATQ[k] || []).map(function (x) { return x.replace(/\{x\}/g, name); }),
+      function () { return contextFor({ areas: kb ? [kb] : [], lat: lat, lon: lon, places: kb ? [kb.id] : [], words: [name, t.name, t['name:en']].filter(Boolean) }); }));
+    if (kb) docsSection(body, { places: [kb.id], words: areaNames(kb).filter(function (x) { return x && x.length > 3; }) }, 'In the archive', kb.name);
     body.appendChild(h('p', { class: 'd-text', style: 'font-size:.8em', html: '<a href="https://www.openstreetmap.org/' + el.type + '/' + el.id + '" target="_blank" rel="noopener">View on OpenStreetMap</a>' }));
     openPanel('sheet');
   }
@@ -629,7 +643,7 @@
     var place = { kind: 'spot on the map', lat: +ll.lat.toFixed(5), lon: +ll.lng.toFixed(5), nearestDistrict: dist.name + ' (' + km(dist.m) + ' away)', nearbySites: near.map(function (x) { return x.s.name + ' (' + km(x.m) + ')'; }), address: null };
 
     body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: 'SPOT' }), h('span', { text: ll.lat.toFixed(5) + ', ' + ll.lng.toFixed(5) })]));
-    var title = h('h1', { class: 'd-title', text: dist.m < 2500 ? dist.name : 'Selected spot' });
+    var title = h('h1', { class: 'd-title', text: (areaAt(ll) || {}).a ? areaAt(ll).a.name : dist.m < 2500 ? dist.name : 'Selected spot' });
     var addr = h('div', { class: 'd-ar', text: 'Looking up the address…' });
     body.appendChild(h('div', {}, [title, addr]));
     body.appendChild(h('dl', { class: 'meta' }, [
@@ -641,9 +655,22 @@
       near.forEach(function (x) { box.appendChild(h('button', { onclick: function () { focusSite(x.s); } }, [glyph(x.s.layer), h('span', {}, [x.s.name, h('small', { text: km(x.m) + ' away' })])])); });
       body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Mapped places nearby' }), box]));
     }
+    var inArea = areaAt(ll);
+    if (inArea) {
+      var A = inArea.a;
+      body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'About ' + A.name }), h('p', { class: 'd-text', text: A.summary || '' }), A.era ? h('p', { class: 'd-text', text: A.era.length > 420 ? A.era.slice(0, 420).replace(/\s\S*$/, '') + '…' : A.era }) : null,
+        h('button', { class: 'btn', text: 'Read the full profile of ' + A.name, onclick: function () { openArea(A); } })]));
+    }
+    var nearMil = areasNear(ll, ['military', 'prison', 'government', 'landmark'], 2000, 4);
+    if (nearMil.length) {
+      var mb = h('div', { class: 'links' });
+      nearMil.forEach(function (x) { mb.appendChild(h('button', { onclick: function () { openArea(x.a); } }, [h('span', { class: 'dtag', text: KIND_LABEL[x.a.kind] }), h('span', {}, [x.a.name, h('small', { text: km(x.m) + ' away' })])])); });
+      body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Known sites nearby' }), mb]));
+    }
     var nearName = near.length ? near[0].s.name : null;
-    var spotQs = SPOTQ.filter(function (x) { return nearName || x.indexOf('{n}') < 0; }).map(function (x) { return x.replace(/\{d\}/g, dist.name).replace(/\{n\}/g, nearName); });
-    add(body, aiBox(place, spotQs));
+    var spotQs = SPOTQ.filter(function (x) { return nearName || x.indexOf('{n}') < 0; }).map(function (x) { return x.replace(/\{d\}/g, inArea ? inArea.a.name : dist.name).replace(/\{n\}/g, nearName); });
+    if (inArea) place.area = inArea.a.name;
+    add(body, aiBox(place, spotQs, function () { return contextFor({ lat: ll.lat, lon: ll.lng, words: place.address ? [place.address.split(',')[0]] : [] }); }));
     body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Ask about another spot', onclick: function () { setPicking(true); } })]));
     openPanel('sheet');
 
@@ -653,7 +680,7 @@
       .then(function (j) {
         var a = j.address || {};
         var area = a.neighbourhood || a.suburb || a.quarter || a.city_district || a.village || a.town;
-        if (area) title.textContent = area;
+        if (area && !inArea) title.textContent = area;
         addr.textContent = j.display_name || 'No address found for this spot.';
         place.address = j.display_name || null;
       })
@@ -720,55 +747,295 @@
     return fetch(CFG.aiEndpoint, { method: 'POST', credentials: 'same-origin', headers: hd, body: JSON.stringify(payload) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (j && j.credit) showCredit(j.credit); if (!r.ok) { if (GATED && r.status === 401) { location.href = '/login?next=' + encodeURIComponent(location.pathname); } var e = new Error(j.error || ('Error ' + r.status)); e.code = r.status; throw e; } return j; }); });
   }
-  function aiBox(place, qs) {
-    if (!CFG.aiEndpoint) return null;
-    var list = (qs || []).slice();
-    var idx = list.length ? Math.floor(Math.random() * list.length) : 0;
-    var q = h('textarea', { 'aria-label': 'Your question', id: 'ai-q', placeholder: 'Or type your own question' });
-    var pw = h('input', { type: 'password', id: 'ai-pw', autocomplete: 'off', autocapitalize: 'none', 'aria-label': 'Family password' });
-    var pwWrap = h('div', { class: 'field' }, [h('label', { for: 'ai-pw', text: 'Family password' }), pw, h('small', { text: 'Only needed once on this device.' })]);
-    pwWrap.hidden = !!store.get('code', '');
-    var out = h('p', { class: 'ai-out', hidden: '' });
-    var asked = h('p', { class: 'ai-asked', hidden: '' });
-    var btn = h('button', { class: 'btn primary', text: 'Ask AI' });
-    var sugg = h('div', { class: 'sugg' });
-    function renderSugg() {
-      sugg.innerHTML = '';
-      for (var i = 0; i < Math.min(3, list.length); i++) {
-        (function (t) { sugg.appendChild(h('button', { class: 'qchip', text: t, onclick: function () { q.value = t; ask(); } })); })(list[(idx + i) % list.length]);
-      }
-      if (list.length > 3) sugg.appendChild(h('button', { class: 'qmore', text: 'More questions ↻', onclick: function () { idx = (idx + 3) % list.length; renderSugg(); } }));
+  /* ---------- knowledge: area profiles and the document archive ---------- */
+  var AREAS = window.ATLAS_AREAS || [];
+  var AREA_BY_ID = {};
+  AREAS.forEach(function (a) { AREA_BY_ID[a.id] = a; });
+  var RECORDS = null, recordsWaiting = null, REC_BY_ID = {};
+  function loadRecords() {
+    if (RECORDS) return Promise.resolve(RECORDS);
+    if (recordsWaiting) return recordsWaiting;
+    recordsWaiting = new Promise(function (ok) {
+      var sc = document.createElement('script');
+      sc.src = 'data/records.js';
+      sc.onload = function () { RECORDS = window.ATLAS_RECORDS || []; RECORDS.forEach(function (r) { REC_BY_ID[r.i] = r; }); ok(RECORDS); };
+      sc.onerror = function () { RECORDS = []; ok(RECORDS); };
+      document.head.appendChild(sc);
+    });
+    return recordsWaiting;
+  }
+  setTimeout(loadRecords, 2500);
+  var fold = function (t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[ً-ٟـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/[’'`ʿʾ\-_.,()]/g, ' ').replace(/\s+/g, ' ').trim(); };
+  var squash = function (t) { return fold(t).replace(/^(al|el|ar|as|az|ad|an|at|ash) /, '').replace(/ /g, ''); };
+  function areaNames(a) { return [a.name, a.ar].concat(a.aliases || []); }
+  function areaByName(name) {
+    var n = squash(name); if (!n) return null;
+    var exact = AREAS.filter(function (a) { return areaNames(a).some(function (x) { return squash(x) === n; }); });
+    if (exact.length) return exact[0];
+    if (n.length < 5) return null;
+    return AREAS.filter(function (a) { return areaNames(a).some(function (x) { var y = squash(x); return y.length >= 5 && (y.indexOf(n) >= 0 || n.indexOf(y) >= 0); }); })[0] || null;
+  }
+  // The area a point falls in: the smallest profile whose circle contains it, else the nearest town or neighbourhood.
+  function areaAt(ll, kinds) {
+    var best = null, near = null;
+    AREAS.forEach(function (a) {
+      if (kinds && kinds.indexOf(a.kind) < 0) return;
+      if (!kinds && ['neighbourhood', 'district', 'town'].indexOf(a.kind) < 0) return;
+      var m = map.distance(ll, [a.lat, a.lon]);
+      if (m <= (a.r || 1) * 1000 && (!best || (a.r || 1) < (best.a.r || 1))) best = { a: a, m: m };
+      if (!near || m < near.m) near = { a: a, m: m };
+    });
+    return best || (near && near.m < 6000 ? near : null);
+  }
+  function areasNear(ll, kinds, maxM, n) {
+    return AREAS.filter(function (a) { return kinds.indexOf(a.kind) >= 0; }).map(function (a) { return { a: a, m: map.distance(ll, [a.lat, a.lon]) }; })
+      .filter(function (x) { return x.m <= maxM; }).sort(function (x, y) { return x.m - y.m; }).slice(0, n || 5);
+  }
+  var KIND_LABEL = { neighbourhood: 'Neighbourhood', district: 'District', town: 'Town', military: 'Military site', landmark: 'Landmark', prison: 'Prison', government: 'Government site' };
+  var TYPE_LABEL = { 'diplomatic cable': 'Cable', 'intelligence assessment': 'Intelligence', 'record of conversation': 'Conversation', 'government document': 'Document', letter: 'Letter', 'editorial note': 'Note', 'policy directive': 'Directive', reference: 'Reference', report: 'Report', event: 'Event', law: 'Law', news: 'News', book: 'Book', testimony: 'Testimony', map: 'Map' };
+  function recWords(r) { return r._w || (r._w = fold(r.t + ' ' + (r.m || '') + ' ' + (r.s || '') + ' ' + (r.k || []).join(' '))); }
+  function scoreRecords(opts) {
+    var words = (opts.words || []).map(fold).filter(function (w) { return w.length > 2; });
+    var ids = opts.places || [];
+    return (RECORDS || []).map(function (r) {
+      var sc = 0, hay = null;
+      (r.p || []).forEach(function (p) { if (ids.indexOf(p) >= 0) sc += 6; });
+      if (words.length) { hay = recWords(r); words.forEach(function (w) { if (hay.indexOf(w) >= 0) sc += w.indexOf(' ') > 0 ? 4 : 2; }); }
+      if (opts.year_from && (r.d || '').slice(0, 4) < String(opts.year_from)) return null;
+      if (opts.year_to && (r.d || '').slice(0, 4) > String(opts.year_to)) return null;
+      if (opts.type && r.y !== opts.type) return null;
+      if (sc && (r.p || []).indexOf('tripoli') >= 0) sc += 0.5;
+      return sc ? { r: r, sc: sc } : null;
+    }).filter(Boolean).sort(function (a, b) { return b.sc - a.sc || (a.r.d < b.r.d ? -1 : 1); }).map(function (x) { return x.r; });
+  }
+  function recordsFor(opts, n) { return scoreRecords(opts).slice(0, n || 8); }
+  function recLine(r) { return '[' + r.i + '] ' + (r.d || 'undated') + ' — ' + r.t + ' (' + (r.s || '') + '): ' + String(r.m || '').slice(0, 420); }
+  function areaText(a, full) {
+    return [a.name + (a.ar ? ' (' + a.ar + ')' : '') + ' — ' + (KIND_LABEL[a.kind] || a.kind) + '.', a.summary, full && a.history ? 'History: ' + a.history : '', a.era ? 'Gaddafi era: ' + a.era : '', a.today ? 'Today: ' + a.today : '',
+      a.uncertain ? 'Uncertain: ' + a.uncertain : '', (a.sources || []).length ? 'Sources: ' + a.sources.map(function (x) { return x.t; }).join('; ') : ''].filter(Boolean).join('\n');
+  }
+  // Everything the map knows that bears on a place, for the AI.
+  function contextFor(o) {
+    var parts = [], ll = o.lat != null ? L.latLng(o.lat, o.lon) : null, used = {};
+    (o.areas || []).forEach(function (a) { if (a && !used[a.id]) { used[a.id] = 1; parts.push('AREA PROFILE\n' + areaText(a, true)); } });
+    if (ll) {
+      var at = areaAt(ll); if (at && !used[at.a.id]) { used[at.a.id] = 1; parts.push('THE AREA THIS POINT IS IN (' + km(at.m) + ' from its centre)\n' + areaText(at.a, true)); }
+      areasNear(ll, ['military', 'landmark', 'prison', 'government'], 2500, 4).forEach(function (x) { if (!used[x.a.id]) { used[x.a.id] = 1; parts.push('NEARBY (' + km(x.m) + ')\n' + areaText(x.a, false)); } });
+      var sites = SITES.map(function (s) { return { s: s, m: map.distance(ll, [s.lat, s.lon]) }; }).filter(function (x) { return x.m < 4000; }).sort(function (a, b) { return a.m - b.m; }).slice(0, 4);
+      if (sites.length) parts.push('MAPPED HISTORICAL PLACES NEARBY\n' + sites.map(function (x) { return x.s.name + ' (' + km(x.m) + ', ' + LAYERS[x.s.layer].label + ', ' + x.s.period + '): ' + x.s.relevance; }).join('\n'));
     }
-    renderSugg();
+    var recs = recordsFor({ places: Object.keys(used).concat(o.places || []), words: o.words || [] }, 10);
+    if (recs.length) parts.push('ARCHIVE DOCUMENTS\n' + recs.map(recLine).join('\n'));
+    return parts.join('\n\n').slice(0, 15000);
+  }
+
+  /* ---------- the question box: answers, follow-ups, sources ---------- */
+  function aiBox(place, qs, ctx) {
+    if (!CFG.aiEndpoint) return null;
+    var list = (qs || []).slice(), idx = list.length ? Math.floor(Math.random() * list.length) : 0, history = [];
+    var q = h('textarea', { 'aria-label': 'Your question', placeholder: 'Or type your own question' });
+    var pw = h('input', { type: 'password', autocomplete: 'off', autocapitalize: 'none', 'aria-label': 'Family password' });
+    var pwWrap = h('div', { class: 'field' }, [h('label', { text: 'Family password' }), pw, h('small', { text: 'Only needed once on this device.' })]);
+    pwWrap.hidden = !!store.get('code', '');
+    var log = h('div', { class: 'ai-log', 'aria-live': 'polite' });
+    var btn = h('button', { class: 'btn primary', text: 'Ask' });
+    var sugg = h('div', { class: 'sugg' });
+    function renderSugg(items, follow) {
+      sugg.innerHTML = '';
+      if (follow) sugg.appendChild(h('div', { class: 'sugg-h', text: 'Ask next' }));
+      items.forEach(function (t) { sugg.appendChild(h('button', { class: 'qchip', text: t, onclick: function () { q.value = t; ask(); } })); });
+      if (!follow && list.length > 3) sugg.appendChild(h('button', { class: 'qmore', text: 'More questions ↻', onclick: function () { idx = (idx + 3) % list.length; renderStart(); } }));
+    }
+    function renderStart() { var a = []; for (var i = 0; i < Math.min(3, list.length); i++) a.push(list[(idx + i) % list.length]); renderSugg(a, false); }
+    renderStart();
     function ask() {
       var question = q.value.trim() || list[idx % Math.max(1, list.length)] || 'Tell me about this place.';
       var code = store.get('code', '') || (pw.value || '').trim();
       if (!code) { pwWrap.hidden = false; pw.focus(); return; }
       store.set('code', code); pwWrap.hidden = true;
-      btn.disabled = true; btn.textContent = 'Thinking…';
-      asked.hidden = false; asked.textContent = question;
-      out.hidden = false; out.classList.remove('err'); out.textContent = '';
-      relay(code, { place: place, question: question.slice(0, 500) })
-        .then(function (j) { out.textContent = j.text || 'No answer came back. Try again.'; })
+      btn.disabled = true; btn.textContent = 'Researching…';
+      $('sheet').classList.add('tall'); document.body.classList.add('sheet-tall');
+      var turn = h('div', { class: 'ai-turn' }, [h('p', { class: 'ai-asked', text: question })]);
+      var out = h('div', { class: 'ai-out' }, [h('p', { class: 'ai-wait', text: 'Reading the archive and checking sources…' })]);
+      turn.appendChild(out); log.appendChild(turn); q.value = ''; sugg.innerHTML = '';
+      turn.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      loadRecords().then(function () { return relay(code, { place: place, question: question.slice(0, 600), history: history.slice(-5), context: ctx ? ctx() : '' }); })
+        .then(function (j) {
+          out.innerHTML = '';
+          String(j.text || 'No answer came back. Try again.').split(/\n{2,}/).forEach(function (para) { out.appendChild(h('p', { text: para.trim() })); });
+          if (j.sources && j.sources.length) out.appendChild(h('details', { class: 'ai-src' }, [h('summary', { text: 'Web sources (' + j.sources.length + ')' }), h('ol', {}, j.sources.map(function (x) { return h('li', {}, [h('a', { href: x.url, target: '_blank', rel: 'noopener', text: x.title })]); }))]));
+          history.push({ q: question, a: j.text || '' });
+          renderSugg((j.followups || []).length ? j.followups : (function () { idx = (idx + 3) % Math.max(1, list.length); var a = []; for (var i = 0; i < Math.min(3, list.length); i++) a.push(list[(idx + i) % list.length]); return a; })(), true);
+          q.placeholder = 'Ask a follow-up question';
+        })
         .catch(function (e) {
-          out.classList.add('err');
-          if (e.code === 401) { store.set('code', ''); pw.value = ''; pwWrap.hidden = false; }
-          out.textContent = e.code === 401 ? 'That password was not accepted. Please type it again.'
+          out.innerHTML = ''; out.classList.add('err');
+          if (e.code === 401 && !GATED) { store.set('code', ''); pw.value = ''; pwWrap.hidden = false; }
+          out.appendChild(h('p', { text: e.code === 401 ? 'That password was not accepted. Please type it again.'
             : e.code === 402 ? 'AI answers are paused because the AI credit has run out.'
             : e.code === 429 ? 'Too many questions just now. Wait a minute and try again.'
-            : 'Could not reach the AI right now. Check your connection and try again.';
+            : 'Could not reach the AI right now. Check your connection and try again.' }));
+          renderStart();
         })
-        .then(function () { btn.disabled = false; btn.textContent = 'Ask AI'; asked.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+        .then(function () { btn.disabled = false; btn.textContent = 'Ask'; turn.scrollIntoView({ block: 'start', behavior: 'smooth' }); });
     }
     btn.addEventListener('click', ask);
-    return h('div', { class: 'ai' }, [h('h3', { class: 'ai-h', text: 'Ask a question' }), sugg, q, pwWrap, btn, asked, out]);
+    q.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(); } });
+    return h('div', { class: 'ai' }, [h('h3', { class: 'ai-h', text: 'Ask about this' }), log, sugg, q, pwWrap, btn]);
   }
+
+  /* ---------- sheets for areas and documents ---------- */
+  function sourcesList(srcs) {
+    return h('div', { class: 'sec' }, [h('h3', { text: 'Sources' }), h('ol', { class: 'srcs' }, srcs.map(function (x) { return h('li', {}, [x.u ? h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t }) : x.t]); }))]);
+  }
+  function docList(recs, more) {
+    var box = h('div', { class: 'links docs' });
+    recs.forEach(function (r) {
+      box.appendChild(h('button', { onclick: function () { openRecord(r); } }, [h('span', { class: 'dtag', text: TYPE_LABEL[r.y] || r.y }), h('span', {}, [r.t, h('small', { text: (r.d || 'undated') + ' · ' + (r.s || '') })])]));
+    });
+    if (more) box.appendChild(h('button', { class: 'more', onclick: function () { openTerm(more); } }, [h('span', { text: 'Search the archive for “' + more + '”' })]));
+    return box;
+  }
+  function docsSection(sec, opts, label, more) {
+    var holder = h('div', { class: 'sec' }, [h('h3', { text: label || 'In the archive' }), h('p', { class: 'd-text muted', text: 'Loading documents…' })]);
+    loadRecords().then(function () {
+      var recs = recordsFor(opts, 8);
+      holder.innerHTML = '';
+      holder.appendChild(h('h3', { text: (label || 'In the archive') + (recs.length ? ' (' + recs.length + (recs.length === 8 ? '+' : '') + ')' : '') }));
+      holder.appendChild(recs.length ? docList(recs, more) : h('p', { class: 'd-text muted', text: 'No documents in the archive mention this yet.' }));
+    });
+    sec.appendChild(holder);
+  }
+  function areaQuestions(a) {
+    var n = a.name;
+    if (a.questions && a.questions.length) return a.questions;
+    if (a.kind === 'military') return ['What was ' + n + ' used for under Gaddafi?', 'Which units were based at ' + n + '?', 'What happened at ' + n + ' in 2011?', 'Who controls ' + n + ' today?', 'Were people detained at ' + n + '?', 'How did ' + n + ' get its name?'];
+    return ['What was ' + n + ' like in the 1970s and 1980s?', 'What happened in ' + n + ' during the 1986 US air raid?', 'Were there security offices or prisons in ' + n + '?', 'What is ' + n + ' known for today?', 'Who lived in ' + n + ' under Gaddafi?', 'How did ' + n + ' change after 2011?'];
+  }
+  function openArea(a) {
+    var body = newSheet(KIND_LABEL[a.kind] || 'Area');
+    markSelected(null);
+    body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: (KIND_LABEL[a.kind] || a.kind).toUpperCase() }), h('span', { text: a.lat.toFixed(4) + ', ' + a.lon.toFixed(4) })]));
+    body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: a.name }), a.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: a.ar }) : null]));
+    if (a.summary) body.appendChild(h('p', { class: 'brief', text: a.summary }));
+    [['History', a.history], ['Under Gaddafi, 1969–2011', a.era], ['Today', a.today], ['Still unclear', a.uncertain]].forEach(function (x) {
+      if (x[1]) body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: x[0] }), h('p', { class: 'd-text', text: x[1] })]));
+    });
+    var ll = L.latLng(a.lat, a.lon);
+    var near = SITES.map(function (s) { return { s: s, m: map.distance(ll, [s.lat, s.lon]) }; }).filter(function (x) { return x.m < 3000; }).sort(function (x, y) { return x.m - y.m; }).slice(0, 5);
+    if (near.length) {
+      var box = h('div', { class: 'links' });
+      near.forEach(function (x) { box.appendChild(h('button', { onclick: function () { focusSite(x.s); } }, [glyph(x.s.layer), h('span', {}, [x.s.name, h('small', { text: km(x.m) + ' away' })])])); });
+      body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Mapped places nearby' }), box]));
+    }
+    add(body, aiBox({ kind: KIND_LABEL[a.kind] || a.kind, name: a.name, arabic: a.ar, lat: a.lat, lon: a.lon }, areaQuestions(a), function () { return contextFor({ areas: [a], lat: a.lat, lon: a.lon, places: [a.id], words: areaNames(a) }); }));
+    docsSection(body, { places: [a.id], words: areaNames(a).filter(function (x) { return x && x.length > 3; }) }, 'In the archive', a.name);
+    if ((a.sources || []).length) body.appendChild(sourcesList(a.sources));
+    body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Zoom to ' + a.name, onclick: function () { map.flyTo(ll, a.kind === 'town' ? 14 : 15, { duration: 0.8 }); } })]));
+    openPanel('sheet');
+  }
+  function openRecord(r) {
+    var body = newSheet('Archive document');
+    markSelected(null);
+    body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: r.i }), h('span', { text: r.d || 'undated' })]));
+    body.appendChild(h('div', { class: 'tags' }, [h('span', { class: 'tag', style: '--c:#4c90f0', text: TYPE_LABEL[r.y] || r.y }), h('span', { class: 'tag', style: '--c:#abb3bf', text: r.rt || r.r })]));
+    body.appendChild(h('h1', { class: 'd-title', text: r.t }));
+    body.appendChild(h('dl', { class: 'meta' }, [h('dt', { text: 'Date' }), h('dd', { text: r.d || 'undated' }), h('dt', { text: 'Source' }), h('dd', { text: r.c || r.s || '' })].concat(r.a ? [h('dt', { text: 'Held at' }), h('dd', { text: r.a })] : [])));
+    if (r.m) body.appendChild(h('p', { class: 'brief', text: r.m }));
+    var pl = (r.p || []).map(function (id) { return BY_ID[id] ? { s: BY_ID[id] } : AREA_BY_ID[id] ? { a: AREA_BY_ID[id] } : null; }).filter(Boolean);
+    if (pl.length) {
+      var box = h('div', { class: 'links' });
+      pl.slice(0, 8).forEach(function (x) { box.appendChild(x.s ? h('button', { onclick: function () { focusSite(x.s); } }, [glyph(x.s.layer), h('span', { text: x.s.name })]) : h('button', { onclick: function () { openArea(x.a); map.flyTo([x.a.lat, x.a.lon], 14, { duration: 0.8 }); } }, [h('span', { class: 'dtag', text: KIND_LABEL[x.a.kind] || '' }), h('span', { text: x.a.name })])); });
+      body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Places mentioned' }), box]));
+    }
+    var full = h('div', { class: 'sec' });
+    if (r.f) {
+      var bt = h('button', { class: 'btn', text: 'Read the full text' });
+      bt.onclick = function () {
+        bt.disabled = true; bt.textContent = 'Loading…';
+        fetch('data/docs/' + encodeURIComponent(r.i) + '.txt').then(function (x) { if (!x.ok) throw new Error(); return x.text(); })
+          .then(function (t) { bt.remove(); full.appendChild(h('div', { class: 'fulltext', text: t })); })
+          .catch(function () { bt.disabled = false; bt.textContent = 'Could not load. Try again'; });
+      };
+      full.appendChild(h('h3', { text: 'Full text' })); full.appendChild(bt);
+    }
+    body.appendChild(full);
+    add(body, aiBox({ kind: 'archive document', id: r.i, title: r.t, date: r.d, source: r.c || r.s, type: r.y }, ['What does this document tell us, in plain words?', 'Why does this matter for people in Tripoli?', 'What happened next?', 'Who are the people named in it?', 'How reliable is this source?', 'What was going on in Libya at the time?'],
+      function () { return 'THIS DOCUMENT\n' + recLine(r) + '\n\n' + (r._full || '') + '\n\nRELATED\n' + recordsFor({ places: r.p || [], words: [] }, 6).filter(function (x) { return x.i !== r.i; }).map(recLine).join('\n'); }));
+    if (r.f && !r._full) fetch('data/docs/' + encodeURIComponent(r.i) + '.txt').then(function (x) { return x.ok ? x.text() : ''; }).then(function (t) { r._full = String(t).slice(0, 9000); }).catch(function () {});
+    if (r.u) body.appendChild(h('p', { class: 'd-text' }, [h('a', { href: r.u, target: '_blank', rel: 'noopener', text: 'Open the original' })]));
+    body.appendChild(h('p', { class: 'd-text muted small', text: r.rn || '' }));
+    openPanel('sheet');
+  }
+
+  /* ---------- search terminal ---------- */
+  var TERM_KINDS = [['all', 'All'], ['place', 'Places'], ['area', 'Areas'], ['doc', 'Documents'], ['event', 'Events']];
+  var termKind = 'all';
+  function openTerm(q) {
+    $('term').hidden = false;
+    if (q != null) $('term-q').value = q;
+    loadRecords().then(runTerm);
+    setTimeout(function () { $('term-q').focus(); $('term-q').select(); }, 30);
+  }
+  function closeTerm() { $('term').hidden = true; }
+  function termResults(q) {
+    var years = (q.match(/\b(1[89]\d\d|20[0-2]\d)\b(?:\s*[-–]\s*\b(1[89]\d\d|20[0-2]\d)\b)?/) || []);
+    var yf = years[1] ? +years[1] : null, yt = years[2] ? +years[2] : yf;
+    var words = fold(q.replace(years[0] || '', '')).split(' ').filter(function (w) { return w.length > 1; });
+    var match = function (text) { var t = fold(text); return words.every(function (w) { return t.indexOf(w) >= 0; }); };
+    var rel = function (title, rest) { var t = fold(title), r = fold(rest), sc = 0; words.forEach(function (w) { if (t.indexOf(w) >= 0) sc += 3; else if (r.indexOf(w) >= 0) sc += 1; }); if (words.length && t.indexOf(words.join(' ')) >= 0) sc += 4; return sc; };
+    var out = [];
+    if (termKind === 'all' || termKind === 'place') SITES.forEach(function (s) {
+      var r = span(s); if (yf && (r[1] < yf || r[0] > yt)) return;
+      if (words.length && !match(s.name + ' ' + (s.ar || '') + ' ' + s.relevance + ' ' + s.text + ' ' + LAYERS[s.layer].label)) return;
+      out.push({ k: 'place', sort: 0, sc: rel(s.name + ' ' + (s.ar || ''), s.relevance + ' ' + s.text), d: s.period, t: s.name, sub: LAYERS[s.layer].label + ' · ' + s.relevance, go: function () { closeTerm(); focusSite(s); }, s: s });
+    });
+    if ((termKind === 'all' || termKind === 'area') && !yf) AREAS.forEach(function (a) {
+      if (words.length && !match(areaNames(a).join(' ') + ' ' + (a.summary || '') + ' ' + (a.era || ''))) return;
+      out.push({ k: 'area', sort: 1, sc: rel(areaNames(a).join(' '), (a.summary || '') + ' ' + (a.era || '')), d: KIND_LABEL[a.kind], t: a.name + (a.ar ? ' · ' + a.ar : ''), sub: a.summary || '', go: function () { closeTerm(); openArea(a); map.flyTo([a.lat, a.lon], a.kind === 'town' ? 13 : 15, { duration: 0.8 }); } });
+    });
+    if (termKind !== 'place' && termKind !== 'area') (RECORDS || []).forEach(function (r) {
+      if (termKind === 'event' && r.y !== 'event') return;
+      if (termKind === 'doc' && r.y === 'event') return;
+      var y = +(r.d || '0').slice(0, 4); if (yf && (y < yf || y > yt)) return;
+      if (words.length && !match(r.t + ' ' + (r.m || '') + ' ' + (r.s || '') + ' ' + (r.k || []).join(' '))) return;
+      out.push({ k: r.y === 'event' ? 'event' : 'doc', sort: r.y === 'event' ? 1.5 : 2, sc: rel(r.t, (r.m || '') + ' ' + (r.s || '')), d: r.d, t: r.t, sub: (TYPE_LABEL[r.y] || r.y) + ' · ' + (r.s || '') + ' · ' + String(r.m || '').slice(0, 160), go: function () { closeTerm(); openRecord(r); } });
+    });
+    if (!words.length && !yf) out = out.filter(function (x) { return x.k !== 'doc'; });
+    out.sort(function (a, b) { return words.length ? (b.sc - a.sc || a.sort - b.sort || String(a.d || '').localeCompare(String(b.d || ''))) : (a.sort - b.sort || String(a.d || '').localeCompare(String(b.d || ''))); });
+    return out;
+  }
+  function runTerm() {
+    var q = $('term-q').value.trim(), list = $('term-list');
+    var res = termResults(q);
+    list.innerHTML = '';
+    $('term-meta').textContent = (RECORDS ? '' : 'Loading the archive… ') + res.length + ' result' + (res.length === 1 ? '' : 's') + (q ? ' for “' + q + '”' : '') + (RECORDS ? ' · ' + RECORDS.length + ' documents, ' + AREAS.length + ' area profiles, ' + SITES.length + ' mapped places' : '');
+    res.slice(0, 200).forEach(function (x) {
+      list.appendChild(h('button', { class: 'trow k-' + x.k, onclick: x.go }, [h('span', { class: 'tk', text: { place: 'PLACE', area: 'AREA', doc: 'DOC', event: 'EVENT' }[x.k] }), h('span', { class: 'td', text: x.d || '' }), h('span', { class: 'tt' }, [h('b', { text: x.t }), h('small', { text: x.sub })])]));
+    });
+    if (res.length > 200) list.appendChild(h('p', { class: 'd-text muted', text: 'Showing the first 200. Add words or a year to narrow it down.' }));
+  }
+  TERM_KINDS.forEach(function (k) {
+    $('term-kinds').appendChild(h('button', { 'aria-pressed': k[0] === termKind ? 'true' : 'false', 'data-k': k[0], text: k[1], onclick: function () {
+      termKind = k[0]; document.querySelectorAll('#term-kinds button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === termKind ? 'true' : 'false'); }); runTerm(); } }));
+  });
+  var termTimer;
+  $('term-q').addEventListener('input', function () { clearTimeout(termTimer); termTimer = setTimeout(runTerm, 120); });
+  $('term-q').addEventListener('keydown', function (e) { if (e.key === 'Enter') { var f = $('term-list').querySelector('button'); if (f) f.click(); } });
+  $('term-close').onclick = closeTerm;
+  $('term').addEventListener('click', function (e) { if (e.target.id === 'term') closeTerm(); });
+  $('btn-search').onclick = function () { openTerm(); };
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '/' && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) { e.preventDefault(); openTerm(); }
+  });
+
 
   /* ---------- chat guide (agent loop) ---------- */
   var convo = [];
   var CATALOG = SITES.map(function (s) { return [s.id, s.name, LAYERS[s.layer].label, s.period, s.relevance].join(' | '); }).join('\n') +
-    '\nKnown but with no map location: ' + UNPLACED.map(function (u) { return u.name + ' (' + u.when + ')'; }).join('; ');
-  var STARTERS = ['Show me only the massacres', 'Where were political prisoners held?', 'What happened in the 1986 US air raid?', 'Switch to satellite and take me to Ben Ashour'];
+    '\nKnown but with no map location: ' + UNPLACED.map(function (u) { return u.name + ' (' + u.when + ')'; }).join('; ') +
+    '\nArea profiles available through get_area: ' + (window.ATLAS_AREAS || []).map(function (a) { return a.name; }).join(', ');
+  var STARTERS = ['Where were political prisoners held?', 'What do US documents say about the 1986 raid?', 'Show me only the massacres', 'What was Bab al-Aziziya?', 'Take me to Ben Ashour on satellite'];
   var PERIOD_KEYS = { before_1969: 'pre', from_1969_to_1989: 'main', after_1989: 'post' };
   var DISPLAY_KEYS = { district_names: 'districts', uncertainty_rings: 'rings', place_names: 'labels', grid: 'grid', timeline: 'timeline' };
   function scrollChat() { var l = $('chat-log'); l.scrollTop = l.scrollHeight; }
@@ -787,7 +1054,7 @@
   }
   function closeChat() { $('chat-panel').hidden = true; document.body.classList.remove('chat-open'); $('chat-input').blur(); }
   function greet() {
-    var m = bubble('bot', 'Ask me anything about Tripoli between 1969 and 1989, or tell me what to show. I can change the map for you, and if something isn’t here yet I can help you ask ' + OWNER + ' to look into it.');
+    var m = bubble('bot', 'Ask me anything about Tripoli under Gaddafi, before and since, or tell me what to show. I can search the archive of documents and the web. I can change the map for you, and if something isn’t here yet I can help you ask ' + OWNER + ' to look into it.');
     var box = h('div', { class: 'acts' });
     STARTERS.forEach(function (t) { box.appendChild(h('button', { class: 'act', text: t, onclick: function () { send(t); } })); });
     m.appendChild(box);
@@ -959,11 +1226,42 @@
       ui.chips.push(s); ui.log.push('Added a button to open ' + s.name);
       return 'On this phone a button to open ' + s.name + ' was added under your reply.';
     },
+    search_archive: function (a) {
+      return loadRecords().then(function () {
+        var words = String(a.query || '').split(/\s+/).filter(function (w) { return w.length > 2; });
+        var res = scoreRecords({ words: words.length ? [a.query].concat(words) : [], places: a.place_id ? [a.place_id] : [], year_from: a.year_from, year_to: a.year_to, type: a.type });
+        if (!words.length && !a.place_id) res = (RECORDS || []).filter(function (r) { var y = +(r.d || '0').slice(0, 4); return (!a.year_from || y >= a.year_from) && (!a.year_to || y <= a.year_to) && (!a.type || r.y === a.type); });
+        var n = Math.min(20, a.limit || 10);
+        return JSON.stringify({ total: res.length, records: res.slice(0, n).map(function (r) { return { id: r.i, date: r.d, type: r.y, title: r.t, source: r.s, places: r.p, summary: String(r.m || '').slice(0, 500) }; }) });
+      });
+    },
+    get_record: function (a) {
+      return loadRecords().then(function () {
+        var r = REC_BY_ID[a.id]; if (!r) return { error: 'No record with id ' + a.id };
+        var base = { id: r.i, date: r.d, type: r.y, title: r.t, source: r.c || r.s, held_at: r.a || null, places: r.p, summary: r.m, link: r.u, rights: r.rn };
+        if (!r.f) return JSON.stringify(base);
+        return fetch('data/docs/' + encodeURIComponent(r.i) + '.txt').then(function (x) { return x.ok ? x.text() : ''; }).then(function (t) { base.full_text = String(t).slice(0, 5000); return JSON.stringify(base); }).catch(function () { return JSON.stringify(base); });
+      });
+    },
+    get_area: function (a) {
+      var ar = a.name ? areaByName(a.name) : null;
+      if (!ar && a.lat != null) { var x = areaAt(L.latLng(+a.lat, +a.lon)); ar = x && x.a; }
+      if (!ar) return { error: 'No profile found. Known areas include: ' + AREAS.slice(0, 60).map(function (x) { return x.name; }).join(', ') };
+      return JSON.stringify({ id: ar.id, name: ar.name, arabic: ar.ar, kind: ar.kind, lat: ar.lat, lon: ar.lon, summary: ar.summary, history: ar.history, gaddafi_era: ar.era, today: ar.today, uncertain: ar.uncertain, sources: (ar.sources || []).map(function (x) { return x.t; }) });
+    },
+    open_record: function (a) {
+      return loadRecords().then(function () {
+        var r = REC_BY_ID[a.id]; if (!r) return { error: 'No record with id ' + a.id };
+        ui.docs.push(r); ui.log.push('Added a button to open “' + r.t.slice(0, 60) + '”');
+        return 'A button to open the document was added under your reply.';
+      });
+    },
     suggest_request: function (a) { ui.requests.push(a); return 'The request form is shown to the reader, filled in with: ' + (a.title || '') + '.'; }
   };
   var STEP_LABEL = { get_map_state: 'Checking the map', search_places: 'Searching the map', get_place: 'Reading place details', describe_spot: 'Looking up the area',
     set_layers: 'Changing layers', set_today_layers: 'Loading present-day layers', set_basemap: 'Changing the map style', set_periods: 'Changing the time period',
-    set_display: 'Adjusting the display', fly_to: 'Moving the map', open_place: 'Opening the place', suggest_request: 'Preparing a request' };
+    set_display: 'Adjusting the display', fly_to: 'Moving the map', open_place: 'Opening the place', suggest_request: 'Preparing a request',
+    search_archive: 'Searching the archive', get_record: 'Reading a document', get_area: 'Reading the area profile', open_record: 'Opening a document', web_search: 'Searching the web' };
   function runTool(name, input) {
     try {
       var fn = TOOLS[name];
@@ -983,6 +1281,7 @@
     function step() {
       steps++;
       return relay(code, { agent: true, messages: convo, catalog: CATALOG, state: mapState() }).then(function (j) {
+        (j.sources || []).forEach(function (x) { if (!ui.sources.some(function (y) { return y.url === x.url; })) ui.sources.push(x); });
         var content = (j.content || []).filter(function (b) { return b && (b.type === 'text' || b.type === 'tool_use'); });
         if (!content.length) content = [{ type: 'text', text: lastText || 'I don’t have an answer for that.' }];
         convo.push({ role: 'assistant', content: content });
@@ -1016,7 +1315,7 @@
     $('chat-input').value = '';
     var wait = bubble('bot', 'Thinking…'); wait.classList.add('wait');
     $('chat-send').disabled = true;
-    ui = { log: [], chips: [], requests: [], mapChanged: false };
+    ui = { log: [], chips: [], requests: [], docs: [], sources: [], mapChanged: false };
     runAgent(code, function (s) { wait.querySelector('p').textContent = s; scrollChat(); })
       .then(function (reply) {
         wait.remove();
@@ -1024,7 +1323,9 @@
         if (ui.log.length) m.appendChild(h('ul', { class: 'did' }, ui.log.map(function (x) { return h('li', { text: x }); })));
         var box = h('div', { class: 'acts' }), seen = {};
         ui.chips.forEach(function (s) { if (seen[s.id]) return; seen[s.id] = 1; box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); focusSite(s); } }, [glyph(s.layer), h('span', { text: 'Open ' + s.name })])); });
+        ui.docs.forEach(function (r) { box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); openRecord(r); } }, [h('span', { class: 'dtag', text: TYPE_LABEL[r.y] || 'Doc' }), h('span', { text: r.t.slice(0, 80) })])); });
         if (ui.mapChanged && !DESKTOP.matches) box.appendChild(h('button', { class: 'act', text: 'View the map ↓', onclick: closeChat }));
+        if (ui.sources.length) m.appendChild(h('details', { class: 'ai-src' }, [h('summary', { text: 'Web sources (' + ui.sources.length + ')' }), h('ol', {}, ui.sources.map(function (x) { return h('li', {}, [h('a', { href: x.url, target: '_blank', rel: 'noopener', text: x.title })]); }))]));
         if (box.children.length) m.appendChild(box);
         ui.requests.forEach(function (r) { requestCard(r.title, r.details); });
         scrollChat();
@@ -1093,6 +1394,7 @@
   }
   function closeSettings() { if (CFG.aiEndpoint && !GATED) store.set('code', $('family-code').value.trim()); $('settings').hidden = true; }
   $('btn-settings').onclick = openSettings;
+  $('btn-settings-2').onclick = function () { if (!DESKTOP.matches) closePanel('drawer'); openSettings(); };
   $('set-close').onclick = closeSettings;
   $('settings').addEventListener('click', function (e) { if (e.target.id === 'settings') closeSettings(); });
   $('tip-ok').onclick = function () { $('tip').hidden = true; store.set('tipSeen', true); };
@@ -1105,7 +1407,8 @@
   $('reset-view').onclick = function () { map.flyToBounds(HOME, { duration: 0.8 }); if (!DESKTOP.matches) closePanel('drawer'); };
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (picking) setPicking(false);
+    if (!$('term').hidden) closeTerm();
+    else if (picking) setPicking(false);
     else if (!$('chat-panel').hidden) closeChat();
     else if (!$('settings').hidden) closeSettings();
     else if ($('sheet').classList.contains('open')) closePanel('sheet');

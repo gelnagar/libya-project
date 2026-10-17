@@ -32,24 +32,32 @@
 
 const clip = (v, n) => String(v == null ? '' : v).slice(0, n);
 
-const PLACE_SYSTEM = `You explain places on a historical map of Tripoli, Libya, focused on 1969–1989 under Muammar Gaddafi.
-Readers are older family members reading on phones. Write plainly in short paragraphs, under 170 words, with no jargon and no headings.
-Cover what the place is, why it matters for 1969–1989, and what is uncertain.
-Use only well-established facts. If you do not know something, say so plainly instead of guessing.
-For present-day map features, explain what the feature is and any history of the surrounding area, and note that the map data is modern.
-For a spot the reader picked on the map, use the neighbourhood, address and nearby mapped places you are given.
-Never give home addresses or current whereabouts of private individuals.
-If the reader writes in Arabic, answer in Arabic.`;
+const PLACE_SYSTEM = `You are the research assistant inside "Tripoli: Open Source", a map of Tripoli, Libya, about the Gaddafi era (1969–2011), the history that shaped it and what those places are today. Readers are family members, many of them older, reading on phones.
+
+How to answer:
+- Answer the question that was asked, directly, in your first sentence. Never open with caveats about the map data or about what you cannot know.
+- Use the archive notes you are given and everything you know about Libya and Tripoli. Be specific: names, units, dates, numbers, streets, buildings. When you give a figure, say roughly when it applies and, if you are confident, who estimated it.
+- If the question is general (the army, the Revolutionary Committees, the 1986 raid, life under Gaddafi), answer it properly in general first, then connect it to this place if you can.
+- If you need facts that are not in the notes or that may have changed (for example who controls a site today), use web search. Prefer reliable sources: UN, Amnesty, Human Rights Watch, major news agencies, academic work, Libyan official sources.
+- Only when a specific detail is genuinely unknown, say so in one short sentence near the end, and give what is known about the surrounding area or the closest comparable case instead.
+- Present-day map labels show how a place is named today. Mention that only if it changes the answer.
+- Plain words, short paragraphs, about 120–220 words. No headings. Use a short list only when listing several things.
+- Never give home addresses or current whereabouts of private individuals, and do not speculate about named private people.
+- If the reader writes in Arabic, answer in Arabic.
+
+After your answer, write a line "FOLLOW-UPS:" and then three short follow-up questions the reader might want to ask next, one per line starting with "- ". Make them specific to this place and to what you just said, and different from questions already asked.`;
 
 function agentSystem(owner, catalog) {
-  return `You are the guide inside a family history map of Tripoli, Libya, focused on 1969–1989 under Muammar Gaddafi. You can see and control the map with your tools.
+  return `You are the guide inside "Tripoli: Open Source", a family history map of Tripoli, Libya, about the Gaddafi era (1969–2011), the history that shaped it and the city today. You can see and control the map, search the document archive and look things up on the web with your tools.
 
-Readers are older family members, often on phones. Your final answer must be plain language, under 150 words, with no headings.
+Readers are older family members, often on phones. Your final answer must be plain language, about 80–200 words, with no headings. Answer the question directly first; do not open with caveats.
 
 How to work:
 - When the reader asks to see, hide, change or find something, do it with the tools straight away. Tool results tell you what actually changed; check them before answering.
 - To show only certain categories, use set_layers with "only". To remove a category, use "hide".
 - Use get_map_state if you need to know what is currently shown, and search_places or get_place before giving details about a place.
+- For history questions, search the archive (search_archive, get_record) and the area profiles (get_area). Cite documents by title and date. Use web_search for anything not covered, especially present-day facts.
+- Use your own knowledge of Libya too; be specific with names, dates and numbers. Only say something is unknown when it genuinely is, and then give the closest known facts.
 - When places are relevant to an answer, move the map to them with fly_to.
 - If something is not on the map, or you are not confident of the facts, say so and call suggest_request so the reader can ask ${owner}, who maintains the map, to investigate or add it.
 - Do not explain your tools or their limits to the reader. Do the task, then tell them briefly what they are now looking at.
@@ -58,7 +66,7 @@ How to work:
 Places on the map (id | name | category | when | summary):
 ${catalog}
 
-Use only well-established facts. Never invent places, coordinates, names or numbers. Never give home addresses or current whereabouts of private individuals. If the reader writes in Arabic, answer in Arabic.`;
+Never invent places, coordinates, documents, names or numbers. Never give home addresses or current whereabouts of private individuals. If the reader writes in Arabic, answer in Arabic.`;
 }
 
 const HIST = ['detention', 'security', 'military', 'airstrike', 'massacre', 'power', 'landmark'];
@@ -77,9 +85,14 @@ const TOOLS = [
   { name: 'set_display', description: 'Turn display options on or off. Omitted options stay as they are.', input_schema: { type: 'object', properties: { district_names: { type: 'boolean' }, uncertainty_rings: { type: 'boolean' }, place_names: { type: 'boolean' }, grid: { type: 'boolean' }, timeline: { type: 'boolean' } } } },
   { name: 'fly_to', description: 'Move the map. Give place_ids to frame one or more places, a district name, a lat/lon with optional zoom (10–18), or whole_city true.', input_schema: { type: 'object', properties: { place_ids: arr({ type: 'string' }), district: { type: 'string' }, lat: { type: 'number' }, lon: { type: 'number' }, zoom: { type: 'integer' }, whole_city: { type: 'boolean' } } } },
   { name: 'open_place', description: 'Open the details panel for a place (on phones this adds a button the reader can tap).', input_schema: { type: 'object', properties: { id: { type: 'string' } }, required: ['id'] } },
+  { name: 'search_archive', description: 'Search the document archive (State Department FRUS documents, CIA estimates reprinted in FRUS, UN and NGO reports, reference articles, a chronology of events). Returns ids, titles, dates, sources and short summaries.', input_schema: { type: 'object', properties: { query: { type: 'string' }, place_id: { type: 'string' }, year_from: { type: 'integer' }, year_to: { type: 'integer' }, type: { type: 'string' }, limit: { type: 'integer' } } } },
+  { name: 'get_record', description: 'Read one archive record in full: metadata, summary and (when the rights allow) the full text.', input_schema: { type: 'object', properties: { id: { type: 'string' } }, required: ['id'] } },
+  { name: 'get_area', description: 'Profile of a Tripoli neighbourhood, district, military site or landmark: what it is, its history, the Gaddafi era, today, and sources. Give a name (English or Arabic) or a lat/lon.', input_schema: { type: 'object', properties: { name: { type: 'string' }, lat: { type: 'number' }, lon: { type: 'number' } } } },
+  { name: 'open_record', description: 'Open an archive document in the details panel for the reader.', input_schema: { type: 'object', properties: { id: { type: 'string' } }, required: ['id'] } },
   { name: 'suggest_request', description: 'Show the reader a form to ask the map maintainer to research or add something.', input_schema: { type: 'object', properties: { title: { type: 'string' }, details: { type: 'string' } }, required: ['title', 'details'] } }
 ];
 TOOLS[TOOLS.length - 1].cache_control = { type: 'ephemeral' };
+const WEB_SEARCH = { type: 'web_search_20250305', name: 'web_search', max_uses: 3 };
 
 const MAX_PER_MINUTE = 40;
 const hits = new Map();
@@ -96,7 +109,7 @@ async function creditInfo(env) {
 async function recordSpend(env, u) {
   if (!env.ATLAS_KV || !u) return;
   const pin = parseFloat(env.PRICE_IN) || 2, pout = parseFloat(env.PRICE_OUT) || 10;
-  const cost = ((u.input_tokens || 0) * pin + (u.cache_creation_input_tokens || 0) * pin * 1.25 + (u.cache_read_input_tokens || 0) * pin * 0.1 + (u.output_tokens || 0) * pout) / 1e6;
+  const cost = (u.searches || 0) * 0.01 + ((u.input_tokens || 0) * pin + (u.cache_creation_input_tokens || 0) * pin * 1.25 + (u.cache_read_input_tokens || 0) * pin * 0.1 + (u.output_tokens || 0) * pout) / 1e6;
   const spent = parseFloat(await env.ATLAS_KV.get('spent_usd')) || 0;
   await env.ATLAS_KV.put('spent_usd', String(spent + cost));
 }
@@ -111,6 +124,39 @@ async function callClaude(env, payload) {
     headers: { 'Content-Type': 'application/json', 'x-api-key': env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' },
     body: JSON.stringify({ model: env.MODEL || 'claude-sonnet-5-5', ...payload })
   });
+}
+
+// Calls Claude with web search available; continues paused turns and falls back without search if it is not enabled.
+async function askClaude(env, payload, search) {
+  const usage = { input_tokens: 0, output_tokens: 0, cache_creation_input_tokens: 0, cache_read_input_tokens: 0, searches: 0 };
+  const tools = (payload.tools || []).concat(search ? [WEB_SEARCH] : []);
+  let messages = payload.messages.slice(), content = [], data = null;
+  for (let round = 0; round < 4; round++) {
+    let r = await callClaude(env, { ...payload, messages, tools: tools.length ? tools : undefined });
+    if (!r.ok) {
+      const err = await r.text();
+      if (search && /web_search|web search|not enabled|not available/i.test(err)) return askClaude(env, payload, false);
+      return { error: err, status: r.status };
+    }
+    data = await r.json();
+    for (const k of Object.keys(usage)) usage[k] += (data.usage && data.usage[k]) || 0;
+    usage.searches += (data.usage && data.usage.server_tool_use && data.usage.server_tool_use.web_search_requests) || 0;
+    content = content.concat(data.content || []);
+    if (data.stop_reason !== 'pause_turn') break;
+    messages = payload.messages.concat([{ role: 'assistant', content }]);
+  }
+  const sources = [], seen = new Set();
+  for (const b of content) for (const c of (b.type === 'text' && b.citations) || []) {
+    if (c.url && !seen.has(c.url)) { seen.add(c.url); sources.push({ title: clip(c.title || c.url, 160), url: c.url }); }
+  }
+  return { content, stop_reason: data && data.stop_reason, usage, sources: sources.slice(0, 8) };
+}
+
+function splitFollowups(text) {
+  const m = text.split(/\n\s*\**FOLLOW-UPS:?\**\s*\n/i);
+  if (m.length < 2) return { text: text.trim(), followups: [] };
+  const followups = m[1].split('\n').map((l) => l.replace(/^\s*[-*•\d.)]+\s*/, '').trim()).filter((l) => l.length > 4).slice(0, 3);
+  return { text: m[0].trim(), followups };
 }
 
 // Accept only plain conversation turns, tool calls and tool results, within size limits.
@@ -217,7 +263,7 @@ small { color: #abb3bf; }
 <body><div class="grid" aria-hidden="true"></div>
 <form method="post" action="/login">
   <h1>Tripoli: Open Source</h1>
-  <p>Prisons &amp; security, 1969–89</p>
+  <p>Leveraging AI to Map Gaddafi’s Capital of Terror</p>
   ${msg ? `<p class="msg" role="alert">${escHtml(msg)}</p>` : ''}
   <label for="code">Family password</label>
   <input id="code" name="code" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required autofocus>
@@ -338,31 +384,44 @@ async function api(request, env, url) {
     const msgs = cleanMessages(body.messages);
     if (!msgs.length || msgs[msgs.length - 1].role !== 'user') return json({ error: 'Bad request' }, 400, cors);
     const system = [
-      { type: 'text', text: agentSystem(owner, clip(body.catalog, 9000)), cache_control: { type: 'ephemeral' } },
+      { type: 'text', text: agentSystem(owner, clip(body.catalog, 14000)), cache_control: { type: 'ephemeral' } },
       { type: 'text', text: 'Map state when this step started: ' + clip(body.state, 3000) }
     ];
-    const r = await callClaude(env, { max_tokens: 1024, system, tools: TOOLS, messages: msgs });
-    if (!r.ok) {
-      const err = await r.text();
-      if (/credit balance/i.test(err)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
+    const r = await askClaude(env, { max_tokens: 1400, system, tools: TOOLS, messages: msgs }, true);
+    if (r.error) {
+      if (/credit balance/i.test(r.error)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
       return json({ error: 'AI service error ' + r.status }, 502, cors);
     }
-    const data = await r.json();
-    await recordSpend(env, data.usage);
-    return json({ content: data.content || [], stop_reason: data.stop_reason, credit: await creditInfo(env) }, 200, cors);
+    await recordSpend(env, r.usage);
+    const content = [];
+    for (const b of r.content) {
+      if (b.type === 'text') { const last = content[content.length - 1]; if (last && last.type === 'text') last.text += b.text; else content.push({ type: 'text', text: b.text }); }
+      else if (b.type === 'tool_use') content.push(b);
+    }
+    return json({ content, stop_reason: r.stop_reason, sources: r.sources, credit: await creditInfo(env) }, 200, cors);
   }
 
-  /* ----- single question about a place ----- */
-  const question = clip(body.question || 'Why does this place matter?', 500);
-  const place = JSON.stringify(body.place || {}).slice(0, 4000);
-  const r = await callClaude(env, { max_tokens: 600, system: PLACE_SYSTEM, messages: [{ role: 'user', content: `Place on the map:\n${place}\n\nQuestion: ${question}` }] });
-  if (!r.ok) {
-    const err = await r.text();
-    if (/credit balance/i.test(err)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
+  /* ----- a question (and follow-ups) about a place, spot, area or document ----- */
+  const question = clip(body.question || 'Why does this place matter?', 600);
+  const place = clip(JSON.stringify(body.place || {}), 5000);
+  const context = clip(body.context || '', 16000);
+  const opening = `Place on the map:\n${place}\n\nArchive notes for this place (from the map's own archive; cite by title when you use them):\n${context || '(none)'}`;
+  const hist = Array.isArray(body.history) ? body.history.slice(-5) : [];
+  const messages = [];
+  hist.forEach((t, i) => {
+    const q = clip(t && t.q, 600), a = clip(t && t.a, 3000);
+    if (!q || !a) return;
+    messages.push({ role: 'user', content: (messages.length ? '' : opening + '\n\nQuestion: ') + q });
+    messages.push({ role: 'assistant', content: a });
+  });
+  messages.push({ role: 'user', content: (messages.length ? '' : opening + '\n\nQuestion: ') + question });
+  const r = await askClaude(env, { max_tokens: 1400, system: [{ type: 'text', text: PLACE_SYSTEM, cache_control: { type: 'ephemeral' } }], messages }, body.search !== false);
+  if (r.error) {
+    if (/credit balance/i.test(r.error)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
     return json({ error: 'AI service error ' + r.status }, 502, cors);
   }
-  const data = await r.json();
-  await recordSpend(env, data.usage);
-  const text = (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('\n').trim();
-  return json({ text, credit: await creditInfo(env) }, 200, cors);
+  await recordSpend(env, r.usage);
+  const raw = r.content.filter((c) => c.type === 'text').map((c) => c.text).join('').trim();
+  const parts = splitFollowups(raw);
+  return json({ text: parts.text, followups: parts.followups, sources: r.sources, credit: await creditInfo(env) }, 200, cors);
 }

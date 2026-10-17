@@ -1,0 +1,15 @@
+name: Find landmark coordinates
+on: { workflow_dispatch: {}, push: { branches: [main], paths: [scripts/find-coords.py, .github/workflows/find-coords.yml] } }
+permissions: { contents: write }
+jobs:
+  coords:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/find-coords.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/research/coords-candidates.json
+          if git diff --cached --quiet; then echo none; else git commit -m "Coordinate candidates" && git pull --rebase && git push; fi

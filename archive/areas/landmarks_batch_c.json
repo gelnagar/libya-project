@@ -632,7 +632,7 @@
   "lon": 13.17452,
   "r": 0.1,
   "summary": "A decorated courtyard house built by the Karamanli family in 1744 and once the residence of the British consul.",
-  "history": "Built by the Karamanli family in 1744 and used as the residence of the British Consul. A small doorway off Shar'a al-Kuwash opens onto a large decorated courtyard, according to Philip Ward's 1969 guidebook as summarised by Archnet. Tripoli's Karamanli rulers hosted several European consulates; the US consulate is the only one named on Wikipedia's Karamanli page, where the flagpole in front of it was cut down in May 1801. The old-city map from a travel site also lists an Old French Consulate.",
+  "history": "Built by the Karamanli family in 1744 and used as the residence of the British Consul. A small doorway off Shar'a al-Kuwash opens onto a large decorated courtyard, according to Philip Ward's 1969 guidebook as summarised by Archnet. Other foreign consulates also operated in the city; Wikipedia's Karamanli page names only the US consulate, whose flagpole Yusuf Karamanli had cut down in May 1801. The old-city map from a travel site also lists an Old French Consulate.",
   "era": "",
   "today": "Mapped in OpenStreetMap as \"Old British Consulate\"; its present use is not documented.",
   "uncertain": "The 1744 date and the house's use come from a single guidebook summary. Whether the OpenStreetMap point matches that exact house is unconfirmed. Locations of other consulates (US, French) were not found.",
@@ -1474,7 +1474,7 @@
   "summary": "The Italian-built station that began three narrow-gauge lines, including a 21 km line east to Tajura.",
   "history": "Tripoli Central was the start of three Italian lines: Tripoli-Zuara (118 km), Tripoli-Garian (90 km) and Tripoli-Tagiura (21 km, ten stations). They used 950 mm gauge, and Gurgi and Gargaresc were the first two stops on the Zuara and Garian lines. Italy built nearly 400 km of railway in Libya and none after 1926. After the 1911 Ain Zara battle the Italians built a line linking that oasis to Tripoli. A Tripoli-Benghazi line begun in 1941 was never finished.",
   "era": "",
-  "today": "",
+  "today": "Wikipedia lists Tripoli Central station among the Italian-era buildings later demolished, without a date.",
   "uncertain": "Opening years for each line, the tramway named in the request, and the station site are not documented in the sources opened; no coordinates are given.",
   "sources": [
    {

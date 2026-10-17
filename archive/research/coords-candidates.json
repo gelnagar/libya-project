@@ -1,0 +1,234 @@
+{
+ "lm-rixos-al-nasr": {
+  "name": "Rixos Al Nasr Hotel and Convention Centre",
+  "candidates": []
+ },
+ "lm-karamanli-mosque": {
+  "name": "Karamanli Mosque (Ahmed Pasha Karamanli Mosque)",
+  "candidates": []
+ },
+ "lm-old-city-gates": {
+  "name": "Old City gates (Bab al-Bahr, Bab Zanata, Bab Hawwara, Bab el-Jedid)",
+  "candidates": []
+ },
+ "lm-darghouth-turkish-bath": {
+  "name": "Darghouth Turkish Bath (Hammam Darghut)",
+  "candidates": []
+ },
+ "lm-miramare-theatre": {
+  "name": "Royal Miramare Theatre (demolished)",
+  "candidates": []
+ },
+ "lm-tripoli-central-railway-station": {
+  "name": "Tripoli Central Railway Station (demolished)",
+  "candidates": []
+ },
+ "lm-libyan-state-tv-hq": {
+  "name": "Libyan state TV headquarters (Al-Jamahiriya TV)",
+  "candidates": []
+ },
+ "lm-central-bank-of-libya": {
+  "name": "Central Bank of Libya headquarters",
+  "candidates": []
+ },
+ "lm-peoples-hall": {
+  "name": "People's Hall (General People's Congress)",
+  "candidates": []
+ },
+ "lm-tripoli-congress-center": {
+  "name": "Tripoli Congress Center",
+  "candidates": []
+ },
+ "lm-ministry-of-justice-martyrs-square": {
+  "name": "Ministry of Justice (Martyrs' Square)",
+  "candidates": []
+ },
+ "lm-tripoli-international-fair": {
+  "name": "Tripoli International Fair",
+  "candidates": []
+ },
+ "lm-dar-bishi-synagogue": {
+  "name": "Dar Bishi Synagogue",
+  "candidates": []
+ },
+ "lm-souq-al-mushir": {
+  "name": "Souq al-Mushir",
+  "candidates": []
+ },
+ "lm-tajoura-nuclear-research-centre": {
+  "name": "Tajoura Nuclear Research Centre",
+  "candidates": []
+ },
+ "lm-noc-headquarters": {
+  "name": "National Oil Corporation headquarters",
+  "candidates": []
+ },
+ "lm-fish-market": {
+  "name": "Tripoli Fish Market",
+  "candidates": []
+ },
+ "lm-uthman-pasha-madrasa": {
+  "name": "Uthman Pasha Madrasa",
+  "candidates": []
+ },
+ "lb-faculty-of-medicine-tripoli": {
+  "name": "Faculty of Medicine, University of Tripoli",
+  "candidates": []
+ },
+ "lb-libyan-open-university": {
+  "name": "Libyan Open University",
+  "candidates": []
+ },
+ "lb-gmr-stadium": {
+  "name": "GMR Stadium (Al-Madina SC ground)",
+  "candidates": []
+ },
+ "lb-karamanli-mosque": {
+  "name": "Ahmed Pasha Karamanli Mosque",
+  "candidates": []
+ },
+ "lb-libyan-studies-centre": {
+  "name": "Libyan Studies Centre",
+  "candidates": []
+ },
+ "lb-al-jamahiriya-tv": {
+  "name": "Libyan Jamahiriya Broadcasting Corporation / Al-Jamahiriya TV",
+  "candidates": []
+ },
+ "lb-central-bank-of-libya": {
+  "name": "Central Bank of Libya",
+  "candidates": []
+ },
+ "lb-jamahiriya-institutions": {
+  "name": "Jamahiriya institutions: People's Committees and Revolutionary Committees",
+  "candidates": []
+ },
+ "lh-bab-al-bahr": {
+  "name": "Bab al-Bahr (Sea Gate)",
+  "candidates": []
+ },
+ "lh-bab-jedid-bab-zanata": {
+  "name": "Bab Jedid (New Gate) and Bab Zanata",
+  "candidates": []
+ },
+ "lh-hammam-dragut": {
+  "name": "Hammam Dragut (Darghouth Turkish Bath)",
+  "candidates": []
+ },
+ "lh-karamanli-mosque": {
+  "name": "Ahmed Pasha Karamanli Mosque",
+  "candidates": []
+ },
+ "lh-sidi-salem": {
+  "name": "Sidi Salem Mosque",
+  "candidates": []
+ },
+ "lh-uthman-pasha-madrasa": {
+  "name": "Uthman Pasha Madrasa",
+  "candidates": []
+ },
+ "lh-souq-al-mushir": {
+  "name": "Souq al-Mushir",
+  "candidates": []
+ },
+ "lh-souq-al-turk": {
+  "name": "Souq al-Turk",
+  "candidates": []
+ },
+ "lh-dar-bishi-synagogue": {
+  "name": "Dar Bishi Synagogue",
+  "candidates": []
+ },
+ "lh-hara-kebira": {
+  "name": "Hara Kebira (Jewish Quarter)",
+  "candidates": []
+ },
+ "lh-martyrs-square": {
+  "name": "Piazza Italia / Independence Square / Green Square / Martyrs' Square",
+  "candidates": []
+ },
+ "lh-grand-hotel": {
+  "name": "Grand Hotel of Tripoli (Italian original)",
+  "candidates": []
+ },
+ "lh-banco-di-roma-napoli": {
+  "name": "Banco di Roma and Banco di Napoli buildings",
+  "candidates": []
+ },
+ "lh-miramare-theatre": {
+  "name": "Royal Miramare Theatre",
+  "candidates": []
+ },
+ "lh-lungomare-conte-volpi": {
+  "name": "Lungomare Conte Volpi (the Corniche)",
+  "candidates": []
+ },
+ "lh-tripoli-international-fair": {
+  "name": "Tripoli International Fair",
+  "candidates": []
+ },
+ "lh-italian-colonist-villages": {
+  "name": "Italian colonist villages around Tripoli",
+  "candidates": []
+ },
+ "lh-tripoli-railway-tajura-line": {
+  "name": "Tripoli Central Station and the Tripoli-Tajura line",
+  "candidates": []
+ },
+ "lh-forts-hamidiye-sultaniye": {
+  "name": "Fort Hamidiye and Fort Sultaniye (1911 landing)",
+  "candidates": []
+ },
+ "lh-university-of-libya-tripoli": {
+  "name": "University of Libya, Tripoli faculties (1957)",
+  "candidates": []
+ },
+ "lh-1945-riots-sites": {
+  "name": "1945 anti-Jewish riots in Tripoli (sites)",
+  "candidates": []
+ },
+ "lh-1967-riots-tripoli": {
+  "name": "1967 Six-Day War riots in Tripoli",
+  "candidates": []
+ },
+ "lh-1969-coup-tripoli": {
+  "name": "1 September 1969 coup in Tripoli (radio station and barracks)",
+  "candidates": []
+ },
+ "wp-rabta-pharma-150-chemical-plant": {
+  "name": "Rabta chemical plant (Pharma 150)",
+  "candidates": []
+ },
+ "wp-undeclared-nuclear-sites-al-hashan-al-khalla": {
+  "name": "Undeclared nuclear-programme sites (Al Hashan, Al-Khalla, Salah Eddin)",
+  "candidates": []
+ },
+ "wp-tripoli-air-defence-1986": {
+  "name": "Tripoli air-defence network (1986)",
+  "candidates": []
+ },
+ "wp-al-fatah-missile-project": {
+  "name": "Al-Fatah missile project",
+  "candidates": []
+ },
+ "wp-libyan-scud-units-and-storage": {
+  "name": "Libyan Scud / short-range missile units",
+  "candidates": []
+ },
+ "wp-lampedusa-missile-attack-1986": {
+  "name": "Lampedusa missile attack launch site (April 1986)",
+  "candidates": []
+ },
+ "wp-ruwagha-chemical-depot": {
+  "name": "Ruwagha chemical weapons depot",
+  "candidates": []
+ },
+ "wp-libya-2003-disarmament-and-2004-removals": {
+  "name": "Libya's 2003 disarmament deal and 2004 removals",
+  "candidates": []
+ },
+ "wp-sabha-yellowcake-and-jufra-stocks-post-2011": {
+  "name": "Sabha yellowcake store and 2011 chemical stock reports",
+  "candidates": []
+ }
+}

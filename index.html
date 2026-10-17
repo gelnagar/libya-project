@@ -280,6 +280,58 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
 .modal-box .lead { margin: 0; font-size: 1.1em; }
 .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .seg button { min-height: 48px; border: 1.5px solid var(--edge); background: transparent; border-radius: 0; font-weight: 700; }
+
+/* Glass: every bar and panel is frosted, lit along the top edge, and floats over the map */
+:root { --line: rgba(255,255,255,.16); --edge: rgba(255,255,255,.3); --panel-2: rgba(255,255,255,.08); --panel-3: rgba(255,255,255,.15);
+  --glass: rgba(26,32,40,.5); --glass-strong: rgba(26,32,40,.66);
+  --blur: blur(26px) saturate(1.9) brightness(1.08);
+  --shine: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -1px 0 rgba(255,255,255,.08), inset 1px 0 0 rgba(255,255,255,.1), inset -1px 0 0 rgba(255,255,255,.1);
+  --lift: 0 10px 34px rgba(0,0,0,.38), 0 1px 3px rgba(0,0,0,.3); }
+.bar, .panel, .chat, #timeline, .hud, .status, .tip, .modal-box, .leaflet-bar, .leaflet-control-attribution, .leaflet-control-scale-line, .leaflet-tooltip.site-label {
+  background: var(--glass); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+  border: 1px solid rgba(255,255,255,.22); box-shadow: var(--shine), var(--lift); }
+.panel, .chat, .modal-box { background: var(--glass-strong); }
+.bar { border-width: 0 0 1px; border-radius: 0; box-shadow: inset 0 -1px 0 rgba(255,255,255,.3), inset 0 1px 0 rgba(255,255,255,.18), 0 6px 24px rgba(0,0,0,.3); }
+.panel-head { border-bottom: 1px solid var(--line); }
+.panel, .chat, .modal-box { border-radius: 22px; }
+#timeline, .tip { border-radius: 18px; }
+.hud, .status { border-radius: 999px; }
+.leaflet-bar { border: 1px solid rgba(255,255,255,.22) !important; border-radius: 16px !important; overflow: hidden; box-shadow: var(--shine), var(--lift) !important; background: var(--glass) !important; }
+.leaflet-bar a { background: transparent !important; color: var(--text) !important; border-color: var(--line) !important; border-radius: 0 !important; }
+.leaflet-bar a:hover { background: rgba(255,255,255,.14) !important; }
+.leaflet-bar a.on { background: rgba(251,179,96,.9) !important; }
+.leaflet-control-attribution, .leaflet-control-scale-line { border-radius: 10px; background: rgba(26,32,40,.5) !important; border: 1px solid rgba(255,255,255,.18); padding: 1px 8px; box-shadow: none; }
+.leaflet-tooltip.site-label { border-radius: 10px; background: var(--glass-strong); border: 1px solid rgba(255,255,255,.25); color: var(--text); }
+.btn, .chips button, .seg button, .act { border-radius: 14px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.26); box-shadow: inset 0 1px 0 rgba(255,255,255,.3); }
+.btn:hover, .act:hover, .chips button:hover, .seg button:hover { background: rgba(255,255,255,.2); }
+.btn.primary { background: rgba(76,144,240,.88); border-color: rgba(190,215,255,.6); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 2px 10px rgba(76,144,240,.35); }
+.btn.primary:hover { background: rgba(110,166,248,.95); }
+.btn.ghost { background: transparent; }
+.chips button[aria-pressed="true"], .seg button[aria-pressed="true"] { background: rgba(76,144,240,.38); border-color: rgba(150,195,255,.8); box-shadow: inset 0 1px 0 rgba(255,255,255,.4); }
+.basemaps .thumb { border-radius: 14px; border: 1px solid rgba(255,255,255,.3); box-shadow: inset 0 1px 0 rgba(255,255,255,.3); }
+.basemaps button[aria-pressed="true"] .thumb { outline: 3px solid var(--accent); outline-offset: 1px; }
+.ai textarea, .field input, .chat-form input, .msg.req input, .msg.req textarea { background: rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.26); border-radius: 14px; box-shadow: inset 0 1px 3px rgba(0,0,0,.35); }
+.chat-form { padding: 10px; }
+.tag { border-radius: 8px; background: rgba(255,255,255,.1); }
+.glyph.square, .mk.square, .osm-ic, #timeline .tl-dot.square { border-radius: 8px; }
+.mk.square { border-radius: 9px; }
+.credit { -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); background: rgba(251,179,96,.82); box-shadow: inset 0 -1px 0 rgba(255,255,255,.35); }
+.credit.out { background: rgba(250,153,156,.82); }
+.modal { -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.places button:hover, .links button:hover, .qchip:hover { background: rgba(255,255,255,.08); }
+.msg.me, .msg.bot { background: none; }
+@media (max-width: 899px) {
+  .panel { border-width: 1px 0 0; border-radius: 24px 24px 0 0; }
+  .chat { border-width: 1px 0 0; }
+  body.chat-open .chat { border-radius: 24px 24px 0 0; }
+  .grab { background: rgba(255,255,255,.4); border-radius: 3px; }
+}
+@media (min-width: 900px) {
+  .chat { border-radius: 22px; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .bar, .panel, .chat, #timeline, .hud, .status, .tip, .modal-box { background: #1c2127; }
+}
 </style>
 </head>
 <body>

@@ -13,7 +13,7 @@ BBOX = [12.95, 32.70, 13.45, 32.95]  # west, south, east, north
 STAC = 'https://planetarycomputer.microsoft.com/api/stac/v1/search'
 SIGN = 'https://planetarycomputer.microsoft.com/api/sas/v1/sign?href='
 PERIODS = [  # id, label year, collection, date range, platform filter, bands (r,g,b), note
-    ('landsat-1972', 1972, 'landsat-c2-l1', '1972-07-01/1976-12-31', ['landsat-1', 'landsat-2'], ('nir08', 'red', 'green'), 'Landsat 1–2 MSS, false colour (vegetation shows red)'),
+    ('landsat-1970s', 1976, 'landsat-c2-l1', '1972-07-01/1979-12-31', ['landsat-1', 'landsat-2', 'landsat-3'], ('nir08', 'red', 'green'), 'Landsat 1–2 MSS, false colour (vegetation shows red)'),
     ('landsat-1984', 1984, 'landsat-c2-l2', '1984-03-01/1986-12-31', ['landsat-5'], ('red', 'green', 'blue'), 'Landsat 5 TM, natural colour'),
     ('landsat-1989', 1989, 'landsat-c2-l2', '1988-06-01/1990-12-31', ['landsat-5'], ('red', 'green', 'blue'), 'Landsat 5 TM, natural colour'),
     ('landsat-2003', 2003, 'landsat-c2-l2', '2002-06-01/2004-12-31', ['landsat-5', 'landsat-7'], ('red', 'green', 'blue'), 'Landsat 5/7, natural colour'),
@@ -35,7 +35,8 @@ for pid, year, coll, dt, plats, bands, note in PERIODS:
         print(pid, 'search failed', e); continue
     items = [i for i in items if all(b in i['assets'] for b in bands)]
     if not items: print(pid, 'no scenes'); continue
-    items.sort(key=lambda i: (i['properties'].get('eo:cloud_cover', 100), abs(int(i['properties']['datetime'][5:7]) - 6)))
+    # prefer Tier 1 scenes (best geometry), then clear skies, then summer
+    items.sort(key=lambda i: (0 if i['id'].endswith('_T1') else 1, i['properties'].get('eo:cloud_cover', 100), abs(int(i['properties']['datetime'][5:7]) - 6)))
     it = items[0]; date = it['properties']['datetime'][:10]
     print(pid, 'using', it['id'], date, 'cloud', it['properties'].get('eo:cloud_cover'))
     outs = []
@@ -45,19 +46,22 @@ for pid, year, coll, dt, plats, bands, note in PERIODS:
         gdal.Warp(dst, src, outputBounds=BBOX, outputBoundsSRS='EPSG:4326', dstSRS='EPSG:3857', xRes=30, yRes=30, resampleAlg='bilinear')
         outs.append(dst)
     vrt = gdal.BuildVRT(f'work/{pid}.vrt', outs, separate=True); vrt = None
-    # contrast stretch each band to its 2–98% range
-    ds = gdal.Open(f'work/{pid}.vrt')
-    scale = []
-    for k in range(1, 4):
-        band = ds.GetRasterBand(k); arr = band.ReadAsArray().astype('float64'); v = arr[arr > 0]
+    if coll == 'landsat-c2-l2':
+        # surface reflectance: DN*0.0000275-0.2; show reflectance 0–0.32 the same way on all bands (keeps colours true)
+        scale = [[7273, 18909, 0, 255]] * 3
+        gdal.Translate(f'work/{pid}.rgb.tif', f'work/{pid}.vrt', outputType=gdal.GDT_Byte, scaleParams=scale, exponents=[0.8, 0.8, 0.8])
+    else:
         import numpy as np
-        lo, hi = (np.percentile(v, 2), np.percentile(v, 98)) if v.size else (0, 1)
-        scale.append([float(lo), float(hi), 0, 255])
-    ds = None
-    gdal.Translate(f'work/{pid}.rgb.tif', f'work/{pid}.vrt', outputType=gdal.GDT_Byte, scaleParams=scale)
+        ds = gdal.Open(f'work/{pid}.vrt'); vals = []
+        for k in range(1, 4):
+            arr = ds.GetRasterBand(k).ReadAsArray().astype('float64'); vals.append(arr[arr > 0])
+        ds = None
+        allv = np.concatenate(vals) if vals else np.array([0, 1])
+        lo, hi = float(np.percentile(allv, 1)), float(np.percentile(allv, 99))
+        gdal.Translate(f'work/{pid}.rgb.tif', f'work/{pid}.vrt', outputType=gdal.GDT_Byte, scaleParams=[[lo, hi, 0, 255]] * 3)
     gdal.Warp(f'work/{pid}.alpha.tif', f'work/{pid}.rgb.tif', dstAlpha=True, srcNodata=0)
-    subprocess.run(['gdal2tiles.py', '-q', '--xyz', '-z', '10-15', '-w', 'none', '-r', 'bilinear', '--processes=2', f'work/{pid}.alpha.tif', f'public/maps/{pid}'], check=True)
-    meta = {'id': pid, 'year': year, 'date': date, 'scene': it['id'], 'note': note, 'bbox': BBOX, 'maxZoom': 14,
+    subprocess.run(['gdal2tiles.py', '-q', '--xyz', '-z', '10-13', '-w', 'none', '-r', 'bilinear', '--tiledriver=WEBP', '--webp-quality=82', '--processes=2', f'work/{pid}.alpha.tif', f'public/maps/{pid}'], check=True)
+    meta = {'id': pid, 'year': year, 'date': date, 'scene': it['id'], 'note': note, 'bbox': BBOX, 'maxZoom': 13, 'ext': 'webp',
             'title': f'Satellite image, {date[:4]} (Landsat)', 'source': 'USGS Landsat via Microsoft Planetary Computer', 'license': 'Public domain (USGS)'}
     json.dump(meta, open(f'public/maps/{pid}/meta.json', 'w'), indent=1)
     open(f'public/maps/{pid}/done', 'w').write(date)

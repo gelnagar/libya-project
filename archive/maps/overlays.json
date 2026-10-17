@@ -43,5 +43,27 @@
    ]
   ],
   "note": "Compiled 1960 from British 1:7,500 plans, revised from air photos; printed May 1962. Datum ED50, UTM zone 33."
+ },
+ {
+  "id": "ams-1943",
+  "title": "Tripoli city plan, 1943 (US Army Map Service, 1:7,500)",
+  "year": 1943,
+  "source": "Stanford University Libraries (David Rumsey Map Center), purl rz484cy6222",
+  "page": "https://purl.stanford.edu/rz484cy6222",
+  "iiif": "https://purl.stanford.edu/rz484cy6222/iiif/manifest",
+  "license": "Public domain (Public Domain Mark 1.0)",
+  "zooms": "12-17",
+  "crops_auto": true
+ },
+ {
+  "id": "atlas-1978",
+  "title": "Urban development of Tripoli, National Atlas of the Jamahiriya (1978)",
+  "year": 1978,
+  "source": "David Rumsey Map Collection, RUMSEY~8~1~331655~90100008",
+  "page": "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~331655~90100008",
+  "iiif": "https://www.davidrumsey.com/luna/servlet/iiif/m/RUMSEY~8~1~331655~90100008/manifest",
+  "license": "CC BY-NC-SA 3.0 (David Rumsey Map Collection); for non-commercial use with attribution",
+  "zooms": "11-15",
+  "crops_auto": true
  }
 ]

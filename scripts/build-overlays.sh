@@ -10,7 +10,20 @@ jq -c '.[]' archive/maps/overlays.json | while read -r m; do
   ngcp=$(jq '.gcps // [] | length' <<<"$m")
   [ -f "public/maps/$id/done" ] && { echo "$id already tiled"; continue; }
   echo "== $id"
+  iiif=$(jq -r '.iiif // empty' <<<"$m")
+  if [ -n "$iiif" ] && [ ! -f "work/$id.src" ]; then
+    # IIIF manifest (v2 or v3): take the first image service and ask for the full image
+    curl -sSL -A "TripoliOpenSourceArchive/1.0" "$iiif" -o "work/$id.manifest.json"
+    svc=$(jq -r '[.. | objects | select(has("@id") or has("id")) | (.["@id"] // .id) | select(test("iiif|image") and (test("manifest|canvas|annotation|sequence|range") | not))][0]' "work/$id.manifest.json")
+    img=$(jq -r '[.. | objects | select((.["@type"] // .type) == "dctypes:Image" or (.["@type"] // .type) == "Image") | (.["@id"] // .id)][0]' "work/$id.manifest.json")
+    echo "manifest service: $svc image: $img" | tee -a "archive/maps/$id.info.txt"
+    for u in "${svc%/info.json}/full/full/0/default.jpg" "${svc%/info.json}/full/max/0/default.jpg" "$img"; do
+      curl -sSL -A "TripoliOpenSourceArchive/1.0" -o "work/$id.src" "$u" && [ "$(file -b --mime-type "work/$id.src")" = "image/jpeg" ] && break
+    done
+    url="(iiif) $u"
+  fi
   [ -f "work/$id.src" ] || curl -sSL -A "TripoliOpenSourceArchive/1.0 (github.com/gelnagar/libya-project)" -o "work/$id.src" "$url"
+  file "work/$id.src" >> "archive/maps/$id.info.txt"
   case "$(file -b --mime-type "work/$id.src")" in
     application/zip) (cd work && unzip -o -q "$id.src" -d "$id.unz"); src=$(find "work/$id.unz" -iname '*.tif*' -o -iname '*.jp*g' -o -iname '*.png' | head -1);;
     *) src="work/$id.src";;

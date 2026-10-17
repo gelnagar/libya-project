@@ -371,6 +371,17 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
 .district { pointer-events: auto; cursor: pointer; }
 @media (max-width: 899px) { #sheet.tall { max-height: calc(100vh - var(--map-top) - 8px); } body.sheet-tall.sheet-open .chat { display: none; } }
 @media (max-width: 480px) { #btn-settings { display: none; } }
+.omap { display: flex; flex-direction: column; gap: 6px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.omap:last-child { border-bottom: 0; }
+.omap .row { display: flex; align-items: center; gap: 12px; }
+.omap input[type=checkbox] { width: 24px; height: 24px; accent-color: var(--accent); margin: 0; flex: none; }
+.omap .t { flex: 1; font-family: var(--f-ui); font-weight: 700; line-height: 1.25; }
+.omap small { display: block; font-weight: 400; color: var(--muted); font-size: .8em; }
+.omap .yr { font: 700 .8em var(--f-ui); padding: 2px 8px; border-radius: 8px; background: rgba(76,144,240,.25); color: #cfe0ff; }
+.omap input[type=range] { width: 100%; accent-color: var(--accent); }
+.omap .op { display: flex; align-items: center; gap: 10px; font: .8em var(--f-ui); color: var(--muted); }
+.yearbadge { position: fixed; z-index: 1045; left: 12px; top: calc(var(--map-top) + 10px); padding: 4px 12px; border-radius: 999px; font: 700 .85em var(--f-ui); background: var(--glass); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border: 1px solid rgba(255,255,255,.22); box-shadow: var(--shine); pointer-events: none; }
+@media (min-width: 900px) { body.drawer-open .yearbadge { left: 362px; } }
 </style>
 </head>
 <body>
@@ -389,6 +400,7 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
 <div id="status" class="status" role="status" hidden></div>
 <div id="credit" class="credit" role="alert" hidden><p id="credit-msg"></p><button class="btn" id="credit-x">Hide</button></div>
 <div class="hud" id="hud" aria-hidden="true"></div>
+<div class="yearbadge" id="yearbadge" hidden></div>
 <div id="timeline" aria-label="Timeline of events"><div class="tl-title">Timeline</div></div>
 
 <aside id="drawer" class="panel" aria-label="Map layers">
@@ -410,6 +422,10 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
     <div class="sec">
       <h3>Today, from OpenStreetMap</h3>
       <div id="osm-toggles"></div>
+    </div>
+    <div class="sec" id="old-maps-sec" hidden>
+      <h3>Historical maps</h3>
+      <div id="old-maps"></div>
     </div>
     <div class="sec">
       <h3>Display</h3>
@@ -504,6 +520,7 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
 <script src="data/sites.js"></script>
 <script src="data/questions.js"></script>
 <script src="data/areas.js"></script>
+<script src="data/overlays.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

@@ -199,6 +199,36 @@
    ['timeline', 'Timeline bar', 'Computer screens only']].forEach(function (d) {
     $('display-toggles').appendChild(toggleRow(d[0], d[1], d[2], active[d[0]], function (v) { active[d[0]] = v; refresh(); }));
   });
+  /* historical map overlays (see archive/maps/overlays.json) */
+  var OVERLAYS = window.ATLAS_OVERLAYS || [], overlayLayers = {}, overlayOn = store.get('omaps', {}), overlayOpacity = store.get('omapsOp', {});
+  function syncYearBadge() {
+    var on = OVERLAYS.filter(function (o) { return overlayOn[o.id]; });
+    $('yearbadge').hidden = !on.length;
+    $('yearbadge').textContent = on.map(function (o) { return o.year + ' map'; }).join(' · ');
+  }
+  function setOverlay(id, on) {
+    var o = OVERLAYS.filter(function (x) { return x.id === id; })[0]; if (!o) return false;
+    overlayOn[id] = !!on; store.set('omaps', overlayOn);
+    if (!overlayLayers[id]) overlayLayers[id] = L.tileLayer(o.tiles, { bounds: L.latLngBounds(o.bounds), minZoom: 9, maxNativeZoom: o.maxZoom, maxZoom: 19, opacity: overlayOpacity[id] != null ? overlayOpacity[id] : 0.85, attribution: o.attribution, zIndex: 50 });
+    if (on) overlayLayers[id].addTo(map); else map.removeLayer(overlayLayers[id]);
+    if (inputs['om-' + id]) inputs['om-' + id].checked = !!on;
+    syncYearBadge();
+    return true;
+  }
+  if (OVERLAYS.length) {
+    $('old-maps-sec').hidden = false;
+    OVERLAYS.forEach(function (o) {
+      var cb = h('input', { type: 'checkbox', id: 'om-' + o.id }); inputs['om-' + o.id] = cb;
+      var rng = h('input', { type: 'range', min: '0.2', max: '1', step: '0.05', value: String(overlayOpacity[o.id] != null ? overlayOpacity[o.id] : 0.85), 'aria-label': 'See-through amount for the ' + o.year + ' map' });
+      cb.addEventListener('change', function () { setOverlay(o.id, cb.checked); if (cb.checked && !map.getBounds().intersects(o.bounds)) map.flyToBounds(o.bounds, { duration: 0.8 }); });
+      rng.addEventListener('input', function () { overlayOpacity[o.id] = +rng.value; store.set('omapsOp', overlayOpacity); if (overlayLayers[o.id]) overlayLayers[o.id].setOpacity(+rng.value); });
+      $('old-maps').appendChild(h('div', { class: 'omap' }, [
+        h('label', { class: 'row', for: 'om-' + o.id }, [cb, h('span', { class: 't' }, [o.title, h('small', { text: o.note || o.source })]), h('span', { class: 'yr', text: String(o.year) })]),
+        h('div', { class: 'op' }, [h('span', { text: 'See-through' }), rng])
+      ]));
+      if (overlayOn[o.id]) setOverlay(o.id, true);
+    });
+  }
   Object.keys(PERIODS).forEach(function (k) {
     var b = h('button', { 'aria-pressed': periods[k] ? 'true' : 'false', 'data-k': k, text: PERIODS[k] });
     b.addEventListener('click', function () { periods[k] = !periods[k]; b.setAttribute('aria-pressed', periods[k] ? 'true' : 'false'); refresh(); });
@@ -1098,6 +1128,7 @@
       historical_layers_on: onOff(active, Object.keys(LAYERS)),
       historical_layers_off: Object.keys(LAYERS).filter(function (k) { return !active[k]; }),
       today_layers_on: onOff(osmActive, Object.keys(OSM)),
+      historical_maps_available: OVERLAYS.map(function (o) { return o.id + ' (' + o.year + ')'; }), historical_maps_on: OVERLAYS.filter(function (o) { return overlayOn[o.id]; }).map(function (o) { return o.id; }),
       display: { district_names: !!active.districts, uncertainty_rings: !!active.rings, place_names: !!active.labels, grid: !!active.grid, timeline: !!active.timeline },
       zoom: map.getZoom(), center: [+c.lat.toFixed(4), +c.lng.toFixed(4)],
       selected_place: selected || null,
@@ -1226,6 +1257,17 @@
       ui.chips.push(s); ui.log.push('Added a button to open ' + s.name);
       return 'On this phone a button to open ' + s.name + ' was added under your reply.';
     },
+    set_historical_map: function (a) {
+      if (!OVERLAYS.length) return { error: 'No historical maps are available yet.' };
+      if (a.id === 'none' || a.show === false) { OVERLAYS.forEach(function (o) { if (a.id === 'none' || o.id === a.id) setOverlay(o.id, false); }); ui.mapChanged = true; ui.log.push('Historical map hidden'); return 'Historical maps hidden.'; }
+      var o = OVERLAYS.filter(function (x) { return x.id === a.id || String(x.year) === String(a.year); })[0];
+      if (!o) return { error: 'Unknown map. Available: ' + OVERLAYS.map(function (x) { return x.id + ' (' + x.year + ')'; }).join(', ') };
+      setOverlay(o.id, true);
+      if (a.opacity) { overlayOpacity[o.id] = Math.max(0.2, Math.min(1, +a.opacity)); overlayLayers[o.id].setOpacity(overlayOpacity[o.id]); }
+      if (!map.getBounds().intersects(o.bounds)) map.flyToBounds(o.bounds, { duration: 0.8 });
+      ui.mapChanged = true; ui.log.push('Showing the ' + o.year + ' map');
+      return 'Showing ' + o.title + '.';
+    },
     search_archive: function (a) {
       return loadRecords().then(function () {
         var words = String(a.query || '').split(/\s+/).filter(function (w) { return w.length > 2; });
@@ -1261,7 +1303,7 @@
   var STEP_LABEL = { get_map_state: 'Checking the map', search_places: 'Searching the map', get_place: 'Reading place details', describe_spot: 'Looking up the area',
     set_layers: 'Changing layers', set_today_layers: 'Loading present-day layers', set_basemap: 'Changing the map style', set_periods: 'Changing the time period',
     set_display: 'Adjusting the display', fly_to: 'Moving the map', open_place: 'Opening the place', suggest_request: 'Preparing a request',
-    search_archive: 'Searching the archive', get_record: 'Reading a document', get_area: 'Reading the area profile', open_record: 'Opening a document', web_search: 'Searching the web' };
+    search_archive: 'Searching the archive', set_historical_map: 'Laying an old map over the city', get_record: 'Reading a document', get_area: 'Reading the area profile', open_record: 'Opening a document', web_search: 'Searching the web' };
   function runTool(name, input) {
     try {
       var fn = TOOLS[name];

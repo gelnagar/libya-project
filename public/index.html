@@ -216,20 +216,24 @@ table.kv td:first-child { color: var(--muted); width: 40%; }
 /* HUD + timeline (desktop) */
 .hud { position: fixed; z-index: 1040; top: calc(var(--map-top) + 10px); left: 50%; transform: translateX(-50%); font-size: 12.5px; color: var(--muted); background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); padding: 4px 12px; white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none; }
 .hud b { color: var(--text); font-weight: 700; }
-#timeline { position: fixed; z-index: 1030; bottom: 10px; left: 10px; right: 10px; height: 104px; background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); }
+#timeline { position: fixed; z-index: 1030; bottom: 10px; left: 10px; right: 10px; height: 132px; background: rgba(28,33,39,.85); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); }
 body.drawer-open #timeline { left: 360px; }
 body.sheet-open #timeline { right: 440px; }
 #timeline .tl-title { position: absolute; left: 10px; top: 5px; font-size: 12px; font-weight: 700; color: var(--muted); }
-#timeline .tl-axis { position: absolute; left: 14px; right: 14px; bottom: 24px; height: 1px; background: var(--line); }
-#timeline .tl-band { position: absolute; bottom: 24px; height: 64px; background: rgba(76,144,240,.08); border-left: 1px solid rgba(76,144,240,.5); border-right: 1px solid rgba(76,144,240,.5); }
-#timeline .tl-tick { position: absolute; bottom: 4px; transform: translateX(-50%); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+#timeline .tl-axis { position: absolute; height: 1px; background: var(--line); }
+#timeline .tl-band { position: absolute; background: rgba(76,144,240,.07); border-left: 1px solid rgba(76,144,240,.45); border-right: 1px solid rgba(76,144,240,.45); border-radius: 6px; }
+#timeline .tl-tick { position: absolute; transform: translateX(-50%); padding: 0 3px; border: 0; background: none; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; cursor: pointer; }
+#timeline .tl-tick:hover { color: #fff; }
+#timeline .tl-lab { position: absolute; left: 12px; width: 100px; font-size: 11px; font-weight: 700; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#timeline .tl-lane { position: absolute; height: 1px; background: rgba(255,255,255,.07); }
+#timeline .tl-span { position: absolute; height: 5px; border-radius: 3px; opacity: .45; }
 #timeline .tl-bar { position: absolute; bottom: 25px; min-width: 3px; padding: 0; border: 0; border-radius: 3px 3px 0 0; background: rgba(150,170,200,.28); cursor: pointer; }
 #timeline .tl-bar:hover, #timeline .tl-bar:focus-visible { background: rgba(104,193,238,.7); }
-#timeline .tl-hint { position: absolute; left: 80px; top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; right: 12px; font-size: 11px; color: var(--muted); }
-#timeline .tl-dot { position: absolute; z-index: 2; width: 12px; height: 12px; transform: translate(-50%, 50%); border: 2px solid var(--ink); padding: 0; }
+#timeline .tl-hint { position: absolute; left: 118px; right: 12px; top: 4px; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#timeline .tl-dot { position: absolute; z-index: 2; width: 11px; height: 11px; transform: translateX(-50%); border: 2px solid var(--ink); padding: 0; cursor: pointer; }
 #timeline .tl-dot.circle { border-radius: 50%; }
 #timeline .tl-dot.square { border-radius: 0; }
-#timeline .tl-dot.diamond { transform: translate(-50%, 50%) rotate(45deg); }
+#timeline .tl-dot.diamond { transform: translateX(-50%) rotate(45deg); }
 #timeline .tl-dot:hover, #timeline .tl-dot.sel { outline: 2px solid #fff; outline-offset: 1px; }
 
 .status { position: fixed; z-index: 1050; top: calc(var(--map-top) + 48px); left: 50%; transform: translateX(-50%); max-width: calc(100% - 120px); background: var(--panel); color: var(--text); border: 1.5px solid var(--edge); padding: 8px 14px; font-family: var(--f-ui); font-size: .88em; text-align: center; }
@@ -269,16 +273,16 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
   html.has-chat .tip { bottom: calc(var(--chat-h) + 12px); }
 }
 @media (min-width: 900px) {
-  .chat { left: 10px; right: 10px; bottom: 124px; max-width: 640px; margin: 0 auto; }
+  .chat { left: 10px; right: 10px; bottom: 148px; max-width: 640px; margin: 0 auto; }
   body.drawer-open .chat { left: 360px; }
   body.sheet-open .chat { right: 440px; }
   body.no-timeline .chat { bottom: 10px; }
   body.chat-open .chat { height: min(60vh, 560px); }
-  html.has-chat .tip { bottom: 200px; }
+  html.has-chat .tip { bottom: 224px; }
 }
 .tip { position: fixed; z-index: 1200; left: 12px; right: 12px; bottom: calc(16px + var(--bot)); max-width: 480px; margin: 0 auto; background: var(--panel); color: var(--text); border: 1.5px solid var(--edge); border-left: 6px solid var(--accent); padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
 .tip p { margin: 0; flex: 1; }
-@media (min-width: 900px) { .tip { bottom: 130px; } }
+@media (min-width: 900px) { .tip { bottom: 154px; } }
 
 .modal { position: fixed; inset: 0; z-index: 1300; background: rgba(0,0,0,.65); display: grid; place-items: center; padding: 16px; }
 .modal.float { background: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; pointer-events: none; place-items: start center; padding-top: 80px; }
@@ -322,7 +326,8 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
 .ai textarea, .field input, .chat-form input, .msg.req input, .msg.req textarea { background: rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.26); border-radius: 14px; box-shadow: inset 0 1px 3px rgba(0,0,0,.35); }
 .chat-form { padding: 10px; }
 .tag { border-radius: 8px; background: rgba(255,255,255,.1); }
-.glyph.square, .mk.square, .osm-ic, #timeline .tl-dot.square { border-radius: 8px; }
+.glyph.square, .mk.square, .osm-ic { border-radius: 8px; }
+#timeline .tl-dot.square { border-radius: 3px; }
 .mk.square { border-radius: 9px; }
 .credit { -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); background: rgba(251,179,96,.82); box-shadow: inset 0 -1px 0 rgba(255,255,255,.35); }
 .credit.out { background: rgba(250,153,156,.82); }
@@ -393,6 +398,32 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
 .swipe::after { content: '⇆'; position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; display: grid; place-items: center; background: rgba(26,32,40,.75); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.5); color: #fff; font: 700 20px var(--f-ui); }
 .swipe span { position: absolute; top: 12px; font: 700 12px var(--f-ui); padding: 3px 8px; border-radius: 8px; background: rgba(26,32,40,.75); color: #fff; white-space: nowrap; }
 .swipe .swipe-l { right: 10px; } .swipe .swipe-r { left: 10px; }
+
+/* grouped layer chooser */
+.grp-help { margin: 0 0 8px; font-size: .82em; color: var(--muted); line-height: 1.4; }
+.k-then, .k-now { display: inline-block; padding: 0 6px; border-radius: 6px; font-weight: 700; font-size: .9em; }
+.k-then { background: rgba(245,73,139,.22); color: #ffc4da; }
+.k-now { background: rgba(104,193,238,.2); color: #c4ecff; }
+.grp { padding: 8px 0 10px; border-bottom: 1px solid var(--line); }
+.grp-head { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 44px; padding: 0; border: 0; background: none; text-align: left; color: inherit; font: inherit; cursor: pointer; }
+.grp-head .box { flex: none; width: 24px; height: 24px; border-radius: 7px; border: 1.5px solid rgba(255,255,255,.45); display: grid; place-items: center; font-size: 15px; font-weight: 800; line-height: 1; }
+.grp-head[data-state="all"] .box { background: var(--accent); border-color: var(--accent); }
+.grp-head[data-state="some"] .box { background: rgba(76,144,240,.45); border-color: var(--accent); }
+.grp-head .gt { flex: 1; min-width: 0; font-family: var(--f-ui); font-weight: 700; line-height: 1.25; }
+.grp-head .gt small { display: block; font-weight: 400; color: var(--muted); font-size: .8em; }
+.grp-parts { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 0 34px; }
+.grp-parts button { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 10px; border-radius: 12px; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.06); color: inherit; font-family: var(--f-ui); font-size: .82em; font-weight: 600; cursor: pointer; }
+.grp-parts button[aria-pressed="true"] { background: rgba(76,144,240,.36); border-color: rgba(150,195,255,.8); }
+.grp-parts .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.grp-parts .tm { font-size: .78em; font-weight: 700; padding: 0 4px; border-radius: 5px; }
+.grp-parts .tm.then { background: rgba(245,73,139,.25); color: #ffc4da; }
+.grp-parts .tm.now { background: rgba(104,193,238,.22); color: #c4ecff; }
+@media (max-width: 899px) { .grp-head .gt small { display: none; } .grp-parts button { min-height: 34px; } .grp-parts { margin-left: 34px; } }
+details.more { border-top: 1.5px solid var(--edge); padding-top: 4px; }
+details.more > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-family: var(--f-text); font-weight: 600; font-size: 1.05em; list-style: none; }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::after { content: '+'; margin-left: auto; font-size: 1.3em; color: var(--muted); }
+details.more[open] > summary::after { content: '–'; }
 </style>
 </head>
 <body>
@@ -427,25 +458,24 @@ html.has-chat { --chat-h: calc(66px + var(--bot)); }
       <div class="chips" id="periods"></div>
     </div>
     <div class="sec">
-      <h3>History</h3>
-      <div id="hist-toggles"></div>
+      <h3>What to show</h3>
+      <p class="grp-help">Tap a heading to switch the whole group. Tap the small buttons to pick parts of it. <span class="k-then">Then</span> means 1969–2011 research, <span class="k-now">Now</span> means today’s map data.</p>
+      <div id="groups"></div>
+      <div id="hist-toggles" hidden></div>
+      <div id="osm-toggles" hidden></div>
     </div>
-    <div class="sec">
-      <h3>Today, from OpenStreetMap</h3>
-      <div id="osm-toggles"></div>
-    </div>
-    <div class="sec">
-      <h3>Display</h3>
+    <details class="sec more">
+      <summary>Display options</summary>
       <div id="display-toggles"></div>
-    </div>
-    <div class="sec">
-      <h3>All places, by year</h3>
+    </details>
+    <details class="sec more">
+      <summary>All mapped events, by year</summary>
       <div class="places" id="places"></div>
-    </div>
-    <div class="sec">
-      <h3>Known activity without a map location</h3>
+    </details>
+    <details class="sec more">
+      <summary>Known but not on the map</summary>
       <div class="unplaced" id="unplaced"></div>
-    </div>
+    </details>
     <div class="row-btns"><button class="btn" id="reset-view">Show all of Tripoli</button><button class="btn" id="btn-settings-2">Settings</button></div>
   </div>
 </aside>

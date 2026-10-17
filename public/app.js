@@ -278,7 +278,7 @@
   });
   function ensureVisible(s) {
     var changed = false;
-    if (!active[s.layer]) { active[s.layer] = true; inputs[s.layer].checked = true; changed = true; }
+    if (!active[s.layer]) { active[s.layer] = true; inputs[s.layer].checked = true; changed = true; if (typeof syncGroups === 'function') setTimeout(syncGroups, 0); }
     if (!inPeriod(s)) {
       var r = span(s), k = r[0] < 1969 ? 'pre' : r[0] > 1989 ? 'post' : 'main';
       periods[k] = true; document.querySelector('#periods [data-k="' + k + '"]').setAttribute('aria-pressed', 'true'); changed = true;
@@ -300,37 +300,43 @@
   }
 
   /* ---------- timeline (desktop) ---------- */
+  /* timeline: one lane per subject, years run left to right; spans show how long a place was in use */
   function tx(y) {
-    if (y < 1969) return 0.14 * Math.max(0, y - 1905) / 64;
-    if (y <= 1989) return 0.14 + 0.72 * (y - 1969) / 20;
-    return 0.86 + 0.14 * (Math.min(y, 2012) - 1989) / 23;
+    if (y < 1969) return 0.10 * Math.max(0, y - 1905) / 64;
+    if (y <= 2012) return 0.10 + 0.82 * (y - 1969) / 43;
+    return 0.92 + 0.08 * (Math.min(y, 2026) - 2012) / 14;
   }
   function pos(f) { return 'calc(14px + ' + f.toFixed(4) + ' * (100% - 28px))'; }
+  var TL_LANES = [['Prisons & security', ['detention', 'security']], ['Military', ['military', 'airstrike']], ['Killings', ['massacre']], ['Power', ['power']], ['Landmarks', ['landmark']]];
   function drawTimeline() {
     var tl = $('timeline');
-    tl.querySelectorAll('.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-bar,.tl-hint').forEach(function (e) { e.remove(); });
-    var W = Math.max(200, tl.clientWidth - 28);
-    var yearX = function (y) { return tx(y) * W; };
-    /* documents per year, drawn as bars behind the events; tap a bar to search that year */
-    if (RECORDS) {
-      var counts = {}, max = 1;
-      RECORDS.forEach(function (r) { var y = +(r.d || '0').slice(0, 4); if (y >= 1905 && y <= 2011 && r.y !== 'event') { counts[y] = (counts[y] || 0) + 1; if (counts[y] > max) max = counts[y]; } });
-      Object.keys(counts).forEach(function (k) {
-        var y = +k, left = yearX(y), w = Math.max(3, yearX(y + 1) - left - 2);
-        tl.appendChild(h('button', { class: 'tl-bar', title: y + ': ' + counts[y] + ' document' + (counts[y] === 1 ? '' : 's') + '. Tap to search.', 'aria-label': y + ', ' + counts[y] + ' documents',
-          style: 'left:' + (14 + left).toFixed(1) + 'px;width:' + w.toFixed(1) + 'px;height:' + Math.max(3, Math.round(46 * Math.sqrt(counts[y] / max))) + 'px', onclick: function () { openTerm(String(y)); } }));
+    tl.querySelectorAll('.tl-lane,.tl-lab,.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-span,.tl-bar,.tl-hint').forEach(function (e) { e.remove(); });
+    var L0 = 118, R0 = 14, W = Math.max(200, tl.clientWidth - L0 - R0), TOP = 27, LH = 15;
+    var X = function (y) { return L0 + tx(y) * W; };
+    tl.appendChild(h('div', { class: 'tl-band', style: 'left:' + X(1969).toFixed(1) + 'px;width:' + (X(2011.7) - X(1969)).toFixed(1) + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 6) + 'px', title: 'Gaddafi era, 1969–2011' }));
+    TL_LANES.forEach(function (lane, li) {
+      var y = TOP + li * LH;
+      tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (y - 1) + 'px', text: lane[0] }));
+      tl.appendChild(h('div', { class: 'tl-lane', style: 'top:' + (y + 6) + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
+      var used = {};
+      SITES.filter(function (s) { return lane[1].indexOf(s.layer) >= 0 && s.y0 != null && visible(s); }).sort(function (a, b) { return a.y0 - b.y0; }).forEach(function (s) {
+        var lay = LAYERS[s.layer], x0 = X(s.y0);
+        if (s.y1 != null && s.y1 > s.y0) {
+          tl.appendChild(h('div', { class: 'tl-span', title: s.name + ', ' + s.y0 + '–' + s.y1, style: 'left:' + x0.toFixed(1) + 'px;width:' + Math.max(2, X(s.y1) - x0).toFixed(1) + 'px;top:' + (y + 4) + 'px;background:' + lay.color }));
+        }
+        var slot = Math.round(x0 / 9), n = 0; while (used[slot + n]) n++; used[slot + n] = 1;
+        tl.appendChild(h('button', { class: 'tl-dot ' + lay.shape + (selected === s.id ? ' sel' : ''), title: s.y0 + (s.y1 && s.y1 > s.y0 ? '–' + s.y1 : '') + ' · ' + s.name, 'aria-label': s.y0 + ', ' + s.name,
+          style: 'left:' + (x0 + n * 9).toFixed(1) + 'px;top:' + (y + 1) + 'px;background:' + lay.color, onclick: function () { focusSite(s); } }));
       });
-    }
-    tl.appendChild(h('div', { class: 'tl-axis' }));
-    tl.appendChild(h('div', { class: 'tl-band', style: 'left:' + pos(tx(1969)) + ';width:calc(' + (tx(1989) - tx(1969)).toFixed(4) + ' * (100% - 28px))' }));
-    [1911, 1945, 1969, 1974, 1979, 1984, 1989, 1996, 2011].forEach(function (y) { tl.appendChild(h('div', { class: 'tl-tick', style: 'left:' + pos(tx(y)), text: String(y) })); });
-    var stack = {};
-    SITES.filter(function (s) { return s.y0 != null && visible(s); }).sort(function (a, b) { return a.y0 - b.y0; }).forEach(function (s) {
-      var lay = LAYERS[s.layer], n = stack[s.y0] = (stack[s.y0] || 0) + 1;
-      tl.appendChild(h('button', { class: 'tl-dot ' + lay.shape + (selected === s.id ? ' sel' : ''), title: s.y0 + ' · ' + s.name, 'aria-label': s.y0 + ', ' + s.name,
-        style: 'left:calc(' + pos(tx(s.y0)).slice(5, -1) + ' + ' + (Math.floor((n - 1) / 4) * 14) + 'px);bottom:' + (30 + ((n - 1) % 4) * 13) + 'px;background:' + lay.color, onclick: function () { focusSite(s); } }));
     });
-    tl.appendChild(h('div', { class: 'tl-hint', text: 'Dots: places on the map. Bars: documents per year (tap one to search it).' }));
+    var axisY = TOP + TL_LANES.length * LH + 4;
+    tl.appendChild(h('div', { class: 'tl-axis', style: 'top:' + axisY + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
+    var last = -99;
+    [1911, 1945, 1951, 1969, 1975, 1980, 1985, 1990, 1996, 2000, 2005, 2011, 2020].forEach(function (yr) {
+      var x = X(yr); if (x - last < 34) return; last = x;
+      tl.appendChild(h('button', { class: 'tl-tick', style: 'left:' + x.toFixed(1) + 'px;top:' + (axisY + 3) + 'px', text: String(yr), title: 'Search the archive for ' + yr, onclick: function () { openTerm(String(yr)); } }));
+    });
+    tl.appendChild(h('div', { class: 'tl-hint', text: 'Tap a dot to see the place · bars show how long it was in use · tap a year to search documents' }));
   }
   window.addEventListener('resize', function () { clearTimeout(drawTimeline.t); drawTimeline.t = setTimeout(drawTimeline, 150); });
 
@@ -616,7 +622,7 @@
   function openPanel(id) {
     $(id).classList.add('open');
     if (id === 'sheet') { $('sheet-body').scrollTop = 0; requestAnimationFrame(function () { $('sheet-body').scrollTop = 0; }); }
-    if (id === 'drawer') $('btn-layers').setAttribute('aria-expanded', 'true');
+    if (id === 'drawer') { $('btn-layers').setAttribute('aria-expanded', 'true'); syncGroups(); }
     if (!DESKTOP.matches) { if (id === 'sheet') closePanel('drawer'); if (id === 'drawer') closePanel('sheet'); if (!$('chat-panel').hidden) closeChat(); }
     syncBody();
   }
@@ -1229,10 +1235,55 @@
       visible_places: SITES.filter(visible).length + ' of ' + SITES.length
     });
   }
+
+  /* ---------- grouped layer chooser: history and today side by side, one row per subject ---------- */
+  var GROUPS = [
+    { t: 'Prisons, police & security', n: 'Prisons, security services, police', parts: [['detention', 'Prisons', 'then'], ['security', 'Security services', 'then'], ['osm-police', 'Police stations', 'now']] },
+    { t: 'Military & weapons', n: 'Bases, camps, missile and weapons sites', parts: [['military', 'Bases', 'then'], ['osm-military', 'Military areas', 'now']] },
+    { t: 'Killings & attacks', n: 'Massacres, executions, the 1986 raid', parts: [['massacre', 'Massacres', 'then'], ['airstrike', '1986 US raid', 'then']] },
+    { t: 'Power & government', n: "Gaddafi's compounds, ministries, courts, embassies", parts: [['power', 'Seats of power', 'then'], ['osm-govt', 'Offices & courts', 'now'], ['osm-embassies', 'Embassies', 'now']] },
+    { t: 'Landmarks & history', n: 'Squares, old city, researched buildings, monuments', parts: [['landmark', 'Events & squares', 'then'], ['profiles', 'Researched buildings', 'then'], ['osm-sights', 'Monuments & sights', 'now'], ['osm-mosques', 'Mosques', 'now'], ['osm-cemeteries', 'Cemeteries', 'now']] },
+    { t: 'Hospitals & universities', n: 'Health and education today', parts: [['osm-hospitals', 'Hospitals', 'now'], ['osm-schools', 'Universities', 'now']] },
+    { t: 'The city today', n: 'Zones, buildings, water, oil', parts: [['osm-landuse', 'Zones', 'now'], ['osm-buildings', 'Buildings', 'now'], ['osm-water', 'Water', 'now'], ['osm-oil', 'Oil & gas', 'now']] }
+  ];
+  var groupEls = [];
+  function partColor(k) { if (LAYERS[k]) return LAYERS[k].color; if (k === 'profiles') return '#e0b95a'; var o = OSM[k.replace(/^osm-/, '')]; return o ? (o.point || o.swatch) : '#888'; }
+  function syncGroups() {
+    (groupEls || []).forEach(function (g) {
+      var on = 0;
+      g.btns.forEach(function (b) { var i = inputs[b.dataset.k]; var v = !!(i && i.checked); if (v) on++; b.setAttribute('aria-pressed', v ? 'true' : 'false'); });
+      var st = on === 0 ? 'none' : on === g.btns.length ? 'all' : 'some';
+      g.head.dataset.state = st; g.box.textContent = st === 'all' ? '✓' : st === 'some' ? '–' : '';
+      g.head.setAttribute('aria-pressed', st === 'none' ? 'false' : st === 'all' ? 'true' : 'mixed');
+    });
+  }
+  function setInput(k, v) { var i = inputs[k]; if (i && i.checked !== v) i.click(); }
+  function buildGroups() {
+    var box = $('groups'); if (!box) return;
+    GROUPS.forEach(function (g) {
+      var parts = g.parts.filter(function (p) { return inputs[p[0]]; });
+      if (!parts.length) return;
+      var btns = parts.map(function (p) {
+        var b = h('button', { 'data-k': p[0], 'aria-pressed': 'false', title: p[2] === 'then' ? 'Research on 1969–2011 and earlier' : 'Today’s OpenStreetMap data' },
+          [h('span', { class: 'dot', style: 'background:' + partColor(p[0]) }), p[1], h('span', { class: 'tm ' + p[2], text: p[2] === 'then' ? 'Then' : 'Now' })]);
+        b.addEventListener('click', function () { setInput(p[0], !inputs[p[0]].checked); syncGroups(); });
+        inputs[p[0]].addEventListener('change', syncGroups);
+        return b;
+      });
+      var boxEl = h('span', { class: 'box', 'aria-hidden': 'true' });
+      var head = h('button', { class: 'grp-head', 'aria-pressed': 'false' }, [boxEl, h('span', { class: 'gt' }, [g.t, h('small', { text: g.n })])]);
+      head.addEventListener('click', function () { var turnOn = head.dataset.state !== 'all'; parts.forEach(function (p) { setInput(p[0], turnOn); }); syncGroups(); });
+      box.appendChild(h('div', { class: 'grp' }, [head, h('div', { class: 'grp-parts' }, btns)]));
+      groupEls.push({ head: head, box: boxEl, btns: btns });
+    });
+    syncGroups();
+  }
+  setTimeout(buildGroups, 0);
   function syncInputs() {
     Object.keys(LAYERS).concat(['districts', 'rings', 'labels', 'grid', 'timeline']).forEach(function (k) { if (inputs[k]) inputs[k].checked = !!active[k]; });
     Object.keys(OSM).forEach(function (k) { if (inputs['osm-' + k]) inputs['osm-' + k].checked = !!osmActive[k]; });
     Object.keys(PERIODS).forEach(function (k) { var b = document.querySelector('#periods [data-k="' + k + '"]'); if (b) b.setAttribute('aria-pressed', periods[k] ? 'true' : 'false'); });
+    syncGroups();
   }
   function visibleNames() { var v = SITES.filter(visible); return v.length ? v.map(function (s) { return s.name; }).join('; ') : 'none'; }
   function brief(s) { return { id: s.id, name: s.name, category: LAYERS[s.layer].label, when: s.period, visible: visible(s) }; }

@@ -1,0 +1,47 @@
+name: Probe source sites
+on: { workflow_dispatch: {}, push: { branches: [main], paths: [scripts/probe.mjs, .github/workflows/probe.yml] } }
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: >
+          node scripts/probe.mjs
+          https://www.cia.gov/readingroom/docs/CIA-RDP90-00965R000807600013-0.pdf
+          https://www.cia.gov/readingroom/document/cia-rdp90-00965r000807600013-0
+          "https://www.cia.gov/readingroom/search/site/Tripoli%20Libya"
+          http://countrystudies.us/libya/
+          https://tile.loc.gov/storage-services/master/frd/frdcstdy/li/libyacountrystud00metz/libyacountrystud00metz.pdf
+          "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Tripoli%20Libya%201986&format=json"
+          https://www.reaganlibrary.gov/
+          https://digitallibrary.un.org/search?p=Libya
+          https://www.amnesty.org/en/documents/mde19/001/1987/en/
+          "https://archive.org/advancedsearch.php?q=libya+tripoli&fl[]=identifier&rows=5&output=json"
+          https://nsarchive.gwu.edu/
+          https://maps.lib.utexas.edu/maps/ams/libya_city_plans/
+          "https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=Tripoli%20map%201911&srnamespace=6&format=json"
+          https://mapwarper.net/maps?q=tripoli
+          https://www.davidrumsey.com/luna/servlet/view/search?q=tripoli
+          https://chroniclingamerica.loc.gov/search/pages/results/?andtext=tripoli+libya&format=json
+          https://www.loc.gov/maps/?q=tripoli+libya&fo=json
+          https://gallica.bnf.fr/services/engine/search/sru?operation=searchRetrieve&query=%28gallica%20all%20%22tripoli%22%29
+          https://www.e-periodica.ch/
+          https://news.google.com/newspapers
+          https://catalog.archives.gov/api/v2/records/search?q=tripoli%20libya
+          https://www.nationalarchives.gov.uk/
+          https://discovery.nationalarchives.gov.uk/
+          https://www.margaretthatcher.org/search?w=libya
+          https://www.wilsoncenter.org/
+          https://digitalarchive.wilsoncenter.org/search?q=libya
+          https://apps.dtic.mil/sti/citations/ADA000001
+          https://earthexplorer.usgs.gov/
+          https://www.fbi.gov/
+          https://vault.fbi.gov/
+          https://www.nsa.gov/
+          https://www.state.gov/
+          https://www.globalsecurity.org/
+          https://www.refworld.org/
+          https://hrsly.com/en/
+          https://libyaherald.com/

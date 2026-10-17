@@ -8,11 +8,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p public/img
-          curl -sSL -A "TripoliOpenSource/1.0 (github.com/gelnagar/libya-project)" -o public/img/gaddafi-thumb.jpg "https://commons.wikimedia.org/wiki/Special:FilePath/Muammar_al-Gaddafi,_12th_AU_Summit,_090202-N-0506A-534_cropped.jpg?width=240"
-          file public/img/gaddafi-thumb.jpg; ls -la public/img
+          mkdir -p public/img archive/research
+          UA="TripoliOpenSource/1.0 (github.com/gelnagar/libya-project)"
+          curl -sS -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&iiurlwidth=600&titles=File:Muammar_Gaddafi_in_1972.jpg%7CFile:Muammar_Gaddafi_in_1972_(cropped).jpg" -o archive/research/photo-meta.json
+          python3 - <<'PY'
+          import json
+          d=json.load(open('archive/research/photo-meta.json'))
+          for p in d['query']['pages'].values():
+              ii=(p.get('imageinfo') or [{}])[0]; m=ii.get('extmetadata',{})
+              print(p['title'], ii.get('width'), ii.get('height'), '|', m.get('LicenseShortName',{}).get('value'), '|', m.get('Artist',{}).get('value','')[:120], '|', m.get('DateTimeOriginal',{}).get('value'), '|', ii.get('thumburl'))
+          PY
+          curl -sSL -A "$UA" -o public/img/gaddafi-1972.jpg "https://commons.wikimedia.org/wiki/Special:FilePath/Muammar_Gaddafi_in_1972.jpg?width=600"
+          file public/img/gaddafi-1972.jpg
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/img
-          if git diff --cached --quiet; then echo none; else git commit -m "Add thumbnail photo (U.S. Navy, public domain)" && git pull --rebase && git push; fi
+          git add public/img archive/research/photo-meta.json
+          if git diff --cached --quiet; then echo none; else git commit -m "Candidate 1972 photo and licence data" && git pull --rebase && git push; fi

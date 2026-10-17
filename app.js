@@ -158,6 +158,7 @@
     var z = map.getZoom(), el = map.getContainer();
     el.classList.toggle('hide-labels', !active.labels || z < 14);
     el.classList.toggle('hide-districts', z < 12);
+    el.classList.toggle('hide-osm-icons', z < 13);
   }
   map.on('zoomend', zoomClasses);
 
@@ -263,6 +264,13 @@
       q: function (b) { return '(node["man_made"="petroleum_well"](' + b + ');way["man_made"="petroleum_well"](' + b + ');way["industrial"~"^(oil|refinery|fuel)$"](' + b + ');node["industrial"~"^(oil|refinery)$"](' + b + ');way["man_made"="storage_tank"]["content"~"oil|fuel|petrol|gas"](' + b + '););out geom 1500;'; },
       style: function () { return { color: '#d0b090', weight: 1.5, fillColor: '#d0b090', fillOpacity: 0.3 }; }, point: '#d0b090' }
   };
+  var OSM_ICONS = {
+    military: '<path d="M12 2 4 5v6c0 5.2 3.4 9.4 8 11 4.6-1.6 8-5.8 8-11V5z"/>',
+    water: '<path d="M12 2s-7 8-7 12.5a7 7 0 0 0 14 0C19 10 12 2 12 2z"/>',
+    oil: '<path fill-rule="evenodd" d="M12 2 5 22h3l1.5-5h5l1.5 5h3zm-1.8 12.5L12 8.5l1.8 6z"/>'
+  };
+  function osmIconHtml(k) { return '<div class="osm-ic" style="--c:' + OSM[k].point + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + OSM_ICONS[k] + '</svg></div>'; }
+  function osmIcon(k) { return L.divIcon({ className: '', iconSize: [26, 26], iconAnchor: [13, 13], html: osmIconHtml(k) }); }
   var ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
   var osmActive = store.get('osm', {});
   var osmGroups = {}, osmCache = {}, osmAbort = {}, savedData = {}, savedState = {};
@@ -270,7 +278,7 @@
   Object.keys(OSM).forEach(function (k) {
     osmGroups[k] = L.layerGroup();
     var o = OSM[k];
-    var sw = h('span', { class: 'glyph square', style: 'background:' + (o.point || o.swatch) });
+    var sw = OSM_ICONS[k] ? h('span', { class: 'glyph', html: osmIconHtml(k) }) : h('span', { class: 'glyph square', style: 'background:' + (o.point || o.swatch) });
     $('osm-toggles').appendChild(toggleRow('osm-' + k, o.label, o.note, osmActive[k], function (v) {
       osmActive[k] = v; store.set('osm', osmActive);
       if (!v) { map.removeLayer(osmGroups[k]); if (osmAbort[k]) osmAbort[k].abort(); if (k !== 'buildings' && (!o.saved || savedState[k] === 'missing')) osmGroups[k].clearLayers(); }
@@ -328,8 +336,10 @@
     g.clearLayers();
     (data.elements || []).forEach(function (el) {
       var t = el.tags || {}, shape = null;
+      var center = null;
       if (el.type === 'node') {
-        shape = L.circleMarker([el.lat, el.lon], { renderer: canvas, radius: 7, color: '#111418', weight: 2, fillColor: o.point || '#fff', fillOpacity: 1 });
+        shape = OSM_ICONS[k] ? L.marker([el.lat, el.lon], { icon: osmIcon(k), keyboard: false, title: KIND[k](t) })
+          : L.circleMarker([el.lat, el.lon], { renderer: canvas, radius: 7, color: '#111418', weight: 2, fillColor: o.point || '#fff', fillOpacity: 1 });
       } else if (el.type === 'way' && el.geometry) {
         var pts = el.geometry.map(function (p) { return [p.lat, p.lon]; });
         var closed = pts.length > 3 && pts[0][0] === pts[pts.length - 1][0] && pts[0][1] === pts[pts.length - 1][1];
@@ -338,7 +348,17 @@
         var rs = el.members.filter(function (m) { return m.geometry && m.role !== 'inner'; }).map(function (m) { return m.geometry.map(function (p) { return [p.lat, p.lon]; }); });
         if (rs.length) shape = L.polygon(rs, Object.assign({ renderer: canvas }, o.style(t)));
       }
-      if (shape) { shape.on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openFeature(k, el); }); shape.addTo(g); }
+      if (shape) {
+        var open = function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openFeature(k, el); };
+        shape.on('click', open); shape.addTo(g);
+        if (OSM_ICONS[k] && el.type !== 'node') {
+          var pts2 = el.type === 'way' ? el.geometry : [].concat.apply([], el.members.filter(function (m) { return m.geometry; }).map(function (m) { return m.geometry; }));
+          if (pts2.length) {
+            center = L.latLngBounds(pts2.map(function (p) { return [p.lat, p.lon]; })).getCenter();
+            L.marker(center, { icon: osmIcon(k), keyboard: false, title: KIND[k](t), zIndexOffset: -500 }).on('click', open).addTo(g);
+          }
+        }
+      }
     });
   }
   var osmTimer;

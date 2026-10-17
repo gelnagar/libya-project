@@ -5,6 +5,7 @@
   var LAYERS = window.ATLAS_LAYERS, LEVELS = window.ATLAS_LEVELS, SITES = window.ATLAS_SITES;
   var QS = window.ATLAS_QUESTIONS || {}, SPOTQ = window.ATLAS_SPOT_QUESTIONS || [], FEATQ = window.ATLAS_FEATURE_QUESTIONS || {};
   var LINKS = window.ATLAS_LINKS || [], UNPLACED = window.ATLAS_UNPLACED || [], DISTRICTS = window.ATLAS_DISTRICTS;
+  var OWNER = CFG.ownerName || 'the person who shared this map';
   var HOME = L.latLngBounds([32.79, 13.08], [32.91, 13.30]);
   var DESKTOP = window.matchMedia('(min-width: 900px)');
   var BY_ID = {};
@@ -147,6 +148,7 @@
     if (active.districts) districtLayer.addTo(map); else map.removeLayer(districtLayer);
     if (active.grid) gridLayer.addTo(map); else map.removeLayer(gridLayer);
     $('timeline').hidden = !active.timeline;
+    document.body.classList.toggle('no-timeline', !active.timeline);
     zoomClasses();
     drawTimeline();
     if (selected) markSelected(selected);
@@ -340,7 +342,7 @@
     $(id).classList.add('open');
     if (id === 'sheet') { $('sheet-body').scrollTop = 0; requestAnimationFrame(function () { $('sheet-body').scrollTop = 0; }); }
     if (id === 'drawer') $('btn-layers').setAttribute('aria-expanded', 'true');
-    if (!DESKTOP.matches) { if (id === 'sheet') closePanel('drawer'); if (id === 'drawer') closePanel('sheet'); }
+    if (!DESKTOP.matches) { if (id === 'sheet') closePanel('drawer'); if (id === 'drawer') closePanel('sheet'); if (!$('chat-panel').hidden) closeChat(); }
     syncBody();
   }
   function closePanel(id) {
@@ -536,8 +538,8 @@
     if (!c || !c.tracked || !c.low || creditHidden) { b.hidden = true; fitBanner(); return; }
     b.classList.toggle('out', !!c.out);
     $('credit-msg').textContent = c.out
-      ? 'AI answers are paused: the AI credit has run out. Let the person who shared this map know.'
-      : 'AI credit is running low: about $' + Number(c.remaining).toFixed(2) + ' left. Let the person who shared this map know.';
+      ? 'AI answers are paused: the AI credit has run out. Let ' + OWNER + ' know.'
+      : 'AI credit is running low: about $' + Number(c.remaining).toFixed(2) + ' left. Let ' + OWNER + ' know.';
     b.hidden = false; fitBanner();
   }
   window.addEventListener('resize', fitBanner);
@@ -588,6 +590,117 @@
     }
     btn.addEventListener('click', ask);
     return h('div', { class: 'ai' }, [h('h3', { style: 'margin:0;font:500 .7em var(--f-data);letter-spacing:.14em;text-transform:uppercase;color:#8abbff', text: 'Ask AI · tap a question' }), sugg, q, pwWrap, btn, asked, out]);
+  }
+
+  /* ---------- chat guide ---------- */
+  var chatHistory = [];
+  var CATALOG = SITES.map(function (s) { return [s.id, s.name, LAYERS[s.layer].label, s.period, s.relevance].join(' | '); }).join('\n') +
+    '\nKnown but with no map location: ' + UNPLACED.map(function (u) { return u.name + ' (' + u.when + ')'; }).join('; ');
+  var STARTERS = ['Where were political prisoners held?', 'What happened in the 1986 US air raid?', 'Show me the massacres on the map', 'What was life like under the Revolutionary Committees?'];
+  function scrollChat() { var l = $('chat-log'); l.scrollTop = l.scrollHeight; }
+  function bubble(role, text) {
+    var m = h('div', { class: 'msg ' + (role === 'user' ? 'me' : 'bot') }, [h('p', { text: text })]);
+    $('chat-log').appendChild(m); scrollChat();
+    return m;
+  }
+  function openChat() {
+    if ($('chat-panel').hidden) {
+      $('chat-panel').hidden = false; document.body.classList.add('chat-open');
+      if (!DESKTOP.matches) { closePanel('drawer'); closePanel('sheet'); }
+      if (!$('chat-log').children.length) greet();
+    }
+    scrollChat();
+  }
+  function closeChat() { $('chat-panel').hidden = true; document.body.classList.remove('chat-open'); $('chat-input').blur(); }
+  function greet() {
+    var m = bubble('bot', 'Ask me anything about Tripoli between 1969 and 1989. I can show places on the map, and if something isn’t here yet I can help you ask ' + OWNER + ' to look into it.');
+    var box = h('div', { class: 'acts' });
+    STARTERS.forEach(function (t) { box.appendChild(h('button', { class: 'act', text: t, onclick: function () { send(t); } })); });
+    m.appendChild(box);
+  }
+  function codeCard(after) {
+    var input = h('input', { type: 'password', autocomplete: 'off', autocapitalize: 'none', 'aria-label': 'Family password' });
+    var card = h('div', { class: 'msg bot' }, [h('p', { text: 'Type the family password first. You only need to do this once.' }), h('div', { class: 'field' }, [input]),
+      h('button', { class: 'btn primary', text: 'Continue', onclick: function () { var c = input.value.trim(); if (!c) { input.focus(); return; } store.set('code', c); card.remove(); after(); } })]);
+    $('chat-log').appendChild(card); scrollChat(); input.focus();
+  }
+  function requestCard(title, details) {
+    var t = h('input', { type: 'text', value: title || '', placeholder: 'What should be looked into?', 'aria-label': 'Request title' });
+    var d = h('textarea', { placeholder: 'Details: names, places, years, anything you remember', 'aria-label': 'Request details' });
+    d.value = details || '';
+    var n = h('input', { type: 'text', value: store.get('name', ''), placeholder: 'Your name (optional)', 'aria-label': 'Your name' });
+    var msg = h('small', { 'aria-live': 'polite' });
+    var go = h('button', { class: 'btn primary', text: 'Send to ' + OWNER });
+    var card = h('div', { class: 'msg bot req' }, [h('b', { text: 'Ask ' + OWNER + ' to investigate or add this' }), h('div', { class: 'field' }, [t]), h('div', { class: 'field' }, [d]), h('div', { class: 'field' }, [n]), go, msg]);
+    go.addEventListener('click', function () {
+      var code = store.get('code', '');
+      if (!code) { codeCard(function () { go.click(); }); return; }
+      if (!t.value.trim() && !d.value.trim()) { msg.textContent = 'Write a few words about what to look into.'; return; }
+      store.set('name', n.value.trim());
+      go.disabled = true; msg.textContent = 'Sending…';
+      var lastQ = chatHistory.filter(function (x) { return x.role === 'user'; }).slice(-1)[0];
+      relay(code, { request: { title: t.value.trim(), details: d.value.trim(), name: n.value.trim(), context: lastQ ? lastQ.content : '' } })
+        .then(function () { card.innerHTML = ''; card.appendChild(h('p', { text: 'Sent. ' + OWNER + ' will see your request: “' + (t.value.trim() || d.value.trim().slice(0, 60)) + '”' })); scrollChat(); })
+        .catch(function (e) { go.disabled = false; msg.textContent = e.code === 503 ? 'Requests are not switched on yet. Please tell ' + OWNER + ' directly.' : e.code === 401 ? 'The family password was not accepted.' : 'Could not send right now. Try again in a moment.'; });
+    });
+    $('chat-log').appendChild(card); scrollChat();
+    return card;
+  }
+  function doActions(m, actions) {
+    var box = h('div', { class: 'acts' }), placed = 0;
+    (actions || []).forEach(function (a) {
+      var inp = a.input || {};
+      if (a.type === 'show_place' && BY_ID[inp.id]) {
+        var s = BY_ID[inp.id];
+        ensureVisible(s);
+        if (placed++ === 0) { map.flyTo([s.lat, s.lon], Math.max(map.getZoom(), 14), { duration: 0.8 }); markSelected(s.id); }
+        box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); focusSite(s); } }, [glyph(s.layer), h('span', { text: 'Open ' + s.name })]));
+      } else if (a.type === 'show_layer' && LAYERS[inp.layer]) {
+        active[inp.layer] = true; if (inputs[inp.layer]) inputs[inp.layer].checked = true; refresh();
+        box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); map.flyToBounds(HOME, { duration: 0.8 }); } }, [glyph(inp.layer), h('span', { text: 'Showing ' + LAYERS[inp.layer].label.toLowerCase() + ' — view map' })]));
+      } else if (a.type === 'suggest_request') {
+        setTimeout(function () { requestCard(inp.title, inp.details); }, 0);
+      }
+    });
+    if (box.children.length) m.appendChild(box);
+  }
+  function send(text) {
+    text = (text || '').trim();
+    if (!text) return;
+    openChat();
+    var code = store.get('code', '');
+    if (!code) { codeCard(function () { send(text); }); return; }
+    chatHistory.push({ role: 'user', content: text });
+    bubble('user', text);
+    $('chat-input').value = '';
+    var wait = bubble('bot', 'Thinking…'); wait.classList.add('wait');
+    $('chat-send').disabled = true;
+    relay(code, { agent: true, messages: chatHistory.slice(-12), catalog: CATALOG })
+      .then(function (j) {
+        wait.remove();
+        var actions = j.actions || [];
+        var reply = j.text || (actions.length ? 'Here it is on the map.' : 'I don’t have an answer for that.');
+        chatHistory.push({ role: 'assistant', content: reply });
+        doActions(bubble('bot', reply), actions);
+      })
+      .catch(function (e) {
+        wait.remove();
+        chatHistory.pop();
+        if (e.code === 401) { store.set('code', ''); codeCard(function () { send(text); }); return; }
+        var m = bubble('bot', e.code === 402 ? 'AI answers are paused because the AI credit has run out. Let ' + OWNER + ' know.'
+          : e.code === 429 ? 'Too many questions just now. Wait a minute and try again.'
+          : 'I couldn’t reach the AI right now. Check your connection and try again.');
+        m.classList.add('err');
+      })
+      .then(function () { $('chat-send').disabled = false; });
+  }
+  if (CFG.aiEndpoint) {
+    $('chat').hidden = false;
+    document.documentElement.classList.add('has-chat');
+    $('chat-form').addEventListener('submit', function (e) { e.preventDefault(); send($('chat-input').value); });
+    $('chat-input').addEventListener('focus', openChat);
+    $('chat-close').onclick = closeChat;
+    $('chat-suggest').onclick = function () { openChat(); requestCard('', ''); };
   }
 
   /* ---------- welcome password ---------- */
@@ -644,6 +757,7 @@
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     if (picking) setPicking(false);
+    else if (!$('chat-panel').hidden) closeChat();
     else if (!$('settings').hidden) closeSettings();
     else if ($('sheet').classList.contains('open')) closePanel('sheet');
     else closePanel('drawer');

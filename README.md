@@ -12,6 +12,8 @@ The map runs full screen on phones and computers. Tap any marker to read why it 
 
 **Ask about any spot:** right-click (computer), press and hold (phone), or tap ◎ then tap the map.
 
+**Chat guide:** a question box at the bottom of the map. It answers, moves the map to places it mentions, and offers to send requests to Gordon when something is missing. Requests are read at `requests.html`.
+
 **Suggested questions:** 20 per place in `data/questions.js`, shown three at a time.
 
 **Today, from OpenStreetMap (loads live as you zoom in):** residential, commercial and industrial zones; buildings; present-day military areas; water wells, towers and reservoirs; oil and gas facilities.
@@ -31,7 +33,8 @@ Settings (⚙) has a larger-text option.
 | `data/sites.js` | Historical sites, links, briefs and sources. Edit this to add or correct places |
 | `data/questions.js` | Suggested questions for each place, spot and map feature |
 | `data/config.js` | Address of the AI relay |
-| `worker/worker.js` | The AI relay that holds the API key |
+| `worker/worker.js` | The AI relay that holds the API key and stores requests |
+| `requests.html` | Owner page for reading family requests |
 | `vendor/leaflet/` | Leaflet 1.9.4 mapping library |
 
 ### Evidence levels

@@ -20,6 +20,7 @@ In the Anthropic Console (console.anthropic.com), open **Settings → Limits** a
 | `ANTHROPIC_API_KEY` | Secret | your Anthropic API key |
 | `FAMILY_CODE` | Secret | the family password (capitals and spaces are ignored) |
 | `ALLOWED_ORIGINS` | Text | `https://gelnagar.github.io` |
+| `OWNER_CODE` | Secret | your own password for the requests page (different from the family password) |
 
 5. Optional low-credit warning: go to **Storage & Databases → KV → Create**, name it `ATLAS_KV`. Back in the worker, open **Bindings → Add → KV namespace**, set the variable name to `ATLAS_KV` and pick the namespace you just made. Then add two more variables:
 
@@ -49,3 +50,9 @@ Commit the change. The worker address is safe to publish; the API key is not in 
 Tell family members the family code. The first time they tap **Ask AI**, the map asks for it and saves it on their phone.
 
 To cut off access, change `FAMILY_CODE` in Cloudflare. To stop all AI use, delete the worker or the API key.
+
+## Requests from the family
+
+The chat at the bottom of the map can offer a **Send to Gordon** button when something is not on the map. Requests are saved in `ATLAS_KV`. Read them at `https://gelnagar.github.io/libya-project/requests.html` with your `OWNER_CODE`, and tap **Mark done** to clear one. The family password cannot open that page.
+
+When `worker/worker.js` changes, paste the new version into Cloudflare (**Edit code → select all → paste → Deploy**). Your secrets and settings stay as they are.

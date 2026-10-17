@@ -1,0 +1,726 @@
+{
+ "source": "Helen Chapin Metz, ed. Libya: A Country Study. Washington: GPO for the Library of Congress, 1987.",
+ "rights": "public domain (U.S. government work)",
+ "sections": [
+  {
+   "i": 1,
+   "title": "Libya - Acknowledgments",
+   "url": "http://countrystudies.us/libya/1.htm",
+   "chars": 2485
+  },
+  {
+   "i": 2,
+   "title": "Libya - Preface",
+   "url": "http://countrystudies.us/libya/2.htm",
+   "chars": 1211
+  },
+  {
+   "i": 3,
+   "title": "Libya - History",
+   "url": "http://countrystudies.us/libya/3.htm",
+   "chars": 3653
+  },
+  {
+   "i": 4,
+   "title": "Libya - EARLY HISTORY",
+   "url": "http://countrystudies.us/libya/4.htm",
+   "chars": 2602
+  },
+  {
+   "i": 5,
+   "title": "Libya - Tripolitania and the Phoenicians",
+   "url": "http://countrystudies.us/libya/5.htm",
+   "chars": 2375
+  },
+  {
+   "i": 6,
+   "title": "Libya - Cyrenaica and the Greeks",
+   "url": "http://countrystudies.us/libya/6.htm",
+   "chars": 3211
+  },
+  {
+   "i": 7,
+   "title": "Libya - Fezzan and the Garamentes",
+   "url": "http://countrystudies.us/libya/7.htm",
+   "chars": 1805
+  },
+  {
+   "i": 8,
+   "title": "Libya and the Romans",
+   "url": "http://countrystudies.us/libya/8.htm",
+   "chars": 6376
+  },
+  {
+   "i": 9,
+   "title": "Libya - ISLAM AND THE ARABS",
+   "url": "http://countrystudies.us/libya/9.htm",
+   "chars": 7054
+  },
+  {
+   "i": 10,
+   "title": "Libya - Fatimids",
+   "url": "http://countrystudies.us/libya/10.htm",
+   "chars": 2994
+  },
+  {
+   "i": 11,
+   "title": "Libya - Hilalians",
+   "url": "http://countrystudies.us/libya/11.htm",
+   "chars": 1896
+  },
+  {
+   "i": 12,
+   "title": "Libya - Hafsids",
+   "url": "http://countrystudies.us/libya/12.htm",
+   "chars": 3229
+  },
+  {
+   "i": 13,
+   "title": "Libya - Medieval Cyrenaica and Fezzan",
+   "url": "http://countrystudies.us/libya/13.htm",
+   "chars": 1647
+  },
+  {
+   "i": 14,
+   "title": "Libya - OTTOMAN REGENCY",
+   "url": "http://countrystudies.us/libya/14.htm",
+   "chars": 1949
+  },
+  {
+   "i": 15,
+   "title": "Libya - Pashas and Deys",
+   "url": "http://countrystudies.us/libya/15.htm",
+   "chars": 2894
+  },
+  {
+   "i": 16,
+   "title": "Libya - Karamanlis",
+   "url": "http://countrystudies.us/libya/16.htm",
+   "chars": 3226
+  },
+  {
+   "i": 17,
+   "title": "Libya - The Ottoman Revival",
+   "url": "http://countrystudies.us/libya/17.htm",
+   "chars": 1850
+  },
+  {
+   "i": 18,
+   "title": "Libya - The Sanusi Order",
+   "url": "http://countrystudies.us/libya/18.htm",
+   "chars": 6468
+  },
+  {
+   "i": 19,
+   "title": "Libya - COLONY OF ITALY",
+   "url": "http://countrystudies.us/libya/19.htm",
+   "chars": 2534
+  },
+  {
+   "i": 20,
+   "title": "Libya - Italy and Arab Resistance",
+   "url": "http://countrystudies.us/libya/20.htm",
+   "chars": 8119
+  },
+  {
+   "i": 21,
+   "title": "Libya - The Second Italo-Sanusi War",
+   "url": "http://countrystudies.us/libya/21.htm",
+   "chars": 3105
+  },
+  {
+   "i": 22,
+   "title": "Libya - The Fourth Shore",
+   "url": "http://countrystudies.us/libya/22.htm",
+   "chars": 4013
+  },
+  {
+   "i": 23,
+   "title": "Libya - WORLD WAR II AND INDEPENDENCE",
+   "url": "http://countrystudies.us/libya/23.htm",
+   "chars": 4769
+  },
+  {
+   "i": 24,
+   "title": "Libya - WORLD WAR II - The Desert War",
+   "url": "http://countrystudies.us/libya/24.htm",
+   "chars": 2879
+  },
+  {
+   "i": 25,
+   "title": "Libya - WORLD WAR II - Allied Administration",
+   "url": "http://countrystudies.us/libya/25.htm",
+   "chars": 1862
+  },
+  {
+   "i": 26,
+   "title": "Libya - The United Nations and Libya",
+   "url": "http://countrystudies.us/libya/26.htm",
+   "chars": 9344
+  },
+  {
+   "i": 27,
+   "title": "Libya - INDEPENDENT LIBYA",
+   "url": "http://countrystudies.us/libya/27.htm",
+   "chars": 9115
+  },
+  {
+   "i": 28,
+   "title": "Libya - The September 1969 Coup",
+   "url": "http://countrystudies.us/libya/28.htm",
+   "chars": 5410
+  },
+  {
+   "i": 29,
+   "title": "Libya - Qadhafi",
+   "url": "http://countrystudies.us/libya/29.htm",
+   "chars": 8061
+  },
+  {
+   "i": 30,
+   "title": "Libya - The Socialist People's Libyan Arab Jamahiriya",
+   "url": "http://countrystudies.us/libya/30.htm",
+   "chars": 9725
+  },
+  {
+   "i": 31,
+   "title": "Libya - Politics of Oil",
+   "url": "http://countrystudies.us/libya/31.htm",
+   "chars": 4021
+  },
+  {
+   "i": 32,
+   "title": "Libya and Arab Unity",
+   "url": "http://countrystudies.us/libya/32.htm",
+   "chars": 9213
+  },
+  {
+   "i": 33,
+   "title": "Libya - Libyan Ventures in Sub-Saharan Africa",
+   "url": "http://countrystudies.us/libya/33.htm",
+   "chars": 3723
+  },
+  {
+   "i": 34,
+   "title": "Libya - Relations with the United States",
+   "url": "http://countrystudies.us/libya/34.htm",
+   "chars": 4747
+  },
+  {
+   "i": 35,
+   "title": "Libya - Geography",
+   "url": "http://countrystudies.us/libya/35.htm",
+   "chars": 5846
+  },
+  {
+   "i": 36,
+   "title": "Libya - Climate",
+   "url": "http://countrystudies.us/libya/36.htm",
+   "chars": 3424
+  },
+  {
+   "i": 37,
+   "title": "Libya - The Society",
+   "url": "http://countrystudies.us/libya/37.htm",
+   "chars": 4113
+  },
+  {
+   "i": 38,
+   "title": "Libya - Population",
+   "url": "http://countrystudies.us/libya/38.htm",
+   "chars": 10617
+  },
+  {
+   "i": 39,
+   "title": "Libya - Arabs",
+   "url": "http://countrystudies.us/libya/39.htm",
+   "chars": 3925
+  },
+  {
+   "i": 40,
+   "title": "Libya - Berbers",
+   "url": "http://countrystudies.us/libya/40.htm",
+   "chars": 3619
+  },
+  {
+   "i": 41,
+   "title": "Libya - Tuareg",
+   "url": "http://countrystudies.us/libya/41.htm",
+   "chars": 1229
+  },
+  {
+   "i": 42,
+   "title": "Libya - Black Africans",
+   "url": "http://countrystudies.us/libya/42.htm",
+   "chars": 1909
+  },
+  {
+   "i": 43,
+   "title": "Libya - Languages of Libya",
+   "url": "http://countrystudies.us/libya/43.htm",
+   "chars": 4529
+  },
+  {
+   "i": 44,
+   "title": "Libya - STRUCTURE OF SOCIETY",
+   "url": "http://countrystudies.us/libya/44.htm",
+   "chars": 11157
+  },
+  {
+   "i": 45,
+   "title": "Libya - The Revolution and Social Change",
+   "url": "http://countrystudies.us/libya/45.htm",
+   "chars": 15445
+  },
+  {
+   "i": 46,
+   "title": "Libya - THE FAMILY, THE INDIVIDUAL, AND THE SEXES",
+   "url": "http://countrystudies.us/libya/46.htm",
+   "chars": 1000
+  },
+  {
+   "i": 47,
+   "title": "Libya - Family",
+   "url": "http://countrystudies.us/libya/47.htm",
+   "chars": 5444
+  },
+  {
+   "i": 48,
+   "title": "Libya - The Traditional View of Men and Women",
+   "url": "http://countrystudies.us/libya/48.htm",
+   "chars": 4698
+  },
+  {
+   "i": 49,
+   "title": "Libya - Society of the Revolutionary Era",
+   "url": "http://countrystudies.us/libya/49.htm",
+   "chars": 9893
+  },
+  {
+   "i": 50,
+   "title": "Libya - RELIGION",
+   "url": "http://countrystudies.us/libya/50.htm",
+   "chars": 3359
+  },
+  {
+   "i": 51,
+   "title": "Libya - Islam",
+   "url": "http://countrystudies.us/libya/51.htm",
+   "chars": 4655
+  },
+  {
+   "i": 52,
+   "title": "Libya - Saints and Brotherhoods",
+   "url": "http://countrystudies.us/libya/52.htm",
+   "chars": 3079
+  },
+  {
+   "i": 53,
+   "title": "Libya - Sanusi",
+   "url": "http://countrystudies.us/libya/53.htm",
+   "chars": 1698
+  },
+  {
+   "i": 54,
+   "title": "Libya - Islam in Revolutionary Libya",
+   "url": "http://countrystudies.us/libya/54.htm",
+   "chars": 6838
+  },
+  {
+   "i": 55,
+   "title": "Libya - HEALTH AND WELFARE",
+   "url": "http://countrystudies.us/libya/55.htm",
+   "chars": 5672
+  },
+  {
+   "i": 56,
+   "title": "Libya - EDUCATION",
+   "url": "http://countrystudies.us/libya/56.htm",
+   "chars": 11181
+  },
+  {
+   "i": 57,
+   "title": "Libya - The Economy",
+   "url": "http://countrystudies.us/libya/57.htm",
+   "chars": 3781
+  },
+  {
+   "i": 58,
+   "title": "Libya - GROWTH AND STRUCTURE OF THE ECONOMY",
+   "url": "http://countrystudies.us/libya/58.htm",
+   "chars": 8730
+  },
+  {
+   "i": 59,
+   "title": "Libya - THE ECONOMY - ROLE OF THE GOVERNMENT",
+   "url": "http://countrystudies.us/libya/59.htm",
+   "chars": 13285
+  },
+  {
+   "i": 60,
+   "title": "Libya - INDUSTRY",
+   "url": "http://countrystudies.us/libya/60.htm",
+   "chars": 17627
+  },
+  {
+   "i": 61,
+   "title": "Libya - Manufacturing and Construction",
+   "url": "http://countrystudies.us/libya/61.htm",
+   "chars": 8497
+  },
+  {
+   "i": 62,
+   "title": "Libya - AGRICULTURE",
+   "url": "http://countrystudies.us/libya/62.htm",
+   "chars": 3819
+  },
+  {
+   "i": 63,
+   "title": "Libya - Land Use and Irrigation",
+   "url": "http://countrystudies.us/libya/63.htm",
+   "chars": 7516
+  },
+  {
+   "i": 64,
+   "title": "Libya - Crops and Livestock",
+   "url": "http://countrystudies.us/libya/64.htm",
+   "chars": 2797
+  },
+  {
+   "i": 65,
+   "title": "Libya - Fishing and Forestry",
+   "url": "http://countrystudies.us/libya/65.htm",
+   "chars": 2793
+  },
+  {
+   "i": 66,
+   "title": "Libya - Government",
+   "url": "http://countrystudies.us/libya/66.htm",
+   "chars": 6295
+  },
+  {
+   "i": 67,
+   "title": "Libya - INTERNAL POLITICS",
+   "url": "http://countrystudies.us/libya/67.htm",
+   "chars": 6050
+  },
+  {
+   "i": 68,
+   "title": "Libya - The Revolutionary Command Council (RCC)",
+   "url": "http://countrystudies.us/libya/68.htm",
+   "chars": 3069
+  },
+  {
+   "i": 69,
+   "title": "Libya - The General People's Congress",
+   "url": "http://countrystudies.us/libya/69.htm",
+   "chars": 4586
+  },
+  {
+   "i": 70,
+   "title": "Libya - Subnational Government and Administration",
+   "url": "http://countrystudies.us/libya/70.htm",
+   "chars": 2991
+  },
+  {
+   "i": 71,
+   "title": "Libya - The Arab Socialist Union",
+   "url": "http://countrystudies.us/libya/71.htm",
+   "chars": 5736
+  },
+  {
+   "i": 72,
+   "title": "Libya - The Cultural Revolution and People's Committees",
+   "url": "http://countrystudies.us/libya/72.htm",
+   "chars": 6165
+  },
+  {
+   "i": 73,
+   "title": "Libya - The Basic People's Congress",
+   "url": "http://countrystudies.us/libya/73.htm",
+   "chars": 3876
+  },
+  {
+   "i": 74,
+   "title": "Libya - The Revolutionary Committees",
+   "url": "http://countrystudies.us/libya/74.htm",
+   "chars": 2291
+  },
+  {
+   "i": 75,
+   "title": "Libya - LAW AND THE JUDICIARY",
+   "url": "http://countrystudies.us/libya/75.htm",
+   "chars": 13331
+  },
+  {
+   "i": 76,
+   "title": "Libya - OPPOSITION TO QADHAFI",
+   "url": "http://countrystudies.us/libya/76.htm",
+   "chars": 17960
+  },
+  {
+   "i": 77,
+   "title": "Libya - POLITICAL IDEOLOGY",
+   "url": "http://countrystudies.us/libya/77.htm",
+   "chars": 7008
+  },
+  {
+   "i": 78,
+   "title": "Libya - Third Universal Theory",
+   "url": "http://countrystudies.us/libya/78.htm",
+   "chars": 5715
+  },
+  {
+   "i": 79,
+   "title": "Libya - The Cultural Revolution",
+   "url": "http://countrystudies.us/libya/79.htm",
+   "chars": 3447
+  },
+  {
+   "i": 80,
+   "title": "Libya - The Green Book",
+   "url": "http://countrystudies.us/libya/80.htm",
+   "chars": 11039
+  },
+  {
+   "i": 81,
+   "title": "Libya - FOREIGN RELATIONS",
+   "url": "http://countrystudies.us/libya/81.htm",
+   "chars": 4244
+  },
+  {
+   "i": 82,
+   "title": "Libya - Arab Relations",
+   "url": "http://countrystudies.us/libya/82.htm",
+   "chars": 4679
+  },
+  {
+   "i": 83,
+   "title": "Libya - Mediterranean Relations",
+   "url": "http://countrystudies.us/libya/83.htm",
+   "chars": 3072
+  },
+  {
+   "i": 84,
+   "title": "Libya - Maghrib Relations",
+   "url": "http://countrystudies.us/libya/84.htm",
+   "chars": 7663
+  },
+  {
+   "i": 85,
+   "title": "Libya - Sub-Saharan Africa",
+   "url": "http://countrystudies.us/libya/85.htm",
+   "chars": 7130
+  },
+  {
+   "i": 86,
+   "title": "Libya - Relations with Western Europe and the United States",
+   "url": "http://countrystudies.us/libya/86.htm",
+   "chars": 1895
+  },
+  {
+   "i": 87,
+   "title": "Libya - France",
+   "url": "http://countrystudies.us/libya/87.htm",
+   "chars": 1412
+  },
+  {
+   "i": 88,
+   "title": "Libya - Italy",
+   "url": "http://countrystudies.us/libya/88.htm",
+   "chars": 1692
+  },
+  {
+   "i": 89,
+   "title": "Libya - Britain",
+   "url": "http://countrystudies.us/libya/89.htm",
+   "chars": 1530
+  },
+  {
+   "i": 90,
+   "title": "Libya - United States",
+   "url": "http://countrystudies.us/libya/90.htm",
+   "chars": 4365
+  },
+  {
+   "i": 91,
+   "title": "Libya - The United Nations",
+   "url": "http://countrystudies.us/libya/91.htm",
+   "chars": 1563
+  },
+  {
+   "i": 92,
+   "title": "Libya - Bibliography",
+   "url": "http://countrystudies.us/libya/92.htm",
+   "chars": 11195
+  },
+  {
+   "i": 93,
+   "title": "",
+   "url": "http://countrystudies.us/libya/93.htm",
+   "chars": 82
+  },
+  {
+   "i": 94,
+   "title": "",
+   "url": "http://countrystudies.us/libya/94.htm",
+   "chars": 82
+  },
+  {
+   "i": 95,
+   "title": "",
+   "url": "http://countrystudies.us/libya/95.htm",
+   "chars": 82
+  },
+  {
+   "i": 96,
+   "title": "",
+   "url": "http://countrystudies.us/libya/96.htm",
+   "chars": 82
+  },
+  {
+   "i": 97,
+   "title": "",
+   "url": "http://countrystudies.us/libya/97.htm",
+   "chars": 82
+  },
+  {
+   "i": 98,
+   "title": "",
+   "url": "http://countrystudies.us/libya/98.htm",
+   "chars": 82
+  },
+  {
+   "i": 99,
+   "title": "",
+   "url": "http://countrystudies.us/libya/99.htm",
+   "chars": 82
+  },
+  {
+   "i": 100,
+   "title": "",
+   "url": "http://countrystudies.us/libya/100.htm",
+   "chars": 82
+  },
+  {
+   "i": 101,
+   "title": "",
+   "url": "http://countrystudies.us/libya/101.htm",
+   "chars": 82
+  },
+  {
+   "i": 102,
+   "title": "",
+   "url": "http://countrystudies.us/libya/102.htm",
+   "chars": 82
+  },
+  {
+   "i": 103,
+   "title": "",
+   "url": "http://countrystudies.us/libya/103.htm",
+   "chars": 82
+  },
+  {
+   "i": 104,
+   "title": "",
+   "url": "http://countrystudies.us/libya/104.htm",
+   "chars": 82
+  },
+  {
+   "i": 105,
+   "title": "",
+   "url": "http://countrystudies.us/libya/105.htm",
+   "chars": 82
+  },
+  {
+   "i": 106,
+   "title": "",
+   "url": "http://countrystudies.us/libya/106.htm",
+   "chars": 82
+  },
+  {
+   "i": 107,
+   "title": "",
+   "url": "http://countrystudies.us/libya/107.htm",
+   "chars": 82
+  },
+  {
+   "i": 108,
+   "title": "",
+   "url": "http://countrystudies.us/libya/108.htm",
+   "chars": 82
+  },
+  {
+   "i": 109,
+   "title": "",
+   "url": "http://countrystudies.us/libya/109.htm",
+   "chars": 82
+  },
+  {
+   "i": 110,
+   "title": "",
+   "url": "http://countrystudies.us/libya/110.htm",
+   "chars": 82
+  },
+  {
+   "i": 111,
+   "title": "",
+   "url": "http://countrystudies.us/libya/111.htm",
+   "chars": 82
+  },
+  {
+   "i": 112,
+   "title": "",
+   "url": "http://countrystudies.us/libya/112.htm",
+   "chars": 82
+  },
+  {
+   "i": 113,
+   "title": "",
+   "url": "http://countrystudies.us/libya/113.htm",
+   "chars": 82
+  },
+  {
+   "i": 114,
+   "title": "",
+   "url": "http://countrystudies.us/libya/114.htm",
+   "chars": 82
+  },
+  {
+   "i": 115,
+   "title": "",
+   "url": "http://countrystudies.us/libya/115.htm",
+   "chars": 82
+  },
+  {
+   "i": 116,
+   "title": "",
+   "url": "http://countrystudies.us/libya/116.htm",
+   "chars": 82
+  },
+  {
+   "i": 117,
+   "title": "",
+   "url": "http://countrystudies.us/libya/117.htm",
+   "chars": 82
+  },
+  {
+   "i": 118,
+   "title": "",
+   "url": "http://countrystudies.us/libya/118.htm",
+   "chars": 82
+  },
+  {
+   "i": 119,
+   "title": "",
+   "url": "http://countrystudies.us/libya/119.htm",
+   "chars": 82
+  },
+  {
+   "i": 120,
+   "title": "",
+   "url": "http://countrystudies.us/libya/120.htm",
+   "chars": 82
+  }
+ ]
+}

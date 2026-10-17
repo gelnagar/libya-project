@@ -1,135 +1,239 @@
 /*
-  Historical sites, 1969–1989.
-  level: documented | testimony | suspected | context
-  r: position uncertainty in km
+  Historical sites and events.
+  layer:  which overlay the entry belongs to (see ATLAS_LAYERS)
+  level:  documented | testimony | suspected | context
+  y0, y1: first and last year the entry applies to
+  r:      position uncertainty in km
 */
 window.ATLAS_LAYERS = {
-  detention: { label: 'Prisons & detention', code: 'P', color: '#ff5d52' },
-  military:  { label: 'Military installations', code: 'M', color: '#ffb224' },
-  power:     { label: "Gaddafi's residences & seats of power", code: 'G', color: '#c792ff' },
-  landmark:  { label: 'Landmarks & events', code: 'L', color: '#4cc9f0' }
+  detention: { label: 'Prisons & detention',               code: 'P', color: '#e76a6e', shape: 'circle' },
+  security:  { label: 'Security & police',                 code: 'S', color: '#72ca9b', shape: 'square' },
+  military:  { label: 'Military installations',            code: 'M', color: '#ec9a3c', shape: 'square' },
+  airstrike: { label: 'Foreign airstrikes',                code: 'A', color: '#fbd065', shape: 'diamond' },
+  massacre:  { label: 'Massacres & mass killings',         code: 'X', color: '#f5498b', shape: 'diamond' },
+  power:     { label: "Gaddafi's residences & seats of power", code: 'G', color: '#bdadff', shape: 'square' },
+  landmark:  { label: 'Landmarks & events',                code: 'L', color: '#68c1ee', shape: 'circle' }
 };
 
 window.ATLAS_LEVELS = {
-  documented: 'Documented for 1969–1989',
+  documented: 'Documented',
   testimony:  'Named in testimony · area only',
-  suspected:  'Existed · period unverified',
-  context:    'Context site'
+  suspected:  'Reported · not confirmed',
+  context:    'Context'
+};
+
+var SRC = {
+  wikiAbuSalim: { t: 'Abu Salim prison, Wikipedia', u: 'https://en.wikipedia.org/wiki/Abu_Salim_prison' },
+  hrsly: { t: 'Human Rights Solidarity Organization, Abu Salim annex', u: 'https://hrsly.com/en/annex-1-the-abu-salim-prison-massacre/' },
+  ai1992: { t: 'Amnesty International (1992)', u: 'https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190031992en.pdf' },
+  shareef: { t: 'Abubaker Shareef interview, Tarikhi', u: 'https://tarikhi.org/interview/abubaker-shareef/' },
+  sahli: { t: 'Majda Sahli interview, Tarikhi', u: 'https://tarikhi.org/?p=356' },
+  hrw2011: { t: 'Human Rights Watch (2011)', u: 'https://www.hrw.org/node/97287' },
+  usaf: { t: 'US Air Force Historical Support Division, Operation El Dorado Canyon', u: 'https://www.afhistory.af.mil/FAQs/Fact-Sheets/Article/458950/operation-el-dorado-canyon' },
+  merip: { t: 'MERIP, "US Raid Haunts Libya" (1986)', u: 'https://www.merip.org/1986/07/us-raid-haunts-libya/' },
+  binAshur: { t: 'Bin Ashur, Wikipedia', u: 'https://en.wikipedia.org/wiki/Bin_Ashur' },
+  massList: { t: 'List of massacres in Libya, Wikipedia', u: 'https://en.wikipedia.org/wiki/List_of_massacres_in_Libya' },
+  sharShatt: { t: 'Battle and massacre at Shar al-Shatt, Wikipedia', u: 'https://en.wikipedia.org/wiki/Battle_and_massacre_at_Shar_al-Shatt' },
+  hrw1996: { t: 'Human Rights Watch, Libya: June 1996 Killings at Abu Salim Prison', u: 'https://www.hrw.org/reports/2006/06/28/libya-june-1996-killings-abu-salim-prison' },
+  rgc: { t: 'Revolutionary Guard Corps (Libya), Wikipedia', u: 'https://en.wikipedia.org/wiki/Revolutionary_Guard_Corps_(Libyan_paramilitary_unit)' }
 };
 
 window.ATLAS_SITES = [
+  /* ---------- prisons & detention ---------- */
   {
-    id: 'abusalim', layer: 'detention', level: 'documented',
+    id: 'abusalim', layer: 'detention', level: 'documented', y0: 1984, y1: 2011,
     name: 'Abu Salim prison', ar: 'سجن أبو سليم',
     lat: 32.8333, lon: 13.1739, r: 1, period: 'Completed 1984',
     relevance: "The main prison for political prisoners under Gaddafi. People arrested for opposing the government, or only suspected of it, were held here, often for years without trial.",
-    text: "Built inside the Military Police Command compound in the Abu Salim district to replace the colonial-era Black Horse prison. The first political prisoners arrived after the arrests that followed the May 1984 attack on Bab al-Aziziya. In March 1988, 426 of its 530 political prisoners were released in an amnesty, but many others stayed. More arrests of religious activists and suspected opponents followed in 1989 and 1990. In June 1996, after the period on this map, more than 1,000 prisoners were killed here.",
-    sources: [
-      { t: 'Abu Salim prison, Wikipedia', u: 'https://en.wikipedia.org/wiki/Abu_Salim_prison' },
-      { t: 'Human Rights Solidarity Organization, Abu Salim annex', u: 'https://hrsly.com/en/annex-1-the-abu-salim-prison-massacre/' },
-      { t: 'Amnesty International (1992)', u: 'https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190031992en.pdf' }
-    ]
+    text: "Built inside the Military Police Command compound to replace the colonial-era Black Horse prison. The first political prisoners arrived after the arrests that followed the May 1984 attack on Bab al-Aziziya. In March 1988, 426 of its 530 political prisoners were released in an amnesty, but many others stayed. More arrests of religious activists and suspected opponents followed in 1989 and 1990.",
+    sources: [SRC.wikiAbuSalim, SRC.hrsly, SRC.ai1992]
   },
   {
-    id: 'jdeida', layer: 'detention', level: 'testimony',
+    id: 'jdeida', layer: 'detention', level: 'testimony', y0: 1980, y1: 2011,
     name: 'Jdeida prison', ar: 'سجن الجديدة',
     lat: 32.73, lon: 13.10, r: 3.5, period: 'Named for the 1980s',
     relevance: "A civilian prison where political detainees were sent after interrogation elsewhere, including people brought from Benghazi.",
-    text: "A former detainee describes three months of interrogation at the 7 April prison in Benghazi before transfer to the civilian prison of Jdeida in Tripoli. Human Rights Watch also lists Jdeida among possible detention sites in Tripoli in 2011. The marker shows the Jdeida area only; the exact building is not documented in these sources.",
-    sources: [
-      { t: 'Abubaker Shareef interview, Tarikhi', u: 'https://tarikhi.org/interview/abubaker-shareef/' },
-      { t: 'Human Rights Watch (2011)', u: 'https://www.hrw.org/node/97287' }
-    ]
+    text: "Former detainees describe interrogation at the 7 April prison in Benghazi before transfer to Jdeida in Tripoli, and being held in both Jdeida and Abu Salim. The marker shows the Jdeida area only; the exact building is not documented in these sources.",
+    sources: [SRC.shareef, SRC.sahli, SRC.hrw2011]
   },
   {
-    id: 'maktab', layer: 'detention', level: 'suspected',
+    id: 'maktab', layer: 'detention', level: 'suspected', y0: null, y1: 2011,
     name: 'Maktab al-Nasser',
     lat: 32.840, lon: 13.179, r: 2, period: 'Dates unverified',
     relevance: "An internal security office that also held prisoners, many of whom were later moved to Abu Salim.",
     text: "Described as a prison and internal security office in the Abu Salim district before 2011. Sources give no start date, so use during 1969–1989 is unconfirmed. Placed by district only.",
-    sources: [ { t: 'Maktab al-Nasser prison, Wikipedia', u: 'https://en.wikipedia.org/wiki/Maktab_al-Nasser_prison' } ]
+    sources: [{ t: 'Maktab al-Nasser prison, Wikipedia', u: 'https://en.wikipedia.org/wiki/Maktab_al-Nasser_prison' }]
   },
   {
-    id: 'hadba', layer: 'detention', level: 'suspected',
+    id: 'hadba', layer: 'detention', level: 'suspected', y0: null, y1: null,
     name: 'Hadba al-Khadra prison', ar: 'سجن الهضبة الخضراء',
     lat: 32.8444, lon: 13.191, r: 1.8, period: 'Dates unverified',
     relevance: "Best known after 2011, when senior officials of the former government were held here.",
     text: "A Ministry of Defence facility in the Hadba al-Khadra area. No source found shows it in use during 1969–1989. Reported locations differ by a kilometre or more.",
-    sources: [ { t: 'Reuters (2017)', u: 'https://reuters.screenocean.com/record/877072' } ]
+    sources: [{ t: 'Reuters (2017)', u: 'https://reuters.screenocean.com/record/877072' }]
   },
   {
-    id: 'ainzara', layer: 'detention', level: 'suspected',
+    id: 'ainzara', layer: 'detention', level: 'suspected', y0: null, y1: null,
     name: 'Ain Zara prison', ar: 'سجن عين زارة',
     lat: 32.79, lon: 13.27, r: 3, period: 'Dates unverified',
     relevance: "A long-running state prison on the southeast edge of Tripoli.",
     text: "A Ministry of Justice prison in the Ain Zara suburb. Human Rights Watch lists it among possible detention sites in 2011. No source found confirms political detention here between 1969 and 1989. Placed by suburb only.",
-    sources: [
-      { t: 'USIP, Prisons and Detention in Libya', u: 'https://www.usip.org/sites/default/files/PW119-Prisons-and-Detention-in-Libya.pdf' },
-      { t: 'Human Rights Watch (2011)', u: 'https://www.hrw.org/node/97287' }
-    ]
+    sources: [{ t: 'USIP, Prisons and Detention in Libya', u: 'https://www.usip.org/sites/default/files/PW119-Prisons-and-Detention-in-Libya.pdf' }, SRC.hrw2011]
   },
 
+  /* ---------- security & police ---------- */
   {
-    id: 'wheelus', layer: 'military', level: 'documented',
+    id: 'cso', layer: 'security', level: 'suspected', y0: 1986, y1: 1986,
+    name: 'Central Security Organization (reported)', ar: 'جهاز الأمن المركزي',
+    lat: 32.8772, lon: 13.2126, r: 1, period: 'Reported 1986',
+    relevance: "A state security building that may have been the real target when US bombs hit the Ben Ashour neighbourhood in 1986.",
+    text: "Japan's ambassador to Libya suggested the bombs that fell on Ben Ashour were meant for the Central Security Organization, located behind the French embassy. Its exact position is not published; the marker shows the Ben Ashour area.",
+    sources: [SRC.binAshur]
+  },
+
+  /* ---------- military ---------- */
+  {
+    id: 'wheelus', layer: 'military', level: 'documented', y0: 1970, y1: 1989,
     name: 'Okba Ben Nafi Air Base (former Wheelus)', ar: 'قاعدة عقبة بن نافع الجوية',
     lat: 32.8941, lon: 13.2760, r: 0.8, period: 'Handed over 1970',
-    relevance: "Removing this large American air base was one of the new government's first big moves after the 1969 coup, and a point of national pride in Gaddafi's speeches.",
+    relevance: "Removing this large American air base was one of the new government's first big moves after the 1969 coup.",
     text: "Wheelus Air Base was a major US Air Force base on Tripoli's eastern coast. The United States withdrew in 1970 and the base was renamed Okba Ben Nafi Air Base. Today it is Mitiga airport.",
-    sources: [ { t: 'Mitiga International Airport, Wikipedia', u: 'https://en.wikipedia.org/wiki/Mitiga' } ]
+    sources: [{ t: 'Mitiga International Airport, Wikipedia', u: 'https://en.wikipedia.org/wiki/Mitiga' }]
   },
   {
-    id: 'tip', layer: 'military', level: 'documented',
+    id: 'tip', layer: 'military', level: 'documented', y0: 1969, y1: 1989,
     name: 'Tripoli military airport', ar: 'مطار طرابلس الدولي',
-    lat: 32.6635, lon: 13.159, r: 1.5, period: 'Struck April 1986',
-    relevance: "One of the targets of the April 1986 US air strikes on Libya.",
-    text: "The military side of Tripoli's international airport, south of the city, was hit by US F-111 aircraft during the April 1986 strikes, along with Bab al-Aziziya and the Sidi Bilal camp.",
-    sources: [ { t: 'US Air Force Historical Support Division, Operation El Dorado Canyon', u: 'https://www.afhistory.af.mil/FAQs/Fact-Sheets/Article/458950/operation-el-dorado-canyon' } ]
+    lat: 32.6635, lon: 13.159, r: 1.5, period: 'Throughout',
+    relevance: "The military side of Tripoli's international airport, south of the city.",
+    text: "Listed by the US Air Force among the Tripoli targets of the April 1986 strikes.",
+    sources: [SRC.usaf]
   },
   {
-    id: 'sidibilal', layer: 'military', level: 'documented',
-    name: 'Murat Sidi Bilal camp', ar: 'مرسى سيدي بلال',
-    lat: 32.830, lon: 13.000, r: 4, period: 'Struck April 1986',
-    relevance: "A coastal training camp west of Tripoli that the United States struck in April 1986, describing it as a training camp for attacks abroad.",
-    text: "Listed by the US Air Force among the Tripoli targets of the April 1986 strikes. Its exact position is not given in these sources; the marker shows the Janzour coast area.",
-    sources: [ { t: 'US Air Force Historical Support Division, Operation El Dorado Canyon', u: 'https://www.afhistory.af.mil/FAQs/Fact-Sheets/Article/458950/operation-el-dorado-canyon' } ]
+    id: 'sidibilal', layer: 'military', level: 'documented', y0: 1986, y1: 1986,
+    name: 'Sidi Bilal naval school', ar: 'سيدي بلال',
+    lat: 32.830, lon: 13.000, r: 4, period: 'Named 1986',
+    relevance: "A naval training site on the coast west of Tripoli, including a frogman school.",
+    text: "Described in 1986 reporting as a naval secondary school and frogman training school west of Tripoli. Its exact position is not given in these sources; the marker shows the Janzour coast area.",
+    sources: [SRC.merip, SRC.usaf]
   },
 
+  /* ---------- foreign airstrikes ---------- */
   {
-    id: 'bab', layer: 'power', level: 'documented',
+    id: 'as-bab', layer: 'airstrike', level: 'documented', y0: 1986, y1: 1986,
+    name: '1986 US strike: Bab al-Aziziya', lat: 32.848, lon: 13.151, r: 0.8, period: '15 April 1986',
+    relevance: "The main target of the US raid on Tripoli, aimed at Gaddafi's home and command centre.",
+    text: "US F-111 aircraft bombed the compound. Eight craters were clustered near Gaddafi's home, tent and offices. Two of his sons were seriously wounded and an adopted daughter was reported killed.",
+    sources: [SRC.usaf, SRC.merip]
+  },
+  {
+    id: 'as-benashour', layer: 'airstrike', level: 'documented', y0: 1986, y1: 1986,
+    name: '1986 US strike: Ben Ashour homes', ar: 'بن عاشور',
+    lat: 32.8772, lon: 13.2126, r: 1, period: '15 April 1986',
+    relevance: "The raid's worst civilian damage: bombs fell on a crowded residential neighbourhood with many embassies.",
+    text: "About ten apartment buildings were damaged. A bomb hit a building just behind the French embassy and killed a family, and the embassy itself was damaged. The bombs appear to have missed their intended target.",
+    sources: [SRC.merip, SRC.binAshur]
+  },
+  {
+    id: 'as-tip', layer: 'airstrike', level: 'documented', y0: 1986, y1: 1986,
+    name: '1986 US strike: Tripoli military airport', lat: 32.6635, lon: 13.159, r: 1.5, period: '15 April 1986',
+    relevance: "The last target of the raid; reporting describes extensive damage to the air base.",
+    text: "Five US F-111 aircraft made the final strike of the raid on the military side of Tripoli's airport.",
+    sources: [SRC.usaf, SRC.merip]
+  },
+  {
+    id: 'as-sidibilal', layer: 'airstrike', level: 'documented', y0: 1986, y1: 1986,
+    name: '1986 US strike: Sidi Bilal', lat: 32.830, lon: 13.000, r: 4, period: '15 April 1986',
+    relevance: "A naval training site west of Tripoli that the United States described as a training camp for attacks abroad.",
+    text: "Three US F-111 aircraft hit the site. Reporting from Libya afterwards said half of the naval secondary school was reduced to rubble.",
+    sources: [SRC.usaf, SRC.merip]
+  },
+
+  /* ---------- massacres ---------- */
+  {
+    id: 'mk-sharshatt', layer: 'massacre', level: 'documented', y0: 1911, y1: 1911,
+    name: 'Shar al-Shatt killings', ar: 'معركة الشط',
+    lat: 32.8953, lon: 13.2103, r: 1.5, period: '23–26 October 1911',
+    relevance: "The first weeks of the Italian invasion. A battle at Shar al-Shatt was followed by mass Italian reprisals against civilians in Tripoli's oasis.",
+    text: "On 23 October 1911, Ottoman and Libyan fighters overran an Italian position at Shar al-Shatt; about 290 Italian soldiers were killed after surrendering. In the following days Italian forces killed thousands of people in and around Tripoli, with estimates of some 4,000 dead.",
+    sources: [SRC.sharShatt, SRC.massList]
+  },
+  {
+    id: 'mk-riots', layer: 'massacre', level: 'documented', y0: 1945, y1: 1967,
+    name: 'Anti-Jewish riots (1945, 1948, 1967)', ar: 'المدينة القديمة',
+    lat: 32.8962, lon: 13.1745, r: 1, period: '1945 · 1948 · 1967',
+    relevance: "Three waves of riots against Tripoli's Jewish community, centred on the old city, which drove most of the community to leave Libya.",
+    text: "More than 140 people were killed in November 1945, 12 in June 1948, and 18 in June 1967. By the time Gaddafi took power in 1969 almost no Jewish residents remained. The marker shows the old city area.",
+    sources: [SRC.massList]
+  },
+  {
+    id: 'mk-abusalim', layer: 'massacre', level: 'documented', y0: 1996, y1: 1996,
+    name: 'Abu Salim prison massacre', ar: 'مجزرة سجن أبو سليم',
+    lat: 32.8333, lon: 13.1739, r: 1, period: '29 June 1996',
+    relevance: "The worst single killing of Gaddafi's rule. It happened after the 1969–1989 period but in the prison built during it.",
+    text: "After prisoners protested about conditions, security forces killed an estimated 1,200 or more inmates in the prison courtyards. The government denied it for years. Families' protests over the killings helped spark the February 2011 uprising.",
+    sources: [SRC.hrw1996, SRC.wikiAbuSalim]
+  },
+
+  /* ---------- seats of power ---------- */
+  {
+    id: 'bab', layer: 'power', level: 'documented', y0: 1969, y1: 2011,
     name: 'Bab al-Aziziya compound', ar: 'باب العزيزية',
     lat: 32.848, lon: 13.151, r: 0.8, period: 'Throughout 1969–1989',
     relevance: "Gaddafi's home and command headquarters, the centre of power in Libya. Both the 1984 attack and the 1986 US bombing were aimed here.",
-    text: "A fortified barracks in southern Tripoli that Gaddafi expanded in the 1980s. On 8 May 1984 an armed opposition group attacked it; mass arrests across Libya followed, and many of those detained ended up in Abu Salim. On 15 April 1986, US aircraft bombed the compound while Gaddafi's family was inside their residence. The compound was demolished after 2011.",
-    sources: [
-      { t: 'Bab al-Azizia, Wikipedia', u: 'https://en.wikipedia.org/wiki/Bab_al-Azizia' },
-      { t: 'Amnesty International (1992)', u: 'https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190031992en.pdf' }
-    ]
+    text: "A fortified barracks in southern Tripoli that Gaddafi expanded in the 1980s. On 8 May 1984 an armed opposition group attacked it; mass arrests across Libya followed, and many of those detained ended up in Abu Salim. On 15 April 1986, US aircraft bombed the compound. It was demolished after 2011.",
+    sources: [{ t: 'Bab al-Azizia, Wikipedia', u: 'https://en.wikipedia.org/wiki/Bab_al-Azizia' }, SRC.ai1992]
   },
   {
-    id: 'palace', layer: 'power', level: 'context',
+    id: 'palace', layer: 'power', level: 'context', y0: 1969, y1: 1969,
     name: "Royal Palace (People's Palace)", ar: 'قصر الشعب',
     lat: 32.8876, lon: 13.1899, r: 1, period: 'Taken over 1969',
     relevance: "The Tripoli palace of King Idris. After the 1969 coup ended the monarchy it was renamed the People's Palace.",
     text: "A symbol of the old monarchy in central Tripoli. Its renaming marked the new government's break with the king. Position is approximate.",
-    sources: [ { t: 'Idris of Libya, Wikipedia', u: 'https://en.wikipedia.org/wiki/Idris_of_Libya' } ]
+    sources: [{ t: 'Idris of Libya, Wikipedia', u: 'https://en.wikipedia.org/wiki/Idris_of_Libya' }]
   },
 
+  /* ---------- landmarks ---------- */
   {
-    id: 'green', layer: 'landmark', level: 'context',
+    id: 'green', layer: 'landmark', level: 'context', y0: 1969, y1: 2011,
     name: 'Green Square (Martyrs’ Square)', ar: 'الساحة الخضراء',
     lat: 32.8963, lon: 13.1806, r: 0.3, period: 'Renamed after 1969',
     relevance: "Tripoli's main square, renamed Green Square under Gaddafi and used for his rallies and speeches. It is now Martyrs' Square.",
     text: "Beside the Red Castle and the old city walls. The name followed the green of Gaddafi's flag and his Green Book.",
-    sources: [ { t: "Martyrs' Square, Tripoli, Wikipedia", u: 'https://en.wikipedia.org/wiki/Martyrs%27_Square,_Tripoli' } ]
+    sources: [{ t: "Martyrs' Square, Tripoli, Wikipedia", u: 'https://en.wikipedia.org/wiki/Martyrs%27_Square,_Tripoli' }]
   },
   {
-    id: 'fateh', layer: 'landmark', level: 'context',
+    id: 'fateh', layer: 'landmark', level: 'context', y0: 1976, y1: 1989,
     name: 'Al-Fateh University', ar: 'جامعة الفاتح',
-    lat: 32.8565, lon: 13.2257, r: 1, period: '1970s–1980s',
-    relevance: "Universities were closely watched by Revolutionary Committees, and students were among those arrested for political or religious activity.",
-    text: "Tripoli's main university, now the University of Tripoli. Amnesty International reports that security forces arrested religious students at al-Fateh University in 1989. Position is approximate.",
-    sources: [ { t: 'Amnesty International (1992)', u: 'https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190031992en.pdf' } ]
+    lat: 32.8565, lon: 13.2257, r: 1, period: '1976–1989',
+    relevance: "Universities were closely watched, and students were among those attacked and arrested for political or religious activity.",
+    text: "Tripoli's main university, now the University of Tripoli. In April 1976 police and government loyalists attacked protesting students, according to a former student. Amnesty International reports that security forces arrested religious students here in 1989. Position is approximate.",
+    sources: [SRC.sahli, SRC.ai1992]
   }
+];
+
+/* Connections drawn on the map when one end is selected */
+window.ATLAS_LINKS = [
+  ['bab', 'abusalim', 'After the May 1984 attack, those arrested were taken to Abu Salim'],
+  ['maktab', 'abusalim', 'Prisoners were often moved on to Abu Salim'],
+  ['jdeida', 'abusalim', 'Former detainees were held in both prisons'],
+  ['abusalim', 'mk-abusalim', 'Same prison, 1996 massacre'],
+  ['bab', 'as-bab', 'Bombed on 15 April 1986'],
+  ['tip', 'as-tip', 'Bombed on 15 April 1986'],
+  ['sidibilal', 'as-sidibilal', 'Bombed on 15 April 1986'],
+  ['as-bab', 'as-benashour', 'Same raid, 15 April 1986'],
+  ['as-bab', 'as-tip', 'Same raid, 15 April 1986'],
+  ['as-bab', 'as-sidibilal', 'Same raid, 15 April 1986'],
+  ['as-benashour', 'cso', 'Reported intended target of the bombs'],
+  ['palace', 'bab', 'Seat of power moved from the king’s palace to Gaddafi’s barracks']
+];
+
+/* Known activity with no published location */
+window.ATLAS_UNPLACED = [
+  { name: 'Revolutionary Guard Corps', when: '1980s', text: 'Grew out of the Revolutionary Committees. It watched soldiers inside barracks, reportedly controlled ammunition at the main bases, and fought regular army units in Tripoli’s streets during a May 1985 coup attempt. No source gives its bases.', src: SRC.rgc },
+  { name: 'Police stations and checkpoints', when: '1969–1989', text: 'No published source maps Tripoli’s police posts or checkpoints for this period.' },
+  { name: 'Military intelligence prison, Tripoli', when: '1984', text: 'A former detainee describes being held there after the May 1984 arrests. Its location is not given.', src: SRC.shareef },
+  { name: 'Black Horse prison', when: 'Until 1984', text: 'Italian-era prison replaced by Abu Salim. No source places it on a map.', src: SRC.hrsly },
+  { name: 'Public executions', when: 'Late 1970s–1980s', text: 'Public hangings were staged on 7 April anniversaries, including at universities and a sports stadium. The documented cases with places are in Benghazi, outside this map.', src: { t: 'Human rights violations during the Gaddafi regime, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime' } }
 ];
 
 window.ATLAS_DISTRICTS = [

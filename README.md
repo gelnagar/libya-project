@@ -8,7 +8,11 @@ The map runs full screen on phones and computers. Tap any marker to read why it 
 
 **Map styles:** dark, satellite, streets, terrain.
 
-**History, 1969–1989 (curated):** prisons and detention sites, military installations and 1986 strike targets, Gaddafi's residences and seats of power, landmarks and events, district names in English and Arabic, and uncertainty rings.
+**History (curated):** prisons and detention sites, security and police, military installations, the 1986 US airstrikes, massacres and mass killings, Gaddafi's residences and seats of power, landmarks and events, district names in English and Arabic, uncertainty rings, and a coordinate grid. Filter by period: before 1969, 1969–1989, after 1989. Selecting a place draws lines to linked places.
+
+**Ask about any spot:** right-click (computer), press and hold (phone), or tap ◎ then tap the map.
+
+**Suggested questions:** 20 per place in `data/questions.js`, shown three at a time.
 
 **Today, from OpenStreetMap (loads live as you zoom in):** residential, commercial and industrial zones; buildings; present-day military areas; water wells, towers and reservoirs; oil and gas facilities.
 
@@ -24,7 +28,8 @@ Settings (⚙) has a larger-text option.
 | --- | --- |
 | `index.html` | Page layout and styling |
 | `app.js` | Map behaviour |
-| `data/sites.js` | Historical sites, briefs and sources. Edit this to add or correct places |
+| `data/sites.js` | Historical sites, links, briefs and sources. Edit this to add or correct places |
+| `data/questions.js` | Suggested questions for each place, spot and map feature |
 | `data/config.js` | Address of the AI relay |
 | `worker/worker.js` | The AI relay that holds the API key |
 | `vendor/leaflet/` | Leaflet 1.9.4 mapping library |

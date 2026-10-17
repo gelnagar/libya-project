@@ -1,0 +1,1483 @@
+[
+ {
+  "id": "lb-tripoli-medical-center",
+  "name": "Tripoli Medical Center",
+  "ar": "مركز طرابلس الطبي",
+  "aliases": [
+   "TMC",
+   "Tripoli Medical Centre",
+   "Markaz Tarabulus at-Tibbi"
+  ],
+  "kind": "landmark",
+  "lat": 32.85277,
+  "lon": 13.23064,
+  "r": 0.2,
+  "summary": "Tripoli's largest public hospital and the main teaching hospital of the University of Tripoli medical faculty.",
+  "era": "A Libyan-government-funded training project with the Medical University of Vienna ran at the hospital from 2006 (first assessments April 2006, training from spring 2007), when it was described as a 1,300-bed public hospital with over 3,000 staff. In the 2011 Battle of Tripoli, Medecins Sans Frontieres evacuated its two most critical patients from Abu Salim hospital to the Tripoli Medical Centre on 25 August 2011 and planned to assess its needs two days later.",
+  "today": "It remains one of Tripoli's main referral hospitals and a teaching hospital of the University of Tripoli.",
+  "uncertain": "Opening date not found. Bed and staff figures are from a Vienna university project page that may be dated.",
+  "sources": [
+   {
+    "t": "Medical University of Vienna - Tripoli Medical Center project",
+    "u": "https://www.meduniwien.ac.at/web/internationales/muvi/our-projects/tripoli-medical-center/"
+   },
+   {
+    "t": "MSF Hong Kong - Tripoli hospitals, August 2011",
+    "u": "https://www.msf.hk/en/latest/news-and-stories/news/libya-msf-scales-medical-response-tripoli-amid-shocking-scenes-hospitals"
+   },
+   {
+    "t": "Wikipedia - University of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/313590241"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-tripoli-central-hospital",
+  "name": "Tripoli Central Hospital",
+  "ar": "مستشفى طرابلس المركزي",
+  "aliases": [
+   "TCH",
+   "Tripoli General Hospital",
+   "Vittorio Emanuele III Colonial Hospital (Italian era)"
+  ],
+  "kind": "landmark",
+  "lat": 32.88074,
+  "lon": 13.18994,
+  "r": 0.25,
+  "summary": "Tripoli's second-largest hospital, founded in the Italian era and home to the city's oldest trauma centre and Libya's organ-transplant programme.",
+  "era": "Built in 1910 as the Italian colonial Vittorio Emanuele III hospital. It was Tripoli's only trauma centre for the last three decades of the 20th century. Doctors interviewed after the fall of Gaddafi alleged that in February 2011 government troops took over the hospital and that anti-Gaddafi patients were taken away; these are unverified accounts. In October 2011 fighters broke into a sealed section and found a 'secret morgue' with 17 bodies, including a baby, which officials suspected were executed after the 1984 coup attempt. Al Jazeera reported the hospital overwhelmed with casualties on 24 August 2011.",
+  "today": "Wounded migrants from the July 2019 Tajoura detention-centre air strike were photographed here. Rocket fire around 14 May 2020 partly damaged its communicable-diseases and dermatology buildings, according to the GNA health ministry; the GNA blamed forces loyal to Khalifa Haftar, who denied it. The organ-transplant programme began in 2005, and its outpatient clinics handled about 250,000 cases in 2019.",
+  "uncertain": "Wikipedia gives coordinates near 32.874, 13.144, about 4 km from the OpenStreetMap hospital polygon used here; the OSM point was preferred. The 'secret morgue' link to 1984 is the suspicion of officials, not a proven finding.",
+  "sources": [
+   {
+    "t": "Wikipedia - Tripoli Central Hospital",
+    "u": "https://en.wikipedia.org/wiki/Tripoli_Central_Hospital"
+   },
+   {
+    "t": "Al Jazeera - Tripoli hospital struggling to cope (24 Aug 2011)",
+    "u": "https://www.aljazeera.com/news/2011/8/24/tripoli-hospital-struggling-to-cope"
+   },
+   {
+    "t": "Al Jazeera - Doctors reveal hospital horrors under Gaddafi",
+    "u": "https://www.aljazeera.com/amp/features/2011/9/15/doctors-reveal-hospital-horrors-under-gaddafi"
+   },
+   {
+    "t": "IOL - Libyans discover secret morgue (Oct 2011)",
+    "u": "https://iol.co.za/news/africa/2011-10-17-libyans-discover-secret-morgue/"
+   },
+   {
+    "t": "Africanews - UN deplores attacks on Libyan hospitals (May 2020)",
+    "u": "https://www.africanews.com/amp/2020/05/15/un-deplores-attacks-on-libyan-hospitals/"
+   },
+   {
+    "t": "Al Jazeera - Tajoura detention centre attack (July 2019)",
+    "u": "https://www.aljazeera.com/news/2019/7/4/libya-migrants-recount-horrors-of-tajoura-detention-centre-attack"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/95248345"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-abu-salim-trauma-hospital",
+  "name": "Abu Salim Trauma Hospital",
+  "ar": "مستشفى أبوسليم للحوادث",
+  "aliases": [
+   "Abu Slim Hospital",
+   "Abu Salim Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.85444,
+  "lon": 13.17464,
+  "r": 0.15,
+  "summary": "A four-storey trauma hospital in the Abu Salim district, the site of one of the worst scenes of the 2011 Battle of Tripoli.",
+  "era": "On 25 August 2011 MSF found dozens of bodies in the compound and 22 patients and five staff trapped by fighting; the two most critical patients were moved to Tripoli Medical Centre. Reporters on 26 August found about 41 decomposing bodies (21 in one room, 20 in the courtyard); MSF reported over 200, and Airwars records estimates between 39 and 200. Pro-Gaddafi snipers were reported to have used the building until rebels secured it. In the 13 November 2013 Gharghour shootings, Human Rights Watch named Abu Salim Trauma Hospital as one of the hospitals that received the wounded; officials counted 43 dead and 460 wounded in all.",
+  "today": "Its emergency departments were again busy during the 2018 and 2019-2020 fighting in southern Tripoli, but no hospital-specific figures were found.",
+  "uncertain": "How and when the 2011 victims died is not established by the sources; reports describe both rebels and loyalists among them. The 2018-2020 line is general context, not a sourced hospital event.",
+  "sources": [
+   {
+    "t": "Gulf News - Piles of dead bodies at empty Tripoli hospital",
+    "u": "https://gulfnews.com/amp/story/world%2Fmena%2Fpiles-of-dead-bodies-left-behind-at-empty-tripoli-hospital-1.857433"
+   },
+   {
+    "t": "Mail & Guardian - Tripoli hospital closes (27 Aug 2011)",
+    "u": "https://mg.co.za/article/2011-08-27-tripoli-hospital-closes-as-fighting-rages-on/"
+   },
+   {
+    "t": "Airwars - incident Lib2011-152",
+    "u": "https://airwars.org/incidents/lib2011-152-august-26-2011"
+   },
+   {
+    "t": "MSF - Tripoli hospitals, August 2011",
+    "u": "https://www.msf.hk/en/latest/news-and-stories/news/libya-msf-scales-medical-response-tripoli-amid-shocking-scenes-hospitals"
+   },
+   {
+    "t": "Human Rights Watch - Libya: militias kill unarmed protesters (2013)",
+    "u": "https://www.hrw.org/news/2013/11/17/libya-militias-kill-unarmed-protesters"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/167504193"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-al-khadra-hospital",
+  "name": "Al-Khadra General Hospital",
+  "ar": "مستشفى الخضراء",
+  "aliases": [
+   "Elkhadra Hospital",
+   "Khadra Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.85432,
+  "lon": 13.19242,
+  "r": 0.15,
+  "summary": "One of Tripoli's biggest public hospitals and a teaching hospital of the University of Tripoli, heavily used in the 2019-2020 war.",
+  "era": "",
+  "today": "Its emergency wing saw more than 250,000 patients in 2019. After a 4 January 2020 air strike on a military school it treated 33 wounded in one night and received 30 bodies. It was built for about 300 emergency cases at a time but sometimes saw 3,000 patients a day, with about a third of the care staff it needed. On 6 April 2020, while it was the city's only dedicated COVID-19 hospital, projectiles hit its grounds and wounded at least six health workers; the Abu Salim council blamed Libyan National Army rockets and the UN called it a clear violation of humanitarian law.",
+  "uncertain": "Gaddafi-era history was not found in the sources consulted.",
+  "sources": [
+   {
+    "t": "Al Jazeera - UN condemns rocket attack on Tripoli hospital (Apr 2020)",
+    "u": "https://www.aljazeera.com/news/2020/04/condemns-rocket-attack-tripoli-hospital-200407140610239.html"
+   },
+   {
+    "t": "AFP via Malay Mail - At gates of Libya's war, Tripoli hospital struggles to cope",
+    "u": "https://www.malaymail.com/news/life/2020/01/23/at-gates-of-libyas-war-a-tripoli-hospital-struggles-to-cope/1830795"
+   },
+   {
+    "t": "Wikipedia - University of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/101518198"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-al-jalaa-hospital",
+  "name": "Al-Jalaa Children's Hospital",
+  "ar": "مستشفى الجلاء للأطفال",
+  "aliases": [
+   "Aljala Hospital",
+   "Tripoli Children's Hospital",
+   "Jalaa Maternity Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.88448,
+  "lon": 13.16361,
+  "r": 0.2,
+  "summary": "Tripoli's main children's hospital, listed as a University of Tripoli teaching hospital under the name Aljala.",
+  "era": "",
+  "today": "On about 14 May 2025, UNICEF reported that children, families and medical staff at Al Jalaa Children Hospital were stranded for hours as fighting closed in on the area during two days of violence in and around Tripoli.",
+  "uncertain": "A separate 'Jalaa Maternity Hospital' is listed by Wikipedia's Health in Libya page; the sources do not say whether it is the same site or a neighbouring one. Gaddafi-era history not found. OSM also maps a second point for the children's hospital about 0.3 km away.",
+  "sources": [
+   {
+    "t": "UNICEF MENA - Statement on escalating hostilities, Tripoli (May 2025)",
+    "u": "https://www.unicef.org/mena/press-releases/statement-unicef-impact-escalating-hostilities-children-tripoli-libya"
+   },
+   {
+    "t": "Wikipedia - University of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   },
+   {
+    "t": "Wikipedia - Health in Libya",
+    "u": "https://en.wikipedia.org/wiki/Health_in_Libya"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/789864106"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-mitiga-hospital",
+  "name": "Mitiga Hospital",
+  "ar": "مستشفى امعيتيقة",
+  "aliases": [
+   "Matiga Hospital",
+   "Maiteeqa Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.90608,
+  "lon": 13.26886,
+  "r": 0.2,
+  "summary": "A hospital in the Mitiga area on the eastern edge of Tripoli, near the former Wheelus air base.",
+  "era": "On 26 August 2011, during the Battle of Tripoli, an eight-person MSF team began supporting 'Matiga hospital', where more than 60 patients including frontline wounded were being treated. MSF donated anaesthetics, antibiotics, dressings and surgical equipment.",
+  "today": "No current-status source found.",
+  "uncertain": "MSF's 'Matiga hospital' is matched to this OSM-mapped facility by name only.",
+  "sources": [
+   {
+    "t": "MSF Hong Kong - Tripoli hospitals, August 2011",
+    "u": "https://www.msf.hk/en/latest/news-and-stories/news/libya-msf-scales-medical-response-tripoli-amid-shocking-scenes-hospitals"
+   },
+   {
+    "t": "Wikipedia - Mitiga International Airport",
+    "u": "https://en.wikipedia.org/wiki/Mitiga_International_Airport"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/452104732"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-al-razi-psychiatric-hospital",
+  "name": "Al-Razi Psychiatric Hospital",
+  "ar": "مستشفى الرازي للأمراض العقلية",
+  "aliases": [
+   "Razi Mental Hospital",
+   "Al Razi Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.87476,
+  "lon": 13.13787,
+  "r": 0.15,
+  "summary": "Tripoli's psychiatric hospital, described as the only mental hospital serving western, central and southern Libya.",
+  "era": "It opened about three decades before a 2019 article describing it, with roughly 200 beds, and treated 60 to 70 percent of Libya's mental-health service users. Reports say it received less funding and attention under Gaddafi, with poorly maintained buildings and little rehabilitation. During the August 2011 fighting a patient escaped, guards left, and inpatients were frightened by NATO bombing.",
+  "today": "After Tripoli fell, new management introduced reforms within six months: a 40-bed rehabilitation unit, a 16-bed subacute unit, a renovated 40-bed acute unit with international-standard seclusion rooms, CCTV and an outpatient department, with 23 new doctors and 50 new nurses recruited. In late 2011 it reported shortages of staff and medicine.",
+  "uncertain": "Exact opening year not stated.",
+  "sources": [
+   {
+    "t": "Foreign Policy - The Mad Dog's Madhouse (Sept 2011)",
+    "u": "https://foreignpolicy.com/2011/09/01/the-mad-dogs-madhouse-2/"
+   },
+   {
+    "t": "PMC - Arab Spring as a catalyst for reform at the psychiatric hospital in Tripoli",
+    "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6735120"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/452107133"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-burn-plastic-surgery-hospital",
+  "name": "Burn and Plastic Surgery Hospital",
+  "ar": "مستشفى جراحة الحروق والتجميل",
+  "aliases": [
+   "Surface and Beauty Surgery Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.87753,
+  "lon": 13.19238,
+  "r": 0.2,
+  "summary": "A hospital mapped as the burns and plastic surgery hospital in central Tripoli.",
+  "era": "",
+  "today": "The sources consulted give no current-status information.",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known. The English OSM label differs from the Arabic name; treat the identification as tentative.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/856893669"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-tripoli-eye-hospital",
+  "name": "Tripoli Eye Hospital",
+  "ar": "مستشفى العيون",
+  "aliases": [
+   "Hospital of Eyes"
+  ],
+  "kind": "landmark",
+  "lat": 32.89513,
+  "lon": 13.20087,
+  "r": 0.25,
+  "summary": "An eye hospital in central Tripoli, listed among the capital's hospitals.",
+  "era": "",
+  "today": "",
+  "uncertain": "Wikipedia's list of Tripoli hospitals names a Tripoli Eye Hospital, but does not say this OSM-mapped site is the same one.",
+  "sources": [
+   {
+    "t": "Wikipedia - Health in Libya",
+    "u": "https://en.wikipedia.org/wiki/Health_in_Libya"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/786555562"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-tajoura-heart-hospital",
+  "name": "Tajoura Heart Hospital",
+  "ar": "مستشفى القلب تاجوراء",
+  "aliases": [
+   "Tajoura Cardiac Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.87723,
+  "lon": 13.3964,
+  "r": 0.2,
+  "summary": "A specialist heart hospital in Tajoura, the eastern suburb of Tripoli.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/452121114"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-janzour-hospital",
+  "name": "Janzour Hospital",
+  "ar": "مستشفى جنزور",
+  "aliases": [
+   "Janzur Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.82718,
+  "lon": 13.01421,
+  "r": 0.2,
+  "summary": "The main general hospital of Janzour, the western suburb of Tripoli.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/789864603"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-abu-sitta-chest-hospital",
+  "name": "Abu Sitta Hospital for Chest Diseases",
+  "ar": "مستشفى أبوستة للأمراض الصدرية",
+  "aliases": [
+   "Abu Setta Chest Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.89698,
+  "lon": 13.22412,
+  "r": 0.2,
+  "summary": "A hospital for chest diseases in the Tripoli coastal district between the old city and Mitiga.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/452106357"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-tripoli-diabetes-hospital",
+  "name": "Diabetes Hospital, Tripoli",
+  "ar": "مستشفى السكري",
+  "aliases": [
+   "Tripoli Diabetes Hospital"
+  ],
+  "kind": "landmark",
+  "lat": 32.82611,
+  "lon": 13.21828,
+  "r": 0.2,
+  "summary": "A specialist diabetes hospital in south-eastern Tripoli.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/771616033"
+   }
+  ],
+  "category": "hospital"
+ },
+ {
+  "id": "lb-university-of-tripoli",
+  "name": "University of Tripoli (Al-Fateh University)",
+  "ar": "جامعة طرابلس",
+  "aliases": [
+   "Al Fateh University",
+   "Tripoli University",
+   "Jami'at Tarabulus"
+  ],
+  "kind": "landmark",
+  "lat": 32.85415,
+  "lon": 13.22753,
+  "r": 0.4,
+  "summary": "Libya's largest university, with more than 45,000 students, based in south-eastern Tripoli.",
+  "era": "The Tripoli faculties of the University of Libya (Science 1957, Agriculture 1966) became the University of Tripoli in 1973. On 7 April 1976 students in Tripoli and Benghazi protested against military control and demanded elections; security forces suppressed them and many were jailed. The university was renamed Al Fateh University that year. Public hangings of students took place every 7 April from 1977 until the late 1980s, but the sources place the documented hangings in Benghazi, not on the Tripoli campus. During the August 2011 Battle of Tripoli the university was the site of a student uprising led by the Students' Union.",
+  "today": "Renamed the University of Tripoli again in 2012. It runs Medicine, Engineering, Dentistry, Education and many other faculties across several sites, and its teaching hospitals include Tripoli Medical Center, Tripoli Central Hospital, Al-Khadra and Al-Jalaa.",
+  "uncertain": "No source found for any specific 1984 student event at Tripoli University; 1984 is documented only for the Bab al-Azizia coup attempt (8 May) and a televised hanging in Benghazi (5 June).",
+  "sources": [
+   {
+    "t": "Wikipedia - University of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   },
+   {
+    "t": "Wikipedia - 1976 Libyan protests",
+    "u": "https://en.wikipedia.org/wiki/1976_Libyan_protests"
+   },
+   {
+    "t": "Wikipedia - University of Libya",
+    "u": "https://en.wikipedia.org/wiki/University_of_Libya"
+   },
+   {
+    "t": "ECOI - report on student protests and hangings",
+    "u": "https://www.ecoi.net/de/dokument/185092"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/316136904"
+   }
+  ],
+  "category": "university"
+ },
+ {
+  "id": "lb-faculty-of-engineering-tripoli",
+  "name": "Faculty of Engineering, University of Tripoli",
+  "ar": "كلية الهندسة - جامعة طرابلس",
+  "aliases": [
+   "Tripoli University Engineering Faculty",
+   "Faculty of High Technical Studies"
+  ],
+  "kind": "landmark",
+  "lat": 32.85072,
+  "lon": 13.22167,
+  "r": 0.3,
+  "summary": "The first engineering faculty in Libya, now part of the University of Tripoli campus in the south-east of the city.",
+  "era": "It was founded as the Faculty of High Technical Studies under a UNESCO programme and grew from four departments to fourteen, becoming a faculty of the University of Tripoli when the university was created in 1973.",
+  "today": "It remains a major faculty of the University of Tripoli.",
+  "uncertain": "Position is the centre of four OSM-mapped engineering department points (chemical, computer, nuclear, metals and materials); the faculty building outline is not mapped.",
+  "sources": [
+   {
+    "t": "Wikipedia - University of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   },
+   {
+    "t": "OpenStreetMap - Department of Nuclear Engineering node",
+    "u": "https://www.openstreetmap.org/node/3904810612"
+   }
+  ],
+  "category": "university"
+ },
+ {
+  "id": "lb-faculty-of-medicine-tripoli",
+  "name": "Faculty of Medicine, University of Tripoli",
+  "ar": "كلية الطب البشري - جامعة طرابلس",
+  "aliases": [
+   "Tripoli Medical School",
+   "Al Fateh Faculty of Medicine"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.3,
+  "summary": "Tripoli's medical school, opened in 1973 and located next to the university's main campus.",
+  "era": "Libya's medical schools opened in Benghazi (1970) and Tripoli (1973) on a British-style curriculum. The faculty has its own administration although it was planned as part of the main university, and trains students at Tripoli Medical Center, Tripoli Central Hospital, Al-Khadra and Al-Jalaa hospitals.",
+  "today": "Still an active faculty of the University of Tripoli.",
+  "uncertain": "No coordinates were found for the faculty building itself.",
+  "sources": [
+   {
+    "t": "Wikipedia - University of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   },
+   {
+    "t": "Wikipedia - Health in Libya",
+    "u": "https://en.wikipedia.org/wiki/Health_in_Libya"
+   }
+  ],
+  "category": "university"
+ },
+ {
+  "id": "lb-ibn-al-manzour-dental-college",
+  "name": "Faculty of Dentistry (Ibn al-Manzour), University of Tripoli",
+  "ar": "كلية ابن المنظور لطب الأسنان",
+  "aliases": [
+   "Dental College Tripoli University"
+  ],
+  "kind": "landmark",
+  "lat": 32.82366,
+  "lon": 13.2115,
+  "r": 0.2,
+  "summary": "The dental college of the University of Tripoli, mapped in the south-east of the city.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/452117700"
+   }
+  ],
+  "category": "university"
+ },
+ {
+  "id": "lb-faculty-of-education-tripoli",
+  "name": "Faculty of Education, University of Tripoli",
+  "ar": "كلية التربية - جامعة طرابلس",
+  "aliases": [],
+  "kind": "landmark",
+  "lat": 32.89155,
+  "lon": 13.22408,
+  "r": 0.2,
+  "summary": "A faculty building of the University of Tripoli in the Tajoura road district.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known. It sits apart from the main campus.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/445312781"
+   }
+  ],
+  "category": "university"
+ },
+ {
+  "id": "lb-libyan-academy-graduate-studies",
+  "name": "Libyan Academy for Postgraduate Studies (Academy of Graduate Studies)",
+  "ar": "الأكاديمية الليبية للدراسات العليا",
+  "aliases": [
+   "Academy of Graduate Studies",
+   "Libyan Academy"
+  ],
+  "kind": "landmark",
+  "lat": 32.84083,
+  "lon": 13.04481,
+  "r": 0.25,
+  "summary": "Libya's postgraduate institution in Tripoli, set up in 1988 as an economics institute.",
+  "era": "Founded in 1988 as the Graduate Institute of Economic Sciences, it began graduate teaching in autumn 1989 with accounting, management and economics. In 1995 Decision No. 996 renamed it the Academy of Graduate Studies and let it award graduate diplomas and master's degrees. It later grew to eight schools including engineering, languages, strategic studies and medical sciences.",
+  "today": "Under Council of Ministers Resolution No. 167 of 2012 it became the Libyan Academy, under the Ministry of Higher Education and Scientific Research, offering postgraduate teaching, consulting and research training.",
+  "uncertain": "The OSM mapping is on the western edge of the city near Janzour; the academy has other sites.",
+  "sources": [
+   {
+    "t": "Libyan Academy - About",
+    "u": "https://academy.edu.ly/en/about"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/766013513"
+   }
+  ],
+  "category": "university"
+ },
+ {
+  "id": "lb-libyan-open-university",
+  "name": "Libyan Open University",
+  "ar": "الجامعة الليبية المفتوحة",
+  "aliases": [
+   "Libya Open University"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A distance-learning university based in Tripoli, established in 1987.",
+  "era": "Established in 1987 as an education foundation affiliated with the Ministry of Higher Education, it began scientific activity in the 1989/1990 academic year. Its mission was to spread distance learning without limits of place, time or age.",
+  "today": "It lists itself as a member of the Arab Universities Union and the Arab Network for Open Education Learning.",
+  "uncertain": "No street address or coordinates found; only a Tripoli P.O. box was listed. Naser University and Libyan International Medical University could not be sourced (the latter is generally a Benghazi institution).",
+  "sources": [
+   {
+    "t": "Libia Open University listing",
+    "u": "https://datainforms.faraafrica.org/node/242376"
+   }
+  ],
+  "category": "university"
+ },
+ {
+  "id": "lb-tripoli-international-stadium",
+  "name": "Tripoli International Stadium (11 June Stadium)",
+  "ar": "ملعب طرابلس الدولي",
+  "aliases": [
+   "June 11 Stadium",
+   "Stade 11 Juin",
+   "Tripoli Stadium"
+  ],
+  "kind": "landmark",
+  "lat": 32.85991,
+  "lon": 13.13579,
+  "r": 0.15,
+  "summary": "Libya's national stadium, a 50,000-seat venue in western Tripoli.",
+  "era": "Named 11 June after the date in 1970 when US forces left Libya's Wheelus base. Wikipedia says it opened in 1970 while another timeline lists 1982. It hosted many matches of the 1982 African Cup of Nations, including the Ghana v Libya final, and the 2002 Italian Supercup (Juventus 2-1 Parma).",
+  "today": "Renamed after 2011. A renovation was completed on 8 March 2024, reopening with a Milan All-Stars v Libya All-Stars match before over 50,000 fans. In 2025 Al-Ahly Tripoli and Al-Ittihad drew full 50,000 crowds there for CAF Champions League games. It is shared by the national team, Al-Ittihad, Al-Ahli Tripoli and Al-Madina.",
+  "uncertain": "Sources disagree on the opening year (1970 vs 1982).",
+  "sources": [
+   {
+    "t": "Wikipedia - Tripoli Stadium",
+    "u": "https://en.wikipedia.org/wiki/Tripoli_Stadium"
+   },
+   {
+    "t": "Wikipedia - Timeline of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   },
+   {
+    "t": "Wikipedia - Al-Ahli SC (Tripoli)",
+    "u": "https://en.wikipedia.org/wiki/Al-Ahli_SC_(Tripoli)"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/100721723"
+   }
+  ],
+  "category": "stadium"
+ },
+ {
+  "id": "lb-gmr-stadium",
+  "name": "GMR Stadium (Al-Madina SC ground)",
+  "ar": "",
+  "aliases": [
+   "Al-Madina Stadium"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "An 8,000-capacity football ground in Tripoli, home of Al-Madina SC.",
+  "era": "A timeline of Tripoli dates its opening to 2000. Al-Madina SC was founded on 29 October 1953 and is the only Libyan club never relegated.",
+  "today": "Al-Madina plays in the Libyan Premier League western group in 2025-26.",
+  "uncertain": "No coordinates found. No sources were found for an Al-Ahli Tripoli club ground other than the national stadium, or for an indoor basketball arena.",
+  "sources": [
+   {
+    "t": "Wikipedia - Al-Madina SC",
+    "u": "https://en.wikipedia.org/wiki/Al-Madina_SC"
+   },
+   {
+    "t": "Wikipedia - Timeline of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   }
+  ],
+  "category": "stadium"
+ },
+ {
+  "id": "lb-gurgi-mosque",
+  "name": "Gurgi Mosque",
+  "ar": "جامع قرجي",
+  "aliases": [
+   "Mustafa Gurgi Mosque",
+   "Qurji Mosque"
+  ],
+  "kind": "landmark",
+  "lat": 32.89944,
+  "lon": 13.17556,
+  "r": 0.1,
+  "summary": "An Ottoman-style mosque in Tripoli's old city, completed in 1834 and funded by naval captain Mustafa Gurgi.",
+  "era": "No Gaddafi-era events were found for this mosque. Wikipedia describes a marble interior, fifteen domes and a 25-metre minaret, with the founder buried in a courtyard mausoleum.",
+  "today": "It is an active mosque beside the Arch of Marcus Aurelius in the Bab al-Bahr quarter.",
+  "uncertain": "A scholarly paper dates the foundation inscription to 1833-1834; Wikipedia's text on the ruling pasha is confusing.",
+  "sources": [
+   {
+    "t": "Wikipedia - Gurgi Mosque",
+    "u": "https://en.wikipedia.org/wiki/Gurgi_Mosque"
+   },
+   {
+    "t": "HRMARS paper on Karamanli-era mosques",
+    "u": "https://www.hrmars.com/papers_submitted/13020/secrets-of-the-foundational-paintings-of-the-karamanli-era-mosques-in-the-old-city-of-tripoli-1711-1835-ad.pdf"
+   }
+  ],
+  "category": "mosque"
+ },
+ {
+  "id": "lb-karamanli-mosque",
+  "name": "Ahmed Pasha Karamanli Mosque",
+  "ar": "جامع أحمد باشا القرمانلي",
+  "aliases": [
+   "Karamanli Mosque"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "An 18th-century mosque complex in Tripoli's old city founded by Ahmed Karamanli, with a madrasa and tombs of the dynasty.",
+  "era": "Construction began in 1736 (inscriptions suggest 1737-38). No Gaddafi-era events were found.",
+  "today": "It was vandalised in 2014 during the civil war: ceramic tiles and marble decoration were damaged, and UNESCO condemned the attack. It is listed as active.",
+  "uncertain": "No coordinates found.",
+  "sources": [
+   {
+    "t": "Wikipedia - Karamanli Mosque",
+    "u": "https://en.wikipedia.org/wiki/Karamanli_Mosque"
+   },
+   {
+    "t": "HRMARS paper on Karamanli-era mosques",
+    "u": "https://www.hrmars.com/papers_submitted/13020/secrets-of-the-foundational-paintings-of-the-karamanli-era-mosques-in-the-old-city-of-tripoli-1711-1835-ad.pdf"
+   }
+  ],
+  "category": "mosque"
+ },
+ {
+  "id": "lb-murad-agha-mosque",
+  "name": "Murad Agha Mosque",
+  "ar": "جامع مراد آغا",
+  "aliases": [
+   "Murad Aga Mosque",
+   "Tajoura Great Mosque"
+  ],
+  "kind": "landmark",
+  "lat": 32.88167,
+  "lon": 13.34028,
+  "r": 0.1,
+  "summary": "A mid-16th-century Ottoman mosque in Tajoura, east of Tripoli, founded by the first Ottoman governor Murad Agha.",
+  "era": "Declared a historic monument by the Italian administration on 12 April 1922. In 2011, before the civil war began, anti-Gaddafi protests were held outside it.",
+  "today": "Murad's tomb outside the mosque was destroyed by an explosion in 2013, condemned by Libya's prime minister Ali Zeidan and UNESCO. Its present condition was not stated.",
+  "uncertain": "Construction date is given as 1552 or about 1553-1556.",
+  "sources": [
+   {
+    "t": "Wikipedia - Murad Agha Mosque",
+    "u": "https://en.wikipedia.org/wiki/Murad_Agha_Mosque"
+   }
+  ],
+  "category": "mosque"
+ },
+ {
+  "id": "lb-tripoli-war-cemetery",
+  "name": "Tripoli War Cemetery (Commonwealth)",
+  "ar": "مقبرة الكومنولث في طرابلس",
+  "aliases": [
+   "Tripoli Commonwealth War Cemetery",
+   "British Cemetery Tripoli"
+  ],
+  "kind": "landmark",
+  "lat": 32.88025,
+  "lon": 13.16315,
+  "r": 0.15,
+  "summary": "A Commonwealth War Graves Commission cemetery with 1,369 Second World War burials, in the Mansura district.",
+  "era": "Tripoli fell to Montgomery's army on 23 January 1943 and became a hospital centre; most burials came from British general hospitals there. The adjacent Italian cemetery was unguarded for years while the British one was reported well kept.",
+  "today": "A rocket fell on the adjacent British cemetery on 31 May 2020. The CWGC says maintenance is limited by conditions in Libya and a major renovation to replace eroded headstones is planned.",
+  "uncertain": "",
+  "sources": [
+   {
+    "t": "CWGC - Tripoli War Cemetery",
+    "u": "https://www.cwgc.org/find-a-cemetery/cemetery/2014700/CemeteryPlan.ashx?id=2014700"
+   },
+   {
+    "t": "WW2Cemeteries - Tripoli War Cemetery",
+    "u": "https://www.ww2cemeteries.com/lib-tripoli-war-cemetery.html"
+   },
+   {
+    "t": "Italian Foreign Ministry - Hammangi sacrario",
+    "u": "https://www.esteri.it/it/sala_stampa/archivionotizie/retediplomatica/2020/10/libia-rinasce-il-sacrario-italiano-di-hammangi/"
+   }
+  ],
+  "category": "cemetery"
+ },
+ {
+  "id": "lb-hammangi-italian-cemetery",
+  "name": "Italian Cemetery and Sacrario (Hammangi)",
+  "ar": "مقبرة الإيطاليين",
+  "aliases": [
+   "Hammangi Italian Cemetery",
+   "Italian Christian Cemetery"
+  ],
+  "kind": "landmark",
+  "lat": 32.87957,
+  "lon": 13.16037,
+  "r": 0.15,
+  "summary": "Tripoli's former Italian cemetery, once about 12 hectares with around 15,000 burials and a shrine for Italian war dead.",
+  "era": "After Gaddafi's 1970 coup and the expulsion of Italians, thousands of remains were repatriated, including that of Italo Balbo. For years it had no guards. Ten hectares were returned to the Tripoli municipality and a first restoration was completed in 2009.",
+  "today": "After 2011 it was looted and vandalised. A 350,000-euro restoration began in 2019 and the sacrario reopened on 7 October 2020, the 50th anniversary of the expulsion. A rocket grazed it on 31 May 2020 during the work.",
+  "uncertain": "",
+  "sources": [
+   {
+    "t": "Italian Foreign Ministry - Hammangi sacrario",
+    "u": "https://www.esteri.it/it/sala_stampa/archivionotizie/retediplomatica/2020/10/libia-rinasce-il-sacrario-italiano-di-hammangi/"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/100872903"
+   }
+  ],
+  "category": "cemetery"
+ },
+ {
+  "id": "lb-old-jewish-graveyard-tripoli",
+  "name": "Old Jewish Cemetery",
+  "ar": "مقبرة اليهود",
+  "aliases": [
+   "Old Jews Graveyard"
+  ],
+  "kind": "landmark",
+  "lat": 32.87971,
+  "lon": 13.15767,
+  "r": 0.15,
+  "summary": "A former Jewish burial ground next to the Italian and Commonwealth cemeteries.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/100872906"
+   }
+  ],
+  "category": "cemetery"
+ },
+ {
+  "id": "lb-sidi-munaidar-cemetery",
+  "name": "Sidi Munaidar Cemetery",
+  "ar": "مقبرة سيدي منيدر",
+  "aliases": [
+   "Sidi Munadir Cemetery"
+  ],
+  "kind": "landmark",
+  "lat": 32.88609,
+  "lon": 13.17806,
+  "r": 0.15,
+  "summary": "A cemetery in central Tripoli near the old city.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known. Sidi Hamouda and Sidi Abdel Salam cemeteries were not found in the sources.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/95208806"
+   }
+  ],
+  "category": "cemetery"
+ },
+ {
+  "id": "lb-al-hani-cemetery",
+  "name": "Al-Hani Cemetery",
+  "ar": "مقبرة الهاني",
+  "aliases": [],
+  "kind": "landmark",
+  "lat": 32.88424,
+  "lon": 13.21941,
+  "r": 0.2,
+  "summary": "A large neighbourhood cemetery in the Hani district.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/100961278"
+   }
+  ],
+  "category": "cemetery"
+ },
+ {
+  "id": "lb-bab-al-azizia",
+  "name": "Bab al-Azizia Compound",
+  "ar": "باب العزيزية",
+  "aliases": [
+   "Bab al-Aziziya",
+   "Gaddafi compound"
+  ],
+  "kind": "government",
+  "lat": 32.87222,
+  "lon": 13.17361,
+  "r": 0.5,
+  "summary": "Muammar Gaddafi's fortified barracks and residence compound in south Tripoli, around 6 square km.",
+  "era": "Originally an Italian army base, occupied by British forces in 1945 and rebuilt by King Idris. Gaddafi expanded it in the 1980s. On 8 May 1984 the National Front for the Salvation of Libya attempted a coup there. It was the main target of the 15 April 1986 US bombing; a monument of a fist crushing a US jet was later put up. NATO bombed it repeatedly in 2011, and rebels took it on 23 August 2011.",
+  "today": "Opened to the public and looted in 2011, with a market held there in October; bulldozers began demolishing the outer walls on 17 October 2011. By February 2012 many buildings were rubble, some families were living in makeshift homes, and a park was proposed.",
+  "uncertain": "Later demolition and redevelopment were not found.",
+  "sources": [
+   {
+    "t": "Wikipedia - Bab al-Azizia",
+    "u": "https://en.wikipedia.org/wiki/Bab_al-Azizia"
+   }
+  ],
+  "category": "other"
+ },
+ {
+  "id": "lb-martyrs-square-green-square",
+  "name": "Martyrs' Square (formerly Green Square)",
+  "ar": "ميدان الشهداء",
+  "aliases": [
+   "Green Square",
+   "Independence Square",
+   "Piazza Italia",
+   "Algeria Square"
+  ],
+  "kind": "landmark",
+  "lat": 32.895,
+  "lon": 13.18111,
+  "r": 0.15,
+  "summary": "Tripoli's central square at the bay, beside the Red Castle.",
+  "era": "Piazza Italia under Italy, Independence Square under the monarchy, and Green Square under Gaddafi, named for his Green Book. The Royal Miramare Theatre opposite the Red Castle was demolished after the 1960s to make room for large demonstrations.",
+  "today": "Rebels took it on the night of 21-22 August 2011 and renamed it Martyrs' Square; tens of thousands celebrated there on 31 August and 2 September 2011. It is a commercial centre and tourist site.",
+  "uncertain": "",
+  "sources": [
+   {
+    "t": "Wikipedia - Martyrs' Square, Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Martyrs%27_Square,_Tripoli"
+   }
+  ],
+  "category": "other"
+ },
+ {
+  "id": "lb-red-castle-museum",
+  "name": "Red Castle Museum (Assaraya al-Hamra)",
+  "ar": "متحف السرايا الحمراء",
+  "aliases": [
+   "Jamahiriya Museum",
+   "National Museum of Libya",
+   "Assaraya Alhamra Museum"
+  ],
+  "kind": "landmark",
+  "lat": 32.89592,
+  "lon": 13.18111,
+  "r": 0.15,
+  "summary": "The museum inside Tripoli's Red Castle, reopened as the National Museum of Libya in December 2025.",
+  "era": "Reopened to the public in 1988 as the Assaraya Alhamra Museum, also called the Jamahiriya Museum, and held some Gaddafi-related items.",
+  "today": "Closed for security after the 2011 war; rebels entered and damaged a few Gaddafi items, and staff moved the most valuable pieces to another place. It officially reopened on 12 December 2025 as the National Museum of Libya, at first only to school groups.",
+  "uncertain": "",
+  "sources": [
+   {
+    "t": "Wikipedia - Red Castle Museum",
+    "u": "https://en.wikipedia.org/wiki/Red_Castle_Museum"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/1108492326"
+   }
+  ],
+  "category": "other"
+ },
+ {
+  "id": "lb-national-archives-of-libya",
+  "name": "National Archives of Libya (Libyan Historical Archives)",
+  "ar": "دار المحفوظات التاريخية",
+  "aliases": [
+   "Dar al-Mahfuzat al-Tarikhiyya"
+  ],
+  "kind": "government",
+  "lat": 32.89592,
+  "lon": 13.18111,
+  "r": 0.3,
+  "summary": "Libya's national archive, housed in the Red Castle in Tripoli.",
+  "era": "In 1980 it was overseen by the Director of Antiquities. A researcher visiting an unnamed archive centre in September 2011 reported that the 17 million documents on Libya's 20th-century history had all survived the war; the only visible change was boarded-up windows.",
+  "today": "No current condition was found.",
+  "uncertain": "Position is that of the Red Castle; the archive's exact entrance is not mapped. The 2011 report does not name the centre.",
+  "sources": [
+   {
+    "t": "Wikipedia - National Archives of Libya",
+    "u": "https://en.wikipedia.org/wiki/National_Archives_of_Libya"
+   },
+   {
+    "t": "Libya Analysis - How Libya's archives survived the war",
+    "u": "https://www.libya-analysis.com/blogs/how-libyas-archives-survived-the-war"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/1108492326"
+   }
+  ],
+  "category": "other"
+ },
+ {
+  "id": "lb-libyan-studies-centre",
+  "name": "Libyan Studies Centre",
+  "ar": "مركز دراسات الجهاد الليبي",
+  "aliases": [
+   "Centre for Libyan Studies",
+   "Jihad Centre"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A research and historical documentation centre in Tripoli that opened in 1978.",
+  "era": "A timeline of Tripoli records that the Libyan Studies Center opened in 1978.",
+  "today": "",
+  "uncertain": "Only the opening date was found; the Arabic name and the location are not confirmed here. The National Library was not found in the sources.",
+  "sources": [
+   {
+    "t": "Wikipedia - Timeline of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   }
+  ],
+  "category": "other"
+ },
+ {
+  "id": "lb-abu-salim-prison",
+  "name": "Abu Salim Prison",
+  "ar": "سجن أبوسليم",
+  "aliases": [
+   "Abu Slim Prison"
+  ],
+  "kind": "government",
+  "lat": 32.83352,
+  "lon": 13.17521,
+  "r": 0.3,
+  "summary": "A maximum-security prison in south Tripoli, built in 1984 and the scene of the June 1996 massacre.",
+  "era": "Built by foreign workers in 1984 from prefabricated slabs, with a military and a central block; the first prisoners arrived in September 1984 after the Bab al-Azizia coup attempt. On 28-29 June 1996, after a protest over food, guards killed prisoners in the courtyards; Human Rights Watch estimated over 1,200 dead. Gaddafi admitted the killings in 2004 after eight years of denial.",
+  "today": "Rebels captured it on 24 August 2011 and freed prisoners, though loyalist troops fired on some. A reported mass grave announced on 25 September 2011 turned out to hold what looked like animal bones. On 2 May 2021 Libya's Supreme Court ruled the massacre a genocide and sent the case back to a lower court. Current use was not stated.",
+  "uncertain": "The death toll is an estimate.",
+  "sources": [
+   {
+    "t": "Wikipedia - Abu Salim Prison",
+    "u": "https://en.wikipedia.org/wiki/Abu_Salim_Prison"
+   },
+   {
+    "t": "Wikipedia - Human rights violations during the Gaddafi regime",
+    "u": "https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/101078561"
+   }
+  ],
+  "category": "other"
+ },
+ {
+  "id": "lb-us-embassy-tripoli",
+  "name": "US Embassy, Tripoli",
+  "ar": "السفارة الأمريكية",
+  "aliases": [
+   "American Embassy Tripoli"
+  ],
+  "kind": "government",
+  "lat": 32.78664,
+  "lon": 13.1336,
+  "r": 0.5,
+  "summary": "The US diplomatic mission in Libya, burned by a mob in December 1979 and closed until 2004.",
+  "era": "The US had already withdrawn its ambassador in 1972. On 2 December 1979 protesters set fire to the embassy, angry over false claims of US involvement in the seizure of the Grand Mosque in Mecca. The US withdrew its remaining staff and closed the embassy. A US Interests Section returned on 8 February 2004 and became a Liaison Office on 24 June 2004.",
+  "today": "In September 2011 an American flag was raised over the embassy compound in Tripoli. The embassy was later evacuated during the 2014 fighting (not detailed in the sources consulted).",
+  "uncertain": "OpenStreetMap places the US embassy in the south of the city; the 1979 building may have been in a different place.",
+  "sources": [
+   {
+    "t": "Wikipedia - 1979 U.S. Embassy Burning in Libya",
+    "u": "https://en.wikipedia.org/wiki/1979_U.S._Embassy_Burning_in_Libya"
+   },
+   {
+    "t": "ABC News - American flag raised over US Embassy in Tripoli (2011)",
+    "u": "https://abcnews.com/blogs/politics/2011/09/american-flag-raised-over-u-s-embassy-in-tripoli"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/4718259193"
+   }
+  ],
+  "category": "embassy"
+ },
+ {
+  "id": "lb-british-embassy-tripoli",
+  "name": "British Embassy, Tripoli",
+  "ar": "السفارة البريطانية",
+  "aliases": [
+   "UK Embassy Tripoli"
+  ],
+  "kind": "government",
+  "lat": 32.89213,
+  "lon": 13.16724,
+  "r": 0.5,
+  "summary": "The UK diplomatic mission in Tripoli, besieged in 1984, burned in 2011 and reopened in October 2011.",
+  "era": "After gunfire from the Libyan People's Bureau in London killed WPC Yvonne Fletcher on 17 April 1984, Britain broke relations on 22 April. In Tripoli about 60 Revolutionary Guards surrounded the British embassy, trapping its staff including Ambassador Oliver Miles, until the siege was lifted. Relations were restored after Libya accepted responsibility in 1999 and were normalised by 2007. On 1 May 2011 a mob burned the embassy and ambassador's residence after a NATO strike, leaving 'burned shells'.",
+  "today": "William Hague reopened the embassy on 17 October 2011 and appointed Sir John Jenkins ambassador. Its status since then was not found.",
+  "uncertain": "The OSM point may be a later location; the building burned in 2011 may have been elsewhere. Wikipedia's page gives the 1984 lift date as 18 April.",
+  "sources": [
+   {
+    "t": "Wikipedia - Yvonne Fletcher",
+    "u": "https://en.wikipedia.org/wiki/Yvonne_Fletcher"
+   },
+   {
+    "t": "Atlantic Council - Libyans burn British and Italian embassies",
+    "u": "https://www.atlanticcouncil.org/blogs/natosource/libyans-burn-british-and-italian-embassies-after-nato-strike/"
+   },
+   {
+    "t": "RIA Novosti via GlobalSecurity - Britain re-opens embassy",
+    "u": "https://www.globalsecurity.org/wmd/library/news/libya/2011/libya-111017-rianovosti02.htm"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/6644721185"
+   }
+  ],
+  "category": "embassy"
+ },
+ {
+  "id": "lb-italian-embassy-tripoli",
+  "name": "Italian Embassy, Tripoli",
+  "ar": "السفارة الإيطالية",
+  "aliases": [
+   "Embassy of Italy"
+  ],
+  "kind": "government",
+  "lat": 32.89357,
+  "lon": 13.19239,
+  "r": 0.5,
+  "summary": "Italy's embassy in Tripoli, burned by a mob on 1 May 2011.",
+  "era": "On 1 May 2011, after a NATO strike on Gaddafi's compound, the embassy was burned. Italy had withdrawn its diplomats weeks earlier and blamed the Gaddafi regime for failing to protect foreign missions.",
+  "today": "Italy's ambassador oversaw the 2019-2020 restoration of the Hammangi Italian cemetery. The embassy's current premises were not documented here.",
+  "uncertain": "The building burned in 2011 may not be this mapped location. French and Turkish embassies were not researched.",
+  "sources": [
+   {
+    "t": "Atlantic Council - Libyans burn British and Italian embassies",
+    "u": "https://www.atlanticcouncil.org/blogs/natosource/libyans-burn-british-and-italian-embassies-after-nato-strike/"
+   },
+   {
+    "t": "Italian Foreign Ministry - Hammangi sacrario",
+    "u": "https://www.esteri.it/it/sala_stampa/archivionotizie/retediplomatica/2020/10/libia-rinasce-il-sacrario-italiano-di-hammangi/"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/100832546"
+   }
+  ],
+  "category": "embassy"
+ },
+ {
+  "id": "lb-al-jamahiriya-tv",
+  "name": "Libyan Jamahiriya Broadcasting Corporation / Al-Jamahiriya TV",
+  "ar": "الإذاعة والتلفزيون الليبي",
+  "aliases": [
+   "Al-Jamahiriya TV",
+   "Libyan Radio and TV Authority"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The state broadcaster of the Jamahiriya, strictly controlled by the state, with its headquarters in Tripoli.",
+  "era": "NATO struck the Tripoli headquarters of Al-Jamahiriya and two of its installations on 30 July 2011; the station said three journalists were killed and 21 wounded, which was not independently verified. NATO said the aim was to stop 'terror broadcasts'. Al-Jamahiriya, Al Urubah and Al-Shababiyah went off air in late August 2011.",
+  "today": "Later organisation not researched.",
+  "uncertain": "No coordinates found for the headquarters; the radio buildings were not documented.",
+  "sources": [
+   {
+    "t": "RSF - NATO attacks on national TV headquarters",
+    "u": "https://rsf.org/en/news/nato-attacks-national-tv-headquarters-and-installations-tripoli"
+   },
+   {
+    "t": "Wikipedia - Free speech in the media during the 2011 Libyan civil war",
+    "u": "https://en.wikipedia.org/wiki/Free_speech_in_the_media_during_the_Libyan_civil_war_(2011)"
+   }
+  ],
+  "category": "media"
+ },
+ {
+  "id": "lb-central-bank-of-libya",
+  "name": "Central Bank of Libya",
+  "ar": "مصرف ليبيا المركزي",
+  "aliases": [
+   "CBL"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "Libya's central bank, in the former Savings Bank building on Al Fatah Street, designed in 1921 by Armando Brasini.",
+  "era": "Founded 1955 as the National Bank of Libya and opened 1 April 1956; renamed Bank of Libya in 1963 and Central Bank of Libya after the 1969 coup. In March 2011 governor Farhat Bengdara resigned and joined the rebels, first arranging for most external assets to be frozen.",
+  "today": "The bank split in the civil wars; the Tripoli and Bayda branches agreed to unify in 2021 and announced reunification in August 2023. Naji Belqasem has been governor since 3 October 2024.",
+  "uncertain": "No coordinates found.",
+  "sources": [
+   {
+    "t": "Wikipedia - Central Bank of Libya",
+    "u": "https://en.wikipedia.org/wiki/Central_Bank_of_Libya"
+   }
+  ],
+  "category": "bank"
+ },
+ {
+  "id": "lb-ministry-of-interior",
+  "name": "Ministry of Interior",
+  "ar": "وزارة الداخلية",
+  "aliases": [],
+  "kind": "government",
+  "lat": 32.89431,
+  "lon": 13.17962,
+  "r": 0.3,
+  "summary": "Government ministry office in Tripoli, mapped at this location.",
+  "era": "",
+  "today": "Under the Jamahiriya the cabinet was the General People's Committee, whose members were called secretaries rather than ministers; the ministry names here are the post-2011 usage.",
+  "uncertain": "Only the mapped position is documented; the ministry may have occupied other buildings under Gaddafi, and several ministries have more than one mapped office.",
+  "sources": [
+   {
+    "t": "Wikipedia - Libyan Arab Jamahiriya",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/6709036987"
+   }
+  ],
+  "category": "ministry"
+ },
+ {
+  "id": "lb-ministry-of-health",
+  "name": "Ministry of Health",
+  "ar": "وزارة الصحة",
+  "aliases": [],
+  "kind": "government",
+  "lat": 32.84512,
+  "lon": 13.23605,
+  "r": 0.3,
+  "summary": "Government ministry office in Tripoli, mapped at this location.",
+  "era": "",
+  "today": "Under the Jamahiriya the cabinet was the General People's Committee, whose members were called secretaries rather than ministers; the ministry names here are the post-2011 usage.",
+  "uncertain": "Only the mapped position is documented; the ministry may have occupied other buildings under Gaddafi, and several ministries have more than one mapped office.",
+  "sources": [
+   {
+    "t": "Wikipedia - Libyan Arab Jamahiriya",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/6463118885"
+   }
+  ],
+  "category": "ministry"
+ },
+ {
+  "id": "lb-ministry-of-justice",
+  "name": "Ministry of Justice",
+  "ar": "وزارة العدل",
+  "aliases": [],
+  "kind": "government",
+  "lat": 32.86721,
+  "lon": 13.16253,
+  "r": 0.3,
+  "summary": "Government ministry office in Tripoli, mapped at this location.",
+  "era": "",
+  "today": "Under the Jamahiriya the cabinet was the General People's Committee, whose members were called secretaries rather than ministers; the ministry names here are the post-2011 usage.",
+  "uncertain": "Only the mapped position is documented; the ministry may have occupied other buildings under Gaddafi, and several ministries have more than one mapped office.",
+  "sources": [
+   {
+    "t": "Wikipedia - Libyan Arab Jamahiriya",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/4758293843"
+   }
+  ],
+  "category": "ministry"
+ },
+ {
+  "id": "lb-ministry-of-foreign-affairs",
+  "name": "Ministry of Foreign Affairs",
+  "ar": "وزارة الخارجية والتعاون الدولي",
+  "aliases": [],
+  "kind": "government",
+  "lat": 32.89744,
+  "lon": 13.2044,
+  "r": 0.3,
+  "summary": "Government ministry office in Tripoli, mapped at this location.",
+  "era": "",
+  "today": "Under the Jamahiriya the cabinet was the General People's Committee, whose members were called secretaries rather than ministers; the ministry names here are the post-2011 usage.",
+  "uncertain": "Only the mapped position is documented; the ministry may have occupied other buildings under Gaddafi, and several ministries have more than one mapped office.",
+  "sources": [
+   {
+    "t": "Wikipedia - Libyan Arab Jamahiriya",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/4771882621"
+   }
+  ],
+  "category": "ministry"
+ },
+ {
+  "id": "lb-ministry-of-higher-education",
+  "name": "Ministry of Higher Education and Scientific Research",
+  "ar": "وزارة التعليم العالي",
+  "aliases": [],
+  "kind": "government",
+  "lat": 32.89375,
+  "lon": 13.21894,
+  "r": 0.3,
+  "summary": "Government ministry office in Tripoli, mapped at this location.",
+  "era": "",
+  "today": "Under the Jamahiriya the cabinet was the General People's Committee, whose members were called secretaries rather than ministers; the ministry names here are the post-2011 usage.",
+  "uncertain": "Only the mapped position is documented; the ministry may have occupied other buildings under Gaddafi, and several ministries have more than one mapped office.",
+  "sources": [
+   {
+    "t": "Wikipedia - Libyan Arab Jamahiriya",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/4392824095"
+   }
+  ],
+  "category": "ministry"
+ },
+ {
+  "id": "lb-ministry-of-education",
+  "name": "Ministry of Education",
+  "ar": "وزارة التعليم",
+  "aliases": [],
+  "kind": "government",
+  "lat": 32.88151,
+  "lon": 13.21914,
+  "r": 0.3,
+  "summary": "Government ministry office in Tripoli, mapped at this location.",
+  "era": "",
+  "today": "Under the Jamahiriya the cabinet was the General People's Committee, whose members were called secretaries rather than ministers; the ministry names here are the post-2011 usage.",
+  "uncertain": "Only the mapped position is documented; the ministry may have occupied other buildings under Gaddafi, and several ministries have more than one mapped office.",
+  "sources": [
+   {
+    "t": "Wikipedia - Libyan Arab Jamahiriya",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/4697791990"
+   }
+  ],
+  "category": "ministry"
+ },
+ {
+  "id": "lb-ministry-of-youth-sports",
+  "name": "Ministry of Youth and Sports",
+  "ar": "وزارة الشباب والرياضة",
+  "aliases": [],
+  "kind": "government",
+  "lat": 32.89246,
+  "lon": 13.21281,
+  "r": 0.3,
+  "summary": "Government ministry office in Tripoli, mapped at this location.",
+  "era": "",
+  "today": "Under the Jamahiriya the cabinet was the General People's Committee, whose members were called secretaries rather than ministers; the ministry names here are the post-2011 usage.",
+  "uncertain": "Only the mapped position is documented; the ministry may have occupied other buildings under Gaddafi, and several ministries have more than one mapped office.",
+  "sources": [
+   {
+    "t": "Wikipedia - Libyan Arab Jamahiriya",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/4996661522"
+   }
+  ],
+  "category": "ministry"
+ },
+ {
+  "id": "lb-tripoli-courts-complex",
+  "name": "Tripoli Courts Complex",
+  "ar": "مجمع المحاكم طرابلس",
+  "aliases": [
+   "Courts Complex"
+  ],
+  "kind": "government",
+  "lat": 32.87442,
+  "lon": 13.19412,
+  "r": 0.2,
+  "summary": "The main courts complex in central Tripoli, next to the Supreme Judicial Council offices.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/4228765990"
+   }
+  ],
+  "category": "court"
+ },
+ {
+  "id": "lb-tripoli-supreme-court",
+  "name": "Tripoli Supreme Court",
+  "ar": "المحكمة العليا",
+  "aliases": [
+   "Libyan Supreme Court"
+  ],
+  "kind": "government",
+  "lat": 32.89489,
+  "lon": 13.19757,
+  "r": 0.2,
+  "summary": "The Supreme Court building, mapped in central Tripoli.",
+  "era": "",
+  "today": "On 2 May 2021 the Supreme Court ruled that the 1996 Abu Salim prison massacre was genocide and sent the case back to a lower court (location of the ruling not stated).",
+  "uncertain": "The 2021 ruling is from a source on Abu Salim, not on the building itself.",
+  "sources": [
+   {
+    "t": "Wikipedia - Abu Salim Prison",
+    "u": "https://en.wikipedia.org/wiki/Abu_Salim_Prison"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/460112447"
+   }
+  ],
+  "category": "court"
+ },
+ {
+  "id": "lb-jamahiriya-institutions",
+  "name": "Jamahiriya institutions: People's Committees and Revolutionary Committees",
+  "ar": "اللجان الشعبية واللجان الثورية",
+  "aliases": [
+   "People's Committees",
+   "Revolutionary Committees",
+   "General People's Committee",
+   "Basic People's Congress"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The state system of Gaddafi's Jamahiriya, run from Tripoli through committees and congresses rather than ministries.",
+  "era": "People's Committees began around 1973 in the cultural revolution, organised by function (universities, firms, media) and geography, with over 2,000 by mid-1973. The General People's Congress (1977) replaced the Revolutionary Command Council, and the General People's Committee replaced the cabinet, with 'secretaries' instead of ministers. Revolutionary Committees, organised from 1977, supervised the system, surveyed the population, repressed opposition and ran public executions; in 1979 they took control of Basic People's Congress elections.",
+  "today": "The system ended with the Jamahiriya in October 2011.",
+  "uncertain": "This is a system, not a single building; no committee office locations were found.",
+  "sources": [
+   {
+    "t": "Wikipedia - Libyan Arab Jamahiriya",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya"
+   },
+   {
+    "t": "Wikipedia - Human rights violations during the Gaddafi regime",
+    "u": "https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime"
+   }
+  ],
+  "category": "other"
+ },
+ {
+  "id": "lb-libyan-olympic-committee",
+  "name": "Libyan Olympic Committee",
+  "ar": "اللجنة الأولمبية الليبية",
+  "aliases": [],
+  "kind": "government",
+  "lat": 32.88758,
+  "lon": 13.16602,
+  "r": 0.3,
+  "summary": "The national Olympic committee, with offices mapped in central Tripoli.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/node/6878682591"
+   }
+  ],
+  "category": "other"
+ },
+ {
+  "id": "lb-college-medical-sciences-technology",
+  "name": "College of Medical Sciences and Technology, Tripoli",
+  "ar": "كلية العلوم والتقنيات الطبية",
+  "aliases": [],
+  "kind": "landmark",
+  "lat": 32.84685,
+  "lon": 13.04077,
+  "r": 0.2,
+  "summary": "A health-sciences technical college in the Janzour side of Tripoli.",
+  "era": "",
+  "today": "",
+  "uncertain": "No documented history was found in the sources consulted; only its mapped location is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/820918893"
+   }
+  ],
+  "category": "university"
+ }
+]

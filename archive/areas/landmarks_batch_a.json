@@ -1,0 +1,1477 @@
+[
+ {
+  "id": "lm-tripoli-tower-al-fateh",
+  "name": "Al Fateh Tower (Tripoli Tower)",
+  "ar": "برج الفاتح",
+  "aliases": [
+   "Tripoli Tower",
+   "Burj al-Fateh",
+   "Fateh Tower",
+   "Burj Tarablus"
+  ],
+  "kind": "landmark",
+  "lat": 32.8919,
+  "lon": 13.1671,
+  "r": 0.3,
+  "summary": "A tall mixed-use tower on the Corniche (Gulf Street) near the central business district, known as Al Fateh Tower and now as Tripoli Tower. It holds shops, serviced apartments and a small hotel, and is a separate building from Fateh University.",
+  "era": "Wikipedia lists it as opening in 2003 in the infobox, while its article text says 1999. It was called Al Fateh Tower before it became Tripoli Tower. Reported height is 112 to 120 metres and 25 to 28 floors (the page contradicts itself). It has four basement car-parking levels. It is a different building from the Corinthia Hotel complex and from the That El Emad Towers, which stand nearby. The sources seen contain no specific events at the tower during 1969-2011.",
+  "today": "A Libya Monitor report dated 24 July 2013 says a rocket hit a residential tower in the main business area near Tripoli Tower (formerly Burj al-Fateh); the report did not name the building hit and no injuries were reported. The tower's present condition is not described in the sources seen.",
+  "uncertain": "Two heights, two floor counts and two opening years are given. Architect, owner and the date of the renaming from Al Fateh Tower to Tripoli Tower are not stated. The coordinate comes from Wikipedia's infobox only. Check whether the 'Fateh Towers' twin-tower description from the owner matches this single tower.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli Tower",
+    "u": "https://en.wikipedia.org/wiki/Tripoli_Tower"
+   },
+   {
+    "t": "Libya Monitor: rocket attack in main Tripoli business district",
+    "u": "https://libyamonitor.com/taxonomy/term/12/rocket-attack-main-tripoli-business-district"
+   }
+  ]
+ },
+ {
+  "id": "lm-corinthia-bab-africa-hotel",
+  "name": "Corinthia Hotel Tripoli (Corinthia Bab Africa)",
+  "ar": "فندق كورنثيا باب أفريقيا",
+  "aliases": [
+   "Corinthia Bab Africa Hotel",
+   "Bab Africa Hotel"
+  ],
+  "kind": "landmark",
+  "lat": 32.8972,
+  "lon": 13.1703,
+  "r": 0.2,
+  "summary": "A twin-tower hotel complex on the Tripoli waterfront, opened in 2003 and described as the largest hotel in Libya. It is operated by Corinthia Hotels International.",
+  "era": "Opened in 2003 in the central business district; Wikipedia says it was opened by Prime Minister Shukri Ghanem, but that claim is marked 'citation needed'. Tower 1 has 28 floors and tower 2 has 14; the hotel has 319 rooms and four restaurants. It stands 120 m high. The sources seen contain no specific events at the hotel during the Gaddafi era or the 2011 war.",
+  "today": "On 27 January 2015 gunmen attacked the hotel and killed ten people, including five foreigners and an American security contractor. Islamic State in Tripoli Province claimed responsibility. Before the main attack a car bomb injured six people nearby. Wikipedia (2026) names it one of only two international chain hotels in Libya, the other being the Radisson Blu Al Mahary.",
+  "uncertain": "Gaddafi-era use and 2011 events are not documented in the sources seen. One news source gives a toll of nine rather than ten for the 2015 attack. Opening ceremony claim is unsourced.",
+  "sources": [
+   {
+    "t": "Wikipedia: Corinthia Hotel Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Corinthia_Hotel_Tripoli"
+   },
+   {
+    "t": "Wikipedia: Radisson Blu Al Mahary Hotel Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Radisson_Blu_Al_Mahary_Hotel_Tripoli"
+   }
+  ]
+ },
+ {
+  "id": "lm-radisson-blu-al-mahary",
+  "name": "Radisson Blu Al Mahary Hotel",
+  "ar": "فندق راديسون بلو المهاري",
+  "aliases": [
+   "Al Mahary Hotel",
+   "Mahari Hotel",
+   "Hotel del Mehari",
+   "Al Mehari"
+  ],
+  "kind": "landmark",
+  "lat": 32.8956,
+  "lon": 13.2003,
+  "r": 0.15,
+  "summary": "A city-centre hotel on Elfatah Street that stands on the site of the Italian-era Hotel del Mehari. Since 2016 it has also served as a meeting place for Libya's High Council of State.",
+  "era": "The Italian Hotel del Mehari was built in 1935, designed by Florestano Di Fausto with Stefano Gatti-Casazza. The present hotel opened in 1989 and was fully remodelled in 2009 to international standards under the Radisson name. After the 2011 war began it closed briefly, then reopened a few months later under local management. In 2012 Carlson Rezidor (now the Radisson Hotel Group) returned as operator. The sources seen do not describe how it was used under Gaddafi.",
+  "today": "The High Council of State met here on 27 February 2016 and was formally established here on 5 April 2016. It moved to the Rixos Al Nasr complex on 22 April 2016, and returned to the Radisson in October 2016 after fighting there. As of 2026 Wikipedia calls it one of only two international chain hotels in Libya.",
+  "uncertain": "It is not documented who ran the hotel in 1989-2009 or what happened there in 2011 beyond the brief closure.",
+  "sources": [
+   {
+    "t": "Wikipedia: Radisson Blu Al Mahary Hotel Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Radisson_Blu_Al_Mahary_Hotel_Tripoli"
+   },
+   {
+    "t": "Wikipedia: High Council of State (Libya)",
+    "u": "https://en.wikipedia.org/wiki/High_Council_of_State_(Libya)"
+   }
+  ]
+ },
+ {
+  "id": "lm-al-waddan-hotel",
+  "name": "Al Waddan Hotel (Uaddan)",
+  "ar": "فندق ودان",
+  "aliases": [
+   "Uaddan Hotel and Casino",
+   "Waddan Intercontinental",
+   "InterContinental Al Waddan"
+  ],
+  "kind": "landmark",
+  "lat": 32.8933,
+  "lon": 13.1911,
+  "r": 0.15,
+  "summary": "An Italian-era luxury hotel and casino, restored in 2007-2009 as an international hotel. It was once called the Waldorf Astoria of Tripoli by an American journalist.",
+  "era": "It opened in 1935 or 1936 as the Uaddan Hotel and Casino, designed by Florestano Di Fausto with Stefano Gatti-Casazza, with a casino and a 500-seat theatre. It was built at the same time as the Hotel Al Mehari. It was completely restored from 2007 to 2009 at a cost of $16 million, and InterContinental Hotels Group managed it for several years. The sources seen do not cover what happened there during 1969-2011 or in the war.",
+  "today": "Wikipedia does not say whether it operates today.",
+  "uncertain": "Gaddafi-era use, 2011 events and its present state are not documented in the sources seen. Opening year is given as both 1935 and 1936.",
+  "sources": [
+   {
+    "t": "Wikipedia: Al Waddan Hotel",
+    "u": "https://en.wikipedia.org/wiki/Al_Waddan_Hotel"
+   }
+  ]
+ },
+ {
+  "id": "lm-grand-hotel-tripoli",
+  "name": "Grand Hotel Tripoli",
+  "ar": "فندق قراند",
+  "aliases": [
+   "Grand Hotel",
+   "Gran Hotel Tripoli"
+  ],
+  "kind": "landmark",
+  "lat": 32.8931,
+  "lon": 13.1844,
+  "r": 0.15,
+  "summary": "A hotel overlooking the harbour near Martyrs' Square. The Italian Grand Hotel (1927) was demolished in the early 1980s and a new hotel was built on the site in 1982.",
+  "era": "The first Grand Hotel was built by the Italians in 1927 in a Moorish-revival style and hosted General Rommel in 1941. It was heavily bombed in 1942 but kept operating until it was demolished in the early 1980s. The replacement hotel was designed by the British firm Wakeman Trower and Partners and built in 1982. The sources seen do not say why the older building was demolished.",
+  "today": "The hotel closed in 2011 because of the civil war. It is defunct, but plans for renovation and reopening were announced in December 2025.",
+  "uncertain": "Reason for the demolition is not documented. Whether anything happened at the hotel in 2011 beyond the closure is not stated.",
+  "sources": [
+   {
+    "t": "Wikipedia: Grand Hotel Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Grand_Hotel_Tripoli"
+   },
+   {
+    "t": "Libyan Wanderer: the Grand Hotel of Tripoli",
+    "u": "https://libyanwanderer.com/the-grand-hotel-of-tripoli-another-lost-architectural-beauty/"
+   }
+  ]
+ },
+ {
+  "id": "lm-rixos-al-nasr",
+  "name": "Rixos Al Nasr Hotel and Convention Centre",
+  "ar": "فندق ريكسوس النصر",
+  "aliases": [
+   "Rixos Hotel",
+   "Ghabat Al Nasr Convention Centre",
+   "Rixos Al Nasr Convention Centre"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A hotel and conference complex that housed foreign journalists in 2011, was a loyalist stronghold during the fall of Tripoli, and later became the seat of the General National Congress.",
+  "era": "On 4 March 2011 foreign journalists, about 130 invited by the government, were barred from leaving the hotel without a minder. By 22 August, as the rebels entered Tripoli, loyalists still held it. Roughly 40 foreigners, mostly journalists, were kept inside, and Al Jazeera said they were being used as human shields. Saif al-Islam Gaddafi appeared at the hotel in the early hours of 23 August. The journalists were released in Red Cross vans around 24 August.",
+  "today": "The Timeline of Tripoli says the General National Congress began meeting in the 'Ghabat Al Nasr Convention Centre' in 2012. The High Council of State occupied the former GNC headquarters at the Rixos Al Nasr Convention Centre on 22 April 2016, and GNC loyalists attacked it on 10 October 2016. It was seized again in October 2016, besieged in March 2017, and a Reuters report dated 24 May 2019 says rockets hit the Rixos hotel.",
+  "uncertain": "No coordinates were found in any source seen. The sources use two names (Ghabat Al Nasr and Rixos Al Nasr) and it is not confirmed that they are the same building.",
+  "sources": [
+   {
+    "t": "CS Monitor: Spots to watch in the battle for Tripoli",
+    "u": "https://csmonitor.com/World/Middle-East/2011/0822/Spots-to-watch-in-the-battle-for-Tripoli/Rixos-Hotel"
+   },
+   {
+    "t": "Al Jazeera: foreign reporters trapped in Libya hotel",
+    "u": "https://www.aljazeera.com/economy/2011/8/24/foreign-reporters-trapped-in-libya-hotel"
+   },
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   },
+   {
+    "t": "Wikipedia: Free speech in the media during the Libyan civil war",
+    "u": "https://en.wikipedia.org/wiki/Free_speech_in_the_media_during_the_Libyan_civil_war_(2011)"
+   },
+   {
+    "t": "Wikipedia: High Council of State (Libya)",
+    "u": "https://en.wikipedia.org/wiki/High_Council_of_State_(Libya)"
+   },
+   {
+    "t": "Wikipedia: Western Libya clashes (2016-2018)",
+    "u": "https://en.wikipedia.org/wiki/Western_Libya_clashes_(2016%E2%80%932018)"
+   },
+   {
+    "t": "Wikipedia: Timeline of Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   },
+   {
+    "t": "JPost/Reuters: rockets hit hotel in Libyan capital",
+    "u": "https://www.jpost.com/Breaking-News/Rockets-hit-hotel-in-libyan-capital-590573"
+   }
+  ]
+ },
+ {
+  "id": "lm-martyrs-square",
+  "name": "Martyrs' Square (formerly Green Square)",
+  "ar": "ميدان الشهداء",
+  "aliases": [
+   "Green Square",
+   "Piazza Italia",
+   "Independence Square",
+   "Al-Sahat al-Khadra"
+  ],
+  "kind": "landmark",
+  "lat": 32.895,
+  "lon": 13.1811,
+  "r": 0.2,
+  "summary": "Tripoli's main public square beside the Red Castle and the waterfront. It was Piazza Italia under the Italians, Green Square under Gaddafi, and was renamed Martyrs' Square by rebels in 2011.",
+  "era": "The Italians built it on the site of an old bread market and called it Piazza Italia; it was enlarged in the 1930s. It was Independence Square from 1951 to 1969, then renamed Green Square after the 1969 revolution to reflect the Green Book. The Royal Miramare Theatre opposite the Red Castle was demolished by Gaddafi's government to make room for large rallies. In February 2011 protesters filled the square in a failed uprising, and pro-Gaddafi rallies followed.",
+  "today": "Rebels took the square on the night of 21-22 August 2011 and renamed it Martyrs' Square. Tens of thousands celebrated there on 31 August and 2 September 2011. A militia group rallied there around 5 November 2016. The square, with a large central fountain, remains a main downtown tourist attraction and commercial centre.",
+  "uncertain": "Exact dates of the demolition of the Miramare Theatre are not given.",
+  "sources": [
+   {
+    "t": "Wikipedia: Martyrs' Square, Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Martyrs%27_Square,_Tripoli"
+   },
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   },
+   {
+    "t": "Wikipedia: Western Libya clashes (2016-2018)",
+    "u": "https://en.wikipedia.org/wiki/Western_Libya_clashes_(2016%E2%80%932018)"
+   }
+  ]
+ },
+ {
+  "id": "lm-red-castle-national-museum",
+  "name": "Red Castle (Assaraya al-Hamra) and National Museum of Libya",
+  "ar": "السراي الحمراء",
+  "aliases": [
+   "Assaraya Alhamra",
+   "Jamahiriya Museum",
+   "Libyan Museum",
+   "Red Castle Museum"
+  ],
+  "kind": "landmark",
+  "lat": 32.8963,
+  "lon": 13.1804,
+  "r": 0.2,
+  "summary": "A large castle and palace complex at the edge of the Old City next to Martyrs' Square, long used as Libya's national museum (called the Jamahiriya Museum in the Gaddafi period).",
+  "era": "The Italians turned part of the castle into an archaeological museum in 1919; it was renovated in the early 1920s on plans by Armando Brasini. After 1943 the museum filled the whole complex, and in 1948 it became The Libyan Museum. It reopened to the public in 1988 as the Assaraya Alhamra Museum and is also listed as the Jamahiriya Museum. It displayed Phoenician, Greek and Roman finds and Gaddafi's colourful Volkswagen Beetle.",
+  "today": "The museum closed in 2011 for security reasons; a few Gaddafi items were damaged when rebels entered, and staff moved valuable items to another location and put Gaddafi-related items in storage. It stayed closed until it officially reopened on 12 December 2025 as The National Museum of Libya, initially open to school groups only.",
+  "uncertain": "Which Gaddafi-period name changes happened when is not detailed in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Red Castle Museum",
+    "u": "https://en.wikipedia.org/wiki/Red_Castle_Museum"
+   },
+   {
+    "t": "Wikipedia: Martyrs' Square, Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Martyrs%27_Square,_Tripoli"
+   },
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-gurgi-mosque",
+  "name": "Gurgi Mosque",
+  "ar": "جامع قرجي",
+  "aliases": [
+   "Gurgi Mosque",
+   "Mustafa Gurgi Mosque",
+   "Qurji Mosque"
+  ],
+  "kind": "landmark",
+  "lat": 32.8994,
+  "lon": 13.1756,
+  "r": 0.15,
+  "summary": "An Ottoman-style mosque in the Old City built in 1834, with 15 domes and a 25-metre minaret. It is an active mosque and a tourist attraction near the Arch of Marcus Aurelius.",
+  "era": "Naval captain Mustafa Gurgi commissioned it in 1834, shortly after the reign of Pasha Yusuf Karamanli (1795-1832); he and his family are buried in an antechamber to the right of the entrance. It has marble walls and columns and a mix of European and Islamic geometric designs. The sources seen contain no information about the mosque during the Gaddafi period or in 2011.",
+  "today": "The page lists the mosque as active and calls it an important tourist attraction.",
+  "uncertain": "Gaddafi-era events and 2011 are not covered in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Gurgi Mosque",
+    "u": "https://en.wikipedia.org/wiki/Gurgi_Mosque"
+   }
+  ]
+ },
+ {
+  "id": "lm-karamanli-mosque",
+  "name": "Karamanli Mosque (Ahmed Pasha Karamanli Mosque)",
+  "ar": "جامع أحمد باشا القرمانلي",
+  "aliases": [
+   "Ahmed Karamanli Mosque",
+   "Qaramanli Mosque",
+   "Jami al-Karamanli"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "An 18th-century mosque complex founded by Ahmed Pasha Karamanli, founder of the Karamanli dynasty, with a madrasa and family tombs. A source places it in the Souq al-Mushir area.",
+  "era": "Ahmed Karamanli (1686-1745) seized power in Tripoli in the 1711 coup and made the governorship hereditary. Construction of the mosque began in 1736 and the complex includes a madrasa and the tombs of dynasty members. The sources seen say nothing about the mosque in 1969-2011.",
+  "today": "The mosque is listed as active. It was vandalised in 2014 during the civil conflict, damaging its ceramic tiles and marble decoration, and UNESCO condemned the attack. Whether repairs were made is not stated.",
+  "uncertain": "No coordinates were found. The sources seen do not say whether Ahmed Pasha's own tomb is in the complex.",
+  "sources": [
+   {
+    "t": "Wikipedia: Karamanli Mosque",
+    "u": "https://en.wikipedia.org/wiki/Karamanli_Mosque"
+   },
+   {
+    "t": "Wikipedia: Ahmed Karamanli",
+    "u": "https://en.wikipedia.org/wiki/Ahmed_Pasha_Karamanli"
+   },
+   {
+    "t": "Libyan Wanderer: Souq al-Mushir",
+    "u": "https://libyanwanderer.com/?p=1029"
+   },
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-arch-of-marcus-aurelius",
+  "name": "Arch of Marcus Aurelius",
+  "ar": "قوس ماركوس أوريليوس",
+  "aliases": [
+   "Roman Arch",
+   "Arch of Lucius Verus",
+   "Triumphal Arch of Oea"
+  ],
+  "kind": "landmark",
+  "lat": 32.8999,
+  "lon": 13.1758,
+  "r": 0.1,
+  "summary": "A marble Roman triumphal arch from about AD 165 at the north-eastern entrance to the Old City, the main visible Roman monument in Tripoli.",
+  "era": "It was built to mark Lucius Verus's victories over the Parthians. It was partly buried over the centuries and was restored by the Italians in 1914-1918; the surrounding area was reorganised in the 1930s by Florestano Di Fausto. It was partially hit in the Second World War with only minor damage. The sources seen contain nothing specific about the Gaddafi period.",
+  "today": "As of 2017 the arch was suffering from poor maintenance and visitor damage, and acid rain has damaged its original details.",
+  "uncertain": "Gaddafi-era and 2011 events are not documented in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Arch of Marcus Aurelius (Tripoli)",
+    "u": "https://en.wikipedia.org/wiki/Arch_of_Marcus_Aurelius_(Tripoli)"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-old-city-medina",
+  "name": "Tripoli Old City (Medina)",
+  "ar": "المدينة القديمة",
+  "aliases": [
+   "Medina of Tripoli",
+   "Madinah al-Qadimah"
+  ],
+  "kind": "landmark",
+  "lat": 32.8981,
+  "lon": 13.1759,
+  "r": 0.5,
+  "summary": "The walled old town on the harbour, mostly shaped under the Ottomans and the Karamanlis, with mosques, souks, baths and caravanserais.",
+  "era": "Its pentagonal layout dates from 16th-century Ottoman refortification. It holds the Gurgi, Karamanli, Draghut and al-Naqah mosques, hammams and old merchants' inns. In the 1980s the Libyan government tried to restore the Dar Bishi synagogue in the old city but abandoned the effort. The sources seen give no wider account of the Old City under Gaddafi, though the Red Castle is on its edge.",
+  "today": "Only sections of the walls survive. The Old City remains a historic quarter with several mosques still in use; one source says the Arch of Marcus Aurelius suffers from poor maintenance.",
+  "uncertain": "This is an area, not a point, so the position is the centre of the OSM polygon. Gaddafi-era policy toward the Old City is not documented in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   },
+   {
+    "t": "Libyan Wanderer: Dar Bishi synagogue",
+    "u": "https://libyanwanderer.com/dar-bishi-synagogue-in-tripoli-1923/"
+   }
+  ]
+ },
+ {
+  "id": "lm-bab-darghouth",
+  "name": "Bab Darghouth",
+  "ar": "باب درغوث",
+  "aliases": [
+   "Darghut Gate",
+   "Bab Dargut"
+  ],
+  "kind": "landmark",
+  "lat": 32.8991,
+  "lon": 13.1773,
+  "r": 0.1,
+  "summary": "A city gate of the Old City named after Darghut (Turgut Reis), near the Sidi Darghut mosque. The OpenStreetMap extract tags it as a city gate in the Old City. The sources seen give no history for this gate and no events during 1969-2011.",
+  "era": "",
+  "today": "Not described in the sources seen.",
+  "uncertain": "History and present state are not documented in the sources seen; only its map position is known.",
+  "sources": [
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   },
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-old-city-gates",
+  "name": "Old City gates (Bab al-Bahr, Bab Zanata, Bab Hawwara, Bab el-Jedid)",
+  "ar": "أبواب المدينة القديمة",
+  "aliases": [
+   "Bab al-Bahr",
+   "Bab Zenata",
+   "Bab al-Ashdar",
+   "Bab Hawwara",
+   "Bab al-Mensha",
+   "Bab el-Jedid"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The historic gates of the walled Old City: Bab al-Bahr on the sea side, Bab Hawwara to the south-east, Bab Zenata to the west, and the later Bab el-Jedid.",
+  "era": "Wikipedia names Bab al-Bahr (north, near the sea), Bab Hawwara (south-east, probably today's Bab al-Mensha) and Bab Zenata (west, originally Bab al-Ashdar). The Timeline of Tripoli says Bab el-Jedid opened in 1860. Only sections of the walls remain. The sources seen give no events at the gates between 1969 and 2011.",
+  "today": "Only sections of the city walls survive.",
+  "uncertain": "Individual gate positions were not found, so no coordinates are given. Bab Darghouth has its own entry.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   },
+   {
+    "t": "Wikipedia: Timeline of Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-sidi-darghut-mosque",
+  "name": "Sidi Darghut Mosque (Mosque of Turgut Reis)",
+  "ar": "جامع درغوث",
+  "aliases": [
+   "Dragut Mosque",
+   "Darghut Pasha Mosque",
+   "Tomb of Turgut Reis"
+  ],
+  "kind": "landmark",
+  "lat": 32.8988,
+  "lon": 13.1771,
+  "r": 0.1,
+  "summary": "A 16th-century Ottoman mosque in the Old City that holds the tomb of the Ottoman admiral Dragut (Turgut Reis), who died at the Siege of Malta in 1565.",
+  "era": "Dragut built it around 1560 on the site of a Hospitaller church, and was buried there in 1565. Iskander Pasha altered it in the early 1600s. It was restored in the 1920s, then heavily damaged by Second World War bombing; its central part was rebuilt with a different layout, and the roof now has 32 small domes instead of 27. The sources seen do not cover the Gaddafi period.",
+  "today": "It is an active mosque. During the 2014 violence armed men tried several times to vandalise it and were repelled.",
+  "uncertain": "Gaddafi-era events and 2011 are not documented in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Sidi Darghut Mosque",
+    "u": "https://en.wikipedia.org/wiki/Sidi_Darghut_Mosque"
+   }
+  ]
+ },
+ {
+  "id": "lm-al-naqah-mosque",
+  "name": "Al-Naqah Mosque (Mosque of the Camel)",
+  "ar": "جامع الناقة",
+  "aliases": [
+   "Jama'a al-Naqa'a",
+   "Naqa Mosque"
+  ],
+  "kind": "landmark",
+  "lat": 32.8954,
+  "lon": 13.1789,
+  "r": 0.1,
+  "summary": "Tripoli's oldest Islamic-era monument, probably founded in 973 under the Fatimid caliph al-Mu'izz and rebuilt in 1610-1611.",
+  "era": "Its name comes from legends of a camel laden with riches. It was badly damaged during the 16th-century Spanish occupation and reconstructed in 1610-1611 by Safar Dey. The prayer hall has 36 columns, many reused from Roman and Byzantine buildings, and 42 domes. The sources seen say nothing about the Gaddafi period.",
+  "today": "It is listed as an active mosque. The floor lies about 0.4 m below the current street level.",
+  "uncertain": "Founding date and later restorations are uncertain; Gaddafi-era events are not documented in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Al-Naqah Mosque",
+    "u": "https://en.wikipedia.org/wiki/Al-Naqah_Mosque"
+   },
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-darghouth-turkish-bath",
+  "name": "Darghouth Turkish Bath (Hammam Darghut)",
+  "ar": "حمام درغوث",
+  "aliases": [
+   "Hammam Darghut",
+   "Darghut Hammam"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A Turkish bath in the Old City founded around 1670 and attached to the Sidi Darghut mosque and tomb. The bath was established in 1081 AH (about 1670-1671), annexed to the Sidi Darghut mosque and tomb. The sources seen give no information on its use during the Gaddafi period.",
+  "era": "",
+  "today": "Its present state is not described in the sources seen.",
+  "uncertain": "No coordinates found; present use and Gaddafi-era history are undocumented in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Darghouth Turkish Bath",
+    "u": "https://en.wikipedia.org/wiki/Darghouth_Turkish_Bath"
+   }
+  ]
+ },
+ {
+  "id": "lm-clock-tower",
+  "name": "Tripoli Clock Tower (Torre dell'Orologio)",
+  "ar": "برج الساعة",
+  "aliases": [
+   "Clock Square",
+   "Meydan Assa'a",
+   "Al-Sa'aa Tower"
+  ],
+  "kind": "landmark",
+  "lat": 32.8962,
+  "lon": 13.1792,
+  "r": 0.2,
+  "summary": "An Ottoman clock tower about 18 m tall at the edge of the Old City, built in 1866-1870, now a city landmark. Built under the Ottoman governor between 1866 and 1870. The Souq al-Mushir market runs between the Huwara souq and the clock tower. The sources seen give no events at the tower between 1969 and 2011.",
+  "era": "",
+  "today": "Wikipedia says it is still a city landmark; the square is marked as Meydan Assa'a (Clock Square) in OpenStreetMap.",
+  "uncertain": "The position is the OSM point for Clock Square, which may differ from the tower base by a short distance.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   },
+   {
+    "t": "Wikipedia: Timeline of Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   },
+   {
+    "t": "Libyan Wanderer: Souq al-Mushir",
+    "u": "https://libyanwanderer.com/?p=1029"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-cathedral-algeria-square-mosque",
+  "name": "Tripoli Cathedral (Algeria Square Mosque)",
+  "ar": "مسجد جمال عبد الناصر",
+  "aliases": [
+   "Gamal Abdel Nasser Mosque",
+   "Algeria Square Mosque",
+   "Cattedrale di Tripoli"
+  ],
+  "kind": "landmark",
+  "lat": 32.8906,
+  "lon": 13.1858,
+  "r": 0.1,
+  "summary": "The former Roman Catholic cathedral built by the Italians in 1923-1928, converted into a mosque after Gaddafi took power.",
+  "era": "Designed by Saffo Panteri in Romanesque Revival style, with a 46 m dome and a 60 m bell tower; consecrated in November 1928. In July 1970 the Revolutionary Council ordered Italian and church property confiscated; in September 1970 the Vicar Apostolic of Benghazi was expelled and the cathedral closed. It became the Gamal Abdel Nasser (Algeria Square) Mosque. Exterior changes may have been completed as late as about 1998-2000.",
+  "today": "It works as a mosque and was visitable as of 2020. It keeps its basilica form and separate bell tower, but the facade and interior have been substantially altered. St. Francis Pro-Cathedral serves as the temporary Catholic cathedral.",
+  "uncertain": "The exact timing of the conversion is uncertain.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli Cathedral",
+    "u": "https://en.wikipedia.org/wiki/Tripoli_Cathedral"
+   },
+   {
+    "t": "Libyan Wanderer: Grand Hotel (mentions Jamal Abdel Nasser Mosque nearby)",
+    "u": "https://libyanwanderer.com/the-grand-hotel-of-tripoli-another-lost-architectural-beauty/"
+   }
+  ]
+ },
+ {
+  "id": "lm-galleria-de-bono",
+  "name": "Galleria De Bono",
+  "ar": "",
+  "aliases": [
+   "De Bono Arcade"
+  ],
+  "kind": "landmark",
+  "lat": 32.8936,
+  "lon": 13.1819,
+  "r": 0.1,
+  "summary": "An Italian-era octagonal shopping arcade in central Tripoli named after Emilio De Bono. Built during the Italian period, with four mirrored entrances; two connect to the former Via Costanzo Ciano and Corso Vittorio Emanuele. The sources seen do not cover its use between 1969 and 2011.",
+  "era": "",
+  "today": "The large central space is now without its original steel-and-glass roof.",
+  "uncertain": "Construction date and Gaddafi-era history are not given in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Galleria De Bono",
+    "u": "https://en.wikipedia.org/wiki/Galleria_De_Bono"
+   },
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-royal-palace-tripoli",
+  "name": "Royal Palace of Tripoli (former Governor's Palace)",
+  "ar": "",
+  "aliases": [
+   "Governor's Palace",
+   "Palace of King Idris",
+   "Tripoli public library"
+  ],
+  "kind": "landmark",
+  "lat": 32.8878,
+  "lon": 13.1892,
+  "r": 0.15,
+  "summary": "A palace built in 1924-1931 for the Italian colonial governors and later used by the Libyan monarchs. After the 1969 coup it was turned into a public library.",
+  "era": "Built 1924-1931 by Saul Meraviglia Mantegazza for the governors of Italian Tripolitania; the Timeline of Tripoli dates the Governor's Palace to 1929. It later served as the monarch's residence in Tripoli. After Gaddafi's coup the palace was converted into a public library.",
+  "today": "Its present use is not described in the sources seen.",
+  "uncertain": "The 2011 war and present state are not documented in the sources seen. Whether this is the 'Maktaba' the owner mentions is unconfirmed.",
+  "sources": [
+   {
+    "t": "Wikipedia: Royal Palace of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Royal_Palace_of_Tripoli"
+   },
+   {
+    "t": "Wikipedia: Timeline of Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-miramare-theatre",
+  "name": "Royal Miramare Theatre (demolished)",
+  "ar": "",
+  "aliases": [
+   "Teatro Miramare",
+   "Miramare Theatre"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "An Italian-era theatre across from the Red Castle, demolished under Gaddafi's government to create space for mass demonstrations. Built in 1928, it stood opposite the Red Castle on Martyrs' (then Green) Square. Gaddafi's government demolished it after the 1960s to make room for large demonstrations in the square.",
+  "era": "",
+  "today": "The theatre no longer exists.",
+  "uncertain": "Exact demolition date and exact site are not given; no coordinates.",
+  "sources": [
+   {
+    "t": "Wikipedia: Martyrs' Square, Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Martyrs%27_Square,_Tripoli"
+   },
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   },
+   {
+    "t": "Wikipedia: Timeline of Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-central-railway-station",
+  "name": "Tripoli Central Railway Station (demolished)",
+  "ar": "",
+  "aliases": [
+   "Tripoli Railway Station"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The Italian-built central railway station of Tripoli, which was demolished under Gaddafi. Built under Italian rule, the station was demolished under Gaddafi, according to Wikipedia's article on Tripoli. The sources seen give no date or location.",
+  "era": "",
+  "today": "No station remains.",
+  "uncertain": "Date of demolition and site are not given in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-gazelle-statue",
+  "name": "Gazelle Statue (Sorgente di Vita)",
+  "ar": "تمثال الغزالة",
+  "aliases": [
+   "Gazelle Fountain",
+   "Source of Life",
+   "Statue of the Woman and Gazelle"
+  ],
+  "kind": "landmark",
+  "lat": 32.8927,
+  "lon": 13.187,
+  "r": 0.3,
+  "summary": "A bronze Italian-era statue of a woman embracing a gazelle on the seafront, a symbol of Tripoli that Gaddafi did not destroy.",
+  "era": "Made by Angiolo Vannetti in the Italian period (a local source gives 1932) and originally called 'Sorgente di Vita'. Gaddafi spared it while destroying other reminders of Italian rule. After 2011 it was wrapped in blue cloth in 2012, armed police prevented a threatened attack in August 2012, and a 2013 rocket-propelled grenade reportedly damaged it.",
+  "today": "One local blog says the statue was removed in 2014 and the site had become an ordinary fountain by February 2021. The statue's current whereabouts are not established.",
+  "uncertain": "The OSM point is labelled 'Statue Belle and Spinner' and may not match the statue's position exactly. Where the statue is now is not documented.",
+  "sources": [
+   {
+    "t": "Herald/AP: Libya's naked lady offers bronzed defiance",
+    "u": "https://www.heraldnet.com/2013/02/14/libyas-naked-lady-offers-bronzed-defiance-to-islamists/"
+   },
+   {
+    "t": "Libyan Wanderer: 7 years after the Gazelle disappearance",
+    "u": "https://libyanwanderer.com/7-years-after-the-gazalla-disappearance/"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-bab-al-azizia",
+  "name": "Bab al-Azizia compound",
+  "ar": "باب العزيزية",
+  "aliases": [
+   "Bab al-Aziziya",
+   "Azizia barracks",
+   "Gaddafi's compound"
+  ],
+  "kind": "government",
+  "lat": 32.8722,
+  "lon": 13.1736,
+  "r": 0.4,
+  "summary": "Muammar Gaddafi's fortified residence and military headquarters in Tripoli, bombed in 1986 and 2011 and overrun by rebels on 23 August 2011.",
+  "era": "The site began as an Italian army base; King Idris rebuilt it after British occupation, and Gaddafi expanded it in the 1980s. He lived in a Bedouin-style tent on the grounds. On 8 May 1984 the National Front for the Salvation of Libya attempted a coup there. On 15 April 1986 US bombers hit it; Gaddafi claimed his adopted daughter Hanna was killed, which is disputed. He later commissioned a monument of a fist crushing a US fighter jet.",
+  "today": "NATO bombed it repeatedly as a command centre in 2011. On 23 August guards surrendered and rebels captured it; they vandalised a Gaddafi statue and the fist monument. Gaddafi's family had fled. Bulldozers began demolishing the outer walls on 17 October 2011, and by February 2012 many buildings were rubble and some families had built makeshift homes there. Plans for a park were proposed but not finalised.",
+  "uncertain": "The compound's current use is not documented in the sources seen. The coordinate is from Wikipedia and refers to the general site.",
+  "sources": [
+   {
+    "t": "Wikipedia: Bab al-Azizia",
+    "u": "https://en.wikipedia.org/wiki/Bab_al-Azizia"
+   },
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   }
+  ]
+ },
+ {
+  "id": "lm-libyan-state-tv-hq",
+  "name": "Libyan state TV headquarters (Al-Jamahiriya TV)",
+  "ar": "",
+  "aliases": [
+   "Libyan Jamahiriya Broadcasting Corporation",
+   "LJBC",
+   "Jamahiriya TV"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The Tripoli headquarters of Libya's state broadcaster, which carried Gaddafi-era government coverage and was struck by NATO in 2011.",
+  "era": "Station building work in Tripoli and Benghazi began in 1967 and finished by the end of 1968; regular television started on 24 December 1968. Under Gaddafi it was renamed from the People's Revolutionary Broadcasting Corporation to the Libyan Jamahiriya Broadcasting Corporation on 24 December 2001. The main channel, Al-Jamahiriya, covered People's Congress sessions and readings of the Green Book. It reached the Arab world and Europe by satellite from 1997.",
+  "today": "On 30 July 2011 NATO struck the state TV's Tripoli headquarters and two installations; the broadcaster said three journalists died and 21 were hurt. Loyalists took refuge at the TV centre on 20 August 2011, and the channels went off air by 21-22 August as rebels took the building. The corporation was dissolved. A relaunched channel later broadcast from Cairo.",
+  "uncertain": "The exact street address of the 2011 headquarters is not given in the sources seen; no coordinates. Casualty figures come from the broadcaster and were unverified.",
+  "sources": [
+   {
+    "t": "Wikipedia: Libyan Jamahiriya Broadcasting Corporation",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Jamahiriya_Broadcasting_Corporation"
+   },
+   {
+    "t": "RSF: NATO attacks on national TV headquarters in Tripoli",
+    "u": "https://rsf.org/en/nato-attacks-national-tv-headquarters-and-installations-tripoli"
+   },
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   }
+  ]
+ },
+ {
+  "id": "lm-central-bank-of-libya",
+  "name": "Central Bank of Libya headquarters",
+  "ar": "مصرف ليبيا المركزي",
+  "aliases": [
+   "CBL",
+   "National Bank of Libya"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The headquarters in Tripoli of Libya's central bank, which began as the National Bank of Libya in 1956.",
+  "era": "The bank was set up by a 1955 law and began operating on 1 April 1956 as the National Bank of Libya. It became the Bank of Libya in 1963 and took its present name after the 1969 coup. The sources seen do not describe the building itself or events at it between 1969 and 2011.",
+  "today": "The bank's administration split during the 2011 civil war and again from 2014, and it announced reunification in August 2023. In August 2024 the Tripoli government removed governor Sadiq al-Kabir, prompting the east-based government to close oil fields; Naji Belqasem has been governor since October 2024.",
+  "uncertain": "The building's address and any damage in conflicts are not documented in the sources seen; no coordinates.",
+  "sources": [
+   {
+    "t": "Wikipedia: Central Bank of Libya",
+    "u": "https://en.wikipedia.org/wiki/Central_Bank_of_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-peoples-hall",
+  "name": "People's Hall (General People's Congress)",
+  "ar": "قاعة الشعب",
+  "aliases": [
+   "Hall of the People",
+   "Qaddafi's People's Hall",
+   "General People's Congress building"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The large hall where the General People's Congress met under Gaddafi. Protesters set it on fire in February 2011 and it later burned repeatedly.",
+  "era": "Built in the late 1970s or early 1980s, it hosted the General People's Congress and was normally closed to the public. Demonstrators set it on fire on 21 February 2011 and it was reignited on 22 February and burned out, along with other government buildings including the Justice Ministry at Martyrs' Square.",
+  "today": "In March 2016 militia commander Haithem Tajouri's brigade took over the hall; it was later abandoned, used by gangs, and set on fire several times, most recently on 13 April 2017. The Libyan Heritage House lists it as destroyed following the 2011 revolution.",
+  "uncertain": "No coordinates were found; exact location is not given on the pages seen. Current condition is not documented.",
+  "sources": [
+   {
+    "t": "Wikipedia: People's Hall, Tripoli",
+    "u": "https://en.wikipedia.org/wiki/People%27s_Hall,_Tripoli"
+   },
+   {
+    "t": "Libyan Heritage House: Jamahirya architecture",
+    "u": "https://libyanheritagehouse.org/architecture/jamahirya-architecture-libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-congress-center",
+  "name": "Tripoli Congress Center",
+  "ar": "",
+  "aliases": [
+   "Palace of Conferences (unconfirmed)",
+   "Tripoli Convention Centre"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A conference building of about 25,000 square metres designed by TA Tabanlioglu Architects and listed as built in 2009-2010.",
+  "era": "The architects list the client as the State of Libya, with a two-storey rectangular block wrapped in a metal mesh shield and set among woodland. Its listed date is 2009-2010. The sources seen do not state how it was used before 2011.",
+  "today": "Its present use is not described in the sources seen.",
+  "uncertain": "No coordinates found. It is not confirmed whether this is the building owners call the Palace of Conferences or Dhafra Convention Centre.",
+  "sources": [
+   {
+    "t": "TA Tabanlioglu: Tripoli Congress Center",
+    "u": "https://www.tabanlioglu.com/project/tripoli-congress-center/"
+   }
+  ]
+ },
+ {
+  "id": "lm-ministry-of-foreign-affairs",
+  "name": "Ministry of Foreign Affairs and International Cooperation",
+  "ar": "وزارة الخارجية والتعاون الدولي",
+  "aliases": [
+   "Foreign Ministry"
+  ],
+  "kind": "government",
+  "lat": 32.8975,
+  "lon": 13.2044,
+  "r": 0.15,
+  "summary": "The foreign ministry building in central Tripoli, near the Consular Affairs office. The OpenStreetMap extract marks the building. A 1988 decentralisation programme moved most ministries from Tripoli, mostly to Sirte, so that few remained in the city. The sources seen give no specific events at this building.",
+  "era": "",
+  "today": "Not described in the sources seen.",
+  "uncertain": "History, 2011 events and current use are not documented in the sources seen.",
+  "sources": [
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   },
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-ministry-of-justice-martyrs-square",
+  "name": "Ministry of Justice (Martyrs' Square)",
+  "ar": "وزارة العدل",
+  "aliases": [
+   "Justice Ministry"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A justice ministry building at Martyrs' Square that was burned in the February 2011 protests. The People's Hall article says demonstrators set fire to several buildings in February 2011, including the justice ministry at Martyrs' Square. The sources seen give no earlier history.",
+  "era": "",
+  "today": "Not described in the sources seen.",
+  "uncertain": "The OSM extract shows a separate 'Ministry of Justice' point elsewhere in Tripoli, so exact building is unconfirmed; no coordinates given.",
+  "sources": [
+   {
+    "t": "Wikipedia: People's Hall, Tripoli",
+    "u": "https://en.wikipedia.org/wiki/People%27s_Hall,_Tripoli"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-central-hospital",
+  "name": "Tripoli Central Hospital",
+  "ar": "مستشفى طرابلس المركزي",
+  "aliases": [
+   "Qurji Hospital",
+   "Colonial Hospital Vittorio Emanuele III"
+  ],
+  "kind": "landmark",
+  "lat": 32.874,
+  "lon": 13.1437,
+  "r": 0.5,
+  "summary": "The main trauma centre in central Tripoli, founded by the Italians before 1910 and now a teaching hospital.",
+  "era": "Founded before 1910 as L'Ospedale Coloniale di Vittorio Emanuele III, with main buildings of 1910. In the last three decades of the 20th century it was the sole trauma centre for all Tripoli; the national organ transplant programme began there in 2005. The sources seen do not describe the 2011 war at this site.",
+  "today": "It remains Tripoli's main downtown trauma centre and one of two teaching hospitals for the medical faculty of Al Fateh University (University of Tripoli). It handled roughly 250,000 cases in 2019.",
+  "uncertain": "Wikipedia puts it near Qurji at 32.874, 13.144, but OpenStreetMap places a 'Tripoli Central Hospital' polygon about 5 km east at 32.881, 13.190, so which site is correct needs checking.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli Central Hospital",
+    "u": "https://en.wikipedia.org/wiki/Tripoli_Central_Hospital"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-zoo",
+  "name": "Tripoli Zoo",
+  "ar": "حديقة حيوان طرابلس",
+  "aliases": [
+   "Abu Salim Zoo"
+  ],
+  "kind": "landmark",
+  "lat": 32.8586,
+  "lon": 13.1789,
+  "r": 0.3,
+  "summary": "Libya's largest zoo and botanical garden, south of the centre, closed since the 2011 war. Wikipedia gives little on the Gaddafi era beyond calling it the country's biggest zoo. It was closed for safety reasons during the 2011 civil war; the BBC reported animals traumatised and a lack of money for feed afterwards.",
+  "era": "",
+  "today": "In 2013 parts of the zoo became an immigration detention centre where detainees were reportedly arrested arbitrarily and tortured. As of March 2025 it was closed, with plans to reopen under new management; after armed clashes in May 2025 lions and antelopes were reportedly slaughtered or stolen.",
+  "uncertain": "Founding date and Gaddafi-era events are not stated. OSM places the zoo roundabout about 0.4 km west of the Wikipedia point.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli Zoo",
+    "u": "https://en.wikipedia.org/wiki/Tripoli_Zoo"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-international-fair",
+  "name": "Tripoli International Fair",
+  "ar": "معرض طرابلس الدولي",
+  "aliases": [
+   "Tripoli Fair",
+   "Fiera di Tripoli",
+   "Pavilion of Rome"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A trade fair ground on Omar Mukhtar Avenue, founded by the Italians in 1927 and described as the oldest trade fair in Africa.",
+  "era": "Founded in 1927 by the Italian government and used in the 1930s to promote Italian Libya; its entrance monument, the Pavilion of Rome, was designed by Alessandro Limongelli. It reopened at reduced scale after the Second World War. The 2008 session ran 2-12 April; in 2010 more than 1,000 participants from 29 countries took part, organised by the General Board of Fairs.",
+  "today": "The sources seen do not describe the site after 2010.",
+  "uncertain": "No coordinates were found. Events in 2011 and the present state are not documented in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli International Fair",
+    "u": "https://en.wikipedia.org/wiki/Tripoli_International_Fair"
+   },
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-international-airport",
+  "name": "Tripoli International Airport",
+  "ar": "مطار طرابلس العالمي",
+  "aliases": [
+   "Castel Benito",
+   "Idris el Awal Airport",
+   "Tripoli Airport"
+  ],
+  "kind": "landmark",
+  "lat": 32.6709,
+  "lon": 13.1508,
+  "r": 0.5,
+  "summary": "Tripoli's former main airport south of the city, built by the Italians in 1934, largely destroyed in 2014 and under reconstruction.",
+  "era": "Built in 1934 as Tripoli-Castel Benito, renamed Idris el Awal in 1951 and given its present name after 1969. A new terminal opened on 28 July 1978. In 2007 a 2.1 billion dollar expansion with two new terminals was contracted, but work was halted by the 2011 war. The airport was closed from March to October 2011, captured by the Zintan brigade on 21 August 2011, and reopened on 11 October 2011.",
+  "today": "Misratan militias attacked on 14 July 2014; after about 40 days of fighting Zintan forces withdrew, and the LA Times reported at least 90 per cent of facilities and 20 aircraft destroyed. Flights moved to Mitiga. The Libyan National Army held it from April 2019 to June 2020. Reconstruction of two terminals began in February 2023; the contract was revoked in 2024 and a new contractor was appointed in July 2025. Opening is scheduled for the fourth quarter of 2026.",
+  "uncertain": "Sources conflict on whether limited flights resumed in 2017. The coordinate is the centre of the large OSM airport area.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli International Airport",
+    "u": "https://en.wikipedia.org/wiki/Tripoli_International_Airport"
+   },
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-mitiga-airport",
+  "name": "Mitiga International Airport",
+  "ar": "مطار معيتيقة الدولي",
+  "aliases": [
+   "Mellaha Air Base",
+   "Wheelus Air Base",
+   "Okba Ben Nafi Air Base"
+  ],
+  "kind": "landmark",
+  "lat": 32.8972,
+  "lon": 13.2869,
+  "r": 0.5,
+  "summary": "Tripoli's working international airport, east of the centre, on the former Wheelus Air Base site.",
+  "era": "Built in 1923 as the Italian Mellaha Air Base and later used by the US as Wheelus Air Base until 1970, when Libya took it over. As Okba Ben Nafi Air Base it housed the People's Air Force headquarters and training, with Soviet aircraft and personnel based there, and was bombed by the US in 1986. It became a civilian airport in 1995. Air Force colonel Ali Atiyya defected there on 13 March 2011, and rebels assaulted it on 21 August 2011.",
+  "today": "It has been the main airport for Tripoli since 2014 and its sole international airport since 2018. It closed on 8 April 2019 after airstrikes and was held by GNA-aligned forces during 2019-20. Tunisair resumed flights in May 2021. It has two runways, 1,829 m and 3,376 m.",
+  "uncertain": "The Mitiga prison is covered separately and not described here.",
+  "sources": [
+   {
+    "t": "Wikipedia: Mitiga International Airport",
+    "u": "https://en.wikipedia.org/wiki/Mitiga_International_Airport"
+   },
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-port-of-tripoli",
+  "name": "Port of Tripoli",
+  "ar": "ميناء طرابلس",
+  "aliases": [
+   "Tripoli harbour",
+   "Tripoli Marine Port"
+  ],
+  "kind": "landmark",
+  "lat": 32.9047,
+  "lon": 13.1933,
+  "r": 0.5,
+  "summary": "Libya's main commercial port, built in its present form by the Italians in the late 1920s, covering about 300 hectares.",
+  "era": "Congestion was a long-standing problem: in 1977 ships waited an average of 24 days. Improvements from the mid-1970s added cargo terminals, a yacht club and a fishing wharf. About 600 large vessels visited each year until the end of the Gaddafi regime. In the 2011 battle rebels arrived by boat from Misrata and Zliten on 21 August, and loyalists used tanks near the port on 22 August.",
+  "today": "The harbour has breakwaters of 2,000 m and 700 m and takes vessels up to 190 m. The authority is the Socialist Ports Company; the page gives no current-status details.",
+  "uncertain": "Present operations after 2011 are not documented in the sources seen.",
+  "sources": [
+   {
+    "t": "Wikipedia: Port of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Port_of_Tripoli"
+   },
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-stadium-11-june",
+  "name": "Tripoli International Stadium (11 June Stadium)",
+  "ar": "ملعب طرابلس الدولي",
+  "aliases": [
+   "11 June Stadium",
+   "June 11 Stadium",
+   "Tripoli Stadium"
+  ],
+  "kind": "landmark",
+  "lat": 32.8599,
+  "lon": 13.1358,
+  "r": 0.2,
+  "summary": "Libya's main national stadium, formerly the 11 June Stadium, with a capacity of about 50,000.",
+  "era": "The old name refers to 11 June, the date in 1970 when US forces withdrew from Libya. OpenStreetMap lists a start date of 1970; the Timeline of Tripoli says it opened in 1982; it hosted many 1982 African Cup of Nations games including the final, which Ghana won against Libya. In 2002 it hosted the Italian Supercup between Juventus and Parma.",
+  "today": "A renovation was completed on 8 March 2024, reopened by a match with AC Milan All-Stars that drew over 50,000. Full-capacity crowds attended CAF Champions League matches in 2025.",
+  "uncertain": "Opening year is given as 1970 in one source and 1982 in another.",
+  "sources": [
+   {
+    "t": "Wikipedia: 11 June Stadium",
+    "u": "https://en.wikipedia.org/wiki/11_June_Stadium"
+   },
+   {
+    "t": "Wikipedia: Timeline of Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-university-of-tripoli-al-fateh",
+  "name": "University of Tripoli (Al-Fateh University)",
+  "ar": "جامعة طرابلس",
+  "aliases": [
+   "Al Fateh University",
+   "Fateh University",
+   "Jami'at al-Fateh"
+  ],
+  "kind": "landmark",
+  "lat": 32.8558,
+  "lon": 13.2214,
+  "r": 0.5,
+  "summary": "Libya's largest public university, called Al Fateh University from 1976 to 2011. It is a separate site from Al Fateh Tower.",
+  "era": "The first college opened in 1957 and the Tripoli colleges became an independent University of Tripoli in 1973. It was renamed Al Fateh University in 1976, after student unrest in April of that year when pro-government students chanted 'Al Fateh'. Gaddafi's followers marked 7 April each year until 2011. In August 2011 it was the site of a student uprising during the Battle of Tripoli.",
+  "today": "It reverted to University of Tripoli in 2012 and has over 45,000 students. Tripoli Central Hospital serves as one of its teaching hospitals.",
+  "uncertain": "The coordinate is from Wikipedia and refers to the main campus; faculties are spread over a wide area.",
+  "sources": [
+   {
+    "t": "Wikipedia: University of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-war-cemetery",
+  "name": "Tripoli War Cemetery (Commonwealth War Graves)",
+  "ar": "",
+  "aliases": [
+   "Commonwealth War Graves Cemetery",
+   "Tripoli Military Cemetery"
+  ],
+  "kind": "landmark",
+  "lat": 32.8796,
+  "lon": 13.162,
+  "r": 0.15,
+  "summary": "The Commonwealth war cemetery in the Mansura district with 1,369 Second World War burials, entered through the old Italian Christian cemetery.",
+  "era": "CWGC records say the city became a hospital centre after Montgomery's forces took it on 23 January 1943, and most burials came from hospitals. The figures given are inconsistent: 1,242 identified casualties in one place, 1,369 Commonwealth burials (133 unidentified) in another. It lies off Sharia Jamahuriya near the Bab Gargaresh roundabout.",
+  "today": "CWGC says maintenance is currently limited by conditions in Libya.",
+  "uncertain": "Burial counts in the CWGC page do not fully reconcile; Gaddafi-era events are not documented in the sources seen.",
+  "sources": [
+   {
+    "t": "CWGC: Tripoli War Cemetery",
+    "u": "https://www.cwgc.org/find-a-cemetery/cemetery/2014700/CemeteryPlan.ashx?id=2014700"
+   }
+  ]
+ },
+ {
+  "id": "lm-italian-cemetery",
+  "name": "Italian Cemetery (Municipal Christian Cemetery)",
+  "ar": "مقبرة الإيطاليين",
+  "aliases": [
+   "Cimitero italiano",
+   "Christian cemetery"
+  ],
+  "kind": "landmark",
+  "lat": 32.8796,
+  "lon": 13.1604,
+  "r": 0.2,
+  "summary": "The former Italian municipal Christian cemetery in Mansura, through whose gate the Commonwealth war cemetery is reached. CWGC states that entry to the war cemetery is through the former Italian Municipal Christian Cemetery, with a crucifixion sculpture in a small piazza about 100 m inside. The sources seen contain no history of the cemetery under Gaddafi.",
+  "era": "",
+  "today": "Not described in the sources seen.",
+  "uncertain": "History, current care and any graves moved are undocumented in the sources seen.",
+  "sources": [
+   {
+    "t": "CWGC: Tripoli War Cemetery",
+    "u": "https://www.cwgc.org/find-a-cemetery/cemetery/2014700/CemeteryPlan.ashx?id=2014700"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-old-jewish-cemetery",
+  "name": "Old Jewish cemetery (Tripoli)",
+  "ar": "مقبرة اليهود",
+  "aliases": [
+   "Old Jews Graveyard"
+  ],
+  "kind": "landmark",
+  "lat": 32.8797,
+  "lon": 13.1577,
+  "r": 0.2,
+  "summary": "A cemetery marked as the Old Jews Graveyard on OpenStreetMap, next to the Italian cemetery. The only source seen is the OpenStreetMap label. Nothing about its use or treatment between 1969 and 2011 was found.",
+  "era": "",
+  "today": "Not described.",
+  "uncertain": "Everything beyond the map label is undocumented in the sources seen.",
+  "sources": [
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-dar-bishi-synagogue",
+  "name": "Dar Bishi Synagogue",
+  "ar": "",
+  "aliases": [
+   "Tripoli Synagogue",
+   "Hara Kebira synagogue"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The last surviving synagogue in the Old City, designed in 1922 by Umberto Di Segni and now derelict.",
+  "era": "The old city once had about 33 synagogues; Dar Bishi is the only one still standing. In the 1980s the Libyan government tried to restore it but abandoned the effort. Tripoli's last indigenous Jewish community member died in 2003. In 2011 Libyan Jewish exile David Gerbi returned, cleared debris and reopened it for prayer, but on 8 October 2011 protests forced the work onto indefinite hold and he was urged to leave.",
+  "today": "The building is in very poor shape, with refuse on the floors and most windows bricked up; some parts have been demolished. Reports suggest local authorities planned to turn it into an Islamic library.",
+  "uncertain": "No coordinates found. It lies in the Hara Kebira (old Jewish quarter) of the Old City. The Islamic library plan is a report, not confirmed.",
+  "sources": [
+   {
+    "t": "Diarna: Dar Bishi",
+    "u": "https://diarna.org/?p=65"
+   },
+   {
+    "t": "Libyan Wanderer: Dar Bishi synagogue",
+    "u": "https://libyanwanderer.com/dar-bishi-synagogue-in-tripoli-1923/"
+   }
+  ]
+ },
+ {
+  "id": "lm-islamic-museum",
+  "name": "Islamic Museum of Tripoli",
+  "ar": "المتحف الإسلامي",
+  "aliases": [
+   "Yusuf Pasha summer palace"
+  ],
+  "kind": "landmark",
+  "lat": 32.877,
+  "lon": 13.183,
+  "r": 0.2,
+  "summary": "A planned Islamic museum in an old Ottoman summer palace, never opened.",
+  "era": "The building dates to the 1800s under governor Ali Pasha al-Garamalli, later owned by Giuseppe Volpi during Italian rule, then by the Department of Antiquities. The museum was planned under Saif al-Islam Gaddafi and set to open in September 2011 for the revolution anniversary. In May 2011 construction was reported halted; the August battle and Saif's arrest ended the plan.",
+  "today": "As of 2025 the Italian company Studio Italia Costruzioni is restoring the building; there is no opening date.",
+  "uncertain": "Page gives conflicting building history (Ali Pasha versus Yusuf Pasha).",
+  "sources": [
+   {
+    "t": "Wikipedia: Islamic Museum of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/Islamic_Museum_of_Tripoli"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-souq-al-mushir",
+  "name": "Souq al-Mushir",
+  "ar": "سوق المشير",
+  "aliases": [
+   "Suq al-Mushir",
+   "Al-Mushir market"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "An open-air market in the Old City named for the Ottoman governor Rajab Pasha, running between the Huwara souq and the clock tower.",
+  "era": "A local source says it was built under al-Wali al-Mushir Rajab Pasha between 1906 and 1908; the Timeline of Tripoli says it was reconstructed in 1935. It includes the Karamanli mosque and sells clothing, household goods, food and hardware today. The sources seen give nothing for 1969-2011.",
+  "today": "Still an open-air market.",
+  "uncertain": "No coordinates found; the two sources disagree on dates.",
+  "sources": [
+   {
+    "t": "Libyan Wanderer: Souq al-Mushir",
+    "u": "https://libyanwanderer.com/?p=1029"
+   },
+   {
+    "t": "Wikipedia: Timeline of Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-tajoura-nuclear-research-centre",
+  "name": "Tajoura Nuclear Research Centre",
+  "ar": "مركز تاجوراء للبحوث النووية",
+  "aliases": [
+   "Tajura Nuclear Research Center",
+   "Tajoura reactor"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "Libya's nuclear research centre east of Tripoli, home to a Soviet-supplied 10 MW research reactor.",
+  "era": "Established in 1983 by Libya's atomic energy secretariat. The reactor was supplied by the Soviet Union (in 1979 according to GlobalSecurity; Wikipedia says it came online in 1981). In March 2004 weapons-grade uranium was flown to Russia with IAEA help.",
+  "today": "A fire broke out in an outbuilding in April 2024 and was reported under control.",
+  "uncertain": "No coordinates found for the centre itself; Tajura town is about 23 km east of Tripoli.",
+  "sources": [
+   {
+    "t": "GlobalSecurity: Tajura",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/tajura.htm"
+   },
+   {
+    "t": "Wikipedia: Tajura",
+    "u": "https://en.wikipedia.org/wiki/Tajura"
+   }
+  ]
+ },
+ {
+  "id": "lm-noc-headquarters",
+  "name": "National Oil Corporation headquarters",
+  "ar": "المؤسسة الوطنية للنفط",
+  "aliases": [
+   "NOC HQ"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The headquarters of Libya's National Oil Corporation in central Tripoli. The sources seen give no history before 2011.",
+  "era": "",
+  "today": "On 10 September 2018 armed men stormed the building, a blast followed, and a fire spread on lower floors; at least two staff and two gunmen died and ten were wounded.",
+  "uncertain": "No coordinates found; Gaddafi-era use is not documented in the sources seen.",
+  "sources": [
+   {
+    "t": "Al Jazeera: NOC Tripoli offices attacked",
+    "u": "https://www.aljazeera.com/amp/news/2018/9/10/libya-national-oil-corporations-tripoli-offices-attacked"
+   }
+  ]
+ },
+ {
+  "id": "lm-ben-nabi-mosque",
+  "name": "Ben Nabi Mosque",
+  "ar": "جامع بن نابي",
+  "aliases": [
+   "Masjid Ben Nabi"
+  ],
+  "kind": "landmark",
+  "lat": 32.8826,
+  "lon": 13.169,
+  "r": 0.15,
+  "summary": "A mosque in the Abu Salim area where loyalists were driven back on 20 August 2011 before retreating to the state TV centre. The 2011 battle article says loyalists were driven back from the Ben Nabi Mosque on 20 August 2011 and took refuge in the state TV centre. The sources seen give no history before that.",
+  "era": "",
+  "today": "Not described in the sources seen.",
+  "uncertain": "Only this single 2011 reference was found.",
+  "sources": [
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   },
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-that-el-emad-towers",
+  "name": "That El Emad Towers",
+  "ar": "",
+  "aliases": [
+   "Thatelemad Towers"
+  ],
+  "kind": "government",
+  "lat": 32.8947,
+  "lon": 13.1672,
+  "r": 0.2,
+  "summary": "A five-tower government complex of 18 floors each in downtown Tripoli, built 1984-1990 by Daewoo of South Korea. Construction began in early 1984 and it opened in 1990 under Gaddafi. The roof is 74 m high. Its listed use is government. A Wikipedia aside mentions a 2009 light show.",
+  "era": "",
+  "today": "Not described in the sources seen.",
+  "uncertain": "The page does not specify functions or 2011 events.",
+  "sources": [
+   {
+    "t": "Wikipedia: That El Emad Towers",
+    "u": "https://en.wikipedia.org/wiki/That_El_Emad_Towers"
+   },
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   }
+  ]
+ },
+ {
+  "id": "lm-tripoli-courts-complex",
+  "name": "Tripoli Courts Complex",
+  "ar": "مجمع المحاكم طرابلس",
+  "aliases": [
+   "Supreme Judicial Council building"
+  ],
+  "kind": "government",
+  "lat": 32.8744,
+  "lon": 13.1941,
+  "r": 0.15,
+  "summary": "The main courts complex of Tripoli. OpenStreetMap labels this complex and a second point for the Supreme Judicial Council in the same area. The sources seen give no history.",
+  "era": "",
+  "today": "Not described.",
+  "uncertain": "Everything beyond the map label is undocumented in the sources seen.",
+  "sources": [
+   {
+    "t": "OpenStreetMap extract (project file landmarks.json)",
+    "u": "https://www.openstreetmap.org/"
+   }
+  ]
+ },
+ {
+  "id": "lm-7-october-stadium",
+  "name": "7 October Stadium (Municipal Stadium)",
+  "ar": "",
+  "aliases": [
+   "Tripoli Municipal Stadium"
+  ],
+  "kind": "landmark",
+  "lat": 32.8883,
+  "lon": 13.1652,
+  "r": 0.2,
+  "summary": "A small football ground in central Tripoli built in 1939. Built in 1939 as the Municipal Stadium; until the June 11 Stadium opened in the 1970s it was the only football stadium in Tripoli. Capacity 5,000.",
+  "era": "",
+  "today": "Used as a training ground for Al-Ittihad Club.",
+  "uncertain": "Gaddafi-era events not documented.",
+  "sources": [
+   {
+    "t": "Wikipedia: 7 October Stadium",
+    "u": "https://en.wikipedia.org/wiki/7_October_Stadium"
+   }
+  ]
+ },
+ {
+  "id": "lm-fish-market",
+  "name": "Tripoli Fish Market",
+  "ar": "سوق السمك",
+  "aliases": [
+   "Souq al-Hout"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A busy seafood market at the edge of the Old City. The sources seen do not cover its history.",
+  "era": "",
+  "today": "A travel site describes a busy market selling sardines, mackerel, sea bream, shrimp and other seafood, with a cleaning area.",
+  "uncertain": "No coordinates, history or 2011 information found.",
+  "sources": [
+   {
+    "t": "Travel2Unlimited: Tripoli Fish Market",
+    "u": "https://travel2unlimited.com/libya-tripoli-fish-market/"
+   }
+  ]
+ },
+ {
+  "id": "lm-uthman-pasha-madrasa",
+  "name": "Uthman Pasha Madrasa",
+  "ar": "",
+  "aliases": [
+   "Madrasa of Uthman Pasha"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "An Ottoman madrasa built in 1654 and one of the best-preserved in Tripoli, with a courtyard, student rooms and a domed tomb chamber. Wikipedia's article on Tripoli says it was built in 1654. The sources seen give no events for 1969-2011.",
+  "era": "",
+  "today": "Not described.",
+  "uncertain": "No coordinates, no recent history.",
+  "sources": [
+   {
+    "t": "Wikipedia: Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+   },
+   {
+    "t": "Wikipedia: Timeline of Tripoli, Libya",
+    "u": "https://en.wikipedia.org/wiki/Timeline_of_Tripoli,_Libya"
+   }
+  ]
+ }
+]

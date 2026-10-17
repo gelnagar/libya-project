@@ -78,7 +78,14 @@
     document.querySelectorAll('#basemaps button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === key ? 'true' : 'false'); });
   }
   Object.keys(BASEMAPS).forEach(function (k) {
-    $('basemaps').appendChild(h('button', { 'data-key': k, 'aria-pressed': 'false', onclick: function () { setBase(k); } }, [BASEMAPS[k].name, h('small', { text: BASEMAPS[k].note })]));
+    var tz = 12, tx = Math.floor((13.19 + 180) / 360 * Math.pow(2, tz)), la = 32.885 * Math.PI / 180,
+        ty = Math.floor((1 - Math.log(Math.tan(la) + 1 / Math.cos(la)) / Math.PI) / 2 * Math.pow(2, tz));
+    var tile = { dark: ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/' + tz + '/' + ty + '/' + tx,
+      satellite: ESRI + 'World_Imagery/MapServer/tile/' + tz + '/' + ty + '/' + tx,
+      street: 'https://tile.openstreetmap.org/' + tz + '/' + tx + '/' + ty + '.png',
+      terrain: 'https://a.tile.opentopomap.org/' + tz + '/' + tx + '/' + ty + '.png' }[k];
+    $('basemaps').appendChild(h('button', { 'data-key': k, 'aria-pressed': 'false', onclick: function () { setBase(k); } },
+      [h('span', { class: 'thumb', style: 'background-image:url(' + tile + ')' }), h('span', { class: 'nm', text: BASEMAPS[k].name }), h('small', { text: BASEMAPS[k].note })]));
   });
 
   /* ---------- state ---------- */
@@ -538,9 +545,9 @@
     var outside = span(s)[1] < 1969 || span(s)[0] > 1989;
     body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: s.ref }), h('span', { text: s.lat.toFixed(4) + ', ' + s.lon.toFixed(4) })]));
     body.appendChild(h('div', { class: 'tags' }, [
-      h('span', { class: 'tag', style: 'color:' + lay.color, text: lay.label }),
-      h('span', { class: 'tag', style: 'color:var(--muted)', text: LEVELS[s.level] }),
-      outside ? h('span', { class: 'tag', style: 'color:var(--focus)', text: 'Outside 1969–1989' }) : null
+      h('span', { class: 'tag', style: '--c:' + lay.color, text: lay.label }),
+      h('span', { class: 'tag', style: '--c:#4d5d65', text: LEVELS[s.level] }),
+      outside ? h('span', { class: 'tag', style: '--c:#f2b33d', text: 'Outside 1969–1989' }) : null
     ]));
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: s.name }), s.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: s.ar }) : null]));
     body.appendChild(h('dl', { class: 'meta' }, [
@@ -589,7 +596,7 @@
     var lat = el.lat || (el.bounds ? (el.bounds.minlat + el.bounds.maxlat) / 2 : null);
     var lon = el.lon || (el.bounds ? (el.bounds.minlon + el.bounds.maxlon) / 2 : null);
     body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: 'OSM ' + el.type.toUpperCase() + ' ' + el.id }), lat ? h('span', { text: lat.toFixed(4) + ', ' + lon.toFixed(4) }) : null]));
-    body.appendChild(h('div', { class: 'tags' }, [h('span', { class: 'tag', style: 'color:var(--accent)', text: 'OpenStreetMap · today' })]));
+    body.appendChild(h('div', { class: 'tags' }, [h('span', { class: 'tag', style: '--c:#8c2f3b', text: 'OpenStreetMap, today' })]));
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: name }), t.name && t.name !== name ? h('div', { class: 'd-ar', text: t.name }) : null]));
     body.appendChild(h('p', { class: 'brief', text: KIND[k](t) + '. ' + EXPLAIN[k] }));
     var rows = Object.keys(t).filter(function (x) { return !/^(source|note|fixme|wikidata|created_by)/.test(x); }).slice(0, 12);
@@ -749,7 +756,7 @@
         .then(function () { btn.disabled = false; btn.textContent = 'Ask AI'; asked.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
     }
     btn.addEventListener('click', ask);
-    return h('div', { class: 'ai' }, [h('h3', { style: 'margin:0;font:500 .7em var(--f-data);letter-spacing:.14em;text-transform:uppercase;color:#8abbff', text: 'Ask AI · tap a question' }), sugg, q, pwWrap, btn, asked, out]);
+    return h('div', { class: 'ai' }, [h('h3', { class: 'ai-h', text: 'Ask a question' }), sugg, q, pwWrap, btn, asked, out]);
   }
 
   /* ---------- chat guide (agent loop) ---------- */

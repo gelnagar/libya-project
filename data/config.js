@@ -4,5 +4,5 @@
   Never put an API key in this file.
 */
 window.ATLAS_CONFIG = {
-  aiEndpoint: ''
+  aiEndpoint: 'https://tripoli-atlas-ai.gsea2020.workers.dev'
 };

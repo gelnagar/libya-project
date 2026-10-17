@@ -592,11 +592,13 @@
     return h('div', { class: 'ai' }, [h('h3', { style: 'margin:0;font:500 .7em var(--f-data);letter-spacing:.14em;text-transform:uppercase;color:#8abbff', text: 'Ask AI · tap a question' }), sugg, q, pwWrap, btn, asked, out]);
   }
 
-  /* ---------- chat guide ---------- */
-  var chatHistory = [];
+  /* ---------- chat guide (agent loop) ---------- */
+  var convo = [];
   var CATALOG = SITES.map(function (s) { return [s.id, s.name, LAYERS[s.layer].label, s.period, s.relevance].join(' | '); }).join('\n') +
     '\nKnown but with no map location: ' + UNPLACED.map(function (u) { return u.name + ' (' + u.when + ')'; }).join('; ');
-  var STARTERS = ['Where were political prisoners held?', 'What happened in the 1986 US air raid?', 'Show me the massacres on the map', 'What was life like under the Revolutionary Committees?'];
+  var STARTERS = ['Show me only the massacres', 'Where were political prisoners held?', 'What happened in the 1986 US air raid?', 'Switch to satellite and take me to Ben Ashour'];
+  var PERIOD_KEYS = { before_1969: 'pre', from_1969_to_1989: 'main', after_1989: 'post' };
+  var DISPLAY_KEYS = { district_names: 'districts', uncertainty_rings: 'rings', place_names: 'labels', grid: 'grid', timeline: 'timeline' };
   function scrollChat() { var l = $('chat-log'); l.scrollTop = l.scrollHeight; }
   function bubble(role, text) {
     var m = h('div', { class: 'msg ' + (role === 'user' ? 'me' : 'bot') }, [h('p', { text: text })]);
@@ -613,7 +615,7 @@
   }
   function closeChat() { $('chat-panel').hidden = true; document.body.classList.remove('chat-open'); $('chat-input').blur(); }
   function greet() {
-    var m = bubble('bot', 'Ask me anything about Tripoli between 1969 and 1989. I can show places on the map, and if something isn’t here yet I can help you ask ' + OWNER + ' to look into it.');
+    var m = bubble('bot', 'Ask me anything about Tripoli between 1969 and 1989, or tell me what to show. I can change the map for you, and if something isn’t here yet I can help you ask ' + OWNER + ' to look into it.');
     var box = h('div', { class: 'acts' });
     STARTERS.forEach(function (t) { box.appendChild(h('button', { class: 'act', text: t, onclick: function () { send(t); } })); });
     m.appendChild(box);
@@ -638,7 +640,7 @@
       if (!t.value.trim() && !d.value.trim()) { msg.textContent = 'Write a few words about what to look into.'; return; }
       store.set('name', n.value.trim());
       go.disabled = true; msg.textContent = 'Sending…';
-      var lastQ = chatHistory.filter(function (x) { return x.role === 'user'; }).slice(-1)[0];
+      var lastQ = convo.filter(function (x) { return x.role === 'user' && typeof x.content === 'string'; }).slice(-1)[0];
       relay(code, { request: { title: t.value.trim(), details: d.value.trim(), name: n.value.trim(), context: lastQ ? lastQ.content : '' } })
         .then(function () { card.innerHTML = ''; card.appendChild(h('p', { text: 'Sent. ' + OWNER + ' will see your request: “' + (t.value.trim() || d.value.trim().slice(0, 60)) + '”' })); scrollChat(); })
         .catch(function (e) { go.disabled = false; msg.textContent = e.code === 503 ? 'Requests are not switched on yet. Please tell ' + OWNER + ' directly.' : e.code === 401 ? 'The family password was not accepted.' : 'Could not send right now. Try again in a moment.'; });
@@ -646,46 +648,218 @@
     $('chat-log').appendChild(card); scrollChat();
     return card;
   }
-  function doActions(m, actions) {
-    var box = h('div', { class: 'acts' }), placed = 0;
-    (actions || []).forEach(function (a) {
-      var inp = a.input || {};
-      if (a.type === 'show_place' && BY_ID[inp.id]) {
-        var s = BY_ID[inp.id];
-        ensureVisible(s);
-        if (placed++ === 0) { map.flyTo([s.lat, s.lon], Math.max(map.getZoom(), 14), { duration: 0.8 }); markSelected(s.id); }
-        box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); focusSite(s); } }, [glyph(s.layer), h('span', { text: 'Open ' + s.name })]));
-      } else if (a.type === 'show_layer' && LAYERS[inp.layer]) {
-        active[inp.layer] = true; if (inputs[inp.layer]) inputs[inp.layer].checked = true; refresh();
-        box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); map.flyToBounds(HOME, { duration: 0.8 }); } }, [glyph(inp.layer), h('span', { text: 'Showing ' + LAYERS[inp.layer].label.toLowerCase() + ' — view map' })]));
-      } else if (a.type === 'suggest_request') {
-        setTimeout(function () { requestCard(inp.title, inp.details); }, 0);
-      }
+
+  /* map state and tools the agent can use */
+  function onOff(obj, keys) { return keys.filter(function (k) { return obj[k]; }); }
+  function mapState() {
+    var c = map.getCenter();
+    return JSON.stringify({
+      map_style: currentBase,
+      periods: { before_1969: periods.pre, from_1969_to_1989: periods.main, after_1989: periods.post },
+      historical_layers_on: onOff(active, Object.keys(LAYERS)),
+      historical_layers_off: Object.keys(LAYERS).filter(function (k) { return !active[k]; }),
+      today_layers_on: onOff(osmActive, Object.keys(OSM)),
+      display: { district_names: !!active.districts, uncertainty_rings: !!active.rings, place_names: !!active.labels, grid: !!active.grid, timeline: !!active.timeline },
+      zoom: map.getZoom(), center: [+c.lat.toFixed(4), +c.lng.toFixed(4)],
+      selected_place: selected || null,
+      visible_places: SITES.filter(visible).length + ' of ' + SITES.length
     });
-    if (box.children.length) m.appendChild(box);
+  }
+  function syncInputs() {
+    Object.keys(LAYERS).concat(['districts', 'rings', 'labels', 'grid', 'timeline']).forEach(function (k) { if (inputs[k]) inputs[k].checked = !!active[k]; });
+    Object.keys(OSM).forEach(function (k) { if (inputs['osm-' + k]) inputs['osm-' + k].checked = !!osmActive[k]; });
+    Object.keys(PERIODS).forEach(function (k) { var b = document.querySelector('#periods [data-k="' + k + '"]'); if (b) b.setAttribute('aria-pressed', periods[k] ? 'true' : 'false'); });
+  }
+  function visibleNames() { var v = SITES.filter(visible); return v.length ? v.map(function (s) { return s.name; }).join('; ') : 'none'; }
+  function brief(s) { return { id: s.id, name: s.name, category: LAYERS[s.layer].label, when: s.period, visible: visible(s) }; }
+  var ui = null; // per-turn collector: { log: [], chips: [], mapChanged: bool }
+  var TOOLS = {
+    get_map_state: function () { return mapState(); },
+    search_places: function (a) {
+      var q = String(a.query || '').toLowerCase().split(/\s+/).filter(Boolean);
+      var res = SITES.filter(function (s) {
+        if (a.layer && s.layer !== a.layer) return false;
+        var r = span(s);
+        if (a.year_from != null && r[1] < a.year_from) return false;
+        if (a.year_to != null && r[0] > a.year_to) return false;
+        if (!q.length) return true;
+        var hay = (s.name + ' ' + (s.ar || '') + ' ' + s.relevance + ' ' + s.text + ' ' + LAYERS[s.layer].label).toLowerCase();
+        return q.every(function (w) { return hay.indexOf(w) >= 0; });
+      });
+      return JSON.stringify({ count: res.length, places: res.map(brief) });
+    },
+    get_place: function (a) {
+      var s = BY_ID[a.id];
+      if (!s) return { error: 'No place with id ' + a.id };
+      return JSON.stringify(Object.assign(brief(s), { arabic: s.ar || null, evidence: LEVELS[s.level], accuracy_km: s.r, lat: s.lat, lon: s.lon, why_it_matters: s.relevance, details: s.text,
+        linked: linksFor(s.id).map(function (x) { return x.other.id + ': ' + x.why; }), sources: s.sources.map(function (x) { return x.t; }) }));
+    },
+    describe_spot: function (a) {
+      var ll = L.latLng(+a.lat, +a.lon);
+      if (isNaN(ll.lat) || isNaN(ll.lng)) return { error: 'Invalid coordinates' };
+      var d = nearestDistrict(ll);
+      var near = SITES.map(function (s) { return { s: s, m: map.distance(ll, [s.lat, s.lon]) }; }).filter(function (x) { return x.m < 3000; }).sort(function (x, y) { return x.m - y.m; }).slice(0, 5)
+        .map(function (x) { return x.s.id + ' (' + km(x.m) + ')'; });
+      var base = { nearest_district: d.name + ' (' + km(d.m) + ')', nearby_places: near };
+      var ac = new AbortController(); setTimeout(function () { ac.abort(); }, 8000);
+      return fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=16&accept-language=en&lat=' + ll.lat + '&lon=' + ll.lng, { signal: ac.signal })
+        .then(function (r) { return r.json(); })
+        .then(function (j) { base.address = j.display_name || null; return JSON.stringify(base); })
+        .catch(function () { base.address = 'lookup unavailable'; return JSON.stringify(base); });
+    },
+    set_layers: function (a) {
+      var keys = Object.keys(LAYERS), bad = [].concat(a.only || [], a.show || [], a.hide || []).filter(function (k) { return !LAYERS[k]; });
+      if (bad.length) return { error: 'Unknown layers: ' + bad.join(', ') };
+      if (a.only && a.only.length) keys.forEach(function (k) { active[k] = a.only.indexOf(k) >= 0; });
+      (a.show || []).forEach(function (k) { active[k] = true; });
+      (a.hide || []).forEach(function (k) { active[k] = false; });
+      refresh(); syncInputs(); ui.mapChanged = true;
+      var on = keys.filter(function (k) { return active[k]; });
+      ui.log.push(on.length ? 'Showing ' + on.map(function (k) { return LAYERS[k].label.toLowerCase(); }).join(', ') : 'All history layers hidden');
+      return 'Historical layers now on: ' + (on.join(', ') || 'none') + '. Visible places: ' + visibleNames() + '.';
+    },
+    set_today_layers: function (a) {
+      var bad = [].concat(a.show || [], a.hide || []).filter(function (k) { return !OSM[k]; });
+      if (bad.length) return { error: 'Unknown layers: ' + bad.join(', ') };
+      (a.show || []).forEach(function (k) { osmActive[k] = true; });
+      (a.hide || []).forEach(function (k) { osmActive[k] = false; osmGroups[k].clearLayers(); });
+      store.set('osm', osmActive); syncInputs(); ui.mapChanged = true;
+      var need = (a.show || []).map(function (k) { return OSM[k].minZoom; }).reduce(function (x, y) { return Math.max(x, y); }, 0);
+      var note = '';
+      if (need && map.getZoom() < need) { map.setZoom(need); note = ' Zoomed in to level ' + need + ' so they can load.'; }
+      refreshOSM();
+      if ((a.show || []).length) ui.log.push('Turned on ' + a.show.map(function (k) { return OSM[k].label.toLowerCase(); }).join(', '));
+      if ((a.hide || []).length) ui.log.push('Turned off ' + a.hide.map(function (k) { return OSM[k].label.toLowerCase(); }).join(', '));
+      return 'Present-day layers now on: ' + (onOff(osmActive, Object.keys(OSM)).join(', ') || 'none') + '. They load from OpenStreetMap over the next few seconds.' + note;
+    },
+    set_basemap: function (a) {
+      if (!BASEMAPS[a.style]) return { error: 'Unknown style ' + a.style };
+      setBase(a.style); ui.mapChanged = true; ui.log.push('Switched to ' + BASEMAPS[a.style].name.toLowerCase() + ' view');
+      return 'Map style is now ' + a.style + '.';
+    },
+    set_periods: function (a) {
+      Object.keys(PERIOD_KEYS).forEach(function (k) { if (typeof a[k] === 'boolean') periods[PERIOD_KEYS[k]] = a[k]; });
+      refresh(); syncInputs(); ui.mapChanged = true;
+      var on = Object.keys(PERIODS).filter(function (k) { return periods[k]; }).map(function (k) { return PERIODS[k]; });
+      ui.log.push('Time period: ' + (on.join(', ') || 'none'));
+      return 'Periods shown: ' + (on.join(', ') || 'none') + '. Visible places: ' + visibleNames() + '.';
+    },
+    set_display: function (a) {
+      var changed = [];
+      Object.keys(DISPLAY_KEYS).forEach(function (k) { if (typeof a[k] === 'boolean') { active[DISPLAY_KEYS[k]] = a[k]; changed.push(k.replace(/_/g, ' ') + (a[k] ? ' on' : ' off')); } });
+      refresh(); syncInputs(); ui.mapChanged = true;
+      if (changed.length) ui.log.push(changed.join(', '));
+      return 'Display updated: ' + (changed.join(', ') || 'nothing changed') + '.';
+    },
+    fly_to: function (a) {
+      ui.mapChanged = true;
+      if (a.place_ids && a.place_ids.length) {
+        var ss = a.place_ids.map(function (id) { return BY_ID[id]; }).filter(Boolean);
+        if (!ss.length) return { error: 'No matching place ids' };
+        ss.forEach(ensureVisible);
+        if (ss.length === 1) { map.flyTo([ss[0].lat, ss[0].lon], Math.max(map.getZoom(), 15), { duration: 0.8 }); markSelected(ss[0].id); }
+        else map.flyToBounds(L.latLngBounds(ss.map(function (s) { return [s.lat, s.lon]; })).pad(0.3), { duration: 0.8, maxZoom: 15 });
+        ui.log.push('Moved map to ' + ss.map(function (s) { return s.name; }).join(', '));
+        ss.slice(0, 3).forEach(function (s) { ui.chips.push(s); });
+        return 'Map now shows: ' + ss.map(function (s) { return s.name; }).join(', ') + '.';
+      }
+      if (a.whole_city) { map.flyToBounds(HOME, { duration: 0.8 }); ui.log.push('Showing all of Tripoli'); return 'Map shows all of Tripoli.'; }
+      if (a.district) {
+        var want = String(a.district).toLowerCase().replace(/[^a-z]/g, '');
+        var d = DISTRICTS.filter(function (x) { return x[0].toLowerCase().replace(/[^a-z]/g, '') === want || x[1] === a.district; })[0]
+          || DISTRICTS.filter(function (x) { var n = x[0].toLowerCase().replace(/[^a-z]/g, ''); return n.indexOf(want) >= 0 || want.indexOf(n) >= 0; })[0];
+        if (!d) return { error: 'Unknown district. Known districts: ' + DISTRICTS.map(function (x) { return x[0]; }).join(', ') };
+        map.flyTo([d[2], d[3]], a.zoom || 15, { duration: 0.8 }); ui.log.push('Moved map to ' + d[0]);
+        return 'Map centred on ' + d[0] + ' (approximate district centre).';
+      }
+      if (a.lat != null && a.lon != null) {
+        var z = Math.min(18, Math.max(10, a.zoom || 15));
+        map.flyTo([+a.lat, +a.lon], z, { duration: 0.8 }); ui.log.push('Moved map to ' + (+a.lat).toFixed(4) + ', ' + (+a.lon).toFixed(4));
+        return 'Map centred on ' + a.lat + ', ' + a.lon + ' at zoom ' + z + '.';
+      }
+      return { error: 'Give place_ids, district, lat/lon or whole_city.' };
+    },
+    open_place: function (a) {
+      var s = BY_ID[a.id];
+      if (!s) return { error: 'No place with id ' + a.id };
+      ensureVisible(s); ui.mapChanged = true;
+      if (DESKTOP.matches) { openSite(s); map.flyTo([s.lat, s.lon], Math.max(map.getZoom(), 15), { duration: 0.8 }); ui.log.push('Opened ' + s.name); return 'Details panel for ' + s.name + ' is open.'; }
+      ui.chips.push(s); ui.log.push('Added a button to open ' + s.name);
+      return 'On this phone a button to open ' + s.name + ' was added under your reply.';
+    },
+    suggest_request: function (a) { ui.requests.push(a); return 'The request form is shown to the reader, filled in with: ' + (a.title || '') + '.'; }
+  };
+  var STEP_LABEL = { get_map_state: 'Checking the map', search_places: 'Searching the map', get_place: 'Reading place details', describe_spot: 'Looking up the area',
+    set_layers: 'Changing layers', set_today_layers: 'Loading present-day layers', set_basemap: 'Changing the map style', set_periods: 'Changing the time period',
+    set_display: 'Adjusting the display', fly_to: 'Moving the map', open_place: 'Opening the place', suggest_request: 'Preparing a request' };
+  function runTool(name, input) {
+    try {
+      var fn = TOOLS[name];
+      var r = fn ? fn(input || {}) : { error: 'Unknown tool ' + name };
+      return Promise.resolve(r).then(function (v) { return typeof v === 'string' ? { content: v } : { content: v.error || JSON.stringify(v), is_error: !!v.error }; });
+    } catch (e) { return Promise.resolve({ content: 'Tool failed: ' + e.message, is_error: true }); }
+  }
+  function trimConvo() {
+    while (convo.length > 30) {
+      convo.shift();
+      while (convo.length && !(convo[0].role === 'user' && typeof convo[0].content === 'string')) convo.shift();
+    }
+  }
+  var MAX_STEPS = 8;
+  function runAgent(code, setStatus) {
+    var steps = 0, lastText = '';
+    function step() {
+      steps++;
+      return relay(code, { agent: true, messages: convo, catalog: CATALOG, state: mapState() }).then(function (j) {
+        var content = (j.content || []).filter(function (b) { return b && (b.type === 'text' || b.type === 'tool_use'); });
+        if (!content.length) content = [{ type: 'text', text: lastText || 'I don’t have an answer for that.' }];
+        convo.push({ role: 'assistant', content: content });
+        var text = content.filter(function (b) { return b.type === 'text'; }).map(function (b) { return b.text; }).join('\n').trim();
+        if (text) lastText = text;
+        var uses = content.filter(function (b) { return b.type === 'tool_use'; });
+        if (!uses.length) return lastText;
+        setStatus(uses.map(function (u) { return STEP_LABEL[u.name] || 'Working'; }).join(' · ') + '…');
+        var chain = Promise.resolve(), results = [];
+        uses.forEach(function (u) { chain = chain.then(function () { return runTool(u.name, u.input).then(function (r) { results.push({ type: 'tool_result', tool_use_id: u.id, content: r.content, is_error: !!r.is_error }); }); }); });
+        return chain.then(function () {
+          if (steps >= MAX_STEPS) { results.forEach(function (r) { r.content += ' (Step limit reached: give your final answer now.)'; }); }
+          convo.push({ role: 'user', content: results });
+          if (steps >= MAX_STEPS + 1) return lastText;
+          return step();
+        });
+      });
+    }
+    return step();
   }
   function send(text) {
     text = (text || '').trim();
-    if (!text) return;
+    if (!text || $('chat-send').disabled) return;
     openChat();
     var code = store.get('code', '');
     if (!code) { codeCard(function () { send(text); }); return; }
-    chatHistory.push({ role: 'user', content: text });
+    trimConvo();
+    var mark = convo.length;
+    convo.push({ role: 'user', content: text });
     bubble('user', text);
     $('chat-input').value = '';
     var wait = bubble('bot', 'Thinking…'); wait.classList.add('wait');
     $('chat-send').disabled = true;
-    relay(code, { agent: true, messages: chatHistory.slice(-12), catalog: CATALOG })
-      .then(function (j) {
+    ui = { log: [], chips: [], requests: [], mapChanged: false };
+    runAgent(code, function (s) { wait.querySelector('p').textContent = s; scrollChat(); })
+      .then(function (reply) {
         wait.remove();
-        var actions = j.actions || [];
-        var reply = j.text || (actions.length ? 'Here it is on the map.' : 'I don’t have an answer for that.');
-        chatHistory.push({ role: 'assistant', content: reply });
-        doActions(bubble('bot', reply), actions);
+        var m = bubble('bot', reply || (ui.log.length ? 'Done.' : 'I don’t have an answer for that.'));
+        if (ui.log.length) m.appendChild(h('ul', { class: 'did' }, ui.log.map(function (x) { return h('li', { text: x }); })));
+        var box = h('div', { class: 'acts' }), seen = {};
+        ui.chips.forEach(function (s) { if (seen[s.id]) return; seen[s.id] = 1; box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); focusSite(s); } }, [glyph(s.layer), h('span', { text: 'Open ' + s.name })])); });
+        if (ui.mapChanged && !DESKTOP.matches) box.appendChild(h('button', { class: 'act', text: 'View the map ↓', onclick: closeChat }));
+        if (box.children.length) m.appendChild(box);
+        ui.requests.forEach(function (r) { requestCard(r.title, r.details); });
+        scrollChat();
       })
       .catch(function (e) {
         wait.remove();
-        chatHistory.pop();
+        convo.length = mark;
         if (e.code === 401) { store.set('code', ''); codeCard(function () { send(text); }); return; }
         var m = bubble('bot', e.code === 402 ? 'AI answers are paused because the AI credit has run out. Let ' + OWNER + ' know.'
           : e.code === 429 ? 'Too many questions just now. Wait a minute and try again.'

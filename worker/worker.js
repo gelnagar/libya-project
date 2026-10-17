@@ -14,7 +14,13 @@
     CREDIT_LOADED      (text)    total dollars you have ever added, e.g. 20
     LOW_CREDIT_WARNING (text)    warn below this many dollars, default 10
     PRICE_IN, PRICE_OUT (text)   dollars per million tokens, default 2 and 10
+
+  The chat guide is an agent: Claude calls map tools, the map runs them and sends back
+  the results, and the loop continues until Claude gives its final answer. The tools and
+  instructions live here, in the worker; the map only supplies data and tool results.
 */
+
+const clip = (v, n) => String(v == null ? '' : v).slice(0, n);
 
 const PLACE_SYSTEM = `You explain places on a historical map of Tripoli, Libya, focused on 1969–1989 under Muammar Gaddafi.
 Readers are older family members reading on phones. Write plainly in short paragraphs, under 170 words, with no jargon and no headings.
@@ -26,30 +32,46 @@ Never give home addresses or current whereabouts of private individuals.
 If the reader writes in Arabic, answer in Arabic.`;
 
 function agentSystem(owner, catalog) {
-  return `You are the guide built into a family history map of Tripoli, Libya, focused on 1969–1989 under Muammar Gaddafi.
-Readers are older family members, often on phones. Answer plainly and briefly (under 150 words), no headings, no lists unless asked.
+  return `You are the guide inside a family history map of Tripoli, Libya, focused on 1969–1989 under Muammar Gaddafi. You can see and control the map with your tools.
 
-The map contains these places (id | name | category | when | summary):
+Readers are older family members, often on phones. Your final answer must be plain language, under 150 words, with no headings.
+
+How to work:
+- When the reader asks to see, hide, change or find something, do it with the tools straight away. Tool results tell you what actually changed; check them before answering.
+- To show only certain categories, use set_layers with "only". To remove a category, use "hide".
+- Use get_map_state if you need to know what is currently shown, and search_places or get_place before giving details about a place.
+- When places are relevant to an answer, move the map to them with fly_to.
+- If something is not on the map, or you are not confident of the facts, say so and call suggest_request so the reader can ask ${owner}, who maintains the map, to investigate or add it.
+- Do not explain your tools or their limits to the reader. Do the task, then tell them briefly what they are now looking at.
+- Only say you changed the map if a tool result in this conversation confirms it.
+
+Places on the map (id | name | category | when | summary):
 ${catalog}
 
-Tools:
-- When your answer concerns a mapped place, call show_place with its id so the map moves there. At most two per answer.
-- When the reader wants to see a whole category, call show_layer.
-- When the reader asks about something that is not on the map, asks for something to be added, or you are not confident of the facts, say so honestly and call suggest_request with a short title and a description of what should be researched or added. The reader can then send it to ${owner}, who maintains the map.
-
-Always write your answer as text before calling any tool.
-Use only well-established facts. Never invent places, coordinates, names or numbers.
-Never give home addresses or current whereabouts of private individuals.
-If the reader writes in Arabic, answer in Arabic.`;
+Use only well-established facts. Never invent places, coordinates, names or numbers. Never give home addresses or current whereabouts of private individuals. If the reader writes in Arabic, answer in Arabic.`;
 }
 
-const TOOLS = [
-  { name: 'show_place', description: 'Move the map to a mapped place and highlight it.', input_schema: { type: 'object', properties: { id: { type: 'string', description: 'Place id from the list' } }, required: ['id'] } },
-  { name: 'show_layer', description: 'Turn on a category of places on the map.', input_schema: { type: 'object', properties: { layer: { type: 'string', enum: ['detention', 'security', 'military', 'airstrike', 'massacre', 'power', 'landmark'] } }, required: ['layer'] } },
-  { name: 'suggest_request', description: 'Offer the reader a button to ask the map maintainer to research or add something.', input_schema: { type: 'object', properties: { title: { type: 'string' }, details: { type: 'string' } }, required: ['title', 'details'] } }
-];
+const HIST = ['detention', 'security', 'military', 'airstrike', 'massacre', 'power', 'landmark'];
+const TODAY = ['landuse', 'buildings', 'military', 'water', 'oil'];
+const arr = (items) => ({ type: 'array', items });
 
-const MAX_PER_MINUTE = 10;
+const TOOLS = [
+  { name: 'get_map_state', description: 'See what the map is showing now: map style, time periods, which layers are on, display options, zoom, centre and the selected place.', input_schema: { type: 'object', properties: {} } },
+  { name: 'search_places', description: 'Find mapped places by words in their name or description, by category, or by year range. Returns ids, names, categories, years and whether each is currently visible.', input_schema: { type: 'object', properties: { query: { type: 'string' }, layer: { type: 'string', enum: HIST }, year_from: { type: 'integer' }, year_to: { type: 'integer' } } } },
+  { name: 'get_place', description: 'Full details of one mapped place: description, evidence level, accuracy, linked places and sources.', input_schema: { type: 'object', properties: { id: { type: 'string' } }, required: ['id'] } },
+  { name: 'describe_spot', description: 'Look up any point: address, neighbourhood, nearest district and mapped places nearby.', input_schema: { type: 'object', properties: { lat: { type: 'number' }, lon: { type: 'number' } }, required: ['lat', 'lon'] } },
+  { name: 'set_layers', description: 'Change the historical layers. "only" shows exactly these and hides all others. "show" turns layers on; "hide" turns them off.', input_schema: { type: 'object', properties: { only: arr({ type: 'string', enum: HIST }), show: arr({ type: 'string', enum: HIST }), hide: arr({ type: 'string', enum: HIST }) } } },
+  { name: 'set_today_layers', description: 'Turn present-day OpenStreetMap layers on or off: land-use zones, buildings, military areas today, water infrastructure, oil and gas.', input_schema: { type: 'object', properties: { show: arr({ type: 'string', enum: TODAY }), hide: arr({ type: 'string', enum: TODAY }) } } },
+  { name: 'set_basemap', description: 'Change the map style.', input_schema: { type: 'object', properties: { style: { type: 'string', enum: ['dark', 'satellite', 'street', 'terrain'] } }, required: ['style'] } },
+  { name: 'set_periods', description: 'Choose which time periods are shown. Omitted periods stay as they are.', input_schema: { type: 'object', properties: { before_1969: { type: 'boolean' }, from_1969_to_1989: { type: 'boolean' }, after_1989: { type: 'boolean' } } } },
+  { name: 'set_display', description: 'Turn display options on or off. Omitted options stay as they are.', input_schema: { type: 'object', properties: { district_names: { type: 'boolean' }, uncertainty_rings: { type: 'boolean' }, place_names: { type: 'boolean' }, grid: { type: 'boolean' }, timeline: { type: 'boolean' } } } },
+  { name: 'fly_to', description: 'Move the map. Give place_ids to frame one or more places, a district name, a lat/lon with optional zoom (10–18), or whole_city true.', input_schema: { type: 'object', properties: { place_ids: arr({ type: 'string' }), district: { type: 'string' }, lat: { type: 'number' }, lon: { type: 'number' }, zoom: { type: 'integer' }, whole_city: { type: 'boolean' } } } },
+  { name: 'open_place', description: 'Open the details panel for a place (on phones this adds a button the reader can tap).', input_schema: { type: 'object', properties: { id: { type: 'string' } }, required: ['id'] } },
+  { name: 'suggest_request', description: 'Show the reader a form to ask the map maintainer to research or add something.', input_schema: { type: 'object', properties: { title: { type: 'string' }, details: { type: 'string' } }, required: ['title', 'details'] } }
+];
+TOOLS[TOOLS.length - 1].cache_control = { type: 'ephemeral' };
+
+const MAX_PER_MINUTE = 40;
 const hits = new Map();
 
 async function creditInfo(env) {
@@ -61,10 +83,10 @@ async function creditInfo(env) {
   return { tracked: true, remaining: Math.round(remaining * 100) / 100, low: remaining < warnBelow, out: remaining <= 0.05 };
 }
 
-async function recordSpend(env, usage) {
-  if (!env.ATLAS_KV || !usage) return;
+async function recordSpend(env, u) {
+  if (!env.ATLAS_KV || !u) return;
   const pin = parseFloat(env.PRICE_IN) || 2, pout = parseFloat(env.PRICE_OUT) || 10;
-  const cost = ((usage.input_tokens || 0) * pin + (usage.output_tokens || 0) * pout) / 1e6;
+  const cost = ((u.input_tokens || 0) * pin + (u.cache_creation_input_tokens || 0) * pin * 1.25 + (u.cache_read_input_tokens || 0) * pin * 0.1 + (u.output_tokens || 0) * pout) / 1e6;
   const spent = parseFloat(await env.ATLAS_KV.get('spent_usd')) || 0;
   await env.ATLAS_KV.put('spent_usd', String(spent + cost));
 }
@@ -81,7 +103,31 @@ async function callClaude(env, payload) {
   });
 }
 
-const clip = (v, n) => String(v || '').slice(0, n);
+// Accept only plain conversation turns, tool calls and tool results, within size limits.
+function cleanMessages(list) {
+  if (!Array.isArray(list)) return [];
+  let out = [];
+  for (const m of list.slice(-40)) {
+    if (!m || (m.role !== 'user' && m.role !== 'assistant')) continue;
+    if (typeof m.content === 'string') { if (m.content.trim()) out.push({ role: m.role, content: clip(m.content, 4000) }); continue; }
+    if (!Array.isArray(m.content)) continue;
+    const blocks = [];
+    for (const b of m.content.slice(0, 24)) {
+      if (!b) continue;
+      if (b.type === 'text' && String(b.text || '').trim()) blocks.push({ type: 'text', text: clip(b.text, 4000) });
+      else if (b.type === 'tool_use' && m.role === 'assistant') blocks.push({ type: 'tool_use', id: clip(b.id, 100), name: clip(b.name, 64), input: b.input && typeof b.input === 'object' ? b.input : {} });
+      else if (b.type === 'tool_result' && m.role === 'user') blocks.push({ type: 'tool_result', tool_use_id: clip(b.tool_use_id, 100), content: clip(typeof b.content === 'string' ? b.content : JSON.stringify(b.content), 6000), is_error: !!b.is_error });
+    }
+    if (blocks.length) out.push({ role: m.role, content: blocks });
+  }
+  const startsClean = (m) => m.role === 'user' && (typeof m.content === 'string' || !m.content.some((b) => b.type === 'tool_result'));
+  while (out.length && !startsClean(out[0])) out.shift();
+  while (JSON.stringify(out).length > 90000 && out.length > 1) {
+    out.shift();
+    while (out.length && !startsClean(out[0])) out.shift();
+  }
+  return out;
+}
 
 export default {
   async fetch(request, env) {
@@ -140,15 +186,16 @@ export default {
       return json({ ok: true }, 200, cors);
     }
 
-    /* ----- chat guide ----- */
+    /* ----- chat guide: one step of the agent loop ----- */
     if (body.agent) {
       const owner = env.OWNER_NAME || 'Gordon';
-      const msgs = (Array.isArray(body.messages) ? body.messages : []).slice(-12)
-        .filter((m) => (m.role === 'user' || m.role === 'assistant') && m.content)
-        .map((m) => ({ role: m.role, content: clip(m.content, 2000) }));
-      while (msgs.length && msgs[0].role !== 'user') msgs.shift();
+      const msgs = cleanMessages(body.messages);
       if (!msgs.length || msgs[msgs.length - 1].role !== 'user') return json({ error: 'Bad request' }, 400, cors);
-      const r = await callClaude(env, { max_tokens: 700, system: agentSystem(owner, clip(body.catalog, 9000)), tools: TOOLS, messages: msgs });
+      const system = [
+        { type: 'text', text: agentSystem(owner, clip(body.catalog, 9000)), cache_control: { type: 'ephemeral' } },
+        { type: 'text', text: 'Map state when this step started: ' + clip(body.state, 3000) }
+      ];
+      const r = await callClaude(env, { max_tokens: 1024, system, tools: TOOLS, messages: msgs });
       if (!r.ok) {
         const err = await r.text();
         if (/credit balance/i.test(err)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
@@ -156,10 +203,7 @@ export default {
       }
       const data = await r.json();
       await recordSpend(env, data.usage);
-      const content = data.content || [];
-      const text = content.filter((c) => c.type === 'text').map((c) => c.text).join('\n').trim();
-      const actions = content.filter((c) => c.type === 'tool_use').map((c) => ({ type: c.name, input: c.input || {} }));
-      return json({ text, actions, credit: await creditInfo(env) }, 200, cors);
+      return json({ content: data.content || [], stop_reason: data.stop_reason, credit: await creditInfo(env) }, 200, cors);
     }
 
     /* ----- single question about a place ----- */

@@ -231,6 +231,8 @@ body.sheet-open #timeline { right: 440px; }
 .msg.req textarea { min-height: 80px; resize: vertical; }
 .msg.req small { color: var(--muted); }
 .acts { display: flex; flex-direction: column; gap: 6px; }
+.did { margin: 0; padding: 0 0 0 4px; list-style: none; font: .78em var(--f-data); color: #72ca9b; display: flex; flex-direction: column; gap: 2px; }
+.did li::before { content: '\2713  '; }
 .act { display: flex; gap: 10px; align-items: center; text-align: left; min-height: 44px; padding: 6px 10px; background: var(--panel); border: 1px solid #2d4a73; border-radius: 3px; color: #8abbff; font-weight: 600; font-size: .9em; }
 html.has-chat { --chat-h: calc(66px + var(--bot)); }
 @media (max-width: 899px) {

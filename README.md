@@ -12,7 +12,7 @@ The map runs full screen on phones and computers. Tap any marker to read why it 
 
 **Ask about any spot:** right-click (computer), press and hold (phone), or tap ◎ then tap the map.
 
-**Chat guide:** a question box at the bottom of the map. It answers, moves the map to places it mentions, and offers to send requests to Gordon when something is missing. Requests are read at `requests.html`.
+**Chat guide:** an agent at the bottom of the map. It can read the map's state and place details, look up any address, change layers (including showing only one category), switch map style, time period and display options, move the map, and open places. It works step by step until the task is done, then lists what it changed. When something is missing it offers to send a request to Gordon, read at `requests.html`. Its tools and instructions live in `worker/worker.js`.
 
 **Suggested questions:** 20 per place in `data/questions.js`, shown three at a time.
 

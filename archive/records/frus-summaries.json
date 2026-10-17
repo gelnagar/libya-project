@@ -867,5 +867,119 @@
    "diplomacy",
    "military"
   ]
+ },
+ "frus-1981-88v24-d23": {
+  "summary": "In this July 19, 1983 cable the U.S. Embassy in Tunis reported that Tunisian Prime Minister Mzali was leaving for Tripoli to attend a session of the Tunisian-Libyan High Commission. The embassy said Tunisia still saw Qadhafi's Libya as a security threat and the main issues were Tunisian workers enrolled in Libyan-backed 'liberation movements' and the continental shelf.",
+  "tripoli_details": [
+   "Mzali traveled to Tripoli on July 19, 1983 for the High Commission session; Tunisian ministers of Economy and Plans had been there since July 17.",
+   "The embassy said the Libyans would have taken great offense if Mzali had not gone.",
+   "The High Commission had been dormant until revived by Qadhafi's visit to Tunisia in February 1982."
+  ],
+  "people": [
+   "Mu'ammar Qadhafi",
+   "Mohamed Mzali",
+   "Caid Essebsi",
+   "Habib Bourguiba"
+  ],
+  "topics": [
+   "diplomacy",
+   "oil",
+   "Chad"
+  ]
+ },
+ "frus-1981-88v24-d34": {
+  "summary": "In this May 14, 1984 cable the U.S. Embassy in Tunis reported escalating Libyan threats against Tunisia after infiltrators entered Libya. Libyan statements blamed 'a Tunisian side' for the infiltration, and Libya admitted holding three Tunisian personnel.",
+  "tripoli_details": [
+   "A statement said to represent Libyan 'masses' who demonstrated in Tripoli on May 13 accused Egypt, Sudan and elements in the Tunisian regime of conspiring with 'stray dogs.'",
+   "The Libyans admitted in a May 10 statement that they were holding three Tunisian personnel.",
+   "The embassy thought a negotiated solution was still possible if Tunisia gave Qadhafi an official expression of regret and private assurances."
+  ],
+  "people": [
+   "Mu'ammar Qadhafi",
+   "Fezzani",
+   "Ibrahimi"
+  ],
+  "topics": [
+   "diplomacy",
+   "arrests",
+   "Egypt",
+   "Sudan"
+  ]
+ },
+ "frus-1969-76ve09p1-d13": {
+  "summary": "These April 16, 1973 minutes of a Washington Special Actions Group meeting covered Libya and Indochina. Kissinger said the U.S. Chargé in Tripoli had sent many messages, and that the rules of engagement for U.S. reconnaissance flights over the Mediterranean needed to be carefully drawn since Libyans were willing to shoot at planes fifty miles out at sea.",
+  "tripoli_details": [
+   "Kissinger said the chargé in Tripoli had sent more messages in a week than the Ambassador in Cambodia sent in a year.",
+   "He said Libyans were willing to shoot down American planes at a range of fifty miles out at sea."
+  ],
+  "people": [
+   "Henry Kissinger"
+  ],
+  "topics": [
+   "military",
+   "diplomacy",
+   "embassy"
+  ]
+ },
+ "frus-1977-80v17p3-d117": {
+  "summary": "This memorandum records a December 19, 1979 meeting in Washington between Under Secretary Newsom and Ali El-Houderi of the Libyan People's Bureau after the attack on the U.S. Embassy in Tripoli. El-Houderi said Libya regretted the attack, would pay compensation and promised protection for Americans, while Newsom raised the detention of embassy fiscal officer Bashir Dultz.",
+  "tripoli_details": [
+   "El-Houderi said Libya accepted responsibility for failing to protect the Embassy and was prepared to pay compensation for the damage.",
+   "Newsom asked that security units be designated to protect the Embassy and that Chargé Eagleton get an early meeting with Qadhafi.",
+   "Bashir Dultz, a German national who had been the Embassy's budget and fiscal officer for many years, was arrested and detained, which caused nervousness among Embassy employees.",
+   "El-Houderi said Dultz was well known in Tripoli and many believed he was a 'spy.'"
+  ],
+  "people": [
+   "Ali El-Houderi",
+   "David Newsom",
+   "William Eagleton",
+   "Bashir Dultz",
+   "Mu'ammar Qadhafi",
+   "Turayki"
+  ],
+  "topics": [
+   "embassy",
+   "arrests",
+   "diplomacy",
+   "terrorism"
+  ]
+ },
+ "frus-1977-80v17p3-d88": {
+  "summary": "In this April 14, 1977 cable the U.S. Embassy in Tripoli reported the Libyan response to a message from President Carter. A Libyan official said Libya wanted better political relations, and a Libyan note denied that the terrorist known as Carlos had entered Libya except once when he transited Tripoli airport.",
+  "tripoli_details": [
+   "The Libyan note said Carlos entered Libya only on the occasion of the Oil Minister's kidnapping, when he transited Tripoli International Airport.",
+   "The note said Libya wanted Carlos for trial for killing a member of the Libyan delegation at the OPEC conference in Vienna.",
+   "The Libyan official said only he and Turayki in the Tripoli Foreign Office knew of the President's letter."
+  ],
+  "people": [
+   "Sahad",
+   "Turayki",
+   "Carlos",
+   "Anwar Sadat"
+  ],
+  "topics": [
+   "diplomacy",
+   "terrorism",
+   "embassy"
+  ]
+ },
+ "frus-1977-80v17p3-d95": {
+  "summary": "This October 2, 1978 cable reports Under Secretary Newsom's one-hour meeting at the UN with Libyan Permanent Representative Kikhia. Newsom said he would see if relations could improve, but military items like C-130s were blocked because of Libyan support for terrorism, while Kikhia said the U.S. needed a scapegoat.",
+  "tripoli_details": [
+   "Kikhia said about 4,000 U.S. citizens worked in Libya and 3,000 Libyan students were in the U.S.",
+   "He said the U.S. imported about 40 percent of Libyan oil at an annual cost of 4 billion dollars.",
+   "A US-Arab Dialogue was scheduled for Tripoli later that week.",
+   "Newsom noted agreement had been given to export 400 Oshkosh trucks."
+  ],
+  "people": [
+   "Kikhia",
+   "David Newsom"
+  ],
+  "topics": [
+   "diplomacy",
+   "oil",
+   "terrorism",
+   "students"
+  ]
  }
 }

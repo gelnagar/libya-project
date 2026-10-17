@@ -1,6 +1,6 @@
 # Tripoli: Open Source
 
-Private family map of Tripoli, Libya. It covers Gaddafi-era prisons, security sites, the military, the 1986 raid and killings, alongside landmarks, today's map data and an archive of 2,700+ documents. The site is password-protected, and an AI answers questions about any place.
+A record of Gaddafi's Tripoli, built from declassified files and the accounts of people who lived there. It maps prisons, security sites, military bases, the 1986 raid and the regime's killings, and backs them with 2,700+ documents. Password-protected. Ask the AI about any place.
 
 ## System
 

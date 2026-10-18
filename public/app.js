@@ -2325,7 +2325,7 @@
     var a = spec.ends[0] || { name: '?' }, b = spec.ends[1] || { name: '?' };
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: a.name + ' ↔ ' + b.name })]));
     if (a.pic || b.pic) body.appendChild(h('div', { class: 'cn-pair' }, [h('span', { html: a.pic || '' }), h('i', { text: '↔' }), h('span', { html: b.pic || '' })]));
-    var slot = h('div', { class: 'cn-slot' }); var facts0 = [['Kind', spec.kicker], ['Year', spec.year], ['Evidence', spec.level], ['Documents', spec.docs ? spec.docs.length : '']];
+    var slot = h('div', { class: 'cn-slot' }); var facts0 = [['Kind', spec.kicker], ['Year', spec.year], ['Evidence', spec.level]];
     var fx = facts(facts0); body.appendChild(fx); body.appendChild(slot);
     var goes = h('div', { class: 'row-btns' }, [a.open ? h('button', { class: 'btn', type: 'button', text: 'Go to ' + (a.name.length > 26 ? a.name.slice(0, 24) + '…' : a.name), onclick: a.open }) : null, b.open ? h('button', { class: 'btn', type: 'button', text: 'Go to ' + (b.name.length > 26 ? b.name.slice(0, 24) + '…' : b.name), onclick: b.open }) : null]);
     slot.appendChild(h('p', { class: 'd-text cn-wait', text: 'Reading the sources…' }));

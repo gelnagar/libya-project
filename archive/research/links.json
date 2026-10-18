@@ -1055,24 +1055,6 @@
  },
  {
   "a": "yarmouk-camp",
-  "b": "mk-babcamp-2011",
-  "kind": "context",
-  "why": "In late August 2011 detainees were killed at the Yarmouk warehouse and bodies were found near Bab al-Aziziya, within the same days.",
-  "year": 2011,
-  "confidence": "reported",
-  "sources": [
-   {
-    "t": "HRW (29 Aug 2011), Khamis Brigade killed 45 detainees",
-    "u": "https://www.hrw.org/news/2011/08/29/libya-evidence-suggests-khamis-brigade-killed-45-detainees"
-   },
-   {
-    "t": "HRW (28 Aug 2011), Gaddafi forces suspected of executing detainees",
-    "u": "https://www.hrw.org/news/2011/08/28/libya-gaddafi-forces-suspected-executing-detainees"
-   }
-  ]
- },
- {
-  "a": "yarmouk-camp",
   "b": "artillery-school",
   "kind": "same-place",
   "why": "The artillery school is next to the Yarmouk camp.",
@@ -1551,7 +1533,7 @@
   "a": "lb-university-of-tripoli",
   "b": "furnaj",
   "kind": "same-place",
-  "why": "The district around the campus; Amnesty records arrests of students there after the 7 April 1976 protests era.",
+  "why": "The Furnaj district is the area around the University of Tripoli campus.",
   "year": 1976,
   "confidence": "reported",
   "sources": [
@@ -1562,28 +1544,6 @@
    {
     "t": "1976 Libyan protests, Wikipedia",
     "u": "https://en.wikipedia.org/wiki/1976_Libyan_protests"
-   }
-  ]
- },
- {
-  "a": "fateh",
-  "b": "mk-hang-1984",
-  "kind": "event",
-  "why": "The 7 April 1976 protests at Tripoli's university started the anniversary reprisals that led to the 1984 campus hanging.",
-  "year": 1976,
-  "confidence": "reported",
-  "sources": [
-   {
-    "t": "1976 Libyan protests, Wikipedia",
-    "u": "https://en.wikipedia.org/wiki/1976_Libyan_protests"
-   },
-   {
-    "t": "IRB Canada via ecoi.net, significance of 7 April",
-    "u": "https://www.ecoi.net/de/dokument/185092"
-   },
-   {
-    "t": "Washington Post, 22 Apr 1984, Libya hanged 2 students",
-    "u": "https://www.washingtonpost.com/archive/politics/1984/04/22/libya-hanged-2-students-monday-for-treason/f639373f-d89a-4259-bd91-11ffbfbc2fab/"
    }
   ]
  },
@@ -1718,20 +1678,6 @@
   ]
  },
  {
-  "a": "lb-ministry-of-interior",
-  "b": "central-security",
-  "kind": "same-unit",
-  "why": "The Central Security force whose headquarters sits in Salah al-Din belongs to the Interior Ministry.",
-  "year": null,
-  "confidence": "reported",
-  "sources": [
-   {
-    "t": "UN OHCHR/UNSMIL (2018), Abuse Behind Bars",
-    "u": "https://www.ecoi.net/en/file/local/2004491/AbuseBehindBarsArbitraryUnlawful_EN.pdf"
-   }
-  ]
- },
- {
   "a": "abu-salim",
   "b": "tekbali-camp",
   "kind": "same-unit",
@@ -1846,20 +1792,6 @@
    {
     "t": "UN/Anadolu (Jun 2025), UN rights chief urges action on mass graves",
     "u": "https://www.aa.com.tr/en/europe/un-rights-chief-urges-action-on-mass-graves-abuse-sites-in-libya/3588969"
-   }
-  ]
- },
- {
-  "a": "lb-abu-salim-trauma-hospital",
-  "b": "abu-salim",
-  "kind": "casualties",
-  "why": "Bodies from Abu Salim's SSA sites were reportedly stored at the hospital in May 2025.",
-  "year": 2025,
-  "confidence": "reported",
-  "sources": [
-   {
-    "t": "UNSMIL/OHCHR (4 Jun 2025), sites of gross violations must be sealed",
-    "u": "https://unsmil.unmissions.org/en/node/56475"
    }
   ]
  },
@@ -2198,8 +2130,8 @@
   "confidence": "documented",
   "sources": [
    {
-    "t": "Al Jazeera (23 May 2020), GNA retakes military camps near Tripoli",
-    "u": "https://www.aljazeera.com/news/2020/5/23/libya-gna-retakes-military-camps-near-tripoli"
+    "t": "Libyan Navy, Wikipedia",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Navy"
    }
   ]
  }

@@ -340,3 +340,12 @@ html #term-src button[aria-pressed="true"] { background: var(--fy-sel); color: v
 .st-pin span { background: rgba(255,255,255,.94); color: #1c2127; font: 600 12px var(--f-ui); padding: 2px 7px; border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,.35); white-space: nowrap; max-width: 220px; overflow: hidden; text-overflow: ellipsis; }
 .st-pin.here i { width: 30px; height: 30px; background: #2d72d2; }
 @media (max-width: 600px) { .street-btns .btn { padding: 0 9px; font-size: .85em; } .street-help { font-size: .72em; } }
+/* connections */
+.conn { display: flex; flex-direction: column; }
+.conn-row { border-left: 3px solid var(--c); padding: 6px 0 8px 10px; border-bottom: 1px solid var(--fy-line); }
+.conn-row:last-child { border-bottom: 0; }
+.conn-go { display: block; width: 100%; text-align: left; padding: 0; border: 0; background: none; color: var(--fy-accent); font-family: var(--f-ui); cursor: pointer; }
+.conn-go b { font-weight: 600; }
+.conn-go small { display: block; color: var(--fy-muted); font-size: .8em; }
+.conn-row p { margin: 3px 0; font-size: .92em; }
+.conn-row a { font: .78em var(--f-ui); color: var(--fy-muted); }

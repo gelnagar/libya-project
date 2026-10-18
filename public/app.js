@@ -1365,7 +1365,7 @@
     { t: 'The city today', n: 'Zones, buildings, water, oil', parts: [['osm-landuse', 'Zones', 'now'], ['osm-buildings', 'Buildings', 'now'], ['osm-water', 'Water', 'now'], ['osm-oil', 'Oil & gas', 'now']] }
   ];
   var groupEls = [];
-  function partColor(k) { if (LAYERS[k]) return LAYERS[k].color; if (k === 'profiles') return '#e0b95a'; if (k === 'milprof') return '#ec9a3c'; if (k === 'reports') return '#d1980b'; var o = OSM[k.replace(/^osm-/, '')]; return o ? (o.point || o.swatch) : '#888'; }
+  function partColor(k) { if (LAYERS[k]) return LAYERS[k].color; if (k === 'profiles') return '#e0b95a'; if (k === 'milprof') return '#ec9a3c'; if (k === 'net') return '#2d72d2'; if (k === 'reports') return '#d1980b'; var o = OSM[k.replace(/^osm-/, '')]; return o ? (o.point || o.swatch) : '#888'; }
   function syncGroups() {
     (groupEls || []).forEach(function (g) {
       var on = 0;
@@ -1510,7 +1510,7 @@
       var s = BY_ID[a.id];
       if (!s) return { error: 'No place with id ' + a.id };
       return JSON.stringify(Object.assign(brief(s), { arabic: s.ar || null, evidence: LEVELS[s.level], accuracy_km: s.r, lat: s.lat, lon: s.lon, why_it_matters: s.relevance, details: s.text,
-        linked: linksFor(s.id).map(function (x) { return x.other.id + ': ' + x.why; }), sources: s.sources.map(function (x) { return x.t; }) }));
+        linked: connFor(s.id).map(function (x) { return x.other.id + ' (' + x.c.kind + '): ' + x.c.why; }), sources: s.sources.map(function (x) { return x.t; }) }));
     },
     describe_spot: function (a) {
       var ll = L.latLng(+a.lat, +a.lon);
@@ -1859,6 +1859,7 @@
       b.insertBefore(head, b.firstChild);
     }
     familyNotesSection(b);
+    connSection(b);
     var old3 = b.querySelector('.st-open'); if (old3) old3.remove();
     if (curTarget && curTarget.lat != null && !curTarget.isReport) {
       var t3 = curTarget, btn3 = h('div', { class: 'row-btns st-open' }, [h('button', { class: 'btn', text: 'Street-level 3D view', onclick: function () { openStreet(t3.lat, t3.lon, t3.name || ''); } })]);
@@ -2069,6 +2070,55 @@
     L.DomEvent.on(b, 'click', function (e) { L.DomEvent.stop(e); var c = map.getCenter(); openStreet(c.lat, c.lng, ''); });
     L.DomEvent.disableClickPropagation(wrap); return wrap; } });
   new StreetControl().addTo(map);
+
+
+  /* ---------- connections between places (evidence-based) ---------- */
+  var CONN = window.ATLAS_CONNECTIONS || [];
+  var CONN_KIND = { transfer: 'Prisoner transfer', 'same-unit': 'Same unit or agency', attack: 'Attack and target', casualties: 'Where the dead and wounded went', 'same-place': 'Same place, other entry', programme: 'Same weapons programme', event: 'Same event', control: 'Who controlled it', context: 'Context' };
+  var CONN_COL = { transfer: '#e76a6e', 'same-unit': '#8f6bd6', attack: '#d99e0b', casualties: '#f5498b', 'same-place': '#738091', programme: '#ec9a3c', event: '#2d72d2', control: '#3fa36b', context: '#9aa5b4' };
+  function ent(id) {
+    var s = BY_ID[id]; if (s) return { id: id, name: s.name, lat: s.lat, lon: s.lon, open: function () { focusSite(s); } };
+    var x = AREA_BY_ID[id]; if (x) return { id: id, name: x.name, lat: x.lat, lon: x.lon, open: function () { openArea(x); map.flyTo([x.lat, x.lon], Math.max(map.getZoom(), 15), { duration: 0.8 }); } };
+    return null;
+  }
+  function connFor(id) { return CONN.filter(function (c) { return c.a === id || c.b === id; }).map(function (c) { return { c: c, other: ent(c.a === id ? c.b : c.a) }; }).filter(function (x) { return x.other; }); }
+  function connSection(b) {
+    var old = b.querySelector('.conn-sec'); if (old) old.remove();
+    if (!curTarget || !curTarget.id) return;
+    var me = ent(curTarget.id), list = connFor(curTarget.id);
+    if (!list.length || !me) return;
+    linkLayer.clearLayers();
+    var box = h('div', { class: 'conn' });
+    list.sort(function (x, y) { return (x.c.kind === 'same-place') - (y.c.kind === 'same-place') || (x.c.year || 0) - (y.c.year || 0); }).forEach(function (x) {
+      var c = x.c, col = CONN_COL[c.kind] || '#738091';
+      if (map.distance([me.lat, me.lon], [x.other.lat, x.other.lon]) > 60) L.polyline([[me.lat, me.lon], [x.other.lat, x.other.lon]], { color: col, weight: 3, opacity: 0.85, dashArray: c.confidence === 'documented' ? null : '6 6', interactive: false }).addTo(linkLayer);
+      var src = (c.sources || [])[0];
+      box.appendChild(h('div', { class: 'conn-row', style: '--c:' + col }, [
+        h('button', { class: 'conn-go', onclick: x.other.open }, [h('b', { text: x.other.name }), h('small', { text: (CONN_KIND[c.kind] || c.kind) + (c.year ? ' · ' + c.year : '') + (c.confidence === 'reported' ? ' · reported' : '') })]),
+        h('p', { text: c.why }),
+        src ? h('a', { href: src.u, target: '_blank', rel: 'noopener', text: 'Source: ' + src.t }) : null
+      ]));
+    });
+    var sec = h('div', { class: 'sec conn-sec' }, [h('h3', { text: 'Connections (' + list.length + ')' }), box]);
+    var anchor = b.querySelector('.fam-sec') || b.querySelector('.ai'); if (anchor) b.insertBefore(sec, anchor); else b.appendChild(sec);
+  }
+  // network layer: every connection as a faint line
+  var netLayer = L.layerGroup(), netOn = store.get('net', false);
+  function drawNet() {
+    netLayer.clearLayers();
+    CONN.forEach(function (c) { if (c.kind === 'same-place') return; var x = ent(c.a), y = ent(c.b); if (!x || !y) return;
+      L.polyline([[x.lat, x.lon], [y.lat, y.lon]], { color: CONN_COL[c.kind] || '#738091', weight: 2, opacity: 0.55, dashArray: c.confidence === 'documented' ? null : '5 6' })
+        .bindTooltip(x.name + ' ↔ ' + y.name + ': ' + c.why, { sticky: true, className: 'site-label' }).on('click', function () { curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon }; x.open(); }).addTo(netLayer); });
+  }
+  $('hist-toggles').appendChild(toggleRow('net', 'Connections', 'Lines between linked places', netOn, function (v) { netOn = v; store.set('net', v); if (v) { drawNet(); netLayer.addTo(map); } else map.removeLayer(netLayer); }));
+  GROUPS.push({ t: 'Connections', n: 'Transfers, units, attacks, where the dead were taken', parts: [['net', 'All connections', 'then']] });
+  if (netOn) setTimeout(function () { drawNet(); netLayer.addTo(map); }, 0);
+  // the AI sees them too
+  var _ctx2 = contextFor; contextFor = function (o) {
+    var base = _ctx2(o), ids = (o.places || []).concat((o.areas || []).map(function (x) { return x && x.id; })).filter(Boolean), seen = {}, lines = [];
+    ids.forEach(function (id) { connFor(id).forEach(function (x) { var k = x.c.a + x.c.b + x.c.kind; if (seen[k]) return; seen[k] = 1; lines.push('- ' + (ent(id) || {}).name + ' ↔ ' + x.other.name + ' (' + (CONN_KIND[x.c.kind] || x.c.kind) + (x.c.year ? ', ' + x.c.year : '') + ', ' + x.c.confidence + '): ' + x.c.why); }); });
+    return lines.length ? (base + '\n\nCONNECTIONS\n' + lines.slice(0, 20).join('\n')).slice(0, 17000) : base;
+  };
 
   /* ---------- start ---------- */
   setSize(store.get('size', 'normal'));

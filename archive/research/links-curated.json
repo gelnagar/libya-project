@@ -1,0 +1,216 @@
+[
+ {
+  "a": "bab",
+  "b": "bt-1984-bab",
+  "kind": "attack",
+  "why": "The May 1984 attack by the National Front for the Salvation of Libya targeted the Bab al-Aziziya compound.",
+  "year": 1984,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: 1984 Libyan coup attempt",
+    "u": "https://en.wikipedia.org/wiki/1984_Libyan_coup_attempt"
+   }
+  ]
+ },
+ {
+  "a": "bt-1984-bab",
+  "b": "abusalim",
+  "kind": "transfer",
+  "why": "The first political prisoners at Abu Salim arrived after the arrests that followed the May 1984 attack.",
+  "year": 1984,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: Abu Salim Prison",
+    "u": "https://en.wikipedia.org/wiki/Abu_Salim_Prison"
+   },
+   {
+    "t": "Wikipedia: 1984 Libyan coup attempt",
+    "u": "https://en.wikipedia.org/wiki/1984_Libyan_coup_attempt"
+   }
+  ]
+ },
+ {
+  "a": "abusalim",
+  "b": "lh-military-police-command",
+  "kind": "same-place",
+  "why": "Abu Salim prison was built inside the Military Police Command compound.",
+  "year": 1984,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: Abu Salim Prison",
+    "u": "https://en.wikipedia.org/wiki/Abu_Salim_Prison"
+   }
+  ]
+ },
+ {
+  "a": "bt-2011-abusalim",
+  "b": "abusalim",
+  "kind": "same-place",
+  "why": "Fighting in the Abu Salim district in 2011 centred on the area of the prison.",
+  "year": 2011,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   }
+  ]
+ },
+ {
+  "a": "bt-2011-bab",
+  "b": "bab",
+  "kind": "same-place",
+  "why": "Rebel forces stormed the Bab al-Aziziya compound on 23 August 2011.",
+  "year": 2011,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   }
+  ]
+ },
+ {
+  "a": "as-nato-bab",
+  "b": "bab",
+  "kind": "same-place",
+  "why": "NATO air strikes in 2011 hit targets in and around the Bab al-Aziziya compound.",
+  "year": 2011,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: 2011 military intervention in Libya",
+    "u": "https://en.wikipedia.org/wiki/2011_military_intervention_in_Libya"
+   }
+  ]
+ },
+ {
+  "a": "as-bab",
+  "b": "bab",
+  "kind": "same-place",
+  "why": "The April 1986 US air raid hit the Bab al-Aziziya barracks.",
+  "year": 1986,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   }
+  ]
+ },
+ {
+  "a": "as-bab",
+  "b": "as-benashour",
+  "kind": "event",
+  "why": "Both sites were struck in the same US raid of 15 April 1986, together with Tripoli airport and Sidi Bilal.",
+  "year": 1986,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   }
+  ]
+ },
+ {
+  "a": "as-bab",
+  "b": "as-sidibilal",
+  "kind": "event",
+  "why": "Same raid of 15 April 1986.",
+  "year": 1986,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   }
+  ]
+ },
+ {
+  "a": "as-sidibilal",
+  "b": "sidibilal",
+  "kind": "same-place",
+  "why": "The 1986 raid struck the Sidi Bilal naval commando training base.",
+  "year": 1986,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   }
+  ]
+ },
+ {
+  "a": "bt-1979-embassy",
+  "b": "lb-us-embassy-tripoli",
+  "kind": "same-place",
+  "why": "The US embassy was stormed and burned by a crowd on 2 December 1979.",
+  "year": 1979,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: 1979 U.S. Embassy Burning in Libya",
+    "u": "https://en.wikipedia.org/wiki/1979_U.S._Embassy_Burning_in_Libya"
+   }
+  ]
+ },
+ {
+  "a": "bt-2011-mitiga",
+  "b": "mitiga",
+  "kind": "same-place",
+  "why": "Fighting at Mitiga airport in 2011 involved the air base, which also served civilian flights.",
+  "year": 2011,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Wikipedia: Battle of Tripoli (2011)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)"
+   }
+  ]
+ },
+ {
+  "a": "mitiga",
+  "b": "lh-mellaha-wheelus-mitiga",
+  "kind": "same-place",
+  "why": "The same airfield: Wheelus Air Base became Okba Ben Nafi air base and later Mitiga.",
+  "year": null,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: Mitiga International Airport",
+    "u": "https://en.wikipedia.org/wiki/Mitiga_International_Airport"
+   }
+  ]
+ },
+ {
+  "a": "lm-tripoli-international-airport",
+  "b": "as-tip",
+  "kind": "dual",
+  "why": "The 1986 raid struck the military side of Tripoli International Airport, which also handled civilian flights.",
+  "year": 1986,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: 1986 United States bombing of Libya",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   }
+  ]
+ },
+ {
+  "a": "mitiga",
+  "b": "wp-mitiga-okba-ben-nafi-air-base",
+  "kind": "dual",
+  "why": "Military air base and civilian airport on one site.",
+  "year": null,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "Wikipedia: Mitiga International Airport",
+    "u": "https://en.wikipedia.org/wiki/Mitiga_International_Airport"
+   }
+  ]
+ }
+]

@@ -2904,6 +2904,31 @@
   ]
  },
  {
+  "id": "lh-military-police-command",
+  "name": "Military Police Command compound (reported)",
+  "aliases": [
+   "Military Police Command",
+   "Military Police compound"
+  ],
+  "kind": "military",
+  "lat": 32.8346,
+  "lon": 13.1768,
+  "r": 0.6,
+  "summary": "A military police headquarters compound in the Abu Salim district; Abu Salim prison was built inside it.",
+  "history": "Published accounts say Abu Salim prison, completed in 1984, was built inside the Military Police Command compound, replacing the colonial-era Black Horse prison. This is why the prison and the compound are linked on the map: detainees were held on a military site rather than in a civilian prison.",
+  "uncertain": "Only the location 'around Abu Salim prison' is supported; the compound's boundaries, buildings and unit structure are not mapped here, so the marker is approximate and wide. The earlier 'police depots' seized in the 1969 coup are not shown to be this compound.",
+  "sources": [
+   {
+    "t": "Wikipedia: Abu Salim Prison",
+    "u": "https://en.wikipedia.org/wiki/Abu_Salim_Prison"
+   },
+   {
+    "t": "Human Rights Watch, Libya: June 1996 Killings at Abu Salim Prison",
+    "u": "https://www.hrw.org/reports/2006/06/28/libya-june-1996-killings-abu-salim-prison"
+   }
+  ]
+ },
+ {
   "id": "lb-mitiga-hospital",
   "name": "Mitiga Hospital",
   "ar": "مستشفى امعيتيقة",

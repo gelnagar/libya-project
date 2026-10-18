@@ -181,9 +181,12 @@
       if (g.length < 2) return;
       var cx = 0, cy = 0; g.forEach(function (a) { cx += a.p.x; cy += a.p.y; }); cx /= g.length; cy /= g.length;
       g.sort(function (a, b) { return Math.atan2(a.p.y - cy, a.p.x - cx) - Math.atan2(b.p.y - cy, b.p.x - cx) || (a.s.id < b.s.id ? -1 : 1); });
+      // a place with events on it (the compound with its attacks and strikes) stays in the middle; the events fan out around it
+      var EVT = { airstrike: 1, battle: 1, massacre: 1 }, hubs = g.filter(function (a) { return !EVT[a.s.layer]; }), hub = hubs.length === 1 && g.length > 2 ? hubs[0] : (hubs.length === 1 && g.length === 2 ? hubs[0] : null);
+      if (hub) { off[hub.s.id] = { dx: Math.round(cx - hub.p.x), dy: Math.round(cy - hub.p.y), p: hub.p, hub: true }; g = g.filter(function (a) { return a !== hub; }); }
       var n = g.length, rings = n <= 8 ? [n] : [6, n - 6], k = 0;
       rings.forEach(function (m, ri) {
-        var R = ri ? 82 + Math.max(0, m - 12) * 3 : Math.max(30, 25 / Math.sin(Math.PI / Math.max(m, 3)));
+        var R = ri ? 82 + Math.max(0, m - 12) * 3 : (hub ? Math.max(50, 31 / Math.sin(Math.PI / Math.max(m, 3))) : Math.max(30, 25 / Math.sin(Math.PI / Math.max(m, 3))));
         if (ri === 0 && n > 8) R = 46;
         for (var j = 0; j < m; j++, k++) {
           var ang = -Math.PI / 2 + (j + (ri ? .5 : 0)) * 2 * Math.PI / m, a = g[k];
@@ -202,7 +205,7 @@
       m.unbindTooltip().bindTooltip(s.name, { permanent: true, direction: left ? 'left' : 'right', offset: [(left ? -16 : 16) + s.dx, -22 + s.dy], className: 'site-label', interactive: false });
     });
     vis.forEach(function (s) {
-      var o = off[s.id]; if (!o) return;
+      var o = off[s.id]; if (!o || (o.hub && Math.abs(o.dx) < 4 && Math.abs(o.dy) < 4)) return;
       var lay = LAYERS[s.layer], from = map.unproject(o.p, z), to = map.unproject(L.point(o.p.x + o.dx, o.p.y + o.dy - 18), z);
       L.polyline([from, to], { color: '#111418', weight: 2, opacity: .8, interactive: false }).addTo(leaderLayer);
       L.circleMarker(from, { radius: 3, color: '#111418', weight: 1.5, fillColor: lay.color, fillOpacity: 1, interactive: false }).addTo(leaderLayer);

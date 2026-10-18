@@ -526,3 +526,22 @@ body.unknown-on #timeline, body.unknown-on .chat, body.unknown-on .hud, body.unk
 .cn-quote p { margin: 0 0 2px; font-style: italic; } .cn-quote small { color: var(--fy-muted); font-family: var(--f-ui); }
 .cn-aside { display: block; margin: 8px 0 0; color: var(--fy-muted); font: .78em var(--f-ui); }
 .cn-slot .brief { margin-bottom: 10px; } .cn-slot .cn-strength { margin-bottom: 12px; }
+
+/* ---- The Unknown: detailed drawn pictures ---- */
+.un-pic .sk { fill: #7a7468; } .un-pic .sk2 { fill: #5c574d; } .un-pic .sh { fill: #000; opacity: .34; }
+.un-pic .ln { fill: none; stroke: #1b1b1e; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; } .un-pic .ln2 { fill: none; stroke: #2e2e34; stroke-width: 1; }
+.un-pic .hr { fill: #232225; } .un-pic .hi { fill: #a9a395; } .un-pic .hi-l { fill: none; stroke: #8d877a; stroke-width: 1.2; stroke-linecap: round; }
+.un-pic .lap { fill: #26262b; stroke: #0b0b0c; stroke-width: .6; } .un-pic .shirt { fill: #a8a294; }
+.un-pic .ac { fill: #8a2f43; } .un-pic .ac-l { stroke: #b0405c; stroke-width: 1.6; }
+.un-pic .gl { fill: none; stroke: #d3ccbc; stroke-width: 1.5; stroke-linecap: round; }
+.un-pic .hatch { fill: url(#un-hatch); } .un-pic .lt-b { fill: #5f5b53; }
+.un-pic .ch { fill: #77736a; font: 700 6.4px var(--f-ui); letter-spacing: .08em; }
+.un-pic .tick { fill: none; stroke: #d9d2c3; stroke-width: 1.2; opacity: .5; }
+.un-pic .cl { fill: #15181a; stroke: #33403f; stroke-width: .8; } .un-pic .cl2 { fill: #1a1f20; stroke: #33403f; stroke-width: .8; }
+.un-pic .pin { fill: #b0405c; } .un-pic .water { fill: #17323a; } .un-pic .road { fill: none; stroke: #3c3c43; stroke-width: 2.4; }
+.un-pic .ring { fill: none; stroke: #38787a; stroke-width: 1.6; } .un-pic .on-map .mp, .un-pic .mp { fill: #38787a; }
+.un-pic .t1 .sk { fill: #8a7d69; } .un-pic .t1 .sk2 { fill: #66594a; }
+.un-pic .t2 .sk { fill: #5f594e; } .un-pic .t2 .sk2 { fill: #48443c; }
+.un-pic .t3 .sk { fill: #9c9688; } .un-pic .t3 .sk2 { fill: #7b766a; }
+.un-pic .h1 .hr { fill: #8a877f; } .un-pic .h2 .hr { fill: #4b4034; } .un-pic .h3 .hr { fill: #0d0d0e; }
+.un-pic .a1 .ac { fill: #2d5a73; } .un-pic .a2 .ac { fill: #6b5a28; }

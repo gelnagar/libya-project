@@ -8,36 +8,8 @@
   var view = { x: 0, y: 0, k: 1 };
 
   /* ---------- the pictures (viewBox 0 0 100 100; classes set the tones) ---------- */
-  var SHOULDERS = '<path class="s1" d="M8 100c2-24 18-36 42-36s40 12 42 36z"/>';
-  var PICS = {
-    person: { eye: 36, body: SHOULDERS + '<circle class="s1" cx="50" cy="38" r="17"/><path class="s2" d="M33 38a17 17 0 0 1 34 0c-4-9-11-12-17-12s-13 3-17 12z"/>' },
-    agent: { eye: 38, body: '<path class="s1" d="M6 100c3-26 17-38 44-38s41 12 44 38z"/><path class="s2" d="M36 62l14 22 14-22 8 6-22 32-22-32z"/><circle class="s1" cx="50" cy="40" r="15"/>' +
-      '<path class="s3" d="M22 30c8-3 18-4 28-4s20 1 28 4c-6 3-16 4-28 4s-22-1-28-4z"/><path class="s3" d="M35 29c0-11 6-17 15-17s15 6 15 17z"/><rect class="s2" x="35" y="23" width="30" height="4"/>' },
-    official: { eye: 35, body: '<path class="s1" d="M8 100c2-24 18-36 42-36s40 12 42 36z"/><path class="lt" d="M40 64l10 22 10-22z"/><path class="s3" d="M47.5 67h5l2 20-4.5 6-4.5-6z"/>' +
-      '<circle class="s1" cx="50" cy="37" r="16"/><path class="s3" d="M34 33c1-10 8-15 16-15s15 5 16 15c-5-5-10-7-16-7s-11 2-16 7z"/>' },
-    leader: { eye: 39, body: '<path class="s1" d="M8 100c2-24 18-36 42-36s40 12 42 36z"/><rect class="s2" x="16" y="70" width="18" height="6"/><rect class="s2" x="66" y="70" width="18" height="6"/>' +
-      '<circle class="s1" cx="50" cy="40" r="15"/><path class="s3" d="M28 30h44l-6-14H34z"/><path class="s2" d="M30 30h40v4H30z"/><rect class="s3" x="36" y="36" width="28" height="7"/>' },
-    dissident: { eye: 38, body: '<path class="s1" d="M8 100c2-24 18-36 42-36s40 12 42 36z"/><path class="s2" d="M30 66c6 6 13 9 20 9s14-3 20-9l4 6c-7 7-15 10-24 10s-17-3-24-10z"/>' +
-      '<circle class="s1" cx="50" cy="38" r="16"/><path class="s3" d="M33 36c0-12 8-19 17-19s17 7 17 19c-3-6-6-8-9-9-4 4-12 5-25 9z"/>' +
-      '<circle class="lt-s" cx="43" cy="40" r="4.5"/><circle class="lt-s" cx="57" cy="40" r="4.5"/><path class="lt-s" d="M47.5 40h5"/>' },
-    militant: { eye: 40, body: '<path class="s1" d="M8 100c2-24 18-36 42-36s40 12 42 36z"/><path class="s1" d="M30 52c0-24 8-34 20-34s20 10 20 34v8c-6 5-13 7-20 7s-14-2-20-7z"/>' +
-      '<rect class="lt" x="35" y="37" width="30" height="7"/><circle class="s3" cx="42" cy="40.5" r="2.4"/><circle class="s3" cx="58" cy="40.5" r="2.4"/><path class="s2" d="M30 60c6 5 13 7 20 7s14-2 20-7v6c-6 5-13 7-20 7s-14-2-20-7z"/>' },
-    trader: { eye: 36, body: '<path class="s1" d="M8 100c2-24 18-36 42-36s40 12 42 36z"/><path class="lt" d="M43 64l7 16 7-16z"/><circle class="s1" cx="50" cy="38" r="16"/>' +
-      '<path class="s3" d="M34 34c2-10 8-14 16-14s14 4 16 14c-6-4-11-5-16-5s-10 1-16 5z"/><rect class="s3" x="58" y="76" width="30" height="20"/><rect class="s2" x="58" y="82" width="30" height="3"/><path class="s2" d="M67 76v-4h12v4h-3v-1.5h-6V76z"/>' },
-    org: { body: '<path class="s2" d="M14 34L50 14l36 20z"/><rect class="s2" x="14" y="36" width="72" height="6"/><rect class="s1" x="20" y="44" width="8" height="36"/><rect class="s1" x="36" y="44" width="8" height="36"/>' +
-      '<rect class="s1" x="56" y="44" width="8" height="36"/><rect class="s1" x="72" y="44" width="8" height="36"/><rect class="s2" x="10" y="82" width="80" height="6"/><rect class="s3" x="6" y="90" width="88" height="6"/>' },
-    state: { body: '<rect class="s2" x="22" y="10" width="5" height="84"/><rect class="s3" x="14" y="92" width="22" height="5"/><path class="s1" d="M27 14c12-5 22 4 34 0s18-4 26 0v34c-8-4-14-4-26 0s-22-5-34 0z"/>' +
-      '<path class="s3" d="M27 31c12-5 22 4 34 0s18-4 26 0v4c-8-4-14-4-26 0s-22-5-34 0z"/>' },
-    place: { body: '<circle class="s3-s" cx="50" cy="50" r="38"/><circle class="s3-s" cx="50" cy="50" r="24"/><path class="s3-s" d="M50 4v92M4 50h92"/>' +
-      '<path class="s1" d="M50 22c-12 0-21 9-21 21 0 16 21 37 21 37s21-21 21-37c0-12-9-21-21-21zm0 13a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill-rule="evenodd"/>' },
-    airfield: { body: '<rect class="s3" x="40" y="4" width="20" height="92"/><path class="s2" d="M49 10h2v10h-2zM49 28h2v10h-2zM49 46h2v10h-2zM49 64h2v10h-2zM49 82h2v10h-2z"/>' +
-      '<path class="s1" d="M50 30l3 8 1 9 24 14 2 6-26-7-1 13 7 6v3l-10-3-10 3v-3l7-6-1-13-26 7 2-6 24-14 1-9z"/>' },
-    mapped: { body: '<rect class="s3" x="8" y="8" width="84" height="84"/><path class="map-s" d="M8 34h84M8 64h84M34 8v84M66 8v84"/>' +
-      '<path class="mp" d="M50 18c-12 0-21 9-21 21 0 16 21 37 21 37s21-21 21-37c0-12-9-21-21-21zm0 13a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill-rule="evenodd"/>' },
-    event: { body: '<path class="s1" d="M50 6l8 22 20-12-8 22 24 4-20 14 16 18-24-4 2 24-18-16-18 16 2-24-24 4 16-18-20-14 24-4-8-22 20 12z"/><circle class="s3" cx="50" cy="50" r="12"/>' },
-    unknown: { body: '<path class="s1" d="M8 100c2-24 18-36 42-36s40 12 42 36z"/><circle class="s1" cx="50" cy="38" r="17"/>' +
-      '<path class="lt" d="M44 30c0-4 3-7 7-7s7 3 7 7c0 5-6 6-6 11h-3c0-7 6-8 6-11 0-2-2-4-4-4s-4 2-4 4zM50 44h3v3h-3z"/>' }
-  };
+  var ART = window.ATLAS_ART;
+  var PICS = { person: 1, agent: 1, official: 1, leader: 1, dissident: 1, militant: 1, trader: 1, org: 1, state: 1, place: 1, airfield: 1, mapped: 1, event: 1, unknown: 1 };
   var PIC_LABEL = {
     agent: 'Person in intelligence, covert or security work', official: 'Person: official or officer', leader: 'Person: head of state', dissident: 'Person: dissident, exile or student',
     militant: 'Person: gunman or militant', trader: 'Person in business or the arms trade', person: 'Person', org: 'Organisation', state: 'Country', place: 'Place outside the Tripoli map',
@@ -52,10 +24,11 @@
 
   /* a small picture for lists and the panel header */
   function picSvg(n, px) {
-    if (n.img) return '<svg class="un-pic real" viewBox="0 0 100 100" width="' + px + '" height="' + px + '" aria-hidden="true"><rect class="bg" width="100" height="100"/>' + PICS[picOf(n)].body + '<image class="ph" href="' + n.img.thumb.replace(/"/g, '&quot;') + '" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMin slice"/></svg>';
-    var p = picOf(n), flip = n.seed % 2 ? ' transform="translate(100 0) scale(-1 1)"' : '';
-    var bar = PICS[p].eye ? '<rect class="redact" x="27" y="' + (PICS[p].eye - 4) + '" width="46" height="8"/>' : '';
-    return '<svg class="un-pic' + (p === 'mapped' ? ' on-map' : '') + '" viewBox="0 0 100 100" width="' + px + '" height="' + px + '" aria-hidden="true"><rect class="bg" width="100" height="100"/><g' + flip + '>' + PICS[p].body + '</g>' + bar + '</svg>';
+    ART.defs();
+    var p = picOf(n), art = '<g class="' + ART.cls(p, n.seed) + '">' + ART.draw(p, n.seed) + '</g>', fin = ART.finish();
+    if (n.img) return '<svg class="un-pic real" viewBox="0 0 100 100" width="' + px + '" height="' + px + '" aria-hidden="true"><rect class="bg" width="100" height="100"/>' + art + '<image class="ph" href="' + n.img.thumb.replace(/"/g, '&quot;') + '" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMin slice"/>' + fin + '</svg>';
+    var eye = ART.eye(p), bar = eye ? '<rect class="redact" x="27" y="' + (eye - 4) + '" width="46" height="8"/>' : '';
+    return '<svg class="un-pic' + (p === 'mapped' ? ' on-map' : '') + '" viewBox="0 0 100 100" width="' + px + '" height="' + px + '" aria-hidden="true"><rect class="bg" width="100" height="100"/>' + art + bar + fin + '</svg>';
   }
   function el(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
 
@@ -273,6 +246,7 @@
   }
   // If a picture cannot load (offline, blocked), fall back to the drawn stand-in underneath it.
   document.addEventListener('error', function (ev) { var t = ev.target; if (t && t.tagName && t.tagName.toLowerCase() === 'image' && t.closest && t.closest('.un-pic')) t.remove(); }, true);
+  window.ATLAS_UNKNOWN_PIC = picSvg;
   window.ATLAS_UNKNOWN_OPEN = open;
   window.ATLAS_UNKNOWN_CLOSE = close;
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && root && !root.hidden && document.activeElement && document.activeElement.id !== 'un-q' && sel != null) { sel = null; paint(); } });

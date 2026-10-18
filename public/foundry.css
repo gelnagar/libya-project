@@ -349,3 +349,5 @@ html #term-src button[aria-pressed="true"] { background: var(--fy-sel); color: v
 .conn-go small { display: block; color: var(--fy-muted); font-size: .8em; }
 .conn-row p { margin: 3px 0; font-size: .92em; }
 .conn-row a { font: .78em var(--f-ui); color: var(--fy-muted); }
+.conn-same { margin: 8px 0 0; font: .85em var(--f-ui); color: var(--fy-muted); }
+.linkbtn { border: 0; background: none; padding: 0; color: var(--fy-accent); font: inherit; cursor: pointer; text-decoration: underline; }

@@ -2119,8 +2119,9 @@
   function connSection(b) {
     var old = b.querySelector('.conn-sec'); if (old) old.remove();
     if (!curTarget || !curTarget.id) return;
-    var me = ent(curTarget.id), list = connFor(curTarget.id);
-    if (!list.length || !me) return;
+    var me = ent(curTarget.id), all = connFor(curTarget.id);
+    var same = all.filter(function (x) { return x.c.kind === 'same-place'; }), list = all.filter(function (x) { return x.c.kind !== 'same-place'; });
+    if (!all.length || !me) return;
     linkLayer.clearLayers();
     var box = h('div', { class: 'conn' });
     list.sort(function (x, y) { return (x.c.kind === 'same-place') - (y.c.kind === 'same-place') || (x.c.year || 0) - (y.c.year || 0); }).forEach(function (x) {
@@ -2134,7 +2135,8 @@
         src ? h('a', { href: src.u, target: '_blank', rel: 'noopener', text: 'Source: ' + src.t }) : null
       ]));
     });
-    var sec = h('div', { class: 'sec conn-sec' }, [h('h3', { text: 'Connections (' + list.length + ')' }), box]);
+    if (same.length) box.appendChild(h('p', { class: 'conn-same' }, ['Also in the atlas as: '].concat(same.map(function (x, i) { return h('span', {}, [i ? ', ' : '', h('button', { class: 'linkbtn', text: x.other.name, title: x.c.why, onclick: x.other.open })]); }))));
+    var sec = h('div', { class: 'sec conn-sec' }, [h('h3', { text: list.length ? 'Connections (' + list.length + ')' : 'Other entries' }), box]);
     var anchor = b.querySelector('.fam-sec') || b.querySelector('.ai'); if (anchor) b.insertBefore(sec, anchor); else b.appendChild(sec);
   }
   // network layer: every connection as a faint line

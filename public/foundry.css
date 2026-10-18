@@ -411,3 +411,11 @@ html .mem-box { max-width: none; width: 96vw; height: 94vh; max-height: 94vh; }
 .grp-parts .glyph, .legend .lg .glyph { width: 20px; height: 20px; flex: none; }
 .grp-parts .glyph svg, .legend .lg .glyph svg { width: 13px; height: 13px; }
 .grp-parts button { gap: 8px; }
+
+/* timeline dots carry the layer icon */
+#timeline .tl-dot { width: 17px; height: 17px; border: 2px solid #111418; border-radius: 0 !important; transform: translateX(-50%) !important; box-shadow: 1px 1px 0 #111418; display: grid; place-items: center; color: #fff; }
+#timeline .tl-dot svg { width: 11px; height: 11px; display: block; }
+#timeline .tl-dot.sel { outline: 2px solid var(--fy-accent); outline-offset: 1px; }
+#timeline { height: 172px !important; }
+body:not(.no-timeline) .chat { bottom: 192px; }
+@media (min-width: 900px) { body:not(.no-timeline) .tip { bottom: 250px; } body:not(.no-timeline) .chat { bottom: 192px; } }

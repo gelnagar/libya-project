@@ -29,10 +29,11 @@ def main():
         scenes = res.get('results', []) if res else []
         print(ds, 'scenes', len(scenes))
         ids = [s['entityId'] for s in scenes]
-        avail = {}
+        avail = {}; allopts = {}
         for i in range(0, len(ids), 100):
             try:
                 for o in call('download-options', {'datasetName': ds, 'entityIds': ids[i:i + 100]}, key) or []:
+                    allopts.setdefault(o['entityId'], []).append({'id': o['id'], 'product': o.get('productName'), 'available': o.get('available'), 'size': o.get('filesize'), 'system': o.get('downloadSystem')})
                     if o.get('available'): avail.setdefault(o['entityId'], []).append({'id': o['id'], 'product': o.get('productName'), 'size': o.get('filesize')})
             except Exception as e:
                 print('options failed', ds, e)
@@ -40,7 +41,7 @@ def main():
             md = {m.get('fieldName'): m.get('value') for m in (s.get('metadata') or [])}
             out['scenes'].append({'dataset': ds, 'entityId': s['entityId'], 'displayId': s.get('displayId'), 'date': (s.get('temporalCoverage') or {}).get('startDate', '')[:10],
                 'cloud': s.get('cloudCover'), 'footprint': (s.get('spatialCoverage') or {}).get('coordinates'), 'camera': md.get('Camera Type') or md.get('Camera'), 'resolution': md.get('Camera Resolution') or md.get('Resolution'),
-                'mission': md.get('Mission'), 'downloadable': avail.get(s['entityId'], []), 'browse': [b.get('browsePath') for b in (s.get('browse') or [])][:1]})
+                'mission': md.get('Mission'), 'downloadable': avail.get(s['entityId'], []), 'options': allopts.get(s['entityId'], []), 'browse': [b.get('browsePath') for b in (s.get('browse') or [])][:1]})
     call('logout', {}, key)
     os.makedirs('archive/maps', exist_ok=True)
     out['scenes'].sort(key=lambda x: x['date'])

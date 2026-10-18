@@ -1,0 +1,17 @@
+name: Find declassified satellite frames
+on: { workflow_dispatch: {}, push: { branches: [main], paths: [scripts/usgs-declass.py, .github/workflows/usgs.yml] } }
+permissions: { contents: write }
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/usgs-declass.py
+        env: { USGS_USERNAME: '${{ secrets.USGS_USERNAME }}', USGS_TOKEN: '${{ secrets.USGS_TOKEN }}' }
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/maps/usgs-declass.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo none; else git commit -m "Declassified satellite frames over Tripoli" && git pull --rebase && git push; fi

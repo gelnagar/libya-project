@@ -1887,7 +1887,8 @@
     if (t && !b.querySelector('.selhead')) {
       var wrap = t.parentNode, tag = b.querySelector('.tag'), c = tag ? (tag.style.getPropertyValue('--c') || '') : '';
       var kind = $('sheet-kind').textContent || '';
-      var head = h('div', { class: 'selhead' }, [h('div', { class: 'ic', style: c ? '--c:' + c : '', text: curTarget && curTarget.code && !/^<svg/.test(curTarget.code) ? curTarget.code : (kind.charAt(0) || '•') }), h('div', { class: 'tt' })]);
+      var head = h('div', { class: 'selhead' }, [h('div', { class: 'ic', style: c ? '--c:' + c : '', text: curTarget && curTarget.code && !/^<svg/.test(curTarget.code) ? curTarget.code : '' }), h('div', { class: 'tt' })]);
+      if (!(curTarget && curTarget.code)) head.firstChild.innerHTML = LAYER_ICON.landmark;
       if (curTarget && /^<svg/.test(curTarget.code || '')) head.firstChild.innerHTML = curTarget.code;
       var tt = head.querySelector('.tt'); tt.appendChild(t); var ar = wrap.querySelector('.d-ar'); if (ar) tt.appendChild(ar); tt.appendChild(h('div', { class: 'sub', text: kind }));
       if (wrap !== b && !wrap.children.length) wrap.remove();
@@ -1972,7 +1973,9 @@
   }
   // remember what each sheet is about, so notes can be attached to it
   var _openSite = openSite; openSite = function (s) { curTarget = { id: s.id, name: s.name, lat: s.lat, lon: s.lon, code: siteCode(s), profile: s.profile }; _openSite(s); };
-  var _openArea = openArea; openArea = function (x) { var host = SITES.filter(function (s) { return s.profile === x.id; })[0]; if (host) { focusSite(host); return; } curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon }; _openArea(x); };
+  var _openArea = openArea; openArea = function (x) { var host = SITES.filter(function (s) { return s.profile === x.id; })[0]; if (host) { focusSite(host); return; } curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon, code: areaIcon(x) }; _openArea(x); };
+  function areaIcon(x) { var m = { prison: 'detention', military: 'military', government: 'power', landmark: 'landmark', police: 'security', security: 'security' }; if (/universit|college|school/i.test(x.name)) return SITE_ICON.university; return LAYER_ICON[m[x.kind] || 'landmark']; }
+  var LINK_ICON = '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M2 9h6v6H2zM16 9h6v6h-6z"/><path d="M8 11h8v2H8z"/></svg>';
   var _openSpot = openSpot; openSpot = function (ll) { curTarget = { lat: ll.lat, lon: ll.lng, name: '' }; _openSpot(ll); };
   var _openFeature = openFeature; openFeature = function (k, el) { var lat = el.lat || (el.bounds ? (el.bounds.minlat + el.bounds.maxlat) / 2 : null), lon = el.lon || (el.bounds ? (el.bounds.minlon + el.bounds.maxlon) / 2 : null); curTarget = lat != null ? { id: 'osm-' + el.type + '-' + el.id, name: (el.tags && (el.tags['name:en'] || el.tags.name)) || '', lat: lat, lon: lon } : null; _openFeature(k, el); };
   var _openRecord = openRecord; openRecord = function (r) { curTarget = null; _openRecord(r); };
@@ -2321,7 +2324,7 @@
   }
   // spec: { key, kicker, ends:[{name, open, pic?}, {…}], year, level, why:[…], sources:[{t,u}], docs:[{t,u,d,r}], color }
   function connDetail(spec) {
-    var body = newSheet('Connection'); markSelected(null); curTarget = { isReport: true, code: 'C' };
+    var body = newSheet('Connection'); markSelected(null); curTarget = { isReport: true, code: LINK_ICON };
     var a = spec.ends[0] || { name: '?' }, b = spec.ends[1] || { name: '?' };
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: a.name + ' ↔ ' + b.name })]));
     if (a.pic || b.pic) body.appendChild(h('div', { class: 'cn-pair' }, [h('span', { html: a.pic || '' }), h('i', { text: '↔' }), h('span', { html: b.pic || '' })]));

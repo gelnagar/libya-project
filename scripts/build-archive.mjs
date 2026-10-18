@@ -189,6 +189,44 @@ try {
   await writeFile(ROOT + 'archive/crest/link-candidates.json', JSON.stringify(links, null, 1));
   console.log('crest records', n, 'malformed-field rows repaired/ignored', bad, 'new place mentions', newPlaces.length, 'link candidates', links.length);
 } catch (e) { console.log('crest skipped', e.message); }
+
+// 7. Event tags: tie documents to the events mapped on the atlas. A rule fires when the text names the year, matches every keyword group,
+//    and (optionally) the place names. Deliberately conjunctive so that a passing mention does not tag a document.
+const EVENT_RULES = [
+  { id: 'bt-1984-bab', yr: '1984', all: [/(bab|babel|el)[\s\-]*(al|el)?[\s\-]*az[iz]+[iy]?a|barracks/i, /(attack|assault|gunmen|raid|coup|commando)/i, /\bmay\b|8 may|nfsl|national front/i] },
+  { id: 'mk-hang-1984', yr: '1984', all: [/hang(ed|ing|ings)/i, /(student|universit)/i, /tripoli|fateh/i] },
+  { id: 'bt-1979-embassy', yr: '1979', all: [/embass/i, /(burn|burnt|sack|storm|mob|demonstrat|set on fire)/i, /(u\.?s\.?|american)/i] },
+  { id: 'as-bab', yr: '1986', all: [/(air (raid|strike|attack)|bomb(ing|ed)|f-?111|el dorado)/i, /(bab|el)[\s\-]*(al|el)?[\s\-]*az[iz]+[iy]?a|qadh?dh?afi.{0,40}(house|compound|residence|tent|headquarters)/i] },
+  { id: 'as-tip', yr: '1986', all: [/(air (raid|strike|attack)|bomb(ing|ed)|f-?111|el dorado)/i, /(tripoli (military )?(air|airport|airfield)|aeroporto|military airfield)/i] },
+  { id: 'as-sidibilal', yr: '1986', all: [/(air (raid|strike|attack)|bomb(ing|ed)|f-?111|el dorado)/i, /sidi bilal|murat sidi/i] },
+  { id: 'as-benashour', yr: '1986', all: [/(air (raid|strike|attack)|bomb(ing|ed)|f-?111|el dorado)/i, /ben ashour|french embassy|residential (area|neighbou?rhood)/i] },
+  { id: 'mk-abusalim', all: [/abu ?sl[ei]+m/i, /(massacre|1,?270|1996|killing of (prisoners|detainees)|mass (killing|grave))/i] },
+  { id: 'mk-feb2011', yr: '2011', all: [/tripoli/i, /(protest|demonstrat|uprising)/i, /(shot|killed|fired|live (ammunition|fire)|crackdown|bodies)/i, /february|feb\.? 2[0-5]|2[0-5] feb/i] },
+  { id: 'bt-2011-bab', yr: '2011', all: [/(bab|el)[\s\-]*(al|el)?[\s\-]*az[iz]+[iy]?a/i, /(stormed|overran|fell|captured|seized|assault)/i, /august|23 aug/i] },
+  { id: 'bt-2011-abusalim', yr: '2011', all: [/abu ?sl[ei]+m/i, /(fight|battle|clash|rebel|revolutionar|uprising|seized|liberat)/i] },
+  { id: 'bt-2011-tajoura', yr: '2011', all: [/tajou?ra/i, /(fight|battle|clash|rebel|revolutionar|uprising|seized|liberat)/i] },
+  { id: 'bt-2011-mitiga', yr: '2011', all: [/mitiga|maitiga|mitiga/i, /(fight|battle|clash|rebel|revolutionar|seized|shell|rocket)/i] },
+  { id: 'bt-2011-green', yr: '2011', all: [/green square|martyrs.? square/i, /(fight|battle|clash|rebel|revolutionar|seized|shot|protest)/i] },
+  { id: 'as-nato-bab', yr: '2011', all: [/nato/i, /(air ?strike|bomb|missile)/i, /(bab|el)[\s\-]*(al|el)?[\s\-]*az[iz]+[iy]?a|tripoli/i] }
+];
+try {
+  let tagged = 0; const per = {};
+  for (const r of out) {
+    const txt = (fulltext.get(r.i) || '') + '\n' + (r.t || '') + '\n' + (r.m || '');
+    const head = txt.length > 60000 ? txt.slice(0, 60000) : txt;
+    const add = [];
+    for (const ru of EVENT_RULES) {
+      if (ru.yr && !head.includes(ru.yr)) continue;
+      const ry = +(r.d || '').slice(0, 4);
+      const front = (r.t || '') + ' ' + (r.m || '');
+      // Precision first: a dated record must fall within a year of the event; an undated one must name it in its title or summary.
+      if (ru.yr && (ry ? Math.abs(ry - +ru.yr) > 1 : !ru.all.every((re) => re.test(front)))) continue;
+      if (ru.all.every((re) => re.test(head)) && !(r.p || []).includes(ru.id)) { add.push(ru.id); per[ru.id] = (per[ru.id] || 0) + 1; }
+    }
+    if (add.length) { r.p = [...add, ...(r.p || [])].slice(0, 12); tagged++; }
+  }
+  console.log('event-tagged records', tagged, per);
+} catch (e) { console.log('event tags skipped', e.message); }
 out.sort((a, b) => (a.d || '9999').localeCompare(b.d || '9999') || a.i.localeCompare(b.i));
 // Drop undefined keys to keep the file small
 const clean = out.map((r) => Object.fromEntries(Object.entries(r).filter(([, v]) => v !== undefined && v !== '' && !(Array.isArray(v) && !v.length))));

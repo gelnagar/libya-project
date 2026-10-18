@@ -1051,8 +1051,12 @@
     'wp-al-karamia-site-h': '<path fill-rule="evenodd" d="M3 6l9-4 9 4v12l-9 4-9-4zm8.2 4.4v10.1h1.6V10.4zM12 8.7l6.6-2.9-.6-1.2L12 7.2 6 4.6l-.6 1.2z"/>',
     'wp-el-ezeizia-site-k': '<path fill-rule="evenodd" d="M2 10l10-6 10 6v11H2zm6 11h8v-7H8z"/>',
     'wp-scud-launch-august-2011': '<path d="M16.6 1.6l3.8 3.8-1.4 2.6-3.4 3.4-3.6-3.6 3.2-3.6zM11.4 9.2l3.4 3.4-9 6.6-1.4-1.4zM1 19h22v2.5H1z"/><circle cx="5" cy="22" r="1.6"/><circle cx="12" cy="22" r="1.6"/><circle cx="19" cy="22" r="1.6"/>',
+    'tajoura-nuclear': '<path fill-rule="evenodd" d="M12 2c4.6 0 8 3.4 8 7.5V13h2v9H2v-9h2V9.5C4 5.4 7.4 2 12 2zm-1.2 9v3h2.4v-3zM8 16v6h2v-4h4v4h2v-6z"/>',
+    'wp-janzour-machine-shop': '<path fill-rule="evenodd" d="M10.4 2h3.2l.5 2.6 1.6.7 2.2-1.5 2.3 2.3-1.5 2.2.7 1.6 2.6.5v3.2l-2.6.5-.7 1.6 1.5 2.2-2.3 2.3-2.2-1.5-1.6.7-.5 2.6h-3.2l-.5-2.6-1.6-.7-2.2 1.5-2.3-2.3 1.5-2.2-.7-1.6L2 13.6v-3.2l2.6-.5.7-1.6-1.5-2.2 2.3-2.3 2.2 1.5 1.6-.7zM12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7z"/>',
+    'wp-tarhuna-underground-facility': '<path fill-rule="evenodd" d="M1 21V11C1 6 6 2 12 2s11 4 11 9v10zm5-1h12v-8c0-3-2.7-5.4-6-5.4S6 9 6 12zm3-1v-6.5c0-1.2 1.3-2 3-2s3 .8 3 2V19z"/>',
     'wp-tawiwa-otrag-range': '<path d="M12 1c2.3 2.3 3.2 5.2 3.2 8.4V15H8.8V9.4C8.8 6.2 9.7 3.3 12 1zM8.8 12.5L6 16.5V19l2.8-1.4zM15.2 12.5l2.8 4V19l-2.8-1.4z"/><path d="M3 22h18v-1.8h-2.2V10h-1.8v10.2H7V10H5.2v10.2H3z"/>'
   };
+  function isWpn(a) { return a.kind === 'military' || /^wp-/.test(a.id) || !!WEAPON_ICON[a.id]; }
   function weaponSvg(a) { return WEAPON_ICON[a.id] || (isMissile(a) ? MISSILE_SVG : null); }
   function isMissile(a) { return /missile|\bSAM\b|scud|surface-to-air/i.test((a.name || '') + ' ' + (a.summary || '')); }
   function drawProfiles() {
@@ -1062,12 +1066,12 @@
       var dup = SITES.some(function (s) { return map.distance([a.lat, a.lon], [s.lat, s.lon]) < 120 && (s.layer === 'landmark' || s.layer === 'power') && fold(s.name).split(' ')[0] === fold(a.name).split(' ')[0]; });
       if (dup) return;
       var m = L.marker([a.lat, a.lon], { keyboard: false, title: a.name, zIndexOffset: -200, icon: L.divIcon({ className: '', iconSize: [28, 28], iconAnchor: [14, 14],
-        html: '<div class="osm-ic prof" style="--c:' + (a.kind === 'military' || /^wp-/.test(a.id) ? '#55603a' : '#6f5f45') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + (weaponSvg(a) || PROF_SVG) + '</svg></div>' }) });
+        html: '<div class="osm-ic prof" style="--c:' + (isWpn(a) ? '#55603a' : '#6f5f45') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + (weaponSvg(a) || PROF_SVG) + '</svg></div>' }) });
       m.bindTooltip(a.name, { direction: 'top', offset: [0, -12], className: 'site-label' });
       m.on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openArea(a); });
-      m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], a.kind === 'military' || /^wp-/.test(a.id) ? '#55603a' : '#6f5f45', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar]], [0, -16]); });
+      m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], isWpn(a) ? '#55603a' : '#6f5f45', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar]], [0, -16]); });
       m.on('mouseout', hideCard);
-      m.addTo(a.kind === 'military' || /^wp-/.test(a.id) ? milGroup : profGroup);
+      m.addTo(isWpn(a) ? milGroup : profGroup);
     });
   }
   function syncProfiles() { if (profOn && map.getZoom() >= 14) map.addLayer(profGroup); else map.removeLayer(profGroup); if (milOn && map.getZoom() >= 11) map.addLayer(milGroup); else map.removeLayer(milGroup); }

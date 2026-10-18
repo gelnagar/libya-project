@@ -624,8 +624,23 @@
     });
     t.layer = g;
   }
+  // Saved building tiles (public/data/buildings, refreshed monthly) load first; Overpass is only a fallback.
+  var bIndex = null, bBox = null, bIndexWait = fetch('data/buildings/index.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (j) { bIndex = j ? new Set(j.tiles) : new Set(); bBox = j ? j.bbox : null; }).catch(function () { bIndex = new Set(); });
+  function savedTile(key) {
+    return bIndexWait.then(function () {
+      var ij = key.split('_').map(Number), inside = bBox && (ij[0] + 0.5) * TILE > bBox[0] && (ij[0] + 0.5) * TILE < bBox[2] && (ij[1] + 0.5) * TILE > bBox[1] && (ij[1] + 0.5) * TILE < bBox[3];
+      if (!inside) return null;
+      if (!bIndex.has(key)) return { elements: [], saved: true };
+      return fetch('data/buildings/' + key + '.json').then(function (r) { if (!r.ok) throw new Error('missing'); return r.json(); }).then(function (j) {
+        return { saved: true, elements: j.b.map(function (b) { var c = b[2], x = 0, y = 0, g = []; for (var k = 0; k < c.length; k += 2) { x += c[k]; y += c[k + 1]; g.push({ lat: x / 1e5, lon: y / 1e5 }); } return { type: 'way', id: b[0], tags: b[1] || { building: 'yes' }, geometry: g }; }) };
+      });
+    });
+  }
   function fetchTile(key, i, j, race) {
-    return cacheGet(key).then(function (hit) {
+    return savedTile(key).catch(function () { return null; }).then(function (s) {
+      if (s) return s;
+      return cacheGet(key);
+    }).then(function (hit) {
       if (hit) return hit;
       var q = 'way["building"](' + tileBox(i, j) + ');out geom;';
       var p = race ? overpass(q) : fetch(ENDPOINTS[0], { method: 'POST', body: 'data=' + encodeURIComponent('[out:json][timeout:25];' + q), headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });

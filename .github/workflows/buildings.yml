@@ -1,0 +1,22 @@
+name: Save Tripoli buildings
+on:
+  workflow_dispatch:
+  schedule: [{ cron: '41 4 2 * *' }]
+  push: { branches: [main], paths: [scripts/fetch-buildings.mjs, .github/workflows/buildings.yml] }
+permissions: { contents: write }
+concurrency: { group: buildings, cancel-in-progress: false }
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/fetch-buildings.mjs
+      - run: |
+          du -sh public/data/buildings; ls public/data/buildings | wc -l
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/buildings
+          if git diff --cached --quiet; then echo none; else git commit -m "Save Tripoli buildings" && git pull --rebase && git push; fi

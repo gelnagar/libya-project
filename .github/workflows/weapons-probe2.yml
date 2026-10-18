@@ -1,0 +1,15 @@
+name: Probe weapons sites 2
+on: workflow_dispatch
+permissions: { contents: write }
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/probe-weapons-sites2.py
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do git add archive/research && git commit -m "Weapons-site probe 2" ; git pull --rebase && git push && break; sleep 5; done

@@ -52,6 +52,7 @@
 
   /* a small picture for lists and the panel header */
   function picSvg(n, px) {
+    if (n.img) return '<svg class="un-pic real" viewBox="0 0 100 100" width="' + px + '" height="' + px + '" aria-hidden="true"><rect class="bg" width="100" height="100"/>' + PICS[picOf(n)].body + '<image class="ph" href="' + n.img.thumb.replace(/"/g, '&quot;') + '" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMin slice"/></svg>';
     var p = picOf(n), flip = n.seed % 2 ? ' transform="translate(100 0) scale(-1 1)"' : '';
     var bar = PICS[p].eye ? '<rect class="redact" x="27" y="' + (PICS[p].eye - 4) + '" width="46" height="8"/>' : '';
     return '<svg class="un-pic' + (p === 'mapped' ? ' on-map' : '') + '" viewBox="0 0 100 100" width="' + px + '" height="' + px + '" aria-hidden="true"><rect class="bg" width="100" height="100"/><g' + flip + '>' + PICS[p].body + '</g>' + bar + '</svg>';
@@ -65,7 +66,7 @@
     D.edges.forEach(function (e, i) { adj[e.s].push(i); adj[e.t].push(i); });
     root = h('div', { id: 'unknown', role: 'region', 'aria-label': 'The Unknown: people and groups linked in the files', hidden: '' });
     var head = h('div', { class: 'un-head' }, [
-      h('div', { class: 'un-title' }, [h('h2', { text: 'The Unknown' }), h('p', { text: 'People, groups and places beyond Tripoli that the declassified files tie together. The pictures are stand-ins, not likenesses.' })]),
+      h('div', { class: 'un-title' }, [h('h2', { text: 'The Unknown' }), h('p', { text: 'People, groups and places beyond Tripoli that the declassified files tie together. Real pictures appear where a free one exists; the rest are stand-ins, not likenesses.' })]),
       h('div', { class: 'un-tools' }, [
         h('input', { type: 'search', id: 'un-q', placeholder: 'Find a name', 'aria-label': 'Find a name in The Unknown', autocomplete: 'off' }),
         h('button', { class: 'btn', type: 'button', id: 'un-fit', text: 'Show all' }),
@@ -143,13 +144,17 @@
   }
 
   /* ---------- pan and zoom ---------- */
-  function apply() { vp.setAttribute('transform', 'translate(' + view.x.toFixed(1) + ' ' + view.y.toFixed(1) + ') scale(' + view.k.toFixed(3) + ')'); root.classList.toggle('near', view.k > 1.15); root.classList.toggle('far', view.k < 0.55); }
+  function apply() { vp.setAttribute('transform', 'translate(' + view.x.toFixed(1) + ' ' + view.y.toFixed(1) + ') scale(' + view.k.toFixed(3) + ')'); root.classList.toggle('near', view.k > 1.15); root.classList.toggle('far', view.k < 0.36); }
   function box() { var r = svg.getBoundingClientRect(); return { w: r.width, h: r.height, l: r.left, t: r.top }; }
   function fit(anim, onlyMain) {
     var x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
     D.nodes.forEach(function (n) { if (onlyMain && n.c !== 0) return; x0 = Math.min(x0, n.x); x1 = Math.max(x1, n.x); y0 = Math.min(y0, n.y); y1 = Math.max(y1, n.y); });
     var b = box(), padT = b.w < 900 ? 150 : 110, padB = b.w < 900 ? 90 : 70;
     var k = Math.min((b.w - 60) / (x1 - x0 + 80), (b.h - padT - padB) / (y1 - y0 + 80));
+    if (onlyMain && k < 0.5) {  // small screens: start close enough to read, on the most-documented card
+      var n0 = D.nodes[0]; k = 0.5;
+      return go({ k: k, x: b.w / 2 - n0.x * k, y: padT + (b.h - padT - padB) / 2 - n0.y * k }, anim);
+    }
     go({ k: k, x: b.w / 2 - (x0 + x1) / 2 * k, y: padT + (b.h - padT - padB) / 2 - (y0 + y1) / 2 * k }, anim);
   }
   var raf = null;
@@ -207,6 +212,9 @@
       body.appendChild(h('div', { class: 'un-portrait', html: picSvg(n, 132) }, [h('span', { class: 'un-case', text: caseNo(i) })]));
       body.appendChild(API.facts([['What it is', PIC_LABEL[p]], ['Role in the files', (n.roles || []).join('; ')], ['Also called', (n.aka || []).join(', ')],
         ['Documents', n.n], ['Years in the files', n.y0 ? (n.y1 && n.y1 !== n.y0 ? n.y0 + '–' + n.y1 : String(n.y0)) : ''], ['Connections', links.length], ['Case file', caseNo(i)]]));
+      if (n.img || n.wiki) body.appendChild(h('p', { class: 'un-credit' }, [
+        n.img ? h('span', { text: 'Picture: ' + n.img.artist + ', ' + n.img.lic + ', ' }) : null, n.img ? h('a', { href: n.img.url, target: '_blank', rel: 'noopener', text: 'Wikimedia Commons' }) : null,
+        n.img && n.wiki ? h('span', { text: '. ' }) : null, n.wiki ? h('a', { href: n.wiki, target: '_blank', rel: 'noopener', text: 'Wikipedia article' }) : null]));
       if (n.map) body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn primary', text: 'Show on the Tripoli map', onclick: function () { close(); API.openPlace(n.map); } })]));
       var box = h('div', { class: 'links un-links' });
       links.forEach(function (x) {
@@ -248,6 +256,8 @@
     root.hidden = true; document.body.classList.remove('unknown-on'); sel = null; hover = null; paint();
     API.markBase(null);
   }
+  // If a picture cannot load (offline, blocked), fall back to the drawn stand-in underneath it.
+  document.addEventListener('error', function (ev) { var t = ev.target; if (t && t.tagName && t.tagName.toLowerCase() === 'image' && t.closest && t.closest('.un-pic')) t.remove(); }, true);
   window.ATLAS_UNKNOWN_OPEN = open;
   window.ATLAS_UNKNOWN_CLOSE = close;
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && root && !root.hidden && document.activeElement && document.activeElement.id !== 'un-q' && sel != null) { sel = null; paint(); } });

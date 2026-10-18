@@ -495,3 +495,9 @@ body.unknown-on #timeline, body.unknown-on .chat, body.unknown-on .hud, body.unk
 .un-docs small { color: var(--fy-muted); }
 .linkish { margin-left: 8px; padding: 0; border: 0; background: none; color: var(--fy-accent); font: 600 .86em var(--f-ui); cursor: pointer; text-decoration: underline; }
 .selhead .ic svg.un-pic { width: 100%; height: 100%; display: block; }
+.un-pic.real .ph { filter: grayscale(1) contrast(1.12) brightness(.92); }
+#unknown .un-n.hot .un-pic.real .ph, #unknown .un-n:hover .un-pic.real .ph { filter: grayscale(.2) contrast(1.05); }
+.un-credit { margin: -4px 0 10px; font-size: .8em; color: var(--fy-muted); }
+@media (max-width: 899px) { #unknown .un-tools input { flex: 1 1 100%; } #unknown .un-tools .btn { flex: 1; } }
+#unknown .un-n .cn { display: none; }
+#unknown.near .un-n .cn, #unknown .un-n.hot .cn, #unknown .un-n:hover .cn { display: inline; }

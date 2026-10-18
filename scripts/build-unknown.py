@@ -148,6 +148,24 @@ for e in sorted(nodes_used, key=lambda e: -len(ndocs[e])):
     nodes.append({'id': e, 'name': lab, 'kind': k, 'pic': pic, 'role': roles[0] if roles else '', 'roles': roles, 'aka': aka, 'n': len(ndocs[e]),
                   'y0': yrs[0] if yrs else None, 'y1': yrs[-1] if yrs else None, 'map': e[4:] if e.startswith('map:') else None,
                   'seed': int(hashlib.md5(e.encode()).hexdigest()[:6], 16)})
+try: PH = json.load(open(ROOT + '/archive/unknown/photos.json'))
+except Exception: PH = {}
+STOPW = {'tripoli', 'libya', 'libyan', 'the', 'of', 'and', 'in', 'for', 'to', 'a', 'al', 'el'}
+WRONG = {'front for salvation of libya', '1986 air attack on tripoli and benghazi', "arab people's congress", 'the institute', 'libyan mission to the united nations', "libyan people's bureau"}
+def same(name, title):
+    a = {w for w in re.findall(r"[a-z]{3,}", name.lower()) if w not in STOPW}
+    b = {w for w in re.findall(r"[a-z]{3,}", title.lower()) if w not in STOPW}
+    return bool(a & b) or not a
+def credit(a):
+    a = re.sub(r'(Unknown author)(\s*Unknown author)+', r'\1', a or '')
+    return 'see the Commons page' if re.search(r'see (file history|below)|upload log', a, re.I) else a
+for n in nodes:
+    ph = PH.get(n['id'])
+    if ph and (n['id'] in WRONG or not same(n['name'] + ' ' + ' '.join(n.get('aka') or []), ph.get('title', ''))): ph = None
+    if ph and ph.get('img'): ph['img']['artist'] = credit(ph['img'].get('artist'))
+    if ph:
+        n['wiki'] = ph.get('page')
+        if ph.get('img'): n['img'] = {k: ph['img'][k] for k in ('thumb', 'url', 'lic', 'artist')}
 idx = {n['id']: i for i, n in enumerate(nodes)}
 out_edges = [{'s': idx[x['a']], 't': idx[x['b']], 'why': x['why'], 'docs': [docref(d) for d in x['docs'][:6]], 'n': len(x['docs'])} for x in edges]
 

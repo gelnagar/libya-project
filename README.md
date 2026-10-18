@@ -83,6 +83,7 @@ erDiagram
 | Area (profile of a neighbourhood, building or camp) | `archive/areas/*` → `public/data/areas.js` | 139 (+59 without coordinates) |
 | Record (document or event) | `archive/*` → `public/data/records.js` | 4,290 |
 | Connection (evidence-based link between two places) | `archive/research/links*.json` → `public/data/links.js` (`scripts/build-links.mjs`, `scripts/auto-links.py`) | 159 |
+| Unknown entity (person, group or outside place linked in the files) | `archive/crest/extract*.jsonl` → `public/data/unknown.js` (`scripts/build-unknown.py`; free pictures via `scripts/unknown-photos.mjs`) | 285 entities, 268 links, 66 pictures |
 | Report (added by family) | Cloudflare KV `reports:v1` | live |
 | OSM feature (today's map data) | `public/data/osm/*.json` | ~2,300 |
 | Overlay (old map or satellite image) | `public/data/overlays.js` + `public/maps/` | 4 |
@@ -134,3 +135,12 @@ node scripts/fetch-osm.mjs       # refreshes osm/*.json
 ```
 
 Rights: U.S. government works are public domain. Wikipedia text is CC BY-SA. Everything else is shown as a summary with a link.
+
+
+## The Unknown
+
+A map style that swaps the city for a black plane: the people, organisations and places beyond Tripoli that the declassified files connect
+(for example the Edwin Wilson and Frank Terpil arms network). Names and links come from the Claude Haiku extractions; spellings are merged in
+`scripts/build-unknown.py`. Where Wikimedia Commons has a freely licensed photo or drawing of the same entity (checked against a Wikipedia
+article that mentions Libya), it is shown with its credit; everything else gets a drawn stand-in, never a likeness.
+Rebuild with `python3 scripts/build-unknown.py`; refresh pictures by running the "Find free pictures for The Unknown" workflow.

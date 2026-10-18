@@ -1,0 +1,984 @@
+{
+ "at": "2026-10-18T16:15:57.422Z",
+ "ia": {
+  "israel_state_archives": {
+   "status": 200,
+   "found": 2,
+   "sample": [
+    [
+     "libya-israeli-relations-1951-52",
+     "Libya - Israeli Relations 1951-52",
+     "1951-01-01",
+     "Israel State Archives"
+    ],
+    [
+     "gaddafi-in-the-files-of-the-israeli-foreign-ministry",
+     "Gaddafi in the files of the Israeli Foreign Ministry 1972-1977",
+     "1977-01-01",
+     "Israel State Archives"
+    ]
+   ]
+  },
+  "gaddafi_files": {
+   "status": 200,
+   "found": 3,
+   "sample": [
+    [
+     "libya-israeli-relations-1951-52",
+     "Libya - Israeli Relations 1951-52",
+     "1951-01-01",
+     "Israel State Archives"
+    ],
+    [
+     "youtube-z3qymuUmC0w",
+     "Why there's no Jews in Libya",
+     "2023-03-19",
+     "Israel Advocacy Movement"
+    ],
+    [
+     "gaddafi-in-the-files-of-the-israeli-foreign-ministry",
+     "Gaddafi in the files of the Israeli Foreign Ministry 1972-1977",
+     "1977-01-01",
+     "Israel State Archives"
+    ]
+   ]
+  },
+  "nsa_libya": {
+   "status": 200,
+   "found": 0,
+   "sample": []
+  },
+  "uk_ukna": {
+   "status": 200,
+   "found": 21,
+   "sample": [
+    [
+     "gov.archives.arc.38933",
+     "BRITISH PURSUE ROMMEL IN LIBYA [ETC.]",
+     "1942-01-01",
+     "National Archives and Records Administra"
+    ],
+    [
+     "gov.archives.arc.37715",
+     "[AMERICAN DAY IN] TRIPOLI, LIBYA",
+     "1962-01-01",
+     "National Archives and Records Administra"
+    ],
+    [
+     "the-school-system-of-libya-1935",
+     "The School System of Libya 1935",
+     "1935-01-01",
+     "National Archives (United States)"
+    ],
+    [
+     "libya-from-foreign-office-files",
+     "Libya from Foreign Office files 1951-1956",
+     "1951-01-01",
+     "The National Archives (Kew, United Kingd"
+    ],
+    [
+     "italian-refugees",
+     "Italian Refugees from Libya, Eritrea and Somalia 1947-1948",
+     "1947-01-01",
+     "The National Archives (Kew, United Kingd"
+    ],
+    [
+     "libya-military-report",
+     "Libya military report 1936",
+     "1936-01-01",
+     "The National Archives (Kew, United Kingd"
+    ],
+    [
+     "italian-refugees-from-libya-eritrea-and-somalia",
+     "Italian Refugees from Libya, Eritrea and Somalia 1947-1948",
+     "1974-01-01",
+     "The National Archives (Kew, United Kingd"
+    ],
+    [
+     "111-lc-44041",
+     "\"Operation Climax\" Search for remains of the the WW II B-24 Bomber \"Lady Be Good\" Sand Sea of Calanscio, Libya",
+     "1960-01-01",
+     "National Archives"
+    ],
+    [
+     "gov.archives.arc.1663432",
+     "Oil Rich Libya",
+     "1972-01-01",
+     "National Archives"
+    ],
+    [
+     "tunisians-in-libya",
+     "Activities of Tunisians in Libya: arms smuggling and repatriation of Tunisian refugees 1954",
+     "1954-01-01",
+     "The National Archives (Kew, United Kingd"
+    ],
+    [
+     "letter-to-president-jimmy-carter-from-colonel-muammar-gaddafi-1980",
+     "Letter To President Jimmy Carter From Colonel Muammar Gaddafi 1980",
+     "1980-01-01",
+     "National Archives (United States)"
+    ],
+    [
+     "111-lc-44038",
+     "\"Operation Climax\"; Search for remains of the WW II B-24 bomber \"Lady Be Good\" Sand Sea of Calanscio, Libyan D",
+     "1960-01-01",
+     "National Archives"
+    ],
+    [
+     "111-lc-44035",
+     "\"Operation Climax\" search for remains of the WW II B-24 bomber, \"Lady Be Good\", Sand Sea of Calanscio, Libyan ",
+     "1960-01-01",
+     "National Archives"
+    ],
+    [
+     "prince-hasan-al-rida-al-sanusi",
+     "Political and economic conditions in Libya 1961-1963",
+     "1963-01-01",
+     "National Archives (United States)"
+    ],
+    [
+     "french-refugees",
+     "French Refugees from Libya in Tunisia 1943",
+     "1943-01-01",
+     "The National Archives (Kew, United Kingd"
+    ],
+    [
+     "repatriation-of-italian-refugees-from-libya",
+     "Repatriation of Italian Refugees from Libya 1945",
+     "1945-01-01",
+     "The National Archives (Kew, United Kingd"
+    ],
+    [
+     "the-internal-situation-in-libya",
+     "Internal situation in Libya 1994-1997",
+     "1994-01-01",
+     "The National Archives (Kew, United Kingd"
+    ],
+    [
+     "security-of-libya",
+     "Threats to the security of Libya 1964-1967",
+     "1946-01-01",
+     "The National Archives (Kew, United Kingd"
+    ],
+    [
+     "111-lc-44080",
+     "Operation Climax (search for crew of \"Lady Be Good\" of WW II) Libyan Desert, Libya",
+     "1960-01-01",
+     "National Archives"
+    ],
+    [
+     "4-16-17-1986-402",
+     "President Ronald Reagan's Photo Opportunities on April 16-17, 1986. President Reagan Meeting with NCAA Women a",
+     null,
+     "National Archives"
+    ]
+   ]
+  },
+  "stasi_libya": {
+   "status": 200,
+   "found": 318,
+   "sample": [
+    [
+     "DerTalmudDasLehrbuchDerJudenVonErichGlagau",
+     "Der Talmud Das Lehrbuch Der Juden Von Erich Glagau",
+     null,
+     "Erich Glagau und Alexander Mueller"
+    ],
+    [
+     "Ckln88.1FmsRudeAwakeningTheyWillNotControlUsWeWilldoWhatWe",
+     "CKLN 88.1 FM's Rude Awakening: They Will Not Control Us, We Will (Do What We Always Do To) Be Victorious (So C",
+     null,
+     ""
+    ],
+    [
+     "cia-readingroom-document-cia-rdp96-00789r001001430003-0",
+     "CIA Reading Room cia-rdp96-00789r001001430003-0: AROUND THE WORLD (WASHINGTON POST)",
+     "1991-12-12",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp86m00886r002400020020-5",
+     "CIA Reading Room cia-rdp86m00886r002400020020-5: 1984 RESEARCH PROGRAM",
+     "1984-01-03",
+     "CIA Reading Room"
+    ],
+    [
+     "LINKTV_20200217_230000_DW_News",
+     "DW News : LINKTV : February 17, 2020 3:00pm-3:31pm PST",
+     "2020-02-17",
+     ""
+    ],
+    [
+     "KasperleSCHWERrechts",
+     "zum Dr. WolfgangBittnervortrag - 1 Kasperle Spielt rechte Denkfabrik, der OKV zum Schaden 24. März 2025 in Neu",
+     "2025-04-06",
+     "Dr. martin Krämer Liehn"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp86t01017r000505090001-1",
+     "CIA Reading Room cia-rdp86t01017r000505090001-1: MOSCOW'S STAKE IN THE BERLIN ACCESS CHALLENGE",
+     "1986-06-20",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp86t01017r000606430001-1",
+     "CIA Reading Room cia-rdp86t01017r000606430001-1: CHRONOLOGY: NORTH KOREA AUGUST 1986",
+     "1986-09-11",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp87t00289r000301200001-3",
+     "CIA Reading Room cia-rdp87t00289r000301200001-3: EUROPEAN REVIEW",
+     "1986-10-10",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp88t00659r000100320001-1",
+     "CIA Reading Room cia-rdp88t00659r000100320001-1: NATIONAL INTELLIGENCE DAILY",
+     "1987-02-09",
+     "CIA Reading Room"
+    ],
+    [
+     "DW_20200115_080000_DW_News",
+     "DW News : DW : January 15, 2020 9:00am-9:31am CET",
+     "2020-01-15",
+     ""
+    ],
+    [
+     "cia-readingroom-document-02046568",
+     "CIA Reading Room 02046568: CURRENT INTELLIGENCE BULLETIN - 1952/04/22",
+     "1952-04-22",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp90-00965r000100120022-7",
+     "CIA Reading Room cia-rdp90-00965r000100120022-7: LIBYA'S QADDAFI IS HEADING FOR A FALL",
+     "1985-11-06",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000500070017-1",
+     "CIA Reading Room cia-rdp82-00850r000500070017-1: JPRS ID: 10571 VIETNAM REPORT",
+     "2016-11-01",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp97s00289r000200200018-7",
+     "CIA Reading Room cia-rdp97s00289r000200200018-7: CONFLICT IN SOUTHERN AFRICA: REGIONAL AND INTERNATIONAL DIMEN",
+     "1981-12-10",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp88-00798r000300160005-9",
+     "CIA Reading Room cia-rdp88-00798r000300160005-9: INTERNATIONAL ECONOMIC & ENERGY WEEKLY",
+     "1986-05-16",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-03176167",
+     "CIA Reading Room 03176167: CURRENT INTELLIGENCE WEEKLY SUMMARY",
+     "1962-03-23",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp79-00927a011400230001-2",
+     "CIA Reading Room cia-rdp79-00927a011400230001-2: WEEKLY SUMMARY",
+     "2016-12-21",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp79-00927a009000010001-3",
+     "CIA Reading Room cia-rdp79-00927a009000010001-3: WEEKLY SUMMARY",
+     "2016-12-21",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp79-00927a004400120001-2",
+     "CIA Reading Room cia-rdp79-00927a004400120001-2: WEEKLY SUMMARY",
+     "2016-12-21",
+     "CIA Reading Room"
+    ]
+   ]
+  },
+  "hebrew": {
+   "status": 200,
+   "found": 284,
+   "sample": [
+    [
+     "EXPLAINDANIELANDREVELATIONUPDATE25WithoutExtraEvidence",
+     "EXPLAIN DANIEL AND REVELATION UPDATE 25 Without Extra Evidence",
+     null,
+     ""
+    ],
+    [
+     "EXPLAINDANIELANDREVELATIONUPDATE26WithOutExtra",
+     "EXPLAIN DANIEL AND REVELATION UPDATE 26 With Out Extra",
+     null,
+     ""
+    ],
+    [
+     "the-roman-canaanite-church",
+     "THE ROMAN CANAANITE CHURCH",
+     "2023-03-10",
+     ""
+    ],
+    [
+     "MSNBCW_20160525_100000_Morning_Joe",
+     "Morning Joe : MSNBCW : May 25, 2016 3:00am-6:01am PDT",
+     "2016-05-25",
+     ""
+    ],
+    [
+     "AishKodeshJanuary52012ParshaVayechi",
+     "Vayechi ~ Aish Kodesh January 5, 2012",
+     null,
+     "Rabbi Henoch Dov Hoffman"
+    ],
+    [
+     "explaindanielandrevelationupdate33withoutextra",
+     "EXPLAIN DANIEL AND REVELATION UPDATE 33 WITHOUT EXTRA",
+     null,
+     ""
+    ],
+    [
+     "explaindanielandrevelationupdate50withextraevidence",
+     "27 07 2019 EXPLAIN DANIEL AND REVELATION UPDATE 50 WITH EXTRA EVIDENCE",
+     null,
+     ""
+    ],
+    [
+     "cia-readingroom-document-cia-rdp09-00997r000100530001-0",
+     "CIA Reading Room cia-rdp09-00997r000100530001-0: MISSION",
+     "1986-09-01",
+     "CIA Reading Room"
+    ],
+    [
+     "AishKodeshSeptember272012HaazinuYomKippur",
+     "Ha'Azinu ~ Yom Kippur - Aish Kodesh, September 27, 2012",
+     null,
+     "Rabbi Henoch Dov Hoffman"
+    ],
+    [
+     "CNNW_20160515_180000_CNN_Newsroom_With_Fredricka_Whitfield",
+     "CNN Newsroom With Fredricka Whitfield : CNNW : May 15, 2016 11:00am-12:01pm PDT",
+     "2016-05-15",
+     ""
+    ],
+    [
+     "explaindanielandrevelationupdate52compact",
+     "EXPLAIN DANIEL AND REVELATION UPDATE 52 COMPACT",
+     null,
+     ""
+    ],
+    [
+     "cia-readingroom-document-cia-rdp87-01104r000100160009-6",
+     "CIA Reading Room cia-rdp87-01104r000100160009-6: MONTHLY REPORT -- TEL AVIV BUREAU -- APRIL 1986",
+     "1986-05-08",
+     "CIA Reading Room"
+    ],
+    [
+     "github.com-iptv-org-iptv_-_2023-08-28_18-06-58",
+     "github.com-iptv-org-iptv_-_2023-08-28_18-06-58",
+     "2023-08-28",
+     "iptv-org"
+    ],
+    [
+     "github.com-iptv-org-iptv_-_2021-01-18_15-45-43",
+     "github.com-iptv-org-iptv_-_2021-01-18_15-45-43",
+     "2021-01-18",
+     "iptv-org"
+    ],
+    [
+     "github.com-iptv-org-iptv_-_2021-02-13_21-46-48",
+     "github.com-iptv-org-iptv_-_2021-02-13_21-46-48",
+     "2021-02-13",
+     "iptv-org"
+    ],
+    [
+     "github.com-iptv-org-iptv_-_2022-02-01_03-09-48",
+     "github.com-iptv-org-iptv_-_2022-02-01_03-09-48",
+     "2022-02-01",
+     "iptv-org"
+    ],
+    [
+     "github.com-iptv-org-iptv_-_2022-02-01_14-59-16",
+     "github.com-iptv-org-iptv_-_2022-02-01_14-59-16",
+     "2022-02-01",
+     "iptv-org"
+    ],
+    [
+     "github.com-iptv-org-iptv_-_2020-12-22_01-56-27",
+     "github.com-iptv-org-iptv_-_2020-12-22_01-56-27",
+     "2020-12-22",
+     "iptv-org"
+    ],
+    [
+     "TEMPLE_B_NAI_B_RITH-Podcast_Dan_Sarah_Fainberg_June_8_2020_Audio_Final_a5hxt",
+     "COVID-19's Impact on Russian Foreign Policy and the Latest on Anti-Semitism in Europe",
+     "2020-06-08",
+     "TEMPLE B'NAI B'RITH"
+    ],
+    [
+     "github.com-iptv-org-iptv_-_2022-08-10_04-44-55",
+     "github.com-iptv-org-iptv_-_2022-08-10_04-44-55",
+     "2022-08-10",
+     "iptv-org"
+    ]
+   ]
+  },
+  "trials_docs": {
+   "status": 200,
+   "found": 644,
+   "sample": [
+    [
+     "DW_20190627_203000_The_Day",
+     "The Day : DW : June 27, 2019 10:30pm-11:00pm CEST",
+     "2019-06-27",
+     ""
+    ],
+    [
+     "DW_20191112_060000_DW_News",
+     "DW News : DW : November 12, 2019 7:00am-7:30am CET",
+     "2019-11-12",
+     ""
+    ],
+    [
+     "NPDP19360717",
+     "Hong Kong Daily Press 1936-07-17",
+     "1936-07-17",
+     ""
+    ],
+    [
+     "ALJAZ_20191110_020000_NEWSHOUR",
+     "NEWSHOUR : ALJAZ : November 10, 2019 5:00am-6:01am +03",
+     "2019-11-10",
+     ""
+    ],
+    [
+     "ALJAZ_20191110_040000_NEWS_LIVE_-_30",
+     "NEWS LIVE - 30 : ALJAZ : November 10, 2019 7:00am-7:33am +03",
+     "2019-11-10",
+     ""
+    ],
+    [
+     "ALJAZ_20200122_090000_NEWS_LIVE_-_30",
+     "NEWS LIVE - 30 : ALJAZ : January 22, 2020 12:00pm-12:34pm +03",
+     "2020-01-22",
+     ""
+    ],
+    [
+     "cia-readingroom-document-cia-rdp88-01203r000100090002-0",
+     "CIA Reading Room cia-rdp88-01203r000100090002-0: TERRORISM REVIEW",
+     "1987-05-07",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp88-01203r000100250002-2",
+     "CIA Reading Room cia-rdp88-01203r000100250002-2: TERRORISM REVIEW",
+     "1987-12-21",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp86t01017r000403890001-6",
+     "CIA Reading Room cia-rdp86t01017r000403890001-6: PROSPECTS FOR WEST EUROPEAN ASSISTANCE IN FURTHER US MILITARY",
+     "1986-05-06",
+     "CIA Reading Room"
+    ],
+    [
+     "the-roman-canaanite-church",
+     "THE ROMAN CANAANITE CHURCH",
+     "2023-03-10",
+     ""
+    ],
+    [
+     "NPTG19390216",
+     "Hong Kong Telegraph 1939-02-16",
+     "1939-02-16",
+     ""
+    ],
+    [
+     "cia-readingroom-document-03004635",
+     "CIA Reading Room 03004635: CENTRAL INTELLIGENCE BULLETIN - 1960/04/15",
+     "1960-04-15",
+     "CIA Reading Room"
+    ],
+    [
+     "internationalcri0000bant",
+     "International criminal law",
+     "2001-01-01",
+     "Bantekas, Ilias"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp62-00328a000200200006-7",
+     "CIA Reading Room cia-rdp62-00328a000200200006-7: PERIODIC REQUIREMENTS LIST (PRL) FOR USSR (1 MAY-31 AUGUST 19",
+     "1959-08-31",
+     "CIA Reading Room"
+    ],
+    [
+     "DW_20190627_230200_The_Day",
+     "The Day : DW : June 28, 2019 1:02am-1:31am CEST",
+     "2019-06-27",
+     ""
+    ],
+    [
+     "ALJAZ_20200115_230000_NEWSHOUR",
+     "NEWSHOUR : ALJAZ : January 16, 2020 2:00am-3:01am +03",
+     "2020-01-15",
+     ""
+    ],
+    [
+     "cia-readingroom-document-cia-rdp86t01017r000505090001-1",
+     "CIA Reading Room cia-rdp86t01017r000505090001-1: MOSCOW'S STAKE IN THE BERLIN ACCESS CHALLENGE",
+     "1986-06-20",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp88b00443r000903760059-6",
+     "CIA Reading Room cia-rdp88b00443r000903760059-6: CASEY'S MISDIRECTED ENERGY",
+     "2011-02-28",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp99-01448r000301210005-7",
+     "CIA Reading Room cia-rdp99-01448r000301210005-7: OVERSIGHT AND COUNTERINTELLIGENCE DRAW SPEAKERS' FOCUS AT DIN",
+     "2013-05-21",
+     "CIA Reading Room"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp90-00965r000302630016-4",
+     "CIA Reading Room cia-rdp90-00965r000302630016-4: STATEMENT BY GEORGE V. LAUDER TO BERNIE GWERTZMAN",
+     "1986-12-09",
+     "CIA Reading Room"
+    ]
+   ]
+  }
+ },
+ "robots": {
+  "digitalarchive.wilsoncenter.org": {
+   "status": 0,
+   "star": []
+  },
+  "nsarchive.gwu.edu": {
+   "status": 200,
+   "star": [
+    "Allow: /core/*.css$",
+    "Allow: /core/*.css?",
+    "Allow: /core/*.js$",
+    "Allow: /core/*.js?",
+    "Allow: /core/*.gif",
+    "Allow: /core/*.jpg",
+    "Allow: /core/*.jpeg",
+    "Allow: /core/*.png",
+    "Allow: /core/*.svg",
+    "Allow: /profiles/*.css$",
+    "Allow: /profiles/*.css?",
+    "Allow: /profiles/*.js$",
+    "Allow: /profiles/*.js?",
+    "Allow: /profiles/*.gif"
+   ]
+  },
+  "nsarchive2.gwu.edu": {
+   "status": 200,
+   "star": []
+  },
+  "discovery.nationalarchives.gov.uk": {
+   "status": 200,
+   "star": [
+    "Disallow: /browse/\r",
+    "Disallow: /Details/AddtoBasket\r",
+    "Disallow: /details/addtobasket\r",
+    "Disallow: /Details/AssetMain\r",
+    "Disallow: /details/AssetMain\r",
+    "Disallow: /Details/FindRelatedIA\r",
+    "Disallow: /details/FindRelatedIA\r",
+    "Disallow: /Details/FlagTag\r",
+    "Disallow: /details/FlagTag\r",
+    "Disallow: /details/r/*/submitcorrection\r",
+    "Disallow: /hbrowse\r",
+    "Disallow: /home/redirect\r",
+    "Disallow: /image/\r",
+    "Disallow: /mdr\r"
+   ]
+  },
+  "www.nationalarchives.gov.uk": {
+   "status": 200,
+   "star": [
+    "Crawl-delay: 10 seconds",
+    "Disallow: /book-a-reading-room-visit/",
+    "Disallow: /cabinetpaperssearch/",
+    "Disallow: /catalogue/",
+    "Disallow: /contact-us/*/form",
+    "Disallow: /discovery/",
+    "Disallow: /documents/archives/ArchivesObsolete/",
+    "Disallow: /documents/information-management/imr-guidance-and-appendices.pdf",
+    "Disallow: /documents/mog.pdf",
+    "Disallow: /documents/old/",
+    "Disallow: /droid/",
+    "Disallow: /e179/includes/",
+    "Disallow: /e179/scripts/",
+    "Disallow: /editorial/"
+   ]
+  },
+  "catalog.archives.gov": {
+   "status": 200,
+   "star": [
+    "Disallow: /"
+   ]
+  },
+  "archives.mod.gov.il": {
+   "status": 200,
+   "star": [
+    "Disallow: /_layouts/\r",
+    "Disallow: /_vti_bin/\r",
+    "Disallow: /_catalogs/\r"
+   ]
+  },
+  "www.archives.gov.il": {
+   "status": 403,
+   "star": []
+  },
+  "www.bundesarchiv.de": {
+   "status": 200,
+   "star": [
+    "Disallow: /*?",
+    "Disallow: /suche/",
+    "Disallow: /typo3/",
+    "Disallow: /typo3conf/",
+    "Allow: /typo3conf/ext/",
+    "Allow: /typo3temp/",
+    "Crawl-delay: 30"
+   ]
+  },
+  "www.bstu.de": {
+   "status": 200,
+   "star": [
+    "Disallow: /*?",
+    "Disallow: /suche/",
+    "Disallow: /typo3/",
+    "Disallow: /typo3conf/",
+    "Allow: /typo3conf/ext/",
+    "Allow: /typo3temp/",
+    "Crawl-delay: 30"
+   ]
+  },
+  "www.stasi-unterlagen-archiv.de": {
+   "status": 200,
+   "star": [
+    "Disallow: /*?",
+    "Disallow: /suche/",
+    "Disallow: /typo3/",
+    "Disallow: /typo3conf/",
+    "Allow: /typo3conf/ext/",
+    "Allow: /typo3temp/",
+    "Crawl-delay: 30"
+   ]
+  },
+  "www.margaretthatcher.org": {
+   "status": 200,
+   "star": [
+    "Crawl-delay: 20",
+    "Disallow: /search",
+    "Disallow: /taxonomy/term/",
+    "Allow: /misc/*.css$",
+    "Allow: /misc/*.css?",
+    "Allow: /misc/*.js$",
+    "Allow: /misc/*.js?",
+    "Allow: /misc/*.gif",
+    "Allow: /misc/*.jpg",
+    "Allow: /misc/*.jpeg",
+    "Allow: /misc/*.png",
+    "Allow: /modules/*.css$",
+    "Allow: /modules/*.css?",
+    "Allow: /modules/*.js$"
+   ]
+  },
+  "www.cvce.eu": {
+   "status": 200,
+   "star": [
+    "Disallow: /*p_p_id",
+    "Disallow: /html/themes/",
+    "Disallow: /image$",
+    "Disallow: /*jsessionid",
+    "Disallow: /obj/Text/",
+    "Disallow: /obj/Image/",
+    "Disallow: /obj/Audiovisual/",
+    "Disallow: /obj/Animation/",
+    "Disallow: /obj/Facsimile/",
+    "Disallow: /obj/Person/",
+    "Disallow: /content/publication/*.htm",
+    "Disallow: /education/object-content/-/unit/",
+    "Disallow: /recherche/object-content/-/unit/",
+    "Disallow: /publications/unit-content"
+   ]
+  },
+  "www.fordlibrarymuseum.gov": {
+   "status": 200,
+   "star": [
+    "Allow: /"
+   ]
+  },
+  "www.jimmycarterlibrary.gov": {
+   "status": 200,
+   "star": [
+    "Disallow: /"
+   ]
+  },
+  "history.state.gov": {
+   "status": 200,
+   "star": [
+    "Disallow: /*pg_",
+    "Disallow: /search",
+    "Crawl-delay: 20"
+   ]
+  },
+  "www.cia.gov": {
+   "status": 200,
+   "star": [
+    "Disallow: /js/",
+    "Disallow: /preview/",
+    "Disallow: /*.js$",
+    "Disallow: /*.js.map$",
+    "Disallow: /*.json$",
+    "Disallow: /readingroom/search/",
+    "Disallow: /readingroom/advanced-search-view/",
+    "Disallow: /readingroom/request/",
+    "Crawl-delay: 10"
+   ]
+  }
+ },
+ "items": {
+  "gaddafi_isa": {
+   "files": [
+    [
+     "__ia_thumb.jpg",
+     "Item Tile",
+     "8907"
+    ],
+    [
+     "gaddafi-in-the-files-of-the-israeli-foreign-ministry_archive.torrent",
+     "Archive BitTorrent",
+     "13803"
+    ],
+    [
+     "gaddafi-in-the-files-of-the-israeli-foreign-ministry_files.xml",
+     "Metadata",
+     null
+    ],
+    [
+     "gaddafi-in-the-files-of-the-israeli-foreign-ministry_meta.sqlite",
+     "Metadata",
+     "32768"
+    ],
+    [
+     "gaddafi-in-the-files-of-the-israeli-foreign-ministry_meta.xml",
+     "Metadata",
+     "2132"
+    ],
+    [
+     "ج 1.pdf",
+     "Image Container PDF",
+     "16305659"
+    ],
+    [
+     "ج 1_chocr.html.gz",
+     "chOCR",
+     "3810856"
+    ],
+    [
+     "ج 1_djvu.txt",
+     "DjVuTXT",
+     "279602"
+    ],
+    [
+     "ج 1_djvu.xml",
+     "Djvu XML",
+     "3887204"
+    ],
+    [
+     "ج 1_hocr.html",
+     "hOCR",
+     "7875408"
+    ],
+    [
+     "ج 1_hocr_pageindex.json.gz",
+     "OCR Page Index",
+     "2161"
+    ],
+    [
+     "ج 1_hocr_searchtext.txt.gz",
+     "OCR Search Text",
+     "144910"
+    ],
+    [
+     "ج 1_jp2.zip",
+     "Single Page Processed JP2 ZIP",
+     "13052360"
+    ],
+    [
+     "ج 1_page_numbers.json",
+     "Page Numbers JSON",
+     "29354"
+    ],
+    [
+     "ج 1_scandata.xml",
+     "Scandata",
+     "60769"
+    ],
+    [
+     "ج 1_text.pdf",
+     "Additional Text PDF",
+     "3913146"
+    ],
+    [
+     "ج 2.pdf",
+     "Image Container PDF",
+     "28649393"
+    ],
+    [
+     "ج 2_chocr.html.gz",
+     "chOCR",
+     "5928017"
+    ],
+    [
+     "ج 2_djvu.txt",
+     "DjVuTXT",
+     "432258"
+    ],
+    [
+     "ج 2_djvu.xml",
+     "Djvu XML",
+     "6392156"
+    ],
+    [
+     "ج 2_hocr.html",
+     "hOCR",
+     "13154252"
+    ],
+    [
+     "ج 2_hocr_pageindex.json.gz",
+     "OCR Page Index",
+     "3769"
+    ],
+    [
+     "ج 2_hocr_searchtext.txt.gz",
+     "OCR Search Text",
+     "224186"
+    ],
+    [
+     "ج 2_jp2.zip",
+     "Single Page Processed JP2 ZIP",
+     "21820173"
+    ],
+    [
+     "ج 2_page_numbers.json",
+     "Page Numbers JSON",
+     "53117"
+    ],
+    [
+     "ج 2_scandata.xml",
+     "Scandata",
+     "112742"
+    ],
+    [
+     "ج 2_text.pdf",
+     "Additional Text PDF",
+     "5696203"
+    ],
+    [
+     "ج 3.pdf",
+     "Image Container PDF",
+     "10772725"
+    ],
+    [
+     "ج 3_chocr.html.gz",
+     "chOCR",
+     "1831492"
+    ],
+    [
+     "ج 3_djvu.txt",
+     "DjVuTXT",
+     "128445"
+    ],
+    [
+     "ج 3_djvu.xml",
+     "Djvu XML",
+     "1971771"
+    ],
+    [
+     "ج 3_hocr.html",
+     "hOCR",
+     "3917654"
+    ],
+    [
+     "ج 3_hocr_pageindex.json.gz",
+     "OCR Page Index",
+     "1412"
+    ],
+    [
+     "ج 3_hocr_searchtext.txt.gz",
+     "OCR Search Text",
+     "75472"
+    ],
+    [
+     "ج 3_jp2.zip",
+     "Single Page Processed JP2 ZIP",
+     "8008441"
+    ],
+    [
+     "ج 3_page_numbers.json",
+     "Page Numbers JSON",
+     "20685"
+    ],
+    [
+     "ج 3_scandata.xml",
+     "Scandata",
+     "44180"
+    ],
+    [
+     "ج 3_text.pdf",
+     "Additional Text PDF",
+     "1982827"
+    ]
+   ],
+   "meta": {
+    "identifier": "gaddafi-in-the-files-of-the-israeli-foreign-ministry",
+    "mediatype": "texts",
+    "collection": [
+     "politics_archive_portal",
+     "folkscanomy_politics",
+     "folkscanomy"
+    ],
+    "creator": "Israel State Archives",
+    "date": "1977",
+    "description": "p1- ISA-mfa-mfa-000pnt3<div><br /></div><div>p2- ISA-mfa-mfa-000ptot</div><div><br /></div><div>p3- ISA-mfa-mfa-000pnt4</div><div><br /></div><div><p style=\"text-align:center;\"><b><font size=\"4\">Israel State Archives</font></b></p></div><div><b><font size=\"4\"><br /></font></b></div>",
+    "language": "eng",
+    "scanner": "Internet Archive HTML5 Uploader 1.6.4",
+    "subject": [
+     "Gaddafi",
+     "Israeli Foreign Ministry"
+    ],
+    "title": "Gaddafi in the files of the Israeli Foreign Ministry 1972-1977",
+    "uploader": "moh.history@gmail.com",
+    "publicdate": "2021-09-27 21:13:09",
+    "addeddate": "2021-09-27 21:13:09",
+    "curation": "[curator]validator@archive.org[/curator][date]20210927212115[/date][comment]checked for malware[/comment]",
+    "identifier-access": "http://archive.org/details/gaddafi-in-the-files-of-the-israeli-foreign-ministry",
+    "identifier-ark": "ark:/13960/t64584b31",
+    "ppi": "100",
+    "ocr": "tesseract 5.0.0-beta-20210815",
+    "ocr_parameters": "-l eng",
+    "ocr_module_version": "0.0.13",
+    "ocr_detected_script": "Hebrew",
+    "ocr_detected_script_conf": "0.5814",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "pdf_module_version": "0.0.15",
+    "collection_added": [
+     "folkscanomy_politics",
+     "folkscanomy",
+     "additional_collections"
+    ]
+   }
+  }
+ }
+}

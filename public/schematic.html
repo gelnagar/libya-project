@@ -1,4 +1,4 @@
-<title>Tripoli Detention Sites 1969–1989</title>
+<title>Tripoli Detention Sites 1969–2011</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -78,7 +78,7 @@ text.geo { font: italic 11px var(--font-display); fill: var(--ink-soft); paint-o
 
 <div class="wrap">
   <header>
-    <h1>Detention sites around Tripoli, 1969–1989</h1>
+    <h1>Detention sites around Tripoli, 1969–2011</h1>
     <p class="sub">Prisons and detention sites in and near Tripoli during the first two decades of Gaddafi's rule, compiled from published reports. Select a marker to see its sources.</p>
   </header>
 
@@ -113,7 +113,7 @@ text.geo { font: italic 11px var(--font-display); fill: var(--ink-soft); paint-o
     </div>
     <div class="panel">
       <h3>Notes on positions</h3>
-      <p style="margin-top:0">Dashed rings show the possible margin of error for each marker. Abu Salim's position comes from a published coordinate. The other sites are placed by district or suburb only. "Suspected" marks a facility that existed in Tripoli with no source tying it to 1969–1989.</p>
+      <p style="margin-top:0">Dashed rings show the possible margin of error for each marker. Abu Salim's position comes from a published coordinate. The other sites are placed by district or suburb only. "Suspected" marks a facility that existed in Tripoli with no source tying it to 1969–2011.</p>
     </div>
   </div>
 
@@ -140,9 +140,9 @@ text.geo { font: italic 11px var(--font-display); fill: var(--ink-soft); paint-o
   function px(lon, lat) { return [(lon - LON0) * PXLON, (LAT1 - lat) * PXLAT]; }
 
   var TYPES = {
-    confirmed: { label: 'Documented, 1969–1989', note: 'Reported for the period by Amnesty International or similar sources.', color: 'var(--confirmed)' },
+    confirmed: { label: 'Documented, 1969–2011', note: 'Reported for the period by Amnesty International or similar sources.', color: 'var(--confirmed)' },
     testimony: { label: 'Testimony, area only', note: 'A former detainee names it for the 1980s. Position is approximate.', color: 'var(--testimony)' },
-    suspected: { label: 'Suspected, period unverified', note: 'A facility existed in Tripoli. No source ties it to 1969–1989.', color: 'var(--suspected)' },
+    suspected: { label: 'Suspected, period unverified', note: 'A facility existed in Tripoli. No source ties it to 1969–2011.', color: 'var(--suspected)' },
     context: { label: 'Context site, not a prison', note: 'Linked to arrests or detention but not itself a prison.', color: 'var(--context)' }
   };
 
@@ -161,15 +161,15 @@ text.geo { font: italic 11px var(--font-display); fill: var(--ink-soft); paint-o
       src: 'Amnesty International (1992); Abubaker Shareef interview' },
     { id: 'maktab', name: 'Maktab al-Nasser', type: 'suspected', lon: 13.179, lat: 32.840, r: 2, dx: 12, dy: -6, anchor: 'start',
       when: 'Date range unverified',
-      text: 'A prison and internal security office in the Abu Salim district. Prisoners held there were often moved on to Abu Salim prison. The source describes its use before 2011 and does not give start dates, so operation between 1969 and 1989 is unconfirmed. The marker is placed only in the district.',
+      text: 'A prison and internal security office in the Abu Salim district. Prisoners held there were often moved on to Abu Salim prison. The source describes its use before 2011 and does not give start dates, so operation under Gaddafi (1969–2011) is unconfirmed. The marker is placed only in the district.',
       src: 'Wikipedia, citing Foreign Policy (2011)' },
     { id: 'hadba', name: 'Hadba al-Khadra', type: 'suspected', lon: 13.191, lat: 32.8444, r: 1.8, dx: 12, dy: -14, anchor: 'start',
       when: 'Date range unverified',
-      text: 'A Ministry of Defence facility in the Hadba al-Khadra area, known for holding senior officials of the former government after 2011. No source places it in use during 1969–1989, so it is shown as suspected only. Reports of its location vary by a kilometre or more.',
+      text: 'A Ministry of Defence facility in the Hadba al-Khadra area, known for holding senior officials of the former government after 2011. No source places it in use during 1969–2011, so it is shown as suspected only. Reports of its location vary by a kilometre or more.',
       src: 'Reuters (2017); Human Rights Watch (2015)' },
     { id: 'ainzara', name: 'Ain Zara prison', type: 'suspected', lon: 13.27, lat: 32.79, r: 3, dx: 12, dy: 4, anchor: 'start',
       when: 'Date range unverified',
-      text: 'A long-standing Ministry of Justice prison in the Ain Zara suburb. Human Rights Watch lists it among possible detention facilities in Tripoli in 2011. No source confirms political detention there between 1969 and 1989. The marker shows the suburb only.',
+      text: 'A long-standing Ministry of Justice prison in the Ain Zara suburb. Human Rights Watch lists it among possible detention facilities in Tripoli in 2011. No source confirms political detention there under Gaddafi (1969–2011). The marker shows the suburb only.',
       src: 'USIP; Human Rights Watch 2011' }
   ];
 

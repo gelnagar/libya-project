@@ -2199,6 +2199,16 @@
     b.appendChild(h('p', { class: 'mem-dedication', text: 'For the people of Tripoli and of all Libya who were killed, executed, or taken and never came home.' }));
     var lines = (MEM.lines || []);
     if (lines.length) b.appendChild(h('ul', { class: 'mem-lines' }, lines.map(function (l) { return h('li', {}, [h('span', { class: 'ml-n', text: l.n }), h('span', { class: 'ml-t', text: l.t })]); })));
+    b.appendChild(h('p', { class: 'mem-rest', text: 'And countless thousands more, if not orders of magnitude more, whose names we may never know.' }));
+    var counted = lines.filter(function (l) { return l.count; });
+    if (counted.length) {
+      var total = counted.reduce(function (s, l) { return s + l.count; }, 0);
+      var cv = h('canvas', { class: 'mem-dots', role: 'img', 'aria-label': 'One dot for each of about ' + total.toLocaleString('en-US') + ' people counted above, followed by fainter dots for the many more never counted' });
+      var tip = h('div', { class: 'mem-dot-tip', hidden: '' });
+      b.appendChild(h('figure', { class: 'mem-dotfig' }, [h('div', { class: 'mem-dotwrap' }, [cv, tip]),
+        h('figcaption', { text: 'Each solid dot is one person in the counts above, about ' + total.toLocaleString('en-US') + ' in all. The fading dots after them stand for the people never counted; their number is not known.' })]));
+      setTimeout(function () { drawDots(cv, tip, counted); }, 30);
+    }
     var fam = REPORTS.filter(function (r) { return r.cat === 'remember'; });
     var names = (MEM.names || []).map(function (n) { return { name: n.name, what: n.what, site: n.site }; }).concat(fam.map(function (r) { return { name: r.title, what: [r.when, r.text].filter(Boolean).join(' · '), by: r.by || 'family' }; }));
     if (names.length) {
@@ -2208,10 +2218,39 @@
         return h('li', {}, [h('b', { text: n.name }), n.what ? h('span', { text: ' ' + n.what }) : null, n.by ? h('small', { text: ' Added by ' + n.by + '.' }) : null, site ? h('button', { class: 'linkbtn', text: 'Where', onclick: function () { closeMemorial(); focusSite(site); } }) : null]);
       })));
     }
-    b.appendChild(h('p', { class: 'mem-rest', text: 'And the many thousands whose names we do not hold.' }));
     if (canReport) b.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Remember someone', onclick: function () {
       closeMemorial(); openReportForm({ lat: 32.8925, lon: 13.1802, target: 'memorial', targetName: 'In memory', cat: 'remember' });
       $('rep-name').placeholder = 'Their name'; $('rep-text').placeholder = 'Who they were, and what happened to them.'; } })]));
+  }
+  function drawDots(cv, tip, groups) {
+    var W = cv.parentNode.clientWidth, D = W < 500 ? 4 : 5, G = 2, S = D + G, cols = Math.floor(W / S), ghosts = 9000;
+    var total = groups.reduce(function (s, l) { return s + l.count; }, 0), n = total + ghosts, rows = Math.ceil(n / cols);
+    var dpr = window.devicePixelRatio || 1; cv.width = cols * S * dpr; cv.height = rows * S * dpr; cv.style.width = cols * S + 'px'; cv.style.height = rows * S + 'px';
+    var c = cv.getContext('2d'); c.scale(dpr, dpr);
+    var ink = getComputedStyle(document.documentElement).getPropertyValue('--mem').trim() || '#8a2846';
+    var ranges = [], i = 0;
+    groups.forEach(function (g) { ranges.push([i, i + g.count, g]); i += g.count; });
+    var draw = function (hi) {
+      c.clearRect(0, 0, cols * S, rows * S);
+      for (var k = 0; k < n; k++) {
+        var x = (k % cols) * S + D / 2, y = Math.floor(k / cols) * S + D / 2;
+        if (k < total) { var r = ranges.filter(function (q) { return k >= q[0] && k < q[1]; })[0]; c.globalAlpha = hi && r !== hi ? 0.28 : 1; c.fillStyle = ink; }
+        else { c.globalAlpha = Math.max(0.05, 0.42 * (1 - (k - total) / ghosts)); c.fillStyle = ink; }
+        c.beginPath(); c.arc(x, y, D / 2, 0, 6.2832); c.fill();
+      }
+      c.globalAlpha = 1;
+    };
+    draw(null);
+    var at = function (ev) { var rc = cv.getBoundingClientRect(), k = Math.floor((ev.clientY - rc.top) / S) * cols + Math.floor((ev.clientX - rc.left) / S); return k; };
+    var show = function (ev) {
+      var k = at(ev), r = ranges.filter(function (q) { return k >= q[0] && k < q[1]; })[0];
+      if (r) { draw(r); tip.hidden = false; tip.textContent = r[2].n + ' ' + r[2].t; }
+      else if (k >= total && k < n) { draw(null); tip.hidden = false; tip.textContent = 'The uncounted: people killed or disappeared whose deaths were never recorded.'; }
+      else { draw(null); tip.hidden = true; }
+      var rc = cv.getBoundingClientRect(); tip.style.left = Math.min(ev.clientX - rc.left + 12, rc.width - 260) + 'px'; tip.style.top = (ev.clientY - rc.top + 14) + 'px';
+    };
+    cv.addEventListener('mousemove', show); cv.addEventListener('click', show);
+    cv.addEventListener('mouseleave', function () { draw(null); tip.hidden = true; });
   }
   function openMemorial() { renderMemorial(); $('memorial').hidden = false; $('mem-close').focus(); }
   function closeMemorial() { $('memorial').hidden = true; }

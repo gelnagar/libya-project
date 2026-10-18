@@ -1,19 +1,13 @@
 {
- "at": "2026-10-18T18:20:43.713Z",
+ "at": "2026-10-18T18:22:29.638Z",
  "model": "claude-sonnet-5-5",
  "items": 433,
- "notes": 0,
- "in": 0,
- "out": 0,
- "cw": 0,
- "cr": 0,
- "ok": 0,
- "fail": 10,
- "errors": [
-  "m:lb-tripoli-international-stadium|lm-7-october-stadium|context HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CgAAZzqfqHBB9dRyLFm7W\"}",
-  "m:hadba|ainzara|transfer HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CgAAZzvszjxPKsxQ2USRx\"}",
-  "m:lb-british-embassy-tripoli|lb-italian-embassy-tripoli|event HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CgAAZzuPq8EbNxs2i7nab\"}",
-  "m:lh-al-waddan-hotel|lm-radisson-blu-al-mahary|same-place HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CgAAa2MDBPDDd5siEuJwn\"}",
-  "u:egypt|libya foreign relations HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CgAAa2RfksCMUKmLeam7b\"}"
- ]
+ "notes": 10,
+ "in": 12420,
+ "out": 9777,
+ "cw": 3999,
+ "cr": 9331,
+ "ok": 10,
+ "fail": 0,
+ "errors": []
 }

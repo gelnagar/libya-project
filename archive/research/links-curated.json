@@ -262,5 +262,69 @@
     "u": "https://www.washingtonpost.com/archive/politics/1984/04/22/libya-hanged-2-students-monday-for-treason/f639373f-d89a-4259-bd91-11ffbfbc2fab/"
    }
   ]
+ },
+ {
+  "a": "wp-al-hashan-site-a",
+  "b": "wp-al-fallah-site-b",
+  "kind": "transfer",
+  "why": "Libya dismantled its centrifuge equipment at Al Hashan and, by April 2002, moved it to Al Fallah, where it stayed in storage.",
+  "year": 2002,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "GlobalSecurity: Al Fallah",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/al-fallah.htm"
+   },
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   }
+  ]
+ },
+ {
+  "a": "wp-al-hashan-site-a",
+  "b": "wp-al-khalla-site-c",
+  "kind": "programme",
+  "why": "Al Khalla succeeded Al Hashan as the centrifuge research and development site and was used to store uranium hexafluoride.",
+  "year": null,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   }
+  ]
+ },
+ {
+  "a": "wp-al-khalla-site-c",
+  "b": "wp-salah-eddin-site-d",
+  "kind": "transfer",
+  "why": "Libya moved the Japanese-supplied uranium conversion modules from Al Khalla to Salah Eddin for security and secrecy; IAEA inspectors first saw them there in December 2003.",
+  "year": 2003,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "GlobalSecurity: Salah Eddin",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/salah-eddin.htm"
+   },
+   {
+    "t": "GlobalSecurity: Al Khalla",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/al-khalla.htm"
+   }
+  ]
+ },
+ {
+  "a": "wp-rabta-pharma-150-chemical-plant",
+  "b": "wp-tarhuna-underground-facility",
+  "kind": "programme",
+  "why": "US officials called the underground plant at Tarhuna \"Rabta-II\" because it appeared to be a copy of Rabta; Libya called it Pharma 300.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Wisconsin Project: Libya has trouble building the most deadly weapons",
+    "u": "https://www.wisconsinproject.org/libya-has-trouble-building-the-most-deadly-weapons/"
+   }
+  ]
  }
 ]

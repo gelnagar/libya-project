@@ -23,7 +23,7 @@ if True:
         if re.search(r'bab.?al.?azi[sz]ia', a.get('name', '').lower()): skipped.append((a.get('name'), 'location conflicts with the existing site')); continue
         if a.get('id') in seen or key in names: skipped.append((a.get('name'), 'duplicate')); continue
         lat, lon = a.get('lat'), a.get('lon')
-        if not (isinstance(lat, (int, float)) and isinstance(lon, (int, float)) and 32.0 <= lat <= 33.4 and 12.2 <= lon <= 14.3): skipped.append((a.get('name'), 'no coordinates')); nocoord.append(a); continue
+        if not (isinstance(lat, (int, float)) and isinstance(lon, (int, float)) and ((32.0 <= lat <= 33.4 and 12.2 <= lon <= 14.3) or a.get('far'))): skipped.append((a.get('name'), 'no coordinates')); nocoord.append(a); continue
         if not a.get('summary'): skipped.append((a.get('name'), 'no summary')); continue
         a = {k: v for k, v in a.items() if v not in (None, '', []) and k not in ('category', 'built', 'period')}
         a['kind'] = a.get('kind') if a.get('kind') in ('landmark', 'government', 'prison', 'military') else 'landmark'

@@ -9,14 +9,14 @@
    "Qabilat az Zaribah"
   ],
   "kind": "military",
-  "lat": null,
-  "lon": null,
-  "r": 5,
+  "lat": 32.2114,
+  "lon": 12.9085,
+  "r": 2,
   "summary": "Reported chemical weapons plant at Rabta, south of Tripoli, publicly presented by Libya as a pharmaceutical factory; subject of the 1990 fire dispute.",
   "history": "GlobalSecurity's compilation places the site at Qabilat az Zaribah (Rabta), about 60 miles south of Tripoli. It gives construction as 1984 to 1988. West Germany's intelligence service (BND) and government linked German firm Imhausen Chemie to the project from 1984 onward, and in 1987 the BND judged from satellite images that the plant was most likely for chemical weapons.",
   "era": "The US assessed Rabta in 1990 as the largest chemical weapons plant in the developing world; Libya denied this and claimed a closure that was not confirmed. In March 1990 a fire occurred: Libya blamed the United States, while US officials said satellite imagery showed only minimal damage and called it a hoax; US officials later said production resumed by mid-May 1990. In 1995 Libya reopened it as a pharmaceutical plant, a joint venture with Egypt's Nasr Companies.",
   "today": "Libya joined the Chemical Weapons Convention in early 2004. The OPCW stated that Libya declared several chemical weapons production facilities which were destroyed or converted to peaceful uses; the OPCW pages seen do not name Rabta, so its exact post-2004 use is not confirmed here.",
-  "uncertain": "Location approximate: no coordinates were seen on any page opened, so lat/lon are null. Distance is converted from a source figure of about 60 miles (about 97 km) and is rough; other accounts give different distances. Much of the 1980s-90s detail is Western intelligence or press assertion, denied by Libya.",
+  "uncertain": "Position is the plant compound as mapped on OpenStreetMap (a way labelled 'Rabta Chemical Weapons Factory'; Nominatim names the same spot the Rabta pharmaceutical factory), about 75 km south-south-west of Tripoli, near Rabta in the Jabal Nafusa foothills. The FAS gazetteer lists the site at Qabilat az Zaribah, 32°09'27\"N 12°50'32\"E, about 9 km south-west of it; published distances from Tripoli vary from about 40 km to about 100 km. Treat the pin as the plant area, not a building.",
   "sources": [
    {
     "t": "GlobalSecurity: Rabta",
@@ -25,9 +25,21 @@
    {
     "t": "OPCW: Libya completes destruction of its Category 1 chemical weapons",
     "u": "https://www.opcw.org/news/article/libya-completes-destruction-of-its-category-1-chemical-weapons"
+   },
+   {
+    "t": "OpenStreetMap: Rabta Chemical Weapons Factory (way 126490585)",
+    "u": "https://www.openstreetmap.org/way/126490585"
+   },
+   {
+    "t": "FAS: Libya special weapons (Rabta at Qabilat az Zaribah, 32°09′27″N 12°50′32″E)",
+    "u": "https://nuke.fas.org/guide/libya/index.html"
+   },
+   {
+    "t": "Wisconsin Project: Libya has trouble building the most deadly weapons",
+    "u": "https://www.wisconsinproject.org/libya-has-trouble-building-the-most-deadly-weapons/"
    }
   ],
-  "distance_from_tripoli_km": 97
+  "distance_from_tripoli_km": 80
  },
  {
   "id": "wp-tarhuna-underground-facility",
@@ -133,7 +145,7 @@
   "history": "NTI's IAEA-based summary names Al-Hashan (operated 1997-2002), Al-Khalla (its successor), Salah Eddin, Janzour, Sawani, Al-Karamia and El-Ezeizia as undeclared sites, plus underground storage at Sabha. Wikipedia says that in October 2000 a single complete device was installed at Al Hashan. Exact addresses are not published in the pages seen.",
   "era": "Libya's 19 December 2003 announcement ended its nuclear weapons efforts. The IAEA verified the sites in 2004, and NTI reports that the US and UK worked with the IAEA to remove all nuclear-related equipment and materials in three stages, with the most sensitive items first and the work done by September 2004. The IAEA then reported on the programme to its Board.",
   "today": "The pages seen do not describe the present state of these buildings. Equipment was removed in 2004, so no weapons-related material is reported to remain, but the sites' current use is not documented here.",
-  "uncertain": "Location approximate: no coordinates were seen, so lat/lon are null; the sources give functions, not locations. Several are described only as being in the Tripoli area. This profile groups sites and should not be pinned to one spot.",
+  "uncertain": "This profile is the overview of the group. Each site now has its own pin where open sources name a suburb or street: Al Hashan, Al Khalla, Salah Eddin, Al Fallah, Al Karamia and El Ezeizia, plus Sawani and the Janzour machine shop, which were already on the map. All of those pins are suburb-level (2–3 km radius): the IAEA and press sources name the suburbs but publish no street addresses or coordinates. The Sabha yellowcake store is not mapped.",
   "sources": [
    {
     "t": "NTI: Libya nuclear facilities",
@@ -335,7 +347,7 @@
   "history": "Reports summarised by GlobalSecurity and Wikipedia say Libya sought to build a domestic missile (reported range 950-1,000 km), drawing on earlier OTRAG work in the desert near Sebha from 1979. Foreign help from Iraq, Iran, Serbia and China was alleged. A test facility is mentioned but not located.",
   "era": "Per GlobalSecurity, 1995 reports said Iraqi technicians were working on Al Fatah, and in 1999 US imagery satellites reportedly photographed an enlarged Al Fatah test facility. Reports of North Korean talks later proved false after 2003. In December 2003 Libya agreed to eliminate missiles beyond 300 km range and 500 kg payload.",
   "today": "Libya largely abandoned the programme in 2004 in exchange for sanctions relief, per Wikipedia. No site is known to remain; nothing in the sources opened describes its present state.",
-  "uncertain": "No coordinates: the facility's location is not given in any source I opened, so lat/lon are null; location approximate. Much of the programme is reporting by intelligence-sourced press, and its real progress is unclear.",
+  "uncertain": "Still no location. No open source places the Al-Fatah research or test facility. Two nearby clues exist: a 1989 report of a desert camp about 100 km from Sebha where German engineers worked on a 500-750 km missile, and the OTRAG rocket range at Tawiwa near Sabha (now on the map), which the programme reportedly drew on. Neither is stated to be the Al-Fatah site, so it is left unpinned rather than guessed.",
   "sources": [
    {
     "t": "GlobalSecurity: Libyan Missiles",
@@ -366,7 +378,7 @@
   "history": "GlobalSecurity says Libya obtained Scud-B and FROG-7 missiles from the Soviet Union in the mid-1970s. GlobalSecurity also refers to North Korean Scud-C missiles. OpenStreetMap lists an 'Artillery and Missile School' near Tripoli at 32.766 N, 13.197 E, though no source ties it to Scuds.",
   "era": "Two Scuds were fired at Lampedusa in April 1986 after the US raid. After the 19 December 2003 deal, Libya agreed to remove missiles over 300 km range, so it gave up Scud-C but not 300 km Scud-B, per GlobalSecurity. In 2011 Libyan forces reportedly fired Scud-B at rebel areas and missed; NATO strikes reportedly destroyed the rest.",
   "today": "Not documented in the pages seen; some missiles are believed to have survived outside government control after 2011 but no source opened confirms this.",
-  "uncertain": "No base coordinates; distances not given. Claims about Scud storage near Sirte, Sebha, Al-Jufra are repeated in general press but were not confirmed in sources I opened.",
+  "uncertain": "Unit garrisons and storage sites are not published in the sources used. The one reported position is the first Scud launch of the 2011 war, about 80 km east of Sirte (now on the map as its own point); the artillery and missile school near Tripoli is not tied to Scuds by any source. Claims about storage near Sirte, Sebha and Al-Jufra are repeated in general press but not confirmed.",
   "sources": [
    {
     "t": "GlobalSecurity: Libyan Missiles",
@@ -399,7 +411,7 @@
   "history": "The reprisal followed Operation El Dorado Canyon. Wikipedia says Libya fired two Scud missiles at the NATO base at Capo Ponente, Lampedusa, at about 16:33 UTC on 15 April 1986. One exploded about 2 km northwest and the other about 2 km southwest of the base, in the sea.",
   "era": "Libya later said it targeted a US-led NATO base, not Italy. The attack caused a diplomatic crisis with Italy. The page seen does not state the launch site; reports that it was near Sirte, east of Tripoli, were not confirmed in the sources I opened.",
   "today": "Lampedusa is unchanged and is today an Italian island; the launch location remains unrecorded in the sources used here, and no site is mapped.",
-  "uncertain": "Launch site not confirmed by any page I opened; 'Sirte' is common in press but unverified here. Lat/lon null.",
+  "uncertain": "Launch site still not published: the Italian and English accounts say only that the two Scuds came from Libya and landed about 2 km north-west and south-west of the Capo Ponente (35°31′N 12°31′E) base. 'Sirte' is common in press but unconfirmed, so no pin.",
   "sources": [
    {
     "t": "Wikipedia: Libyan missile attack against Lampedusa",
@@ -422,14 +434,14 @@
    "Waddan area"
   ],
   "kind": "military",
-  "lat": null,
-  "lon": null,
-  "r": 5,
+  "lat": 29.1782,
+  "lon": 16.1607,
+  "r": 8,
   "summary": "Remote desert depot in south-eastern Libya where Libya's declared mustard stockpile was stored and destroyed under OPCW monitoring (2010-2014).",
   "history": "Libya joined the Chemical Weapons Convention in January 2004 and declared nearly 25 tonnes of bulk mustard agent and thousands of unfilled aerial bombs. The OPCW describes the depot at Ruwagha as being in remote south-eastern Libya, far outside the Tripoli area. Waddan is the nearest town named in the brief.",
   "era": "Empty munitions were destroyed in March 2004. Destruction of the bulk mustard began in October 2010 and stopped in February 2011 after equipment failed and unrest began. OPCW inspectors confirmed the stockpile intact in November 2011. Work resumed on 20 April 2013 and ended 4 May 2013; the OPCW announced it on 6 May 2013. Libya completed destruction of its remaining mustard-loaded shells and bombs on 26 January 2014.",
   "today": "Precursor chemicals (846 tonnes) remained and were later moved to Germany, completed in 2016-2017 per Wikipedia; the OPCW pages seen cover only the earlier steps. The site's state today is not documented in the pages opened.",
-  "uncertain": "No coordinates seen, so lat/lon null; far from Tripoli (distance not stated in the sources). Wikipedia also reports rebels finding a mustard stockpile in Jufra District in 2011; whether this is the same depot as Ruwagha is not established here.",
+  "uncertain": "Position is the Ruwagha (Ar-Rawagha) locality on the edge of Waddan in Al Jufra District, as named on OpenStreetMap, which fits the 'Waddan area' alias and the OPCW's remote-desert description. No source gives the depot's own coordinates and OpenStreetMap shows no military feature there, so the pin marks the named locality with an 8 km radius, not the storage site. Wikipedia also reports rebels finding mustard stocks in Jufra District in 2011; whether that was this depot is not established.",
   "sources": [
    {
     "t": "OPCW: Libya completes destruction of its Category 1 chemical weapons",
@@ -446,9 +458,14 @@
    {
     "t": "Wikipedia: Libya and weapons of mass destruction",
     "u": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction"
+   },
+   {
+    "t": "OpenStreetMap: Ar-Rawagha, suburb of Waddan (node 4197740816)",
+    "u": "https://www.openstreetmap.org/node/4197740816"
    }
   ],
-  "distance_from_tripoli_km": null
+  "distance_from_tripoli_km": 501,
+  "far": true
  },
  {
   "id": "wp-libya-2003-disarmament-and-2004-removals",

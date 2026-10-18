@@ -16,6 +16,7 @@ jobs:
         with: { node-version: 20 }
       - env: { ANTHROPIC_API_KEY: '${{ secrets.ANTHROPIC_API_KEY }}' }
         run: |
+          mkdir -p archive/crest; echo "{\"secret_present\": $([ -n \"$ANTHROPIC_API_KEY\" ] && echo true || echo false), \"at\": \"$(date -u +%FT%TZ)\"}" > archive/crest/extract-check.json
           if [ -z "$ANTHROPIC_API_KEY" ]; then echo '{"error":"ANTHROPIC_API_KEY secret missing in GitHub"}' > archive/crest/extract-status.json; else
           if [ "${{ inputs.mode }}" = "batch" ]; then node scripts/crest-extract.mjs --batch; else node scripts/crest-extract.mjs --sample ${{ inputs.n }}; fi; fi
       - if: always()

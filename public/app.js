@@ -147,10 +147,14 @@
     });
   });
 
+  function siteIcon(s) {
+    var lay = LAYERS[s.layer];
+    return L.divIcon({ className: '', iconSize: [28, 36], iconAnchor: [14 - s.dx, 36 - s.dy],
+      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '"><b>' + siteCode(s) + '</b></div>' });
+  }
   SITES.forEach(function (s) {
     var lay = LAYERS[s.layer];
-    var icon = L.divIcon({ className: '', iconSize: [28, 36], iconAnchor: [14 - s.dx, 36 - s.dy],
-      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '"><b>' + siteCode(s) + '</b></div>' });
+    var icon = siteIcon(s);
     markers[s.id] = L.marker([s.lat, s.lon], { icon: icon, title: s.name, keyboard: true, riseOnHover: true })
       .bindTooltip(s.name, { permanent: true, direction: 'right', offset: [16 + s.dx, -22 + s.dy], className: 'site-label', interactive: false })
       .on('click', function () { openSite(s); })
@@ -158,6 +162,54 @@
       .on('mouseout', hideCard);
     rings[s.id] = L.circle([s.lat, s.lon], { radius: s.r * 1000, color: lt(lay.color), weight: 1.2, dashArray: '5 5', fillColor: lt(lay.color), fillOpacity: 0.03, interactive: false }); rings[s.id]._base = lay.color;
   });
+
+
+  /* Spread icons that sit on top of each other (Bab al-Aziziya, Abu Salim, the airfield...). Done in screen pixels at the current zoom:
+     icons closer than one icon width are fanned out around their middle, each keeps a thin line back to its true position.
+     Below zoom 13 nothing moves (a whole-city view); above ~17 the places separate on their own. */
+  var leaderLayer = L.layerGroup().addTo(map);
+  function spreadMarkers() {
+    var z = map.getZoom(), vis = SITES.filter(function (s) { return siteLayer.hasLayer(markers[s.id]); }), changed = [];
+    leaderLayer.clearLayers();
+    var pts = vis.map(function (s) { return { s: s, p: map.project([s.lat, s.lon], z), g: -1 }; }), groups = [];
+    if (z >= 13) pts.forEach(function (a, i) {
+      if (a.g >= 0) return; var g = groups.length; groups.push([a]); a.g = g;
+      pts.forEach(function (b) { if (b.g < 0 && Math.hypot(b.p.x - a.p.x, b.p.y - a.p.y) < 34) { b.g = g; groups[g].push(b); } });
+    });
+    var off = {};
+    groups.forEach(function (g) {
+      if (g.length < 2) return;
+      var cx = 0, cy = 0; g.forEach(function (a) { cx += a.p.x; cy += a.p.y; }); cx /= g.length; cy /= g.length;
+      g.sort(function (a, b) { return Math.atan2(a.p.y - cy, a.p.x - cx) - Math.atan2(b.p.y - cy, b.p.x - cx) || (a.s.id < b.s.id ? -1 : 1); });
+      var n = g.length, rings = n <= 8 ? [n] : [6, n - 6], k = 0;
+      rings.forEach(function (m, ri) {
+        var R = ri ? 82 + Math.max(0, m - 12) * 3 : Math.max(30, 25 / Math.sin(Math.PI / Math.max(m, 3)));
+        if (ri === 0 && n > 8) R = 46;
+        for (var j = 0; j < m; j++, k++) {
+          var ang = -Math.PI / 2 + (j + (ri ? .5 : 0)) * 2 * Math.PI / m, a = g[k];
+          off[a.s.id] = { dx: Math.round(cx + Math.cos(ang) * R - a.p.x), dy: Math.round(cy + Math.sin(ang) * R - a.p.y), p: a.p };
+        }
+      });
+    });
+    SITES.forEach(function (s) {
+      var o = off[s.id], dx = o ? o.dx : 0, dy = o ? o.dy : 0;
+      if (s.dx !== dx || s.dy !== dy) { s.dx = dx; s.dy = dy; changed.push(s); }
+    });
+    changed.forEach(function (s) {
+      var m = markers[s.id], on = siteLayer.hasLayer(m);
+      m.setIcon(siteIcon(s));
+      var left = s.dx < -8;   // icons fanned to the left keep their name on the left, so labels do not cover the neighbours
+      m.unbindTooltip().bindTooltip(s.name, { permanent: true, direction: left ? 'left' : 'right', offset: [(left ? -16 : 16) + s.dx, -22 + s.dy], className: 'site-label', interactive: false });
+    });
+    vis.forEach(function (s) {
+      var o = off[s.id]; if (!o) return;
+      var lay = LAYERS[s.layer], from = map.unproject(o.p, z), to = map.unproject(L.point(o.p.x + o.dx, o.p.y + o.dy - 18), z);
+      L.polyline([from, to], { color: '#111418', weight: 2, opacity: .8, interactive: false }).addTo(leaderLayer);
+      L.circleMarker(from, { radius: 3, color: '#111418', weight: 1.5, fillColor: lay.color, fillOpacity: 1, interactive: false }).addTo(leaderLayer);
+    });
+    if (selected && markers[selected]) markSelected(selected);
+  }
+  map.on('zoomend', spreadMarkers);
 
   var districtLayer = L.layerGroup();
   DISTRICTS.forEach(function (d) {
@@ -201,6 +253,7 @@
     document.body.classList.toggle('no-timeline', !active.timeline);
     zoomClasses();
     drawTimeline();
+    spreadMarkers();
     declutter();
     if (typeof syncEraChips === 'function') syncEraChips();
     if (selected) markSelected(selected);
@@ -219,7 +272,7 @@
       els.forEach(function (e) {
         var r = e.getBoundingClientRect(); if (!r.width) return;
         var isDistrict = e.classList.contains('district');
-        if (hit(r, placed, 3) || (isDistrict && hit(r, marks, 0))) e.classList.add('lbl-hide'); else placed.push(r);
+        if (hit(r, placed, 3) || (isDistrict && hit(r, marks, 0)) || (!isDistrict && hit(r, marks, -3))) e.classList.add('lbl-hide'); else placed.push(r);
       });
     }, 60);
   }
@@ -2365,7 +2418,7 @@
   }
   var API = null;
   window.ATLAS_API = API = {
-    conn: connDetail, h: h, facts: facts, section: section,
+    conn: connDetail, map: map, h: h, facts: facts, section: section,
     sheet: function (kind, icon, fill) { var body = newSheet(kind); markSelected(null); curTarget = { isReport: true, code: icon }; fill(body); openPanel('sheet'); },
     openPlace: function (id) { if (BY_ID[id]) { focusSite(BY_ID[id]); return; } var a = AREA_BY_ID[id]; if (a) { map.flyTo([a.lat, a.lon], 15, { duration: 0.8 }); openArea(a); } },
     recordExists: function (id) { return loadRecords().then(function () { return !!REC_BY_ID[id]; }); },

@@ -49,7 +49,7 @@ function trim(t, max = 24000) { // keep the head + windows around key terms
   while ((m = RX.exec(t))) { const a = Math.max(6000, m.index - 1200), b = Math.min(t.length, m.index + 1200); if (win.length && a <= win[win.length - 1][1]) win[win.length - 1][1] = b; else win.push([a, b]); }
   let s = head; for (const [a, b] of win) { if (s.length > max) break; s += '\n[…]\n' + t.slice(a, b); } return s.slice(0, max);
 }
-const params = (d) => ({ model: MODEL, max_tokens: 1800, temperature: 0,
+const params = (d) => ({ model: MODEL, max_tokens: 1800,
   system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
   tools: [TOOL], tool_choice: { type: 'tool', name: 'record' },
   messages: [{ role: 'user', content: `Title: ${d.title}\nDate (catalog): ${d.date || 'unknown'}\nSource: ${d.src === 'jprs' ? 'JPRS translation volume (Libya-related excerpts only)' : d.src === 'nis' ? 'CIA National Intelligence Survey' : 'CIA reading room (CREST)'}\n\n<document>\n${trim(d.text)}\n</document>` }] });

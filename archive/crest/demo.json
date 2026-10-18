@@ -1,0 +1,56 @@
+{
+ "started": "2026-10-18T15:14:10.821Z",
+ "index": {
+  "status": 200,
+  "isIndex": false,
+  "entries": 0,
+  "first": [],
+  "last": [],
+  "tags": [
+   "html",
+   "head",
+   "meta",
+   "link",
+   "title",
+   "style",
+   "script",
+   "body",
+   "div",
+   "noscript",
+   "header",
+   "span",
+   "img",
+   "ul",
+   "li",
+   "a",
+   "center",
+   "button",
+   "section",
+   "nav",
+   "p",
+   "form",
+   "label",
+   "input",
+   "sup",
+   "article",
+   "br",
+   "blockquote",
+   "em",
+   "strong"
+  ]
+ },
+ "docUrlsSeen": 0,
+ "pages": [],
+ "elapsedS": 0,
+ "requests": 1,
+ "avgMs": 244,
+ "log": [
+  {
+   "u": "https://www.cia.gov/readingroom/sitemap.xml",
+   "status": 200,
+   "ms": 244,
+   "len": 38347,
+   "type": "text/html; charset=utf-8"
+  }
+ ]
+}

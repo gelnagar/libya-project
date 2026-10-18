@@ -1,0 +1,156 @@
+[
+ {
+  "a": "central-security",
+  "b": "ben-ashour",
+  "kind": "attack",
+  "why": "The article places the Central Security apparatus behind the French embassy, in the area affected by the 1986 bombing.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "بن عاشور (Arabic Wikipedia)",
+    "u": "https://ar.wikipedia.org/wiki/%D8%A8%D9%86_%D8%B9%D8%A7%D8%B4%D9%88%D8%B1"
+   }
+  ]
+ },
+ {
+  "a": "dahra",
+  "b": "zawiyat-dahmani",
+  "kind": "same-place",
+  "why": "The article names Zawiyat al-Dahmani as bordering Dahra to the east.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "الظهرة (طرابلس) (Arabic Wikipedia)",
+    "u": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B8%D9%87%D8%B1%D8%A9_(%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3)"
+   }
+  ]
+ },
+ {
+  "a": "dahra",
+  "b": "fashloum",
+  "kind": "same-place",
+  "why": "The article names Fashloum as bordering Dahra to the east.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "الظهرة (طرابلس) (Arabic Wikipedia)",
+    "u": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B8%D9%87%D8%B1%D8%A9_(%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3)"
+   }
+  ]
+ },
+ {
+  "a": "fashloum",
+  "b": "zawiyat-dahmani",
+  "kind": "same-place",
+  "why": "The article places Fashloom inland to the south of Zawiyat al-Dahmani.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Fashlum (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Fashlum"
+   }
+  ]
+ },
+ {
+  "a": "fashloum",
+  "b": "lm-martyrs-square",
+  "kind": "same-place",
+  "why": "The article places Fashloom southeast of Martyrs' Square.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Fashlum (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Fashlum"
+   }
+  ]
+ },
+ {
+  "a": "fateh",
+  "b": "mk-feb2011",
+  "kind": "same-place",
+  "why": "The article describes a student uprising at the university during the August 2011 Battle of Tripoli, which is part of the 2011 uprising in Tripoli.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "University of Tripoli (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   }
+  ]
+ },
+ {
+  "a": "hadba",
+  "b": "abu-salim",
+  "kind": "same-place",
+  "why": "The article says the Green Plateau is administratively part of the Abu Salim municipality and borders the Abu Salim district to the west.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "الهضبة الخضراء (Arabic Wikipedia)",
+    "u": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%87%D8%B6%D8%A8%D8%A9_%D8%A7%D9%84%D8%AE%D8%B6%D8%B1%D8%A7%D8%A1"
+   }
+  ]
+ },
+ {
+  "a": "lh-gurgi-mosque",
+  "b": "lh-arch-of-marcus-aurelius",
+  "kind": "same-place",
+  "why": "The article says the Roman Arch of Marcus Aurelius is nearby in the same historic area.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Gurgi Mosque (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Gurgi_Mosque"
+   }
+  ]
+ },
+ {
+  "a": "mitiga",
+  "b": "as-tip",
+  "kind": "attack",
+  "why": "Mitiga airport and the Tripoli military airfield were both struck by US F-111s on 15 April 1986.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "1986 United States bombing of Libya (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   }
+  ]
+ },
+ {
+  "a": "palace",
+  "b": "as-bab",
+  "kind": "attack",
+  "why": "The article notes the palace was damaged in the 1986 American raid on Libya.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "قصر الخلد (Arabic Wikipedia)",
+    "u": "https://ar.wikipedia.org/wiki/%D9%82%D8%B5%D8%B1_%D8%A7%D9%84%D8%AE%D9%84%D8%AF"
+   }
+  ]
+ },
+ {
+  "a": "tajura",
+  "b": "souq-al-juma",
+  "kind": "same-place",
+  "why": "The article describes Tajoura as bordered by Souq al-Juma to the west.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "تاجوراء (ليبيا) (Arabic Wikipedia)",
+    "u": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%AC%D9%88%D8%B1%D8%A7%D8%A1_(%D9%84%D9%8A%D8%A8%D9%8A%D8%A7)"
+   }
+  ]
+ }
+]

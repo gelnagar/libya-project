@@ -1440,6 +1440,55 @@
   "uncertain": "When the huts were cleared and where residents were moved. Family memory would help here."
  },
  {
+  "id": "lh-military-police-command",
+  "name": "Military Police Command compound (reported)",
+  "aliases": [
+   "Military Police Command",
+   "Military Police compound"
+  ],
+  "kind": "military",
+  "lat": 32.8346,
+  "lon": 13.1768,
+  "r": 0.6,
+  "summary": "A military police headquarters compound in the Abu Salim district; Abu Salim prison was built inside it.",
+  "history": "Amnesty International (2006) describes Abu Salim Prison as located in a compound of the Military Police in the area of Abu Salim, a suburb of Tripoli. The Human Rights Solidarity account says it lies within the compound of the Military Police Command and consists of two parallel facilities, the Central Prison and the Military Prison. Published accounts say the prison, completed in 1984, replaced the colonial-era Black Horse prison. During the June 1996 standoff a security team led by Colonel Abdullah al-Senussi, head of military intelligence, arrived and negotiated with the prisoners, so the site was not run by the Military Police alone. By 2005 Human Rights Watch lists Abu Salim among facilities run by the Internal Security Agency. Earlier evidence of the unit: a 1974 CIA National Intelligence Survey says Military Police companies were located in both Tripoli and Benghazi, serving units in their regions. During the May 1984 attack on Bab al-Aziziya, military police surrounded the building where the attackers had retreated, and fighting continued until early afternoon. In March 1988 Gaddafi complained in a speech that military intelligence, the military police and the staff office could each publish lists of people barred from travel (reported by FBIS). In the 2011-era Libyan Army order of battle, a Tripoli Military Police is listed under the Tripoli Military Region.",
+  "uncertain": "Only the location 'around Abu Salim prison' is supported; the compound's boundaries, buildings and unit structure are not mapped here, so the marker is approximate and wide. The earlier 'police depots' seized in the 1969 coup are not shown to be this compound.",
+  "sources": [
+   {
+    "t": "Amnesty International (2006), Libya: Investigation needed into prison deaths",
+    "u": "https://www.amnesty.org/en/wp-content/uploads/2021/08/mde190062006en.pdf"
+   },
+   {
+    "t": "Human Rights Solidarity, Annex 1: The Abu Salim Prison Massacre",
+    "u": "https://hrsly.com/en/annex-1-the-abu-salim-prison-massacre/"
+   },
+   {
+    "t": "Wikipedia: Abu Salim Prison",
+    "u": "https://en.wikipedia.org/wiki/Abu_Salim_Prison"
+   },
+   {
+    "t": "Human Rights Watch (2006), Libya: Words to Deeds",
+    "u": "https://www.hrw.org/reports/libya0106webwcover.pdf"
+   },
+   {
+    "t": "CIA National Intelligence Survey 49, Libya: Armed Forces (February 1974)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp01-00707r000200080014-2"
+   },
+   {
+    "t": "Wikipedia: 1984 Libyan coup attempt",
+    "u": "https://en.wikipedia.org/wiki/1984_Libyan_coup_attempt"
+   },
+   {
+    "t": "FBIS, Al-Qadhdhafi addresses 12 March rally (14 March 1988)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400430024-2"
+   },
+   {
+    "t": "Wikipedia: Libyan Army",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Army"
+   }
+  ]
+ },
+ {
   "id": "wp-tarhuna-underground-facility",
   "name": "Tarhuna (Tarhunah) underground facility",
   "ar": "منشأة ترهونة",
@@ -2062,39 +2111,6 @@
    {
     "t": "OpenStreetMap mapped feature (local extract)",
     "u": "https://www.openstreetmap.org/way/452107133"
-   }
-  ]
- },
- {
-  "id": "lh-military-police-command",
-  "name": "Military Police Command compound (reported)",
-  "aliases": [
-   "Military Police Command",
-   "Military Police compound"
-  ],
-  "kind": "military",
-  "lat": 32.8346,
-  "lon": 13.1768,
-  "r": 0.6,
-  "summary": "A military police headquarters compound in the Abu Salim district; Abu Salim prison was built inside it.",
-  "history": "Amnesty International (2006) describes Abu Salim Prison as located in a compound of the Military Police in the area of Abu Salim, a suburb of Tripoli. The Human Rights Solidarity account says it lies within the compound of the Military Police Command and consists of two parallel facilities, the Central Prison and the Military Prison. Published accounts say the prison, completed in 1984, replaced the colonial-era Black Horse prison. During the June 1996 standoff a security team led by Colonel Abdullah al-Senussi, head of military intelligence, arrived and negotiated with the prisoners, so the site was not run by the Military Police alone. By 2005 Human Rights Watch lists Abu Salim among facilities run by the Internal Security Agency.",
-  "uncertain": "Only the location 'around Abu Salim prison' is supported; the compound's boundaries, buildings and unit structure are not mapped here, so the marker is approximate and wide. The earlier 'police depots' seized in the 1969 coup are not shown to be this compound.",
-  "sources": [
-   {
-    "t": "Amnesty International (2006), Libya: Investigation needed into prison deaths",
-    "u": "https://www.amnesty.org/en/wp-content/uploads/2021/08/mde190062006en.pdf"
-   },
-   {
-    "t": "Human Rights Solidarity, Annex 1: The Abu Salim Prison Massacre",
-    "u": "https://hrsly.com/en/annex-1-the-abu-salim-prison-massacre/"
-   },
-   {
-    "t": "Wikipedia: Abu Salim Prison",
-    "u": "https://en.wikipedia.org/wiki/Abu_Salim_Prison"
-   },
-   {
-    "t": "Human Rights Watch (2006), Libya: Words to Deeds",
-    "u": "https://www.hrw.org/reports/libya0106webwcover.pdf"
    }
   ]
  },

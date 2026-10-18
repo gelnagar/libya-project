@@ -212,5 +212,55 @@
     "u": "https://en.wikipedia.org/wiki/Mitiga_International_Airport"
    }
   ]
+ },
+ {
+  "a": "bt-1984-bab",
+  "b": "lh-military-police-command",
+  "kind": "event",
+  "why": "During the May 1984 attack on Bab al-Aziziya, military police surrounded the building where the attackers had retreated and fighting lasted until early afternoon.",
+  "year": 1984,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Wikipedia: 1984 Libyan coup attempt",
+    "u": "https://en.wikipedia.org/wiki/1984_Libyan_coup_attempt"
+   }
+  ]
+ },
+ {
+  "a": "mk-hang-1984",
+  "b": "bt-1984-bab",
+  "kind": "context",
+  "why": "Public hangings were a response to opposition in 1984: after the May attack on Bab al-Aziziya, twelve of those involved were publicly hanged in their home towns, and further hangings were broadcast on state television.",
+  "year": 1984,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Wikipedia: Execution of Al-Sadek Hamed Al-Shuwehdy",
+    "u": "https://en.wikipedia.org/wiki/Execution_of_Al-Sadek_Hamed_Al-Shuwehdy"
+   },
+   {
+    "t": "Wikipedia: 1984 Libyan coup attempt",
+    "u": "https://en.wikipedia.org/wiki/1984_Libyan_coup_attempt"
+   }
+  ]
+ },
+ {
+  "a": "mk-hang-1984",
+  "b": "mk-april1976",
+  "kind": "context",
+  "why": "The 1984 campus hanging in Tripoli belongs to the same pattern of student repression as the 7 April 1976 crackdown and the 7 April 1977 hangings of students.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Wikipedia: 1976 Libyan protests",
+    "u": "https://en.wikipedia.org/wiki/1976_Libyan_protests"
+   },
+   {
+    "t": "Washington Post, 22 Apr 1984: Libya hanged 2 students Monday for treason",
+    "u": "https://www.washingtonpost.com/archive/politics/1984/04/22/libya-hanged-2-students-monday-for-treason/f639373f-d89a-4259-bd91-11ffbfbc2fab/"
+   }
+  ]
  }
 ]

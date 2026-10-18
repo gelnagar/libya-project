@@ -46,7 +46,7 @@
     s.textContent = msg; s.hidden = false;
     if (ms) statusTimer = setTimeout(function () { s.hidden = true; }, ms);
   }
-  var LAYER_ICON = { massacre: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M11 0h2v6h-2z"/><path d="M9 5h6v3H9z"/><path fill-rule="evenodd" d="M8 11h8l4 4v4l-4 4H8l-4-4v-4zm1.6 2.6L6.4 16.8v1.4l3.2 3.2h4.8l3.2-3.2v-1.4l-3.2-3.2z"/></svg>',
+  var LAYER_ICON = { massacre: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M11 0h2v4h-2z"/><path d="M8 4h8v1.8H8zM8 7h8v1.8H8zM8 10h8v1.8H8z"/><path fill-rule="evenodd" d="M12 12.4a5.8 5.8 0 1 0 0 11.6 5.8 5.8 0 1 0 0-11.6zm0 2.7a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 1 1 0-6.2z"/></svg>',
     detention: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M2 2h20v20H2zm3 3v14h14V5z"/><path d="M7.6 5h2v14h-2zM11 5h2v14h-2zM14.4 5h2v14h-2z"/></svg>',
     security: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M3 2h18v10l-9 10-9-10zm4 4v5l5 5.6 5-5.6V6z"/></svg>',
     military: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M1 21V10l4-5h14l4 5v11zm5-9v3h12v-3z"/></svg>',
@@ -762,24 +762,26 @@
   function linksFor(id) {
     return LINKS.filter(function (l) { return l[0] === id || l[1] === id; }).map(function (l) { return { other: BY_ID[l[0] === id ? l[1] : l[0]], why: l[2] }; }).filter(function (x) { return x.other; });
   }
+  function facts(rows) {
+    var kids = [];
+    rows.forEach(function (r) { if (r[1] == null || r[1] === '') return; kids.push(h('dt', { text: r[0] })); kids.push(h('dd', { text: String(r[1]) })); });
+    return h('dl', { class: 'meta facts' }, kids);
+  }
+  function section(title, kids) { return h('div', { class: 'sec' }, [h('h3', { text: title })].concat(kids)); }
   function openSite(s) {
     var lay = LAYERS[s.layer];
     var body = newSheet(lay.label);
     markSelected(s.id);
     var outside = span(s)[1] < 1969 || span(s)[0] > 1989;
-    body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: s.ref }), h('span', { text: s.lat.toFixed(4) + ', ' + s.lon.toFixed(4) })]));
-    body.appendChild(h('div', { class: 'tags' }, [
-      h('span', { class: 'tag', style: '--c:' + lay.color, text: lay.label }),
-      h('span', { class: 'tag', style: '--c:#abb3bf', text: LEVELS[s.level] }),
-      outside ? h('span', { class: 'tag', style: '--c:#f2b33d', text: 'Outside 1969–1989' }) : null
-    ]));
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: s.name }), s.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: s.ar }) : null]));
-    body.appendChild(h('dl', { class: 'meta' }, [
-      h('dt', { text: 'When' }), h('dd', { text: s.period }),
-      h('dt', { text: 'Accuracy' }), h('dd', { text: 'within about ' + s.r + ' km' })
+    body.appendChild(facts([
+      ['Category', lay.label], ['Evidence', LEVELS[s.level]], ['When', s.period],
+      ['Active', s.y0 ? (s.y1 && s.y1 !== s.y0 ? s.y0 + '–' + s.y1 : String(s.y0)) : ''],
+      ['Accuracy', 'within about ' + s.r + ' km'], ['Coordinates', s.lat.toFixed(4) + ', ' + s.lon.toFixed(4)],
+      ['Note', outside ? 'Outside 1969–1989' : ''], ['Reference', s.ref], ['Sources', (s.sources || []).length]
     ]));
-    body.appendChild(h('p', { class: 'brief', text: s.relevance }));
-    body.appendChild(h('p', { class: 'd-text', text: s.text }));
+    body.appendChild(section('Why it matters', [h('p', { class: 'brief', text: s.relevance })]));
+    body.appendChild(section('What is known', [h('p', { class: 'd-text', text: s.text })]));
 
     var ls = linksFor(s.id);
     if (ls.length) {
@@ -975,6 +977,8 @@
   /* researched landmarks and buildings: one marker each, opening the full profile */
   var profGroup = L.layerGroup(), profOn = store.get('prof', true), milGroup = L.layerGroup(), milOn = store.get('milprof', true);
   var PROF_SVG = '<path d="M12 2 2 7v2h20V7zM4 11v8H2v3h20v-3h-2v-8h-3v8h-2v-8h-4v8H9v-8z"/>';
+  var MISSILE_SVG = '<path d="M12 .8l3.2 5.4V16H8.8V6.2zM8.8 11.5 4 18v3.2h4.8zM15.2 11.5 20 18v3.2h-4.8zM10.4 17h3.2v6h-3.2z"/>';
+  function isMissile(a) { return /missile|\bSAM\b|scud|surface-to-air/i.test((a.name || '') + ' ' + (a.summary || '')); }
   function drawProfiles() {
     profGroup.clearLayers(); milGroup.clearLayers();
     var merged = {}; SITES.forEach(function (s) { if (s.profile) merged[s.profile] = 1; });
@@ -982,10 +986,10 @@
       var dup = SITES.some(function (s) { return map.distance([a.lat, a.lon], [s.lat, s.lon]) < 120 && (s.layer === 'landmark' || s.layer === 'power') && fold(s.name).split(' ')[0] === fold(a.name).split(' ')[0]; });
       if (dup) return;
       var m = L.marker([a.lat, a.lon], { keyboard: false, title: a.name, zIndexOffset: -200, icon: L.divIcon({ className: '', iconSize: [28, 28], iconAnchor: [14, 14],
-        html: '<div class="osm-ic prof" style="--c:' + (a.kind === 'military' || /^wp-/.test(a.id) ? '#55603a' : '#6f5f45') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + PROF_SVG + '</svg></div>' }) });
+        html: '<div class="osm-ic prof" style="--c:' + (a.kind === 'military' || /^wp-/.test(a.id) ? '#55603a' : '#6f5f45') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + (isMissile(a) ? MISSILE_SVG : PROF_SVG) + '</svg></div>' }) });
       m.bindTooltip(a.name, { direction: 'top', offset: [0, -12], className: 'site-label' });
       m.on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openArea(a); });
-      m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], a.kind === 'military' || /^wp-/.test(a.id) ? '#55603a' : '#6f5f45', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar], ['About', (a.summary || '').length > 90 ? a.summary.slice(0, 88) + '…' : a.summary]], [0, -16]); });
+      m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], a.kind === 'military' || /^wp-/.test(a.id) ? '#55603a' : '#6f5f45', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar]], [0, -16]); });
       m.on('mouseout', hideCard);
       m.addTo(a.kind === 'military' || /^wp-/.test(a.id) ? milGroup : profGroup);
     });
@@ -1159,9 +1163,9 @@
   function openArea(a) {
     var body = newSheet(KIND_LABEL[a.kind] || 'Area');
     markSelected(null);
-    body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: (KIND_LABEL[a.kind] || a.kind).toUpperCase() }), h('span', { text: a.lat.toFixed(4) + ', ' + a.lon.toFixed(4) })]));
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: a.name }), a.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: a.ar }) : null]));
-    if (a.summary) body.appendChild(h('p', { class: 'brief', text: a.summary }));
+    body.appendChild(facts([['Type', KIND_LABEL[a.kind] || a.kind], ['Also known as', (a.aliases || []).join(', ')], ['Coordinates', a.lat.toFixed(4) + ', ' + a.lon.toFixed(4)], ['Accuracy', a.r ? 'within about ' + a.r + ' km' : ''], ['Sources', (a.sources || []).length]]));
+    if (a.summary) body.appendChild(section('Summary', [h('p', { class: 'brief', text: a.summary })]));
     [['History', a.history], ['Under Gaddafi, 1969–2011', a.era], ['Today', a.today], ['Still unclear', a.uncertain]].forEach(function (x) {
       if (x[1]) body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: x[0] }), h('p', { class: 'd-text', text: x[1] })]));
     });
@@ -1378,6 +1382,18 @@
     { t: 'The city today', n: 'Zones, buildings, water, oil', parts: [['osm-landuse', 'Zones', 'now'], ['osm-buildings', 'Buildings', 'now'], ['osm-water', 'Water', 'now'], ['osm-oil', 'Oil & gas', 'now']] }
   ];
   var groupEls = [];
+  function mkGlyph(color, html) { return h('span', { class: 'glyph square', style: 'background:' + color }, [h('span', { html: html })]); }
+  var PART_ICON = { profiles: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M1 9l11-7 11 7v3H1zm3 5h4v6H4zm6 0h4v6h-4zm6 0h4v6h-4zM1 21h22v2H1z"/></svg>',
+    net: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M2 3h6v6H2zM16 15h6v6h-6zM6 8h2v5h8v2H6z"/></svg>',
+    reports: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>' };
+  function partGlyph(k) {
+    if (LAYERS[k]) return glyph(k);
+    if (k === 'milprof') return mkGlyph('#55603a', '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' + MISSILE_SVG + '</svg>');
+    if (PART_ICON[k]) return mkGlyph(partColor(k), PART_ICON[k]);
+    var o = k.replace(/^osm-/, '');
+    if (OSM[o] && OSM_ICONS[o]) return h('span', { class: 'glyph', html: osmIconHtml(o) });
+    return mkGlyph(partColor(k), '');
+  }
   function partColor(k) { if (LAYERS[k]) return LAYERS[k].color; if (k === 'profiles') return '#6f5f45'; if (k === 'milprof') return '#55603a'; if (k === 'net') return '#2d72d2'; if (k === 'reports') return '#d1980b'; var o = OSM[k.replace(/^osm-/, '')]; return o ? (o.point || o.swatch) : '#888'; }
   function syncGroups() {
     (groupEls || []).forEach(function (g) {
@@ -1396,7 +1412,7 @@
       if (!parts.length) return;
       var btns = parts.map(function (p) {
         var b = h('button', { 'data-k': p[0], 'aria-pressed': 'false', title: p[2] === 'then' ? 'Research on 1969–2011 and earlier' : 'Today’s OpenStreetMap data' },
-          [h('span', { class: 'dot', style: 'background:' + partColor(p[0]) }), p[1], h('span', { class: 'tm ' + p[2], text: p[2] === 'then' ? 'Then' : 'Now' })]);
+          [partGlyph(p[0]), p[1], h('span', { class: 'tm ' + p[2], text: p[2] === 'then' ? 'Then' : 'Now' })]);
         b.addEventListener('click', function () { setInput(p[0], !inputs[p[0]].checked); syncGroups(); });
         inputs[p[0]].addEventListener('change', syncGroups);
         return b;
@@ -1842,13 +1858,13 @@
   $('tab-legend').onclick = function () { showTab('legend'); };
   function drawLegend() {
     var box = $('legend'); box.innerHTML = '';
-    var row = function (color, label, n, shape) { return h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:' + color + (shape === 'ring' ? ';background:none;border:2px dashed ' + color + ';border-radius:50%' : '') }), label, n != null ? h('small', { text: String(n) }) : null]); };
+    var row = function (color, label, n, shape, key) { return h('div', { class: 'lg' }, [key ? partGlyph(key) : h('span', { class: 'sw', style: 'background:' + color + (shape === 'ring' ? ';background:none;border:2px dashed ' + color + ';border-radius:50%' : '') }), label, n != null ? h('small', { text: String(n) }) : null]); };
     box.appendChild(h('h4', { text: 'Shown on the map' }));
     var any = false;
     GROUPS.forEach(function (g) { g.parts.forEach(function (p) {
       var i = inputs[p[0]]; if (!i || !i.checked) return; any = true;
       var n = LAYERS[p[0]] ? SITES.filter(function (s) { return s.layer === p[0] && visible(s); }).length : p[0] === 'profiles' ? AREAS.filter(function (x) { return ['landmark', 'government', 'prison'].indexOf(x.kind) >= 0 || /^wp-/.test(x.id); }).length : p[0] === 'reports' ? REPORTS.length : (savedData[p[0].replace(/^osm-/, '')] ? savedData[p[0].replace(/^osm-/, '')].elements.length : null);
-      box.appendChild(row(partColor(p[0]), p[1] + (p[2] === 'now' ? ' (today)' : ''), n));
+      box.appendChild(row(partColor(p[0]), p[1] + (p[2] === 'now' ? ' (today)' : ''), n, null, p[0]));
     }); });
     if (!any) box.appendChild(h('p', { text: 'Nothing is switched on. Open the Layers tab to choose.' }));
     box.appendChild(h('h4', { text: 'How to read the pins' }));

@@ -12,7 +12,7 @@
   "lon": 13.1768,
   "r": 0.6,
   "summary": "A military police headquarters compound in the Abu Salim district; Abu Salim prison was built inside it.",
-  "history": "Amnesty International (2006) describes Abu Salim Prison as located in a compound of the Military Police in the area of Abu Salim, a suburb of Tripoli. The Human Rights Solidarity account says it lies within the compound of the Military Police Command and consists of two parallel facilities, the Central Prison and the Military Prison. Published accounts say the prison, completed in 1984, replaced the colonial-era Black Horse prison. During the June 1996 standoff a security team led by Colonel Abdullah al-Senussi, head of military intelligence, arrived and negotiated with the prisoners, so the site was not run by the Military Police alone. By 2005 Human Rights Watch lists Abu Salim among facilities run by the Internal Security Agency.",
+  "history": "Amnesty International (2006) describes Abu Salim Prison as located in a compound of the Military Police in the area of Abu Salim, a suburb of Tripoli. The Human Rights Solidarity account says it lies within the compound of the Military Police Command and consists of two parallel facilities, the Central Prison and the Military Prison. Published accounts say the prison, completed in 1984, replaced the colonial-era Black Horse prison. During the June 1996 standoff a security team led by Colonel Abdullah al-Senussi, head of military intelligence, arrived and negotiated with the prisoners, so the site was not run by the Military Police alone. By 2005 Human Rights Watch lists Abu Salim among facilities run by the Internal Security Agency. Earlier evidence of the unit: a 1974 CIA National Intelligence Survey says Military Police companies were located in both Tripoli and Benghazi, serving units in their regions. During the May 1984 attack on Bab al-Aziziya, military police surrounded the building where the attackers had retreated, and fighting continued until early afternoon. In March 1988 Gaddafi complained in a speech that military intelligence, the military police and the staff office could each publish lists of people barred from travel (reported by FBIS). In the 2011-era Libyan Army order of battle, a Tripoli Military Police is listed under the Tripoli Military Region.",
   "era": "",
   "today": "",
   "uncertain": "Only the location 'around Abu Salim prison' is supported; the compound's boundaries, buildings and unit structure are not mapped here, so the marker is approximate and wide. The earlier 'police depots' seized in the 1969 coup are not shown to be this compound.",
@@ -32,6 +32,22 @@
    {
     "t": "Human Rights Watch (2006), Libya: Words to Deeds",
     "u": "https://www.hrw.org/reports/libya0106webwcover.pdf"
+   },
+   {
+    "t": "CIA National Intelligence Survey 49, Libya: Armed Forces (February 1974)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp01-00707r000200080014-2"
+   },
+   {
+    "t": "Wikipedia: 1984 Libyan coup attempt",
+    "u": "https://en.wikipedia.org/wiki/1984_Libyan_coup_attempt"
+   },
+   {
+    "t": "FBIS, Al-Qadhdhafi addresses 12 March rally (14 March 1988)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400430024-2"
+   },
+   {
+    "t": "Wikipedia: Libyan Army",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Army"
    }
   ],
   "period": "jamahiriya",
@@ -61,6 +77,60 @@
    {
     "t": "Human Rights Watch (2006), Libya: Words to Deeds",
     "u": "https://www.hrw.org/reports/libya0106webwcover.pdf"
+   }
+  ],
+  "period": "jamahiriya",
+  "built": ""
+ },
+ {
+  "id": "lh-police-hq-tripoli",
+  "name": "Police headquarters, Tripoli (reported guard post)",
+  "ar": "",
+  "aliases": [
+   "Police headquarters"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A Tripoli police headquarters named in a 1982 press report as one of the places where Gaddafi posted his Syrian bodyguards.",
+  "history": "A report carried in JPRS Near East/North Africa Report No. 2475 (26 January 1982) quotes a newspaper saying Colonel Kadhafi had posted most of his 500-strong Syrian bodyguard around his palace, 'others are at the radio station and police headquarters.' The report does not say where the police headquarters stood.",
+  "era": "",
+  "today": "",
+  "uncertain": "Single press report, location not given, and it is not shown to be the Military Police Command or the police college.",
+  "sources": [
+   {
+    "t": "JPRS Near East/North Africa Report No. 2475 (26 Jan 1982)",
+    "u": "https://archive.org/details/ufiche-test-document_jprs-79941"
+   }
+  ],
+  "period": "jamahiriya",
+  "built": ""
+ },
+ {
+  "id": "lh-benghazi-basketball-stadium",
+  "name": "Benghazi basketball stadium (televised hanging, 5 June 1984; outside Tripoli)",
+  "ar": "",
+  "aliases": [
+   "Benghazi basketball stadium"
+  ],
+  "kind": "landmark",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "The venue of the best-known televised hanging under Gaddafi, in Benghazi rather than Tripoli.",
+  "history": "On 5 June 1984 Al-Sadek Hamed Al-Shuwehdy was publicly executed at the end of a show trial held in a basketball stadium in Benghazi, in front of students; the event had been announced as the trial of one of Gaddafi's political enemies. Other hangings of that period were broadcast and re-broadcast on Libyan state television. In Tripoli, the hanging of a student on the University of Tripoli campus in April 1984 is on the map as its own entry.",
+  "era": "",
+  "today": "",
+  "uncertain": "The stadium is not named in the pages opened and lies outside Greater Tripoli, so it is not mapped. No source opened places a similar stadium hanging in Tripoli itself.",
+  "sources": [
+   {
+    "t": "Wikipedia: Execution of Al-Sadek Hamed Al-Shuwehdy",
+    "u": "https://en.wikipedia.org/wiki/Execution_of_Al-Sadek_Hamed_Al-Shuwehdy"
+   },
+   {
+    "t": "Executed Today: 1984, Sadiq Hamed Al-Shuwehdy, live from Benghazi",
+    "u": "https://www.executedtoday.com/2019/06/05/1984-sadiq-hamed-al-shuwehdy-live-from-benghazi/"
    }
   ],
   "period": "jamahiriya",

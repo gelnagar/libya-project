@@ -401,3 +401,13 @@ html .mem-box { max-width: none; width: 96vw; height: 94vh; max-height: 94vh; }
 .mem-dots { display: block; cursor: crosshair; }
 .mem-dot-tip { position: absolute; z-index: 2; max-width: 260px; padding: 6px 9px; background: var(--fy-panel); color: var(--fy-text); border-radius: 3px; box-shadow: var(--fy-shadow); font: 600 .85em var(--f-ui); pointer-events: none; }
 .mem-dotfig figcaption { margin-top: 8px; color: var(--fy-muted); font-size: .85em; max-width: 70ch; }
+
+/* panel fact tables: key on the left, value on the right */
+.meta.facts { grid-template-columns: 36% 1fr; margin: 4px 0 10px; }
+.meta.facts dt { font-weight: 600; font-size: .86em; color: var(--fy-muted); display: flex; align-items: center; }
+.meta.facts dd { font-variant-numeric: tabular-nums; line-height: 1.35; overflow-wrap: anywhere; }
+.meta.facts dt:nth-last-child(2), .meta.facts dd:last-child { border-bottom: 0; }
+#sheet .sec .brief, #sheet .sec .d-text { margin: 8px 12px 10px; }
+.grp-parts .glyph, .legend .lg .glyph { width: 20px; height: 20px; flex: none; }
+.grp-parts .glyph svg, .legend .lg .glyph svg { width: 13px; height: 13px; }
+.grp-parts button { gap: 8px; }

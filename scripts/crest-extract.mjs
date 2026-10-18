@@ -80,7 +80,9 @@ let todo = docs.filter((d) => !done.has(d.id) && !(d.src === 'jprs' && oldJ.has(
 if (SAMPLE) { const step = Math.max(1, Math.floor(todo.length / SAMPLE)); todo = todo.filter((d, i) => d.src === 'nis' || i % step === 0).slice(0, SAMPLE); }
 console.log('docs', docs.length, 'done', done.size, 'skipped old JPRS', docs.filter((d) => d.src === 'jprs' && oldJ.has(d.id)).length, 'todo', todo.length);
 
-const usage = { in: 0, out: 0, cw: 0, cr: 0, n: 0, fail: 0 };
+const usage = { in: 0, out: 0, cw: 0, cr: 0, n: 0, fail: 0 }; const errors = [];
+const writeStatus = (extra) => fs.writeFileSync(`${DIR}/extract-status.json`, JSON.stringify({ at: new Date().toISOString(), model: MODEL, docs: docs.length, todo: todo.length, ok: usage.n, failed: usage.fail, errors: errors.slice(0, 5), ...extra }, null, 1));
+process.on('uncaughtException', (e) => { errors.push('uncaught: ' + e.message); writeStatus({ crashed: true }); process.exit(1); });
 function keep(id, msg, batch) {
   const u = msg.usage || {}; usage.in += u.input_tokens || 0; usage.out += u.output_tokens || 0; usage.cw += u.cache_creation_input_tokens || 0; usage.cr += u.cache_read_input_tokens || 0;
   const tu = (msg.content || []).find((c) => c.type === 'tool_use'); if (!tu) { usage.fail++; return; }
@@ -92,7 +94,7 @@ if (!BATCH) {
   let i = 0;
   async function lane() { while (i < todo.length) { const d = todo[i++];
     for (let k = 0; k < 4; k++) { const r = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: H, body: JSON.stringify(params(d)) });
-      if (r.ok) { keep(d.id, await r.json()); break; } const t = await r.text(); console.log('err', r.status, t.slice(0, 200)); if (r.status === 400 || r.status === 401) { usage.fail++; break; } await sleep(5000 * (k + 1)); } } }
+      if (r.ok) { keep(d.id, await r.json()); break; } const t = await r.text(); errors.push(`${d.id} HTTP ${r.status}: ${t.slice(0, 300)}`); console.log('err', r.status, t.slice(0, 200)); if (r.status === 400 || r.status === 401) { usage.fail++; break; } await sleep(5000 * (k + 1)); } } }
   await Promise.all([lane(), lane(), lane(), lane()]);
 } else {
   for (let s = 0; s < todo.length; s += 5000) {
@@ -105,6 +107,6 @@ if (!BATCH) {
     for (const l of res.split('\n').filter(Boolean)) { const x = JSON.parse(l); if (x.result?.type === 'succeeded') keep(idOf[x.custom_id], x.result.message, true); else usage.fail++; }
   }
 }
-const rel = {}; for (const l of fs.readFileSync(OUT, 'utf8').split('\n').filter(Boolean)) { const x = JSON.parse(l); rel[x.relevance] = (rel[x.relevance] || 0) + 1; }
-const stat = { at: new Date().toISOString(), mode: BATCH ? 'batch' : 'sample', model: MODEL, ...usage, costUSD: +cost(BATCH).toFixed(4), perDocUSD: usage.n ? +(cost(BATCH) / usage.n).toFixed(5) : null, relevanceSoFar: rel, remaining: docs.length - done.size - usage.n };
+const rel = {}; if (fs.existsSync(OUT)) for (const l of fs.readFileSync(OUT, 'utf8').split('\n').filter(Boolean)) { const x = JSON.parse(l); rel[x.relevance] = (rel[x.relevance] || 0) + 1; }
+const stat = { errors: errors.slice(0, 5), at: new Date().toISOString(), mode: BATCH ? 'batch' : 'sample', model: MODEL, ...usage, costUSD: +cost(BATCH).toFixed(4), perDocUSD: usage.n ? +(cost(BATCH) / usage.n).toFixed(5) : null, relevanceSoFar: rel, remaining: docs.length - done.size - usage.n };
 fs.writeFileSync(`${DIR}/extract-status.json`, JSON.stringify(stat, null, 1)); console.log(stat);

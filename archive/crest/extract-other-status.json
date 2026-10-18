@@ -1,0 +1,23 @@
+{
+ "set": "other",
+ "errors": [],
+ "at": "2026-10-18T17:02:16.246Z",
+ "mode": "batch",
+ "model": "claude-haiku-5-5",
+ "in": 7207954,
+ "out": 2190017,
+ "cw": 18916,
+ "cr": 25110990,
+ "n": 2657,
+ "fail": 0,
+ "costUSD": 1.0346,
+ "perDocUSD": 0.00039,
+ "relevanceSoFar": {
+  "0": 66,
+  "1": 2060,
+  "2": 461,
+  "3": 69,
+  "undefined": 1
+ },
+ "remaining": 0
+}

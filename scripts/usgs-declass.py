@@ -57,5 +57,6 @@ except Exception as e:
     msg = str(e)
     for v in (os.environ.get('USGS_TOKEN') or '', os.environ.get('USGS_USERNAME') or ''):
         if v: msg = msg.replace(v, '***')
-    json.dump({'ok': False, 'error': msg[:500], 'type': type(e).__name__}, open('archive/maps/usgs-status.json', 'w'))
+    import datetime
+    json.dump({'ok': False, 'error': msg[:500], 'type': type(e).__name__, 'at': datetime.datetime.utcnow().isoformat(), 'have_username': bool(os.environ.get('USGS_USERNAME')), 'have_token': bool(os.environ.get('USGS_TOKEN')), 'env_names_with_usgs': sorted(k for k in os.environ if 'USGS' in k.upper())}, open('archive/maps/usgs-status.json', 'w'))
     print('ERROR', msg[:500])

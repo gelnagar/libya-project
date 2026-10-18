@@ -2102,6 +2102,20 @@
     return null;
   }
   function connFor(id) { return CONN.filter(function (c) { return c.a === id || c.b === id; }).map(function (c) { return { c: c, other: ent(c.a === id ? c.b : c.a) }; }).filter(function (x) { return x.other; }); }
+  // While a place is selected, make every connected place visible even if its layer is off (cleared with the lines on deselect).
+  function showLinkedEnd(o) {
+    var s = BY_ID[o.id];
+    if (s) {
+      if (siteLayer.hasLayer(markers[s.id]) && map.hasLayer(siteLayer)) return;
+      L.marker([s.lat, s.lon], { icon: markers[s.id].options.icon, title: s.name, zIndexOffset: 400 }).bindTooltip(s.name, { direction: 'right', offset: [16, -22], className: 'site-label' }).on('click', function () { focusSite(s); }).addTo(linkLayer);
+      return;
+    }
+    var x = AREA_BY_ID[o.id]; if (!x) return;
+    var mil = x.kind === 'military' || /^wp-/.test(x.id), drawn = ['landmark', 'government', 'prison', 'military'].indexOf(x.kind) >= 0;
+    if (drawn && map.hasLayer(mil ? milGroup : profGroup)) return;
+    L.marker([x.lat, x.lon], { zIndexOffset: 400, title: x.name, icon: L.divIcon({ className: '', iconSize: [24, 24], iconAnchor: [12, 12], html: '<div class="osm-ic prof" style="--c:' + (mil ? '#ec9a3c' : drawn ? '#e0b95a' : '#738091') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + PROF_SVG + '</svg></div>' }) })
+      .bindTooltip(x.name, { direction: 'right', offset: [12, 0], className: 'site-label' }).on('click', function () { openArea(x); }).addTo(linkLayer);
+  }
   function connSection(b) {
     var old = b.querySelector('.conn-sec'); if (old) old.remove();
     if (!curTarget || !curTarget.id) return;
@@ -2111,6 +2125,7 @@
     var box = h('div', { class: 'conn' });
     list.sort(function (x, y) { return (x.c.kind === 'same-place') - (y.c.kind === 'same-place') || (x.c.year || 0) - (y.c.year || 0); }).forEach(function (x) {
       var c = x.c, col = CONN_COL[c.kind] || '#738091';
+      showLinkedEnd(x.other);
       if (map.distance([me.lat, me.lon], [x.other.lat, x.other.lon]) > 60) L.polyline([[me.lat, me.lon], [x.other.lat, x.other.lon]], { color: col, weight: 3, opacity: 0.85, dashArray: c.confidence === 'documented' ? null : '6 6', interactive: false }).addTo(linkLayer);
       var src = (c.sources || [])[0];
       box.appendChild(h('div', { class: 'conn-row', style: '--c:' + col }, [

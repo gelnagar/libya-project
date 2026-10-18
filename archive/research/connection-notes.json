@@ -876,32 +876,36 @@
   "docs": 1
  },
  "u:gulf of sidra|sirte": {
-  "h": "816725c654c9",
+  "h": "d8a2baeb3754",
   "model": "claude-sonnet-5-5",
-  "headline": "Sirte (Surt) lies on the Gulf of Sidra coast, and a 1986 CIA assessment saw a US run toward it as likely to provoke Libyan fire.",
-  "explanation": "The Gulf of Sidra is the large body of water off Libya's central coast. Sirte, spelled \"Surt\" in the document, is a town on that coast. The 1986 CIA analysis looks at how Qadhafi might react if US ships entered the Gulf. It names Surt as an example of a sensitive target. It calls the town \"Qadhafi's tribal heartland\" and says a fast run toward it would likely lead Libya to order its forces to fire. The link helps explain why the Gulf was a flashpoint, and why Sirte mattered to Gaddafi beyond its size. The document does not cover Tripoli itself.",
-  "strength": "reported",
+  "headline": "Surt is the Libyan town on the Gulf of Sidra's shore, and it was a flashpoint when US ships and aircraft entered the Gulf in 1986.",
+  "explanation": "Surt (Sirte) lies on the coast of the Gulf of Sidra, so the two places are tied together by geography and by the 1986 confrontation. A January 1986 CIA assessment warned that a fast US run toward Surt, which it called Qadhafi's tribal heartland, was the sort of move likely to make Libya order its forces to fire. A Wikipedia account says that on 24 March 1986 a Libyan missile site near Surt fired SA-5 missiles at US fighters operating over the Gulf. Together these show why Surt mattered to how the Gulf crisis played out. The sources say nothing about Tripoli itself.",
+  "strength": "direct",
   "flag": "ok",
   "established": [
-   "A January 1986 CIA analysis names Surt as an example of a target whose approach by US forces would likely prompt a Libyan order to fire.",
-   "It describes Surt as Qadhafi's tribal heartland.",
-   "It says the chance of a clash rises the longer US ships stay in the Gulf, the closer they get to the Libyan coast, and depending on how they approach Libyan civilian or military targets.",
-   "It notes that in August 1981 US ships entered the Gulf and Libyan ships did not fire."
+   "A January 1986 CIA analysis said a high-speed US run toward Surt, described as Qadhafi's tribal heartland, was an example of an action likely to prompt a Libyan order to fire.",
+   "The same analysis said an engagement becomes more likely the longer US ships stay in the Gulf and the nearer they get to the Libyan coast.",
+   "Wikipedia says a Libyan missile installation near Surt fired two SA-5 missiles at US F-14s on 24 March 1986, and two more later that day.",
+   "The first missiles missed and fell into the sea. The later two were reported as jammed by a US EA-6B aircraft."
   ],
   "not_established": [
-   "The document does not say Surt is on the Gulf's shore. That comes from general geography, not from this passage.",
-   "It is an analyst's judgment about what Libya might do, not a record of what happened.",
-   "Nothing here concerns Tripoli directly."
+   "The CIA paper is a forecast made before the events; it does not describe what happened.",
+   "Neither passage gives the exact distance from Surt to the missile site, or says whether the firing was a direct response to any approach toward Surt.",
+   "Nothing here links either place to Tripoli."
   ],
-  "context": "Sirte lies on the coast of the Gulf of Sidra and was Gaddafi's home region. Libya claimed the Gulf as its waters, and the US disputed the claim, which led to clashes in 1981 and 1986.",
+  "context": "Surt is a coastal city on the Gulf of Sidra and was Qadhafi's home region. Libya claimed the Gulf as territorial waters and the US challenged that claim with naval exercises.",
   "timeline": [
    {
-    "when": "August 1981",
-    "what": "US ships enter the Gulf; Libyan ships stay close but do not fire."
+    "when": "January 1986",
+    "what": "CIA assessment warns that a run toward Surt could prompt Libya to fire."
    },
    {
-    "when": "January 1986",
-    "what": "CIA memorandum assesses how Qadhafi might react to new US naval moves in the Gulf."
+    "when": "23 March 1986",
+    "what": "US aircraft cross the 'Line of Death' and begin operating in the Gulf of Sidra."
+   },
+   {
+    "when": "24 March 1986",
+    "what": "A Libyan SA-5 site near Surt fires missiles at US aircraft; they miss."
    }
   ],
   "quotes": [
@@ -911,10 +915,17 @@
      "id": "cia-readingroom-document-cia-rdp88g01116r001001560020-7",
      "t": "LIBYA-US: REPERCUSSIONS OF THE PRESIDENT'S SPECIAL MEASURES"
     }
+   },
+   {
+    "text": "A Libyan missile installation near Surt (Sirte) launched two Soviet-made SA-5 \"Gammon\" surface-to-air missiles (SAMs)",
+    "doc": {
+     "id": "wiki-en-Action in the Gulf of Sidra (1986)",
+     "t": "Action in the Gulf of Sidra (1986) (Wikipedia)"
+    }
    }
   ],
-  "open_question": "A map or later account of the 1986 operations would show whether US forces actually moved toward Sirte, and how Libya responded.",
-  "docs": 1
+  "open_question": "",
+  "docs": 2
  },
  "u:gulf of sidra|misrata": {
   "h": "ce8f9862bc26",
@@ -1054,21 +1065,21 @@
   "docs": 1
  },
  "u:fort collins, colorado|zagallai shooting": {
-  "h": "5176f2acd290",
+  "h": "9de2ef026822",
   "model": "claude-sonnet-5-5",
-  "headline": "The 1980 shooting of Libyan student Faisal Zagallai took place in Fort Collins, Colorado, far from Tripoli.",
-  "explanation": "A November 1981 Washington Post article covers the trial of Eugene Tafoya. He was accused of shooting Faisal Zagallai, a Libyan dissident student, in Fort Collins in 1980. So the place and the event are directly linked: Fort Collins is where the shooting happened. The article matters to Tripoli's story because prosecutors tied the case to alleged Libyan efforts to reach opponents abroad. That tie is only alleged in the passage given, and nothing in it concerns Tripoli itself.",
+  "headline": "The 1980 shooting of Libyan student Faisal Zagallai happened in Fort Collins, Colorado, according to a 1981 Washington Post article.",
+  "explanation": "The article is about the trial of Eugene Tafoya, accused of shooting Faisal Zagallai, a Libyan dissident student, in Fort Collins. The place and the event are directly tied in the summary. The passage given also names a Fort Collins police detective, which fits. The case matters to Tripoli's story because prosecutors linked it to alleged Libyan use of former CIA men. It shows how Gaddafi's government was suspected of reaching dissidents abroad. The article itself says nothing about Tripoli.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "The article's summary says Tafoya was tried in Colorado for shooting Faisal Zagallai, a Libyan dissident student, in Fort Collins in 1980.",
-   "A Fort Collins police detective, Ray Martinez, gave an affidavit about what Tafoya said regarding the shooting.",
-   "Tafoya's lawyers said they would portray Zagallai as a pro-Qaddafi agent who informed the Libyan government about dissidents."
+   "The article's summary says Tafoya was accused of shooting Faisal Zagallai, a Libyan dissident student, in Fort Collins in 1980.",
+   "The passage cites an affidavit by Fort Collins police detective Ray Martinez about what Tafoya said of his visit to Zagallai.",
+   "Tafoya's lawyers planned to portray Zagallai as a pro-Qaddafi agent; Tafoya said he shot in self-defense."
   ],
   "not_established": [
-   "The passage shown does not itself state the date, October 14, 1980. That date comes from the link's description, and the article summary says only 1980.",
-   "The passage does not show who ordered the shooting or whether the Libyan government was involved.",
-   "Nothing here describes events in Tripoli."
+   "The passage shown does not itself give the date October 14, 1980; the summary says only 1980.",
+   "The sources do not show that the Libyan government ordered the shooting; prosecutors' link to Libya is described as alleged.",
+   "The article does not concern events in Tripoli."
   ],
   "context": "",
   "timeline": [
@@ -1078,11 +1089,11 @@
    },
    {
     "when": "November 1981",
-    "what": "The Washington Post reports on Tafoya's trial in Colorado."
+    "what": "Tafoya's trial is reported by the Washington Post."
    }
   ],
   "quotes": [],
-  "open_question": "Court records from the Tafoya trial would confirm the exact date and location, and show whether any Libyan role was proved.",
+  "open_question": "Court records from the Tafoya trial would confirm the exact date and location of the shooting and what the court found about any Libyan role.",
   "docs": 1
  },
  "u:al-ittihad sc|map:lb-tripoli-international-stadium": {
@@ -1313,59 +1324,48 @@
   "docs": 0
  },
  "u:sirte|university of medical sciences and technology khartoum": {
-  "h": "e18b06f47e99",
+  "h": "662cbbc4225b",
   "model": "claude-sonnet-5-5",
-  "headline": "In August 2015, five people from a Khartoum medical university travelled by road to Sirte, then held by Islamic State, to work in a hospital.",
-  "explanation": "The article says five people from the University of Medical Sciences and Technology (UMST) in Khartoum left in August 2015 for Sirte, Libya. Islamic State (IS) held the city at the time. The article says they were sent to work at a hospital there. This link is about Sirte, not Tripoli. It shows how Sirte, a city on Libya's coast, became a destination for foreign recruits years after Gaddafi's rule ended. The article is the only source used here, and it is a Wikipedia summary.",
+  "headline": "In August 2015, five people from a Khartoum medical university travelled by road to Sirte, Libya, then held by Islamic State, and worked at a hospital there.",
+  "explanation": "The link is that Sirte was the destination of a small group from the University of Medical Sciences and Technology (UMST) in Khartoum. The Wikipedia article says five people left in August 2015 and went to Sirte, which Islamic State (IS) held at the time. After they arrived, they were sent to work at a hospital in Sirte. This is a single source, and it is about Sirte, not Tripoli. It matters for Tripoli only as part of the wider picture of Libya after Gaddafi, when parts of the country were outside any central government's control.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "A group of five from UMST left in August 2015 to travel to IS territory in Sirte, Libya.",
-   "They were helped by IS agents in Khartoum, booked decoy flights to Cairo and Istanbul, and went to Sirte by road.",
-   "After arriving, they were sent to work at a hospital in Sirte and paid a small monthly salary.",
-   "All five were British nationals: one man and four women, including twins."
+   "Five UMST people left in August 2015 and travelled by road to Sirte, Libya, which IS occupied at the time.",
+   "They had booked flights to Cairo and Istanbul to mislead their families.",
+   "The group were all British nationals: one man and four women, including twins.",
+   "In Sirte they were sent to work at a hospital and were paid a monthly salary in Libyan dinars worth about $50."
   ],
   "not_established": [
-   "The passages do not name the hospital or say where in Sirte it was.",
-   "The article gives no link to Tripoli, and none to Gaddafi's time in power.",
-   "This is a single Wikipedia article, and the passages do not show its own sources."
+   "The passages do not say which route they took by road from Khartoum to Sirte.",
+   "They do not connect this group to Tripoli or to the Gaddafi years.",
+   "This is one Wikipedia article. The passages do not show what sources it relies on."
   ],
-  "context": "Sirte was Gaddafi's home town. IS held it from 2015 until Libyan forces retook it in 2016.",
+  "context": "Sirte was Gaddafi's home town. IS held it from 2015 until it was retaken in 2016. That is after Gaddafi's rule ended in 2011.",
   "timeline": [
    {
     "when": "March 2015",
     "what": "Eleven UMST people leave to join IS in Syria."
    },
    {
+    "when": "June 2015",
+    "what": "About a dozen more leave for Syria."
+   },
+   {
     "when": "August 2015",
-    "what": "Five UMST people travel by road from Khartoum to Sirte."
+    "what": "Five UMST people travel by road to IS-held Sirte."
    },
    {
     "when": "After arrival",
-    "what": "The five are sent to work at a hospital in Sirte."
+    "what": "They are sent to work at a hospital in Sirte."
    },
    {
-    "when": "2016",
-    "what": "Sirte is retaken from IS, according to the article summary."
+    "when": "July 2016",
+    "what": "It is reported that 40 UMST people had joined IS."
    }
   ],
-  "quotes": [
-   {
-    "text": "these five people travelled by road to Sirte, Libya, which was occupied by IS at the time.",
-    "doc": {
-     "id": "wiki-en-University of Medical Sciences and Technology disappearances",
-     "t": "University of Medical Sciences and Technology disappearances (Wikipedia)"
-    }
-   },
-   {
-    "text": "the five UMST medics were sent to work at a hospital in Sirte",
-    "doc": {
-     "id": "wiki-en-University of Medical Sciences and Technology disappearances",
-     "t": "University of Medical Sciences and Technology disappearances (Wikipedia)"
-    }
-   }
-  ],
-  "open_question": "Court records, family testimony or Libyan hospital records could show which hospital it was and what became of the five.",
+  "quotes": [],
+  "open_question": "Court records, family testimony or Libyan hospital records could show what happened to the five after they arrived, and which route they took.",
   "docs": 1
  },
  "u:libya-chad border|sebha": {
@@ -2009,39 +2009,40 @@
   "docs": 1
  },
  "u:fort collins, colorado|libyan embassy takeover 1976": {
-  "h": "d94627157537",
+  "h": "5f0c02eecc73",
   "model": "claude-sonnet-5-5",
-  "headline": "Faisal Zagallai, a Libyan dissident living in Fort Collins, is linked in this article to the 1976 embassy takeover, but the town itself is not.",
-  "explanation": "The article is about a 1981 trial in Fort Collins, Colorado. It says Faisal Zagallai and his wife had lived there for about ten years while studying at Colorado State University. The link to the 1976 embassy takeover goes through Zagallai, not the town. The passage we have does not mention the embassy takeover. The AI's note says the article mentions Zagallai's role in it, but the text shown cuts off before that. Fort Collins and the embassy takeover are therefore connected only through one person. For Tripoli under Gaddafi, this shows how the regime's critics abroad, who were first sent on regime scholarships, could become targets far from Libya.",
+  "headline": "Fort Collins, Colorado, was the home of Faisal Zagallai, who is linked to the 1976 embassy takeover, but the article does not connect the place to the takeover.",
+  "explanation": "The 1981 Washington Post article is set in Fort Collins, where Faisal Zagallai testified at the trial of the man accused of shooting him. He said he had lived there for 10 years while studying at Colorado State University. The summary says the article also mentions his 1976 part in taking over the Libyan Embassy in the United States. The passage we have does not show that. It also does not say the takeover happened in or was planned from Fort Collins. The link is therefore indirect: both ends involve the same man. It helps show how Libyan student opposition abroad led to later danger for its leaders, but Fort Collins itself was not part of the 1976 event.",
   "strength": "weak",
   "flag": "ok",
   "established": [
-   "Zagallai testified that he and his wife had lived in Fort Collins for 10 years while studying at Colorado State University, at first on scholarships from the Qaddafi regime.",
-   "The trial of Eugene Tafoya, over the shooting of Zagallai in October 1980, took place in Fort Collins.",
-   "Prosecutors claimed the shooting was an attempted assassination directed by Qaddafi's regime."
+   "Zagallai testified at a trial in Fort Collins in November 1981.",
+   "He said he and his wife had lived in Fort Collins for 10 years while studying at Colorado State University.",
+   "He said he had moved from supporting Qaddafi to opposing him, and took part in a 1973 student conference in Libya.",
+   "The prosecution says the October 1980 shooting was directed by Qaddafi's regime. The defense says the man went to give a CIA warning."
   ],
   "not_established": [
-   "The passage shown does not mention the 1976 embassy takeover at all.",
-   "Nothing shows that the embassy takeover was planned in, or had any direct tie to, Fort Collins.",
-   "Zagallai's role in the takeover is not shown in the text given, only claimed in the link summary."
+   "The passage given does not mention the 1976 embassy takeover. Only the summary of the article does.",
+   "Nothing shows the takeover took place in Fort Collins or was organized from there.",
+   "The sources do not show whether the shooting was connected to the takeover."
   ],
-  "context": "In 1976 a group of Libyan students took over the Libyan embassy in Washington in a protest against the Gaddafi government. This is general background and is not shown by the passage.",
+  "context": "In 1976 a group of Libyan students took over the Libyan embassy in Washington. Zagallai is generally reported to have been among them.",
   "timeline": [
    {
     "when": "1969",
-    "what": "Zagallai says he supported Qaddafi when he took power."
+    "what": "Qaddafi takes power; Zagallai says he supported him at first."
    },
    {
     "when": "1973",
-    "what": "Zagallai says he helped organize a student conference in Libya."
+    "what": "Zagallai helps organize a student conference in Libya."
    },
    {
     "when": "1976",
-    "what": "Embassy takeover (not described in the passage given)."
+    "what": "Embassy takeover, per the article summary only."
    },
    {
     "when": "October 1980",
-    "what": "Zagallai is shot in Fort Collins."
+    "what": "Zagallai is shot in the head in Fort Collins."
    },
    {
     "when": "November 1981",
@@ -2050,14 +2051,14 @@
   ],
   "quotes": [
    {
-    "text": "have lived in Fort Collins for 10 years while study- ing at Colorado State University, initially, ‘on’ scholarships provided by the Qaddafi regime.",
+    "text": "have lived in Fort Collins for 10 years while study- ing at Colorado State University",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000605700098-8",
      "t": "LIBYAN IDENTIFIES TAFOYA AS HIS ASSAILANT"
     }
    }
   ],
-  "open_question": "The full article, or another source, would need to say what role Zagallai had in the 1976 embassy takeover. A source tying the takeover to Fort Collins would also be needed.",
+  "open_question": "The full article text, or other records of the 1976 takeover, would show what Zagallai's role was and whether it had any link to Fort Collins.",
   "docs": 1
  },
  "u:french embassy in tripoli|tripoli mob violence": {
@@ -5115,48 +5116,59 @@
   "docs": 1
  },
  "u:people's congress|people's hall tripoli": {
-  "h": "7a64a38fd6a7",
+  "h": "21b00aa524ae",
   "model": "claude-sonnet-5-5",
-  "headline": "A 1980 radio report places an extraordinary General People's Congress session in Tripoli, but the excerpt does not name the People's Hall.",
-  "explanation": "The General People's Congress was Libya's main national assembly. The People's Hall is a Tripoli venue. The link says the Congress ended an extraordinary session there. The excerpt confirms the session was in Tripoli, at the end of September 1980, on the proposed union with Syria. It cuts off before any sentence naming the hall. The link is plausible, but the passage we have does not prove it. The full report should be checked for the wording about the hall.",
-  "strength": "weak",
+  "headline": "The General People's Congress held its sessions at the People's Hall in Tripoli, as two radio reports from 1978 and 1980 show.",
+  "explanation": "The General People's Congress was Libya's national assembly under the Jamahiriyah system. Two Tripoli radio reports, translated by the U.S. government, name the People's Hall in Tripoli as the place where it met. In December 1978 the Congress was invited to meet there. In September 1980 an extraordinary session ended there. Together they show the hall was a regular home for the Congress, at least in these years. Neither report describes the building itself.",
+  "strength": "direct",
   "flag": "ok",
   "established": [
-   "A Syrian Ba'th Party official, Muhammad Haidar, arrived in Tripoli on 28 September 1980 to attend the General People's Congress extraordinary session the next day.",
-   "The session was described as being held to confirm unity between Libya (the Jamahiriyah) and Syria.",
-   "The report summary says it covers the resolutions of this extraordinary session."
+   "A decision signed by Qadhdhafi, as secretary general of the Congress, invited the Congress to convene on Saturday 16 December 1978 at 1000 at the People's Hall in Tripoli.",
+   "Tripoli radio reported on 29 September 1980 that the Congress concluded its extraordinary session the previous evening at the People's Hall in Tripoli.",
+   "The 1980 session dealt with proposed unity with Syria, and a Syrian Ba'th Party official came to Tripoli to attend it."
   ],
   "not_established": [
-   "The visible text never names the People's Hall as the meeting place.",
-   "The claim that the session concluded at the hall comes from the AI reading. The excerpt we have does not show it.",
-   "The excerpt does not say whether the whole session took place in the hall or only the closing part."
+   "The passages do not say whether every Congress session was held at the People's Hall, only these two occasions.",
+   "The passages give no details of the hall's location in the city, its size or its construction.",
+   "The 1978 passage is only an invitation. It does not confirm that the session took place there."
   ],
-  "context": "Under the Jamahiriyah system, the General People's Congress was presented as Libya's highest national assembly. Its sessions were commonly held in Tripoli.",
+  "context": "The General People's Congress was the highest body in Libya's Jamahiriyah system of government, set up in 1977. Qadhdhafi was its secretary general at the time of the first report.",
   "timeline": [
    {
+    "when": "5 Dec 1978",
+    "what": "Radio announces the decision inviting the Congress to meet at the People's Hall on 16 December."
+   },
+   {
+    "when": "16 Dec 1978",
+    "what": "Planned date of the Congress meeting at the People's Hall."
+   },
+   {
     "when": "28 Sep 1980",
-    "what": "Muhammad Haidar of the Syrian Ba'th Party arrives in Tripoli for the Congress session."
+    "what": "Extraordinary session of the Congress concludes at the People's Hall in Tripoli."
    },
    {
     "when": "29 Sep 1980",
-    "what": "Extraordinary session of the General People's Congress scheduled, on unity with Syria."
-   },
-   {
-    "when": "1 Oct 1980",
-    "what": "FBIS publishes the report."
+    "what": "Tripoli radio reports the resolutions adopted."
    }
   ],
   "quotes": [
    {
-    "text": "arrived in Tripoli this morning to attend the General People's Congress extraordinary session tomorrow.",
+    "text": "The People's General Congress concluded its extraordinary session yesterday evening at the People's Hall in Tripoli",
     "doc": {
      "id": "fbis-1980-10-01-0752",
      "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 192, 1 October 1980"
     }
+   },
+   {
+    "text": "The General People's Congress is hereby invited to convene on Saturday, 16 December 1978 at 1000 in at the People's Hall in Tripoli.",
+    "doc": {
+     "id": "fbis-1978-12-06-0237",
+     "t": "FBIS Daily Report: Middle East & N. Africa, Vol V No 235, 6 December 1978"
+    }
    }
   ],
-  "open_question": "The full FBIS item on the Congress resolutions, or a Libyan radio or JANA report on the session's close, would show whether the People's Hall is named as the venue.",
-  "docs": 1
+  "open_question": "Records of other Congress sessions, or a description of the hall, would show whether it was always the meeting place.",
+  "docs": 2
  },
  "u:edwin wilson|eugene tafoya": {
   "h": "542fb545e94e",
@@ -5757,39 +5769,39 @@
   "docs": 4
  },
  "u:map:bab|national front for the salvation of libya": {
-  "h": "21f050bf1d34",
+  "h": "338c9fd4d636",
   "model": "claude-sonnet-5-5",
-  "headline": "The National Front for the Salvation of Libya attacked Gaddafi's Bab al-Aziziya compound in Tripoli in May 1984, and the attack failed.",
-  "explanation": "Two sources link the opposition group to the Bab al-Aziziya compound. A 1985 newspaper column says the group tried to kill Gaddafi on 8 May 1984 and was defeated in a battle less than a mile from the barracks where he was sheltering. A Wikipedia entry names the compound directly as the target of the group's 1984 assault. Together they show the compound was the centre of Gaddafi's power and the place the opposition aimed at. The column does not name the compound, so the match rests on the Wikipedia entry and on the column's mention of \"the barracks\".",
+  "headline": "The National Front for the Salvation of Libya attacked near Qaddafi's Bab al-Aziziya compound in Tripoli on 8 May 1984, and the attack failed.",
+  "explanation": "Two sources link this exile opposition group to the Bab al-Aziziya compound. A 1985 newspaper column says the group's attempt on Qaddafi ended in a day-long battle less than a mile from the barracks where he was sheltering. A general reference article calls the 1984 assault on Bab al-Azizia the group's best-known coup attempt. The Wikipedia entry is a later summary, so it is weaker evidence. The link matters because it shows that the compound, Qaddafi's seat of power in Tripoli, was the target of an armed attempt to overthrow him, and that the attempt was crushed.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "A 1985 Washington Post column says the group tried to assassinate Gaddafi on 8 May 1984 and was destroyed in a day-long battle less than a mile from the barracks where he was holed up.",
-   "The column says Gaddafi was behind Soviet-made tanks and antiaircraft guns.",
-   "Wikipedia says the group's most notable coup attempt was its 1984 armed assault on the Bab al-Azizia compound in Tripoli."
+   "A 1985 Washington Post column says the group tried to assassinate Qaddafi on 8 May 1984 and was slaughtered in a day-long battle less than a mile from the barracks where he was holed up.",
+   "The column says the CIA trained and supported the group before, during and after the attempt. This is the columnists' claim, not a document from the CIA.",
+   "Wikipedia describes the 1984 armed assault on Gaddafi's Bab al-Azizia compound in Tripoli as the group's most notable coup attempt."
   ],
   "not_established": [
-   "The column does not name Bab al-Aziziya. It says the fighting was near the barracks, not at the gate or inside the compound.",
-   "The Wikipedia passage is undated background. It gives no detail of the fighting and cites no primary source here.",
-   "The sources do not say how far the attackers got, or how many were killed or captured."
+   "The column places the fighting near the barracks, less than a mile away. It does not say the group reached or entered the compound.",
+   "Neither source gives details of the fighting, the number of people involved, or the casualties.",
+   "The Wikipedia passage is undated and cites no primary evidence in the excerpt, so it adds little beyond the column."
   ],
-  "context": "Bab al-Aziziya was Gaddafi's main residence and barracks in Tripoli. The 1984 attack is widely known as an attempt on his life.",
+  "context": "Bab al-Aziziya was Qaddafi's fortified residence and command base in Tripoli. The May 1984 attack is widely recorded as a failed attempt by an exile group.",
   "timeline": [
    {
     "when": "1981",
-    "what": "The National Front for the Salvation of Libya is formed (Wikipedia)."
+    "what": "The National Front for the Salvation of Libya is formed (per Wikipedia)."
    },
    {
     "when": "6 May 1984",
-    "what": "The group's top military man is captured near the Tunisian border (column)."
+    "what": "The group's top military man is captured near the Tunisian border (per the column)."
    },
    {
     "when": "8 May 1984",
-    "what": "The group attacks in Tripoli and is defeated in a day-long battle near Gaddafi's barracks."
+    "what": "Day-long battle in Tripoli, less than a mile from the barracks, ends in defeat for the group."
    },
    {
     "when": "8 November 1985",
-    "what": "The Washington Post column reports on the attempt."
+    "what": "Anderson and Van Atta column on CIA backing of the group."
    }
   ],
   "quotes": [
@@ -5801,14 +5813,14 @@
     }
    },
    {
-    "text": "its 1984 armed assault on Gaddafi's Bab al-Azizia compound in Tripoli",
+    "text": "the most notable being its 1984 armed assault on Gaddafi's Bab al-Azizia compound in Tripoli",
     "doc": {
      "id": "wiki-en-National Front for the Salvation of Libya",
      "t": "National Front for the Salvation of Libya (Wikipedia)"
     }
    }
   ],
-  "open_question": "A dated report from 1984 that names the compound and describes the fighting, or an account by a survivor or a Tripoli resident, would show how close the attackers came.",
+  "open_question": "Official or eyewitness accounts of 8 May 1984 would show how close the fighters came to the compound and what happened there.",
   "docs": 2
  },
  "u:lockheed|omar muhayshi": {
@@ -7130,31 +7142,31 @@
   "docs": 0
  },
  "u:people's hall tripoli|qadhdhafi address to egyptian people 23 july 1987": {
-  "h": "55fddefd40e8",
+  "h": "9abdb7ee7b1c",
   "model": "claude-sonnet-5-5",
-  "headline": "A July 1987 report says Qadhdhafi's address to Egyptians was relayed from the People's Hall in Tripoli.",
-  "explanation": "The link joins a building in Tripoli to a speech made on the anniversary of Egypt's 23 July revolution. The only source is one 1987 compilation of Libyan media items. Its title says the address was \"relayed to celebration\", and the AI reading says it came from the People's Hall. We were not given the passage that names the hall. So the link rests on that reading and on the document's summary. It shows the hall was a place where Libya's leader addressed an audience, but it tells us little more about the building.",
+  "headline": "A July 1987 report says Qadhdhafi's 23 July address to Egyptians was relayed from the People's Hall in Tripoli.",
+  "explanation": "The link rests on one document, a compilation of Libyan media items from July 1987. Its title says Qadhdhafi's address was \"relayed to celebration\", and the AI reading says the broadcast came from the People's Hall in Tripoli. The speech marked the Egyptian 23 July anniversary and attacked Sadat and the Camp David accords. If the reading is right, it shows the hall was used as a venue for major political speeches aimed at foreign audiences. The summary says the document says little about specific sites in Tripoli, so the exact wording about the hall could not be checked here. The link is plausible but thinly documented.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "A document dated 23 July 1987 carries a Qadhdhafi address to the Egyptian people for the 23 July anniversary.",
+   "One July 1987 document gives Qadhdhafi's address to Egyptians for the 23 July anniversary.",
    "The document's title says the address was relayed to a celebration.",
-   "The AI reading of the document says the address was relayed from the People's Hall in Tripoli."
+   "The AI reading of the document places the relay at the People's Hall in Tripoli."
   ],
   "not_established": [
-   "The passage naming the People's Hall was not among the text we were given, so we cannot confirm the wording.",
-   "The sources do not say whether Qadhdhafi spoke in person in the hall or whether the address was recorded or sent from there.",
-   "They do not describe the hall or any audience there."
+   "The passage naming the People's Hall was not available to check word for word.",
+   "It is not clear whether Qadhdhafi spoke from the hall in person or the address was only relayed through it.",
+   "No second source confirms the location."
   ],
-  "context": "23 July marks the 1952 revolution in Egypt. Qadhdhafi often spoke on this date and was strongly critical of Sadat and the Camp David accords.",
+  "context": "The People's Hall in Tripoli was a government and congress building where Libyan officials held major gatherings and received delegations.",
   "timeline": [
    {
     "when": "23 July 1987",
-    "what": "Qadhdhafi's address to Egyptians is relayed for the anniversary celebration, reportedly from the People's Hall, Tripoli."
+    "what": "Qadhdhafi's address to Egyptians marks the anniversary of the 1952 Egyptian revolution."
    }
   ],
   "quotes": [],
-  "open_question": "The original Libyan radio or news agency text (as translated by FBIS) giving the dateline and place of the speech would settle where he spoke from.",
+  "open_question": "The full text of the original broadcast report, or the Libyan news agency's account, would show whether the speech was given in the People's Hall or only relayed from it.",
   "docs": 1
  },
  "m:lm-tripoli-international-airport|qasr-ben-ghashir|same-place": {
@@ -9592,26 +9604,26 @@
   "docs": 2
  },
  "u:jamal 'abd an-nasir base|tobruk": {
-  "h": "da0c44867661",
+  "h": "5c21466f7906",
   "model": "claude-sonnet-5-5",
-  "headline": "Gaddafi spoke at a rally in Tobruk and named the Jamal 'Abd an-Nasir Base, which the link says lies in that region.",
-  "explanation": "The document is a broadcast of Gaddafi's speech at a Tobruk rally on 28 March 1981. It marked the anniversary of British bases leaving Libya. In the speech he talks about the Jamal 'Abd an-Nasir Base, saying Egyptian pilots graduated there and that it was freed from the British. The text given does not say where the base is. It does not say the base is in Tobruk or that it was once called Al-Adem. The link therefore rests on the base being discussed at a Tobruk rally, plus outside knowledge. The speech shows how the government used Tobruk and this base to tell a story about ending foreign control. It is not about Tripoli itself.",
+  "headline": "Gaddafi spoke at a rally in Tobruk and mentioned the Jamal 'Abd an-Nasir Base, which the speech ties to the same region.",
+  "explanation": "The document is a broadcast of Gaddafi's 28 March 1981 speech at a rally in Tobruk. It marked the anniversary of British bases leaving Libya. In the speech he talks about the Jamal 'Abd an-Nasir Base. He says Libya freed it from the British and then opened it to Arab forces and Egypt. The speech does not say where the base is. The tie to Tobruk is therefore a sensible reading, not a stated fact. The link helps show how the Tobruk area figured in Libya's story of ending foreign military presence. The speech has nothing to do with Tripoli itself, apart from being broadcast on Tripoli radio.",
   "strength": "inferred",
   "flag": "ok",
   "established": [
-   "Gaddafi gave a speech at a public rally in Tobruk on 28 March 1981, marking the anniversary of the British bases' evacuation.",
+   "Gaddafi gave the speech at a rally in Tobruk on 28 March 1981, marking the anniversary of the British bases' evacuation.",
    "In the speech he says Egyptian pilots graduated from the Jamal 'Abd an-Nasir Base.",
    "He says the base was liberated from the British and then opened to Arab forces and Egypt."
   ],
   "not_established": [
-   "The excerpts do not state that the base is in the Tobruk region.",
-   "The excerpts do not give the former name Al-Adem."
+   "The passages do not state that the base is in or near Tobruk.",
+   "The claim that the base was formerly called Al-Adem does not appear in the passages given."
   ],
-  "context": "The base was formerly the British Royal Air Force station at El Adem, near Tobruk, and was renamed after Egypt's President Nasser. This is background knowledge, not shown in the source.",
+  "context": "The Jamal 'Abd an-Nasir Base is widely known as the former RAF El Adem, south of Tobruk. This is background knowledge, not something shown by the passage.",
   "timeline": [
    {
     "when": "1956",
-    "what": "According to the speech, British aircraft flew from the base to strike Egypt."
+    "what": "Gaddafi says British aircraft flew from that base to strike at Egypt."
    },
    {
     "when": "28 March 1981",
@@ -9627,7 +9639,7 @@
     }
    }
   ],
-  "open_question": "A map, gazetteer or other record naming the base's location and its former name Al-Adem would settle the link.",
+  "open_question": "A map, a base listing or a report that places the base by name near Tobruk would settle the location. It would also need to confirm the Al-Adem name.",
   "docs": 1
  },
  "u:libya-chad border|matan as sarra airfield": {
@@ -10128,75 +10140,71 @@
   "docs": 1
  },
  "u:ghurdabiyah airfield|sirte": {
-  "h": "13b22aa0f3e8",
+  "h": "e27a7c3d1e8a",
   "model": "claude-sonnet-5-5",
-  "headline": "A 1982 U.S. imagery note places Ghurdabiyah airfield about 9 nautical miles south of Sirte, on Libya's Mediterranean coast.",
-  "explanation": "The two places are linked by distance and position. Ghurdabiyah is an airfield in north-central Libya, and the note says it lies 9 nautical miles south of Surt (Sirte). Sirte was the nearest town of note, so it served as the reference point for finding the airfield. The note is mainly about a Libyan Air Force crash near the airfield in 1982. For Tripoli, it shows that Libyan military air activity was spread along the coast and well away from the capital.",
+  "headline": "A 1982 U.S. imagery note places Ghurdabiyah airfield about 9 nautical miles south of Surt (Sirte), near the Mediterranean coast.",
+  "explanation": "The two places are different: one is an airfield, the other is the coastal town of Surt (Sirte). A single U.S. imagery note ties them together by distance, giving the airfield's location as 9 nautical miles south of Surt. The note was written about a crash near the airfield. It helps place the airfield on the map and shows that Libya's air force used a base near Surt. Neither place is in Tripoli, and the note says nothing more about how they were linked.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "The note, dated May 1982, states that Ghurdabiyah airfield is in north-central Libya, 9 nm south of Surt, on the Mediterranean coast.",
-   "It reports that a possible Fitter aircraft crashed and burned near one end of Ghurdabiyah airfield, apparently while landing."
+   "A May 1982 U.S. imagery note says Ghurdabiyah airfield is in north-central Libya, 9 nm south of Surt, on the Mediterranean coast.",
+   "The note reports a possible Fitter aircraft crashed and burned near the airfield, apparently while landing."
   ],
   "not_established": [
-   "The note does not say what the airfield was used for or which units were based there.",
-   "It does not describe any link between the airfield and the town of Sirte beyond distance and location.",
-   "The coordinates printed in the OCR text are unclear about which set belongs to which airfield, so they should not be relied on here."
+   "The note does not describe the airfield's size, ownership or history beyond the crash.",
+   "It does not describe any wider ties between the airfield and the town of Surt.",
+   "The coordinates are given, but the OCR text does not make clear which coordinate pair belongs to which airfield."
   ],
-  "context": "Surt is another spelling of Sirte, the coastal city east of Tripoli. Neither the airfield nor Sirte is in Tripoli.",
+  "context": "Surt (Sirte) is a coastal city on the Gulf of Sirte, east of Tripoli. Its later importance under Gaddafi, who was born near there, is widely known but is not covered by this document.",
   "timeline": [
    {
     "when": "May 1982",
-    "what": "U.S. imagery analysts note a crash near Ghurdabiyah airfield and place it 9 nm south of Surt."
+    "what": "U.S. imagery note reports a possible Fitter crash near Ghurdabiyah airfield and places the airfield 9 nm south of Surt."
    }
   ],
   "quotes": [
    {
-    "text": "GHURDABIYAH AIRFIELD IS LOCATED IN NORTH- CENTRAL LIBYA, 9 NM SOUTH OF SURT, ON THE MEDITERRANEAN SEA",
+    "text": "GHURDABIYAH AIRFIELD IS LOCATED IN NORTH- CENTRAL LIBYA, 9 NM SOUTH OF SURT, ON THE MEDITERRANEAN SEA oe COAST.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp82t00709r000101040001-1",
      "t": "RECENT AIRCRAFT ACCIDENTS IN LIBYA SEBHA AIRFIELD AND GHURDABIYAH AIRFIELD (SANITIZED)"
     }
    }
   ],
-  "open_question": "\"",
+  "open_question": "Other maps or imagery reports could confirm the airfield's exact position relative to Surt and which coordinates belong to it.",
   "docs": 1
  },
  "u:map:port|tobruk": {
-  "h": "b77940c68716",
+  "h": "21730adc8333",
   "model": "claude-sonnet-5-5",
-  "headline": "A 1986 CIA memo discusses Soviet naval use of both Tripoli harbor and Tobruk, but treats them as separate places.",
-  "explanation": "The memo is a CIA assessment of how the Soviet Union might increase its support for Libya after the 1986 clashes with the United States. It mentions Tripoli harbor and Tobruk in the same discussion of Soviet naval activity. Tripoli harbor is where a Soviet ship is said to be stationed and could pass on warnings. Tobruk is a port the Soviet Navy might use more often to resupply and repair ships. The two places are linked only by being named in the same forecast. The memo does not say they are connected in any other way.",
+  "headline": "A 1986 CIA memo mentions Tripoli harbor and Tobruk as two Libyan ports the Soviet Navy might use, but it does not link them to each other.",
+  "explanation": "The memo is a May 1986 CIA assessment of how the Soviet Union might increase its support to Libya. It names two ports in that context. One is Tripoli harbor, where a Soviet ship is said to be stationed and to pass on warning information. The other is Tobruk, which the Soviets might use more often to replenish and repair ships and submarines. The two ports are connected only because the same document discusses both as part of Soviet naval access to Libya. The memo does not describe any direct tie between them, such as shared traffic, supply routes or joint operations.",
   "strength": "weak",
   "flag": "ok",
   "established": [
-   "The memo says a Soviet ship is stationed in Tripoli harbor and is used to pass on early-warning information in crises.",
-   "It says the Soviet Navy will probably use Tobruk more regularly to replenish and repair submarines and ships.",
-   "It says the Soviets may be willing to keep a naval ship in port to assure Qadhafi of timely warning."
+   "The memo expects Soviet warships to pass early-warning information through a Soviet ship stationed in Tripoli harbor in future crises.",
+   "It says the Soviets may be willing to keep a naval ship in port to assure Qadhafi of timely warning.",
+   "It expects the Soviet Navy to increase visits to Libyan ports and use Tobruk more regularly to replenish and repair submarines and ships."
   ],
   "not_established": [
-   "The memo does not describe any direct operational link between Tripoli harbor and Tobruk.",
-   "The Tobruk use is a forecast ('probably'), not a confirmed arrangement.",
-   "The memo's summary says it gives no specific places in Tripoli, and 'Tripoli harbor' is the only Tripoli location mentioned in the passages shown."
+   "The memo does not say the Tripoli and Tobruk ports were linked in operation, or that ships moved between them.",
+   "It is a forecast of what the Soviets would likely do, not a record of what happened.",
+   "The AI summary says the memo names no places in Tripoli, yet the passage does mention Tripoli harbor. The memo does not name a specific berth or facility."
   ],
-  "context": "Tobruk is a port in eastern Libya, far from Tripoli in the west. Both were Libyan harbors that the Soviet Navy could, in principle, visit.",
+  "context": "Tripoli and Tobruk are both Libyan Mediterranean ports, at opposite ends of the country's coast. Tobruk is in the east, near the Egyptian border.",
   "timeline": [
    {
     "when": "March–April 1986",
-    "what": "US–Libyan hostilities, which prompted the assessment."
+    "what": "US–Libyan hostilities, which the memo treats as the background to its assessment."
    },
    {
     "when": "14 May 1986",
-    "what": "CIA memo written, using information available up to that date."
-   },
-   {
-    "when": "Next year (forecast)",
-    "what": "Memo expects more Soviet support and more use of Libyan ports such as Tobruk."
+    "what": "CIA memo on possible Soviet support and military access in Libya."
    }
   ],
   "quotes": [
    {
-    "text": "in future crises off Libya, Soviet surface combatants again will set up early warning patrols near hostile forces and pass the information through a Soviet ship stationed in Tripoli harbor.",
+    "text": "Soviet surface combatants again will set up early warning patrols near hostile forces and pass the information through a Soviet ship stationed in Tripoli harbor.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp86t01017r000505030001-7",
      "t": "OPPORTUNITIES FOR INCREASED SOVIET SUPPORT AND INFLUENCE IN LIBYA"
@@ -10210,7 +10218,7 @@
     }
    }
   ],
-  "open_question": "Soviet naval port-call records or later intelligence reports could show whether Soviet ships actually used Tobruk and Tripoli harbor in the way the memo expected.",
+  "open_question": "Soviet naval port-call records for Tripoli and Tobruk after 1986 would show whether the memo's forecast came true and whether the two ports were used together.",
   "docs": 1
  },
  "u:balidogle|bur acaba": {
@@ -11107,35 +11115,35 @@
   "docs": 1
  },
  "u:china lake california|fort collins, colorado": {
-  "h": "e0eadf93602b",
+  "h": "019713ec39b2",
   "model": "claude-sonnet-5-5",
-  "headline": "A 1981 news report ties a Fort Collins shooting case to a man at China Lake, through phone records.",
-  "explanation": "The article is about the October 1980 shooting of a Libyan student, Faisal Zagallai, in Fort Collins, Colorado. Investigators said they linked Mr. Tafoya, the man charged in Colorado, to Douglas Haden, a civilian at the China Lake naval weapons center in California. The link is said to rest on phone company records and Mr. Tafoya's telephone book. The two places are connected only through the people in the case. Neither place is in Tripoli. The article places Edwin Wilson, a former CIA agent, in Libya, and that is the Libyan thread behind the case.",
+  "headline": "A 1981 news report links a Fort Collins shooting case to a man at China Lake through telephone records.",
+  "explanation": "The article reports on the October 1980 shooting of a Libyan student, Faisal Zagallai, in Fort Collins, Colorado. Investigators say the case is tied to former CIA agent Edwin P. Wilson, who is said to be living in Libya. The passage says Mr. Tafoya, the defendant in Fort Collins, had a telephone book and phone company records showing calls connected to Douglas Haden. The summary places Haden at the China Lake naval weapons center. The link between the two places is therefore a person, not a direct connection between the locations. It matters because it shows how one effort aimed at Libyan critics of Colonel Qaddafi reached into the United States. Nothing here takes place in Tripoli.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "The article reports a Colorado court case in Fort Collins involving Mr. Tafoya.",
-   "Investigators said Mr. Tafoya's telephone book and phone company records showed contact with Mr. Haden.",
-   "The passage says the evidence linking Tafoya to Haden was found in Tafoya's telephone book, and that phone records showed several calls."
+   "The article reports a prosecution in Fort Collins, Colorado, called the Tafoya case, in which prosecutors tried to present evidence at a bail hearing.",
+   "Investigators said Mr. Tafoya's telephone book and phone company records showed calls tied to Mr. Haden.",
+   "The judge upheld a defense objection to the evidence and barred public discussion of the case by lawyers and investigators."
   ],
   "not_established": [
-   "The passage given does not say what was discussed in the calls or what Mr. Haden did, if anything, in the case.",
-   "The investigators' claims were not tested in court; the judge barred public discussion of the evidence.",
-   "Nothing here shows either place had a direct link to Tripoli."
+   "The passage does not itself say what Haden's job at China Lake was; that comes from the document summary.",
+   "Nothing shown proves that anyone at China Lake took part in the shooting; these are investigators' claims, and the court did not test them in public.",
+   "The excerpt does not show what was said in the calls or how many there were."
   ],
-  "context": "China Lake is a U.S. Navy weapons research site in California. Edwin Wilson was a former CIA officer later convicted of selling arms and services to Libya.",
+  "context": "Edwin P. Wilson was a former CIA officer who later worked with the Libyan government. He was widely reported to have supplied it with weapons and training.",
   "timeline": [
    {
     "when": "October 1980",
-    "what": "Libyan student Faisal Zagallai shot in Fort Collins, Colorado."
+    "what": "Libyan student Faisal Zagallai is shot in Fort Collins, Colorado."
    },
    {
     "when": "April 1980",
-    "what": "Wilson and Terpil indicted over a separate plot against a Libyan critic living in Egypt."
+    "what": "Wilson and Terpil are indicted for plotting to kill a Libyan critic living in Egypt."
    },
    {
     "when": "July 1981",
-    "what": "The article reports the investigators' claims and a judge's order limiting public discussion."
+    "what": "The New York Times reports that investigators link the Tafoya case to Haden at China Lake."
    }
   ],
   "quotes": [
@@ -11147,7 +11155,7 @@
     }
    }
   ],
-  "open_question": "Court records from the Tafoya case, or the phone records themselves, would show what Mr. Haden's role was and whether the calls mattered to the shooting.",
+  "open_question": "Court records from the Tafoya case, or phone records and testimony about Haden's calls, would show what the contacts were and whether they were connected to the shooting.",
   "docs": 1
  },
  "m:dahra|fashloum|same-place": {
@@ -11172,26 +11180,28 @@
   "docs": 0
  },
  "u:seawind exercise|tripoli flight information region": {
-  "h": "469b5bd1dcec",
+  "h": "742705deab5e",
   "model": "claude-sonnet-5-5",
-  "headline": "A 1986 press report says aircraft in the \"Seawind\" exercise were flown into Tripoli's air-traffic zone so Libyan radar would pick them up.",
-  "explanation": "The Washington Post article describes a secret 1986 US plan to unsettle Gadhafi. Part of it was military exercises meant to \"spook\" Libyan defenses. One was called Seawind, held in August with US and Egyptian forces. Sources said aircraft were sent into the Tripoli Flight Information Region so they would show on Libyan radar. This shows how the airspace around Tripoli was used to send a message to the Libyan government. The account rests on unnamed sources in one newspaper article.",
+  "headline": "A Washington Post report says U.S.–Egyptian \"Seawind\" exercises in August 1986 sent aircraft into the Tripoli Flight Information Region so Libyan radar would see them.",
+  "explanation": "The Washington Post article describes a secret 1986 U.S. plan to unsettle Gaddafi. It says U.S. and Egyptian forces held exercises called \"Seawind\" in August. Its sources say aircraft were flown into the Tripoli Flight Information Region, the air-traffic zone the Tripoli authorities manage, so they would show up on Libyan radar. For Tripoli, this shows the capital's airspace being used as a pressure point. Two copies of the same article say the same thing. The sources are anonymous, and the article does not give flight details.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "[\"The article says US and Egyptian forces held exercises called \"Seawind\" in the region in August 1986.\",\"Sources told the paper that aircraft were sent into the Tripoli Flight Information Region so they would appear on Libyan radar.\",\"The exercises were part of a wider plan to \"deceive, overburden and 'spook'\" Libyan defenses.\"]"
+   "[\"The article says U.S. and Egyptian forces conducted \"Seawind\" exercises in the region in August 1986.\",\"Unnamed sources say the exercises sent aircraft into the Tripoli Flight Information Region so they would appear on Libyan radar.\",\"The exercises were described as part of a plan for exercises meant to \"deceive, overburden and 'spook'\" Libyan defenses.\",\"The sources say the exercises did not cross Gaddafi's \"line of death\" into the Gulf of Sidra.\"]"
   ],
   "not_established": [
-   "[\"The article does not name the sources, and it gives no flight records, numbers of aircraft or dates.\",\"It does not say how Libya responded or whether the radar contact was noticed.\",\"It says the Gulf of Sidra \"line of death\" was not crossed, so the exercise was not the most provocative option.\"]"
+   "How many aircraft went in, which units flew them, or on what dates.",
+   "Whether Libya responded, or how Libyan radar operators reacted.",
+   "The article's sources are unnamed, and the two documents are copies of the same article, not independent confirmation."
   ],
-  "context": "A flight information region is an area of airspace for which one country's air-traffic service provides flight information and alerts. Tripoli's covers a large part of Libyan airspace and the sea nearby.",
+  "context": "A Flight Information Region is an area of airspace in which a country's air-traffic service provides flight information and alerting. The Gulf of Sidra \"line of death\" was a boundary Gaddafi declared in the early 1980s.",
   "timeline": [],
   "quotes": [
    {
     "text": "sending aircraft into the Tripoli Flight Information Region so they would appear on Lib- yan radar",
     "doc": {
-     "id": "cia-readingroom-document-cia-rdp90b01390r000100090025-3",
-     "t": "GADHAFI TARGET OF SECRET US DECEPTION PLAN"
+     "id": "cia-readingroom-document-cia-rdp90-00965r000807560027-0",
+     "t": "GADHAFI TARGET OF SECRET U.S. DECEPTION PLAN"
     }
    },
    {
@@ -11202,39 +11212,46 @@
     }
    }
   ],
-  "open_question": "Flight logs, US Navy or Air Force records of the August 1986 Seawind exercise, or Libyan or Egyptian accounts could confirm where the aircraft flew.",
-  "docs": 1
+  "open_question": "Flight logs, U.S. Navy or Air Force exercise records, or Libyan air-defense accounts could confirm which aircraft entered the Tripoli FIR and when.",
+  "docs": 2
  },
  "u:libyan people's bureau london|london": {
-  "h": "9ad9369707bd",
+  "h": "b8c9e8553c53",
   "model": "claude-sonnet-5-5",
-  "headline": "The Libyan People's Bureau was Libya's official mission in London, and the June 1980 demonstration and arrests happened at or near it.",
-  "explanation": "The Bureau was Libya's embassy-like office in London, so this link is mainly a place-and-institution one. The June 1980 report says a demonstration took place in front of the Bureau and that British police arrested Libyans. Tripoli protested to the British ambassador and threatened similar measures against British people in Libya. A second report describes a students' march from the Jamahiriyah Students Union building to the Bureau. For Tripoli, it shows how the government used its London office as a focus for politics and pressure abroad. The report is from Libyan state news and is one-sided.",
+  "headline": "The Libyan People's Bureau (Libya's embassy) was located in London, and it was the focus of demonstrations in 1980 and 1984.",
+  "explanation": "The Libyan People's Bureau was Libya's embassy in London, so the link to the city is where it stood. A June 1980 Libyan news report places demonstrations \"in front of\" the Bureau and says British police arrested Libyans there. A 1984 US press article ties the London Libyan Embassy to the shooting of a British police constable and Britain's break in relations. The sources show the Bureau was in London and was a flashpoint. They say little else about it. They show Tripoli's government dealing with Britain through this office, but nothing about daily life in Tripoli.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "JANA (12 June 1980) says British police gathered people and organized a demonstration in front of the Libyan People's Bureau in London the day before.",
-   "Libya demanded the release of Libyans arrested by British police and threatened similar measures against British subjects in Libya.",
-   "A second JANA report says a students' demonstration set out from the Jamahiriyah Students Union building and headed towards the Libyan Arab People's Bureau."
+   "A June 1980 Libyan news agency report says British police arrested Libyans after a demonstration in front of the Libyan People's Bureau in London.",
+   "A second June 1980 report describes a students' march in London heading towards the Libyan Arab People's Bureau.",
+   "A 30 April 1984 New York Times article links the shooting of a British police constable at the London Libyan Embassy to the diplomatic break with Britain."
   ],
   "not_established": [
-   "The passage does not say where exactly the arrests took place, or how many people were arrested.",
-   "The Libyan account that British police staged the demonstration is a state claim; no independent account is given here.",
-   "The passage does not show what followed, such as whether those arrested were released."
+   "The passages given do not describe the shooting itself, only that it happened and led to the break in relations.",
+   "The 1980 account is Libya's own version, which calls the demonstration 'false'; it is not independent confirmation of what happened."
   ],
-  "context": "Libyan embassies in the 1980s were called People's Bureaus. The London one was later the site of the 1984 shooting of a police officer, which is outside this document.",
+  "context": "Libyan embassies abroad were called People's Bureaus after 1979. The 1984 shooting of WPC Yvonne Fletcher outside the London Bureau is widely known, but the passages here do not name her.",
   "timeline": [
    {
     "when": "11 June 1980",
-    "what": "Demonstration in front of the Libyan People's Bureau in London; Libyans arrested, according to JANA."
+    "what": "British police arrest Libyans after a demonstration outside the Libyan People's Bureau in London (per Libyan report)."
    },
    {
     "when": "12 June 1980",
-    "what": "Libya's Foreign Liaison office hands the British ambassador in Tripoli a protest note."
+    "what": "Tripoli hands the British ambassador a protest note demanding their release."
    },
    {
     "when": "13 June 1980",
-    "what": "Students march in London from the Students Union building to the Bureau in support of Qadhafi's speech."
+    "what": "A students' march in London heads to the Bureau in support of Qadhafi's speech."
+   },
+   {
+    "when": "April 1984",
+    "what": "A police constable is shot at the London Libyan Embassy and Britain breaks relations."
+   },
+   {
+    "when": "30 April 1984",
+    "what": "The New York Times reports US plans to consult allies about Libya."
    }
   ],
   "quotes": [
@@ -11244,17 +11261,10 @@
      "id": "fbis-1980-06-13-0672",
      "t": "FBIS DAILY REPORT—Middle East & Africa, Vol. V No. 116, 13 June 1980"
     }
-   },
-   {
-    "text": "if it does not free the Libyans arrested by the British police yesterday, Libya will be forced to take similar measures toward British subjects in Libya",
-    "doc": {
-     "id": "fbis-1980-06-13-0672",
-     "t": "FBIS DAILY REPORT—Middle East & Africa, Vol. V No. 116, 13 June 1980"
-    }
    }
   ],
-  "open_question": "British police or Foreign Office records from June 1980 would show who was arrested, where, and why.",
-  "docs": 1
+  "open_question": "British police or Foreign Office records from June 1980 and April 1984 would give an independent account of the events at the Bureau.",
+  "docs": 2
  },
  "u:gafsa|qadhafi": {
   "h": "5ffe293f2cd7",
@@ -12187,44 +12197,48 @@
   "docs": 1
  },
  "u:public tile and construction materials company tripoli|ra's al-dali in al-'aziziyah": {
-  "h": "98e663882fd5",
+  "h": "0ea39f6b409e",
   "model": "claude-sonnet-5-5",
-  "headline": "The passages shown do not mention the Tripoli tile company at all, so they do not support this link to Ra's al-Dali.",
-  "explanation": "The article is about a 1981-82 study of local stone sites in western and central Libya. Ra's al-Dali in al-'Aziziyah is one of three promising sites. The study found it could supply dark brown, grey and black stone for polished slabs and tiles. The link says rock samples were cut and polished at the company's plant in Tripoli. The passages we have do not name the Public Tile and Construction Materials Company or say where samples were cut. The link may be in a part of the article we cannot see, so it should be checked against the full text before anyone relies on it.",
+  "headline": "The passages shown name Ra's al-Dali as a stone site but do not mention the Tripoli tile company's plant.",
+  "explanation": "A 1982 Libyan newspaper article, translated in a 1983 U.S. report, describes a study of stone deposits for decorative stone and tiles. It names Ra's al-Dali in al-'Aziziyah as one of three promising sites. The passages we have do not mention the Public Tile and Construction Materials Company or a plant in Tripoli. The AI's claim that samples were cut and polished at that plant may come from text that was not shown here. The link cannot be confirmed from this evidence. It would matter because it would show how local stone was meant to feed Tripoli's building industry.",
   "strength": "doubtful",
   "flag": "unsupported",
   "established": [
-   "A 1981-82 study covered 10 sites in the western and central provinces. Three looked promising, including Ra's al-Dali in al-'Aziziyah.",
-   "At Ra's al-Dali the study estimated 12,000 cubic meters of rock could be mined each year. That would give 3,000 cubic meters of block stone and 60,000 square meters of polished slabs.",
-   "The study suggested a tile plant could be set up in al-'Aziziyah."
+   "A 1981-82 study covered 10 sites in the western and central provinces and picked three promising ones, including Ra's al-Dali in al-'Aziziyah.",
+   "For Ra's al-Dali, the study found it possible to mine 12,000 cubic meters of rock a year, giving 3,000 cubic meters of block stone and 60,000 square meters of polished slabs.",
+   "The study said a tile plant could be set up in al-'Aziziyah."
   ],
   "not_established": [
-   "The passages never name the Public Tile and Construction Materials Company.",
-   "They do not say that samples from Ra's al-Dali were cut or polished in Tripoli, or at any company plant.",
-   "The summary says the article is not about Tripoli sites."
+   "The shown passages never name the Public Tile and Construction Materials Company.",
+   "They do not say that rock samples were cut and polished at a plant in Tripoli.",
+   "The two documents are the same article, so they are not independent confirmation."
   ],
   "context": "",
   "timeline": [
    {
     "when": "1981-82",
-    "what": "The Industrial Research Center studied 10 possible stone sites, then narrowed them to three."
+    "what": "Study of stone sites for decorative stone and tiles carried out."
+   },
+   {
+    "when": "1982",
+    "what": "Newspaper article reports the results."
    },
    {
     "when": "1983-01-31",
-    "what": "The report containing the translated article was published."
+    "what": "Translation published in the Near East/North Africa Report."
    }
   ],
   "quotes": [
    {
     "text": "Ra's al-Dali in al-'Aziziyah where the colors are dark brown, grey and black.",
     "doc": {
-     "id": "gov-jprs-ufiche-test-document_jprs-82767",
+     "id": "gov-jprs-jprs-report_jprs-82767",
      "t": "Near East/North Africa Report No. 2700"
     }
    }
   ],
-  "open_question": "The full article text should be checked for a sentence naming the company and saying where the samples were cut and polished.",
-  "docs": 1
+  "open_question": "The full text of the article, especially the passage on semi-industrial tests, would show whether samples were cut and polished at a Tripoli plant and whether the company is named.",
+  "docs": 2
  },
  "m:ainzara|mk-abusalim|context": {
   "h": "ce5ca28d271d",
@@ -13077,28 +13091,28 @@
   "docs": 1
  },
  "u:libya-chad conflict|sebha airfield": {
-  "h": "785f20d64480",
+  "h": "a59ae8a1e6a5",
   "model": "claude-sonnet-5-5",
-  "headline": "A 1983 US imagery note ties Sebha airfield in southern Libya to supplying Libyan-backed Chadian forces during the Libya-Chad conflict.",
-  "explanation": "Two copies of the same US imagery briefing note, dated August 1983, are titled \"Libya-Chad Conflict, Sebha Airfield, Libya\". They say resupply of Libyan-backed Chadian dissident forces was continuing. Libyan heavy-lift transporters carrying armored personnel carriers were gathering just north of the airfield. The link is stated in the note itself, though it comes from one analyst's reading of aerial photos. It shows that Sebha, far from Tripoli, was part of the logistics behind Libya's role in Chad. The note does not describe the wider war or decisions made in Tripoli.",
+  "headline": "A August 1983 US imagery note ties Sebha airfield in southern Libya to supplying Libyan-backed Chadian rebel forces.",
+  "explanation": "Two copies of the same US imagery briefing note, dated August 1983, are titled \"Libya-Chad conflict, Sebha airfield, Libya.\" They say resupply of Libyan-backed Chadian dissident forces was continuing. They describe heavy-lift transporters loaded with BTR-60 armored personnel carriers gathering just north of the airfield. This shows Sebha as a staging point for Libya's military support in the Chad war. The site is in the far south, so the link says little about Tripoli directly. It does show how far Tripoli's military effort reached.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "The note is titled with both the Libya-Chad conflict and Sebha Airfield, and gives its significance as continuing resupply to Libyan-backed Chadian dissident forces.",
+   "Both copies carry the title 'Libya-Chad conflict, Sebha airfield, Libya' and are dated August 1983.",
+   "They state that resupply efforts to Libyan-backed Chadian dissident forces continue.",
    "Libyan heavy-lift transporters carrying armored personnel carriers were assembling immediately north of the airfield.",
-   "Twelve BTR-60 carriers were counted, 11 of them on heavy-lift transporters, along with four empty transporters and one with a possible water tank.",
-   "Two separate archived copies carry the same text, so this is one note and not two independent sources."
+   "Twelve BTR-60 carriers (11 on transporters), four empty transporters and one with a possible water tank were counted."
   ],
   "not_established": [
-   "The note does not say where the vehicles were going or whether they actually reached Chad.",
-   "It does not show how often Sebha was used, or whether aircraft, as opposed to ground transporters, carried the supplies.",
-   "The term 'dissident forces' is the analyst's wording, and the note gives no detail on who the Chadian groups were."
+   "The notes do not say where the vehicles were going or when they arrived in Chad.",
+   "They do not show how long Sebha was used this way, only what was seen in this one report.",
+   "They are briefing notes, not detailed analysis, so they give no wider account of the war."
   ],
-  "context": "Libya was involved in the long conflict in neighbouring Chad through the 1980s. Sebha is a town in the south of Libya, far from Tripoli.",
+  "context": "Libya and Chad were in a long conflict through the 1980s, with Libya backing rebel groups and later sending its own forces.",
   "timeline": [
    {
     "when": "August 1983",
-    "what": "US imagery note records heavy-lift transporters and BTR-60 carriers gathering north of Sebha airfield."
+    "what": "US imagery note records transporters with BTR-60 carriers assembling north of Sebha airfield."
    }
   ],
   "quotes": [
@@ -13117,7 +13131,7 @@
     }
    }
   ],
-  "open_question": "Later imagery reports, or Libyan or Chadian records, could show how Sebha was used over the whole conflict and where these vehicles ended up.",
+  "open_question": "Other imagery or flight records from 1983–84 could show how regularly Sebha was used to send supplies on to Chad.",
   "docs": 2
  },
  "u:al jufrah airfield|soviet union": {
@@ -13456,27 +13470,27 @@
   "docs": 0
  },
  "u:british forces|tobruk": {
-  "h": "1221506cd062",
+  "h": "272e90a76e8d",
   "model": "claude-sonnet-5-5",
-  "headline": "A 1958 CIA memo says British forces based at Tobruk could keep order where they were deployed, but would be too few to hold Libya's coast.",
-  "explanation": "The memo places British forces at Tobruk, in eastern Libya. It says they could help keep order wherever they were sent. It then says many more Western troops would be needed to control the coastal areas and all the main centers. This matters for Tripoli because it shows how limited the British presence was in 1958, and how Western planners thought about stepping in if King Idris's government fell. The memo does not name Tripoli or describe any British action there. The link is a direct statement about British forces at Tobruk, but it comes from a single outside assessment.",
+  "headline": "A 1958 CIA memo says British forces based at Tobruk could keep order where they were sent, but not control Libya's coast.",
+  "explanation": "The link is a simple one: the memo places British forces at Tobruk, a port in eastern Libya. It says they could help keep order wherever they were deployed. It adds that many more Western troops would be needed to control the coastal areas and main centers. This matters for Tripoli because it shows how limited the Western military presence was in 1958, and how Western planners thought about stepping in if King Idris's government fell. The memo does not name Tripoli sites, and Tobruk is not described as a place where trouble was expected.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "A 1958 CIA estimate refers to British forces at Tobruk.",
-   "It says they could maintain order wherever they were deployed.",
-   "It says a substantially larger number of Western troops would be needed to control the coastal areas and main centers."
+   "A 1958 CIA memo refers to \"the British forces in Tobruk\".",
+   "It says they could be used to maintain order wherever they were deployed.",
+   "It says a substantially larger number of Western troops would be needed to control the coastal areas, including all the main centers."
   ],
   "not_established": [
-   "The passage does not give the size of the British force or say what it was made up of.",
-   "It does not say whether those forces were ever used, or sent to Tripoli.",
-   "It does not name Tripoli or any site there."
+   "The memo does not give the size, units or exact role of the British forces at Tobruk.",
+   "It does not say these forces were ever used to keep order, in Tobruk or in Tripoli.",
+   "It names no specific Tripoli site, and the OCR text is imperfect."
   ],
-  "context": "After the Second World War Britain kept military bases and troops in Libya under agreements with King Idris's government. Tobruk was one of the main places where they were stationed.",
+  "context": "After the Second World War, Britain kept military bases in Libya under agreements with the Libyan kingdom. These ended after Gaddafi took power in 1969.",
   "timeline": [
    {
     "when": "1958-11-26",
-    "what": "CIA Office of National Estimates memo \"Prospects in Libya\" assesses the Western position and the risks after the King's death."
+    "what": "CIA Office of National Estimates memo \"Prospects in Libya\" is dated."
    }
   ],
   "quotes": [
@@ -13486,9 +13500,16 @@
      "id": "cia-readingroom-document-cia-rdp79r00904a000400030007-0",
      "t": "PROSPECTS IN LIBYA*"
     }
+   },
+   {
+    "text": "it would take a substantially larger number of Western troops to establish control of the coastal areasy including all the main centers",
+    "doc": {
+     "id": "cia-readingroom-document-cia-rdp79r00904a000400030007-0",
+     "t": "PROSPECTS IN LIBYA*"
+    }
    }
   ],
-  "open_question": "British or Libyan records of troop numbers and any contingency plans in 1958 would show how large the Tobruk force was and where it might have been sent.",
+  "open_question": "British or Libyan records of the Tobruk garrison in 1958 would show its size and role, and whether it had any plan to deploy elsewhere.",
   "docs": 1
  },
  "u:abdelbaset al-megrahi|libyan arab airlines": {
@@ -13740,24 +13761,23 @@
   "docs": 2
  },
  "u:aozou airfield|sebha airfield": {
-  "h": "0622c7b48ab8",
+  "h": "d6159d22b45e",
   "model": "claude-sonnet-5-5",
-  "headline": "A December 1982 U.S. imagery report says Sebha airfield was the departure point for Libyan flights into Aozou airfield in northern Chad.",
-  "explanation": "The two airfields are linked by supply and support flights. A U.S. imagery analysis from December 1982 says Sebha, in central Libya, was used as the departure airfield for flights into Aozou. The flights were said to support Chadian rebels. Aozou is described as \"Libya (formerly in northern Chad)\", which shows Libya treated the Aozou area as its own territory at that time. For Tripoli under Gaddafi, the link shows how Libya's southern air bases were tied to its military activity in Chad. The report gives the statement briefly and without detail about the flights.",
+  "headline": "A December 1982 U.S. imagery report says flights into Aozou airfield in northern Chad left from Sebha airfield in Libya.",
+  "explanation": "The two airfields are linked by supply or support flights. A U.S. photo-analysis report from December 1982 says Sebha was used as a departure airfield for flights into Aozou airfield, in support of Chadian rebels. Sebha is in central Libya, and Aozou is in the Aozou Strip in northern Chad. The link shows how Libya's southern air bases were used for its operations in Chad. The report is a single, brief statement from one document.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "A December 1982 U.S. imagery report states that Sebha is used as a departure airfield for flights into Aozou airfield.",
-   "The report says the flights were in support of Chadian rebels.",
-   "The report says 24 fighter and transport aircraft were newly dispersed to Sebha, and that this could be related to Libyan activity in Chad.",
-   "The report describes Sebha airfield as supporting an air academy and civilian aircraft in central Libya."
+   "The report states that Sebha is used as a departure airfield for flights into Aozou airfield, in support of Chadian rebels.",
+   "Twenty-four fighter and transport aircraft were newly dispersed to Sebha in December 1982. The report says this was probably a response to U.S. activity in the Gulf of Sidra, and could also be related to Libyan activity in Chad.",
+   "The report describes Sebha as supporting an air academy and civilian aircraft in central Libya."
   ],
   "not_established": [
-   "The report does not say how many flights there were, when they took place, or what they carried.",
-   "It does not say which Chadian rebels were supported, or show the evidence behind the statement.",
-   "It is a single document, and the link is not confirmed by a second source."
+   "The report gives no dates, numbers or aircraft types for the Aozou flights themselves.",
+   "It does not say what the flights carried, or who flew them.",
+   "It does not show that the aircraft newly sent to Sebha flew to Aozou. It only says the Chad link could be one reason for the dispersal."
   ],
-  "context": "Aozou is in the Aozou Strip, a border area of northern Chad that Libya occupied from 1973 and that was disputed until 1994.",
+  "context": "Libya occupied the Aozou Strip in northern Chad in the 1970s and kept a presence there through the 1980s. The OCR text calls Aozou \"Libya (formerly in northern Chad)\", which reflects how the report treats the area.",
   "timeline": [
    {
     "when": "January 1982",
@@ -13765,7 +13785,7 @@
    },
    {
     "when": "December 1982",
-    "what": "The report records 24 more aircraft newly dispersed to Sebha and notes its use for flights into Aozou."
+    "what": "Twenty-four aircraft were newly dispersed to Sebha. The report notes Sebha's role as a departure point for flights into Aozou."
    }
   ],
   "quotes": [
@@ -13777,7 +13797,7 @@
     }
    }
   ],
-  "open_question": "Flight logs, later imagery reports, or Chadian and Libyan accounts could show how often and when the Sebha–Aozou flights ran, and what they carried.",
+  "open_question": "Flight logs, or further imagery reports from 1982 to 1983, could show how often the Sebha–Aozou flights ran and what they carried.",
   "docs": 1
  },
  "m:palace|lh-royal-palace-governors-palace|same-place": {
@@ -13991,47 +14011,48 @@
   "docs": 0
  },
  "u:libya-egypt border|tobruk": {
-  "h": "b2a867e2510f",
+  "h": "095cd5f34402",
   "model": "claude-sonnet-5-5",
-  "headline": "A 1977 CIA report says Libyan forces were to pull back from the Egyptian border to Tobruk under a reported deal.",
-  "explanation": "The document describes talks between Egypt and Libya in August 1977 to ease tension along their shared border. One reported part of the deal was that Libyan troops would withdraw to Tobruk, keeping only a small unit at Musaid. Egyptian troops would pull back to Sidi Barrani, keeping a small force at Sollum. So Tobruk is named as the place Libyan forces would fall back to, away from the border. The report says nothing about Tripoli. It helps show how close the two countries came to conflict in the Gaddafi years, and where eastern Libya's military line sat.",
+  "headline": "A 1977 CIA review says Libya was to pull its border forces back to Tobruk under a quiet deal with Egypt.",
+  "explanation": "The document describes talks between Egypt and Libya to ease tension on their shared border. One part of the reported agreement was a mutual pullback of troops. The Libyans were to withdraw to Tobruk, apart from a small unit at Musaid. The Egyptians were to withdraw to Sidi Barrani, apart from a small force at Sollum. So Tobruk is named as the place Libyan forces would fall back to from the border zone. The link is useful for seeing how far Tobruk lay from the frontier, and as a military base in eastern Libya. The document does not deal with Tripoli.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "The CIA review says one provision of the agreement calls for Libyan forces to withdraw to Tobruk, except for a small unit at Musaid.",
-   "The Egyptians were to withdraw to Sidi Barrani, except for a small force at Sollum.",
+   "A CIA weekly review reports an agreement, apparently reached in talks since mid-August, to ease tension on the Egyptian-Libyan border.",
+   "One provision called for Libyan forces to withdraw to Tobruk, except for a small unit at Musaid.",
+   "Egypt was to withdraw to Sidi Barrani, except for a small force at Sollum.",
    "The two countries had not made the withdrawal agreement public."
   ],
   "not_established": [
-   "The document does not show that the pullback actually happened.",
-   "It does not say how far Tobruk is from the border or what forces were based there.",
-   "It says nothing about Tripoli."
+   "The document does not show that the pullback was actually carried out.",
+   "It does not say anything about Tripoli or about what Tobruk itself was used for.",
+   "The document's heading date (5 July 1977) does not match the August events it describes, so the exact timing is unclear."
   ],
   "context": "Tobruk is a port city in eastern Libya, not far from the Egyptian frontier. Libya and Egypt fought a short border war in July 1977.",
   "timeline": [
    {
-    "when": "Mid-August 1977",
-    "what": "Egyptian War Minister Gamasy and a senior Libyan officer begin high-level talks."
+    "when": "Mid-August (year as given in the review)",
+    "what": "Talks begin between Egyptian War Minister Gamasy and a senior Libyan officer."
    },
    {
-    "when": "23 August 1977",
-    "what": "Egyptian Foreign Minister Fahmi tells diplomats only of cease-fire observation posts and an end to propaganda."
+    "when": "23 August",
+    "what": "Egypt's Foreign Minister tells diplomats of cease-fire observation posts and a halt to propaganda."
    },
    {
-    "when": "24 August 1977",
+    "when": "24 August",
     "what": "A prisoner exchange is carried out and publicized."
    }
   ],
   "quotes": [
    {
-    "text": "Another provision calls for a mutual pullbeck of troops in which the Libyans are to withdraw their forces to Tobruk",
+    "text": "the Libyans are to withdraw their forces to Tobruk, except for a smait unit that is 10 remain at Musaid",
     "doc": {
      "id": "cia-readingroom-document-0000215146",
      "t": "MIDDLE EAST - EGYPT-LIBYA"
     }
    }
   ],
-  "open_question": "Later reporting or military records would show whether Libyan forces really withdrew to Tobruk and when.",
+  "open_question": "Later reporting or Egyptian and Libyan military records could show whether Libyan forces actually withdrew to Tobruk, and when.",
   "docs": 1
  },
  "u:chad|faya-largeau": {
@@ -14080,42 +14101,42 @@
   "docs": 1
  },
  "u:libyan people's bureau london|yvonne fletcher": {
-  "h": "53a6b8ea858e",
+  "h": "a8a31cd8ab34",
   "model": "claude-sonnet-5-5",
-  "headline": "Yvonne Fletcher, a British policewoman, was killed in April 1984 during the events at the Libyan People's Bureau in London; this source gives Libya's version.",
-  "explanation": "The two are linked by the April 1984 events at the Libyan People's Bureau (the Libyan embassy) in London. A Libyan paper, quoted in a February 1985 US monitoring report, says Fletcher was killed during an \"assault\" on the Bureau. The paper blames \"British hands\" for her death, which is Libya's own account. It was written while Libya and Britain were arguing over a memorial to her. For readers, it shows how Libyan state media described the shooting, and how the dispute still affected relations in 1985. The passage does not say who fired the shots.",
+  "headline": "Yvonne Fletcher was a British policewoman killed in April 1984 during events at the Libyan People's Bureau in London, according to a Libyan commentary.",
+  "explanation": "The two ends are a building (the Libyan People's Bureau, which was Libya's embassy in London) and the officer killed outside it. The only source here is a Libyan newspaper commentary reported by the U.S. monitoring service in February 1985. It says Fletcher \"was killed by British hands\" during an \"assault\" on the Bureau the previous April. That is a Libyan claim about who was responsible, and the passage gives no evidence for it. It does tie her death to the Bureau. The sources do not give the date, the circumstances, or any finding on who fired. The link matters because the shooting led to a breakdown in relations between Britain and Libya, and this passage shows that dispute still running in 1985.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "A Libyan commentary, quoted in a US monitoring report of 4 February 1985, says Yvonne Fletcher was killed during an assault on the Libyan Arab People's Bureau in London last April.",
-   "The commentary was an attack on Britain over a memorial to her."
+   "A Libyan paper in February 1985 attacked Britain over a memorial for policewoman Yvonne Fletcher.",
+   "The commentary links her death to an event at the Libyan Arab People's Bureau in London in April (1984)."
   ],
   "not_established": [
-   "The passage does not show who fired the fatal shot. It only repeats the Libyan claim that she was killed 'by British hands'.",
-   "It does not describe what happened at the Bureau, apart from calling it a 'treacherous assault'.",
-   "The text is OCR and partly garbled, and the start of the passage is cut off."
+   "The document does not show who shot Fletcher; the claim that she was killed 'by British hands' is Libyan commentary, not an established fact.",
+   "It gives no exact date, location detail, or account of how the shooting happened.",
+   "It says nothing about events in Tripoli."
   ],
-  "context": "Widely known: WPC Yvonne Fletcher was shot dead in April 1984 while policing a protest outside the Libyan Bureau in St James's Square, London. The shots came from the building. Britain then cut diplomatic relations with Libya. The Libyan commentary's account conflicts with this.",
+  "context": "Widely known background: Fletcher was shot in April 1984 outside the Libyan embassy in London while policing a protest. Britain broke off diplomatic relations with Libya afterwards. Libya denied responsibility.",
   "timeline": [
    {
     "when": "April 1984",
-    "what": "Fletcher is killed outside the Libyan People's Bureau in London."
+    "what": "Fletcher is killed in London during events at the Libyan People's Bureau (as described by the Libyan commentary)."
    },
    {
     "when": "4 February 1985",
-    "what": "A Libyan paper attacks Britain over a memorial to her, as reported by FBIS."
+    "what": "Libyan media attack Britain over a memorial to Fletcher, as reported in the FBIS Daily Report."
    }
   ],
   "quotes": [
    {
-    "text": "policeman Yvonne Fletcher, who was killed by British hands during the treacherous assault to which the Libyan Arab People’s Bureau was exposed in London last April.",
+    "text": "policeman Yvonne Fletcher, who was killed by British hands during the treacherous assault to which the Libyan Arab People’s Bureau was exposed in London last April",
     "doc": {
      "id": "fbis-1985-02-04-0606",
      "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 023, 4 February 1985"
     }
    }
   ],
-  "open_question": "British police and court records or the official inquiry into the 1984 shooting would settle who fired and from where.",
+  "open_question": "British police and court records, and official inquiry findings on the 1984 shooting, would show who fired and from where. This Libyan commentary cannot settle that.",
   "docs": 1
  },
  "u:edwin wilson|frank terpil": {
@@ -14749,106 +14770,98 @@
   "docs": 0
  },
  "u:gulf of sidra|tripoli flight information region": {
-  "h": "ca2da5c09f09",
+  "h": "7f1a32dd8c16",
   "model": "claude-sonnet-5-5",
-  "headline": "The Gulf of Sidra is a stretch of sea off Libya; the Tripoli Flight Information Region is the airspace over and around it that the U.S. Navy named in its 1986 flight notices.",
-  "explanation": "In January and March 1986 the U.S. Navy filed notices with international aviation authorities for carrier flight operations in the \"Tripoli flight information region\". Newspaper reports on the same exercises said the ships and planes might also enter the Gulf of Sidra, which Libya claims as its own waters and airspace. The two places are therefore connected through the same 1986 U.S. naval exercises. They are not the same place. One is a body of water, and the other is an air-traffic zone that reaches out from Libya for many miles. The articles do not say exactly how the zone and the gulf overlap.",
+  "headline": "The Gulf of Sidra and the Tripoli Flight Information Region were overlapping areas off Libya where U.S. Navy flights were planned in the 1980s.",
+  "explanation": "A flight information region (FIR) is a defined block of airspace; the Gulf of Sidra is a body of water. They are not the same place, but they lie in the same area off Libya's coast. In 1986 the U.S. Navy filed notices saying carrier flights would take place in the \"Tripoli\" FIR, while news reports said ships and planes might also enter the Gulf, which Libya claimed. The link matters because it shows how the U.S. and Libya disagreed about sea and air boundaries. The sources do not say exactly how the two areas overlap.",
   "strength": "inferred",
   "flag": "ok",
   "established": [
-   "The Navy's notice said carrier flight operations would run for a week within the Tripoli Flight Information Region, described as airspace extending scores of miles from Libya (Docs 1, 3).",
-   "A Pentagon spokesman said aerial maneuvers would take place \"in the Tripoli flight information region\" and in international waters (Doc 4).",
-   "Qaddafi claims the whole Gulf of Sidra and its airspace. The U.S. recognizes only 12 miles of territorial waters, and the warships were authorized to sail in the gulf (Docs 1, 3).",
-   "Sources said fleet commanders had been cleared to exercise inside the Gulf of Sidra (Doc 4)."
+   "A January 1986 Navy notice said carrier flight operations would take place for a week within the Tripoli Flight Information Region, described as airspace extending scores of miles from Libya (DOC 1, DOC 4).",
+   "In March 1986 a Pentagon spokesman said a notice was filed for aerial maneuvers in the Tripoli flight information region, while sources said the fleet could exercise inside the Gulf of Sidra (DOC 5).",
+   "A 1982 State Department paper says Libya claimed the Gulf of Sidra as internal waters and notes that the Libyan FIR extends to latitude 34°20' (DOC 2).",
+   "Qaddafi claimed the whole Gulf and its airspace as Libyan territory, while the U.S. recognized only 12 miles of territorial waters (DOC 1, DOC 4)."
   ],
   "not_established": [
-   "No article says that the Gulf of Sidra lies inside the Tripoli Flight Information Region, or where its boundary runs.",
-   "The reports do not say which flights actually entered the gulf. Doc 1 says planes would begin north of it and work south later.",
-   "The articles are press accounts based on anonymous officials. They are not the Navy notice itself."
+   "No source states that the Gulf of Sidra lies inside the FIR or gives the exact extent of the overlap.",
+   "The sources do not say that the notified flights actually entered the Gulf; they say only that this was authorized or possible."
   ],
-  "context": "The Tripoli Flight Information Region is an air-traffic control zone for Libya, so its name does not mean the events took place near the city of Tripoli. The Gulf of Sidra is on Libya's central coast.",
+  "context": "The Gulf of Sidra is a large bay on Libya's Mediterranean coast. Libya and the U.S. disputed Libya's claim to it in several confrontations in the 1980s, including the 1981 air clash.",
   "timeline": [
    {
-    "when": "19 Aug 1981",
-    "what": "U.S. Navy fighters shot down two Libyan fighters above the Gulf of Sidra (Docs 1, 3, 4)."
+    "when": "Oct 1973",
+    "what": "Libya claims the Gulf of Sidra as internal waters (DOC 2)."
    },
    {
-    "when": "24 Jan 1986",
-    "what": "The Washington Post reports that the Navy filed a notice for a week of carrier flight operations in the Tripoli Flight Information Region (Docs 1, 3)."
+    "when": "Aug 1981",
+    "what": "U.S. Navy fighters shoot down two Libyan aircraft above the Gulf (DOC 1, DOC 5)."
    },
    {
-    "when": "19 Mar 1986",
-    "what": "The New York Post reports a new notice of aerial maneuvers in the Tripoli region, and that ships were cleared to enter the Gulf of Sidra (Doc 4)."
+    "when": "Jan 1986",
+    "what": "Navy notice announces carrier flights in the Tripoli FIR (DOC 1, DOC 4)."
    },
    {
-    "when": "27 Aug 1986",
-    "what": "A Washington Post report describes flight operations off Libya and Scud missile firings into the Gulf of Sidra (Doc 2)."
+    "when": "Mar 1986",
+    "what": "A new notice covers aerial maneuvers in the Tripoli FIR; the fleet may enter the Gulf (DOC 5)."
+   },
+   {
+    "when": "Aug 1986",
+    "what": "Flight operations off Libya, and Scud missile firings into the Gulf, are reported (DOC 3)."
    }
   ],
-  "quotes": [
-   {
-    "text": "carrier flight operations will be conducted for a week within the Tripoli Flight Information Re- gion, a sector of airspace extending scores of miles from Libya.",
-    "doc": {
-     "id": "cia-readingroom-document-cia-rdp90-00552r000505250003-3",
-     "t": "U.S. NAVY PLANES TO BEGIN OPERATIONS NORTH OF LIBYA"
-    }
-   },
-   {
-    "text": "in the Tripoli flight information region",
-    "doc": {
-     "id": "cia-readingroom-document-cia-rdp90-00965r000403720034-2",
-     "t": "REAGAN SENDS FLEET TO LIBYA TO TEST KHADAFY"
-    }
-   }
-  ],
-  "open_question": "The Navy's original notice, or an aviation chart showing the region's boundary, would show whether the Gulf of Sidra lies inside the Tripoli Flight Information Region.",
-  "docs": 4
+  "quotes": [],
+  "open_question": "A map of the Libyan FIR boundary set against the Gulf of Sidra, or the Navy's original notices, would show how far the two areas overlap.",
+  "docs": 5
  },
  "u:marsa matruh|tobruk": {
-  "h": "14dbc61f3409",
+  "h": "558963f0cf5b",
   "model": "claude-sonnet-5-5",
-  "headline": "Marsa Matruh and Tobruk are named together as the two meeting places of Gaddafi's 1989 talks with Egyptian President Mubarak.",
-  "explanation": "In a October 1989 interview, Gaddafi speaks of his talks with President Mubarak \"in Marsa Matruh and Tobruk\". He says these sessions led to practical steps between the two countries. Marsa Matruh is on the Egyptian side of the border and Tobruk is on the Libyan side. The link is one of shared events, not of one place causing the other. It shows how Libya and Egypt rebuilt relations in 1989, which affected ordinary people on both sides of the border. The document does not mention Tripoli.",
+  "headline": "Marsa Matruh and Tobruk were the two meeting places where Qadhdhafi and Mubarak held talks in 1989 that restored Egyptian-Libyan relations.",
+  "explanation": "In a October 1989 interview, Qadhdhafi speaks of his talks with President Mubarak \"in Marsa Matruh and Tobruk\". Marsa Matruh is on the Egyptian side of the border and Tobruk on the Libyan side. The two places are linked only because the talks took place in both. The document says nothing about Tripoli itself, but it shows how Libya's leadership dealt with its neighbour at this time.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "The interviewer asks about Gaddafi's talks with Mubarak \"in Marsa Matruh and Tobruk\".",
-   "Gaddafi calls the Marsa Matruh and Tobruk sessions a realistic start that produced agreement on concrete measures for citizens of both countries.",
-   "The interview was published in Cairo's Al-Musawwar on 27 October 1989 and translated by FBIS."
+   "The interviewer refers to Qadhdhafi's talks with President Mubarak in Marsa Matruh and Tobruk, held as relations between Egypt and Libya were restored.",
+   "Qadhdhafi says the sessions in both places produced agreement on practical measures affecting ordinary citizens of both countries.",
+   "Qadhdhafi calls the start made at the two places a realistic one."
   ],
   "not_established": [
-   "The document does not give the dates of the two meetings or say which took place first.",
-   "It does not list the specific measures agreed.",
-   "It says nothing about Tripoli or about life in Tripoli."
+   "The document gives no dates for the individual sessions or says who attended besides Qadhdhafi and Mubarak.",
+   "It does not say what was decided at each place, or which meeting happened first.",
+   "It does not link either town to Tripoli."
   ],
-  "context": "Marsa Matruh is a coastal town in Egypt. Tobruk is a coastal town in eastern Libya, not far from the Egyptian border.",
+  "context": "Marsa Matruh is a coastal town in Egypt and Tobruk a port town in eastern Libya, both fairly near the border between the two countries.",
   "timeline": [
    {
-    "when": "Autumn 1989 (exact dates not given)",
-    "what": "Gaddafi and Mubarak hold talks at Marsa Matruh and Tobruk."
+    "when": "Before 27 October 1989",
+    "what": "Qadhdhafi and Mubarak hold talks at Marsa Matruh and Tobruk."
    },
    {
     "when": "27 October 1989",
-    "what": "Al-Musawwar publishes the interview with Gaddafi, conducted in Benghazi."
+    "what": "Al-Musawwar (Cairo) publishes its interview with Qadhdhafi, conducted in Banghazi."
+   },
+   {
+    "when": "28 October 1989",
+    "what": "The interview is circulated in a U.S. translation service report."
    }
   ],
   "quotes": [
+   {
+    "text": "THE MARSA MATRUH AND TOBRUK SESSIONS HAVE PRODUCED AGREEMENT ON A NUMBER OF PHYSICAL, CONCRETE MEASURES THAT DIRECTLY AFFECT THE INTERESTS OF CITIZENS",
+    "doc": {
+     "id": "cia-readingroom-document-cia-rdp05-01559r000400440003-4",
+     "t": "AL-QADHDHAFI ON EGYPT, OTHER ISSUES"
+    }
+   },
    {
     "text": "THE REALISTIC START WE MADE IN MARSA MATRUH AND TOBRUK HAS PUT US ON THE RIGHT TACK",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp05-01559r000400440003-4",
      "t": "AL-QADHDHAFI ON EGYPT, OTHER ISSUES"
     }
-   },
-   {
-    "text": "YOUR TALKS WITH PRESIDENT MUBARAK IN MARSA MATRUH AND TOBRUK",
-    "doc": {
-     "id": "cia-readingroom-document-cia-rdp05-01559r000400440003-4",
-     "t": "AL-QADHDHAFI ON EGYPT, OTHER ISSUES"
-    }
    }
   ],
-  "open_question": "Dated records of the Mubarak–Gaddafi meetings would show when each town hosted talks and what was agreed.",
+  "open_question": "Dates and agreed terms of each round of talks, from Egyptian or Libyan press reports or official communiqués, would show what was settled at each place.",
   "docs": 1
  },
  "u:aozou strip|sebha": {
@@ -15283,23 +15296,22 @@
   "docs": 1
  },
  "u:british diplomatic break 1984|libyan people's bureau london": {
-  "h": "59ba3a31f862",
+  "h": "384884b17e92",
   "model": "claude-sonnet-5-5",
   "headline": "Shots fired from the Libyan People's Bureau in London in 1984 led Britain to break diplomatic relations with Libya.",
-  "explanation": "The Libyan People's Bureau in London was Libya's embassy-like mission in Britain. A 1987 U.S. Library of Congress country study says a shooting at the Bureau in 1984 was part of the strained Libya–Britain relationship. The AI's reading is that this shooting led to the break in diplomatic relations. That is a reasonable summary of the link, but the summary we have does not give the passage wording, dates or details. It matters for Tripoli because the break cut Libya's formal ties with Britain and shows how events at its overseas missions shaped its place in the world.",
+  "explanation": "The Libyan People's Bureau was Libya's embassy in London. In 1984 a shooting took place at the Bureau, and the 1987 Library of Congress country study ties this to the end of diplomatic relations between Britain and Libya. The break is the event, and the Bureau is the place where it began. This matters because it shows how a single incident in London cut official contact between the two countries. It also sets the scene for later tension, such as the 1986 use of British bases for the U.S. strike. The summary we have is brief, so the details of the incident come from outside this source.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "A 1987 Library of Congress country study covers Libya–Britain relations under Qadhafi.",
-   "Its summary names the 1984 shooting at the London People's Bureau as one of the points of strain.",
-   "The summary also mentions the nationalizing of British Petroleum's interests and the 1986 use of British bases for the U.S. strike."
+   "A 1987 U.S. Library of Congress country study covers strained Libya-Britain relations under Qadhafi.",
+   "It mentions the 1984 shooting at the London People's Bureau as part of that history.",
+   "The summary links the shooting to the breaking of diplomatic relations."
   ],
   "not_established": [
-   "The passage text is not shown, so we cannot confirm exactly how it links the shooting to the diplomatic break.",
-   "The summary does not give the day of the shooting, who was involved, or who was hurt.",
-   "Nothing here is specific to Tripoli sites."
+   "The summary does not give the details of the shooting, such as who fired or who was hurt.",
+   "It says nothing about what happened in Tripoli itself, and the source is not specific to Tripoli sites."
   ],
-  "context": "In April 1984 a shot fired from the Libyan People's Bureau in St James's Square, London, killed police officer Yvonne Fletcher. Britain broke relations soon after. This is widely known background, not drawn from the document given.",
+  "context": "Widely known: in April 1984, shots fired from the Bureau in St James's Square killed a British policewoman, Yvonne Fletcher. Britain then broke off relations.",
   "timeline": [
    {
     "when": "1984",
@@ -15307,7 +15319,7 @@
    },
    {
     "when": "1984",
-    "what": "Britain breaks diplomatic relations with Libya"
+    "what": "Britain and Libya break diplomatic relations"
    },
    {
     "when": "1986",
@@ -15315,7 +15327,7 @@
    }
   ],
   "quotes": [],
-  "open_question": "The full text of the 1987 country study, or British government records of the April 1984 decision, would show the exact wording and date of the break.",
+  "open_question": "The full text of the country study, or British government records of 1984, would give the exact sequence and the terms of the break.",
   "docs": 1
  },
  "m:lb-al-khadra-hospital|lb-abu-salim-trauma-hospital|event": {
@@ -15380,48 +15392,26 @@
   "docs": 0
  },
  "u:faisal zagallai|fort collins, colorado": {
-  "h": "06fd1c2e812f",
+  "h": "2812dfd50378",
   "model": "claude-sonnet-5-5",
-  "headline": "Faisal Zagallai, a Libyan dissident student, was shot at his home in Fort Collins, Colorado, in October 1980.",
-  "explanation": "A 1985 news report says Zagallai was a graduate student at Colorado State University in Fort Collins. It says Eugene Tafoya shot him twice during a visit to his home in October 1980. Tafoya said he had been sent to warn Zagallai to tone down his criticism of Gaddafi. This shows that opposition to Gaddafi led to violence far from Tripoli, in a small American college town. The link is to Fort Collins, not to anywhere in Libya.",
+  "headline": "Faisal Zagallai, a Libyan critic of Gaddafi, was a graduate student in Fort Collins, Colorado, where he was shot in October 1980.",
+  "explanation": "A 1985 news report says Zagallai was a Libyan dissident studying at Colorado State University in Fort Collins. It says he was shot twice during a visit to his home in October 1980. The man convicted, Eugene Tafoya, said he had been sent to warn Zagallai to tone down his criticism of Gaddafi. This matters for Tripoli because it shows a quarrel with Gaddafi's government reaching a Libyan student in a small American city. The second document, a 1981 New York Times article, has a Fort Collins dateline for the trial testimony. That article is badly garbled and does not clearly say where the shooting happened.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "Zagallai was a Libyan dissident and graduate student at Colorado State University in Fort Collins.",
-   "Tafoya shot him twice in October 1980, during a visit to his home, while posing as a computer company representative.",
-   "Tafoya was convicted of misdemeanor third-degree assault, and an appeals court upheld the conviction in 1985."
+   "A 1985 UPI report says Zagallai was a Libyan dissident attending Colorado State University in Fort Collins.",
+   "The same report says Tafoya shot him twice during an October 1980 visit to the graduate student's home.",
+   "The 1981 New York Times article carries a Fort Collins dateline and reports testimony in Tafoya's trial over the shooting of Zagallai."
   ],
   "not_established": [
-   "The article does not say that Gaddafi's government ordered the shooting.",
-   "Tafoya's claim that the CIA sent him is disputed. The agency denied it and said Edwin Wilson hired him.",
-   "The article does not say exactly where in Fort Collins the home was."
+   "The sources do not give Zagallai's street address. They place the home in Fort Collins only by the way the report is worded.",
+   "The 1981 article's mention of a court-martial seems to refer to Tafoya's earlier Army case from Vietnam days, not to the trial in Fort Collins. The scanned text is too garbled to be sure.",
+   "The sources do not show that the Libyan government ordered the shooting. They give only Tafoya's claim of CIA orders, which the CIA denied, and that he was hired by Edwin Wilson."
   ],
-  "context": "Fort Collins is a city in Colorado, and Colorado State University is there. Edwin Wilson was a former CIA officer later convicted over work for Libya. The passage given is cut off before it says why he was convicted.",
-  "timeline": [
-   {
-    "when": "October 1980",
-    "what": "Tafoya shoots Zagallai at his Fort Collins home."
-   },
-   {
-    "when": "January 1982",
-    "what": "Tafoya is sentenced to the maximum two years."
-   },
-   {
-    "when": "25 April 1985",
-    "what": "The Colorado Court of Appeals upholds the conviction."
-   }
-  ],
-  "quotes": [
-   {
-    "text": "twice shooting Libyan dissidentFaisal Zagallai while posing as a representative of a computer company during an October 1980 visit to the graduate student's home.",
-    "doc": {
-     "id": "cia-readingroom-document-cia-rdp90-00965r000604920031-0",
-     "t": "CONVICTION UPHELD IN ATTACK ON LIBYAN STUDENT"
-    }
-   }
-  ],
-  "open_question": "Court records from the Tafoya trial in Larimer County, or investigators' files, could show who directed the shooting and where exactly it happened.",
-  "docs": 1
+  "context": "Fort Collins is the home of Colorado State University. Tafoya's trial was in Larimer County, which includes Fort Collins.",
+  "timeline": [],
+  "quotes": [],
+  "docs": 2
  },
  "u:benina air base|gulf of sidra": {
   "h": "35d05f036092",
@@ -15594,26 +15584,27 @@
   "docs": 1
  },
  "u:aozou airfield|gouro airfield": {
-  "h": "a4d7e845eeaf",
+  "h": "6ddbf4dcbe13",
   "model": "claude-sonnet-5-5",
-  "headline": "A August 1983 US imagery report names Aozou and Gouro together as places where Libyan forces were being strengthened in northern Chad.",
-  "explanation": "One US photo-interpretation report from August 1983 treats Aozou airfield and Gouro airfield as a pair. Its opening line says the Libyans \"continue to strengthen their forces\" at both. The part we have describes Aozou in detail: missile batteries, tanks, artillery and many trucks. The Gouro section is cut off in the passage given. So the link is that the two places appear together in one report about the same Libyan build-up. The report is not about Tripoli. It does show how far Libya's military reach extended from the capital in those years.",
+  "headline": "A 1983 imagery report names Aozou and Gouro airfields together as places where Libya was building up its forces in northern Chad.",
+  "explanation": "One U.S. imagery report from August 1983 covers both airfields. It says the Libyans \"continue to strengthen their forces at Aozou and Gouro.\" The part we have describes Aozou in detail: air-defence missile batteries, tanks, artillery and many trucks. The link is that the two airfields were part of the same Libyan effort in the Chad conflict. Both lie far from Tripoli, so this shows how far Libya's military reach extended from the capital. It says nothing about Tripoli itself.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "One 1983 US imagery report names Aozou and Gouro together in its summary line as places where Libyan forces were being strengthened.",
-   "The passage describes Aozou airfield: probable SA-6 missile batteries, heavy transporters, at least four tanks, artillery, at least 55 trucks or vehicles, and new revetments."
+   "The August 1983 report names Aozou and Gouro together as places where Libyan forces were being strengthened.",
+   "At Aozou airfield it reports probable SA-6 missile batteries, heavy-lift transporters, at least four tanks, probable towed artillery and at least 55 trucks or unidentified vehicles.",
+   "It also reports new revetments and fuel bladders at Aozou."
   ],
   "not_established": [
-   "The passage given says nothing about what is at Gouro airfield.",
-   "It does not say the two airfields were linked by command, supply routes or a shared plan, only that both are named in one report.",
-   "It says nothing about Tripoli."
+   "The passage we have gives no detail about Gouro airfield itself; the Gouro section may be in the missing pages.",
+   "The sources do not show how the two airfields were connected in command or supply.",
+   "Nothing here concerns Tripoli directly."
   ],
-  "context": "Aozou is in the Aozou Strip in far northern Chad, an area Libya occupied and claimed during the 1970s and 1980s.",
+  "context": "Aozou is in the Aozou Strip in northern Chad, which Libya occupied in the 1970s and fought over with Chad in the 1980s.",
   "timeline": [
    {
     "when": "August 1983",
-    "what": "US National Photographic Interpretation Center report notes Libyan force build-up at Aozou and Gouro."
+    "what": "U.S. imagery analysts report continued Libyan reinforcement at Aozou and Gouro."
    }
   ],
   "quotes": [
@@ -15625,7 +15616,7 @@
     }
    }
   ],
-  "open_question": "The rest of the report, with the Gouro section and the graphics, would show what was at Gouro and how it related to Aozou.",
+  "open_question": "The missing Gouro section of this report, or other imagery reports from 1983, would show what was actually at Gouro airfield.",
   "docs": 1
  },
  "m:sidibilal|wp-murat-sidi-bilal-camp|same-place": {
@@ -16193,55 +16184,45 @@
   "docs": 0
  },
  "u:ghurdabiyah airfield|misratah port": {
-  "h": "926bee9ec701",
+  "h": "71068a3154d5",
   "model": "claude-sonnet-5-5",
-  "headline": "A January 1983 U.S. imagery note says helicopter containers would likely go to Misratah port, and the helicopters on to Ghurdabiyah airfield.",
-  "explanation": "One U.S. imagery note links the two places as steps in a single arms delivery. Soviet-type cargo ship carrying shipping containers for HAZE A helicopters arrived off Tobruk. The note says the containers would probably go on to Misratah port, where earlier deliveries of such containers had been seen. It then says the helicopters were probably meant for Ghurdabiyah airfield. The link is the analyst's judgement about where the cargo would go, not a record of what happened. It shows how Libya's ports and airfields were used to receive Soviet-type military equipment. The note does not mention Tripoli.",
+  "headline": "US imagery notes say Soviet-built HAZE A helicopters came in by containers through Misratah port, probably bound for Ghurdabiyah airfield near Tripoli.",
+  "explanation": "Two US imagery briefing notes from December 1982 and January 1983 follow a shipment route. Containers of HAZE A helicopters (an antisubmarine and search-and-rescue type) were landed at Misratah port. The helicopters were then probably sent on to Ghurdabiyah airfield. The notes say \"probably\", so this is an assessment, not a confirmed delivery. The link shows how Libya brought Soviet-type military equipment in through ports outside Tripoli, and where the aircraft were likely based. We have the full text only for the January 1983 note. For the December 1982 note we have just a summary.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "A Soviet-type roll-on/roll-off ship with HAZE A helicopter containers arrived offshore Tobruk in early 1983.",
-   "The note says the containers would probably be moved to Misratah port, where delivery of HAZE A containers had been seen before.",
-   "The note says the helicopters were probably destined for Ghurdabiyah airfield."
+   "The January 1983 note says a ship carrying HAZE A helicopter containers arrived offshore Tubruq, and the containers would probably be moved to Misratah port.",
+   "It says the helicopters 'probably are destined for' Ghurdabiyah airfield.",
+   "It says HAZE A container delivery had already been observed at Misratah port.",
+   "The December 1982 note, as summarised, reports six more probable HAZE A helicopters shipped in containers via the Misratah mole, probably bound for Ghurdabiyah airfield, not Tripoli."
   ],
   "not_established": [
-   "The note does not say the helicopters actually travelled from Misratah to Ghurdabiyah.",
-   "It gives no route, dates of onward movement, or confirmation that the cargo was delivered.",
-   "Both the port and the airfield destinations are stated as probable, not confirmed."
+   "Neither source confirms the helicopters actually reached Ghurdabiyah; both say 'probably'.",
+   "The December 1982 note is available only as a summary, so its exact wording is not checked.",
+   "The sources do not describe how the containers were moved from Misratah to the airfield."
   ],
-  "context": "Ghurdabiyah (Ghardabiyah) airfield is near Sirte, on the coast east of Tripoli. Misratah is a port city on the coast between Tripoli and Sirte.",
+  "context": "Ghurdabiyah (also spelled Gardabiya) is an air base near Sirte, on Libya's central coast, not in Tripoli itself. Misratah is a port east of Tripoli.",
   "timeline": [
    {
-    "when": "Before January 1983",
-    "what": "Delivery of HAZE A containers was observed at Misratah port (as the note recalls)."
+    "when": "19 Dec 1982",
+    "what": "Note reports six more probable HAZE A helicopters shipped in containers via Misratah port, probably bound for Ghurdabiyah."
    },
    {
-    "when": "January 1983",
-    "what": "Ship with eight helicopter fuselage containers and 16 component containers arrives offshore Tobruk."
-   },
-   {
-    "when": "After arrival (expected)",
-    "what": "Containers probably moved to Misratah; helicopters probably destined for Ghurdabiyah airfield."
+    "when": "4 Jan 1983",
+    "what": "Note reports another ship with HAZE A containers arriving offshore Tubruq, expected to go on to Misratah, with the helicopters probably going to Ghurdabiyah."
    }
   ],
   "quotes": [
    {
-    "text": "THE CONTAINERS (UNLIKELY TO BE OFFLOADED AT TUBRUQ) WILL PROBABLY BE TRANSPORTED TO MISRATAH PORT FACILITY",
-    "doc": {
-     "id": "cia-readingroom-document-cia-rdp90t00784r000200500007-2",
-     "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA"
-    }
-   },
-   {
-    "text": "THE 5X1 HELICOPTER PROBABLY ARE DESTINED FOR GHURDABIYAH AIRFIELD",
+    "text": "WILL PROBABLY BE TRANSPORTED TO MISRATAH PORT FACILITY",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90t00784r000200500007-2",
      "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA"
     }
    }
   ],
-  "open_question": "Later imagery reports or shipping records showing HAZE A helicopters unloaded at Misratah and seen at Ghurdabiyah would settle whether this route was followed.",
-  "docs": 1
+  "open_question": "Later imagery or Libyan air force records showing HAZE A helicopters at Ghurdabiyah would confirm the final destination.",
+  "docs": 2
  },
  "u:map:tip|morocco": {
   "h": "42da6306ba73",
@@ -16632,34 +16613,35 @@
   "docs": 1
  },
  "u:qadhafi speech 7 october 1986|sirte": {
-  "h": "1501946365c4",
+  "h": "abd59cd9bc7c",
   "model": "claude-sonnet-5-5",
-  "headline": "A US defense cable says Qadhafi gave his 7 October 1986 speech while in Sirte (spelled \"Surt\"), to mark the end of Italian rule.",
-  "explanation": "The link is stated in one U.S. Defense Intelligence Agency cable from 11 October 1986. It says Qadhafi and his deputy, Jallud, were in Surt on 7 October to mark the anniversary. Surt is a common spelling of Sirte, the coastal city. The cable ties the speech to a place outside Tripoli, which shows that major public events of the period were not always held in the capital. The speech itself called for defensive measures against a US attack and threatened terrorism.",
+  "headline": "A US defence cable places Qadhafi in Surt (Sirte) on 7 October 1986, for a speech marking the end of Italian rule.",
+  "explanation": "The cable is a US Defense Intelligence Agency report on a Qadhafi speech. It says Qadhafi and his deputy, Jallud, were in Surt on 7 October to mark the anniversary of the end of Italian authority in Libya. So the speech is tied to Surt as the place where the commemoration was held. This shows that major public occasions under Gaddafi were not always held in Tripoli. Surt, on the coast, also served as a stage for his messages. The cable's wording is slightly loose: it says he was \"in Surt\" for the commemoration, and the speech itself is described as given \"during\" it.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "The cable says Qadhafi and Jallud were in Surt on 7 October 1986 to mark the commemoration.",
+   "The cable says Qadhafi and Jallud were in Surt on 7 October (1986) to mark the commemoration.",
    "The speech marked the 16th anniversary of the official end of Italian authority in Libya.",
-   "In the speech he called on people to mine the coast and fortify the country, and threatened terrorism against the US if it attacked again."
+   "In it, Qadhafi called for mining the coast and fortifying the country, and threatened terrorism against the US if attacked again."
   ],
   "not_established": [
-   "The cable does not say exactly where in Surt the speech was given, or who attended.",
-   "It is a single secondhand intelligence summary; it does not give the speech text or say how the speech was heard or reported."
+   "The cable does not give the exact venue within Surt or say who was in the audience.",
+   "It does not explicitly say the words were spoken in Surt; that follows from where the leaders were for the commemoration.",
+   "It is a single US intelligence summary, not a full text of the speech."
   ],
-  "context": "Sirte is a coastal city east of Tripoli and was Qadhafi's home region. \"Surt\" is a common transliteration of the same name.",
+  "context": "The anniversary on 7 October was marked in Libya as a day of remembrance of the expulsion of Italians in 1970 (the year the cable counts from).",
   "timeline": [
    {
     "when": "7 October 1986",
-    "what": "Qadhafi and Jallud are in Surt; Qadhafi gives the speech marking the end of Italian authority."
+    "what": "Qadhafi and Jallud in Surt for the commemoration; speech given."
    },
    {
     "when": "10 October 1986",
-    "what": "Date of information given in the DIA cable."
+    "what": "US Defense Intelligence Agency records the speech report (as of 1535 EDT)."
    },
    {
     "when": "11 October 1986",
-    "what": "The cable is sent from DIA Washington."
+    "what": "Cable dated in the archive record."
    }
   ],
   "quotes": [
@@ -16671,7 +16653,7 @@
     }
    }
   ],
-  "open_question": "Libyan press or broadcast records from 7–8 October 1986 could confirm the venue and show the full speech text.",
+  "open_question": "A Libyan press report or broadcast transcript of the 7 October 1986 speech could confirm the exact location and the full wording.",
   "docs": 1
  },
  "u:billy carter|gibril shalotif": {
@@ -16940,52 +16922,26 @@
   "docs": 1
  },
  "u:gulf of sidra|sixth fleet maneuvers 17-23 august 1981": {
-  "h": "63eee7b0a86c",
+  "h": "ed9bc4ad1aed",
   "model": "claude-sonnet-5-5",
-  "headline": "The August 1981 Sixth Fleet maneuvers took place in and around the Gulf of Sidra, according to Libyan state broadcasts.",
-  "explanation": "A Libyan statement of 18 August 1981 says the U.S. Sixth Fleet began maneuvers on 17 August \"off the shores of Sidra\", to continue until 23 August. It says part of the area lay inside the Gulf of Sidra, which Libya claimed as its own waters. The next day Libya said eight U.S. aircraft intercepted two Libyan planes over the Gulf. This matters for Tripoli because the Gulf became the setting for a standoff between Libya and the United States. All of this comes from Libyan state media, so it shows Libya's account, not a neutral one.",
-  "strength": "reported",
+  "headline": "Libyan state media said the US Sixth Fleet's August 1981 maneuvers took place partly inside the Gulf of Sidra, which Libya claimed as its own waters.",
+  "explanation": "The August 1981 document links the two directly. A Libyan statement says the Sixth Fleet began maneuvers on 17 August off Sidra, and that part of the area lay inside the Gulf. Libya called this a violation of its 1973 declaration claiming the Gulf. A military spokesman then reported that eight US aircraft intercepted two Libyan planes over the Gulf on 19 August. The 1979 document does not describe these maneuvers. It shows only that a similar dispute over the Gulf and US naval exercises had come up two years earlier. All of this is Libya's account, and it was not a neutral measurement of where the ships were.",
+  "strength": "direct",
   "flag": "ok",
   "established": [
-   "A Libyan statement of 18 August 1981 says the Sixth Fleet began maneuvers on 17 August, to continue until 23 August, off the shores of Sidra.",
-   "The statement says part of the maneuver area fell inside the Gulf of Sidra, which Libya treated as its territorial waters.",
-   "Libyan radio said that at 0712 on 19 August eight USAF aircraft intercepted two Libyan aircraft over the Gulf and fired on them."
+   "Doc 2 (Libyan radio, 18-19 Aug 1981) says the US 6th Fleet began maneuvers on 17 August, to run until 23 August, off the shores of Sidra.",
+   "Libya's Foreign Liaison Bureau said part of the maneuver area fell inside the Gulf of Sidra, about 38 km within what Libya called its territorial waters. It said the last part, in international waters, fell in a Libyan Air Force danger area.",
+   "A Libyan military spokesman said eight USAF aircraft intercepted and fired on two Libyan aircraft over the Gulf at 0712 on 19 August 1981.",
+   "Doc 1 (August 1979) shows an earlier dispute. Libya told the US charge d'affaires it would defend its 12-mile waters and the Gulf of Sidra, which it called an internal sea, under its 1973 proclamation."
   ],
   "not_established": [
-   "The document gives only Libyan state media's account. It does not give the U.S. account or independent confirmation.",
-   "It says only part of the maneuver area lay inside the Gulf. Some of it was in international waters, so the whole exercise was not in the Gulf.",
-   "The text is OCR'd and partly garbled. The firing claim rests on a misread word."
+   "The sources give only Libya's account. They do not give the US position or independent positions of ships and aircraft.",
+   "They do not show that the Gulf is Libyan territorial water. That is Libya's claim, and the sources do not settle it.",
+   "Doc 1 does not mention the 17-23 August 1981 maneuvers, so it adds only background."
   ],
-  "context": "The Gulf of Sidra is a large bay off Libya's coast. Libya claimed it as territorial water, and the United States and others did not accept that claim.",
-  "timeline": [
-   {
-    "when": "9 Oct 1973",
-    "what": "Libya declares the Gulf of Sidra part of its territory (as cited in the statement)."
-   },
-   {
-    "when": "17 Aug 1981",
-    "what": "Sixth Fleet maneuvers begin, per Libya's statement."
-   },
-   {
-    "when": "19 Aug 1981, 0712",
-    "what": "Libya reports eight USAF aircraft intercepted two Libyan planes over the Gulf."
-   },
-   {
-    "when": "23 Aug 1981",
-    "what": "Planned end of the maneuvers."
-   }
-  ],
-  "quotes": [
-   {
-    "text": "the U.S. 6th Fleet in the Mediterranean yesterday, 17 August 1981, began military maneuvers off the shores of Sidra which will continue until 23 August.",
-    "doc": {
-     "id": "fbis-1981-08-19-0982",
-     "t": "FBIS DAILY REPORT: Middle East & Africa, Vol. V No. 160, 19 August 1981"
-    }
-   }
-  ],
-  "open_question": "U.S. Navy records or independent accounts of the exercise area and the 19 August encounter would confirm where the events took place.",
-  "docs": 1
+  "timeline": [],
+  "quotes": [],
+  "docs": 2
  },
  "m:as-sidibilal|sidibilal|same-place": {
   "h": "1bbb13f7bae1",
@@ -17350,6 +17306,187 @@
    }
   ],
   "open_question": "Supply, airlift or base records from Sebha, or later assessments of the Chad campaign, could show what Sebha's role was.",
+  "docs": 1
+ },
+ "u:benghazi|national front for the salvation of libya": {
+  "h": "f06379fd78c7",
+  "model": "claude-sonnet-5-5",
+  "headline": "A May 1984 Libyan state report says a Benghazi demonstration called the Front for Salvation of Libya a cover for the Muslim Brotherhood and American agents.",
+  "explanation": "The link comes from one translated Libyan news item (JANA) in a U.S. government daily report. It describes a demonstration, held in Benghazi according to the document summary, that denounced people said to have infiltrated Libya to carry out sabotage. The slogans, as reported, said the \"so-called Front for Salvation of Libya\" was only a cover for the Muslim Brotherhood and America's agents. This shows how the state media of the time presented the opposition: as foreign-backed traitors. It is the government's account, not an independent one. It says nothing about who was actually in the Front.",
+  "strength": "reported",
+  "flag": "ok",
+  "established": [
+   "A Libyan state news item, published in a U.S. daily report on 17 May 1984, reports a demonstration whose slogans attacked the Front for Salvation of Libya.",
+   "The slogans, as reported, called the Front a cover for the Muslim Brotherhood and America's agents.",
+   "The summary of the document places the rally in Benghazi."
+  ],
+  "not_established": [
+   "The passage shown does not itself name Benghazi; that comes from the document summary.",
+   "Nothing shows the Front was in fact a cover for the Muslim Brotherhood or for American agents. This is the Libyan government's claim.",
+   "The passage does not say how many people took part in the demonstration or who organised it."
+  ],
+  "context": "The National Front for the Salvation of Libya was an opposition group based abroad that opposed Gaddafi's rule. Libyan state media often described such groups as foreign agents.",
+  "timeline": [
+   {
+    "when": "17 May 1984",
+    "what": "FBIS daily report carries the JANA item on the demonstration and its slogans."
+   }
+  ],
+  "quotes": [
+   {
+    "text": "the so-called Front for Salvation of Libya is nothing more than a cover-up to Muslim Brotherhood, America’s agents who were eliminated inside.",
+    "doc": {
+     "id": "fbis-1984-05-17-0419",
+     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 097, 17 May 1984"
+    }
+   }
+  ],
+  "open_question": "Other reports of the same rally, such as Libyan press or radio from the same days, could confirm the location and who attended.",
+  "docs": 1
+ },
+ "u:faya-largeau|libya-chad conflict": {
+  "h": "0dd1e6c2f18a",
+  "model": "claude-sonnet-5-5",
+  "headline": "A 1983 U.S. briefing says Faya Largeau was the main Libyan ground force base in Chad and the furthest south Libyan units had reached.",
+  "explanation": "Faya Largeau is a town in northern Chad. A U.S. imagery briefing from August 1983 names it as the main place where Libyan ground forces were stationed during the fighting in Chad. It also says Libyan ground units had pushed \"as far south\" as the town since late July. So the town is a clear marker of how far the Libyan military reached into Chad. The document has nothing about Tripoli itself. Its link to life in Tripoli is only that the forces came from Libya.",
+  "strength": "direct",
+  "flag": "ok",
+  "established": [
+   "The briefing states that the primary Libyan ground force deployment in Chad is at Faya Largeau.",
+   "It says Libyan ground units had pushed as far south as Faya Largeau since late July 1983.",
+   "Libyan forces were also confirmed on imagery at Ounianga Kebir, Ogoui and Aozou.",
+   "It lists the units at Faya Largeau, including a mechanized infantry battalion, a probable motorized infantry battalion, a heavy-lift battalion and artillery batteries."
+  ],
+  "not_established": [
+   "The document does not cover the whole Libya-Chad conflict, only the position around August 1983.",
+   "It says nothing about Tripoli or about what people there knew or experienced.",
+   "It does not say how long Libyan forces stayed at Faya Largeau."
+  ],
+  "context": "Libya and Chad were in conflict over many years, including a dispute over the Aozou strip in the north. Faya Largeau is the main oasis town of northern Chad.",
+  "timeline": [
+   {
+    "when": "Late July 1983",
+    "what": "Libyan mechanized and motorized infantry units are introduced, and the fighting escalates."
+   },
+   {
+    "when": "Since late July 1983",
+    "what": "Libyan ground units push as far south as Faya Largeau."
+   },
+   {
+    "when": "18 August 1983",
+    "what": "The briefing shows Faya Largeau as the main Libyan ground force deployment in Chad."
+   }
+  ],
+  "quotes": [
+   {
+    "text": "THE PRIMARY LIBYAN GROUND FORCE DEPLOYMENT IN CHAD IS AT FAYA LARGEAU.",
+    "doc": {
+     "id": "cia-readingroom-document-cia-rdp84t00171r000201410001-4",
+     "t": "DISPOSITION OF LIBYAN FORCES IN CHAD (SANITIZED)"
+    }
+   }
+  ],
+  "open_question": "\">Later records of who held Faya Largeau, and for how long, would show how this town fits into the wider course of the conflict.\"",
+  "docs": 1
+ },
+ "u:aozou airfield|matan as sarra airfield": {
+  "h": "9d667db7a046",
+  "model": "claude-sonnet-5-5",
+  "headline": "A 1983 U.S. imagery note says Matan as Sarra airfield in Libya could be a staging base to defend or support Aozou airfield in Chad.",
+  "explanation": "Aozou airfield is in northern Chad. Matan as Sarra airfield is in far southeastern Libya. A U.S. analyst's note from August 1983 links them as a pair of airfields. It says Matan as Sarra gives Libya a base inside Libya if Habre's forces threaten Aozou. From there, the SF.260 light attack aircraft could reach the Aozou area. This shows how Libya's military reach under Gaddafi extended into Chad from remote desert bases, far from Tripoli. The link is the analyst's judgment about how the airfields might be used, not a record of actual operations.",
+  "strength": "direct",
+  "flag": "ok",
+  "established": [
+   "The note says Matan as Sarra gives Libya a staging base inside Libya if Habre's forces threaten Aozou airfield.",
+   "It gives the SF.260 an operational radius of 300 nautical miles and says it can strike the Faya Largeau, Bardai and Aozou areas of Chad.",
+   "It reports three SF.260 aircraft identified at Matan as Sarra for the first time, with the airfield under construction since early 1980.",
+   "It places Matan as Sarra in southeastern Libya, 172 nm south of Kufra and 275 nm northeast of Faya Largeau, Chad."
+  ],
+  "not_established": [
+   "The note does not show that any strike on Aozou was actually flown from Matan as Sarra.",
+   "It does not describe Aozou airfield itself, such as who held it or what was based there.",
+   "It is a briefing note and the analyst's view of what could happen, not a confirmed plan."
+  ],
+  "context": "Aozou is in the Aozou Strip, a border area of northern Chad that Libya occupied in the 1970s and fought over with Chad in the 1980s.",
+  "timeline": [
+   {
+    "when": "Early 1980",
+    "what": "Construction of Matan as Sarra airfield begins, according to the note."
+   },
+   {
+    "when": "1981–1982",
+    "what": "No aircraft seen; a small part of the east runway is usable by light aircraft and helicopters."
+   },
+   {
+    "when": "Early 1983",
+    "what": "Construction shifts to the west parallel runway, part of which has a probable hardened surface."
+   },
+   {
+    "when": "2 August 1983",
+    "what": "Three SF.260 aircraft identified at Matan as Sarra for the first time."
+   }
+  ],
+  "quotes": [
+   {
+    "text": "PROVIDES THE LIBYAN'S WITH A STAGING BASE INSIDE LIBYA IN THE EVENT HABRE'S FORCES THREATEN AOZOU AIRFIELD",
+    "doc": {
+     "id": "cia-readingroom-document-cia-rdp84t00171r000201300001-6",
+     "t": "FIRST IDENTIFICATION OF FIXED WING AIRCRAFT MATAN AS SARRA AIRFIELD, LIBYA (SANITIZED)"
+    }
+   },
+   {
+    "text": "FROM MATAN AS SARRA, THE SF.260 CAN STRIKE THE FAYA LARGEAU, THE BARDAI, AND THE AOZOU AREAS OF CHAD.",
+    "doc": {
+     "id": "cia-readingroom-document-cia-rdp84t00171r000201300001-6",
+     "t": "FIRST IDENTIFICATION OF FIXED WING AIRCRAFT MATAN AS SARRA AIRFIELD, LIBYA (SANITIZED)"
+    }
+   }
+  ],
+  "open_question": "Later imagery reports or Libyan and Chadian records could show whether aircraft at Matan as Sarra were ever used to defend or support Aozou.",
+  "docs": 1
+ },
+ "u:misratah port|tobruk": {
+  "h": "224c0e56dd8b",
+  "model": "claude-sonnet-5-5",
+  "headline": "A January 1983 US imagery note expects Soviet-built helicopter containers at Tobruk port to move on to Misratah port.",
+  "explanation": "The two ports are linked as stops on a likely route for a military shipment to Libya. A Soviet-type cargo ship carrying helicopter containers arrived off Tobruk. The note says the containers would probably not be unloaded there. It expects them to go to Misratah port, where an earlier delivery of the same kind of container had been seen. This is an analyst's expectation, not a record of the move. It matters for Tripoli because it shows how arms reached Libya's coast and were passed along. It says nothing about Tripoli itself.",
+  "strength": "inferred",
+  "flag": "ok",
+  "established": [
+   "A ship carrying eight helicopter fuselage containers and 16 component containers arrived off Tobruk port in early January 1983.",
+   "The note says the containers would probably be moved to Misratah port, where delivery of similar containers had been observed.",
+   "The helicopters themselves were probably meant for Ghurdabiyah airfield."
+  ],
+  "not_established": [
+   "The note does not confirm the containers were actually moved from Tobruk to Misratah, or how or when.",
+   "It does not say who ran either port or whether Tripoli was involved.",
+   "The earlier observed delivery at Misratah is not dated or described in the passage."
+  ],
+  "context": "HAZE A is a Soviet-designed helicopter used for anti-submarine and search-and-rescue work. The note says only Syria and Libya operated it outside the Warsaw Pact.",
+  "timeline": [
+   {
+    "when": "Before January 1983",
+    "what": "Delivery of HAZE A containers observed at Misratah port (date not given)."
+   },
+   {
+    "when": "Early January 1983",
+    "what": "Ship with helicopter containers arrives offshore Tobruk port."
+   },
+   {
+    "when": "Expected next",
+    "what": "Containers probably moved to Misratah port; helicopters probably bound for Ghurdabiyah airfield."
+   }
+  ],
+  "quotes": [
+   {
+    "text": "THE CONTAINERS (UNLIKELY TO BE OFFLOADED AT TUBRUQ) WILL PROBABLY BE TRANSPORTED TO MISRATAH PORT FACILITY",
+    "doc": {
+     "id": "cia-readingroom-document-cia-rdp90t00784r000200500007-2",
+     "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA"
+    }
+   }
+  ],
+  "open_question": "A later imagery report or shipping record showing the containers at Misratah would confirm the move.",
   "docs": 1
  }
 }

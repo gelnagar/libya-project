@@ -12,18 +12,55 @@
   "lon": 13.1768,
   "r": 0.6,
   "summary": "A military police headquarters compound in the Abu Salim district; Abu Salim prison was built inside it.",
-  "history": "Published accounts say Abu Salim prison, completed in 1984, was built inside the Military Police Command compound, replacing the colonial-era Black Horse prison. This is why the prison and the compound are linked on the map: detainees were held on a military site rather than in a civilian prison.",
+  "history": "Amnesty International (2006) describes Abu Salim Prison as located in a compound of the Military Police in the area of Abu Salim, a suburb of Tripoli. The Human Rights Solidarity account says it lies within the compound of the Military Police Command and consists of two parallel facilities, the Central Prison and the Military Prison. Published accounts say the prison, completed in 1984, replaced the colonial-era Black Horse prison. During the June 1996 standoff a security team led by Colonel Abdullah al-Senussi, head of military intelligence, arrived and negotiated with the prisoners, so the site was not run by the Military Police alone. By 2005 Human Rights Watch lists Abu Salim among facilities run by the Internal Security Agency.",
   "era": "",
   "today": "",
   "uncertain": "Only the location 'around Abu Salim prison' is supported; the compound's boundaries, buildings and unit structure are not mapped here, so the marker is approximate and wide. The earlier 'police depots' seized in the 1969 coup are not shown to be this compound.",
   "sources": [
    {
+    "t": "Amnesty International (2006), Libya: Investigation needed into prison deaths",
+    "u": "https://www.amnesty.org/en/wp-content/uploads/2021/08/mde190062006en.pdf"
+   },
+   {
+    "t": "Human Rights Solidarity, Annex 1: The Abu Salim Prison Massacre",
+    "u": "https://hrsly.com/en/annex-1-the-abu-salim-prison-massacre/"
+   },
+   {
     "t": "Wikipedia: Abu Salim Prison",
     "u": "https://en.wikipedia.org/wiki/Abu_Salim_Prison"
    },
    {
-    "t": "Human Rights Watch, Libya: June 1996 Killings at Abu Salim Prison",
-    "u": "https://www.hrw.org/reports/2006/06/28/libya-june-1996-killings-abu-salim-prison"
+    "t": "Human Rights Watch (2006), Libya: Words to Deeds",
+    "u": "https://www.hrw.org/reports/libya0106webwcover.pdf"
+   }
+  ],
+  "period": "jamahiriya",
+  "built": ""
+ },
+ {
+  "id": "lh-police-college",
+  "name": "Police college (Tripoli, location not published)",
+  "ar": "",
+  "aliases": [
+   "Police Academy"
+  ],
+  "kind": "government",
+  "lat": null,
+  "lon": null,
+  "r": 0.5,
+  "summary": "A police training college whose cadets graduated in Tripoli; a Human Rights Watch report also lists a Police Academy among Tripoli sites used in a Muslim Brotherhood retrial.",
+  "history": "Libyan state news (JANA) reported on 4 September 1985, during the 16th anniversary celebrations of the 1969 revolution, a ceremony for the graduation of the 10th batch of the police college. The director spoke of training cadets to be ideologically committed to the revolution's goals, and the secretary of the General People's Committee for Justice attended. Human Rights Watch (2006) lists the Police Academy among Tripoli sites in connection with a retrial of Muslim Brotherhood defendants.",
+  "era": "",
+  "today": "",
+  "uncertain": "None of the sources opened gives an address, so it is not mapped. It is not shown to be the same as the 1969 'police depots' or the Military Police Command. The 2006 HRW detail comes from a summary of its report, not a page read in full here.",
+  "sources": [
+   {
+    "t": "CIA reading room (via archive.org): JANA, 4 Sep 1985, graduation ceremony for police cadets",
+    "u": "https://archive.org/details/cia-readingroom-document-cia-rdp05-01559r000400400057-9"
+   },
+   {
+    "t": "Human Rights Watch (2006), Libya: Words to Deeds",
+    "u": "https://www.hrw.org/reports/libya0106webwcover.pdf"
    }
   ],
   "period": "jamahiriya",

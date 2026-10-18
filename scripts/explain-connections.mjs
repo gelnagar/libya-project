@@ -100,12 +100,14 @@ console.log('items', items.length, 'todo', todo.length);
 const usage = { in: 0, out: 0, cw: 0, cr: 0, ok: 0, fail: 0 }, errors = [];
 function verifyQuotes(it, q) { // keep only quotes that really occur in the evidence we sent
   const hay = norm(it.ev.map((e) => (e.passages || []).join(' ') + ' ' + (e.quote || '') + ' ' + (e.summary || '')).join(' ')).toLowerCase();
-  return (q || []).filter((x) => x.text && hay.includes(norm(x.text).replace(/^…|…$/g, '').toLowerCase())).slice(0, 2).map((x) => ({ text: norm(x.text), doc: it.ev[x.doc - 1] ? { id: it.ev[x.doc - 1].id, t: it.ev[x.doc - 1].title } : null }));
+  return (Array.isArray(q) ? q : []).filter((x) => x.text && hay.includes(norm(x.text).replace(/^…|…$/g, '').toLowerCase())).slice(0, 2).map((x) => ({ text: norm(x.text), doc: it.ev[x.doc - 1] ? { id: it.ev[x.doc - 1].id, t: it.ev[x.doc - 1].title } : null }));
 }
 function keep(it, msg) {
   const u = msg.usage || {}; usage.in += u.input_tokens || 0; usage.out += u.output_tokens || 0; usage.cw += u.cache_creation_input_tokens || 0; usage.cr += u.cache_read_input_tokens || 0;
   const tu = (msg.content || []).find((c) => c.type === 'tool_use'); if (!tu) { usage.fail++; return; }
-  const n = tu.input; usage.ok++; notes[it.key] = { h: it.hash, model: MODEL, ...n, quotes: verifyQuotes(it, n.quotes), docs: it.ev.length };
+  const n = { ...tu.input }; for (const f of ['established', 'not_established', 'timeline', 'quotes']) { let v = n[f]; if (typeof v === 'string') { try { v = JSON.parse(v); } catch { v = f === 'established' || f === 'not_established' ? [v] : []; } } n[f] = Array.isArray(v) ? v : []; }
+  n.timeline = n.timeline.filter((t) => t && t.when && t.what); n.quotes = n.quotes.filter((q) => q && q.text);
+  usage.ok++; notes[it.key] = { h: it.hash, model: MODEL, ...n, quotes: verifyQuotes(it, n.quotes), docs: it.ev.length };
 }
 const save = () => {
   fs.mkdirSync('archive/research', { recursive: true });

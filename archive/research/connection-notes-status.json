@@ -1,13 +1,15 @@
 {
- "at": "2026-10-18T18:22:29.638Z",
+ "at": "2026-10-18T18:31:45.495Z",
  "model": "claude-sonnet-5-5",
  "items": 433,
- "notes": 10,
- "in": 12420,
- "out": 9777,
- "cw": 3999,
- "cr": 9331,
- "ok": 10,
+ "notes": 117,
+ "in": 127544,
+ "out": 104516,
+ "cw": 0,
+ "cr": 143964,
+ "ok": 108,
  "fail": 0,
- "errors": []
+ "errors": [
+  "uncaught: (q || []).filter is not a function"
+ ]
 }

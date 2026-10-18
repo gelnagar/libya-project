@@ -1,0 +1,419 @@
+{
+ "at": "2026-10-18T15:17:51.652Z",
+ "collectionTotal": 987048,
+ "crestTitleHits": 1534,
+ "jprsHits": 403,
+ "gazHits": 3,
+ "byYear": {
+  "1948": 1,
+  "1949": 1,
+  "1950": 2,
+  "1952": 1,
+  "1953": 2,
+  "1954": 1,
+  "1956": 15,
+  "1957": 8,
+  "1958": 4,
+  "1959": 5,
+  "1960": 2,
+  "1961": 1,
+  "1963": 1,
+  "1965": 2,
+  "1968": 1,
+  "1969": 8,
+  "1970": 6,
+  "1971": 2,
+  "1972": 2,
+  "1973": 9,
+  "1974": 20,
+  "1975": 22,
+  "1976": 86,
+  "1977": 24,
+  "1978": 3,
+  "1979": 9,
+  "1980": 62,
+  "1981": 219,
+  "1982": 178,
+  "1983": 112,
+  "1984": 35,
+  "1985": 214,
+  "1986": 267,
+  "1987": 65,
+  "1988": 55,
+  "1989": 15,
+  "1990": 9,
+  "1991": 2,
+  "1993": 2,
+  "1994": 1,
+  "1999": 5,
+  "2001": 1,
+  "2003": 2,
+  "2004": 1,
+  "2005": 1,
+  "2006": 3,
+  "2007": 5,
+  "2008": 5,
+  "2010": 1,
+  "2011": 10,
+  "2012": 4,
+  "2013": 3,
+  "2016": 16,
+  "": 3
+ },
+ "samples": [
+  {
+   "id": "cia-readingroom-document-0000214355",
+   "title": "CIA Reading Room 0000214355: (EST PUB DATE) THE LIBYAN NUCLEAR PROGRAM: A TECHNICAL PERSPECTIVE (DELETED)",
+   "files": [
+    [
+     "0000214355.pdf",
+     "Image Container PDF",
+     "276631"
+    ],
+    [
+     "0000214355_chocr.html.gz",
+     "chOCR",
+     "13508"
+    ],
+    [
+     "0000214355_djvu.txt",
+     "DjVuTXT",
+     "827"
+    ],
+    [
+     "0000214355_djvu.xml",
+     "Djvu XML",
+     "17126"
+    ],
+    [
+     "0000214355_hocr.html",
+     "hOCR",
+     "36254"
+    ],
+    [
+     "0000214355_hocr_pageindex.json.gz",
+     "OCR Page Index",
+     "80"
+    ],
+    [
+     "0000214355_hocr_searchtext.txt.gz",
+     "OCR Search Text",
+     "566"
+    ],
+    [
+     "0000214355_imgonly_pdfmeta.json",
+     "Image-Only PDF Metadata JSON",
+     "5394"
+    ],
+    [
+     "0000214355_jp2.zip",
+     "Single Page Processed JP2 ZIP",
+     "2414523"
+    ],
+    [
+     "0000214355_page_numbers.json",
+     "Page Numbers JSON",
+     "844"
+    ],
+    [
+     "0000214355_scandata.xml",
+     "Scandata",
+     "1563"
+    ],
+    [
+     "0000214355_text.pdf",
+     "Additional Text PDF",
+     "619111"
+    ]
+   ],
+   "meta": {
+    "creator": "CIA Reading Room",
+    "date": "1985-01-05",
+    "description": "No Description",
+    "language": "english",
+    "subject": "CIA Reading Room;",
+    "title": "CIA Reading Room 0000214355: (EST PUB DATE) THE LIBYAN NUCLEAR PROGRAM:  A TECHNICAL PERSPECTIVE (DELETED)",
+    "curation": "[curator]validator@archive.org[/curator][date]20230716211503[/date][comment]checked for malware[/comment]",
+    "identifier-access": "http://archive.org/details/cia-readingroom-document-0000214355",
+    "identifier-ark": "ark:/13960/s2fs57bnx8w",
+    "ppi": "300",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.3",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_parameters": "-l eng",
+    "ocr_module_version": "0.0.21",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "0.9997",
+    "pdf_module_version": "0.0.23",
+    "collection_added": "usgovernmentmirrors,government-documents"
+   }
+  },
+  {
+   "id": "cia-readingroom-document-0000215139",
+   "title": "CIA Reading Room 0000215139: EGYPT-LIBYA: CEASE FIRE ANNOUNCEMENT",
+   "files": [
+    [
+     "0000215139.pdf",
+     "Image Container PDF",
+     "34551"
+    ],
+    [
+     "0000215139_chocr.html.gz",
+     "chOCR",
+     "5442"
+    ],
+    [
+     "0000215139_djvu.txt",
+     "DjVuTXT",
+     "297"
+    ],
+    [
+     "0000215139_djvu.xml",
+     "Djvu XML",
+     "5967"
+    ],
+    [
+     "0000215139_hocr.html",
+     "hOCR",
+     "12997"
+    ],
+    [
+     "0000215139_hocr_pageindex.json.gz",
+     "OCR Page Index",
+     "42"
+    ],
+    [
+     "0000215139_hocr_searchtext.txt.gz",
+     "OCR Search Text",
+     "239"
+    ],
+    [
+     "0000215139_imgonly_pdfmeta.json",
+     "Image-Only PDF Metadata JSON",
+     "1517"
+    ],
+    [
+     "0000215139_jp2.zip",
+     "Single Page Processed JP2 ZIP",
+     "477407"
+    ],
+    [
+     "0000215139_page_numbers.json",
+     "Page Numbers JSON",
+     "340"
+    ],
+    [
+     "0000215139_scandata.xml",
+     "Scandata",
+     "606"
+    ],
+    [
+     "0000215139_text.pdf",
+     "Additional Text PDF",
+     "80196"
+    ]
+   ],
+   "meta": {
+    "creator": "CIA Reading Room",
+    "date": "1977-06-01",
+    "description": "No Description",
+    "language": "english",
+    "subject": "CIA Reading Room;",
+    "title": "CIA Reading Room 0000215139: EGYPT-LIBYA: CEASE FIRE ANNOUNCEMENT",
+    "curation": "[curator]validator@archive.org[/curator][date]20230716232205[/date][comment]checked for malware[/comment]",
+    "identifier-access": "http://archive.org/details/cia-readingroom-document-0000215139",
+    "identifier-ark": "ark:/13960/s2t458f8vt0",
+    "ppi": "300",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.3",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_parameters": "-l eng",
+    "ocr_module_version": "0.0.21",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "pdf_module_version": "0.0.23",
+    "collection_added": "usgovernmentmirrors,government-documents"
+   }
+  },
+  {
+   "id": "cia-readingroom-document-0000215141",
+   "title": "CIA Reading Room 0000215141: (EST PUB DATE)(UNTITLED) RE EGYPT-LIBYA CONTINUE TO OBSERVE A DE FACTO TRUCE",
+   "files": [
+    [
+     "0000215141.pdf",
+     "Image Container PDF",
+     "217728"
+    ],
+    [
+     "0000215141_chocr.html.gz",
+     "chOCR",
+     "98605"
+    ],
+    [
+     "0000215141_djvu.txt",
+     "DjVuTXT",
+     "6387"
+    ],
+    [
+     "0000215141_djvu.xml",
+     "Djvu XML",
+     "92474"
+    ],
+    [
+     "0000215141_hocr.html",
+     "hOCR",
+     "180675"
+    ],
+    [
+     "0000215141_hocr_pageindex.json.gz",
+     "OCR Page Index",
+     "112"
+    ],
+    [
+     "0000215141_hocr_searchtext.txt.gz",
+     "OCR Search Text",
+     "3232"
+    ],
+    [
+     "0000215141_imgonly_pdfmeta.json",
+     "Image-Only PDF Metadata JSON",
+     "9273"
+    ],
+    [
+     "0000215141_jp2.zip",
+     "Single Page Processed JP2 ZIP",
+     "3060438"
+    ],
+    [
+     "0000215141_page_numbers.json",
+     "Page Numbers JSON",
+     "1348"
+    ],
+    [
+     "0000215141_scandata.xml",
+     "Scandata",
+     "2520"
+    ],
+    [
+     "0000215141_text.pdf",
+     "Additional Text PDF",
+     "559623"
+    ]
+   ],
+   "meta": {
+    "creator": "CIA Reading Room",
+    "date": "1977-06-05",
+    "description": "No Description",
+    "language": "english",
+    "subject": "CIA Reading Room;",
+    "title": "CIA Reading Room 0000215141: (EST PUB DATE)(UNTITLED) RE EGYPT-LIBYA CONTINUE TO OBSERVE A DE FACTO TRUCE",
+    "curation": "[curator]validator@archive.org[/curator][date]20230716162831[/date][comment]checked for malware[/comment]",
+    "identifier-access": "http://archive.org/details/cia-readingroom-document-0000215141",
+    "identifier-ark": "ark:/13960/s2tb3b5mtcp",
+    "ppi": "300",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.3",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_parameters": "-l eng",
+    "ocr_module_version": "0.0.21",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "0.6086",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "0.9914",
+    "pdf_module_version": "0.0.23",
+    "collection_added": "usgovernmentmirrors,government-documents"
+   }
+  },
+  {
+   "id": "cia-readingroom-document-0000215142",
+   "title": "CIA Reading Room 0000215142: MIDDLE EAST- EGYPT-LIBYA",
+   "files": [
+    [
+     "0000215142.pdf",
+     "Image Container PDF",
+     "70051"
+    ],
+    [
+     "0000215142_chocr.html.gz",
+     "chOCR",
+     "49466"
+    ],
+    [
+     "0000215142_djvu.txt",
+     "DjVuTXT",
+     "3518"
+    ],
+    [
+     "0000215142_djvu.xml",
+     "Djvu XML",
+     "46031"
+    ],
+    [
+     "0000215142_hocr.html",
+     "hOCR",
+     "90083"
+    ],
+    [
+     "0000215142_hocr_pageindex.json.gz",
+     "OCR Page Index",
+     "43"
+    ],
+    [
+     "0000215142_hocr_searchtext.txt.gz",
+     "OCR Search Text",
+     "1688"
+    ],
+    [
+     "0000215142_imgonly_pdfmeta.json",
+     "Image-Only PDF Metadata JSON",
+     "1517"
+    ],
+    [
+     "0000215142_jp2.zip",
+     "Single Page Processed JP2 ZIP",
+     "961424"
+    ],
+    [
+     "0000215142_page_numbers.json",
+     "Page Numbers JSON",
+     "340"
+    ],
+    [
+     "0000215142_scandata.xml",
+     "Scandata",
+     "606"
+    ],
+    [
+     "0000215142_text.pdf",
+     "Additional Text PDF",
+     "132789"
+    ]
+   ],
+   "meta": {
+    "creator": "CIA Reading Room",
+    "date": "1977-06-05",
+    "description": "No Description",
+    "language": "english",
+    "subject": "CIA Reading Room;",
+    "title": "CIA Reading Room 0000215142: MIDDLE EAST- EGYPT-LIBYA",
+    "curation": "[curator]validator@archive.org[/curator][date]20230716172425[/date][comment]checked for malware[/comment]",
+    "identifier-access": "http://archive.org/details/cia-readingroom-document-0000215142",
+    "identifier-ark": "ark:/13960/s2tqv6hpbrf",
+    "ppi": "300",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.3",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_parameters": "-l eng",
+    "ocr_module_version": "0.0.21",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "pdf_module_version": "0.0.23",
+    "collection_added": "usgovernmentmirrors,government-documents"
+   }
+  }
+ ]
+}

@@ -2169,6 +2169,63 @@
     return lines.length ? (base + '\n\nCONNECTIONS\n' + lines.slice(0, 20).join('\n')).slice(0, 17000) : base;
   };
 
+
+  /* ---------- In memory: numbers, ranges and names, each with its source ---------- */
+  var MEM = window.ATLAS_MEMORIAL || { items: [], names: [] };
+  function fmtN(n) { return n == null ? '' : Number(n).toLocaleString('en-US'); }
+  function rangeText(it) { if (it.low != null && it.high != null && it.low !== it.high) return fmtN(it.low) + '–' + fmtN(it.high); return fmtN(it.best != null ? it.best : (it.high != null ? it.high : it.low)); }
+  function memBars(items, label) {
+    if (!items.length) return null;
+    var max = Math.max.apply(null, items.map(function (it) { return it.high || it.best || it.low || 0; })) || 1;
+    var rows = items.map(function (it) {
+      var lo = it.low != null ? it.low : (it.best || it.high), hi = it.high != null ? it.high : (it.best || it.low), best = it.best != null ? it.best : hi;
+      var pct = function (v) { return (100 * v / max).toFixed(2) + '%'; };
+      var src = (it.sources || [])[0];
+      var tip = it.note + (src ? '\nSource: ' + src.t : '');
+      return h('div', { class: 'mb-row', title: tip, tabindex: '0', 'aria-label': it.label + ': ' + rangeText(it) + ' ' + it.unit + '. ' + it.note }, [
+        h('div', { class: 'mb-lab' }, [h('b', { text: it.label }), h('small', { text: [it.year, it.place].filter(Boolean).join(' · ') })]),
+        h('div', { class: 'mb-track' }, [
+          h('span', { class: 'mb-bar', style: 'width:' + pct(best) }),
+          lo !== hi ? h('span', { class: 'mb-range', style: 'left:' + pct(lo) + ';width:calc(' + pct(hi) + ' - ' + pct(lo) + ')' }) : null
+        ]),
+        h('div', { class: 'mb-val', text: rangeText(it) })
+      ]);
+    });
+    return h('figure', { class: 'mem-fig' }, [h('figcaption', { text: label }), h('div', { class: 'mb' }, rows),
+      h('p', { class: 'mem-note', text: 'Bars show the most-cited figure; the lighter band is the range between sources. Hover or tap a row for who counted.' })]);
+  }
+  function renderMemorial() {
+    var b = $('mem-body'); b.innerHTML = '';
+    var items = MEM.items || [];
+    if (MEM.summary) b.appendChild(h('p', { class: 'mem-intro', text: MEM.summary }));
+    var heroes = (MEM.hero || []).map(function (id) { return items.filter(function (x) { return x.id === id; })[0]; }).filter(Boolean);
+    if (heroes.length) b.appendChild(h('div', { class: 'mem-kpis' }, heroes.map(function (it) {
+      return h('div', { class: 'mem-kpi' }, [h('div', { class: 'mk-n', text: rangeText(it) }), h('div', { class: 'mk-l', text: it.unit + ' · ' + it.label }), h('small', { text: it.year || '' })]);
+    })));
+    var killed = items.filter(function (it) { return (it.unit === 'killed' || it.unit === 'executed') && it.category !== 'total'; }).sort(function (x, y) { return (y.best || y.high || 0) - (x.best || x.high || 0); });
+    var inLibya = killed.filter(function (it) { return it.place !== 'abroad'; }), abroad = killed.filter(function (it) { return it.place === 'abroad'; });
+    var f1 = memBars(inLibya, 'Killed and executed inside Libya, by event'); if (f1) b.appendChild(f1);
+    var missing = items.filter(function (it) { return it.unit === 'missing' || it.unit === 'imprisoned'; }).sort(function (x, y) { return (y.best || y.high || 0) - (x.best || x.high || 0); });
+    var f2 = memBars(missing, 'Still unaccounted for, and imprisoned'); if (f2) b.appendChild(f2);
+    var f3 = memBars(abroad, 'Killed abroad in attacks attributed to the regime'); if (f3) b.appendChild(f3);
+    if ((MEM.names || []).length) {
+      b.appendChild(h('h3', { class: 'mem-h', text: 'Remembered by name' }));
+      b.appendChild(h('ul', { class: 'mem-names' }, MEM.names.map(function (n) {
+        var site = n.site && BY_ID[n.site];
+        return h('li', {}, [h('b', { text: n.name }), h('span', { text: ' ' + n.what }), site ? h('button', { class: 'linkbtn', text: 'Show on map', onclick: function () { closeMemorial(); focusSite(site); } }) : null]);
+      })));
+      b.appendChild(h('p', { class: 'mem-note', text: 'Most of those killed are not named in any public source we hold. Use “Add to map” to record someone you knew; it stays inside the family atlas.' }));
+    }
+    var srcs = []; items.forEach(function (it) { (it.sources || []).forEach(function (s) { if (s.u && !srcs.some(function (x) { return x.u === s.u; })) srcs.push(s); }); });
+    if (srcs.length) b.appendChild(h('details', { class: 'mem-src' }, [h('summary', { text: 'Sources (' + srcs.length + ')' }), h('ol', {}, srcs.map(function (s) { return h('li', {}, [h('a', { href: s.u, target: '_blank', rel: 'noopener', text: s.t })]); }))]));
+  }
+  function openMemorial() { renderMemorial(); $('memorial').hidden = false; $('mem-close').focus(); }
+  function closeMemorial() { $('memorial').hidden = true; }
+  $('btn-memorial').onclick = openMemorial;
+  $('mem-close').onclick = closeMemorial;
+  $('memorial').addEventListener('click', function (e) { if (e.target.id === 'memorial') closeMemorial(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('memorial').hidden) closeMemorial(); });
+
   /* ---------- start ---------- */
   setSize(store.get('size', 'normal'));
   setBase(store.get('base2', document.documentElement.classList.contains('dark') ? 'dark' : 'light'));

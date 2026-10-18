@@ -1,0 +1,16 @@
+{
+ "at": "2026-10-18T16:10:45.425Z",
+ "listed": 1943,
+ "have": 1923,
+ "todoLeft": 0,
+ "errors": 17,
+ "dups": 0,
+ "empty": 21,
+ "bySrc": {
+  "nis": 3,
+  "crest": 1524,
+  "jprs": 396
+ },
+ "totalChars": 25617974,
+ "minutes": 51
+}

@@ -1039,6 +1039,21 @@
   var profGroup = L.layerGroup(), profOn = store.get('prof', true), milGroup = L.layerGroup(), milOn = store.get('milprof', true);
   var PROF_SVG = '<path d="M12 2 2 7v2h20V7zM4 11v8H2v3h20v-3h-2v-8h-3v8h-2v-8h-4v8H9v-8z"/>';
   var MISSILE_SVG = '<path d="M12 .8l3.2 5.4V16H8.8V6.2zM8.8 11.5 4 18v3.2h4.8zM15.2 11.5 20 18v3.2h-4.8zM10.4 17h3.2v6h-3.2z"/>';
+  /* one distinct glyph per weapons-programme site (24x24, drawn in the military colour) */
+  function trefoil() { var o = '', R = 9.2, r = 3.3, i, a0, a1, p = function (rad, a) { return (12 + rad * Math.cos(a)).toFixed(2) + ' ' + (12 + rad * Math.sin(a)).toFixed(2); }; for (i = 0; i < 3; i++) { a0 = (-90 + i * 120 - 30) * Math.PI / 180; a1 = (-90 + i * 120 + 30) * Math.PI / 180; o += '<path d="M' + p(r, a0) + 'L' + p(R, a0) + 'A' + R + ' ' + R + ' 0 0 1 ' + p(R, a1) + 'L' + p(r, a1) + 'A' + r + ' ' + r + ' 0 0 0 ' + p(r, a0) + 'z"/>'; } return o + '<circle cx="12" cy="12" r="1.9"/>'; }
+  var WEAPON_ICON = {
+    'wp-rabta-pharma-150-chemical-plant': '<path d="M9 2h6v2h-1v5.2l5.6 9.6A2 2 0 0 1 17.9 22H6.1a2 2 0 0 1-1.7-3.2L10 9.2V4H9z"/>',
+    'wp-ruwagha-chemical-depot': '<path fill-rule="evenodd" d="M5 4c0-1.1 3.1-2 7-2s7 .9 7 2v16c0 1.1-3.1 2-7 2s-7-.9-7-2zM5 8.6v1.8c2 .9 4.5 1.4 7 1.4s5-.5 7-1.4V8.6c-2 .9-4.5 1.4-7 1.4s-5-.5-7-1.4zm0 6v1.8c2 .9 4.5 1.4 7 1.4s5-.5 7-1.4v-1.8c-2 .9-4.5 1.4-7 1.4s-5-.5-7-1.4z"/>',
+    'wp-al-hashan-site-a': '<g fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></g><circle cx="12" cy="12" r="2.2"/>',
+    'wp-al-khalla-site-c': trefoil(),
+    'wp-salah-eddin-site-d': '<path d="M7 2h10c-.7 4.2-1.7 6.2-1.7 10s1 6.6 2 10H6.7c1-3.4 2-6.2 2-10S7.7 6.2 7 2z"/>',
+    'wp-al-fallah-site-b': '<path fill-rule="evenodd" d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm5 -2v12h1.6V6zm6.4 0v12H16V6zM6 18h2v3H6zm10 0h2v3h-2z"/>',
+    'wp-al-karamia-site-h': '<path fill-rule="evenodd" d="M3 6l9-4 9 4v12l-9 4-9-4zm8.2 4.4v10.1h1.6V10.4zM12 8.7l6.6-2.9-.6-1.2L12 7.2 6 4.6l-.6 1.2z"/>',
+    'wp-el-ezeizia-site-k': '<path fill-rule="evenodd" d="M2 10l10-6 10 6v11H2zm6 11h8v-7H8z"/>',
+    'wp-scud-launch-august-2011': '<path d="M16.6 1.6l3.8 3.8-1.4 2.6-3.4 3.4-3.6-3.6 3.2-3.6zM11.4 9.2l3.4 3.4-9 6.6-1.4-1.4zM1 19h22v2.5H1z"/><circle cx="5" cy="22" r="1.6"/><circle cx="12" cy="22" r="1.6"/><circle cx="19" cy="22" r="1.6"/>',
+    'wp-tawiwa-otrag-range': '<path d="M12 1c2.3 2.3 3.2 5.2 3.2 8.4V15H8.8V9.4C8.8 6.2 9.7 3.3 12 1zM8.8 12.5L6 16.5V19l2.8-1.4zM15.2 12.5l2.8 4V19l-2.8-1.4z"/><path d="M3 22h18v-1.8h-2.2V10h-1.8v10.2H7V10H5.2v10.2H3z"/>'
+  };
+  function weaponSvg(a) { return WEAPON_ICON[a.id] || (isMissile(a) ? MISSILE_SVG : null); }
   function isMissile(a) { return /missile|\bSAM\b|scud|surface-to-air/i.test((a.name || '') + ' ' + (a.summary || '')); }
   function drawProfiles() {
     profGroup.clearLayers(); milGroup.clearLayers();
@@ -1047,7 +1062,7 @@
       var dup = SITES.some(function (s) { return map.distance([a.lat, a.lon], [s.lat, s.lon]) < 120 && (s.layer === 'landmark' || s.layer === 'power') && fold(s.name).split(' ')[0] === fold(a.name).split(' ')[0]; });
       if (dup) return;
       var m = L.marker([a.lat, a.lon], { keyboard: false, title: a.name, zIndexOffset: -200, icon: L.divIcon({ className: '', iconSize: [28, 28], iconAnchor: [14, 14],
-        html: '<div class="osm-ic prof" style="--c:' + (a.kind === 'military' || /^wp-/.test(a.id) ? '#55603a' : '#6f5f45') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + (isMissile(a) ? MISSILE_SVG : PROF_SVG) + '</svg></div>' }) });
+        html: '<div class="osm-ic prof" style="--c:' + (a.kind === 'military' || /^wp-/.test(a.id) ? '#55603a' : '#6f5f45') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + (weaponSvg(a) || PROF_SVG) + '</svg></div>' }) });
       m.bindTooltip(a.name, { direction: 'top', offset: [0, -12], className: 'site-label' });
       m.on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openArea(a); });
       m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], a.kind === 'military' || /^wp-/.test(a.id) ? '#55603a' : '#6f5f45', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar]], [0, -16]); });
@@ -2030,7 +2045,7 @@
   // remember what each sheet is about, so notes can be attached to it
   var _openSite = openSite; openSite = function (s) { curTarget = { id: s.id, name: s.name, lat: s.lat, lon: s.lon, code: siteCode(s), profile: s.profile }; _openSite(s); };
   var _openArea = openArea; openArea = function (x) { var host = SITES.filter(function (s) { return s.profile === x.id; })[0]; if (host) { focusSite(host); return; } curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon, code: areaIcon(x) }; _openArea(x); };
-  function areaIcon(x) { var m = { prison: 'detention', military: 'military', government: 'power', landmark: 'landmark', police: 'security', security: 'security' }; if (/universit|college|school/i.test(x.name)) return SITE_ICON.university; return LAYER_ICON[m[x.kind] || 'landmark']; }
+  function areaIcon(x) { var m = { prison: 'detention', military: 'military', government: 'power', landmark: 'landmark', police: 'security', security: 'security' }; if (/universit|college|school/i.test(x.name)) return SITE_ICON.university; if (WEAPON_ICON[x.id]) return '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' + WEAPON_ICON[x.id] + '</svg>'; return LAYER_ICON[m[x.kind] || 'landmark']; }
   var LINK_ICON = '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M2 9h6v6H2zM16 9h6v6h-6z"/><path d="M8 11h8v2H8z"/></svg>';
   var _openSpot = openSpot; openSpot = function (ll) { curTarget = { lat: ll.lat, lon: ll.lng, name: '' }; _openSpot(ll); };
   var _openFeature = openFeature; openFeature = function (k, el) { var lat = el.lat || (el.bounds ? (el.bounds.minlat + el.bounds.maxlat) / 2 : null), lon = el.lon || (el.bounds ? (el.bounds.minlon + el.bounds.maxlon) / 2 : null); curTarget = lat != null ? { id: 'osm-' + el.type + '-' + el.id, name: (el.tags && (el.tags['name:en'] || el.tags.name)) || '', lat: lat, lon: lon } : null; _openFeature(k, el); };

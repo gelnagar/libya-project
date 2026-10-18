@@ -1,5 +1,5 @@
 {
- "fetched": "2026-10-17",
+ "fetched": "2026-10-18",
  "all": 529,
  "maps": [
   {
@@ -22,25 +22,6 @@
    "bytes": 84790
   },
   {
-   "id": "wmc-10262740",
-   "source": "Wikimedia Commons",
-   "title": "Tripoli souk backstreet.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Tripoli_souk_backstreet.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Tripoli_souk_backstreet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/63/Tripoli_souk_backstreet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "width": 768,
-   "height": 1024,
-   "date": "2009-02-04 19:01",
-   "author": "bob rayner from UK",
-   "license": "CC BY 2.0",
-   "usage": "Creative Commons Attribution 2.0",
-   "description": "Backstreet behind the souk, 'Old Town' Medina, Tripoli, Libya",
-   "categories": "Souqs in Tripoli|Flickr images reviewed by File Upload Bot (Magnus Manske)|Tripoli Old Town|Files with coordinates missing SDC location of creation|Streets in Tripoli",
-   "reusable": true,
-   "file": "wmc-10262740.jpg",
-   "bytes": 363571
-  },
-  {
    "id": "wmc-14526447",
    "source": "Wikimedia Commons",
    "title": "Location map Libya Tripoli.png",
@@ -55,7 +36,9 @@
    "usage": "Creative Commons Attribution-Share Alike 2.0",
    "description": "Map of Tripoli\nGeographic limits of the map:\n\nN: 32.9197°\nS: 32.8006°\nW: 13.1345°\nE: 13.2562°\n\n This file is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license.\nYou are free:\nto share – to copy, distribute and transmit the work\nto remix – to adapt the work\nUnder the following conditions:\nattribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nshare alike – If you remix, transform, or build upon the",
    "categories": "Maps of Tripoli|OpenStreetMap maps of Libya",
-   "reusable": true
+   "reusable": true,
+   "file": "wmc-14526447.png",
+   "bytes": 531654
   },
   {
    "id": "wmc-14526625",
@@ -293,7 +276,9 @@
    "usage": "Creative Commons Attribution-Share Alike 3.0",
    "description": "County of Tripoli around 1135",
    "categories": "Derivative versions|Maps of the County of Tripoli",
-   "reusable": true
+   "reusable": true,
+   "file": "wmc-77087444.png",
+   "bytes": 50513
   },
   {
    "id": "wmc-84030299",
@@ -571,9 +556,11 @@
    "author": "Monteil, P.-L. (Parfait-Louis)",
    "license": "Public domain",
    "usage": "Public domain",
-   "description": "SOURCE: https://archive.org/details/desaintlouistrip00monteil/page/n429/mode/2up\n\nDe Saint-Louis a Tripoli par le Lac Tchad : voyage au travers du Soudan et du Sahara accompli pendant les années 1890-91-92\nby en:Parfait-Louis Monteil , 1855-1925",
+   "description": "SOURCE: https://archive.org/details/desaintlouistrip00monteil/page/n429/mode/2up\nDe Saint-Louis a Tripoli par le Lac Tchad : voyage au travers du Soudan et du Sahara accompli pendant les années 1890-91-92\n\nby en:Parfait-Louis Monteil , 1855-1925",
    "categories": "Maps of Libya|Lake Chad|Sahara|Tripoli|French-language maps|PD US expired|1895 maps",
-   "reusable": true
+   "reusable": true,
+   "file": "wmc-123516216.jpg",
+   "bytes": 389487
   },
   {
    "id": "wmc-123516217",
@@ -1618,6 +1605,25 @@
    "reusable": true
   },
   {
+   "id": "wmc-173051",
+   "source": "Wikimedia Commons",
+   "title": "Map Crusader states ca. 1100.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Map_Crusader_states_ca._1100.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Map_Crusader_states_ca._1100.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/36/Map_Crusader_states_ca._1100.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 454,
+   "height": 1114,
+   "date": "1911",
+   "author": "",
+   "license": "Public domain",
+   "usage": "Public domain",
+   "description": "Crusader states",
+   "categories": "Files with no machine-readable author|PD Old|Media lacking author information|Historical map images that should use vector graphics|JPG images that should use vector graphics|Maps of the Kingdom of Jerusalem|CC-PD-Mark|PD-old missing SDC copyright status|Maps of Cilicia in the 12th century|Maps of the County of Tripoli|Maps of the Principality of Antioch",
+   "reusable": true,
+   "file": "wmc-173051.jpg",
+   "bytes": 160528
+  },
+  {
    "id": "wmc-47025217",
    "source": "Wikimedia Commons",
    "title": "Map Crusader states 1240-eng.png",
@@ -1632,7 +1638,9 @@
    "usage": "Creative Commons Attribution-Share Alike 4.0",
    "description": "A political map of the Near East from 1229 until 1241 CE.",
    "categories": "Retouched pictures|Pages with non-numeric formatnum arguments|Map images that should use vector graphics|Self-published work|PNG that should use vector graphics|Maps of the Kingdom of Jerusalem|Maps showing the 1240s|English-language maps showing history|Maps of Cilicia in the 13th century|Maps of the County of Tripoli|Maps of the Principality of Antioch|Maps of the Crusader states|Treaty of Jaffa",
-   "reusable": true
+   "reusable": true,
+   "file": "wmc-47025217.png",
+   "bytes": 112558
   },
   {
    "id": "wmc-76572034",
@@ -2012,25 +2020,6 @@
    "reusable": false
   },
   {
-   "id": "wmc-68592175",
-   "source": "Wikimedia Commons",
-   "title": "ETH-BIB-Tripoli, Stadtplan und Pozzi-Dia 247-Z-00090.tif",
-   "page": "https://commons.wikimedia.org/wiki/File:ETH-BIB-Tripoli,_Stadtplan_und_Pozzi-Dia_247-Z-00090.tif",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/ETH-BIB-Tripoli%2C_Stadtplan_und_Pozzi-Dia_247-Z-00090.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/ETH-BIB-Tripoli%2C_Stadtplan_und_Pozzi-Dia_247-Z-00090.tif/lossy-page1-1920px-ETH-BIB-Tripoli%2C_Stadtplan_und_Pozzi-Dia_247-Z-00090.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "width": 3620,
-   "height": 2908,
-   "date": "Unknown date",
-   "author": "AnonymousUnknown author",
-   "license": "CC BY-SA 4.0",
-   "usage": "Creative Commons Attribution-Share Alike 4.0",
-   "description": "Nach \"Ricerche e Studi Agrologici sulla Libia\" I. 1912 […?] II",
-   "categories": "Media contributed by the ETH-Bibliothek|Unknown date|All media supported by Wikimedia CH|GWToolset Batch Upload|Old maps of Tripoli|Manuscript maps by Leo Wehrli",
-   "reusable": true,
-   "file": "wmc-68592175.jpg",
-   "bytes": 735562
-  },
-  {
    "id": "wmc-177405554",
    "source": "Wikimedia Commons",
    "title": "Tripoli - corso Vittorio Emanuele III - municipio - cartolina.jpg",
@@ -2287,7 +2276,7 @@
    "author": "Unknown authorUnknown author or not provided",
    "license": "Public domain",
    "usage": "Public domain",
-   "description": "Scope and content:  The original database describes this as:\nDescription: Apollo Soyuz Test Project (ASTP),Mediterranean Sea,Cyprus,Cape Greco,Lebanon,Tripoli. Image taken on Revolution 71. Greenwich Mean Time (GMT) of Photo 201:10:42,Ground Elapsed Time (GET) 110:52,Altitude 225.Original Film Magazine: CT-04,Laboratory Roll 16; Camera Data: Hasselblad,70-mm,Data with 1-cm Reseau,Model 500EL,NASA Modified; Film Data: 70mm Ektachrome,High Definition Aerial,Type SO-242,ASA = 10 (Approximate); Lens 60mm.\nSubject Terms: Apollo Soyuz Test Project, Earth Observations (From Space), Mediterranean Sea,",
+   "description": "Scope and content:  The original database describes this as:\n\nDescription: Apollo Soyuz Test Project (ASTP),Mediterranean Sea,Cyprus,Cape Greco,Lebanon,Tripoli. Image taken on Revolution 71. Greenwich Mean Time (GMT) of Photo 201:10:42,Ground Elapsed Time (GET) 110:52,Altitude 225.Original Film Magazine: CT-04,Laboratory Roll 16; Camera Data: Hasselblad,70-mm,Data with 1-cm Reseau,Model 500EL,NASA Modified; Film Data: 70mm Ektachrome,High Definition Aerial,Type SO-242,ASA = 10 (Approximate); Lens 60mm.\n\nSubject Terms: Apollo Soyuz Test Project, Earth Observations (From Space), Mediterranean Se",
    "categories": "PD NASA|Images from the National Archives and Records Administration|Media contributed by the National Archives and Records Administration|Artworks without Wikidata item|Template Unknown (author)|Earth photography during the Apollo-Soyuz Test Project|US National Archives series: Photographs of the Apollo-Soyuz Test Project|Files from NASA with known IDs|US National Archives location: other",
    "reusable": true,
    "file": "wmc-80097103.jpg",
@@ -2446,7 +2435,7 @@
    "author": "Archives New Zealand from New Zealand",
    "license": "CC BY-SA 2.0",
    "usage": "Creative Commons Attribution-Share Alike 2.0",
-   "description": "After the Allies' breakthrough at El Alamein in October 1942 the New Zealand Division helped pursue retreating German-Italian forces along the Libyan coast.\n\nOn 23 January 1943 the New Zealanders were the first Commonwealth troops to enter the city of Tripoli. As soon as engineers and naval forces cleared the devastated port, men from the division helped unload supply ships carrying food and equipment needed for the 8th Army’s advance.\n\nThe watercolour pictured above was painted by Peter McIntyre. During the War, McIntyre was appointed New Zealand’s official war artist, and he covered the camp",
+   "description": "After the Allies' breakthrough at El Alamein in October 1942 the New Zealand Division helped pursue retreating German-Italian forces along the Libyan coast.\nOn 23 January 1943 the New Zealanders were the first Commonwealth troops to enter the city of Tripoli. As soon as engineers and naval forces cleared the devastated port, men from the division helped unload supply ships carrying food and equipment needed for the 8th Army’s advance.\nThe watercolour pictured above was painted by Peter McIntyre. During the War, McIntyre was appointed New Zealand’s official war artist, and he covered the campai",
    "categories": "1943 in Libya|National Collection of War Art at Archives New Zealand|Flickr images reviewed by FlickreviewR|Images from Archives New Zealand|Statues in Tripoli|Tripoli in the 1940s|Works by Peter McIntyre",
    "reusable": true
   },
@@ -3723,7 +3712,9 @@
    "usage": "Public domain",
    "description": "A circa 1950-1960 image of Independence Square (1950s-1960s) - on the harbour in downtown Tripoli, during the Libyan monarchy era.\nThe present day Martyrs' Square or \"Maidan Al Shohdaa\" , in independent Libya.\nAerial view is to the southwest, with Tripoli Bay in the foreground of the corniche and the two monument columns (before 1960s landfills extended land far into the harbour-bay).\nThe Ottoman era Red Castle (Tripoli Castle museum) is on the upper right, and former Teatro Miramareon the square's lower left.\nAlso formerly named Italian colonial Piazza Italia (1930s-1950s), and Green Square o",
    "categories": "Tripoli Castle|Images with annotations|Teatro Miramare|PD-Libya|Arecaceae in Libya|PD-old missing SDC copyright status|Tripoli in the 1950s|Coasts of Tripoli|Martyrs' Square, Tripoli",
-   "reusable": true
+   "reusable": true,
+   "file": "wmc-6890970.jpg",
+   "bytes": 55179
   },
   {
    "id": "wmc-24337717",
@@ -3878,7 +3869,7 @@
    "categories": "Aerial photographs of Libya|Views of Tripoli|Ports and harbours|Port of Tripoli|Panoramio files uploaded by Panoramio upload bot|Panoramio images reviewed by trusted users|Photos from Panoramio|2012 in water transport in Libya|Files with coordinates missing SDC location of creation|Libya photographs taken on 2012-12-24|2012 in Tripoli|Photos from Panoramio ID 108875",
    "reusable": true,
    "file": "wmc-56044246.jpg",
-   "bytes": 1131922
+   "bytes": 1131870
   },
   {
    "id": "wmc-60774458",
@@ -4024,7 +4015,7 @@
    "categories": "Aerial photographs of Libya|Images with annotations|Self-published work|Images from Wiki Loves Monuments 2024|Files with coordinates missing SDC location of creation|Images from Wiki Loves Monuments missing SDC depicts|Images from Wiki Loves Monuments missing SDC location of creation|Images from Wiki Loves Monuments 2024 in Libya|Uploaded via Campaign:wlm-ly|Algeria Square, Tripoli",
    "reusable": true,
    "file": "wmc-153967365.jpg",
-   "bytes": 3066499
+   "bytes": 3066551
   },
   {
    "id": "wmc-160947984",
@@ -4139,25 +4130,6 @@
    "reusable": true,
    "file": "wmc-185487060.jpg",
    "bytes": 1655300
-  },
-  {
-   "id": "wmc-185794647",
-   "source": "Wikimedia Commons",
-   "title": "CLB-31 Showcase TRUAS (9539785).jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:CLB-31_Showcase_TRUAS_(9539785).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/CLB-31_Showcase_TRUAS_%289539785%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/CLB-31_Showcase_TRUAS_%289539785%29.jpg/3840px-CLB-31_Showcase_TRUAS_%289539785%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "width": 5007,
-   "height": 3338,
-   "date": "Taken on 26 February 2026",
-   "author": "U.S. Marine Corps photo by Cpl. Eric Reyes",
-   "license": "Public domain",
-   "usage": "Public domain",
-   "description": "U.S. Marines with Combat Logistics Company-Bravo, Combat Logistics Battalion 31, 31st Marine Expeditionary Unit, unpack a Tactical Resupply Unmanned Aircraft System before a static display and capabilities demonstration at Camp Hansen, Okinawa, Japan, Feb. 26, 2026. The TRUAS is a Class 3 unmanned aerial vehicle that can deliver supplies to remote and inaccessible areas. The 31st MEU is a persistent, combat credible force operating aboard the ships of the Tripoli Amphibious Ready Group in the U.S. 7th fleet area of operations, routinely interacting and operating with our allies and partners to",
-   "categories": "PD US Marines|Files created by the United States Marine Corps with known IDs|DVIDS files uploaded by OptimusPrimeBot|Milimedia files, Japan (review needed)|Japan photographs taken on 2026-02-26",
-   "reusable": true,
-   "file": "wmc-185794647.jpg",
-   "bytes": 2669003
   },
   {
    "id": "wmc-185794652",
@@ -4309,7 +4281,7 @@
    "categories": "31st Marine Expeditionary Unit|PD US Marines|Files created by the United States Marine Corps with known IDs|DVIDS files uploaded by OptimusPrimeBot|Aboard USS Tripoli (LHA-7)|Photographs taken on 2026-05-31",
    "reusable": true,
    "file": "wmc-195285316.jpg",
-   "bytes": 1950240
+   "bytes": 1950188
   },
   {
    "id": "wmc-195285323",
@@ -4633,7 +4605,7 @@
    "author": "de krafft, f. c.",
    "license": "No known restrictions on publication (check)",
    "description": "Relief shown pictorially. Depths shown by fathoms. Sketch map showing the positions of the labeled vessels of the United States squadron. Pen-and-ink and watercolor on 3 sheets pasted together, sectioned in 3 and mounted on cloth. Title supplied by cataloger. Includes explanatory list of \"References\" and an inset of \"A view of Tripoli in Barbary.\" Imperfect: Stained, mounted on cloth, losses and discoloration along the margins. Available also through the Library of Congress Web site as a raster image.",
-   "subjects": "aerial views; maps, manuscript; tripoli (libya); libya; maps; ships; tripoli",
+   "subjects": "maps, manuscript; ships; libya; tripoli; maps; tripoli (libya); aerial views",
    "reusable": true,
    "file": "loc-2008621589.jpg",
    "bytes": 1269844
@@ -4648,7 +4620,7 @@
    "author": "",
    "license": "No known restrictions on publication (check)",
    "description": "Relief shown by hachures. \"Supplemento straordinario della rivista mondiale \"Settimana illustrata\".\" Includes 7 portraits of Italian military figures, flags showing cities held by Turkey and Italy, and 1912 calendar showing saints' days. Available also through the Library of Congress Web site as a raster image. Change call number date to 1912.",
-   "subjects": "libya; turco-italian war; ṭarābulus; cyrenaica; cyrenaica (libya); ṭarābulus (libya : province); maps",
+   "subjects": "libya; cyrenaica; cyrenaica (libya); maps; turco-italian war; ṭarābulus; ṭarābulus (libya : province)",
    "reusable": true,
    "file": "loc-2017589623.jpg",
    "bytes": 420914
@@ -4663,7 +4635,7 @@
    "author": "stabilimento d'arti grafiche l. teodoro & frigè",
    "license": "No known restrictions on publication (check)",
    "description": "Italian propaganda map of the Italo-Turco war in Libya in 1912.",
-   "subjects": "history; libya; turco-italian war; ṭarābulus; cyrenaica; cyrenaica (libya); ṭarābulus (libya : province); maps; aerial views; pictorial maps",
+   "subjects": "libya; cyrenaica; cyrenaica (libya); maps; turco-italian war; history; ṭarābulus; aerial views; pictorial maps; ṭarābulus (libya : province)",
    "reusable": true,
    "file": "loc-2017589624.jpg",
    "bytes": 403607

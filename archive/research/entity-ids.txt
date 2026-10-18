@@ -1,0 +1,163 @@
+# Sites (curated map markers): id | layer | name
+abusalim | detention | Abu Salim prison
+jdeida | detention | Jdeida prison
+maktab | detention | Maktab al-Nasser
+hadba | detention | Hadba al-Khadra prison
+ainzara | detention | Ain Zara prison
+cso | security | Central Security Organization (reported)
+wheelus | military | Okba Ben Nafi Air Base (former Wheelus)
+tip | military | Tripoli military airport
+sidibilal | military | Sidi Bilal naval school
+as-bab | airstrike | 1986 US strike: Bab al-Aziziya
+as-benashour | airstrike | 1986 US strike: Ben Ashour homes
+as-tip | airstrike | 1986 US strike: Tripoli military airport
+as-sidibilal | airstrike | 1986 US strike: Sidi Bilal
+mk-sharshatt | massacre | Shar al-Shatt killings
+mk-riots | massacre | Anti-Jewish riots (1945, 1948, 1967)
+mk-abusalim | massacre | Abu Salim prison massacre
+bab | power | Bab al-Aziziya compound
+palace | power | Royal Palace (People's Palace)
+green | landmark | Green Square (Martyrs’ Square)
+fateh | landmark | Al-Fateh University
+mk-hang-1984 | massacre | University of Tripoli hanging, April 1984
+mk-feb2011 | massacre | Tripoli crackdown, 20–25 February 2011
+mk-babcamp-2011 | massacre | Camp near Bab al-Aziziya, August 2011 (reported)
+# Area profiles
+old-city | neighbourhood | Old City (Medina)
+city-centre | neighbourhood | City centre (Italian-era downtown)
+dahra | neighbourhood | Dahra
+ben-ashour | neighbourhood | Ben Ashour
+fashloum | neighbourhood | Fashloum
+zawiyat-dahmani | neighbourhood | Zawiyat al-Dahmani
+hani | neighbourhood | Al-Hani
+bab-ben-ghashir | neighbourhood | Bab Ben Ghashir
+sidi-masri | neighbourhood | Sidi al-Masri
+ras-hassan | neighbourhood | Ras Hassan
+zanata | neighbourhood | Zanata
+abu-sitta | neighbourhood | Abu Sitta
+gurji | neighbourhood | Gurji
+mansoura | neighbourhood | Al-Mansoura
+bab-akara | neighbourhood | Bab Akara
+bab-aziziya-area | neighbourhood | Bab al-Aziziya (neighbourhood)
+hay-dimashq | neighbourhood | Hay Dimashq
+tekbali-camp | military | Tekbali camp
+yarmouk-camp | military | Yarmouk camp (32nd Brigade)
+artillery-school | military | Artillery and Missile School
+hamza-camp | military | Hamza camp
+transport-camp | military | Transport camp
+camp-7-april | military | 7 April camp
+camp-27 | military | Camp 27
+military-college | military | Military College, al-Hadba
+central-security | government | Central Security headquarters
+ghut-shaal-camp | military | Ghut al-Shaal mobilisation camp
+abu-sitta-base | military | Abu Sitta naval base
+tajura-naval | military | Tajura naval base
+naval-academy | military | Libyan Naval Academy, Janzour (Sidi Bilal)
+sam-site | military | Air-defence missile site
+brigade-42 | military | 42nd Brigade headquarters
+brigade-55 | military | 55th Brigade
+maasra | military | Al-Ma‘asra
+electronic-support | military | Electronic support site
+tajura-camp | military | Military camp, Tajura
+mitiga | military | Mitiga airport (former Wheelus Air Base)
+tajoura-nuclear | government | Tajoura Nuclear Research Centre
+red-castle | landmark | Red Castle (Assaraya al-Hamra)
+turkish-prison | prison | The Turkish Prison (Old City)
+ain-zara-prison | prison | Ain Zara prison (“the political prison”)
+mabani | prison | Al-Mabani detention centre
+zoo | landmark | Tripoli Zoo
+port | landmark | Port of Tripoli
+amazons-academy | military | Former women’s military academy
+abu-salim | district | Abu Salim
+hadba | district | Hadba al-Khadra
+salah-al-din | district | Salah al-Din
+ain-zara | town | Ain Zara
+furnaj | neighbourhood | Al-Furnaj (University area)
+souq-al-juma | district | Souq al-Juma
+tajura | town | Tajura
+janzour | town | Janzour
+gargaresh | neighbourhood | Gargaresh
+hay-andalus | district | Hay al-Andalus
+siyahiya | neighbourhood | Al-Siyahiya
+ghut-shaal | neighbourhood | Ghut al-Shaal
+dribi | neighbourhood | Al-Dribi
+islamic-call | landmark | World Islamic Call Society
+qasr-ben-ghashir | town | Qasr bin Ghashir
+karimia | neighbourhood | Al-Karimia
+sawani | town | Sawani bin Adam
+hadba-project | neighbourhood | Al-Hadba Project
+former-huts | neighbourhood | Former shanty neighbourhood (Hay al-Akwakh)
+wp-tarhuna-underground-facility | military | Tarhuna (Tarhunah) underground facility
+lb-tripoli-central-hospital | landmark | Tripoli Central Hospital
+lh-tripoli-cathedral | landmark | Italian Cathedral (Algeria Square / Gamal Abdel Nasser Mosque)
+lh-italian-cemetery-hammangi | landmark | Italian Cemetery and Memorial (Hammangi)
+lh-mellaha-wheelus-mitiga | landmark | Mellaha Air Base / Wheelus Air Base / Okba Ben Nafi / Mitiga
+lh-castel-benito-airport | landmark | Castel Benito Airfield (Tripoli Idris Airport)
+lm-tripoli-tower-al-fateh | landmark | Al Fateh Tower (Tripoli Tower)
+lm-tripoli-international-airport | landmark | Tripoli International Airport
+lh-royal-palace-governors-palace | government | Royal Palace of Tripoli (Qasr al-Khuld) / Italian Governor's Palace
+lb-university-of-tripoli | landmark | University of Tripoli (Al-Fateh University)
+lm-martyrs-square | landmark | Martyrs' Square (formerly Green Square)
+lm-radisson-blu-al-mahary | landmark | Radisson Blu Al Mahary Hotel
+lh-jewish-cemetery | landmark | Jewish Cemetery of Tripoli
+wp-mitiga-okba-ben-nafi-air-base | military | Mitiga (Okba Ben Nafi) air base
+lh-karamanli-house-museum | landmark | Karamanli House Museum (Harem of Ali Karamanli)
+lm-corinthia-bab-africa-hotel | landmark | Corinthia Hotel Tripoli (Corinthia Bab Africa)
+wp-janzour-machine-shop | military | Janzour (reported centrifuge machine shop site)
+lb-al-razi-psychiatric-hospital | landmark | Al-Razi Psychiatric Hospital
+wp-murat-sidi-bilal-camp | military | Murat Sidi Bilal naval commando camp
+lh-janzur | landmark | Janzur (Zanzur) and Italian Giorgimpopoli
+lb-abu-salim-prison | government | Abu Salim Prison
+lh-arch-of-marcus-aurelius | landmark | Arch of Marcus Aurelius
+lh-gazelle-fountain | landmark | Gazelle Fountain (Gazelle and the Beauty)
+lb-abu-salim-trauma-hospital | landmark | Abu Salim Trauma Hospital
+lh-tripoli-war-cemetery | landmark | Tripoli War Cemetery (Commonwealth)
+lh-dragut-mosque | landmark | Dragut (Sidi Darghut) Mosque and tomb
+lb-british-embassy-tripoli | government | British Embassy, Tripoli
+lb-al-khadra-hospital | landmark | Al-Khadra General Hospital
+lm-grand-hotel-tripoli | landmark | Grand Hotel Tripoli
+lb-tripoli-international-stadium | landmark | Tripoli International Stadium (11 June Stadium)
+lb-tripoli-medical-center | landmark | Tripoli Medical Center
+lh-naqa-mosque | landmark | Naqa (Al-Naqah) Mosque
+lb-libyan-academy-graduate-studies | landmark | Libyan Academy for Postgraduate Studies (Academy of Graduate Studies)
+lh-al-waddan-hotel | landmark | Uaddan Hotel and Casino (Al Waddan Hotel)
+lh-shar-al-shatt | landmark | Shar al-Shatt (Sciara Sciat) battlefield
+lh-old-british-consulate | landmark | Old British Consulate (Karamanli-era house)
+lh-gurgi-mosque | landmark | Gurgi Mosque
+lh-ain-zara-battle | landmark | Ain Zara battlefield and memorial
+lh-mellaha-grand-prix-circuit | landmark | Mellaha Lake Grand Prix Circuit
+lm-islamic-museum | landmark | Islamic Museum of Tripoli
+lh-ottoman-clock-tower | landmark | Ottoman Clock Tower
+lb-us-embassy-tripoli | government | US Embassy, Tripoli
+lh-hani-battle-monument | landmark | Monument to the Battle of Hani
+lb-murad-agha-mosque | landmark | Murad Agha Mosque
+lb-italian-embassy-tripoli | government | Italian Embassy, Tripoli
+lb-mitiga-hospital | landmark | Mitiga Hospital
+lb-faculty-of-engineering-tripoli | landmark | Faculty of Engineering, University of Tripoli
+lb-national-archives-of-libya | government | National Archives of Libya (Libyan Historical Archives)
+lm-ministry-of-foreign-affairs | government | Ministry of Foreign Affairs and International Cooperation
+lm-ben-nabi-mosque | landmark | Ben Nabi Mosque
+lb-al-jalaa-hospital | landmark | Al-Jalaa Children's Hospital
+lm-that-el-emad-towers | government | That El Emad Towers
+lm-bab-darghouth | landmark | Bab Darghouth
+lm-7-october-stadium | landmark | 7 October Stadium (Municipal Stadium)
+lb-ministry-of-interior | government | Ministry of Interior
+lb-ministry-of-health | government | Ministry of Health
+lb-ministry-of-justice | government | Ministry of Justice
+lb-ministry-of-higher-education | government | Ministry of Higher Education and Scientific Research
+lb-ministry-of-education | government | Ministry of Education
+lb-ministry-of-youth-sports | government | Ministry of Youth and Sports
+lb-tripoli-supreme-court | government | Tripoli Supreme Court
+lm-tripoli-courts-complex | government | Tripoli Courts Complex
+lb-burn-plastic-surgery-hospital | landmark | Burn and Plastic Surgery Hospital
+lb-abu-sitta-chest-hospital | landmark | Abu Sitta Hospital for Chest Diseases
+lb-ibn-al-manzour-dental-college | landmark | Faculty of Dentistry (Ibn al-Manzour), University of Tripoli
+lb-faculty-of-education-tripoli | landmark | Faculty of Education, University of Tripoli
+lb-tripoli-eye-hospital | landmark | Tripoli Eye Hospital
+lb-libyan-olympic-committee | government | Libyan Olympic Committee
+lb-tajoura-heart-hospital | landmark | Tajoura Heart Hospital
+lb-janzour-hospital | landmark | Janzour Hospital
+lb-college-medical-sciences-technology | landmark | College of Medical Sciences and Technology, Tripoli
+lb-tripoli-diabetes-hospital | landmark | Diabetes Hospital, Tripoli
+lb-al-hani-cemetery | landmark | Al-Hani Cemetery
+lb-sidi-munaidar-cemetery | landmark | Sidi Munaidar Cemetery

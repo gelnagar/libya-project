@@ -46,9 +46,11 @@
     s.textContent = msg; s.hidden = false;
     if (ms) statusTimer = setTimeout(function () { s.hidden = true; }, ms);
   }
+  var LAYER_ICON = { massacre: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5v5.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><rect x="9" y="5.4" width="6" height="8.2" rx="1.6" fill="currentColor"/><path d="M9.4 7.4h5.2M9.4 9.5h5.2M9.4 11.6h5.2" stroke="rgba(0,0,0,.35)" stroke-width=".9"/><ellipse cx="12" cy="18" rx="4.6" ry="4.8" stroke="currentColor" stroke-width="2.2" fill="none"/></svg>' };
+  function codeHtml(k) { return LAYER_ICON[k] || LAYERS[k].code; }
   function glyph(layerKey, size) {
     var lay = LAYERS[layerKey];
-    var g = h('span', { class: 'glyph ' + lay.shape, style: 'background:' + lay.color + (size ? ';width:' + size + 'px;height:' + size + 'px' : '') }, [h('span', { text: lay.code })]);
+    var g = h('span', { class: 'glyph ' + lay.shape, style: 'background:' + lay.color + (size ? ';width:' + size + 'px;height:' + size + 'px' : '') }, [h('span', { html: codeHtml(layerKey) })]);
     return g;
   }
   function km(m) { return m < 1000 ? Math.round(m / 10) * 10 + ' m' : (m / 1000).toFixed(1) + ' km'; }
@@ -132,11 +134,11 @@
   SITES.forEach(function (s) {
     var lay = LAYERS[s.layer];
     var icon = L.divIcon({ className: '', iconSize: [28, 36], iconAnchor: [14 - s.dx, 36 - s.dy],
-      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '"><b>' + lay.code + '</b></div>' });
+      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '"><b>' + codeHtml(s.layer) + '</b></div>' });
     markers[s.id] = L.marker([s.lat, s.lon], { icon: icon, title: s.name, keyboard: true, riseOnHover: true })
       .bindTooltip(s.name, { permanent: true, direction: 'right', offset: [16 + s.dx, -22 + s.dy], className: 'site-label', interactive: false })
       .on('click', function () { openSite(s); })
-      .on('mouseover', function () { hoverCard([s.lat, s.lon], lay.color, lay.code, s.name, [['When', s.period], ['Type', lay.label], ['Evidence', LEVELS[s.level]], ['Accuracy', '± ' + s.r + ' km']], [-s.dx, -36 + s.dy]); })
+      .on('mouseover', function () { hoverCard([s.lat, s.lon], lay.color, codeHtml(s.layer), s.name, [['When', s.period], ['Type', lay.label], ['Evidence', LEVELS[s.level]], ['Accuracy', '± ' + s.r + ' km']], [-s.dx, -36 + s.dy]); })
       .on('mouseout', hideCard);
     rings[s.id] = L.circle([s.lat, s.lon], { radius: s.r * 1000, color: lay.color, weight: 1.2, dashArray: '5 5', fillColor: lay.color, fillOpacity: 0.03, interactive: false });
   });
@@ -161,7 +163,7 @@
   var cardTip = null;
   function hoverCard(ll, color, code, title, rows, off) {
     if (!DESKTOP.matches) return;
-    var html = '<div class="fy-card" style="--c:' + color + '"><div class="ch"><i>' + esc(code) + '</i>' + esc(title) + '</div>' +
+    var html = '<div class="fy-card" style="--c:' + color + '"><div class="ch"><i>' + (/^<svg/.test(code) ? code : esc(code)) + '</i>' + esc(title) + '</div>' +
       rows.filter(function (r) { return r[1]; }).map(function (r) { return '<div class="cr"><span>' + esc(r[0]) + '</span><span>' + esc(r[1]) + '</span></div>'; }).join('') + '</div>';
     if (!cardTip) cardTip = L.tooltip({ direction: 'top', className: 'fy-tip', opacity: 1, interactive: false });
     cardTip.options.offset = off || [0, -20];
@@ -1403,9 +1405,93 @@
   }
   function visibleNames() { var v = SITES.filter(visible); return v.length ? v.map(function (s) { return s.name; }).join('; ') : 'none'; }
   function brief(s) { return { id: s.id, name: s.name, category: LAYERS[s.layer].label, when: s.period, visible: visible(s) }; }
+  var selLayer = L.layerGroup();
   var ui = null; // per-turn collector: { log: [], chips: [], mapChanged: bool }
   var TOOLS = {
     get_map_state: function () { return mapState(); },
+    find_anything: function (a) {
+      var words = fold(a.query || '').split(' ').filter(function (w) { return w.length > 1; });
+      var kinds = a.kinds && a.kinds.length ? a.kinds : ['site', 'area', 'report', 'osm'];
+      var near = a.lat != null && a.lon != null ? L.latLng(+a.lat, +a.lon) : null, rad = +a.radius_m || 2000;
+      var ok = function (text, lat, lon, y0, y1) {
+        if (words.length && !words.every(function (w) { return fold(text).indexOf(w) >= 0; })) return false;
+        if (near && (lat == null || map.distance(near, [lat, lon]) > rad)) return false;
+        if (a.year_from != null && y1 != null && y1 < a.year_from) return false;
+        if (a.year_to != null && y0 != null && y0 > a.year_to) return false;
+        return true;
+      };
+      var out = [];
+      var dist = function (lat, lon) { return near ? Math.round(map.distance(near, [lat, lon])) : undefined; };
+      if (kinds.indexOf('site') >= 0) SITES.forEach(function (s) { var r = span(s); if (ok(s.name + ' ' + (s.ar || '') + ' ' + s.relevance + ' ' + s.text + ' ' + LAYERS[s.layer].label, s.lat, s.lon, r[0], r[1])) out.push({ ref: 'site:' + s.id, name: s.name, type: LAYERS[s.layer].label, when: s.period, m: dist(s.lat, s.lon) }); });
+      if (kinds.indexOf('area') >= 0) AREAS.forEach(function (x) { if (ok(areaNames(x).join(' ') + ' ' + (x.summary || '') + ' ' + (x.era || '') + ' ' + KIND_LABEL[x.kind], x.lat, x.lon)) out.push({ ref: 'area:' + x.id, name: x.name, type: KIND_LABEL[x.kind] || x.kind, m: dist(x.lat, x.lon) }); });
+      if (kinds.indexOf('report') >= 0) REPORTS.forEach(function (r) { if (r.lat != null && ok(r.title + ' ' + r.text + ' ' + r.cat, r.lat, r.lon)) out.push({ ref: 'report:' + r.id, name: r.title, type: 'Family report (' + r.cat + ')', when: r.when, m: dist(r.lat, r.lon) }); });
+      var osmKeys = (a.osm_layers && a.osm_layers.length ? a.osm_layers : ['hospitals', 'schools', 'govt', 'police', 'embassies', 'sights', 'cemeteries', 'military']).filter(function (k) { return OSM[k] && OSM[k].saved; });
+      var loads = kinds.indexOf('osm') >= 0 ? osmKeys.map(function (k) {
+        return (savedData[k] ? Promise.resolve(savedData[k]) : fetch('data/osm/' + k + '.json').then(function (r) { return r.json(); }).then(function (j) { savedData[k] = savedData[k] || { elements: (j.features || []).map(expand), generated: j.generated }; savedState[k] = savedState[k] || 'ready'; return savedData[k]; }))
+          .then(function (d) { d.elements.forEach(function (el) { var t = el.tags || {}, nm = t['name:en'] || t.name; if (!nm) return; var lat = el.lat || (el.bounds && (el.bounds.minlat + el.bounds.maxlat) / 2), lon = el.lon || (el.bounds && (el.bounds.minlon + el.bounds.maxlon) / 2);
+            if (ok(nm + ' ' + (t.name || '') + ' ' + (t['name:ar'] || '') + ' ' + KIND[k](t), lat, lon)) out.push({ ref: 'osm:' + k + ':' + el.type + ':' + el.id, name: nm, type: KIND[k](t) + ' (today)', m: dist(lat, lon) }); }); }).catch(function () {});
+      }) : [];
+      return Promise.all(loads).then(function () {
+        if (near) out.sort(function (x, y) { return (x.m || 0) - (y.m || 0); });
+        var n = Math.min(80, a.limit || 40);
+        return JSON.stringify({ total: out.length, results: out.slice(0, n) });
+      });
+    },
+    select: function (a) {
+      var refs = (a.refs || []).slice(0, 120), pts = [], names = [];
+      selLayer.clearLayers();
+      var add = function (lat, lon, name, color) { pts.push([lat, lon]); names.push(name);
+        L.circleMarker([lat, lon], { radius: 17, color: '#2d72d2', weight: 3, fillColor: '#2d72d2', fillOpacity: 0.12, interactive: false }).addTo(selLayer); };
+      var jobs = refs.map(function (ref) {
+        var p = String(ref).split(':');
+        if (p[0] === 'site' && BY_ID[p[1]]) { var s = BY_ID[p[1]]; ensureVisible(s); add(s.lat, s.lon, s.name); return null; }
+        if (p[0] === 'area' && AREA_BY_ID[p[1]]) { var x = AREA_BY_ID[p[1]]; if (x.kind === 'military' && !milOn) inputs.milprof.click(); else if (['landmark', 'government', 'prison'].indexOf(x.kind) >= 0 && !profOn) inputs.profiles.click(); add(x.lat, x.lon, x.name); return null; }
+        if (p[0] === 'report') { var r = REPORTS.filter(function (z) { return z.id === p[1]; })[0]; if (r && r.lat != null) { if (!inputs.reports.checked) inputs.reports.click(); add(r.lat, r.lon, r.title); } return null; }
+        if (p[0] === 'osm' && OSM[p[1]]) { if (!osmActive[p[1]]) inputs['osm-' + p[1]].click(); var d = savedData[p[1]]; var el = d && d.elements.filter(function (e) { return e.type === p[2] && String(e.id) === p[3]; })[0];
+          if (el) { add(el.lat || (el.bounds.minlat + el.bounds.maxlat) / 2, el.lon || (el.bounds.minlon + el.bounds.maxlon) / 2, (el.tags && (el.tags['name:en'] || el.tags.name)) || p[1]); return null; } return ref; }
+        return ref;
+      });
+      var missing = jobs.filter(Boolean);
+      if (!pts.length) return { error: 'Nothing matched. Use refs returned by find_anything, e.g. "site:abusalim", "area:tekbali-camp".' };
+      selLayer.addTo(map);
+      if (a.frame !== false) { if (pts.length === 1) map.flyTo(pts[0], Math.max(map.getZoom(), 15), { duration: 0.8 }); else map.flyToBounds(L.latLngBounds(pts).pad(0.25), { duration: 0.8, maxZoom: 16 }); }
+      ui.mapChanged = true; ui.log.push('Highlighted ' + pts.length + ' place' + (pts.length > 1 ? 's' : '') + (names.length <= 4 ? ': ' + names.join(', ') : ''));
+      if (a.open_first) { var f = String(refs[0]).split(':'); if (f[0] === 'site' && BY_ID[f[1]]) TOOLS.open_place({ id: f[1] }); else if (f[0] === 'area' && AREA_BY_ID[f[1]]) TOOLS.open_area({ id: f[1] }); }
+      return 'Highlighted ' + pts.length + ' on the map with blue rings' + (missing.length ? '. Not found: ' + missing.join(', ') : '') + '.';
+    },
+    clear_selection: function () { selLayer.clearLayers(); ui.log.push('Cleared highlights'); return 'Highlights cleared.'; },
+    set_visibility: function (a) {
+      var all = []; GROUPS.forEach(function (g) { g.parts.forEach(function (p) { if (inputs[p[0]]) all.push(p[0]); }); });
+      var bad = [].concat(a.only || [], a.show || [], a.hide || []).filter(function (k) { return all.indexOf(k) < 0; });
+      if (bad.length) return { error: 'Unknown keys: ' + bad.join(', ') + '. Valid: ' + all.join(', ') };
+      var want = {};
+      if (a.only && a.only.length) all.forEach(function (k) { want[k] = a.only.indexOf(k) >= 0; });
+      (a.show || []).forEach(function (k) { want[k] = true; }); (a.hide || []).forEach(function (k) { want[k] = false; });
+      Object.keys(want).forEach(function (k) { if (inputs[k].checked !== want[k]) inputs[k].click(); });
+      syncGroups(); ui.mapChanged = true;
+      var on = all.filter(function (k) { return inputs[k].checked; });
+      ui.log.push('Showing: ' + on.join(', '));
+      return 'Now on: ' + on.join(', ') + '.';
+    },
+    set_time: function (a) {
+      stopPlay();
+      if (a.all) { timeRange = null; timeYear = null; refresh(); ui.log.push('All years'); return 'Showing all years.'; }
+      if (a.era) { var e = ERAS.filter(function (x) { return fold(x[2]).indexOf(fold(a.era)) >= 0 || fold(x[3]) === fold(a.era); })[0]; if (!e) return { error: 'Unknown era. Eras: ' + ERAS.map(function (x) { return x[2] + ' (' + x[0] + '–' + x[1] + ')'; }).join('; ') }; timeYear = null; timeRange = [e[0], e[1]]; refresh(); ui.log.push('Period: ' + e[2]); ui.mapChanged = true; return 'Showing ' + e[2] + ', ' + e[0] + '–' + e[1] + '. Visible places: ' + visibleNames() + '.'; }
+      if (a.year_from != null || a.year_to != null) { timeYear = null; timeRange = [a.year_from != null ? +a.year_from : 1900, a.year_to != null ? +a.year_to : 2026]; refresh(); ui.mapChanged = true; ui.log.push('Years ' + timeRange[0] + '–' + timeRange[1]); return 'Showing ' + timeRange[0] + '–' + timeRange[1] + '. Visible places: ' + visibleNames() + '.'; }
+      if (a.year != null) { setYear(+a.year); ui.mapChanged = true; ui.log.push('Year ' + a.year); return 'Time cursor at ' + a.year + '. Visible places: ' + visibleNames() + '.'; }
+      if (a.play) { startPlay(); ui.log.push('Playing through 1969–2011'); return 'Playing through the years.'; }
+      return { error: 'Give era, year, year_from/year_to, play or all.' };
+    },
+    open_area: function (a) {
+      var x = (a.id && AREA_BY_ID[a.id]) || (a.name && areaByName(a.name));
+      if (!x) return { error: 'No area profile ' + (a.id || a.name) };
+      ui.mapChanged = true; map.flyTo([x.lat, x.lon], Math.max(map.getZoom(), 15), { duration: 0.8 });
+      if (DESKTOP.matches) { openArea(x); ui.log.push('Opened ' + x.name); return 'Profile of ' + x.name + ' is open.'; }
+      ui.areas.push(x); ui.log.push('Added a button to open ' + x.name); return 'A button to open ' + x.name + ' was added under your reply.';
+    },
+    open_encyclopedia: function (a) { closeChat(); termKind = a.tab || 'all'; openTerm(a.query || ''); document.querySelectorAll('#term-kinds button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === termKind ? 'true' : 'false'); }); $('term-src').hidden = termKind !== 'doc'; return 'The Encyclopedia is open on “' + (a.query || '') + '”.'; },
+    start_report: function (a) { ui.log.push('Opened the Add to map form'); setTimeout(function () { closeChat(); openReportForm({ lat: a.lat != null ? +a.lat : null, lon: a.lon != null ? +a.lon : null, cat: a.category || '', keep: {} }); if (a.title) $('rep-name').value = a.title; if (a.notes) $('rep-text').value = a.notes; }, 400); return 'The Add to map form is open for the reader to finish and save.'; },
+
     search_places: function (a) {
       var q = String(a.query || '').toLowerCase().split(/\s+/).filter(Boolean);
       var res = SITES.filter(function (s) {
@@ -1564,6 +1650,7 @@
   var STEP_LABEL = { get_map_state: 'Checking the map', search_places: 'Searching the map', get_place: 'Reading place details', describe_spot: 'Looking up the area',
     set_layers: 'Changing layers', set_today_layers: 'Loading present-day layers', set_basemap: 'Changing the map style', set_periods: 'Changing the time period',
     set_display: 'Adjusting the display', fly_to: 'Moving the map', open_place: 'Opening the place', suggest_request: 'Preparing a request',
+    find_anything: 'Searching places', select: 'Highlighting places', clear_selection: 'Clearing highlights', set_visibility: 'Changing what is shown', set_time: 'Changing the time period', open_area: 'Opening the profile', open_encyclopedia: 'Opening the Encyclopedia', start_report: 'Opening the form',
     search_archive: 'Searching the archive', set_historical_map: 'Laying an old map over the city', get_record: 'Reading a document', get_area: 'Reading the area profile', open_record: 'Opening a document', web_search: 'Searching the web' };
   function runTool(name, input) {
     try {
@@ -1578,7 +1665,7 @@
       while (convo.length && !(convo[0].role === 'user' && typeof convo[0].content === 'string')) convo.shift();
     }
   }
-  var MAX_STEPS = 8;
+  var MAX_STEPS = 16;
   function runAgent(code, setStatus) {
     var steps = 0, lastText = '';
     function step() {
@@ -1618,7 +1705,7 @@
     $('chat-input').value = '';
     var wait = bubble('bot', 'Thinking…'); wait.classList.add('wait');
     $('chat-send').disabled = true;
-    ui = { log: [], chips: [], requests: [], docs: [], sources: [], mapChanged: false };
+    ui = { log: [], chips: [], requests: [], docs: [], areas: [], sources: [], mapChanged: false };
     runAgent(code, function (s) { wait.querySelector('p').textContent = s; scrollChat(); })
       .then(function (reply) {
         wait.remove();
@@ -1626,6 +1713,7 @@
         if (ui.log.length) m.appendChild(h('ul', { class: 'did' }, ui.log.map(function (x) { return h('li', { text: x }); })));
         var box = h('div', { class: 'acts' }), seen = {};
         ui.chips.forEach(function (s) { if (seen[s.id]) return; seen[s.id] = 1; box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); focusSite(s); } }, [glyph(s.layer), h('span', { text: 'Open ' + s.name })])); });
+        ui.areas.forEach(function (x) { box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); openArea(x); } }, [h('span', { class: 'dtag', text: KIND_LABEL[x.kind] || 'Area' }), h('span', { text: 'Open ' + x.name })])); });
         ui.docs.forEach(function (r) { box.appendChild(h('button', { class: 'act', onclick: function () { if (!DESKTOP.matches) closeChat(); openRecord(r); } }, [h('span', { class: 'dtag', text: TYPE_LABEL[r.y] || 'Doc' }), h('span', { text: r.t.slice(0, 80) })])); });
         if (ui.mapChanged && !DESKTOP.matches) box.appendChild(h('button', { class: 'act', text: 'View the map ↓', onclick: closeChat }));
         if (ui.sources.length) m.appendChild(h('details', { class: 'ai-src' }, [h('summary', { text: 'Web sources (' + ui.sources.length + ')' }), h('ol', {}, ui.sources.map(function (x) { return h('li', {}, [h('a', { href: x.url, target: '_blank', rel: 'noopener', text: x.title })]); }))]));
@@ -1763,7 +1851,8 @@
     if (t && !b.querySelector('.selhead')) {
       var wrap = t.parentNode, tag = b.querySelector('.tag'), c = tag ? (tag.style.getPropertyValue('--c') || '') : '';
       var kind = $('sheet-kind').textContent || '';
-      var head = h('div', { class: 'selhead' }, [h('div', { class: 'ic', style: c ? '--c:' + c : '', text: curTarget && curTarget.code ? curTarget.code : (kind.charAt(0) || '•') }), h('div', { class: 'tt' })]);
+      var head = h('div', { class: 'selhead' }, [h('div', { class: 'ic', style: c ? '--c:' + c : '', text: curTarget && curTarget.code && !/^<svg/.test(curTarget.code) ? curTarget.code : (kind.charAt(0) || '•') }), h('div', { class: 'tt' })]);
+      if (curTarget && /^<svg/.test(curTarget.code || '')) head.firstChild.innerHTML = curTarget.code;
       var tt = head.querySelector('.tt'); tt.appendChild(t); var ar = wrap.querySelector('.d-ar'); if (ar) tt.appendChild(ar); tt.appendChild(h('div', { class: 'sub', text: kind }));
       if (wrap !== b && !wrap.children.length) wrap.remove();
       b.insertBefore(head, b.firstChild);
@@ -1839,7 +1928,7 @@
     openPanel('sheet');
   }
   // remember what each sheet is about, so notes can be attached to it
-  var _openSite = openSite; openSite = function (s) { curTarget = { id: s.id, name: s.name, lat: s.lat, lon: s.lon, code: LAYERS[s.layer].code }; _openSite(s); };
+  var _openSite = openSite; openSite = function (s) { curTarget = { id: s.id, name: s.name, lat: s.lat, lon: s.lon, code: codeHtml(s.layer) }; _openSite(s); };
   var _openArea = openArea; openArea = function (x) { curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon }; _openArea(x); };
   var _openSpot = openSpot; openSpot = function (ll) { curTarget = { lat: ll.lat, lon: ll.lng, name: '' }; _openSpot(ll); };
   var _openFeature = openFeature; openFeature = function (k, el) { var lat = el.lat || (el.bounds ? (el.bounds.minlat + el.bounds.maxlat) / 2 : null), lon = el.lon || (el.bounds ? (el.bounds.minlon + el.bounds.maxlon) / 2 : null); curTarget = lat != null ? { id: 'osm-' + el.type + '-' + el.id, name: (el.tags && (el.tags['name:en'] || el.tags.name)) || '', lat: lat, lon: lon } : null; _openFeature(k, el); };

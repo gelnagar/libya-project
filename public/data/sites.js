@@ -6,14 +6,14 @@
   r:      position uncertainty in km
 */
 window.ATLAS_LAYERS = {
-  detention: { label: 'Prisons & detention',               code: 'P', color: '#e76a6e', shape: 'circle' },
-  security:  { label: 'Security & police',                 code: 'S', color: '#72ca9b', shape: 'square' },
-  military:  { label: 'Military installations',            code: 'M', color: '#ec9a3c', shape: 'square' },
-  airstrike: { label: 'Foreign airstrikes',                code: 'A', color: '#fbd065', shape: 'diamond' },
-  battle:    { label: 'Ground battles & attacks',          code: 'B', color: '#9bbf3f', shape: 'square' },
-  massacre:  { label: 'Killings & repression',         code: 'X', color: '#f5498b', shape: 'diamond' },
-  power:     { label: "Gaddafi's residences & seats of power", code: 'G', color: '#bdadff', shape: 'square' },
-  landmark:  { label: 'Landmarks & events',                code: 'L', color: '#68c1ee', shape: 'circle' }
+  detention: { label: 'Prisons & detention',               code: 'P', color: '#5d3f6a', shape: 'circle' },
+  security:  { label: 'Security & police',                 code: 'S', color: '#29508f', shape: 'square' },
+  military:  { label: 'Military installations',            code: 'M', color: '#55603a', shape: 'square' },
+  airstrike: { label: 'Foreign airstrikes',                code: 'A', color: '#8a6a1f', shape: 'diamond' },
+  battle:    { label: 'Ground battles & attacks',          code: 'B', color: '#7a4524', shape: 'square' },
+  massacre:  { label: 'Killings & repression',         code: 'X', color: '#8a1c34', shape: 'diamond' },
+  power:     { label: "Gaddafi's residences & seats of power", code: 'G', color: '#6b6f78', shape: 'square' },
+  landmark:  { label: 'Landmarks & events',                code: 'L', color: '#38787a', shape: 'circle' }
 };
 
 var cia = function (id, t) { return { t: 'CIA reading room: ' + t, u: 'https://www.cia.gov/readingroom/document/' + id }; };

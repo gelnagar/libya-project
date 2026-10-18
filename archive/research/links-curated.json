@@ -358,5 +358,23 @@
     "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100180007-6"
    }
   ]
+ },
+ {
+  "a": "wp-tarabulus-scud-storage-southeast",
+  "b": "wp-bin-ghashir-scud-facility",
+  "kind": "programme",
+  "why": "Both are Tripoli-area Scud sites in CIA imagery: the first confirmed Scud-B launcher at the south-east storage area in 1977, and elements of two Scud brigades at Bin Ghashir in 1982.",
+  "year": 1982,
+  "confidence": "documented",
+  "sources": [
+   {
+    "t": "CIA NPIC imagery information report: First confirmed identification of Scud-B launcher in Libya (21 Apr 1977)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp78t05698a000300010012-1"
+   },
+   {
+    "t": "CIA NPIC briefing board: TAC SSM activity, Bin Ghashir (1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100180007-6"
+   }
+  ]
  }
 ]

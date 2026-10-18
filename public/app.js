@@ -514,7 +514,7 @@
     buildings: { label: 'Buildings', minZoom: 16, note: 'Zoom in close; appears area by area', saved: false,
       q: function (b) { return 'way["building"](' + b + ');out geom 2500;'; },
       style: function () { return { color: '#c5cbd3', weight: 0.6, fillColor: '#8f99a8', fillOpacity: 0.35 }; }, swatch: '#c5cbd3' },
-    military: { label: 'Military areas (today)', minZoom: 9, note: 'Areas tagged military now', saved: true,
+    military: { label: 'Military areas (today)', minZoom: 9, note: 'Tagged military now; many are older Gaddafi-era bases, undated', saved: true,
       q: function (b) { return '(way["landuse"="military"](' + b + ');relation["landuse"="military"](' + b + ');way["military"](' + b + ');node["military"](' + b + '););out geom 1500;'; },
       style: function () { return { color: '#55603a', weight: 2, dashArray: '6 4', fillColor: '#55603a', fillOpacity: 0.08 }; }, point: '#55603a' },
     water: { label: 'Water wells, towers & reservoirs', minZoom: 9, note: 'Water infrastructure', saved: true,
@@ -873,7 +873,7 @@
   var EXPLAIN = {
     landuse: 'This is how the area is used today. Land use in 1969–1989 may have been different, since Tripoli grew a great deal after the 1980s.',
     buildings: 'A building as it stands today. It may not have existed in 1969–1989.',
-    military: 'An area marked as military in today’s map data. Present-day military sites do not always match those of the Gaddafi era.',
+    military: 'An area marked as military in today’s map data. Many of these are Gaddafi-era bases that later forces took over, but the map data does not say when a site was built or who used it under Gaddafi. Only the researched camp profiles date a site, so being on this layer does not mean a site existed in 1969–2011.',
     water: 'Part of the water supply as mapped today. Before the Great Man-Made River reached the city, Tripoli depended heavily on local groundwater wells.',
     oil: 'An oil or gas facility mapped today. Tripoli has no major oil fields; Libya’s main fields lie far to the south and east.'
   };
@@ -1055,7 +1055,8 @@
     'wp-janzour-machine-shop': '<path fill-rule="evenodd" d="M10.4 2h3.2l.5 2.6 1.6.7 2.2-1.5 2.3 2.3-1.5 2.2.7 1.6 2.6.5v3.2l-2.6.5-.7 1.6 1.5 2.2-2.3 2.3-2.2-1.5-1.6.7-.5 2.6h-3.2l-.5-2.6-1.6-.7-2.2 1.5-2.3-2.3 1.5-2.2-.7-1.6L2 13.6v-3.2l2.6-.5.7-1.6-1.5-2.2 2.3-2.3 2.2 1.5 1.6-.7zM12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7z"/>',
     'wp-tarhuna-underground-facility': '<path fill-rule="evenodd" d="M1 21V11C1 6 6 2 12 2s11 4 11 9v10zm5-1h12v-8c0-3-2.7-5.4-6-5.4S6 9 6 12zm3-1v-6.5c0-1.2 1.3-2 3-2s3 .8 3 2V19z"/>',
     'wp-bin-ghashir-scud-facility': '<path d="M7.5 2l2.6 4.6V16H4.9V6.6zM4.9 12.5L3 16v2h1.9zM10.1 12.5L12 16v2h-1.9zM16.5 5l2.6 4.6V19h-5.2V9.6zM13.9 15.5L12 19v2h1.9zM19.1 15.5L21 19v2h-1.9zM2 22h20v-1.5H2z"/>',
-    'wp-tawiwa-otrag-range': '<path d="M12 1c2.3 2.3 3.2 5.2 3.2 8.4V15H8.8V9.4C8.8 6.2 9.7 3.3 12 1zM8.8 12.5L6 16.5V19l2.8-1.4zM15.2 12.5l2.8 4V19l-2.8-1.4z"/><path d="M3 22h18v-1.8h-2.2V10h-1.8v10.2H7V10H5.2v10.2H3z"/>'
+    'wp-jarmah-otrag-launch-site': '<path d="M12 1c2.3 2.3 3.2 5.2 3.2 8.4V15H8.8V9.4C8.8 6.2 9.7 3.3 12 1zM8.8 12.5L6 16.5V19l2.8-1.4zM15.2 12.5l2.8 4V19l-2.8-1.4z"/><path d="M3 22h18v-1.8h-2.2V10h-1.8v10.2H7V10H5.2v10.2H3z"/>',
+    'wp-tarabulus-scud-storage-southeast': '<path d="M3 10l4-3h9l5 3.5-5 3.5H7z"/><path d="M3 16h18v2.2H3z"/><circle cx="7" cy="20.5" r="1.5"/><circle cx="12" cy="20.5" r="1.5"/><circle cx="17" cy="20.5" r="1.5"/>'
   };
   function isWpn(a) { return a.kind === 'military' || /^wp-/.test(a.id) || !!WEAPON_ICON[a.id]; }
   function weaponSvg(a) { return WEAPON_ICON[a.id] || (isMissile(a) ? MISSILE_SVG : null); }
@@ -1078,7 +1079,7 @@
   function syncProfiles() { if (profOn && map.getZoom() >= 14) map.addLayer(profGroup); else map.removeLayer(profGroup); if (milOn && map.getZoom() >= 11) map.addLayer(milGroup); else map.removeLayer(milGroup); }
   map.on('zoomend', syncProfiles);
   $('hist-toggles').appendChild(toggleRow('profiles', 'Researched landmarks & buildings', 'Ministries, hospitals, mosques, old city and historic sites, with histories', profOn, function (v) { profOn = v; store.set('prof', v); syncProfiles(); }));
-  $('hist-toggles').appendChild(toggleRow('milprof', 'Camps & weapons sites', 'Researched military camps, missile and weapons-programme sites', milOn, function (v) { milOn = v; store.set('milprof', v); syncProfiles(); }));
+  $('hist-toggles').appendChild(toggleRow('milprof', 'Camps & weapons sites', 'Researched military camps, missile and weapons-programme sites; each profile gives the dates its sources cover', milOn, function (v) { milOn = v; store.set('milprof', v); syncProfiles(); }));
   setTimeout(function () { drawProfiles(); syncProfiles(); }, 0);
   var RECORDS = null, recordsWaiting = null, REC_BY_ID = {};
   function loadRecords() {
@@ -1245,7 +1246,8 @@
     var body = newSheet(KIND_LABEL[a.kind] || 'Area');
     markSelected(null);
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: a.name }), a.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: a.ar }) : null]));
-    body.appendChild(facts([['Type', KIND_LABEL[a.kind] || a.kind], ['Also known as', (a.aliases || []).join(', ')], ['Coordinates', a.lat.toFixed(4) + ', ' + a.lon.toFixed(4)], ['Accuracy', a.r ? 'within about ' + a.r + ' km' : ''], ['Sources', (a.sources || []).length]]));
+    body.appendChild(facts([['Type', KIND_LABEL[a.kind] || a.kind], ['Also known as', (a.aliases || []).join(', ')], ['Coordinates', a.lat.toFixed(4) + ', ' + a.lon.toFixed(4)], ['Accuracy', a.r ? 'within about ' + a.r + ' km' : ''], ['Documented in use', a.documented || ''], ['Sources', (a.sources || []).length]]));
+    if (a.kind === 'military') body.appendChild(h('p', { class: 'd-note', text: 'Dates come only from the sources cited. A base can be older than the document that mentions it, and many Gaddafi-era sites were later taken over by other forces, so a site’s use after 2011 is not assumed here.' }));
     if (a.summary) body.appendChild(section('Summary', [h('p', { class: 'brief', text: a.summary })]));
     [['History', a.history], ['Under Gaddafi, 1969–2011', a.era], ['Today', a.today], ['Still unclear', a.uncertain]].forEach(function (x) {
       if (x[1]) body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: x[0] }), h('p', { class: 'd-text', text: x[1] })]));

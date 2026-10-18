@@ -553,3 +553,5 @@ body.unknown-on #timeline, body.unknown-on .chat, body.unknown-on .hud, body.unk
 .un-pic .ag-hat { fill: #b2aa94; } .un-pic .ag-hat2 { fill: #8f8873; } .un-pic .ag-band { fill: #5b1d2c; } .un-pic .ag-rim { fill: none; stroke: #efe9da; stroke-width: 1.4; stroke-linecap: round; opacity: .55; }
 .un-pic .ag .sk { fill: #b3a68e; } .un-pic .ag .sk2 { fill: #7f7461; } .un-pic .ag .hr { fill: #2a2420; } .un-pic .ag .ln { stroke: #14110f; }
 .un-pic .ag .t1 { } 
+
+.d-note { margin: 8px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--ink-2, #6b6a5e); border-left: 2px solid #55603a; padding-left: 9px; }

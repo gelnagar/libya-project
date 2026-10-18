@@ -1449,14 +1449,14 @@
    "Qabilat az Zaribah"
   ],
   "kind": "military",
-  "lat": 32.2114,
-  "lon": 12.9085,
-  "r": 2,
+  "lat": 32.188,
+  "lon": 12.885,
+  "r": 6,
   "summary": "Reported chemical weapons plant at Rabta, south of Tripoli, publicly presented by Libya as a pharmaceutical factory; subject of the 1990 fire dispute.",
   "history": "GlobalSecurity's compilation places the site at Qabilat az Zaribah (Rabta), about 60 miles south of Tripoli. It gives construction as 1984 to 1988. West Germany's intelligence service (BND) and government linked German firm Imhausen Chemie to the project from 1984 onward, and in 1987 the BND judged from satellite images that the plant was most likely for chemical weapons. A November 1988 CIA memo says the Technology Center near Rabta is administratively controlled by the Tajura Nuclear Research Center, that its metal-fabrication section may support the surface-to-surface missile programme, and that it was then probably Libya's most heavily defended site, with SA-2, SA-3, SA-6 and SA-8 units nearby and SA-5s at Al Aziziyah. IAEA GOV/2004/12 Annex II lists a Rabta Engineering Industrial Complex, a Rabta Pharmaceutical Plant and a Rabta Factory 69 bomb-filling plant.",
   "era": "The US assessed Rabta in 1990 as the largest chemical weapons plant in the developing world; Libya denied this and claimed a closure that was not confirmed. In March 1990 a fire occurred: Libya blamed the United States, while US officials said satellite imagery showed only minimal damage and called it a hoax; US officials later said production resumed by mid-May 1990. In 1995 Libya reopened it as a pharmaceutical plant, a joint venture with Egypt's Nasr Companies.",
   "today": "Libya joined the Chemical Weapons Convention in early 2004. The OPCW stated that Libya declared several chemical weapons production facilities which were destroyed or converted to peaceful uses; the OPCW pages seen do not name Rabta, so its exact post-2004 use is not confirmed here.",
-  "uncertain": "Position is the plant compound as mapped on OpenStreetMap (a way labelled 'Rabta Chemical Weapons Factory'; Nominatim names the same spot the Rabta pharmaceutical factory), about 75 km south-south-west of Tripoli, near Rabta in the Jabal Nafusa foothills. The FAS gazetteer lists the site at Qabilat az Zaribah, 32°09'27\"N 12°50'32\"E, about 9 km south-west of it; published distances from Tripoli vary from about 40 km to about 100 km. Treat the pin as the plant area, not a building.",
+  "uncertain": "Three open positions disagree by up to about 7 km, so the pin sits between them with a 6 km radius. (1) The FAS gazetteer lists Qabilat az Zaribah at 32°09′27″N 12°50′32″E. (2) A Google Earth geolocation of 'Ain er Rabta' gives 32°09′51″N 12°51′47″E, 85 km at 202° from Tripoli. (3) OpenStreetMap maps a compound labelled 'Rabta Chemical Weapons Factory' at 32.211°N 12.909°E. Published distances from Tripoli range from about 40 km to 100 km. Treat the pin as the plant area, not a building; no declassified CIA text we hold gives its coordinates.",
   "sources": [
    {
     "t": "GlobalSecurity: Rabta",
@@ -1471,10 +1471,6 @@
     "u": "https://www.openstreetmap.org/way/126490585"
    },
    {
-    "t": "FAS: Libya special weapons (Rabta at Qabilat az Zaribah, 32°09′27″N 12°50′32″E)",
-    "u": "https://nuke.fas.org/guide/libya/index.html"
-   },
-   {
     "t": "Wisconsin Project: Libya has trouble building the most deadly weapons",
     "u": "https://www.wisconsinproject.org/libya-has-trouble-building-the-most-deadly-weapons/"
    },
@@ -1485,9 +1481,18 @@
    {
     "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
     "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
+   },
+   {
+    "t": "FAS: Libya special weapons (Rabta at Qabilat az Zaribah, 32°09′27″N 12°50′32″E)",
+    "u": "https://nuke.fas.org/guide/libya/index.html"
+   },
+   {
+    "t": "Big Enough Lie: Rabta CWPF at Ain er Rabta (32°09′51″N 12°51′47″E, 85 km at 202° from Tripoli)",
+    "u": "https://bigenoughlie.wordpress.com/2011/06/30/rabta-cwpf-libya/"
    }
   ],
-  "distance_from_tripoli_km": 80
+  "distance_from_tripoli_km": 83,
+  "documented": "Assessed by the CIA as a chemical-weapons plant in 1988; declared to the OPCW in 2004"
  },
  {
   "id": "lh-military-police-command",
@@ -1715,7 +1720,7 @@
   "history": "Libya joined the Chemical Weapons Convention in January 2004 and declared nearly 25 tonnes of bulk mustard agent and thousands of unfilled aerial bombs. The OPCW describes the depot at Ruwagha as being in remote south-eastern Libya, far outside the Tripoli area. Waddan is the nearest town named in the brief.",
   "era": "Empty munitions were destroyed in March 2004. Destruction of the bulk mustard began in October 2010 and stopped in February 2011 after equipment failed and unrest began. OPCW inspectors confirmed the stockpile intact in November 2011. Work resumed on 20 April 2013 and ended 4 May 2013; the OPCW announced it on 6 May 2013. Libya completed destruction of its remaining mustard-loaded shells and bombs on 26 January 2014.",
   "today": "Precursor chemicals (846 tonnes) remained and were later moved to Germany, completed in 2016-2017 per Wikipedia; the OPCW pages seen cover only the earlier steps. The site's state today is not documented in the pages opened.",
-  "uncertain": "Position is the Ruwagha (Ar-Rawagha) locality on the edge of Waddan in Al Jufra District, as named on OpenStreetMap, which fits the 'Waddan area' alias and the OPCW's remote-desert description. No source gives the depot's own coordinates and OpenStreetMap shows no military feature there, so the pin marks the named locality with an 8 km radius, not the storage site. Wikipedia also reports rebels finding mustard stocks in Jufra District in 2011; whether that was this depot is not established.",
+  "uncertain": "Position is the Ruwagha (Ar-Rawagha) locality on the edge of Waddan in Al Jufra District, as named on OpenStreetMap, which fits the 'Waddan area' alias and the OPCW's remote-desert description. No source gives the depot's own coordinates and OpenStreetMap shows no military feature there, so the pin marks the named locality with an 8 km radius, not the storage site. Wikipedia also reports rebels finding mustard stocks in Jufra District in 2011; whether that was this depot is not established. Context: a December 1983 CIA imagery board reports 'probable missile-ready bunkers' at Al Jufrah airfield (29.217°N 16.0°E), about 15 km west of this pin; nothing links that airfield to the depot.",
   "sources": [
    {
     "t": "OPCW: Libya completes destruction of its Category 1 chemical weapons",
@@ -1736,10 +1741,15 @@
    {
     "t": "OpenStreetMap: Ar-Rawagha, suburb of Waddan (node 4197740816)",
     "u": "https://www.openstreetmap.org/node/4197740816"
+   },
+   {
+    "t": "CIA NPIC briefing board: Probable missile-ready bunkers, Al Jufrah airfield (Dec 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000300850001-6"
    }
   ],
   "distance_from_tripoli_km": 501,
-  "far": true
+  "far": true,
+  "documented": "Stocks declared in 2004; bulk-mustard destruction completed in 2016-17 (per Wikipedia)"
  },
  {
   "id": "lh-italian-cemetery-hammangi",
@@ -1852,7 +1862,8 @@
     "u": "https://www.cia.gov/readingroom/document/cia-rdp81t00034r000100500001-1"
    }
   ],
-  "distance_from_tripoli_km": 15
+  "distance_from_tripoli_km": 15,
+  "documented": "Seen in US imagery in 1982; later use not documented"
  },
  {
   "id": "lh-castel-benito-airport",
@@ -2048,6 +2059,49 @@
     "u": "https://en.wikipedia.org/wiki/High_Council_of_State_(Libya)"
    }
   ]
+ },
+ {
+  "id": "wp-jarmah-otrag-launch-site",
+  "name": "Jarmah missile launch site (OTRAG), later used for Libyan missile development",
+  "aliases": [
+   "OTRAG Libya",
+   "Jarmah launch site",
+   "Jarmah missile launch site"
+  ],
+  "kind": "military",
+  "lat": 26.5514,
+  "lon": 13.1639,
+  "r": 2,
+  "far": true,
+  "summary": "The German OTRAG rocket range in the Libyan desert, about 380 nautical miles south of Tripoli. By December 1983 CIA imagery said the Libyans were using it to develop a short-range missile.",
+  "history": "A March 1981 NPIC report describes a fenced site about 2 by 1 km with a 19 m lattice launch tower, propellant storage, 16 prefabricated housing units, workshops, a water reservoir and a 2,370 m runway, built by the West German firm OTRAG after its Zaire range was cancelled in 1979. An August 1982 board records a new concrete launch pad at coordinates 26°33′05″N 13°09′50″E. OTRAG ended its Libyan launch work in December 1981 and left in 1981-82 (Aviation Week; Der Spiegel). A December 1983 board shows a launch in preparation with a crane over the erector-launcher and says the site was 'currently being used by the Libyans for the development of a short-range missile'.",
+  "era": "1980-1983; later use is not documented in the sources held.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are from the CIA briefing boards of 1982 and 1983. Their text says the site is '5.5 nm east of Jarmah', which does not fit the town of Jarma (Germa) on modern maps, so the coordinates are used and the place name is not. Wikipedia places OTRAG's Libyan centre at Tawiwa near Sabha (26.99°N 14.46°E), and GlobalSecurity says a March 1981 test came 'from either the Sebha Oasis or the Jarmah Oasis'; the CIA imagery supports the Jarmah site. Which later Libyan missile programme used it is not stated.",
+  "sources": [
+   {
+    "t": "CIA NPIC imagery analysis report: Jarmah missile launch site (OTRAG), Jarmah, Libya (Mar 1981)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp81t00380r000100100001-1"
+   },
+   {
+    "t": "CIA NPIC briefing board: New launch pad, Jarmah missile launch site (13 Aug 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp83t00574r000101740001-3"
+   },
+   {
+    "t": "CIA NPIC briefing board: Launch preparations, Jarmah missile launch site (Dec 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200500003-4"
+   },
+   {
+    "t": "GlobalSecurity: Jarmah (OTRAG)",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/jarmah.htm"
+   },
+   {
+    "t": "FBIS: Libya says OTRAG tests are peaceful (17 Mar 1981)",
+    "u": "https://archive.org/details/fbis-1981-03-17-0868"
+   }
+  ],
+  "distance_from_tripoli_km": 705,
+  "documented": "Imagery 1981-83; OTRAG left in 1981-82; later use not documented"
  },
  {
   "id": "lh-jewish-cemetery",
@@ -2610,7 +2664,8 @@
     "u": "https://en.wikipedia.org/wiki/Libya_and_weapons_of_mass_destruction"
    }
   ],
-  "distance_from_tripoli_km": 14
+  "distance_from_tripoli_km": 14,
+  "documented": "Centrifuge work 1997-2002 (IAEA); cleared 2004"
  },
  {
   "id": "lm-grand-hotel-tripoli",
@@ -2888,6 +2943,35 @@
   ]
  },
  {
+  "id": "wp-tarabulus-scud-storage-southeast",
+  "name": "Tarabulus Military Storage Area Southeast (first confirmed Scud-B launcher)",
+  "aliases": [
+   "Scud-B storage",
+   "Tripoli military storage area southeast"
+  ],
+  "kind": "military",
+  "lat": 32.8292,
+  "lon": 13.3406,
+  "r": 1.2,
+  "summary": "Where US imagery analysts first confirmed a Scud-B launcher in Libya, in April 1977, at a military storage area south-east of Tripoli.",
+  "history": "A top-secret NPIC imagery information report of 21 April 1977 says the first confirmed Scud-B transporter-erector-launcher in Libya was identified at the 'Tarabulus Military Storage Area Southeast', at 32°49′45″N 13°20′26″E. It adds that four probable Scud-B launchers and nine resupply transporters had been seen in July 1976 at the Al Aziziyah ammunition storage depot.",
+  "era": "1976-1977; the later organisation of the Scud brigades is covered in the 1980 NPIC report.",
+  "today": "Not described.",
+  "uncertain": "Coordinates are exact in the report, but the report names the area only as a military storage area and does not say how long Scuds stayed there. Later Scud brigades were at other sites such as Bin Ghashir.",
+  "sources": [
+   {
+    "t": "CIA NPIC imagery information report: First confirmed identification of Scud-B launcher in Libya (21 Apr 1977)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp78t05698a000300010012-1"
+   },
+   {
+    "t": "CIA NPIC imagery analysis report: Tactical surface-to-surface missile organization and deployment in Libya (Dec 1980)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp81t00034r000100500001-1"
+   }
+  ],
+  "distance_from_tripoli_km": 17,
+  "documented": "Seen in US imagery in 1977; later use not documented"
+ },
+ {
   "id": "lh-ain-zara-battle",
   "name": "Ain Zara battlefield and memorial",
   "ar": "عين زارة",
@@ -2974,7 +3058,8 @@
     "u": "https://www.openstreetmap.org/node/7241078225"
    }
   ],
-  "distance_from_tripoli_km": 13
+  "distance_from_tripoli_km": 13,
+  "documented": "Conversion modules there from 1998 (IAEA); cleared 2004"
  },
  {
   "id": "wp-el-ezeizia-site-k",
@@ -3011,7 +3096,8 @@
     "u": "https://www.cia.gov/readingroom/document/cia-rdp81t00034r000100500001-1"
    }
   ],
-  "distance_from_tripoli_km": 43
+  "distance_from_tripoli_km": 43,
+  "documented": "Used for storage before 2004 (IAEA); exact dates not given"
  },
  {
   "id": "lm-islamic-museum",
@@ -3038,35 +3124,6 @@
     "u": "https://www.openstreetmap.org/"
    }
   ]
- },
- {
-  "id": "wp-tawiwa-otrag-range",
-  "name": "Tawiwa OTRAG rocket launch centre (Sabha)",
-  "aliases": [
-   "OTRAG Libya",
-   "Tawiwa launch center"
-  ],
-  "kind": "military",
-  "lat": 26.9939,
-  "lon": 14.4643,
-  "r": 3,
-  "summary": "The German OTRAG commercial-rocket range in the Libyan desert near Sabha, used 1981-87 after the company left Zaire; Libya's later missile effort reportedly drew on it.",
-  "history": "Wikipedia's list of launch sites gives Tawiwa as OTRAG's Libyan launch centre at 26°59′38″N 14°27′51″E, with two launches reaching about 50 km altitude. GlobalSecurity and Wikipedia note that Libya's Al-Fatah missile work drew on earlier OTRAG work near Sebha.",
-  "era": "OTRAG's Libyan activity ended in 1987 and the work was linked in the press to Libyan missile ambitions.",
-  "today": "Not documented.",
-  "uncertain": "Coordinates come from Wikipedia's launch-site table, not from a primary source. A 1989 press report of a missile 'desert camp about 100 km from Sebha' is a different clue and is not placed.",
-  "sources": [
-   {
-    "t": "Wikipedia: List of rocket launch sites",
-    "u": "https://en.wikipedia.org/wiki/List_of_rocket_launch_sites"
-   },
-   {
-    "t": "FAS: Missile proliferation - Libya",
-    "u": "https://irp.fas.org/threat/missile/libya.htm"
-   }
-  ],
-  "distance_from_tripoli_km": 667,
-  "far": true
  },
  {
   "id": "lh-ottoman-clock-tower",
@@ -3164,7 +3221,8 @@
    }
   ],
   "distance_from_tripoli_km": 445,
-  "far": true
+  "far": true,
+  "documented": "16 August 2011 (a single launch)"
  },
  {
   "id": "lh-hani-battle-monument",
@@ -3226,7 +3284,8 @@
     "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
    }
   ],
-  "distance_from_tripoli_km": 5
+  "distance_from_tripoli_km": 5,
+  "documented": "Centrifuge equipment there from April 2002 (IAEA); cleared 2004"
  },
  {
   "id": "lb-murad-agha-mosque",
@@ -3280,7 +3339,8 @@
     "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
    }
   ],
-  "distance_from_tripoli_km": 8
+  "distance_from_tripoli_km": 8,
+  "documented": "Conversion modules there by 2003 (IAEA); cleared 2004"
  },
  {
   "id": "lb-italian-embassy-tripoli",
@@ -3541,7 +3601,8 @@
     "u": "https://www.openstreetmap.org/way/342138800"
    }
   ],
-  "distance_from_tripoli_km": 19
+  "distance_from_tripoli_km": 19,
+  "documented": "Used for storage before 2004 (IAEA); exact dates not given"
  },
  {
   "id": "lm-bab-darghouth",

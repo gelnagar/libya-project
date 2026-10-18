@@ -266,11 +266,11 @@
   "h": "20cc1d7f313f",
   "model": "claude-sonnet-5-5",
   "headline": "A 1983 imagery briefing places Libyan forces at Ounianga Kebir in Chad and heavy transport activity at Tajura in the same report.",
-  "explanation": "The two places appear together in one short U.S. imagery briefing on the Libya–Chad conflict from August 1983. It reports Libyan troops and guns improving defenses at Ounianga Kebir in northern Chad. It also reports a high level of heavy-lift transport activity at Tajura in Libya. The briefing does not say the Tajura activity was supplying Ounianga Kebir. The link is therefore one of shared context: Tajura was a Libyan site watched as part of the Chad campaign. Most of the document is blacked out, which limits what can be said.",
+  "explanation": "The two places appear together in one short U.S. imagery briefing on the Libya\u2013Chad conflict from August 1983. It reports Libyan troops and guns improving defenses at Ounianga Kebir in northern Chad. It also reports a high level of heavy-lift transport activity at Tajura in Libya. The briefing does not say the Tajura activity was supplying Ounianga Kebir. The link is therefore one of shared context: Tajura was a Libyan site watched as part of the Chad campaign. Most of the document is blacked out, which limits what can be said.",
   "strength": "weak",
   "flag": "ok",
   "established": [
-   "The briefing lists Ounianga Kebir, where Libyan forces were improving defenses, and Tajura, where heavy-lift transport activity continued, under one Libya–Chad heading.",
+   "The briefing lists Ounianga Kebir, where Libyan forces were improving defenses, and Tajura, where heavy-lift transport activity continued, under one Libya\u2013Chad heading.",
    "At Ounianga Kebir old airfield it describes a mechanized infantry battalion, a probable tank battalion and ten 130mm M-46 field guns, six of which were deployed north of the airfield.",
    "The Tajura activity is described as continuing at a high level, and it is the only Libya-side item."
   ],
@@ -374,7 +374,7 @@
    "It does not say whether Carlos was still at The Institute in 1979. Some reports put him in Libya and others in Iraq, Czechoslovakia or Aden.",
    "Part of the text is not declassified, so the memo's evidence for these claims is not shown."
   ],
-  "context": "Carlos, born Ilich Ramírez Sánchez, was a Venezuelan-born militant linked to the Popular Front for the Liberation of Palestine (PFLP). He was widely known as 'the Jackal'.",
+  "context": "Carlos, born Ilich Ram\u00edrez S\u00e1nchez, was a Venezuelan-born militant linked to the Popular Front for the Liberation of Palestine (PFLP). He was widely known as 'the Jackal'.",
   "timeline": [
    {
     "when": "1977",
@@ -391,10 +391,10 @@
   ],
   "quotes": [
    {
-    "text": "Housed at “The Institute,” a terrorist training camp near Tripoli, Carlos and the Libyan Intelligence Service planned such operations as the aborted attack on the US ambassador to Egypt in 1977.",
+    "text": "Housed at \u201cThe Institute,\u201d a terrorist training camp near Tripoli, Carlos and the Libyan Intelligence Service planned such operations as the aborted attack on the US ambassador to Egypt in 1977.",
     "doc": {
      "id": "frus-frus-1977-80v17p3-d100",
-     "t": "Intelligence Memorandum Prepared in the Central Intelligence Agency | Washington , June 1, 1979 | LIBYA’S CHANGING ROLE AS A PATRON STATE"
+     "t": "Intelligence Memorandum Prepared in the Central Intelligence Agency | Washington , June 1, 1979 | LIBYA\u2019S CHANGING ROLE AS A PATRON STATE"
     }
    }
   ],
@@ -441,7 +441,7 @@
  "u:oujda|rabat": {
   "h": "ba725c8700dc",
   "model": "claude-sonnet-5-5",
-  "headline": "A 1984 U.S. cable from Rabat reports the Hassan–Qadhafi meeting in Oujda and says Moroccan officials would return to Rabat afterward.",
+  "headline": "A 1984 U.S. cable from Rabat reports the Hassan\u2013Qadhafi meeting in Oujda and says Moroccan officials would return to Rabat afterward.",
   "explanation": "Oujda is a Moroccan border town where King Hassan met Colonel Qadhafi on 13 August 1984. They concluded a treaty forming a union between Morocco and Libya. Rabat is where the U.S. Embassy wrote the cable, and where Moroccan officials were expected to return. The link is about where the news was written and where officials were heading. It is not a direct connection between the two cities. It matters for Tripoli because it shows how Libya's leader dealt with Morocco, and how outside observers followed those talks.",
   "strength": "reported",
   "flag": "ok",
@@ -456,7 +456,7 @@
    "It does not say what was discussed in the talks beyond the treaty, or what the treaty changed in practice.",
    "The link between the two places is the cable's setting and the officials' travel, not a formal relationship."
   ],
-  "context": "The Morocco–Libya union treaty of 1984 is widely known as the Oujda agreement. It was short-lived.",
+  "context": "The Morocco\u2013Libya union treaty of 1984 is widely known as the Oujda agreement. It was short-lived.",
   "timeline": [
    {
     "when": "13 August 1984",
@@ -471,13 +471,13 @@
     "what": "Qadhafi goes to Tunis; the Rabat embassy sends this cable."
    },
    {
-    "when": "14–15 August 1984",
+    "when": "14\u201315 August 1984",
     "what": "Foreign Minister Belkeziz expected back in Rabat; other officials to follow."
    }
   ],
   "quotes": [
    {
-    "text": "as senior GOM and palace officials—all of whom accompanied the King to Oujda—filter back to Rabat in the days to come",
+    "text": "as senior GOM and palace officials\u2014all of whom accompanied the King to Oujda\u2014filter back to Rabat in the days to come",
     "doc": {
      "id": "frus-frus-1981-88v24-d37",
      "t": "Telegram From the Embassy in Morocco to the Department of State and the Embassies in Tunisia and Algeria | Rabat , August 14, 1984, 1749Z | Military for Polads."
@@ -512,7 +512,7 @@
     "what": "Kikhia arrives in Cairo for a human rights meeting."
    },
    {
-    "when": "1–2 Dec 1993",
+    "when": "1\u20132 Dec 1993",
     "what": "Arab Organization for Human Rights meeting; afterwards he visits family in Alexandria."
    },
    {
@@ -1004,14 +1004,14 @@
     "text": "Libya denies the Rabta facility is a CW production facility.",
     "doc": {
      "id": "frus-frus-1981-88v24-d185",
-     "t": "Telegram From the Department of State to the Embassy in Algeria | Washington , January 6, 1989, 0021Z | Algerian Ambassador’s Démarche on Shootdown of Libyan MI"
+     "t": "Telegram From the Department of State to the Embassy in Algeria | Washington , January 6, 1989, 0021Z | Algerian Ambassador\u2019s D\u00e9marche on Shootdown of Libyan MI"
     }
    },
    {
     "text": "the Rabta facility, which Libya maintained was a pharmaceutical plant only",
     "doc": {
      "id": "frus-frus-1981-88v24-d185",
-     "t": "Telegram From the Department of State to the Embassy in Algeria | Washington , January 6, 1989, 0021Z | Algerian Ambassador’s Démarche on Shootdown of Libyan MI"
+     "t": "Telegram From the Department of State to the Embassy in Algeria | Washington , January 6, 1989, 0021Z | Algerian Ambassador\u2019s D\u00e9marche on Shootdown of Libyan MI"
     }
    }
   ],
@@ -1124,7 +1124,7 @@
   "flag": "ok",
   "established": [
    "The article states the Zanzur tuna plant is controlled by the Libyan Maritime Fishing Company.",
-   "The plant reached only 43 percent of its target for the January–September 1982 period.",
+   "The plant reached only 43 percent of its target for the January\u2013September 1982 period.",
    "The causes given were worn equipment, no tuna because credit was delayed, no spare parts, and an unstable labour force."
   ],
   "not_established": [
@@ -1135,7 +1135,7 @@
   "context": "Under Gaddafi, most large businesses in Libya were state-owned or state-run, so companies like this one were usually public bodies.",
   "timeline": [
    {
-    "when": "January–September 1982",
+    "when": "January\u2013September 1982",
     "what": "Period for which the plant's output targets were measured; it reached 43 percent."
    },
    {
@@ -1210,7 +1210,7 @@
   "h": "694e3c15c166",
   "model": "claude-sonnet-5-5",
   "headline": "Protests were reportedly held outside Tajoura's Murad Agha Mosque in early 2011, around the time of the Tripoli crackdown.",
-  "explanation": "The link rests on one stated reason: anti-Gaddafi protests took place outside the Murad Agha Mosque in Tajoura in early 2011. The crackdown entry says shooting was reported in Tajoura during 20–25 February 2011, so the two could be connected. No source passage could be retrieved, so we cannot check the wording, the date of the protests, or whether they were part of the same events. The mosque's age and architecture are not relevant to the link. Treat it as a plausible, second-hand connection that still needs checking.",
+  "explanation": "The link rests on one stated reason: anti-Gaddafi protests took place outside the Murad Agha Mosque in Tajoura in early 2011. The crackdown entry says shooting was reported in Tajoura during 20\u201325 February 2011, so the two could be connected. No source passage could be retrieved, so we cannot check the wording, the date of the protests, or whether they were part of the same events. The mosque's age and architecture are not relevant to the link. Treat it as a plausible, second-hand connection that still needs checking.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -1219,7 +1219,7 @@
   ],
   "not_established": [
    "No source text was available, so the claim about the mosque protests could not be checked.",
-   "It is not shown that protesters at the mosque were fired on, or that the protests fell within 20–25 February.",
+   "It is not shown that protesters at the mosque were fired on, or that the protests fell within 20\u201325 February.",
    "The mosque is not shown to have had any role beyond being a gathering place."
   ],
   "context": "Tajoura is a district east of central Tripoli. The Murad Agha Mosque is also known as the Tajoura Great Mosque.",
@@ -1229,7 +1229,7 @@
     "what": "Anti-Gaddafi protests reportedly held outside the Murad Agha Mosque, Tajoura."
    },
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Shooting reported in several Tripoli districts, including Tajoura."
    }
   ],
@@ -1371,8 +1371,8 @@
  "u:libya-chad border|sebha": {
   "h": "470f8b711524",
   "model": "claude-sonnet-5-5",
-  "headline": "A February 1978 news report says a four-nation summit on the Libya–Chad dispute was expected in Sabha, \"near\" the Libyan-Chadian border.",
-  "explanation": "The link is about where Sabha sits in relation to the Libya–Chad border. One report, translated by the U.S. government, says leaders were expected to meet in Sabha city \"near the Libyan-Chadian border\". The border here is a general area, not a point on the map. Sabha is a town in southern Libya, so it was a natural place to hold talks about a border dispute. The report only says \"near\" and gives no distance. It also says the meeting was expected, not that it took place.",
+  "headline": "A February 1978 news report says a four-nation summit on the Libya\u2013Chad dispute was expected in Sabha, \"near\" the Libyan-Chadian border.",
+  "explanation": "The link is about where Sabha sits in relation to the Libya\u2013Chad border. One report, translated by the U.S. government, says leaders were expected to meet in Sabha city \"near the Libyan-Chadian border\". The border here is a general area, not a point on the map. Sabha is a town in southern Libya, so it was a natural place to hold talks about a border dispute. The report only says \"near\" and gives no distance. It also says the meeting was expected, not that it took place.",
   "strength": "direct",
   "flag": "ok",
   "established": [
@@ -1386,7 +1386,7 @@
    "It does not confirm the meeting actually happened in Sabha or on that date.",
    "It cites unnamed 'informed sources', and the meeting was first announced as only Libya and Chad."
   ],
-  "context": "Sabha is the main town of southern Libya, in the Fezzan region. The Libya–Chad border area was disputed during these years, including over the Aozou Strip.",
+  "context": "Sabha is the main town of southern Libya, in the Fezzan region. The Libya\u2013Chad border area was disputed during these years, including over the Aozou Strip.",
   "timeline": [
    {
     "when": "20 Feb 1978",
@@ -1524,7 +1524,7 @@
   ],
   "quotes": [
    {
-    "text": "The attack had been made, not by Malloum’s forces, but by Chadian rebels armed by Qadhafi.",
+    "text": "The attack had been made, not by Malloum\u2019s forces, but by Chadian rebels armed by Qadhafi.",
     "doc": {
      "id": "frus-frus-1977-80v17p3-d14",
      "t": "Telegram From the Embassy in Egypt to the Department of State | Cairo , July 1, 1977, 1331Z | 11017. Subject: President Sadat Oral Message to President Carter r"
@@ -1921,7 +1921,7 @@
   "strength": "inferred",
   "flag": "same-entity",
   "established": [
-   "The documents spell the town \"Zanzur\" and place it west of Tripoli. DOC 2 lists it with Sabratha and Zuwara on the western rail track, and DOC 3 lists it on the western Tripoli–Ra's Ijdayr line.",
+   "The documents spell the town \"Zanzur\" and place it west of Tripoli. DOC 2 lists it with Sabratha and Zuwara on the western rail track, and DOC 3 lists it on the western Tripoli\u2013Ra's Ijdayr line.",
    "DOC 1 names Zanzur as the site of a small gas-turbine power station.",
    "DOC 4 mentions a medical cotton and gauze plant being built in Zanzur, with a capacity of 800 tons.",
    "Both map entries list \"Zanzur\" among their alternate names."
@@ -1998,7 +1998,7 @@
   ],
   "quotes": [
    {
-    "text": "At Tripoli International Airport Yasir ‘Arafat was met by Ingineer ‘Abd al-Majid al-Qa'ud, secretary of liaison",
+    "text": "At Tripoli International Airport Yasir \u2018Arafat was met by Ingineer \u2018Abd al-Majid al-Qa'ud, secretary of liaison",
     "doc": {
      "id": "fbis-1979-06-07-0371",
      "t": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 111, 7 June 1979"
@@ -2050,7 +2050,7 @@
   ],
   "quotes": [
    {
-    "text": "have lived in Fort Collins for 10 years while study- ing at Colorado State University, initially, ‘on’ scholarships provided by the Qaddafi regime.",
+    "text": "have lived in Fort Collins for 10 years while study- ing at Colorado State University, initially, \u2018on\u2019 scholarships provided by the Qaddafi regime.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000605700098-8",
      "t": "LIBYAN IDENTIFIES TAFOYA AS HIS ASSAILANT"
@@ -2303,7 +2303,7 @@
   "context": "The Arab People's Congress was a body set up under Libyan leadership. It issued statements on Arab and international politics.",
   "timeline": [
    {
-    "when": "13–14 Oct 1981",
+    "when": "13\u201314 Oct 1981",
     "what": "APC Permanent Secretariat meets at Ash-Shati' Hotel; Shadhili attends and speaks."
    },
    {
@@ -2380,7 +2380,7 @@
   "context": "Human Rights Watch reported on the killings in Tripoli and elsewhere in Libya in the first week after protests began in February 2011.",
   "timeline": [
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Security forces fire on protesters in several Tripoli districts, including Green Square."
    },
    {
@@ -2495,14 +2495,14 @@
     "text": "Noting Libyan assertions that the Rabat plant was producing pharmaceuticals",
     "doc": {
      "id": "frus-frus-1981-88v24-d284",
-     "t": "Telegram From the Department of State to the Embassy in Morocco | Washington , December 28, 1988, 0141Z | Moroccan Démarche: Libyan Chemical Weapons Capability"
+     "t": "Telegram From the Department of State to the Embassy in Morocco | Washington , December 28, 1988, 0141Z | Moroccan D\u00e9marche: Libyan Chemical Weapons Capability"
     }
    },
    {
     "text": "the briefing recently provided to the GOM",
     "doc": {
      "id": "frus-frus-1981-88v24-d284",
-     "t": "Telegram From the Department of State to the Embassy in Morocco | Washington , December 28, 1988, 0141Z | Moroccan Démarche: Libyan Chemical Weapons Capability"
+     "t": "Telegram From the Department of State to the Embassy in Morocco | Washington , December 28, 1988, 0141Z | Moroccan D\u00e9marche: Libyan Chemical Weapons Capability"
     }
    }
   ],
@@ -2513,7 +2513,7 @@
   "h": "c19ddf74cd68",
   "model": "claude-sonnet-5-5",
   "headline": "The two entries describe the same place, Shar al-Shatt (Sciara Sciat), but the sources shown do not say Zawiyat al-Dahmani was its later name.",
-  "explanation": "Both entries are about the village and battlefield of Shar al-Shatt, east of Tripoli's old city, where fighting and killings took place on 23–26 October 1911. One entry is filed under the battle name, the other under the district name Zawiyat al-Dahmani. The map treats them as one place with two labels. The cited Wikipedia article confirms the village of Shar al-Shatt and the events there. The passages given do not mention Zawiyat al-Dahmani, so the claim that it was \"formerly\" Shar al-Shatt is not shown here. For readers, this matters because the 1911 events were later remembered under Gaddafi as a symbol of resistance to Italy, and the two entries are probably duplicates.",
+  "explanation": "Both entries are about the village and battlefield of Shar al-Shatt, east of Tripoli's old city, where fighting and killings took place on 23\u201326 October 1911. One entry is filed under the battle name, the other under the district name Zawiyat al-Dahmani. The map treats them as one place with two labels. The cited Wikipedia article confirms the village of Shar al-Shatt and the events there. The passages given do not mention Zawiyat al-Dahmani, so the claim that it was \"formerly\" Shar al-Shatt is not shown here. For readers, this matters because the 1911 events were later remembered under Gaddafi as a symbol of resistance to Italy, and the two entries are probably duplicates.",
   "strength": "inferred",
   "flag": "same-entity",
   "established": [
@@ -2533,13 +2533,13 @@
     "what": "Ottoman and Libyan forces attack Italian positions at Shar al-Shatt; about 290 surrendered soldiers are killed."
    },
    {
-    "when": "23–26 Oct 1911",
+    "when": "23\u201326 Oct 1911",
     "what": "Italians retake the area and carry out harsh reprisals against civilians."
    }
   ],
   "quotes": [
    {
-    "text": "The battle and massacre at Shar al-Shatt (Arabic: شارع الشط Shār’ ash-Shaṭ; Sciara Sciat in Italian) occurred on 23 October 1911 in the village of Shar al-Shatt",
+    "text": "The battle and massacre at Shar al-Shatt (Arabic: \u0634\u0627\u0631\u0639 \u0627\u0644\u0634\u0637 Sh\u0101r\u2019 ash-Sha\u1e6d; Sciara Sciat in Italian) occurred on 23 October 1911 in the village of Shar al-Shatt",
     "doc": {
      "id": "wiki-en-Battle and massacre at Shar al-Shatt",
      "t": "Battle and massacre at Shar al-Shatt (Wikipedia)"
@@ -2646,7 +2646,7 @@
   ],
   "quotes": [
    {
-    "text": "Speech by Mu‘ammar al-Qadhdhafi on the 10th anni- versary of the liberation of Libyan workers and the 19th anniversary of the Libyan revolution at a meeting attended by Libyan and foreign delegations in Green Square, Tripoli",
+    "text": "Speech by Mu\u2018ammar al-Qadhdhafi on the 10th anni- versary of the liberation of Libyan workers and the 19th anniversary of the Libyan revolution at a meeting attended by Libyan and foreign delegations in Green Square, Tripoli",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp05-01559r000400430040-4",
      "t": "AL-QADHDHAFI ADDRESS MARKS ANNIVERSARIES"
@@ -2660,7 +2660,7 @@
   "h": "5d764ee667c4",
   "model": "claude-sonnet-5-5",
   "headline": "Both hospitals were reached by MSF in late August 2011, but the link is only a shared visit, and no source text was available.",
-  "explanation": "The recorded reason says Médecins Sans Frontières (MSF) reached Abu Salim Trauma Hospital and \"Matiga hospital\" on 25-26 August 2011. At Abu Salim it found dozens of bodies, and at Matiga it found over 60 patients. This ties the two places together as part of one MSF response during the fighting for Tripoli. I could not retrieve any source passage, so this note rests only on that stated reason and the Abu Salim profile. The two hospitals are not otherwise shown to be connected. The match of MSF's \"Matiga hospital\" to the mapped Mitiga Hospital is made by name only.",
+  "explanation": "The recorded reason says M\u00e9decins Sans Fronti\u00e8res (MSF) reached Abu Salim Trauma Hospital and \"Matiga hospital\" on 25-26 August 2011. At Abu Salim it found dozens of bodies, and at Matiga it found over 60 patients. This ties the two places together as part of one MSF response during the fighting for Tripoli. I could not retrieve any source passage, so this note rests only on that stated reason and the Abu Salim profile. The two hospitals are not otherwise shown to be connected. The match of MSF's \"Matiga hospital\" to the mapped Mitiga Hospital is made by name only.",
   "strength": "weak",
   "flag": "ok",
   "established": [
@@ -2691,7 +2691,7 @@
   "h": "3ed29d6539bf",
   "model": "claude-sonnet-5-5",
   "headline": "During the August 2011 fighting, MSF moved the two most critical patients from Abu Salim Trauma Hospital to Tripoli Medical Centre.",
-  "explanation": "The link is a patient transfer on 25 August 2011. MSF (Médecins Sans Frontières) is recorded as having found 22 patients and five staff trapped at Abu Salim by the fighting. It then moved the two most in need to Tripoli Medical Centre. This shows that Tripoli Medical Centre was still working as a receiving hospital during the Battle of Tripoli. It also shows how badly Abu Salim was cut off. No source text could be retrieved for this note, so it rests on the recorded reason and the two place profiles, which agree with each other. I have not checked the MSF page itself.",
+  "explanation": "The link is a patient transfer on 25 August 2011. MSF (M\u00e9decins Sans Fronti\u00e8res) is recorded as having found 22 patients and five staff trapped at Abu Salim by the fighting. It then moved the two most in need to Tripoli Medical Centre. This shows that Tripoli Medical Centre was still working as a receiving hospital during the Battle of Tripoli. It also shows how badly Abu Salim was cut off. No source text could be retrieved for this note, so it rests on the recorded reason and the two place profiles, which agree with each other. I have not checked the MSF page itself.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -2892,7 +2892,7 @@
   "context": "Rada (the Special Deterrence Force) is a armed group widely reported to have operated from Mitiga airport and to have been strong in Souq al-Juma after 2011. This is background only, not evidence from the passage.",
   "timeline": [
    {
-    "when": "20–28 August 2011",
+    "when": "20\u201328 August 2011",
     "what": "Battle of Tripoli: rebels surround Mitiga airport and take Suq al-Jumaa, while fighting continues in both areas."
    }
   ],
@@ -2991,7 +2991,7 @@
   "h": "e496d11f26b5",
   "model": "claude-sonnet-5-5",
   "headline": "A Wikipedia article says many prisoners held at Maktab al-Nasser were later moved to Abu Salim prison, but gives no dates.",
-  "explanation": "Maktab al-Nasser was a prison and internal security office in the Abu Salim district of Tripoli. The one source we have says many of its prisoners were later sent on to Abu Salim prison. This suggests it worked as an earlier stop for some detainees before they reached the main political prison. The source gives no dates, no numbers and no named prisoners. We therefore cannot say when the transfers happened or whether they took place in the 1969–1989 period. The link rests on a short background article with no references shown.",
+  "explanation": "Maktab al-Nasser was a prison and internal security office in the Abu Salim district of Tripoli. The one source we have says many of its prisoners were later sent on to Abu Salim prison. This suggests it worked as an earlier stop for some detainees before they reached the main political prison. The source gives no dates, no numbers and no named prisoners. We therefore cannot say when the transfers happened or whether they took place in the 1969\u20131989 period. The link rests on a short background article with no references shown.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -3001,7 +3001,7 @@
   "not_established": [
    "When Maktab al-Nasser opened, or when the transfers took place.",
    "How many prisoners were moved, who they were, or why they were chosen.",
-   "Whether the transfers happened during 1969–1989; the source does not say."
+   "Whether the transfers happened during 1969\u20131989; the source does not say."
   ],
   "context": "Abu Salim prison was the main prison for political prisoners under Gaddafi. Security offices elsewhere in the city often held people for questioning before they were sent there.",
   "timeline": [],
@@ -3085,7 +3085,7 @@
     "what": "Date on or around which security forces are recorded as firing on protesters in Green Square."
    },
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Period of the wider Tripoli crackdown, with shooting reported in several districts."
    },
    {
@@ -3409,7 +3409,7 @@
     }
    }
   ],
-  "open_question": "Flight records or Tunisian press from 20–21 November 1979 could show who travelled and when they reached Tunis.",
+  "open_question": "Flight records or Tunisian press from 20\u201321 November 1979 could show who travelled and when they reached Tunis.",
   "docs": 1
  },
  "u:abdullah senussi|tripoli villa former military intelligence": {
@@ -3564,7 +3564,7 @@
   ],
   "quotes": [
    {
-    "text": "secretary of the Libyan Arab People’s Bureau in Rome, was the target of an attempted assassination when he was fired upon by unidenti- fied assailants",
+    "text": "secretary of the Libyan Arab People\u2019s Bureau in Rome, was the target of an attempted assassination when he was fired upon by unidenti- fied assailants",
     "doc": {
      "id": "fbis-1984-01-23-0333",
      "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 015, 23 January 1984"
@@ -3610,7 +3610,7 @@
   "h": "0255ab3b2ada",
   "model": "claude-sonnet-5-5",
   "headline": "A CIA chronology places the Libyan People's Bureau, Libya's embassy, in London, where a policewoman was shot and killed in 1984.",
-  "explanation": "The Libyan People's Bureau was Libya's embassy in London. The CIA chronology says gunfire from that building killed a British policewoman and wounded 11 anti-Qadhafi demonstrators. A siege followed. The document says British authorities then found weapons and spent shell casings in the empty building. It also says British citizens in Libya were arrested as hostages during the siege. The link shows how events in Tripoli's foreign policy reached London. The document is a U.S. intelligence assessment, so it is one source and not independent proof. The passage gives no year for this entry, though the layout of the text suggests it falls in the 1980–85 chronology.",
+  "explanation": "The Libyan People's Bureau was Libya's embassy in London. The CIA chronology says gunfire from that building killed a British policewoman and wounded 11 anti-Qadhafi demonstrators. A siege followed. The document says British authorities then found weapons and spent shell casings in the empty building. It also says British citizens in Libya were arrested as hostages during the siege. The link shows how events in Tripoli's foreign policy reached London. The document is a U.S. intelligence assessment, so it is one source and not independent proof. The passage gives no year for this entry, though the layout of the text suggests it falls in the 1980\u201385 chronology.",
   "strength": "direct",
   "flag": "ok",
   "established": [
@@ -3626,7 +3626,7 @@
   "context": "The shooting in April 1984 outside the Libyan embassy in St James's Square is widely known. The victim was Yvonne Fletcher. Britain broke off diplomatic relations with Libya afterward.",
   "timeline": [
    {
-    "when": "1980–85",
+    "when": "1980\u201385",
     "what": "Period covered by the CIA chronology of Libyan incidents abroad."
    },
    {
@@ -3640,7 +3640,7 @@
   ],
   "quotes": [
    {
-    "text": "British policewoman killed and 11 anti-Qadhafi demonstrators wounded by gunfire from London Libvan People’s Bureau.",
+    "text": "British policewoman killed and 11 anti-Qadhafi demonstrators wounded by gunfire from London Libvan People\u2019s Bureau.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90t00114r000800810001-1",
      "t": "LIBYAN INVOLVEMENT IN TERRORISM"
@@ -3703,7 +3703,7 @@
   "context": "Wheelus Air Base, near Tripoli, was a major U.S. air base in Libya. The U.S. left it in 1970, after the 1969 coup that brought Gaddafi to power.",
   "timeline": [
    {
-    "when": "1965–1966",
+    "when": "1965\u20131966",
     "what": "U.S. hoped helping the Libyan Air Force might support continued use of Wheelus (DOC 1)."
    },
    {
@@ -3728,14 +3728,14 @@
     "text": "Ukbah Bin Nafi (formerly Wheelus) Air Base, which is used by the Libyan Air Force, assisted by Greek and Pakistani training missions.",
     "doc": {
      "id": "frus-frus-1969-76ve05p2-d74",
-     "t": "National Intelligence Estimate 36.5–71 | Washington , April 30, 1971 | NOTE"
+     "t": "National Intelligence Estimate 36.5\u201371 | Washington , April 30, 1971 | NOTE"
     }
    },
    {
     "text": "During our years at Wheelus Air Base, the U.S. Air Force helped the Libyans get their own air force started.",
     "doc": {
      "id": "frus-frus-1969-76ve05p2-d52",
-     "t": "Memorandum From the President’s Assistant for National Security Affairs (Kissinger) to President Nixon | Washington , undated | Future U.S. Relationship with th"
+     "t": "Memorandum From the President\u2019s Assistant for National Security Affairs (Kissinger) to President Nixon | Washington , undated | Future U.S. Relationship with th"
     }
    }
   ],
@@ -3753,7 +3753,7 @@
    "The Mitiga article says the airport was built in 1923 by the Italian Air Force as Mellaha Air Base.",
    "It says the Americans renamed it Wheelus Air Base in 1945, and after they left it became Okba Ben Nafi Air Base, used by Libyan and Soviet air forces.",
    "It says the US bombed the base in 1986 during Operation El Dorado Canyon, and that it became a civilian airport called Mitiga in 1995.",
-   "The second source (on the 2019–2020 fighting) mentions Mitiga Airport as a place that was attacked, which shows the name is still in use."
+   "The second source (on the 2019\u20132020 fighting) mentions Mitiga Airport as a place that was attacked, which shows the name is still in use."
   ],
   "not_established": [
    "The passages do not settle the exact handover date from the US to Libya; other sources give March or 11 June 1970.",
@@ -3784,7 +3784,7 @@
   ],
   "quotes": [
    {
-    "text": "When the Americans left, the base was renamed Okba Ben Nafi Air Base (قاعدة عقبة بن نافع الجوية) after the Islamic general who conquered North Africa.",
+    "text": "When the Americans left, the base was renamed Okba Ben Nafi Air Base (\u0642\u0627\u0639\u062f\u0629 \u0639\u0642\u0628\u0629 \u0628\u0646 \u0646\u0627\u0641\u0639 \u0627\u0644\u062c\u0648\u064a\u0629) after the Islamic general who conquered North Africa.",
     "doc": {
      "id": "wiki-en-Mitiga International Airport",
      "t": "Mitiga International Airport (Wikipedia)"
@@ -3970,13 +3970,13 @@
  "u:gulf of sidra|libyan closure line at 32 30'": {
   "h": "6d8ba2947062",
   "model": "claude-sonnet-5-5",
-  "headline": "The \"closure line\" at 32°30' is the northern edge of the waters Libya claimed in the Gulf of Sidra, so the two ends describe the same dispute.",
-  "explanation": "A 1982 US interagency memo says Libya claimed the Gulf of Sidra as internal waters in October 1973, out to latitude 32°30' north. The memo calls this limit the Libyan \"closure line\". US naval exercises were described as staying above it, or going below it. The line is therefore the edge of the claim that the Gulf of Sidra exercises were about. This shows how the dispute over the Gulf shaped Libya's relations with the US, but the memo is about military planning and does not describe life in Tripoli.",
+  "headline": "The \"closure line\" at 32\u00b030' is the northern edge of the waters Libya claimed in the Gulf of Sidra, so the two ends describe the same dispute.",
+  "explanation": "A 1982 US interagency memo says Libya claimed the Gulf of Sidra as internal waters in October 1973, out to latitude 32\u00b030' north. The memo calls this limit the Libyan \"closure line\". US naval exercises were described as staying above it, or going below it. The line is therefore the edge of the claim that the Gulf of Sidra exercises were about. This shows how the dispute over the Gulf shaped Libya's relations with the US, but the memo is about military planning and does not describe life in Tripoli.",
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "In October 1973 Libya claimed the Gulf of Sidra as internal waters, north to latitude 32°30'.",
-   "The memo says the US penetrated below the 32°30' closure line with aircraft and ships when it resumed exercises in August 1981.",
+   "In October 1973 Libya claimed the Gulf of Sidra as internal waters, north to latitude 32\u00b030'.",
+   "The memo says the US penetrated below the 32\u00b030' closure line with aircraft and ships when it resumed exercises in August 1981.",
    "The US held exercises in the Gulf for years, including some below the line, then paused them in 1980 after Libyan protests."
   ],
   "not_established": [
@@ -3987,7 +3987,7 @@
   "timeline": [
    {
     "when": "October 1973",
-    "what": "Libya claims the Gulf of Sidra as internal waters north to 32°30'."
+    "what": "Libya claims the Gulf of Sidra as internal waters north to 32\u00b030'."
    },
    {
     "when": "1980",
@@ -3995,7 +3995,7 @@
    },
    {
     "when": "August 1981",
-    "what": "The US resumes exercises and goes below the 32°30' line."
+    "what": "The US resumes exercises and goes below the 32\u00b030' line."
    },
    {
     "when": "23 November 1982",
@@ -4011,7 +4011,7 @@
     }
    },
    {
-    "text": "penetrated below the 32°30' closure line with aircraft and ships",
+    "text": "penetrated below the 32\u00b030' closure line with aircraft and ships",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp83m00914r000600030023-2",
      "t": "RESTRICTED SIG MEETING: LIBYA STAIR STEP PLAN"
@@ -4060,7 +4060,7 @@
    "The scanned text is garbled, so the exact cemetery location and some wording are uncertain.",
    "Nothing connects either place to a specific site or event in Tripoli."
   ],
-  "context": "The Gulf of Sidra was the scene of U.S.–Libyan naval confrontations in the early 1980s. The Italian invasion of Libya began in 1911. Both are widely known background, not evidence from this document.",
+  "context": "The Gulf of Sidra was the scene of U.S.\u2013Libyan naval confrontations in the early 1980s. The Italian invasion of Libya began in 1911. Both are widely known background, not evidence from this document.",
   "timeline": [
    {
     "when": "1911",
@@ -4127,7 +4127,7 @@
     }
    },
    {
-    "text": "Ostensibly, Qaddafi’s grandiose scheme to run a pipeline 1,200 miles from an underground lake in southern Libya to the Mediterranean coast",
+    "text": "Ostensibly, Qaddafi\u2019s grandiose scheme to run a pipeline 1,200 miles from an underground lake in southern Libya to the Mediterranean coast",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00965r000100120017-3",
      "t": "QADDAFI PLANS 'WATER WAR' WITH EGYPT"
@@ -4150,13 +4150,13 @@
   ],
   "not_established": [
    "No source text was checked, so the detention claim and the link to the trial are unverified here.",
-   "Nothing shows that the prison, or the Hadba district, was involved in the 20–25 February 2011 shootings.",
+   "Nothing shows that the prison, or the Hadba district, was involved in the 20\u201325 February 2011 shootings.",
    "It is not established whether the al-Hadba buildings were used for detention before 2011."
   ],
   "context": "The al-Hadba prison is documented as a prison only after 2011. The February 2011 crackdown took place in other parts of Tripoli, such as Green Square, Fashloum, Tajoura and Ben Ashour.",
   "timeline": [
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Security forces fire on protesters in several Tripoli districts."
    },
    {
@@ -4316,7 +4316,7 @@
     "what": "Meeting is held."
    },
    {
-    "when": "January–March 1980",
+    "when": "January\u2013March 1980",
     "what": "Later meetings with Houdairi and other Libyans, and a March phone call."
    },
    {
@@ -4329,14 +4329,14 @@
     "text": "ZB knows he (Vance) was briefed on all of the meetings with Houdari.",
     "doc": {
      "id": "frus-frus-1977-80v17p3-d133",
-     "t": "Memorandum for the Record | Washington , July 25, 1980, 11:05–11:43 a.m. | Meeting in ZB’s Office"
+     "t": "Memorandum for the Record | Washington , July 25, 1980, 11:05\u201311:43 a.m. | Meeting in ZB\u2019s Office"
     }
    },
    {
     "text": "subsequent meetings with Houdairi, and the March phone call; and the meeting in July",
     "doc": {
      "id": "frus-frus-1977-80v17p3-d133",
-     "t": "Memorandum for the Record | Washington , July 25, 1980, 11:05–11:43 a.m. | Meeting in ZB’s Office"
+     "t": "Memorandum for the Record | Washington , July 25, 1980, 11:05\u201311:43 a.m. | Meeting in ZB\u2019s Office"
     }
    }
   ],
@@ -4795,7 +4795,7 @@
   "timeline": [
    {
     "when": "January 1974",
-    "what": "Djerba Declaration on Libya–Tunisia unity announced (background, not in the excerpt)."
+    "what": "Djerba Declaration on Libya\u2013Tunisia unity announced (background, not in the excerpt)."
    },
    {
     "when": "6 November 1974",
@@ -4822,7 +4822,7 @@
     }
    }
   ],
-  "open_question": "Tunisian government records or Libyan statements from 1974–75 could show how each side understood the Declaration and what Libya actually did.",
+  "open_question": "Tunisian government records or Libyan statements from 1974\u201375 could show how each side understood the Declaration and what Libya actually did.",
   "docs": 1
  },
  "u:benghazi|front for salvation of libya": {
@@ -4851,7 +4851,7 @@
   ],
   "quotes": [
    {
-    "text": "the so-called Front for Salvation of Libya is nothing more than a cover-up to Muslim Brotherhood, America’s agents who were eliminated inside.",
+    "text": "the so-called Front for Salvation of Libya is nothing more than a cover-up to Muslim Brotherhood, America\u2019s agents who were eliminated inside.",
     "doc": {
      "id": "fbis-1984-05-17-0419",
      "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 097, 17 May 1984"
@@ -4895,7 +4895,7 @@
   ],
   "quotes": [
    {
-    "text": "hire d an \"ainerican assassin for $1 ‘million to kill Umar Abdullah Mu- “ hayshi:-a.former member of the : Libyan ruling council who had de- ected to Egypt.",
+    "text": "hire d an \"ainerican assassin for $1 \u2018million to kill Umar Abdullah Mu- \u201c hayshi:-a.former member of the : Libyan ruling council who had de- ected to Egypt.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000100990076-1",
      "t": "EX-CIA AGENT FACING TRIAL IN CASE RELATED TO LIBYA"
@@ -5025,7 +5025,7 @@
     "what": "Shootings of protesters began in Tripoli."
    },
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "The crackdown in several districts of the city."
    },
    {
@@ -5097,12 +5097,12 @@
   "not_established": [
    "The passage as summarised does not name Wheelus or Okba Ben Nafi.",
    "It does not say how much of the circuit the later base covered, or when.",
-   "It says nothing about the base or the site during Gaddafi's rule (1969–2011)."
+   "It says nothing about the base or the site during Gaddafi's rule (1969\u20132011)."
   ],
   "context": "Mellaha Air Base is generally known to have become Wheelus Air Base under US use after the Second World War. It was renamed Okba Ben Nafi after the US left in 1970.",
   "timeline": [
    {
-    "when": "1925–1940",
+    "when": "1925\u20131940",
     "what": "Tripoli Grand Prix held near Tripoli, first on the Mellaha Lake circuit."
    },
    {
@@ -5162,7 +5162,7 @@
   "h": "542fb545e94e",
   "model": "claude-sonnet-5-5",
   "headline": "Prosecutors and investigators linked ex-CIA man Edwin Wilson to Eugene Tafoya, who was convicted of shooting Libyan student Faisal Zagallai in Colorado in 1980.",
-  "explanation": "The 1981–85 news reports tie Wilson, who was living in Libya, to Tafoya, a former Green Beret. Tafoya shot Faisal Zagallai, a Libyan student critical of Gaddafi, in Fort Collins, Colorado, in October 1980. The reports say prosecutors alleged Wilson hired Tafoya, and investigators found Wilson's phone and telex numbers among Tafoya's things. Wilson himself said he recruited Tafoya, but only to teach tactics to Libyan soldiers. This matters because it shows how Gaddafi's government is alleged to have used outside hired men against critics abroad. The sources show a connection, but they do not prove Wilson ordered the shooting. Tafoya was acquitted of attempted murder and convicted only of assault and conspiracy.",
+  "explanation": "The 1981\u201385 news reports tie Wilson, who was living in Libya, to Tafoya, a former Green Beret. Tafoya shot Faisal Zagallai, a Libyan student critical of Gaddafi, in Fort Collins, Colorado, in October 1980. The reports say prosecutors alleged Wilson hired Tafoya, and investigators found Wilson's phone and telex numbers among Tafoya's things. Wilson himself said he recruited Tafoya, but only to teach tactics to Libyan soldiers. This matters because it shows how Gaddafi's government is alleged to have used outside hired men against critics abroad. The sources show a connection, but they do not prove Wilson ordered the shooting. Tafoya was acquitted of attempted murder and convicted only of assault and conspiracy.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -5200,7 +5200,7 @@
   ],
   "quotes": [
    {
-    "text": "A link between Tafoya and: former CIA _ * operative Edwin P. Wilson, who ‘allegedly - - armed and trained Libyan terrorists, aroee- ! when -Wilson’s telex number surfaced",
+    "text": "A link between Tafoya and: former CIA _ * operative Edwin P. Wilson, who \u2018allegedly - - armed and trained Libyan terrorists, aroee- ! when -Wilson\u2019s telex number surfaced",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000606560093-8",
      "t": "SUSPECT IN ATTACK ON LIBYAN FLAYS 'HEARSAY EVIDENCE'"
@@ -5275,7 +5275,7 @@
   "not_established": [
    "No source text was checked, so the claim rests on the recorded reason alone.",
    "Nothing shows when the dental faculty was founded or where it stood during the Gaddafi years.",
-   "Nothing links the dental faculty to the 1976–77 protests, the hangings or the 2011 student uprising."
+   "Nothing links the dental faculty to the 1976\u201377 protests, the hangings or the 2011 student uprising."
   ],
   "context": "Universities in Libya, as elsewhere, were made up of faculties, often in separate buildings around the city. The dental college may therefore sit apart from the main campus.",
   "timeline": [],
@@ -5821,7 +5821,7 @@
   "established": [
    "A April 1976 State Department cable deals with a Libyan note about eight C-130 aircraft bought from Lockheed.",
    "The cable's summary says Qadhafi publicly attacked Muhayshi and that Muhayshi was alleged to have been bribed by Lockheed.",
-   "A Libyan chargé in Washington sent Lockheed a letter on April 1 asking specifically for information on Muhayshi."
+   "A Libyan charg\u00e9 in Washington sent Lockheed a letter on April 1 asking specifically for information on Muhayshi."
   ],
   "not_established": [
    "The passage does not show that Lockheed actually paid Muhayshi anything.",
@@ -5832,11 +5832,11 @@
   "timeline": [
    {
     "when": "March 29, 1976",
-    "what": "Libyan chargé makes an oral request to Lockheed for information."
+    "what": "Libyan charg\u00e9 makes an oral request to Lockheed for information."
    },
    {
     "when": "April 1, 1976",
-    "what": "Chargé sends a written letter asking about Muhayshi and an Egyptian official."
+    "what": "Charg\u00e9 sends a written letter asking about Muhayshi and an Egyptian official."
    },
    {
     "when": "April 8, 1976",
@@ -5852,7 +5852,7 @@
     "text": "Letter asked specifically for information on Muhayshi and quote Egyptian Min State for Foreign Affairs who together contacted the company unquote.",
     "doc": {
      "id": "frus-frus-1969-76ve09p1-d50",
-     "t": "Telegram 90244 From the Department of State to the Embassy in Libya | Washington , April 14, 1976, 2241Z . | 90244. Subject: Libyan Diplomatic Note on C–130’s."
+     "t": "Telegram 90244 From the Department of State to the Embassy in Libya | Washington , April 14, 1976, 2241Z . | 90244. Subject: Libyan Diplomatic Note on C\u2013130\u2019s."
     }
    }
   ],
@@ -5951,7 +5951,7 @@
   "context": "Tajura is a known suburb of Tripoli, and it also hosted the Tajoura nuclear research centre. Military sites there are not unusual.",
   "timeline": [
    {
-    "when": "Late 1960s–2011",
+    "when": "Late 1960s\u20132011",
     "what": "Gaddafi era; the CIA document cited for the barracks is not dated in the material given."
    },
    {
@@ -6101,7 +6101,7 @@
     "what": "Wilson is indicted on charges of shipping explosives to Libya."
    },
    {
-    "when": "5–6 November 1981",
+    "when": "5\u20136 November 1981",
     "what": "The New York Times reports that Hitchman directs the American pilots and mechanics in Libya."
    }
   ],
@@ -6164,7 +6164,7 @@
     "what": "Appointed Secretary of the Libyan People's Bureau in London."
    },
    {
-    "when": "1994–2009",
+    "when": "1994\u20132009",
     "what": "Headed the External Security Organization, Libya's intelligence agency."
    },
    {
@@ -6270,7 +6270,7 @@
    "The memo does not say Libyan aircraft actually attacked N'Djamena from Ouadi Doum.",
    "It is an intelligence assessment, so its judgments are the analysts' view, and some passages are redacted or garbled by OCR."
   ],
-  "context": "Chad and Libya were in conflict through the 1980s over the Aouzou Strip and Chadian politics. N'Djamena was the seat of Hissène Habré's government.",
+  "context": "Chad and Libya were in conflict through the 1980s over the Aouzou Strip and Chadian politics. N'Djamena was the seat of Hiss\u00e8ne Habr\u00e9's government.",
   "timeline": [
    {
     "when": "October 1985",
@@ -6301,14 +6301,14 @@
   "h": "8f40de3bd4cb",
   "model": "claude-sonnet-5-5",
   "headline": "The Khamis Brigade article may link the brigade to fighting at Tarhuna on 29 August 2011, but the text we have stops before it says so.",
-  "explanation": "The recorded link says the article reports Khamis Gaddafi killed in fighting at Tarhuna on 29 August 2011. The passage we were given breaks off at \"On 29 August 2…\", so Tarhuna never appears in the visible text. What we can see covers the brigade's headquarters near Tripoli being bombed in April 2011 and overrun on 21 August, plus reported killings of prisoners. The link is therefore a possible one, not a confirmed one. Even if the article says it, it is a secondary summary, and reports of Khamis Gaddafi's death in 2011 should be checked against better sources.",
+  "explanation": "The recorded link says the article reports Khamis Gaddafi killed in fighting at Tarhuna on 29 August 2011. The passage we were given breaks off at \"On 29 August 2\u2026\", so Tarhuna never appears in the visible text. What we can see covers the brigade's headquarters near Tripoli being bombed in April 2011 and overrun on 21 August, plus reported killings of prisoners. The link is therefore a possible one, not a confirmed one. Even if the article says it, it is a secondary summary, and reports of Khamis Gaddafi's death in 2011 should be checked against better sources.",
   "strength": "weak",
   "flag": "ok",
   "established": [
    "The article is a secondary background piece on the Khamis Brigade in the 2011 war.",
    "It reports the brigade's headquarters west of Tripoli was overrun by rebels on 21 August 2011.",
    "It reports the brigade killed about 50 prisoners in a Tripoli warehouse on 23 August 2011.",
-   "It has an entry beginning 'On 29 August 2…', but the text is cut off there."
+   "It has an entry beginning 'On 29 August 2\u2026', but the text is cut off there."
   ],
   "not_established": [
    "The visible passage never mentions Tarhuna or Tarhunah.",
@@ -6407,7 +6407,7 @@
   "h": "b1f94014ed56",
   "model": "claude-sonnet-5-5",
   "headline": "The university is linked to the February 2011 crackdown only through the wider 2011 uprising; no passage shows a direct tie.",
-  "explanation": "The recorded reason says the University of Tripoli article describes a student uprising in August 2011, during the Battle of Tripoli. That is a different event from the 20–25 February crackdown. Both belong to the same 2011 uprising against Gaddafi's government, and both took place in Tripoli. No source text could be retrieved, so this note rests only on the stated reason and the two atlas profiles. The February profile does not mention the university. The link is therefore a loose one about the same uprising and the same city, not a documented event on campus in February. It is labelled \"same-place\", but the crackdown is centred on Green Square and other districts, not the campus.",
+  "explanation": "The recorded reason says the University of Tripoli article describes a student uprising in August 2011, during the Battle of Tripoli. That is a different event from the 20\u201325 February crackdown. Both belong to the same 2011 uprising against Gaddafi's government, and both took place in Tripoli. No source text could be retrieved, so this note rests only on the stated reason and the two atlas profiles. The February profile does not mention the university. The link is therefore a loose one about the same uprising and the same city, not a documented event on campus in February. It is labelled \"same-place\", but the crackdown is centred on Green Square and other districts, not the campus.",
   "strength": "weak",
   "flag": "unsupported",
   "established": [
@@ -6415,14 +6415,14 @@
    "The atlas profile for the university says students rose against the regime in August 2011."
   ],
   "not_established": [
-   "No source passage was available showing the university was involved in the 20–25 February 2011 shooting or protests.",
+   "No source passage was available showing the university was involved in the 20\u201325 February 2011 shooting or protests.",
    "The February profile names Green Square, Fashloum, Tajoura and Ben Ashour, not the university.",
    "The August student rising and the February crackdown are separate events, and the link does not connect them directly."
   ],
   "context": "The Battle of Tripoli in August 2011 came months after the February violence, as part of the same national uprising.",
   "timeline": [
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Security forces fire on protesters in several Tripoli districts."
    },
    {
@@ -6431,7 +6431,7 @@
    }
   ],
   "quotes": [],
-  "open_question": "Did protests or shootings take place at or near the university campus during 20–25 February 2011? Eyewitness accounts or human rights reports on that week could settle it.",
+  "open_question": "Did protests or shootings take place at or near the university campus during 20\u201325 February 2011? Eyewitness accounts or human rights reports on that week could settle it.",
   "docs": 0
  },
  "u:qadhafi|tunis": {
@@ -6463,7 +6463,7 @@
   ],
   "quotes": [
    {
-    "text": "Qadhafi is gloating: “that’s what you get for being the friends of the U.S.”",
+    "text": "Qadhafi is gloating: \u201cthat\u2019s what you get for being the friends of the U.S.\u201d",
     "doc": {
      "id": "frus-frus-1981-88v24-d332",
      "t": "Telegram From the Embassy in Tunisia to the Department of State, Secretary of State Shultz in New York, and the Mission to the United Nations | Tunis , October"
@@ -6501,7 +6501,7 @@
     "what": "US forces rename it Wheelus Air Base."
    },
    {
-    "when": "1969–1970",
+    "when": "1969\u20131970",
     "what": "After the coup and the end of the lease, the Americans leave and the base is renamed Okba Ben Nafi."
    },
    {
@@ -6515,7 +6515,7 @@
   ],
   "quotes": [
    {
-    "text": "When the Americans left, the base was renamed Okba Ben Nafi Air Base (قاعدة عقبة بن نافع الجوية) after the Islamic general who conquered North Africa.",
+    "text": "When the Americans left, the base was renamed Okba Ben Nafi Air Base (\u0642\u0627\u0639\u062f\u0629 \u0639\u0642\u0628\u0629 \u0628\u0646 \u0646\u0627\u0641\u0639 \u0627\u0644\u062c\u0648\u064a\u0629) after the Islamic general who conquered North Africa.",
     "doc": {
      "id": "wiki-en-Mitiga International Airport",
      "t": "Mitiga International Airport (Wikipedia)"
@@ -6665,7 +6665,7 @@
    "The document summary says the article covers his Wheelus negotiations."
   ],
   "not_established": [
-   "The passage we can read does not mention Wheelus or the base's handover. It breaks off at 'The same year, Jalloud also succeeded…'.",
+   "The passage we can read does not mention Wheelus or the base's handover. It breaks off at 'The same year, Jalloud also succeeded\u2026'.",
    "The source does not give the dates of the talks, who sat on the American side, or the terms agreed.",
    "It is a single background reference, not an eyewitness or official record."
   ],
@@ -6680,12 +6680,12 @@
     "what": "Jalloud is Treasury Minister. The summary places the Wheelus talks around this time, and the base is handed to Libya."
    },
    {
-    "when": "1972–1977",
+    "when": "1972\u20131977",
     "what": "Jalloud serves as Prime Minister."
    }
   ],
   "quotes": [],
-  "open_question": "The full text of the Wikipedia section on Wheelus, or U.S. and Libyan records of the 1969–70 evacuation talks, would show Jalloud's exact role.",
+  "open_question": "The full text of the Wikipedia section on Wheelus, or U.S. and Libyan records of the 1969\u201370 evacuation talks, would show Jalloud's exact role.",
   "docs": 1
  },
  "m:abu-salim|hadba-project|same-place": {
@@ -6726,7 +6726,7 @@
    "The report is an imagery analysis of the 10 August 1983 assault on Faya Largeau."
   ],
   "not_established": [
-   "The passage does not mention a mechanized infantry battalion moving along an Ogoui–Faya Largeau road.",
+   "The passage does not mention a mechanized infantry battalion moving along an Ogoui\u2013Faya Largeau road.",
    "The passage is cut off, so later parts of the report may say more about Ogoui."
   ],
   "context": "Faya Largeau is a town in northern Chad that was fought over in 1983 between Chadian government forces and Libyan-backed dissidents.",
@@ -6819,7 +6819,7 @@
   "context": "Tindouf, in southwestern Algeria, is widely known as a base for Sahrawi refugee camps and for the Polisario Front's leadership.",
   "timeline": [
    {
-    "when": "Feb 28 – Mar 4, 1987",
+    "when": "Feb 28 \u2013 Mar 4, 1987",
     "what": "Morocco registers 11 Libyan flights to Tindouf."
    },
    {
@@ -6836,7 +6836,7 @@
     }
    },
    {
-    "text": "Libya may have resumed arms aid to the Polisario and be rushing military equipment to the Polisario via an “air bridge.”",
+    "text": "Libya may have resumed arms aid to the Polisario and be rushing military equipment to the Polisario via an \u201cair bridge.\u201d",
     "doc": {
      "id": "frus-frus-1981-88v24-d445",
      "t": "Memorandum Prepared in the Embassy in Morocco | Rabat , March 4, 1987 | Possible Libyan Resumption of Arms Assistance to the Polisario"
@@ -7002,7 +7002,7 @@
   ],
   "quotes": [
    {
-    "text": "The betrayed anti-Qaddafi exile was beaten and kicked to death by the colonel’s goons on the airport runway in Tripoli, according to USS. intelligence sources.",
+    "text": "The betrayed anti-Qaddafi exile was beaten and kicked to death by the colonel\u2019s goons on the airport runway in Tripoli, according to USS. intelligence sources.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000505250036-7",
      "t": "FIGHTER AGAINST QADDAFI BETRAYED"
@@ -7160,7 +7160,7 @@
  "m:lm-tripoli-international-airport|qasr-ben-ghashir|same-place": {
   "h": "c823a61a1dc4",
   "model": "claude-sonnet-5-5",
-  "headline": "Tripoli International Airport sits in the Qasr bin Ghashir area, about 20–24 km south of central Tripoli, so the two places overlap.",
+  "headline": "Tripoli International Airport sits in the Qasr bin Ghashir area, about 20\u201324 km south of central Tripoli, so the two places overlap.",
   "explanation": "The airport is not a separate neighbour of the town in the sources. It is described as being in the area of Qasr bin Ghashir. The town article says the airport is \"close by\". The airport article says it lies \"in the area of Qasr bin Ghashir\". So the recorded reason, that the airport lies next to the town, is supported in substance. The old name Castel Benito belonged to the town under Italian rule, and the airport also carried that name. For Tripoli under Gaddafi, this means events at \"the airport\" and events at \"Qasr bin Ghashir\" often refer to the same stretch of land south of the city. The 1986 US raid and the 2011 fighting are examples. The sources do not say exactly where the town ends and the airport begins.",
   "strength": "direct",
   "flag": "ok",
@@ -7190,7 +7190,7 @@
     "what": "Fighting at the airport and at a loyalist camp in Qasr bin Ghashir during the Battle of Tripoli."
    },
    {
-    "when": "27–31 August 2018",
+    "when": "27\u201331 August 2018",
     "what": "Fighting began in Qasr bin Ghashir; the airport closed on 31 August after rocket damage."
    }
   ],
@@ -7676,7 +7676,7 @@
   "h": "53703ceb051f",
   "model": "claude-sonnet-5-5",
   "headline": "The 14 April 1986 US air raid on Libya was the backdrop to a later US plan to unsettle Gaddafi.",
-  "explanation": "A Washington Post article from October 1986 describes a secret US plan, approved in August 1986, to make Gaddafi believe another attack was coming. It says officials justified the plan by citing new intelligence, which they said came \"following a four-month lull after the April 14 American bombing raid against Libya.\" So the raid is mentioned as the starting point of that period, and Gaddafi is the target of both the raid and the later plan. The article does not say the raid was aimed at Gaddafi personally, and it does not describe the raid itself. For Tripoli, it shows how the raid still shaped US–Libyan tension months afterward.",
+  "explanation": "A Washington Post article from October 1986 describes a secret US plan, approved in August 1986, to make Gaddafi believe another attack was coming. It says officials justified the plan by citing new intelligence, which they said came \"following a four-month lull after the April 14 American bombing raid against Libya.\" So the raid is mentioned as the starting point of that period, and Gaddafi is the target of both the raid and the later plan. The article does not say the raid was aimed at Gaddafi personally, and it does not describe the raid itself. For Tripoli, it shows how the raid still shaped US\u2013Libyan tension months afterward.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -7697,7 +7697,7 @@
     "what": "American bombing raid against Libya"
    },
    {
-    "when": "April–August 1986",
+    "when": "April\u2013August 1986",
     "what": "A four-month lull, as described by the article"
    },
    {
@@ -8026,7 +8026,7 @@
    "A single Sanusi lodge was founded at Al Bayda in 1843.",
    "A network of lodges later spread across Cyrenaica.",
    "Before his death in 1859, the Grand Sanusi established the order's center at Al Jaghbub.",
-   "Al Jaghbub lay at the crossing of the Mecca pilgrimage route and the Sudan–coast trade route."
+   "Al Jaghbub lay at the crossing of the Mecca pilgrimage route and the Sudan\u2013coast trade route."
   ],
   "not_established": [
    "The passage does not give the exact year of the move to Al Jaghbub.",
@@ -8415,7 +8415,7 @@
   "h": "8421e292069b",
   "model": "claude-sonnet-5-5",
   "headline": "Douglas Schlachter, a former aide to Edwin Wilson, was charged and later pleaded guilty over the Libyan explosives and terrorist training work.",
-  "explanation": "Three 1981–82 newspaper articles tie Schlachter directly to Wilson. They say he managed Wilson's Virginia farm. In August 1976 he left to supervise the Libyan operation that Wilson and Frank Terpil ran under a 1976 contract. He was indicted with them. In 1982 he pleaded guilty and agreed to cooperate with prosecutors. This matters because Schlachter's account was a route for U.S. investigators into how Wilson's work for Libya was set up. The articles are about a U.S. court case, so they say little about daily life in Tripoli.",
+  "explanation": "Three 1981\u201382 newspaper articles tie Schlachter directly to Wilson. They say he managed Wilson's Virginia farm. In August 1976 he left to supervise the Libyan operation that Wilson and Frank Terpil ran under a 1976 contract. He was indicted with them. In 1982 he pleaded guilty and agreed to cooperate with prosecutors. This matters because Schlachter's account was a route for U.S. investigators into how Wilson's work for Libya was set up. The articles are about a U.S. court case, so they say little about daily life in Tripoli.",
   "strength": "direct",
   "flag": "ok",
   "established": [
@@ -8612,12 +8612,12 @@
    },
    {
     "when": "15 November 1981",
-    "what": "Sunday News Journal article says the Carter–Terpil link was never adequately investigated."
+    "what": "Sunday News Journal article says the Carter\u2013Terpil link was never adequately investigated."
    }
   ],
   "quotes": [
    {
-    "text": "Carter met Terpil at a dinner _. and was photographed with him watching 2 parade — on his second visit to Libya in 1979.",
+    "text": "Carter met Terpil at a dinner _. and was photographed with him watching 2 parade \u2014 on his second visit to Libya in 1979.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000100990005-9",
      "t": "LIBYANS GAVE BILLY EXTRA LOAN"
@@ -8641,12 +8641,12 @@
   "not_established": [
    "No passage from the HRW report was available, so the wording and the basis for the fear could not be checked.",
    "It is not shown that anyone was actually held at Jdeida, or how many people, or who they were.",
-   "The link does not show that those held were arrested in the specific events of 20–25 February."
+   "The link does not show that those held were arrested in the specific events of 20\u201325 February."
   ],
   "context": "Jdeida and Abu Salim were already known as prisons where political detainees were held under Gaddafi, as the atlas profile for Jdeida describes.",
   "timeline": [
    {
-    "when": "20–25 Feb 2011",
+    "when": "20\u201325 Feb 2011",
     "what": "Security forces fire on protesters in Tripoli districts."
    },
    {
@@ -8666,7 +8666,7 @@
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "Before 1859 the Grand Sanusi made Al Jaghbub the order's center, on a pilgrimage route and a Sudan–coast trade route.",
+   "Before 1859 the Grand Sanusi made Al Jaghbub the order's center, on a pilgrimage route and a Sudan\u2013coast trade route.",
    "In 1895 his son Muhammad, the Mahdi, moved the headquarters 650 km south to the oasis of Al Kufrah."
   ],
   "not_established": [
@@ -8921,14 +8921,14 @@
   ],
   "quotes": [
    {
-    "text": "was involved ina department i in- quiry into. whether Billy Carter was act- ing-as an ‘agent: forthe Government of Libya.",
+    "text": "was involved ina department i in- quiry into. whether Billy Carter was act- ing-as an \u2018agent: forthe Government of Libya.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000100990062-6",
      "t": "BILLY CARTER DENIES HAVING COPIES OF SECRET CABLES RELATING TO LIBYA"
     }
    },
    {
-    "text": "Mr. Carter registered. as an agent’ on July 14.",
+    "text": "Mr. Carter registered. as an agent\u2019 on July 14.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000100990062-6",
      "t": "BILLY CARTER DENIES HAVING COPIES OF SECRET CABLES RELATING TO LIBYA"
@@ -8968,7 +8968,7 @@
   ],
   "quotes": [
    {
-    "text": "Egypt, Ghavala: -~ pointed out, has a peace treaty with “° rig and does not intend to break: “te nothing else",
+    "text": "Egypt, Ghavala: -~ pointed out, has a peace treaty with \u201c\u00b0 rig and does not intend to break: \u201cte nothing else",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00965r000100140106-2",
      "t": "QADDAFI MAKES AN ASTONISHING TELEPHONE CALL"
@@ -9015,7 +9015,7 @@
     }
    }
   ],
-  "open_question": "The full text of the CIA assessment, or satellite imagery reports from 1985–86, could show who built the airfield, when, and what range it gave Libyan aircraft.",
+  "open_question": "The full text of the CIA assessment, or satellite imagery reports from 1985\u201386, could show who built the airfield, when, and what range it gave Libyan aircraft.",
   "docs": 1
  },
  "m:fateh|mk-hang-1984|event": {
@@ -9078,7 +9078,7 @@
     "what": "Wilson and two Libyan prospective customers visit Manina's office, per his affidavit; the camera is shipped to Canada and then Libya."
    },
    {
-    "when": "1976–1979",
+    "when": "1976\u20131979",
     "what": "Manina is general manager of Warsland Engineering, a Leigh Instruments subsidiary."
    },
    {
@@ -9133,7 +9133,7 @@
     }
    },
    {
-    "text": "Yasir ‘Arafat must leave Tripoli and that he must not turn it into a trench for more killing and destruction.",
+    "text": "Yasir \u2018Arafat must leave Tripoli and that he must not turn it into a trench for more killing and destruction.",
     "doc": {
      "id": "fbis-1983-11-09-0282",
      "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 218, 9 November 1983"
@@ -9141,47 +9141,6 @@
    }
   ],
   "open_question": "",
-  "docs": 1
- },
- "u:chad|sebha": {
-  "h": "6ca707028124",
-  "model": "claude-sonnet-5-5",
-  "function": "note",
-  "parameter": {
-   "headline": "A January 1984 CIA briefing says Libyan forces in northern Chad were supported from bases in southern Libya, including Sebha.",
-   "explanation": "The document is an imagery briefing on where Libyan and Libyan-backed forces were placed in northern Chad and southern Libya. It says the forces in Chad \"continued to be supported from bases in southern Libya\". It then lists Sebha and Kufra as southern Libyan sites, each holding a combined force of armor and mechanized units. So the link is fairly clear: Sebha was part of the Libyan military setup connected to the Chad operation. The document does not describe what Sebha actually sent to Chad, and it says nothing about Tripoli.",
-   "strength": "reported",
-   "flag": "ok",
-   "established": [
-    "The briefing, dated 3 January 1984, covers Libyan forces in Chad and southern Libya.",
-    "It says Libyan and Libyan-backed forces in northern Chad continued to be supported from bases in southern Libya.",
-    "It names Sebha and Kufra as southern Libyan sites with combined arms forces of armor and mechanized units.",
-    "The graphic shows aircraft and units at Sebha, including what looks like G.222T transport aircraft."
-   ],
-   "not_established": [
-    "The text shown does not say which supplies or units moved from Sebha to Chad.",
-    "It does not name Sebha as the specific base supporting any one Chadian location.",
-    "The passages shown give only part of the document."
-   ],
-   "context": "Libya and Chad were in conflict in the 1980s, and Libyan forces held the Aozou Strip and later moved into northern Chad.",
-   "timeline": [
-    {
-     "when": "3 January 1984",
-     "what": "CIA imagery center briefing shows Libyan forces in northern Chad and southern Libya."
-    }
-   ],
-   "quotes": [
-    {
-     "doc": 1,
-     "text": "LIBYAN AND LIBYAN-BACKED DISSIDENT FORCES REMAINED DEPLOYED IN KEY LOCATIONS IN NORTHERN CHAD AND CONTINUED TO BE SUPPORTED FROM BASES IN SOUTHERN LIBYA."
-    }
-   ],
-   "open_question": "Logistics or flight records showing what moved from Sebha to Chad, and when, would confirm Sebha's exact role."
-  },
-  "established": [],
-  "not_established": [],
-  "timeline": [],
-  "quotes": [],
   "docs": 1
  },
  "m:mk-feb2011|lb-abu-salim-trauma-hospital|casualties": {
@@ -9194,7 +9153,7 @@
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "\n<parameter name=\"0\">The recorded reason says HRW's sources reported at least 50 bodies in the Abu Salim hospital morgue after the shootings of 20–22 February 2011."
+   "\n<parameter name=\"0\">The recorded reason says HRW's sources reported at least 50 bodies in the Abu Salim hospital morgue after the shootings of 20\u201322 February 2011."
   ],
   "not_established": [
    "\n<parameter name=\"0\">No passage from the HRW release was available, so the wording and the \"at least 50\" figure could not be checked here."
@@ -9302,7 +9261,7 @@
   "context": "Both districts lie in the eastern part of greater Tripoli. Tajura is the larger, with an older town centre and the nuclear research site.",
   "timeline": [
    {
-    "when": "20–28 August 2011",
+    "when": "20\u201328 August 2011",
     "what": "Battle of Tripoli, in which rebels and local residents took control of the city."
    },
    {
@@ -9515,7 +9474,7 @@
   "h": "690c500eb56f",
   "model": "claude-sonnet-5-5",
   "headline": "\"Sidra\" here is the name of a place on the Gulf of Sidra coast, so the two ends are related but not the same.",
-  "explanation": "The Gulf of Sidra is the large bay off Libya's northern coast. The 1986 article says U.S. planes attacked a SAM-5 missile site \"at Sidra\". The summary reads this as a site on the gulf coast. The two names share a root, and the gulf takes its name from the place. The article does not say how far apart they are. The link is probably loose or partly overlapping, and the sources don't settle it. The article is about the U.S.–Libya naval confrontation, not Tripoli itself.",
+  "explanation": "The Gulf of Sidra is the large bay off Libya's northern coast. The 1986 article says U.S. planes attacked a SAM-5 missile site \"at Sidra\". The summary reads this as a site on the gulf coast. The two names share a root, and the gulf takes its name from the place. The article does not say how far apart they are. The link is probably loose or partly overlapping, and the sources don't settle it. The article is about the U.S.\u2013Libya naval confrontation, not Tripoli itself.",
   "strength": "weak",
   "flag": "same-entity",
   "established": [
@@ -9575,10 +9534,10 @@
   ],
   "quotes": [
    {
-    "text": "Ali al-Houderi of the Libyan People’s Bureau returned urgently from a visit to Tripoli yesterday to deliver a message from Col. Qadhafi.",
+    "text": "Ali al-Houderi of the Libyan People\u2019s Bureau returned urgently from a visit to Tripoli yesterday to deliver a message from Col. Qadhafi.",
     "doc": {
      "id": "frus-frus-1977-80v17p3-d119",
-     "t": "Memorandum From the President’s Assistant for National Security Affairs (Brzezinski) to President Carter | Washington , January 3, 1980 | Message from Qadhafi"
+     "t": "Memorandum From the President\u2019s Assistant for National Security Affairs (Brzezinski) to President Carter | Washington , January 3, 1980 | Message from Qadhafi"
     }
    }
   ],
@@ -9615,7 +9574,7 @@
   ],
   "quotes": [
    {
-    "text": "the USS. Sixth Fleet could be sent back into the Gulf of Sidra to distract Kaddafi’s air force",
+    "text": "the USS. Sixth Fleet could be sent back into the Gulf of Sidra to distract Kaddafi\u2019s air force",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000505410111-5",
      "t": "UNITING AGAINST LIBYA"
@@ -9661,7 +9620,7 @@
   ],
   "quotes": [
    {
-    "text": "Egyptian pilots graduated from the Jamal ‘Abd an'Nasir Base. After we liberated the base from the British we opened it to the Arab forces and to Egypt.",
+    "text": "Egyptian pilots graduated from the Jamal \u2018Abd an'Nasir Base. After we liberated the base from the British we opened it to the Arab forces and to Egypt.",
     "doc": {
      "id": "fbis-1981-03-30-0877",
      "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 060, 30 March 1981"
@@ -9753,11 +9712,11 @@
   "h": "2ade8a9550ff",
   "model": "claude-sonnet-5-5",
   "headline": "Human Rights Watch linked Abu Salim to the February 2011 Tripoli crackdown through a reported morgue count and a fear that detainees were held in the prison.",
-  "explanation": "The only basis for this link is the reason recorded by the family's researchers. It says Human Rights Watch (HRW) heard that at least 50 bodies lay in the Abu Salim hospital morgue after the shootings of 21–22 February 2011. It also says HRW feared that detainees were held at Abu Salim prison. These are two separate points. One concerns the hospital in the Abu Salim area, and the other concerns the prison. No source text could be retrieved, so we could not check either claim against the HRW pages. The link matters because it ties the prison, long a place of political detention, to the events of the 2011 uprising. It rests on second-hand information and a stated concern, not on confirmed facts.",
+  "explanation": "The only basis for this link is the reason recorded by the family's researchers. It says Human Rights Watch (HRW) heard that at least 50 bodies lay in the Abu Salim hospital morgue after the shootings of 21\u201322 February 2011. It also says HRW feared that detainees were held at Abu Salim prison. These are two separate points. One concerns the hospital in the Abu Salim area, and the other concerns the prison. No source text could be retrieved, so we could not check either claim against the HRW pages. The link matters because it ties the prison, long a place of political detention, to the events of the 2011 uprising. It rests on second-hand information and a stated concern, not on confirmed facts.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "The recorded reason says HRW heard that at least 50 bodies were in the Abu Salim hospital morgue after the 21–22 February 2011 shootings.",
+   "The recorded reason says HRW heard that at least 50 bodies were in the Abu Salim hospital morgue after the 21\u201322 February 2011 shootings.",
    "The recorded reason says HRW feared detainees were held at Abu Salim prison.",
    "Two HRW pages, dated 22 February and 13 March 2011, are cited."
   ],
@@ -9769,11 +9728,11 @@
   "context": "Abu Salim is both the name of a Tripoli district and of the prison within it. The hospital morgue is in the district, not in the prison.",
   "timeline": [
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Security forces fire on protesters in Tripoli."
    },
    {
-    "when": "21–22 February 2011",
+    "when": "21\u201322 February 2011",
     "what": "HRW hears of at least 50 bodies in the Abu Salim hospital morgue."
    },
    {
@@ -9939,14 +9898,14 @@
   ],
   "quotes": [
    {
-    "text": "He arrived at ‘Tripoli International Airport at 1400 today.",
+    "text": "He arrived at \u2018Tripoli International Airport at 1400 today.",
     "doc": {
      "id": "fbis-1978-07-05-0129",
      "t": "FBIS Daily Report: Middle East & North Africa, Vol. V No. 129, 5 July 1978"
     }
    },
    {
-    "text": "returned to Tripoli this afternoon at the end of a 19-day ‘our of peace, friendship and cooperation to socialist bloc countries and Malta.",
+    "text": "returned to Tripoli this afternoon at the end of a 19-day \u2018our of peace, friendship and cooperation to socialist bloc countries and Malta.",
     "doc": {
      "id": "fbis-1978-07-05-0129",
      "t": "FBIS Daily Report: Middle East & North Africa, Vol. V No. 129, 5 July 1978"
@@ -9975,7 +9934,7 @@
   "context": "Haftar's forces (the Libyan National Army) fought the UN-backed GNA for Tripoli from April 2019. Both camps were military sites on the edge of Tripoli that existed in Gaddafi's time.",
   "timeline": [
    {
-    "when": "2019–2020",
+    "when": "2019\u20132020",
     "what": "Haftar forces reportedly held the camps during the fight for Tripoli (per the recorded reason)."
    },
    {
@@ -10223,8 +10182,8 @@
   "context": "Tobruk is a port in eastern Libya, far from Tripoli in the west. Both were Libyan harbors that the Soviet Navy could, in principle, visit.",
   "timeline": [
    {
-    "when": "March–April 1986",
-    "what": "US–Libyan hostilities, which prompted the assessment."
+    "when": "March\u2013April 1986",
+    "what": "US\u2013Libyan hostilities, which prompted the assessment."
    },
    {
     "when": "14 May 1986",
@@ -10339,13 +10298,13 @@
   "h": "9f3cf019385a",
   "model": "claude-sonnet-5-5",
   "headline": "Faisal Zagallai, a Libyan dissident, was shot in Fort Collins, Colorado, where he studied and where the accused man's court-martial was reported from.",
-  "explanation": "The article is a New York Times piece of 1 December 1981 with a Fort Collins dateline. It reports the court-martial of Eugene Tafoya, who is accused of shooting the Libyan dissident Faisal Zagallai. The readable text says Zagallai was a graduate student at a \"State Uni…\" (cut off in the scan), which fits Colorado State University in Fort Collins. The scan is broken, so the exact words that put the shooting in Fort Collins are missing. The link matters because it shows that Gaddafi's critics living abroad, including in small American towns, could be targeted. It also shows how a U.S. court dealt with the case.",
+  "explanation": "The article is a New York Times piece of 1 December 1981 with a Fort Collins dateline. It reports the court-martial of Eugene Tafoya, who is accused of shooting the Libyan dissident Faisal Zagallai. The readable text says Zagallai was a graduate student at a \"State Uni\u2026\" (cut off in the scan), which fits Colorado State University in Fort Collins. The scan is broken, so the exact words that put the shooting in Fort Collins are missing. The link matters because it shows that Gaddafi's critics living abroad, including in small American towns, could be targeted. It also shows how a U.S. court dealt with the case.",
   "strength": "inferred",
   "flag": "ok",
   "established": [
    "The article is datelined Fort Collins, Colo., 30 November, and reports testimony at Eugene A. Tafoya's court-martial.",
    "Tafoya is charged with attempted murder and conspiracy for shooting the dissident Faisal Zagallai.",
-   "Zagallai is described as a graduate student at a university whose name is cut off ('State Uni…')."
+   "Zagallai is described as a graduate student at a university whose name is cut off ('State Uni\u2026')."
   ],
   "not_established": [
    "The damaged text does not clearly say the shooting itself happened in Fort Collins.",
@@ -10369,7 +10328,7 @@
   ],
   "quotes": [
    {
-    "text": "A Government official ‘testified toda that Eugene A. Tafoya was never em-| - - ployed by the Central Intelligence Agen- cy",
+    "text": "A Government official \u2018testified toda that Eugene A. Tafoya was never em-| - - ployed by the Central Intelligence Agen- cy",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000606560045-1",
      "t": "OFFICIAL DENIES C.I.A. EMPLOYED MAN ACCUSED OF SHOOTING LIBYAN"
@@ -10421,7 +10380,7 @@
  "u:libyan people's bureau|map:lb-us-embassy-tripoli": {
   "h": "25179f534115",
   "model": "claude-sonnet-5-5",
-  "headline": "The Libyan People's Bureau (Libya's mission in Washington) and the US Embassy in Tripoli are separate offices in different countries, linked only by US–Libya tensions.",
+  "headline": "The Libyan People's Bureau (Libya's mission in Washington) and the US Embassy in Tripoli are separate offices in different countries, linked only by US\u2013Libya tensions.",
   "explanation": "The one document is a 1980 memo from Secretary of State Muskie to President Carter. It concerns a suspected Libyan-linked shooting of a Libyan student dissident in Colorado and the US response to a Libyan campaign of intimidation. The Libyan People's Bureau it refers to is Libya's mission in Washington, not anything in Tripoli. The US Embassy in Tripoli is the American counterpart, but the memo does not describe it. At most, the two stand on opposite sides of the same strained relationship. The link should not be read as a match between places.",
   "strength": "doubtful",
   "flag": "unsupported",
@@ -10442,7 +10401,7 @@
    }
   ],
   "quotes": [],
-  "open_question": "Records of US–Libyan diplomatic exchanges in 1980, including the embassy's closure, would show how the two offices were actually connected.",
+  "open_question": "Records of US\u2013Libyan diplomatic exchanges in 1980, including the embassy's closure, would show how the two offices were actually connected.",
   "docs": 1
  },
  "u:billy carter|charter oil": {
@@ -10747,7 +10706,7 @@
   "h": "4a048a5550d9",
   "model": "claude-sonnet-5-5",
   "headline": "Two camps near Tripoli are linked because one news report says the GNA took both from Haftar forces on 23 May 2020.",
-  "explanation": "The link rests only on the reason recorded by the site: that the Government of National Accord (GNA) took both the Artillery and Missile School (also called al-Sawarikh or Missile camp) and Hamza camp from Haftar forces on 23 May 2020. We could not retrieve any text from the cited Al Jazeera article, so we cannot check this ourselves. The link is about a shared event in the 2019–2020 fighting around Tripoli, not a direct tie between the two sites. It sits outside the Gaddafi years themselves. It does show that camps built or used in that era were still military ground decades later. The atlas also notes it is unclear whether the OpenStreetMap \"Artillery and Missile School\" is the same place as al-Sawarikh camp.",
+  "explanation": "The link rests only on the reason recorded by the site: that the Government of National Accord (GNA) took both the Artillery and Missile School (also called al-Sawarikh or Missile camp) and Hamza camp from Haftar forces on 23 May 2020. We could not retrieve any text from the cited Al Jazeera article, so we cannot check this ourselves. The link is about a shared event in the 2019\u20132020 fighting around Tripoli, not a direct tie between the two sites. It sits outside the Gaddafi years themselves. It does show that camps built or used in that era were still military ground decades later. The atlas also notes it is unclear whether the OpenStreetMap \"Artillery and Missile School\" is the same place as al-Sawarikh camp.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -10908,7 +10867,7 @@
   "context": "The Shar al-Shatt fighting of October 1911 was part of the Italian invasion of Libya, when Italian forces held Tripoli and Ottoman and Arab forces counter-attacked from the oasis.",
   "timeline": [
    {
-    "when": "23–26 October 1911",
+    "when": "23\u201326 October 1911",
     "what": "Fighting at Shar al-Shatt, with Italian reprisals after it (per the atlas profile)."
    }
   ],
@@ -10919,7 +10878,7 @@
  "u:abdessalam jalloud|map:palace": {
   "h": "91e95345f792",
   "model": "claude-sonnet-5-5",
-  "headline": "Two 1979–80 radio and news-agency reports say Jallud received foreign visitors at the People's Palace in Tripoli.",
+  "headline": "Two 1979\u201380 radio and news-agency reports say Jallud received foreign visitors at the People's Palace in Tripoli.",
   "explanation": "Abd as-Salam Jallud was a senior Libyan leader, and two official reports place his meetings with visiting foreigners at the palace. In July 1979 he received Iran's Mohammed Montazeri at \"Ash-Sha'b Palace\". In April 1980 he received Pakistan's envoy Agha Shahi at \"Al-Chaab Palace\". These are two spellings of the same name, People's Palace. The reports suggest the palace was a regular place for receiving official guests. They do not say whether Jallud worked there or what the building was like inside.",
   "strength": "direct",
   "flag": "ok",
@@ -10977,7 +10936,7 @@
   "not_established": [
    "No source text was available to check the stated reason, so the Wikipedia citation is unverified here.",
    "The sources do not say when the engineering faculty was founded or where its building stood; its map position is only the centre of four mapped department points.",
-   "Nothing shows that engineering students took part in the 1976–77 protests or the 1984 events."
+   "Nothing shows that engineering students took part in the 1976\u201377 protests or the 1984 events."
   ],
   "context": "The University of Libya had faculties in Tripoli and Benghazi. In 1973 these were split into separate universities, and the Tripoli one was later renamed Al Fateh University.",
   "timeline": [
@@ -11031,7 +10990,7 @@
     "text": "embracing the masses in Qafsah, Safqis, Susah, Qabis, Naftah and in all the Tunisian towns and villages",
     "doc": {
      "id": "fbis-1980-02-11-0545",
-     "t": "FBIS DAILY REPORT—Middle East & N. Africa, Vol. V No. 029, 11 February 1980"
+     "t": "FBIS DAILY REPORT\u2014Middle East & N. Africa, Vol. V No. 029, 11 February 1980"
     }
    }
   ],
@@ -11181,7 +11140,7 @@
   ],
   "quotes": [
    {
-    "text": "The evidence linking Mr. Tafoya to Mr. Haden also was found in Mr. Ta- foya’s telephone book, investigators said.",
+    "text": "The evidence linking Mr. Tafoya to Mr. Haden also was found in Mr. Ta- foya\u2019s telephone book, investigators said.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000606560100-9",
      "t": "ARMS EXPORTER IS BELIEVED LINKED WITH ATTEMPT TO MURDER LIBYAN"
@@ -11236,7 +11195,7 @@
     }
    },
    {
-    "text": "unilateral and Joint exercises designed to deceive, overburden and ‘spook’ Libyan defenses.",
+    "text": "unilateral and Joint exercises designed to deceive, overburden and \u2018spook\u2019 Libyan defenses.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90b01390r000100090025-3",
      "t": "GADHAFI TARGET OF SECRET US DECEPTION PLAN"
@@ -11283,14 +11242,14 @@
     "text": "organized a false demonstration in front of the Libyan People's Bureau in London",
     "doc": {
      "id": "fbis-1980-06-13-0672",
-     "t": "FBIS DAILY REPORT—Middle East & Africa, Vol. V No. 116, 13 June 1980"
+     "t": "FBIS DAILY REPORT\u2014Middle East & Africa, Vol. V No. 116, 13 June 1980"
     }
    },
    {
     "text": "if it does not free the Libyans arrested by the British police yesterday, Libya will be forced to take similar measures toward British subjects in Libya",
     "doc": {
      "id": "fbis-1980-06-13-0672",
-     "t": "FBIS DAILY REPORT—Middle East & Africa, Vol. V No. 116, 13 June 1980"
+     "t": "FBIS DAILY REPORT\u2014Middle East & Africa, Vol. V No. 116, 13 June 1980"
     }
    }
   ],
@@ -11313,7 +11272,7 @@
   "not_established": [
    "The memo gives no independent evidence that Qadhafi or the Libyan government organised, trained or armed the Gafsa insurgents; it only records what Bourguiba said.",
    "The passages do not say how the insurgents were connected to Libya.",
-   "The memo is a US summary, not a verbatim record, and the passage is cut off after 'Qadhafi had gone …'."
+   "The memo is a US summary, not a verbatim record, and the passage is cut off after 'Qadhafi had gone \u2026'."
   ],
   "context": "The Gafsa raid took place in January 1980. It is widely described as an attack by armed Tunisian dissidents who had been trained in Libya, and it badly strained relations between Tunisia and Libya.",
   "timeline": [
@@ -11328,7 +11287,7 @@
   ],
   "quotes": [
    {
-    "text": "President Bourguiba then launched into a description of the Gafsa incident and Qadhafi’s efforts to destabilize Tunisia.",
+    "text": "President Bourguiba then launched into a description of the Gafsa incident and Qadhafi\u2019s efforts to destabilize Tunisia.",
     "doc": {
      "id": "frus-frus-1981-88v24-d288",
      "t": "Memorandum for the Record | Tunis , May 23, 1981, 11 a.m. | Meeting between Mr. West, ASD/ISA (designate) and President Bourguiba"
@@ -11368,7 +11327,7 @@
     "what": "Ottoman and Libyan fighters overran an Italian position at Shar al-Shatt (per the map's profile)."
    },
    {
-    "when": "23–26 October 1911",
+    "when": "23\u201326 October 1911",
     "what": "Italian troops killed local civilians in reprisal (per the map's profile)."
    }
   ],
@@ -11380,11 +11339,11 @@
   "h": "e955135ecf11",
   "model": "claude-sonnet-5-5",
   "headline": "Witnesses told Human Rights Watch of shooting at passers-by in Ben Ashour during the February 2011 Tripoli crackdown.",
-  "explanation": "The crackdown of 20–25 February 2011 took place in many parts of Tripoli, and Ben Ashour is one of the districts where shooting was reported. The link rests only on the reason recorded by the family map: witnesses described shooting at passers-by there on 21–22 February. We could not retrieve the Human Rights Watch passage, so we could not check that wording. The link also shows that Ben Ashour, known for embassies and for the 1986 air raid, was part of the 2011 events too.",
+  "explanation": "The crackdown of 20\u201325 February 2011 took place in many parts of Tripoli, and Ben Ashour is one of the districts where shooting was reported. The link rests only on the reason recorded by the family map: witnesses described shooting at passers-by there on 21\u201322 February. We could not retrieve the Human Rights Watch passage, so we could not check that wording. The link also shows that Ben Ashour, known for embassies and for the 1986 air raid, was part of the 2011 events too.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "The recorded reason says witnesses described shooting at passers-by in Ben Ashour on 21–22 February 2011.",
+   "The recorded reason says witnesses described shooting at passers-by in Ben Ashour on 21\u201322 February 2011.",
    "The cited source is a Human Rights Watch release of 22 February 2011."
   ],
   "not_established": [
@@ -11395,7 +11354,7 @@
   "context": "Ben Ashour is a Tripoli district. In February 2011 protests against Gaddafi spread to the capital and were met with lethal force.",
   "timeline": [
    {
-    "when": "21–22 Feb 2011",
+    "when": "21\u201322 Feb 2011",
     "what": "Witnesses described shooting at passers-by in Ben Ashour (as recorded)."
    },
    {
@@ -11458,7 +11417,7 @@
   "h": "719db5ce62d8",
   "model": "claude-sonnet-5-5",
   "headline": "These two entries describe the same October 1911 events at Shar al-Shatt: the battle and the reprisals that followed.",
-  "explanation": "One entry treats Shar al-Shatt as a battlefield place. The other treats the killings there as an event. Both describe the 23–26 October 1911 fighting on the edge of Tripoli and the Italian reprisals afterwards. They are the same episode seen from two sides, one tied to the site and one to the killings. No source text could be retrieved for this note, so it rests only on the two entry descriptions and the stated reason. The link helps readers see that the battle and the reprisals were one connected story in the first weeks of the Italian invasion.",
+  "explanation": "One entry treats Shar al-Shatt as a battlefield place. The other treats the killings there as an event. Both describe the 23\u201326 October 1911 fighting on the edge of Tripoli and the Italian reprisals afterwards. They are the same episode seen from two sides, one tied to the site and one to the killings. No source text could be retrieved for this note, so it rests only on the two entry descriptions and the stated reason. The link helps readers see that the battle and the reprisals were one connected story in the first weeks of the Italian invasion.",
   "strength": "weak",
   "flag": "same-entity",
   "established": [
@@ -11485,7 +11444,7 @@
     "what": "Reprisals against civilians in Tripoli's oasis begin."
    },
    {
-    "when": "23–26 October 1911",
+    "when": "23\u201326 October 1911",
     "what": "Period given in the stated reason for the whole episode."
    }
   ],
@@ -11513,7 +11472,7 @@
   "context": "Under the British military administration after World War II, Tripolitania's Jewish community was large and long established. Most of its members left Libya in the years after 1945, 1948 and 1967.",
   "timeline": [
    {
-    "when": "5–7 November 1945",
+    "when": "5\u20137 November 1945",
     "what": "Riots against Jews in Tripolitania; they began in Tripoli and spread to nearby towns."
    },
    {
@@ -11758,7 +11717,7 @@
   ],
   "quotes": [
    {
-    "text": "When the Americans left, the base was renamed Okba Ben Nafi Air Base (قاعدة عقبة بن نافع الجوية) after the Islamic general who conquered North Africa.",
+    "text": "When the Americans left, the base was renamed Okba Ben Nafi Air Base (\u0642\u0627\u0639\u062f\u0629 \u0639\u0642\u0628\u0629 \u0628\u0646 \u0646\u0627\u0641\u0639 \u0627\u0644\u062c\u0648\u064a\u0629) after the Islamic general who conquered North Africa.",
     "doc": {
      "id": "wiki-en-Mitiga International Airport",
      "t": "Mitiga International Airport (Wikipedia)"
@@ -11906,7 +11865,7 @@
   "h": "530c968c330e",
   "model": "claude-sonnet-5-5",
   "headline": "Fashloum, a Tripoli neighbourhood, is recorded as one of the districts where security forces fired on protesters in February 2011.",
-  "explanation": "The crackdown entry covers the whole week of 20–25 February 2011 across Tripoli. Fashloum is one of the districts named in it. The recorded reason says security forces fired on protesters in Fashloum on 20 February and arrested residents. No source passage could be retrieved for this link, so we could not check that wording against the two cited sources. The link is therefore only as strong as the stated reason and the two citations. Both ends of the link describe the same events, and the crackdown entry already lists Fashloum.",
+  "explanation": "The crackdown entry covers the whole week of 20\u201325 February 2011 across Tripoli. Fashloum is one of the districts named in it. The recorded reason says security forces fired on protesters in Fashloum on 20 February and arrested residents. No source passage could be retrieved for this link, so we could not check that wording against the two cited sources. The link is therefore only as strong as the stated reason and the two citations. Both ends of the link describe the same events, and the crackdown entry already lists Fashloum.",
   "strength": "inferred",
   "flag": "ok",
   "established": [
@@ -11927,7 +11886,7 @@
     "what": "Security forces reportedly fire on protesters in Fashloum (per the stated reason)."
    },
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Crackdown across several Tripoli districts."
    },
    {
@@ -12125,7 +12084,7 @@
   ],
   "quotes": [
    {
-    "text": "Even with the London mess, don’t look for them to leave either.",
+    "text": "Even with the London mess, don\u2019t look for them to leave either.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00965r000302640019-0",
      "t": "U.S. PLANS TO SEEK ACTIONS BY ALLIES TO DETER QADDAFI"
@@ -12518,12 +12477,12 @@
   "h": "77bf38d50317",
   "model": "claude-sonnet-5-5",
   "headline": "A December 1980 U.S. cable on the Gulf of Sidra dispute answers a Libyan protest note, but the passages never name the Washington bureau.",
-  "explanation": "The cable reports a Libyan protest note about U.S. military maneuvers, and the U.S. reply rejecting it. The reply says the U.S. does not accept Libya's claim to close the Gulf of Sidra at 32°30'. The Libyan People's Bureau was Libya's embassy-like office in Washington, so it could have been how such messages passed. The passages we have don't say who delivered or received the note. The link to the Gulf of Sidra is real in the document. The link to this particular bureau is a guess.",
+  "explanation": "The cable reports a Libyan protest note about U.S. military maneuvers, and the U.S. reply rejecting it. The reply says the U.S. does not accept Libya's claim to close the Gulf of Sidra at 32\u00b030'. The Libyan People's Bureau was Libya's embassy-like office in Washington, so it could have been how such messages passed. The passages we have don't say who delivered or received the note. The link to the Gulf of Sidra is real in the document. The link to this particular bureau is a guess.",
   "strength": "weak",
   "flag": "unsupported",
   "established": [
    "A December 1980 State Department cable reports a Libyan protest note and the U.S. rejection of it.",
-   "The U.S. says it does not recognize Libya's 32°30' bay-closing line for the Gulf of Sidra and regards the area as high seas.",
+   "The U.S. says it does not recognize Libya's 32\u00b030' bay-closing line for the Gulf of Sidra and regards the area as high seas.",
    "The U.S. says its air and naval units sometimes cross that line during training exercises."
   ],
   "not_established": [
@@ -12925,7 +12884,7 @@
    "The passage does not say the raid and the Rabta plant were causally connected.",
    "The passage is cut off just as the raid question begins, so his answer on the raid is not shown here."
   ],
-  "context": "The U.S. struck Tripoli and Benghazi in April 1986. In 1988–89 the U.S. publicly accused Libya of building a chemical weapons plant at Rabta.",
+  "context": "The U.S. struck Tripoli and Benghazi in April 1986. In 1988\u201389 the U.S. publicly accused Libya of building a chemical weapons plant at Rabta.",
   "timeline": [
    {
     "when": "1986",
@@ -12938,7 +12897,7 @@
   ],
   "quotes": [
    {
-    "text": "Asked about his country's chemicalfi plant at Rabta which the U.S. government says was buiit to make poison gas, Ghadafi said, ‘‘This is a medicine plant.''",
+    "text": "Asked about his country's chemicalfi plant at Rabta which the U.S. government says was buiit to make poison gas, Ghadafi said, \u2018\u2018This is a medicine plant.''",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp05-01559r000400440001-6",
      "t": "GADHAFI INTERVIEW"
@@ -12992,7 +12951,7 @@
   "h": "1e28f75e98b0",
   "model": "claude-sonnet-5-5",
   "headline": "A Wikipedia article says the 444th Brigade reportedly took both the Port of Tripoli and Ain Zara during the May 2025 fighting.",
-  "explanation": "The source lists the Port of Tripoli and Ain Zara together among places the 444th Brigade \"reportedly\" took control of during the clashes of May 2025. So the link is that one armed group is said to have held both places at the same time. This is a recent event, long after Gaddafi's rule, and it says nothing about either place in 1969–2011. It does show that both are still places of strategic importance in Tripoli's struggles. The claim is \"reported\" by a secondary source, so \"documented\" is too strong.",
+  "explanation": "The source lists the Port of Tripoli and Ain Zara together among places the 444th Brigade \"reportedly\" took control of during the clashes of May 2025. So the link is that one armed group is said to have held both places at the same time. This is a recent event, long after Gaddafi's rule, and it says nothing about either place in 1969\u20132011. It does show that both are still places of strategic importance in Tripoli's struggles. The claim is \"reported\" by a secondary source, so \"documented\" is too strong.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -13007,7 +12966,7 @@
   "context": "The 444th Brigade is an armed force linked to the Tripoli government. Since 2011 Tripoli's armed groups have divided up control of the city's key sites.",
   "timeline": [
    {
-    "when": "13–14 May 2025",
+    "when": "13\u201314 May 2025",
     "what": "Renewed fighting between the RADA Special Deterrence Forces and the 444th Brigade."
    },
    {
@@ -13381,7 +13340,7 @@
     "what": "A rebel spokesman claimed Abu Salim was secured (from the atlas profile)."
    },
    {
-    "when": "24–26 August 2011",
+    "when": "24\u201326 August 2011",
     "what": "Fighting continued in the district, with loyalists reported to still hold the area (from the atlas profile)."
    }
   ],
@@ -13448,7 +13407,7 @@
     "what": "Heavy deployment and shootings reported in Tajoura (stated reason for the link; not checked against the sources)."
    },
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Security forces fire on protesters in several Tripoli districts."
    },
    {
@@ -13631,7 +13590,7 @@
   "context": "Outside this document, Bouri is widely reported to have been developed with the Italian company AGIP. That background is not evidence from these passages.",
   "timeline": [
    {
-    "when": "1980–1985",
+    "when": "1980\u20131985",
     "what": "Libyan oil revenues fall from $23 billion to $11 billion, according to the CIA."
    },
    {
@@ -13648,7 +13607,7 @@
     }
    },
    {
-    "text": "Leading these activities is Tripoli’s major investment in the offshore Bouri oilfield—located about 100 kilometers northwest of Tripoli in the Mediterranean Sea.",
+    "text": "Leading these activities is Tripoli\u2019s major investment in the offshore Bouri oilfield\u2014located about 100 kilometers northwest of Tripoli in the Mediterranean Sea.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp06t00412r000504980001-4",
      "t": "THE LIBYAN OIL INDUSTRY: DEPENDENCE ON FOREIGN COMPANIES"
@@ -13737,14 +13696,14 @@
   "h": "bf9f6c4d652e",
   "model": "claude-sonnet-5-5",
   "headline": "Bashir Dultz, a German long-time budget officer at the US Embassy in Tripoli, was arrested, and the US pressed Libya for his release.",
-  "explanation": "Two US government records show that Bashir Dultz worked for the US Embassy in Tripoli. A December 1979 meeting note calls him the Embassy's budget and fiscal officer \"for many years.\" It says his arrest and ongoing detention were raised with a Libyan official. A January 1980 cable lists him as an \"Embassy national employee\" and tells the chargé to raise his case with Col. Qadhafi. The US tied the arrest to worries about Embassy staff security, which shows how fragile life was for local staff at the Embassy at this time.",
+  "explanation": "Two US government records show that Bashir Dultz worked for the US Embassy in Tripoli. A December 1979 meeting note calls him the Embassy's budget and fiscal officer \"for many years.\" It says his arrest and ongoing detention were raised with a Libyan official. A January 1980 cable lists him as an \"Embassy national employee\" and tells the charg\u00e9 to raise his case with Col. Qadhafi. The US tied the arrest to worries about Embassy staff security, which shows how fragile life was for local staff at the Embassy at this time.",
   "strength": "direct",
   "flag": "ok",
   "established": [
    "Dultz is described as a German national and long-time budget and fiscal officer at the US Embassy in Tripoli (Dec 1979).",
    "Under Secretary Newsom raised his arrest and ongoing detention with Libyan People's Bureau official Ali El-Houderi in Washington.",
    "Newsom said the arrest was causing great nervousness among national and American employees at the Embassy.",
-   "A January 1980 cable told the chargé to say the US remained concerned and hoped for a prompt, satisfactory resolution."
+   "A January 1980 cable told the charg\u00e9 to say the US remained concerned and hoped for a prompt, satisfactory resolution."
   ],
   "not_established": [
    "The passages do not say why Dultz was arrested or what charges, if any, were made.",
@@ -13758,7 +13717,7 @@
    },
    {
     "when": "January 17, 1980",
-    "what": "State Department sends talking points for the chargé to raise Dultz's case with Col. Qadhafi."
+    "what": "State Department sends talking points for the charg\u00e9 to raise Dultz's case with Col. Qadhafi."
    }
   ],
   "quotes": [
@@ -13766,7 +13725,7 @@
     "text": "Bashir Dultz, a German national who has been the budget and fiscal officer at the Embassy for many years",
     "doc": {
      "id": "frus-frus-1977-80v17p3-d117",
-     "t": "Memorandum of Conversation | Washington , December 19, 1979 | Meeting with Ali El-Houderi, Libyan People’s Bureau"
+     "t": "Memorandum of Conversation | Washington , December 19, 1979 | Meeting with Ali El-Houderi, Libyan People\u2019s Bureau"
     }
    },
    {
@@ -13818,7 +13777,7 @@
     }
    }
   ],
-  "open_question": "Flight logs, later imagery reports, or Chadian and Libyan accounts could show how often and when the Sebha–Aozou flights ran, and what they carried.",
+  "open_question": "Flight logs, later imagery reports, or Chadian and Libyan accounts could show how often and when the Sebha\u2013Aozou flights ran, and what they carried.",
   "docs": 1
  },
  "m:palace|lh-royal-palace-governors-palace|same-place": {
@@ -13881,7 +13840,7 @@
     "what": "Construction at Matan as Sarra airfield begins, per the note."
    },
    {
-    "when": "1981–1982",
+    "when": "1981\u20131982",
     "what": "No aircraft seen; a small part of the runway is judged usable by light aircraft and helicopters."
    },
    {
@@ -13989,7 +13948,7 @@
     "text": "I had hour and three-quarter session with Qadhafi February 23 at Aziziyah barracks.",
     "doc": {
      "id": "frus-frus-1969-76ve05p2-d71",
-     "t": "Telegram 373 From the Embassy in Libya to the Department of State | Tripoli , February 24, 1971, 1147Z | Tour d’Horizon With Qadhafi: F–5’s"
+     "t": "Telegram 373 From the Embassy in Libya to the Department of State | Tripoli , February 24, 1971, 1147Z | Tour d\u2019Horizon With Qadhafi: F\u20135\u2019s"
     }
    },
    {
@@ -14149,7 +14108,7 @@
   ],
   "quotes": [
    {
-    "text": "policeman Yvonne Fletcher, who was killed by British hands during the treacherous assault to which the Libyan Arab People’s Bureau was exposed in London last April.",
+    "text": "policeman Yvonne Fletcher, who was killed by British hands during the treacherous assault to which the Libyan Arab People\u2019s Bureau was exposed in London last April.",
     "doc": {
      "id": "fbis-1985-02-04-0606",
      "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 023, 4 February 1985"
@@ -14163,7 +14122,7 @@
   "h": "c49269330cc5",
   "model": "claude-sonnet-5-5",
   "headline": "Edwin Wilson and Frank Terpil were former CIA men, business partners, and co-defendants indicted in 1980 over work for Libya.",
-  "explanation": "Several 1981–82 newspaper items name Wilson and Terpil together as ex-CIA agents who worked with Qaddafi's Libya. One report says a federal grand jury indicted both on 25 April 1980. Another says they were partners with Kevin Mulcahy in a firm called International Technology, Inc., and that Mulcahy had earlier worked for an export firm owned by the two. The link matters because it shows how private deals by ex-agents tied the U.S. to Libya's security and training work. The sources report allegations; they are not court findings.",
+  "explanation": "Several 1981\u201382 newspaper items name Wilson and Terpil together as ex-CIA agents who worked with Qaddafi's Libya. One report says a federal grand jury indicted both on 25 April 1980. Another says they were partners with Kevin Mulcahy in a firm called International Technology, Inc., and that Mulcahy had earlier worked for an export firm owned by the two. The link matters because it shows how private deals by ex-agents tied the U.S. to Libya's security and training work. The sources report allegations; they are not court findings.",
   "strength": "direct",
   "flag": "ok",
   "established": [
@@ -14202,14 +14161,14 @@
   ],
   "quotes": [
    {
-    "text": "Mr. Wilson and another former agent,’ Frank Terpll; were indicted by a Fed. eral grand Jury here on April 25, 1980",
+    "text": "Mr. Wilson and another former agent,\u2019 Frank Terpll; were indicted by a Fed. eral grand Jury here on April 25, 1980",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp99-00498r000200020058-8",
      "t": "EMPLOYEES OF C.I.A. AIDED LIBYAN DEAL"
     }
    },
    {
-    "text": "two “former agents; Edwin P. Wilson: ~ and Frank E..Terpik accused of set-: “ting up a terrarist (raining project “in Libya.",
+    "text": "two \u201cformer agents; Edwin P. Wilson: ~ and Frank E..Terpik accused of set-: \u201cting up a terrarist (raining project \u201cin Libya.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp09s00048r000100020054-2",
      "t": "CASEY REPORTEDLY SAYS CIA DIDN'T TRAIN LIBYA TERRORISTS"
@@ -14243,7 +14202,7 @@
     "what": "Independence Square renamed Green Square after the revolution."
    },
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Protests reached Tripoli; security forces fired on protesters in several districts, including around Green Square."
    },
    {
@@ -14284,7 +14243,7 @@
   ],
   "quotes": [
    {
-    "text": "He was welcomed at the Tripoli international fair by Staff Maj ‘Abd as-Salam Jallud",
+    "text": "He was welcomed at the Tripoli international fair by Staff Maj \u2018Abd as-Salam Jallud",
     "doc": {
      "id": "fbis-1981-01-30-0835",
      "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 020, 30 January 1981"
@@ -14302,8 +14261,8 @@
   "strength": "weak",
   "flag": "ok",
   "established": [
-   "In October 1973 Libya claimed the Gulf of Sidra as internal waters, north to latitude 32°30'.",
-   "The memo says the Libyan FIR extends north to latitude 34°20'.",
+   "In October 1973 Libya claimed the Gulf of Sidra as internal waters, north to latitude 32\u00b030'.",
+   "The memo says the Libyan FIR extends north to latitude 34\u00b020'.",
    "The memo says the US held naval exercises in the Gulf of Sidra, some of which crossed into waters Libya claimed.",
    "A November 1972 Libyan communique said foreign aircraft could not fly within 100 miles of Tripoli."
   ],
@@ -14320,7 +14279,7 @@
    },
    {
     "when": "October 1973",
-    "what": "Libya claims the Gulf of Sidra as internal waters up to 32°30' N."
+    "what": "Libya claims the Gulf of Sidra as internal waters up to 32\u00b030' N."
    },
    {
     "when": "1980",
@@ -14328,7 +14287,7 @@
    },
    {
     "when": "August 1981",
-    "what": "US resumes exercises and crosses the 32°30' line."
+    "what": "US resumes exercises and crosses the 32\u00b030' line."
    },
    {
     "when": "23 November 1982",
@@ -14337,7 +14296,7 @@
   ],
   "quotes": [
    {
-    "text": "The Libyan Flight Infor- mation Region (FIR) extends to a northern boundary of latitude 34° 20'",
+    "text": "The Libyan Flight Infor- mation Region (FIR) extends to a northern boundary of latitude 34\u00b0 20'",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp84b00049r000501190014-6",
      "t": "SIG MEETING; LIBYA (SANITIZED)"
@@ -14392,7 +14351,7 @@
   ],
   "quotes": [
    {
-    "text": "Speech by Mu‘ammar al- Qaddafi at a rally held in Green Square, Tripoli, to mark the 18th anniversary of the 1 September revolution — live",
+    "text": "Speech by Mu\u2018ammar al- Qaddafi at a rally held in Green Square, Tripoli, to mark the 18th anniversary of the 1 September revolution \u2014 live",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp05-01559r000400420025-2",
      "t": "AL-QADHDHAFI SPEECH ON 1 SEP REVOLUTION ANNIVERSARY"
@@ -14454,7 +14413,7 @@
     }
    }
   ],
-  "open_question": "A dated source on the 1969–70s renaming and on the first regime rallies in the square would back up the rally part of this link.",
+  "open_question": "A dated source on the 1969\u201370s renaming and on the first regime rallies in the square would back up the rally part of this link.",
   "docs": 1
  },
  "u:abd al-qadir baqdadi|yvonne fletcher": {
@@ -14541,7 +14500,7 @@
   "flag": "ok",
   "established": [
    "The document is the Justice Department's final report on Billy Carter's relations with Libya, reprinted in 1981.",
-   "The visible passage says more interviews were done, including with President Carter, Dr. Brzezinski, a former U.S. chargé d'affaires in Tripoli, and the U.S. ambassador to Italy."
+   "The visible passage says more interviews were done, including with President Carter, Dr. Brzezinski, a former U.S. charg\u00e9 d'affaires in Tripoli, and the U.S. ambassador to Italy."
   ],
   "not_established": [
    "The shown passage never names Michele Papa, so it does not show he was questioned.",
@@ -14585,7 +14544,7 @@
    "It does not give dates or routes for the transfer to Giado.",
    "It is a Wikipedia summary, not an eyewitness or official record."
   ],
-  "context": "Giado (Jadu) was an Italian-run camp in the Nafusa highlands of Tripolitania, where Libyan Jews were held in 1942–1943.",
+  "context": "Giado (Jadu) was an Italian-run camp in the Nafusa highlands of Tripolitania, where Libyan Jews were held in 1942\u20131943.",
   "timeline": [
    {
     "when": "December 1940",
@@ -14633,7 +14592,7 @@
    "The memo does not confirm that extra Libyans were present; the US Embassy could not verify an increase.",
    "The one report cited, of 15 Libyans arriving at Zanderij airport, is not confirmed, and their whereabouts are unknown."
   ],
-  "context": "Libya under Gaddafi called its embassies \"People's Bureaus\". Suriname was then led by Désiré Bouterse and faced an insurgency.",
+  "context": "Libya under Gaddafi called its embassies \"People's Bureaus\". Suriname was then led by D\u00e9sir\u00e9 Bouterse and faced an insurgency.",
   "timeline": [
    {
     "when": "Mid-1986",
@@ -14646,7 +14605,7 @@
   ],
   "quotes": [
    {
-    "text": "a good case can be made that the Libyan presence does not extend beyond a dozen or so Libyans--including dependents—-who are engaged in normal diplomatic activities",
+    "text": "a good case can be made that the Libyan presence does not extend beyond a dozen or so Libyans--including dependents\u2014-who are engaged in normal diplomatic activities",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90t00114r000100010002-5",
      "t": "SURINAME: THE LIBYAN PRESENCE"
@@ -14679,7 +14638,7 @@
     "what": "Italian Air Force builds Mellaha Air Base (atlas profile)"
    },
    {
-    "when": "1945–1948",
+    "when": "1945\u20131948",
     "what": "Wheelus Army Air Field, then Wheelus Air Base (atlas profile)"
    },
    {
@@ -14758,7 +14717,7 @@
   "h": "7534a7549fb2",
   "model": "claude-sonnet-5-5",
   "headline": "A 2019 strike on a detention centre in Tajura is recorded as sending wounded migrants to Tripoli Central Hospital, but no source text was available to check.",
-  "explanation": "The link comes from a note saying that migrants wounded in the 2 July 2019 strike on the Tajoura detention centre were photographed at Tripoli Central Hospital. If correct, it shows the hospital still acting as a main place for treating casualties near the city, years after Gaddafi's fall. It also ties the Tajura suburb to the hospital through events of 2019, not through the Gaddafi years. No passage from the cited HRW report or the Wikipedia page could be retrieved. This note therefore rests only on the stated reason, and I could not check it against the sources. The date is outside 1969–2011.",
+  "explanation": "The link comes from a note saying that migrants wounded in the 2 July 2019 strike on the Tajoura detention centre were photographed at Tripoli Central Hospital. If correct, it shows the hospital still acting as a main place for treating casualties near the city, years after Gaddafi's fall. It also ties the Tajura suburb to the hospital through events of 2019, not through the Gaddafi years. No passage from the cited HRW report or the Wikipedia page could be retrieved. This note therefore rests only on the stated reason, and I could not check it against the sources. The date is outside 1969\u20132011.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -14889,7 +14848,7 @@
     }
    }
   ],
-  "open_question": "Dated records of the Mubarak–Gaddafi meetings would show when each town hosted talks and what was agreed.",
+  "open_question": "Dated records of the Mubarak\u2013Gaddafi meetings would show when each town hosted talks and what was agreed.",
   "docs": 1
  },
  "u:aozou strip|sebha": {
@@ -14956,7 +14915,7 @@
   "context": "Salah al-Din is a district in southern Tripoli. The 2013 handover and 2025 clashes both fall long after Gaddafi's rule.",
   "timeline": [
    {
-    "when": "1969–2011",
+    "when": "1969\u20132011",
     "what": "Gaddafi era: army bases built up south of Salah al-Din; the camp's name and units at this time are unknown."
    },
    {
@@ -15019,11 +14978,11 @@
   "h": "9cca4d709607",
   "model": "claude-sonnet-5-5",
   "headline": "Two battles near Tripoli in the 1911 Italian invasion, Shar al-Shatt in October and Ain Zara in December, are linked as parts of one campaign.",
-  "explanation": "The link is that both battles were fought on the edge of Tripoli during the Italian invasion of 1911. No source passage could be retrieved for this note, so it rests on the recorded reason and the two place profiles. Those profiles give Shar al-Shatt as 23–26 October 1911 and Ain Zara as 4 December 1911, which is about six weeks later. Together they show the Italians first holding the city against a hard attack, then pushing out to take the oasis south of it. The sources do not say whether one battle caused the other.",
+  "explanation": "The link is that both battles were fought on the edge of Tripoli during the Italian invasion of 1911. No source passage could be retrieved for this note, so it rests on the recorded reason and the two place profiles. Those profiles give Shar al-Shatt as 23\u201326 October 1911 and Ain Zara as 4 December 1911, which is about six weeks later. Together they show the Italians first holding the city against a hard attack, then pushing out to take the oasis south of it. The sources do not say whether one battle caused the other.",
   "strength": "inferred",
   "flag": "ok",
   "established": [
-   "The atlas profiles date Shar al-Shatt to 23–26 October 1911, on Tripoli's outskirts, and Ain Zara to 4 December 1911, about 8 km south of Tripoli.",
+   "The atlas profiles date Shar al-Shatt to 23\u201326 October 1911, on Tripoli's outskirts, and Ain Zara to 4 December 1911, about 8 km south of Tripoli.",
    "Both profiles describe Ottoman and Arab forces fighting Italian forces in the same invasion.",
    "The recorded cited sources are the Wikipedia articles on each battle."
   ],
@@ -15035,7 +14994,7 @@
   "context": "Italy declared war on the Ottoman Empire in September 1911 and landed at Tripoli in October. The war ended in 1912 with Italy taking Libya.",
   "timeline": [
    {
-    "when": "23–26 October 1911",
+    "when": "23\u201326 October 1911",
     "what": "Battle at Shar al-Shatt on the edge of Tripoli; Italians retook the area on the evening of 23 October."
    },
    {
@@ -15095,13 +15054,13 @@
   "h": "bc3fdf843b52",
   "model": "claude-sonnet-5-5",
   "headline": "An Arabic Wikipedia article reportedly says the old royal palace was damaged in the 1986 US raid, but no source text was available to check.",
-  "explanation": "The link says the former palace of King Idris, later the People's Palace, was damaged when American aircraft struck Tripoli in April 1986. The only support is a note that the cited Arabic Wikipedia article (قصر الخلد) says so. No passage from it could be retrieved, so the claim could not be checked here. The palace is a separate place from Bab al-Aziziya, the main target of the raid. If the claim is right, it would mean the raid also hit buildings tied to the old monarchy. Treat it as a reported claim, not a confirmed one.",
+  "explanation": "The link says the former palace of King Idris, later the People's Palace, was damaged when American aircraft struck Tripoli in April 1986. The only support is a note that the cited Arabic Wikipedia article (\u0642\u0635\u0631 \u0627\u0644\u062e\u0644\u062f) says so. No passage from it could be retrieved, so the claim could not be checked here. The palace is a separate place from Bab al-Aziziya, the main target of the raid. If the claim is right, it would mean the raid also hit buildings tied to the old monarchy. Treat it as a reported claim, not a confirmed one.",
   "strength": "reported",
   "flag": "ok",
   "established": [
    "The link is recorded as a reported attack connection.",
    "The stated reason is that the palace article notes damage in the 1986 American raid on Libya.",
-   "The cited source is the Arabic Wikipedia article on the palace (قصر الخلد)."
+   "The cited source is the Arabic Wikipedia article on the palace (\u0642\u0635\u0631 \u0627\u0644\u062e\u0644\u062f)."
   ],
   "not_established": [
    "No source text was retrieved, so the claim of damage could not be checked.",
@@ -15158,7 +15117,7 @@
   "h": "bfcf81956c06",
   "model": "claude-sonnet-5-5",
   "headline": "In late June 1983, aircraft from the US carrier Eisenhower were reported operating near Libya, and Libya called this a provocation.",
-  "explanation": "One news digest from 1 July 1983 links the carrier Eisenhower to American military activity off the Libyan coast. It carries a clandestine radio report that Eisenhower's planes intercepted two Libyan planes. It also carries a Libyan news agency (JANA) statement condemning US aircraft taking off and acting provocatively. The passage we have does not itself name the Gulf of Sidra or say the carrier was in it; the summary says it does, but that part of the text is cut off. The link matters because it shows how the Gulf of Sidra, off Libya's coast, became a place of repeated US–Libyan confrontation that the Tripoli government answered with public protest.",
+  "explanation": "One news digest from 1 July 1983 links the carrier Eisenhower to American military activity off the Libyan coast. It carries a clandestine radio report that Eisenhower's planes intercepted two Libyan planes. It also carries a Libyan news agency (JANA) statement condemning US aircraft taking off and acting provocatively. The passage we have does not itself name the Gulf of Sidra or say the carrier was in it; the summary says it does, but that part of the text is cut off. The link matters because it shows how the Gulf of Sidra, off Libya's coast, became a place of repeated US\u2013Libyan confrontation that the Tripoli government answered with public protest.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -15327,11 +15286,11 @@
   "h": "59ba3a31f862",
   "model": "claude-sonnet-5-5",
   "headline": "Shots fired from the Libyan People's Bureau in London in 1984 led Britain to break diplomatic relations with Libya.",
-  "explanation": "The Libyan People's Bureau in London was Libya's embassy-like mission in Britain. A 1987 U.S. Library of Congress country study says a shooting at the Bureau in 1984 was part of the strained Libya–Britain relationship. The AI's reading is that this shooting led to the break in diplomatic relations. That is a reasonable summary of the link, but the summary we have does not give the passage wording, dates or details. It matters for Tripoli because the break cut Libya's formal ties with Britain and shows how events at its overseas missions shaped its place in the world.",
+  "explanation": "The Libyan People's Bureau in London was Libya's embassy-like mission in Britain. A 1987 U.S. Library of Congress country study says a shooting at the Bureau in 1984 was part of the strained Libya\u2013Britain relationship. The AI's reading is that this shooting led to the break in diplomatic relations. That is a reasonable summary of the link, but the summary we have does not give the passage wording, dates or details. It matters for Tripoli because the break cut Libya's formal ties with Britain and shows how events at its overseas missions shaped its place in the world.",
   "strength": "reported",
   "flag": "ok",
   "established": [
-   "A 1987 Library of Congress country study covers Libya–Britain relations under Qadhafi.",
+   "A 1987 Library of Congress country study covers Libya\u2013Britain relations under Qadhafi.",
    "Its summary names the 1984 shooting at the London People's Bureau as one of the points of strain.",
    "The summary also mentions the nationalizing of British Petroleum's interests and the 1986 use of British bases for the U.S. strike."
   ],
@@ -15363,7 +15322,7 @@
   "h": "66ba9aa4e560",
   "model": "claude-sonnet-5-5",
   "headline": "Both hospitals are named together in a 2025 UN report about 67 bodies kept in refrigerators after fighting in May 2025.",
-  "explanation": "The recorded reason says the UN reported 67 bodies in refrigerators at Abu Salim and Al Khadra hospitals after the May 2025 fighting in Tripoli. That links the two hospitals through one later event, not through anything in the Gaddafi years. I could not retrieve the source passages, so this note rests only on the stated reason and the titles of the two cited pieces. It is a second-hand summary of the UN reporting. It does not say how the bodies came to be there or who they were. It does not connect the two hospitals during 1969–2011.",
+  "explanation": "The recorded reason says the UN reported 67 bodies in refrigerators at Abu Salim and Al Khadra hospitals after the May 2025 fighting in Tripoli. That links the two hospitals through one later event, not through anything in the Gaddafi years. I could not retrieve the source passages, so this note rests only on the stated reason and the titles of the two cited pieces. It is a second-hand summary of the UN reporting. It does not say how the bodies came to be there or who they were. It does not connect the two hospitals during 1969\u20132011.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -15409,7 +15368,7 @@
    "No source passage was retrieved, so the wording of the sources could not be checked here.",
    "The profile's claims about five F-111 aircraft, the last strike of the raid and the extent of the damage could not be checked against any text."
   ],
-  "context": "Operation El Dorado Canyon was the US air raid on Libya on the night of 14–15 April 1986. It hit targets in Tripoli and Benghazi.",
+  "context": "Operation El Dorado Canyon was the US air raid on Libya on the night of 14\u201315 April 1986. It hit targets in Tripoli and Benghazi.",
   "timeline": [
    {
     "when": "15 April 1986",
@@ -15603,7 +15562,7 @@
     "what": "US forces rename it Wheelus Air Base."
    },
    {
-    "when": "1969–1970",
+    "when": "1969\u20131970",
     "what": "The coup is followed by the end of the lease. The US leaves and the base becomes Okba Ben Nafi Air Base."
    },
    {
@@ -15617,7 +15576,7 @@
   ],
   "quotes": [
    {
-    "text": "When the Americans left, the base was renamed Okba Ben Nafi Air Base (قاعدة عقبة بن نافع الجوية) after the Islamic general who conquered North Africa.",
+    "text": "When the Americans left, the base was renamed Okba Ben Nafi Air Base (\u0642\u0627\u0639\u062f\u0629 \u0639\u0642\u0628\u0629 \u0628\u0646 \u0646\u0627\u0641\u0639 \u0627\u0644\u062c\u0648\u064a\u0629) after the Islamic general who conquered North Africa.",
     "doc": {
      "id": "wiki-en-Mitiga International Airport",
      "t": "Mitiga International Airport (Wikipedia)"
@@ -15759,12 +15718,12 @@
   "not_established": [
    "No source text was retrieved, so the claim could not be checked against the cited pages.",
    "The crackdown profile does not list Souq al-Juma among the places where shooting was reported, so it is not shown that security forces fired there.",
-   "No dates, casualty figures or events specific to Souq al-Juma in 20–25 February are given."
+   "No dates, casualty figures or events specific to Souq al-Juma in 20\u201325 February are given."
   ],
   "context": "Souq al-Juma is an eastern district of Tripoli. Accounts of the 2011 uprising commonly describe it as an early centre of protest, but that is background, not evidence here.",
   "timeline": [
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "Uprising reaches Tripoli; security forces fire on protesters in several districts."
    },
    {
@@ -15822,7 +15781,7 @@
   "established": [
    "The Libyan People's Office is described as being in Rome, in an ANSA report datelined Rome, 8 March 1985.",
    "Its secretary, 'Abd al-Rahman Shalgam, spoke to ANSA about Libya's stance toward Italy and Qadhdhafi's speech.",
-   "The report says Libya's Foreign Ministry had recently contacted the Italian chargé d'affaires in Tripoli about the speech."
+   "The report says Libya's Foreign Ministry had recently contacted the Italian charg\u00e9 d'affaires in Tripoli about the speech."
   ],
   "not_established": [
    "The passage does not say how the office was staffed or run, or what else it did in Rome.",
@@ -15863,7 +15822,7 @@
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "Judge Jean-Louis Bruguière identified Abdullah Senussi as one of six Libyans charged over the bombing.",
+   "Judge Jean-Louis Brugui\u00e8re identified Abdullah Senussi as one of six Libyans charged over the bombing.",
    "The article describes him as Gaddafi's brother-in-law and deputy head of Libyan intelligence.",
    "In 1999 the six were tried in the Paris Assize Court and convicted in absentia, as Gaddafi would not allow extradition."
   ],
@@ -15945,7 +15904,7 @@
   "flag": "ok",
   "established": [
    "The square was renamed \"Green Square\" after the 1969 revolution, to mark Gaddafi's Green Book philosophy.",
-   "Rebels took the area on 21–22 August 2011 and began calling it Martyrs' Square.",
+   "Rebels took the area on 21\u201322 August 2011 and began calling it Martyrs' Square.",
    "The square features the Red Castle, which hosts Libya's Antiquities Department and the National Museum."
   ],
   "not_established": [
@@ -15959,7 +15918,7 @@
     "what": "Italian rulers expand the square, then called Piazza Italia."
    },
    {
-    "when": "1951–1969",
+    "when": "1951\u20131969",
     "what": "The square is known as Independence Square under the monarchy."
    },
    {
@@ -15971,13 +15930,13 @@
     "what": "Gaddafi's speech from the castle, as recorded in the connection but not shown in the passage we have."
    },
    {
-    "when": "21–22 August 2011",
+    "when": "21\u201322 August 2011",
     "what": "Rebels take the square and rename it Martyrs' Square."
    }
   ],
   "quotes": [
    {
-    "text": "It features the Red Castle (As-saraya Al-hamra), which hosts Libya's Antiquities Department and the National Mu…",
+    "text": "It features the Red Castle (As-saraya Al-hamra), which hosts Libya's Antiquities Department and the National Mu\u2026",
     "doc": {
      "id": "wiki-en-Martyrs' Square, Tripoli",
      "t": "Martyrs' Square, Tripoli (Wikipedia)"
@@ -16178,7 +16137,7 @@
   "h": "cedb6c4f50d7",
   "model": "claude-sonnet-5-5",
   "headline": "The August 2011 fighting at Mitiga airbase took place at the same airfield that was once Wheelus Air Base.",
-  "explanation": "One end is an event, the fighting around Mitiga airbase on 20–21 August 2011. The other end is the place, the airfield at Mitiga, which the US handed over as Wheelus in 1970 and which then became the Libyan air force's Okba Ben Nafi base. The recorded reason says the 2011 fighting involved the air base, which also served civilian flights. No source passage could be retrieved for this link, so this note rests only on that stated reason and on the two atlas profiles. The link is a plausible place-to-event connection. It matters because it shows the same site moving from foreign base to Libyan air base to a battle in the fall of Tripoli. We cannot check it here against the cited text.",
+  "explanation": "One end is an event, the fighting around Mitiga airbase on 20\u201321 August 2011. The other end is the place, the airfield at Mitiga, which the US handed over as Wheelus in 1970 and which then became the Libyan air force's Okba Ben Nafi base. The recorded reason says the 2011 fighting involved the air base, which also served civilian flights. No source passage could be retrieved for this link, so this note rests only on that stated reason and on the two atlas profiles. The link is a plausible place-to-event connection. It matters because it shows the same site moving from foreign base to Libyan air base to a battle in the fall of Tripoli. We cannot check it here against the cited text.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -16188,7 +16147,7 @@
   "not_established": [
    "No source text was retrieved, so the cited Wikipedia article's wording could not be checked.",
    "The details of the fighting are unclear: reports said the base was surrounded, then taken, and the situation stayed uncertain for some time.",
-   "Nothing here shows who held the base at any given hour on 20–21 August."
+   "Nothing here shows who held the base at any given hour on 20\u201321 August."
   ],
   "context": "Wheelus Air Base, outside Tripoli, was a large US air base until 1970. The same airfield later served as Tripoli's second airport, Mitiga.",
   "timeline": [
@@ -16197,7 +16156,7 @@
     "what": "The US hands Wheelus Air Base over to Libya; it becomes the Okba Ben Nafi base."
    },
    {
-    "when": "20–21 August 2011",
+    "when": "20\u201321 August 2011",
     "what": "Rebels landing by sea advance on Mitiga airbase; reports of its fall are unclear."
    }
   ],
@@ -16222,7 +16181,7 @@
    "Nothing here shows whether the town itself was hit or what happened to people living there.",
    "The count of aircraft, the damage details and the number of F-111s come from the atlas profile, not from a source checked here."
   ],
-  "context": "The US air raid on Libya took place on the night of 14–15 April 1986. Targets were in Tripoli and Benghazi. Tripoli International Airport lies south of the city, in the Qasr bin Ghashir area.",
+  "context": "The US air raid on Libya took place on the night of 14\u201315 April 1986. Targets were in Tripoli and Benghazi. Tripoli International Airport lies south of the city, in the Qasr bin Ghashir area.",
   "timeline": [
    {
     "when": "15 April 1986",
@@ -16455,14 +16414,14 @@
     "text": "Major Hasan Ashkal accompanied Qadhafi from Tripoli to Benghazi on 5 April aboard a Libyan VIP aircraft.",
     "doc": {
      "id": "frus-frus-1977-80v17p3-d89",
-     "t": "Memorandum From Director of Central Intelligence Turner to the President’s Assistant for National Security Affairs (Brzezinski) | Washington , April 20, 1977 |"
+     "t": "Memorandum From Director of Central Intelligence Turner to the President\u2019s Assistant for National Security Affairs (Brzezinski) | Washington , April 20, 1977 |"
     }
    },
    {
     "text": "The only passengers on the flight were Qadhafi and Ashkal, who was dressed in military uniform and carried a machine gun.",
     "doc": {
      "id": "frus-frus-1977-80v17p3-d89",
-     "t": "Memorandum From Director of Central Intelligence Turner to the President’s Assistant for National Security Affairs (Brzezinski) | Washington , April 20, 1977 |"
+     "t": "Memorandum From Director of Central Intelligence Turner to the President\u2019s Assistant for National Security Affairs (Brzezinski) | Washington , April 20, 1977 |"
     }
    }
   ],
@@ -16477,7 +16436,7 @@
   "strength": "direct",
   "flag": "ok",
   "established": [
-   "On 31 January 1984 Libya's foreign liaison office in Tripoli summoned Tunisia's chargé d'affaires and protested.",
+   "On 31 January 1984 Libya's foreign liaison office in Tripoli summoned Tunisia's charg\u00e9 d'affaires and protested.",
    "Libya said Tunisia was turning into a centre for gangs formed by Yasir Arafat to assassinate Libyans working abroad.",
    "Libya described this as subversive activity that Arafat and his clique were engineering against Libyans.",
    "Libya linked the alleged plots to revenge for its stance against 'capitulatory tendencies'."
@@ -16491,7 +16450,7 @@
   "timeline": [
    {
     "when": "31 Jan 1984",
-    "what": "Tripoli summons Tunisia's chargé d'affaires and lodges a protest, reported by JANA."
+    "what": "Tripoli summons Tunisia's charg\u00e9 d'affaires and lodges a protest, reported by JANA."
    },
    {
     "when": "1 Feb 1984",
@@ -16500,7 +16459,7 @@
   ],
   "quotes": [
    {
-    "text": "the Jamahiriyah finds it unacceptable that Tunisia is a center for the subversive activities that Yasir ‘Arafat and his clique are engineering against the Libyans.",
+    "text": "the Jamahiriyah finds it unacceptable that Tunisia is a center for the subversive activities that Yasir \u2018Arafat and his clique are engineering against the Libyans.",
     "doc": {
      "id": "fbis-1984-02-01-0341",
      "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 022, 1 February 1984"
@@ -16712,7 +16671,7 @@
     }
    }
   ],
-  "open_question": "Libyan press or broadcast records from 7–8 October 1986 could confirm the venue and show the full speech text.",
+  "open_question": "Libyan press or broadcast records from 7\u20138 October 1986 could confirm the venue and show the full speech text.",
   "docs": 1
  },
  "u:billy carter|gibril shalotif": {
@@ -16748,7 +16707,7 @@
   ],
   "quotes": [
    {
-    "text": "With respect to Billy Carter’s first¢ trip to Libya, in 1978, President Carter. stated that he first learned of his broth- : -er’s trip from his secretary",
+    "text": "With respect to Billy Carter\u2019s first\u00a2 trip to Libya, in 1978, President Carter. stated that he first learned of his broth- : -er\u2019s trip from his secretary",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00552r000100830016-4",
      "t": "TEXT OF FINAL JUSTICE DEPARTMENT REPORT ON BILLY CARTER'S RELATIONS WITH LIBYA"
@@ -16832,7 +16791,7 @@
   ],
   "quotes": [
    {
-    "text": "prompting intelligence reports that Gadhafi might resort to this weapon if U.S. ships should cross the “line of death” he has drawn across the gulf.",
+    "text": "prompting intelligence reports that Gadhafi might resort to this weapon if U.S. ships should cross the \u201cline of death\u201d he has drawn across the gulf.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00965r000707060057-3",
      "t": "U.S. SAID TRYING TO STIR IRRATIONAL ACT BY GADHAFI"
@@ -16877,7 +16836,7 @@
   ],
   "quotes": [
    {
-    "text": "THE NEWLY INSTALLED SOCIALIST “GOVERNMENT IN ITALY SHOULD PAY DOUBLE IN ORDER TO RESOLVE THE PROBLEM OF DAMAGES COMMITTED AGAINST THE LIBYAN PEOPLE DURING THE COLONIAL PERIOD.",
+    "text": "THE NEWLY INSTALLED SOCIALIST \u201cGOVERNMENT IN ITALY SHOULD PAY DOUBLE IN ORDER TO RESOLVE THE PROBLEM OF DAMAGES COMMITTED AGAINST THE LIBYAN PEOPLE DURING THE COLONIAL PERIOD.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp05-01559r000400390035-5",
      "t": "QADHAFI'S SPEECH IN MISURATA"
@@ -16965,7 +16924,7 @@
    },
    {
     "when": "2008",
-    "what": "Fair session held 2–12 April."
+    "what": "Fair session held 2\u201312 April."
    }
   ],
   "quotes": [
@@ -17076,7 +17035,7 @@
    "The source is an undated encyclopedia article. It names no witnesses, survivors or documents, and the summary gives no basis for the figure of about 50.",
    "The summary does not confirm the exact date, 23 August, or the fire. Those details come from the link note."
   ],
-  "context": "The Khamis Brigade was commanded by Khamis Gaddafi, one of Muammar Gaddafi's sons. Rebel forces entered Tripoli around 20–23 August 2011.",
+  "context": "The Khamis Brigade was commanded by Khamis Gaddafi, one of Muammar Gaddafi's sons. Rebel forces entered Tripoli around 20\u201323 August 2011.",
   "timeline": [
    {
     "when": "April 2011",
@@ -17224,7 +17183,7 @@
   ],
   "quotes": [
    {
-    "text": "Libya’s U.N. mission was headed until early last month by Ali Treiki, who is now Qaddafi's for- eign minister.",
+    "text": "Libya\u2019s U.N. mission was headed until early last month by Ali Treiki, who is now Qaddafi's for- eign minister.",
     "doc": {
      "id": "cia-readingroom-document-cia-rdp90-00965r000302450010-0",
      "t": "FBI PROBING LIBYAN AID TO BLACK ACTIVISTS"
@@ -17264,7 +17223,7 @@
     "what": "About 15 people reported killed in Fashloum, Tajoura and al-Dibri, according to the recorded reason."
    },
    {
-    "when": "20–25 February 2011",
+    "when": "20\u201325 February 2011",
     "what": "The wider crackdown in Tripoli, as described in the atlas profile."
    }
   ],
@@ -17290,7 +17249,7 @@
    "The passages given do not give dates or details of the recapture of Faya Largeau beyond that one statement.",
    "The note is a briefing aid and says it should not be used for detailed analysis."
   ],
-  "context": "Aozou is in the Aouzou Strip on the Libya–Chad border, and Faya Largeau is a major oasis town in northern Chad. Libya and Chad fought over this region in the 1980s.",
+  "context": "Aozou is in the Aouzou Strip on the Libya\u2013Chad border, and Faya Largeau is a major oasis town in northern Chad. Libya and Chad fought over this region in the 1980s.",
   "timeline": [
    {
     "when": "18 Aug 1983",

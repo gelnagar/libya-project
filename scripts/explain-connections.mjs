@@ -105,7 +105,7 @@ function verifyQuotes(it, q) { // keep only quotes that really occur in the evid
 function keep(it, msg) {
   const u = msg.usage || {}; usage.in += u.input_tokens || 0; usage.out += u.output_tokens || 0; usage.cw += u.cache_creation_input_tokens || 0; usage.cr += u.cache_read_input_tokens || 0;
   const tu = (msg.content || []).find((c) => c.type === 'tool_use'); if (!tu) { usage.fail++; return; }
-  const n = { ...tu.input }; for (const f of ['established', 'not_established', 'timeline', 'quotes']) { let v = n[f]; if (typeof v === 'string') { try { v = JSON.parse(v); } catch { v = f === 'established' || f === 'not_established' ? [v] : []; } } n[f] = Array.isArray(v) ? v : []; }
+  const n = { ...(tu.input?.parameter && !tu.input.headline ? tu.input.parameter : tu.input) }; for (const f of ['established', 'not_established', 'timeline', 'quotes']) { let v = n[f]; if (typeof v === 'string') { try { v = JSON.parse(v); } catch { v = f === 'established' || f === 'not_established' ? [v] : []; } } n[f] = Array.isArray(v) ? v : []; }
   n.timeline = n.timeline.filter((t) => t && t.when && t.what); n.quotes = n.quotes.filter((q) => q && q.text);
   usage.ok++; notes[it.key] = { h: it.hash, model: MODEL, ...n, quotes: verifyQuotes(it, n.quotes), docs: it.ev.length };
 }

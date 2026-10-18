@@ -1,0 +1,22 @@
+{
+ "errors": [
+  "cia-readingroom-document-0000215145 HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"`temperature` is deprecated for this model.\"},\"request_id\":\"req_011Cg9zA3hjXjG34oV4BKPfk\"}",
+  "cia-readingroom-document-0000259675 HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"`temperature` is deprecated for this model.\"},\"request_id\":\"req_011Cg9zA3hyjjaCx6twCZJY9\"}",
+  "cia-readingroom-document-0000389214 HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"`temperature` is deprecated for this model.\"},\"request_id\":\"req_011Cg9zA3kDgMZWDTtFmyYRU\"}",
+  "cia-readingroom-document-0000214355 HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"`temperature` is deprecated for this model.\"},\"request_id\":\"req_011Cg9zA3pSCYAfD1krLGWab\"}",
+  "cia-readingroom-document-0001123260 HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"`temperature` is deprecated for this model.\"},\"request_id\":\"req_011Cg9zA56pqUUg7WR5vKrEw\"}"
+ ],
+ "at": "2026-10-18T16:04:11.348Z",
+ "mode": "sample",
+ "model": "claude-haiku-5-5",
+ "in": 0,
+ "out": 0,
+ "cw": 0,
+ "cr": 0,
+ "n": 0,
+ "fail": 30,
+ "costUSD": 0,
+ "perDocUSD": null,
+ "relevanceSoFar": {},
+ "remaining": 30
+}

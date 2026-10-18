@@ -25,7 +25,7 @@ def main():
         try:
             res = call('scene-search', {'datasetName': ds, 'maxResults': 500, 'sceneFilter': {'spatialFilter': AOI}, 'metadataType': 'full'}, key)
         except Exception as e:
-            print('search failed', ds, e); continue
+            print('search failed', ds, e); out.setdefault('errors', []).append('scene-search ' + ds + ': ' + str(e)[:300]); continue
         scenes = res.get('results', []) if res else []
         print(ds, 'scenes', len(scenes))
         ids = [s['entityId'] for s in scenes]
@@ -36,7 +36,7 @@ def main():
                     allopts.setdefault(o['entityId'], []).append({'id': o['id'], 'product': o.get('productName'), 'available': o.get('available'), 'size': o.get('filesize'), 'system': o.get('downloadSystem')})
                     if o.get('available'): avail.setdefault(o['entityId'], []).append({'id': o['id'], 'product': o.get('productName'), 'size': o.get('filesize')})
             except Exception as e:
-                print('options failed', ds, e)
+                print('options failed', ds, e); out.setdefault('errors', []).append('download-options ' + ds + ': ' + str(e)[:300])
         for s in scenes:
             md = {m.get('fieldName'): m.get('value') for m in (s.get('metadata') or [])}
             out['scenes'].append({'dataset': ds, 'entityId': s['entityId'], 'displayId': s.get('displayId'), 'date': (s.get('temporalCoverage') or {}).get('startDate', '')[:10],

@@ -251,6 +251,9 @@ function loginPage(env, msg, next, status) {
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1c2127">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Tripoli: Open Source</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Newsreader:opsz,wght@6..72,600&display=swap">
@@ -303,6 +306,8 @@ async function handleLogin(request, env) {
   return new Response(null, { status: 303, headers: { ...SECURITY, Location: next, 'Set-Cookie': cookie, 'Cache-Control': 'no-store' } });
 }
 
+const ICONS = new Set(['/favicon.svg', '/favicon-32.png', '/favicon.ico', '/apple-touch-icon.png', '/icon-192.png', '/icon-512.png']);
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -312,6 +317,13 @@ export default {
     if (path === '/login') return handleLogin(request, env);
     if (path === '/logout') return new Response(null, { status: 303, headers: { ...SECURITY, Location: '/login', 'Set-Cookie': `${COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax` } });
     if (path === '/api' || request.method === 'POST' || request.method === 'OPTIONS') return api(request, env, url);
+
+    // the site icons are only a logo, so they load before sign-in (the login page and the tab show them)
+    if (request.method === 'GET' && ICONS.has(path) && env.ASSETS) {
+      const ic = await env.ASSETS.fetch(request); const o = new Response(ic.body, ic);
+      for (const [k, v] of Object.entries(SECURITY)) o.headers.set(k, v);
+      o.headers.set('Cache-Control', 'public, max-age=3600'); return o;
+    }
 
     if (!(await sessionOk(request, env))) {
       const wantsPage = request.method === 'GET' && /text\/html/.test(request.headers.get('Accept') || '');

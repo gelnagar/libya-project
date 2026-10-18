@@ -163,7 +163,12 @@ try {
   const ex = (await read('archive/crest/extract.jsonl')).split('\n').filter(Boolean).map((l) => JSON.parse(l));
   const ids = new Set([...SITES.map((s) => s.id), ...AREAS.map((a) => a.id)]);
   const newPlaces = [], links = []; let n = 0;
-  for (const x of ex) {
+  const arr = (v) => { if (Array.isArray(v)) return v; if (typeof v === 'string') { try { const j = JSON.parse(v); return Array.isArray(j) ? j : []; } catch { return []; } } return []; };
+  let bad = 0;
+  for (const x0 of ex) {
+    const x = { ...x0, places: arr(x0.places).filter((p) => p && typeof p === 'object'), events: arr(x0.events).filter((e) => e && typeof e === 'object'),
+      people: arr(x0.people).filter((p) => p && typeof p === 'object'), facts: arr(x0.facts).filter((f) => typeof f === 'string'), links: arr(x0.links).filter((l) => l && typeof l === 'object') };
+    if (['places', 'events', 'people', 'facts', 'links'].some((k) => x0[k] != null && !Array.isArray(x0[k]))) bad++;
     const d = docs.get(x.id); if (!d || !(x.relevance >= 1)) continue;
     const id = (d.src === 'jprs' ? 'jprs2-' : 'crest-') + d.id.replace(/^cia-readingroom-document-|^ufiche-test-document_/, '');
     const src = d.src === 'jprs' ? 'JPRS (Joint Publications Research Service)' : d.src === 'nis' ? 'CIA National Intelligence Survey' : 'CIA reading room (CREST)';
@@ -182,7 +187,7 @@ try {
   }
   await writeFile(ROOT + 'archive/crest/new-places.json', JSON.stringify(newPlaces, null, 1));
   await writeFile(ROOT + 'archive/crest/link-candidates.json', JSON.stringify(links, null, 1));
-  console.log('crest records', n, 'new place mentions', newPlaces.length, 'link candidates', links.length);
+  console.log('crest records', n, 'malformed-field rows repaired/ignored', bad, 'new place mentions', newPlaces.length, 'link candidates', links.length);
 } catch (e) { console.log('crest skipped', e.message); }
 out.sort((a, b) => (a.d || '9999').localeCompare(b.d || '9999') || a.i.localeCompare(b.i));
 // Drop undefined keys to keep the file small

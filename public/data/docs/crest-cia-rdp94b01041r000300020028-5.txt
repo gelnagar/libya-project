@@ -1,0 +1,1941 @@
+NEW YORK TIMES ARTICLE ENTITLED, 'THE QADDAFI CONNECTION'
+https://www.cia.gov/readingroom/document/cia-rdp94b01041r000300020028-5
+https://archive.org/details/cia-readingroom-document-cia-rdp94b01041r000300020028-5
+
+Summary (AI): A 1981 CIA memo forwards a New York Times article by Seymour Hersh (14 June 1981), "The Qaddafi Connection," about former CIA operatives Edwin Wilson and Frank Terpil who allegedly sold weapons, explosives and expertise to Libya's Qaddafi. The memo itself describes CIA contractor security rules; the article covers Libyan terrorism support and arms dealings, with no Tripoli site specifics.
+• Article alleges Wilson and Terpil helped Libya set up a manufacturing plant for assassination weapons and recruited former Green Berets to teach explosives handling.
+• Qaddafi allegedly ordered hundreds of thousands of timers capable of detonating explosives at delayed times, via Wilson and Terpil.
+• Wilson allegedly held a $1 million contract to assassinate Libyan defector Umar Abdullah Monayshi.
+• Wilson's trading company in Tripoli, known as Meprico, allegedly supplied Qaddafi's army.
+• Article says Qaddafi is suspected of ordering the murder of at least 10 political enemies in Europe and the Middle East.
+• 1975-09: Kevin Mulcahy approached the CIA and FBI about the legality of Wilson and Terpil's dealings with Libya (article says 'fall of 1975')
+• 1976-05: Wilson telephoned Theodore Shackley about Libya-related contacts, per the article
+
+Approved For Galease 2005/07/28 : CIA-RDP94B010443080300020028-5 
+
+16 JUN 1981 
+
+MEMORANDUM FOR: Deputy Director for Operations 
+
+FROM: Harry E. Fitzwater 
+Deputy Director for Administration 
+
+SUBJECT New York Times Article Entitled, "The 
+Qaddafi Connection" 
+
+1. In the 14 June 1981 edition of the New York Times, an 
+article by Seymour M. Hersh reported that a group of former CIA 
+employees had been, among other things, using their former employee 
+status to obtain classified information and material from Agency 
+contractors for illegal sale to foreign governments. In this 
+regard you asked for an outline of how classified material is pro- 
+tected from unauthorized third person or foreign government access. 
+There are several regulatory issuances governing these procedures, 
+all of which stem from various federal statutes and Executive Orders. 
+Specifically these publications are: 
+
+a. Standard Security Procedures for Contractors, 
+dated 1 May 1979; 
+
+b. Security of COMINT and/or TALENT~KEYHOLE- 
+Controlled Information Provided to or Produced by 
+Agency Contractors; 
+
+C. ndustrial Security Manual, dated 
+November 1969; 
+
+d. U.S. Intelligence Community Physical Security 
+Standards for Sensitive Compartmented Information 
+Facilities, dated 23 April 1981; 
+
+2. In addition to the above, every contract incorporates 
+boiler place language regarding security and nonpublicity and 
+specific provisions for adherence to security requirements, 
+
+OS 1 1295 
+Approved For Release 2005/07/28 : CIA-RDP94B01041R000300020028-5 
+
+25X1 
+
+25X11 
+
+‘Approved Fordgkelease 2005/07/28 : CIA-RDP94B0104gR000300020028-5 
+
+classification, default for nonperformance on security issues, 
+need-to-know, etc. There is also a Contractor's Secrecy and 
+
+Security Agreement, signed by corporate officers, which incorporates 
+similar language. . Each Request for Proposal requires specific 
+responses from the contractor as to their security plan and com- 
+pliance with security regulations and protection of Agency classified 
+information. There are various Agency regulations governing Agency 
+
+employces' responsibilities in this regard. Of particular note is 
+r dregarding relationship with former cmployees. 
+
+3, These regulations, procedures and standards are promulgated 
+by: 
+
+a. Security clearances and security approvals for 
+Agency and contractor employees. This includes back- 
+ground investigations and, where applicable, polygraph 
+examinations. 
+
+b. EOD processing (Agency employees), and initial 
+briefings by the Contractor's Security Officer (CSO). 
+
+c. Secrecy Agreements which legally bind individuals 
+in all aspects of classified information protection. 
+
+d. Reindoctrination, continuing security education 
+programs, reinvestigation and repolygraph programs which 
+cover the issue of unauthorized dissemination of classified 
+information. 
+
+e. Upon resignation or retirement, debriefings and 
+termination secrecy agreements. 
+
+£. Monitoring of security performance throughout the 
+employee's tenure for both Agency and contractor employees. 
+
+g. Security lectures at the Project Officer in the 
+Contractor Cycle Course (POCC) and other training involving 
+Contracting Officers, Project Officers, and Industrial 
+Security Officers. 
+
+h. Periodic industrial contractor conferences. 
+
+i. Industrial security officers training program. 
+
+j. Guidance and advice from security staffs and 
+
+individual security officers assigned to each contracting 
+element. 
+
+Approved For Release 2005/07/28 : CIA-RDP94B01041R000300020028-5 
+
+25X1 
+
+Approved Formdkélease 2005/07/28 : CIA-RDP94B010445000300020028-5 
+25X1 
+
+5. Inspections, audits and recommendations cover every aspect 
+of security. Some of the specific key issues covered are: 
+
+a. physical security standards; 
+
+b. stringent procedures for document control, 
+accountability, inventory, reproduction and destruction; 
+
+c. reducing classified holdings by either returning 
+or destroying residual material; 
+
+d. stringent access control to classified information 
+in restricted areas; 
+
+e. reviewing and rejustifying security approvals on 
+each employee and keeping lists of cleared employees current; 
+
+f. strict visitor certification procedures; 
+
+g. reporting and adjudicating foreign ownership, 
+control or influence in a corporation; 
+
+h. reviewing capabilities briefings, publications 
+and patent procedures; 
+
+i. limiting access to only individuals who are Agency 
+security approved. 
+
+Approved For Release 2005/07/28> CIA-RDP94B01041R000300020028-5 
+
+Approved Form&ealgase 2005/07/28 : CIA-RDP94B01041RQ90300020028-5 
+
+6. As you can see, the regulations and requirements for 
+protection of classified material in industry are all-encompassing, 
+for both Agency and contractor employees. Much of the strength 
+of the Agency's present Industrial Security Program results from 
+the Boyce and Lee case. After that incident, the program's scope 
+was greatly expanded and augmented with additional personnel in 
+contracting element security staffs. Security education was 
+revitalized and given greater emphasis within the Agency and the 
+contractor facilities. Background investigation and reinvestiga- 
+tion criteria were strengthened. The adjudication process was 
+reviewed and made more stringent. A program_of unannounced com- 
+prehensive security audits was instituted. 
+these audits have been conducted since this program began in the 
+summer of 1977. The Inspector General was tasked with periodic 
+reviews of the industrial contracting process to include industrial 
+security. Much of the stronger and more specific security language 
+in contracts was added after this incident. Of course, none of 
+these regulations, procedures and requirements are immune to cir- 
+cumvention by personnel who would violate U.S. laws and personnel 
+secrecy declarations. For this reason they are continually under 
+review for effectiveness and current applicability. However, the 
+present procedures incorporate reporting procedures designed for 
+the early detection of aberrations or possible violations and they 
+bring these items to the attention of the appropriate Agency 
+officials. 
+
+SIGNBD 
+Harry E. Fitzwater 
+
+Attachment: 
+New York Times Article 
+
+Approved For Release 2005/07/28 : CIA-RDP94B01041R000300020028-5 
+
+25X1 
+
+Approved Forgelease 2005/07/28 : CIA-RDP94B0104¢5000300020028-5 
+
+SUBJECT: New York Times Article Entitled, "The Qaddafi.Connection" 
+
+ot 
+oe 
+
+id 25X1 
+ieee = aeate 
+Distribution: 
+Orig §& 1 - Adse 
+— 2 - DDA 
+1 - D/SEC 
+1 = D/SEC 
+1 - OS Registry 
+: 7 eae opooeree Subject 
+ae ; z= B Chrono 
+PTAS/PSD/IS 6 June 81) 25X14 
+
+Approved For Release 2005/07/28 : CIA-RDP94B01041R000300020028-5 
+
+a p AGE ose 
+
+14 June 798) 
+
+CPYRGH 
+
+Approved For Release 2005/07/28 : CIA- RDP94501041R000300020028-5 _ 
+
+SRR aS Tear EEE REO tee 
+
+By Baym our. ersh 
+
+aisitnaitc. it 
+
+ive years ago, ‘tee former * 
+operatives of the United — 
+States Central. Intelligence , 
+
+Agency — Edwin P. Wilson ! 
+
+and Frank E. ferpil — made - 
+a business deal with Col. 
+
+Muammar - el-Qaddaft, thes} 
+renmemens ruler of Libya. In essence, 
+the. nae Ci, Aumen, who-had. Get 
+
+ligence-agency Co: contacts, _experi- 
+
+encé and éxpertise. Theirs was a prod- 
+uét that could not be purchased on the 
+open market. The colonel, who boasts 
+
+of supporting terrorism in the Middle 
+East, Europe and Africa and who has 
+
+been attempting to set up his own new 
+
+federation of Arab and Moslem states, 
+
+was willing — and able, because of his 
+
+vast oil wealth_—to pay dearly. 
+
+.AS a result, the two Americans, ac- 
+cording to Federal investigators, have 
+made millions of doHars aiding Qaddafi 
+in his drive to export terrorism and 
+build his own. Middle Eastern power.- 
+
+Under_ cover of their r_exportimport 
+
+business, Wilson and Terpil are said to | 
+havehelped Libyasetupa aYhanufactur-: 
+
+ing plant fort the ‘production of assassi- 
+nation weapons; to have themselves 
+
+helped Qaddafi plan political assassi-- 
+
+nations: to have recruited dozens of for- 
+mer Green Berets to teach Libyan sol- 
+diers and Arab terrorists how to handle 
+volatile explosives — how, for example, 
+to turn ashtrays into weapons of terror; 
+to have illegally shipped arms explo- 
+
+sives to Libya withthe aid offorged and | 
+
+fraudulent State 1 Department_ export 
+
+pe a renee te eerie 
+
+Seymour M. Hersh, a former New York 
+Times reporter, is now at work ona 
+book about Henry 
+
+lished by. Summit 7 Apptoved For Rilease SO UaE SAR 
+
+“the - Wilson-Terpil 
+
+-certificates, and to have involved other 
+former x C.LA. employees _| in their 
+projects. 
+
+“~Jntormation about the ‘Qaddati con 
+nection has been known by the Govern. 
+ment Since the fall of 1975. It was then 
+that Kevin P. Mulcahy, at the time a 
+partner of Wilson and Terpil, ap- 
+‘proached the C.l.A. and the Federal 
+Bureau. of. Investigation with grave 
+doubts about the legality and ethics of 
+
+-his company’s business dealings with 
+. Libya. Mulcahy, a former C.I.A. em-- 
+
+‘ployee who had spent six months inside. 
+. Operation, would 
+spend hundreds of hours, over the next 
+fev years, providing the Government 
+withf irsthand knowledge. 
+
+_Kevin Mulcah; y has. now decided to. 
+tell his story publicly for the first time. 
+‘He’s tired of waiting for this sesmerit of 
+his life to end. He wants to be sted 
+again inthe telephone directory, to hold 
+a driver's license in his own name, to 
+vote, to own property, to stop hving as 
+if he —and not Wilson and Terpil — had 
+been indicted for wrongdoing. He feels 
+he is forced now, in effect, to pive his 
+testimony in the pages of The New York. 
+Times. The essentials of his account 
+have been verified where possible 
+through secret documents and in inter-. 
+views with key members of the State 
+Department, the Justice Department, 
+the F.B.L, the United States Attormey’s 
+office in Washington, as well as wittr 
+Stansfield Turner, the former head of 
+Central Intelligence, and other high 
+C.LA. officials. 
+
+of “ O : 
+
+The Wilson-Terpil case is a story of 
+Americans who. meet secretly in bars and 
+beard rooms to arrange the illegal sale of 
+electronic-spying equipment and terrorist 
+
+' weapons, and of Americans who train as- 
+
+sassins abroad. It is a story of an old-boy 
+
+past tC. LA. leaders who seem unableto 
+face fully the implicatic nticng al the case. It 
+tells of a basic inability of the Govern. 
+ment’s: investigative and law-enforce- 
+ment agencies, disrupted by internal jeal- 
+cusies and feuding, to perform effective 
+ly. It suggests that a moral climate exists 
+inside and cn the edges of the intelligence 
+community which results in tha subver- 
+sion of national goals to perscnal gain. 
+
+Ed Wilson was running what 
+
+amositeat to anupdat: ed 
+
+Acand inilitacy employee: 
+wut. their Covernment experience, 
+‘touse for larg 
+personaly iwionetary. gainer regardless of 
+the damage they will do to S their. own 
+
+COUTIEY. 7 Sica” men “have worked in 
+
+league witha “nuraber_o of American 
+manufacturers who have specialized in 
+working ng fort the C. L.A. and other intelti- 
+gerice agencies in a Stpplying_military 
+goods nd higtly classified technical 
+equipment. p Ueesions that should nor- 
+
+2 asked —Are the sales Offi- 
+
+1? Are they legal? Do 
+
+arel not. Senior Government ‘oificials, int 
+recent interviews, acknowledge that 
+American expertise is being trans- 
+
+ferred abroad in unprecedented fash- 
+jon. The phenomenon, known in tne bu- 
+reaucracy as “tachne'ugy transfer,’’ is 
+one apparent resuit of the declining mo- 
+rale inside the intelligence community 
+and the increasing profits available, 
+
+These officials say that nations such as 
+Chile7 South Korea, Brazil, Argentina, 
+
+Taiwan, South Africa, Yraq a and Paki- 
+stan ‘Have been. “able. ta.purchase the 
+very latest “American equipment and 
+technology in communications, | mili- 
+tary arms, computer § science and nu- 
+clear, F development — = “with, ‘Or_without 
+authorization from_the United States 
+Government. 
+
+intensively re- 
+
+: IBbooseaBboths oa inside ne Carter 
+
+yet, the Reagan Administration has not 
+addressed the issue. In early May, the 
+Administration did order the Libyan 
+Govemment to shut down its offices in 
+Washington, as part of the campaign 
+aauinst international terrorism. But it: 
+
+as 
+
+has not faced the broader problem —. 
+the export of American weaponry ang : 
+
+expertise to terrorists. 
+
+Bsfore 
+broust 
+
+presented to Philip B. Heymann, then 
+
+Assistant Attorney General for the: 
+
+Criminal Division. Heymann, whois re- 
+turning this summer to teach at Har- 
+vard Law School, recalls: “EI was. 
+
+shocked by what I saw in the Wilson. 
+
+' | matter. The notion that there is no con. 
+trol over an panera intelligence offf-" 
+on eae His wand selling it 
+
+ots highest bide bidder seems to be jn 
+
+santé” ~Tt’terrorism is to be taken as a, 
+major national problem, ** Heymann 
+‘|says, ‘we'll have to start at home and 
+
+draft statutes that would barthe saleof - 
+
+fancy American equipmen ant and fancy 
+American é€ expertise for terrorist. pur- 
+
+poses. It won't bean easy matter, be 
+catse it’s hard. to put.a:-lid om the dis- 
+
+Semination of information. But this 
+
+question: is. exactlyS what. Congress 
+ought to beholding pestnes on.” a 
+
+Federal ‘authorities, in: “accepting 
+Kevin Mulcahy’s story as accurate, ac~ 
+knowledge that its implications are 
+
+deeply disturbing: Qaddafi obviously: 
+has utilized the materials and expertise 
+of VWilsor: and Terpil in his support of | 
+such terrorist groups as the Palestine: 
+Liberation Organization, the Red Bri-: 
+
+gades of Italy, the Red Army of Japan, 
+
+the Baader-Meinhof gang in Germany’ 
+and the Irish Republican Army..He is’ 
+suspected of having ordered the mur-: 
+
+der of at least.10 political enemies in 
+[Europe and the Middle East; two 
+months ago, the F.B.I. arrested Eu- 
+
+pene A. Tafoya of New Mexico, a for-_ 
+mer Creen Beret, and accused him of © 
+
+an attempted assassination of a Libyan 
+
+student at Colorado State University. . 
+
+‘fhe Libyan is one of a growing number 
+outside the country who oppose Qadda- 
+
+fis rule. When arrested, Tafoya, who’ 
+
+traveled to Libya three times last year, 
+had Ed Wilson’s business card in his 
+possession with telephone and telex list- 
+ings in Tripoli, London and Washington 
+for one of Wilson’s Swiss-based compa- 
+nies. Tafoya’s links to Wilson are still 
+being investigated. 
+
+Approved For Release 2005/07/28 : CIAARDP94B01041 R000300020028-5 
+
+the . Federal prosecutors 
+ont their indictments in April 1980 — 
+in the Wiison-Terpil case, the file was. 
+
+Colonel Qaddati Is relentlessly anti- 
+_Israel, supports the rnost extrerne fac- 
+
+tions in Syria ard opposes the moderat- 
+
+“ ing influences of Jordan’s King Bussein 
+and Egypt’s Anwar el-Sadat as part of 
+his campaign of political expansion ia 
+North | Africa. Qaddaii’s ambitions 
+were strengthened early this year when 
+he successfully invaded Chad, seizing 
+an area beHeved to be rich in uranium 
+ore. The war also meant more profit for 
+Wilson, who has established his own 
+trading Company iy r Pripol, | known as. 
+Meprico, to suppiy Qaddafi’s army. 
+LibYa, relying ors its estimated $25 bil-. 
+lion im annual oi} revenues, is a major 
+
+_ purchaser of Sovier arms, and raore 
+than 5,000 Warsaw Pact military advis- 
+-ers are believed to be or. duty with | 
+Qaneey Ss &, 000-man aay, - : 
+
+A fotmer= sea Ste 
+
+tions and cornputer-tecimology expert 
+in the C.1.A., Kevin Mnlcahy was no in- 
+nocent when he came forward about the 
+way the export-Imrort business had 
+worked. He had gone into business with 
+Wilson and Terpil at a high suaranteed 
+income. Within three months,.Mulcahy 
+realized that-his partners—were-—rau- 
+tinely. ‘selling restricted military and 
+
+scorimunications gear. He himselt. of- 
+fered to sell such sophisticated equip- 
+rent -as- ‘second-g eneration computer 
+systems” sand coded 2d_communica tions 
+
+apn ienice his own \ role i in questionable 
+activities, which included the sale of 
+embargoed ammunition to South Af- 
+rica, In alLof these dealings, he says, he 
+believed or wanted to believe that Wil- 
+-sén and Terpil were Somenow pa parks ofa 
+
+*covert CTA. A. operation... 
+
+- Today, Mulcahy i is an angry ane fais: 
+trated man. He believes his life is in 
+Canger, a belief shared by Federal offi- 
+
+cials, and he is deeply disturbed by | 
+
+what he regards as a monumental lack 
+of resolve, competence and comrauni- 
+cation within the Federai Government 
+in handling the case, It took nearly four 
+~ years to indict Wilson and Terpil in 
+Washington, on’ charges that include 
+illegal export. of explosives, failing to 
+register as a foreign agent, and con- 
+spiracy and solicitation tocommit mur- 
+cer. Despite fugitive warrants, the 
+Government has been unable to appre- 
+hend them ata time when their travels 
+in and about Europe, the Middle East, 
+Africa and the United States have been 
+observed by many people. Last winter, 
+
+CPYRGH. 
+
+Approved For Release 2005/07/28 : CIA-RDP94B01041 R000300020028-5 T 
+Administration, with little progress. As . 
+
+raore than six months after his indi 
+ment, Wilson was seen by a busin 
+foiend in Blackie’s House of Heet 
+Wasnington restaurant, with a scour 
+his former emplovees: if is not kno 
+how he entered the country. Mautea 
+racaowhile, has been forced to Jest 
+Hie of Turtiveness. ‘I’ve had five ye 
+Gf indecision, contradiction and wait 
+for the day that this chacter of my 
+
+ends,” he says. “The Govemm 
+keeps telling ma, ‘We're on top of 
+we're on top of it.?’” Yet Wilson < 
+Terpil remain at large, and many 
+their operations, which clearly seer 
+be worxing against the interests 
+their own country and, indeed, wo 
+peace, are believed to be continuing 
+this moment. 
+
+' Kevin Mulcahy, now 33, grew up ¥ 
+tage Americana ja suburban Washi 
+ton: altar boy, Eagle Scout, va 
+‘basketball, class vice president. 
+was a son of Donald V. Mulcahy, a 
+year-career senior official of the C.L. 
+four of whose six children were a 
+employed by the agency. Kevin, 
+oldest child, begin working full-ti 
+for the C.1A. in 1563, after serving 
+an airborne radio operator in the Na 
+He became a comraunications : 
+computer expert and worked on hi: 
+classified programs that he wilt 
+talx about today. In.1543, he resis 
+fromm the agency to takea position i: 
+electronics industry. There foltow- 
+succession of increasingly respons 
+jobs in the computer industry; a ser’ 
+drinking problem that drove him 
+
+. Alcoholics Anonymous, and a pai. 
+divorce. 
+
+By the fall of 1974, Mulcahy had e~ 
+to grips with his alcoholism and, ha: 
+left the computer industry, be. 
+working in Virginia as a counselor : 
+drug- and alcchol-treatment center 
+1975, he was trying to set up a seri 
+halfway houses and was scramblina 
+Federal grants. Mulcahy rented 
+house by chence from a Barbara 
+son— Edwin P. Wilson’s wife. Mulc 
+became friendly with her and eve 
+aly was invited to dinner at the J 
+sons’ newly purchased, Iuxurious 1, 
+acre farm in Uppervilla, Va. Ed Wi 
+now 52, was well known inside 
+C.LA. as a skilled and trustwort 
+operative. Wilson, who, began his 
+port-import business in the early 19 
+while working as a consultant fora t 
+secret Navy intelligence unit, 
+played a role ‘in the Bay of Pigs < 
+
+’ other undercover operations in his } 
+C.IA. Career as a contract agent. » 
+cahy was impressed. 
+
+2 GE 
+
+Over dinner, Wilson ARRROVEd FarRelease, HUST 2e GIA REAR AFROOQINNOAINLE ai invoivet min. 
+
+that he knew pretty much all there was 
+to know about Kevin Mulcahy, about 
+his former ernployment with the C.LA. 
+and his current work with teerragers. A 
+few months later, Wilson made an offec 
+Mulcahy would not refuse: If Mulcaloy 
+would join his arms-sales business in 
+Washiegion and remain for one year, 
+he cond then have as a bonus a nin = 
+bedioom furmhouse Wilson also owns 
+and use it as a halfway house for tr ot i 
+fed youths. Mulcahy’ S Puarnatesr 
+$3,CU0 annual income would be fae 
+mented by cormmissions and expanses. 
+*“y had no suspicions at all about the 
+job,’” Tiulcahy recalls, and he began. 
+working hard. ‘tk. was putting in 13 
+
+hours. a ayat at fi irst, de b Cea WH een 
+
+those weeks” Most oat of the Iniainess: fas 
+abo vyetoard and involved the sale. of | 
+highly technical equipment. Mulcahy 
+was responsible for arranging export li-' 
+censes, international letters of credit’ 
+ar} shipping, and also for piascssCatalea 
+which mamulacturers’---equiprnent. 
+would meet. the specifications ¢ of ie 
+order. — taste: = 
+
+Mulcahy obvi ous y nase. puster. ta, 
+the early spring of 1975, Wilsen walked 
+him: to another office a few blocks 
+avay, in downtown Vashingtan, andin-- 
+troduced him to Frank Terpil, now 41. 
+Terpui bad served abont seven years as: 
+a communications technician for the. 
+C.I.A. but was forced to resign in 1971 | 
+
+| after a series of embarrassing private: 
+escapades, including an attempt to 
+smuggle contraband liquor into India. 
+‘Unlike Wilson, who mingled easily and 
+‘effortlessly wi with | senior C.LA, officials, 
+corporaie”. “executives 5 and _im portant 
+members of Consress, the Brooklyn- 
+born Terpil was a Street vperatur who : 
+
+‘hac been arrested twice for illegal trat- 
+ficking in arms. Mulcahy kmew nothing 
+about Terpil except that he had worked 
+overseas for the C.LA. 
+
+The three men agreed ta set up anew 
+company, to b> known as IntéerTech-. 
+nology Inc.; forthe specific purpose of | 
+selling: 2 _high-speed” communications 
+
+S d com puters.ta_ foreign coun—' 
+tries. the equipment was legally pur-- 
+Chased from American companies. 
+Each man was to bea one-third partner’ 
+of Inter-Technology, which, it turns* 
+out, was one of scores of Wilson-Terpil . 
+companies scattered in corporate ‘ 
+records throughout the United States 
+and iurope. aro 
+
+If Mulcahy had any doubts about his - 
+new job, he suppressed them by believ- ’ 
+ing — or wanting to beHeve — that 
+Wilson was still linked tathe C.T A. ‘e< 
+would parade his contaGeR 
+
+“Washingion’s police headquarters, to- 
+
+preyed Far Release A006(02 
+
+with to impress them tat he wag still. 
+C.LA.,” Mulcahy says. “He would sug-? 
+gest he was. still under deep cover.””# 
+Cfreo on Friday nights, Wilson made it: 
+a ‘point to fo drinking at bars in subur-3 
+ban Virginia known to be after-hours! 
+hangcuts for C.1.A. offictals‘on duty ati 
+
+-the agency’s headquarters in McLean.’ 
+
+Malcany, the new pourtaer, began & soing: 
+along. “I thought he was agency,”’ Mul-: 
+cahy says of Wilsoa. “t hadno, sea 
+na pas et : : 
+
+- A few days atter the new partnership: 
+was formed, Mulcahy discavered sales: 
+orders showing that Wilson and Terpil: 
+were in the process of selilng machine: 
+guns and silencers to an arms Cealer in: 
+Zambia. He was bothered by the sale of 
+the silencers for he knew they had only: 
+one purpose —- killing without drawing? 
+
+‘attention to the killer: He telephoned 
+
+the F.B.1. and later showed copies of. 
+tae sales orders to agents.in the Bureau. 
+of Alcohol, Tobacco and..Firearms 
+(B.A.T.F.),; one of whose functions itis: 
+‘to monitor iNegal-arms deals and re4 
+port cn impending, sales. He also askect 
+about his new partners. The authorities! 
+said that the sale to Zambia was legak 
+and that they had no cerogatory infor! 
+mation about Wilsen and Terpibin thei’ 
+
+files. “T said to myself, ‘Christ, this has. 
+
+‘got to be an agency creration,’ ? Muk ‘3 
+
+cahy recalls. These puys-are baee: 
+
+and selling silencers, and the F.B.2..: 
+and BLA. T.F. give them the O.K. So Pm: 
+foeling pretty gocd: I'd gone to the Fed: 
+eral authorities, shown thera door. 
+ments and they said. Wilson and Terpi 
+Wer na a ae 
+
+- Wilson’s contacts seemed inexhaust--: 
+ibie. Ed Wilson was friendly, as Mul-:: 
+cahy and Federal investigators: were; 
+later to learn, with many seniorle sisla-., 
+ae “Including Senators Strom Thur- 
+ond of. South Carolina and the late: 
+jie L. McClellan of Arkansas and: 
+Representative Silvio O. Conte of Mas--: 
+sacnusetts.. He, ond felephone a con 4 
+
+er. Fie | was able, ‘witha -Pelbatiay evs call te! : 
+obtain registration information on a’ 
+local automobile Jicense plate. But 
+sometime in late May of 1976, Wilson. 
+went a step further: He telephoned | 
+
+Theodore G. Shackley, a. prominént - 
+
+C.LA. official who was then Serving as . 
+
+the assistant to the deputy director for © ~ 
+
+clandestiné operations —.one of the- 
+mest powerful posts in the agency. _ 
+Shackley was renowned for his tough. 
+ness and efficiency as a station ae in. 
+Laos and in Moke Viet 
+
+@hi.ClA ROSA 
+
+CPYRGH 
+
+Sti 
+
+controversial Phoenix nsaeaain? utiGa 
+proyram. Ee later served in Chil 
+— ane 12 — A. was: sa ee toe tas 
+
+i. ining ice Sarees nad an 
+arry Rastatter, one ol E 
+HMeSS. ASSOClAtEs Whe} 
+retucnet com a busines strip te 
+
+ra sucoe falormaticn from Ss : 
+the oo Alat infemabp Yes, aod was 
+willing to pass it alons to the C.LA. 
+Shactd ey was introduced by Wilson to 
+Mulcatiy and recalled knowing his fa. 
+ther, who earned the National Intelli- 
+‘gence Medal, the agency’s highest ra 
+avard, before retirement. There was 
+talk about military: and intelligence 
+needs invIran, Turkey and Libya. Wil- 
+son told Shackley that he and Terpil 
+.Were planning to travel to Tripoli and 
+meet with Qaddafi. “By now I’m con- 
+“vinced that the whole thing is an agency 
+front,”’ Mulcahy recalls. “I thought Ed 
+.Wwas in bed with the C.LA” Some Fed- 
+“eral ofiicials say they are still investi. 
+spating Shackley’s persciral and finan- 
+-cial involvement with Wilson. Shackley 
+has ackeowledgal to Federal authori- 
+«es thatthe meeting described by Mul 
+seahy as-well 2s other meetings witht 
+;Wilson Cid take place, but Shackley in. 
+“sisted that at no time did Wilson receive 
+‘any authority or sanctiom from the 
+iC.LA, for his workin Libya. Ha said fe 
+-eontacts with Wilsen were solely fort 
+ipurpese of obtaining any stray bits a 
+Jintelligence Wiisen might have pickadt 
+Up: Wilson and Shackley had worked tO” 
+
+gather in 1968 on the B Bay of F Pigs opera- 
+tion. Shackley, in en interview, con- 
+firmed Mulcahy’s acconat of the meet- 
+ings and said that he, like Muleah 1, Wa 
+unaware then of Wilson’s plans for ps 
+porting Qaddaii’s: terrorist prosram.’ 
+Shackley said his purross in talcing to 
+Wilson and Rastatter was to collect in 
+formation from nen-C..a\. sources. “I 
+talked to them solely not to bea captive 
+of the systern,”’ he said. “Wilson was 
+uy who knew about a lot of things. He 
+was a scod contact.’”” 
+
+: After the Shackley meeting, Nuleaby: 
+was brought into the Libyan operation. 
+Muammar el-Qaddafi had placedapur- 
+
+chase order with Wilseom and i-Terpit for 
+
+a 
+
+- hundreds of thousands ¢ of timers capa-, 
+
+ble of detonating exn lesives at some: 
+specitically” delayed tims. Wilson an 
+
+Terpil didnot teil > Mileahy, however, 
+the real purpose of the devices: instead 
+he was Iced to beleve that Qaddafi 
+
+needed them to clear mines from har- 
+
+"| bors and battlefields by 5 ately blowing 
+li 
+{tGd rosbs0ovecb25 spines, 50 Muley was 
+
+3 : onr the 1973 Arab= 
+Israell war. The thers. were to t 
+
+dcemorstratad to Qad&ppsoverhFemRelease 
+
+tary and intelligence aides that June im: 
+Libya, and Wilson and Terpil. had toi 
+find an immediate manufactuer. They! 
+decided to exploit a long-time CIAL: 
+
+contractor, _ the 2 American. n. Electronic. 
+
+Laboratories of Colmar, | Pa.a and Fails’ 
+Church, Val which had routinely y been: 
+provicing the agency with som= of its: 
+mest highly classitied electronics andi 
+
+comraunications gear. - at Rw Aes 
+
+“American Eleceronic: was a a logical : 
+
+5.7 RR ETI] Hepes 
+
+starting p place. In ey 1978,.¥4 2: Wilson had 
+
+ing under cover for. anaixcraincompa~ 
+2Y¥. Cre of Loomis’s- functions was to. 
+
+Serve a3.eliaisonotficerberween CLA; 
+headquarters and its overseas Stations 1. 
+
+ke was responsible for establishing per~ 
+sonal relationships with senior military 
+and Government officials in. the Far 
+man Loomis. added. credibility £ to-Wih- 
+
+3% pHeh. “Terpit- was. there to im. 
+
+ae then with his contacts inthe Mids. 
+dle East,” _Mulcany recalls, SVWilsons, 
+was there j for Eurcpe and Loomis for: 
+
+| tee Par Enst. I was there because itt 
+was told to them that I was ex-C.1. Ay! 
+and would remain on-site-and: ACCESS 
+blewhile the others traveled”)... | 
+
+- Leomis, who had been Negally moon | 
+
+lig ghting | for Wilson 3 for some time, 2 WAS | 
+
+is salesmen, a3 well as for Wilson, was"! 
+
+extremely high, in part because the; 
+
+thetable kickbacks to Wilson's com-: 
+pany and to foreign officials. - : 
+No apreement was reached between _ 
+Vilson aiid$enior officials of Américan 
+lectronic aut, -theixmeeting, but but it Wilson 
+ciates were able to leave | 
+e impres sion | that their y r Work was not : 
+bnly highly profitable but alsohad been : 
+pificially sanctioned by the..Gavern- 
+lent. In June, when the 10 10 prototype 
+imers were heeded, another series of. , 
+eetings was Set up ina Virginia bar ° 
+nvolving ‘three of Wilson's ilson’s employees, . 
+
+i eae For Release 2005/07/28 : CIA- RDP94B01041 R00030002Q0 
+
+STITT ne es ees et ee eet: 
+
++ tere tga meee ae gre 
+
+-along with William Weisenburger, then- 
+
+1 nee eee 
+sue hats and eooosoaaanone gs Pras 
+
+‘oft whonr was. another CTA, official: 
+ther. Working u wunder, _COVEr: Weisena 
+
+iuién agreed to work privately overt 
+weekend foproeduce 10 )prototyce timing 
+Ae Vics. Att om inflated. coe ot se: 
+
+authorities | later “concluded that these 
+men knew that there had been. 
+
+cial CIAL vauthorization. | » for. the. oe 
+and that senior officials of Ain ericans 
+Electronic} had 1 nok ot known,02 the. ancon; 
+lighting. | It- was. a project. that in the: 
+months ahead struck Mulcahy as wildly 
+ironic: He-knew that many of the’ com-i 
+pany’s: senior officials. were» Jews: 
+and, he now: Says, You can “Det they? 
+
+ae ees . 
+Muleahy-¥ was beginnin g to get. ata ste? 
+‘of life as‘an- international ssalesman,! 
+
+and it Was good. ta June, he fev to: - 
+England toset up an exhibition atia set t- 
+curity show. at: Brighton. The- rooms: | 
+
+were first class. So was. the’ food; and = : 
+there seemed to be a constant series of? 
+
+parties; and party girls. One:oF Muica—? 
+hy’s. first: customers: at. the security? 
+show was a Syrian company, Abdalla = 
+Engineering, : which was-interested= i> 
+
+purchasing =: high-speed : communica-% @ 
+
+tions. equipment — gear So sensitive,” 
+Mulcahy: thought, that. the: State De! 
+partment would never: permit: its: ex. io 
+port. “Frank told me, ‘Don’t. worry} 
+pabout it: We don’t need licenses: Just? 
+“get the, order, °”? Mulcahy recaliss ‘By! 
+now itwas 3 Obviows ‘that Wilsorrandder~ : 
+‘Pilhad a wide latiinde tor theageney.” me 
+-Theeqnipment included encodinse d 
+"Vices. and radio monitors capa‘le:of 
+tracking; intercepting and toterpreting’ 
+encodett signals. There was a meeting: 
+with representatives: of the Irish- Ren 
+
+pdt baweqaan’ 
+
+publican Army, who wantedAmerican-;. - 
+de M-16 rifles. Mulcahy] bihat .. . 
+madei rifles. Mulcahy learner : os ‘gether: = eceae aie 
+
+“mation. Ed: ‘compartmental- 
+
+such weapons could be found ir pleatin 
+ful supply; North Vietnam had: sokt its: 
+surplus weapons —seized.in huge quar: 
+tities afterits army overran South-¥; jet 
+nam in 1975 — to Samuel ‘Cummings oF 
+Interarmco, the European-based arms: 
+dealer,-It was in England also,;"Mui- 
+cahy says, that Terpil asked him if he 
+wanted. to. earn $5,C00 on his. returrm 
+
+flight to Washington by. detouriag: to. 
+Cairo to Celiver a “cold gun,”’ one withi 
+no identifying serial number. Mulcahy: 
+refused to deliver the weapon, but dice 
+
+aoe eed 
+~ 
+
+a oe 
+
+Wilson with a Sk million com 
+is tract to asSassinal = Umar Ab- 
+dullah Monayshi, Libyan de 
+fector who had pletted to over- 
+nthrow Qaddai’’s :eeime. The 
+_assassination w34) onmtent nad- 
+been succontracted by Wilson 
+sto three aatitastrn Cubans in’ 
+: Miamiwits whom he had once. 
+worked. in the C.).A. ‘Fran’ 
+was playing both : nds. against 
+the middle,’ Mulcahy recalls. 
+i ile was 52tting tan elabo 
+» Kate, /Security system. for the 
+» guy” in Egypt: to protect him 
+- whileat the same time ‘trying 
+
+“tobamp him salen 
+
+= Mulcahy and. ‘Terpit got 
+along well and the ovo men ex- 
+“changed many confidences 
+‘during. their ‘tips tovether. 
+“Frank tends to-talix a Jot: he 
+ilikes-to namedrop,’” Mulcahy 
+
+“says: “What charr-s3 Frank’s. 
+
+!batteries. is the-thrilt of the 
+chase, the: excitement, being 
+
+' on the periphery o? power. He 
+
+thrives on- it. "In time; Mak 
+cehy said, he cam> to realize 
+that there was mure‘truth in 
+
+_ Terpil’s seemingly wild stories 
+
+a anne had thought. - 
+
+Wilson ig more discreet and. 
+oe more dangerous, Mulcahy 
+-saids “Ed is devious and cun-~ 
+oningt and. he’s. liviz is a lie 
+that he is the. mos? important 
+
+' human: being-alive: He'll use". 
+
+“anything tomanioulate people 
+Hos events to get them to come 
+heute di his favor. Hats abso. 
+“Biceds brilliant in che wa ehe . 
+<setsia deal) up, Puts Ppeonk: to- 
+
+izes; ‘his’ own: cperation the 
+;same way the agency does. It 
+- allows him: ta play both ends 
+~against the middie and come 
+~cut the winner. If Ed comes 
+zback. and: goes.or trial, he’s 
+
+. +S0ing- touse every bit ot infor. 
+~ pmaticon=-he’s.:stored - up~ for 
+
+"years. to get the C.L Asin couct 
+Sand putthe agency or trial in- 
+“stead of Ed Witeen.”' In fact,. 
+‘Wilson's attorney tr Washing. 
+ton; Seymour Glamer, has re. 
+
+‘peatedly told Federal prosecu- | 
+
+tors that the whole Story of his . 
+client's involyement in Libya. 
+
+CPYRG HT 
+has not been area sprovEd Ror Release 
+
+a telephone intecview, refused | 
+to comment. But the prosecu-; 
+tors have inferred from con-} 
+versations: with hirn that his 
+defense will be: Wilson is still 
+at work for the C_LA. There is | 
+no known evidence that this is, 
+the case, however. j 
+Muleahy jmunediately 
+sensed Wilson’s. essentiat 
+toughnass, but there wag uoth 
+ing unusual about suck men in’ 
+side the CLA. aial it was a! 
+characteristic that could ba- 
+admired. Mid-lOis° was a 
+period of travail for the C.L.A., 
+which was uncer attack ia the:| 
+press for its. illegal domestic’ 
+spying activities and under io 
+vestigation. by the Senate Ia 
+telligence Committee for its 
+foreian assassination efforts. 
+Mulcahy learned, shortly diter 
+joining Wilson and Terpil, that 
+President Ford had placed se. 
+vere new restrictions on clan- 
+destine C.I.A. activities, Wil. 
+son and Terpil suddeniy be. 
+came more legitimate in his 
+Jeoyes: “T thonght it was logical 
+that the agency would set irup 
+this way and have their pecole 
+on the street freelancing.” 
+During that suramer, Muk 
+cahy edged closer tothe line of 
+illegality and, in at least-one 
+case, crossed it. He recalls 
+that_Wilson. | and Terpil vicre 
+selling munitions, communi- 
+cations equipment and highly 
+restricted night-vision devices 
+withéut préliminary clearance 
+from. the Office cf Mimitions 
+hy rol in ite Siz cate “papar te 
+nent and tue e export control. 
+ivision in ‘the | Commerce De. 
+partment. ‘Tn one case, Wilson! 
+and Terpi! purchased a United ‘ 
+States Army vehicle equipped 
+with night-surveillance equip- 
+ment for shipment to Libya, in 
+direct viclation of all regula- 
+tions. To avoid any possible 
+problem, the vehicle was first 
+sent to Canada and. trans- 
+
+shipped fromm there to Tripoli. 
+
+The risks of such flagrant ac- 
+tivity were high, but so were 
+the rewards. The vehicle cost 
+about $60,006 ta purchase in 
+the United States and was sold 
+othe Libyan Government by 
+Wilson and Terpil for 5990,000, 
+Federal prosecutors ~ later 
+learned. Similarly, Terpil and 
+Wilson provided Qaddafi with 
+
+Fhi4 2005 losely controlled 
+and sophisticated infrared 
+night-vision devices for I-16 
+ritles, which were primarily 
+oo seed for use by snipers in. 
+
+"are. Not all such. sales 
+
+Ww ron to Libya. Mulcahy says’ 
+ha was directly involved in the 
+Hlogal sate of 2,000 rounds of 
+ormunition tothe South Afri-~ 
+can Government, and he used: 
+
+Talsivied documents to label 
+fhe araminition as “phunbing 
+fixtures.” This and? other- 
+sales, he says, were arranged: 
+through Sven K.H. Hoffelner, ° 
+an Austrian arms dealer who: 
+also owns.a Successful group- 
+of restativants in Loadon. Hof-: 
+felner had established aclose. 
+.working relationship with Ter-: 
+pH by the time pa: join 
+eg PersU err: a 
+
+In July 1978, after his returrr 
+from . England, .. “Mulcahy 
+Tearned that nly s six of the 10 
+timing devices sent to. Libya 
+had. worked... The Cemonstra 
+tion of the devices was madein 
+Libya by John Henry Harner, 
+
+who-had-spent- more-than- 20-- 
+
+years as a bomb and ordnance 
+technician for the C.LLAL and 
+who had. joined American 
+Electronic. after: he. retired. 
+Two of the timers: had failed,: 
+Mulcahy -was . told, because 
+Harper had miswired therm. 
+Libya’s reaction to the demon-: 
+stration was puzzling to Mul-: 
+cahy: Although nearly hall the, 
+Gevices had failed to Work, me 
+
+‘Libyans > Were stilt willing tor : 
+
+order 100,000 for immediate 
+delivery. A_ few weeks later.” 
+Terpi} returned from a visit to: 
+Libya with an increase in the 
+“Order to 360,000 timers: a Oy 
+didn’t pet suspicions, ” Mul. 
+
+cahy recalls, ‘‘until -Frank. 
+
+came in with the order for 
+360,0C0.-I knew damn good a und 
+
+. Well that there was-no way. 
+
+there was a need for 306,000 
+timers —- there weren "t 300,000 
+mines in the harbors and 
+deserts from thé Seeray, War 
+as wellas World War iy.’ 
+
+. At this, polnt, Mutcahy un- 
+derstood that Wilson's story 
+about mineclearing in Libya 
+was false, but he thought it 
+was shielding a C.1. a opera- 
+
+005/07/2 28 : CIA- RDP94B0104.1 R000300020028-5 
+
+tio ind rot. serving as ct 
+cover for &t srrorisi-aurtorr 
+program. The cover storp wis 
+beginning to ercce. Whatever 
+concerned Mulcahy was. quis 
+euy suppressed over the newt 
+fowxweels, however: “f was 
+impressed. by the: raoney and 
+the ny OF makin, 2afor, 
+
+sas arican a El ‘ctronic could net 
+
+be persuaded to Build | 209,00. 
+“tare cece Svitcout Veriiying me 
+
+: i nother: scrarable:, : 
+iThis: hee to find. a manulac. 
+tur er who could begin- deliver; 
+ing: the-timers, within. 45. days. 
+
+“Another: Friday’ night. meeting 
+ini aVirg a was arranged: 
+
+‘Coramunications: s.Int. of Dab 
+lay. Terpit had found the com. 
+‘pany, whese president, Joe L. 
+Halpain, lateragreed tomami- 
+Ae anchors es ee imers- 
+
+28e dnyibes Div: Asica— the proun 
+
+“yeapnnsible for produeing, ter 
+
+jes: Thoma acm Cline. thea 7 
+
+‘senior: “olficiak inthe. CLAS: 
+Oftice-of: f-Training, also was in 
+the: bar that ni ight, sitting with. 
+Ed: Wilson: Mulcahy’ spent the. 
+nae. ttablehoupping—-2 ‘asi thes 
+manifacturing = “ plans were 
+‘worksd? ‘Outu' Chiness wastwell 
+knowr ingidec'the?; agency for 
+Ais closeness to-Ted Shacktey, 
+Like the. others, ;Clines es had 
+
+played. a. ‘rate* in the. “Bay oF 
+Pigs, After S Shackley’s S retires, 
+
+- nent fromy the C. TA. in. 1979, 
+
+he-and Clines would. set pa 
+consulting firm. 
+
+“oBverybsdy” smelled the big 
+money. that night in ‘the bar, 
+Mulcahy later learned that the 
+final ‘contract’ with Qaddait 
+
+called, for. a.tatal payment of 
+
+"$35 million for 500,000 timers 
+
+whose cest to supply, he new, 
+would be somewhere around 
+$2.5 milHon. Even in the inter. 
+
+Sp pei o> ETP TIg IN ere rer eh er tee 
+8 
+
+7 
+
+: Repceee For Release 2005/07/28 : CIA-RDP94B01041R000300020028-5 
+
+qiraLares business, prof 
+its like that are: not easy te 
+comeby. : 
+
+Wilson’s major concern was 
+time: he had promised the! 
+Libyans that he would set up a’ 
+manwfacturing 7 laboratory ; 
+near Triceli forthe production; 
+of assassination weapens in; 
+August. - Qaddafi, im turn, ; 
+promised to pay him $1 rnillion! 
+in cash immediately upon ar-} 
+rival of the frst ‘batch: of 
+timers, explesives’ and other? 
+equipment that would be need 
+ed. Manufacturing: the weap-4 
+ons theroselves in Libya would | 
+be no procierny;.men sucty as. 
+John Harper, who- was paid. 
+more than 52,000 a week by: 
+Wilson and Terpil, agreed to: 
+
+IN th YY 
+
+sige) to Libya and begin training’ 
+
+Libyans in the artot disguising" 
+
+explosives in ashtrays, flower-., 
+pews; loempar and oFRe house 
+hold goods that could be trig-* 
+gered by delayed timing de-- 
+vices. Sci entific- Comronnica-- 
+
+peimize to. dgliver tire p proto. 
+
+type timers ¥ within 2a day ws The! ‘Texas 
+
+yt had handled legitimate-< ang 
+
+sensitiv contracts. tor the { C.LA., _ but 
+
+- was. different and. the. ‘firm’s 
+
+Joe Halpain,} lnew it. Heper- 
+
+oti versed th the timers, b hidden in 
+plastic-pr: t 
+
+to ‘Libya, tox a mote} t near CLA. AD head-, 
+
+quarters, where they were picked up sby | j 
+Wilson rand aiful Ucahy. Far more difficult | 
+were the issnes of where to purchase? 4 
+the volatile chemical explosives needed |} i 
+for the producticn of the assassination | 
+weapons and how to slip them into™ 
+
+cee — eamedaetd explesives in-, 
+“| 
+
+ne ~~ _ among here RDX, formally! 
+known as cyclotrimethylene trinitra-. 
+mine—-which were designated as Class 
+A explosives by the Department of 
+Transportation and could not be 
+shipped on passenger and Cargo air- 
+craft. Wilson and Terpil again reached 
+
+into the ranks of C_L.A- contractors and. 
+
+TS a ce mmm mes 8 
+
+LUDA LL TO 
+
+sone a callegis firm,’ ._ J. Se] ‘Brower 
+
+“which: 
+
+that conta. Tot bee e& ote 
+
+crallicensing. nts 
+
+xOne ee reniained: how-to" ‘get 
+the timers and explosives into Libya. Ir 
+
+early August, 1975, Muicahy attended a it 
+meeting at. the offices of Inter-Tech- 
+nology im.Washington- wittr:a. Caree 
+sales manager of -Luithansa. German 
+Airlines, which has passenger service 
+from: Germany to ‘fripolk.. The. sales 
+manager, Walter Doerr,-categorically 
+refused ta ship the explosives, legally: 
+or otherwise, ona passenger craft. Acdi 
+he-refused ta’ charter a special cargos 
+plane because ol the high risk of explo 
+sion. Later that day, , Terpitarranged a 
+meeting with. Jerome s- Paha tei 
+
+fiolee oe his DB snanstey (nd ares wasi 
+askakto advise” Congress's Office. oF 
+Technology Assessment on. & propesedk 
+method of marking and tracing explo 
+sives used in international. terrori smc 
+Brower gine a list. oF als. the 
+
+Brower immediately exclaimed: He 
+
+Seer 
+clearance.” 57) 
+
+was Setting up a laboratory in. Tripols 
+and.doing some demonstrations WOTK.; 
+
+“He didn’t say precisely what, we were 
+
+doing,’” Mulcahy. recalls, “put: it-was: 
+obvicus. Wilson went further.t than. Va. 
+ever heard in explaining..the SCOPE OF 
+
+the entire project. There was. an: enor - os ; z 
+= rented: a: -barge-and as it was bo 
+
+ynous potential for followaip: business, 
+which removed any inhibitions Browext 
+
+chad? Mulcahy marveled, "ati ‘Wilson's: 
+
+ability to handle Brower: Browec hadi 
+
+never done any business with. either off . a 
+
+these guys before and here heis agrees 
+
+Ing to- sell and ship. explosives. to: 
+Libya.”’ Browerimm ediately raised his! 
+pricé and demanded partial payment in? 
+advance. Wilson and Terpil agreed to- 
+
+pay nearly 338,CC0 on account; Mu! cahy? ; 
+
+says, and the California bitsinessman! 
+“called his plant, talked to- his Wife,” 
+Peggy, and his plant manager and told- 
+them how to pack the chemicals!” ~*+ 
+“RDX, the most lethal and unstable: 
+
+materfal, was to be placed. insida 5 oe : 
+
+gallon drums in webbiny and the drums! 
+then were to be filled with a get sub— 
+stance. The explosives ‘were to be 
+shipped . East, to Dulles: Airport, 
+
+: ‘Wilson- epee ‘that the: company, , 
+
+CPYRGH 
+T 
+
+marked as “industrial cobvent,” 
+
+“Ticst available passenyer Rrohts, AE 
+
+ceahy recalls, Gnee at Dulles, they we 
+, cousnudated into ore shipping corti 
+er, aon with the timers and rae ine 
+“trial tools and workbenches nest 
+‘ser up: the: explosives Inborator, 
+‘Libya. Them they were: forwarval: 
+“Eucoce for transshipment by Lu 
+hassa cassenger planes to Tripod: 
+‘ont knowledge of the airline: AlLt 
+meg involvec_in the mseiing in Was 
+‘ingtor uncerstood the ae 
+owhat they were duing, Mulcahy. + 
+:“The-nitro could have blown iz ve 
+| plane hitanair poc: sot.”™ eat, 
+es Brower was: indicted in ‘Aprik 3 if 
+jalong with Wilson and * Terpi}, for 
+i role in illegally conspiring to shin 
+explosives with knowledse that c. 
+would. be used to “Idi, injure ars. 
+‘timidate individuals.” Aiter plead 
+guilty anckagreeing to cooperate + 
+Federak investigators, ne was fir 
+$5,000 last December and sentence: 
+_& five-year prisom term, with elt 
+Tor months suspended. be 
++ The- meeting with Brower hac 
+‘solved the final-stumbling bleck J 
+Wilson flew to Libya, where he wa: 
+. conclud> ths arrangements. for est 
+Jishing the-weapens laboratory acd 
+be on hand. to insure the careful bh 
+, cling oft the shipmentof “Industrial 
+ivent” fronr the United Siates. He 2 
+“would receivether wromised millers < 
+JJarpayofft trom eacia fi. : 
+Le 
+
+reg Kevire rauleahy, mieanwnle. tics 
+[ Europe fora. meeting in London. y 
+Terpil and a group of Britisharms dé 
+
+ROS. “There Was the inevitable pa 
+
+‘early y.-one. balmy- Sunday. afterg 
+3 tarown: “by: Sverm Hoffainer, the tr. 
+“ink? to. eouth: Airica.. Hoffelnmer j 
+
+poled along a.c canal near Oxford iz 
+“bright. sun;*:-Mulcahy began. -tck 
+
+ae E casuat snapshots of the revelry. Te: 
+
+vsaw his camera; Mulcahy recalled, 
+
+a Stwent berserk: He-got alt redid 
+
+wfaces he was really, akakecgiipdlitons ‘ 
+htold reeto put the camera Jig: b 
+ayou endupdead ae 
+. Later thar evening, Terpil.e expla aus 
+that one of the guests on the barge ¥ 
+? Carlos - Kamirez,: known. to pol 
+» throughout the world as “the Jack 
+--~the- international terrorist belie 
+“to be-responsible for planning the } q 
+Olympics - massacre in _-Munichn, 
+deadly raid on the Fiumicino Airpe 
+-Rome and numerous aircraft hi! 
+ings There- was no photogra: 
+| Rarnirez in existence, Terpil toi.’ 
+caby; the “Wanterl’’ posters on di: 
+
+CPYRGHT Wis YORU Lbivado 
+
+Approved For Release 2005/07/28 : CIA-RDP94B01044R000300020028-5 
+
+at airports throughout the world con- 
+tained only a composite drawing. Ter- 
+pil also told Mulcahy that Ramirez was 
+living in barracks No. 3 at the foomer 
+Wheelus United States Aic Porc: base 
+in Libya. Terpil seemed awed by “Lami- 
+rez, who was accompanied at te party 
+by Sayad Qaddafi, chief of Libyan intei~ 
+Uisenes, identified by Terpil as Gacda- 
+fis cousin and the second mest y 
+J Fok ran in scam ia 
+ee a 
+
+Bi beat eoiy was noe in far tout CBE TE S inde 
+Keknewit. 9 000 foe ot tyes 
+
+It was late nee and Jonn I Lt sper 
+‘and other . Wilson-Terpil er ae 
+were at work in Tripoli setting up the 
+munitions. “laboratory.. for. terrorist 
+bombs and a training program for their 
+effective use. Wilson and Terpil made it 
+“clear to Mulcahy that they didnot want. 
+him to go to Libya: Mulcahy kept his: 
+Snow prave doubts to himself and conn. 
+-vedt or his business trip, moving ca to 
+‘Copenhagen and. another. series. of 
+meetings. Terpil returned to Cioya, an& 
+he and Wilson suddenly dispatched ar 
+vurpent cable te Copenhagen: Muican va 
+
+oy 
+
+was to brea. off his trip and reiurm to. 
+
+tor tee purchase. ote 
+
+eae rourd-to-alr rnisulies. 
+
+pally “acceptable bitysrs, The missite, 
+whith conld not be. exported to Libya 
+
+inder the law, is shoulder-launched and. 
+pies a heatseeking cornponent that en- 
+ables it to track and destroy aircrait in 
+flight. I: had been used extensively ard 
+successfully by the Israelis during the 
+
+1973 war. “My problem was not to: 
+worry about the paperwork,” Muscahy. 
+says. 'Terpil and Wilson had a pilot in. 
+Pennsylvania who would fly anywhere... 
+
+‘Once he got over the water’’ -— and. 
+away from American legal jurisdiction 
+—— “he would change the paper.” Ii the 
+Redeye had been purchased, the pilot 
+would simply change the intended re- 
+cipient Histed on the export license, 
+from an approved ally, such as these in. 
+NATO, for example, to Libya. 
+
+- Altering the State Department’s exe 
+port license, known officially as the 
+end-user certificate, was considered so- 
+yauch a normal part of the arms busi- 
+ness by Wilson and Terpil that Malcahy 
+had been authorized to quote prices 8 
+percent to 12 percent higher if the sale 
+
+also required supply of the certificate. 
+
+Approved For Release 2005/07/28 
+
+‘Biulcahy was unnerved by his sudderé 
+
+assignment and discussed it with an as 
+_seciatein Cocenhazen— a foreign mili- 
+“gary attaché staticneabin Denmars who 
+
+“bad a renutation for legitimate cre “ras 
+
+tions. “My Iriend told me th: atthe culy 
+
+reason Libya wunld want one Redeye 
+
+was for use in a terrorist attack,” Mul- 
+ccahy says. We speculated that Gad~ 
+
+dafi probably waated to be the first to 
+
+shoot down o 747, To hit a fully loaded 
+
+passenger at ane in flight would be big- 
+per than-the destruction of planes. at, 
+
+‘Dawsor Air’ Fiek¥in“Jordan,” wher 
+-P.L.O. terrorists in 1970 biev up thre: 
+
+international airliners and held seores, 
+of passengers hestage. + 
+
+-Muleahy had a- leisurely Gapee and 
+began walking the streets of Copen! qaZ- 
+en. He couldn’t sleep He recallaiatrip- 
+heand Terpil hadtakentoa firm cadet: 
+DefenS& Apparel in. Hartford, Conn. 
+where “Terpil discussed sa the ‘possible 
+purchase ¢ of up to to 100,000. 51 suits_ that: 
+would protect t hurmans exposed} toradio~ 
+activity, Could the Redeye cary a Me 
+
+clear warhead? He knew now he woe | 
+-never place the Redeyeorder. 2s" oa 
+
+“T watched. the sunrise come i ins Co-] 
+penhagen,” : Mulcahy . recalls, \‘fand 
+hnew what TL had. to do get back. to 
+Washington fast. [had to find eut what, 
+‘paperwork existed’” in the Inter-Tock+ 
+nology offices he shared wit Wilson 
+and ferpik: “*Y felt that Frank, aunh. re 
+were giving Qaddatk. any. gC , 
+ed eas jor.” ae 
+
+Kevin iw goes underground. 
+= to-save his life. The Government. . 
+
+/ Sdrags its feet in the arms-export ine 
+
+-vestigation, while some. Sormiery 
+
+American C.1LA: and military_men,’ 
+
+continue exporting the hardware:of 
+‘terrorism —-- timers. and’, explo 
+5 cu hee for Sere — and train. 
+
+: CIA-RDP94B01041R000300020028-5 
+
+~ 
+
+“Hon ee 
+
+‘Edwin P. Wilson. is invariably de 
+picted by former as‘cciateS as- a. 
+charming, charisma sé, effective, 
+rough-and-ready, &foot- swashbuck- 
+ler who excelled in his military and in- 
+
+. telligence career. But the realreasons 
+‘for, hia success as’ am international 
+_ weapons dealer are the contacts he 
+, has built up during more than 20 years 
+of work with United States Cove 
+
+; ment intelligence services. Pes 
+
+“Wilson went to-work for the C. LAC Ss 
+“Olfice-of- Security in 195). and, after 
+serving inthe Marines, became a full- 
+. time CIA. contract employee in 1955. 
+Inthe late 0’s, he helped organize a: 
+
+: Washingtor firm called Consultants. 
+:- International. Inc. ‘for the’C.1.A. and- 
+~ the- Navy. The: firm’s ostensible: pur- 
+pose was- to conduct. export-import. 
+eperations;. but- that- function. was a 
+
+. cover.’ ieee “classified. intelligence: 
+
+Note io ye his intel 
+: genes activities were combined and | 
+
+: " Iningled with: his private operations.” 
+
+. He hired a-nurnber of ‘associates, ° 
+
+_ miaeyy of there-with: military or intelle 
+~-gance backzrounds, and, according to- 
+_ Federal officials, was, routinely ree 
+
+‘ceiving huge kickbacks froor Ameri~ 
+ean manuiacturers and foreign gov- 
+ernmenis or his: Procurement con |) 
+Seca . 7 
+
+“The men working for him were dy 
+
+‘vinced that he was still active ‘in 
+_C_.LA. intelligence operations. “LT 
+thought he was reporting directly to 
+the President,” one former associate 
+‘recalls. “Ed still must be sanctioned: 
+by the U.S. Government. The people I 
+- met were irmoressive. All of a sudden 
+~Pm-on-a. firstname basis with big 
+names in Congréss and the Senate. It 
+was always like the Government was 
+ Supsorting us.’” Robert Keith Gray, 
+an influenti:] pwblic-relations man 
+~ known for his close ties to the Eisen- 
+hower, Nixon and Reagan Adrninis- 
+trations, was among those listed asa 
+member of the board of Consultants 
+International for five years, begina- 
+ning in 1970. However, Gray, who 
+served as co-chairman of Reagan’s 
+Inaugural Committee, expressed sure 
+
+- prise Ut arr interview upon being tol td 
+of his official listing “YF never knew I 
+
+“was on’ the: board,’? Gray: said. “I~ 
+
+never wasc invited to a board: mect- 
+
+_ing’” Heracknowledged that he has: 
+~ hada social and business relationship 
+
+with Wilson,.whonr he describe: as 
+“charming and. very PACD a pede 
+blooded American? ot 
+-~-In 197%, Wilson dropped - his. ion TAL 
+
+| Come and, was. a‘part of Task. 
+Force 157, a secret, Navy intelligence 
+
+unit that employed: 50-t0- 73 agents to 
+“monitor and ~collect:. information: on 
+
+* Soviet shipping. . Tt. reported. nor only . 
+
+on:- routine cargio~ itemsy put. also. 
+
+‘ \watcheds for’. the. covert- Shipment of > 
+
+“military goods-and nuclear weapons. [- 
+
+“The unitalso was charged withthere-. [ 
+» sponsibility of picking up intelligence-. 
+
+; eure from Taiwan and secretly F 
+
+rrying them. inside mainland China, 
+
+: at they wouldtimplant’ sensitive 
+“seismic monitors: and=radiot equip- | 
+ment, Those operations werestopped | 
+~ after. President: Richard. M2 Nixon’s. 
+
+. visit to Peking in. 1972, and CELA. ofti- 
+
+.clals were-astonisted to. learn later’ 
+
+“that some of the’sensitive equipment, 
+
+- designed solely for use inside China, 
+
+- was appearing for salei in the interna— 
+
+= tional arms marxet. 
+
+aoe Wilson's firs CUA assignment, in | 
+: the. 50's; “was torinfiltrate the.Seafar- | 
+eXS ‘International Union, in-whick he |- 
+was eventually‘appointed toa mum ber: 4: 
+- of officiak positions. “He also- was:ine |‘ 
+
+volved. in Congressional lobbying: on: 
+behalf: of: the union. and apparently - 
+
+began then: forming his close relation- 
+-sShin. with: a& number ‘of influentiak- : 
+
+-members of Conitress. Wilson became. 
+
+aC.LA: specialist on maritime issues : 
+: and-was involved inthe procurement. } 
+
+of. equipment” for> clandestine” Navy 
+
+operations. During the Bay of Pigs, he. 
+pas wasianedial a paymaster and han- : 
+died procurement:as- welb. He- later |. 
+served iy Southeast “Asia: and Latin: i 
+
+-A full accounting’ of “Wilson S con 
+‘nections and business activities, may 
+never be known. He bas boasted of 
+having a controlling interest in more 
+than 160 corporations in’ the United 
+States and Europe.-—S. MLL. 
+
+CPYRGH 
+T 
+
+‘ Approved For Release 2005/07/28 : CIA+RDP94B01041R000300020028-5 S oxS 
+
+q UNCLASSIFIED y Aner Rae 2 2005/07/28 : slice aatarionaton tO SECRET 
+
+Lae ne ete 
+
+SUBJECT: (Optional) 
+
+TO: 
+building) 
+
+cis JS OCUri iy Services. cfc tion tate rviews. _ 
+
+O/TSBe tie 
+
+(Officer designation, room number, and 
+
+ROUTING AND RECORD SHEET 
+
+Headquarters Securi Ly Branch, 
+
+A POOR A AD amin 
+
+EXTENSION NO. 
+
+DATE _ 
+
+DATE 
+| = OFFICER'S 
+
+3 | INITIALS 
+RECEIVED | FORWARDED 
+
+to whom. 
+
+aO Jumens BOB To ee 
+
+COMMENTS (Mumber each comment to show from whom 
+Draw a line across column ofter each comment.) 
+
+wee 61 
+
+SIONS Poh Rail BT Bh gee 
+
+Dose ie 
+
+INTERHAL 1] urtacerc, 
+moHoaN Pooosodozoout ae FIED

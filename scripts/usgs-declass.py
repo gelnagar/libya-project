@@ -42,6 +42,8 @@ def main():
             out['scenes'].append({'dataset': ds, 'entityId': s['entityId'], 'displayId': s.get('displayId'), 'date': (s.get('temporalCoverage') or {}).get('startDate', '')[:10],
                 'cloud': s.get('cloudCover'), 'footprint': (s.get('spatialCoverage') or {}).get('coordinates'), 'camera': md.get('Camera Type') or md.get('Camera'), 'resolution': md.get('Camera Resolution') or md.get('Resolution'),
                 'mission': md.get('Mission'), 'downloadable': avail.get(s['entityId'], []), 'options': allopts.get(s['entityId'], []), 'browse': [b.get('browsePath') for b in (s.get('browse') or [])][:1]})
+    out['download_access'] = not any('download-options' in e and '403' in e for e in out.get('errors', []))
+    out['checked'] = __import__('datetime').datetime.utcnow().isoformat()
     call('logout', {}, key)
     os.makedirs('archive/maps', exist_ok=True)
     out['scenes'].sort(key=lambda x: x['date'])

@@ -1,5 +1,5 @@
 name: Find declassified satellite frames
-on: { workflow_dispatch: {}, push: { branches: [main], paths: [scripts/usgs-declass.py, .github/workflows/usgs.yml] } }
+on: { workflow_dispatch: {}, schedule: [{ cron: '50 15 * * *' }], push: { branches: [main], paths: [scripts/usgs-declass.py, .github/workflows/usgs.yml] } }
 permissions: { contents: write }
 jobs:
   find:
@@ -15,4 +15,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add archive/maps/usgs-status.json; git add archive/maps/usgs-declass.json 2>/dev/null || true
           if git diff --cached --quiet; then echo none; else git commit -m "Declassified satellite frames over Tripoli" && git pull --rebase && git push; fi
-# run 1792289893
+

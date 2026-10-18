@@ -1,0 +1,10513 @@
+{
+ "tripoli_names": [
+  {
+   "id": "n3195901761",
+   "name": "Salah Aldeen",
+   "ar": "صلاح الدين",
+   "lat": 32.8240749,
+   "lon": 13.22008,
+   "tags": {
+    "place": "town"
+   }
+  },
+  {
+   "id": "n3300366408",
+   "name": "Al Aziziya",
+   "ar": "العزيزية",
+   "lat": 32.5330923,
+   "lon": 13.0176242,
+   "tags": {
+    "place": "city"
+   }
+  },
+  {
+   "id": "n3491677511",
+   "name": "Al kirimiya",
+   "ar": "الكريمية",
+   "lat": 32.7540993,
+   "lon": 13.0867342,
+   "tags": {
+    "place": "town"
+   }
+  },
+  {
+   "id": "n3533742224",
+   "name": "Kirimiyah Police",
+   "ar": "مركز شرطة الكريمية",
+   "lat": 32.737894,
+   "lon": 13.0840825,
+   "tags": {
+    "amenity": "police"
+   }
+  },
+  {
+   "id": "n4210853997",
+   "name": "Fuel Station",
+   "ar": "محطة وقود الفلاح",
+   "lat": 32.8526769,
+   "lon": 13.1441551,
+   "tags": {
+    "amenity": "fuel",
+    "operator": "Oilibya 111"
+   }
+  },
+  {
+   "id": "n4252389352",
+   "name": "ثانوية البيروني",
+   "ar": "ثانوية البيروني",
+   "lat": 32.846093,
+   "lon": 13.0931912,
+   "tags": {
+    "office": "educational_institution"
+   }
+  },
+  {
+   "id": "n4255416006",
+   "name": "خياط صلاح الدين",
+   "ar": "خياط صلاح الدين",
+   "lat": 32.8092668,
+   "lon": 13.0079014,
+   "tags": {}
+  },
+  {
+   "id": "n4357433289",
+   "name": "Salah adden Center for the treatment of infertility",
+   "ar": "مركز صلاح الدين لعلاج العقم",
+   "lat": 32.827052,
+   "lon": 13.2133167,
+   "tags": {
+    "amenity": "doctors"
+   }
+  },
+  {
+   "id": "n4381536290",
+   "name": "Salah Eldin El-Ayobi School",
+   "ar": "مدرسة صلاح الدين الأيوبي",
+   "lat": 32.878301,
+   "lon": 13.2118241,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n4394766606",
+   "name": "جامع صلاح الدين",
+   "ar": "جامع صلاح الدين",
+   "lat": 32.8595868,
+   "lon": 13.2931617,
+   "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque"
+   }
+  },
+  {
+   "id": "n4441873693",
+   "name": "سوق صلاح الدين",
+   "ar": "سوق صلاح الدين",
+   "lat": 32.8513803,
+   "lon": 13.0865202,
+   "tags": {}
+  },
+  {
+   "id": "n4446595891",
+   "name": "مسجد الخلة",
+   "ar": "مسجد الخلة",
+   "lat": 32.7014018,
+   "lon": 13.0355117,
+   "tags": {
+    "amenity": "place_of_worship"
+   }
+  },
+  {
+   "id": "n4446608692",
+   "name": "Post Office -Azizia",
+   "ar": "خدمات البريد والهاتف",
+   "lat": 32.5321869,
+   "lon": 13.0155516,
+   "tags": {
+    "amenity": "post_office"
+   }
+  },
+  {
+   "id": "n4446630092",
+   "name": "Azizia Piazza",
+   "ar": "ميدان شهداء العزيزية",
+   "lat": 32.5292323,
+   "lon": 13.016706,
+   "tags": {}
+  },
+  {
+   "id": "n4446636689",
+   "name": "Azizia Secondary School",
+   "ar": "ثانوية العزيزية",
+   "lat": 32.5319796,
+   "lon": 13.016655,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n4463149591",
+   "name": "صلاح الدين للمواد الغذائية",
+   "ar": "صلاح الدين للمواد غذائية",
+   "lat": 32.8479763,
+   "lon": 13.0981285,
+   "tags": {}
+  },
+  {
+   "id": "n4491538389",
+   "name": "Aramex",
+   "ar": "أرامكس الفلاح",
+   "lat": 32.8509738,
+   "lon": 13.1428236,
+   "tags": {
+    "amenity": "post_office"
+   }
+  },
+  {
+   "id": "n4516567103",
+   "name": "Higher Institute of Science and Technology - Azizia",
+   "ar": "المعهد العالي للعلوم والتقنية-العزيزية",
+   "lat": 32.5360094,
+   "lon": 13.0209071,
+   "tags": {
+    "amenity": "university"
+   }
+  },
+  {
+   "id": "n4601491902",
+   "name": "سلخانة الفلاح",
+   "ar": "سلخانة الفلاح",
+   "lat": 32.8288318,
+   "lon": 13.0385239,
+   "tags": {}
+  },
+  {
+   "id": "n4627150191",
+   "name": "AL WAHA Bank-Fellah",
+   "ar": "مصرف الواحة",
+   "lat": 32.8583175,
+   "lon": 13.1513448,
+   "tags": {
+    "amenity": "bank"
+   }
+  },
+  {
+   "id": "n4644358289",
+   "name": "سلاخانة الفلاح الدريبي",
+   "ar": "سلاخانة الفلاح الدريبي",
+   "lat": 32.8455023,
+   "lon": 13.112168,
+   "tags": {}
+  },
+  {
+   "id": "n4741812930",
+   "name": "مصحة صلاح الدين القره بولي",
+   "ar": "مصحة صلاح الدين القره بولي",
+   "lat": 32.7279956,
+   "lon": 13.6484508,
+   "tags": {
+    "amenity": "clinic"
+   }
+  },
+  {
+   "id": "n4753593221",
+   "name": "Pharmacy",
+   "ar": "صيدلية الخلة",
+   "lat": 32.7872475,
+   "lon": 13.0539612,
+   "tags": {
+    "amenity": "pharmacy"
+   }
+  },
+  {
+   "id": "n4782097021",
+   "name": "Al Aziziyah Police Station",
+   "ar": "مركز شرطة العزيزية",
+   "lat": 32.532997,
+   "lon": 13.015554,
+   "tags": {
+    "amenity": "police"
+   }
+  },
+  {
+   "id": "n4782097121",
+   "name": "Civil Registry Office",
+   "ar": "مكتب السجل المدني العزيزية",
+   "lat": 32.5305876,
+   "lon": 13.0171903,
+   "tags": {
+    "office": "government"
+   }
+  },
+  {
+   "id": "n4782097321",
+   "name": "Theater & Cinema",
+   "ar": "مسرح العزيزية,الفيلم",
+   "lat": 32.5313772,
+   "lon": 13.017705,
+   "tags": {
+    "amenity": "cinema"
+   }
+  },
+  {
+   "id": "n4907024121",
+   "name": "مركز صلاح الدين لعلاج و تركيب الأسنان",
+   "ar": "مركز صلاح الدين لعلاج و تركيب الأسنان",
+   "lat": 32.8523723,
+   "lon": 13.1675539,
+   "tags": {
+    "amenity": "dentist"
+   }
+  },
+  {
+   "id": "n5268042321",
+   "name": "Kepap",
+   "ar": "مطعم كباب الكريمية",
+   "lat": 32.786579,
+   "lon": 13.1095837,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5570021732",
+   "name": "School",
+   "ar": "مدرسة الكريمية المركزية",
+   "lat": 32.7631168,
+   "lon": 13.0926093,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n5583920022",
+   "name": "مصرف التجارة و التنمية  صلاح الدين",
+   "ar": "مصرف التجارة و التنمية  صلاح الدين",
+   "lat": 32.8218519,
+   "lon": 13.2189627,
+   "tags": {
+    "amenity": "bank"
+   }
+  },
+  {
+   "id": "n5907375585",
+   "name": "salh alden",
+   "ar": "صلاح الدين",
+   "lat": 32.8507213,
+   "lon": 13.1629207,
+   "tags": {
+    "highway": "bus_stop"
+   }
+  },
+  {
+   "id": "n5961071686",
+   "name": "Gifts Shop",
+   "ar": "تحف وهدايا جملة سوق الكريمية",
+   "lat": 32.7719948,
+   "lon": 13.0924027,
+   "tags": {}
+  },
+  {
+   "id": "n6171442688",
+   "name": "Salah adden -Al qasr Taxi",
+   "ar": "القصر - صلاح الدين",
+   "lat": 32.685189,
+   "lon": 13.1760333,
+   "tags": {
+    "amenity": "taxi",
+    "operator": "PREVIA"
+   }
+  },
+  {
+   "id": "n6176558285",
+   "name": "الكريمية",
+   "ar": "الكريمية",
+   "lat": 32.7777365,
+   "lon": 13.0933215,
+   "tags": {
+    "amenity": "bank"
+   }
+  },
+  {
+   "id": "n6348465687",
+   "name": "Bus station AL MADINA",
+   "ar": "محطة حافلات صلاح الدين -المدينة",
+   "lat": 32.8259612,
+   "lon": 13.214782,
+   "tags": {
+    "amenity": "taxi"
+   }
+  },
+  {
+   "id": "n6348465885",
+   "name": "Bus station Azizia -Tripoli",
+   "ar": "محطة حافلات العزيزية -طرابلس",
+   "lat": 32.8930261,
+   "lon": 13.1739851,
+   "tags": {
+    "amenity": "bus_station",
+    "operator": "IVECOO"
+   }
+  },
+  {
+   "id": "n6348465886",
+   "name": "Bus staion Salah Adden",
+   "ar": "محطة حافلات صلاح الدين",
+   "lat": 32.892076,
+   "lon": 13.1765306,
+   "tags": {
+    "amenity": "bus_station",
+    "operator": "TRAJET"
+   }
+  },
+  {
+   "id": "n6361194087",
+   "name": "Salah Adden -Al madina",
+   "ar": "صلاح الدين -المدينة",
+   "lat": 32.8259242,
+   "lon": 13.2149192,
+   "tags": {
+    "amenity": "taxi"
+   }
+  },
+  {
+   "id": "n6373956387",
+   "name": "steam bath ,Sauna",
+   "ar": "حمام صلاح الدين البخاري",
+   "lat": 32.8302635,
+   "lon": 13.2127534,
+   "tags": {}
+  },
+  {
+   "id": "n6444050985",
+   "name": "Savings Bank and Real Estate Investment-Azizia",
+   "ar": "مصرف الادخار والاستثمار العقاري -العزيزية",
+   "lat": 32.5266017,
+   "lon": 13.0155108,
+   "tags": {
+    "amenity": "bank"
+   }
+  },
+  {
+   "id": "n6460377385",
+   "name": "Passports Office",
+   "ar": "مكتب جوازات صلاح الدين",
+   "lat": 32.8017065,
+   "lon": 13.2242163,
+   "tags": {
+    "office": "government"
+   }
+  },
+  {
+   "id": "n6640377493",
+   "name": "School .Boys",
+   "ar": "مدرسة العزيزية بنين",
+   "lat": 32.5263142,
+   "lon": 13.0183453,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n6858570088",
+   "name": "Qasr -Sawani -Krimiyia",
+   "ar": "القصر -السواني -الكريمية",
+   "lat": 32.6857759,
+   "lon": 13.1748979,
+   "tags": {
+    "amenity": "taxi"
+   }
+  },
+  {
+   "id": "n7241078218",
+   "name": "Bab Al Aziziya",
+   "ar": "باب العزيزية",
+   "lat": 32.8753263,
+   "lon": 13.1709108,
+   "tags": {
+    "place": "town"
+   }
+  },
+  {
+   "id": "n7245975476",
+   "name": "Azzohour -Salah Adden",
+   "ar": "حي الزهور- صلاح الدين",
+   "lat": 32.8065508,
+   "lon": 13.2218388,
+   "tags": {
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "id": "n7732121084",
+   "name": "محطة الزجاج العزيزية",
+   "ar": "محطة الزجاج العزيزية",
+   "lat": 32.5260017,
+   "lon": 13.028574,
+   "tags": {
+    "operator": "gecol.ly"
+   }
+  },
+  {
+   "id": "n7736538688",
+   "name": "Social Security Board - Azizia",
+   "ar": "صندوق الضمان الإجتماعي - العزيزية",
+   "lat": 32.5283686,
+   "lon": 13.0174659,
+   "tags": {
+    "office": "government"
+   }
+  },
+  {
+   "id": "n8285815017",
+   "name": "المجمع الصحي الكريمية",
+   "ar": "المجمع الصحي الكريمية",
+   "lat": 32.7713644,
+   "lon": 13.0971111,
+   "tags": {
+    "amenity": "clinic"
+   }
+  },
+  {
+   "id": "n8635499859",
+   "name": "Al Fellah",
+   "ar": "سيمافرو الفلاح",
+   "lat": 32.8542768,
+   "lon": 13.1460119,
+   "tags": {
+    "amenity": "bus_station",
+    "operator": "شركة السهم للنقل العام"
+   }
+  },
+  {
+   "id": "n9213947118",
+   "name": "انديش لمواد التنظيف فرع الكريمية",
+   "ar": "انديش لمواد التنظيف فرع الكريمية",
+   "lat": 32.7667008,
+   "lon": 13.0794857,
+   "tags": {}
+  },
+  {
+   "id": "n9903385817",
+   "name": "مسجد صلاح الدين",
+   "ar": "مسجد صلاح الدين",
+   "lat": 32.8464455,
+   "lon": 13.1617594,
+   "tags": {
+    "amenity": "place_of_worship"
+   }
+  },
+  {
+   "id": "n13196427978",
+   "name": "مصرف شمال أفريقيا - صلاح الدين",
+   "ar": "مصرف شمال أفريقيا - صلاح الدين",
+   "lat": 32.8262671,
+   "lon": 13.2509242,
+   "tags": {
+    "amenity": "bank",
+    "operator": "مصرف شمال أفريقيا"
+   }
+  },
+  {
+   "id": "w25441834",
+   "name": "Azizia -Garyan Road",
+   "ar": "طريق العزيزية- غريان",
+   "lat": 32.5379862,
+   "lon": 13.0176409,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w25442905",
+   "name": "Salah Adden -Qasr Bin Ghashir Road",
+   "ar": "صلاح الدين - قصر بن غشير",
+   "lat": 32.771938,
+   "lon": 13.2104202,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w25442914",
+   "name": "طريق صلاح الدين - قصر بن غشير",
+   "ar": "طريق صلاح الدين - قصر بن غشير",
+   "lat": 32.6869545,
+   "lon": 13.1811297,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w32341856",
+   "name": "Salah Aldeen - Qaser Bin Ghashir Road",
+   "ar": "طريق صلاح الدين -قصر بن غشير",
+   "lat": 32.7701695,
+   "lon": 13.2102677,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w32342150",
+   "name": "Salah Aldeen - Qaser Bin Ghashir Road",
+   "ar": "طريق صلاح الدين - قصر بن غشير",
+   "lat": 32.6874072,
+   "lon": 13.18309,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w32359782",
+   "name": "صلاح الدين - قصر بن غشير",
+   "ar": "صلاح الدين - قصر بن غشير",
+   "lat": 32.7059001,
+   "lon": 13.1957388,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w37787353",
+   "name": "الخلة الرشاح",
+   "ar": "الخلة الرشاح",
+   "lat": 32.7946587,
+   "lon": 13.0306492,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w39635024",
+   "name": "Al Azizia -Al Zahra Road",
+   "ar": "طريق العزيزية- الزهرة",
+   "lat": 32.6783099,
+   "lon": 12.8766428,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w39658182",
+   "name": "Khallat Al-baish Road",
+   "ar": "Khallat Al-baish Road",
+   "lat": 32.7847903,
+   "lon": 13.3679537,
+   "tags": {
+    "highway": "tertiary"
+   }
+  },
+  {
+   "id": "w101167799",
+   "name": "Salah Aldeen - Qaser Bin Ghashir Road",
+   "ar": "طريق صلاح الدين - قصر بن غشير",
+   "lat": 32.6889831,
+   "lon": 13.1883776,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w101314148",
+   "name": "باب العزيزية",
+   "ar": "باب العزيزية",
+   "lat": 32.8757024,
+   "lon": 13.1708085,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w101314150",
+   "name": "Bab Al Azizia St",
+   "ar": "شارع باب العزيزية",
+   "lat": 32.8777029,
+   "lon": 13.1723904,
+   "tags": {
+    "highway": "tertiary"
+   }
+  },
+  {
+   "id": "w101358503",
+   "name": "Isbiea- Al aziziz Road",
+   "ar": "طريق إسبيعة -العزيزية",
+   "lat": 32.5245135,
+   "lon": 13.1144948,
+   "tags": {
+    "highway": "tertiary"
+   }
+  },
+  {
+   "id": "w101358504",
+   "name": "Isbiea- Al aziziz Road",
+   "ar": "طريق إسبيعة- العزيزية",
+   "lat": 32.5294425,
+   "lon": 13.0650275,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w101535208",
+   "name": "Samba Street",
+   "ar": "شارع السامبا الكريمية",
+   "lat": 32.7640567,
+   "lon": 13.0865813,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w114127469",
+   "name": "دوائر الهيرة : العزيزية جهد 30 ك ف",
+   "ar": "دوائر الهيرة : العزيزية جهد 30 ك ف",
+   "lat": 32.4866977,
+   "lon": 13.0228069,
+   "tags": {
+    "operator": "GECOL.LY",
+    "power": "line"
+   }
+  },
+  {
+   "id": "w114127492",
+   "name": "دوائر العزيزية : ام القرون جهد 30 ك ف",
+   "ar": "دوائر العزيزية : ام القرون جهد 30 ك ف",
+   "lat": 32.5174832,
+   "lon": 13.0004491,
+   "tags": {
+    "operator": "GECOL.LY",
+    "power": "line"
+   }
+  },
+  {
+   "id": "w154249667",
+   "name": "دوائر صلاح الدين : جودائم",
+   "ar": "دوائر صلاح الدين : جودائم",
+   "lat": 32.7880464,
+   "lon": 12.7783404,
+   "tags": {
+    "operator": "GECOLY .LY",
+    "power": "line"
+   }
+  },
+  {
+   "id": "w180811360",
+   "name": "محطة تحويل جهد 11/30 ك ف العزيزية",
+   "ar": "محطة تحويل جهد 11/30 ك ف العزيزية",
+   "lat": 32.5213725,
+   "lon": 13.0090706,
+   "tags": {
+    "operator": "GECOL.LY"
+   }
+  },
+  {
+   "id": "w180811364",
+   "name": "الطريق الدائري العزيزية",
+   "ar": "الطريق الدائري العزيزية",
+   "lat": 32.5101347,
+   "lon": 13.01851,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w180811386",
+   "name": "دوائر الهيرة : العزيزية جهد 30 ك ف",
+   "ar": "دوائر الهيرة : العزيزية جهد 30 ك ف",
+   "lat": 32.486213,
+   "lon": 13.0226295,
+   "tags": {
+    "operator": "GECOL.LY",
+    "power": "line"
+   }
+  },
+  {
+   "id": "w180945424",
+   "name": "الطريق الدائري العزيزية",
+   "ar": "الطريق الدائري العزيزية",
+   "lat": 32.5098382,
+   "lon": 13.0183807,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w180945444",
+   "name": "Azizia -Azzahra Road",
+   "ar": "العزيزية- الزهراء",
+   "lat": 32.5468249,
+   "lon": 13.0163551,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w180945445",
+   "name": "Azizia -Azzahra Road",
+   "ar": "العزيزية- الزهراء",
+   "lat": 32.5479435,
+   "lon": 13.0171801,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w182574390",
+   "name": "Azizia -Nalut",
+   "ar": "طريق العزيزية- نالوت",
+   "lat": 32.5244482,
+   "lon": 13.0134502,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w295621985",
+   "name": "Azizia -Nalut Road",
+   "ar": "طريق العزيزية- نالوت",
+   "lat": 32.4618434,
+   "lon": 12.9090814,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w339238497",
+   "name": "The National Company for Drilling and Maintenance of Oil Wells Al-Kuraimi",
+   "ar": "الشركة الوطنية للحفر وصيانة آبار النفط موقع الكريمية",
+   "lat": 32.7717917,
+   "lon": 13.085961,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w342138800",
+   "name": "Al Krimiya",
+   "ar": "الكريمية",
+   "lat": 32.7522017,
+   "lon": 13.0628217,
+   "tags": {
+    "place": "suburb"
+   }
+  },
+  {
+   "id": "w369707333",
+   "name": "Al Khalla Road",
+   "ar": "طريق الخلة",
+   "lat": 32.7823919,
+   "lon": 13.2181272,
+   "tags": {
+    "highway": "tertiary"
+   }
+  },
+  {
+   "id": "w384114268",
+   "name": "Al Azizia -Al Zahra Road",
+   "ar": "طريق العزيزية- الزهرة",
+   "lat": 32.5426626,
+   "lon": 12.9652687,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w384114279",
+   "name": "Al Azizia -Azzahra Road",
+   "ar": "طريق العزيزية- الزهرة",
+   "lat": 32.6099193,
+   "lon": 12.9175796,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w452108885",
+   "name": "مسجد صلاح الدين",
+   "ar": "مسجد صلاح الدين",
+   "lat": 32.8514238,
+   "lon": 13.1285891,
+   "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque"
+   }
+  },
+  {
+   "id": "w456821434",
+   "name": "Khalla Al Ferjan",
+   "ar": "Khalla Al Ferjan",
+   "lat": 32.7947882,
+   "lon": 13.2170006,
+   "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque"
+   }
+  },
+  {
+   "id": "w594173038",
+   "name": "Azizia Glass Manufacturing Company",
+   "ar": "شركة العزيزية لتصنيع الزجاج",
+   "lat": 32.5271173,
+   "lon": 13.0260344,
+   "tags": {
+    "landuse": "industrial",
+    "operator": "AGMC"
+   }
+  },
+  {
+   "id": "w656154191",
+   "name": "Al Azizia -Al Zahra Road",
+   "ar": "طريق العزيزية- الزهرة",
+   "lat": 32.6783846,
+   "lon": 12.8766436,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w656154192",
+   "name": "Al Azizia -Azzahra Road",
+   "ar": "طريق العزيزية- الزهرة",
+   "lat": 32.6784157,
+   "lon": 12.8985232,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w668665081",
+   "name": "الخلة الرشاح",
+   "ar": "الخلة الرشاح",
+   "lat": 32.7949772,
+   "lon": 13.0236808,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w668665082",
+   "name": "الخلة الرشاح",
+   "ar": "الخلة الرشاح",
+   "lat": 32.7949398,
+   "lon": 13.0236717,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w668693260",
+   "name": "الخلة الرشاح",
+   "ar": "الخلة الرشاح",
+   "lat": 32.7944314,
+   "lon": 13.0375512,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w668693263",
+   "name": "الخلة الرشاح",
+   "ar": "الخلة الرشاح",
+   "lat": 32.7943413,
+   "lon": 13.0375325,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w770702641",
+   "name": "Al Krimiya Matket For Food",
+   "ar": "سوق الكريمية",
+   "lat": 32.7472414,
+   "lon": 13.084717,
+   "tags": {
+    "landuse": "commercial"
+   }
+  },
+  {
+   "id": "w770850556",
+   "name": "Isbiea- Al aziziz Road",
+   "ar": "طريق إسبيعة -العزيزية",
+   "lat": 32.5314003,
+   "lon": 13.1456223,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w820806876",
+   "name": "Higher Institute of Medical Sciences and Technologies - Azizia",
+   "ar": "المعهد العالي للعلوم والتقنيات الطبية-العزيزية",
+   "lat": 32.533685,
+   "lon": 13.0270862,
+   "tags": {
+    "amenity": "university"
+   }
+  },
+  {
+   "id": "w826102240",
+   "name": "كابل جهد 30 ك ف جودائم صلاح الدين",
+   "ar": "كابل جهد 30 ك ف جودائم صلاح الدين",
+   "lat": 32.7724071,
+   "lon": 12.7492932,
+   "tags": {
+    "operator": "GECOL.LY",
+    "power": "cable"
+   }
+  },
+  {
+   "id": "w945682971",
+   "name": "Al Jalaa Hospital",
+   "ar": "مستوصف الجلاء العزيزية",
+   "lat": 32.5414891,
+   "lon": 12.9517166,
+   "tags": {
+    "amenity": "hospital"
+   }
+  },
+  {
+   "id": "w1104966167",
+   "name": "باب العزيزية",
+   "ar": "باب العزيزية",
+   "lat": 32.8754868,
+   "lon": 13.170817,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w1105451397",
+   "name": "باب العزيزية",
+   "ar": "باب العزيزية",
+   "lat": 32.8754853,
+   "lon": 13.170716,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w1105451398",
+   "name": "باب العزيزية",
+   "ar": "باب العزيزية",
+   "lat": 32.8755681,
+   "lon": 13.1706387,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w1105451399",
+   "name": "باب العزيزية",
+   "ar": "باب العزيزية",
+   "lat": 32.8755898,
+   "lon": 13.1709282,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w1105478398",
+   "name": "Salah Adden -Qasr Bin Ghashir Road",
+   "ar": "صلاح الدين - قصر بن غشير",
+   "lat": 32.8438122,
+   "lon": 13.2054015,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1105488085",
+   "name": "Salah Aldeen - Qaser Bin Ghashir Road",
+   "ar": "طريق صلاح الدين -قصر بن غشير",
+   "lat": 32.8357568,
+   "lon": 13.2096337,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1111996659",
+   "name": "Al Khalla Road",
+   "ar": "طريق الخلة",
+   "lat": 32.7939344,
+   "lon": 13.2159518,
+   "tags": {
+    "highway": "tertiary"
+   }
+  },
+  {
+   "id": "w1118051863",
+   "name": "Al Khalla Road",
+   "ar": "طريق الخلة",
+   "lat": 32.7941654,
+   "lon": 13.216184,
+   "tags": {
+    "highway": "tertiary"
+   }
+  },
+  {
+   "id": "w1347981350",
+   "name": "Azizia -Nalut Road",
+   "ar": "طريق العزيزية- نالوت",
+   "lat": 32.5098919,
+   "lon": 12.9957975,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1355021181",
+   "name": "Azizia -Garyan Road",
+   "ar": "طريق العزيزية - غريان",
+   "lat": 32.4594193,
+   "lon": 13.0362563,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1417958020",
+   "name": "Azizia -Nalut Road",
+   "ar": "طريق العزيزية- نالوت",
+   "lat": 32.5051299,
+   "lon": 12.9880372,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1432314424",
+   "name": "Salah Adden -Qasr Bin Ghashir Road",
+   "ar": "صلاح الدين - قصر بن غشير",
+   "lat": 32.8336826,
+   "lon": 13.2107333,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1473667334",
+   "name": "Samba Street",
+   "ar": "شارع السامبا الكريمية",
+   "lat": 32.7638594,
+   "lon": 13.0932951,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w1473667335",
+   "name": "Samba Street",
+   "ar": "شارع السامبا الكريمية",
+   "lat": 32.7636698,
+   "lon": 13.093202,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w1482459746",
+   "name": "Bab Al Azizia St",
+   "ar": "شارع باب العزيزية",
+   "lat": 32.8758408,
+   "lon": 13.170984,
+   "tags": {
+    "highway": "tertiary"
+   }
+  },
+  {
+   "id": "w1482459747",
+   "name": "Bab Al Azizia St",
+   "ar": "شارع باب العزيزية",
+   "lat": 32.875808,
+   "lon": 13.1710337,
+   "tags": {
+    "highway": "tertiary"
+   }
+  },
+  {
+   "id": "w1497010989",
+   "name": "Azizia -Garyan Road",
+   "ar": "طريق العزيزية- غريان",
+   "lat": 32.5449864,
+   "lon": 13.0199884,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1497010990",
+   "name": "Azizia -Garyan Road",
+   "ar": "طريق العزيزية- غريان",
+   "lat": 32.5477151,
+   "lon": 13.0205497,
+   "tags": {
+    "highway": "construction"
+   }
+  },
+  {
+   "id": "w1497010994",
+   "name": "Azizia -Garyan Road",
+   "ar": "طريق العزيزية- غريان",
+   "lat": 32.5524504,
+   "lon": 13.020849,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1505064008",
+   "name": "Salah Adden -Qasr Bin Ghashir Road",
+   "ar": "صلاح الدين - قصر بن غشير",
+   "lat": 32.8209367,
+   "lon": 13.2193429,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1505064009",
+   "name": "Salah Adden -Qasr Bin Ghashir Road",
+   "ar": "صلاح الدين - قصر بن غشير",
+   "lat": 32.8207074,
+   "lon": 13.2194803,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1505064010",
+   "name": "Salah Adden -Qasr Bin Ghashir Road",
+   "ar": "صلاح الدين - قصر بن غشير",
+   "lat": 32.8203849,
+   "lon": 13.2196394,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1505064014",
+   "name": "Salah Aldeen - Qaser Bin Ghashir Road",
+   "ar": "طريق صلاح الدين -قصر بن غشير",
+   "lat": 32.8217573,
+   "lon": 13.2175638,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1505064017",
+   "name": "Salah Adden -Qasr Bin Ghashir Road",
+   "ar": "صلاح الدين - قصر بن غشير",
+   "lat": 32.8233758,
+   "lon": 13.2174248,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w1553862505",
+   "name": "Azizia -Garyan Road",
+   "ar": "طريق العزيزية- غريان",
+   "lat": 32.5502075,
+   "lon": 13.0210549,
+   "tags": {
+    "highway": "construction"
+   }
+  },
+  {
+   "id": "w1553862506",
+   "name": "Azizia -Azzahra Road",
+   "ar": "العزيزية- الزهراء",
+   "lat": 32.5501499,
+   "lon": 13.0208431,
+   "tags": {
+    "highway": "construction"
+   }
+  },
+  {
+   "id": "r14714480",
+   "name": "ⵚⵍⴰⵃ ⴷⴷⵉⵏ صلاح الدين",
+   "ar": "ⵚⵍⴰⵃ ⴷⴷⵉⵏ صلاح الدين",
+   "lat": 32.832017,
+   "lon": 13.2334652,
+   "tags": {
+    "place": "neighbourhood"
+   }
+  }
+ ],
+ "tripoli_military": [
+  {
+   "id": "n4359472589",
+   "name": "الكلية العسكرية",
+   "ar": "الكلية العسكرية",
+   "lat": 32.8389716,
+   "lon": 13.202534,
+   "tags": {
+    "landuse": "military",
+    "military": "office"
+   }
+  },
+  {
+   "id": "n4422281589",
+   "name": "Traffic",
+   "ar": "اشارة مرور",
+   "lat": 32.8530594,
+   "lon": 13.1448656,
+   "tags": {
+    "amenity": "police"
+   }
+  },
+  {
+   "id": "n4818823989",
+   "name": "Militya 301",
+   "ar": "ميليشيا 301",
+   "lat": 32.8804367,
+   "lon": 13.152306,
+   "tags": {
+    "amenity": "police"
+   }
+  },
+  {
+   "id": "n5889814891",
+   "name": "Main Gate of Tripoli AB",
+   "ar": "بوابة قاعدة طرابلس الجوية",
+   "lat": 32.8966079,
+   "lon": 13.2630705,
+   "tags": {
+    "amenity": "police"
+   }
+  },
+  {
+   "id": "n6245990086",
+   "name": "معسكر الفرقة الأولى - تاجوراء",
+   "ar": "معسكر الفرقة الأولى - تاجوراء",
+   "lat": 32.8196777,
+   "lon": 13.365005,
+   "tags": {
+    "amenity": "police"
+   }
+  },
+  {
+   "id": "n9197061494",
+   "name": null,
+   "ar": null,
+   "lat": 32.6122491,
+   "lon": 13.3478409,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n9352839432",
+   "name": null,
+   "ar": null,
+   "lat": 32.8574158,
+   "lon": 13.2576753,
+   "tags": {
+    "military": "office"
+   }
+  },
+  {
+   "id": "n10882858822",
+   "name": null,
+   "ar": null,
+   "lat": 32.6129148,
+   "lon": 13.3478646,
+   "tags": {
+    "military": "cannon"
+   }
+  },
+  {
+   "id": "n10882858823",
+   "name": null,
+   "ar": null,
+   "lat": 32.6125733,
+   "lon": 13.3472185,
+   "tags": {
+    "military": "cannon"
+   }
+  },
+  {
+   "id": "n10882858824",
+   "name": null,
+   "ar": null,
+   "lat": 32.6119239,
+   "lon": 13.3472185,
+   "tags": {
+    "military": "cannon"
+   }
+  },
+  {
+   "id": "n10882858825",
+   "name": null,
+   "ar": null,
+   "lat": 32.6119615,
+   "lon": 13.3485597,
+   "tags": {
+    "military": "cannon"
+   }
+  },
+  {
+   "id": "n14060440157",
+   "name": null,
+   "ar": null,
+   "lat": 32.8007227,
+   "lon": 12.9140169,
+   "tags": {
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n14060440267",
+   "name": "55th Brigade",
+   "ar": "55th Brigade",
+   "lat": 32.8085941,
+   "lon": 12.9013019,
+   "tags": {
+    "military": "office"
+   }
+  },
+  {
+   "id": "n14060451422",
+   "name": "42nd Brigade Headquarters",
+   "ar": "42nd Brigade Headquarters",
+   "lat": 32.7828403,
+   "lon": 13.2864706,
+   "tags": {
+    "military": "office"
+   }
+  },
+  {
+   "id": "w39609193",
+   "name": null,
+   "ar": null,
+   "lat": 32.8902595,
+   "lon": 13.3058071,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101409381",
+   "name": null,
+   "ar": null,
+   "lat": 32.8837917,
+   "lon": 13.2995561,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101409387",
+   "name": null,
+   "ar": null,
+   "lat": 32.8843366,
+   "lon": 13.3010302,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101409394",
+   "name": null,
+   "ar": null,
+   "lat": 32.884307,
+   "lon": 13.3023189,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101409396",
+   "name": null,
+   "ar": null,
+   "lat": 32.8824178,
+   "lon": 13.3016725,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101409400",
+   "name": null,
+   "ar": null,
+   "lat": 32.883353,
+   "lon": 13.3021233,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101409403",
+   "name": null,
+   "ar": null,
+   "lat": 32.8849227,
+   "lon": 13.2997258,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101409407",
+   "name": null,
+   "ar": null,
+   "lat": 32.8825871,
+   "lon": 13.2995927,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101409417",
+   "name": null,
+   "ar": null,
+   "lat": 32.8841481,
+   "lon": 13.3006477,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101409421",
+   "name": null,
+   "ar": null,
+   "lat": 32.8823778,
+   "lon": 13.3006724,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101600538",
+   "name": "Tajura Naval Base",
+   "ar": "قاعدة تاجوراء البحرية",
+   "lat": 32.8436569,
+   "lon": 13.4736071,
+   "tags": {
+    "landuse": "military",
+    "military": "naval_base"
+   }
+  },
+  {
+   "id": "w101600640",
+   "name": null,
+   "ar": null,
+   "lat": 32.868273,
+   "lon": 13.4092348,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101607633",
+   "name": null,
+   "ar": null,
+   "lat": 32.8951592,
+   "lon": 13.2670068,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101607636",
+   "name": null,
+   "ar": null,
+   "lat": 32.8945791,
+   "lon": 13.2677014,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101635695",
+   "name": null,
+   "ar": null,
+   "lat": 32.6085257,
+   "lon": 13.0854626,
+   "tags": {
+    "landuse": "military",
+    "military": "air defence"
+   }
+  },
+  {
+   "id": "w101641682",
+   "name": null,
+   "ar": null,
+   "lat": 32.622658,
+   "lon": 13.1219959,
+   "tags": {
+    "landuse": "military",
+    "military": "air defence"
+   }
+  },
+  {
+   "id": "w101643487",
+   "name": null,
+   "ar": null,
+   "lat": 32.5058582,
+   "lon": 13.0882809,
+   "tags": {
+    "landuse": "military",
+    "military": "air defence"
+   }
+  },
+  {
+   "id": "w101646788",
+   "name": null,
+   "ar": null,
+   "lat": 32.6279442,
+   "lon": 13.1244878,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101648551",
+   "name": null,
+   "ar": null,
+   "lat": 32.6105839,
+   "lon": 13.0903868,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648552",
+   "name": null,
+   "ar": null,
+   "lat": 32.6086237,
+   "lon": 13.089282,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648553",
+   "name": null,
+   "ar": null,
+   "lat": 32.6058401,
+   "lon": 13.0865741,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648554",
+   "name": null,
+   "ar": null,
+   "lat": 32.6068922,
+   "lon": 13.0888273,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648555",
+   "name": null,
+   "ar": null,
+   "lat": 32.6097141,
+   "lon": 13.0809315,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648556",
+   "name": null,
+   "ar": null,
+   "lat": 32.6067941,
+   "lon": 13.0877915,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648557",
+   "name": null,
+   "ar": null,
+   "lat": 32.6112939,
+   "lon": 13.0783564,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648558",
+   "name": null,
+   "ar": null,
+   "lat": 32.6089885,
+   "lon": 13.0882993,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648559",
+   "name": null,
+   "ar": null,
+   "lat": 32.6113795,
+   "lon": 13.0762192,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648560",
+   "name": null,
+   "ar": null,
+   "lat": 32.6055786,
+   "lon": 13.087599,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648561",
+   "name": null,
+   "ar": null,
+   "lat": 32.6069358,
+   "lon": 13.0871593,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648562",
+   "name": null,
+   "ar": null,
+   "lat": 32.6113176,
+   "lon": 13.0800016,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648563",
+   "name": null,
+   "ar": null,
+   "lat": 32.6079711,
+   "lon": 13.0872779,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648564",
+   "name": null,
+   "ar": null,
+   "lat": 32.6076895,
+   "lon": 13.0883037,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648565",
+   "name": null,
+   "ar": null,
+   "lat": 32.6106907,
+   "lon": 13.0884001,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648566",
+   "name": null,
+   "ar": null,
+   "lat": 32.6101551,
+   "lon": 13.0894408,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648567",
+   "name": null,
+   "ar": null,
+   "lat": 32.608249,
+   "lon": 13.0808744,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648568",
+   "name": null,
+   "ar": null,
+   "lat": 32.6114672,
+   "lon": 13.08044,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648569",
+   "name": null,
+   "ar": null,
+   "lat": 32.6109732,
+   "lon": 13.0894043,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648570",
+   "name": null,
+   "ar": null,
+   "lat": 32.6089261,
+   "lon": 13.0902979,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648571",
+   "name": null,
+   "ar": null,
+   "lat": 32.6101297,
+   "lon": 13.0792794,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648572",
+   "name": null,
+   "ar": null,
+   "lat": 32.6101246,
+   "lon": 13.0809419,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101648573",
+   "name": null,
+   "ar": null,
+   "lat": 32.6066282,
+   "lon": 13.0860194,
+   "tags": {
+    "building": "yes",
+    "military": "hangar"
+   }
+  },
+  {
+   "id": "w101648574",
+   "name": null,
+   "ar": null,
+   "lat": 32.609792,
+   "lon": 13.0889889,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101785482",
+   "name": null,
+   "ar": null,
+   "lat": 32.8144804,
+   "lon": 13.2957772,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101787611",
+   "name": "The Tekbali camp",
+   "ar": "معسكر التكبالي",
+   "lat": 32.803457,
+   "lon": 13.2248574,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101789009",
+   "name": "Major General 32 Camp",
+   "ar": "معسكر اليرموك -اللواء 32 المعزز",
+   "lat": 32.7744419,
+   "lon": 13.2055731,
+   "tags": {
+    "landuse": "military",
+    "operator": "Major: Khamis Muammar Gaddafi"
+   }
+  },
+  {
+   "id": "w101809607",
+   "name": null,
+   "ar": null,
+   "lat": 32.8544689,
+   "lon": 13.3468726,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101847283",
+   "name": "Artillery and Missile School",
+   "ar": "مدرسة المدفعية والصواريخ",
+   "lat": 32.7624431,
+   "lon": 13.2001587,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101851631",
+   "name": null,
+   "ar": null,
+   "lat": 32.8995207,
+   "lon": 13.2671051,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101853905",
+   "name": null,
+   "ar": null,
+   "lat": 32.8232809,
+   "lon": 13.3741179,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101853906",
+   "name": null,
+   "ar": null,
+   "lat": 32.8274198,
+   "lon": 13.3730752,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101853912",
+   "name": null,
+   "ar": null,
+   "lat": 32.8249821,
+   "lon": 13.372214,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101853916",
+   "name": null,
+   "ar": null,
+   "lat": 32.8236712,
+   "lon": 13.3724508,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101853926",
+   "name": null,
+   "ar": null,
+   "lat": 32.8307174,
+   "lon": 13.3812574,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w101884570",
+   "name": null,
+   "ar": null,
+   "lat": 32.8402152,
+   "lon": 13.4830573,
+   "tags": {
+    "landuse": "military",
+    "military": "air defence"
+   }
+  },
+  {
+   "id": "w101889006",
+   "name": null,
+   "ar": null,
+   "lat": 32.8225383,
+   "lon": 13.3691915,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889007",
+   "name": null,
+   "ar": null,
+   "lat": 32.8252034,
+   "lon": 13.3922473,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889010",
+   "name": null,
+   "ar": null,
+   "lat": 32.8275464,
+   "lon": 13.3935278,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889011",
+   "name": null,
+   "ar": null,
+   "lat": 32.8247584,
+   "lon": 13.3853207,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889012",
+   "name": null,
+   "ar": null,
+   "lat": 32.8390685,
+   "lon": 13.3793569,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889013",
+   "name": null,
+   "ar": null,
+   "lat": 32.827623,
+   "lon": 13.3771243,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889014",
+   "name": null,
+   "ar": null,
+   "lat": 32.8287592,
+   "lon": 13.3950503,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889015",
+   "name": null,
+   "ar": null,
+   "lat": 32.8212933,
+   "lon": 13.3765536,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889016",
+   "name": null,
+   "ar": null,
+   "lat": 32.83418,
+   "lon": 13.3837269,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889017",
+   "name": null,
+   "ar": null,
+   "lat": 32.8226628,
+   "lon": 13.3784795,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889018",
+   "name": null,
+   "ar": null,
+   "lat": 32.8246379,
+   "lon": 13.3820499,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889019",
+   "name": null,
+   "ar": null,
+   "lat": 32.835452,
+   "lon": 13.3787764,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889021",
+   "name": null,
+   "ar": null,
+   "lat": 32.8355575,
+   "lon": 13.3826033,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889023",
+   "name": null,
+   "ar": null,
+   "lat": 32.8342301,
+   "lon": 13.382115,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889024",
+   "name": null,
+   "ar": null,
+   "lat": 32.826925,
+   "lon": 13.3888941,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889025",
+   "name": null,
+   "ar": null,
+   "lat": 32.8258093,
+   "lon": 13.3805484,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889026",
+   "name": null,
+   "ar": null,
+   "lat": 32.8246285,
+   "lon": 13.3787553,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889027",
+   "name": null,
+   "ar": null,
+   "lat": 32.8257119,
+   "lon": 13.3947834,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889028",
+   "name": null,
+   "ar": null,
+   "lat": 32.8205636,
+   "lon": 13.3793463,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889030",
+   "name": null,
+   "ar": null,
+   "lat": 32.8337773,
+   "lon": 13.3804036,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889033",
+   "name": null,
+   "ar": null,
+   "lat": 32.8250175,
+   "lon": 13.3906619,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889035",
+   "name": null,
+   "ar": null,
+   "lat": 32.8278552,
+   "lon": 13.3912228,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889036",
+   "name": null,
+   "ar": null,
+   "lat": 32.826237,
+   "lon": 13.3764865,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889039",
+   "name": null,
+   "ar": null,
+   "lat": 32.8278188,
+   "lon": 13.3878157,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889040",
+   "name": null,
+   "ar": null,
+   "lat": 32.8224889,
+   "lon": 13.3673305,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889042",
+   "name": null,
+   "ar": null,
+   "lat": 32.8281466,
+   "lon": 13.3850872,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889046",
+   "name": null,
+   "ar": null,
+   "lat": 32.835169,
+   "lon": 13.3805031,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889048",
+   "name": null,
+   "ar": null,
+   "lat": 32.8381633,
+   "lon": 13.3783831,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889049",
+   "name": null,
+   "ar": null,
+   "lat": 32.8220954,
+   "lon": 13.3736145,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889052",
+   "name": null,
+   "ar": null,
+   "lat": 32.8243354,
+   "lon": 13.3749545,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889053",
+   "name": null,
+   "ar": null,
+   "lat": 32.8259862,
+   "lon": 13.3710782,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889054",
+   "name": null,
+   "ar": null,
+   "lat": 32.8257683,
+   "lon": 13.3985514,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889055",
+   "name": null,
+   "ar": null,
+   "lat": 32.8199121,
+   "lon": 13.3758666,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889057",
+   "name": null,
+   "ar": null,
+   "lat": 32.8379009,
+   "lon": 13.3804159,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889058",
+   "name": null,
+   "ar": null,
+   "lat": 32.8398227,
+   "lon": 13.3780061,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889060",
+   "name": null,
+   "ar": null,
+   "lat": 32.826455,
+   "lon": 13.3849154,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889062",
+   "name": null,
+   "ar": null,
+   "lat": 32.82068,
+   "lon": 13.3745416,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889063",
+   "name": null,
+   "ar": null,
+   "lat": 32.8264136,
+   "lon": 13.3963062,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889064",
+   "name": null,
+   "ar": null,
+   "lat": 32.8257293,
+   "lon": 13.3837581,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889066",
+   "name": null,
+   "ar": null,
+   "lat": 32.8316918,
+   "lon": 13.3860291,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889067",
+   "name": null,
+   "ar": null,
+   "lat": 32.8241337,
+   "lon": 13.3690393,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889068",
+   "name": null,
+   "ar": null,
+   "lat": 32.8264796,
+   "lon": 13.3924971,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889069",
+   "name": null,
+   "ar": null,
+   "lat": 32.8322154,
+   "lon": 13.3823467,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889070",
+   "name": null,
+   "ar": null,
+   "lat": 32.8223959,
+   "lon": 13.3719784,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889071",
+   "name": null,
+   "ar": null,
+   "lat": 32.8327507,
+   "lon": 13.3834908,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889072",
+   "name": null,
+   "ar": null,
+   "lat": 32.8242858,
+   "lon": 13.3938993,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889073",
+   "name": null,
+   "ar": null,
+   "lat": 32.825187,
+   "lon": 13.3700165,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889074",
+   "name": null,
+   "ar": null,
+   "lat": 32.829703,
+   "lon": 13.3850949,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889075",
+   "name": null,
+   "ar": null,
+   "lat": 32.8298714,
+   "lon": 13.3819216,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889077",
+   "name": null,
+   "ar": null,
+   "lat": 32.8367472,
+   "lon": 13.3786769,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889078",
+   "name": null,
+   "ar": null,
+   "lat": 32.8307857,
+   "lon": 13.3835156,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889082",
+   "name": null,
+   "ar": null,
+   "lat": 32.8235482,
+   "lon": 13.3770218,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889083",
+   "name": null,
+   "ar": null,
+   "lat": 32.8250897,
+   "lon": 13.396402,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889085",
+   "name": null,
+   "ar": null,
+   "lat": 32.8364539,
+   "lon": 13.380272,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w101889087",
+   "name": null,
+   "ar": null,
+   "lat": 32.8256157,
+   "lon": 13.3775889,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w102048747",
+   "name": null,
+   "ar": null,
+   "lat": 32.7668068,
+   "lon": 13.0331487,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102050684",
+   "name": "7th April Camp",
+   "ar": "7th April Camp",
+   "lat": 32.8050719,
+   "lon": 13.1060505,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102212462",
+   "name": null,
+   "ar": null,
+   "lat": 32.5129901,
+   "lon": 13.3964115,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102213489",
+   "name": null,
+   "ar": null,
+   "lat": 32.5820892,
+   "lon": 13.4576351,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102508895",
+   "name": "SAM Site",
+   "ar": "SAM Site",
+   "lat": 32.6145796,
+   "lon": 13.3565919,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102508898",
+   "name": null,
+   "ar": null,
+   "lat": 32.5264705,
+   "lon": 13.2135689,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102510972",
+   "name": null,
+   "ar": null,
+   "lat": 32.7920821,
+   "lon": 13.5905573,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102539584",
+   "name": null,
+   "ar": null,
+   "lat": 32.8335036,
+   "lon": 13.3029329,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w126532492",
+   "name": "Army Camp",
+   "ar": "تجييش غوط الشعال",
+   "lat": 32.8613232,
+   "lon": 13.0966291,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w127308213",
+   "name": "27 Base",
+   "ar": "معسكر 27",
+   "lat": 32.8057719,
+   "lon": 12.9082056,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w290032367",
+   "name": "جزيرة معسكر ال77",
+   "ar": "جزيرة معسكر ال77",
+   "lat": 32.8672363,
+   "lon": 13.1786905,
+   "tags": {
+    "landuse": "meadow"
+   }
+  },
+  {
+   "id": "w338939195",
+   "name": "الدعم الاكتروني",
+   "ar": "الدعم الاكتروني",
+   "lat": 32.6964746,
+   "lon": 13.0062718,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w338939197",
+   "name": "الدعم الاكتروني",
+   "ar": "الدعم الاكتروني",
+   "lat": 32.6896216,
+   "lon": 13.0104668,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w397034114",
+   "name": "Elmaasra",
+   "ar": "المعصرة",
+   "lat": 32.8769598,
+   "lon": 13.1535888,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w399727039",
+   "name": null,
+   "ar": null,
+   "lat": 32.7923702,
+   "lon": 13.5934301,
+   "tags": {
+    "military": "range"
+   }
+  },
+  {
+   "id": "w409777939",
+   "name": "Abu Sitta Naval Base",
+   "ar": "قاعدة أبو ستة البحرية",
+   "lat": 32.9064089,
+   "lon": 13.2206031,
+   "tags": {
+    "landuse": "military",
+    "military": "naval_base"
+   }
+  },
+  {
+   "id": "w452110365",
+   "name": null,
+   "ar": null,
+   "lat": 32.8278331,
+   "lon": 13.048529,
+   "tags": {
+    "landuse": "military",
+    "military": "obstacle_course"
+   }
+  },
+  {
+   "id": "w456821413",
+   "name": null,
+   "ar": null,
+   "lat": 32.8200647,
+   "lon": 13.2124513,
+   "tags": {
+    "landuse": "military",
+    "military": "range"
+   }
+  },
+  {
+   "id": "w460102491",
+   "name": "Military camp",
+   "ar": "Military camp",
+   "lat": 32.8647868,
+   "lon": 13.3580923,
+   "tags": {}
+  },
+  {
+   "id": "w460103744",
+   "name": "Military Camp",
+   "ar": "مخيم عسكري",
+   "lat": 32.8730471,
+   "lon": 13.3946415,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w471648867",
+   "name": "حديقة المعسكر",
+   "ar": "حديقة المعسكر",
+   "lat": 32.8719157,
+   "lon": 13.1210556,
+   "tags": {}
+  },
+  {
+   "id": "w486073870",
+   "name": null,
+   "ar": null,
+   "lat": 32.8464786,
+   "lon": 13.2425513,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w767837399",
+   "name": "Naval academy",
+   "ar": "الأكاديمية البحرية الليبية",
+   "lat": 32.816593,
+   "lon": 12.9388402,
+   "tags": {
+    "amenity": "university",
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w774860700",
+   "name": "Hamza Camp",
+   "ar": "معسكر حمزة",
+   "lat": 32.7873107,
+   "lon": 13.1747661,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w809088146",
+   "name": "Transport camp",
+   "ar": "معسكر النقلية",
+   "lat": 32.7328641,
+   "lon": 13.1487915,
+   "tags": {
+    "landuse": "military",
+    "military": "range"
+   }
+  },
+  {
+   "id": "w809090148",
+   "name": null,
+   "ar": null,
+   "lat": 32.7578359,
+   "lon": 13.2024509,
+   "tags": {
+    "landuse": "military",
+    "military": "barracks"
+   }
+  },
+  {
+   "id": "w835004252",
+   "name": null,
+   "ar": null,
+   "lat": 32.8354628,
+   "lon": 13.2530121,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w843255798",
+   "name": null,
+   "ar": null,
+   "lat": 32.5197688,
+   "lon": 13.2271011,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w854847119",
+   "name": null,
+   "ar": null,
+   "lat": 32.7187216,
+   "lon": 12.8512738,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w894898409",
+   "name": "General Administration of Central Security at the Ministry of Interior",
+   "ar": "الادارة العامة للامن المركزي بوزارة الداخلية",
+   "lat": 32.8151572,
+   "lon": 13.2102855,
+   "tags": {
+    "landuse": "military",
+    "military": "range"
+   }
+  },
+  {
+   "id": "w943052401",
+   "name": null,
+   "ar": null,
+   "lat": 32.8755831,
+   "lon": 13.3065451,
+   "tags": {
+    "landuse": "military",
+    "military": "range"
+   }
+  },
+  {
+   "id": "w945667688",
+   "name": null,
+   "ar": null,
+   "lat": 32.8389337,
+   "lon": 13.343653,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w956288856",
+   "name": null,
+   "ar": null,
+   "lat": 32.8152138,
+   "lon": 13.5351079,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w1014056162",
+   "name": null,
+   "ar": null,
+   "lat": 32.8096069,
+   "lon": 13.2254356,
+   "tags": {
+    "landuse": "military",
+    "military": "training_area"
+   }
+  },
+  {
+   "id": "w1014056164",
+   "name": null,
+   "ar": null,
+   "lat": 32.8143239,
+   "lon": 13.224541,
+   "tags": {
+    "landuse": "military",
+    "military": "training_area"
+   }
+  },
+  {
+   "id": "w1015345259",
+   "name": null,
+   "ar": null,
+   "lat": 32.7465553,
+   "lon": 13.0906475,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w1025756749",
+   "name": null,
+   "ar": null,
+   "lat": 32.820275,
+   "lon": 13.3822256,
+   "tags": {
+    "building": "yes",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1042947986",
+   "name": null,
+   "ar": null,
+   "lat": 32.798142,
+   "lon": 13.224284,
+   "tags": {
+    "landuse": "military",
+    "military": "training_area"
+   }
+  },
+  {
+   "id": "w1042959137",
+   "name": null,
+   "ar": null,
+   "lat": 32.7761162,
+   "lon": 13.2041686,
+   "tags": {
+    "landuse": "military",
+    "military": "training_area"
+   }
+  },
+  {
+   "id": "w1071980189",
+   "name": null,
+   "ar": null,
+   "lat": 32.8362044,
+   "lon": 13.3322788,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w1084094663",
+   "name": "Fourth Brigade",
+   "ar": "اللواء الرابع",
+   "lat": 32.5043636,
+   "lon": 12.9843877,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w1122309149",
+   "name": null,
+   "ar": null,
+   "lat": 32.8332676,
+   "lon": 13.3028153,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122309151",
+   "name": null,
+   "ar": null,
+   "lat": 32.8334952,
+   "lon": 13.3025444,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1525946804",
+   "name": null,
+   "ar": null,
+   "lat": 32.7323323,
+   "lon": 13.1994147,
+   "tags": {
+    "military": "barracks"
+   }
+  },
+  {
+   "id": "w1545890616",
+   "name": "Camp 27",
+   "ar": "Camp 27",
+   "lat": 32.8094022,
+   "lon": 12.9091157,
+   "tags": {
+    "landuse": "military",
+    "military": "base"
+   }
+  },
+  {
+   "id": "w1545892254",
+   "name": null,
+   "ar": null,
+   "lat": 32.7826442,
+   "lon": 13.2865997,
+   "tags": {
+    "landuse": "military",
+    "military": "base"
+   }
+  }
+ ],
+ "tripoli_industrial": [
+  {
+   "id": "n4348315695",
+   "name": "ElNajma factory",
+   "ar": "مصنع النجمة للصابون",
+   "lat": 32.8677401,
+   "lon": 13.2920789,
+   "tags": {
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "n4775683631",
+   "name": "Pepsi Cola Drink Factory",
+   "ar": "مصنع المشروب بيبسي كولا",
+   "lat": 32.8437488,
+   "lon": 13.1610583,
+   "tags": {
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "n5396452521",
+   "name": "مصنع مياه الصافية",
+   "ar": "مصنع مياه الصافية",
+   "lat": 32.8000413,
+   "lon": 13.2548494,
+   "tags": {
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "n6051390686",
+   "name": "Buy Scrap",
+   "ar": "شراء خردة",
+   "lat": 32.7098529,
+   "lon": 13.0761036,
+   "tags": {
+    "industrial": "scrap_yard",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "n6442844685",
+   "name": "Swani Building Material Complex",
+   "ar": "مجمع السواني لصناعة مواد البناء",
+   "lat": 32.742441,
+   "lon": 13.0762426,
+   "tags": {
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "n13516363839",
+   "name": "شركة صحة لتعبئة المياه و المشروبات",
+   "ar": "شركة صحة لتعبئة المياه و المشروبات",
+   "lat": 32.7352992,
+   "lon": 13.0287329,
+   "tags": {
+    "man_made": "works",
+    "operator": "Sahha Company"
+   }
+  },
+  {
+   "id": "w101078565",
+   "name": "The General Tobacco Company",
+   "ar": "الشركة العامة للتبغ",
+   "lat": 32.8490239,
+   "lon": 13.1066928,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w101078567",
+   "name": "Tripoli wastewater treatment plant",
+   "ar": "محطة طرابلس لمعالجة مياه الصرف الصحي",
+   "lat": 32.8315421,
+   "lon": 13.1654741,
+   "tags": {
+    "landuse": "industrial",
+    "man_made": "wastewater_plant"
+   }
+  },
+  {
+   "id": "w108036550",
+   "name": "Tripoli South OCGT Power Plant",
+   "ar": "محطة جنوب طرابلس الغازية لتوليد الكهرباء",
+   "lat": 32.7761323,
+   "lon": 13.0990348,
+   "tags": {
+    "landuse": "industrial",
+    "power": "plant"
+   }
+  },
+  {
+   "id": "w161956631",
+   "name": "Atebba station electric 220/400 KV",
+   "ar": "Atebba station electric 220/400 KV",
+   "lat": 32.7320359,
+   "lon": 13.2764746,
+   "tags": {
+    "landuse": "industrial",
+    "power": "substation"
+   }
+  },
+  {
+   "id": "w161963067",
+   "name": "East Tripoli power station",
+   "ar": "محطة كهرباء شرق طرابلس",
+   "lat": 32.8473804,
+   "lon": 13.3329341,
+   "tags": {
+    "landuse": "industrial",
+    "power": "plant"
+   }
+  },
+  {
+   "id": "w214448787",
+   "name": "Zahra Power Plant",
+   "ar": "Zahra Power Plant",
+   "lat": 32.6791359,
+   "lon": 12.8775967,
+   "tags": {
+    "landuse": "industrial",
+    "power": "plant"
+   }
+  },
+  {
+   "id": "w313517843",
+   "name": "Tripoli West Power Station",
+   "ar": "محطه توليد الكهرباء غرب طرابلس",
+   "lat": 32.8240824,
+   "lon": 12.9737907,
+   "tags": {
+    "landuse": "industrial",
+    "power": "plant"
+   }
+  },
+  {
+   "id": "w338391853",
+   "name": "Al Mamoura Factory for Food Industries",
+   "ar": "مصنع المعمورة للصناعات الغذائية",
+   "lat": 32.7277317,
+   "lon": 12.854371,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w338939196",
+   "name": "المشتل",
+   "ar": "المشتل",
+   "lat": 32.6930474,
+   "lon": 13.0113359,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w339238497",
+   "name": "The National Company for Drilling and Maintenance of Oil Wells Al-Kuraimi",
+   "ar": "الشركة الوطنية للحفر وصيانة آبار النفط موقع الكريمية",
+   "lat": 32.7717917,
+   "lon": 13.085961,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w339955818",
+   "name": "مصنع اعلاف",
+   "ar": "مصنع اعلاف",
+   "lat": 32.7173509,
+   "lon": 12.9195939,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w345428939",
+   "name": "sidi bilal Seaport",
+   "ar": "مرفاء سي بلال البحري صياد",
+   "lat": 32.8221461,
+   "lon": 12.9546767,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w399735386",
+   "name": "Al Mawsem Company for Grinding Grain",
+   "ar": "شركة الموسم لطحن الغلال",
+   "lat": 32.7121384,
+   "lon": 13.6006631,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w456825567",
+   "name": "Schlumberger Base",
+   "ar": "شركة شلمبرجير",
+   "lat": 32.7499918,
+   "lon": 13.4068886,
+   "tags": {
+    "landuse": "industrial",
+    "office": "government"
+   }
+  },
+  {
+   "id": "w554925432",
+   "name": "مصنع لتقطيع الرخام",
+   "ar": "مصنع لتقطيع الرخام",
+   "lat": 32.6822491,
+   "lon": 13.2560102,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w570028121",
+   "name": "The River Company",
+   "ar": "شركة النهر",
+   "lat": 32.721407,
+   "lon": 13.2501851,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w570649620",
+   "name": "شركة المراعي الخصبة للمطاحن والاعلاف",
+   "ar": "شركة المراعي الخصبة للمطاحن والاعلاف",
+   "lat": 32.7324274,
+   "lon": 13.3024949,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w570649621",
+   "name": "شركة رخام",
+   "ar": "شركة رخام",
+   "lat": 32.7288335,
+   "lon": 13.3000415,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w594173038",
+   "name": "Azizia Glass Manufacturing Company",
+   "ar": "شركة العزيزية لتصنيع الزجاج",
+   "lat": 32.5271173,
+   "lon": 13.0260344,
+   "tags": {
+    "landuse": "industrial",
+    "operator": "AGMC"
+   }
+  },
+  {
+   "id": "w637594086",
+   "name": "Industrial Twon",
+   "ar": "الحي الصناعي",
+   "lat": 32.8439656,
+   "lon": 13.1349814,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w682133636",
+   "name": "معصرة زيتون",
+   "ar": "معصرة زيتون",
+   "lat": 32.7416525,
+   "lon": 12.8067535,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w682133638",
+   "name": "ورشة سيارات",
+   "ar": "ورشة سيارات",
+   "lat": 32.7415765,
+   "lon": 12.807149,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w682133641",
+   "name": "مصنع بومشي",
+   "ar": "مصنع بومشي",
+   "lat": 32.741674,
+   "lon": 12.8078973,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w682133649",
+   "name": "مصنع بومشي",
+   "ar": "مصنع بومشي",
+   "lat": 32.7424751,
+   "lon": 12.8109066,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w682133668",
+   "name": "مصنع الكردي",
+   "ar": "مصنع الكردي",
+   "lat": 32.7411988,
+   "lon": 12.8026738,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w770696632",
+   "name": "Hani Gas Warehouse",
+   "ar": "مستودع الهاني للغاز",
+   "lat": 32.8840693,
+   "lon": 13.2235375,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w771614709",
+   "name": "Al Waha Painting Factory",
+   "ar": "مصنع الواحة للطلاء",
+   "lat": 32.7476762,
+   "lon": 13.23201,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w776229387",
+   "name": "Pasta and Couscous Factory",
+   "ar": "مصنع المكرونة",
+   "lat": 32.8615806,
+   "lon": 13.1241787,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w787496094",
+   "name": "Brega oil company",
+   "ar": "شركة البريقة لتسويق النفط-مستودع طرابلس النفطي",
+   "lat": 32.7901592,
+   "lon": 13.1488881,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w810561293",
+   "name": "Rauch Juice Factory",
+   "ar": "مصنع عصير الراوخ",
+   "lat": 32.5160151,
+   "lon": 13.1774487,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w810700807",
+   "name": "Truck and trailer factory ( CALABRESE-IVECO",
+   "ar": "مصنع الشاحنات والمقطورات",
+   "lat": 32.8418359,
+   "lon": 13.3928804,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w816522508",
+   "name": "Al Shifa Medical Supplies Factory",
+   "ar": "مصنع الشفاء للمستلزمات الطبية،",
+   "lat": 32.8086909,
+   "lon": 13.3114704,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w820821101",
+   "name": "مصنع الروائح",
+   "ar": "مصنع الروائح",
+   "lat": 32.686602,
+   "lon": 13.2341197,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w820918894",
+   "name": "Judi Food Industries Company",
+   "ar": "شركة جودي للصناعات الغذائية",
+   "lat": 32.7441126,
+   "lon": 13.0255186,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w826376901",
+   "name": "Brega oil company-Head Office",
+   "ar": "شركة البريقة للنفط-الادارة العامة",
+   "lat": 32.7988944,
+   "lon": 13.1615802,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w826376902",
+   "name": "soap factory",
+   "ar": "مصنع الصابون -قصر بن غشير",
+   "lat": 32.6895959,
+   "lon": 13.1704972,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w827014793",
+   "name": "IVECO LIBYA",
+   "ar": "IVECO LIBYA",
+   "lat": 32.7597751,
+   "lon": 13.4417517,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w836946463",
+   "name": "Al Rabie Factory for Medical Sponge",
+   "ar": "مصنع الربيع للاسنفنج والمراتب",
+   "lat": 32.7196447,
+   "lon": 13.2808291,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w838351026",
+   "name": null,
+   "ar": null,
+   "lat": 32.6346339,
+   "lon": 13.3456891,
+   "tags": {
+    "building": "yes",
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "w838351027",
+   "name": null,
+   "ar": null,
+   "lat": 32.635364,
+   "lon": 13.3458108,
+   "tags": {
+    "building": "yes",
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "w838351029",
+   "name": null,
+   "ar": null,
+   "lat": 32.6367385,
+   "lon": 13.3452806,
+   "tags": {
+    "building": "yes",
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "w842482304",
+   "name": "North Africa Geophysical Exploration Company (NAGICO)",
+   "ar": "شركة شمال أفريقيا للاستكشاف الجيوفيزيائي (ناجيكو)",
+   "lat": 32.6801972,
+   "lon": 13.2588132,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w843251627",
+   "name": "Suq Al khamis Company for the production of fodder",
+   "ar": "شركة سوق الخميس لانتاج العلف",
+   "lat": 32.4643996,
+   "lon": 13.3103273,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w843681037",
+   "name": "Masafi Mineral Water Factory",
+   "ar": "مصنع مسافي للمياه المعدنية",
+   "lat": 32.7953532,
+   "lon": 13.180405,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w843681040",
+   "name": "Acacus Repsol Petroleum Operations Company",
+   "ar": "شركة أكاكوس ريبسول للعمليات النفطية",
+   "lat": 32.8286039,
+   "lon": 13.1560915,
+   "tags": {
+    "industrial": "oil",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w844765382",
+   "name": "Abraj Oil Services Company",
+   "ar": "شركة أبراج للخدمات النفطية",
+   "lat": 32.7278423,
+   "lon": 13.2543803,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w859817967",
+   "name": "Diaa Libya Company for the feed industry",
+   "ar": "شركة ضياء ليبيا لصناعة الاعلاف",
+   "lat": 32.6762147,
+   "lon": 12.9250868,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w859817968",
+   "name": "Market stores",
+   "ar": "مخازن الاسواق",
+   "lat": 32.7728744,
+   "lon": 12.9451649,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w860653445",
+   "name": "شركة الريشة الذهبية للصناعات الغذائية",
+   "ar": "شركة الريشة الذهبية للصناعات الغذائية",
+   "lat": 32.7320781,
+   "lon": 13.0327402,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w861079097",
+   "name": "Soap factory",
+   "ar": "مصنع الصابون-السواني",
+   "lat": 32.7524509,
+   "lon": 13.0456844,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w861152795",
+   "name": "Al Qalaa soap factory",
+   "ar": "مصنع القلعة للصابون",
+   "lat": 32.7380484,
+   "lon": 13.0915054,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w861159688",
+   "name": "South Tripoli Mill",
+   "ar": "مطحن جنوب طرابلس",
+   "lat": 32.7273518,
+   "lon": 13.0855494,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w893950667",
+   "name": "Al-Nahr Company for Pipes and Constructions",
+   "ar": "شركة النهر للأنابيب و الانشاءات",
+   "lat": 32.7210891,
+   "lon": 13.2033839,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w893953411",
+   "name": "Electrical Industrial company",
+   "ar": "شركة الصناعات الكهربائية",
+   "lat": 32.7201923,
+   "lon": 13.2572551,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w904057385",
+   "name": "Birra Oea",
+   "ar": "Birra Oea",
+   "lat": 32.8925904,
+   "lon": 13.1948606,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w907034266",
+   "name": "Arab Company for Drilling and Well Maintenance",
+   "ar": "الشركة العربية للحفر و صيانة الآبار",
+   "lat": 32.7260881,
+   "lon": 13.2174836,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w923748857",
+   "name": "Al-Sadd Company for the manufacture of animal feed",
+   "ar": "شركة السد لصناعة الاعلاف الحيوانية",
+   "lat": 32.7275289,
+   "lon": 13.256285,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w923748865",
+   "name": "Truck and trailer factory ( CALABRESE-IVECO",
+   "ar": "مصنع الشاحنات والمقطورات",
+   "lat": 32.8380471,
+   "lon": 13.3962952,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w923748866",
+   "name": "Department of Agricultural Tractors",
+   "ar": "مصنع الجرارات الزراعية",
+   "lat": 32.8400321,
+   "lon": 13.3999809,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w943676526",
+   "name": "Carpet Factory",
+   "ar": "مصنع النسيج",
+   "lat": 32.6393325,
+   "lon": 13.2205322,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w944028899",
+   "name": "Al-Jafara Juices Factory",
+   "ar": "مصنع الجفارة للعصائر",
+   "lat": 32.6985944,
+   "lon": 13.1277481,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w948667107",
+   "name": "Poultry farming project",
+   "ar": "مشروع تربية الدواجن",
+   "lat": 32.6652834,
+   "lon": 13.1897626,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w948668255",
+   "name": "Feed factory",
+   "ar": "مصنع الاعلاف -قصر بن غشير",
+   "lat": 32.6570491,
+   "lon": 13.2005641,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w952992704",
+   "name": "General Electronics Company - Garyounis",
+   "ar": "الشركة العامة للألكترونيات -قاريونس",
+   "lat": 32.8558828,
+   "lon": 13.3795855,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w954326658",
+   "name": "LIBYANA Storge",
+   "ar": "مخازن شركة ليبيانا",
+   "lat": 32.8122628,
+   "lon": 13.4424556,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w966690188",
+   "name": "مصنع الرخام",
+   "ar": "مصنع الرخام",
+   "lat": 32.5169613,
+   "lon": 13.3239648,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w991047778",
+   "name": null,
+   "ar": null,
+   "lat": 32.7556526,
+   "lon": 13.4112959,
+   "tags": {
+    "building": "yes",
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "w991047779",
+   "name": null,
+   "ar": null,
+   "lat": 32.7540231,
+   "lon": 13.4091697,
+   "tags": {
+    "building": "yes",
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "w991047793",
+   "name": null,
+   "ar": null,
+   "lat": 32.753351,
+   "lon": 13.4096912,
+   "tags": {
+    "building": "yes",
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "w1013718590",
+   "name": "Al-Nabaa Al-Safi Mineral Water Factory",
+   "ar": "مصنع النبع الصافي للمياه المعدنية",
+   "lat": 32.8029532,
+   "lon": 13.2433547,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w1016562812",
+   "name": "Dairy Factory",
+   "ar": "مصنع الالبان -جنزور",
+   "lat": 32.7964914,
+   "lon": 12.980636,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w1042006844",
+   "name": "مصنع ذات العماد للحديد والصلب",
+   "ar": "مصنع ذات العماد للحديد والصلب",
+   "lat": 32.5798547,
+   "lon": 13.2716125,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w1110773543",
+   "name": "شركة شمس",
+   "ar": "شركة شمس",
+   "lat": 32.685541,
+   "lon": 12.7755609,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w1112586882",
+   "name": "Janzour Oil Depot",
+   "ar": "شركة البريقة لتسويق النفط مستودع جنزور النفطي",
+   "lat": 32.8242233,
+   "lon": 12.9696749,
+   "tags": {
+    "industrial": "oil",
+    "landuse": "industrial",
+    "operator": "Brega Oil Marketing Company"
+   }
+  },
+  {
+   "id": "w1233679434",
+   "name": "مصنع العالمية لصناعة الدقيق",
+   "ar": "مصنع العالمية لصناعة الدقيق",
+   "lat": 32.4518058,
+   "lon": 13.3586231,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w1348549509",
+   "name": null,
+   "ar": null,
+   "lat": 32.6358415,
+   "lon": 13.3404704,
+   "tags": {
+    "building": "yes",
+    "man_made": "works"
+   }
+  },
+  {
+   "id": "w1547463404",
+   "name": "جهاز استثمار مياه منظومة جبل الحساونة السفارة للنهر الصناعي",
+   "ar": "جهاز استثمار مياه منظومة جبل الحساونة السفارة للنهر الصناعي",
+   "lat": 32.6389,
+   "lon": 13.1270005,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "r14347178",
+   "name": "Pepsi Cola",
+   "ar": "مصنع البيبسي",
+   "lat": 32.8547672,
+   "lon": 13.1097992,
+   "tags": {
+    "industrial": "factory",
+    "landuse": "industrial"
+   }
+  }
+ ],
+ "waddan_near": [
+  {
+   "id": "n1193623176",
+   "name": "Waddan",
+   "ar": "ودان",
+   "lat": 29.1613826,
+   "lon": 16.141311,
+   "tags": {
+    "place": "city"
+   }
+  },
+  {
+   "id": "n1809141547",
+   "name": null,
+   "ar": null,
+   "lat": 28.9749734,
+   "lon": 16.4077358,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n1809141639",
+   "name": null,
+   "ar": null,
+   "lat": 29.0255571,
+   "lon": 16.3679889,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n1837692624",
+   "name": null,
+   "ar": null,
+   "lat": 29.3623097,
+   "lon": 16.0874404,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n1837692625",
+   "name": null,
+   "ar": null,
+   "lat": 29.3631154,
+   "lon": 16.0861371,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n1837820205",
+   "name": null,
+   "ar": null,
+   "lat": 29.1437583,
+   "lon": 16.1626647,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n1837820206",
+   "name": null,
+   "ar": null,
+   "lat": 29.1439467,
+   "lon": 16.162727,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n1847659150",
+   "name": null,
+   "ar": null,
+   "lat": 29.1218362,
+   "lon": 15.9364875,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n1849071319",
+   "name": null,
+   "ar": null,
+   "lat": 29.2566335,
+   "lon": 16.2163617,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n1849071473",
+   "name": null,
+   "ar": null,
+   "lat": 29.3261565,
+   "lon": 16.3127091,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n1925508810",
+   "name": "Fuel Station",
+   "ar": "محطه وقود ودان",
+   "lat": 29.1902086,
+   "lon": 16.149343,
+   "tags": {
+    "amenity": "fuel"
+   }
+  },
+  {
+   "id": "n1925845780",
+   "name": null,
+   "ar": null,
+   "lat": 29.0734033,
+   "lon": 15.7863574,
+   "tags": {
+    "man_made": "water_tower"
+   }
+  },
+  {
+   "id": "n3308958795",
+   "name": "Fuel Station",
+   "ar": "محطة وقود الاهلية",
+   "lat": 29.1810983,
+   "lon": 16.1509565,
+   "tags": {
+    "amenity": "fuel",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "n3308984120",
+   "name": "Fuel Station",
+   "ar": "محطة وقود",
+   "lat": 29.1603563,
+   "lon": 16.1287381,
+   "tags": {
+    "amenity": "fuel"
+   }
+  },
+  {
+   "id": "n3683100485",
+   "name": null,
+   "ar": null,
+   "lat": 29.1279738,
+   "lon": 15.9347543,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n3760033345",
+   "name": "مدرسة فاطمة الزهراء للتعليم الاساسي",
+   "ar": "مدرسة الزهراء",
+   "lat": 29.1667895,
+   "lon": 16.1352189,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n3760059235",
+   "name": "المجلس المحلي ودان",
+   "ar": "المجلس المحلي ودان",
+   "lat": 29.1548533,
+   "lon": 16.1434998,
+   "tags": {
+    "amenity": "townhall"
+   }
+  },
+  {
+   "id": "n3760067651",
+   "name": "مدرسة المقرون",
+   "ar": "مدرسة المقرون",
+   "lat": 29.1445719,
+   "lon": 16.1455989,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n3760069006",
+   "name": "العهد الصناعي",
+   "ar": "العهد الصناعي",
+   "lat": 29.1525571,
+   "lon": 16.1447233,
+   "tags": {}
+  },
+  {
+   "id": "n3760070132",
+   "name": "الملعب البلدي القديم",
+   "ar": "الملعب البلدي القديم",
+   "lat": 29.1536348,
+   "lon": 16.1452139,
+   "tags": {}
+  },
+  {
+   "id": "n3760081253",
+   "name": "High School Boys",
+   "ar": "مدرسة ودان الثانوية بنين",
+   "lat": 29.1571042,
+   "lon": 16.1418514,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n3760082182",
+   "name": "روضة الزهور",
+   "ar": "روضة الزهور",
+   "lat": 29.1595176,
+   "lon": 16.1395103,
+   "tags": {
+    "amenity": "kindergarten"
+   }
+  },
+  {
+   "id": "n3760083247",
+   "name": "مسجد الصوان",
+   "ar": "مسجد الصوان",
+   "lat": 29.1687863,
+   "lon": 16.1511136,
+   "tags": {
+    "amenity": "place_of_worship"
+   }
+  },
+  {
+   "id": "n3760083983",
+   "name": "Higher Institute of Science and Technology",
+   "ar": "معهد المهن الشاملة",
+   "lat": 29.1631845,
+   "lon": 16.1492903,
+   "tags": {
+    "amenity": "college"
+   }
+  },
+  {
+   "id": "n3760091389",
+   "name": "صندوق التقاعد",
+   "ar": "صندوق التقاعد",
+   "lat": 29.1779399,
+   "lon": 16.1523969,
+   "tags": {
+    "office": "government"
+   }
+  },
+  {
+   "id": "n3760091922",
+   "name": "محطة المياه البلاد",
+   "ar": "محطة المياه البلاد",
+   "lat": 29.1588969,
+   "lon": 16.1326096,
+   "tags": {}
+  },
+  {
+   "id": "n3760091975",
+   "name": "محكمة ودان الجزئية",
+   "ar": "محكمة ودان الجزئية",
+   "lat": 29.1782912,
+   "lon": 16.1509865,
+   "tags": {
+    "amenity": "courthouse"
+   }
+  },
+  {
+   "id": "n3760091976",
+   "name": "المركز الثقافي",
+   "ar": "المركز الثقافي",
+   "lat": 29.1789262,
+   "lon": 16.1510651,
+   "tags": {
+    "office": "government"
+   }
+  },
+  {
+   "id": "n3760092717",
+   "name": "التخطيط العمراني",
+   "ar": "التخطيط العمراني",
+   "lat": 29.1790245,
+   "lon": 16.1512368,
+   "tags": {
+    "office": "government"
+   }
+  },
+  {
+   "id": "n3760099141",
+   "name": "نقابة المعلمين بالجفرة",
+   "ar": "نقابة المعلمين بالجفرة",
+   "lat": 29.1608124,
+   "lon": 16.1319528,
+   "tags": {}
+  },
+  {
+   "id": "n3760104391",
+   "name": "مدرسة عقبة بن نافع",
+   "ar": "مدرسة عقبة بن نافع",
+   "lat": 29.1744565,
+   "lon": 16.1457244,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n4197740816",
+   "name": "A roghah",
+   "ar": "الرواغة",
+   "lat": 29.1782331,
+   "lon": 16.1606989,
+   "tags": {
+    "place": "suburb"
+   }
+  },
+  {
+   "id": "n4197740817",
+   "name": "Anakazh",
+   "ar": "النقازه",
+   "lat": 29.1748795,
+   "lon": 16.1496053,
+   "tags": {
+    "place": "suburb"
+   }
+  },
+  {
+   "id": "n4197740818",
+   "name": "LBLAD",
+   "ar": "لبلاد",
+   "lat": 29.1612392,
+   "lon": 16.1348209,
+   "tags": {
+    "place": "suburb"
+   }
+  },
+  {
+   "id": "n4197740820",
+   "name": "Al mgron",
+   "ar": "المقرون",
+   "lat": 29.1471473,
+   "lon": 16.1441335,
+   "tags": {
+    "place": "suburb"
+   }
+  },
+  {
+   "id": "n4525956291",
+   "name": "Bakery",
+   "ar": "مخبز القاضي",
+   "lat": 29.1625153,
+   "lon": 16.1320732,
+   "tags": {}
+  },
+  {
+   "id": "n5238046847",
+   "name": null,
+   "ar": null,
+   "lat": 29.1732244,
+   "lon": 16.1520732,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5238046848",
+   "name": null,
+   "ar": null,
+   "lat": 29.1734626,
+   "lon": 16.1520086,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5255642156",
+   "name": "summaya",
+   "ar": "summaya",
+   "lat": 29.1736097,
+   "lon": 16.1588273,
+   "tags": {
+    "highway": "rest_area"
+   }
+  },
+  {
+   "id": "n5255642157",
+   "name": "summaya",
+   "ar": "summaya",
+   "lat": 29.1751033,
+   "lon": 16.1511414,
+   "tags": {}
+  },
+  {
+   "id": "n5255648958",
+   "name": "Roady",
+   "ar": "Roady",
+   "lat": 29.1842676,
+   "lon": 16.1536785,
+   "tags": {}
+  },
+  {
+   "id": "n5469039813",
+   "name": null,
+   "ar": null,
+   "lat": 29.2084949,
+   "lon": 16.0085873,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469040622",
+   "name": null,
+   "ar": null,
+   "lat": 29.1952727,
+   "lon": 16.0140684,
+   "tags": {
+    "man_made": "mast"
+   }
+  },
+  {
+   "id": "n5469040711",
+   "name": null,
+   "ar": null,
+   "lat": 29.202158,
+   "lon": 16.0051703,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040738",
+   "name": null,
+   "ar": null,
+   "lat": 29.2035027,
+   "lon": 16.0073147,
+   "tags": {
+    "man_made": "mast"
+   }
+  },
+  {
+   "id": "n5469040739",
+   "name": null,
+   "ar": null,
+   "lat": 29.2039437,
+   "lon": 16.0068464,
+   "tags": {
+    "man_made": "mast"
+   }
+  },
+  {
+   "id": "n5469040740",
+   "name": null,
+   "ar": null,
+   "lat": 29.2039868,
+   "lon": 16.0063904,
+   "tags": {
+    "man_made": "mast"
+   }
+  },
+  {
+   "id": "n5469040741",
+   "name": null,
+   "ar": null,
+   "lat": 29.2039115,
+   "lon": 16.0056756,
+   "tags": {
+    "man_made": "mast"
+   }
+  },
+  {
+   "id": "n5469040742",
+   "name": null,
+   "ar": null,
+   "lat": 29.2045222,
+   "lon": 16.0117856,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040743",
+   "name": null,
+   "ar": null,
+   "lat": 29.2030292,
+   "lon": 16.0131827,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040744",
+   "name": null,
+   "ar": null,
+   "lat": 29.2029125,
+   "lon": 16.0095279,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040745",
+   "name": null,
+   "ar": null,
+   "lat": 29.2014195,
+   "lon": 16.0109249,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040872",
+   "name": null,
+   "ar": null,
+   "lat": 29.2040252,
+   "lon": 16.0263658,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040873",
+   "name": null,
+   "ar": null,
+   "lat": 29.204036,
+   "lon": 16.0275366,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040874",
+   "name": null,
+   "ar": null,
+   "lat": 29.2036702,
+   "lon": 16.0258605,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040875",
+   "name": null,
+   "ar": null,
+   "lat": 29.2033367,
+   "lon": 16.0255154,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040876",
+   "name": null,
+   "ar": null,
+   "lat": 29.2027881,
+   "lon": 16.0258728,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040877",
+   "name": null,
+   "ar": null,
+   "lat": 29.2030248,
+   "lon": 16.0285965,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040878",
+   "name": null,
+   "ar": null,
+   "lat": 29.2039069,
+   "lon": 16.0282761,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040879",
+   "name": null,
+   "ar": null,
+   "lat": 29.2026913,
+   "lon": 16.0291141,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469040882",
+   "name": null,
+   "ar": null,
+   "lat": 29.2018847,
+   "lon": 16.0271981,
+   "tags": {
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469041271",
+   "name": null,
+   "ar": null,
+   "lat": 29.2235642,
+   "lon": 16.0061442,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469041272",
+   "name": null,
+   "ar": null,
+   "lat": 29.2217236,
+   "lon": 16.0035041,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469041273",
+   "name": null,
+   "ar": null,
+   "lat": 29.2169431,
+   "lon": 16.0122437,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469041274",
+   "name": null,
+   "ar": null,
+   "lat": 29.2150891,
+   "lon": 16.0096794,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469041275",
+   "name": null,
+   "ar": null,
+   "lat": 29.2179893,
+   "lon": 16.006918,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469041276",
+   "name": null,
+   "ar": null,
+   "lat": 29.2216286,
+   "lon": 16.0079279,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469041278",
+   "name": null,
+   "ar": null,
+   "lat": 29.2196313,
+   "lon": 16.0097685,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469041288",
+   "name": null,
+   "ar": null,
+   "lat": 29.2216044,
+   "lon": 16.0050062,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469041290",
+   "name": null,
+   "ar": null,
+   "lat": 29.2199624,
+   "lon": 16.0066145,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469041298",
+   "name": null,
+   "ar": null,
+   "lat": 29.2171417,
+   "lon": 16.0108326,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469041299",
+   "name": null,
+   "ar": null,
+   "lat": 29.2164266,
+   "lon": 16.0098767,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469041525",
+   "name": null,
+   "ar": null,
+   "lat": 29.1804048,
+   "lon": 16.0086932,
+   "tags": {
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469187109",
+   "name": null,
+   "ar": null,
+   "lat": 29.060618,
+   "lon": 15.8215362,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469187110",
+   "name": null,
+   "ar": null,
+   "lat": 29.0624736,
+   "lon": 15.8195552,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469187383",
+   "name": null,
+   "ar": null,
+   "lat": 29.0472304,
+   "lon": 15.8456413,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278796",
+   "name": null,
+   "ar": null,
+   "lat": 29.0488617,
+   "lon": 15.8425319,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278797",
+   "name": null,
+   "ar": null,
+   "lat": 29.0475164,
+   "lon": 15.8431131,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278798",
+   "name": null,
+   "ar": null,
+   "lat": 29.0475973,
+   "lon": 15.8467323,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278799",
+   "name": null,
+   "ar": null,
+   "lat": 29.0467428,
+   "lon": 15.8474125,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278800",
+   "name": null,
+   "ar": null,
+   "lat": 29.0462635,
+   "lon": 15.8460784,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278801",
+   "name": null,
+   "ar": null,
+   "lat": 29.0472162,
+   "lon": 15.8443085,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278802",
+   "name": null,
+   "ar": null,
+   "lat": 29.0502185,
+   "lon": 15.8471087,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278803",
+   "name": null,
+   "ar": null,
+   "lat": 29.0508651,
+   "lon": 15.8475842,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278804",
+   "name": null,
+   "ar": null,
+   "lat": 29.0510845,
+   "lon": 15.8465408,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278805",
+   "name": null,
+   "ar": null,
+   "lat": 29.0453917,
+   "lon": 15.8448368,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278806",
+   "name": null,
+   "ar": null,
+   "lat": 29.0455591,
+   "lon": 15.8433773,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278807",
+   "name": null,
+   "ar": null,
+   "lat": 29.0433535,
+   "lon": 15.8427102,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278808",
+   "name": null,
+   "ar": null,
+   "lat": 29.0464367,
+   "lon": 15.8414224,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278809",
+   "name": null,
+   "ar": null,
+   "lat": 29.0489136,
+   "lon": 15.8409865,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278810",
+   "name": null,
+   "ar": null,
+   "lat": 29.0488675,
+   "lon": 15.8388929,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278811",
+   "name": null,
+   "ar": null,
+   "lat": 29.0498085,
+   "lon": 15.8421819,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278812",
+   "name": null,
+   "ar": null,
+   "lat": 29.0498721,
+   "lon": 15.8405836,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278813",
+   "name": null,
+   "ar": null,
+   "lat": 29.0502069,
+   "lon": 15.8382523,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278814",
+   "name": null,
+   "ar": null,
+   "lat": 29.050484,
+   "lon": 15.8393024,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278815",
+   "name": null,
+   "ar": null,
+   "lat": 29.050969,
+   "lon": 15.8425187,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278816",
+   "name": null,
+   "ar": null,
+   "lat": 29.051708,
+   "lon": 15.8433442,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278817",
+   "name": null,
+   "ar": null,
+   "lat": 29.0524817,
+   "lon": 15.8441632,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278818",
+   "name": null,
+   "ar": null,
+   "lat": 29.0530532,
+   "lon": 15.8452529,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278819",
+   "name": null,
+   "ar": null,
+   "lat": 29.05344,
+   "lon": 15.8467455,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278820",
+   "name": null,
+   "ar": null,
+   "lat": 29.0535209,
+   "lon": 15.8477956,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279933",
+   "name": null,
+   "ar": null,
+   "lat": 29.0501319,
+   "lon": 15.8356964,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279934",
+   "name": null,
+   "ar": null,
+   "lat": 29.0494159,
+   "lon": 15.8368191,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279935",
+   "name": null,
+   "ar": null,
+   "lat": 29.048394,
+   "lon": 15.8359275,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279936",
+   "name": null,
+   "ar": null,
+   "lat": 29.0477936,
+   "lon": 15.8365219,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279937",
+   "name": null,
+   "ar": null,
+   "lat": 29.0466908,
+   "lon": 15.8351878,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279938",
+   "name": null,
+   "ar": null,
+   "lat": 29.0473894,
+   "lon": 15.83567,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279960",
+   "name": null,
+   "ar": null,
+   "lat": 29.0520313,
+   "lon": 15.8349633,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279961",
+   "name": null,
+   "ar": null,
+   "lat": 29.052805,
+   "lon": 15.8355313,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279962",
+   "name": null,
+   "ar": null,
+   "lat": 29.0523373,
+   "lon": 15.8364361,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279963",
+   "name": null,
+   "ar": null,
+   "lat": 29.0510556,
+   "lon": 15.8353397,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279964",
+   "name": null,
+   "ar": null,
+   "lat": 29.0519505,
+   "lon": 15.8378494,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279965",
+   "name": null,
+   "ar": null,
+   "lat": 29.0532495,
+   "lon": 15.8379749,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279966",
+   "name": null,
+   "ar": null,
+   "lat": 29.0544157,
+   "lon": 15.8361653,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279967",
+   "name": null,
+   "ar": null,
+   "lat": 29.0541848,
+   "lon": 15.8374465,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279968",
+   "name": null,
+   "ar": null,
+   "lat": 29.0552067,
+   "lon": 15.8358879,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279969",
+   "name": null,
+   "ar": null,
+   "lat": 29.0540405,
+   "lon": 15.8386419,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279970",
+   "name": null,
+   "ar": null,
+   "lat": 29.0556454,
+   "lon": 15.8380079,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279971",
+   "name": null,
+   "ar": null,
+   "lat": 29.0557667,
+   "lon": 15.8367465,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279972",
+   "name": null,
+   "ar": null,
+   "lat": 29.0561535,
+   "lon": 15.8390712,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279974",
+   "name": null,
+   "ar": null,
+   "lat": 29.0571926,
+   "lon": 15.8388334,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279975",
+   "name": null,
+   "ar": null,
+   "lat": 29.0579316,
+   "lon": 15.8378494,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279976",
+   "name": null,
+   "ar": null,
+   "lat": 29.0582087,
+   "lon": 15.8367267,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279977",
+   "name": null,
+   "ar": null,
+   "lat": 29.0592882,
+   "lon": 15.8362445,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279988",
+   "name": null,
+   "ar": null,
+   "lat": 29.0596519,
+   "lon": 15.8393552,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279989",
+   "name": null,
+   "ar": null,
+   "lat": 29.0583472,
+   "lon": 15.8401939,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279990",
+   "name": null,
+   "ar": null,
+   "lat": 29.057666,
+   "lon": 15.8411318,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279991",
+   "name": null,
+   "ar": null,
+   "lat": 29.0577353,
+   "lon": 15.842314,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279992",
+   "name": null,
+   "ar": null,
+   "lat": 29.0573427,
+   "lon": 15.8434697,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279993",
+   "name": null,
+   "ar": null,
+   "lat": 29.0577988,
+   "lon": 15.8454114,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279994",
+   "name": null,
+   "ar": null,
+   "lat": 29.0581336,
+   "lon": 15.8466068,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469280010",
+   "name": null,
+   "ar": null,
+   "lat": 29.0520371,
+   "lon": 15.846653,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469280330",
+   "name": null,
+   "ar": null,
+   "lat": 29.0474645,
+   "lon": 15.8474257,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469280331",
+   "name": null,
+   "ar": null,
+   "lat": 29.0426722,
+   "lon": 15.8434961,
+   "tags": {
+    "man_made": "tower"
+   }
+  },
+  {
+   "id": "n5469280342",
+   "name": null,
+   "ar": null,
+   "lat": 29.045111,
+   "lon": 15.8420419,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469280343",
+   "name": null,
+   "ar": null,
+   "lat": 29.0483011,
+   "lon": 15.8398267,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469280355",
+   "name": null,
+   "ar": null,
+   "lat": 29.0596714,
+   "lon": 15.8347311,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469280356",
+   "name": null,
+   "ar": null,
+   "lat": 29.0426549,
+   "lon": 15.8436522,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n6033500743",
+   "name": "Tete Camp-Sita",
+   "ar": "مخيم تيتي",
+   "lat": 29.193389,
+   "lon": 16.1517737,
+   "tags": {}
+  },
+  {
+   "id": "n6034204888",
+   "name": null,
+   "ar": null,
+   "lat": 29.118137,
+   "lon": 16.1647576,
+   "tags": {
+    "man_made": "water_well"
+   }
+  },
+  {
+   "id": "n6371035896",
+   "name": "مصنع القور للتمور",
+   "ar": "القور للتمور",
+   "lat": 29.1290329,
+   "lon": 16.1938895,
+   "tags": {}
+  },
+  {
+   "id": "n6532678785",
+   "name": "Alnakil",
+   "ar": "النخيل لبيع المواد الغدائية والتمور ومشتقاتها",
+   "lat": 29.189135,
+   "lon": 16.1491295,
+   "tags": {}
+  },
+  {
+   "id": "n6604989285",
+   "name": "مكتب بريد ودان",
+   "ar": "مكتب بريد ودان",
+   "lat": 29.159411,
+   "lon": 16.1408198,
+   "tags": {
+    "amenity": "post_office"
+   }
+  },
+  {
+   "id": "n6604999785",
+   "name": "صيدلية الأسرة",
+   "ar": "صيدلية الأسرة",
+   "lat": 29.1634185,
+   "lon": 16.1465492,
+   "tags": {
+    "amenity": "pharmacy"
+   }
+  },
+  {
+   "id": "n6605003485",
+   "name": "Bakery",
+   "ar": "مخبز",
+   "lat": 29.16045,
+   "lon": 16.1313076,
+   "tags": {}
+  },
+  {
+   "id": "n6605387887",
+   "name": "North Africa Bank -Waddan",
+   "ar": "مصرف شمال افريقيا -ودان",
+   "lat": 29.1593906,
+   "lon": 16.141133,
+   "tags": {
+    "amenity": "bank"
+   }
+  },
+  {
+   "id": "n6606387787",
+   "name": "College of Business Administration",
+   "ar": "كلية ادارة الاعمال",
+   "lat": 29.1716637,
+   "lon": 16.1461142,
+   "tags": {
+    "amenity": "college"
+   }
+  },
+  {
+   "id": "n6795980887",
+   "name": "Havana Cafe",
+   "ar": "كافي هافانا",
+   "lat": 29.1712354,
+   "lon": 16.1550406,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6893659686",
+   "name": "Social Security Fund",
+   "ar": "صندوق الضمان الاجتماعي -ودان",
+   "lat": 29.1781703,
+   "lon": 16.1525651,
+   "tags": {
+    "office": "government"
+   }
+  },
+  {
+   "id": "n6920478585",
+   "name": "jaws",
+   "ar": "البيت",
+   "lat": 29.1719975,
+   "lon": 16.1511795,
+   "tags": {}
+  },
+  {
+   "id": "n6920478885",
+   "name": null,
+   "ar": null,
+   "lat": 29.0257731,
+   "lon": 16.292738,
+   "tags": {
+    "man_made": "water_well"
+   }
+  },
+  {
+   "id": "n7118167185",
+   "name": "ورشة جراح لصيانة السيارات",
+   "ar": "ورشة جراح لصيانة السيارات",
+   "lat": 29.1904181,
+   "lon": 16.1478655,
+   "tags": {}
+  },
+  {
+   "id": "n7169686586",
+   "name": "محل محمد حسن قنده",
+   "ar": "محل محمد حسن قنده",
+   "lat": 29.1689522,
+   "lon": 16.1507718,
+   "tags": {}
+  },
+  {
+   "id": "n7169686588",
+   "name": "صالة المناسبات الاجتماعية",
+   "ar": "صالة المناسبات الاجتماعية",
+   "lat": 29.1595709,
+   "lon": 16.1378954,
+   "tags": {
+    "amenity": "community_centre"
+   }
+  },
+  {
+   "id": "n7169689185",
+   "name": "FC. AL QALAA",
+   "ar": "نادي القلعة الرياضي",
+   "lat": 29.1755175,
+   "lon": 16.153108,
+   "tags": {}
+  },
+  {
+   "id": "n7170421785",
+   "name": "ⵍⵙⴱⴰⵅ منطقة السباخ",
+   "ar": "منطقة السباخ",
+   "lat": 29.1696749,
+   "lon": 16.1451636,
+   "tags": {
+    "place": "hamlet"
+   }
+  },
+  {
+   "id": "n7170422885",
+   "name": "Sparkling",
+   "ar": "فوار السباخ",
+   "lat": 29.1716065,
+   "lon": 16.14099,
+   "tags": {}
+  },
+  {
+   "id": "n7172639085",
+   "name": "Youth Hostels Association - Waddan",
+   "ar": "جمعية بيوت الشباب-ودان",
+   "lat": 29.1769081,
+   "lon": 16.1523592,
+   "tags": {}
+  },
+  {
+   "id": "n7172639086",
+   "name": "روضة أطفال",
+   "ar": "روضة أطفال",
+   "lat": 29.1690827,
+   "lon": 16.1559515,
+   "tags": {
+    "amenity": "kindergarten"
+   }
+  },
+  {
+   "id": "n7172639187",
+   "name": "مدرسة العهد الجديد",
+   "ar": "مدرسة العهد الجديد",
+   "lat": 29.169005,
+   "lon": 16.1550146,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n7172639285",
+   "name": "مكتب الكهرباء",
+   "ar": "مكتب الكهرباء",
+   "lat": 29.168439,
+   "lon": 16.1545511,
+   "tags": {
+    "office": "government"
+   }
+  },
+  {
+   "id": "n7173028385",
+   "name": "College of Education - Waddan",
+   "ar": "كلية التربية-ودان",
+   "lat": 29.1580629,
+   "lon": 16.1352419,
+   "tags": {
+    "amenity": "college"
+   }
+  },
+  {
+   "id": "n7173506585",
+   "name": "المركز الصحي",
+   "ar": "المركز الصحي",
+   "lat": 29.162879,
+   "lon": 16.1340559,
+   "tags": {
+    "amenity": "nursing_home"
+   }
+  },
+  {
+   "id": "n7173506586",
+   "name": "مدرسة الإمام",
+   "ar": "مدرسة الإمام",
+   "lat": 29.1591278,
+   "lon": 16.1353435,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n7193739587",
+   "name": "مكتبة العهد الجديد للقرطاسية",
+   "ar": "مكتبة العهد الجديد للقرطاسية",
+   "lat": 29.1714993,
+   "lon": 16.1564604,
+   "tags": {}
+  },
+  {
+   "id": "n7264071985",
+   "name": "محل ونيس اللوزة",
+   "ar": "محل ونيس اللوزة",
+   "lat": 29.1608162,
+   "lon": 16.1386269,
+   "tags": {}
+  },
+  {
+   "id": "n7301966585",
+   "name": "محل خالد للعطور والاكسسوارات والالعاب والهدايا",
+   "ar": "محل خالد للعطور والاكسسوارات والالعاب والهدايا",
+   "lat": 29.1686226,
+   "lon": 16.1522519,
+   "tags": {}
+  },
+  {
+   "id": "n7340368385",
+   "name": null,
+   "ar": null,
+   "lat": 29.0270425,
+   "lon": 16.239553,
+   "tags": {
+    "man_made": "water_well"
+   }
+  },
+  {
+   "id": "n7658402942",
+   "name": "AL MADAR AlJadid Mobile Telecome",
+   "ar": "وكيل شركة المدار الجديد",
+   "lat": 29.1609119,
+   "lon": 16.1376867,
+   "tags": {
+    "office": "telecommunication"
+   }
+  },
+  {
+   "id": "n8047617821",
+   "name": "مسجد ابوبكر الصديق",
+   "ar": "مسجد ابوبكر الصديق",
+   "lat": 29.1688362,
+   "lon": 16.1305858,
+   "tags": {
+    "amenity": "place_of_worship"
+   }
+  },
+  {
+   "id": "n8047743686",
+   "name": "Bakery",
+   "ar": "مخبز",
+   "lat": 29.147298,
+   "lon": 16.1416776,
+   "tags": {}
+  },
+  {
+   "id": "n8047749285",
+   "name": "Mall",
+   "ar": "الوداني ماركت",
+   "lat": 29.1480012,
+   "lon": 16.1419258,
+   "tags": {}
+  },
+  {
+   "id": "n8047752585",
+   "name": "Pharmacy",
+   "ar": "صيدلية آراش",
+   "lat": 29.1642652,
+   "lon": 16.1473987,
+   "tags": {
+    "amenity": "pharmacy"
+   }
+  },
+  {
+   "id": "n8047752985",
+   "name": "Bakery",
+   "ar": "مخبز",
+   "lat": 29.1613315,
+   "lon": 16.1456762,
+   "tags": {}
+  },
+  {
+   "id": "n8047782885",
+   "name": "Holy Quran School",
+   "ar": "منارة لتحفيظ القرآن الكريم",
+   "lat": 29.1758593,
+   "lon": 16.158355,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "n8047908485",
+   "name": "Black Fast Food",
+   "ar": "بلاك فاست فود",
+   "lat": 29.1853446,
+   "lon": 16.1520223,
+   "tags": {
+    "amenity": "fast_food"
+   }
+  },
+  {
+   "id": "n10146631717",
+   "name": "سوق الرحمة العائلي",
+   "ar": "سوق الرحمة العائلي",
+   "lat": 29.1700034,
+   "lon": 16.1574042,
+   "tags": {}
+  },
+  {
+   "id": "n12324051478",
+   "name": null,
+   "ar": null,
+   "lat": 29.3801915,
+   "lon": 16.0922125,
+   "tags": {
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n13325162202",
+   "name": "مسجد معاوية بن ابي سفيان",
+   "ar": "مسجد معاوية بن ابي سفيان",
+   "lat": 29.1892186,
+   "lon": 16.1479526,
+   "tags": {
+    "amenity": "place_of_worship"
+   }
+  },
+  {
+   "id": "w100772945",
+   "name": "waddan-Abu Qurayn",
+   "ar": "طريق ودان - أبو قرين",
+   "lat": 30.2781687,
+   "lon": 15.6933033,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w102290799",
+   "name": "waddan-zillah",
+   "ar": "ودان-زلة",
+   "lat": 28.8566907,
+   "lon": 16.8300543,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w102625679",
+   "name": "Airborne base Jufrah",
+   "ar": "قاعده الجفره الجويه",
+   "lat": 29.2267248,
+   "lon": 16.0791739,
+   "tags": {
+    "highway": "secondary"
+   }
+  },
+  {
+   "id": "w102625691",
+   "name": "Al Jufra Airbase",
+   "ar": "قاعدة الجفرة الجوية",
+   "lat": 29.2035272,
+   "lon": 16.0473877,
+   "tags": {
+    "landuse": "military",
+    "military": "airfield"
+   }
+  },
+  {
+   "id": "w102630613",
+   "name": "waddan- zillah ودان-زله",
+   "ar": "waddan- zillah ودان-زله",
+   "lat": 29.1533398,
+   "lon": 16.1425238,
+   "tags": {
+    "highway": "tertiary"
+   }
+  },
+  {
+   "id": "w169756846",
+   "name": null,
+   "ar": null,
+   "lat": 29.1470384,
+   "lon": 16.0165451,
+   "tags": {
+    "landuse": "industrial",
+    "power": "substation"
+   }
+  },
+  {
+   "id": "w172952459",
+   "name": "ودان waddan",
+   "ar": "ودان waddan",
+   "lat": 29.1805029,
+   "lon": 16.1523668,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w174188306",
+   "name": "Tariq Waddan",
+   "ar": "طريق ودان",
+   "lat": 29.1679379,
+   "lon": 16.139105,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w176726625",
+   "name": "Sabha-Waddan Road",
+   "ar": "طريق سبها-ودّان",
+   "lat": 29.1648166,
+   "lon": 16.090102,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w181252233",
+   "name": "ودان waddan",
+   "ar": "ودان waddan",
+   "lat": 29.1595086,
+   "lon": 16.1240096,
+   "tags": {
+    "highway": "trunk_link"
+   }
+  },
+  {
+   "id": "w181252237",
+   "name": "Tariq Waddan",
+   "ar": "طريق ودان",
+   "lat": 29.167932,
+   "lon": 16.1391842,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w181252241",
+   "name": "ودان waddan",
+   "ar": "ودان waddan",
+   "lat": 29.1590665,
+   "lon": 16.124601,
+   "tags": {
+    "highway": "trunk_link"
+   }
+  },
+  {
+   "id": "w182200749",
+   "name": "ودان waddan",
+   "ar": "ودان waddan",
+   "lat": 29.180704,
+   "lon": 16.1521879,
+   "tags": {
+    "highway": "primary"
+   }
+  },
+  {
+   "id": "w194356472",
+   "name": "siret-waddan",
+   "ar": "سرت-ودان",
+   "lat": 29.1859094,
+   "lon": 16.1499182,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w194356481",
+   "name": "siret-waddan",
+   "ar": "سرت-ودان",
+   "lat": 29.1869125,
+   "lon": 16.1488357,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w194356487",
+   "name": "siret-waddan",
+   "ar": "سرت-ودان",
+   "lat": 29.1857252,
+   "lon": 16.14997,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w235093569",
+   "name": "Waddan - Sirte Road",
+   "ar": "طريق ودان - سرت",
+   "lat": 29.6703639,
+   "lon": 16.3481822,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w238162841",
+   "name": null,
+   "ar": null,
+   "lat": 29.2513802,
+   "lon": 16.0997097,
+   "tags": {
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w277264302",
+   "name": "Abdullah Agel mosque",
+   "ar": "مسجد عبد الله بن عقيل",
+   "lat": 29.1736259,
+   "lon": 16.1522345,
+   "tags": {
+    "amenity": "place_of_worship"
+   }
+  },
+  {
+   "id": "w277264726",
+   "name": "محطة مياه ودان",
+   "ar": "محطه مياه ودان",
+   "lat": 29.1706661,
+   "lon": 16.1528231,
+   "tags": {
+    "man_made": "water_works"
+   }
+  },
+  {
+   "id": "w324152908",
+   "name": "Motel",
+   "ar": "استراحة",
+   "lat": 29.1895598,
+   "lon": 16.1493749,
+   "tags": {
+    "building": "yes"
+   }
+  },
+  {
+   "id": "w324153525",
+   "name": "Waddan - Sirte Road",
+   "ar": "طريق ودان - سرت",
+   "lat": 29.1848112,
+   "lon": 16.1510266,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w324153526",
+   "name": "Waddan - Sirte Road",
+   "ar": "طريق ودان - سرت",
+   "lat": 29.1847496,
+   "lon": 16.1510855,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w324161837",
+   "name": "Fuel Station",
+   "ar": "محطة وقود",
+   "lat": 29.1601875,
+   "lon": 16.128792,
+   "tags": {
+    "amenity": "fuel",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "w324161839",
+   "name": "Weddan Castle",
+   "ar": "قلعة ودان الطوزة",
+   "lat": 29.1607719,
+   "lon": 16.1343519,
+   "tags": {
+    "building": "castle"
+   }
+  },
+  {
+   "id": "w324162281",
+   "name": null,
+   "ar": null,
+   "lat": 29.2521357,
+   "lon": 16.0989021,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w324162390",
+   "name": "Sewage purification plant",
+   "ar": "محطة تنقية مياة الصرف الصحي",
+   "lat": 29.1897898,
+   "lon": 16.1067183,
+   "tags": {
+    "man_made": "wastewater_plant"
+   }
+  },
+  {
+   "id": "w324171130",
+   "name": null,
+   "ar": null,
+   "lat": 29.100851,
+   "lon": 15.9109019,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w328909503",
+   "name": "waddan-zillah",
+   "ar": "ودان-زله",
+   "lat": 29.1622411,
+   "lon": 16.1205195,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w328909504",
+   "name": "waddan-zillah",
+   "ar": "ودان-زله",
+   "lat": 29.1621989,
+   "lon": 16.1204826,
+   "tags": {
+    "highway": "trunk"
+   }
+  },
+  {
+   "id": "w328909505",
+   "name": "waddan-zillah",
+   "ar": "ودان-زله",
+   "lat": 29.1621943,
+   "lon": 16.1200622,
+   "tags": {
+    "highway": "trunk_link"
+   }
+  },
+  {
+   "id": "w328909506",
+   "name": "waddan-zillah",
+   "ar": "ودان-زله",
+   "lat": 29.1627314,
+   "lon": 16.1205066,
+   "tags": {
+    "highway": "trunk_link"
+   }
+  },
+  {
+   "id": "w331503812",
+   "name": "WADDAN General Hospital",
+   "ar": "مستشفي ودّان العام",
+   "lat": 29.1635965,
+   "lon": 16.1481129,
+   "tags": {
+    "amenity": "hospital"
+   }
+  },
+  {
+   "id": "w331512876",
+   "name": "Sawwan",
+   "ar": "الصوان",
+   "lat": 29.1704725,
+   "lon": 16.1552893,
+   "tags": {
+    "place": "suburb"
+   }
+  },
+  {
+   "id": "w331512879",
+   "name": "grain silo",
+   "ar": "صومعة ودان للحبوب",
+   "lat": 29.1797903,
+   "lon": 16.1459503,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w331512880",
+   "name": "waddan Tourism Park",
+   "ar": "منتزه ودان السياحى",
+   "lat": 29.1424947,
+   "lon": 16.1650629,
+   "tags": {}
+  },
+  {
+   "id": "w331770676",
+   "name": "Anakazh",
+   "ar": "النقازه",
+   "lat": 29.1751847,
+   "lon": 16.1490671,
+   "tags": {
+    "place": "suburb"
+   }
+  },
+  {
+   "id": "w331770677",
+   "name": "Al-Rawagha",
+   "ar": "الرواغة",
+   "lat": 29.1795338,
+   "lon": 16.1611922,
+   "tags": {
+    "place": "suburb"
+   }
+  },
+  {
+   "id": "w331773336",
+   "name": "Clinic",
+   "ar": "مستوصف",
+   "lat": 29.1740875,
+   "lon": 16.1532851,
+   "tags": {
+    "amenity": "clinic"
+   }
+  },
+  {
+   "id": "w331773337",
+   "name": "JUMHOURIA Bank -Widdan",
+   "ar": "مصرف الجمهورية - ودان",
+   "lat": 29.1725671,
+   "lon": 16.1532166,
+   "tags": {
+    "amenity": "bank",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "w331773338",
+   "name": "مدرسة أحـمد قنابة",
+   "ar": "مدرسة أحـمد قنابة",
+   "lat": 29.1730648,
+   "lon": 16.1555742,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "w331773339",
+   "name": "مدرسة ابي الحسن بودان",
+   "ar": "مدرسة ابي الحسن بودان",
+   "lat": 29.1618542,
+   "lon": 16.1430847,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "w331813373",
+   "name": "Graveyard",
+   "ar": "مقبرة",
+   "lat": 29.158159,
+   "lon": 16.1394422,
+   "tags": {
+    "landuse": "cemetery"
+   }
+  },
+  {
+   "id": "w331841576",
+   "name": "جامع ودان العتيق",
+   "ar": "جامع ودان العتيق",
+   "lat": 29.1615416,
+   "lon": 16.1340853,
+   "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "w331841577",
+   "name": "نقابة المعلمين - ودان The teachers' union",
+   "ar": "نقابة المعلمين - ودان The teachers' union",
+   "lat": 29.1605775,
+   "lon": 16.1319185,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "w331841578",
+   "name": "مدرسة الخنساء",
+   "ar": "مدرسة الخنساء",
+   "lat": 29.1722949,
+   "lon": 16.1587143,
+   "tags": {
+    "amenity": "school"
+   }
+  },
+  {
+   "id": "w364256181",
+   "name": null,
+   "ar": null,
+   "lat": 29.1809173,
+   "lon": 16.1467699,
+   "tags": {
+    "building": "yes",
+    "man_made": "silo"
+   }
+  },
+  {
+   "id": "w364256184",
+   "name": null,
+   "ar": null,
+   "lat": 29.180045,
+   "lon": 16.1455179,
+   "tags": {
+    "building": "yes",
+    "man_made": "silo"
+   }
+  },
+  {
+   "id": "w364256189",
+   "name": null,
+   "ar": null,
+   "lat": 29.1798332,
+   "lon": 16.1467384,
+   "tags": {
+    "building": "yes",
+    "man_made": "silo"
+   }
+  },
+  {
+   "id": "w364256779",
+   "name": null,
+   "ar": null,
+   "lat": 29.1276232,
+   "lon": 15.9350519,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w419195383",
+   "name": null,
+   "ar": null,
+   "lat": 29.0545578,
+   "lon": 15.8139258,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568477860",
+   "name": null,
+   "ar": null,
+   "lat": 29.1835864,
+   "lon": 16.0232084,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w568477904",
+   "name": null,
+   "ar": null,
+   "lat": 29.2018413,
+   "lon": 16.0083152,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568477916",
+   "name": null,
+   "ar": null,
+   "lat": 29.2029708,
+   "lon": 16.0113553,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568477929",
+   "name": null,
+   "ar": null,
+   "lat": 29.1917459,
+   "lon": 16.0440996,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w568477948",
+   "name": null,
+   "ar": null,
+   "lat": 29.2032454,
+   "lon": 16.0271878,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568477960",
+   "name": null,
+   "ar": null,
+   "lat": 29.2125889,
+   "lon": 15.9986582,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568477963",
+   "name": null,
+   "ar": null,
+   "lat": 29.2116959,
+   "lon": 16.0030287,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568477964",
+   "name": null,
+   "ar": null,
+   "lat": 29.2072623,
+   "lon": 16.0024655,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568477987",
+   "name": null,
+   "ar": null,
+   "lat": 29.2204822,
+   "lon": 15.9939302,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568478009",
+   "name": null,
+   "ar": null,
+   "lat": 29.2193266,
+   "lon": 16.0078739,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568478014",
+   "name": null,
+   "ar": null,
+   "lat": 29.2056388,
+   "lon": 16.0077634,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568478051",
+   "name": null,
+   "ar": null,
+   "lat": 29.2399225,
+   "lon": 15.9620038,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w568478052",
+   "name": null,
+   "ar": null,
+   "lat": 29.243697,
+   "lon": 15.9584091,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w568497746",
+   "name": null,
+   "ar": null,
+   "lat": 29.0727344,
+   "lon": 15.8021658,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w568497748",
+   "name": null,
+   "ar": null,
+   "lat": 29.0743986,
+   "lon": 15.8133073,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w568508015",
+   "name": null,
+   "ar": null,
+   "lat": 29.0527876,
+   "lon": 15.8419937,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568508018",
+   "name": null,
+   "ar": null,
+   "lat": 29.0773709,
+   "lon": 15.8200609,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w568508019",
+   "name": null,
+   "ar": null,
+   "lat": 29.0794662,
+   "lon": 15.8198309,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w841061573",
+   "name": "Assawan Hospital",
+   "ar": "مستوصف الصوان",
+   "lat": 29.1696051,
+   "lon": 16.1559589,
+   "tags": {
+    "amenity": "hospital"
+   }
+  },
+  {
+   "id": "w842839162",
+   "name": "شارع أبوزريطه",
+   "ar": "شارع أبوزريطه",
+   "lat": 29.1051873,
+   "lon": 16.2001292,
+   "tags": {
+    "highway": "residential"
+   }
+  },
+  {
+   "id": "w863827916",
+   "name": "Wednesday market",
+   "ar": "سوق الاربعاء",
+   "lat": 29.1482266,
+   "lon": 16.1410656,
+   "tags": {
+    "landuse": "commercial"
+   }
+  },
+  {
+   "id": "w903027790",
+   "name": null,
+   "ar": null,
+   "lat": 29.1451005,
+   "lon": 16.1367658,
+   "tags": {
+    "building": "yes",
+    "man_made": "storage_tank"
+   }
+  },
+  {
+   "id": "w903028319",
+   "name": null,
+   "ar": null,
+   "lat": 29.1458995,
+   "lon": 16.1355985,
+   "tags": {
+    "man_made": "embankment"
+   }
+  },
+  {
+   "id": "w903034556",
+   "name": null,
+   "ar": null,
+   "lat": 29.1428491,
+   "lon": 16.1339116,
+   "tags": {
+    "building": "yes",
+    "man_made": "storage_tank"
+   }
+  },
+  {
+   "id": "w945871299",
+   "name": "Palm trees",
+   "ar": "Palm trees",
+   "lat": 29.1267214,
+   "lon": 16.1930796,
+   "tags": {}
+  },
+  {
+   "id": "w957734642",
+   "name": null,
+   "ar": null,
+   "lat": 29.1987455,
+   "lon": 16.0067305,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734643",
+   "name": null,
+   "ar": null,
+   "lat": 29.1976426,
+   "lon": 16.0071518,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734644",
+   "name": null,
+   "ar": null,
+   "lat": 29.1964907,
+   "lon": 16.0085532,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734645",
+   "name": null,
+   "ar": null,
+   "lat": 29.1968591,
+   "lon": 16.0096776,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734646",
+   "name": null,
+   "ar": null,
+   "lat": 29.2005625,
+   "lon": 16.005993,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734647",
+   "name": null,
+   "ar": null,
+   "lat": 29.200193,
+   "lon": 16.0092527,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734648",
+   "name": null,
+   "ar": null,
+   "lat": 29.1993503,
+   "lon": 16.0117762,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734649",
+   "name": null,
+   "ar": null,
+   "lat": 29.1986539,
+   "lon": 16.0108072,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734650",
+   "name": null,
+   "ar": null,
+   "lat": 29.1947801,
+   "lon": 16.0095129,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734651",
+   "name": null,
+   "ar": null,
+   "lat": 29.1925067,
+   "lon": 16.0138232,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734652",
+   "name": null,
+   "ar": null,
+   "lat": 29.1930697,
+   "lon": 16.0127909,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734653",
+   "name": null,
+   "ar": null,
+   "lat": 29.1945004,
+   "lon": 16.0129412,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734654",
+   "name": null,
+   "ar": null,
+   "lat": 29.2202515,
+   "lon": 15.9889316,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734655",
+   "name": null,
+   "ar": null,
+   "lat": 29.2210672,
+   "lon": 15.9893729,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734656",
+   "name": null,
+   "ar": null,
+   "lat": 29.2200073,
+   "lon": 15.9902271,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734657",
+   "name": null,
+   "ar": null,
+   "lat": 29.2215518,
+   "lon": 15.9908619,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734658",
+   "name": null,
+   "ar": null,
+   "lat": 29.2224703,
+   "lon": 15.9903109,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734659",
+   "name": null,
+   "ar": null,
+   "lat": 29.2225032,
+   "lon": 15.9917493,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734660",
+   "name": null,
+   "ar": null,
+   "lat": 29.2217881,
+   "lon": 15.9923925,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734661",
+   "name": null,
+   "ar": null,
+   "lat": 29.222739,
+   "lon": 15.9929376,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734662",
+   "name": null,
+   "ar": null,
+   "lat": 29.2207187,
+   "lon": 15.9878925,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734663",
+   "name": null,
+   "ar": null,
+   "lat": 29.2215376,
+   "lon": 15.9883108,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734664",
+   "name": null,
+   "ar": null,
+   "lat": 29.218304,
+   "lon": 16.0088006,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738301",
+   "name": null,
+   "ar": null,
+   "lat": 29.2175368,
+   "lon": 15.9938195,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738302",
+   "name": null,
+   "ar": null,
+   "lat": 29.2190814,
+   "lon": 16.0072969,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738303",
+   "name": null,
+   "ar": null,
+   "lat": 29.2207157,
+   "lon": 16.0057409,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738304",
+   "name": null,
+   "ar": null,
+   "lat": 29.2106188,
+   "lon": 16.0006905,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738305",
+   "name": null,
+   "ar": null,
+   "lat": 29.2106322,
+   "lon": 16.0013395,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738306",
+   "name": null,
+   "ar": null,
+   "lat": 29.2086751,
+   "lon": 15.9979381,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742629",
+   "name": null,
+   "ar": null,
+   "lat": 29.2028713,
+   "lon": 16.0112873,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742630",
+   "name": null,
+   "ar": null,
+   "lat": 29.2084327,
+   "lon": 15.9975732,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742631",
+   "name": null,
+   "ar": null,
+   "lat": 29.2193464,
+   "lon": 15.993288,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742632",
+   "name": null,
+   "ar": null,
+   "lat": 29.2203869,
+   "lon": 15.9941078,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742633",
+   "name": null,
+   "ar": null,
+   "lat": 29.2211002,
+   "lon": 15.9931899,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742634",
+   "name": null,
+   "ar": null,
+   "lat": 29.2186743,
+   "lon": 15.9919141,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742635",
+   "name": null,
+   "ar": null,
+   "lat": 29.2195579,
+   "lon": 15.991724,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742636",
+   "name": null,
+   "ar": null,
+   "lat": 29.2188412,
+   "lon": 15.9930717,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742637",
+   "name": null,
+   "ar": null,
+   "lat": 29.2197346,
+   "lon": 15.9928795,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753298",
+   "name": null,
+   "ar": null,
+   "lat": 29.1856335,
+   "lon": 16.0264915,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753299",
+   "name": null,
+   "ar": null,
+   "lat": 29.1819169,
+   "lon": 16.0246167,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753300",
+   "name": null,
+   "ar": null,
+   "lat": 29.1846768,
+   "lon": 16.0227221,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753301",
+   "name": null,
+   "ar": null,
+   "lat": 29.184185,
+   "lon": 16.0240333,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753302",
+   "name": null,
+   "ar": null,
+   "lat": 29.1833942,
+   "lon": 16.0248241,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753303",
+   "name": null,
+   "ar": null,
+   "lat": 29.1834214,
+   "lon": 16.0254123,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753304",
+   "name": null,
+   "ar": null,
+   "lat": 29.1838773,
+   "lon": 16.0256716,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  }
+ ],
+ "tarhuna_near": [
+  {
+   "id": "n9158833339",
+   "name": null,
+   "ar": null,
+   "lat": 32.6378183,
+   "lon": 13.4275295,
+   "tags": {
+    "man_made": "storage_tank"
+   }
+  },
+  {
+   "id": "n9583350005",
+   "name": null,
+   "ar": null,
+   "lat": 32.6036957,
+   "lon": 13.5512802,
+   "tags": {
+    "man_made": "storage_tank"
+   }
+  },
+  {
+   "id": "w102212462",
+   "name": null,
+   "ar": null,
+   "lat": 32.5129901,
+   "lon": 13.3964115,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102213489",
+   "name": null,
+   "ar": null,
+   "lat": 32.5820892,
+   "lon": 13.4576351,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w399760521",
+   "name": null,
+   "ar": null,
+   "lat": 32.6416409,
+   "lon": 13.558255,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w399760524",
+   "name": null,
+   "ar": null,
+   "lat": 32.6238291,
+   "lon": 13.5365872,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w399760526",
+   "name": null,
+   "ar": null,
+   "lat": 32.5901552,
+   "lon": 13.5364425,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w399760528",
+   "name": null,
+   "ar": null,
+   "lat": 32.6436499,
+   "lon": 13.5942263,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w399760529",
+   "name": null,
+   "ar": null,
+   "lat": 32.642388,
+   "lon": 13.5928351,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w399760535",
+   "name": null,
+   "ar": null,
+   "lat": 32.6110224,
+   "lon": 13.617592,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w399760539",
+   "name": null,
+   "ar": null,
+   "lat": 32.6324239,
+   "lon": 13.624882,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w399760545",
+   "name": null,
+   "ar": null,
+   "lat": 32.5962094,
+   "lon": 13.6263564,
+   "tags": {
+    "landuse": "quarry"
+   }
+  },
+  {
+   "id": "w399760546",
+   "name": null,
+   "ar": null,
+   "lat": 32.591654,
+   "lon": 13.6220388,
+   "tags": {
+    "landuse": "quarry"
+   }
+  },
+  {
+   "id": "w399760547",
+   "name": null,
+   "ar": null,
+   "lat": 32.601525,
+   "lon": 13.6314057,
+   "tags": {
+    "landuse": "quarry"
+   }
+  },
+  {
+   "id": "w399760561",
+   "name": null,
+   "ar": null,
+   "lat": 32.6684937,
+   "lon": 13.753885,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w771062273",
+   "name": null,
+   "ar": null,
+   "lat": 32.1652275,
+   "lon": 13.6746027,
+   "tags": {
+    "landuse": "quarry"
+   }
+  },
+  {
+   "id": "w879029358",
+   "name": null,
+   "ar": null,
+   "lat": 32.3149286,
+   "lon": 13.5676434,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w879217835",
+   "name": null,
+   "ar": null,
+   "lat": 32.3782852,
+   "lon": 13.6445437,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w879217836",
+   "name": "APPICO",
+   "ar": "مجمع إيبكو",
+   "lat": 32.3817012,
+   "lon": 13.6481439,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w883002603",
+   "name": null,
+   "ar": null,
+   "lat": 32.4271934,
+   "lon": 13.6337126,
+   "tags": {
+    "landuse": "industrial",
+    "power": "plant"
+   }
+  },
+  {
+   "id": "w906584487",
+   "name": "سلخانة ترهونة المركزية",
+   "ar": "سلخانة ترهونة المركزية",
+   "lat": 32.394124,
+   "lon": 13.6433259,
+   "tags": {
+    "building": "yes",
+    "industrial": "slaughterhouse",
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w966690188",
+   "name": "مصنع الرخام",
+   "ar": "مصنع الرخام",
+   "lat": 32.5169613,
+   "lon": 13.3239648,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w992014873",
+   "name": null,
+   "ar": null,
+   "lat": 32.6498008,
+   "lon": 13.4467075,
+   "tags": {
+    "building": "yes",
+    "man_made": "storage_tank"
+   }
+  },
+  {
+   "id": "w1039703779",
+   "name": null,
+   "ar": null,
+   "lat": 32.3216789,
+   "lon": 13.4607708,
+   "tags": {
+    "landuse": "quarry"
+   }
+  },
+  {
+   "id": "w1039703781",
+   "name": null,
+   "ar": null,
+   "lat": 32.4303075,
+   "lon": 13.430376,
+   "tags": {
+    "landuse": "quarry"
+   }
+  },
+  {
+   "id": "w1055492511",
+   "name": null,
+   "ar": null,
+   "lat": 32.2778346,
+   "lon": 13.6459391,
+   "tags": {
+    "landuse": "industrial"
+   }
+  },
+  {
+   "id": "w1095114932",
+   "name": null,
+   "ar": null,
+   "lat": 32.5251041,
+   "lon": 13.611474,
+   "tags": {
+    "building": "yes",
+    "man_made": "storage_tank"
+   }
+  },
+  {
+   "id": "w1117392774",
+   "name": null,
+   "ar": null,
+   "lat": 32.2026332,
+   "lon": 13.6470284,
+   "tags": {
+    "landuse": "quarry"
+   }
+  },
+  {
+   "id": "w1233679434",
+   "name": "مصنع العالمية لصناعة الدقيق",
+   "ar": "مصنع العالمية لصناعة الدقيق",
+   "lat": 32.4518058,
+   "lon": 13.3586231,
+   "tags": {
+    "landuse": "industrial"
+   }
+  }
+ ],
+ "sirte_military": [
+  {
+   "id": "n665114050",
+   "name": "Saadi",
+   "ar": "سعدي",
+   "lat": 31.0510837,
+   "lon": 16.649415,
+   "tags": {
+    "landuse": "military",
+    "place": "suburb"
+   }
+  },
+  {
+   "id": "n4835776222",
+   "name": "مفترق احنيوة",
+   "ar": "مفترق احنيوة",
+   "lat": 30.7957455,
+   "lon": 16.5385052,
+   "tags": {
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n8309297798",
+   "name": null,
+   "ar": null,
+   "lat": 31.0827403,
+   "lon": 16.5834623,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297799",
+   "name": null,
+   "ar": null,
+   "lat": 31.080408,
+   "lon": 16.5829996,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297800",
+   "name": null,
+   "ar": null,
+   "lat": 31.0787063,
+   "lon": 16.5813207,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297801",
+   "name": null,
+   "ar": null,
+   "lat": 31.0784557,
+   "lon": 16.5839083,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297802",
+   "name": null,
+   "ar": null,
+   "lat": 31.0838245,
+   "lon": 16.5847401,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297803",
+   "name": null,
+   "ar": null,
+   "lat": 31.0842466,
+   "lon": 16.5874124,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297804",
+   "name": null,
+   "ar": null,
+   "lat": 31.0785942,
+   "lon": 16.5868502,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297805",
+   "name": null,
+   "ar": null,
+   "lat": 31.0772025,
+   "lon": 16.5855179,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297806",
+   "name": null,
+   "ar": null,
+   "lat": 31.0772618,
+   "lon": 16.5887678,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297807",
+   "name": null,
+   "ar": null,
+   "lat": 31.0787723,
+   "lon": 16.5883288,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297808",
+   "name": null,
+   "ar": null,
+   "lat": 31.0797353,
+   "lon": 16.5894917,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297809",
+   "name": null,
+   "ar": null,
+   "lat": 31.0810016,
+   "lon": 16.5895995,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297810",
+   "name": null,
+   "ar": null,
+   "lat": 31.0822152,
+   "lon": 16.5911783,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297811",
+   "name": null,
+   "ar": null,
+   "lat": 31.0835673,
+   "lon": 16.5896766,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297812",
+   "name": null,
+   "ar": null,
+   "lat": 31.0857372,
+   "lon": 16.5892915,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297813",
+   "name": null,
+   "ar": null,
+   "lat": 31.0794202,
+   "lon": 16.5912037,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297814",
+   "name": null,
+   "ar": null,
+   "lat": 31.0859099,
+   "lon": 16.6009829,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297815",
+   "name": null,
+   "ar": null,
+   "lat": 31.0836441,
+   "lon": 16.6007109,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309297816",
+   "name": null,
+   "ar": null,
+   "lat": 31.0844304,
+   "lon": 16.6029553,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306017",
+   "name": null,
+   "ar": null,
+   "lat": 31.0840577,
+   "lon": 16.6056554,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306018",
+   "name": null,
+   "ar": null,
+   "lat": 31.0829743,
+   "lon": 16.6069613,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306019",
+   "name": null,
+   "ar": null,
+   "lat": 31.0806443,
+   "lon": 16.6074441,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306020",
+   "name": null,
+   "ar": null,
+   "lat": 31.0790424,
+   "lon": 16.6092057,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306021",
+   "name": null,
+   "ar": null,
+   "lat": 31.0786988,
+   "lon": 16.606628,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306022",
+   "name": null,
+   "ar": null,
+   "lat": 31.0787745,
+   "lon": 16.6036762,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306023",
+   "name": null,
+   "ar": null,
+   "lat": 31.0789026,
+   "lon": 16.6021867,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306024",
+   "name": null,
+   "ar": null,
+   "lat": 31.0773823,
+   "lon": 16.6018263,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306025",
+   "name": null,
+   "ar": null,
+   "lat": 31.0774114,
+   "lon": 16.6050909,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306026",
+   "name": null,
+   "ar": null,
+   "lat": 31.0798346,
+   "lon": 16.6010237,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306027",
+   "name": null,
+   "ar": null,
+   "lat": 31.0794677,
+   "lon": 16.5993098,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306028",
+   "name": null,
+   "ar": null,
+   "lat": 31.081087,
+   "lon": 16.6009013,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8309306029",
+   "name": null,
+   "ar": null,
+   "lat": 31.0822811,
+   "lon": 16.5992486,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102102",
+   "name": null,
+   "ar": null,
+   "lat": 31.0499857,
+   "lon": 16.622552,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102103",
+   "name": null,
+   "ar": null,
+   "lat": 31.0482576,
+   "lon": 16.6227344,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102104",
+   "name": null,
+   "ar": null,
+   "lat": 31.0480278,
+   "lon": 16.6202775,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102105",
+   "name": null,
+   "ar": null,
+   "lat": 31.0449945,
+   "lon": 16.6203311,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102106",
+   "name": null,
+   "ar": null,
+   "lat": 31.0448291,
+   "lon": 16.6227773,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102107",
+   "name": null,
+   "ar": null,
+   "lat": 31.0430458,
+   "lon": 16.6226485,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102108",
+   "name": null,
+   "ar": null,
+   "lat": 31.0516861,
+   "lon": 16.6309097,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102109",
+   "name": null,
+   "ar": null,
+   "lat": 31.0498202,
+   "lon": 16.6293862,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102110",
+   "name": null,
+   "ar": null,
+   "lat": 31.0492963,
+   "lon": 16.631811,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102111",
+   "name": null,
+   "ar": null,
+   "lat": 31.047412,
+   "lon": 16.6333881,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102112",
+   "name": null,
+   "ar": null,
+   "lat": 31.0458402,
+   "lon": 16.6333988,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102113",
+   "name": null,
+   "ar": null,
+   "lat": 31.0439374,
+   "lon": 16.6319504,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102114",
+   "name": null,
+   "ar": null,
+   "lat": 31.0417221,
+   "lon": 16.6317895,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102115",
+   "name": null,
+   "ar": null,
+   "lat": 31.0433675,
+   "lon": 16.6294506,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344102116",
+   "name": null,
+   "ar": null,
+   "lat": 31.0400858,
+   "lon": 16.6193655,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137417",
+   "name": null,
+   "ar": null,
+   "lat": 31.0382657,
+   "lon": 16.6194835,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137418",
+   "name": null,
+   "ar": null,
+   "lat": 31.0364915,
+   "lon": 16.6210714,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137419",
+   "name": null,
+   "ar": null,
+   "lat": 31.0350022,
+   "lon": 16.6162756,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137420",
+   "name": null,
+   "ar": null,
+   "lat": 31.034993,
+   "lon": 16.6144946,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137421",
+   "name": null,
+   "ar": null,
+   "lat": 31.0363076,
+   "lon": 16.6122308,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137422",
+   "name": null,
+   "ar": null,
+   "lat": 31.0363904,
+   "lon": 16.6096237,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137423",
+   "name": null,
+   "ar": null,
+   "lat": 31.0381921,
+   "lon": 16.6112223,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137424",
+   "name": null,
+   "ar": null,
+   "lat": 31.0400123,
+   "lon": 16.6112438,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137425",
+   "name": null,
+   "ar": null,
+   "lat": 31.0420346,
+   "lon": 16.6135398,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137426",
+   "name": null,
+   "ar": null,
+   "lat": 31.0420714,
+   "lon": 16.6170374,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137427",
+   "name": null,
+   "ar": null,
+   "lat": 31.0407753,
+   "lon": 16.6161254,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137428",
+   "name": null,
+   "ar": null,
+   "lat": 31.0399571,
+   "lon": 16.6172948,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137429",
+   "name": null,
+   "ar": null,
+   "lat": 31.0399387,
+   "lon": 16.6133574,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137430",
+   "name": null,
+   "ar": null,
+   "lat": 31.0407385,
+   "lon": 16.6145268,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137431",
+   "name": null,
+   "ar": null,
+   "lat": 31.0430734,
+   "lon": 16.6014376,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137432",
+   "name": null,
+   "ar": null,
+   "lat": 31.0430825,
+   "lon": 16.6047421,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137433",
+   "name": null,
+   "ar": null,
+   "lat": 31.0416945,
+   "lon": 16.6034117,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137434",
+   "name": null,
+   "ar": null,
+   "lat": 31.0415198,
+   "lon": 16.601899,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137435",
+   "name": null,
+   "ar": null,
+   "lat": 31.0405822,
+   "lon": 16.6007832,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137436",
+   "name": null,
+   "ar": null,
+   "lat": 31.0409131,
+   "lon": 16.5990236,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137437",
+   "name": null,
+   "ar": null,
+   "lat": 31.0393136,
+   "lon": 16.600633,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137438",
+   "name": null,
+   "ar": null,
+   "lat": 31.0381278,
+   "lon": 16.5990236,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137439",
+   "name": null,
+   "ar": null,
+   "lat": 31.0367581,
+   "lon": 16.6005471,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137440",
+   "name": null,
+   "ar": null,
+   "lat": 31.0345242,
+   "lon": 16.6009012,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137441",
+   "name": null,
+   "ar": null,
+   "lat": 31.0360134,
+   "lon": 16.6028216,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137442",
+   "name": null,
+   "ar": null,
+   "lat": 31.0364455,
+   "lon": 16.6054931,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137443",
+   "name": null,
+   "ar": null,
+   "lat": 31.0375946,
+   "lon": 16.6067591,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137444",
+   "name": null,
+   "ar": null,
+   "lat": 31.0399204,
+   "lon": 16.6072527,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137445",
+   "name": null,
+   "ar": null,
+   "lat": 31.04186,
+   "lon": 16.60633,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n8344137446",
+   "name": null,
+   "ar": null,
+   "lat": 31.0415566,
+   "lon": 16.6089156,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w102223320",
+   "name": null,
+   "ar": null,
+   "lat": 30.8642026,
+   "lon": 16.5727072,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102954659",
+   "name": null,
+   "ar": null,
+   "lat": 31.0695687,
+   "lon": 16.6666919,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w102954660",
+   "name": null,
+   "ar": null,
+   "lat": 31.0438522,
+   "lon": 16.615196,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w103080752",
+   "name": null,
+   "ar": null,
+   "lat": 31.0446997,
+   "lon": 16.5317718,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w103080755",
+   "name": null,
+   "ar": null,
+   "lat": 31.0061045,
+   "lon": 16.4489866,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w103080784",
+   "name": null,
+   "ar": null,
+   "lat": 30.9970578,
+   "lon": 16.6231902,
+   "tags": {
+    "landuse": "military",
+    "military": "air defence"
+   }
+  },
+  {
+   "id": "w103639157",
+   "name": null,
+   "ar": null,
+   "lat": 31.0489811,
+   "lon": 16.4394315,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w103639391",
+   "name": null,
+   "ar": null,
+   "lat": 30.9756571,
+   "lon": 16.5325927,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w364256720",
+   "name": null,
+   "ar": null,
+   "lat": 31.1608594,
+   "lon": 16.5732285,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w364256808",
+   "name": null,
+   "ar": null,
+   "lat": 30.9251193,
+   "lon": 16.6054879,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w364256823",
+   "name": null,
+   "ar": null,
+   "lat": 30.7973285,
+   "lon": 16.3935989,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w645007180",
+   "name": null,
+   "ar": null,
+   "lat": 31.0846913,
+   "lon": 16.60136,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w865022146",
+   "name": null,
+   "ar": null,
+   "lat": 31.0631855,
+   "lon": 16.6379063,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w916457136",
+   "name": "Saadi camp",
+   "ar": "معسكر الساعدي",
+   "lat": 31.0432107,
+   "lon": 16.6539642,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w1122280653",
+   "name": null,
+   "ar": null,
+   "lat": 30.9914386,
+   "lon": 16.6236553,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122280672",
+   "name": null,
+   "ar": null,
+   "lat": 30.9942498,
+   "lon": 16.6173613,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122280677",
+   "name": null,
+   "ar": null,
+   "lat": 30.9989751,
+   "lon": 16.6170406,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122280727",
+   "name": null,
+   "ar": null,
+   "lat": 30.9934415,
+   "lon": 16.6258142,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122280729",
+   "name": null,
+   "ar": null,
+   "lat": 30.993115,
+   "lon": 16.6259161,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122280734",
+   "name": null,
+   "ar": null,
+   "lat": 30.9929874,
+   "lon": 16.624113,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122280739",
+   "name": null,
+   "ar": null,
+   "lat": 30.9920823,
+   "lon": 16.6215647,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122280742",
+   "name": null,
+   "ar": null,
+   "lat": 30.991307,
+   "lon": 16.62673,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122280756",
+   "name": null,
+   "ar": null,
+   "lat": 30.9985891,
+   "lon": 16.6219399,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122280775",
+   "name": null,
+   "ar": null,
+   "lat": 30.9904763,
+   "lon": 16.6298279,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411840",
+   "name": null,
+   "ar": null,
+   "lat": 31.0000898,
+   "lon": 16.6298422,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411844",
+   "name": null,
+   "ar": null,
+   "lat": 30.9978331,
+   "lon": 16.6305498,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411849",
+   "name": null,
+   "ar": null,
+   "lat": 30.9982144,
+   "lon": 16.6322539,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411851",
+   "name": null,
+   "ar": null,
+   "lat": 30.9977638,
+   "lon": 16.6334355,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411855",
+   "name": null,
+   "ar": null,
+   "lat": 30.9968998,
+   "lon": 16.6367211,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411873",
+   "name": null,
+   "ar": null,
+   "lat": 31.0024903,
+   "lon": 16.6277828,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411876",
+   "name": null,
+   "ar": null,
+   "lat": 31.0036643,
+   "lon": 16.6263823,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411879",
+   "name": null,
+   "ar": null,
+   "lat": 31.0045019,
+   "lon": 16.6294741,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411881",
+   "name": null,
+   "ar": null,
+   "lat": 31.0059706,
+   "lon": 16.6267385,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w1122411895",
+   "name": null,
+   "ar": null,
+   "lat": 30.9921844,
+   "lon": 16.6160566,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411896",
+   "name": null,
+   "ar": null,
+   "lat": 30.9944084,
+   "lon": 16.6127674,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411897",
+   "name": null,
+   "ar": null,
+   "lat": 30.9974149,
+   "lon": 16.6121469,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411898",
+   "name": null,
+   "ar": null,
+   "lat": 31.0007271,
+   "lon": 16.6114503,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411899",
+   "name": null,
+   "ar": null,
+   "lat": 31.0026565,
+   "lon": 16.6145665,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411900",
+   "name": null,
+   "ar": null,
+   "lat": 31.0022456,
+   "lon": 16.6180563,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411901",
+   "name": null,
+   "ar": null,
+   "lat": 31.0016849,
+   "lon": 16.6213325,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411902",
+   "name": null,
+   "ar": null,
+   "lat": 30.993952,
+   "lon": 16.6276184,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411903",
+   "name": null,
+   "ar": null,
+   "lat": 30.9922639,
+   "lon": 16.630034,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411904",
+   "name": null,
+   "ar": null,
+   "lat": 30.9911548,
+   "lon": 16.6316355,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411905",
+   "name": null,
+   "ar": null,
+   "lat": 30.9886338,
+   "lon": 16.6293728,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411906",
+   "name": null,
+   "ar": null,
+   "lat": 30.9887154,
+   "lon": 16.6253357,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411907",
+   "name": null,
+   "ar": null,
+   "lat": 30.9891666,
+   "lon": 16.6220901,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  },
+  {
+   "id": "w1122411908",
+   "name": null,
+   "ar": null,
+   "lat": 30.9907543,
+   "lon": 16.6185738,
+   "tags": {
+    "building": "yes",
+    "man_made": "tower",
+    "military": "yes"
+   }
+  }
+ ],
+ "jufra_sebha_military": [
+  {
+   "id": "n5469039813",
+   "name": null,
+   "ar": null,
+   "lat": 29.2084949,
+   "lon": 16.0085873,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469040882",
+   "name": null,
+   "ar": null,
+   "lat": 29.2018847,
+   "lon": 16.0271981,
+   "tags": {
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469041276",
+   "name": null,
+   "ar": null,
+   "lat": 29.2216286,
+   "lon": 16.0079279,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469041278",
+   "name": null,
+   "ar": null,
+   "lat": 29.2196313,
+   "lon": 16.0097685,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469041288",
+   "name": null,
+   "ar": null,
+   "lat": 29.2216044,
+   "lon": 16.0050062,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469041290",
+   "name": null,
+   "ar": null,
+   "lat": 29.2199624,
+   "lon": 16.0066145,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469041298",
+   "name": null,
+   "ar": null,
+   "lat": 29.2171417,
+   "lon": 16.0108326,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469041299",
+   "name": null,
+   "ar": null,
+   "lat": 29.2164266,
+   "lon": 16.0098767,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469041525",
+   "name": null,
+   "ar": null,
+   "lat": 29.1804048,
+   "lon": 16.0086932,
+   "tags": {
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469187109",
+   "name": null,
+   "ar": null,
+   "lat": 29.060618,
+   "lon": 15.8215362,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469187110",
+   "name": null,
+   "ar": null,
+   "lat": 29.0624736,
+   "lon": 15.8195552,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469187383",
+   "name": null,
+   "ar": null,
+   "lat": 29.0472304,
+   "lon": 15.8456413,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278796",
+   "name": null,
+   "ar": null,
+   "lat": 29.0488617,
+   "lon": 15.8425319,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278797",
+   "name": null,
+   "ar": null,
+   "lat": 29.0475164,
+   "lon": 15.8431131,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278798",
+   "name": null,
+   "ar": null,
+   "lat": 29.0475973,
+   "lon": 15.8467323,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278799",
+   "name": null,
+   "ar": null,
+   "lat": 29.0467428,
+   "lon": 15.8474125,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278800",
+   "name": null,
+   "ar": null,
+   "lat": 29.0462635,
+   "lon": 15.8460784,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278801",
+   "name": null,
+   "ar": null,
+   "lat": 29.0472162,
+   "lon": 15.8443085,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278802",
+   "name": null,
+   "ar": null,
+   "lat": 29.0502185,
+   "lon": 15.8471087,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278803",
+   "name": null,
+   "ar": null,
+   "lat": 29.0508651,
+   "lon": 15.8475842,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278804",
+   "name": null,
+   "ar": null,
+   "lat": 29.0510845,
+   "lon": 15.8465408,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278805",
+   "name": null,
+   "ar": null,
+   "lat": 29.0453917,
+   "lon": 15.8448368,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278806",
+   "name": null,
+   "ar": null,
+   "lat": 29.0455591,
+   "lon": 15.8433773,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278807",
+   "name": null,
+   "ar": null,
+   "lat": 29.0433535,
+   "lon": 15.8427102,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278808",
+   "name": null,
+   "ar": null,
+   "lat": 29.0464367,
+   "lon": 15.8414224,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278809",
+   "name": null,
+   "ar": null,
+   "lat": 29.0489136,
+   "lon": 15.8409865,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278810",
+   "name": null,
+   "ar": null,
+   "lat": 29.0488675,
+   "lon": 15.8388929,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278811",
+   "name": null,
+   "ar": null,
+   "lat": 29.0498085,
+   "lon": 15.8421819,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278812",
+   "name": null,
+   "ar": null,
+   "lat": 29.0498721,
+   "lon": 15.8405836,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278813",
+   "name": null,
+   "ar": null,
+   "lat": 29.0502069,
+   "lon": 15.8382523,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278814",
+   "name": null,
+   "ar": null,
+   "lat": 29.050484,
+   "lon": 15.8393024,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278815",
+   "name": null,
+   "ar": null,
+   "lat": 29.050969,
+   "lon": 15.8425187,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278816",
+   "name": null,
+   "ar": null,
+   "lat": 29.051708,
+   "lon": 15.8433442,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278817",
+   "name": null,
+   "ar": null,
+   "lat": 29.0524817,
+   "lon": 15.8441632,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278818",
+   "name": null,
+   "ar": null,
+   "lat": 29.0530532,
+   "lon": 15.8452529,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278819",
+   "name": null,
+   "ar": null,
+   "lat": 29.05344,
+   "lon": 15.8467455,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469278820",
+   "name": null,
+   "ar": null,
+   "lat": 29.0535209,
+   "lon": 15.8477956,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279933",
+   "name": null,
+   "ar": null,
+   "lat": 29.0501319,
+   "lon": 15.8356964,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279934",
+   "name": null,
+   "ar": null,
+   "lat": 29.0494159,
+   "lon": 15.8368191,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279935",
+   "name": null,
+   "ar": null,
+   "lat": 29.048394,
+   "lon": 15.8359275,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279936",
+   "name": null,
+   "ar": null,
+   "lat": 29.0477936,
+   "lon": 15.8365219,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279937",
+   "name": null,
+   "ar": null,
+   "lat": 29.0466908,
+   "lon": 15.8351878,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279938",
+   "name": null,
+   "ar": null,
+   "lat": 29.0473894,
+   "lon": 15.83567,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279960",
+   "name": null,
+   "ar": null,
+   "lat": 29.0520313,
+   "lon": 15.8349633,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279961",
+   "name": null,
+   "ar": null,
+   "lat": 29.052805,
+   "lon": 15.8355313,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279962",
+   "name": null,
+   "ar": null,
+   "lat": 29.0523373,
+   "lon": 15.8364361,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279963",
+   "name": null,
+   "ar": null,
+   "lat": 29.0510556,
+   "lon": 15.8353397,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279964",
+   "name": null,
+   "ar": null,
+   "lat": 29.0519505,
+   "lon": 15.8378494,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279965",
+   "name": null,
+   "ar": null,
+   "lat": 29.0532495,
+   "lon": 15.8379749,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279966",
+   "name": null,
+   "ar": null,
+   "lat": 29.0544157,
+   "lon": 15.8361653,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279967",
+   "name": null,
+   "ar": null,
+   "lat": 29.0541848,
+   "lon": 15.8374465,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279968",
+   "name": null,
+   "ar": null,
+   "lat": 29.0552067,
+   "lon": 15.8358879,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279969",
+   "name": null,
+   "ar": null,
+   "lat": 29.0540405,
+   "lon": 15.8386419,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279970",
+   "name": null,
+   "ar": null,
+   "lat": 29.0556454,
+   "lon": 15.8380079,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279971",
+   "name": null,
+   "ar": null,
+   "lat": 29.0557667,
+   "lon": 15.8367465,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279972",
+   "name": null,
+   "ar": null,
+   "lat": 29.0561535,
+   "lon": 15.8390712,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279974",
+   "name": null,
+   "ar": null,
+   "lat": 29.0571926,
+   "lon": 15.8388334,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279975",
+   "name": null,
+   "ar": null,
+   "lat": 29.0579316,
+   "lon": 15.8378494,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279976",
+   "name": null,
+   "ar": null,
+   "lat": 29.0582087,
+   "lon": 15.8367267,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279977",
+   "name": null,
+   "ar": null,
+   "lat": 29.0592882,
+   "lon": 15.8362445,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279988",
+   "name": null,
+   "ar": null,
+   "lat": 29.0596519,
+   "lon": 15.8393552,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279989",
+   "name": null,
+   "ar": null,
+   "lat": 29.0583472,
+   "lon": 15.8401939,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279990",
+   "name": null,
+   "ar": null,
+   "lat": 29.057666,
+   "lon": 15.8411318,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279991",
+   "name": null,
+   "ar": null,
+   "lat": 29.0577353,
+   "lon": 15.842314,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279992",
+   "name": null,
+   "ar": null,
+   "lat": 29.0573427,
+   "lon": 15.8434697,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279993",
+   "name": null,
+   "ar": null,
+   "lat": 29.0577988,
+   "lon": 15.8454114,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469279994",
+   "name": null,
+   "ar": null,
+   "lat": 29.0581336,
+   "lon": 15.8466068,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469280010",
+   "name": null,
+   "ar": null,
+   "lat": 29.0520371,
+   "lon": 15.846653,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469280342",
+   "name": null,
+   "ar": null,
+   "lat": 29.045111,
+   "lon": 15.8420419,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469280343",
+   "name": null,
+   "ar": null,
+   "lat": 29.0483011,
+   "lon": 15.8398267,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "n5469280355",
+   "name": null,
+   "ar": null,
+   "lat": 29.0596714,
+   "lon": 15.8347311,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n5469280356",
+   "name": null,
+   "ar": null,
+   "lat": 29.0426549,
+   "lon": 15.8436522,
+   "tags": {
+    "landuse": "military",
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "n12324051478",
+   "name": null,
+   "ar": null,
+   "lat": 29.3801915,
+   "lon": 16.0922125,
+   "tags": {
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "w102625691",
+   "name": "Al Jufra Airbase",
+   "ar": "قاعدة الجفرة الجوية",
+   "lat": 29.2035272,
+   "lon": 16.0473877,
+   "tags": {
+    "landuse": "military",
+    "military": "airfield"
+   }
+  },
+  {
+   "id": "w103677895",
+   "name": null,
+   "ar": null,
+   "lat": 26.9778316,
+   "lon": 14.4622389,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w103677912",
+   "name": null,
+   "ar": null,
+   "lat": 26.9759854,
+   "lon": 14.4619208,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w128669342",
+   "name": null,
+   "ar": null,
+   "lat": 26.8822119,
+   "lon": 14.4273859,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w128669343",
+   "name": null,
+   "ar": null,
+   "lat": 27.2252096,
+   "lon": 14.6872888,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w238162841",
+   "name": null,
+   "ar": null,
+   "lat": 29.2513802,
+   "lon": 16.0997097,
+   "tags": {
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w278639967",
+   "name": "Tamanhint Air Force Base",
+   "ar": "قاعدة تمنهنت الجوية",
+   "lat": 27.2375819,
+   "lon": 14.6667971,
+   "tags": {
+    "landuse": "military",
+    "military": "airfield"
+   }
+  },
+  {
+   "id": "w330467032",
+   "name": "Fares Camp",
+   "ar": "كتيبة فارس",
+   "lat": 27.0136838,
+   "lon": 14.4542646,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w330467033",
+   "name": "Moral guidance for the army",
+   "ar": "التوجيه المعنوي للجيش",
+   "lat": 27.0107393,
+   "lon": 14.4507134,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w330467036",
+   "name": null,
+   "ar": null,
+   "lat": 27.0173547,
+   "lon": 14.456029,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w330467037",
+   "name": null,
+   "ar": null,
+   "lat": 27.0178092,
+   "lon": 14.4582731,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w331260489",
+   "name": null,
+   "ar": null,
+   "lat": 27.0174401,
+   "lon": 14.5026924,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w331260495",
+   "name": null,
+   "ar": null,
+   "lat": 27.0293977,
+   "lon": 14.5141869,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w331414269",
+   "name": "multple rocket launchers رادار صواريخ",
+   "ar": "multple rocket launchers رادار صواريخ",
+   "lat": 26.9508724,
+   "lon": 14.4287498,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w331425462",
+   "name": null,
+   "ar": null,
+   "lat": 26.980865,
+   "lon": 14.4480521,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w331425470",
+   "name": "Secondary Airborne",
+   "ar": "الثانوية الجوية",
+   "lat": 26.9900738,
+   "lon": 14.449695,
+   "tags": {
+    "landuse": "military"
+   }
+  },
+  {
+   "id": "w568477860",
+   "name": null,
+   "ar": null,
+   "lat": 29.1835864,
+   "lon": 16.0232084,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734642",
+   "name": null,
+   "ar": null,
+   "lat": 29.1987455,
+   "lon": 16.0067305,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734643",
+   "name": null,
+   "ar": null,
+   "lat": 29.1976426,
+   "lon": 16.0071518,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734644",
+   "name": null,
+   "ar": null,
+   "lat": 29.1964907,
+   "lon": 16.0085532,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734645",
+   "name": null,
+   "ar": null,
+   "lat": 29.1968591,
+   "lon": 16.0096776,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734646",
+   "name": null,
+   "ar": null,
+   "lat": 29.2005625,
+   "lon": 16.005993,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734647",
+   "name": null,
+   "ar": null,
+   "lat": 29.200193,
+   "lon": 16.0092527,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734648",
+   "name": null,
+   "ar": null,
+   "lat": 29.1993503,
+   "lon": 16.0117762,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734649",
+   "name": null,
+   "ar": null,
+   "lat": 29.1986539,
+   "lon": 16.0108072,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734650",
+   "name": null,
+   "ar": null,
+   "lat": 29.1947801,
+   "lon": 16.0095129,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734651",
+   "name": null,
+   "ar": null,
+   "lat": 29.1925067,
+   "lon": 16.0138232,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734652",
+   "name": null,
+   "ar": null,
+   "lat": 29.1930697,
+   "lon": 16.0127909,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734653",
+   "name": null,
+   "ar": null,
+   "lat": 29.1945004,
+   "lon": 16.0129412,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734654",
+   "name": null,
+   "ar": null,
+   "lat": 29.2202515,
+   "lon": 15.9889316,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734655",
+   "name": null,
+   "ar": null,
+   "lat": 29.2210672,
+   "lon": 15.9893729,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734656",
+   "name": null,
+   "ar": null,
+   "lat": 29.2200073,
+   "lon": 15.9902271,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734657",
+   "name": null,
+   "ar": null,
+   "lat": 29.2215518,
+   "lon": 15.9908619,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734658",
+   "name": null,
+   "ar": null,
+   "lat": 29.2224703,
+   "lon": 15.9903109,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734659",
+   "name": null,
+   "ar": null,
+   "lat": 29.2225032,
+   "lon": 15.9917493,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734660",
+   "name": null,
+   "ar": null,
+   "lat": 29.2217881,
+   "lon": 15.9923925,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734661",
+   "name": null,
+   "ar": null,
+   "lat": 29.222739,
+   "lon": 15.9929376,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734662",
+   "name": null,
+   "ar": null,
+   "lat": 29.2207187,
+   "lon": 15.9878925,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734663",
+   "name": null,
+   "ar": null,
+   "lat": 29.2215376,
+   "lon": 15.9883108,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957734664",
+   "name": null,
+   "ar": null,
+   "lat": 29.218304,
+   "lon": 16.0088006,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738301",
+   "name": null,
+   "ar": null,
+   "lat": 29.2175368,
+   "lon": 15.9938195,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738302",
+   "name": null,
+   "ar": null,
+   "lat": 29.2190814,
+   "lon": 16.0072969,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738303",
+   "name": null,
+   "ar": null,
+   "lat": 29.2207157,
+   "lon": 16.0057409,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738304",
+   "name": null,
+   "ar": null,
+   "lat": 29.2106188,
+   "lon": 16.0006905,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738305",
+   "name": null,
+   "ar": null,
+   "lat": 29.2106322,
+   "lon": 16.0013395,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957738306",
+   "name": null,
+   "ar": null,
+   "lat": 29.2086751,
+   "lon": 15.9979381,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742629",
+   "name": null,
+   "ar": null,
+   "lat": 29.2028713,
+   "lon": 16.0112873,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742630",
+   "name": null,
+   "ar": null,
+   "lat": 29.2084327,
+   "lon": 15.9975732,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742631",
+   "name": null,
+   "ar": null,
+   "lat": 29.2193464,
+   "lon": 15.993288,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742632",
+   "name": null,
+   "ar": null,
+   "lat": 29.2203869,
+   "lon": 15.9941078,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742633",
+   "name": null,
+   "ar": null,
+   "lat": 29.2211002,
+   "lon": 15.9931899,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742634",
+   "name": null,
+   "ar": null,
+   "lat": 29.2186743,
+   "lon": 15.9919141,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742635",
+   "name": null,
+   "ar": null,
+   "lat": 29.2195579,
+   "lon": 15.991724,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742636",
+   "name": null,
+   "ar": null,
+   "lat": 29.2188412,
+   "lon": 15.9930717,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957742637",
+   "name": null,
+   "ar": null,
+   "lat": 29.2197346,
+   "lon": 15.9928795,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753298",
+   "name": null,
+   "ar": null,
+   "lat": 29.1856335,
+   "lon": 16.0264915,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753299",
+   "name": null,
+   "ar": null,
+   "lat": 29.1819169,
+   "lon": 16.0246167,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753300",
+   "name": null,
+   "ar": null,
+   "lat": 29.1846768,
+   "lon": 16.0227221,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753301",
+   "name": null,
+   "ar": null,
+   "lat": 29.184185,
+   "lon": 16.0240333,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753302",
+   "name": null,
+   "ar": null,
+   "lat": 29.1833942,
+   "lon": 16.0248241,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753303",
+   "name": null,
+   "ar": null,
+   "lat": 29.1834214,
+   "lon": 16.0254123,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753304",
+   "name": null,
+   "ar": null,
+   "lat": 29.1838773,
+   "lon": 16.0256716,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753305",
+   "name": null,
+   "ar": null,
+   "lat": 29.1842214,
+   "lon": 16.0218528,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753306",
+   "name": null,
+   "ar": null,
+   "lat": 29.1822667,
+   "lon": 16.0206541,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753307",
+   "name": null,
+   "ar": null,
+   "lat": 29.1819024,
+   "lon": 16.0216553,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753308",
+   "name": null,
+   "ar": null,
+   "lat": 29.1818114,
+   "lon": 16.0210413,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753309",
+   "name": null,
+   "ar": null,
+   "lat": 29.1828896,
+   "lon": 16.0220976,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753310",
+   "name": null,
+   "ar": null,
+   "lat": 29.1832404,
+   "lon": 16.0210863,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753311",
+   "name": null,
+   "ar": null,
+   "lat": 29.1827629,
+   "lon": 16.0240019,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753312",
+   "name": null,
+   "ar": null,
+   "lat": 29.1861044,
+   "lon": 16.0221571,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753313",
+   "name": null,
+   "ar": null,
+   "lat": 29.1867363,
+   "lon": 16.0236125,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957753314",
+   "name": null,
+   "ar": null,
+   "lat": 29.1870557,
+   "lon": 16.022608,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957755908",
+   "name": null,
+   "ar": null,
+   "lat": 29.1803488,
+   "lon": 16.008611,
+   "tags": {
+    "military": "checkpoint"
+   }
+  },
+  {
+   "id": "w957755910",
+   "name": null,
+   "ar": null,
+   "lat": 29.2029108,
+   "lon": 16.0047517,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957925518",
+   "name": null,
+   "ar": null,
+   "lat": 29.1841369,
+   "lon": 16.0234297,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957925519",
+   "name": null,
+   "ar": null,
+   "lat": 29.1856381,
+   "lon": 16.0226092,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957925520",
+   "name": null,
+   "ar": null,
+   "lat": 29.1857786,
+   "lon": 16.0231305,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957925521",
+   "name": null,
+   "ar": null,
+   "lat": 29.1942011,
+   "lon": 16.0107293,
+   "tags": {
+    "building": "bunker",
+    "landuse": "military",
+    "military": "bunker"
+   }
+  },
+  {
+   "id": "w957925522",
+   "name": null,
+   "ar": null,
+   "lat": 29.2207066,
+   "lon": 15.9900157,
+   "tags": {
+    "building": "bunker",
+    "military": "bunker"
+   }
+  }
+ ],
+ "iaea_len": 29,
+ "iaea_ctx": []
+}

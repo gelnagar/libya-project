@@ -1,1 +1,1 @@
-{"ok": false, "error": "USGS_USERNAME / USGS_TOKEN secrets are missing", "type": "RuntimeError"}
+{"ok": false, "error": "USGS_USERNAME / USGS_TOKEN secrets are missing", "type": "RuntimeError", "at": "2026-10-18T02:11:20.083868", "have_username": false, "have_token": false, "env_names_with_usgs": ["USGS_TOKEN", "USGS_USERNAME"]}

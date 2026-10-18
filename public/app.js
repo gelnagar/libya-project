@@ -1038,7 +1038,7 @@
   /* researched landmarks and buildings: one marker each, opening the full profile */
   var wpnGroup = L.layerGroup(), profGroup = L.layerGroup(), profOn = store.get('prof', true), milGroup = L.layerGroup(), milOn = store.get('milprof', true);
   var PROF_SVG = '<path d="M12 2 2 7v2h20V7zM4 11v8H2v3h20v-3h-2v-8h-3v8h-2v-8h-4v8H9v-8z"/>';
-  var MISSILE_SVG = '<path d="M12 .8l3.2 5.4V16H8.8V6.2zM8.8 11.5 4 18v3.2h4.8zM15.2 11.5 20 18v3.2h-4.8zM10.4 17h3.2v6h-3.2z"/>';
+  var MISSILE_SVG = '<path d="M2 17.2h20v2.3H2z"/><circle cx="5" cy="21.6" r="1.5"/><circle cx="10" cy="21.6" r="1.5"/><circle cx="15.5" cy="21.6" r="1.5"/><path d="M16.5 11.5H21v5.7h-4.5z"/><path transform="rotate(-55 5.5 16.6)" d="M5.5 14.4h9.6v4.4H5.5z"/><g transform="translate(11.2 9.4) rotate(-55)"><path d="M0-.95H6.6L10 0 6.6.95H0z"/><path d="M0-.95-1.9-2.8H2.2L3.2-.95zM0 .95-1.9 2.8H2.2L3.2.95z"/></g><circle cx="13.6" cy="12.7" r="1.5"/><circle cx="15.3" cy="14.4" r="1.1"/>';
   /* one distinct glyph per weapons-programme site (24x24, drawn in the military colour) */
   function trefoil() { var o = '', R = 9.2, r = 3.3, i, a0, a1, p = function (rad, a) { return (12 + rad * Math.cos(a)).toFixed(2) + ' ' + (12 + rad * Math.sin(a)).toFixed(2); }; for (i = 0; i < 3; i++) { a0 = (-90 + i * 120 - 30) * Math.PI / 180; a1 = (-90 + i * 120 + 30) * Math.PI / 180; o += '<path d="M' + p(r, a0) + 'L' + p(R, a0) + 'A' + R + ' ' + R + ' 0 0 1 ' + p(R, a1) + 'L' + p(r, a1) + 'A' + r + ' ' + r + ' 0 0 0 ' + p(r, a0) + 'z"/>'; } return o + '<circle cx="12" cy="12" r="1.9"/>'; }
   var WEAPON_ICON = {
@@ -1050,7 +1050,7 @@
     'wp-al-fallah-site-b': '<path fill-rule="evenodd" d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm5 -2v12h1.6V6zm6.4 0v12H16V6zM6 18h2v3H6zm10 0h2v3h-2z"/>',
     'wp-al-karamia-site-h': '<path fill-rule="evenodd" d="M3 6l9-4 9 4v12l-9 4-9-4zm8.2 4.4v10.1h1.6V10.4zM12 8.7l6.6-2.9-.6-1.2L12 7.2 6 4.6l-.6 1.2z"/>',
     'wp-el-ezeizia-site-k': '<path fill-rule="evenodd" d="M2 10l10-6 10 6v11H2zm6 11h8v-7H8z"/>',
-    'wp-scud-launch-august-2011': '<path d="M16.6 1.6l3.8 3.8-1.4 2.6-3.4 3.4-3.6-3.6 3.2-3.6zM11.4 9.2l3.4 3.4-9 6.6-1.4-1.4zM1 19h22v2.5H1z"/><circle cx="5" cy="22" r="1.6"/><circle cx="12" cy="22" r="1.6"/><circle cx="19" cy="22" r="1.6"/>',
+    'wp-scud-launch-august-2011': '<path d="M2 17.2h20v2.3H2z"/><circle cx="5" cy="21.6" r="1.5"/><circle cx="10" cy="21.6" r="1.5"/><circle cx="15.5" cy="21.6" r="1.5"/><path d="M16.5 11.5H21v5.7h-4.5z"/><path transform="rotate(-55 5.5 16.6)" d="M5.5 14.4h9.6v4.4H5.5z"/><g transform="translate(11.2 9.4) rotate(-55)"><path d="M0-.95H6.6L10 0 6.6.95H0z"/><path d="M0-.95-1.9-2.8H2.2L3.2-.95zM0 .95-1.9 2.8H2.2L3.2.95z"/></g><circle cx="13.6" cy="12.7" r="1.5"/><circle cx="15.3" cy="14.4" r="1.1"/>',
     'tajoura-nuclear': '<path fill-rule="evenodd" d="M12 2c4.6 0 8 3.4 8 7.5V13h2v9H2v-9h2V9.5C4 5.4 7.4 2 12 2zm-1.2 9v3h2.4v-3zM8 16v6h2v-4h4v4h2v-6z"/>',
     'wp-janzour-machine-shop': '<path fill-rule="evenodd" d="M10.4 2h3.2l.5 2.6 1.6.7 2.2-1.5 2.3 2.3-1.5 2.2.7 1.6 2.6.5v3.2l-2.6.5-.7 1.6 1.5 2.2-2.3 2.3-2.2-1.5-1.6.7-.5 2.6h-3.2l-.5-2.6-1.6-.7-2.2 1.5-2.3-2.3 1.5-2.2-.7-1.6L2 13.6v-3.2l2.6-.5.7-1.6-1.5-2.2 2.3-2.3 2.2 1.5 1.6-.7zM12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7z"/>',
     'wp-tarhuna-underground-facility': '<path fill-rule="evenodd" d="M1 21V11C1 6 6 2 12 2s11 4 11 9v10zm5-1h12v-8c0-3-2.7-5.4-6-5.4S6 9 6 12zm3-1v-6.5c0-1.2 1.3-2 3-2s3 .8 3 2V19z"/>',

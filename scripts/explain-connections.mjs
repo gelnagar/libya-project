@@ -77,7 +77,8 @@ You get the two ends, how the link was recorded, and source passages (OCR'd U.S.
 - "strength": direct = a source states the link; reported = a source reports it second-hand or from testimony; inferred = it follows from the facts but nobody states it; weak = only co-mentioned or thin; doubtful = the evidence does not support it or the two ends look like the same thing or unrelated.
 - If both ends are really the same person or place under two spellings, set flag "same-entity". If the evidence does not support the link, set flag "unsupported". Otherwise "ok".
 - quotes must be copied word for word from the passages given (max 30 words each), with the DOC number. Include none if nothing quotable.
-- Write for the reader first: headline then explanation, then details.`;
+- Write for the reader first: headline then explanation, then details.
+- Always answer by calling the note tool, once.`;
 const TOOL = { name: 'note', description: 'The note for one connection.', input_schema: { type: 'object', additionalProperties: false, required: ['headline', 'explanation', 'strength', 'flag', 'established', 'not_established', 'context', 'timeline', 'quotes', 'open_question'], properties: {
   headline: { type: 'string', description: 'One plain sentence, max 22 words, naming the link.' },
   explanation: { type: 'string', description: '3-5 plain sentences: what links the two and why it matters to understanding Tripoli under Gaddafi.' },
@@ -89,7 +90,7 @@ const TOOL = { name: 'note', description: 'The note for one connection.', input_
   timeline: { type: 'array', maxItems: 5, items: { type: 'object', additionalProperties: false, required: ['when', 'what'], properties: { when: { type: 'string' }, what: { type: 'string' } } } },
   quotes: { type: 'array', maxItems: 2, items: { type: 'object', additionalProperties: false, required: ['text', 'doc'], properties: { text: { type: 'string' }, doc: { type: 'integer' } } } },
   open_question: { type: 'string', description: 'What record or witness would settle what is uncertain. Empty if nothing is uncertain.' } } } };
-const params = (it) => ({ model: MODEL, max_tokens: 1500, system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }], tools: [TOOL], tool_choice: { type: 'tool', name: 'note' }, messages: [{ role: 'user', content: it.input }] });
+const params = (it) => ({ model: MODEL, max_tokens: 1500, system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }], tools: [TOOL], messages: [{ role: 'user', content: it.input + '\n\nRespond only by calling the note tool.' }] });
 
 // ---- run
 const notes = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};

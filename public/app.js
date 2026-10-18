@@ -2176,7 +2176,8 @@
       box.appendChild(h('div', { class: 'conn-row', style: '--c:' + col }, [
         h('button', { class: 'conn-go', onclick: x.other.open }, [h('b', { text: x.other.name }), h('small', { text: (CONN_KIND[c.kind] || c.kind) + (c.year ? ' · ' + c.year : '') + (c.confidence === 'reported' ? ' · reported' : '') })]),
         h('p', { text: c.why }),
-        src ? h('a', { href: src.u, target: '_blank', rel: 'noopener', text: 'Source: ' + src.t }) : null
+        src ? h('a', { href: src.u, target: '_blank', rel: 'noopener', text: 'Source: ' + src.t }) : null,
+        h('button', { class: 'linkbtn conn-why', type: 'button', text: 'Why are these connected?', onclick: function () { connDetail(mapConnSpec(c)); } })
       ]));
     });
     if (same.length) box.appendChild(h('p', { class: 'conn-same' }, ['Also in the atlas as: '].concat(same.map(function (x, i) { return h('span', {}, [i ? ', ' : '', h('button', { class: 'linkbtn', text: x.other.name, title: x.c.why, onclick: x.other.open })]); }))));
@@ -2189,7 +2190,7 @@
     netLayer.clearLayers();
     CONN.forEach(function (c) { if (c.kind === 'same-place') return; var x = ent(c.a), y = ent(c.b); if (!x || !y) return;
       L.polyline([[x.lat, x.lon], [y.lat, y.lon]], { color: CONN_COL[c.kind] || '#738091', weight: 2, opacity: 0.55, dashArray: c.confidence === 'documented' ? null : '5 6' })
-        .bindTooltip(x.name + ' ↔ ' + y.name + ': ' + c.why, { sticky: true, className: 'site-label' }).on('click', function () { curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon }; x.open(); }).addTo(netLayer); });
+        .bindTooltip(x.name + ' ↔ ' + y.name + ': ' + c.why, { sticky: true, className: 'site-label' }).on('click', function () { connDetail(mapConnSpec(c)); }).addTo(netLayer); });
   }
   $('hist-toggles').appendChild(toggleRow('net', 'Connections', 'Lines between linked places', netOn, function (v) { netOn = v; store.set('net', v); if (v) { drawNet(); netLayer.addTo(map); } else map.removeLayer(netLayer); }));
   GROUPS.push({ t: 'Connections', n: 'Transfers, units, attacks, where the dead were taken', parts: [['net', 'All connections', 'then']] });
@@ -2304,8 +2305,64 @@
   var code = store.get('code', '');
   if (CFG.aiEndpoint && code) relay(code, { status: true }).catch(function () {});
   // Small API for unknown.js (The Unknown network view).
-  window.ATLAS_API = {
-    h: h, facts: facts, section: section,
+
+  /* ---------- the note behind a connection (written by Claude Sonnet, shown on click) ---------- */
+  var notesLoading = null;
+  function loadNotes() {
+    if (window.ATLAS_CONN_NOTES) return Promise.resolve(window.ATLAS_CONN_NOTES);
+    if (notesLoading) return notesLoading;
+    notesLoading = new Promise(function (ok) { var sc = document.createElement('script'); sc.src = 'data/connection-notes.js'; sc.onload = function () { ok(window.ATLAS_CONN_NOTES || {}); }; sc.onerror = function () { ok({}); }; document.head.appendChild(sc); });
+    return notesLoading;
+  }
+  var STRENGTH = { direct: ['Stated outright', 'A source says this directly.'], reported: ['Reported', 'A source reports it second-hand or from testimony.'], inferred: ['Follows from the facts', 'Nobody states it, but the facts point to it.'], weak: ['Thin evidence', 'The two are mentioned together, little more.'], doubtful: ['Not supported', 'The sources do not back this link.'] };
+  function mapConnSpec(c) {
+    var x = ent(c.a), y = ent(c.b);
+    return { key: 'm:' + c.a + '|' + c.b + '|' + c.kind, kicker: CONN_KIND[c.kind] || 'Connection', ends: [x, y], year: c.year, level: c.confidence === 'documented' ? 'Documented' : 'Reported, not confirmed', why: [c.why], sources: c.sources || [], color: CONN_COL[c.kind] };
+  }
+  // spec: { key, kicker, ends:[{name, open, pic?}, {…}], year, level, why:[…], sources:[{t,u}], docs:[{t,u,d,r}], color }
+  function connDetail(spec) {
+    var body = newSheet('Connection'); markSelected(null); curTarget = { isReport: true, code: 'C' };
+    var a = spec.ends[0] || { name: '?' }, b = spec.ends[1] || { name: '?' };
+    body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: a.name + ' ↔ ' + b.name })]));
+    if (a.pic || b.pic) body.appendChild(h('div', { class: 'cn-pair' }, [h('span', { html: a.pic || '' }), h('i', { text: '↔' }), h('span', { html: b.pic || '' })]));
+    var slot = h('div', { class: 'cn-slot' }); var facts0 = [['Kind', spec.kicker], ['Year', spec.year], ['Evidence', spec.level], ['Documents', spec.docs ? spec.docs.length : '']];
+    var fx = facts(facts0); body.appendChild(fx); body.appendChild(slot);
+    var goes = h('div', { class: 'row-btns' }, [a.open ? h('button', { class: 'btn', type: 'button', text: 'Go to ' + (a.name.length > 26 ? a.name.slice(0, 24) + '…' : a.name), onclick: a.open }) : null, b.open ? h('button', { class: 'btn', type: 'button', text: 'Go to ' + (b.name.length > 26 ? b.name.slice(0, 24) + '…' : b.name), onclick: b.open }) : null]);
+    slot.appendChild(h('p', { class: 'd-text cn-wait', text: 'Reading the sources…' }));
+    function list(items) { return h('ul', { class: 'cn-list' }, items.map(function (t) { return h('li', { text: t }); })); }
+    function fill(note) {
+      slot.innerHTML = '';
+      if (note) {
+        var st = STRENGTH[note.strength] || ['', ''];
+        if (note.flag === 'same-entity') slot.appendChild(h('p', { class: 'cn-flag', text: 'These two may be the same ' + (spec.same || 'thing') + ' under different spellings.' }));
+        if (note.flag === 'unsupported') slot.appendChild(h('p', { class: 'cn-flag', text: 'The sources do not clearly support this link. Treat it as a lead, not a fact.' }));
+        slot.appendChild(h('p', { class: 'brief', text: note.headline }));
+        slot.appendChild(h('div', { class: 'cn-strength s-' + note.strength }, [h('b', { text: st[0] }), h('small', { text: st[1] })]));
+        slot.appendChild(h('p', { class: 'd-text', text: note.explanation }));
+        if ((note.established || []).length) slot.appendChild(section('What the sources show', [list(note.established)]));
+        if ((note.not_established || []).length) slot.appendChild(section('What they do not show', [list(note.not_established)]));
+        if ((note.timeline || []).length) slot.appendChild(section('Timeline', [h('ol', { class: 'cn-tl' }, note.timeline.map(function (t) { return h('li', {}, [h('b', { text: t.when }), h('span', { text: ' ' + t.what })]); }))]));
+        if ((note.quotes || []).length) slot.appendChild(section('In their words', note.quotes.map(function (q) { return h('blockquote', { class: 'cn-quote' }, [h('p', { text: '“' + q.text + '”' }), q.doc ? h('small', { text: q.doc.t }) : null]); })));
+        if (note.context) slot.appendChild(section('Background', [h('p', { class: 'd-text', text: note.context }), h('small', { class: 'cn-aside', text: 'General background, not evidence for this link.' })]));
+        if (note.open_question) slot.appendChild(section('Still open', [h('p', { class: 'd-text', text: note.open_question })]));
+      } else {
+        slot.appendChild(h('p', { class: 'brief', text: (spec.why || [])[0] || '' }));
+        (spec.why || []).slice(1, 4).forEach(function (w) { slot.appendChild(h('p', { class: 'd-text', text: w })); });
+        slot.appendChild(h('p', { class: 'cn-aside', text: 'A fuller written explanation for this connection is not available yet.' }));
+      }
+      if (note && (spec.why || []).length) slot.appendChild(section('As recorded', (spec.why || []).slice(0, 4).map(function (w) { return h('p', { class: 'd-text', text: w }); })));
+      var srcs = (spec.sources || []).map(function (s) { return h('li', {}, [h('a', { href: s.u, target: '_blank', rel: 'noopener', text: s.t })]); });
+      (spec.docs || []).forEach(function (d) { srcs.push(h('li', {}, [h('a', { href: d.u, target: '_blank', rel: 'noopener', text: d.t }), d.d ? h('small', { text: ' ' + String(d.d).slice(0, 10) }) : null, d.r ? h('button', { class: 'linkish', type: 'button', text: 'Open in archive', onclick: function () { API.openRecordById(d.r); } }) : null])); });
+      if (srcs.length) slot.appendChild(section('Sources', [h('ol', { class: 'srcs' }, srcs)]));
+      slot.appendChild(goes);
+      slot.appendChild(h('p', { class: 'cn-aside', text: note ? 'Explained by Claude Sonnet from the documents above. It can make mistakes; check the sources.' : '' }));
+    }
+    openPanel('sheet');
+    loadNotes().then(function (N) { fill(N[spec.key]); });
+  }
+  var API = null;
+  window.ATLAS_API = API = {
+    conn: connDetail, h: h, facts: facts, section: section,
     sheet: function (kind, icon, fill) { var body = newSheet(kind); markSelected(null); curTarget = { isReport: true, code: icon }; fill(body); openPanel('sheet'); },
     openPlace: function (id) { if (BY_ID[id]) { focusSite(BY_ID[id]); return; } var a = AREA_BY_ID[id]; if (a) { map.flyTo([a.lat, a.lon], 15, { duration: 0.8 }); openArea(a); } },
     recordExists: function (id) { return loadRecords().then(function () { return !!REC_BY_ID[id]; }); },

@@ -85,6 +85,12 @@
       ln.style.animationDelay = (Math.min(1, Math.hypot(a.x, a.y) / 700) * 0.9).toFixed(2) + 's';
       eg.appendChild(ln); edgeEls.push(ln);
     });
+    D.edges.forEach(function (e, i) {
+      var a = D.nodes[e.s], b = D.nodes[e.t];
+      var hit = el('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, class: 'un-hit' }); hit._e = i;
+      hit.appendChild(el('title', {})); hit.firstChild.textContent = a.name + ' ↔ ' + b.name + ': click to see why';
+      eg.appendChild(hit);
+    });
     D.nodes.forEach(function (n, i) {
       var s = size(n), p = picOf(n);
       var g = el('g', { class: 'un-n f-' + famOf(p) + (n.n >= 4 ? ' big' : ''), transform: 'translate(' + n.x + ' ' + n.y + ')', tabindex: '0', role: 'button', 'aria-label': n.name + ', ' + PIC_LABEL[p] });
@@ -192,13 +198,21 @@
       delete pts[ev.pointerId]; if (Object.keys(pts).length < 2) pinch = null;
       root.classList.remove('dragging');
       if (wasTap) {
-        var g = start.target.closest ? start.target.closest('.un-n') : null;
-        if (g) select(g._i, false); else if (sel != null) { sel = null; paint(); }
+        var g = start.target.closest ? start.target.closest('.un-n') : null, hl = start.target.closest ? start.target.closest('.un-hit') : null;
+        if (g) select(g._i, false); else if (hl) why(hl._e); else if (sel != null) { sel = null; paint(); }
       }
       if (!Object.keys(pts).length) start = null;
     }
     svg.addEventListener('pointerup', up); svg.addEventListener('pointercancel', up);
     window.addEventListener('resize', function () { if (root && !root.hidden && sel == null) fit(false, true); });
+  }
+
+  /* ---------- a connection ---------- */
+  function why(ei) {
+    var e = D.edges[ei], a = D.nodes[e.s], b = D.nodes[e.t];
+    sel = null; hover = null; paint(); edgeEls.forEach(function (x, k) { x.classList.toggle('on', k === ei); });
+    API.conn({ key: 'u:' + a.id + '|' + b.id, kicker: 'Link in the files', ends: [{ name: a.name, pic: picSvg(a, 64), open: function () { select(e.s, true); } }, { name: b.name, pic: picSvg(b, 64), open: function () { select(e.t, true); } }],
+      level: e.n + ' document' + (e.n === 1 ? '' : 's'), why: e.why, docs: e.docs, same: 'person' });
   }
 
   /* ---------- the panel ---------- */
@@ -219,7 +233,8 @@
       var box = h('div', { class: 'links un-links' });
       links.forEach(function (x) {
         var o = D.nodes[x.other];
-        box.appendChild(h('button', { onclick: function () { select(x.other, true); } }, [h('span', { class: 'un-mini', html: picSvg(o, 30) }), h('span', {}, [o.name, h('small', { text: x.e.why[0] || '' })])]));
+        box.appendChild(h('div', { class: 'un-lrow' }, [h('button', { onclick: function () { select(x.other, true); } }, [h('span', { class: 'un-mini', html: picSvg(o, 30) }), h('span', {}, [o.name, h('small', { text: x.e.why[0] || '' })])]),
+          h('button', { class: 'un-why', type: 'button', title: 'Why are these connected?', 'aria-label': 'Why are ' + n.name + ' and ' + o.name + ' connected?', text: 'Why?', onclick: function () { why(D.edges.indexOf(x.e)); } })]));
       });
       body.appendChild(API.section('Linked in the files', [box]));
       var list = h('ol', { class: 'srcs un-docs' });

@@ -1459,6 +1459,7 @@
       if (a.open_first) { var f = String(refs[0]).split(':'); if (f[0] === 'site' && BY_ID[f[1]]) TOOLS.open_place({ id: f[1] }); else if (f[0] === 'area' && AREA_BY_ID[f[1]]) TOOLS.open_area({ id: f[1] }); }
       return 'Highlighted ' + pts.length + ' on the map with blue rings' + (missing.length ? '. Not found: ' + missing.join(', ') : '') + '.';
     },
+    open_3d_view: function (a) { var lat = +a.lat, lon = +a.lon; if (a.place_id && BY_ID[a.place_id]) { lat = BY_ID[a.place_id].lat; lon = BY_ID[a.place_id].lon; } if (a.area_id && AREA_BY_ID[a.area_id]) { lat = AREA_BY_ID[a.area_id].lat; lon = AREA_BY_ID[a.area_id].lon; } if (isNaN(lat) || isNaN(lon)) return { error: 'Give lat/lon, place_id or area_id' }; setTimeout(function () { closeChat(); openStreet(lat, lon, a.name || ''); }, 300); ui.log.push('Opened the street-level 3D view'); return 'The 3D street-level view is open.'; },
     clear_selection: function () { selLayer.clearLayers(); ui.log.push('Cleared highlights'); return 'Highlights cleared.'; },
     set_visibility: function (a) {
       var all = []; GROUPS.forEach(function (g) { g.parts.forEach(function (p) { if (inputs[p[0]]) all.push(p[0]); }); });
@@ -1650,7 +1651,7 @@
   var STEP_LABEL = { get_map_state: 'Checking the map', search_places: 'Searching the map', get_place: 'Reading place details', describe_spot: 'Looking up the area',
     set_layers: 'Changing layers', set_today_layers: 'Loading present-day layers', set_basemap: 'Changing the map style', set_periods: 'Changing the time period',
     set_display: 'Adjusting the display', fly_to: 'Moving the map', open_place: 'Opening the place', suggest_request: 'Preparing a request',
-    find_anything: 'Searching places', select: 'Highlighting places', clear_selection: 'Clearing highlights', set_visibility: 'Changing what is shown', set_time: 'Changing the time period', open_area: 'Opening the profile', open_encyclopedia: 'Opening the Encyclopedia', start_report: 'Opening the form',
+    find_anything: 'Searching places', select: 'Highlighting places', clear_selection: 'Clearing highlights', set_visibility: 'Changing what is shown', set_time: 'Changing the time period', open_area: 'Opening the profile', open_encyclopedia: 'Opening the Encyclopedia', start_report: 'Opening the form', open_3d_view: 'Opening the 3D view',
     search_archive: 'Searching the archive', set_historical_map: 'Laying an old map over the city', get_record: 'Reading a document', get_area: 'Reading the area profile', open_record: 'Opening a document', web_search: 'Searching the web' };
   function runTool(name, input) {
     try {
@@ -1858,6 +1859,11 @@
       b.insertBefore(head, b.firstChild);
     }
     familyNotesSection(b);
+    var old3 = b.querySelector('.st-open'); if (old3) old3.remove();
+    if (curTarget && curTarget.lat != null && !curTarget.isReport) {
+      var t3 = curTarget, btn3 = h('div', { class: 'row-btns st-open' }, [h('button', { class: 'btn', text: 'Street-level 3D view', onclick: function () { openStreet(t3.lat, t3.lon, t3.name || ''); } })]);
+      var head3 = b.querySelector('.selhead'); if (head3 && head3.nextSibling) b.insertBefore(btn3, head3.nextSibling); else b.appendChild(btn3);
+    }
   }
 
   /* ---------- family reports: anyone with the password can add a place or a note ---------- */
@@ -1991,6 +1997,78 @@
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (repPicking) stopPick(); else if (!$('report').hidden) closeReportForm(); } });
   if (!canReport) $('btn-report').title = 'Adding to the map works on the online version';
+
+
+  /* ---------- street-level 3D view: MapLibre + OpenFreeMap 3D buildings over satellite, with the atlas pins ---------- */
+  var ML = null, stMap = null, stOrbit = null, stMarkers = [];
+  function loadMapLibre() {
+    if (ML) return ML;
+    ML = new Promise(function (ok, bad) {
+      var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = 'vendor/maplibre/maplibre-gl.css'; document.head.appendChild(css);
+      var s = document.createElement('script'); s.src = 'vendor/maplibre/maplibre-gl.js'; s.onload = function () { ok(window.maplibregl); }; s.onerror = function () { ML = null; bad(new Error('3D viewer could not load')); }; document.head.appendChild(s);
+    });
+    return ML;
+  }
+  function stPins(lat, lon) {
+    stMarkers.forEach(function (m) { m.remove(); }); stMarkers = [];
+    var ll = L.latLng(lat, lon), items = [];
+    SITES.forEach(function (s) { var m = map.distance(ll, [s.lat, s.lon]); if (m < 2500) items.push({ lat: s.lat, lon: s.lon, name: s.name, c: LAYERS[s.layer].color, code: codeHtml(s.layer), go: function () { closeStreet(); focusSite(s); } }); });
+    AREAS.forEach(function (x) { if (['landmark', 'government', 'prison', 'military'].indexOf(x.kind) < 0) return; var m = map.distance(ll, [x.lat, x.lon]); if (m < 1500) items.push({ lat: x.lat, lon: x.lon, name: x.name, c: x.kind === 'military' ? '#ec9a3c' : '#e0b95a', code: '▣', go: function () { closeStreet(); openArea(x); } }); });
+    REPORTS.forEach(function (r) { if (r.lat == null) return; if (map.distance(ll, [r.lat, r.lon]) < 1500) items.push({ lat: r.lat, lon: r.lon, name: r.title, c: (CAT_BY[r.cat] || CAT_BY.other).c, code: '+', go: function () { closeStreet(); openReport(r); } }); });
+    items.forEach(function (it) {
+      var el = h('div', { class: 'st-pin', title: it.name, style: '--c:' + it.c }, [h('i', { html: /^<svg/.test(it.code) ? it.code : esc(it.code) }), h('span', { text: it.name })]);
+      el.addEventListener('click', function (e) { e.stopPropagation(); it.go(); });
+      stMarkers.push(new window.maplibregl.Marker({ element: el, anchor: 'bottom-left' }).setLngLat([it.lon, it.lat]).addTo(stMap));
+    });
+  }
+  function stGround(sat) {
+    $('st-sat').setAttribute('aria-selected', sat ? 'true' : 'false'); $('st-map').setAttribute('aria-selected', sat ? 'false' : 'true');
+    if (stMap && stMap.getLayer('sat')) stMap.setLayoutProperty('sat', 'visibility', sat ? 'visible' : 'none');
+    store.set('stSat', sat);
+  }
+  function stSpin(on) {
+    $('st-orbit').setAttribute('aria-pressed', on ? 'true' : 'false');
+    cancelAnimationFrame(stOrbit); stOrbit = null;
+    if (!on || !stMap) return;
+    var last = performance.now();
+    (function step(t) { stMap.setBearing(stMap.getBearing() + (t - last) * 0.006); last = t; stOrbit = requestAnimationFrame(step); })(last);
+  }
+  function openStreet(lat, lon, name) {
+    $('street').hidden = false; $('street-title').textContent = name ? name : 'Street-level view';
+    $('street-sub').textContent = lat.toFixed(5) + ', ' + lon.toFixed(5) + ' · 3D buildings from OpenStreetMap · satellite: Esri';
+    $('st-photos').href = 'https://www.mapillary.com/app/?lat=' + lat + '&lng=' + lon + '&z=17';
+    $('st-photos').title = 'Real street-level photos from Mapillary, where people have uploaded them';
+    loadMapLibre().then(function (maplibregl) {
+      if (!stMap) {
+        stMap = new maplibregl.Map({ container: 'street-map', style: 'https://tiles.openfreemap.org/styles/liberty', center: [lon, lat], zoom: 17, pitch: 65, bearing: -20, maxPitch: 85, attributionControl: { compact: true } });
+        stMap.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'top-right');
+        stMap.on('load', function () {
+          var first = (stMap.getStyle().layers || []).filter(function (l) { return l.type === 'fill-extrusion' || l.type === 'symbol'; })[0];
+          stMap.addSource('sat', { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize: 256, maxzoom: 18, attribution: 'Imagery © Esri, Maxar, Earthstar Geographics' });
+          stMap.addLayer({ id: 'sat', type: 'raster', source: 'sat', paint: { 'raster-opacity': 0.95 } }, first ? first.id : undefined);
+          (stMap.getStyle().layers || []).forEach(function (l) { if (l.type === 'fill-extrusion') { stMap.setPaintProperty(l.id, 'fill-extrusion-opacity', 0.88); } });
+          stGround(store.get('stSat', true));
+        });
+        ['mousedown', 'touchstart', 'wheel'].forEach(function (ev) { stMap.on(ev, function () { stSpin(false); }); });
+      } else { stMap.resize(); stMap.jumpTo({ center: [lon, lat], zoom: 17, pitch: 65 }); }
+      var place = function () { stPins(lat, lon); var here = h('div', { class: 'st-pin here' }, [h('i', { text: '●' })]); stMarkers.push(new maplibregl.Marker({ element: here }).setLngLat([lon, lat]).addTo(stMap)); };
+      if (stMap.loaded()) place(); else stMap.once('load', place);
+      stSpin(true);
+    }).catch(function (e) { closeStreet(); status(e.message + '. Check the connection and try again.', 5000); });
+  }
+  function closeStreet() { stSpin(false); $('street').hidden = true; }
+  $('st-close').onclick = closeStreet;
+  $('st-sat').onclick = function () { stGround(true); };
+  $('st-map').onclick = function () { stGround(false); };
+  $('st-orbit').onclick = function () { stSpin($('st-orbit').getAttribute('aria-pressed') !== 'true'); };
+  $('st-street').onclick = function () { if (!stMap) return; stSpin(false); stMap.easeTo({ zoom: 18.6, pitch: 82, duration: 1200 }); };
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('street').hidden) closeStreet(); });
+  var StreetControl = L.Control.extend({ options: { position: 'topright' }, onAdd: function () {
+    var wrap = L.DomUtil.create('div', 'leaflet-bar'), b = L.DomUtil.create('a', '', wrap);
+    b.href = '#'; b.textContent = '3D'; b.title = 'Street-level 3D view here'; b.setAttribute('role', 'button'); b.style.fontSize = '13px'; b.style.fontWeight = '700';
+    L.DomEvent.on(b, 'click', function (e) { L.DomEvent.stop(e); var c = map.getCenter(); openStreet(c.lat, c.lng, ''); });
+    L.DomEvent.disableClickPropagation(wrap); return wrap; } });
+  new StreetControl().addTo(map);
 
   /* ---------- start ---------- */
   setSize(store.get('size', 'normal'));

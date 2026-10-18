@@ -562,6 +562,20 @@ details.more[open] > summary::after { content: '–'; }
     </form>
   </div>
 </div>
+<div id="street" class="street" hidden role="dialog" aria-modal="true" aria-labelledby="street-title">
+  <div class="street-bar">
+    <div class="street-t"><b id="street-title">Street-level view</b><small id="street-sub">3D buildings from OpenStreetMap</small></div>
+    <div class="street-btns">
+      <div class="fy-tabs" role="group" aria-label="Ground"><button type="button" id="st-sat" aria-selected="true">Satellite</button><button type="button" id="st-map" aria-selected="false">Map</button></div>
+      <button class="btn" type="button" id="st-orbit" aria-pressed="true">Orbit</button>
+      <button class="btn" type="button" id="st-street">Ground level</button>
+      <a class="btn" id="st-photos" target="_blank" rel="noopener">Street photos</a>
+      <button class="btn primary" type="button" id="st-close">Close</button>
+    </div>
+  </div>
+  <div id="street-map"></div>
+  <p class="street-help">Drag to look around · right-drag or two fingers to tilt · scroll or pinch to zoom · tap a pin to read about it</p>
+</div>
 <div id="pick-banner" class="picking-banner" hidden><span id="pick-text">Tap the map where it is</span><button class="btn" id="pick-cancel" type="button">Cancel</button></div>
 
 <div id="settings" class="modal" hidden>

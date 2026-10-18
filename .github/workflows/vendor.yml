@@ -1,0 +1,20 @@
+name: Vendor libraries
+on: { workflow_dispatch: {}, push: { branches: [main], paths: [.github/workflows/vendor.yml] } }
+permissions: { contents: write }
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: |
+          mkdir -p /tmp/v public/vendor/maplibre && cd /tmp/v && npm pack maplibre-gl@4.7.1 && tar xzf maplibre-gl-4.7.1.tgz
+          cp package/dist/maplibre-gl.js package/dist/maplibre-gl.css package/LICENSE.txt "$GITHUB_WORKSPACE/public/vendor/maplibre/" 2>/dev/null || cp package/dist/maplibre-gl.js package/dist/maplibre-gl.css "$GITHUB_WORKSPACE/public/vendor/maplibre/"
+          ls -la "$GITHUB_WORKSPACE/public/vendor/maplibre"
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/vendor/maplibre
+          if git diff --cached --quiet; then echo none; else git commit -m "Vendor MapLibre GL 4.7.1" && git pull --rebase && git push; fi

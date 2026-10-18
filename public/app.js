@@ -1876,7 +1876,7 @@
     { k: 'military', t: 'Military site', c: '#ec9a3c' }, { k: 'checkpoint', t: 'Checkpoint', c: '#14a3a3' },
     { k: 'prison', t: 'Prison or detention', c: '#e76a6e' }, { k: 'security', t: 'Security or police', c: '#3fa36b' },
     { k: 'event', t: 'Something happened here', c: '#f5498b' }, { k: 'landmark', t: 'Landmark or building', c: '#2d72d2' },
-    { k: 'home', t: 'Family or friends’ place', c: '#8f6bd6' }, { k: 'other', t: 'Other', c: '#738091' }];
+    { k: 'home', t: 'Family or friends’ place', c: '#8f6bd6' }, { k: 'remember', t: 'Someone we remember', c: '#3a3f47' }, { k: 'other', t: 'Other', c: '#738091' }];
   var CAT_BY = {}; REPORT_CATS.forEach(function (c) { CAT_BY[c.k] = c; });
   var HOW = { saw: 'Saw it myself', family: 'Told by family or friends', read: 'Read or heard it', unsure: 'Not sure' };
   var REPORTS = [], reportLayer = L.layerGroup(), mine = store.get('myReports', {});
@@ -1888,7 +1888,7 @@
   function drawReports() {
     reportLayer.clearLayers();
     REPORTS.forEach(function (r) {
-      if (r.lat == null) return;
+      if (r.lat == null || r.cat === 'remember') return;
       var c = (CAT_BY[r.cat] || CAT_BY.other).c;
       var m = L.marker([r.lat, r.lon], { title: r.title, keyboard: true, icon: L.divIcon({ className: '', iconSize: [26, 26], iconAnchor: [13, 30], html: '<div class="rep-pin" style="--c:' + c + '">' + PIN_SVG + '</div>' }) });
       m.on('click', function (ev) { L.DomEvent.stop(ev); openReport(r); });
@@ -2196,28 +2196,22 @@
   }
   function renderMemorial() {
     var b = $('mem-body'); b.innerHTML = '';
-    var items = MEM.items || [];
-    if (MEM.summary) b.appendChild(h('p', { class: 'mem-intro', text: MEM.summary }));
-    var heroes = (MEM.hero || []).map(function (id) { return items.filter(function (x) { return x.id === id; })[0]; }).filter(Boolean);
-    if (heroes.length) b.appendChild(h('div', { class: 'mem-kpis' }, heroes.map(function (it) {
-      return h('div', { class: 'mem-kpi' }, [h('div', { class: 'mk-n', text: rangeText(it) }), h('div', { class: 'mk-l', text: it.unit + ' · ' + it.label }), h('small', { text: it.year || '' })]);
-    })));
-    var killed = items.filter(function (it) { return (it.unit === 'killed' || it.unit === 'executed') && it.category !== 'total'; }).sort(function (x, y) { return (y.best || y.high || 0) - (x.best || x.high || 0); });
-    var inLibya = killed.filter(function (it) { return it.place !== 'abroad'; }), abroad = killed.filter(function (it) { return it.place === 'abroad'; });
-    var f1 = memBars(inLibya, 'Killed and executed inside Libya, by event'); if (f1) b.appendChild(f1);
-    var missing = items.filter(function (it) { return it.unit === 'missing' || it.unit === 'imprisoned'; }).sort(function (x, y) { return (y.best || y.high || 0) - (x.best || x.high || 0); });
-    var f2 = memBars(missing, 'Still unaccounted for, and imprisoned'); if (f2) b.appendChild(f2);
-    var f3 = memBars(abroad, 'Killed abroad in attacks attributed to the regime'); if (f3) b.appendChild(f3);
-    if ((MEM.names || []).length) {
-      b.appendChild(h('h3', { class: 'mem-h', text: 'Remembered by name' }));
-      b.appendChild(h('ul', { class: 'mem-names' }, MEM.names.map(function (n) {
+    b.appendChild(h('p', { class: 'mem-dedication', text: 'For the people of Tripoli and of all Libya who were killed, executed, or taken and never came home.' }));
+    var lines = (MEM.lines || []);
+    if (lines.length) b.appendChild(h('ul', { class: 'mem-lines' }, lines.map(function (l) { return h('li', {}, [h('span', { class: 'ml-n', text: l.n }), h('span', { class: 'ml-t', text: l.t })]); })));
+    var fam = REPORTS.filter(function (r) { return r.cat === 'remember'; });
+    var names = (MEM.names || []).map(function (n) { return { name: n.name, what: n.what, site: n.site }; }).concat(fam.map(function (r) { return { name: r.title, what: [r.when, r.text].filter(Boolean).join(' · '), by: r.by || 'family' }; }));
+    if (names.length) {
+      b.appendChild(h('h3', { class: 'mem-h', text: 'We remember' }));
+      b.appendChild(h('ul', { class: 'mem-names' }, names.map(function (n) {
         var site = n.site && BY_ID[n.site];
-        return h('li', {}, [h('b', { text: n.name }), h('span', { text: ' ' + n.what }), site ? h('button', { class: 'linkbtn', text: 'Show on map', onclick: function () { closeMemorial(); focusSite(site); } }) : null]);
+        return h('li', {}, [h('b', { text: n.name }), n.what ? h('span', { text: ' ' + n.what }) : null, n.by ? h('small', { text: ' Added by ' + n.by + '.' }) : null, site ? h('button', { class: 'linkbtn', text: 'Where', onclick: function () { closeMemorial(); focusSite(site); } }) : null]);
       })));
-      b.appendChild(h('p', { class: 'mem-note', text: 'Most of those killed are not named in any public source we hold. Use “Add to map” to record someone you knew; it stays inside the family atlas.' }));
     }
-    var srcs = []; items.forEach(function (it) { (it.sources || []).forEach(function (s) { if (s.u && !srcs.some(function (x) { return x.u === s.u; })) srcs.push(s); }); });
-    if (srcs.length) b.appendChild(h('details', { class: 'mem-src' }, [h('summary', { text: 'Sources (' + srcs.length + ')' }), h('ol', {}, srcs.map(function (s) { return h('li', {}, [h('a', { href: s.u, target: '_blank', rel: 'noopener', text: s.t })]); }))]));
+    b.appendChild(h('p', { class: 'mem-rest', text: 'And the many thousands whose names we do not hold.' }));
+    if (canReport) b.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Remember someone', onclick: function () {
+      closeMemorial(); openReportForm({ lat: 32.8925, lon: 13.1802, target: 'memorial', targetName: 'In memory', cat: 'remember' });
+      $('rep-name').placeholder = 'Their name'; $('rep-text').placeholder = 'Who they were, and what happened to them.'; } })]));
   }
   function openMemorial() { renderMemorial(); $('memorial').hidden = false; $('mem-close').focus(); }
   function closeMemorial() { $('memorial').hidden = true; }

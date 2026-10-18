@@ -406,7 +406,7 @@ async function api(request, env, url) {
     const hash = async (t) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(t || ''))))].map((b) => b.toString(16).padStart(2, '0')).join('');
     if (body.report) {
       const r = body.report;
-      const CATS = ['military', 'checkpoint', 'prison', 'security', 'event', 'landmark', 'home', 'other'];
+      const CATS = ['military', 'checkpoint', 'prison', 'security', 'event', 'landmark', 'home', 'remember', 'other'];
       const lat = Number(r.lat), lon = Number(r.lon);
       const placed = Number.isFinite(lat) && Number.isFinite(lon) && lat > 30 && lat < 35 && lon > 10 && lon < 16;
       const item = { id: now.toString(36) + Math.random().toString(36).slice(2, 7), at: now,

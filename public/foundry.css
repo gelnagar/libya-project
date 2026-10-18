@@ -385,3 +385,10 @@ html.dark { --mem: #d9668c; --mem-band: rgba(217,102,140,.22); }
 .mem-src summary { cursor: pointer; font-weight: 600; font-size: .9em; }
 .mem-src ol { font-size: .82em; padding-left: 20px; }
 @media (max-width: 600px) { .mb-row { grid-template-columns: 1fr auto; } .mb-track { grid-column: 1 / -1; grid-row: 2; } }
+.mem-dedication { margin: 6px 0 4px; font: 400 1.25em/1.5 "Newsreader", Georgia, serif; max-width: 52ch; }
+.mem-lines { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--fy-line); }
+.mem-lines li { display: grid; grid-template-columns: 8.5em 1fr; gap: 14px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--fy-line); }
+.ml-n { font: 600 1.15em "Newsreader", Georgia, serif; color: var(--mem); text-align: right; }
+.ml-t { font-size: .98em; line-height: 1.45; }
+.mem-rest { margin: 4px 0 0; font: italic 400 1.05em "Newsreader", Georgia, serif; color: var(--fy-muted); }
+@media (max-width: 600px) { .mem-lines li { grid-template-columns: 1fr; gap: 2px; } .ml-n { text-align: left; } }

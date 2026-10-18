@@ -1440,6 +1440,56 @@
   "uncertain": "When the huts were cleared and where residents were moved. Family memory would help here."
  },
  {
+  "id": "wp-rabta-pharma-150-chemical-plant",
+  "name": "Rabta chemical plant (Pharma 150)",
+  "ar": "مصنع الرابطة للأدوية",
+  "aliases": [
+   "Rabta",
+   "Pharma 150",
+   "Qabilat az Zaribah"
+  ],
+  "kind": "military",
+  "lat": 32.2114,
+  "lon": 12.9085,
+  "r": 2,
+  "summary": "Reported chemical weapons plant at Rabta, south of Tripoli, publicly presented by Libya as a pharmaceutical factory; subject of the 1990 fire dispute.",
+  "history": "GlobalSecurity's compilation places the site at Qabilat az Zaribah (Rabta), about 60 miles south of Tripoli. It gives construction as 1984 to 1988. West Germany's intelligence service (BND) and government linked German firm Imhausen Chemie to the project from 1984 onward, and in 1987 the BND judged from satellite images that the plant was most likely for chemical weapons. A November 1988 CIA memo says the Technology Center near Rabta is administratively controlled by the Tajura Nuclear Research Center, that its metal-fabrication section may support the surface-to-surface missile programme, and that it was then probably Libya's most heavily defended site, with SA-2, SA-3, SA-6 and SA-8 units nearby and SA-5s at Al Aziziyah. IAEA GOV/2004/12 Annex II lists a Rabta Engineering Industrial Complex, a Rabta Pharmaceutical Plant and a Rabta Factory 69 bomb-filling plant.",
+  "era": "The US assessed Rabta in 1990 as the largest chemical weapons plant in the developing world; Libya denied this and claimed a closure that was not confirmed. In March 1990 a fire occurred: Libya blamed the United States, while US officials said satellite imagery showed only minimal damage and called it a hoax; US officials later said production resumed by mid-May 1990. In 1995 Libya reopened it as a pharmaceutical plant, a joint venture with Egypt's Nasr Companies.",
+  "today": "Libya joined the Chemical Weapons Convention in early 2004. The OPCW stated that Libya declared several chemical weapons production facilities which were destroyed or converted to peaceful uses; the OPCW pages seen do not name Rabta, so its exact post-2004 use is not confirmed here.",
+  "uncertain": "Position is the plant compound as mapped on OpenStreetMap (a way labelled 'Rabta Chemical Weapons Factory'; Nominatim names the same spot the Rabta pharmaceutical factory), about 75 km south-south-west of Tripoli, near Rabta in the Jabal Nafusa foothills. The FAS gazetteer lists the site at Qabilat az Zaribah, 32°09'27\"N 12°50'32\"E, about 9 km south-west of it; published distances from Tripoli vary from about 40 km to about 100 km. Treat the pin as the plant area, not a building.",
+  "sources": [
+   {
+    "t": "GlobalSecurity: Rabta",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/rabta.htm"
+   },
+   {
+    "t": "OPCW: Libya completes destruction of its Category 1 chemical weapons",
+    "u": "https://www.opcw.org/news/article/libya-completes-destruction-of-its-category-1-chemical-weapons"
+   },
+   {
+    "t": "OpenStreetMap: Rabta Chemical Weapons Factory (way 126490585)",
+    "u": "https://www.openstreetmap.org/way/126490585"
+   },
+   {
+    "t": "FAS: Libya special weapons (Rabta at Qabilat az Zaribah, 32°09′27″N 12°50′32″E)",
+    "u": "https://nuke.fas.org/guide/libya/index.html"
+   },
+   {
+    "t": "Wisconsin Project: Libya has trouble building the most deadly weapons",
+    "u": "https://www.wisconsinproject.org/libya-has-trouble-building-the-most-deadly-weapons/"
+   },
+   {
+    "t": "CIA memo: Rabta chemical warfare production facility in Libya (25 Nov 1988)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90g01353r001200180001-3"
+   },
+   {
+    "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
+    "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
+   }
+  ],
+  "distance_from_tripoli_km": 80
+ },
+ {
   "id": "lh-military-police-command",
   "name": "Military Police Command compound (reported)",
   "aliases": [
@@ -1487,48 +1537,6 @@
     "u": "https://en.wikipedia.org/wiki/Libyan_Army"
    }
   ]
- },
- {
-  "id": "wp-rabta-pharma-150-chemical-plant",
-  "name": "Rabta chemical plant (Pharma 150)",
-  "ar": "مصنع الرابطة للأدوية",
-  "aliases": [
-   "Rabta",
-   "Pharma 150",
-   "Qabilat az Zaribah"
-  ],
-  "kind": "military",
-  "lat": 32.2114,
-  "lon": 12.9085,
-  "r": 2,
-  "summary": "Reported chemical weapons plant at Rabta, south of Tripoli, publicly presented by Libya as a pharmaceutical factory; subject of the 1990 fire dispute.",
-  "history": "GlobalSecurity's compilation places the site at Qabilat az Zaribah (Rabta), about 60 miles south of Tripoli. It gives construction as 1984 to 1988. West Germany's intelligence service (BND) and government linked German firm Imhausen Chemie to the project from 1984 onward, and in 1987 the BND judged from satellite images that the plant was most likely for chemical weapons.",
-  "era": "The US assessed Rabta in 1990 as the largest chemical weapons plant in the developing world; Libya denied this and claimed a closure that was not confirmed. In March 1990 a fire occurred: Libya blamed the United States, while US officials said satellite imagery showed only minimal damage and called it a hoax; US officials later said production resumed by mid-May 1990. In 1995 Libya reopened it as a pharmaceutical plant, a joint venture with Egypt's Nasr Companies.",
-  "today": "Libya joined the Chemical Weapons Convention in early 2004. The OPCW stated that Libya declared several chemical weapons production facilities which were destroyed or converted to peaceful uses; the OPCW pages seen do not name Rabta, so its exact post-2004 use is not confirmed here.",
-  "uncertain": "Position is the plant compound as mapped on OpenStreetMap (a way labelled 'Rabta Chemical Weapons Factory'; Nominatim names the same spot the Rabta pharmaceutical factory), about 75 km south-south-west of Tripoli, near Rabta in the Jabal Nafusa foothills. The FAS gazetteer lists the site at Qabilat az Zaribah, 32°09'27\"N 12°50'32\"E, about 9 km south-west of it; published distances from Tripoli vary from about 40 km to about 100 km. Treat the pin as the plant area, not a building.",
-  "sources": [
-   {
-    "t": "GlobalSecurity: Rabta",
-    "u": "https://www.globalsecurity.org/wmd/world/libya/rabta.htm"
-   },
-   {
-    "t": "OPCW: Libya completes destruction of its Category 1 chemical weapons",
-    "u": "https://www.opcw.org/news/article/libya-completes-destruction-of-its-category-1-chemical-weapons"
-   },
-   {
-    "t": "OpenStreetMap: Rabta Chemical Weapons Factory (way 126490585)",
-    "u": "https://www.openstreetmap.org/way/126490585"
-   },
-   {
-    "t": "FAS: Libya special weapons (Rabta at Qabilat az Zaribah, 32°09′27″N 12°50′32″E)",
-    "u": "https://nuke.fas.org/guide/libya/index.html"
-   },
-   {
-    "t": "Wisconsin Project: Libya has trouble building the most deadly weapons",
-    "u": "https://www.wisconsinproject.org/libya-has-trouble-building-the-most-deadly-weapons/"
-   }
-  ],
-  "distance_from_tripoli_km": 80
  },
  {
   "id": "wp-tarhuna-underground-facility",
@@ -1816,6 +1824,35 @@
     "u": "https://en.wikipedia.org/wiki/Kingdom_of_Libya"
    }
   ]
+ },
+ {
+  "id": "wp-bin-ghashir-scud-facility",
+  "name": "Bin Ghashir tactical missile (Scud and FROG) facility",
+  "aliases": [
+   "Bin Ghashir",
+   "Bin Ghashir TAC SSM facility",
+   "Scud garrison"
+  ],
+  "kind": "military",
+  "lat": 32.7583,
+  "lon": 13.2083,
+  "r": 1.5,
+  "summary": "A probable tactical surface-to-surface missile base south of Tripoli where US imagery analysts counted at least 21 Scud launchers in 1982. This is the only Scud garrison with published coordinates.",
+  "history": "A 1982 NPIC briefing board gives the coordinates 32°45′30″N 13°12′30″E and reports elements of at least two Scud brigades and one FROG-7 battalion there for the first time: at least 21 Scud MAZ-543 launchers, five resupply semitrailers, two probable FROG-7 launchers and eight FROG-7 resupply vehicles. It suggests the Scuds may have come from the Kulliyat garrison about 6 nautical miles to the north. A December 1980 NPIC report counted at least 59 Scud launchers in six brigades of 9-10 each, deployed or stored at three facilities in the Tripoli area (Tajura South barracks, Madaniyah barracks, and a barracks and vehicle storage depot) and one at Benghazi, with the first Scuds seen at the Al Aziziyah ammunition depot in 1976.",
+  "era": "Reported 1980-82; whether the base was still used in 2011 is not established.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are from the CIA briefing board as transcribed in the archive; the page's own distance line ('… nm south of Tripoli') is garbled. This is not the Bab Ben Ghashir district or the Qasr bin Ghashir town, which are on the map separately. The December 1980 report names the other Tripoli-area Scud sites but gives no coordinates for them in the text we hold.",
+  "sources": [
+   {
+    "t": "CIA NPIC briefing board: TAC SSM activity, Bin Ghashir probable TAC SSM facility (1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100180007-6"
+   },
+   {
+    "t": "CIA NPIC imagery analysis report: Tactical surface-to-surface missile organization and deployment in Libya (Dec 1980)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp81t00034r000100500001-1"
+   }
+  ],
+  "distance_from_tripoli_km": 15
  },
  {
   "id": "lh-castel-benito-airport",
@@ -2547,11 +2584,15 @@
   "lon": 13.293,
   "r": 3,
   "summary": "Libya's first gas-centrifuge research and development site, active 1997-2002 on the outskirts of Tripoli; the pin marks Ain Zara, where an 'Al Hashan Street' is recorded.",
-  "history": "The IAEA calls it Site A. Libya used it to train scientists and technicians, and centrifuge cascades of 9, 19 and 64 machines were installed from late 2000; Wikipedia says a single complete device was installed there in October 2000.",
+  "history": "IAEA GOV/2004/12 Annex I lists it as 'Site A: the original centrifuge R&D location (Al Hashan)'. Paragraphs 22-23: Libya installed a single complete centrifuge there in 2000 and later a larger hall; the equipment was moved to Al Fallah (Site B).",
   "era": "Libya moved the equipment to Al Fallah (Site B) by April 2002 and the programme later centred on Al Khalla. The site was declared in 2003-04 and the US, UK and IAEA removed all nuclear equipment by September 2004.",
   "today": "Not described in the pages seen. No weapons material is reported to remain.",
-  "uncertain": "Location is suburb-level only. GlobalSecurity says 'on the outskirts of Tripoli'; no source gives an address. The only place name found is 'Al Hashan Street, Ain Zara, Tripoli' (a Paradise Papers registry address), which is a lead, not proof that the site stood on that street. Pinned at the centre of Ain Zara with a 3 km radius.",
+  "uncertain": "The IAEA names the site 'Al Hashan' but gives no suburb, street or coordinates (GOV/2004/12 contains no distances or addresses). The pin is Ain Zara, from GlobalSecurity ('outskirts of Tripoli') and an 'Al Hashan Street' registry address, so it is suburb-level. A 1982 Libyan grain-silo plan also lists an 'al-Hashshan silo' (JPRS 2655), which is probably unrelated.",
   "sources": [
+   {
+    "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
+    "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
+   },
    {
     "t": "GlobalSecurity: Al Hashan",
     "u": "https://www.globalsecurity.org/wmd/world/libya/al-hashan.htm"
@@ -2899,6 +2940,80 @@
   ]
  },
  {
+  "id": "wp-al-khalla-site-c",
+  "name": "Al Khalla (Site C), centrifuge and conversion site",
+  "aliases": [
+   "Al Khalla",
+   "Al-Khalla",
+   "Site C"
+  ],
+  "kind": "military",
+  "lat": 32.7834,
+  "lon": 13.2168,
+  "r": 2.5,
+  "summary": "Suburb-level pin for Libya's second centrifuge site, which succeeded Al Hashan and stored uranium hexafluoride; uranium-conversion modules were assembled here in 1998.",
+  "history": "IAEA GOV/2004/12 Annex I: 'Site C: the original site for the Uranium Conversion Facility (Al Khalla)'. Paragraph 17: the conversion modules were stored around Tripoli until 1998, partly assembled at Sawani (Site G), then moved to Al Khalla; paragraph 18: later moved to Salah Eddin (Site D).",
+  "era": "The conversion modules were later moved on to Salah Eddin. The site was cleared in 2004.",
+  "today": "Not described in the pages seen.",
+  "uncertain": "Suburb-level only. 'Khalla' is the name of a group of neighbourhoods in Salah al-Din (Khalla al-Ferjan, Khalla Bin Oun, with an 'Al Khalla Road' on OpenStreetMap); the sources do not say which one. Pinned at Khalla al-Ferjan with a 2.5 km radius.",
+  "sources": [
+   {
+    "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
+    "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
+   },
+   {
+    "t": "GlobalSecurity: Al Khalla",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/al-khalla.htm"
+   },
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   },
+   {
+    "t": "OpenStreetMap: Khalla al-Ferjan (node 7241078225)",
+    "u": "https://www.openstreetmap.org/node/7241078225"
+   }
+  ],
+  "distance_from_tripoli_km": 13
+ },
+ {
+  "id": "wp-el-ezeizia-site-k",
+  "name": "El Ezeizia (Site K), construction-materials store",
+  "aliases": [
+   "El Ezeizia",
+   "Site K",
+   "Al Aziziyah"
+  ],
+  "kind": "military",
+  "lat": 32.5331,
+  "lon": 13.0176,
+  "r": 3,
+  "summary": "Name-match pin for the original storage site of materials for the Libyan uranium conversion plant; probably the town of Al Aziziyah, south-west of Tripoli.",
+  "history": "IAEA GOV/2004/12 Annex I: 'Site K: the original construction materials storage location (Al Ezeizia)'. Annex II also lists an 'Al Ezeizia storage site' and an 'Al Ezeizia artillery refurbishment site' among places inspected for weapons capability. A 1980 CIA imagery report says Libya's first Scuds were seen in July 1976 at the 'Al Aziziyah Ammunition Storage Depot'.",
+  "era": "Cleared in 2004.",
+  "today": "Not described in the pages seen.",
+  "uncertain": "The IAEA gives no coordinates. The Aziziyah match is now better supported: the Annex II entries (storage and artillery refurbishment) and the CIA's 'Al Aziziyah Ammunition Storage Depot' are both military stores at Al Aziziyah, and the CIA says SA-5 missiles at 'Al Azizyah' protected Rabta. The depot's exact position is still unpublished, so the pin stays on the town centre with a 3 km radius. Do not confuse it with Bab al-Aziziya in Tripoli.",
+  "sources": [
+   {
+    "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
+    "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
+   },
+   {
+    "t": "GlobalSecurity: El Ezeizia",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/el-ezeizia.htm"
+   },
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   },
+   {
+    "t": "CIA NPIC imagery analysis report: Tactical surface-to-surface missile organization and deployment in Libya (Dec 1980)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp81t00034r000100500001-1"
+   }
+  ],
+  "distance_from_tripoli_km": 43
+ },
+ {
   "id": "lm-islamic-museum",
   "name": "Islamic Museum of Tripoli",
   "ar": "المتحف الإسلامي",
@@ -2923,39 +3038,6 @@
     "u": "https://www.openstreetmap.org/"
    }
   ]
- },
- {
-  "id": "wp-al-khalla-site-c",
-  "name": "Al Khalla (Site C), centrifuge and conversion site",
-  "aliases": [
-   "Al Khalla",
-   "Al-Khalla",
-   "Site C"
-  ],
-  "kind": "military",
-  "lat": 32.7834,
-  "lon": 13.2168,
-  "r": 2.5,
-  "summary": "Suburb-level pin for Libya's second centrifuge site, which succeeded Al Hashan and stored uranium hexafluoride; uranium-conversion modules were assembled here in 1998.",
-  "history": "The IAEA calls it Site C. GlobalSecurity says that in 1998 most of the conversion modules were moved to Al Khalla, 'a suburb of Tripoli', and assembled. NTI says it succeeded Al-Hashan as the centrifuge research site and was used to store uranium hexafluoride.",
-  "era": "The conversion modules were later moved on to Salah Eddin. The site was cleared in 2004.",
-  "today": "Not described in the pages seen.",
-  "uncertain": "Suburb-level only. 'Khalla' is the name of a group of neighbourhoods in Salah al-Din (Khalla al-Ferjan, Khalla Bin Oun, with an 'Al Khalla Road' on OpenStreetMap); the sources do not say which one. Pinned at Khalla al-Ferjan with a 2.5 km radius.",
-  "sources": [
-   {
-    "t": "GlobalSecurity: Al Khalla",
-    "u": "https://www.globalsecurity.org/wmd/world/libya/al-khalla.htm"
-   },
-   {
-    "t": "NTI: Libya nuclear facilities",
-    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
-   },
-   {
-    "t": "OpenStreetMap: Khalla al-Ferjan (node 7241078225)",
-    "u": "https://www.openstreetmap.org/node/7241078225"
-   }
-  ],
-  "distance_from_tripoli_km": 13
  },
  {
   "id": "wp-tawiwa-otrag-range",
@@ -3126,11 +3208,15 @@
   "lon": 13.1455,
   "r": 2,
   "summary": "Where Libya moved its centrifuge equipment by April 2002 and stored uranium hexafluoride; GlobalSecurity suggests it may be the Fallah industrial zone in Tripoli.",
-  "history": "The IAEA calls it Site B. It was the new centrifuge research location after Al Hashan; the equipment stayed in storage there apart from parts later sent out of the country.",
+  "history": "IAEA GOV/2004/12 Annex I: 'Site B: the new location for centrifuge R&D, also used to store UF6 (Al Fallah)'; paragraph 23: the equipment moved there from Al Hashan.",
   "era": "The site was not publicly tied to Libya's weapons programme until a May 2004 IAEA report.",
   "today": "Not described in the pages seen.",
   "uncertain": "GlobalSecurity calls the location 'obscure' and says only that it 'may be the Fallah Industrial Zone, near Markaz Azahif Alakhdar in Tripoli'. The pin is the Fallah area on the Tripoli ring road side with a 2 km radius; treat it as a lead.",
   "sources": [
+   {
+    "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
+    "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
+   },
    {
     "t": "GlobalSecurity: Al Fallah",
     "u": "https://www.globalsecurity.org/wmd/world/libya/al-fallah.htm"
@@ -3176,11 +3262,15 @@
   "lon": 13.2232,
   "r": 2.5,
   "summary": "Suburb of Tripoli where Libya moved its Japanese-supplied uranium conversion facility; IAEA inspectors first saw the modules here in December 2003.",
-  "history": "The IAEA calls it Site D. NTI says it hosted a uranium conversion facility supplied by Japan in the 1980s that had been moved from Al-Khalla; GlobalSecurity says the move was for security and secrecy.",
+  "history": "IAEA GOV/2004/12 Annex I: 'Site D: the new site for the UCF (Salah Eddin)'. Paragraph 18: the conversion facility was moved there; the milling and waste-treatment modules stayed at Sawani (Site G).",
   "era": "The equipment was verified in 2004 and removed by September 2004.",
   "today": "Not described in the pages seen.",
   "uncertain": "Suburb-level only: Salah Eddin is a Tripoli district (also on the map as Salah al-Din) and no source gives a street address. The pin is placed slightly apart from the district marker with a 2.5 km radius.",
   "sources": [
+   {
+    "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
+    "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
+   },
    {
     "t": "GlobalSecurity: Salah Eddin",
     "u": "https://www.globalsecurity.org/wmd/world/libya/salah-eddin.htm"
@@ -3191,35 +3281,6 @@
    }
   ],
   "distance_from_tripoli_km": 8
- },
- {
-  "id": "wp-el-ezeizia-site-k",
-  "name": "El Ezeizia (Site K), construction-materials store",
-  "aliases": [
-   "El Ezeizia",
-   "Site K",
-   "Al Aziziyah"
-  ],
-  "kind": "military",
-  "lat": 32.5331,
-  "lon": 13.0176,
-  "r": 3,
-  "summary": "Name-match pin for the original storage site of materials for the Libyan uranium conversion plant; probably the town of Al Aziziyah, south-west of Tripoli.",
-  "history": "The IAEA calls it Site K, the original storage site for construction materials. GlobalSecurity notes that the name 'El Ezeizia' is otherwise unattested and that Al Aziziyah is a town about 20 miles inland of Tripoli.",
-  "era": "Cleared in 2004.",
-  "today": "Not described in the pages seen.",
-  "uncertain": "GlobalSecurity does not confirm that El Ezeizia is Al Aziziyah, so this is a name-match pin on the town centre with a 3 km radius. Do not confuse it with the Bab al-Aziziya compound in Tripoli.",
-  "sources": [
-   {
-    "t": "GlobalSecurity: El Ezeizia",
-    "u": "https://www.globalsecurity.org/wmd/world/libya/el-ezeizia.htm"
-   },
-   {
-    "t": "NTI: Libya nuclear facilities",
-    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
-   }
-  ],
-  "distance_from_tripoli_km": 43
  },
  {
   "id": "lb-italian-embassy-tripoli",
@@ -3387,39 +3448,6 @@
   ]
  },
  {
-  "id": "wp-al-karamia-site-h",
-  "name": "Al Karamia (Site H), first conversion-module store",
-  "aliases": [
-   "Al Karamia",
-   "Site H",
-   "Al-Karamia"
-  ],
-  "kind": "military",
-  "lat": 32.7522,
-  "lon": 13.0628,
-  "r": 3,
-  "summary": "Name-match pin for the first storage place of Libya's uranium conversion modules; GlobalSecurity could not find the name in any gazetteer.",
-  "history": "The IAEA calls it Site H. It was where the conversion facility modules were first stored, before they went on to other sites.",
-  "era": "Cleared with the rest of the programme in 2004.",
-  "today": "Not described in the pages seen.",
-  "uncertain": "Weakest placement of the group. GlobalSecurity says neither NIMA nor Google had heard of 'Al Karamia'. The pin is the Krimiya (Al-Kirimiya, الكريمية) suburb south-west of Tripoli, chosen only because the name is close; it could be wrong. 3 km radius.",
-  "sources": [
-   {
-    "t": "GlobalSecurity: Al Karamia",
-    "u": "https://www.globalsecurity.org/wmd/world/libya/al-karamia.htm"
-   },
-   {
-    "t": "NTI: Libya nuclear facilities",
-    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
-   },
-   {
-    "t": "OpenStreetMap: Al Krimiya suburb (way 342138800)",
-    "u": "https://www.openstreetmap.org/way/342138800"
-   }
-  ],
-  "distance_from_tripoli_km": 19
- },
- {
   "id": "lb-al-jalaa-hospital",
   "name": "Al-Jalaa Children's Hospital",
   "ar": "مستشفى الجلاء للأطفال",
@@ -3477,6 +3505,43 @@
     "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
    }
   ]
+ },
+ {
+  "id": "wp-al-karamia-site-h",
+  "name": "Al Karamia (Site H), first conversion-module store",
+  "aliases": [
+   "Al Karamia",
+   "Site H",
+   "Al-Karamia"
+  ],
+  "kind": "military",
+  "lat": 32.7522,
+  "lon": 13.0628,
+  "r": 3,
+  "summary": "Name-match pin for the first storage place of Libya's uranium conversion modules; GlobalSecurity could not find the name in any gazetteer.",
+  "history": "IAEA GOV/2004/12 Annex I: 'Site H: the storage location for construction material (Al Karamia)'.",
+  "era": "Cleared with the rest of the programme in 2004.",
+  "today": "Not described in the pages seen.",
+  "uncertain": "Weakest placement of the group. GlobalSecurity says neither NIMA nor Google had heard of 'Al Karamia'. The pin is the Krimiya (Al-Kirimiya, الكريمية) suburb south-west of Tripoli, chosen only because the name is close; it could be wrong. 3 km radius.",
+  "sources": [
+   {
+    "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
+    "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
+   },
+   {
+    "t": "GlobalSecurity: Al Karamia",
+    "u": "https://www.globalsecurity.org/wmd/world/libya/al-karamia.htm"
+   },
+   {
+    "t": "NTI: Libya nuclear facilities",
+    "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
+   },
+   {
+    "t": "OpenStreetMap: Al Krimiya suburb (way 342138800)",
+    "u": "https://www.openstreetmap.org/way/342138800"
+   }
+  ],
+  "distance_from_tripoli_km": 19
  },
  {
   "id": "lm-bab-darghouth",

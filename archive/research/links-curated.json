@@ -326,5 +326,37 @@
     "u": "https://www.wisconsinproject.org/libya-has-trouble-building-the-most-deadly-weapons/"
    }
   ]
+ },
+ {
+  "a": "wp-rabta-pharma-150-chemical-plant",
+  "b": "tajoura-nuclear",
+  "kind": "programme",
+  "why": "A 1988 CIA memo says the Rabta Technology Center was administratively controlled by the Tajura Nuclear Research Center, which also held a chemical-munitions filling and storage site.",
+  "year": 1988,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "CIA memo: Rabta chemical warfare production facility in Libya (25 Nov 1988)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90g01353r001200180001-3"
+   }
+  ]
+ },
+ {
+  "a": "wp-bin-ghashir-scud-facility",
+  "b": "wp-el-ezeizia-site-k",
+  "kind": "transfer",
+  "why": "The first Scuds seen in Libya (July 1976) were at the Al Aziziyah ammunition depot; by 1982 elements of two Scud brigades were at Bin Ghashir.",
+  "year": 1982,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "CIA NPIC imagery analysis report: Tactical surface-to-surface missile organization and deployment in Libya (Dec 1980)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp81t00034r000100500001-1"
+   },
+   {
+    "t": "CIA NPIC briefing board: TAC SSM activity, Bin Ghashir probable TAC SSM facility (1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100180007-6"
+   }
+  ]
  }
 ]

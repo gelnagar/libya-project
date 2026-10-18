@@ -1054,6 +1054,7 @@
     'tajoura-nuclear': '<path fill-rule="evenodd" d="M12 2c4.6 0 8 3.4 8 7.5V13h2v9H2v-9h2V9.5C4 5.4 7.4 2 12 2zm-1.2 9v3h2.4v-3zM8 16v6h2v-4h4v4h2v-6z"/>',
     'wp-janzour-machine-shop': '<path fill-rule="evenodd" d="M10.4 2h3.2l.5 2.6 1.6.7 2.2-1.5 2.3 2.3-1.5 2.2.7 1.6 2.6.5v3.2l-2.6.5-.7 1.6 1.5 2.2-2.3 2.3-2.2-1.5-1.6.7-.5 2.6h-3.2l-.5-2.6-1.6-.7-2.2 1.5-2.3-2.3 1.5-2.2-.7-1.6L2 13.6v-3.2l2.6-.5.7-1.6-1.5-2.2 2.3-2.3 2.2 1.5 1.6-.7zM12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7z"/>',
     'wp-tarhuna-underground-facility': '<path fill-rule="evenodd" d="M1 21V11C1 6 6 2 12 2s11 4 11 9v10zm5-1h12v-8c0-3-2.7-5.4-6-5.4S6 9 6 12zm3-1v-6.5c0-1.2 1.3-2 3-2s3 .8 3 2V19z"/>',
+    'wp-bin-ghashir-scud-facility': '<path d="M7.5 2l2.6 4.6V16H4.9V6.6zM4.9 12.5L3 16v2h1.9zM10.1 12.5L12 16v2h-1.9zM16.5 5l2.6 4.6V19h-5.2V9.6zM13.9 15.5L12 19v2h1.9zM19.1 15.5L21 19v2h-1.9zM2 22h20v-1.5H2z"/>',
     'wp-tawiwa-otrag-range': '<path d="M12 1c2.3 2.3 3.2 5.2 3.2 8.4V15H8.8V9.4C8.8 6.2 9.7 3.3 12 1zM8.8 12.5L6 16.5V19l2.8-1.4zM15.2 12.5l2.8 4V19l-2.8-1.4z"/><path d="M3 22h18v-1.8h-2.2V10h-1.8v10.2H7V10H5.2v10.2H3z"/>'
   };
   function isWpn(a) { return a.kind === 'military' || /^wp-/.test(a.id) || !!WEAPON_ICON[a.id]; }

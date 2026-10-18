@@ -13,7 +13,7 @@
   "lon": 12.9085,
   "r": 2,
   "summary": "Reported chemical weapons plant at Rabta, south of Tripoli, publicly presented by Libya as a pharmaceutical factory; subject of the 1990 fire dispute.",
-  "history": "GlobalSecurity's compilation places the site at Qabilat az Zaribah (Rabta), about 60 miles south of Tripoli. It gives construction as 1984 to 1988. West Germany's intelligence service (BND) and government linked German firm Imhausen Chemie to the project from 1984 onward, and in 1987 the BND judged from satellite images that the plant was most likely for chemical weapons.",
+  "history": "GlobalSecurity's compilation places the site at Qabilat az Zaribah (Rabta), about 60 miles south of Tripoli. It gives construction as 1984 to 1988. West Germany's intelligence service (BND) and government linked German firm Imhausen Chemie to the project from 1984 onward, and in 1987 the BND judged from satellite images that the plant was most likely for chemical weapons. A November 1988 CIA memo says the Technology Center near Rabta is administratively controlled by the Tajura Nuclear Research Center, that its metal-fabrication section may support the surface-to-surface missile programme, and that it was then probably Libya's most heavily defended site, with SA-2, SA-3, SA-6 and SA-8 units nearby and SA-5s at Al Aziziyah. IAEA GOV/2004/12 Annex II lists a Rabta Engineering Industrial Complex, a Rabta Pharmaceutical Plant and a Rabta Factory 69 bomb-filling plant.",
   "era": "The US assessed Rabta in 1990 as the largest chemical weapons plant in the developing world; Libya denied this and claimed a closure that was not confirmed. In March 1990 a fire occurred: Libya blamed the United States, while US officials said satellite imagery showed only minimal damage and called it a hoax; US officials later said production resumed by mid-May 1990. In 1995 Libya reopened it as a pharmaceutical plant, a joint venture with Egypt's Nasr Companies.",
   "today": "Libya joined the Chemical Weapons Convention in early 2004. The OPCW stated that Libya declared several chemical weapons production facilities which were destroyed or converted to peaceful uses; the OPCW pages seen do not name Rabta, so its exact post-2004 use is not confirmed here.",
   "uncertain": "Position is the plant compound as mapped on OpenStreetMap (a way labelled 'Rabta Chemical Weapons Factory'; Nominatim names the same spot the Rabta pharmaceutical factory), about 75 km south-south-west of Tripoli, near Rabta in the Jabal Nafusa foothills. The FAS gazetteer lists the site at Qabilat az Zaribah, 32°09'27\"N 12°50'32\"E, about 9 km south-west of it; published distances from Tripoli vary from about 40 km to about 100 km. Treat the pin as the plant area, not a building.",
@@ -37,6 +37,14 @@
    {
     "t": "Wisconsin Project: Libya has trouble building the most deadly weapons",
     "u": "https://www.wisconsinproject.org/libya-has-trouble-building-the-most-deadly-weapons/"
+   },
+   {
+    "t": "CIA memo: Rabta chemical warfare production facility in Libya (25 Nov 1988)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90g01353r001200180001-3"
+   },
+   {
+    "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
+    "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
    }
   ],
   "distance_from_tripoli_km": 80
@@ -145,8 +153,16 @@
   "history": "NTI's IAEA-based summary names Al-Hashan (operated 1997-2002), Al-Khalla (its successor), Salah Eddin, Janzour, Sawani, Al-Karamia and El-Ezeizia as undeclared sites, plus underground storage at Sabha. Wikipedia says that in October 2000 a single complete device was installed at Al Hashan. Exact addresses are not published in the pages seen.",
   "era": "Libya's 19 December 2003 announcement ended its nuclear weapons efforts. The IAEA verified the sites in 2004, and NTI reports that the US and UK worked with the IAEA to remove all nuclear-related equipment and materials in three stages, with the most sensitive items first and the work done by September 2004. The IAEA then reported on the programme to its Board.",
   "today": "The pages seen do not describe the present state of these buildings. Equipment was removed in 2004, so no weapons-related material is reported to remain, but the sites' current use is not documented here.",
-  "uncertain": "This profile is the overview of the group. Each site now has its own pin where open sources name a suburb or street: Al Hashan, Al Khalla, Salah Eddin, Al Fallah, Al Karamia and El Ezeizia, plus Sawani and the Janzour machine shop, which were already on the map. All of those pins are suburb-level (2–3 km radius): the IAEA and press sources name the suburbs but publish no street addresses or coordinates. The Sabha yellowcake store is not mapped.",
+  "uncertain": "This is the overview of the group. IAEA GOV/2004/12 Annex I lists the declared sites as A Al Hashan, B Al Fallah, C Al Khalla, D Salah Eddin, E Janzour (machine shop), F Sabha (yellowcake store), G Sawani (initial storage), H Al Karamia, I Tajura (desalination plant), J the National Board of Scientific Research headquarters, K Al Ezeizia and L the Tajura Nuclear Research Centre. The IAEA gives place names only, with no addresses or coordinates, so the pins for A-D, H and K are suburb-level; Janzour, Sawani and Tajura were already on the map. The Sabha store and the NBSR headquarters are not mapped.",
   "sources": [
+   {
+    "t": "IAEA GOV/2004/12 (20 Feb 2004), Annex I: nuclear-related locations declared by Libya",
+    "u": "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf"
+   },
+   {
+    "t": "IAEA GOV/2004/59 (30 Aug 2004)",
+    "u": "https://www.securitycouncilreport.org/atf/cf/%7B65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9%7D/Disarm%20GOV200459.pdf"
+   },
    {
     "t": "NTI: Libya nuclear facilities",
     "u": "https://www.nti.org/analysis/articles/libya-nuclear-facilities/"
@@ -378,7 +394,7 @@
   "history": "GlobalSecurity says Libya obtained Scud-B and FROG-7 missiles from the Soviet Union in the mid-1970s. GlobalSecurity also refers to North Korean Scud-C missiles. OpenStreetMap lists an 'Artillery and Missile School' near Tripoli at 32.766 N, 13.197 E, though no source ties it to Scuds.",
   "era": "Two Scuds were fired at Lampedusa in April 1986 after the US raid. After the 19 December 2003 deal, Libya agreed to remove missiles over 300 km range, so it gave up Scud-C but not 300 km Scud-B, per GlobalSecurity. In 2011 Libyan forces reportedly fired Scud-B at rebel areas and missed; NATO strikes reportedly destroyed the rest.",
   "today": "Not documented in the pages seen; some missiles are believed to have survived outside government control after 2011 but no source opened confirms this.",
-  "uncertain": "Unit garrisons and storage sites are not published in the sources used. The one reported position is the first Scud launch of the 2011 war, about 80 km east of Sirte (now on the map as its own point); the artillery and missile school near Tripoli is not tied to Scuds by any source. Claims about storage near Sirte, Sebha and Al-Jufra are repeated in general press but not confirmed.",
+  "uncertain": "Most garrison positions are still unpublished. CIA imagery reports (1980, 1982) name the Tripoli-area Scud sites: Tajura South barracks, Madaniyah barracks, a barracks and vehicle storage depot, the Kulliyat garrison, the Al Aziziyah ammunition depot, and Bin Ghashir (the only one with coordinates, now on the map). Two brigades were at Benghazi. The only reported 2011 launch position is the first Scud of the war, about 80 km east of Sirte (also on the map).",
   "sources": [
    {
     "t": "GlobalSecurity: Libyan Missiles",
@@ -391,6 +407,14 @@
    {
     "t": "OpenStreetMap contributors (ODbL), project extract military.json",
     "u": "https://www.openstreetmap.org/"
+   },
+   {
+    "t": "CIA NPIC imagery analysis report: Tactical surface-to-surface missile organization and deployment in Libya (Dec 1980)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp81t00034r000100500001-1"
+   },
+   {
+    "t": "CIA NPIC briefing board: TAC SSM activity, Bin Ghashir probable TAC SSM facility (1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100180007-6"
    }
   ],
   "distance_from_tripoli_km": null

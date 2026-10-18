@@ -92,6 +92,7 @@
   };
   var currentBase = null;
   function setBase(key) {
+    if (window.ATLAS_UNKNOWN_CLOSE) window.ATLAS_UNKNOWN_CLOSE();
     if (!BASEMAPS[key]) key = 'light';
     if (currentBase) BASEMAPS[currentBase].layers.forEach(function (l) { map.removeLayer(l); });
     BASEMAPS[key].layers.forEach(function (l) { l.addTo(map); });
@@ -108,6 +109,10 @@
     $('basemaps').appendChild(h('button', { 'data-key': k, 'aria-pressed': 'false', onclick: function () { setBase(k); } },
       [h('span', { class: 'thumb', style: 'background-image:url(' + tile + ')' }), h('span', { class: 'nm', text: BASEMAPS[k].name }), h('small', { text: BASEMAPS[k].note })]));
   });
+
+  $('basemaps').appendChild(h('button', { 'data-key': 'unknown', 'aria-pressed': 'false', title: 'People and groups linked in the files, on a separate black plane', onclick: function () { if (window.ATLAS_UNKNOWN_OPEN) window.ATLAS_UNKNOWN_OPEN(); } },
+    [h('span', { class: 'thumb un-thumb', html: '<svg viewBox="0 0 100 60" aria-hidden="true"><path d="M14 44 38 18 62 40 86 14M38 18 50 50M62 40 86 46" stroke="#5a5650" stroke-width="1.6" fill="none"/><rect x="8" y="38" width="12" height="12" fill="#26262a" stroke="#4a4a50"/><rect x="32" y="12" width="12" height="12" fill="#26262a" stroke="#4a4a50"/><rect x="56" y="34" width="12" height="12" fill="#26262a" stroke="#4a4a50"/><rect x="80" y="8" width="12" height="12" fill="#26262a" stroke="#b0405c"/><rect x="44" y="44" width="12" height="12" fill="#26262a" stroke="#4a4a50"/><rect x="80" y="40" width="12" height="12" fill="#26262a" stroke="#4a4a50"/></svg>' }),
+     h('span', { class: 'nm', text: 'The Unknown' }), h('small', { text: 'People and groups in the files' })]));
 
   /* ---------- state ---------- */
   var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, battle: true, massacre: true, power: true, landmark: true, districts: true, rings: true, labels: true, grid: true, timeline: true };
@@ -2298,4 +2303,14 @@
   loadReports();
   var code = store.get('code', '');
   if (CFG.aiEndpoint && code) relay(code, { status: true }).catch(function () {});
+  // Small API for unknown.js (The Unknown network view).
+  window.ATLAS_API = {
+    h: h, facts: facts, section: section,
+    sheet: function (kind, icon, fill) { var body = newSheet(kind); markSelected(null); curTarget = { isReport: true, code: icon }; fill(body); openPanel('sheet'); },
+    openPlace: function (id) { if (BY_ID[id]) { focusSite(BY_ID[id]); return; } var a = AREA_BY_ID[id]; if (a) { map.flyTo([a.lat, a.lon], 15, { duration: 0.8 }); openArea(a); } },
+    recordExists: function (id) { return loadRecords().then(function () { return !!REC_BY_ID[id]; }); },
+    openRecordById: function (id) { loadRecords().then(function () { if (REC_BY_ID[id]) openRecord(REC_BY_ID[id]); }); },
+    closeDrawer: function () { closePanel('drawer'); },
+    markBase: function (key) { document.querySelectorAll('#basemaps button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === (key || currentBase) ? 'true' : 'false'); }); }
+  };
 })();

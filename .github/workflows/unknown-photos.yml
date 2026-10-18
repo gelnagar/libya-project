@@ -1,0 +1,17 @@
+name: Find free pictures for The Unknown
+on: { workflow_dispatch: {} }
+permissions: { contents: write }
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/unknown-photos.mjs
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do git add archive/unknown && git commit -m "Unknown: free pictures" ; git pull --rebase && git push && break; sleep 5; done

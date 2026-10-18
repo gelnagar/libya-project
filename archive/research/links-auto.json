@@ -1,5 +1,81 @@
 [
  {
+  "a": "green",
+  "b": "lb-us-embassy-tripoli",
+  "kind": "event",
+  "why": "The demonstration started at Green Square and marched to the U.S. Embassy.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 060, 27 March 1979",
+    "u": "https://archive.org/details/micro_IA1176908_0315"
+   },
+   {
+    "t": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 057, 22 March 1979",
+    "u": "https://archive.org/details/micro_IA1176908_0312"
+   },
+   {
+    "t": "Telegram From the Department of State to All Diplomatic Posts and Other Recipients | Washington , December 2, 1979, 1954Z | 310900. Inform C",
+    "u": null
+   }
+  ]
+ },
+ {
+  "a": "fashloum",
+  "b": "zawiyat-dahmani",
+  "kind": "same-place",
+  "why": "The article places Fashloom inland to the south of Zawiyat al-Dahmani.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Fashlum (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Fashlum"
+   },
+   {
+    "t": "Zawiyat al-Dahmani (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Zawiyat_al-Dahmani"
+   }
+  ]
+ },
+ {
+  "a": "hadba",
+  "b": "lm-radisson-blu-al-mahary",
+  "kind": "transfer",
+  "why": "The document says Tajouri's brigade moved Saadi from al-Hadba prison to the Radisson Blu hotel in 2017.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Al-Saadi Gaddafi (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Al-Saadi_Gaddafi"
+   },
+   {
+    "t": "Abdullah Senussi (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Abdullah_Senussi"
+   }
+  ]
+ },
+ {
+  "a": "lb-us-embassy-tripoli",
+  "b": "palace",
+  "kind": "event",
+  "why": "The march moved from the American Embassy to the People's Palace.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 057, 22 March 1979",
+    "u": "https://archive.org/details/micro_IA1176908_0312"
+   },
+   {
+    "t": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 063, 30 March 1979",
+    "u": "https://archive.org/details/micro_IA1176908_0319"
+   }
+  ]
+ },
+ {
   "a": "central-security",
   "b": "ben-ashour",
   "kind": "attack",
@@ -43,20 +119,6 @@
  },
  {
   "a": "fashloum",
-  "b": "zawiyat-dahmani",
-  "kind": "same-place",
-  "why": "The article places Fashloom inland to the south of Zawiyat al-Dahmani.",
-  "year": null,
-  "confidence": "reported",
-  "sources": [
-   {
-    "t": "Fashlum (Wikipedia)",
-    "u": "https://en.wikipedia.org/wiki/Fashlum"
-   }
-  ]
- },
- {
-  "a": "fashloum",
   "b": "lm-martyrs-square",
   "kind": "same-place",
   "why": "The article places Fashloom southeast of Martyrs' Square.",
@@ -80,6 +142,20 @@
    {
     "t": "University of Tripoli (Wikipedia)",
     "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   }
+  ]
+ },
+ {
+  "a": "green",
+  "b": "palace",
+  "kind": "event",
+  "why": "Demonstrators gathered at Green Square and the working masses then met at the People's Palace in Tripoli on the same day.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 094, 13 May 1983",
+    "u": "https://archive.org/details/micro_IA1176909_0153"
    }
   ]
  },
@@ -150,6 +226,34 @@
    {
     "t": "تاجوراء (ليبيا) (Arabic Wikipedia)",
     "u": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%AC%D9%88%D8%B1%D8%A7%D8%A1_(%D9%84%D9%8A%D8%A8%D9%8A%D8%A7)"
+   }
+  ]
+ },
+ {
+  "a": "tajura-camp",
+  "b": "tajura",
+  "kind": "same-place",
+  "why": "The document places the Tajura Barracks vehicle storage area in Libya, near Tripoli.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "LIBYA-CHAD CONFLICT",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200410001-5"
+   }
+  ]
+ },
+ {
+  "a": "zawiyat-dahmani",
+  "b": "mk-sharshatt",
+  "kind": "same-place",
+  "why": "The article places the neighbourhood near the Shar al-Shatt road, and Shar al-Shatt is also an alternate name for Zawiyat al-Dahmani in the place list.",
+  "year": null,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "زاوية الدهماني (Arabic Wikipedia)",
+    "u": "https://ar.wikipedia.org/wiki/%D8%B2%D8%A7%D9%88%D9%8A%D8%A9_%D8%A7%D9%84%D8%AF%D9%87%D9%85%D8%A7%D9%86%D9%8A"
    }
   ]
  }

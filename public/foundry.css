@@ -419,3 +419,79 @@ html .mem-box { max-width: none; width: 96vw; height: 94vh; max-height: 94vh; }
 #timeline { height: 172px !important; }
 body:not(.no-timeline) .chat { bottom: 192px; }
 @media (min-width: 900px) { body:not(.no-timeline) .tip { bottom: 250px; } body:not(.no-timeline) .chat { bottom: 192px; } }
+
+/* ================= The Unknown: a separate black plane ================= */
+#unknown { position: fixed; z-index: 1020; top: var(--map-top); left: 0; right: 0; bottom: 0; background: #000; color: #e6e0d2; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; }
+#unknown[hidden] { display: none; }
+body.unknown-on #timeline, body.unknown-on .chat, body.unknown-on .hud, body.unknown-on .yearbadge, body.unknown-on .tip, body.unknown-on .leaflet-control-container { display: none !important; }
+#unknown .un-svg { position: absolute; inset: 0; width: 100%; height: 100%; cursor: grab; }
+#unknown.dragging .un-svg { cursor: grabbing; }
+#unknown .un-grain { position: absolute; inset: 0; pointer-events: none; opacity: .09; mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+/* links in the background */
+#unknown .un-e { stroke: rgba(217, 210, 195, .17); fill: none; stroke-linecap: square; transition: stroke .2s, opacity .2s; }
+#unknown.intro .un-e { stroke-dasharray: 1; stroke-dashoffset: 1; animation: un-draw 1.3s cubic-bezier(.2, .7, .2, 1) forwards; }
+@keyframes un-draw { to { stroke-dashoffset: 0; } }
+#unknown.dim .un-e { opacity: .25; }
+#unknown .un-e.hot { stroke: #b0405c; opacity: 1; }
+/* the mystery pictures */
+#unknown .un-n { cursor: pointer; transition: opacity .2s; outline: none; }
+#unknown.dim .un-n { opacity: .2; }
+#unknown .un-n.hot { opacity: 1; }
+#unknown .un-n .shadow { fill: #000; stroke: #2a2a2f; stroke-width: 1; }
+#unknown .un-n .frame { fill: none; stroke: #3d3d43; stroke-width: 2; }
+#unknown .un-n.f-mapped .frame { stroke: #38787a; }
+#unknown .un-n:hover .frame, #unknown .un-n:focus-visible .frame, #unknown .un-n.hot .frame { stroke: #d9d2c3; }
+#unknown .un-n.sel .frame { stroke: #b0405c; stroke-width: 4; }
+#unknown .un-n text { font-family: var(--f-ui); pointer-events: none; }
+#unknown .un-n .cn { fill: #6d6a64; font-size: 9px; font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+#unknown .un-n .nm { fill: #cfc8b8; font-size: 11.5px; font-weight: 650; display: none; paint-order: stroke; stroke: #000; stroke-width: 3px; }
+#unknown .un-n.big .nm, #unknown.near .un-n .nm, #unknown .un-n.hot .nm, #unknown .un-n:hover .nm { display: inline; }
+#unknown.far .un-n:not(.hot):not(:hover) .nm, #unknown.far .un-n:not(.hot) .cn { display: none; }
+#unknown.dim .un-n:not(.hot) .nm { display: none; }
+/* picture tones (shared by the plane, legend and panel) */
+.un-pic .bg { fill: #111113; }
+.un-pic .s1 { fill: #34343a; } .un-pic .s2 { fill: #48474e; } .un-pic .s3 { fill: #1d1d21; }
+.un-pic .lt { fill: #77736a; } .un-pic .lt-s { fill: none; stroke: #77736a; stroke-width: 2.4; }
+.un-pic .s3-s { fill: none; stroke: #2b2b30; stroke-width: 2; } .un-pic .map-s { stroke: #26332f; stroke-width: 2; fill: none; }
+.un-pic .mp { fill: #38787a; }
+.un-pic .redact { fill: #000; }
+/* header, legend, note */
+#unknown .un-head { position: absolute; top: 0; left: 0; right: 0; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-start; justify-content: space-between; padding: 16px 16px 40px;
+  background: linear-gradient(#000 0%, rgba(0, 0, 0, .85) 55%, rgba(0, 0, 0, 0)); pointer-events: none; }
+#unknown .un-head > * { pointer-events: auto; }
+#unknown .un-title h2 { margin: 0; font: 800 26px/1.05 var(--f-ui); letter-spacing: -.01em; color: #efe8d8; }
+#unknown .un-title p { margin: 6px 0 0; max-width: 54ch; font-size: 13.5px; line-height: 1.45; color: #9a948a; }
+#unknown .un-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+#unknown .un-tools input { height: 38px; min-width: 200px; padding: 0 12px; background: #0e0e10; color: #e6e0d2; border: 2px solid #3a3a40; border-radius: 0; font: 15px var(--f-ui); }
+#unknown .un-tools input:focus { outline: none; border-color: #d9d2c3; }
+#unknown .btn { border-radius: 0; background: #141416; color: #e6e0d2; border: 2px solid #3a3a40; box-shadow: none; }
+#unknown .btn:hover { background: #1f1f23; }
+#unknown .btn.primary { background: #d9d2c3; color: #000; border-color: #d9d2c3; }
+#unknown .btn.primary:hover { background: #fff; }
+#unknown .un-legend { position: absolute; left: 12px; bottom: 12px; right: 12px; display: flex; flex-wrap: wrap; gap: 6px; max-width: 760px; }
+#unknown .un-legend button { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px 3px 3px; background: rgba(14, 14, 16, .92); color: #cfc8b8; border: 1.5px solid #2e2e33; border-radius: 0; font: 600 12px var(--f-ui); cursor: pointer; }
+#unknown .un-legend button small { color: #6d6a64; font-weight: 500; font-variant-numeric: tabular-nums; }
+#unknown .un-legend button[aria-pressed="true"] { border-color: #b0405c; color: #fff; }
+#unknown .un-legend .lg-pic svg { display: block; }
+#unknown .un-note { position: absolute; right: 16px; bottom: 14px; max-width: 34ch; margin: 0; font-size: 11.5px; line-height: 1.4; color: #6d6a64; text-align: right; }
+@media (max-width: 899px) {
+  #unknown .un-note { display: none; }
+  #unknown .un-title p { font-size: 12.5px; }
+  #unknown .un-tools input { min-width: 0; flex: 1; }
+  #unknown .un-tools { width: 100%; }
+  #unknown .un-legend { bottom: 8px; left: 8px; right: 8px; max-height: 64px; overflow: auto; }
+}
+@media (prefers-reduced-motion: reduce) { #unknown.intro .un-e { animation: none; stroke-dasharray: none; } }
+/* the basemap tile */
+#basemaps .un-thumb { background: #000; display: grid; place-items: center; }
+#basemaps .un-thumb svg { width: 90%; height: 90%; }
+/* Unknown entries in the Foundry panel */
+.un-portrait { position: relative; display: inline-block; margin: 2px 0 10px; }
+.un-portrait svg { display: block; border: 3px solid #111418; box-shadow: 4px 4px 0 #111418; }
+.un-portrait .un-case { position: absolute; left: 6px; bottom: 6px; padding: 1px 6px; background: #000; color: #d9d2c3; font: 600 11px var(--f-ui); font-variant-numeric: tabular-nums; }
+.un-links .un-mini svg { display: block; border: 1.5px solid #111418; }
+.un-docs li { margin-bottom: 6px; }
+.un-docs small { color: var(--fy-muted); }
+.linkish { margin-left: 8px; padding: 0; border: 0; background: none; color: var(--fy-accent); font: 600 .86em var(--f-ui); cursor: pointer; text-decoration: underline; }
+.selhead .ic svg.un-pic { width: 100%; height: 100%; display: block; }

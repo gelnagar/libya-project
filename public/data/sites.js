@@ -10,10 +10,13 @@ window.ATLAS_LAYERS = {
   security:  { label: 'Security & police',                 code: 'S', color: '#72ca9b', shape: 'square' },
   military:  { label: 'Military installations',            code: 'M', color: '#ec9a3c', shape: 'square' },
   airstrike: { label: 'Foreign airstrikes',                code: 'A', color: '#fbd065', shape: 'diamond' },
+  battle:    { label: 'Ground battles & attacks',          code: 'B', color: '#9bbf3f', shape: 'square' },
   massacre:  { label: 'Killings & repression',         code: 'X', color: '#f5498b', shape: 'diamond' },
   power:     { label: "Gaddafi's residences & seats of power", code: 'G', color: '#bdadff', shape: 'square' },
   landmark:  { label: 'Landmarks & events',                code: 'L', color: '#68c1ee', shape: 'circle' }
 };
+
+var cia = function (id, t) { return { t: 'CIA reading room: ' + t, u: 'https://www.cia.gov/readingroom/document/' + id }; };
 
 window.ATLAS_LEVELS = {
   documented: 'Documented',
@@ -35,6 +38,10 @@ var SRC = {
   massList: { t: 'List of massacres in Libya, Wikipedia', u: 'https://en.wikipedia.org/wiki/List_of_massacres_in_Libya' },
   sharShatt: { t: 'Battle and massacre at Shar al-Shatt, Wikipedia', u: 'https://en.wikipedia.org/wiki/Battle_and_massacre_at_Shar_al-Shatt' },
   hrw1996: { t: 'Human Rights Watch, Libya: June 1996 Killings at Abu Salim Prison', u: 'https://www.hrw.org/reports/2006/06/28/libya-june-1996-killings-abu-salim-prison' },
+  wp1984: { t: '1984 Libyan coup attempt, Wikipedia', u: 'https://en.wikipedia.org/wiki/1984_Libyan_coup_attempt' },
+  wpEmbassy: { t: '1979 U.S. Embassy Burning in Libya, Wikipedia', u: 'https://en.wikipedia.org/wiki/1979_U.S._Embassy_Burning_in_Libya' },
+  wp2011: { t: 'Battle of Tripoli (2011), Wikipedia', u: 'https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)' },
+  wpNato: { t: '2011 military intervention in Libya, Wikipedia', u: 'https://en.wikipedia.org/wiki/2011_military_intervention_in_Libya' },
   rgc: { t: 'Revolutionary Guard Corps (Libya), Wikipedia', u: 'https://en.wikipedia.org/wiki/Revolutionary_Guard_Corps_(Libyan_paramilitary_unit)' }
 };
 
@@ -122,16 +129,16 @@ window.ATLAS_SITES = [
     id: 'as-bab', layer: 'airstrike', level: 'documented', y0: 1986, y1: 1986,
     name: '1986 US strike: Bab al-Aziziya', lat: 32.848, lon: 13.151, r: 0.8, period: '15 April 1986',
     relevance: "The main target of the US raid on Tripoli, aimed at Gaddafi's home and command centre.",
-    text: "US F-111 aircraft bombed the compound. Eight craters were clustered near Gaddafi's home, tent and offices. Two of his sons were seriously wounded and an adopted daughter was reported killed.",
-    sources: [SRC.usaf, SRC.merip]
+    text: "US F-111 aircraft bombed the compound. Eight craters were clustered near Gaddafi's home, tent and offices. Two of his sons were seriously wounded and an adopted daughter was reported killed. A US press report in CIA files says nine jets targeted the compound after US intelligence traced terrorist communications to it.",
+    sources: [SRC.usaf, SRC.merip, cia('cia-rdp91-00901r000500230008-3', 'Target Qaddafi (1987)'), cia('cia-rdp90-00965r000706870020-5', 'U.S. targeted Qaddafi compound after tracing terror message (1986)')]
   },
   {
     id: 'as-benashour', layer: 'airstrike', level: 'documented', y0: 1986, y1: 1986,
     name: '1986 US strike: Ben Ashour homes', ar: 'بن عاشور',
     lat: 32.8772, lon: 13.2126, r: 1, period: '15 April 1986',
     relevance: "The raid's worst civilian damage: bombs fell on a crowded residential neighbourhood with many embassies.",
-    text: "About ten apartment buildings were damaged. A bomb hit a building just behind the French embassy and killed a family, and the embassy itself was damaged. The bombs appear to have missed their intended target.",
-    sources: [SRC.merip, SRC.binAshur]
+    text: "About ten apartment buildings were damaged. A bomb hit a building just behind the French embassy and killed a family, and the embassy itself was damaged. The bombs appear to have missed their intended target. A 1987 press report in CIA files says one F-111 mistakenly hit a residential area near the French embassy.",
+    sources: [SRC.merip, SRC.binAshur, cia('cia-rdp90-00965r000403730006-2', 'Target Qaddafi (1987)')]
   },
   {
     id: 'as-tip', layer: 'airstrike', level: 'documented', y0: 1986, y1: 1986,
@@ -146,6 +153,79 @@ window.ATLAS_SITES = [
     relevance: "A naval training site west of Tripoli that the United States described as a training camp for attacks abroad.",
     text: "Three US F-111 aircraft hit the site. Reporting from Libya afterwards said half of the naval secondary school was reduced to rubble.",
     sources: [SRC.usaf, SRC.merip]
+  },
+
+  {
+    id: 'as-nato-bab', layer: 'airstrike', level: 'documented', y0: 2011, y1: 2011,
+    name: '2011 NATO strikes: Bab al-Aziziya', lat: 32.848, lon: 13.151, r: 0.8, period: 'March–August 2011',
+    relevance: "The compound was hit again, 25 years after the 1986 raid, during the NATO air campaign against Gaddafi's forces.",
+    text: "Wikipedia reports that on the night of 25 April 2011 two Royal Norwegian Air Force F-16s bombed Gaddafi's residence inside Tripoli, according to US military sources. Gaddafi's forces reportedly kept civilians around the compound and other key sites to deter air strikes. Libyan state television also claimed NATO strikes killed 19 civilians in Tripoli on 24 May and seven on 19 June; those tolls come from the government and were not independently confirmed here.",
+    sources: [SRC.wpNato]
+  },
+
+  /* ---------- ground battles and attacks ---------- */
+  {
+    id: 'bt-1979-embassy', layer: 'battle', level: 'documented', y0: 1979, y1: 1979,
+    name: 'US Embassy burned, 2 December 1979', lat: 32.78664, lon: 13.1336, r: 1.5, period: '2 December 1979',
+    relevance: "A mob set the US Embassy on fire; the US withdrew its staff and the embassy stayed closed until 2004.",
+    text: "Protesters burned the embassy, angry over false claims that the US was involved in the seizure of the Grand Mosque in Mecca. CIA files, mostly press clippings, describe mobs burning the embassy and American diplomats leaving Tripoli. The map position is the embassy profile's approximate location and may not be exact.",
+    sources: [SRC.wpEmbassy, cia('cia-rdp90-00965r000302640078-5', 'Reagan weighs economic steps against Libyans (1981)'), cia('cia-rdp90-00552r000100990092-3', 'Billy Carter used by Brzezinski as Libya go-between (1980)')]
+  },
+  {
+    id: 'bt-1984-bab', layer: 'battle', level: 'documented', y0: 1984, y1: 1984,
+    name: 'Attack on Bab al-Aziziya, 8 May 1984', lat: 32.848, lon: 13.151, r: 0.8, period: '8 May 1984',
+    relevance: "Armed exiles of the National Front for the Salvation of Libya attacked Gaddafi's barracks; the fighting lasted hours and was followed by mass arrests.",
+    text: "Wikipedia describes around 20 to 30 gunmen attacking the compound with rocket-propelled grenades and automatic weapons; Libyan forces repelled them and, per official accounts, killed all of them. CIA files give other figures: a 1986 press clipping says 12 men attacked and all 12 were killed, with some 2,000 people arrested afterwards; another report calls it a five-hour gun battle. The government later arrested up to 3,000 people and executed at least seven without trial (Wikipedia). Many of those held were taken to Abu Salim. The accounts differ on numbers.",
+    sources: [SRC.wp1984, cia('cia-rdp90-00552r000505250009-7', 'Libyan military termed restive under Qaddafi (1986)'), cia('cia-rdp90-00965r000100120080-3', 'Five-hour gun battle at the Bab Aziziya barracks (CIA files)'), cia('cia-rdp90-00965r000100120021-8', 'Qaddafi rival spurns CIA overtures (1985)')]
+  },
+  {
+    id: 'bt-2011-uprising', layer: 'battle', level: 'documented', y0: 2011, y1: 2011,
+    name: 'Tripoli rises: Fashloum and Souq al-Juma, 20 August 2011', lat: 32.8845, lon: 13.2218, r: 2.2, period: '20–21 August 2011',
+    relevance: "The first night of the battle: neighbourhoods east of the centre rose against the regime as rebels moved in.",
+    text: "Wikipedia reports that uprisings spread through Tripoli, notably the districts of Fashloum, Souq al-Juma, Tajoura and Ben Ashur, and that fighting in Souq al-Juma continued on 21 August. Many rebels were reported dead in the district of Qadah.",
+    sources: [SRC.wp2011]
+  },
+  {
+    id: 'bt-2011-tajoura', layer: 'battle', level: 'documented', y0: 2011, y1: 2011,
+    name: 'Tajoura captured, 21 August 2011', lat: 32.8834, lon: 13.3526, r: 3, period: '21 August 2011',
+    relevance: "The eastern district fell to rebel forces early in the battle.",
+    text: "Wikipedia reports that the entire Tajoura district was captured by rebel forces, while fighting in Souq al-Juma and at Mitiga airport continued. Loyalists still held a hospital in Tajoura the next day.",
+    sources: [SRC.wp2011]
+  },
+  {
+    id: 'bt-2011-mitiga', layer: 'battle', level: 'documented', y0: 2011, y1: 2011,
+    name: 'Mitiga airbase fighting, 20–21 August 2011', lat: 32.90384, lon: 13.27368, r: 1.5, period: '20–21 August 2011',
+    relevance: "Rebels coming by sea advanced on the airbase and asked it to surrender.",
+    text: "Following a rebel amphibious landing, they advanced toward the Mitiga airbase. Reports said it was surrounded and then that rebels had taken it; the situation was unclear for some time.",
+    sources: [SRC.wp2011]
+  },
+  {
+    id: 'bt-2011-green', layer: 'battle', level: 'documented', y0: 2011, y1: 2011,
+    name: "Green Square taken, 21–22 August 2011", lat: 32.895, lon: 13.1811, r: 0.3, period: '21–22 August 2011',
+    relevance: "Crowds filled the square and rebels entered it; it was renamed Martyrs' Square.",
+    text: "Al Jazeera and the BBC confirmed that opposition fighters had entered the square. Rebels briefly pulled back, then took it again; Al Jazeera confirmed rebel control by the afternoon of 22 August.",
+    sources: [SRC.wp2011]
+  },
+  {
+    id: 'bt-2011-bab', layer: 'battle', level: 'documented', y0: 2011, y1: 2011,
+    name: 'Fall of Bab al-Aziziya, 23 August 2011', lat: 32.848, lon: 13.151, r: 0.8, period: '22–23 August 2011',
+    relevance: "Rebels assaulted a gate and then breached the compound that had been the centre of Gaddafi's power.",
+    text: "Heavy clashes took place around Mansoura as rebels advanced within 500 metres of the compound. They assaulted a gate in the afternoon of 23 August and breached the compound; news channels broadcast rebels gathered around the monument of a fist crushing a US aircraft. Fighting continued inside the compound against snipers. Gaddafi called the loss a tactical move.",
+    sources: [SRC.wp2011]
+  },
+  {
+    id: 'bt-2011-abusalim', layer: 'battle', level: 'documented', y0: 2011, y1: 2011,
+    name: 'Abu Salim district fighting, 24–26 August 2011', lat: 32.838, lon: 13.172, r: 1.3, period: '24–26 August 2011',
+    relevance: "A district with strong loyalist support, around the prison, fought on after the compound fell.",
+    text: "A rebel spokesman claimed Abu Salim secured on 23 August, but fighting continued and loyalists were later reported to still hold the area and al-Hadba. Reuters reported rebels storming the district after a NATO air strike.",
+    sources: [SRC.wp2011]
+  },
+  {
+    id: 'bt-2011-airport', layer: 'battle', level: 'documented', y0: 2011, y1: 2011,
+    name: 'Tripoli airport road, 24 August 2011', lat: 32.6709, lon: 13.1508, r: 1.5, period: '24 August 2011',
+    relevance: "The airport was secured, but fighting continued on the highway into the city.",
+    text: "Despite the airport being secure, clashes were still ongoing on the road near it, and sporadic heavy artillery fire occurred when rebels tried to take the highway leading from the airport to Tripoli.",
+    sources: [SRC.wp2011]
   },
 
   /* ---------- massacres ---------- */
@@ -256,11 +336,26 @@ window.ATLAS_LINKS = [
   ['as-bab', 'as-tip', 'Same raid, 15 April 1986'],
   ['as-bab', 'as-sidibilal', 'Same raid, 15 April 1986'],
   ['as-benashour', 'cso', 'Reported intended target of the bombs'],
-  ['palace', 'bab', 'Seat of power moved from the king’s palace to Gaddafi’s barracks']
+  ['palace', 'bab', 'Seat of power moved from the king’s palace to Gaddafi’s barracks'],
+  ['bab', 'bt-1984-bab', 'Attacked by armed exiles on 8 May 1984'],
+  ['bt-1984-bab', 'abusalim', 'Arrests after the attack: many detainees ended up in Abu Salim'],
+  ['bab', 'bt-2011-bab', 'Stormed by rebels on 23 August 2011'],
+  ['bab', 'as-nato-bab', 'Bombed again in 2011'],
+  ['as-bab', 'as-nato-bab', 'Same compound hit in 1986 and 2011'],
+  ['green', 'bt-2011-green', 'Rebels took the square on 21–22 August 2011'],
+  ['abusalim', 'bt-2011-abusalim', 'District and prison fought over in August 2011'],
+  ['tip', 'bt-2011-airport', 'Airport road clashes, 24 August 2011'],
+  ['wheelus', 'bt-2011-mitiga', 'Mitiga airbase fought over, 20–21 August 2011'],
+  ['bt-2011-uprising', 'bt-2011-tajoura', 'Same battle, 20–21 August 2011'],
+  ['bt-2011-green', 'bt-2011-bab', 'Same battle, 21–23 August 2011'],
+  ['bt-2011-mitiga', 'bt-2011-bab', 'Same battle, 20–23 August 2011'],
+  ['bt-2011-bab', 'bt-2011-abusalim', 'Same battle, 23–26 August 2011']
 ];
 
 /* Known activity with no published location */
 window.ATLAS_UNPLACED = [
+  { name: 'Rixos Al Nasr hotel, Tripoli', when: 'August 2011', text: 'Foreign journalists were kept at this hotel during the battle of Tripoli. Heavy fighting took place around it and it stayed in loyalist hands until about 24 August, when the journalists left in Red Cross vans (Wikipedia, Battle of Tripoli (2011)). I did not confirm its exact location.', src: SRC.wp2011 },
+  { name: 'Libyan government claims of NATO strikes in Tripoli', when: 'May–June 2011', text: 'Libyan state television said NATO strikes killed 19 civilians in Tripoli on 24 May 2011 and seven on 19 June, and fifteen at Sorman near Tripoli on 20 June. These are government claims reported by Wikipedia and were not independently confirmed here; no sites are given.', src: SRC.wpNato },
   { name: 'Revolutionary Guard Corps', when: '1980s', text: 'Grew out of the Revolutionary Committees. It watched soldiers inside barracks, reportedly controlled ammunition at the main bases, and fought regular army units in Tripoli’s streets during a May 1985 coup attempt. No source gives its bases.', src: SRC.rgc },
   { name: 'Police stations and checkpoints', when: '1969–1989', text: 'No published source maps Tripoli’s police posts or checkpoints for this period.' },
   { name: 'Military intelligence prison, Tripoli', when: '1984', text: 'A former detainee describes being held there after the May 1984 arrests. Its location is not given.', src: SRC.shareef },

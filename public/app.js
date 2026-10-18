@@ -46,7 +46,9 @@
     s.textContent = msg; s.hidden = false;
     if (ms) statusTimer = setTimeout(function () { s.hidden = true; }, ms);
   }
-  var LAYER_ICON = { massacre: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5v5.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><rect x="9" y="5.4" width="6" height="8.2" rx="1.6" fill="currentColor"/><path d="M9.4 7.4h5.2M9.4 9.5h5.2M9.4 11.6h5.2" stroke="rgba(0,0,0,.35)" stroke-width=".9"/><ellipse cx="12" cy="18" rx="4.6" ry="4.8" stroke="currentColor" stroke-width="2.2" fill="none"/></svg>' };
+  var LAYER_ICON = { massacre: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5v5.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><rect x="9" y="5.4" width="6" height="8.2" rx="1.6" fill="currentColor"/><path d="M9.4 7.4h5.2M9.4 9.5h5.2M9.4 11.6h5.2" stroke="rgba(0,0,0,.35)" stroke-width=".9"/><ellipse cx="12" cy="18" rx="4.6" ry="4.8" stroke="currentColor" stroke-width="2.2" fill="none"/></svg>',
+    airstrike: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .8l1.1 3.2.5 4.3 7.6 6.2 1.6 3.3-1 .5-6.6-2.2.3 4.2 2.4 2.7v.9L13 22.6h-2l-3.8 1.3v-.9l2.4-2.7.3-4.2-6.6 2.2-1-.5 1.6-3.3 7.6-6.2.5-4.3z"/></svg>',
+    battle: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M.8 9.4 5.6 9.1v3.6L1.3 13.6z"/><path d="M5.4 8.9h6.3v3.5H5.4z"/><path d="M11.4 9.5h4.9v2.8h-4.9z"/><path d="M13.2 8.3h5.9v1.1h-5.9z"/><path d="M16 10.2h6.8v1.1H16z"/><path d="M20.2 8.7h1.1v2.2h-1.1z"/><path d="M22.7 9.8h.9v1.4h-.9z"/><path d="M6.6 12.4h2.4l-.8 4.9-2.1-.4z"/><path d="M10.1 12.3h2.8c.4 2.6 1.6 5.2 3.1 7.2l-2.3 1.2c-2-2.3-3.3-5-3.6-8.4z"/></svg>' };
   function codeHtml(k) { return LAYER_ICON[k] || LAYERS[k].code; }
   var SITE_ICON = { university: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z"/></svg>' };
   function siteCode(s) { return SITE_ICON[s.icon] || codeHtml(s.layer); }
@@ -101,7 +103,7 @@
   });
 
   /* ---------- state ---------- */
-  var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, massacre: true, power: true, landmark: true, districts: true, rings: true, labels: true, grid: true, timeline: true };
+  var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, battle: true, massacre: true, power: true, landmark: true, districts: true, rings: true, labels: true, grid: true, timeline: true };
   var active = Object.assign({}, DEFAULT_ON, store.get('layers3', {}));
   var PERIODS = { pre: 'Before 1969', main: '1969–1989', post: 'After 1989' };
   var periods = Object.assign({ pre: true, main: true, post: true }, store.get('periods', {}));
@@ -229,7 +231,7 @@
   }
   var NOTES = {
     detention: 'Prisons and interrogation sites', security: 'Security service and police buildings',
-    military: 'Bases and training sites', airstrike: 'The April 1986 US raid', massacre: 'Killings, executions and crackdowns',
+    military: 'Bases and training sites', airstrike: 'The April 1986 US raid and 2011 NATO strikes', battle: 'Gun battles, coup attempts and attacks, 1979–2011', massacre: 'Killings, executions and crackdowns',
     power: 'Bab al-Aziziya and the old royal palace', landmark: 'Squares, campuses and events'
   };
   Object.keys(LAYERS).forEach(function (k) {
@@ -366,7 +368,7 @@
     [1992, 2003, 'UN sanctions', 'Sanctions'], [2003, 2011, 'Opening to the West', 'Opening'], [2011, 2012, '2011 uprising and war', '2011'], [2012, 2026, 'After Gaddafi', 'After']];
   var timeRange = null;
   function pos(f) { return 'calc(14px + ' + f.toFixed(4) + ' * (100% - 28px))'; }
-  var TL_LANES = [['Prisons & security', ['detention', 'security']], ['Military', ['military', 'airstrike']], ['Killings', ['massacre']], ['Power', ['power']], ['Landmarks', ['landmark']]];
+  var TL_LANES = [['Prisons & security', ['detention', 'security']], ['Military', ['military', 'airstrike', 'battle']], ['Killings', ['massacre']], ['Power', ['power']], ['Landmarks', ['landmark']]];
   function drawTimeline() {
     var tl = $('timeline');
     tl.querySelectorAll('.tl-lane,.tl-lab,.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-span,.tl-bar,.tl-hint,.tl-hit,.tl-cursor,.tl-ctrl,.tl-era,.tl-grid').forEach(function (e) { e.remove(); });
@@ -1362,7 +1364,7 @@
   var GROUPS = [
     { t: 'Prisons, police & security', n: 'Prisons, security services, police', parts: [['detention', 'Prisons', 'then'], ['security', 'Security services', 'then'], ['osm-police', 'Police stations', 'now']] },
     { t: 'Military & weapons', n: 'Bases, camps, missile and weapons sites', parts: [['military', 'Bases', 'then'], ['milprof', 'Camps & weapons sites', 'then'], ['osm-military', 'Military areas', 'now']] },
-    { t: 'Killings & attacks', n: 'Massacres, executions, the 1986 raid', parts: [['massacre', 'Killings & repression', 'then'], ['airstrike', '1986 US raid', 'then']] },
+    { t: 'Killings & attacks', n: 'Massacres, air raids, ground battles', parts: [['massacre', 'Killings & repression', 'then'], ['airstrike', 'Foreign airstrikes', 'then'], ['battle', 'Ground battles & attacks', 'then']] },
     { t: 'Power & government', n: "Gaddafi's compounds, ministries, courts, embassies", parts: [['power', 'Seats of power', 'then'], ['osm-govt', 'Offices & courts', 'now'], ['osm-embassies', 'Embassies', 'now']] },
     { t: 'Landmarks & history', n: 'Squares, old city, researched buildings, monuments', parts: [['landmark', 'Events & squares', 'then'], ['profiles', 'Researched buildings', 'then'], ['osm-sights', 'Monuments & sights', 'now'], ['osm-mosques', 'Mosques', 'now'], ['osm-cemeteries', 'Cemeteries', 'now']] },
     { t: 'Hospitals & universities', n: 'Health and education today', parts: [['osm-hospitals', 'Hospitals', 'now'], ['osm-schools', 'Universities', 'now']] },

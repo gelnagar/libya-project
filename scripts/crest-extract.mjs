@@ -5,7 +5,8 @@
 import fs from 'node:fs'; import zlib from 'node:zlib'; import vm from 'node:vm';
 const KEY = process.env.ANTHROPIC_API_KEY; if (!KEY) { console.error('ANTHROPIC_API_KEY missing'); process.exit(2); }
 const MODEL = process.env.EXTRACT_MODEL || 'claude-haiku-5-5';
-const DIR = 'archive/crest', OUT = `${DIR}/extract.jsonl`;
+const DIR = 'archive/crest', SET = process.env.SET === 'other' ? 'other' : 'crest';
+const OUT = `${DIR}/${SET === 'other' ? 'extract-other' : 'extract'}.jsonl`, DOCS = `${DIR}/${SET === 'other' ? 'docs-other' : 'docs'}.jsonl.gz`;
 const args = process.argv.slice(2), SAMPLE = args.includes('--sample') ? +args[args.indexOf('--sample') + 1] || 30 : 0, BATCH = args.includes('--batch');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const H = { 'x-api-key': KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' };
@@ -52,7 +53,7 @@ function trim(t, max = 24000) { // keep the head + windows around key terms
 const params = (d) => ({ model: MODEL, max_tokens: 1800,
   system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
   tools: [TOOL], tool_choice: { type: 'tool', name: 'record' },
-  messages: [{ role: 'user', content: `Title: ${d.title}\nDate (catalog): ${d.date || 'unknown'}\nSource: ${d.src === 'jprs' ? 'JPRS translation volume (Libya-related excerpts only)' : d.src === 'nis' ? 'CIA National Intelligence Survey' : 'CIA reading room (CREST)'}\n\n<document>\n${trim(d.text)}\n</document>` }] });
+  messages: [{ role: 'user', content: `Title: ${d.title}\nDate (catalog): ${d.date || 'unknown'}\nSource: ${({ jprs: 'JPRS translation volume (Libya-related excerpts only)', 'jprs-old': 'JPRS translation volume (Libya sections)', nis: 'CIA National Intelligence Survey', wikipedia: 'Wikipedia article (background reference, not an eyewitness source)', fbis: 'FBIS Daily Report, translated Libyan and regional radio and press', frus: 'Foreign Relations of the United States (State Department document)', gov: 'U.S. presidential library document', countrystudy: 'Library of Congress Libya country study (1987)' })[d.src] || 'CIA reading room (CREST)'}\n\n<document>\n${trim(d.text)}\n</document>` }] });
 
 // Inputs
 // If the full fetch has not saved yet, sample mode fetches its own small set from the mirror list (polite, sequential).
@@ -71,8 +72,8 @@ async function sampleDocs(n) {
   }
   return out;
 }
-const docs = fs.existsSync(`${DIR}/docs.jsonl.gz`)
-  ? zlib.gunzipSync(fs.readFileSync(`${DIR}/docs.jsonl.gz`)).toString().split('\n').filter(Boolean).map((l) => JSON.parse(l)).filter((d) => d.text && d.text.length >= 80)
+const docs = fs.existsSync(DOCS)
+  ? zlib.gunzipSync(fs.readFileSync(DOCS)).toString().split('\n').filter(Boolean).map((l) => JSON.parse(l)).filter((d) => d.text && d.text.length >= 80)
   : (SAMPLE ? (await sampleDocs(SAMPLE)).filter((d) => d.text.length >= 80) : (() => { throw new Error('docs.jsonl.gz not there yet'); })());
 let oldJ = new Set(); try { oldJ = new Set(JSON.parse(fs.readFileSync('archive/gov/catalog.json', 'utf8')).map((g) => g.id.replace(/^jprs-/, ''))); } catch {}
 const done = new Set(fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l).id) : []);
@@ -83,7 +84,7 @@ if (SAMPLE) { const step = Math.max(1, Math.floor(todo.length / SAMPLE)); todo =
 console.log('docs', docs.length, 'done', done.size, 'skipped old JPRS', docs.filter((d) => d.src === 'jprs' && oldJ.has(d.id)).length, 'todo', todo.length);
 
 const usage = { in: 0, out: 0, cw: 0, cr: 0, n: 0, fail: 0 }; const errors = [];
-const writeStatus = (extra) => fs.writeFileSync(`${DIR}/extract-status.json`, JSON.stringify({ at: new Date().toISOString(), model: MODEL, docs: docs.length, todo: todo.length, ok: usage.n, failed: usage.fail, errors: errors.slice(0, 5), ...extra }, null, 1));
+const writeStatus = (extra) => fs.writeFileSync(`${DIR}/${SET === 'other' ? 'extract-other-status' : 'extract-status'}.json`, JSON.stringify({ at: new Date().toISOString(), model: MODEL, docs: docs.length, todo: todo.length, ok: usage.n, failed: usage.fail, errors: errors.slice(0, 5), ...extra }, null, 1));
 process.on('uncaughtException', (e) => { errors.push('uncaught: ' + e.message); writeStatus({ crashed: true }); process.exit(1); });
 function keep(id, msg, batch) {
   const u = msg.usage || {}; usage.in += u.input_tokens || 0; usage.out += u.output_tokens || 0; usage.cw += u.cache_creation_input_tokens || 0; usage.cr += u.cache_read_input_tokens || 0;
@@ -110,5 +111,5 @@ if (!BATCH) {
   }
 }
 const rel = {}; if (fs.existsSync(OUT)) for (const l of fs.readFileSync(OUT, 'utf8').split('\n').filter(Boolean)) { const x = JSON.parse(l); rel[x.relevance] = (rel[x.relevance] || 0) + 1; }
-const stat = { errors: errors.slice(0, 5), at: new Date().toISOString(), mode: BATCH ? 'batch' : 'sample', model: MODEL, ...usage, costUSD: +cost(BATCH).toFixed(4), perDocUSD: usage.n ? +(cost(BATCH) / usage.n).toFixed(5) : null, relevanceSoFar: rel, remaining: docs.length - done.size - usage.n };
-fs.writeFileSync(`${DIR}/extract-status.json`, JSON.stringify(stat, null, 1)); console.log(stat);
+const stat = { set: SET, errors: errors.slice(0, 5), at: new Date().toISOString(), mode: BATCH ? 'batch' : 'sample', model: MODEL, ...usage, costUSD: +cost(BATCH).toFixed(4), perDocUSD: usage.n ? +(cost(BATCH) / usage.n).toFixed(5) : null, relevanceSoFar: rel, remaining: docs.length - done.size - usage.n };
+fs.writeFileSync(`${DIR}/${SET === 'other' ? 'extract-other-status' : 'extract-status'}.json`, JSON.stringify(stat, null, 1)); console.log(stat);

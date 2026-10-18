@@ -7389,5 +7389,11 @@
     "https://ims.cr.usgs.gov/browse/declass3/1219-2/00456/F/D3C1219-200456F002.jpg"
    ]
   }
+ ],
+ "errors": [
+  "download-options corona2: HTTP Error 403: Forbidden",
+  "download-options declassii: HTTP Error 403: Forbidden",
+  "download-options declassiii: HTTP Error 403: Forbidden",
+  "download-options declassiii: HTTP Error 403: Forbidden"
  ]
 }

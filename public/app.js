@@ -117,17 +117,17 @@
   /* ---------- state ---------- */
   var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, battle: true, massacre: true, power: true, landmark: true, districts: true, rings: true, labels: true, grid: true, timeline: true };
   var active = Object.assign({}, DEFAULT_ON, store.get('layers3', {}));
-  var PERIODS = { pre: 'Before 1969', main: '1969–1989', post: 'After 1989' };
+  var PERIODS = { pre: 'Before 1969', main: '1969–2011', post: 'After 2011' };
   var periods = Object.assign({ pre: true, main: true, post: true }, store.get('periods', {}));
   function save() { store.set('layers3', active); store.set('periods', periods); }
 
   function span(s) {
-    var a = s.y0 == null ? 1969 : s.y0, b = s.y1 == null ? (s.y0 == null ? 1989 : s.y0) : s.y1;
+    var a = s.y0 == null ? 1969 : s.y0, b = s.y1 == null ? (s.y0 == null ? 2011 : s.y0) : s.y1;
     return [a, b];
   }
   function inPeriod(s) {
     var r = span(s);
-    return (periods.pre && r[0] < 1969) || (periods.main && r[0] <= 1989 && r[1] >= 1969) || (periods.post && r[1] > 1989);
+    return (periods.pre && r[0] < 1969) || (periods.main && r[0] <= 2011 && r[1] >= 1969) || (periods.post && r[1] > 2011);
   }
   function visible(s) { return !!active[s.layer] && inPeriod(s); }
 
@@ -405,7 +405,7 @@
     if ((timeRange && !(span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1])) || (timeYear != null && span(s)[0] > timeYear)) { timeRange = null; timeYear = null; stopPlay(); changed = true; }
     if (!active[s.layer]) { active[s.layer] = true; inputs[s.layer].checked = true; changed = true; if (typeof syncGroups === 'function') setTimeout(syncGroups, 0); }
     if (!inPeriod(s)) {
-      var r = span(s), k = r[0] < 1969 ? 'pre' : r[0] > 1989 ? 'post' : 'main';
+      var r = span(s), k = r[0] < 1969 ? 'pre' : r[0] > 2011 ? 'post' : 'main';
       periods[k] = true; document.querySelector('#periods [data-k="' + k + '"]').setAttribute('aria-pressed', 'true'); changed = true;
     }
     if (changed) refresh();
@@ -833,13 +833,13 @@
     var lay = LAYERS[s.layer];
     var body = newSheet(lay.label);
     markSelected(s.id);
-    var outside = span(s)[1] < 1969 || span(s)[0] > 1989;
+    var outside = span(s)[1] < 1969 || span(s)[0] > 2011;
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: s.name }), s.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: s.ar }) : null]));
     body.appendChild(facts([
       ['Category', lay.label], ['Evidence', LEVELS[s.level]], ['When', s.period],
       ['Active', s.y0 ? (s.y1 && s.y1 !== s.y0 ? s.y0 + '–' + s.y1 : String(s.y0)) : ''],
       ['Accuracy', 'within about ' + s.r + ' km'], ['Coordinates', s.lat.toFixed(4) + ', ' + s.lon.toFixed(4)],
-      ['Note', outside ? 'Outside 1969–1989' : ''], ['Reference', s.ref], ['Sources', (s.sources || []).length]
+      ['Note', outside ? 'Outside the Gaddafi era (1969–2011)' : ''], ['Reference', s.ref], ['Sources', (s.sources || []).length]
     ]));
     body.appendChild(section('Why it matters', [h('p', { class: 'brief', text: s.relevance })]));
     body.appendChild(section('What is known', [h('p', { class: 'd-text', text: s.text })]));
@@ -871,8 +871,8 @@
     oil: function (t) { return t.man_made === 'petroleum_well' ? 'Oil or gas well' : t.man_made === 'storage_tank' ? 'Fuel storage tank' : t.industrial === 'refinery' ? 'Refinery' : 'Oil & gas facility'; }
   };
   var EXPLAIN = {
-    landuse: 'This is how the area is used today. Land use in 1969–1989 may have been different, since Tripoli grew a great deal after the 1980s.',
-    buildings: 'A building as it stands today. It may not have existed in 1969–1989.',
+    landuse: 'This is how the area is used today. Land use under Gaddafi may have been different, since Tripoli grew a great deal after the 1980s.',
+    buildings: 'A building as it stands today. It may not have existed under Gaddafi.',
     military: 'An area marked as military in today’s map data. Many of these are Gaddafi-era bases that later forces took over, but the map data does not say when a site was built or who used it under Gaddafi. Only the researched camp profiles date a site, so being on this layer does not mean a site existed in 1969–2011.',
     water: 'Part of the water supply as mapped today. Before the Great Man-Made River reached the city, Tripoli depended heavily on local groundwater wells.',
     oil: 'An oil or gas facility mapped today. Tripoli has no major oil fields; Libya’s main fields lie far to the south and east.'
@@ -1036,7 +1036,7 @@
   AREAS.forEach(function (a) { AREA_BY_ID[a.id] = a; });
 
   /* researched landmarks and buildings: one marker each, opening the full profile */
-  var profGroup = L.layerGroup(), profOn = store.get('prof', true), milGroup = L.layerGroup(), milOn = store.get('milprof', true);
+  var wpnGroup = L.layerGroup(), profGroup = L.layerGroup(), profOn = store.get('prof', true), milGroup = L.layerGroup(), milOn = store.get('milprof', true);
   var PROF_SVG = '<path d="M12 2 2 7v2h20V7zM4 11v8H2v3h20v-3h-2v-8h-3v8h-2v-8h-4v8H9v-8z"/>';
   var MISSILE_SVG = '<path d="M12 .8l3.2 5.4V16H8.8V6.2zM8.8 11.5 4 18v3.2h4.8zM15.2 11.5 20 18v3.2h-4.8zM10.4 17h3.2v6h-3.2z"/>';
   /* one distinct glyph per weapons-programme site (24x24, drawn in the military colour) */
@@ -1058,11 +1058,17 @@
     'wp-jarmah-otrag-launch-site': '<path d="M12 1c2.3 2.3 3.2 5.2 3.2 8.4V15H8.8V9.4C8.8 6.2 9.7 3.3 12 1zM8.8 12.5L6 16.5V19l2.8-1.4zM15.2 12.5l2.8 4V19l-2.8-1.4z"/><path d="M3 22h18v-1.8h-2.2V10h-1.8v10.2H7V10H5.2v10.2H3z"/>',
     'wp-tarabulus-scud-storage-southeast': '<path d="M3 10l4-3h9l5 3.5-5 3.5H7z"/><path d="M3 16h18v2.2H3z"/><circle cx="7" cy="20.5" r="1.5"/><circle cx="12" cy="20.5" r="1.5"/><circle cx="17" cy="20.5" r="1.5"/>'
   };
-  function isWpn(a) { return a.kind === 'military' || /^wp-/.test(a.id) || !!WEAPON_ICON[a.id]; }
-  function weaponSvg(a) { return WEAPON_ICON[a.id] || (isMissile(a) ? MISSILE_SVG : null); }
+  function isWpn(a) { return a.kind === 'military' || /^wp-|^npic-/.test(a.id) || !!WEAPON_ICON[a.id]; }
+  var SYM_ICON = {
+    airfield: '<path d="M21 14.5v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V7.5l-8 5v2l8-2.5v4.5l-2 1.5V20l3.5-1 3.5 1v-1.5l-2-1.5V12z"/>',
+    port: '<path fill-rule="evenodd" d="M11 2h2v3.1a3 3 0 1 1-2 0zm1 1.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM11 8h2v10.6c3-.3 5.4-2.2 6.2-4.6l-1.9.4 2.7-3.8 2.2 4.3-1.7-.4C19.6 18.6 16.3 21 12 21S4.400 18.600 2.500 14.500l-1.700.4L3 10.600l2.700 3.800-1.900-.4c.8 2.400 3.200 4.300 6.200 4.600z"/>',
+    training: '<path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2.500a7.500 7.500 0 1 1 0 15 7.500 7.500 0 0 1 0-15zM11 1h2v6h-2zM11 17h2v6h-2zM1 11h6v2H1zM17 11h6v2h-6zm-5-3.200a4.200 4.200 0 1 0 0 8.400 4.200 4.200 0 0 0 0-8.400z"/>',
+    barracks: '<path fill-rule="evenodd" d="M1 21V10l4-5h14l4 5v11zm5-9v3h12v-3z"/>'
+  };
+  function weaponSvg(a) { return WEAPON_ICON[a.id] || (a.sym === 'sam' ? MISSILE_SVG : SYM_ICON[a.sym]) || (isMissile(a) ? MISSILE_SVG : null); }
   function isMissile(a) { return /missile|\bSAM\b|scud|surface-to-air/i.test((a.name || '') + ' ' + (a.summary || '')); }
   function drawProfiles() {
-    profGroup.clearLayers(); milGroup.clearLayers();
+    profGroup.clearLayers(); milGroup.clearLayers(); wpnGroup.clearLayers();
     var merged = {}; SITES.forEach(function (s) { if (s.profile) merged[s.profile] = 1; });
     AREAS.filter(function (a) { return ['landmark', 'government', 'prison', 'military'].indexOf(a.kind) >= 0 && a.lat && a.lon && !merged[a.id]; }).forEach(function (a) {
       var dup = SITES.some(function (s) { return map.distance([a.lat, a.lon], [s.lat, s.lon]) < 120 && (s.layer === 'landmark' || s.layer === 'power') && fold(s.name).split(' ')[0] === fold(a.name).split(' ')[0]; });
@@ -1073,10 +1079,10 @@
       m.on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openArea(a); });
       m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], isWpn(a) ? '#55603a' : '#6f5f45', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar]], [0, -16]); });
       m.on('mouseout', hideCard);
-      m.addTo(isWpn(a) ? milGroup : profGroup);
+      m.addTo(a.documented ? wpnGroup : isWpn(a) ? milGroup : profGroup);
     });
   }
-  function syncProfiles() { if (profOn && map.getZoom() >= 14) map.addLayer(profGroup); else map.removeLayer(profGroup); if (milOn && map.getZoom() >= 11) map.addLayer(milGroup); else map.removeLayer(milGroup); }
+  function syncProfiles() { if (profOn && map.getZoom() >= 14) map.addLayer(profGroup); else map.removeLayer(profGroup); if (milOn && map.getZoom() >= 11) map.addLayer(milGroup); else map.removeLayer(milGroup); if (milOn && map.getZoom() >= 9) map.addLayer(wpnGroup); else map.removeLayer(wpnGroup); }
   map.on('zoomend', syncProfiles);
   $('hist-toggles').appendChild(toggleRow('profiles', 'Researched landmarks & buildings', 'Ministries, hospitals, mosques, old city and historic sites, with histories', profOn, function (v) { profOn = v; store.set('prof', v); syncProfiles(); }));
   $('hist-toggles').appendChild(toggleRow('milprof', 'Camps & weapons sites', 'Researched military camps, missile and weapons-programme sites; each profile gives the dates its sources cover', milOn, function (v) { milOn = v; store.set('milprof', v); syncProfiles(); }));
@@ -1384,7 +1390,7 @@
     '\nKnown but with no map location: ' + UNPLACED.map(function (u) { return u.name + ' (' + u.when + ')'; }).join('; ') +
     '\nArea profiles available through get_area: ' + (window.ATLAS_AREAS || []).map(function (a) { return a.name; }).join(', ');
   var STARTERS = ['Where were political prisoners held?', 'What do US documents say about the 1986 raid?', 'Show me only the massacres', 'What was Bab al-Aziziya?', 'Take me to Ben Ashour on satellite'];
-  var PERIOD_KEYS = { before_1969: 'pre', from_1969_to_1989: 'main', after_1989: 'post' };
+  var PERIOD_KEYS = { before_1969: 'pre', from_1969_to_2011: 'main', after_2011: 'post' };
   var DISPLAY_KEYS = { district_names: 'districts', uncertainty_rings: 'rings', place_names: 'labels', grid: 'grid', timeline: 'timeline' };
   function scrollChat() { var l = $('chat-log'); l.scrollTop = l.scrollHeight; }
   function bubble(role, text) {
@@ -1442,7 +1448,7 @@
     var c = map.getCenter();
     return JSON.stringify({
       map_style: currentBase,
-      periods: { before_1969: periods.pre, from_1969_to_1989: periods.main, after_1989: periods.post },
+      periods: { before_1969: periods.pre, from_1969_to_2011: periods.main, after_2011: periods.post },
       historical_layers_on: onOff(active, Object.keys(LAYERS)),
       historical_layers_off: Object.keys(LAYERS).filter(function (k) { return !active[k]; }),
       today_layers_on: onOff(osmActive, Object.keys(OSM)),
@@ -2052,7 +2058,7 @@
   // remember what each sheet is about, so notes can be attached to it
   var _openSite = openSite; openSite = function (s) { curTarget = { id: s.id, name: s.name, lat: s.lat, lon: s.lon, code: siteCode(s), profile: s.profile }; _openSite(s); };
   var _openArea = openArea; openArea = function (x) { var host = SITES.filter(function (s) { return s.profile === x.id; })[0]; if (host) { focusSite(host); return; } curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon, code: areaIcon(x) }; _openArea(x); };
-  function areaIcon(x) { var m = { prison: 'detention', military: 'military', government: 'power', landmark: 'landmark', police: 'security', security: 'security' }; if (/universit|college|school/i.test(x.name)) return SITE_ICON.university; if (WEAPON_ICON[x.id]) return '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' + WEAPON_ICON[x.id] + '</svg>'; return LAYER_ICON[m[x.kind] || 'landmark']; }
+  function areaIcon(x) { var m = { prison: 'detention', military: 'military', government: 'power', landmark: 'landmark', police: 'security', security: 'security' }; if (/universit|college|school/i.test(x.name)) return SITE_ICON.university; var wi = WEAPON_ICON[x.id] || (x.sym === 'sam' ? MISSILE_SVG : SYM_ICON[x.sym]); if (wi) return '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' + wi + '</svg>'; return LAYER_ICON[m[x.kind] || 'landmark']; }
   var LINK_ICON = '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M2 9h6v6H2zM16 9h6v6h-6z"/><path d="M8 11h8v2H8z"/></svg>';
   var _openSpot = openSpot; openSpot = function (ll) { curTarget = { lat: ll.lat, lon: ll.lng, name: '' }; _openSpot(ll); };
   var _openFeature = openFeature; openFeature = function (k, el) { var lat = el.lat || (el.bounds ? (el.bounds.minlat + el.bounds.maxlat) / 2 : null), lon = el.lon || (el.bounds ? (el.bounds.minlon + el.bounds.maxlon) / 2 : null); curTarget = lat != null ? { id: 'osm-' + el.type + '-' + el.id, name: (el.tags && (el.tags['name:en'] || el.tags.name)) || '', lat: lat, lon: lon } : null; _openFeature(k, el); };

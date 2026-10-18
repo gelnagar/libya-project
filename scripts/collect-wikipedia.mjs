@@ -1,4 +1,4 @@
-// Downloads Wikipedia articles (English and Arabic) about Tripoli and Libya, 1969–1989, as plain text.
+// Downloads Wikipedia articles (English and Arabic) about Tripoli and Libya, the Gaddafi era (1969–2011), as plain text.
 // Wikipedia text is CC BY-SA 4.0: keep the title and link with anything derived from it.
 // Input: archive/wikipedia/sources.txt — lines "en|Title", "ar|Title", "en|search:query", "en|category:Name".
 // Output: archive/wikipedia/<lang>/<title>.json  { title, lang, url, coords, text, revid, fetched }

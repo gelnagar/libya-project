@@ -445,7 +445,7 @@ window.ATLAS_QUESTIONS = {
 /* Questions for any spot on the map. {d} = district, {n} = nearest mapped place */
 window.ATLAS_SPOT_QUESTIONS = [
   'What was {d} like to live in during the 1970s and 1980s?',
-  'Who mostly lived in {d} in 1969–1989?',
+  'Who mostly lived in {d} under Gaddafi?',
   'How did {d} change after the 1969 coup?',
   'Were people from {d} arrested for political reasons?',
   'What did {d} look like before the 1980s building boom?',
@@ -472,5 +472,5 @@ window.ATLAS_FEATURE_QUESTIONS = {
   buildings: ['How old is this building likely to be?', 'What did buildings like this replace?', 'Who built most of Tripoli’s housing in the 1970s and 1980s?', 'Were foreign companies involved in building this area?', 'How did the government assign housing in the 1980s?', 'Is this area part of the old city or a newer district?', 'What building materials were common in 1980s Tripoli?', 'Were private shops allowed here in the 1980s?', 'How did the 1978 housing law affect buildings like this?', 'What would this street have looked like in 1985?'],
   military: ['Was this area military before 2011?', 'Which armed group uses this site today?', 'Were there Gaddafi-era bases near here?', 'How did military sites change after 2011?', 'Was this area involved in the 2011 fighting?', 'Were civilians kept away from this area in the 1980s?', 'How large was Libya’s army in the 1980s?', 'Did the Revolutionary Guard have posts in this part of Tripoli?', 'What happened to Gaddafi-era bases after 2011?', 'Is this area still restricted?'],
   water: ['Where did Tripoli get its water in the 1970s?', 'When did the Great Man-Made River reach Tripoli?', 'Did wells around Tripoli run dry or turn salty?', 'How did water shortages affect daily life in the 1980s?', 'Who managed water supply under Gaddafi?', 'Was this well or tower built before 1989?', 'How deep are Tripoli’s groundwater wells?', 'Did farms near Tripoli rely on wells like this?', 'How did seawater get into Tripoli’s groundwater?', 'Is Tripoli’s water supply reliable today?'],
-  oil: ['Where were Libya’s oil fields in 1969–1989?', 'How did oil money shape Tripoli under Gaddafi?', 'When was this fuel facility likely built?', 'How did Gaddafi nationalise the oil industry?', 'Which foreign oil companies worked in Libya in the 1970s?', 'How did US sanctions in the 1980s affect Libya’s oil?', 'Where was Tripoli’s fuel refined?', 'Was fuel cheap for ordinary Libyans?', 'How did oil revenue fund the security services?', 'What happened to oil facilities during the 2011 war?']
+  oil: ['Where were Libya’s oil fields under Gaddafi?', 'How did oil money shape Tripoli under Gaddafi?', 'When was this fuel facility likely built?', 'How did Gaddafi nationalise the oil industry?', 'Which foreign oil companies worked in Libya in the 1970s?', 'How did US sanctions in the 1980s affect Libya’s oil?', 'Where was Tripoli’s fuel refined?', 'Was fuel cheap for ordinary Libyans?', 'How did oil revenue fund the security services?', 'What happened to oil facilities during the 2011 war?']
 };

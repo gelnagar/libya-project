@@ -2992,7 +2992,7 @@
   "h": "e496d11f26b5",
   "model": "claude-sonnet-5-5",
   "headline": "A Wikipedia article says many prisoners held at Maktab al-Nasser were later moved to Abu Salim prison, but gives no dates.",
-  "explanation": "Maktab al-Nasser was a prison and internal security office in the Abu Salim district of Tripoli. The one source we have says many of its prisoners were later sent on to Abu Salim prison. This suggests it worked as an earlier stop for some detainees before they reached the main political prison. The source gives no dates, no numbers and no named prisoners. We therefore cannot say when the transfers happened or whether they took place in the 1969–1989 period. The link rests on a short background article with no references shown.",
+  "explanation": "Maktab al-Nasser was a prison and internal security office in the Abu Salim district of Tripoli. The one source we have says many of its prisoners were later sent on to Abu Salim prison. This suggests it worked as an earlier stop for some detainees before they reached the main political prison. The source gives no dates, no numbers and no named prisoners. We therefore cannot say when the transfers happened or whether they took place in the 1969–2011 period. The link rests on a short background article with no references shown.",
   "strength": "reported",
   "flag": "ok",
   "established": [
@@ -3002,7 +3002,7 @@
   "not_established": [
    "When Maktab al-Nasser opened, or when the transfers took place.",
    "How many prisoners were moved, who they were, or why they were chosen.",
-   "Whether the transfers happened during 1969–1989; the source does not say."
+   "Whether the transfers happened during 1969–2011; the source does not say."
   ],
   "context": "Abu Salim prison was the main prison for political prisoners under Gaddafi. Security offices elsewhere in the city often held people for questioning before they were sent there.",
   "timeline": [],
@@ -6643,7 +6643,7 @@
   "not_established": [
    "The passage does not say the prison was a political prison, or that it held political detainees between 1969 and 2011.",
    "The Human Rights Watch (2009) and Amnesty (2004) reports were not supplied, so what they say about this prison is unchecked.",
-   "The atlas profile itself says no source found confirms political detention here between 1969 and 1989."
+   "The atlas profile itself says no source found confirms political detention here under Gaddafi."
   ],
   "context": "The two entries have the same name and place, so they should probably be merged into one. The label \"the political prison\" is a local map name and is not proof of how the prison was used.",
   "timeline": [

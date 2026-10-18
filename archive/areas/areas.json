@@ -675,12 +675,16 @@
   "lon": 13.343,
   "r": 0.6,
   "summary": "A surface-to-air missile site south-east of the city. Under Gaddafi, Tripoli was ringed by Soviet-supplied air-defence missile batteries.",
-  "era": "During the US raid of 15 April 1986 Libyan air defences around Tripoli fired heavily; in 2011 NATO struck Libyan air-defence sites in the first days of its campaign.",
-  "uncertain": "Whether this particular site dates from the Gaddafi era.",
+  "era": "A September 1982 CIA imagery report counted more than 70 permanent and field-deployed SAM sites in Libya (SA-2, SA-3, SA-6, SA-9 and Crotale), concentrated around Tripoli, Benghazi and Tobruk. During the US raid of 15 April 1986 Libyan air defences around Tripoli fired heavily; in 2011 NATO struck Libyan air-defence sites in the first days of its campaign.",
+  "uncertain": "No document we hold gives this exact point, so it is not matched to a dated battery. It sits in the belt of Tripoli-area SAM sites the CIA documented in 1982, which makes a Gaddafi-era battery likely, but the site is not individually dated.",
   "sources": [
    {
     "t": "Wikipedia: 1986 United States bombing of Libya",
     "u": "https://en.wikipedia.org/wiki/1986_United_States_bombing_of_Libya"
+   },
+   {
+    "t": "CIA NPIC: Status of Libyan surface-to-air missile sites (Sept 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp83t00574r000102620001-5"
    }
   ]
  },
@@ -2171,6 +2175,45 @@
   "distance_from_tripoli_km": 8.8
  },
  {
+  "id": "npic-sebha-airfield",
+  "name": "Sebha airfield",
+  "kind": "military",
+  "sym": "airfield",
+  "lat": 26.99333,
+  "lon": 14.46694,
+  "r": 0.8,
+  "far": true,
+  "summary": "The air base at Sebha, where US imagery recorded MiG-25 Foxbat interceptors in 1982 and resupply flights to Chadian dissidents in 1983.",
+  "history": "Jan 1982: Foxbat high speed, high altitude interceptor and reconnaissance aircraft have deployed to Sebha airfield. this is the first identification of Foxbat at this airfield. May 1982: The Libyan air force has recently lost a probable Mirage iii/v and a possible Fitter in two separate crashes. oe (s/d). May 1982: The Libyan air force has recently lost a probable Mirage iii/v and a possible Fitter in two separate crashes. Dec 1982: Four Foxbat a high altitude fighter/intercepter aircraft have been armed with acrid ‘aa-6) air-to-air missiles. Libyan Foxbat normally are ot observed armed. Aug 1983: Resupply efforts to Libyan-backed Chadian dissident forces continue.",
+  "era": "Documented in declassified CIA imagery reports dated 1982–1983, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Jan 1982 and Aug 1983; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Foxbat Deployment Sebha Airfield, Libya (Jan 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100150003-3"
+   },
+   {
+    "t": "CIA NPIC: Recent Aircraft Accidents In Libya Sebha Airfield And Ghurdabiyah Airfield(Sanitized) (May 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100220004-7"
+   },
+   {
+    "t": "CIA NPIC: Recent Aircraft Accidents In Libya Sebha Airfield And Ghurdabiyah Airfield 4 May And 21 Ap (May 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100220005-6"
+   },
+   {
+    "t": "CIA NPIC: Armed Foxbat Sebha Airfield, Libya (Dec 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100060001-8"
+   },
+   {
+    "t": "CIA NPIC: Libya-Chad Conflict Sebha Airfield, Libya (Aug 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200470001-9"
+   }
+  ],
+  "distance_from_tripoli_km": 668
+ },
+ {
   "id": "lh-karamanli-house-museum",
   "name": "Karamanli House Museum (Harem of Ali Karamanli)",
   "ar": "متحف دار القرمانلي",
@@ -2520,6 +2563,80 @@
     "u": "https://www.esteri.it/it/sala_stampa/archivionotizie/retediplomatica/2020/10/libia-rinasce-il-sacrario-italiano-di-hammangi/"
    }
   ]
+ },
+ {
+  "id": "npic-tarabulus-port-facilities-military-deliv",
+  "name": "Tarabulus port facilities (military deliveries)",
+  "kind": "military",
+  "sym": "port",
+  "lat": 32.90694,
+  "lon": 13.1875,
+  "r": 0.8,
+  "far": true,
+  "summary": "Tripoli harbour as the US imagery watched it: Soviet arms deliveries, including SA-2 missile components, arrived here in 1982.",
+  "history": "Apr 1982: An Iranian merchant ship and cargo aircraft in Libya suggests ccntinued Libyan military support to Iran. Oct 1982: Libya has received a shipment of Soviet arms, including components for at least two SA-2 surface-to-air missile batteries. Dec 1982: Additional Soviet arms have been delivered to Libya. Feb 1983: Arms transshipment activity is observed at this port. Feb 1983: An arms delivery has occurred since and transshipment activity involving SA-2 surface to air missile (sam) equipment continues.",
+  "era": "Documented in declassified CIA imagery reports dated 1982–1983, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Apr 1982 and Feb 1983; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Iranian Merchant Ship And Cargo Aircraft In Libya Tarabulus Port Facilities Adn Tripoli Ai (Apr 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp82t00709r000100500001-1"
+   },
+   {
+    "t": "CIA NPIC: Soviet Arms Delivery Tarabulus Port Facilities, Libya (Sanitized) (Oct 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp83t00574r000101350001-6"
+   },
+   {
+    "t": "CIA NPIC: Arms Delivery Tarabulus Port Facilities, Libya (Dec 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100100001-3"
+   },
+   {
+    "t": "CIA NPIC: Arms Transshipment Tarabulus Port Facilities, Libya (Feb 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200590006-4"
+   },
+   {
+    "t": "CIA NPIC: Arms Delivery And Transshipment Tarabulus Port Facilities, Libya (Feb 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200600004-4"
+   }
+  ],
+  "distance_from_tripoli_km": 2
+ },
+ {
+  "id": "npic-al-jufrah-airfield",
+  "name": "Al Jufrah airfield",
+  "kind": "military",
+  "sym": "airfield",
+  "lat": 29.21667,
+  "lon": 16.0,
+  "r": 0.8,
+  "far": true,
+  "summary": "An airfield at Al Jufrah, reportedly built by the Soviets, that US imagery said had become operational for advanced jets by December 1983, with six probable missile-ready bunkers.",
+  "history": "Dec 1983: Al jufrah airfield, reportedly being constructed by the soviets, has become an operational, advanced, jet-capable airfield. 2g. Dec 1983: Six probable missile-ready bunkers, capable of . handling air-to-surface missiles (asm), have been constructed at Al Jufrah airfield in Libya. Dec 1983: Six probable missile-ready bunkers, capable of handling atr-to-surface missiles (asm), have been constructed at Al Jufrah airfield in Libya.",
+  "era": "Documented in declassified CIA imagery reports dated 1983, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Dec 1983; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Al Jufrah Airfield Operational For Advanced Jet Aircraft Al Jufrah Airfield, Libya (Saniti (Dec 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000300830001-8"
+   },
+   {
+    "t": "CIA NPIC: Al Jufrah Airfield Operational For Advanced Jet Aircraft Al Jufrah Airfield, Libya (Saniti (Dec 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100160004-2"
+   },
+   {
+    "t": "CIA NPIC: Probable Missile-Ready Bunkers Al Jufrah Airfield, Libya (Sanitized) (Dec 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000300850001-6"
+   },
+   {
+    "t": "CIA NPIC: Probable Missile-Ready Bunkers Al Jufrah Airfield, Libya (Sanitized) (Dec 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100170002-3"
+   }
+  ],
+  "distance_from_tripoli_km": 489
  },
  {
   "id": "lh-dragut-mosque",
@@ -3126,6 +3243,37 @@
   ]
  },
  {
+  "id": "npic-umm-aitiqah-ecm-site-and-tarabulus-army-",
+  "name": "Umm Aitiqah ECM site and Tarabulus Army Barracks East",
+  "kind": "military",
+  "sym": "barracks",
+  "lat": 32.9,
+  "lon": 13.31806,
+  "r": 0.8,
+  "far": true,
+  "summary": "An army barracks on the eastern side of Tripoli where US imagery found a Big Cap B radar jammer and an Italian self-propelled howitzer in 1982.",
+  "history": "Sep 1982: An Italian self-propelled (sp) howitzer was identified for the first time in Libya. Sep 1982: This is the first identification of the. Big Cap B jammer system in Libya and is also the first identification outside the Soviet union and Warsaw Pact countries.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Sep 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Italian Self-Propelled Howitzer Tarabulus Army Barracks East, Libya (Sanitized) (Sep 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp83t00574r000102180001-4"
+   },
+   {
+    "t": "CIA NPIC: Italian Self-Propelled Howitzer Tarabulus Army Barracks East, Libya(Sanitized) (Sep 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200360009-6"
+   },
+   {
+    "t": "CIA NPIC: Big Cap B Jammer System Umm Aitiqah Ecm Site, Libya (Sanitized) (Sep 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp83t00574r000102200001-1"
+   }
+  ],
+  "distance_from_tripoli_km": 13
+ },
+ {
   "id": "lh-ottoman-clock-tower",
   "name": "Ottoman Clock Tower",
   "ar": "ساعة طرابلس",
@@ -3254,6 +3402,29 @@
   ]
  },
  {
+  "id": "npic-wmd-training-3198-1379",
+  "name": "Western Military District training area (31.98°N 13.79°E)",
+  "kind": "military",
+  "sym": "training",
+  "lat": 31.98333,
+  "lon": 13.7875,
+  "r": 0.8,
+  "far": true,
+  "summary": "A training area where US imagery observed unprecedented large-scale exercises on 13 August 1983.",
+  "history": "Sep 1983: Large-scale ground forces training exercises, one possibly at the brigade level, were observed in libyas western military district on 13 august. the size and composition of this activity is without precedent in Libya.",
+  "era": "Documented in declassified CIA imagery reports dated 1983, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Sep 1983; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Ground Forces Training Activity Western Military District, Libya (Sanitized) (Sep 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100040005-4"
+   }
+  ],
+  "distance_from_tripoli_km": 116
+ },
+ {
   "id": "wp-al-fallah-site-b",
   "name": "Al Fallah (Site B), second centrifuge site",
   "aliases": [
@@ -3343,6 +3514,56 @@
   "documented": "Conversion modules there by 2003 (IAEA); cleared 2004"
  },
  {
+  "id": "npic-tarabulus-army-barracks-prinn",
+  "name": "Tarabulus Army Barracks Prinn",
+  "kind": "military",
+  "sym": "barracks",
+  "lat": 32.84611,
+  "lon": 13.23694,
+  "r": 0.8,
+  "far": true,
+  "summary": "An army barracks in Tripoli where US imagery found a new Czechoslovak 152 mm self-propelled gun in 1983.",
+  "history": "Aug 1983: The Czechoslovakian 152mm self-propelled gun/howitzer m-1978 was newly observed in Libya. {. Aug 1983: The Czechoslovakian 152mm self -propelled gun/howitzer m-1978 was newly observed in Libya.",
+  "era": "Documented in declassified CIA imagery reports dated 1983, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Aug 1983; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Czech Self-Propelled Gun/Howitzer Tarabulus Army Barracks Prinn, Libya (Sanitized) (Aug 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000201570001-7"
+   },
+   {
+    "t": "CIA NPIC: Czech Self-Propelled Gun/Howitzer Tarabulus Army Barracks Prinn, Libya(Sanitized) (Aug 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100030003-7"
+   }
+  ],
+  "distance_from_tripoli_km": 7
+ },
+ {
+  "id": "npic-sebha-sa-2-site",
+  "name": "Sebha SA-2 site",
+  "kind": "military",
+  "sym": "sam",
+  "lat": 27.01389,
+  "lon": 14.52917,
+  "r": 0.8,
+  "far": true,
+  "summary": "A field-deployed SA-2 missile site 3 nautical miles east of Sebha airfield, newly identified in 1982.",
+  "history": "Dec 1982: A field-deployed SA-2 surface-to-air missile (sam) site is newly identified in the Sebha area at 27-00-50n 014-31-45e and is the first operational SA-2 site to be identified near Sebha.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Dec 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Field-Deployed Sa-2 Site Sebha Sam Site, Libya (Dec 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100040010-0"
+   }
+  ],
+  "distance_from_tripoli_km": 666
+ },
+ {
   "id": "lb-italian-embassy-tripoli",
   "name": "Italian Embassy, Tripoli",
   "ar": "السفارة الإيطالية",
@@ -3370,6 +3591,29 @@
     "u": "https://www.openstreetmap.org/way/100832546"
    }
   ]
+ },
+ {
+  "id": "npic-tarabulus-sam-training-facility-east-sou",
+  "name": "Tarabulus SAM training facility (east-south-east)",
+  "kind": "military",
+  "sym": "sam",
+  "lat": 32.8625,
+  "lon": 13.41667,
+  "r": 0.8,
+  "far": true,
+  "summary": "A military installation on the eastern outskirts of Tripoli with a training facility for all types of SAM equipment, where the first SA-8 in Libya was identified in January 1982.",
+  "history": "Jan 1982: Sa-8 surface-to-air missile (sam) equipment was identified for the first time in Libya.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Jan 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Sa-8 Equipment Tarabulus Military East-Southeast, Libya 16 January 1982 (Jan 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100160006-2"
+   }
+  ],
+  "distance_from_tripoli_km": 22
  },
  {
   "id": "lb-mitiga-hospital",
@@ -3428,6 +3672,56 @@
   ]
  },
  {
+  "id": "npic-bir-ganem-training-camp",
+  "name": "Bir Ganem training camp",
+  "kind": "military",
+  "sym": "training",
+  "lat": 32.48611,
+  "lon": 12.73333,
+  "r": 0.8,
+  "far": true,
+  "summary": "A suspected guerrilla and terrorist training camp identified in 1982 about 35 nautical miles south-west of Tripoli.",
+  "history": "Sep 1982: A suspect guerrilla/terrorist training camp is newly identified approximately 35 nm southwest of Tarabulus at 39-29-10n 012-44-00e.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Sep 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Suspect Guerrilla/Terrorist Training Camp Bir Ganem Training Facility, Libya (Sanitized) (Sep 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp83t00574r000100730001-5"
+   }
+  ],
+  "distance_from_tripoli_km": 62
+ },
+ {
+  "id": "npic-sebha-training-facility-east",
+  "name": "Sebha training facility east",
+  "kind": "military",
+  "sym": "training",
+  "lat": 27.025,
+  "lon": 14.5,
+  "r": 0.8,
+  "far": true,
+  "summary": "A facility east of Sebha that US imagery linked in 1983 to training of Libyan-backed dissident forces from Chad.",
+  "history": "Jan 1983: Thirty Land Rover-type vehicles are at this facility which may serve as a training camp for Chadian dissidents.",
+  "era": "Documented in declassified CIA imagery reports dated 1983, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Jan 1983 and Jun 1983; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Probable Libyan Support To Chadian Dissidents Sebha Training Facility East, Libya (Jan 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200530002-4"
+   },
+   {
+    "t": "CIA NPIC: Dissident Training Activity In Libya (Jun 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000100460001-1"
+   }
+  ],
+  "distance_from_tripoli_km": 665
+ },
+ {
   "id": "lb-national-archives-of-libya",
   "name": "National Archives of Libya (Libyan Historical Archives)",
   "ar": "دار المحفوظات التاريخية",
@@ -3456,6 +3750,75 @@
     "u": "https://www.openstreetmap.org/node/1108492326"
    }
   ]
+ },
+ {
+  "id": "npic-tarabulus-air-defence-barracks",
+  "name": "Tarabulus Air Defence Barracks",
+  "kind": "military",
+  "sym": "barracks",
+  "lat": 32.86806,
+  "lon": 13.36222,
+  "r": 0.8,
+  "far": true,
+  "summary": "An air-defence barracks in Tripoli where US imagery found a mobile troposcatter communications system in January 1984.",
+  "history": "Jan 1984: This is the first deployment of the twin plate : mobile troposcatter communications system in Libya.",
+  "era": "Documented in declassified CIA imagery reports dated 1984, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Jan 1984; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Twin Plate Deployment Tarabulus Air Defense Barracks, Libya (Sanitized) (Jan 1984)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000301230001-3"
+   }
+  ],
+  "distance_from_tripoli_km": 17
+ },
+ {
+  "id": "npic-ghurdabiyah-airfield",
+  "name": "Ghurdabiyah airfield",
+  "kind": "military",
+  "sym": "airfield",
+  "lat": 31.05944,
+  "lon": 16.59694,
+  "r": 0.8,
+  "far": true,
+  "summary": "A Libyan Air Force airfield in the Sirte basin where US imagery recorded aircraft accidents in 1982.",
+  "history": "Apr 1982: The Libyan air force has recently lost a probable Mirage iii/v and a possible Fitter in two separate crashes.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Apr 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Recent Aircraft Accidents In Libya Sebha Airfield And Ghurdabiyah Airfield (Sanitized) (Apr 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp82t00709r000101040001-1"
+   }
+  ],
+  "distance_from_tripoli_km": 381
+ },
+ {
+  "id": "npic-sebha-staging-area-for-tanks-sent-to-cha",
+  "name": "Sebha staging area for tanks sent to Chad",
+  "kind": "military",
+  "sym": "barracks",
+  "lat": 27.01389,
+  "lon": 14.45556,
+  "r": 0.8,
+  "far": true,
+  "summary": "Where medium tanks were seen in 1983 before being sent to northern Chad.",
+  "history": "Aug 1983: Medium tanks have recently been deployed from Libya to areas of northern Chad currently controlled by Libyan-supported dissident forces.",
+  "era": "Documented in declassified CIA imagery reports dated 1983, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Aug 1983; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Deployment Of Tanks From Libya To Chad (Sanitized) (Aug 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200120001-7"
+   }
+  ],
+  "distance_from_tripoli_km": 665
  },
  {
   "id": "lm-ministry-of-foreign-affairs",
@@ -3543,6 +3906,29 @@
   ]
  },
  {
+  "id": "npic-tajura-sa-3-site",
+  "name": "Tajura SA-3 site",
+  "kind": "military",
+  "sym": "sam",
+  "lat": 32.88889,
+  "lon": 13.35,
+  "r": 0.8,
+  "far": true,
+  "summary": "A surface-to-air missile site at Tajura, east of Tripoli, with new SAM equipment seen in January 1982.",
+  "history": "Jan 1982: New surface-to-air missile (sam) equipment has been seen in four areas in Libya.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Jan 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Recent Sam Deployment Tarabulus Sa-3 Site Tajura, Libya (Jan 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100210001-8"
+   }
+  ],
+  "distance_from_tripoli_km": 16
+ },
+ {
   "id": "lm-that-el-emad-towers",
   "name": "That El Emad Towers",
   "aliases": [
@@ -3565,6 +3951,29 @@
     "u": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
    }
   ]
+ },
+ {
+  "id": "npic-abu-kammash-drone-support-facility",
+  "name": "Abu Kammash drone support facility",
+  "kind": "military",
+  "sym": "airfield",
+  "lat": 33.07444,
+  "lon": 11.73778,
+  "r": 0.8,
+  "far": true,
+  "summary": "A probable drone support facility on the western coast, the first identified in Libya, in December 1983.",
+  "history": "Dec 1983: The first identification of a probable drone support facility in Libya.",
+  "era": "Documented in declassified CIA imagery reports dated 1983, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Dec 1983; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Probable Drone Support Facility Abu Kammash Probable Drone Support Facility, Libya(Sanitiz (Dec 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100150005-2"
+   }
+  ],
+  "distance_from_tripoli_km": 136
  },
  {
   "id": "wp-al-karamia-site-h",
@@ -3603,6 +4012,98 @@
   ],
   "distance_from_tripoli_km": 19,
   "documented": "Used for storage before 2004 (IAEA); exact dates not given"
+ },
+ {
+  "id": "npic-brach-airfield-2",
+  "name": "Brach airfield 2",
+  "kind": "military",
+  "sym": "airfield",
+  "lat": 27.66667,
+  "lon": 14.26667,
+  "r": 0.8,
+  "far": true,
+  "summary": "A renovated airfield in the Brak area with aircraft deployed for the first time in February 1982.",
+  "history": "Feb 1982: Aircraft are deployed at this recently renovated airfield for the first time.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Feb 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Airfield Activity Brach Airfield 2, Libya (Feb 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000200340003-1"
+   }
+  ],
+  "distance_from_tripoli_km": 590
+ },
+ {
+  "id": "npic-misratah-port-facility",
+  "name": "Misratah port facility",
+  "kind": "military",
+  "sym": "port",
+  "lat": 32.37417,
+  "lon": 15.21417,
+  "r": 0.8,
+  "far": true,
+  "summary": "Misrata's port, where six probable Haze anti-submarine helicopters arrived in 1982.",
+  "history": "Dec 1982: Libya has received an additional delivery of six probable Haze a asw helicopters.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Dec 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Arms Transshipment Misratah Port Facility, Libya (Dec 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100080006-1"
+   }
+  ],
+  "distance_from_tripoli_km": 199
+ },
+ {
+  "id": "npic-bani-walid-airfield",
+  "name": "Bani Walid airfield",
+  "kind": "military",
+  "sym": "airfield",
+  "lat": 31.74444,
+  "lon": 13.95833,
+  "r": 0.8,
+  "far": true,
+  "summary": "A major military airfield under construction in 1982, the sixth of its kind the US had identified in Libya.",
+  "history": "May 1982: A sixth major airfield is under construction in Libya.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in May 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Airfield Construction Bani Walid Airfield, Libya (Sanitized) (May 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp82t00709r000101270001-6"
+   }
+  ],
+  "distance_from_tripoli_km": 147
+ },
+ {
+  "id": "npic-ghat-airfield-north",
+  "name": "Ghat airfield (north)",
+  "kind": "military",
+  "sym": "airfield",
+  "lat": 25.1325,
+  "lon": 10.14889,
+  "r": 0.8,
+  "far": true,
+  "summary": "A south-western airfield where Foxbat interceptors were first seen in 1982.",
+  "history": "Jan 1982: Foxbat are identified for the first time at this airfield.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Jan 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Foxbat Deployment Ghat Airfield North, Libya (Jan 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100170006-8"
+   }
+  ],
+  "distance_from_tripoli_km": 912
  },
  {
   "id": "lm-bab-darghouth",
@@ -3806,6 +4307,50 @@
     "u": "https://www.openstreetmap.org/way/460112447"
    }
   ]
+ },
+ {
+  "id": "npic-wmd-training-3170-1502",
+  "name": "Western Military District training area (31.70°N 15.02°E)",
+  "kind": "military",
+  "sym": "training",
+  "lat": 31.70278,
+  "lon": 15.01667,
+  "r": 0.8,
+  "far": true,
+  "summary": "A ground-forces training area where large exercises were seen in August 1983.",
+  "era": "Documented in declassified CIA imagery reports dated 1983, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Sep 1983; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: Ground Forces Training Activity Western Military District, Libya (Sanitized) (Sep 1983)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000201990001-1"
+   }
+  ],
+  "distance_from_tripoli_km": 217
+ },
+ {
+  "id": "npic-al-wigh-airfield",
+  "name": "Al Wigh airfield",
+  "kind": "military",
+  "sym": "airfield",
+  "lat": 24.08389,
+  "lon": 14.53111,
+  "r": 0.8,
+  "far": true,
+  "summary": "A new airfield under construction in the far south in January 1982.",
+  "era": "Documented in declassified CIA imagery reports dated 1982, so it was in Gaddafi-era use then.",
+  "today": "Not described in the documents used.",
+  "uncertain": "Coordinates are those printed in the CIA briefing boards. The reports date only what the imagery showed; when the site was built, how long it stayed in use and who used it after 2011 are not documented here.",
+  "documented": "Seen in US imagery in Jan 1982; later use not documented",
+  "sources": [
+   {
+    "t": "CIA NPIC: New Airfield Under Construction Al Wigh, Libya (Sanitized) (Jan 1982)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100160004-4"
+   }
+  ],
+  "distance_from_tripoli_km": 988
  },
  {
   "id": "lm-tripoli-courts-complex",

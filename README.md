@@ -80,7 +80,7 @@ erDiagram
 | Entity | File | Count |
 |---|---|---|
 | Site (curated event or place) | `public/data/sites.js` | 23 |
-| Area (profile of a neighbourhood, building or camp) | `archive/areas/*` → `public/data/areas.js` | 149 (+58 without coordinates) |
+| Area (profile of a neighbourhood, building or camp) | `archive/areas/*` → `public/data/areas.js` | 170 (+58 without coordinates) |
 | Record (document or event) | `archive/*` → `public/data/records.js` | 4,290 |
 | Connection (evidence-based link between two places) | `archive/research/links*.json` → `public/data/links.js` (`scripts/build-links.mjs`, `scripts/auto-links.py`) | 159 |
 | Unknown entity (person, group or outside place linked in the files) | `archive/crest/extract*.jsonl` → `public/data/unknown.js` (`scripts/build-unknown.py`; free pictures via `scripts/unknown-photos.mjs`) | 285 entities, 268 links, 66 pictures |

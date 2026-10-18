@@ -68,7 +68,7 @@ window.ATLAS_SITES = [
     name: 'Maktab al-Nasser',
     lat: 32.840, lon: 13.179, r: 2, period: 'Dates unverified',
     relevance: "An internal security office that also held prisoners, many of whom were later moved to Abu Salim.",
-    text: "Described as a prison and internal security office in the Abu Salim district before 2011. Sources give no start date, so use during 1969–1989 is unconfirmed. Placed by district only.",
+    text: "Described as a prison and internal security office in the Abu Salim district before 2011. Sources give no start date, so use under Gaddafi is unconfirmed. Placed by district only.",
     sources: [{ t: 'Maktab al-Nasser prison, Wikipedia', u: 'https://en.wikipedia.org/wiki/Maktab_al-Nasser_prison' }]
   },
   {
@@ -76,7 +76,7 @@ window.ATLAS_SITES = [
     name: 'Hadba al-Khadra prison', ar: 'سجن الهضبة الخضراء',
     lat: 32.8444, lon: 13.191, r: 1.8, period: 'Dates unverified',
     relevance: "Best known after 2011, when senior officials of the former government were held here.",
-    text: "A Ministry of Defence facility in the Hadba al-Khadra area. No source found shows it in use during 1969–1989. Reported locations differ by a kilometre or more.",
+    text: "A Ministry of Defence facility in the Hadba al-Khadra area. No source found shows it in use under Gaddafi. Reported locations differ by a kilometre or more.",
     sources: [{ t: 'Reuters (2017)', u: 'https://reuters.screenocean.com/record/877072' }]
   },
   {
@@ -84,7 +84,7 @@ window.ATLAS_SITES = [
     name: 'Ain Zara prison', ar: 'سجن عين زارة',
     lat: 32.79, lon: 13.27, r: 3, period: 'Dates unverified',
     relevance: "A long-running state prison on the southeast edge of Tripoli.",
-    text: "A Ministry of Justice prison in the Ain Zara suburb. Human Rights Watch lists it among possible detention sites in 2011. No source found confirms political detention here between 1969 and 1989. Placed by suburb only.",
+    text: "A Ministry of Justice prison in the Ain Zara suburb. Human Rights Watch lists it among possible detention sites in 2011. No source found confirms political detention here under Gaddafi. Placed by suburb only.",
     sources: [{ t: 'USIP, Prisons and Detention in Libya', u: 'https://www.usip.org/sites/default/files/PW119-Prisons-and-Detention-in-Libya.pdf' }, SRC.hrw2011]
   },
 
@@ -249,7 +249,7 @@ window.ATLAS_SITES = [
     id: 'mk-abusalim', layer: 'massacre', level: 'documented', y0: 1996, y1: 1996,
     name: 'Abu Salim prison massacre', ar: 'مجزرة سجن أبو سليم',
     lat: 32.8333, lon: 13.1739, r: 1, period: '29 June 1996',
-    relevance: "The worst single killing of Gaddafi's rule. It happened after the 1969–1989 period but in the prison built during it.",
+    relevance: "The worst single killing of Gaddafi's rule. It happened in 1996, inside the prison built under his rule.",
     text: "After prisoners protested about conditions, security forces killed an estimated 1,200 or more inmates in the prison courtyards. The government denied it for years. Families' protests over the killings helped spark the February 2011 uprising.",
     sources: [SRC.hrw1996, SRC.wikiAbuSalim]
   },
@@ -258,7 +258,7 @@ window.ATLAS_SITES = [
   {
     id: 'bab', layer: 'power', level: 'documented', y0: 1969, y1: 2011,
     name: 'Bab al-Aziziya compound', ar: 'باب العزيزية',
-    lat: 32.848, lon: 13.151, r: 0.8, period: 'Throughout 1969–1989',
+    lat: 32.848, lon: 13.151, r: 0.8, period: 'Throughout 1969–2011',
     relevance: "Gaddafi's home and command headquarters, the centre of power in Libya. Both the 1984 attack and the 1986 US bombing were aimed here.",
     text: "A fortified barracks in southern Tripoli that Gaddafi expanded in the 1980s. On 8 May 1984 an armed opposition group attacked it; mass arrests across Libya followed, and many of those detained ended up in Abu Salim. On 15 April 1986, US aircraft bombed the compound. It was demolished after 2011.",
     sources: [{ t: 'Bab al-Azizia, Wikipedia', u: 'https://en.wikipedia.org/wiki/Bab_al-Azizia' }, SRC.ai1992]
@@ -357,7 +357,7 @@ window.ATLAS_UNPLACED = [
   { name: 'Rixos Al Nasr hotel, Tripoli', when: 'August 2011', text: 'Foreign journalists were kept at this hotel during the battle of Tripoli. Heavy fighting took place around it and it stayed in loyalist hands until about 24 August, when the journalists left in Red Cross vans (Wikipedia, Battle of Tripoli (2011)). I did not confirm its exact location.', src: SRC.wp2011 },
   { name: 'Libyan government claims of NATO strikes in Tripoli', when: 'May–June 2011', text: 'Libyan state television said NATO strikes killed 19 civilians in Tripoli on 24 May 2011 and seven on 19 June, and fifteen at Sorman near Tripoli on 20 June. These are government claims reported by Wikipedia and were not independently confirmed here; no sites are given.', src: SRC.wpNato },
   { name: 'Revolutionary Guard Corps', when: '1980s', text: 'Grew out of the Revolutionary Committees. It watched soldiers inside barracks, reportedly controlled ammunition at the main bases, and fought regular army units in Tripoli’s streets during a May 1985 coup attempt. No source gives its bases.', src: SRC.rgc },
-  { name: 'Police stations and checkpoints', when: '1969–1989', text: 'No published source maps Tripoli’s police posts or checkpoints for this period.' },
+  { name: 'Police stations and checkpoints', when: '1969–2011', text: 'No published source maps Tripoli’s police posts or checkpoints for this period.' },
   { name: 'Military intelligence prison, Tripoli', when: '1984', text: 'A former detainee describes being held there after the May 1984 arrests. Its location is not given.', src: SRC.shareef },
   { name: 'Black Horse prison', when: 'Until 1984', text: 'Italian-era prison replaced by Abu Salim. No source places it on a map.', src: SRC.hrsly },
   { name: '7 April, the “Day of Judgement”', when: '1976–1980s', text: 'English Wikipedia says Gaddafi called the anniversary of the 7 April 1976 student protests the “Day of Judgement”. On 7 April 1977 students Omar Dabboub and Mohamed Ben Saoud were hanged in public in Benghazi after a military tribunal in Tripoli; the broadcast was shown on television. Some sources say executions were repeated every 7 April until the late 1980s; that is disputed and no Tripoli venue is named. The University of Tripoli, where students were attacked in 1976 and a student was hanged in April 1984, is on the map.', src: { t: 'Human rights in Libya under Muammar Gaddafi, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi' } },

@@ -54,6 +54,16 @@ MERGE = {  # spelling variants seen in the files -> one entity
     'libya-chad border': ['libya-chad border', 'libyan-chadian border'], 'libya-egypt border': ['libya-egypt border', 'egypt-libya border'], 'al-shati hotel': ['al-shati hotel', "ash-shati' hotel"],
     'carlos the jackal': ['carlos', 'carlos the jackal', 'ilich ramirez sanchez'], 'billy carter': ['billy carter'],
 }
+
+# More spellings merged after the Sonnet connection notes flagged them as the same thing (checked against the files by hand).
+for _k, _vs in {
+    'fort collins, colorado': ['fort collins colo'], 'misratah port': ['misratah port transshipment facility'], 'tobruk': ['tubruq port tobruk'], 'sirte': ['surt sirte'],
+    'aozou airfield': ['aozou airfield chad'], "people's hall tripoli": ["people's hall"], 'sixth fleet maneuvers 17-23 august 1981': ['us 6th fleet maneuvers'],
+    'seawind exercise': ['and egyptian seawind exercises'], 'libya-chad conflict': ['chad conflict'], 'national front for the salvation of libya': ['front for salvation of libya'],
+    'tripoli flight information region': ['libyan flight information region'], 'public tile and construction materials company tripoli': ['public tile and construction materials company plant in tripoli'],
+    "libyan people's bureau london": ['libyan embassy london'],
+}.items():
+    MERGE.setdefault(_k, [_k]); MERGE[_k] += [v for v in _vs if v not in MERGE[_k]]
 CANON = {v: k for k, vs in MERGE.items() for v in vs}
 GENERIC = {'tripoli', 'libya', 'tripoli libya', 'libyan government', 'libyan regime', 'libyan', 'libyans', 'the libyan government', 'tarabulus', 'tarabulus tripoli', 'tripolitania',
            'united states', 'us', 'u s', 'usa', 'the united states', 'u s government', 'us government', 'washington', 'america', 'libyan people', 'the regime', 'regime'}

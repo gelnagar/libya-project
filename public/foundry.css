@@ -525,3 +525,4 @@ body.unknown-on #timeline, body.unknown-on .chat, body.unknown-on .hud, body.unk
 .cn-quote { margin: 6px 0; padding: 4px 0 4px 12px; border-left: 3px solid var(--fy-accent); }
 .cn-quote p { margin: 0 0 2px; font-style: italic; } .cn-quote small { color: var(--fy-muted); font-family: var(--f-ui); }
 .cn-aside { display: block; margin: 8px 0 0; color: var(--fy-muted); font: .78em var(--f-ui); }
+.cn-slot .brief { margin-bottom: 10px; } .cn-slot .cn-strength { margin-bottom: 12px; }

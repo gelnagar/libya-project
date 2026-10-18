@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/usgs-declass.py
-        env: { USGS_USERNAME: '${{ secrets.USGS_USERNAME }}', USGS_TOKEN: '${{ secrets.USGS_TOKEN }}' }
+        env: { USGS_USERNAME: '${{ secrets.USGS_USERNAME || vars.USGS_USERNAME }}', USGS_TOKEN: '${{ secrets.USGS_TOKEN || vars.USGS_TOKEN }}' }
       - if: always()
         run: |
           git config user.name "github-actions[bot]"

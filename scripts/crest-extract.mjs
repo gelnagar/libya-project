@@ -64,7 +64,8 @@ async function sampleDocs(n) {
     const it = pick[i]; const ua = { 'user-agent': 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)' };
     const meta = await (await fetch(`https://archive.org/metadata/${it.identifier}`, { headers: ua })).json().catch(() => null);
     const f = (meta?.files || []).find((x) => /_djvu\.txt$/.test(x.name)); if (!f) continue;
-    const t = await (await fetch(`https://archive.org/download/${it.identifier}/${encodeURIComponent(f.name)}`, { headers: ua })).text();
+    const rr = await fetch(`https://archive.org/download/${it.identifier}/${encodeURIComponent(f.name)}`, { headers: ua }); if (!rr.ok) continue;
+    const t = await rr.text();
     out.push({ id: it.identifier, src: 'crest', title: String(it.title || '').replace(/^CIA Reading Room [^:]+:\s*/, ''), date: String(it.date || '').slice(0, 10), text: t.replace(/\s+/g, ' ').trim().slice(0, 60000) });
     await sleep(3000);
   }
@@ -75,7 +76,8 @@ const docs = fs.existsSync(`${DIR}/docs.jsonl.gz`)
   : (SAMPLE ? (await sampleDocs(SAMPLE)).filter((d) => d.text.length >= 80) : (() => { throw new Error('docs.jsonl.gz not there yet'); })());
 let oldJ = new Set(); try { oldJ = new Set(JSON.parse(fs.readFileSync('archive/gov/catalog.json', 'utf8')).map((g) => g.id.replace(/^jprs-/, ''))); } catch {}
 const done = new Set(fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l).id) : []);
-let todo = docs.filter((d) => !done.has(d.id) && !(d.src === 'jprs' && oldJ.has(d.id)));
+const junk = (t) => /Internal Server Error|<html|<\/head>|502 Bad Gateway|503 Service/i.test(t.slice(0, 600));
+let todo = docs.filter((d) => !junk(d.text) && !done.has(d.id) && !(d.src === 'jprs' && oldJ.has(d.id)));
 // Sample: rank-diverse pick (NIS first, then spread across the list)
 if (SAMPLE) { const step = Math.max(1, Math.floor(todo.length / SAMPLE)); todo = todo.filter((d, i) => d.src === 'nis' || i % step === 0).slice(0, SAMPLE); }
 console.log('docs', docs.length, 'done', done.size, 'skipped old JPRS', docs.filter((d) => d.src === 'jprs' && oldJ.has(d.id)).length, 'todo', todo.length);

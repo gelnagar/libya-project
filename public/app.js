@@ -2051,6 +2051,26 @@
           stGround(store.get('stSat', true));
         });
         ['mousedown', 'touchstart', 'wheel'].forEach(function (ev) { stMap.on(ev, function () { stSpin(false); }); });
+        // If the OpenFreeMap style can't be reached, fall back to satellite + the atlas's own saved buildings, extruded.
+        var fellBack = false;
+        var fallback = function () {
+          if (fellBack || stMap.loaded()) return; fellBack = true;
+          var c = stMap.getCenter(), keys = [];
+          for (var di = -1; di <= 1; di++) for (var dj = -1; dj <= 1; dj++) keys.push(Math.floor(c.lat / TILE + di) + '_' + Math.floor(c.lng / TILE + dj));
+          Promise.all(keys.map(function (k) { return savedTile(k).catch(function () { return null; }); })).then(function (ts) {
+            var feats = [];
+            ts.forEach(function (t) { (t && t.elements || []).forEach(function (el) { var lv = parseFloat((el.tags || {})['building:levels']) || 0, ht = parseFloat((el.tags || {}).height) || 0;
+              feats.push({ type: 'Feature', properties: { h: ht || (lv ? lv * 3.2 : 7) }, geometry: { type: 'Polygon', coordinates: [el.geometry.map(function (p) { return [p.lon, p.lat]; })] } }); }); });
+            stMap.setStyle({ version: 8, sources: {
+              sat: { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize: 256, maxzoom: 18, attribution: 'Imagery © Esri' },
+              bld: { type: 'geojson', data: { type: 'FeatureCollection', features: feats }, attribution: '© OpenStreetMap contributors' } },
+              layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#20262e' } }, { id: 'sat', type: 'raster', source: 'sat' },
+                { id: 'bld', type: 'fill-extrusion', source: 'bld', paint: { 'fill-extrusion-color': '#d9d3c7', 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.88 } }] });
+            stMap.once('styledata', function () { stPins(c.lat, c.lng); });
+          });
+        };
+        stMap.on('error', function (e) { if (!stMap.loaded() && /style|fetch|Failed/i.test(String(e && e.error && e.error.message || e))) fallback(); });
+        setTimeout(fallback, 8000);
       } else { stMap.resize(); stMap.jumpTo({ center: [lon, lat], zoom: 17, pitch: 65 }); }
       var place = function () { stPins(lat, lon); var here = h('div', { class: 'st-pin here' }, [h('i', { text: '●' })]); stMarkers.push(new maplibregl.Marker({ element: here }).setLngLat([lon, lat]).addTo(stMap)); };
       if (stMap.loaded()) place(); else stMap.once('load', place);

@@ -1205,12 +1205,13 @@
 
   /* ---------- search terminal ---------- */
   var TERM_KINDS = [['all', 'All'], ['place', 'Places'], ['area', 'Areas'], ['doc', 'Documents'], ['event', 'Events']];
-  var TERM_SRCS = [['all', 'All sources'], ['us', 'US diplomatic papers'], ['radio', 'Libyan radio & press (translated)'], ['decl', 'Presidential & declassified files'], ['rights', 'Human rights & UN'], ['law', 'Libyan laws'], ['ref', 'Reference & encyclopedias']];
+  var TERM_SRCS = [['all', 'All sources'], ['us', 'US diplomatic papers'], ['radio', 'Libyan radio & press (translated)'], ['cia', 'CIA files'], ['decl', 'Presidential & declassified files'], ['rights', 'Human rights & UN'], ['law', 'Libyan laws'], ['ref', 'Reference & encyclopedias']];
   var termSrc = 'all';
   function srcGroup(r) {
     var s = r.s || '';
     if (/^FRUS/.test(s)) return 'us';
     if (/^(FBIS|JPRS)/.test(s)) return 'radio';
+    if (/^CIA/.test(s)) return 'cia';
     if (/Reagan|Bush|Thatcher|Wilson Center|National Security Archive|Nixon|Carter/i.test(s)) return 'decl';
     if (r.y === 'law' || /security-legislation|legislation/i.test(s + ' ' + (r.c || ''))) return 'law';
     if (/Wikipedia|Library of Congress|country study/i.test(s)) return 'ref';

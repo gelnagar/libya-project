@@ -155,6 +155,35 @@ try {
     fulltext.set(id, t + '\n' + (g.url || '') + '\n\n' + body.slice(0, 400000));
   }
 } catch (e) { console.log('gov skipped', e.message); }
+// 6. CIA reading room (CREST), NIS and new JPRS volumes via the Internet Archive mirror, with Haiku extraction.
+//    Only documents Haiku rated relevance >= 1 are added. Candidate new places and links go to archive/crest/ for review.
+try {
+  const { gunzipSync } = await import('node:zlib');
+  const docs = new Map(gunzipSync(await readFile(ROOT + 'archive/crest/docs.jsonl.gz')).toString().split('\n').filter(Boolean).map((l) => JSON.parse(l)).filter((d) => d.text).map((d) => [d.id, d]));
+  const ex = (await read('archive/crest/extract.jsonl')).split('\n').filter(Boolean).map((l) => JSON.parse(l));
+  const ids = new Set([...SITES.map((s) => s.id), ...AREAS.map((a) => a.id)]);
+  const newPlaces = [], links = []; let n = 0;
+  for (const x of ex) {
+    const d = docs.get(x.id); if (!d || !(x.relevance >= 1)) continue;
+    const id = (d.src === 'jprs' ? 'jprs2-' : 'crest-') + d.id.replace(/^cia-readingroom-document-|^ufiche-test-document_/, '');
+    const src = d.src === 'jprs' ? 'JPRS (Joint Publications Research Service)' : d.src === 'nis' ? 'CIA National Intelligence Survey' : 'CIA reading room (CREST)';
+    const known = [...new Set([...(x.places || []), ...(x.events || [])].map((p) => p.site_id).filter((s) => s && ids.has(s)))];
+    const date = /^\d{4}/.test(x.date || '') ? x.date : (d.date || '');
+    const facts = [...(x.facts || []), ...(x.events || []).map((e) => `${e.date ? e.date + ': ' : ''}${e.what}${e.killed ? ` (${e.killed} killed)` : ''}`)];
+    out.push({ i: id, y: d.src === 'jprs' ? 'report' : (x.kind === 'imagery analysis' ? 'imagery analysis' : 'intelligence document'), t: (d.src === 'jprs' ? 'JPRS ' : '') + d.title.replace(/\s+/g, ' ').trim(), d: date, s: src,
+      c: (d.src === 'jprs' ? 'JPRS translation volume' : 'CIA Electronic Reading Room') + ' (Internet Archive mirror)', u: d.cia || d.ia, a: d.ia,
+      p: [...new Set([...known, ...tag([d.title, x.summary, d.text.slice(0, 20000)].join(' '))])], m: x.summary, r: 'public-domain', rt: 'Public domain',
+      rn: 'U.S. government work, public domain. OCR text: errors are likely. Summary written by AI (Claude Haiku) from the text.', f: true,
+      k: (x.people || []).map((p) => p.name).slice(0, 8) });
+    fulltext.set(id, d.title + '\n' + (d.cia || d.ia) + '\n' + d.ia + '\n\n' + (x.summary ? 'Summary (AI): ' + x.summary + '\n' + facts.map((f) => '• ' + f).join('\n') + '\n\n' : '') + d.text.slice(0, 400000));
+    for (const p of x.places || []) if (!(p.site_id && ids.has(p.site_id)) && (p.in_tripoli || p.lat)) newPlaces.push({ name: p.name, lat: p.lat, lon: p.lon, detail: p.detail, doc: id, date, rel: x.relevance });
+    for (const l of x.links || []) links.push({ ...l, doc: id, date, rel: x.relevance });
+    n++;
+  }
+  await writeFile(ROOT + 'archive/crest/new-places.json', JSON.stringify(newPlaces, null, 1));
+  await writeFile(ROOT + 'archive/crest/link-candidates.json', JSON.stringify(links, null, 1));
+  console.log('crest records', n, 'new place mentions', newPlaces.length, 'link candidates', links.length);
+} catch (e) { console.log('crest skipped', e.message); }
 out.sort((a, b) => (a.d || '9999').localeCompare(b.d || '9999') || a.i.localeCompare(b.i));
 // Drop undefined keys to keep the file small
 const clean = out.map((r) => Object.fromEntries(Object.entries(r).filter(([, v]) => v !== undefined && v !== '' && !(Array.isArray(v) && !v.length))));

@@ -1,0 +1,7204 @@
+{
+ "datasets": [
+  {
+   "alias": "corona2",
+   "name": "Declass 1 "
+  },
+  {
+   "alias": "declassii",
+   "name": "Declass 2 "
+  },
+  {
+   "alias": "declassiii",
+   "name": "Declass 3 "
+  },
+  {
+   "alias": "corona2",
+   "name": "Declass 1 "
+  }
+ ],
+ "scenes": [
+  {
+   "dataset": "corona2",
+   "entityId": "DS09034A040MC049",
+   "displayId": "DS09034A040MC049",
+   "date": "1962-05-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.222,
+      31.269
+     ],
+     [
+      16.938,
+      32.104
+     ],
+     [
+      15.796,
+      37.104
+     ],
+     [
+      10.808,
+      36.219
+     ],
+     [
+      12.222,
+      31.269
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9034A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9034A/040M/C/DS09034A040MC049.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09034A040MC050",
+   "displayId": "DS09034A040MC050",
+   "date": "1962-05-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.473,
+      29.628
+     ],
+     [
+      17.09,
+      30.453
+     ],
+     [
+      15.98,
+      35.432
+     ],
+     [
+      11.114,
+      34.561
+     ],
+     [
+      12.473,
+      29.628
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9034A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9034A/040M/C/DS09034A040MC050.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09034A040MC051",
+   "displayId": "DS09034A040MC051",
+   "date": "1962-05-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.695,
+      27.979
+     ],
+     [
+      17.225,
+      28.796
+     ],
+     [
+      16.139,
+      33.761
+     ],
+     [
+      11.381,
+      32.901
+     ],
+     [
+      12.695,
+      27.979
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9034A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9034A/040M/C/DS09034A040MC051.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09058A010MC045",
+   "displayId": "DS09058A010MC045",
+   "date": "1963-08-29",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      9.312,
+      31.434
+     ],
+     [
+      14.062,
+      32.317
+     ],
+     [
+      12.846,
+      37.344
+     ],
+     [
+      7.819,
+      36.407
+     ],
+     [
+      9.312,
+      31.434
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9058A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9058A/010M/C/DS09058A010MC045.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09058A010MC046",
+   "displayId": "DS09058A010MC046",
+   "date": "1963-08-29",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      9.537,
+      30.003
+     ],
+     [
+      14.21,
+      30.879
+     ],
+     [
+      13.019,
+      35.9
+     ],
+     [
+      8.089,
+      34.973
+     ],
+     [
+      9.537,
+      30.003
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9058A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9058A/010M/C/DS09058A010MC046.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09058A010MC047",
+   "displayId": "DS09058A010MC047",
+   "date": "1963-08-29",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      9.758,
+      28.572
+     ],
+     [
+      14.359,
+      29.441
+     ],
+     [
+      13.194,
+      34.455
+     ],
+     [
+      8.354,
+      33.54
+     ],
+     [
+      9.758,
+      28.572
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9058A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9058A/010M/C/DS09058A010MC047.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09058A010MC048",
+   "displayId": "DS09058A010MC048",
+   "date": "1963-08-29",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      9.957,
+      27.138
+     ],
+     [
+      14.491,
+      28.001
+     ],
+     [
+      13.348,
+      33.009
+     ],
+     [
+      8.592,
+      32.102
+     ],
+     [
+      9.957,
+      27.138
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9058A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9058A/010M/C/DS09058A010MC048.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09059A010MC022",
+   "displayId": "DS09059A010MC022",
+   "date": "1963-10-29",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      8.86,
+      31.114
+     ],
+     [
+      14.337,
+      31.35
+     ],
+     [
+      14.168,
+      37.17
+     ],
+     [
+      8.304,
+      36.917
+     ],
+     [
+      8.86,
+      31.114
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9059A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9059A/010M/C/DS09059A010MC022.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09059A010MC023",
+   "displayId": "DS09059A010MC023",
+   "date": "1963-10-29",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      8.796,
+      29.28
+     ],
+     [
+      14.176,
+      29.522
+     ],
+     [
+      13.991,
+      35.348
+     ],
+     [
+      8.257,
+      35.09
+     ],
+     [
+      8.796,
+      29.28
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9059A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9059A/010M/C/DS09059A010MC023.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09059A010MC024",
+   "displayId": "DS09059A010MC024",
+   "date": "1963-10-29",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      8.728,
+      27.446
+     ],
+     [
+      14.019,
+      27.693
+     ],
+     [
+      13.819,
+      33.524
+     ],
+     [
+      8.204,
+      33.262
+     ],
+     [
+      8.728,
+      27.446
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9059A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9059A/010M/C/DS09059A010MC024.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09059A073MC022",
+   "displayId": "DS09059A073MC022",
+   "date": "1963-10-31",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.121,
+      31.164
+     ],
+     [
+      18.651,
+      31.402
+     ],
+     [
+      18.484,
+      37.276
+     ],
+     [
+      12.557,
+      37.021
+     ],
+     [
+      13.121,
+      31.164
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9059A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9059A/073M/C/DS09059A073MC022.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09059A073MC023",
+   "displayId": "DS09059A073MC023",
+   "date": "1963-10-31",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.06,
+      29.335
+     ],
+     [
+      18.488,
+      29.578
+     ],
+     [
+      18.303,
+      35.453
+     ],
+     [
+      12.513,
+      35.194
+     ],
+     [
+      13.06,
+      29.335
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9059A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9059A/073M/C/DS09059A073MC023.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09059A073MC024",
+   "displayId": "DS09059A073MC024",
+   "date": "1963-10-31",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.994,
+      27.504
+     ],
+     [
+      18.328,
+      27.752
+     ],
+     [
+      18.128,
+      33.628
+     ],
+     [
+      12.463,
+      33.364
+     ],
+     [
+      12.994,
+      27.504
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9059A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9059A/073M/C/DS09059A073MC024.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A010MC051",
+   "displayId": "DS09065A010MC051",
+   "date": "1964-06-14",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.776,
+      31.118
+     ],
+     [
+      16.431,
+      36.402
+     ],
+     [
+      11.037,
+      38.836
+     ],
+     [
+      7.624,
+      33.401
+     ],
+     [
+      12.776,
+      31.118
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/010M/C/DS09065A010MC051.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A010MC052",
+   "displayId": "DS09065A010MC052",
+   "date": "1964-06-14",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.558,
+      29.561
+     ],
+     [
+      15.069,
+      34.876
+     ],
+     [
+      9.753,
+      37.255
+     ],
+     [
+      6.473,
+      31.799
+     ],
+     [
+      11.558,
+      29.561
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/010M/C/DS09065A010MC052.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A010MC053",
+   "displayId": "DS09065A010MC053",
+   "date": "1964-06-14",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      10.403,
+      27.987
+     ],
+     [
+      13.779,
+      33.334
+     ],
+     [
+      8.536,
+      35.659
+     ],
+     [
+      5.38,
+      30.183
+     ],
+     [
+      10.403,
+      27.987
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/010M/C/DS09065A010MC053.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A064MC008",
+   "displayId": "DS09065A064MC008",
+   "date": "1964-06-17",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      14.202,
+      26.447
+     ],
+     [
+      19.184,
+      28.606
+     ],
+     [
+      16.135,
+      34.118
+     ],
+     [
+      10.942,
+      31.839
+     ],
+     [
+      14.202,
+      26.447
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/064M/C/DS09065A064MC008.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A064MC009",
+   "displayId": "DS09065A064MC009",
+   "date": "1964-06-17",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.063,
+      28.024
+     ],
+     [
+      18.103,
+      30.226
+     ],
+     [
+      14.936,
+      35.719
+     ],
+     [
+      9.674,
+      33.386
+     ],
+     [
+      13.063,
+      28.024
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/064M/C/DS09065A064MC009.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A064MC010",
+   "displayId": "DS09065A064MC010",
+   "date": "1964-06-17",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.91,
+      29.598
+     ],
+     [
+      17.011,
+      31.844
+     ],
+     [
+      13.718,
+      37.315
+     ],
+     [
+      8.384,
+      34.927
+     ],
+     [
+      11.91,
+      29.598
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/064M/C/DS09065A064MC010.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A064MC011",
+   "displayId": "DS09065A064MC011",
+   "date": "1964-06-17",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      10.697,
+      31.153
+     ],
+     [
+      15.861,
+      33.449
+     ],
+     [
+      12.424,
+      38.895
+     ],
+     [
+      7.018,
+      36.445
+     ],
+     [
+      10.697,
+      31.153
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/064M/C/DS09065A064MC011.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A073MC051",
+   "displayId": "DS09065A073MC051",
+   "date": "1964-06-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      17.485,
+      29.177
+     ],
+     [
+      20.963,
+      34.502
+     ],
+     [
+      15.664,
+      36.869
+     ],
+     [
+      12.414,
+      31.406
+     ],
+     [
+      17.485,
+      29.177
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/073M/C/DS09065A073MC051.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A073MC052",
+   "displayId": "DS09065A073MC052",
+   "date": "1964-06-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      16.345,
+      27.6
+     ],
+     [
+      19.69,
+      32.955
+     ],
+     [
+      14.463,
+      35.268
+     ],
+     [
+      11.336,
+      29.786
+     ],
+     [
+      16.345,
+      27.6
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/073M/C/DS09065A073MC052.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A073MC053",
+   "displayId": "DS09065A073MC053",
+   "date": "1964-06-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      15.205,
+      26.023
+     ],
+     [
+      18.423,
+      31.408
+     ],
+     [
+      13.263,
+      33.667
+     ],
+     [
+      10.251,
+      28.165
+     ],
+     [
+      15.205,
+      26.023
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/073M/C/DS09065A073MC053.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A089MC046",
+   "displayId": "DS09065A089MC046",
+   "date": "1964-06-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      15.091,
+      31.44
+     ],
+     [
+      18.788,
+      36.714
+     ],
+     [
+      13.38,
+      39.167
+     ],
+     [
+      9.927,
+      33.739
+     ],
+     [
+      15.091,
+      31.44
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/089M/C/DS09065A089MC046.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A089MC047",
+   "displayId": "DS09065A089MC047",
+   "date": "1964-06-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.902,
+      29.877
+     ],
+     [
+      17.449,
+      35.186
+     ],
+     [
+      12.118,
+      37.581
+     ],
+     [
+      8.804,
+      32.13
+     ],
+     [
+      13.902,
+      29.877
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/089M/C/DS09065A089MC047.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A089MC048",
+   "displayId": "DS09065A089MC048",
+   "date": "1964-06-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.713,
+      28.315
+     ],
+     [
+      16.116,
+      33.657
+     ],
+     [
+      10.856,
+      35.993
+     ],
+     [
+      7.676,
+      30.519
+     ],
+     [
+      12.713,
+      28.315
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/089M/C/DS09065A089MC048.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09065A089MC049",
+   "displayId": "DS09065A089MC049",
+   "date": "1964-06-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.593,
+      26.732
+     ],
+     [
+      14.868,
+      32.104
+     ],
+     [
+      9.678,
+      34.388
+     ],
+     [
+      6.614,
+      28.894
+     ],
+     [
+      11.593,
+      26.732
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9065A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9065A/089M/C/DS09065A089MC049.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A010MC055",
+   "displayId": "DS09066A010MC055",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.788,
+      31.158
+     ],
+     [
+      16.432,
+      36.41
+     ],
+     [
+      11.07,
+      38.837
+     ],
+     [
+      7.665,
+      33.434
+     ],
+     [
+      12.788,
+      31.158
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/010M/C/DS09066A010MC055.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A010MC056",
+   "displayId": "DS09066A010MC056",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.604,
+      29.59
+     ],
+     [
+      15.103,
+      34.88
+     ],
+     [
+      9.813,
+      37.25
+     ],
+     [
+      6.543,
+      31.821
+     ],
+     [
+      11.604,
+      29.59
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/010M/C/DS09066A010MC056.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A010MC057",
+   "displayId": "DS09066A010MC057",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      10.421,
+      28.023
+     ],
+     [
+      13.78,
+      33.349
+     ],
+     [
+      8.557,
+      35.662
+     ],
+     [
+      5.416,
+      30.207
+     ],
+     [
+      10.421,
+      28.023
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/010M/C/DS09066A010MC057.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A064MC016",
+   "displayId": "DS09066A064MC016",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      14.226,
+      26.62
+     ],
+     [
+      19.127,
+      28.746
+     ],
+     [
+      16.119,
+      34.161
+     ],
+     [
+      11.014,
+      31.917
+     ],
+     [
+      14.226,
+      26.62
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/064M/C/DS09066A064MC016.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A064MC017",
+   "displayId": "DS09066A064MC017",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.097,
+      28.205
+     ],
+     [
+      18.054,
+      30.372
+     ],
+     [
+      14.933,
+      35.766
+     ],
+     [
+      9.761,
+      33.472
+     ],
+     [
+      13.097,
+      28.205
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/064M/C/DS09066A064MC017.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A064MC018",
+   "displayId": "DS09066A064MC018",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.918,
+      29.776
+     ],
+     [
+      16.934,
+      31.988
+     ],
+     [
+      13.685,
+      37.358
+     ],
+     [
+      8.444,
+      35.008
+     ],
+     [
+      11.918,
+      29.776
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/064M/C/DS09066A064MC018.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A064MC019",
+   "displayId": "DS09066A064MC019",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      10.73,
+      31.343
+     ],
+     [
+      15.809,
+      33.602
+     ],
+     [
+      12.422,
+      38.947
+     ],
+     [
+      7.109,
+      36.54
+     ],
+     [
+      10.73,
+      31.343
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/064M/C/DS09066A064MC019.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A073MC051",
+   "displayId": "DS09066A073MC051",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      16.816,
+      28.135
+     ],
+     [
+      20.191,
+      33.466
+     ],
+     [
+      14.955,
+      35.787
+     ],
+     [
+      11.8,
+      30.326
+     ],
+     [
+      16.816,
+      28.135
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/073M/C/DS09066A073MC051.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A073MC052",
+   "displayId": "DS09066A073MC052",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      15.679,
+      26.553
+     ],
+     [
+      18.929,
+      31.916
+     ],
+     [
+      13.759,
+      34.187
+     ],
+     [
+      10.718,
+      28.704
+     ],
+     [
+      15.679,
+      26.553
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/073M/C/DS09066A073MC052.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A089MC050",
+   "displayId": "DS09066A089MC050",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      15.549,
+      31.879
+     ],
+     [
+      19.276,
+      37.12
+     ],
+     [
+      13.871,
+      39.581
+     ],
+     [
+      10.389,
+      34.184
+     ],
+     [
+      15.549,
+      31.879
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/089M/C/DS09066A089MC050.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A089MC051",
+   "displayId": "DS09066A089MC051",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      14.334,
+      30.321
+     ],
+     [
+      17.907,
+      35.602
+     ],
+     [
+      12.574,
+      38.003
+     ],
+     [
+      9.236,
+      32.577
+     ],
+     [
+      14.334,
+      30.321
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/089M/C/DS09066A089MC051.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A089MC052",
+   "displayId": "DS09066A089MC052",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.149,
+      28.754
+     ],
+     [
+      16.578,
+      34.073
+     ],
+     [
+      11.314,
+      36.416
+     ],
+     [
+      8.109,
+      30.964
+     ],
+     [
+      13.149,
+      28.754
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/089M/C/DS09066A089MC052.jpg"
+   ]
+  },
+  {
+   "dataset": "corona2",
+   "entityId": "DS09066A089MC053",
+   "displayId": "DS09066A089MC053",
+   "date": "1964-08-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.01,
+      27.174
+     ],
+     [
+      15.31,
+      32.526
+     ],
+     [
+      10.113,
+      34.817
+     ],
+     [
+      7.027,
+      29.341
+     ],
+     [
+      12.01,
+      27.174
+     ]
+    ]
+   ],
+   "camera": "Cartographic",
+   "resolution": "Vertical Low",
+   "mission": "9066A",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/DIT/9066A/089M/C/DS09066A089MC053.jpg"
+   ]
+  },
+  {
+   "dataset": "declassii",
+   "entityId": "DZB00402500075H027001",
+   "displayId": "DZB00402500075H027001",
+   "date": "1966-02-20",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.95,
+      32.65
+     ],
+     [
+      13.2,
+      32.615
+     ],
+     [
+      13.3,
+      33.132
+     ],
+     [
+      13.05,
+      33.165
+     ],
+     [
+      12.95,
+      32.65
+     ]
+    ]
+   ],
+   "camera": "KH-7 High Resolution Surveillance",
+   "resolution": "2 to 4 feet",
+   "mission": "4025",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declassii/004025/00075/DZB00402500075H027001-01338.jpg"
+   ]
+  },
+  {
+   "dataset": "declassii",
+   "entityId": "DZB00403600107H015001",
+   "displayId": "DZB00403600107H015001",
+   "date": "1967-02-09",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.2,
+      32.782
+     ],
+     [
+      13.382,
+      32.732
+     ],
+     [
+      13.5,
+      33.015
+     ],
+     [
+      13.3,
+      33.065
+     ],
+     [
+      13.2,
+      32.782
+     ]
+    ]
+   ],
+   "camera": "KH-7 High Resolution Surveillance",
+   "resolution": "2 to 4 feet",
+   "mission": "4036",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declassii/004036/00107/DZB00403600107H015001-00595.jpg"
+   ]
+  },
+  {
+   "dataset": "declassii",
+   "entityId": "DZB00403600107H016001",
+   "displayId": "DZB00403600107H016001",
+   "date": "1967-02-09",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.165,
+      32.815
+     ],
+     [
+      13.365,
+      32.765
+     ],
+     [
+      13.465,
+      33.05
+     ],
+     [
+      13.282,
+      33.1
+     ],
+     [
+      13.165,
+      32.815
+     ]
+    ]
+   ],
+   "camera": "KH-7 High Resolution Surveillance",
+   "resolution": "2 to 4 feet",
+   "mission": "4036",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declassii/004036/00107/DZB00403600107H016001-00595.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-100014A001",
+   "displayId": "D3C1203-100014A001",
+   "date": "1972-07-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.915,
+      32.96
+     ],
+     [
+      15.408,
+      32.69
+     ],
+     [
+      15.433,
+      32.858
+     ],
+     [
+      11.809,
+      33.328
+     ],
+     [
+      11.915,
+      32.96
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-1/00014/A/D3C1203-100014A001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-100014A002",
+   "displayId": "D3C1203-100014A002",
+   "date": "1972-07-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.885,
+      32.8
+     ],
+     [
+      15.37,
+      32.53
+     ],
+     [
+      15.396,
+      32.698
+     ],
+     [
+      11.779,
+      33.168
+     ],
+     [
+      11.885,
+      32.8
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-1/00014/A/D3C1203-100014A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-100014A003",
+   "displayId": "D3C1203-100014A003",
+   "date": "1972-07-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.856,
+      32.64
+     ],
+     [
+      15.333,
+      32.369
+     ],
+     [
+      15.359,
+      32.537
+     ],
+     [
+      11.75,
+      33.008
+     ],
+     [
+      11.856,
+      32.64
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-1/00014/A/D3C1203-100014A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-100014F001",
+   "displayId": "D3C1203-100014F001",
+   "date": "1972-07-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.788,
+      32.898
+     ],
+     [
+      15.419,
+      32.599
+     ],
+     [
+      15.45,
+      32.766
+     ],
+     [
+      11.981,
+      33.238
+     ],
+     [
+      11.788,
+      32.898
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-1/00014/F/D3C1203-100014F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-100014F002",
+   "displayId": "D3C1203-100014F002",
+   "date": "1972-07-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.759,
+      32.738
+     ],
+     [
+      15.382,
+      32.439
+     ],
+     [
+      15.413,
+      32.605
+     ],
+     [
+      11.952,
+      33.078
+     ],
+     [
+      11.759,
+      32.738
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-1/00014/F/D3C1203-100014F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-400596A003",
+   "displayId": "D3C1203-400596A003",
+   "date": "1972-08-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.958,
+      32.987
+     ],
+     [
+      13.968,
+      32.877
+     ],
+     [
+      14.005,
+      33.045
+     ],
+     [
+      12.973,
+      33.158
+     ],
+     [
+      12.958,
+      32.987
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-4/00596/A/D3C1203-400596A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-400596A004",
+   "displayId": "D3C1203-400596A004",
+   "date": "1972-08-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.923,
+      32.833
+     ],
+     [
+      13.931,
+      32.723
+     ],
+     [
+      13.968,
+      32.89
+     ],
+     [
+      12.938,
+      33.003
+     ],
+     [
+      12.923,
+      32.833
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-4/00596/A/D3C1203-400596A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-400596A005",
+   "displayId": "D3C1203-400596A005",
+   "date": "1972-08-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.889,
+      32.678
+     ],
+     [
+      13.895,
+      32.568
+     ],
+     [
+      13.931,
+      32.736
+     ],
+     [
+      12.904,
+      32.848
+     ],
+     [
+      12.889,
+      32.678
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-4/00596/A/D3C1203-400596A005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-400596F003",
+   "displayId": "D3C1203-400596F003",
+   "date": "1972-08-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.961,
+      32.909
+     ],
+     [
+      13.983,
+      32.772
+     ],
+     [
+      14.006,
+      32.941
+     ],
+     [
+      13.001,
+      33.076
+     ],
+     [
+      12.961,
+      32.909
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-4/00596/F/D3C1203-400596F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-400596F004",
+   "displayId": "D3C1203-400596F004",
+   "date": "1972-08-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.926,
+      32.753
+     ],
+     [
+      13.946,
+      32.616
+     ],
+     [
+      13.969,
+      32.785
+     ],
+     [
+      12.966,
+      32.92
+     ],
+     [
+      12.926,
+      32.753
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-4/00596/F/D3C1203-400596F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-400643A001",
+   "displayId": "D3C1203-400643A001",
+   "date": "1972-08-27",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.432,
+      33.019
+     ],
+     [
+      13.577,
+      32.877
+     ],
+     [
+      13.635,
+      33.073
+     ],
+     [
+      12.458,
+      33.19
+     ],
+     [
+      12.432,
+      33.019
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-4/00643/A/D3C1203-400643A001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1203-400643A002",
+   "displayId": "D3C1203-400643A002",
+   "date": "1972-08-27",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.394,
+      32.855
+     ],
+     [
+      13.535,
+      32.714
+     ],
+     [
+      13.593,
+      32.909
+     ],
+     [
+      12.419,
+      33.026
+     ],
+     [
+      12.394,
+      32.855
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1203-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1203-4/00643/A/D3C1203-400643A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-200271A002",
+   "displayId": "D3C1204-200271A002",
+   "date": "1972-11-02",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.436,
+      33.05
+     ],
+     [
+      13.453,
+      32.931
+     ],
+     [
+      13.503,
+      33.105
+     ],
+     [
+      12.458,
+      33.202
+     ],
+     [
+      12.436,
+      33.05
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-2/00271/A/D3C1204-200271A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-200271A003",
+   "displayId": "D3C1204-200271A003",
+   "date": "1972-11-02",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.404,
+      32.905
+     ],
+     [
+      13.42,
+      32.786
+     ],
+     [
+      13.469,
+      32.96
+     ],
+     [
+      12.426,
+      33.058
+     ],
+     [
+      12.404,
+      32.905
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-2/00271/A/D3C1204-200271A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-200271A004",
+   "displayId": "D3C1204-200271A004",
+   "date": "1972-11-02",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.372,
+      32.761
+     ],
+     [
+      13.386,
+      32.642
+     ],
+     [
+      13.435,
+      32.816
+     ],
+     [
+      12.394,
+      32.913
+     ],
+     [
+      12.372,
+      32.761
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-2/00271/A/D3C1204-200271A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-200271F002",
+   "displayId": "D3C1204-200271F002",
+   "date": "1972-11-02",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.446,
+      32.964
+     ],
+     [
+      13.477,
+      32.817
+     ],
+     [
+      13.489,
+      32.995
+     ],
+     [
+      12.473,
+      33.116
+     ],
+     [
+      12.446,
+      32.964
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-2/00271/F/D3C1204-200271F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-200271F003",
+   "displayId": "D3C1204-200271F003",
+   "date": "1972-11-02",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.414,
+      32.82
+     ],
+     [
+      13.443,
+      32.672
+     ],
+     [
+      13.455,
+      32.851
+     ],
+     [
+      12.441,
+      32.971
+     ],
+     [
+      12.414,
+      32.82
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-2/00271/F/D3C1204-200271F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-300332A002",
+   "displayId": "D3C1204-300332A002",
+   "date": "1972-11-07",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.768,
+      32.989
+     ],
+     [
+      14.032,
+      32.893
+     ],
+     [
+      14.044,
+      33.047
+     ],
+     [
+      12.747,
+      33.205
+     ],
+     [
+      12.768,
+      32.989
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-3/00332/A/D3C1204-300332A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-300332A003",
+   "displayId": "D3C1204-300332A003",
+   "date": "1972-11-07",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.74,
+      32.849
+     ],
+     [
+      14.002,
+      32.754
+     ],
+     [
+      14.014,
+      32.907
+     ],
+     [
+      12.719,
+      33.065
+     ],
+     [
+      12.74,
+      32.849
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-3/00332/A/D3C1204-300332A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-300332A004",
+   "displayId": "D3C1204-300332A004",
+   "date": "1972-11-07",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.712,
+      32.709
+     ],
+     [
+      13.972,
+      32.614
+     ],
+     [
+      13.984,
+      32.767
+     ],
+     [
+      12.691,
+      32.925
+     ],
+     [
+      12.712,
+      32.709
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-3/00332/A/D3C1204-300332A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-300332F002",
+   "displayId": "D3C1204-300332F002",
+   "date": "1972-11-07",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.74,
+      32.937
+     ],
+     [
+      14.036,
+      32.823
+     ],
+     [
+      14.071,
+      32.974
+     ],
+     [
+      12.818,
+      33.142
+     ],
+     [
+      12.74,
+      32.937
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-3/00332/F/D3C1204-300332F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-300332F003",
+   "displayId": "D3C1204-300332F003",
+   "date": "1972-11-07",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.712,
+      32.797
+     ],
+     [
+      14.006,
+      32.684
+     ],
+     [
+      14.041,
+      32.834
+     ],
+     [
+      12.79,
+      33.003
+     ],
+     [
+      12.712,
+      32.797
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-3/00332/F/D3C1204-300332F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1204-300332F004",
+   "displayId": "D3C1204-300332F004",
+   "date": "1972-11-07",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.684,
+      32.657
+     ],
+     [
+      13.976,
+      32.544
+     ],
+     [
+      14.01,
+      32.694
+     ],
+     [
+      12.762,
+      32.863
+     ],
+     [
+      12.684,
+      32.657
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1204-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1204-3/00332/F/D3C1204-300332F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-300391A002",
+   "displayId": "D3C1205-300391A002",
+   "date": "1973-04-14",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.029,
+      32.937
+     ],
+     [
+      13.928,
+      32.859
+     ],
+     [
+      13.955,
+      33.009
+     ],
+     [
+      13.038,
+      33.088
+     ],
+     [
+      13.029,
+      32.937
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-3/00391/A/D3C1205-300391A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-300391A003",
+   "displayId": "D3C1205-300391A003",
+   "date": "1973-04-14",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.002,
+      32.797
+     ],
+     [
+      13.899,
+      32.72
+     ],
+     [
+      13.927,
+      32.87
+     ],
+     [
+      13.011,
+      32.949
+     ],
+     [
+      13.002,
+      32.797
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-3/00391/A/D3C1205-300391A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-300391A004",
+   "displayId": "D3C1205-300391A004",
+   "date": "1973-04-14",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.975,
+      32.658
+     ],
+     [
+      13.871,
+      32.581
+     ],
+     [
+      13.898,
+      32.731
+     ],
+     [
+      12.984,
+      32.809
+     ],
+     [
+      12.975,
+      32.658
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-3/00391/A/D3C1205-300391A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-300391F002",
+   "displayId": "D3C1205-300391F002",
+   "date": "1973-04-14",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.035,
+      32.867
+     ],
+     [
+      13.945,
+      32.765
+     ],
+     [
+      13.961,
+      32.916
+     ],
+     [
+      13.066,
+      33.016
+     ],
+     [
+      13.035,
+      32.867
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-3/00391/F/D3C1205-300391F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-300391F003",
+   "displayId": "D3C1205-300391F003",
+   "date": "1973-04-14",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.008,
+      32.729
+     ],
+     [
+      13.917,
+      32.627
+     ],
+     [
+      13.932,
+      32.778
+     ],
+     [
+      13.039,
+      32.878
+     ],
+     [
+      13.008,
+      32.729
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-3/00391/F/D3C1205-300391F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-400475A003",
+   "displayId": "D3C1205-400475A003",
+   "date": "1973-04-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.106,
+      32.85
+     ],
+     [
+      14.075,
+      32.78
+     ],
+     [
+      14.092,
+      32.925
+     ],
+     [
+      13.104,
+      33.02
+     ],
+     [
+      13.106,
+      32.85
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-4/00475/A/D3C1205-400475A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-400475A004",
+   "displayId": "D3C1205-400475A004",
+   "date": "1973-04-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.08,
+      32.712
+     ],
+     [
+      14.047,
+      32.642
+     ],
+     [
+      14.065,
+      32.787
+     ],
+     [
+      13.078,
+      32.882
+     ],
+     [
+      13.08,
+      32.712
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-4/00475/A/D3C1205-400475A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-400475F002",
+   "displayId": "D3C1205-400475F002",
+   "date": "1973-04-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.128,
+      32.93
+     ],
+     [
+      14.114,
+      32.838
+     ],
+     [
+      14.137,
+      32.982
+     ],
+     [
+      13.173,
+      33.096
+     ],
+     [
+      13.128,
+      32.93
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-4/00475/F/D3C1205-400475F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-400475F003",
+   "displayId": "D3C1205-400475F003",
+   "date": "1973-04-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.102,
+      32.792
+     ],
+     [
+      14.087,
+      32.7
+     ],
+     [
+      14.109,
+      32.844
+     ],
+     [
+      13.147,
+      32.958
+     ],
+     [
+      13.102,
+      32.792
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-4/00475/F/D3C1205-400475F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1205-400475F004",
+   "displayId": "D3C1205-400475F004",
+   "date": "1973-04-23",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.076,
+      32.654
+     ],
+     [
+      14.059,
+      32.562
+     ],
+     [
+      14.082,
+      32.706
+     ],
+     [
+      13.121,
+      32.82
+     ],
+     [
+      13.076,
+      32.654
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1205-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1205-4/00475/F/D3C1205-400475F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1206-300376A003",
+   "displayId": "D3C1206-300376A003",
+   "date": "1973-08-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.779,
+      32.906
+     ],
+     [
+      13.707,
+      32.818
+     ],
+     [
+      13.738,
+      32.972
+     ],
+     [
+      12.791,
+      33.063
+     ],
+     [
+      12.779,
+      32.906
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1206-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1206-3/00376/A/D3C1206-300376A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1206-300376A004",
+   "displayId": "D3C1206-300376A004",
+   "date": "1973-08-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.75,
+      32.764
+     ],
+     [
+      13.676,
+      32.675
+     ],
+     [
+      13.706,
+      32.829
+     ],
+     [
+      12.761,
+      32.92
+     ],
+     [
+      12.75,
+      32.764
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1206-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1206-3/00376/A/D3C1206-300376A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1206-300376F002",
+   "displayId": "D3C1206-300376F002",
+   "date": "1973-08-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.814,
+      32.977
+     ],
+     [
+      13.755,
+      32.863
+     ],
+     [
+      13.774,
+      33.019
+     ],
+     [
+      12.848,
+      33.131
+     ],
+     [
+      12.814,
+      32.977
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1206-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1206-3/00376/F/D3C1206-300376F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1206-300376F003",
+   "displayId": "D3C1206-300376F003",
+   "date": "1973-08-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.784,
+      32.834
+     ],
+     [
+      13.724,
+      32.72
+     ],
+     [
+      13.742,
+      32.875
+     ],
+     [
+      12.818,
+      32.988
+     ],
+     [
+      12.784,
+      32.834
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1206-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1206-3/00376/F/D3C1206-300376F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1206-300376F004",
+   "displayId": "D3C1206-300376F004",
+   "date": "1973-08-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.754,
+      32.691
+     ],
+     [
+      13.692,
+      32.577
+     ],
+     [
+      13.711,
+      32.733
+     ],
+     [
+      12.788,
+      32.845
+     ],
+     [
+      12.754,
+      32.691
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1206-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1206-3/00376/F/D3C1206-300376F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-200174A004",
+   "displayId": "D3C1207-200174A004",
+   "date": "1973-12-03",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.076,
+      33.103
+     ],
+     [
+      14.311,
+      32.813
+     ],
+     [
+      14.395,
+      33.024
+     ],
+     [
+      12.091,
+      33.262
+     ],
+     [
+      12.076,
+      33.103
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-2/00174/A/D3C1207-200174A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-200174A005",
+   "displayId": "D3C1207-200174A005",
+   "date": "1973-12-03",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.044,
+      32.958
+     ],
+     [
+      14.275,
+      32.669
+     ],
+     [
+      14.359,
+      32.88
+     ],
+     [
+      12.059,
+      33.117
+     ],
+     [
+      12.044,
+      32.958
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-2/00174/A/D3C1207-200174A005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-200174A006",
+   "displayId": "D3C1207-200174A006",
+   "date": "1973-12-03",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.011,
+      32.814
+     ],
+     [
+      14.239,
+      32.525
+     ],
+     [
+      14.323,
+      32.736
+     ],
+     [
+      12.026,
+      32.973
+     ],
+     [
+      12.011,
+      32.814
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-2/00174/A/D3C1207-200174A006.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-200174F004",
+   "displayId": "D3C1207-200174F004",
+   "date": "1973-12-03",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.078,
+      33.029
+     ],
+     [
+      14.353,
+      32.679
+     ],
+     [
+      14.352,
+      32.902
+     ],
+     [
+      12.116,
+      33.185
+     ],
+     [
+      12.078,
+      33.029
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-2/00174/F/D3C1207-200174F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-200174F005",
+   "displayId": "D3C1207-200174F005",
+   "date": "1973-12-03",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.045,
+      32.885
+     ],
+     [
+      14.317,
+      32.535
+     ],
+     [
+      14.315,
+      32.758
+     ],
+     [
+      12.083,
+      33.041
+     ],
+     [
+      12.045,
+      32.885
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-2/00174/F/D3C1207-200174F005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-400645A004",
+   "displayId": "D3C1207-400645A004",
+   "date": "1974-02-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.665,
+      33.058
+     ],
+     [
+      13.908,
+      32.77
+     ],
+     [
+      13.993,
+      32.982
+     ],
+     [
+      11.68,
+      33.217
+     ],
+     [
+      11.665,
+      33.058
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-4/00645/A/D3C1207-400645A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-400645A005",
+   "displayId": "D3C1207-400645A005",
+   "date": "1974-02-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.632,
+      32.912
+     ],
+     [
+      13.871,
+      32.625
+     ],
+     [
+      13.956,
+      32.837
+     ],
+     [
+      11.647,
+      33.071
+     ],
+     [
+      11.632,
+      32.912
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-4/00645/A/D3C1207-400645A005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-400645F003",
+   "displayId": "D3C1207-400645F003",
+   "date": "1974-02-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.7,
+      33.132
+     ],
+     [
+      13.989,
+      32.782
+     ],
+     [
+      13.987,
+      33.006
+     ],
+     [
+      11.738,
+      33.288
+     ],
+     [
+      11.7,
+      33.132
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-4/00645/F/D3C1207-400645F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-400645F004",
+   "displayId": "D3C1207-400645F004",
+   "date": "1974-02-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.667,
+      32.986
+     ],
+     [
+      13.952,
+      32.637
+     ],
+     [
+      13.95,
+      32.86
+     ],
+     [
+      11.705,
+      33.143
+     ],
+     [
+      11.667,
+      32.986
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-4/00645/F/D3C1207-400645F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1207-400645F005",
+   "displayId": "D3C1207-400645F005",
+   "date": "1974-02-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.635,
+      32.841
+     ],
+     [
+      13.915,
+      32.491
+     ],
+     [
+      13.913,
+      32.715
+     ],
+     [
+      11.673,
+      32.997
+     ],
+     [
+      11.635,
+      32.841
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1207-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1207-4/00645/F/D3C1207-400645F005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1208-200289A003",
+   "displayId": "D3C1208-200289A003",
+   "date": "1974-05-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.592,
+      32.96
+     ],
+     [
+      13.827,
+      32.91
+     ],
+     [
+      13.832,
+      33.06
+     ],
+     [
+      12.563,
+      33.169
+     ],
+     [
+      12.592,
+      32.96
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1208-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1208-2/00289/A/D3C1208-200289A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1208-200289A004",
+   "displayId": "D3C1208-200289A004",
+   "date": "1974-05-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.572,
+      32.823
+     ],
+     [
+      13.805,
+      32.772
+     ],
+     [
+      13.809,
+      32.922
+     ],
+     [
+      12.543,
+      33.032
+     ],
+     [
+      12.572,
+      32.823
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1208-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1208-2/00289/A/D3C1208-200289A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1208-200289F003",
+   "displayId": "D3C1208-200289F003",
+   "date": "1974-05-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.563,
+      32.909
+     ],
+     [
+      13.833,
+      32.841
+     ],
+     [
+      13.86,
+      32.99
+     ],
+     [
+      12.631,
+      33.112
+     ],
+     [
+      12.563,
+      32.909
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1208-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1208-2/00289/F/D3C1208-200289F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1208-200289F004",
+   "displayId": "D3C1208-200289F004",
+   "date": "1974-05-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.543,
+      32.771
+     ],
+     [
+      13.811,
+      32.704
+     ],
+     [
+      13.838,
+      32.852
+     ],
+     [
+      12.611,
+      32.975
+     ],
+     [
+      12.543,
+      32.771
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1208-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1208-2/00289/F/D3C1208-200289F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1209-100110A005",
+   "displayId": "D3C1209-100110A005",
+   "date": "1974-11-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13.006,
+      32.98
+     ],
+     [
+      13.993,
+      32.889
+     ],
+     [
+      14.015,
+      33.036
+     ],
+     [
+      13.008,
+      33.153
+     ],
+     [
+      13.006,
+      32.98
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1209-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1209-1/00110/A/D3C1209-100110A005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1209-100110A006",
+   "displayId": "D3C1209-100110A006",
+   "date": "1974-11-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.976,
+      32.84
+     ],
+     [
+      13.961,
+      32.749
+     ],
+     [
+      13.983,
+      32.896
+     ],
+     [
+      12.978,
+      33.013
+     ],
+     [
+      12.976,
+      32.84
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1209-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1209-1/00110/A/D3C1209-100110A006.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1209-100110A007",
+   "displayId": "D3C1209-100110A007",
+   "date": "1974-11-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.946,
+      32.699
+     ],
+     [
+      13.93,
+      32.609
+     ],
+     [
+      13.952,
+      32.756
+     ],
+     [
+      12.948,
+      32.873
+     ],
+     [
+      12.946,
+      32.699
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1209-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1209-1/00110/A/D3C1209-100110A007.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1209-100110F005",
+   "displayId": "D3C1209-100110F005",
+   "date": "1974-11-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.997,
+      32.92
+     ],
+     [
+      14.001,
+      32.807
+     ],
+     [
+      14.028,
+      32.953
+     ],
+     [
+      13.048,
+      33.088
+     ],
+     [
+      12.997,
+      32.92
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1209-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1209-1/00110/F/D3C1209-100110F005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1209-100110F006",
+   "displayId": "D3C1209-100110F006",
+   "date": "1974-11-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.967,
+      32.78
+     ],
+     [
+      13.969,
+      32.667
+     ],
+     [
+      13.996,
+      32.813
+     ],
+     [
+      13.018,
+      32.948
+     ],
+     [
+      12.967,
+      32.78
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1209-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1209-1/00110/F/D3C1209-100110F006.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-100125A002",
+   "displayId": "D3C1210-100125A002",
+   "date": "1975-06-22",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.98,
+      32.961
+     ],
+     [
+      13.907,
+      32.869
+     ],
+     [
+      13.938,
+      33.023
+     ],
+     [
+      12.992,
+      33.117
+     ],
+     [
+      12.98,
+      32.961
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-1/00125/A/D3C1210-100125A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-100125A003",
+   "displayId": "D3C1210-100125A003",
+   "date": "1975-06-22",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.949,
+      32.819
+     ],
+     [
+      13.875,
+      32.727
+     ],
+     [
+      13.906,
+      32.881
+     ],
+     [
+      12.961,
+      32.975
+     ],
+     [
+      12.949,
+      32.819
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-1/00125/A/D3C1210-100125A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-100125A004",
+   "displayId": "D3C1210-100125A004",
+   "date": "1975-06-22",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.919,
+      32.676
+     ],
+     [
+      13.843,
+      32.584
+     ],
+     [
+      13.874,
+      32.738
+     ],
+     [
+      12.931,
+      32.833
+     ],
+     [
+      12.919,
+      32.676
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-1/00125/A/D3C1210-100125A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-100125F002",
+   "displayId": "D3C1210-100125F002",
+   "date": "1975-06-22",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.984,
+      32.889
+     ],
+     [
+      13.923,
+      32.773
+     ],
+     [
+      13.942,
+      32.928
+     ],
+     [
+      13.019,
+      33.043
+     ],
+     [
+      12.984,
+      32.889
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-1/00125/F/D3C1210-100125F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-100125F003",
+   "displayId": "D3C1210-100125F003",
+   "date": "1975-06-22",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.954,
+      32.747
+     ],
+     [
+      13.891,
+      32.63
+     ],
+     [
+      13.91,
+      32.786
+     ],
+     [
+      12.989,
+      32.901
+     ],
+     [
+      12.954,
+      32.747
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-1/00125/F/D3C1210-100125F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-200245A002",
+   "displayId": "D3C1210-200245A002",
+   "date": "1975-07-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.471,
+      32.954
+     ],
+     [
+      13.737,
+      32.787
+     ],
+     [
+      13.816,
+      32.994
+     ],
+     [
+      12.502,
+      33.107
+     ],
+     [
+      12.471,
+      32.954
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-2/00245/A/D3C1210-200245A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-200245A003",
+   "displayId": "D3C1210-200245A003",
+   "date": "1975-07-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.439,
+      32.812
+     ],
+     [
+      13.703,
+      32.645
+     ],
+     [
+      13.782,
+      32.852
+     ],
+     [
+      12.47,
+      32.965
+     ],
+     [
+      12.439,
+      32.812
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-2/00245/A/D3C1210-200245A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-200245F001",
+   "displayId": "D3C1210-200245F001",
+   "date": "1975-07-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.331,
+      33.028
+     ],
+     [
+      13.479,
+      32.856
+     ],
+     [
+      13.482,
+      33.053
+     ],
+     [
+      12.353,
+      33.179
+     ],
+     [
+      12.331,
+      33.028
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-2/00245/F/D3C1210-200245F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-200245F002",
+   "displayId": "D3C1210-200245F002",
+   "date": "1975-07-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.488,
+      32.86
+     ],
+     [
+      13.783,
+      32.658
+     ],
+     [
+      13.778,
+      32.876
+     ],
+     [
+      12.506,
+      33.014
+     ],
+     [
+      12.488,
+      32.86
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-2/00245/F/D3C1210-200245F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-200245F003",
+   "displayId": "D3C1210-200245F003",
+   "date": "1975-07-10",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.456,
+      32.717
+     ],
+     [
+      13.749,
+      32.516
+     ],
+     [
+      13.744,
+      32.734
+     ],
+     [
+      12.474,
+      32.872
+     ],
+     [
+      12.456,
+      32.717
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-2/00245/F/D3C1210-200245F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-300382A001",
+   "displayId": "D3C1210-300382A001",
+   "date": "1975-08-02",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.888,
+      32.942
+     ],
+     [
+      13.962,
+      32.812
+     ],
+     [
+      14.019,
+      32.994
+     ],
+     [
+      12.913,
+      33.092
+     ],
+     [
+      12.888,
+      32.942
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-3/00382/A/D3C1210-300382A001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-300382A002",
+   "displayId": "D3C1210-300382A002",
+   "date": "1975-08-02",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.682,
+      32.816
+     ],
+     [
+      13.682,
+      32.701
+     ],
+     [
+      13.729,
+      32.872
+     ],
+     [
+      12.703,
+      32.966
+     ],
+     [
+      12.682,
+      32.816
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-3/00382/A/D3C1210-300382A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-300382F001",
+   "displayId": "D3C1210-300382F001",
+   "date": "1975-08-02",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.542,
+      32.9
+     ],
+     [
+      13.508,
+      32.77
+     ],
+     [
+      13.523,
+      32.936
+     ],
+     [
+      12.571,
+      33.05
+     ],
+     [
+      12.542,
+      32.9
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-3/00382/F/D3C1210-300382F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-300382F002",
+   "displayId": "D3C1210-300382F002",
+   "date": "1975-08-02",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.693,
+      32.734
+     ],
+     [
+      13.707,
+      32.592
+     ],
+     [
+      13.717,
+      32.767
+     ],
+     [
+      12.719,
+      32.884
+     ],
+     [
+      12.693,
+      32.734
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-3/00382/F/D3C1210-300382F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-400623A001",
+   "displayId": "D3C1210-400623A001",
+   "date": "1975-09-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.714,
+      32.966
+     ],
+     [
+      14.182,
+      32.762
+     ],
+     [
+      14.284,
+      32.993
+     ],
+     [
+      12.75,
+      33.123
+     ],
+     [
+      12.714,
+      32.966
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-4/00623/A/D3C1210-400623A001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-400623A002",
+   "displayId": "D3C1210-400623A002",
+   "date": "1975-09-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.493,
+      32.845
+     ],
+     [
+      13.757,
+      32.679
+     ],
+     [
+      13.836,
+      32.886
+     ],
+     [
+      12.523,
+      32.998
+     ],
+     [
+      12.493,
+      32.845
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-4/00623/A/D3C1210-400623A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-400623A003",
+   "displayId": "D3C1210-400623A003",
+   "date": "1975-09-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.461,
+      32.703
+     ],
+     [
+      13.724,
+      32.536
+     ],
+     [
+      13.802,
+      32.743
+     ],
+     [
+      12.492,
+      32.856
+     ],
+     [
+      12.461,
+      32.703
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-4/00623/A/D3C1210-400623A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-400623F001",
+   "displayId": "D3C1210-400623F001",
+   "date": "1975-09-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.353,
+      32.919
+     ],
+     [
+      13.499,
+      32.748
+     ],
+     [
+      13.501,
+      32.945
+     ],
+     [
+      12.374,
+      33.07
+     ],
+     [
+      12.353,
+      32.919
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-4/00623/F/D3C1210-400623F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1210-400623F002",
+   "displayId": "D3C1210-400623F002",
+   "date": "1975-09-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.509,
+      32.751
+     ],
+     [
+      13.802,
+      32.55
+     ],
+     [
+      13.796,
+      32.768
+     ],
+     [
+      12.528,
+      32.906
+     ],
+     [
+      12.509,
+      32.751
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1210-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1210-4/00623/F/D3C1210-400623F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1211-100020A002",
+   "displayId": "D3C1211-100020A002",
+   "date": "1975-12-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.417,
+      33.022
+     ],
+     [
+      15.917,
+      32.671
+     ],
+     [
+      15.997,
+      32.88
+     ],
+     [
+      12.395,
+      33.243
+     ],
+     [
+      12.417,
+      33.022
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1211-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1211-1/00020/A/D3C1211-100020A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1211-100020A003",
+   "displayId": "D3C1211-100020A003",
+   "date": "1975-12-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.389,
+      32.879
+     ],
+     [
+      15.884,
+      32.528
+     ],
+     [
+      15.963,
+      32.736
+     ],
+     [
+      12.367,
+      33.1
+     ],
+     [
+      12.389,
+      32.879
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1211-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1211-1/00020/A/D3C1211-100020A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1211-100020A004",
+   "displayId": "D3C1211-100020A004",
+   "date": "1975-12-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.361,
+      32.736
+     ],
+     [
+      15.85,
+      32.384
+     ],
+     [
+      15.93,
+      32.593
+     ],
+     [
+      12.339,
+      32.957
+     ],
+     [
+      12.361,
+      32.736
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1211-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1211-1/00020/A/D3C1211-100020A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1211-100020F002",
+   "displayId": "D3C1211-100020F002",
+   "date": "1975-12-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.387,
+      32.969
+     ],
+     [
+      15.962,
+      32.542
+     ],
+     [
+      15.957,
+      32.761
+     ],
+     [
+      12.467,
+      33.181
+     ],
+     [
+      12.387,
+      32.969
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1211-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1211-1/00020/F/D3C1211-100020F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1211-100020F003",
+   "displayId": "D3C1211-100020F003",
+   "date": "1975-12-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.359,
+      32.826
+     ],
+     [
+      15.928,
+      32.398
+     ],
+     [
+      15.923,
+      32.617
+     ],
+     [
+      12.439,
+      33.037
+     ],
+     [
+      12.359,
+      32.826
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1211-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1211-1/00020/F/D3C1211-100020F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1211-100020F004",
+   "displayId": "D3C1211-100020F004",
+   "date": "1975-12-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.331,
+      32.683
+     ],
+     [
+      15.894,
+      32.255
+     ],
+     [
+      15.889,
+      32.474
+     ],
+     [
+      12.411,
+      32.894
+     ],
+     [
+      12.331,
+      32.683
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1211-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1211-1/00020/F/D3C1211-100020F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1211-400762F005",
+   "displayId": "D3C1211-400762F005",
+   "date": "1976-03-20",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.726,
+      33.042
+     ],
+     [
+      13.784,
+      32.792
+     ],
+     [
+      13.795,
+      32.969
+     ],
+     [
+      11.776,
+      33.215
+     ],
+     [
+      11.726,
+      33.042
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1211-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1211-4/00762/F/D3C1211-400762F005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1211-400762F006",
+   "displayId": "D3C1211-400762F006",
+   "date": "1976-03-20",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.697,
+      32.897
+     ],
+     [
+      13.752,
+      32.647
+     ],
+     [
+      13.763,
+      32.824
+     ],
+     [
+      11.746,
+      33.07
+     ],
+     [
+      11.697,
+      32.897
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1211-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1211-4/00762/F/D3C1211-400762F006.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1211-400849F001",
+   "displayId": "D3C1211-400849F001",
+   "date": "1976-03-29",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.169,
+      32.885
+     ],
+     [
+      14.9,
+      32.482
+     ],
+     [
+      14.903,
+      32.683
+     ],
+     [
+      11.273,
+      33.127
+     ],
+     [
+      11.169,
+      32.885
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1211-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1211-4/00849/F/D3C1211-400849F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassii",
+   "entityId": "DZB1212-500041L003001",
+   "displayId": "DZB1212-500041L003001",
+   "date": "1976-07-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      13,
+      30.658
+     ],
+     [
+      14.255,
+      30.507
+     ],
+     [
+      14.63,
+      32.661
+     ],
+     [
+      13.35,
+      32.819
+     ],
+     [
+      13,
+      30.658
+     ]
+    ]
+   ],
+   "camera": "KH-9 Lower Resolution Mapping",
+   "resolution": "20 to 30 feet",
+   "mission": "1212-5",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declassii/1212-5/00041/DZB1212-500041L003001-00050.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1212-100085A002",
+   "displayId": "D3C1212-100085A002",
+   "date": "1976-07-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.277,
+      32.952
+     ],
+     [
+      15.818,
+      32.549
+     ],
+     [
+      15.902,
+      32.76
+     ],
+     [
+      12.259,
+      33.177
+     ],
+     [
+      12.277,
+      32.952
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1212-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1212-1/00085/A/D3C1212-100085A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1212-100085A003",
+   "displayId": "D3C1212-100085A003",
+   "date": "1976-07-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.245,
+      32.807
+     ],
+     [
+      15.781,
+      32.404
+     ],
+     [
+      15.866,
+      32.615
+     ],
+     [
+      12.228,
+      33.031
+     ],
+     [
+      12.245,
+      32.807
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1212-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1212-1/00085/A/D3C1212-100085A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1212-100085F001",
+   "displayId": "D3C1212-100085F001",
+   "date": "1976-07-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.822,
+      33.081
+     ],
+     [
+      15.55,
+      32.625
+     ],
+     [
+      15.556,
+      32.826
+     ],
+     [
+      11.932,
+      33.322
+     ],
+     [
+      11.822,
+      33.081
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1212-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1212-1/00085/F/D3C1212-100085F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1212-100085F002",
+   "displayId": "D3C1212-100085F002",
+   "date": "1976-07-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.245,
+      32.902
+     ],
+     [
+      15.861,
+      32.418
+     ],
+     [
+      15.86,
+      32.64
+     ],
+     [
+      12.331,
+      33.115
+     ],
+     [
+      12.245,
+      32.902
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1212-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1212-1/00085/F/D3C1212-100085F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1212-100085F003",
+   "displayId": "D3C1212-100085F003",
+   "date": "1976-07-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.214,
+      32.756
+     ],
+     [
+      15.824,
+      32.272
+     ],
+     [
+      15.823,
+      32.495
+     ],
+     [
+      12.299,
+      32.969
+     ],
+     [
+      12.214,
+      32.756
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1212-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1212-1/00085/F/D3C1212-100085F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1212-200468A001",
+   "displayId": "D3C1212-200468A001",
+   "date": "1976-08-30",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.38,
+      32.886
+     ],
+     [
+      15.154,
+      32.407
+     ],
+     [
+      15.444,
+      32.765
+     ],
+     [
+      12.44,
+      33.068
+     ],
+     [
+      12.38,
+      32.886
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1212-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1212-2/00468/A/D3C1212-200468A001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1212-200468A002",
+   "displayId": "D3C1212-200468A002",
+   "date": "1976-08-30",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.097,
+      32.779
+     ],
+     [
+      14.164,
+      32.44
+     ],
+     [
+      14.347,
+      32.734
+     ],
+     [
+      12.147,
+      32.95
+     ],
+     [
+      12.097,
+      32.779
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1212-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1212-2/00468/A/D3C1212-200468A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1212-200468F001",
+   "displayId": "D3C1212-200468F001",
+   "date": "1976-08-30",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.924,
+      32.848
+     ],
+     [
+      13.624,
+      32.543
+     ],
+     [
+      13.601,
+      32.816
+     ],
+     [
+      11.941,
+      33.014
+     ],
+     [
+      11.924,
+      32.848
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1212-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1212-2/00468/F/D3C1212-200468F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1213-100027A001",
+   "displayId": "D3C1213-100027A001",
+   "date": "1977-07-01",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.517,
+      32.9
+     ],
+     [
+      14.612,
+      32.689
+     ],
+     [
+      14.651,
+      32.849
+     ],
+     [
+      12.51,
+      33.101
+     ],
+     [
+      12.517,
+      32.9
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1213-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1213-1/00027/A/D3C1213-100027A001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1213-100027A002",
+   "displayId": "D3C1213-100027A002",
+   "date": "1977-07-01",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.138,
+      32.782
+     ],
+     [
+      14.373,
+      32.571
+     ],
+     [
+      14.407,
+      32.726
+     ],
+     [
+      12.12,
+      33.005
+     ],
+     [
+      12.138,
+      32.782
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1213-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1213-1/00027/A/D3C1213-100027A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1213-100027F001",
+   "displayId": "D3C1213-100027F001",
+   "date": "1977-07-01",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.702,
+      32.906
+     ],
+     [
+      14.236,
+      32.647
+     ],
+     [
+      14.261,
+      32.801
+     ],
+     [
+      11.81,
+      33.144
+     ],
+     [
+      11.702,
+      32.906
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1213-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1213-1/00027/F/D3C1213-100027F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1213-100027F002",
+   "displayId": "D3C1213-100027F002",
+   "date": "1977-07-01",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.107,
+      32.73
+     ],
+     [
+      14.39,
+      32.475
+     ],
+     [
+      14.411,
+      32.632
+     ],
+     [
+      12.192,
+      32.942
+     ],
+     [
+      12.107,
+      32.73
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1213-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1213-1/00027/F/D3C1213-100027F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassii",
+   "entityId": "DZB1213-500039L001001",
+   "displayId": "DZB1213-500039L001001",
+   "date": "1977-07-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.599,
+      31.235
+     ],
+     [
+      12.859,
+      31.08
+     ],
+     [
+      13.247,
+      33.23
+     ],
+     [
+      11.961,
+      33.392
+     ],
+     [
+      11.599,
+      31.235
+     ]
+    ]
+   ],
+   "camera": "KH-9 Lower Resolution Mapping",
+   "resolution": "20 to 30 feet",
+   "mission": "1213-5",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declassii/1213-5/00039/DZB1213-500039L001001-00061.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1214-200558A002",
+   "displayId": "D3C1214-200558A002",
+   "date": "1978-05-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.929,
+      32.988
+     ],
+     [
+      14.286,
+      32.787
+     ],
+     [
+      14.32,
+      32.951
+     ],
+     [
+      11.907,
+      33.222
+     ],
+     [
+      11.929,
+      32.988
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1214-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1214-2/00558/A/D3C1214-200558A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1214-200558A003",
+   "displayId": "D3C1214-200558A003",
+   "date": "1978-05-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.899,
+      32.835
+     ],
+     [
+      14.252,
+      32.635
+     ],
+     [
+      14.285,
+      32.798
+     ],
+     [
+      11.877,
+      33.069
+     ],
+     [
+      11.899,
+      32.835
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1214-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1214-2/00558/A/D3C1214-200558A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1214-200558F001",
+   "displayId": "D3C1214-200558F001",
+   "date": "1978-05-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.42,
+      33.119
+     ],
+     [
+      14.123,
+      32.87
+     ],
+     [
+      14.147,
+      33.031
+     ],
+     [
+      11.533,
+      33.374
+     ],
+     [
+      11.42,
+      33.119
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1214-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1214-2/00558/F/D3C1214-200558F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1214-200558F002",
+   "displayId": "D3C1214-200558F002",
+   "date": "1978-05-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.893,
+      32.935
+     ],
+     [
+      14.302,
+      32.687
+     ],
+     [
+      14.323,
+      32.853
+     ],
+     [
+      11.98,
+      33.159
+     ],
+     [
+      11.893,
+      32.935
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1214-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1214-2/00558/F/D3C1214-200558F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1214-200558F003",
+   "displayId": "D3C1214-200558F003",
+   "date": "1978-05-18",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.864,
+      32.782
+     ],
+     [
+      14.268,
+      32.535
+     ],
+     [
+      14.289,
+      32.7
+     ],
+     [
+      11.95,
+      33.006
+     ],
+     [
+      11.864,
+      32.782
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1214-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1214-2/00558/F/D3C1214-200558F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1214-300819F001",
+   "displayId": "D3C1214-300819F001",
+   "date": "1978-06-30",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.306,
+      33.016
+     ],
+     [
+      13.996,
+      32.775
+     ],
+     [
+      14.019,
+      32.935
+     ],
+     [
+      11.417,
+      33.27
+     ],
+     [
+      11.306,
+      33.016
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1214-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1214-3/00819/F/D3C1214-300819F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1214-300819F002",
+   "displayId": "D3C1214-300819F002",
+   "date": "1978-06-30",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.777,
+      32.834
+     ],
+     [
+      14.174,
+      32.594
+     ],
+     [
+      14.194,
+      32.758
+     ],
+     [
+      11.861,
+      33.058
+     ],
+     [
+      11.777,
+      32.834
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1214-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1214-3/00819/F/D3C1214-300819F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-200515A004",
+   "displayId": "D3C1215-200515A004",
+   "date": "1979-05-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.51,
+      32.908
+     ],
+     [
+      13.864,
+      32.727
+     ],
+     [
+      13.95,
+      32.948
+     ],
+     [
+      12.543,
+      33.072
+     ],
+     [
+      12.51,
+      32.908
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-2/00515/A/D3C1215-200515A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-200515A005",
+   "displayId": "D3C1215-200515A005",
+   "date": "1979-05-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.476,
+      32.755
+     ],
+     [
+      13.829,
+      32.574
+     ],
+     [
+      13.914,
+      32.796
+     ],
+     [
+      12.509,
+      32.919
+     ],
+     [
+      12.476,
+      32.755
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-2/00515/A/D3C1215-200515A005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-200515F003",
+   "displayId": "D3C1215-200515F003",
+   "date": "1979-05-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.56,
+      32.961
+     ],
+     [
+      13.947,
+      32.742
+     ],
+     [
+      13.942,
+      32.975
+     ],
+     [
+      12.581,
+      33.127
+     ],
+     [
+      12.56,
+      32.961
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-2/00515/F/D3C1215-200515F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-200515F004",
+   "displayId": "D3C1215-200515F004",
+   "date": "1979-05-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.526,
+      32.808
+     ],
+     [
+      13.91,
+      32.589
+     ],
+     [
+      13.905,
+      32.823
+     ],
+     [
+      12.546,
+      32.974
+     ],
+     [
+      12.526,
+      32.808
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-2/00515/F/D3C1215-200515F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassii",
+   "entityId": "DZB1215-500463L003001",
+   "displayId": "DZB1215-500463L003001",
+   "date": "1979-06-27",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.521,
+      32.801
+     ],
+     [
+      13.862,
+      32.656
+     ],
+     [
+      14.236,
+      34.908
+     ],
+     [
+      12.86,
+      35.058
+     ],
+     [
+      12.521,
+      32.801
+     ]
+    ]
+   ],
+   "camera": "KH-9 Lower Resolution Mapping",
+   "resolution": "20 to 30 feet",
+   "mission": "1215-5",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declassii/1215-5/00463/DZB1215-500463L003001-00130.jpg"
+   ]
+  },
+  {
+   "dataset": "declassii",
+   "entityId": "DZB1215-500463L004001",
+   "displayId": "DZB1215-500463L004001",
+   "date": "1979-06-27",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.382,
+      32.127
+     ],
+     [
+      13.714,
+      31.981
+     ],
+     [
+      14.083,
+      34.235
+     ],
+     [
+      12.717,
+      34.384
+     ],
+     [
+      12.382,
+      32.127
+     ]
+    ]
+   ],
+   "camera": "KH-9 Lower Resolution Mapping",
+   "resolution": "20 to 30 feet",
+   "mission": "1215-5",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declassii/1215-5/00463/DZB1215-500463L004001-00130.jpg"
+   ]
+  },
+  {
+   "dataset": "declassii",
+   "entityId": "DZB1215-500463L005001",
+   "displayId": "DZB1215-500463L005001",
+   "date": "1979-06-27",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.244,
+      31.452
+     ],
+     [
+      13.567,
+      31.306
+     ],
+     [
+      13.931,
+      33.563
+     ],
+     [
+      12.576,
+      33.71
+     ],
+     [
+      12.244,
+      31.452
+     ]
+    ]
+   ],
+   "camera": "KH-9 Lower Resolution Mapping",
+   "resolution": "20 to 30 feet",
+   "mission": "1215-5",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declassii/1215-5/00463/DZB1215-500463L005001-00130.jpg"
+   ]
+  },
+  {
+   "dataset": "declassii",
+   "entityId": "DZB1215-500463L006001",
+   "displayId": "DZB1215-500463L006001",
+   "date": "1979-06-27",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.107,
+      30.778
+     ],
+     [
+      13.421,
+      30.632
+     ],
+     [
+      13.781,
+      32.89
+     ],
+     [
+      12.435,
+      33.036
+     ],
+     [
+      12.107,
+      30.778
+     ]
+    ]
+   ],
+   "camera": "KH-9 Lower Resolution Mapping",
+   "resolution": "20 to 30 feet",
+   "mission": "1215-5",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declassii/1215-5/00463/DZB1215-500463L006001-00130.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-401206A003",
+   "displayId": "D3C1215-401206A003",
+   "date": "1979-08-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.659,
+      32.946
+     ],
+     [
+      14.021,
+      32.848
+     ],
+     [
+      14.034,
+      33.013
+     ],
+     [
+      12.637,
+      33.179
+     ],
+     [
+      12.659,
+      32.946
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-4/01206/A/D3C1215-401206A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-401206A004",
+   "displayId": "D3C1215-401206A004",
+   "date": "1979-08-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.63,
+      32.795
+     ],
+     [
+      13.99,
+      32.697
+     ],
+     [
+      14.002,
+      32.862
+     ],
+     [
+      12.607,
+      33.027
+     ],
+     [
+      12.63,
+      32.795
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-4/01206/A/D3C1215-401206A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-401206A005",
+   "displayId": "D3C1215-401206A005",
+   "date": "1979-08-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.601,
+      32.644
+     ],
+     [
+      13.958,
+      32.546
+     ],
+     [
+      13.971,
+      32.71
+     ],
+     [
+      12.579,
+      32.876
+     ],
+     [
+      12.601,
+      32.644
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-4/01206/A/D3C1215-401206A005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-401206F003",
+   "displayId": "D3C1215-401206F003",
+   "date": "1979-08-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.626,
+      32.891
+     ],
+     [
+      14.026,
+      32.775
+     ],
+     [
+      14.063,
+      32.938
+     ],
+     [
+      12.71,
+      33.114
+     ],
+     [
+      12.626,
+      32.891
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-4/01206/F/D3C1215-401206F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-401206F004",
+   "displayId": "D3C1215-401206F004",
+   "date": "1979-08-12",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.597,
+      32.74
+     ],
+     [
+      13.994,
+      32.624
+     ],
+     [
+      14.031,
+      32.786
+     ],
+     [
+      12.681,
+      32.963
+     ],
+     [
+      12.597,
+      32.74
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-4/01206/F/D3C1215-401206F004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-401442A002",
+   "displayId": "D3C1215-401442A002",
+   "date": "1979-09-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.651,
+      32.975
+     ],
+     [
+      14.015,
+      32.878
+     ],
+     [
+      14.027,
+      33.043
+     ],
+     [
+      12.628,
+      33.207
+     ],
+     [
+      12.651,
+      32.975
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-4/01442/A/D3C1215-401442A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-401442A003",
+   "displayId": "D3C1215-401442A003",
+   "date": "1979-09-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.622,
+      32.823
+     ],
+     [
+      13.983,
+      32.726
+     ],
+     [
+      13.995,
+      32.891
+     ],
+     [
+      12.599,
+      33.056
+     ],
+     [
+      12.622,
+      32.823
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-4/01442/A/D3C1215-401442A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1215-401442A004",
+   "displayId": "D3C1215-401442A004",
+   "date": "1979-09-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.593,
+      32.672
+     ],
+     [
+      13.952,
+      32.575
+     ],
+     [
+      13.964,
+      32.74
+     ],
+     [
+      12.57,
+      32.905
+     ],
+     [
+      12.593,
+      32.672
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1215-4",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1215-4/01442/A/D3C1215-401442A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-100323A002",
+   "displayId": "D3C1218-100323A002",
+   "date": "1983-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.514,
+      32.95
+     ],
+     [
+      16.239,
+      32.564
+     ],
+     [
+      16.325,
+      32.786
+     ],
+     [
+      12.492,
+      33.185
+     ],
+     [
+      12.514,
+      32.95
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-1/00323/A/D3C1218-100323A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-100323A003",
+   "displayId": "D3C1218-100323A003",
+   "date": "1983-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.484,
+      32.796
+     ],
+     [
+      16.202,
+      32.41
+     ],
+     [
+      16.287,
+      32.632
+     ],
+     [
+      12.462,
+      33.031
+     ],
+     [
+      12.484,
+      32.796
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-1/00323/A/D3C1218-100323A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-100323A004",
+   "displayId": "D3C1218-100323A004",
+   "date": "1983-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.455,
+      32.643
+     ],
+     [
+      16.165,
+      32.257
+     ],
+     [
+      16.251,
+      32.479
+     ],
+     [
+      12.433,
+      32.878
+     ],
+     [
+      12.455,
+      32.643
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-1/00323/A/D3C1218-100323A004.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-100323F001",
+   "displayId": "D3C1218-100323F001",
+   "date": "1983-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.975,
+      33.084
+     ],
+     [
+      15.926,
+      32.648
+     ],
+     [
+      15.931,
+      32.858
+     ],
+     [
+      12.09,
+      33.342
+     ],
+     [
+      11.975,
+      33.084
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-1/00323/F/D3C1218-100323F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-100323F002",
+   "displayId": "D3C1218-100323F002",
+   "date": "1983-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.479,
+      32.897
+     ],
+     [
+      16.288,
+      32.427
+     ],
+     [
+      16.284,
+      32.662
+     ],
+     [
+      12.565,
+      33.123
+     ],
+     [
+      12.479,
+      32.897
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-1/00323/F/D3C1218-100323F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-100323F003",
+   "displayId": "D3C1218-100323F003",
+   "date": "1983-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.449,
+      32.743
+     ],
+     [
+      16.251,
+      32.274
+     ],
+     [
+      16.246,
+      32.508
+     ],
+     [
+      12.535,
+      32.969
+     ],
+     [
+      12.449,
+      32.743
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-1/00323/F/D3C1218-100323F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-300988F001",
+   "displayId": "D3C1218-300988F001",
+   "date": "1983-11-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.091,
+      33.027
+     ],
+     [
+      13.826,
+      32.898
+     ],
+     [
+      13.87,
+      33.071
+     ],
+     [
+      12.207,
+      33.289
+     ],
+     [
+      12.091,
+      33.027
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-3/00988/F/D3C1218-300988F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-300988F002",
+   "displayId": "D3C1218-300988F002",
+   "date": "1983-11-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.604,
+      32.839
+     ],
+     [
+      14.039,
+      32.717
+     ],
+     [
+      14.078,
+      32.884
+     ],
+     [
+      12.691,
+      33.068
+     ],
+     [
+      12.604,
+      32.839
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-3/00988/F/D3C1218-300988F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-300988F003",
+   "displayId": "D3C1218-300988F003",
+   "date": "1983-11-21",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.574,
+      32.685
+     ],
+     [
+      14.007,
+      32.563
+     ],
+     [
+      14.045,
+      32.729
+     ],
+     [
+      12.662,
+      32.913
+     ],
+     [
+      12.574,
+      32.685
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-3/00988/F/D3C1218-300988F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-301302A002",
+   "displayId": "D3C1218-301302A002",
+   "date": "1984-01-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      9.829,
+      33.178
+     ],
+     [
+      13.693,
+      32.786
+     ],
+     [
+      13.782,
+      33.016
+     ],
+     [
+      9.806,
+      33.422
+     ],
+     [
+      9.829,
+      33.178
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-3/01302/A/D3C1218-301302A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-301302A003",
+   "displayId": "D3C1218-301302A003",
+   "date": "1984-01-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      9.799,
+      33.02
+     ],
+     [
+      13.655,
+      32.628
+     ],
+     [
+      13.744,
+      32.858
+     ],
+     [
+      9.776,
+      33.263
+     ],
+     [
+      9.799,
+      33.02
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-3/01302/A/D3C1218-301302A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-301302F001",
+   "displayId": "D3C1218-301302F001",
+   "date": "1984-01-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      9.256,
+      33.312
+     ],
+     [
+      13.361,
+      32.869
+     ],
+     [
+      13.365,
+      33.085
+     ],
+     [
+      9.375,
+      33.579
+     ],
+     [
+      9.256,
+      33.312
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-3/01302/F/D3C1218-301302F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-301302F002",
+   "displayId": "D3C1218-301302F002",
+   "date": "1984-01-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      9.79,
+      33.121
+     ],
+     [
+      13.743,
+      32.64
+     ],
+     [
+      13.738,
+      32.883
+     ],
+     [
+      9.88,
+      33.354
+     ],
+     [
+      9.79,
+      33.121
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-3/01302/F/D3C1218-301302F002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1218-301302F003",
+   "displayId": "D3C1218-301302F003",
+   "date": "1984-01-08",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      9.76,
+      32.963
+     ],
+     [
+      13.705,
+      32.482
+     ],
+     [
+      13.7,
+      32.725
+     ],
+     [
+      9.85,
+      33.196
+     ],
+     [
+      9.76,
+      32.963
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1218-3",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1218-3/01302/F/D3C1218-301302F003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-100045A005",
+   "displayId": "D3C1219-100045A005",
+   "date": "1984-07-03",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.97,
+      32.895
+     ],
+     [
+      16.625,
+      32.519
+     ],
+     [
+      16.709,
+      32.738
+     ],
+     [
+      12.948,
+      33.126
+     ],
+     [
+      12.97,
+      32.895
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-1/00045/A/D3C1219-100045A005.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-100045A006",
+   "displayId": "D3C1219-100045A006",
+   "date": "1984-07-03",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.94,
+      32.744
+     ],
+     [
+      16.589,
+      32.369
+     ],
+     [
+      16.673,
+      32.587
+     ],
+     [
+      12.918,
+      32.975
+     ],
+     [
+      12.94,
+      32.744
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-1/00045/A/D3C1219-100045A006.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-100045A007",
+   "displayId": "D3C1219-100045A007",
+   "date": "1984-07-03",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.91,
+      32.593
+     ],
+     [
+      16.553,
+      32.218
+     ],
+     [
+      16.637,
+      32.436
+     ],
+     [
+      12.889,
+      32.824
+     ],
+     [
+      12.91,
+      32.593
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-1/00045/A/D3C1219-100045A007.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-100160A002",
+   "displayId": "D3C1219-100160A002",
+   "date": "1984-07-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.738,
+      32.935
+     ],
+     [
+      14.253,
+      32.685
+     ],
+     [
+      14.313,
+      32.899
+     ],
+     [
+      11.738,
+      33.157
+     ],
+     [
+      11.738,
+      32.935
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-1/00160/A/D3C1219-100160A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-100160A003",
+   "displayId": "D3C1219-100160A003",
+   "date": "1984-07-19",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.701,
+      32.753
+     ],
+     [
+      14.21,
+      32.503
+     ],
+     [
+      14.27,
+      32.718
+     ],
+     [
+      11.701,
+      32.975
+     ],
+     [
+      11.701,
+      32.753
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-1/00160/A/D3C1219-100160A003.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-100262F001",
+   "displayId": "D3C1219-100262F001",
+   "date": "1984-07-28",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.724,
+      32.645
+     ],
+     [
+      14.117,
+      32.515
+     ],
+     [
+      14.153,
+      32.7
+     ],
+     [
+      12.798,
+      32.876
+     ],
+     [
+      12.724,
+      32.645
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-1",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-1/00262/F/D3C1219-100262F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-200456A001",
+   "displayId": "D3C1219-200456A001",
+   "date": "1984-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.518,
+      33.013
+     ],
+     [
+      13.703,
+      32.888
+     ],
+     [
+      13.751,
+      33.089
+     ],
+     [
+      12.538,
+      33.204
+     ],
+     [
+      12.518,
+      33.013
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-2/00456/A/D3C1219-200456A001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-200456A002",
+   "displayId": "D3C1219-200456A002",
+   "date": "1984-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.198,
+      32.857
+     ],
+     [
+      13.361,
+      32.742
+     ],
+     [
+      13.401,
+      32.936
+     ],
+     [
+      12.212,
+      33.053
+     ],
+     [
+      12.198,
+      32.857
+     ]
+    ]
+   ],
+   "camera": "A",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-2/00456/A/D3C1219-200456A002.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-200456F001",
+   "displayId": "D3C1219-200456F001",
+   "date": "1984-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      11.935,
+      32.985
+     ],
+     [
+      13.139,
+      32.847
+     ],
+     [
+      13.167,
+      33.036
+     ],
+     [
+      11.986,
+      33.186
+     ],
+     [
+      11.935,
+      32.985
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-2/00456/F/D3C1219-200456F001.jpg"
+   ]
+  },
+  {
+   "dataset": "declassiii",
+   "entityId": "D3C1219-200456F002",
+   "displayId": "D3C1219-200456F002",
+   "date": "1984-08-13",
+   "cloud": null,
+   "footprint": [
+    [
+     [
+      12.205,
+      32.773
+     ],
+     [
+      13.384,
+      32.626
+     ],
+     [
+      13.408,
+      32.822
+     ],
+     [
+      12.249,
+      32.966
+     ],
+     [
+      12.205,
+      32.773
+     ]
+    ]
+   ],
+   "camera": "F",
+   "resolution": "2 to 4 feet",
+   "mission": "1219-2",
+   "downloadable": [],
+   "browse": [
+    "https://ims.cr.usgs.gov/browse/declass3/1219-2/00456/F/D3C1219-200456F002.jpg"
+   ]
+  }
+ ]
+}

@@ -1117,9 +1117,9 @@
   "lon": 13.231,
   "r": 0.9,
   "summary": "Eastern-central district around the main campus of the University of Tripoli (called Al-Fateh University under Gaddafi).",
-  "era": "The university was a centre of student opposition. On 7 April 1976 students at the universities in Tripoli and Benghazi protested against military control and called for elections; the protests were met by violent counter-demonstrations and many students were imprisoned. On 7 April 1977 students were hanged in public in Benghazi, and public executions were held on the 7 April anniversary in following years until the late 1980s. The Washington Post reported on 23 April 1984 on hangings in Tripoli that drew attention to Libyan dissent.",
+  "era": "The university was a centre of student opposition. On 7 April 1976 students at the universities in Tripoli and Benghazi protested against military control and called for elections; the protests were met by violent counter-demonstrations and many students were imprisoned. On 7 April 1977 students were hanged in public in Benghazi; in April 1984 a student was reportedly hanged on the Tripoli campus, and the Washington Post reported on 23 April 1984 on hangings in Tripoli that drew attention to Libyan dissent. Claims of 7 April executions every year into the late 1980s are disputed.",
   "today": "Still the main university campus; renamed the University of Tripoli after 2011.",
-  "uncertain": "Which executions took place on the Tripoli campus itself, and on which dates, still needs confirming against Amnesty International reports of the period.",
+  "uncertain": "Beyond the April 1984 hanging, which executions took place on the Tripoli campus itself still needs confirming.",
   "sources": [
    {
     "t": "Wikipedia: University of Tripoli",
@@ -1560,6 +1560,46 @@
   ]
  },
  {
+  "id": "lb-university-of-tripoli",
+  "name": "University of Tripoli / Al-Fateh University",
+  "ar": "جامعة طرابلس / جامعة الفاتح",
+  "aliases": [
+   "Al Fateh University",
+   "Tripoli University",
+   "Jami'at Tarabulus"
+  ],
+  "kind": "landmark",
+  "lat": 32.85415,
+  "lon": 13.22753,
+  "r": 0.4,
+  "summary": "Libya's largest university, with more than 45,000 students, based in south-eastern Tripoli.",
+  "era": "The Tripoli faculties of the University of Libya (Science 1957, Agriculture 1966) became the University of Tripoli in 1973. On 7 April 1976 students in Tripoli and Benghazi protested against military control and demanded elections; security forces suppressed them and many were jailed. The university was renamed Al Fateh University that year. On 7 April 1977 students sentenced by a military tribunal in Tripoli were hanged in public in Benghazi; in April 1984 a student, Rashid Kaabar, was reportedly hanged at the Faculty of Pharmacy on this campus (Washington Post, Asharq Al-Awsat). Claims of hangings every 7 April into the late 1980s are disputed. During the August 2011 Battle of Tripoli the university was the site of a student uprising led by the Students' Union.",
+  "today": "Renamed the University of Tripoli again in 2012. It runs Medicine, Engineering, Dentistry, Education and many other faculties across several sites, and its teaching hospitals include Tripoli Medical Center, Tripoli Central Hospital, Al-Khadra and Al-Jalaa.",
+  "uncertain": "The exact spot of the 1984 hanging on campus rests on one account; whether other executions took place on the campus is not confirmed.",
+  "sources": [
+   {
+    "t": "Wikipedia - University of Tripoli",
+    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
+   },
+   {
+    "t": "Wikipedia - 1976 Libyan protests",
+    "u": "https://en.wikipedia.org/wiki/1976_Libyan_protests"
+   },
+   {
+    "t": "Wikipedia - University of Libya",
+    "u": "https://en.wikipedia.org/wiki/University_of_Libya"
+   },
+   {
+    "t": "ECOI - report on student protests and hangings",
+    "u": "https://www.ecoi.net/de/dokument/185092"
+   },
+   {
+    "t": "OpenStreetMap mapped feature (local extract)",
+    "u": "https://www.openstreetmap.org/way/316136904"
+   }
+  ]
+ },
+ {
   "id": "lh-italian-cemetery-hammangi",
   "name": "Italian Cemetery and Memorial (Hammangi)",
   "ar": "مقبرة الإيطاليين",
@@ -1773,46 +1813,6 @@
    {
     "t": "Wikipedia: Martyrs' Square (Green Square), Tripoli",
     "u": "https://en.wikipedia.org/wiki/Green_Square,_Tripoli"
-   }
-  ]
- },
- {
-  "id": "lb-university-of-tripoli",
-  "name": "University of Tripoli (Al-Fateh University)",
-  "ar": "جامعة طرابلس",
-  "aliases": [
-   "Al Fateh University",
-   "Tripoli University",
-   "Jami'at Tarabulus"
-  ],
-  "kind": "landmark",
-  "lat": 32.85415,
-  "lon": 13.22753,
-  "r": 0.4,
-  "summary": "Libya's largest university, with more than 45,000 students, based in south-eastern Tripoli.",
-  "era": "The Tripoli faculties of the University of Libya (Science 1957, Agriculture 1966) became the University of Tripoli in 1973. On 7 April 1976 students in Tripoli and Benghazi protested against military control and demanded elections; security forces suppressed them and many were jailed. The university was renamed Al Fateh University that year. Public hangings of students took place every 7 April from 1977 until the late 1980s, but the sources place the documented hangings in Benghazi, not on the Tripoli campus. During the August 2011 Battle of Tripoli the university was the site of a student uprising led by the Students' Union.",
-  "today": "Renamed the University of Tripoli again in 2012. It runs Medicine, Engineering, Dentistry, Education and many other faculties across several sites, and its teaching hospitals include Tripoli Medical Center, Tripoli Central Hospital, Al-Khadra and Al-Jalaa.",
-  "uncertain": "No source found for any specific 1984 student event at Tripoli University; 1984 is documented only for the Bab al-Azizia coup attempt (8 May) and a televised hanging in Benghazi (5 June).",
-  "sources": [
-   {
-    "t": "Wikipedia - University of Tripoli",
-    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
-   },
-   {
-    "t": "Wikipedia - 1976 Libyan protests",
-    "u": "https://en.wikipedia.org/wiki/1976_Libyan_protests"
-   },
-   {
-    "t": "Wikipedia - University of Libya",
-    "u": "https://en.wikipedia.org/wiki/University_of_Libya"
-   },
-   {
-    "t": "ECOI - report on student protests and hangings",
-    "u": "https://www.ecoi.net/de/dokument/185092"
-   },
-   {
-    "t": "OpenStreetMap mapped feature (local extract)",
-    "u": "https://www.openstreetmap.org/way/316136904"
    }
   ]
  },

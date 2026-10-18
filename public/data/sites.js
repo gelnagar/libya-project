@@ -10,7 +10,7 @@ window.ATLAS_LAYERS = {
   security:  { label: 'Security & police',                 code: 'S', color: '#72ca9b', shape: 'square' },
   military:  { label: 'Military installations',            code: 'M', color: '#ec9a3c', shape: 'square' },
   airstrike: { label: 'Foreign airstrikes',                code: 'A', color: '#fbd065', shape: 'diamond' },
-  massacre:  { label: 'Massacres & mass killings',         code: 'X', color: '#f5498b', shape: 'diamond' },
+  massacre:  { label: 'Killings & repression',         code: 'X', color: '#f5498b', shape: 'diamond' },
   power:     { label: "Gaddafi's residences & seats of power", code: 'G', color: '#bdadff', shape: 'square' },
   landmark:  { label: 'Landmarks & events',                code: 'L', color: '#68c1ee', shape: 'circle' }
 };
@@ -202,12 +202,20 @@ window.ATLAS_SITES = [
     sources: [{ t: "Martyrs' Square, Tripoli, Wikipedia", u: 'https://en.wikipedia.org/wiki/Martyrs%27_Square,_Tripoli' }]
   },
   {
-    id: 'fateh', layer: 'landmark', level: 'context', y0: 1976, y1: 1989,
-    name: 'Al-Fateh University', ar: 'جامعة الفاتح',
-    lat: 32.8565, lon: 13.2257, r: 1, period: '1976–1989',
-    relevance: "Universities were closely watched. Students were attacked on 7 April 1976, and 7 April became a date of reprisals that Gaddafi reportedly called the “Day of Judgement”.",
-    text: "Tripoli's main university, now the University of Tripoli. On 7 April 1976 police and government loyalists attacked protesting students, according to a former student. English Wikipedia reports that Gaddafi named the anniversary the “Day of Judgement”; the best-known hangings that followed, on 7 April 1977, were in Benghazi, after a military tribunal in Tripoli. In April 1984 a student, Rashid Kaabar, was hanged at the Faculty of Pharmacy while students were made to watch. Amnesty International reports that security forces arrested religious students here in 1989. Position is approximate.",
-    sources: [SRC.sahli, SRC.ai1992, { t: 'Human rights in Libya under Muammar Gaddafi, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi' }]
+    id: 'fateh', layer: 'landmark', level: 'documented', y0: 1957, y1: 2026, icon: 'university', profile: 'lb-university-of-tripoli',
+    name: 'University of Tripoli / Al-Fateh University', ar: 'جامعة طرابلس / جامعة الفاتح',
+    lat: 32.8545, lon: 13.2265, r: 0.5, period: '1957–today (Al-Fateh University 1976–2011)',
+    relevance: "Libya's largest university and, under Gaddafi, a main stage for student opposition and its punishment: the 7 April 1976 crackdown, the “Day of Judgement” anniversaries, a public hanging on campus in 1984 and arrests of religious students in 1989.",
+    text: "Grew from the Tripoli faculties of the University of Libya (Science 1957), became the University of Tripoli in 1973 and was renamed Al-Fateh University in 1976 after the “Al-Fateh” (1 September) revolution. Key events: on 7 April 1976 police and regime loyalists attacked students protesting military control and demanding elections, and many were jailed; Gaddafi reportedly called the anniversary the “Day of Judgement”, and the military tribunal that sentenced students hanged in Benghazi in 1977 sat in Tripoli; in April 1984 student Rashid Kaabar was hanged at the Faculty of Pharmacy while students were made to watch; Revolutionary Committees policed campus life through the 1980s; in 1989 security forces arrested religious students here (Amnesty International). In August 2011 students rose against the regime during the Battle of Tripoli, and the name University of Tripoli returned. Its teaching hospitals include Tripoli Medical Center.",
+    sources: [SRC.sahli, SRC.ai1992, { t: 'University of Tripoli, Wikipedia', u: 'https://en.wikipedia.org/wiki/University_of_Tripoli' }, { t: '1976 Libyan protests, Wikipedia', u: 'https://en.wikipedia.org/wiki/1976_Libyan_protests' }, { t: 'Human rights in Libya under Muammar Gaddafi, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi' }]
+  },
+  {
+    id: 'mk-april1976', layer: 'massacre', level: 'testimony', y0: 1976, y1: 1976,
+    name: '7 April 1976 crackdown on students', ar: 'قمع الطلاب في 7 أبريل 1976',
+    lat: 32.8553, lon: 13.2236, r: 0.6, period: '7 April 1976',
+    relevance: "The attack on student protesters that made 7 April a date of repression, later marked as the “Day of Judgement”.",
+    text: "Students at the universities in Tripoli and Benghazi protested against military control of campus life and called for free elections. Police and regime loyalists attacked them, and many students were detained for months. No reliable death toll has been published for Tripoli. A year later, on 7 April 1977, students sentenced by a military tribunal in Tripoli were hanged in public in Benghazi. Account of the Tripoli attack: a former student (Tarikhi interview) and Wikipedia.",
+    sources: [SRC.sahli, { t: '1976 Libyan protests, Wikipedia', u: 'https://en.wikipedia.org/wiki/1976_Libyan_protests' }, { t: 'Human rights in Libya under Muammar Gaddafi, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi' }]
   },
   {
     id: 'mk-hang-1984', layer: 'massacre', level: 'testimony', y0: 1984, y1: 1984,

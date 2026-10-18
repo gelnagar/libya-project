@@ -1464,8 +1464,8 @@
  {
   "a": "fateh",
   "b": "mk-hang-1984",
-  "kind": "same-place",
-  "why": "Student Rashid Kaabar was hanged at the Faculty of Pharmacy of the University of Tripoli (Al-Fateh) in April 1984.",
+  "kind": "event",
+  "why": "Student Rashid Kaabar was hanged at the Faculty of Pharmacy on this campus in April 1984, with students made to watch.",
   "year": 1984,
   "confidence": "reported",
   "sources": [
@@ -1476,42 +1476,6 @@
    {
     "t": "Washington Post, 23 Apr 1984, Hangings in Tripoli focus attention on Libyan dissent",
     "u": "https://www.washingtonpost.com/archive/politics/1984/04/23/hangings-in-tripoli-focus-attention-on-libyan-dissent/9c2481e3-1b2d-4b74-8d69-4304afe24ed1/"
-   }
-  ]
- },
- {
-  "a": "fateh",
-  "b": "lb-university-of-tripoli",
-  "kind": "same-place",
-  "why": "Al-Fateh University is the Gaddafi-era name of the University of Tripoli, renamed in 1976.",
-  "year": 1976,
-  "confidence": "documented",
-  "sources": [
-   {
-    "t": "University of Tripoli, Wikipedia",
-    "u": "https://en.wikipedia.org/wiki/University_of_Tripoli"
-   },
-   {
-    "t": "1976 Libyan protests, Wikipedia",
-    "u": "https://en.wikipedia.org/wiki/1976_Libyan_protests"
-   }
-  ]
- },
- {
-  "a": "lb-university-of-tripoli",
-  "b": "mk-hang-1984",
-  "kind": "same-place",
-  "why": "The April 1984 student hanging took place on this campus.",
-  "year": 1984,
-  "confidence": "reported",
-  "sources": [
-   {
-    "t": "Washington Post, 22 Apr 1984, Libya hanged 2 students",
-    "u": "https://www.washingtonpost.com/archive/politics/1984/04/22/libya-hanged-2-students-monday-for-treason/f639373f-d89a-4259-bd91-11ffbfbc2fab/"
-   },
-   {
-    "t": "IRB Canada via ecoi.net, significance of 7 April",
-    "u": "https://www.ecoi.net/de/dokument/185092"
    }
   ]
  },
@@ -2132,6 +2096,38 @@
    {
     "t": "Libyan Navy, Wikipedia",
     "u": "https://en.wikipedia.org/wiki/Libyan_Navy"
+   }
+  ]
+ },
+ {
+  "a": "mk-april1976",
+  "b": "fateh",
+  "kind": "event",
+  "why": "Police and regime loyalists attacked students protesting on this campus on 7 April 1976.",
+  "year": 1976,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Majda Sahli interview, Tarikhi",
+    "u": "https://tarikhi.org/?p=356"
+   },
+   {
+    "t": "1976 Libyan protests, Wikipedia",
+    "u": "https://en.wikipedia.org/wiki/1976_Libyan_protests"
+   }
+  ]
+ },
+ {
+  "a": "mk-april1976",
+  "b": "mk-hang-1984",
+  "kind": "context",
+  "why": "Both belong to the campaign against student dissent that turned 7 April into a date of reprisals.",
+  "year": 1984,
+  "confidence": "reported",
+  "sources": [
+   {
+    "t": "Asharq Al-Awsat on the 7 April hangings",
+    "u": "https://aawsat.com/node/4263251"
    }
   ]
  }

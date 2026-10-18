@@ -410,8 +410,8 @@
  },
  {
   "id": "lb-university-of-tripoli",
-  "name": "University of Tripoli (Al-Fateh University)",
-  "ar": "جامعة طرابلس",
+  "name": "University of Tripoli / Al-Fateh University",
+  "ar": "جامعة طرابلس / جامعة الفاتح",
   "aliases": [
    "Al Fateh University",
    "Tripoli University",
@@ -422,9 +422,9 @@
   "lon": 13.22753,
   "r": 0.4,
   "summary": "Libya's largest university, with more than 45,000 students, based in south-eastern Tripoli.",
-  "era": "The Tripoli faculties of the University of Libya (Science 1957, Agriculture 1966) became the University of Tripoli in 1973. On 7 April 1976 students in Tripoli and Benghazi protested against military control and demanded elections; security forces suppressed them and many were jailed. The university was renamed Al Fateh University that year. Public hangings of students took place every 7 April from 1977 until the late 1980s, but the sources place the documented hangings in Benghazi, not on the Tripoli campus. During the August 2011 Battle of Tripoli the university was the site of a student uprising led by the Students' Union.",
+  "era": "The Tripoli faculties of the University of Libya (Science 1957, Agriculture 1966) became the University of Tripoli in 1973. On 7 April 1976 students in Tripoli and Benghazi protested against military control and demanded elections; security forces suppressed them and many were jailed. The university was renamed Al Fateh University that year. On 7 April 1977 students sentenced by a military tribunal in Tripoli were hanged in public in Benghazi; in April 1984 a student, Rashid Kaabar, was reportedly hanged at the Faculty of Pharmacy on this campus (Washington Post, Asharq Al-Awsat). Claims of hangings every 7 April into the late 1980s are disputed. During the August 2011 Battle of Tripoli the university was the site of a student uprising led by the Students' Union.",
   "today": "Renamed the University of Tripoli again in 2012. It runs Medicine, Engineering, Dentistry, Education and many other faculties across several sites, and its teaching hospitals include Tripoli Medical Center, Tripoli Central Hospital, Al-Khadra and Al-Jalaa.",
-  "uncertain": "No source found for any specific 1984 student event at Tripoli University; 1984 is documented only for the Bab al-Azizia coup attempt (8 May) and a televised hanging in Benghazi (5 June).",
+  "uncertain": "The exact spot of the 1984 hanging on campus rests on one account; whether other executions took place on the campus is not confirmed.",
   "sources": [
    {
     "t": "Wikipedia - University of Tripoli",

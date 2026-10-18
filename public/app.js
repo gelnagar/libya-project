@@ -48,6 +48,8 @@
   }
   var LAYER_ICON = { massacre: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5v5.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><rect x="9" y="5.4" width="6" height="8.2" rx="1.6" fill="currentColor"/><path d="M9.4 7.4h5.2M9.4 9.5h5.2M9.4 11.6h5.2" stroke="rgba(0,0,0,.35)" stroke-width=".9"/><ellipse cx="12" cy="18" rx="4.6" ry="4.8" stroke="currentColor" stroke-width="2.2" fill="none"/></svg>' };
   function codeHtml(k) { return LAYER_ICON[k] || LAYERS[k].code; }
+  var SITE_ICON = { university: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z"/></svg>' };
+  function siteCode(s) { return SITE_ICON[s.icon] || codeHtml(s.layer); }
   function glyph(layerKey, size) {
     var lay = LAYERS[layerKey];
     var g = h('span', { class: 'glyph ' + lay.shape, style: 'background:' + lay.color + (size ? ';width:' + size + 'px;height:' + size + 'px' : '') }, [h('span', { html: codeHtml(layerKey) })]);
@@ -134,11 +136,11 @@
   SITES.forEach(function (s) {
     var lay = LAYERS[s.layer];
     var icon = L.divIcon({ className: '', iconSize: [28, 36], iconAnchor: [14 - s.dx, 36 - s.dy],
-      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '"><b>' + codeHtml(s.layer) + '</b></div>' });
+      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '"><b>' + siteCode(s) + '</b></div>' });
     markers[s.id] = L.marker([s.lat, s.lon], { icon: icon, title: s.name, keyboard: true, riseOnHover: true })
       .bindTooltip(s.name, { permanent: true, direction: 'right', offset: [16 + s.dx, -22 + s.dy], className: 'site-label', interactive: false })
       .on('click', function () { openSite(s); })
-      .on('mouseover', function () { hoverCard([s.lat, s.lon], lay.color, codeHtml(s.layer), s.name, [['When', s.period], ['Type', lay.label], ['Evidence', LEVELS[s.level]], ['Accuracy', '± ' + s.r + ' km']], [-s.dx, -36 + s.dy]); })
+      .on('mouseover', function () { hoverCard([s.lat, s.lon], lay.color, siteCode(s), s.name, [['When', s.period], ['Type', lay.label], ['Evidence', LEVELS[s.level]], ['Accuracy', '± ' + s.r + ' km']], [-s.dx, -36 + s.dy]); })
       .on('mouseout', hideCard);
     rings[s.id] = L.circle([s.lat, s.lon], { radius: s.r * 1000, color: lay.color, weight: 1.2, dashArray: '5 5', fillColor: lay.color, fillOpacity: 0.03, interactive: false });
   });
@@ -227,7 +229,7 @@
   }
   var NOTES = {
     detention: 'Prisons and interrogation sites', security: 'Security service and police buildings',
-    military: 'Bases and training sites', airstrike: 'The April 1986 US raid', massacre: 'Mass killings in Tripoli’s history',
+    military: 'Bases and training sites', airstrike: 'The April 1986 US raid', massacre: 'Killings, executions and crackdowns',
     power: 'Bab al-Aziziya and the old royal palace', landmark: 'Squares, campuses and events'
   };
   Object.keys(LAYERS).forEach(function (k) {
@@ -966,7 +968,8 @@
   var PROF_SVG = '<path d="M12 2 2 7v2h20V7zM4 11v8H2v3h20v-3h-2v-8h-3v8h-2v-8h-4v8H9v-8z"/>';
   function drawProfiles() {
     profGroup.clearLayers(); milGroup.clearLayers();
-    AREAS.filter(function (a) { return ['landmark', 'government', 'prison', 'military'].indexOf(a.kind) >= 0 && a.lat && a.lon; }).forEach(function (a) {
+    var merged = {}; SITES.forEach(function (s) { if (s.profile) merged[s.profile] = 1; });
+    AREAS.filter(function (a) { return ['landmark', 'government', 'prison', 'military'].indexOf(a.kind) >= 0 && a.lat && a.lon && !merged[a.id]; }).forEach(function (a) {
       var dup = SITES.some(function (s) { return map.distance([a.lat, a.lon], [s.lat, s.lon]) < 120 && (s.layer === 'landmark' || s.layer === 'power') && fold(s.name).split(' ')[0] === fold(a.name).split(' ')[0]; });
       if (dup) return;
       var m = L.marker([a.lat, a.lon], { keyboard: false, title: a.name, zIndexOffset: -200, icon: L.divIcon({ className: '', iconSize: [28, 28], iconAnchor: [14, 14],
@@ -1358,7 +1361,7 @@
   var GROUPS = [
     { t: 'Prisons, police & security', n: 'Prisons, security services, police', parts: [['detention', 'Prisons', 'then'], ['security', 'Security services', 'then'], ['osm-police', 'Police stations', 'now']] },
     { t: 'Military & weapons', n: 'Bases, camps, missile and weapons sites', parts: [['military', 'Bases', 'then'], ['milprof', 'Camps & weapons sites', 'then'], ['osm-military', 'Military areas', 'now']] },
-    { t: 'Killings & attacks', n: 'Massacres, executions, the 1986 raid', parts: [['massacre', 'Massacres', 'then'], ['airstrike', '1986 US raid', 'then']] },
+    { t: 'Killings & attacks', n: 'Massacres, executions, the 1986 raid', parts: [['massacre', 'Killings & repression', 'then'], ['airstrike', '1986 US raid', 'then']] },
     { t: 'Power & government', n: "Gaddafi's compounds, ministries, courts, embassies", parts: [['power', 'Seats of power', 'then'], ['osm-govt', 'Offices & courts', 'now'], ['osm-embassies', 'Embassies', 'now']] },
     { t: 'Landmarks & history', n: 'Squares, old city, researched buildings, monuments', parts: [['landmark', 'Events & squares', 'then'], ['profiles', 'Researched buildings', 'then'], ['osm-sights', 'Monuments & sights', 'now'], ['osm-mosques', 'Mosques', 'now'], ['osm-cemeteries', 'Cemeteries', 'now']] },
     { t: 'Hospitals & universities', n: 'Health and education today', parts: [['osm-hospitals', 'Hospitals', 'now'], ['osm-schools', 'Universities', 'now']] },
@@ -1860,6 +1863,7 @@
     }
     familyNotesSection(b);
     connSection(b);
+    profileSections(b);
     var old3 = b.querySelector('.st-open'); if (old3) old3.remove();
     if (curTarget && curTarget.lat != null && !curTarget.isReport) {
       var t3 = curTarget, btn3 = h('div', { class: 'row-btns st-open' }, [h('button', { class: 'btn', text: 'Street-level 3D view', onclick: function () { openStreet(t3.lat, t3.lon, t3.name || ''); } })]);
@@ -1935,8 +1939,8 @@
     openPanel('sheet');
   }
   // remember what each sheet is about, so notes can be attached to it
-  var _openSite = openSite; openSite = function (s) { curTarget = { id: s.id, name: s.name, lat: s.lat, lon: s.lon, code: codeHtml(s.layer) }; _openSite(s); };
-  var _openArea = openArea; openArea = function (x) { curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon }; _openArea(x); };
+  var _openSite = openSite; openSite = function (s) { curTarget = { id: s.id, name: s.name, lat: s.lat, lon: s.lon, code: siteCode(s), profile: s.profile }; _openSite(s); };
+  var _openArea = openArea; openArea = function (x) { var host = SITES.filter(function (s) { return s.profile === x.id; })[0]; if (host) { focusSite(host); return; } curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon }; _openArea(x); };
   var _openSpot = openSpot; openSpot = function (ll) { curTarget = { lat: ll.lat, lon: ll.lng, name: '' }; _openSpot(ll); };
   var _openFeature = openFeature; openFeature = function (k, el) { var lat = el.lat || (el.bounds ? (el.bounds.minlat + el.bounds.maxlat) / 2 : null), lon = el.lon || (el.bounds ? (el.bounds.minlon + el.bounds.maxlon) / 2 : null); curTarget = lat != null ? { id: 'osm-' + el.type + '-' + el.id, name: (el.tags && (el.tags['name:en'] || el.tags.name)) || '', lat: lat, lon: lon } : null; _openFeature(k, el); };
   var _openRecord = openRecord; openRecord = function (r) { curTarget = null; _openRecord(r); };
@@ -2116,10 +2120,18 @@
     L.marker([x.lat, x.lon], { zIndexOffset: 400, title: x.name, icon: L.divIcon({ className: '', iconSize: [24, 24], iconAnchor: [12, 12], html: '<div class="osm-ic prof" style="--c:' + (mil ? '#ec9a3c' : drawn ? '#e0b95a' : '#738091') + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + PROF_SVG + '</svg></div>' }) })
       .bindTooltip(x.name, { direction: 'right', offset: [12, 0], className: 'site-label' }).on('click', function () { openArea(x); }).addTo(linkLayer);
   }
+  function profileSections(b) {
+    var old = b.querySelector('.prof-secs'); if (old) old.remove();
+    if (!curTarget || !curTarget.profile || !AREA_BY_ID[curTarget.profile]) return;
+    var x = AREA_BY_ID[curTarget.profile], box = h('div', { class: 'prof-secs' });
+    [['History', x.history], ['Under Gaddafi, 1969–2011', x.era], ['Today', x.today], ['Still unclear', x.uncertain]].forEach(function (y) { if (y[1]) box.appendChild(h('div', { class: 'sec' }, [h('h3', { text: y[0] }), h('p', { class: 'd-text', text: y[1] })])); });
+    if (!box.children.length) return;
+    var anchor = b.querySelector('.conn-sec') || b.querySelector('.fam-sec') || b.querySelector('.ai'); if (anchor) b.insertBefore(box, anchor); else b.appendChild(box);
+  }
   function connSection(b) {
     var old = b.querySelector('.conn-sec'); if (old) old.remove();
     if (!curTarget || !curTarget.id) return;
-    var me = ent(curTarget.id), all = connFor(curTarget.id);
+    var me = ent(curTarget.id), all = connFor(curTarget.id).concat(curTarget.profile ? connFor(curTarget.profile).filter(function (x) { return x.other.id !== curTarget.id; }) : []);
     var same = all.filter(function (x) { return x.c.kind === 'same-place'; }), list = all.filter(function (x) { return x.c.kind !== 'same-place'; });
     if (!all.length || !me) return;
     linkLayer.clearLayers();

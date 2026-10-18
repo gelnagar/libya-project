@@ -155,20 +155,20 @@ table.kv td:first-child { color: var(--fy-muted); }
 .qchip { font-family: var(--f-ui); color: var(--fy-accent); border-bottom-color: var(--fy-line); }
 
 /* ---------- map markers: Foundry pins ---------- */
-.mk { width: 28px; height: 28px; border-radius: 6px !important; border: 2px solid #fff; background: var(--c); color: #fff; box-shadow: 0 1px 3px rgba(17,20,24,.45); font: 700 13px var(--f-ui); position: relative; transform: none !important; }
-.mk::after { content: ''; position: absolute; left: 50%; bottom: -8px; transform: translateX(-50%); border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #fff; filter: drop-shadow(0 1px 1px rgba(17,20,24,.35)); }
-.mk b { transform: none !important; color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,.25); }
-.mk.v-suspected { background: #fff; color: var(--c); border-color: var(--c); }
+.mk { width: 30px; height: 30px; border-radius: 0 !important; border: 3px solid #111418; background: var(--c); color: #fff; box-shadow: 3px 3px 0 #111418; font: 900 13px var(--f-ui); position: relative; transform: none !important; }
+.mk::after { display: none; }
+.mk b { transform: none !important; color: #fff; text-shadow: none; }
+.mk.v-suspected { background: #fff; color: var(--c); border-color: var(--c); box-shadow: 3px 3px 0 var(--c); }
 .mk.v-suspected b { color: var(--c); text-shadow: none; }
 .mk.v-suspected::after { border-top-color: var(--c); }
-.mk.v-testimony { box-shadow: 0 1px 3px rgba(17,20,24,.45), 0 0 0 3px rgba(255,255,255,.7); }
-.mk.sel { box-shadow: 0 0 0 3px var(--fy-accent), 0 2px 6px rgba(17,20,24,.5); transform: scale(1.18) !important; }
+.mk.v-testimony { box-shadow: 3px 3px 0 #111418, 0 0 0 3px rgba(255,255,255,.8); }
+.mk.sel { box-shadow: 0 0 0 3px #fff, 6px 6px 0 3px #111418; transform: scale(1.18) !important; }
 .mk.diamond { border-radius: 6px !important; }
-.osm-ic { background: var(--c); border: 2px solid #fff; border-radius: 6px; box-shadow: 0 1px 3px rgba(17,20,24,.4); }
+.osm-ic { background: var(--c); border: 2px solid #111418; border-radius: 0; box-shadow: 2px 2px 0 #111418; }
 .osm-ic svg { fill: #fff; }
 .glyph .osm-ic { border-width: 1px; }
-.glyph { border: 1px solid rgba(17,20,24,.25); color: #fff; border-radius: 4px; }
-.glyph.circle, .glyph.square { border-radius: 4px; }
+.glyph { border: 2px solid #111418; color: #fff; border-radius: 0; }
+.glyph.circle, .glyph.square { border-radius: 0; }
 .glyph.diamond { transform: none; }
 .glyph.diamond span { transform: none; }
 .glyph span { color: #fff; }
@@ -258,7 +258,7 @@ html.dark .fy-note { background: rgba(251,179,96,.12); border-color: rgba(251,17
 }
 #drawer .panel-body > *, #sheet .panel-body > * { flex: none; }
 #timeline .tl-hint { right: 190px; }
-.osm-ic.prof { width: 22px; height: 22px; border-radius: 5px; }
+.osm-ic.prof { width: 22px; height: 22px; border-radius: 0; }
 .osm-ic.prof svg { width: 12px; height: 12px; }
 /* compact map styles: three across, short thumbnails */
 .basemaps { grid-template-columns: repeat(3, 1fr); gap: 6px; }

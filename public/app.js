@@ -46,13 +46,18 @@
     s.textContent = msg; s.hidden = false;
     if (ms) statusTimer = setTimeout(function () { s.hidden = true; }, ms);
   }
-  var LAYER_ICON = { massacre: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5v5.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><rect x="9" y="5.4" width="6" height="8.2" rx="1.6" fill="currentColor"/><path d="M9.4 7.4h5.2M9.4 9.5h5.2M9.4 11.6h5.2" stroke="rgba(0,0,0,.35)" stroke-width=".9"/><ellipse cx="12" cy="18" rx="4.6" ry="4.8" stroke="currentColor" stroke-width="2.2" fill="none"/></svg>',
+  var LAYER_ICON = { massacre: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M11 0h2v6h-2z"/><path d="M9 5h6v3H9z"/><path fill-rule="evenodd" d="M8 11h8l4 4v4l-4 4H8l-4-4v-4zm1.6 2.6L6.4 16.8v1.4l3.2 3.2h4.8l3.2-3.2v-1.4l-3.2-3.2z"/></svg>',
+    detention: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M2 2h20v20H2zm3 3v14h14V5z"/><path d="M7.6 5h2v14h-2zM11 5h2v14h-2zM14.4 5h2v14h-2z"/></svg>',
+    security: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M3 2h18v10l-9 10-9-10zm4 4v5l5 5.6 5-5.6V6z"/></svg>',
+    military: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M1 21V10l4-5h14l4 5v11zm5-9v3h12v-3z"/></svg>',
+    power: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M1 22v-4h3v-4h4V9h8v5h4v4h3v4z"/></svg>',
+    landmark: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M7 1h10v18h4v4H3v-4h4zm3 4v2h4V5zm0 5v2h4v-2zm0 5v2h4v-2z"/></svg>',
     airstrike: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .8l1.1 3.2.5 4.3 7.6 6.2 1.6 3.3-1 .5-6.6-2.2.3 4.2 2.4 2.7v.9L13 22.6h-2l-3.8 1.3v-.9l2.4-2.7.3-4.2-6.6 2.2-1-.5 1.6-3.3 7.6-6.2.5-4.3z"/></svg>',
     battle: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M.8 9.4 5.6 9.1v3.6L1.3 13.6z"/><path d="M5.4 8.9h6.3v3.5H5.4z"/><path d="M11.4 9.5h4.9v2.8h-4.9z"/><path d="M13.2 8.3h5.9v1.1h-5.9z"/><path d="M16 10.2h6.8v1.1H16z"/><path d="M20.2 8.7h1.1v2.2h-1.1z"/><path d="M22.7 9.8h.9v1.4h-.9z"/><path d="M6.6 12.4h2.4l-.8 4.9-2.1-.4z"/><path d="M10.1 12.3h2.8c.4 2.6 1.6 5.2 3.1 7.2l-2.3 1.2c-2-2.3-3.3-5-3.6-8.4z"/></svg>' };
   // Lighter tone of a layer colour for thin lines on the dark theme (markers keep the full colour and a white outline).
   function lt(c) { if (!document.documentElement.classList.contains('dark')) return c; var n = parseInt(c.slice(1), 16), r = n >> 16, g = (n >> 8) & 255, b = n & 255, f = function (v) { return Math.round(v + (255 - v) * 0.5); }; return 'rgb(' + f(r) + ',' + f(g) + ',' + f(b) + ')'; }
   function codeHtml(k) { return LAYER_ICON[k] || LAYERS[k].code; }
-  var SITE_ICON = { university: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z"/></svg>' };
+  var SITE_ICON = { university: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M1 9l11-7 11 7v3H1zm3 5h4v6H4zm6 0h4v6h-4zm6 0h4v6h-4zM1 21h22v2H1z"/></svg>' };
   function siteCode(s) { return SITE_ICON[s.icon] || codeHtml(s.layer); }
   function glyph(layerKey, size) {
     var lay = LAYERS[layerKey];

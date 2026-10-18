@@ -1,0 +1,654 @@
+{
+ "archive": {
+  "crest_libya": {
+   "status": 200,
+   "found": 7663,
+   "sample": [
+    [
+     "MSNBCW_20150316_060000_Meet_the_Press",
+     "Meet the Press : MSNBCW : March 15, 2015 11:00pm-12:01am PDT",
+     "2015-03-16T00:00:00Z",
+     "TV-MSNBCW,tvarchive,chingrimestvnewsarchive"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83-00452r000200020004-4",
+     "CIA Reading Room cia-rdp83-00452r000200020004-4: ECONOMIC & ENERGY INDICATORS",
+     "2016-12-20T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83-00452r000200190002-8",
+     "CIA Reading Room cia-rdp83-00452r000200190002-8: ECONOMIC & ENERGY INDICATORS",
+     "2016-12-20T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp84-00898r000100070002-7",
+     "CIA Reading Room cia-rdp84-00898r000100070002-7: ECONOMIC & ENERGY INDICATORS",
+     "2016-12-21T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83-00452r000200010004-5",
+     "CIA Reading Room cia-rdp83-00452r000200010004-5: ECONOMIC AND ENERGY INDICATORS",
+     "2016-12-20T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp84-00898r000400050010-7",
+     "CIA Reading Room cia-rdp84-00898r000400050010-7: ECONOMIC & ENERGY INDICATORS",
+     "2016-12-21T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83-00452r000200430002-1",
+     "CIA Reading Room cia-rdp83-00452r000200430002-1: ECONOMIC & ENERGY INDICATORS",
+     "2016-12-20T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83-00452r000200020003-5",
+     "CIA Reading Room cia-rdp83-00452r000200020003-5: ECONOMIC & ENERGY INDICATORS",
+     "2016-12-20T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83-00452r000200130004-2",
+     "CIA Reading Room cia-rdp83-00452r000200130004-2: ECONOMIC & ENERGY INDICATORS",
+     "2016-12-20T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83-00452r000200250002-1",
+     "CIA Reading Room cia-rdp83-00452r000200250002-1: ECONOMIC & ENERGY INDICATORS",
+     "2016-12-20T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp90b01390r000300450019-8",
+     "CIA Reading Room cia-rdp90b01390r000300450019-8: HFAC STAFFDEL VERSTANDIG/LONIE/WEISSMAN",
+     "1986-10-30T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91-01355r000400020008-6",
+     "CIA Reading Room cia-rdp91-01355r000400020008-6: MONTHLY REPORT--APRIL 1988",
+     "1988-05-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91b00390r000200160014-6",
+     "CIA Reading Room cia-rdp91b00390r000200160014-6: UNITED STATES COUNTERINTELLIGENCE AND SECURITY CONCERNS-1986",
+     "1987-02-04T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91b00776r000400140019-3",
+     "CIA Reading Room cia-rdp91b00776r000400140019-3: MONTHLY WARNING REPORTS FOR OCTOBER 1988",
+     "1988-11-14T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91b00874r000200140001-5",
+     "CIA Reading Room cia-rdp91b00874r000200140001-5: CRISIS PRE-PLANNING GROUP WEDNESDAY, JULY 30, 1986, 11:00 A.M.",
+     "1986-07-30T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91t00712r000100240005-2",
+     "CIA Reading Room cia-rdp91t00712r000100240005-2: LIBYA-CHAD CONFLICT NDJAMENA AIRFIELD, CHAD BILTINE AIRFIELD, CHAD",
+     "1983-08-31T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp92b00478r000800130002-8",
+     "CIA Reading Room cia-rdp92b00478r000800130002-8: MOSCOW'S DOUBLE GAME",
+     "1986-01-29T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp92b01090r000700010099-2",
+     "CIA Reading Room cia-rdp92b01090r000700010099-2: SINO-SOVIET BLOC ECONOMIC ACTIVITIES IN UNDERDEVELOPED AREAS",
+     "1959-11-23T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91-00403r000201020008-4",
+     "CIA Reading Room cia-rdp91-00403r000201020008-4: FR:UNO Y TO:VASILEGA L A",
+     "2016-12-29T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91-00561r000100010038-9",
+     "CIA Reading Room cia-rdp91-00561r000100010038-9: DURENBERGER ACCUSES CIA, REAGAN AIDES OF DATA LEAKS",
+     "1986-04-05T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91-00561r000100100006-4",
+     "CIA Reading Room cia-rdp91-00561r000100100006-4: THE PRESS AND THE CIA SHOULD ACT RESPONSIBLY",
+     "1986-05-31T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91-00561r000100100046-0",
+     "CIA Reading Room cia-rdp91-00561r000100100046-0: BROAD INQUIRY IS ORDERED IN DISCLOSURES OF SECRETS",
+     "1986-05-24T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91-00561r000100130012-4",
+     "CIA Reading Room cia-rdp91-00561r000100130012-4: LEAKS VS. PUBLIC SERVICE ANNOUNCEMENTS",
+     "1986-05-11T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91-00587r000100030029-9",
+     "CIA Reading Room cia-rdp91-00587r000100030029-9: CAN CIA CRATOLOGY ULTIMATELY OUTSMART KREMLIN'S SHELLOLOGY?",
+     "1985-01-10T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91-00587r000100270013-0",
+     "CIA Reading Room cia-rdp91-00587r000100270013-0: TWO EX-OFFICIALS PURSUED IRAN DEAL",
+     "1986-11-24T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ]
+   ]
+  },
+  "cia_rdp_libya": {
+   "status": 200,
+   "found": 73,
+   "sample": [
+    [
+     "cia-readingroom-document-0006014840",
+     "CIA Reading Room 0006014840: THE PRESIDENT'S DAILY BRIEF 3 JULY 1975",
+     "1975-07-03T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-0006014903",
+     "CIA Reading Room 0006014903: THE PRESIDENT'S DAILY BRIEF 16 SEPTEMBER 1975",
+     "1975-09-16T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91-00901r000500070021-6",
+     "CIA Reading Room cia-rdp91-00901r000500070021-6: KHOMEINI GOONS TAKE THE PLACE OF SHAH'S GANG",
+     "1982-10-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "chavismo_nationalization",
+     "Chavismo as a direct response to European Privatization Regimes in Latin America: Hasta Siempre",
+     "1991-01-01T00:00:00Z",
+     "magazine_clippings,magazine_rack,fav-angelc00"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp67-00059a000400280089-0",
+     "CIA Reading Room cia-rdp67-00059a000400280089-0: ORR DIARY, 22 AUGUST 1951 (AD/RR INFORMATION UNLESS OTHERWISE STATED)",
+     "1951-08-22T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-0006014898",
+     "CIA Reading Room 0006014898: THE PRESIDENT'S DAILY BRIEF 10 SEPTEMBER 1975",
+     "1975-09-10T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-0005977813",
+     "CIA Reading Room 0005977813: THE PRESIDENT'S DAILY BRIEF 23 NOVEMBER 1970",
+     "1970-11-23T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp85t00875r002000110022-0",
+     "CIA Reading Room cia-rdp85t00875r002000110022-0: IMPLICATIONS OF ECONOMIC NATIONALISM IN THE POOR COUNTRIES",
+     "1971-06-29T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-0005993187",
+     "CIA Reading Room 0005993187: THE PRESIDENT'S DAILY BRIEF 11 MARCH 1972",
+     "1972-03-11T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83m00914r002800140007-4",
+     "CIA Reading Room cia-rdp83m00914r002800140007-4: DDI ACTIVITY REPORT - 15 - 19 FEBRUARY 1982",
+     "2016-12-20T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-0006007699",
+     "CIA Reading Room 0006007699: THE PRESIDENT'S DAILY BRIEF 16 MARCH 1974",
+     "1974-03-16T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp79r01012a005500040021-6",
+     "CIA Reading Room cia-rdp79r01012a005500040021-6: NIE 30-55: MIDDLE EAST DEFENSE PROBLEMS AND PROSPECTS",
+     "1955-03-29T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp61s00750a000400020093-2",
+     "CIA Reading Room cia-rdp61s00750a000400020093-2: (UNTITLED)",
+     "1957-10-22T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp90-00552r000505250059-2",
+     "CIA Reading Room cia-rdp90-00552r000505250059-2: ABC NIGHTLINE - MOAMMAR KHADAFY",
+     "1984-11-20T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-0005992582",
+     "CIA Reading Room 0005992582: THE PRESIDENT'S DAILY BRIEF 12 APRIL 1971",
+     "1971-04-12T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-0005993923",
+     "CIA Reading Room 0005993923: THE PRESIDENT'S DAILY BRIEF 5 SEPTEMBER 1973",
+     "1973-09-05T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp90-00965r000100160066-5",
+     "CIA Reading Room cia-rdp90-00965r000100160066-5: HARE-BRAINED CIA SCHEMES KEEP MULTIPLYING",
+     "1981-08-25T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp61-00549r000300080064-5",
+     "CIA Reading Room cia-rdp61-00549r000300080064-5: RELEASE OF NATIONAL INTELLIGENCE ESTIMATES TO FOREIGN GOVERNMENTS",
+     "1956-07-30T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp84-00868r000100090009-7",
+     "CIA Reading Room cia-rdp84-00868r000100090009-7: EMBASSY CAIRO HAS APPROVED OUR REQUEST TO CONDUCT RECEPTION",
+     "1980-05-28T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83b01027r000200030017-5",
+     "CIA Reading Room cia-rdp83b01027r000200030017-5: ALERT MEMORANDUM ON EGYPT/LIBYA (U)",
+     "1979-07-30T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp90-00965r000100110071-4",
+     "CIA Reading Room cia-rdp90-00965r000100110071-4: FORMER GADHAFI ALLY PLOTS OVERTHROW",
+     "1986-09-24T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-0005993808",
+     "CIA Reading Room 0005993808: THE PRESIDENT'S DAILY BRIEF 27 APRIL 1973",
+     "1973-04-27T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp13x00001r000100450007-8",
+     "CIA Reading Room cia-rdp13x00001r000100450007-8: OSS - ASSESSMENT OF ITALIAN DIPLOMATIC SITUATION/BRITISH COMMENTARY ON ",
+     "1942-04-19T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp85t00875r002000120033-7",
+     "CIA Reading Room cia-rdp85t00875r002000120033-7: THE POOR COUNTRIES: SHIFTING STRATEGY AND PROSPECTS FOR THE SEVENTIES",
+     "1973-01-19T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp86t00608r000600010001-5",
+     "CIA Reading Room cia-rdp86t00608r000600010001-5: ESTIMATED OPEC OIL RECEIPTS, 1974",
+     "1975-02-03T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ]
+   ]
+  },
+  "jprs_nena": {
+   "status": 200,
+   "found": 1335,
+   "sample": [
+    [
+     "ufiche-test-document_jprs-78776",
+     "Near East/North Africa Report No. 2383",
+     "1981-08-18T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-79581",
+     "Near East/North Africa Report No. 2446",
+     "1981-12-03T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-80341",
+     "Near East/North Africa Report No. 2506",
+     "1982-03-17T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-80442",
+     "Near East/North Africa Report No. 2515",
+     "1982-03-30T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-80558",
+     "Near East/North Africa Report No. 2524",
+     "1982-04-13T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-82318",
+     "Near East/North Africa Report No. 2666",
+     "1982-11-24T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-80902",
+     "Near East/North Africa Report No. 2550",
+     "1982-05-25T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-80975",
+     "Near East/North Africa Report No. 2556",
+     "1982-06-03T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-81045",
+     "Near East/North Africa Report No. 2562",
+     "1982-06-15T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-81381",
+     "Near East/North Africa Report No. 2590",
+     "1982-07-28T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-81686",
+     "Near East/North Africa Report No. 2613",
+     "1982-09-01T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-82800",
+     "Near East/North Africa Report No. 2701",
+     "1983-02-03T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "ufiche-test-document_jprs-82811",
+     "Near East/North Africa Report No. 2703",
+     "1983-02-07T00:00:00Z",
+     "ufiche-test-documents,ufiche_test"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000200070044-4",
+     "CIA Reading Room cia-rdp82-00850r000200070044-4: JPRS ID: 9213 USSR REPORT SPACE",
+     "2016-11-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "DTIC_ADA373051",
+     "DTIC ADA373051: Near East/North Africa Report, Number 2658",
+     "1982-11-12T00:00:00Z",
+     "dticarchive,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000200050009-5",
+     "CIA Reading Room cia-rdp82-00850r000200050009-5: JPRS ID: 8907 NEAR EAST/NORTH AFRICA REPORT",
+     "2016-11-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "DTIC_ADA353727",
+     "DTIC ADA353727: Near East/North Africa Report No. 2593",
+     "1982-08-02T00:00:00Z",
+     "dticarchive,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000200070038-1",
+     "CIA Reading Room cia-rdp82-00850r000200070038-1: JPRS ID: 9207 NEAR EAST/NORTH AFRICA REPORT",
+     "2016-11-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "jprs-report_jprs-74182",
+     "Near East/North Africa Report No. 2018; Corrected Copy",
+     "1979-09-14T00:00:00Z",
+     "jprs-reports-near-east-north-africa,evergreen-college,microfiche"
+    ],
+    [
+     "jprs-report_jprs-74444",
+     "Near East/North Africa Report No. 2036",
+     "1979-10-24T00:00:00Z",
+     "jprs-reports-near-east-north-africa,evergreen-college,microfiche"
+    ],
+    [
+     "jprs-report_jprs-75701",
+     "Near East/North Africa Report No. 2116",
+     "1980-05-15T00:00:00Z",
+     "jprs-reports-near-east-north-africa,evergreen-college,microfiche"
+    ],
+    [
+     "jprs-report_jprs-76069",
+     "Near East/North Africa Report No. 2149",
+     "1980-07-18T00:00:00Z",
+     "jprs-reports-near-east-north-africa,evergreen-college,microfiche"
+    ],
+    [
+     "jprs-report_jprs-76071",
+     "Near East/North Africa Report No. 2150",
+     "1980-07-18T00:00:00Z",
+     "jprs-reports-near-east-north-africa,evergreen-college,microfiche"
+    ],
+    [
+     "jprs-report_jprs-76289",
+     "Near East/North Africa Report No. 2169",
+     "1980-08-25T00:00:00Z",
+     "jprs-reports-near-east-north-africa,evergreen-college,microfiche"
+    ],
+    [
+     "jprs-report_jprs-76620",
+     "Near East/North Africa Report No. 2200",
+     "1980-10-15T00:00:00Z",
+     "jprs-reports-near-east-north-africa,evergreen-college,microfiche"
+    ]
+   ]
+  },
+  "fbis_mea": {
+   "status": 200,
+   "found": 139,
+   "sample": [
+    [
+     "cia-readingroom-document-cia-rdp88-00733r000100060005-3",
+     "CIA Reading Room cia-rdp88-00733r000100060005-3: MONTHLY REPORT--LONDON BUREAU--JULY 1987",
+     "1987-08-05T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp88-00733r000100060010-7",
+     "CIA Reading Room cia-rdp88-00733r000100060010-7: MONTHLY REPORT-- LONDON BUREAU-- FEBRUARY 1987",
+     "1987-03-05T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400370017-7",
+     "CIA Reading Room cia-rdp05-01559r000400370017-7: LIBYA: AL-QADHDHAFI SPEAKS ON ANNIVERSARY OF ITALIAN EVACUATION",
+     "1975-10-07T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400420005-4",
+     "CIA Reading Room cia-rdp05-01559r000400420005-4: AL-QADHDHAFI INTERVIEWED ON REGIONAL SITUATION",
+     "1987-01-26T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400380013-0",
+     "CIA Reading Room cia-rdp05-01559r000400380013-0: AL-QADHDHAFI ADDRESSES 1 DAY FO REVENGE ANNIVERSARY RALLY",
+     "1977-10-07T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400430024-2",
+     "CIA Reading Room cia-rdp05-01559r000400430024-2: AL-QADHDHAFI ADDRESSES 12 MARCH RALLY",
+     "1988-03-12T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000200020059-3",
+     "CIA Reading Room cia-rdp82-00850r000200020059-3: JPRS ID: 74691 NEAR EAST/NORTH AFRICA REPORT",
+     "2016-11-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000300070002-9",
+     "CIA Reading Room cia-rdp82-00850r000300070002-9: JPRS ID: 9219 EAST EUROPE REPORT POLITICAL, SOCIOLOGICAL AND MILITARY A",
+     "2016-11-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400430025-1",
+     "CIA Reading Room cia-rdp05-01559r000400430025-1: AL-QADHDHAFI ON 'LIBERATION,' EGYPT, FREEDOM",
+     "1988-03-28T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp88-00733r000100060009-9",
+     "CIA Reading Room cia-rdp88-00733r000100060009-9: MONTHLY REPORT--LONDON BUREAU--MARCH 1987",
+     "1987-04-08T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400400054-2",
+     "CIA Reading Room cia-rdp05-01559r000400400054-2: AL-QADHDHAFI SPEAKS AT CADET GRADUATION",
+     "1985-08-28T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400430008-0",
+     "CIA Reading Room cia-rdp05-01559r000400430008-0: AL-QADHDHAFI ADDRESSES PALESTINIANS",
+     "1988-01-08T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400410052-3",
+     "CIA Reading Room cia-rdp05-01559r000400410052-3: AL-QADHDHAFI CONFIRMS USE OF FORCE IN INTERVIEW",
+     "1986-07-30T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000500050049-8",
+     "CIA Reading Room cia-rdp82-00850r000500050049-8: JPRS ID: 10473 NEAR EAST/NORTH AFRICA REPORT",
+     "2016-11-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp87-01104r000100090007-6",
+     "CIA Reading Room cia-rdp87-01104r000100090007-6: MONTHLY REPORT - LONDON BUREAU - JUNE 1986",
+     "1986-07-03T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp83-00714r000100160004-6",
+     "CIA Reading Room cia-rdp83-00714r000100160004-6: FBIS MONITORING OF MUSLIM AREAS (C)",
+     "1979-12-05T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400410019-0",
+     "CIA Reading Room cia-rdp05-01559r000400410019-0: FURTHER REPORT ON AL-QADHDHAFI'S LA STAMPA INTERVIEW",
+     "1986-02-11T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400430016-1",
+     "CIA Reading Room cia-rdp05-01559r000400430016-1: AL-QADHDHAFI SPEAKS ON UNITY, 'AWARENESS'",
+     "1988-01-28T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000200030002-4",
+     "CIA Reading Room cia-rdp82-00850r000200030002-4: JPRS ID: 74695 NEAR EAST/NORTH AFRICA REPORT",
+     "2016-11-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000200050003-1",
+     "CIA Reading Room cia-rdp82-00850r000200050003-1: JPRS ID: 8901 SUB-SAHARAN AFRICA REPORT",
+     "2016-11-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp82-00850r000200070044-4",
+     "CIA Reading Room cia-rdp82-00850r000200070044-4: JPRS ID: 9213 USSR REPORT SPACE",
+     "2016-11-01T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp05-01559r000400430046-8",
+     "CIA Reading Room cia-rdp05-01559r000400430046-8: SPEECH BY LIBYAN LEADER MU'AMMAR AL-QADHDHAFI TO TUNISIAN CHAMBER OF DE",
+     "1988-12-09T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp87-01104r000100090001-2",
+     "CIA Reading Room cia-rdp87-01104r000100090001-2: MONTHLY REPORT - LONDON BUREAU - DECEMBER 1986",
+     "1987-01-07T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp72-00337r000500070049-4",
+     "CIA Reading Room cia-rdp72-00337r000500070049-4: JOURNAL OFFICE OF LEGISLATIVE COUNSEL",
+     "1970-06-04T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ],
+    [
+     "cia-readingroom-document-cia-rdp91b00776r000500100008-8",
+     "CIA Reading Room cia-rdp91b00776r000500100008-8: STRATEGIC WARNING STAFF",
+     "1981-04-08T00:00:00Z",
+     "ciareadingroom,usgovernmentmirrors,government-documents"
+    ]
+   ]
+  },
+  "black_vault_libya": {
+   "status": 200,
+   "found": 0,
+   "sample": []
+  }
+ },
+ "nara:Libya Tripoli CIA": {
+  "status": 200,
+  "head": "<!doctype html><html lang=\"en\"><head><script>var hostname=window.location.hostname,scriptSources=\"'self' 'unsafe-inline' https://www.google-analytics.com https://www.googletagmanager.com\";\"catalog.archives.gov\"===hostname&&(scriptSources+=\" https://dap.digitalgov.gov\");var meta=document.createElement(\"meta\");meta.httpEquiv=\"Content-Security-Policy\",meta.content=\"script-src \"+scriptSources,document.head.appendChild(meta)</script><script>\"catalog.archives.gov\"===window.location.hostname&&document.write('<script async type=\"text/javascript\" id=\"_fed_an_ua_tag\" src=\"https://dap.digitalgov.gov/Univ"
+ },
+ "nara:CREST Libya": {
+  "status": 200,
+  "head": "<!doctype html><html lang=\"en\"><head><script>var hostname=window.location.hostname,scriptSources=\"'self' 'unsafe-inline' https://www.google-analytics.com https://www.googletagmanager.com\";\"catalog.archives.gov\"===hostname&&(scriptSources+=\" https://dap.digitalgov.gov\");var meta=document.createElement(\"meta\");meta.httpEquiv=\"Content-Security-Policy\",meta.content=\"script-src \"+scriptSources,document.head.appendChild(meta)</script><script>\"catalog.archives.gov\"===window.location.hostname&&document.write('<script async type=\"text/javascript\" id=\"_fed_an_ua_tag\" src=\"https://dap.digitalgov.gov/Univ"
+ },
+ "dtic": {
+  "status": 200,
+  "len": 390649,
+  "pdfs": []
+ },
+ "dtic_robots": {
+  "status": 403,
+  "t": "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>\n<html xmlns='http://www.w3.org/1999/xhtml'>\n\n<head>\n    <meta content='text/html; charset=utf-8' http-equiv='content-type' />\n    <style type='text/css'>\n        body {\n            font-family: Arial;\n            margin-left: 40px;\n        }\n\n        img {\n            border: 0 none;\n        }\n\n        #content {\n            margin-left: auto;\n            margin-right: auto\n        }\n\n        #message h1 {\n            font-size: 24px;\n            font-weight: normal;\n            color: #000000;\n            margin: 34px 0px 0px 0px\n        }\n\n        #message h2 {\n            font-size: 20px;\n            font-weight: normal;\n            color: #000000;\n            margin"
+ },
+ "ia_robots": {
+  "status": 200,
+  "t": "\nSitemap: https://archive.org/sitemap/sitemap.xml\n\n##############################################\n#\n# Welcome to the Internet Archive!\n#\n##############################################\n\nUser-agent: *\nDisallow: /control/\nDisallow: /report/\n"
+ }
+}

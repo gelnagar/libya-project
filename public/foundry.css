@@ -545,3 +545,11 @@ body.unknown-on #timeline, body.unknown-on .chat, body.unknown-on .hud, body.unk
 .un-pic .t3 .sk { fill: #9c9688; } .un-pic .t3 .sk2 { fill: #7b766a; }
 .un-pic .h1 .hr { fill: #8a877f; } .un-pic .h2 .hr { fill: #4b4034; } .un-pic .h3 .hr { fill: #0d0d0e; }
 .un-pic .a1 .ac { fill: #2d5a73; } .un-pic .a2 .ac { fill: #6b5a28; }
+/* agents: higher contrast so the figure separates from the background */
+.un-pic .ag-bg { fill: #0a0a0c; } .un-pic .ag-blind { fill: #e8dfc6; opacity: .17; } .un-pic .ag-sky { fill: #1c1c21; } .un-pic .ag-win { fill: #e3c77a; opacity: .85; }
+.un-pic .ag-coat { fill: #8a8a96; } .un-pic .ag-coat2 { fill: #6c6c78; } .un-pic .ag-lap { fill: #565662; }
+.un-pic .ag-edge { fill: none; stroke: #e2dccd; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; opacity: .85; }
+.un-pic .ag-shirt { fill: #efe9da; } .un-pic .ag-tie { fill: #c24a63; } .un-pic .ag-btn { fill: #d9d2c3; }
+.un-pic .ag-hat { fill: #b2aa94; } .un-pic .ag-hat2 { fill: #8f8873; } .un-pic .ag-band { fill: #5b1d2c; } .un-pic .ag-rim { fill: none; stroke: #efe9da; stroke-width: 1.4; stroke-linecap: round; opacity: .55; }
+.un-pic .ag .sk { fill: #b3a68e; } .un-pic .ag .sk2 { fill: #7f7461; } .un-pic .ag .hr { fill: #2a2420; } .un-pic .ag .ln { stroke: #14110f; }
+.un-pic .ag .t1 { } 

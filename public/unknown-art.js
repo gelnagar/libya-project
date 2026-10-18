@@ -67,17 +67,20 @@
     bg += '<text class="ch" x="3" y="10">180</text><text class="ch" x="3" y="43">170</text><text class="ch" x="3" y="76">160</text><text class="ch" x="84" y="10">180</text>';
     return bg + suit(r) + shirt(r() > .5, r) + head(r, { eye: 37 });
   } };
-  ART.agent = { eye: 38, draw: function (r) {   // trench coat, fedora, venetian-blind light
-    var bg = '<rect class="s3" width="100" height="100"/><rect fill="url(#un-spot)" width="100" height="100"/>', i, x;
-    for (i = 0; i < 9; i++) bg += '<path class="lt" opacity=".13" d="M' + (-10 + i * 14) + ' 0l16 0-30 100h-16z"/>';
-    bg += '<g class="s1">'; for (x = 0, i = 0; x < 100; i++) { var w = 8 + r() * 10, hh = 10 + r() * 26; bg += '<rect x="' + f(x) + '" y="' + f(100 - hh) + '" width="' + f(w) + '" height="' + f(hh) + '"/>'; x += w + 1; } bg += '</g>';
-    for (i = 0; i < 22; i++) bg += '<rect class="hi" opacity=".5" x="' + f(r() * 96) + '" y="' + f(74 + r() * 24) + '" width="1.6" height="1.6"/>';
-    var coat = '<path class="s2" d="M2 100c3-28 18-40 48-40s45 12 48 40z"/><path class="hatch" d="M2 100c3-28 18-40 48-40s45 12 48 40z"/>' +
-      '<path class="shirt" d="M42 61l8 14 8-14z"/><path class="ac" d="M48 66l2 2.6 2-2.6-.8 2.6 2 18-3.2 3-3.2-3 2-18z"/>' +
-      '<path class="s1" d="M26 66l16-8 6 22-8 20-22-8z"/><path class="s1" d="M74 66L58 58l-6 22 8 20 22-8z"/><path class="ln" d="M28 70l14 6M72 70l-14 6M40 80l8 14M60 80l-8 14"/>' +
-      '<path class="s1" d="M30 64c4-8 10-12 20-12s16 4 20 12l-6 6c-4-5-9-7-14-7s-10 2-14 7z"/><circle class="hi" cx="40" cy="88" r="1.4"/><circle class="hi" cx="40" cy="95" r="1.4"/>';
-    var hat = '<path class="s3" d="M17 31c7-4 19-5 33-5s26 1 33 5c-6 4-18 6-33 6s-27-2-33-6z"/><path class="s2" d="M33 30c0-13 6-20 17-20s17 7 17 20z"/><path class="s3" d="M33 28h34v5H33z"/><path class="lt" d="M33 27h34v1.4H33z" opacity=".7"/><path class="hatch" d="M33 30c0-13 6-20 17-20s17 7 17 20z"/><path class="sh" d="M34 36h32l2-4H32z" opacity=".6"/>';
-    return bg + coat + head(r, { eye: 38, cy: 41, rx: 14, ry: 16, bare: true, face: pick(r, [0, 0, 1, 3]) }) + hat;
+  ART.agent = { eye: 38, draw: function (r) {   // trench coat, fedora, hard blind-light on a dark city: high contrast on purpose
+    var bg = '<rect class="ag-bg" width="100" height="100"/><rect fill="url(#un-spot)" width="100" height="100"/>', i, x;
+    for (i = 0; i < 8; i++) bg += '<path class="ag-blind" d="M' + (-14 + i * 15) + ' 0h9l-30 100h-9z"/>';
+    bg += '<g class="ag-sky">'; for (x = 0, i = 0; x < 100; i++) { var w = 8 + r() * 10, hh = 14 + r() * 28; bg += '<rect x="' + f(x) + '" y="' + f(100 - hh) + '" width="' + f(w) + '" height="' + f(hh) + '"/>'; x += w + 1; } bg += '</g>';
+    for (i = 0; i < 30; i++) bg += '<rect class="ag-win" x="' + f(r() * 96) + '" y="' + f(66 + r() * 32) + '" width="1.8" height="2.2"/>';
+    var coat = '<path class="ag-coat" d="M2 100c3-28 18-40 48-40s45 12 48 40z"/><path class="hatch" d="M2 100c3-28 18-40 48-40s45 12 48 40z"/>' +
+      '<path class="ag-shirt" d="M41 60l9 17 9-17z"/><path class="ag-tie" d="M47.6 65l2.4 3 2.4-3-1 3 3 21-4.4 5-4.4-5 3-21z"/>' +
+      '<path class="ag-lap" d="M24 66l17-9 7 24-9 19-22-8z"/><path class="ag-lap" d="M76 66L59 57l-7 24 9 19 22-8z"/>' +
+      '<path class="ag-edge" d="M24 66l17-9 7 24M76 66L59 57l-7 24M39 100l-9-8M61 100l9-8"/>' +
+      '<path class="ag-coat2" d="M28 64c5-9 11-13 22-13s17 4 22 13l-6 6c-4-5-9-7-16-7s-12 2-16 7z"/><path class="ag-edge" d="M30 63c5-8 10-11 20-11s15 3 20 11"/>' +
+      '<circle class="ag-btn" cx="41" cy="88" r="1.8"/><circle class="ag-btn" cx="41" cy="95" r="1.8"/><path class="ag-edge" d="M62 84l12 6M62 92l10 5"/>';
+    var hat = '<path class="ag-hat2" d="M15 32c8-5 20-6 35-6s27 1 35 6c-6 5-19 7-35 7s-29-2-35-7z"/><path class="ag-edge" d="M15 32c8-5 20-6 35-6s27 1 35 6"/>' +
+      '<path class="ag-hat" d="M32 31c0-14 6-22 18-22s18 8 18 22z"/><path class="ag-band" d="M32 27h36l.4 5H31.6z"/><path class="ag-edge" d="M32 31c0-14 6-22 18-22s18 8 18 22M43 11q7 3 14 0"/><path class="hatch" d="M32 31c0-14 6-22 18-22s18 8 18 22z"/><path class="sh" d="M34 36h32l4-5H30z"/>';
+    return '<g class="ag">' + bg + coat + head(r, { eye: 38, cy: 42, rx: 14, ry: 16, bare: true, face: pick(r, [0, 0, 1, 3]) }) + '<path class="ag-rim" d="M36 38q-2 6 1 13"/>' + hat + '</g>';
   } };
   ART.official = { eye: 36, draw: function (r) {   // suit or uniform, flag drape and wall panel
     var bg = '<rect class="s3" width="100" height="100"/><rect class="s1" x="0" y="0" width="22" height="100"/>', i;

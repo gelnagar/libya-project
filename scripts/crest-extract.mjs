@@ -55,7 +55,24 @@ const params = (d) => ({ model: MODEL, max_tokens: 1800, temperature: 0,
   messages: [{ role: 'user', content: `Title: ${d.title}\nDate (catalog): ${d.date || 'unknown'}\nSource: ${d.src === 'jprs' ? 'JPRS translation volume (Libya-related excerpts only)' : d.src === 'nis' ? 'CIA National Intelligence Survey' : 'CIA reading room (CREST)'}\n\n<document>\n${trim(d.text)}\n</document>` }] });
 
 // Inputs
-const docs = zlib.gunzipSync(fs.readFileSync(`${DIR}/docs.jsonl.gz`)).toString().split('\n').filter(Boolean).map((l) => JSON.parse(l)).filter((d) => d.text && d.text.length >= 80);
+// If the full fetch has not saved yet, sample mode fetches its own small set from the mirror list (polite, sequential).
+async function sampleDocs(n) {
+  const L = JSON.parse(fs.readFileSync(`${DIR}/ia-list.json`, 'utf8')).crest;
+  const pick = L.filter((x) => /NATIONAL INTELLIGENCE|LIBYA|QADH|QADD|GADH/i.test(x.title)).slice(0, 200);
+  const step = Math.max(1, Math.floor(pick.length / n)); const out = [];
+  for (let i = 0; i < pick.length && out.length < n; i += step) {
+    const it = pick[i]; const ua = { 'user-agent': 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)' };
+    const meta = await (await fetch(`https://archive.org/metadata/${it.identifier}`, { headers: ua })).json().catch(() => null);
+    const f = (meta?.files || []).find((x) => /_djvu\.txt$/.test(x.name)); if (!f) continue;
+    const t = await (await fetch(`https://archive.org/download/${it.identifier}/${encodeURIComponent(f.name)}`, { headers: ua })).text();
+    out.push({ id: it.identifier, src: 'crest', title: String(it.title || '').replace(/^CIA Reading Room [^:]+:\s*/, ''), date: String(it.date || '').slice(0, 10), text: t.replace(/\s+/g, ' ').trim().slice(0, 60000) });
+    await sleep(3000);
+  }
+  return out;
+}
+const docs = fs.existsSync(`${DIR}/docs.jsonl.gz`)
+  ? zlib.gunzipSync(fs.readFileSync(`${DIR}/docs.jsonl.gz`)).toString().split('\n').filter(Boolean).map((l) => JSON.parse(l)).filter((d) => d.text && d.text.length >= 80)
+  : (SAMPLE ? (await sampleDocs(SAMPLE)).filter((d) => d.text.length >= 80) : (() => { throw new Error('docs.jsonl.gz not there yet'); })());
 let oldJ = new Set(); try { oldJ = new Set(JSON.parse(fs.readFileSync('archive/gov/catalog.json', 'utf8')).map((g) => g.id.replace(/^jprs-/, ''))); } catch {}
 const done = new Set(fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l).id) : []);
 let todo = docs.filter((d) => !done.has(d.id) && !(d.src === 'jprs' && oldJ.has(d.id)));

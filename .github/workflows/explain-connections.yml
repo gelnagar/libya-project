@@ -1,0 +1,26 @@
+name: Sonnet explains connections
+on:
+  workflow_dispatch:
+    inputs:
+      mode: { description: 'sample or batch', default: 'sample' }
+      n: { description: 'sample size', default: '8' }
+permissions: { contents: write }
+concurrency: { group: explain-connections, cancel-in-progress: false }
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - env: { ANTHROPIC_API_KEY: '${{ secrets.ANTHROPIC_API_KEY }}' }
+        run: |
+          mkdir -p archive/research
+          if [ -z "$ANTHROPIC_API_KEY" ]; then echo '{"error":"ANTHROPIC_API_KEY secret missing"}' > archive/research/connection-notes-status.json; else
+          if [ "${{ inputs.mode }}" = "batch" ]; then node scripts/explain-connections.mjs --batch; else node scripts/explain-connections.mjs --sample ${{ inputs.n }}; fi; fi
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do git add archive/research public/data/connection-notes.js && git commit -m "Sonnet connection notes ${{ inputs.mode }}" ; git pull --rebase && git push && break; sleep 5; done

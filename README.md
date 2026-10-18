@@ -80,8 +80,9 @@ erDiagram
 | Entity | File | Count |
 |---|---|---|
 | Site (curated event or place) | `public/data/sites.js` | 23 |
-| Area (profile of a neighbourhood, building or camp) | `archive/areas/*` → `public/data/areas.js` | 138 (+57 without coordinates) |
-| Record (document or event) | `archive/*` → `public/data/records.js` | 2,730 |
+| Area (profile of a neighbourhood, building or camp) | `archive/areas/*` → `public/data/areas.js` | 139 (+59 without coordinates) |
+| Record (document or event) | `archive/*` → `public/data/records.js` | 4,290 |
+| Connection (evidence-based link between two places) | `archive/research/links*.json` → `public/data/links.js` (`scripts/build-links.mjs`, `scripts/auto-links.py`) | 159 |
 | Report (added by family) | Cloudflare KV `reports:v1` | live |
 | OSM feature (today's map data) | `public/data/osm/*.json` | ~2,300 |
 | Overlay (old map or satellite image) | `public/data/overlays.js` + `public/maps/` | 4 |

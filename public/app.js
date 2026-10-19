@@ -125,7 +125,7 @@
     var a = s.y0 == null ? 1969 : s.y0, b = s.y1 == null ? (s.y0 == null ? 2011 : s.y0) : s.y1;
     return [a, b];
   }
-  var whenRange = store.get('when', [1969, 2011]), sure = store.get('sure', 'all');
+  var whenRange = store.get('when', [1969, 2011]), sure = 'all'; // the “how sure” filter was removed; every pin shows its own evidence tag
   var SURE_OK = { doc: { documented: 1 }, testimony: { documented: 1, testimony: 1, context: 1 }, all: null };
   function inPeriod(s) { var r = span(s); return r[1] >= whenRange[0] && r[0] <= whenRange[1]; }
   function sureOk(s) { var ok = SURE_OK[sure]; return !ok || !!ok[s.level]; }
@@ -2742,21 +2742,18 @@
       } }); b.dataset.k = w[0]; whatBox.appendChild(b); return b;
     });
     filt.all = h('button', { 'aria-pressed': 'false', text: 'Everything', onclick: function () { setWhat([]); } }); whatBox.insertBefore(filt.all, whatBox.firstChild);
-    var lab = h('div', { class: 'f-when-lab' }), from = h('input', { type: 'range', min: '1911', max: '2026', 'aria-label': 'From year' }), to = h('input', { type: 'range', min: '1911', max: '2026', 'aria-label': 'To year' });
+    var lab = h('div', { class: 'f-when-lab' }), from = h('input', { type: 'range', min: '1905', max: '2026', 'aria-label': 'From year' }), to = h('input', { type: 'range', min: '1905', max: '2026', 'aria-label': 'To year' });
     from.oninput = to.oninput = function () { lab.textContent = Math.min(+from.value, +to.value) + ' – ' + Math.max(+from.value, +to.value); };
     from.onchange = to.onchange = function () { setWhen([+from.value, +to.value]); };
     filt.from = from; filt.to = to; filt.lab = lab;
-    var presets = h('div', { class: 'chips f-pre' }, [['Gaddafi years', 1969, 2011], ['Before 1969', 1911, 1968], ['After 2011', 2012, 2026], ['All years', 1911, 2026]].map(function (p) {
-      var b = h('button', { 'aria-pressed': 'false', text: p[0], onclick: function () { setWhen([p[1], p[2]]); } }); b.dataset.r = p[1] + '-' + p[2]; return b; }));
+    var PRE = [['Gaddafi years', 1969, 2011], ['All years', 1905, 2026]].concat(ERAS.map(function (e) { return [e[2], e[0], e[1]]; }));
+    var presets = h('div', { class: 'chips f-pre' }, PRE.map(function (p) {
+      var b = h('button', { 'aria-pressed': 'false', text: p[0], title: p[1] + '–' + p[2], onclick: function () { stopPlay(); timeRange = null; timeYear = null; var same = whenRange[0] === p[1] && whenRange[1] === p[2] && p[0] !== 'Gaddafi years'; setWhen(same ? [1969, 2011] : [p[1], p[2]]); } }); b.dataset.r = p[1] + '-' + p[2]; return b; }));
     filt.pre = presets;
-    var sureBox = h('div', { class: 'seg f-sure', role: 'radiogroup', 'aria-label': 'How sure' });
-    filt.sure = [['doc', 'Documented only'], ['testimony', 'Plus testimony'], ['all', 'Everything']].map(function (o) {
-      var b = h('button', { role: 'radio', 'aria-checked': 'false', text: o[1], onclick: function () { setSure(o[0]); } }); b.dataset.k = o[0]; sureBox.appendChild(b); return b; });
     var sec = h('div', { class: 'sec filters' }, [
       h('h3', { text: 'What' }), whatBox,
       h('h3', { text: 'When' }), lab, h('div', { class: 'f-when' }, [h('span', { text: 'From' }), from, h('span', { text: 'To' }), to]), presets,
-      h('h3', { text: 'How sure' }), sureBox,
-      h('p', { class: 'grp-help', text: 'Documented: confirmed by records or several sources. Testimony: reported by witnesses or one source. Everything also shows unconfirmed reports.' })
+      h('p', { class: 'grp-help', text: 'Drag the sliders, or tap a period to jump to it. Each place shows how well it is sourced when you open it.' })
     ]);
     body.insertBefore(sec, body.firstChild);
     // tuck the map styles, named periods and the detailed chooser away
@@ -2764,7 +2761,8 @@
     secs.forEach(function (x) {
       var hd = x.querySelector('h3'); if (!hd || x === sec) return;
       var t = hd.textContent;
-      if (t === 'Map style' || t === 'Time period' || t === 'What to show') {
+      if (t === 'Time period') { x.style.display = 'none'; return; }
+      if (t === 'Map style' || t === 'What to show') {
         var d = h('details', { class: 'sec more' }, [h('summary', { text: t === 'Time period' ? 'Named periods' : t === 'What to show' ? 'Pick layers one by one' : 'Map style' })]);
         hd.remove(); while (x.firstChild) d.appendChild(x.firstChild); x.replaceWith(d);
       }
@@ -2779,7 +2777,6 @@
     filt.what.forEach(function (b) { var w = WHAT.filter(function (x) { return x[0] === b.dataset.k; })[0]; b.setAttribute('aria-pressed', !all && w[2].every(function (l) { return active[l]; }) ? 'true' : 'false'); });
     filt.from.value = whenRange[0]; filt.to.value = whenRange[1]; filt.lab.textContent = whenRange[0] + ' – ' + whenRange[1];
     filt.pre.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.r === whenRange[0] + '-' + whenRange[1] ? 'true' : 'false'); });
-    filt.sure.forEach(function (b) { b.setAttribute('aria-checked', b.dataset.k === sure ? 'true' : 'false'); });
   }
   setTimeout(buildFilters, 0);
 

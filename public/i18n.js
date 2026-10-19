@@ -69,6 +69,11 @@
     'Family testimony, not verified.': 'شهادة عائلية، غير مُتحقق منها.', 'Questions to ask your elders': 'أسئلة لكبار العائلة',
     'For younger family members: ask, listen, and if they agree, save what they say here.': 'للأجيال الأصغر: اسألوا واستمعوا، وإن وافقوا احفظوا ما يقولونه هنا.', 'Save their answer': 'احفظ إجابتهم',
     'Show me': 'أرني', 'Add a note about this': 'أضف ملاحظة عن هذا', 'Add something here': 'أضف شيئًا هنا',
+    'People': 'أشخاص', 'Person': 'شخص', 'What the archive covers': 'ما يغطيه الأرشيف', 'On the map': 'على الخريطة', 'Documents by year': 'الوثائق حسب السنة', 'Most documented places': 'الأماكن الأكثر توثيقًا',
+    'Only public figures and people already named in the published sources behind these places are listed.': 'لا نذكر إلا الشخصيات العامة ومن ورد اسمه في المصادر المنشورة لهذه الأماكن.',
+    'Blue bars are the Gaddafi years. Most of the archive comes from US government files, so the peaks follow US attention: 1969–70, the 1980s and 2011.': 'الأعمدة الزرقاء هي سنوات القذافي. معظم الأرشيف من ملفات الحكومة الأمريكية، لذا تتبع القمم اهتمام الولايات المتحدة: 1969–70 والثمانينيات و2011.',
+    'A place with few documents is not a place where little happened: much of what happened in prisons was never written down, or is still closed.': 'قلّة الوثائق عن مكان لا تعني أن القليل حدث فيه: كثير مما جرى في السجون لم يُكتب قط، أو ما زال مغلقًا.',
+    'Print a booklet': 'اطبع كتيّبًا', 'Print or save as PDF': 'اطبع أو احفظ PDF',
     'Close': 'إغلاق', 'Cancel': 'إلغاء', 'Continue': 'متابعة', 'Hide': 'إخفاء', 'Got it': 'فهمت',
     // chat
     'Ask the atlas': 'اسأل الأطلس', 'Ask': 'اسأل', 'Ask about Tripoli…': 'اسأل عن طرابلس…', 'Suggest an addition': 'اقترح إضافة', 'Thinking…': 'أفكر…',
@@ -101,6 +106,7 @@
   var RX = [
     [/^Ask me anything about Tripoli under Gaddafi[\s\S]*$/, 'اسألني أي شيء عن طرابلس في عهد القذافي وما قبله وما بعده، أو اطلب مني ما أعرضه. أبحث في أرشيف الوثائق وفي الإنترنت، وأستطيع تغيير الخريطة لك، وإن لم يكن الشيء موجودًا بعد أساعدك في طلب البحث عنه.'],
     [/^Stop (\d+) of (\d+)$/, 'المحطة $1 من $2'],
+    [/^Then and now \((\d{4})\)$/, 'الأمس واليوم ($1)'],
     [/^On this day, (\d+) (\w+) (\d{4})$/, 'في مثل هذا اليوم، $1 $2 $3'],
     [/^Recording… (\S+) \(up to 3 minutes\)$/, 'جارٍ التسجيل… $1 (حتى 3 دقائق)'],
     [/^(\d+) mapped places? within ([\d.]+) km · the pin stays on this device only$/, '$1 مكان على الخريطة ضمن $2 كم · العلامة تبقى على هذا الجهاز فقط'],
@@ -142,6 +148,7 @@
     (window.ATLAS_AREAS || []).forEach(function (a) { if (a.ar && !AR[a.name]) AR[a.name] = a.ar; });
     (window.ATLAS_DISTRICTS || []).forEach(function (d) { if (d[1] && !AR[d[0]]) AR[d[0]] = d[1]; });
     (window.ATLAS_STORIES || []).forEach(function (st) { if (st.ar) AR[st.title] = st.ar; });
+    (window.ATLAS_PEOPLE || []).forEach(function (pp) { if (pp.ar) AR[pp.name] = pp.ar; });
   }
   addNames();
   var SKIP = /^(SCRIPT|STYLE|TEXTAREA|INPUT|CODE)$/;

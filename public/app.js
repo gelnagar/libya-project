@@ -925,7 +925,7 @@
     body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Sources' }), srcList]));
     loadQuotes().then(function (Q) { addPassages(srcList, (Q || {})[s.id] || {}); });
     body.appendChild(h('details', { class: 'more-facts' }, [h('summary', { text: 'Details' }), facts([['Category', lay.label], ['Active', s.y0 ? (s.y1 && s.y1 !== s.y0 ? s.y0 + '–' + s.y1 : String(s.y0)) : ''], ['Accuracy', 'within about ' + s.r + ' km'], ['Coordinates', s.lat.toFixed(4) + ', ' + s.lon.toFixed(4)], ['Reference', s.ref]])]));
-    body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Zoom to this place', onclick: function () { map.flyTo([s.lat, s.lon], 16, { duration: 0.8 }); } })]));
+    body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Zoom to this place', onclick: function () { map.flyTo([s.lat, s.lon], 16, { duration: 0.8 }); } }), thenNowButton(s.lat, s.lon)]));
     openPanel('sheet');
     drawTimeline();
     if (!DESKTOP.matches && !aiming) { var pt = map.latLngToContainerPoint([s.lat, s.lon]), mh = $('map').clientHeight; if (pt.y > mh * 0.3 || pt.y < 40) map.panTo(aimAbovePanel(s.lat, s.lon, map.getZoom()), { duration: 0.5 }); }
@@ -1377,7 +1377,7 @@
   }
 
   /* ---------- search terminal ---------- */
-  var TERM_KINDS = [['all', 'All'], ['place', 'Places'], ['area', 'Areas'], ['doc', 'Documents'], ['event', 'Events']];
+  var TERM_KINDS = [['all', 'All'], ['place', 'Places'], ['area', 'Areas'], ['people', 'People'], ['doc', 'Documents'], ['event', 'Events'], ['overview', 'What the archive covers']];
   var TERM_SRCS = [['all', 'All sources'], ['us', 'US diplomatic papers'], ['radio', 'Libyan radio & press (translated)'], ['cia', 'CIA files'], ['decl', 'Presidential & declassified files'], ['rights', 'Human rights & UN'], ['law', 'Libyan laws'], ['ref', 'Reference & encyclopedias']];
   var termSrc = 'all';
   function srcGroup(r) {
@@ -1406,6 +1406,11 @@
     var match = function (text) { var t = fold(text); return words.every(function (w) { return t.indexOf(w) >= 0; }); };
     var rel = function (title, rest) { var t = fold(title), r = fold(rest), sc = 0; words.forEach(function (w) { if (t.indexOf(w) >= 0) sc += 3; else if (r.indexOf(w) >= 0) sc += 1; }); if (words.length && t.indexOf(words.join(' ')) >= 0) sc += 4; return sc; };
     var out = [];
+    if (termKind === 'all' || termKind === 'people') (window.ATLAS_PEOPLE || []).forEach(function (pp) {
+      if (words.length && !match(pp.name + ' ' + (pp.ar || '') + ' ' + pp.role)) return;
+      if (yf) return;
+      out.push({ k: 'person', tag: 'Person', sort: termKind === 'people' ? 0 : 0.5, sc: rel(pp.name + ' ' + (pp.ar || ''), pp.role), d: '', t: pp.name, sub: pp.role, go: function () { closeTerm(); openPerson(pp); } });
+    });
     if (termKind === 'all' || termKind === 'place') SITES.forEach(function (s) {
       var r = span(s); if (yf && (r[1] < yf || r[0] > yt)) return;
       if (words.length && !match(s.name + ' ' + (s.ar || '') + ' ' + s.relevance + ' ' + s.text + ' ' + LAYERS[s.layer].label)) return;
@@ -1430,6 +1435,7 @@
   }
   function runTerm() {
     var q = $('term-q').value.trim(), list = $('term-list');
+    if (termKind === 'overview') { archiveOverview(list); return; }
     var res = termResults(q);
     list.innerHTML = '';
     $('term-meta').textContent = (RECORDS ? '' : 'Loading the archive… ') + (q ? res.length + ' found for “' + q + '”' : 'Gaddafi years (1969–2011) first. Type a name, place or year to search ' + (RECORDS ? RECORDS.length.toLocaleString() + ' documents' : 'everything') + '.');
@@ -2827,6 +2833,7 @@
     hoodCard.innerHTML = ''; hoodCard.hidden = false;
     var list = g.list.slice().sort(function (a, b) { return (a.y0 || 0) - (b.y0 || 0); });
     hoodCard.appendChild(h('div', { class: 'sc-head' }, [h('div', {}, [h('b', { text: g.d[0] + (g.more && g.more.length ? ' and ' + g.more.join(', ') : '') }), h('small', { text: list.length + ' place' + (list.length > 1 ? 's' : '') + ' on the map' }), h('small', { lang: 'ar', dir: 'rtl', class: 'hood-ar', text: g.d[1] })]), h('button', { class: 'btn ghost', text: 'Close', onclick: function () { hoodCard.hidden = true; } })]));
+    hoodCard.appendChild(h('div', { class: 'sc-btns' }, [h('button', { class: 'btn', text: 'Print a booklet', onclick: function () { hoodCard.hidden = true; printBooklet(g.d[0] + (g.more && g.more.length ? ' and nearby' : ''), g.d[1], list); } })]));
     hoodCard.appendChild(h('div', { class: 'yc-list' }, list.map(function (s) { return h('button', { onclick: function () { hoodCard.hidden = true; focusSite(s); } }, [glyph(s.layer), h('span', { text: (s.y0 ? s.y0 + ' · ' : '') + s.name })]); })));
     var b = L.latLngBounds(list.map(function (s) { return [s.lat, s.lon]; }));
     map.flyToBounds(b.pad(0.3), { duration: 0.8, minZoom: HOOD_Z, maxZoom: 16, paddingBottomRight: [20, DESKTOP.matches ? 300 : (hoodCard.getBoundingClientRect().height || 260) + 40] });
@@ -2983,6 +2990,96 @@
     });
   }
   setTimeout(function () { if (store.get('doorOff', false)) onThisDay(); }, 2500);
+
+  /* ---------- then and now: the old map or satellite over today, with the swipe handle ---------- */
+  function overlayFor(lat, lon) {
+    var inb = function (o) { return lat >= o.bounds[0][0] && lat <= o.bounds[1][0] && lon >= o.bounds[0][1] && lon <= o.bounds[1][1]; };
+    return OVERLAYS.filter(function (o) { return o.kind === 'map' && inb(o); })[0] || OVERLAYS.filter(function (o) { return o.id === 'landsat-1984' && inb(o); })[0] || OVERLAYS.filter(inb)[0] || null;
+  }
+  function thenNowButton(lat, lon) {
+    var o = overlayFor(lat, lon); if (!o) return null;
+    return h('button', { class: 'btn', text: 'Then and now (' + o.year + ')', title: o.title, onclick: function () {
+      if (overlayOn[o.id] && swipeOn) { setOverlay(o.id, false); setSwipe(false); status('Back to today’s map.', 2500); return; }
+      OVERLAYS.forEach(function (x) { if (x.id !== o.id && overlayOn[x.id]) setOverlay(x.id, false); });
+      setOverlay(o.id, true); setSwipe(true);
+      map.flyTo([lat, lon], Math.min(o.kind === 'map' ? 16 : 14, (o.maxZoom || 16) + 1), { duration: 0.8 });
+      status(o.title + ': drag the handle across the map — ' + o.year + ' on the left, today on the right. Tap the button again to go back.', 7000);
+    } });
+  }
+
+  /* ---------- people index ---------- */
+  function openPerson(pp) {
+    var body = newSheet('Person'); markSelected(null); curTarget = { isReport: true, code: '' };
+    body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: pp.name }), pp.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: pp.ar }) : null]));
+    body.appendChild(h('p', { class: 'brief', text: pp.role }));
+    var box = h('div', { class: 'links' });
+    (pp.places || []).forEach(function (id) { var x = BY_ID[id]; if (!x) return; box.appendChild(h('button', { onclick: function () { focusSite(x); } }, [glyph(x.layer), h('span', {}, [x.name, h('small', { text: x.period })])])); });
+    body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'On the map' }), box]));
+    body.appendChild(h('p', { class: 'grp-help', text: 'Only public figures and people already named in the published sources behind these places are listed.' }));
+    openPanel('sheet');
+  }
+
+  /* ---------- what the archive covers: documents by year and by place ---------- */
+  function archiveOverview(list) {
+    list.innerHTML = '';
+    $('term-meta').textContent = RECORDS ? RECORDS.length.toLocaleString() + ' documents and events in the searchable archive' : 'Loading the archive…';
+    if (!RECORDS) { loadRecords().then(function () { if (termKind === 'overview') archiveOverview(list); }); return; }
+    var byY = {}, byP = {};
+    RECORDS.forEach(function (r) { var y = +(r.d || '').slice(0, 4); if (y >= 1950 && y <= 2026) byY[y] = (byY[y] || 0) + 1; (r.p || []).forEach(function (p) { if (p !== 'tripoli') byP[p] = (byP[p] || 0) + 1; }); });
+    var max = Math.max.apply(null, Object.keys(byY).map(function (k) { return byY[k]; }).concat([1])), W = 760, H = 150, bw = W / 77;
+    var bars = '';
+    for (var y = 1950; y <= 2026; y++) {
+      var v = byY[y] || 0, bh = Math.round(v / max * (H - 24)), x = (y - 1950) * bw, era = y >= 1969 && y <= 2011;
+      bars += '<rect x="' + (x + 1).toFixed(1) + '" y="' + (H - 18 - bh) + '" width="' + (bw - 2).toFixed(1) + '" height="' + bh + '" rx="1" fill="' + (era ? 'var(--fy-accent)' : '#9aa5b4') + '"><title>' + y + ': ' + v + ' documents</title></rect>';
+      if (y % 10 === 0) bars += '<text x="' + (x + bw / 2).toFixed(1) + '" y="' + (H - 4) + '" font-size="10" text-anchor="middle" fill="currentColor">' + y + '</text>';
+    }
+    var chart = h('div', { class: 'ov-chart', html: '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Documents per year, 1950 to 2026">' + bars + '</svg>' });
+    var name = function (id) { return BY_ID[id] ? BY_ID[id].name : AREA_BY_ID[id] ? AREA_BY_ID[id].name : null; };
+    var top = Object.keys(byP).filter(name).sort(function (a, b) { return byP[b] - byP[a]; }).slice(0, 15), pmax = byP[top[0]] || 1;
+    var rows = h('div', { class: 'ov-places' }, top.map(function (id) {
+      return h('button', { onclick: function () { closeTerm(); if (BY_ID[id]) focusSite(BY_ID[id]); else { var a = AREA_BY_ID[id]; map.flyTo([a.lat, a.lon], 15, { duration: 0.8 }); openArea(a); } } },
+        [h('span', { class: 'ov-n', text: name(id) }), h('span', { class: 'ov-bar' }, [h('i', { style: 'width:' + Math.max(3, byP[id] / pmax * 100).toFixed(0) + '%' })]), h('b', { text: String(byP[id]) })]);
+    }));
+    list.appendChild(h('div', { class: 'ov' }, [
+      h('h4', { text: 'Documents by year' }), h('p', { class: 'grp-help', text: 'Blue bars are the Gaddafi years. Most of the archive comes from US government files, so the peaks follow US attention: 1969–70, the 1980s and 2011.' }), chart,
+      h('h4', { text: 'Most documented places' }), rows,
+      h('p', { class: 'grp-help', text: 'A place with few documents is not a place where little happened: much of what happened in prisons was never written down, or is still closed.' })
+    ]));
+  }
+
+  /* ---------- printable neighbourhood booklet ---------- */
+  function printBooklet(title, ar, places) {
+    var old = $('booklet'); if (old) old.remove();
+    places = places.slice().sort(function (a, b) { return (a.y0 || 0) - (b.y0 || 0); });
+    var lat0 = Math.min.apply(null, places.map(function (s) { return s.lat; })), lat1 = Math.max.apply(null, places.map(function (s) { return s.lat; })),
+        lon0 = Math.min.apply(null, places.map(function (s) { return s.lon; })), lon1 = Math.max.apply(null, places.map(function (s) { return s.lon; }));
+    var pad = 0.004, W = 520, H = 300, sx = function (lon) { return 20 + (lon - lon0 + pad) / (lon1 - lon0 + 2 * pad) * (W - 40); }, sy = function (lat) { return 20 + (1 - (lat - lat0 + pad) / (lat1 - lat0 + 2 * pad)) * (H - 40); };
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" class="bk-map" role="img" aria-label="Sketch of where the places are"><rect width="' + W + '" height="' + H + '" fill="#f4f5f7" stroke="#c5cbd3"/>' +
+      (function () { var pts = []; return places.map(function (s, i) {
+        var x = sx(s.lon), y = sy(s.lat), k = 0;
+        while (pts.some(function (q) { return Math.hypot(q[0] - x, q[1] - y) < 19; }) && k < 40) { k++; var a = k * 2.4, r = 10 + k * 2.2; x = sx(s.lon) + Math.cos(a) * r; y = sy(s.lat) + Math.sin(a) * r; }
+        pts.push([x, y]);
+        return (k ? '<line x1="' + sx(s.lon).toFixed(1) + '" y1="' + sy(s.lat).toFixed(1) + '" x2="' + x.toFixed(1) + '" y2="' + y.toFixed(1) + '" stroke="#8a94a3" stroke-width="1"/>' : '') + '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="9" fill="' + LAYERS[s.layer].color + '" stroke="#fff" stroke-width="1.5"/><text x="' + x.toFixed(1) + '" y="' + (y + 4).toFixed(1) + '" font-size="10" font-weight="700" text-anchor="middle" fill="#fff">' + (i + 1) + '</text>';
+      }).join(''); })() + '<text x="' + (W - 8) + '" y="16" font-size="11" text-anchor="end" fill="#5f6b7c">N ↑ · sketch, not to scale</text></svg>';
+    var stories = (window.ATLAS_STORIES || []).filter(function (st) { return st.stops.some(function (id) { return places.some(function (s) { return s.id === id; }); }); });
+    var bk = h('div', { id: 'booklet', class: 'booklet' }, [
+      h('div', { class: 'bk-bar' }, [h('button', { class: 'btn primary', text: 'Print or save as PDF', onclick: function () { window.print(); } }), h('button', { class: 'btn', text: 'Close', onclick: function () { bk.remove(); document.body.classList.remove('printing'); } })]),
+      h('article', { class: 'bk-page' }, [
+        h('h1', { text: title }), ar ? h('p', { class: 'bk-ar', lang: 'ar', dir: 'rtl', text: ar }) : null,
+        h('p', { class: 'bk-sub', text: 'Tripoli: Open Source · a family record of Tripoli under Gaddafi, 1969–2011 · printed ' + new Date().toLocaleDateString() }),
+        h('div', { html: svg }),
+        stories.length ? h('p', { class: 'bk-stories', text: 'Guided stories that pass through here: ' + stories.map(function (st) { return st.title; }).join(' · ') }) : null
+      ].concat(places.map(function (s, i) {
+        return h('section', { class: 'bk-place' }, [
+          h('h2', { text: (i + 1) + '. ' + s.name }), s.ar ? h('p', { class: 'bk-ar', lang: 'ar', dir: 'rtl', text: s.ar }) : null,
+          h('p', { class: 'bk-meta', text: s.period + ' · ' + LAYERS[s.layer].label + ' · ' + (LEVELS[s.level] || '') + ' · position within about ' + s.r + ' km' }),
+          h('p', { class: 'bk-why', text: s.relevance }), h('p', { text: s.text }),
+          h('ol', { class: 'bk-src' }, (s.sources || []).map(function (x) { return h('li', { text: x.t + ' — ' + x.u }); }))
+        ]);
+      })).concat([h('p', { class: 'bk-foot', text: 'Evidence labels: “Documented” means confirmed by records or several sources; other labels mean the account rests on testimony or a single report. Family memories are not included in this booklet.' })]))
+    ]);
+    document.body.appendChild(bk); document.body.classList.add('printing');
+  }
   var API = null;
   window.ATLAS_API = API = {
     conn: connDetail, map: map, h: h, facts: facts, section: section,

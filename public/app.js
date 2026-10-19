@@ -2790,7 +2790,7 @@
   }
   function hoodMode() {
     var vis = SITES.filter(function (s) { return siteLayer.hasLayer(markers[s.id]) || (s._hoodHidden && visible(s)); });
-    return map.getZoom() < HOOD_Z && !timeRange && timeYear == null && !storyOn && vis.length > 25;
+    return map.getZoom() < HOOD_Z && !timeRange && timeYear == null && !storyOn && vis.length > 50;
   }
   function syncHoods() {
     var on = hoodMode();

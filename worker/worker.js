@@ -421,6 +421,24 @@ async function api(request, env, url) {
     return json({ ok: true }, 200, cors);
   }
 
+  /* ----- family media: a photo or a short voice note attached to a family report (stored in KV, max ~2.5 MB) ----- */
+  if (body.mediaPut || body.mediaGet) {
+    if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
+    if (body.mediaPut) {
+      const m = body.mediaPut, type = String(m.type || '');
+      if (!/^(image\/(jpeg|png|webp)|audio\/(webm|ogg|mp4|mpeg|aac|x-m4a))(;.*)?$/.test(type)) return json({ error: 'Only photos and voice notes can be added.' }, 400, cors);
+      const data = String(m.data || '');
+      if (!data || data.length > 3500000) return json({ error: 'That file is too large. Keep voice notes under 3 minutes.' }, 400, cors);
+      const id = now.toString(36) + Math.random().toString(36).slice(2, 9);
+      await env.ATLAS_KV.put('media:' + id, data, { metadata: { type, at: now } });
+      return json({ ok: true, id, type }, 200, cors);
+    }
+    const id = String(body.mediaGet || '').replace(/[^a-z0-9]/g, '').slice(0, 40);
+    const v = await env.ATLAS_KV.getWithMetadata('media:' + id);
+    if (!v || !v.value) return json({ error: 'Not found' }, 404, cors);
+    return json({ data: v.value, type: (v.metadata && v.metadata.type) || 'application/octet-stream' }, 200, cors);
+  }
+
   /* ----- family reports: places and notes added by family members ----- */
   if (body.reports || body.report || body.reportDelete) {
     if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
@@ -437,7 +455,8 @@ async function api(request, env, url) {
         cat: CATS.includes(r.cat) ? r.cat : 'other', title: clip(r.title, 140), when: clip(r.when, 60), text: clip(r.text, 3000),
         how: ['saw', 'family', 'read', 'unsure'].includes(r.how) ? r.how : 'unsure', src: clip(r.src, 400), by: clip(r.by, 60),
         lat: placed ? Math.round(lat * 1e5) / 1e5 : null, lon: placed ? Math.round(lon * 1e5) / 1e5 : null,
-        target: clip(r.target, 80), targetName: clip(r.targetName, 140) };
+        target: clip(r.target, 80), targetName: clip(r.targetName, 140),
+        media: (Array.isArray(r.media) ? r.media : []).slice(0, 4).map((x) => ({ id: String(x && x.id || '').replace(/[^a-z0-9]/g, '').slice(0, 40), type: clip(x && x.type, 40) })).filter((x) => x.id) };
       if (!item.title || !item.text) return json({ error: 'Add a title and what you know.' }, 400, cors);
       if (!placed && !item.target) return json({ error: 'Pick a place on the map first.' }, 400, cors);
       const token = [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -454,6 +473,7 @@ async function api(request, env, url) {
       const i = list.findIndex((x) => x.id === id);
       if (i < 0) return json({ error: 'Not found' }, 404, cors);
       if (!isOwner && list[i].tk !== t) return json({ error: 'Only the person who added it can remove it.' }, 403, cors);
+      for (const m of list[i].media || []) { try { await env.ATLAS_KV.delete('media:' + m.id); } catch {} }
       list.splice(i, 1);
       await env.ATLAS_KV.put(KEY, JSON.stringify(list));
       return json({ ok: true }, 200, cors);

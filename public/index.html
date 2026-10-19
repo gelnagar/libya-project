@@ -568,6 +568,9 @@ details.more[open] > summary::after { content: '–'; }
       <div><label for="rep-how">How do you know?</label>
         <select id="rep-how"><option value="saw">I saw it myself</option><option value="family">Family or friends told me</option><option value="read">I read or heard it (give the source below)</option><option value="unsure">Not sure</option></select>
         <input id="rep-src" maxlength="400" placeholder="Source, link or who told you (optional)" style="margin-top:6px"></div>
+      <div class="rep-media"><label>Add a photo or your voice (optional)</label>
+        <div class="row-btns"><label class="btn" for="rep-photo">Add a photo</label><input id="rep-photo" type="file" accept="image/*" hidden><button class="btn" type="button" id="rep-rec">Record your voice</button></div>
+        <div id="rep-media-list" class="rep-media-list"></div><small id="rep-rec-msg"></small></div>
       <div><label for="rep-by">Your name</label><input id="rep-by" maxlength="60" placeholder="So others know who added it"></div>
       <p class="fy-note" id="rep-private" hidden>Homes and family places are visible to everyone with the family password, and are never sent to the AI. Leave out anything that could put someone at risk.</p>
       <p class="fy-note">Everyone with the family password will see this, marked “Family report, not verified”.</p>
@@ -639,6 +642,7 @@ details.more[open] > summary::after { content: '–'; }
 <script src="data/memorial.js"></script>
 <script src="data/overlays.js"></script>
 <script src="data/stories.js"></script>
+<script src="data/elder-questions.js"></script>
 <script src="i18n.js"></script>
 <script src="app.js"></script>
 <script src="unknown-art.js"></script>

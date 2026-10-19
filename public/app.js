@@ -917,6 +917,7 @@
       });
       body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Linked places' }), box]));
     }
+    var eld = elderSection(s); if (eld) body.appendChild(eld);
     add(body, aiBox({ kind: 'historical site', name: s.name, arabic: s.ar, category: lay.label, evidence: LEVELS[s.level], period: s.period, summary: s.relevance + ' ' + s.text, lat: s.lat, lon: s.lon }, QS[s.id] || [],
       function () { return contextFor({ lat: s.lat, lon: s.lon, places: [s.id], words: [s.name].concat(s.ar ? [s.ar] : []).concat(s.aliases || []) }); }));
     docsSection(body, { places: [s.id], words: [s.name].concat(s.aliases || []) }, 'In the archive', s.name);
@@ -2167,6 +2168,7 @@
     var list = h('div', { class: 'fam-notes' });
     notes.forEach(function (r) { list.appendChild(h('div', { class: 'fam-note' }, [h('b', { text: r.title }), h('small', { text: [r.when, (r.by || 'Family member') + ', ' + new Date(r.at).toLocaleDateString(), HOW[r.how]].filter(Boolean).join(' · ') }), h('div', { text: r.text })])); });
     if (!notes.length) list.appendChild(h('p', { class: 'd-text muted', text: 'No family notes yet. Know something about this place?' }));
+    list.appendChild(h('button', { class: 'btn primary remember-btn', type: 'button', onclick: function () { rememberHere(); } }, [h('span', { class: 'rb-ic', html: '<svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11z" fill="currentColor"/></svg>' }), h('span', {}, [h('b', { text: 'I remember something here' }), h('small', { text: 'Write it, add a photo, or record your voice' })])]));
     list.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: curTarget.id ? 'Add a note about this' : 'Add something here', onclick: function () { openReportForm({ lat: curTarget.lat, lon: curTarget.lon, target: curTarget.id || '', targetName: curTarget.name || '', cat: curTarget.id ? 'event' : '' }); } })]));
     var sec = h('div', { class: 'sec fam-sec' }, [h('h3', { text: 'Family notes (' + notes.length + ')' }), list]);
     var ai = b.querySelector('.ai'); if (ai) b.insertBefore(sec, ai); else b.appendChild(sec);
@@ -2182,6 +2184,7 @@
       .forEach(function (x) { if (x[1]) { dl.appendChild(h('dt', { text: x[0] })); dl.appendChild(h('dd', { text: x[1] })); } });
     body.appendChild(dl);
     body.appendChild(h('p', { class: 'd-text', text: r.text }));
+    if ((r.media || []).length) body.appendChild(mediaViewer(r.media));
     var btns = [];
     if (r.target && (BY_ID[r.target] || AREA_BY_ID[r.target])) btns.push(h('button', { class: 'btn', text: 'Open ' + (r.targetName || 'the place'), onclick: function () { if (BY_ID[r.target]) focusSite(BY_ID[r.target]); else openArea(AREA_BY_ID[r.target]); } }));
     if (mine[r.id]) btns.push(h('button', { class: 'btn', text: 'Remove my report', onclick: function () {
@@ -2224,6 +2227,8 @@
     $('rep-where').appendChild(h('span', { text: repState.lat.toFixed(5) + ', ' + repState.lon.toFixed(5) }));
     $('rep-by').value = store.get('repBy', '');
     pickCat(repState.cat || '');
+    if (repState.title && !$('rep-name').value) $('rep-name').value = repState.title;
+    if (repState.prompt && !$('rep-text').value) $('rep-text').placeholder = repState.prompt;
     $('rep-msg').textContent = '';
     $('report').hidden = false; setTimeout(function () { $('rep-name').focus(); }, 30);
   }
@@ -2247,10 +2252,10 @@
     if (!payload.title || !payload.text) { $('rep-msg').textContent = 'Add a title and what you know.'; return; }
     store.set('repBy', payload.by);
     $('rep-save').disabled = true; $('rep-msg').textContent = 'Saving…';
-    relay(store.get('code', ''), { report: payload }).then(function (j) {
+    uploadRepMedia().then(function (ms) { if (ms.length) payload.media = ms; return relay(store.get('code', ''), { report: payload }); }).then(function (j) {
       mine[j.report.id] = j.token; store.set('myReports', mine);
       REPORTS.unshift(j.report); drawReports();
-      ['rep-name', 'rep-when', 'rep-text', 'rep-src'].forEach(function (id) { $(id).value = ''; });
+      ['rep-name', 'rep-when', 'rep-text', 'rep-src'].forEach(function (id) { $(id).value = ''; }); clearRepMedia();
       closeReportForm(); repState = {};
       if (!inputs.reports.checked) inputs.reports.click();
       openReport(j.report); status('Added to the map. Thank you.', 4000);
@@ -2664,6 +2669,7 @@
     walk: '<svg viewBox="0 0 24 24"><path d="M4 18c3-6 6 2 9-4s5-6 7-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="6" r="2"/></svg>',
     find: '<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>',
     year: '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>',
+    home: '<svg viewBox="0 0 24 24"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg>',
     ask: '<svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
   };
   var door = null;
@@ -2671,6 +2677,7 @@
     if (!door) return; door.hidden = true;
     var cb = door.querySelector('#door-off'); if (cb && cb.checked) store.set('doorOff', true);
     if (thenTip) showTipNow();
+    setTimeout(onThisDay, 1200);
   }
   function doorMain() {
     var box = door.querySelector('.door-box'); box.innerHTML = '';
@@ -2679,6 +2686,7 @@
       doorChoice(IC.walk, 'Walk me through it', 'Short guided stories, one place at a time', doorStories),
       doorChoice(IC.find, 'Find a place I knew', 'A street, school, prison or neighbourhood', function () { closeDoor(); openTerm(''); }),
       doorChoice(IC.year, 'Pick a year', 'See only what happened that year', function () { closeDoor(); showYear(1986); }),
+      doorChoice(IC.home, 'Where did you live?', 'Mark your old home and see what happened nearby', function () { closeDoor(); pickHome(); }),
       doorChoice(IC.ask, 'Ask a question', 'In your own words, English or Arabic', function () { closeDoor(); openChat(); setTimeout(function () { $('chat-input').focus(); }, 60); })
     ]));
     box.appendChild(h('div', { class: 'door-foot' }, [
@@ -2827,6 +2835,154 @@
   map.on('zoomend', function () { clearHoodHide(); syncHoods(); });
   setTimeout(function () { clearHoodHide(); syncHoods(); }, 0);
   map.on('zoomstart', function () { if (hoodCard && !hoodCard.hidden && map.getZoom() >= HOOD_Z) { /* keep */ } });
+
+  /* ---------- memory recorder: photos and voice notes on family reports ---------- */
+  var repMedia = [], recorder = null, recTimer = null;
+  function clearRepMedia() { repMedia.forEach(function (m) { try { URL.revokeObjectURL(m.url); } catch (e) {} }); repMedia = []; drawRepMedia(); }
+  function drawRepMedia() {
+    var box = $('rep-media-list'); if (!box) return; box.innerHTML = '';
+    repMedia.forEach(function (m, i) {
+      box.appendChild(h('div', { class: 'rm' }, [
+        /^image/.test(m.type) ? h('img', { src: m.url, alt: 'Photo to add' }) : h('audio', { controls: '', src: m.url }),
+        h('button', { class: 'btn ghost', type: 'button', text: 'Remove', onclick: function () { repMedia.splice(i, 1); drawRepMedia(); } })
+      ]));
+    });
+  }
+  function shrinkImage(file) {
+    return new Promise(function (ok, bad) {
+      var img = new Image(), url = URL.createObjectURL(file);
+      img.onload = function () {
+        var k = Math.min(1, 1280 / Math.max(img.width, img.height)), c = document.createElement('canvas');
+        c.width = Math.round(img.width * k); c.height = Math.round(img.height * k); c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url); c.toBlob(function (b) { b ? ok(b) : bad(new Error('Could not read the photo')); }, 'image/jpeg', 0.8);
+      };
+      img.onerror = function () { bad(new Error('Could not read the photo')); }; img.src = url;
+    });
+  }
+  if ($('rep-photo')) $('rep-photo').addEventListener('change', function () {
+    var f = this.files && this.files[0]; this.value = ''; if (!f) return;
+    if (repMedia.length >= 4) { $('rep-rec-msg').textContent = 'Up to four photos or voice notes.'; return; }
+    shrinkImage(f).then(function (b) { repMedia.push({ blob: b, type: 'image/jpeg', url: URL.createObjectURL(b) }); drawRepMedia(); }).catch(function (e) { $('rep-rec-msg').textContent = e.message; });
+  });
+  if ($('rep-rec')) $('rep-rec').onclick = function () {
+    var btn = this, msg = $('rep-rec-msg');
+    if (recorder) { recorder.stop(); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder) { msg.textContent = 'This phone or browser cannot record here. You can type it instead.'; return; }
+    if (repMedia.length >= 4) { msg.textContent = 'Up to four photos or voice notes.'; return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+      var chunks = [], t0 = Date.now(), opts = {};
+      ['audio/webm;codecs=opus', 'audio/mp4', 'audio/ogg'].some(function (t) { if (MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(t)) { opts.mimeType = t; return true; } });
+      try { opts.audioBitsPerSecond = 24000; recorder = new MediaRecorder(stream, opts); } catch (e) { recorder = new MediaRecorder(stream); }
+      recorder.ondataavailable = function (e) { if (e.data && e.data.size) chunks.push(e.data); };
+      recorder.onstop = function () {
+        clearInterval(recTimer); stream.getTracks().forEach(function (t) { t.stop(); });
+        var type = (recorder.mimeType || 'audio/webm').split(';')[0], b = new Blob(chunks, { type: type });
+        recorder = null; btn.textContent = 'Record your voice'; btn.classList.remove('rec-on'); msg.textContent = 'Voice note ready. Listen back before saving.';
+        repMedia.push({ blob: b, type: type, url: URL.createObjectURL(b) }); drawRepMedia();
+      };
+      recorder.start(1000); btn.textContent = 'Stop recording'; btn.classList.add('rec-on');
+      recTimer = setInterval(function () { var s = Math.round((Date.now() - t0) / 1000); msg.textContent = 'Recording… ' + Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2) + ' (up to 3 minutes)'; if (s >= 180 && recorder) recorder.stop(); }, 500);
+    }).catch(function () { msg.textContent = 'The microphone was not allowed. You can type it instead.'; });
+  };
+  function blobToB64(b) { return new Promise(function (ok, bad) { var r = new FileReader(); r.onload = function () { ok(String(r.result).split(',')[1] || ''); }; r.onerror = bad; r.readAsDataURL(b); }); }
+  function uploadRepMedia() {
+    if (!repMedia.length) return Promise.resolve([]);
+    $('rep-msg').textContent = 'Uploading ' + repMedia.length + (repMedia.length > 1 ? ' files…' : ' file…');
+    return Promise.all(repMedia.map(function (m) { return blobToB64(m.blob).then(function (d) { return relay(store.get('code', ''), { mediaPut: { data: d, type: m.type } }); }).then(function (j) { return { id: j.id, type: j.type }; }); }));
+  }
+  function mediaViewer(list) {
+    var box = h('div', { class: 'media-view' });
+    list.forEach(function (m) {
+      var isImg = /^image/.test(m.type), slot = h('div', { class: 'mv' });
+      var b = h('button', { class: 'btn', type: 'button', text: isImg ? 'Show the photo' : 'Play the voice note', onclick: function () {
+        b.disabled = true; b.textContent = 'Loading…';
+        relay(store.get('code', ''), { mediaGet: m.id }).then(function (j) {
+          var src = 'data:' + j.type + ';base64,' + j.data; b.remove();
+          slot.appendChild(isImg ? h('img', { src: src, alt: 'Photo added by family' }) : h('audio', { controls: '', src: src }));
+        }).catch(function (e) { b.disabled = false; b.textContent = 'Could not load: ' + e.message; });
+      } });
+      slot.appendChild(b); box.appendChild(slot);
+    });
+    return h('div', { class: 'sec' }, [h('h3', { text: 'Photos and voice notes' }), box, h('p', { class: 'grp-help', text: 'Family testimony, not verified.' })]);
+  }
+  function rememberHere(prefill) {
+    var t = curTarget || {};
+    openReportForm(Object.assign({ cat: 'remember', lat: t.lat, lon: t.lon, target: t.id || '', targetName: t.name || '' }, prefill || {}));
+  }
+
+  /* ---------- questions to ask your elders ---------- */
+  function elderSection(s) {
+    var E = window.ATLAS_ELDER_Q; if (!E) return null;
+    var qs = (E.byId || {})[s.id] || (E.byLayer || {})[s.layer]; if (!qs) return null;
+    return h('div', { class: 'sec elder' }, [h('h3', { text: 'Questions to ask your elders' }),
+      h('p', { class: 'grp-help', text: 'For younger family members: ask, listen, and if they agree, save what they say here.' }),
+      h('ol', { class: 'elder-q' }, qs.map(function (q) { return h('li', {}, [h('span', { text: q }), canReport ? h('button', { class: 'qr-btn', type: 'button', text: 'Save their answer', onclick: function () { curTarget = curTarget || { lat: s.lat, lon: s.lon, id: s.id, name: s.name }; rememberHere({ title: 'Memory: ' + s.name, prompt: q }); } }) : null]); }))]);
+  }
+
+  /* ---------- where did you live? a private home pin and what happened nearby ---------- */
+  var homeMarker = null, homeCard = null, homePicking = false;
+  var HOME_SVG = '<svg viewBox="0 0 24 24"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3z" fill="currentColor"/></svg>';
+  function drawHome() {
+    var hm = store.get('home', null); if (homeMarker) { map.removeLayer(homeMarker); homeMarker = null; }
+    if (!hm) return;
+    homeMarker = L.marker([hm.lat, hm.lon], { title: 'Where you lived (only on this device)', zIndexOffset: 900,
+      icon: L.divIcon({ className: '', iconSize: [34, 34], iconAnchor: [17, 17], html: '<div class="home-pin">' + HOME_SVG + '</div>' }) }).on('click', function () { showHome(); }).addTo(map);
+  }
+  function pickHome() {
+    closeDoorIf(); homePicking = true; $('pick-text').textContent = 'Tap the map where you lived'; $('pick-banner').hidden = false; document.body.classList.add('picking');
+    if (!DESKTOP.matches) { closePanel('sheet'); closePanel('drawer'); }
+  }
+  map.on('click', function (e) {
+    if (!homePicking) return; homePicking = false; $('pick-banner').hidden = true; document.body.classList.remove('picking'); $('pick-text').textContent = 'Tap the map where it is';
+    store.set('home', { lat: Math.round(e.latlng.lat * 1e5) / 1e5, lon: Math.round(e.latlng.lng * 1e5) / 1e5 }); drawHome(); showHome();
+  });
+  if ($('pick-cancel')) $('pick-cancel').addEventListener('click', function () { if (homePicking) { homePicking = false; $('pick-text').textContent = 'Tap the map where it is'; } });
+  function showHome() {
+    var hm = store.get('home', null); if (!hm) { pickHome(); return; }
+    var ll = L.latLng(hm.lat, hm.lon), R = 1000;
+    var near = SITES.map(function (s) { return { s: s, d: map.distance(ll, [s.lat, s.lon]) }; }).filter(function (x) { return x.d <= R; });
+    if (near.length < 3) { R = 2000; near = SITES.map(function (s) { return { s: s, d: map.distance(ll, [s.lat, s.lon]) }; }).filter(function (x) { return x.d <= R; }); }
+    near.sort(function (a, b) { return (a.s.y0 || 9999) - (b.s.y0 || 9999); });
+    if (!homeCard) { homeCard = h('section', { class: 'story-card home-card' }); document.body.appendChild(homeCard); }
+    homeCard.innerHTML = ''; homeCard.hidden = false;
+    homeCard.appendChild(h('div', { class: 'sc-head' }, [h('div', {}, [h('b', { text: 'Near where you lived' }), h('small', { text: near.length + ' mapped place' + (near.length === 1 ? '' : 's') + ' within ' + (R / 1000) + ' km · the pin stays on this device only' })]), h('button', { class: 'btn ghost', text: 'Close', onclick: function () { homeCard.hidden = true; } })]));
+    var list = h('div', { class: 'yc-list' });
+    if (!near.length) list.appendChild(h('p', { class: 'd-text', text: 'Nothing on the map yet within 2 km. If you remember something from around here, you can add it.' }));
+    near.forEach(function (x) { list.appendChild(h('button', { onclick: function () { homeCard.hidden = true; focusSite(x.s); } }, [glyph(x.s.layer), h('span', { text: (x.s.y0 ? x.s.y0 + ' · ' : '') + x.s.name + ' — ' + (x.d < 1000 ? Math.round(x.d / 50) * 50 + ' m' : (x.d / 1000).toFixed(1) + ' km') })])); });
+    homeCard.appendChild(list);
+    homeCard.appendChild(h('div', { class: 'sc-btns' }, [
+      h('button', { class: 'btn ghost', text: 'Move my pin', onclick: function () { homeCard.hidden = true; pickHome(); } }),
+      h('button', { class: 'btn ghost', text: 'Forget it', onclick: function () { store.set('home', null); drawHome(); homeCard.hidden = true; } }),
+      canReport ? h('button', { class: 'btn primary', text: 'Share a memory of it', onclick: function () { homeCard.hidden = true; openReportForm({ cat: 'home', lat: hm.lat, lon: hm.lon }); } }) : null
+    ]));
+    var ch = homeCard.getBoundingClientRect().height || 300; map.flyTo(map.unproject(map.project(ll, 15).add([0, ch / 2 + (DESKTOP.matches ? 60 : 10)]), 15), 15, { duration: 0.8 });
+  }
+  function closeDoorIf() { if (typeof door !== 'undefined' && door && !door.hidden) door.hidden = true; }
+  setTimeout(drawHome, 0);
+
+  /* ---------- on this day: one dated event from the map or the archive, once a day ---------- */
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var otdTries = 0;
+  function onThisDay() {
+    var now = new Date(), key = now.toISOString().slice(0, 10);
+    if (store.get('otdSeen', '') === key || document.querySelector('.otd')) return;
+    var busy = document.body.classList.contains('picking') || storyOn || (yearCard && !yearCard.hidden) || (homeCard && !homeCard.hidden) || (door && !door.hidden) || !$('report').hidden;
+    if (busy) { if (otdTries++ < 6) setTimeout(onThisDay, 20000); return; }
+    var d = now.getDate(), mo = MONTHS[now.getMonth()], re = new RegExp('\\b' + d + '(?:–\\d+)? ' + mo + ' ((?:19|20)\\d\\d)');
+    var hits = SITES.filter(function (s) { return re.test(s.period || '') || re.test(s.name || ''); });
+    var show = function (title, year, go) {
+      var c = h('section', { class: 'otd', role: 'status' }, [h('small', { text: 'On this day, ' + d + ' ' + mo + ' ' + year }), h('b', { text: title }),
+        h('div', { class: 'sc-btns' }, [h('button', { class: 'btn ghost', text: 'Not now', onclick: function () { c.remove(); store.set('otdSeen', key); } }), h('button', { class: 'btn primary', text: 'Show me', onclick: function () { c.remove(); store.set('otdSeen', key); go(); } })])]);
+      document.body.appendChild(c);
+    };
+    if (hits.length) { var s = hits[0], y = (re.exec(s.period || '') || re.exec(s.name || ''))[1]; show(s.name, y, function () { focusSite(s); }); return; }
+    var mm = ('0' + (now.getMonth() + 1)).slice(-2) + '-' + ('0' + d).slice(-2);
+    loadRecords().then(function (R) {
+      var r = (R || []).filter(function (x) { var y = +(x.d || '').slice(0, 4); return (x.d || '').slice(5, 10) === mm && y >= 1969 && y <= 2011 && /tripoli|libya|qadhafi|qaddafi/i.test(x.t + ' ' + (x.m || '')); })[0];
+      if (r) show(/[a-z]/.test(r.t) ? r.t : r.t.charAt(0) + r.t.slice(1).toLowerCase(), r.d.slice(0, 4), function () { openRecord(r); });
+    });
+  }
+  setTimeout(function () { if (store.get('doorOff', false)) onThisDay(); }, 2500);
   var API = null;
   window.ATLAS_API = API = {
     conn: connDetail, map: map, h: h, facts: facts, section: section,

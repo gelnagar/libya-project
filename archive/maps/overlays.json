@@ -65,38 +65,5 @@
   "license": "CC BY-NC-SA 3.0 (David Rumsey Map Collection); for non-commercial use with attribution",
   "zooms": "11-15",
   "crops_auto": true
- },
- {
-  "id": "kh9-1972-nov",
-  "kind": "satellite",
-  "title": "Spy satellite, November 1972 (KH-9 HEXAGON)",
-  "year": 1972,
-  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003",
-  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
-  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1972-nov.tif",
-  "license": "Public domain (U.S. government work)",
-  "zooms": "12-16",
-  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07.",
-  "registration": {
-   "error": "global match failed",
-   "agree": 7
-  }
- },
- {
-  "id": "kh9-1976-north",
-  "kind": "satellite",
-  "title": "Spy satellite, 1976, north (KH-9 HEXAGON)",
-  "year": 1976,
-  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005",
-  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
-  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1976-north.tif",
-  "license": "Public domain (U.S. government work)",
-  "zooms": "12-16",
-  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga; the frame after it covers Abu Salim. Taken 1976-03-20.",
-  "registration": {
-   "error": "too few local points",
-   "points": 0,
-   "global_agree": 21
-  }
  }
 ]

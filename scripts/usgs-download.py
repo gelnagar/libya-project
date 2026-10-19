@@ -6,7 +6,7 @@ on the frame by matching it against today's imagery (usgs-register.py locate). A
 preview pixels overrides that. The Tripoli window is cut at full detail, attached to the 'usgs-frames' release as
 <id>.tif, previewed with a grid (<id>-cut.jpg) and added to archive/maps/overlays.json. usgs-register.py then lines it
 up and build-overlays.sh tiles it."""
-import datetime, glob, json, os, shutil, subprocess, tarfile, time, urllib.request, zipfile
+import datetime, glob, json, math, os, shutil, subprocess, tarfile, time, urllib.request, zipfile
 import importlib.util
 import numpy as np
 from osgeo import gdal
@@ -185,15 +185,24 @@ def run(key, pick, overlays):
     meta.update({'id': pid, 'entityId': pick['entityId'], 'frame': info, 'whole': {'file': f'{pid}-whole.jpg', 'scale': s, 'width': w, 'height': h},
                  'checked': datetime.datetime.now(datetime.timezone.utc).isoformat()})
     out = 'preview made'
-    crop = pick.get('crop')
+    crop, sc = pick.get('crop'), s  # a hand-set crop is in whole-preview pixels
     if not crop:
-        crop, agree = registrar().locate(gdal.Open(f'{PREV}/{pid}-whole.jpg').ReadAsArray(), s)
-        meta['locate'] = {'crop': crop, 'agree': agree}
+        # a detailed overview (about 20 m a pixel for HEXAGON) to search for Tripoli; kept on the release for tuning
+        fo = max(4, math.ceil(max(info['width'], info['height']) / 48000))
+        ov = os.path.join(d, pid + '-overview.jpg')
+        mem = gdal.Translate('', vrt, format='MEM', width=info['width'] // fo, height=info['height'] // fo, resampleAlg='average', **to_byte(info['dtype']))
+        gdal.GetDriverByName('JPEG').CreateCopy(ov, mem, options=['QUALITY=85'])
+        overview = mem.ReadAsArray(); mem = None
+        try: meta['overview'] = {'url': upload(ov), 'reduced_by': fo}
+        except Exception as e: print('overview upload failed', e)
+        crop, agree = registrar().locate(overview, fo)
+        meta['locate'] = {'crop_in_overview': crop, 'agree': agree}
+        sc = fo
         if not crop:
             meta['locate_failed'] = True
             out = f'preview made; Tripoli not found automatically ({agree} matches agreed)'
     if crop:
-        x, y, cw, ch = crop; sc = meta['whole']['scale']
+        x, y, cw, ch = crop
         win = [max(0, round(x * sc)), max(0, round(y * sc))]
         win += [min(info['width'] - win[0], round(cw * sc)), min(info['height'] - win[1], round(ch * sc))]
         cut = os.path.join(d, pid + '.tif'); factor = 1

@@ -72,7 +72,8 @@ def feats(a):
 def match(fa, fb, ratio=0.8):
     (ka, da), (kb, db) = fa, fb
     if da is None or db is None or len(ka) < 8 or len(kb) < 8: return np.empty((0, 2)), np.empty((0, 2))
-    pairs = cv2.BFMatcher(cv2.NORM_L2).knnMatch(da, db, k=2)
+    # approximate nearest neighbours (kd-trees): far faster than brute force at tens of thousands of features
+    pairs = cv2.FlannBasedMatcher(dict(algorithm=1, trees=5), dict(checks=64)).knnMatch(da, db, k=2)
     good = [m for m, *n in pairs if n and m.distance < ratio * n[0].distance]
     return np.float32([ka[m.queryIdx].pt for m in good]), np.float32([kb[m.trainIdx].pt for m in good])
 
@@ -90,27 +91,57 @@ def fit_poly(src, dst):
     coef, *_ = np.linalg.lstsq(A, dst, rcond=None)
     return lambda p: poly_terms((np.asarray(p, float) - sx) / sy) @ coef
 
-def locate(preview, frame_px_per_preview_px):
-    """Find Tripoli on a whole-frame preview. Returns the CITY window in preview pixels as [x, y, w, h], and how many matches agreed."""
-    ref, origin = reference()
-    ref_c = cv2.resize(ref, None, fx=1 / 8, fy=1 / 8, interpolation=cv2.INTER_AREA)  # about 16 m a pixel
-    fr = feats(ref_c); best = None
-    for guess_m in (1.0, 0.6, 1.8):
-        f = 8 * M_PER_PX / (guess_m * frame_px_per_preview_px)  # ref_c px per preview px
-        small = cv2.resize(preview, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_LINEAR)
-        a, b = match(feats(small), fr)
-        if len(a) < 10: continue
-        Hc, mask = cv2.findHomography(a, b, cv2.RANSAC, 4.0, maxIters=20000, confidence=0.999)
-        n = int(mask.sum()) if mask is not None else 0
-        print('locate at', guess_m, 'm/px:', len(a), 'pairs,', n, 'agree')
-        if Hc is not None and (best is None or n > best[0]): best = (n, Hc, f)
-    if not best or best[0] < 15: return None, best[0] if best else 0
-    n, Hc, f = best
+SCALES = (2.2, 1.5, 3.0, 1.0, 0.6)  # metres per frame pixel to try, likeliest first: HEXAGON scans near 2-2.5, GAMBIT near 0.6-1
+
+def similarity(a, b, thresh):
+    """Rotation + scale + shift between matched points, robust to bad matches. Returns (3x3 matrix, inlier mask) or (None, None)."""
+    if len(a) < 6: return None, None
+    M, inl = cv2.estimateAffinePartial2D(a, b, method=cv2.RANSAC, ransacReprojThreshold=thresh, maxIters=20000, confidence=0.999)
+    if M is None: return None, None
+    return np.vstack([M, [0, 0, 1]]), inl.ravel().astype(bool)
+
+_REF_C = None
+def ref_coarse():
+    global _REF_C
+    if _REF_C is None:
+        ref, origin = reference()
+        small = cv2.resize(ref, None, fx=1 / 8, fy=1 / 8, interpolation=cv2.INTER_AREA)  # about 16 m a pixel
+        _REF_C = small, feats(small)
+    return _REF_C
+
+def locate(overview, frame_px_per_px):
+    """Find Tripoli on a frame overview (frame_px_per_px frame pixels per overview pixel). The strip is searched in
+    overlapping chunks at the reference's 16 m a pixel, for each likely film scale. Returns the CITY window in overview
+    pixels as [x, y, w, h] and how many matches agreed."""
+    ref, origin = reference(); ref_c, fr = ref_coarse()
+    best = (0, None)
+    for g in SCALES:
+        f = g * frame_px_per_px / (8 * M_PER_PX)  # ref_c px per overview px
+        if f > 2: continue
+        img = cv2.resize(overview, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_LINEAR)
+        win, step = 3200, 2000  # the city is about 1,400 px wide at this scale
+        for y in range(0, max(1, img.shape[0] - win + step), step):
+            for x in range(0, max(1, img.shape[1] - win + step), step):
+                chunk = img[y:y + win, x:x + win]
+                if chunk.std() < 6: continue
+                a, b = match(feats(chunk), fr, 0.85)
+                M, inl = similarity(a, b, 4.0)
+                if M is None: continue
+                n, sc = int(inl.sum()), math.hypot(M[0, 0], M[1, 0])
+                if not 0.6 < sc < 1.6: continue
+                if n > best[0]: best = (n, (M, f, x, y, g))
+        print('locate at', g, 'm/px: best so far', best[0], 'agree')
+        if best[0] >= 60: break  # a clear hit; no need to try other scales
+    n, hit = best
+    if n < 12: return None, n
+    M, f, x, y, g = hit
     corners = np.array([ll2px(CITY[0], CITY[3]), ll2px(CITY[2], CITY[3]), ll2px(CITY[2], CITY[1]), ll2px(CITY[0], CITY[1])]) - origin
-    pv = apply_h(np.linalg.inv(Hc), corners / 8) / f
+    pv = (apply_h(np.linalg.inv(M), corners / 8) + [x, y]) / f
     x0, y0 = np.floor(pv.min(0)); x1, y1 = np.ceil(pv.max(0))
-    x0, y0 = max(0, x0), max(0, y0); x1, y1 = min(preview.shape[1], x1), min(preview.shape[0], y1)
+    pad = 0.08 * max(x1 - x0, y1 - y0)
+    x0, y0 = max(0, x0 - pad), max(0, y0 - pad); x1, y1 = min(overview.shape[1], x1 + pad), min(overview.shape[0], y1 + pad)
     if x1 - x0 < 50 or y1 - y0 < 50: return None, n
+    print('located at', g, 'm/px with', n, 'agreeing matches')
     return [int(x0), int(y0), int(x1 - x0), int(y1 - y0)], n
 
 def read_cut(ds, x, y, w, h, scale):
@@ -122,19 +153,23 @@ def read_cut(ds, x, y, w, h, scale):
 
 def register(oid, cut_path, ref, origin):
     ds = gdal.Open(cut_path); W, H = ds.RasterXSize, ds.RasterYSize
-    # 1. global guess, both pictures at about 8 m a pixel; the frames are about 1 m a pixel, so shrink the cut-out ~8x
+    # 1. global guess, both pictures at about 8 m a pixel, for each likely film scale. A similarity transform first (few
+    # unknowns, so it survives the many false matches between 1970s film and today), then a projective fit on its inliers.
     ref_c = cv2.resize(ref, None, fx=1 / COARSE, fy=1 / COARSE, interpolation=cv2.INTER_AREA)
-    best = None
-    for guess_m in (1.0, 0.6, 1.8):  # metres per frame pixel: HEXAGON and GAMBIT scans sit in this range
+    fr = feats(ref_c); best = None
+    for guess_m in SCALES:
         f = COARSE * M_PER_PX / guess_m
+        if f < 0.5: continue
         cut_c, _, _ = read_cut(ds, 0, 0, W, H, 1 / f)
-        a, b = match(feats(cut_c), feats(ref_c))
-        if len(a) < 10: continue
-        Hc, mask = cv2.findHomography(a, b, cv2.RANSAC, 6.0, maxIters=20000, confidence=0.999)
-        n = int(mask.sum()) if mask is not None else 0
+        if cut_c is None: continue
+        a, b = match(feats(cut_c), fr, 0.85)
+        S, inl = similarity(a, b, 6.0)
+        if S is None or not 0.6 < math.hypot(S[0, 0], S[1, 0]) < 1.6: continue
+        n = int(inl.sum())
+        Hc = cv2.findHomography(a[inl], b[inl], 0)[0] if n >= 8 else None
         print(oid, f'global match at {guess_m} m/px: {len(a)} candidate pairs, {n} agree')
         if Hc is not None and (best is None or n > best[0]): best = (n, Hc, f)
-    if not best or best[0] < 15: return None, {'error': 'global match failed', 'agree': best[0] if best else 0}
+    if not best or best[0] < 12: return None, {'error': 'global match failed', 'agree': best[0] if best else 0}
     n0, Hc, f = best
     # full-resolution cut px -> reference px
     Hf = np.diag([COARSE, COARSE, 1.0]) @ Hc @ np.diag([1 / f, 1 / f, 1.0])

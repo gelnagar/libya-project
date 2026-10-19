@@ -126,29 +126,5 @@
   "width": 6000,
   "height": 608
  },
- "checked": "2026-10-19T16:26:49.470667+00:00",
- "locate": {
-  "crop": [
-   0,
-   265,
-   2078,
-   233
-  ],
-  "agree": 20
- },
- "cut": {
-  "window_in_frame": [
-   0,
-   10962,
-   85956,
-   9638
-  ],
-  "reduced_by": 1,
-  "file": "kh9-1976-north-cut.jpg",
-  "scale": 17.1912,
-  "width": 5000,
-  "height": 561,
-  "grid_every_px": 1000,
-  "size_bytes": 154411574
- }
+ "checked": "2026-10-19T16:26:49.470667+00:00"
 }

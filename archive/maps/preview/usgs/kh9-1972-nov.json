@@ -78,29 +78,5 @@
   "width": 6000,
   "height": 1034
  },
- "checked": "2026-10-19T16:25:17.018597+00:00",
- "locate": {
-  "crop": [
-   2356,
-   468,
-   721,
-   157
-  ],
-  "agree": 25
- },
- "cut": {
-  "window_in_frame": [
-   56652,
-   11253,
-   17337,
-   3775
-  ],
-  "reduced_by": 1,
-  "file": "kh9-1972-nov-cut.jpg",
-  "scale": 3.4674,
-  "width": 5000,
-  "height": 1089,
-  "grid_every_px": 1000,
-  "size_bytes": 17521190
- }
+ "checked": "2026-10-19T16:25:17.018597+00:00"
 }

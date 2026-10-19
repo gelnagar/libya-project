@@ -830,6 +830,7 @@
     document.querySelectorAll('.tl-dot.sel').forEach(function (e) { e.classList.remove('sel'); });
     selected = id;
     if (typeof syncRings === 'function') syncRings();
+    if (typeof applyFocus === 'function') applyFocus();
     if (!id) return;
     var el = markers[id] && markers[id].getElement();
     if (el) el.querySelector('.mk').classList.add('sel');
@@ -1969,7 +1970,8 @@
   if (GATED) store.set('code', 'session');
 
   /* ---------- welcome password ---------- */
-  function showTip() { if (!store.get('tipSeen', false)) $('tip').hidden = false; }
+  function showTipNow() { if (!store.get('tipSeen', false)) $('tip').hidden = false; }
+  function showTip() { if (!store.get('doorOff', false)) { setTimeout(openDoor, 0); return; } showTipNow(); }
   function closeWelcome() { $('welcome').hidden = true; showTip(); }
   function maybeWelcome() {
     if (!CFG.aiEndpoint || store.get('code', '') || session.get('skip')) { showTip(); return; }
@@ -2015,6 +2017,7 @@
   $('settings').addEventListener('click', function (e) { if (e.target.id === 'settings') closeSettings(); });
   $('tip-ok').onclick = function () { $('tip').hidden = true; store.set('tipSeen', true); };
   $('tip-again').onclick = function () { closeSettings(); $('tip').hidden = false; };
+  $('door-again').onclick = function () { store.set('doorOff', false); closeSettings(); openDoor(); };
   if (DESKTOP.matches) $('tip-text').textContent = 'Click any marker to read about it. Right-click anywhere on the map to ask about that spot.';
 
   $('btn-layers').onclick = function () { $('drawer').classList.contains('open') ? closePanel('drawer') : openPanel('drawer'); };
@@ -2555,6 +2558,121 @@
     openPanel('sheet');
     loadNotes().then(function (N) { fill(N[spec.key]); });
   }
+
+  /* ---------- focus mode: when a place is selected, fade everything not linked to it ---------- */
+  function applyFocus() {
+    var keep = null;
+    if (selected && BY_ID[selected]) { keep = {}; keep[selected] = 1; linksFor(selected).forEach(function (x) { keep[x.other.id] = 1; }); }
+    if (storyOn && storyOn.cur) { keep = {}; keep[storyOn.cur] = 1; }
+    document.body.classList.toggle('focusing', !!keep);
+    SITES.forEach(function (s) {
+      var m = markers[s.id]; if (!siteLayer.hasLayer(m)) return;
+      var base = timeYear == null || activeAt(s, timeYear) ? 1 : 0.3;
+      m.setOpacity(keep && !keep[s.id] ? Math.min(base, 0.22) : base);
+    });
+  }
+
+  /* ---------- guided stories ---------- */
+  var STORIES = window.ATLAS_STORIES || [], storyOn = null, storyCard = null;
+  function storyStop(i) {
+    var st = storyOn.story, ids = st.stops.filter(function (id) { return BY_ID[id]; });
+    i = Math.max(0, Math.min(ids.length, i)); storyOn.i = i;
+    if (!storyCard) { storyCard = h('section', { class: 'story-card', 'aria-live': 'polite' }); document.body.appendChild(storyCard); }
+    storyCard.innerHTML = ''; storyCard.hidden = false; document.body.classList.add('story-open');
+    closePanel('sheet'); if (!$('chat-panel').hidden) closeChat();
+    var head = h('div', { class: 'sc-head' }, [h('div', {}, [h('b', { text: st.title }), h('small', { text: i === 0 ? st.years : 'Stop ' + i + ' of ' + ids.length })]), h('button', { class: 'btn ghost', text: 'End', onclick: endStory })]);
+    storyCard.appendChild(head);
+    if (i === 0) {
+      storyOn.cur = null;
+      storyCard.appendChild(h('p', { class: 'sc-lead', text: st.lead }));
+      storyCard.appendChild(h('div', { class: 'sc-btns' }, [h('button', { class: 'btn primary', text: 'Start', onclick: function () { storyStop(1); } })]));
+      var b = L.latLngBounds(ids.map(function (id) { return [BY_ID[id].lat, BY_ID[id].lon]; })); map.flyToBounds(b.pad(0.2), { duration: 0.8, maxZoom: 14, paddingTopLeft: [20, 20], paddingBottomRight: [20, (storyCard.getBoundingClientRect().height || 200) + (DESKTOP.matches ? 220 : 80)] });
+      markSelected(null); applyFocus(); return;
+    }
+    var s = BY_ID[ids[i - 1]], lay = LAYERS[s.layer];
+    ensureVisible(s); storyOn.cur = s.id; markSelected(s.id);
+    var z = Math.max(14, Math.min(16, map.getZoom() < 14 ? 15 : map.getZoom()));
+    map.flyTo(aimStory(s.lat, s.lon, z), z, { duration: 1.1 });
+    storyCard.appendChild(h('div', { class: 'sc-place' }, [glyph(s.layer), h('div', {}, [h('b', { text: s.name }), h('small', { text: s.period + ' · ' + (LEVELS[s.level] || '') })])]));
+    storyCard.appendChild(h('p', { class: 'sc-lead', text: s.relevance }));
+    storyCard.appendChild(h('div', { class: 'sc-btns' }, [
+      h('button', { class: 'btn', text: 'Back', onclick: function () { storyStop(i - 1); } }),
+      h('button', { class: 'btn ghost', text: 'Read more', onclick: function () { var keep = storyOn; endStory(); focusSite(s); } }),
+      i < ids.length ? h('button', { class: 'btn primary', text: 'Next', onclick: function () { storyStop(i + 1); } }) : h('button', { class: 'btn primary', text: 'Finish', onclick: endStory })
+    ]));
+    applyFocus();
+  }
+  function aimStory(lat, lon, z) {
+    var ch = storyCard ? storyCard.getBoundingClientRect().height || 240 : 240;
+    return map.unproject(map.project([lat, lon], z).add([0, ch / 2 + (DESKTOP.matches ? 60 : 10)]), z);
+  }
+  function startStory(id) { var st = STORIES.filter(function (x) { return x.id === id; })[0]; if (!st) return; storyOn = { story: st, i: 0 }; storyStop(0); }
+  function endStory() { storyOn = null; if (storyCard) storyCard.hidden = true; document.body.classList.remove('story-open'); markSelected(null); applyFocus(); }
+
+  /* ---------- pick a year: show only that year, with a short "this year in Tripoli" card ---------- */
+  var yearCard = null;
+  function showYear(y) {
+    stopPlay(); timeYear = null; timeRange = [y, y]; refresh();
+    if (!yearCard) { yearCard = h('section', { class: 'story-card year-card' }); document.body.appendChild(yearCard); }
+    yearCard.innerHTML = ''; yearCard.hidden = false; document.body.classList.add('story-open');
+    var happened = SITES.filter(function (s) { return s.y0 === y || (s.y1 === y && s.y0 !== y && s.layer !== 'detention' && s.layer !== 'power' && s.layer !== 'military' && s.layer !== 'landmark'); });
+    var open = SITES.filter(function (s) { var r = span(s); return happened.indexOf(s) < 0 && r[0] <= y && r[1] >= y && s.y0 != null; });
+    var slider = h('input', { type: 'range', min: '1969', max: '2011', value: String(y), 'aria-label': 'Year', oninput: function () { yl.textContent = slider.value; }, onchange: function () { showYear(+slider.value); } });
+    var yl = h('b', { class: 'yc-year', text: String(y) });
+    yearCard.appendChild(h('div', { class: 'sc-head' }, [h('div', {}, [h('small', { text: 'Tripoli in' }), yl]), h('button', { class: 'btn ghost', text: 'Show all years', onclick: endYear })]));
+    yearCard.appendChild(h('div', { class: 'yc-slide' }, [h('button', { class: 'btn', text: '‹', 'aria-label': 'Year before', onclick: function () { if (y > 1969) showYear(y - 1); } }), slider, h('button', { class: 'btn', text: '›', 'aria-label': 'Year after', onclick: function () { if (y < 2011) showYear(y + 1); } })]));
+    var list = h('div', { class: 'yc-list' });
+    if (happened.length) { list.appendChild(h('h4', { text: 'What happened' })); happened.forEach(function (s) { list.appendChild(h('button', { onclick: function () { focusSite(s); } }, [glyph(s.layer), h('span', { text: s.name })])); }); }
+    else list.appendChild(h('p', { class: 'd-text', text: 'No dated events on the map for ' + y + '. The places below were in use.' }));
+    if (open.length) list.appendChild(h('p', { class: 'yc-open', text: 'Also in use: ' + open.map(function (s) { return s.name; }).join(' · ') }));
+    yearCard.appendChild(list);
+    var b = (happened.length ? happened : open).filter(function (s) { return s.lat; });
+    if (b.length) map.flyToBounds(L.latLngBounds(b.map(function (s) { return [s.lat, s.lon]; })).pad(0.3), { duration: 0.8, maxZoom: 14, paddingTopLeft: [20, 20], paddingBottomRight: [20, (yearCard.getBoundingClientRect().height || 300) + (DESKTOP.matches ? 220 : 80)] });
+  }
+  function endYear() { if (yearCard) yearCard.hidden = true; document.body.classList.remove('story-open'); timeRange = null; refresh(); }
+
+  /* ---------- front door: four plain choices on first visit, with "don't show again" ---------- */
+  function doorChoice(icon, title, sub, go) { return h('button', { class: 'door-choice', onclick: go }, [h('span', { class: 'dc-ic', html: icon }), h('span', {}, [h('b', { text: title }), h('small', { text: sub })])]); }
+  var IC = {
+    walk: '<svg viewBox="0 0 24 24"><path d="M4 18c3-6 6 2 9-4s5-6 7-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="6" r="2"/></svg>',
+    find: '<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>',
+    year: '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>',
+    ask: '<svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
+  };
+  var door = null;
+  function closeDoor(thenTip) {
+    if (!door) return; door.hidden = true;
+    var cb = door.querySelector('#door-off'); if (cb && cb.checked) store.set('doorOff', true);
+    if (thenTip) showTipNow();
+  }
+  function doorMain() {
+    var box = door.querySelector('.door-box'); box.innerHTML = '';
+    box.appendChild(h('div', { class: 'door-head' }, [h('h2', { text: 'Tripoli under Gaddafi, 1969–2011' }), h('p', { text: 'Places, events and documents, gathered for the family. Where would you like to start?' })]));
+    box.appendChild(h('div', { class: 'door-grid' }, [
+      doorChoice(IC.walk, 'Walk me through it', 'Short guided stories, one place at a time', doorStories),
+      doorChoice(IC.find, 'Find a place I knew', 'A street, school, prison or neighbourhood', function () { closeDoor(); openTerm(''); }),
+      doorChoice(IC.year, 'Pick a year', 'See only what happened that year', function () { closeDoor(); showYear(1986); }),
+      doorChoice(IC.ask, 'Ask a question', 'In your own words, English or Arabic', function () { closeDoor(); openChat(); setTimeout(function () { $('chat-input').focus(); }, 60); })
+    ]));
+    box.appendChild(h('div', { class: 'door-foot' }, [
+      h('label', { class: 'door-off' }, [h('input', { type: 'checkbox', id: 'door-off' }), ' Don’t show this again']),
+      h('button', { class: 'btn ghost', text: 'Just show me the map', onclick: function () { closeDoor(true); } })
+    ]));
+  }
+  function doorStories() {
+    var box = door.querySelector('.door-box'), off = box.querySelector('#door-off'), keep = off && off.checked; box.innerHTML = '';
+    box.appendChild(h('div', { class: 'door-head' }, [h('h2', { text: 'Choose a story' }), h('p', { text: 'Each takes a few minutes. The map moves to each place; tap Next to go on.' })]));
+    box.appendChild(h('div', { class: 'door-grid one' }, STORIES.map(function (st) {
+      return h('button', { class: 'door-choice', onclick: function () { closeDoor(); startStory(st.id); } }, [h('span', {}, [h('b', { text: st.title }), h('small', { text: st.years + ' · ' + st.lead })])]);
+    })));
+    var cb = h('input', { type: 'checkbox', id: 'door-off' }); cb.checked = !!keep;
+    box.appendChild(h('div', { class: 'door-foot' }, [h('label', { class: 'door-off' }, [cb, ' Don’t show this again']), h('button', { class: 'btn ghost', text: 'Back', onclick: doorMain })]));
+  }
+  function openDoor() {
+    if (!door) { door = h('div', { class: 'modal door', id: 'door' }, [h('div', { class: 'modal-box door-box', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Where to start' })]); door.addEventListener('click', function (e) { if (e.target === door) closeDoor(true); }); document.body.appendChild(door); }
+    door.hidden = false; doorMain();
+  }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (door && !door.hidden) closeDoor(true); else if (storyOn) endStory(); else if (yearCard && !yearCard.hidden) endYear(); } });
   var API = null;
   window.ATLAS_API = API = {
     conn: connDetail, map: map, h: h, facts: facts, section: section,
@@ -2563,6 +2681,7 @@
     recordExists: function (id) { return loadRecords().then(function () { return !!REC_BY_ID[id]; }); },
     openRecordById: function (id) { loadRecords().then(function () { if (REC_BY_ID[id]) openRecord(REC_BY_ID[id]); }); },
     closeDrawer: function () { closePanel('drawer'); },
+    startStory: startStory, showYear: showYear, openDoor: openDoor,
     markBase: function (key) { document.querySelectorAll('#basemaps button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === (key || currentBase) ? 'true' : 'false'); }); }
   };
 })();

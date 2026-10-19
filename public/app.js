@@ -74,15 +74,12 @@
 
   var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
-  /* Light and Dark use CARTO's free grey maps; Esri's old Canvas grey maps stopped working without an API key. */
-  var CARTO = 'https://{s}.basemaps.cartocdn.com/', CARTO_ATTR = 'Basemap &copy; <a href="https://carto.com/attributions">CARTO</a>, ' + OSM_ATTR;
+  /* Light and Dark are OpenStreetMap tiles with a grey or night filter (see .tiles-light / .tiles-dark in index.html).
+     CARTO's grey maps now show an "API key required" watermark, Esri's were unreliable, and OSM needs no key. */
+  var OSM_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
   var BASEMAPS = {
-    light: { name: 'Light', note: 'Clean grey map', layers: [
-      L.tileLayer(CARTO + 'light_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 19, attribution: CARTO_ATTR })
-    ] },
-    dark: { name: 'Dark', note: 'Night view', layers: [
-      L.tileLayer(CARTO + 'dark_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 19, attribution: CARTO_ATTR })
-    ] },
+    light: { name: 'Light', note: 'Clean grey map', layers: [L.tileLayer(OSM_URL, { maxZoom: 19, className: 'tiles-light', attribution: OSM_ATTR })] },
+    dark: { name: 'Dark', note: 'Night view', layers: [L.tileLayer(OSM_URL, { maxZoom: 19, className: 'tiles-dark', attribution: OSM_ATTR })] },
     satellite: { name: 'Satellite', note: 'Photos from above', layers: [
       L.tileLayer(ESRI + 'World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 18, maxZoom: 19, attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics' }),
       L.tileLayer(ESRI + 'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 18, maxZoom: 19 })
@@ -103,12 +100,12 @@
       THUMB_Y = Math.floor((1 - Math.log(Math.tan(THUMB_LA) + 1 / Math.cos(THUMB_LA)) / Math.PI) / 2 * Math.pow(2, THUMB_Z));
   Object.keys(BASEMAPS).forEach(function (k) {
     var tz = THUMB_Z, tx = THUMB_X, ty = THUMB_Y;
-    var tile = { light: 'https://a.basemaps.cartocdn.com/light_all/' + tz + '/' + tx + '/' + ty + '.png', dark: 'https://a.basemaps.cartocdn.com/dark_all/' + tz + '/' + tx + '/' + ty + '.png',
+    var tile = { light: 'https://tile.openstreetmap.org/' + tz + '/' + tx + '/' + ty + '.png', dark: 'https://tile.openstreetmap.org/' + tz + '/' + tx + '/' + ty + '.png',
       satellite: ESRI + 'World_Imagery/MapServer/tile/' + tz + '/' + ty + '/' + tx,
       street: 'https://tile.openstreetmap.org/' + tz + '/' + tx + '/' + ty + '.png',
       terrain: 'https://a.tile.opentopomap.org/' + tz + '/' + tx + '/' + ty + '.png' }[k];
     $('basemaps').appendChild(h('button', { 'data-key': k, 'aria-pressed': 'false', onclick: function () { setBase(k); } },
-      [h('span', { class: 'thumb', style: 'background-image:url(' + tile + ')' }), h('span', { class: 'nm', text: BASEMAPS[k].name }), h('small', { text: BASEMAPS[k].note })]));
+      [h('span', { class: 'thumb' + (k === 'light' || k === 'dark' ? ' tiles-' + k : ''), style: 'background-image:url(' + tile + ')' }), h('span', { class: 'nm', text: BASEMAPS[k].name }), h('small', { text: BASEMAPS[k].note })]));
   });
 
   $('basemaps').appendChild(h('button', { 'data-key': 'unknown', 'aria-pressed': 'false', title: 'People and groups linked in the files, on a separate black plane', onclick: function () { if (window.ATLAS_UNKNOWN_OPEN) window.ATLAS_UNKNOWN_OPEN(); } },

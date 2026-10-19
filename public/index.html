@@ -438,6 +438,8 @@ details.more > summary::after { content: '+'; margin-left: auto; font-size: 1.3e
 details.more[open] > summary::after { content: '–'; }
 
 .glyph, .osm-ic { border-radius: 0 !important; }
+  .tiles-light { filter: grayscale(1) contrast(.92) brightness(1.06); }
+  .tiles-dark { filter: invert(1) hue-rotate(180deg) grayscale(.85) brightness(.8) contrast(.95); }
 </style>
 <link rel="stylesheet" href="foundry.css">
 </head>

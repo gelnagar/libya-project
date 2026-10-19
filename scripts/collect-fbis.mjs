@@ -46,10 +46,19 @@ await mkdir('archive/fbis', { recursive: true });
 let catalog = [];
 try { catalog = JSON.parse(await readFile('archive/fbis/catalog.json', 'utf8')); } catch {}
 const have = new Set(catalog.map((c) => c.identifier));
-const res = await get('https://archive.org/advancedsearch.php?' + new URLSearchParams({ q: 'title:(FBIS Daily Report Middle East Africa)', rows: '5000', output: 'json' }).toString() + '&fl[]=identifier&fl[]=date&fl[]=title');
-const docs = (res?.response?.docs || []).filter((d) => !have.has(d.identifier)).sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+const FQ = ['title:(FBIS Daily Report Middle East Africa)', 'title:(FBIS Daily Report Near East South Asia)', 'title:(FBIS Daily Report Middle East South Asia)', 'title:(FBIS Daily Report Sub-Saharan Africa)', 'title:(FBIS Daily Report Africa)', 'title:(FBIS-NES)', 'title:(FBIS-MEA)', 'title:(FBIS-AFR)', 'title:("Daily Report" AND (Libya OR Arab OR "Near East"))'];
+const dmap = new Map();
+for (const q of FQ) {
+  for (let page = 1; page <= 3; page++) {
+    const r = await get('https://archive.org/advancedsearch.php?' + new URLSearchParams({ q, rows: '5000', page: String(page), output: 'json' }).toString() + '&fl[]=identifier&fl[]=date&fl[]=title');
+    const dd = r?.response?.docs || []; console.log('query', q, 'page', page, dd.length);
+    for (const d of dd) if (/FBIS|Daily Report/i.test(d.title || '')) dmap.set(d.identifier, d);
+    if (dd.length < 5000) break; await sleep(1000);
+  }
+}
+const docs = [...dmap.values()].filter((d) => !have.has(d.identifier)).sort((a, b) => (a.date || '').localeCompare(b.date || ''));
 console.log('issues to read', docs.length);
-const LIMIT = +(process.env.FBIS_LIMIT || 2000);
+const LIMIT = +(process.env.FBIS_LIMIT || 6000);
 let n = 0, started = Date.now();
 async function one(d) {
   const txt = await get(`https://archive.org/download/${d.identifier}/${d.identifier}_djvu.txt`, 'text');
@@ -68,7 +77,7 @@ async function one(d) {
 const queue = docs.slice(0, LIMIT);
 const workers = Array.from({ length: 3 }, async () => {
   while (queue.length) {
-    if (Date.now() - started > 150 * 60 * 1000) return; // stop in time to save
+    if (Date.now() - started > 320 * 60 * 1000) return; // stop in time to save
     const d = queue.shift(); await one(d); n++;
     if (n % 50 === 0) { console.log(n, 'done'); await writeFile('archive/fbis/catalog.json', JSON.stringify(catalog)); }
     await sleep(400);

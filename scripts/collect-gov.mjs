@@ -56,10 +56,10 @@ function libyaSection(text) {
   }
   return best;
 }
-const queries = ['title:(JPRS Near East North Africa)', 'title:("Near East/North Africa Report")', 'title:(JPRS Near East) AND date:[1979-01-01 TO 1996-12-31]'];
+const queries = ['title:(JPRS Near East North Africa)', 'title:("Near East/North Africa Report")', 'title:(JPRS Near East) AND date:[1979-01-01 TO 1996-12-31]', 'title:(JPRS Near East South Asia)', 'title:(JPRS Terrorism)', 'title:(JPRS Sub-Saharan Africa)', 'title:(JPRS Arms Control)', 'title:(JPRS Worldwide Report)', 'title:(JPRS Africa)'];
 const seen = new Map();
 for (const q of queries) {
-  const r = await get('https://archive.org/advancedsearch.php?' + new URLSearchParams({ q, rows: '3000', output: 'json' }).toString() + '&fl[]=identifier&fl[]=date&fl[]=title');
+  const r = await get('https://archive.org/advancedsearch.php?' + new URLSearchParams({ q, rows: '5000', output: 'json' }).toString() + '&fl[]=identifier&fl[]=date&fl[]=title');
   const docs = r?.response?.docs || []; console.log('query', q, docs.length);
   for (const d of docs) seen.set(d.identifier, d);
 }
@@ -69,12 +69,13 @@ let n = 0;
 const queue = docs.slice();
 await Promise.all(Array.from({ length: 3 }, async () => {
   while (queue.length) {
-    if (Date.now() - started > 110 * 60 * 1000) return;
+    if (Date.now() - started > 135 * 60 * 1000) return;
     const d = queue.shift();
     const txt = await get(`https://archive.org/download/${d.identifier}/${d.identifier}_djvu.txt`, 'text');
     const entry = { id: 'jprs-' + d.identifier, source: 'JPRS (Joint Publications Research Service)', collection: 'JPRS Near East/North Africa Report (Internet Archive scan)', title: d.title, date: (d.date || '').slice(0, 10), url: 'https://archive.org/details/' + d.identifier };
     if (txt) {
-      const sec = libyaSection(txt); entry.chars = sec.length;
+      let sec = libyaSection(txt); if (sec.length < 400) { const g2 = /Liby|Tripoli|Qadh|Qaddafi|Gadhafi|Gaddafi|Abu Salim|Jamahiriy/gi; const win = []; let m; while ((m = g2.exec(txt))) { const a = Math.max(0, m.index - 1500), b = Math.min(txt.length, m.index + 1500); if (win.length && a <= win[win.length - 1][1]) win[win.length - 1][1] = b; else win.push([a, b]); } if (win.length >= 2) sec = win.map(([a, b]) => txt.slice(a, b)).join('\n[…]\n').slice(0, 120000); }
+      entry.chars = sec.length;
       if (sec.length > 400) { entry.file = 'jprs-' + d.identifier + '.txt'; await writeFile('archive/gov/' + entry.file, `${d.title}\n${entry.url}\nJPRS translation. U.S. government work, public domain. OCR text: errors are likely.\n\nLIBYA\n\n${sec.slice(0, 300000)}`); }
     } else entry.error = 'no text';
     catalog.push(entry); n++;

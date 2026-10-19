@@ -18,6 +18,15 @@ for ident, names in {
     'tajoura-nuclear': ['tajura nuclear research center', 'tajoura nuclear research centre', 'tajoura nuclear research center'], 'lh-al-waddan-hotel': ['hotel uaddan', 'uaddan hotel', 'al waddan hotel'], 'qasr-ben-ghashir': ['qasr bin ghashir'], 'sidibilal': ['sidi bilal'], 'hay-andalus': ['hay al-andalus'],
     'ain-zara': ['ain zara'], 'lm-7-october-stadium': ['7 october stadium'], 'lb-tripoli-international-stadium': ['june 11 stadium', 'tripoli stadium', '11 june stadium'],
     'lm-radisson-blu-al-mahary': ['radisson blu al mahary hotel tripoli', 'al mahary hotel'], 'military-college': ['military college'],
+    'npic-tarabulus-army-barracks-prinn': ['tarabulus army barracks prinn', 'tarabulus army barracks (prinn)', 'tarabulus army barracks, prinn'],
+    'npic-umm-aitiqah-ecm-site-and-tarabulus-army-': ['umm aitiqah ecm site', 'tarabulus army barracks east', 'tarabulus army barracks, east', 'umm aitiqah ecm'],
+    'npic-tarabulus-air-defence-barracks': ['tarabulus air defense barracks', 'tarabulus air defence barracks'],
+    'npic-tajura-sa-3-site': ['tajura sa-3 site (tarabulus sa-3 site tajura)', 'tajura sa-3 site', 'tarabulus sa-3 site tajura', 'tarabulus sa-3 site'],
+    'npic-tarabulus-sam-training-facility-east-sou': ['tarabulus military installation (sam training school)', 'tarabulus military installation (sam training facility), eastern outskirts of tripoli', 'tarabulus military installation (ese, sam training school)', 'tarabulus sam training facility', 'tarabulus sam training facility (east-south-east)'],
+    'yarmouk-camp': ['yarmuk military base (yarmouk camp)', 'yarmuk military base, tripoli', 'yarmuk military base', 'yarmuk military base, tripoli', 'yarmuk camp'],
+    'bt-1980-embassies': ['french embassy, tripoli', 'french embassy in tripoli', 'french embassy tripoli', 'jordanian embassy in tripoli', 'jordanian embassy, tripoli', 'tunisian embassy in tripoli', 'tripoli mob violence', 'tripoli demonstration, 18 february 1984', 'demonstration of 20 november 1983'],
+    'mk-gargaresh-2011': ['temporary prison near gargaresh, tripoli', 'gargaresh (tripoli) temporary prison', 'gargaresh temporary prison', 'gargaresh (tripoli) temporary prison near gargaresh'],
+    'mk-yarmuk-2011': ['yarmouk camp warehouse, tripoli', 'yarmouk warehouse detention', 'salahaddin warehouse massacre, 23 august 2011', 'tripoli warehouse', 'warehouse in tripoli', 'tripoli warehouse killings, 23 august 2011', 'yarmuk massacre warehouse', 'yarmuk massacre'],
     'islamic-call': ['islamic call society', 'world islamic call society'], 'bt-1984-bab': ['may 1984 uprising', 'may 1984 attack on bab al-aziziya']
 }.items():
     for n in names: ALIAS[n.lower().replace('\u2019', "'")] = ident

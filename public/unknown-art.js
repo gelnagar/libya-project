@@ -1,4 +1,4 @@
-/* Drawn pictures for The Unknown. Symbolic dossier art, never likenesses. Each picture is built from the entity's seed, so
+/* Drawn pictures for Intelligence. Symbolic dossier art, never likenesses. Each picture is built from the entity's seed, so
    the same card always looks the same but no two look alike. viewBox 0 0 100 100; tones come from the .un-pic classes in foundry.css. */
 (function () {
   'use strict';

@@ -1,4 +1,4 @@
-/* The Unknown: a separate black plane showing the people, groups and outside places that the declassified files connect.
+/* Intelligence: a separate black plane showing the people, groups and outside places that the declassified files connect.
    Data: data/unknown.js (scripts/build-unknown.py). Pictures are symbolic stand-ins drawn here, never likenesses. */
 (function () {
   'use strict';
@@ -37,11 +37,11 @@
     D = window.ATLAS_UNKNOWN; if (!D) return;
     adj = D.nodes.map(function () { return []; });
     D.edges.forEach(function (e, i) { adj[e.s].push(i); adj[e.t].push(i); });
-    root = h('div', { id: 'unknown', role: 'region', 'aria-label': 'The Unknown: people and groups linked in the files', hidden: '' });
+    root = h('div', { id: 'unknown', role: 'region', 'aria-label': 'Intelligence: people and groups linked in the files', hidden: '' });
     var head = h('div', { class: 'un-head' }, [
-      h('div', { class: 'un-title' }, [h('h2', { text: 'The Unknown' }), h('p', { text: 'People, groups and places beyond Tripoli that the declassified files tie together. Real pictures appear where a free one exists; the rest are stand-ins, not likenesses.' })]),
+      h('div', { class: 'un-title' }, [h('h2', { text: 'Intelligence' }), h('p', { text: 'People, groups and places beyond Tripoli that the declassified files tie together. Real pictures appear where a free one exists; the rest are stand-ins, not likenesses.' })]),
       h('div', { class: 'un-tools' }, [
-        h('input', { type: 'search', id: 'un-q', placeholder: 'Find a name', 'aria-label': 'Find a name in The Unknown', autocomplete: 'off' }),
+        h('input', { type: 'search', id: 'un-q', placeholder: 'Find a name', 'aria-label': 'Find a name in Intelligence', autocomplete: 'off' }),
         h('button', { class: 'btn', type: 'button', id: 'un-fit', text: 'Show all' }),
         h('button', { class: 'btn primary', type: 'button', id: 'un-back', text: 'Back to the map' })])
     ]);
@@ -194,7 +194,7 @@
     var n = D.nodes[i], p = picOf(n);
     var docs = {}, links = adj[i].map(function (ei) { var e = D.edges[ei]; e.docs.forEach(function (d) { docs[d.id] = d; }); return { e: e, other: e.s === i ? e.t : e.s }; });
     links.sort(function (a, b) { return b.e.n - a.e.n; });
-    API.sheet('The Unknown', picSvg(n, 40), function (body) {
+    API.sheet('Intelligence', picSvg(n, 40), function (body) {
       body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: n.name })]));
       body.appendChild(h('div', { class: 'un-portrait', html: picSvg(n, 132) }, [h('span', { class: 'un-case', text: caseNo(i) })]));
       body.appendChild(API.facts([['What it is', PIC_LABEL[p]], ['Role in the files', (n.roles || []).join('; ')], ['Also called', (n.aka || []).join(', ')],

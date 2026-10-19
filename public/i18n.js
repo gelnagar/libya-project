@@ -34,7 +34,7 @@
     'Map style': 'نمط الخريطة', 'Named periods': 'الحقب المسمّاة', 'Pick layers one by one': 'اختر الطبقات واحدة واحدة', 'Display options': 'خيارات العرض',
     'All mapped events, by year': 'كل الأحداث على الخريطة حسب السنة', 'Known but not on the map': 'معروف لكن غير موجود على الخريطة',
     'Show all of Tripoli': 'اعرض طرابلس كلها', 'Done': 'تم', 'Legend': 'دليل الرموز',
-    'Light': 'فاتح', 'Dark': 'داكن', 'Satellite': 'قمر صناعي', 'Streets': 'الشوارع', 'Terrain': 'التضاريس', 'Historical': 'تاريخية', 'The Unknown': 'المجهول',
+    'Light': 'فاتح', 'Dark': 'داكن', 'Satellite': 'قمر صناعي', 'Streets': 'الشوارع', 'Terrain': 'التضاريس', 'Historical': 'تاريخية', 'Intelligence': 'الاستخبارات',
     'Old maps and satellite, 1943–1990': 'خرائط قديمة وصور جوية، 1943–1990', 'People and groups in the files': 'أشخاص وجماعات في الملفات',
     'Then': 'آنذاك', 'Now': 'الآن',
     'Tap a heading to switch the whole group. Tap the small buttons to pick parts of it.': 'اضغط العنوان لتشغيل المجموعة كلها، أو الأزرار الصغيرة لاختيار أجزاء منها.',

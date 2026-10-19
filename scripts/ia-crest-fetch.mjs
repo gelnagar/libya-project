@@ -28,10 +28,13 @@ console.log('already have', seen.size);
 const crest = await scrape(`collection:ciareadingroom AND title:${T}`);
 const jprs = await scrape(`collection:ufiche-test-documents AND (title:"Near East" OR title:Libya OR title:"North Africa")`);
 const nis = await scrape(`collection:ciareadingroom AND title:("NATIONAL INTELLIGENCE SURVEY" AND (LIBYA OR "49"))`);
+const extra = fs.existsSync(`${DIR}/ia-extra.json`) ? JSON.parse(fs.readFileSync(`${DIR}/ia-extra.json`, 'utf8')) : [];
+console.log('extra candidates', extra.length);
 const queue = [];
 for (const it of nis) queue.push({ ...it, src: 'nis', full: true });
 for (const it of crest) queue.push({ ...it, src: 'crest' });
 for (const it of jprs) queue.push({ ...it, src: 'jprs' });
+for (const it of extra) queue.push({ identifier: it.identifier, title: it.title || it.identifier, date: it.date || '', src: 'crest' });
 const todo = queue.filter((q, i, a) => !seen.has(q.identifier) && a.findIndex((x) => x.identifier === q.identifier) === i);
 console.log('listed', queue.length, 'todo', todo.length);
 

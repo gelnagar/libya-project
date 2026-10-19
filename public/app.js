@@ -1199,7 +1199,7 @@
       loadRecords().then(function () { return relay(code, { place: place, question: question.slice(0, 600), history: history.slice(-5), context: ctx ? ctx() : '' }); })
         .then(function (j) {
           out.innerHTML = '';
-          String(j.text || 'No answer came back. Try again.').split(/\n{2,}/).forEach(function (para) { out.appendChild(h('p', { text: para.trim() })); });
+          out.classList.add('md'); out.appendChild(md(j.text || 'No answer came back. Try again.'));
           if (j.sources && j.sources.length) out.appendChild(h('details', { class: 'ai-src' }, [h('summary', { text: 'Web sources (' + j.sources.length + ')' }), h('ol', {}, j.sources.map(function (x) { return h('li', {}, [h('a', { href: x.url, target: '_blank', rel: 'noopener', text: x.title })]); }))]));
           history.push({ q: question, a: j.text || '' });
           renderSugg((j.followups || []).length ? j.followups : (function () { idx = (idx + 3) % Math.max(1, list.length); var a = []; for (var i = 0; i < Math.min(3, list.length); i++) a.push(list[(idx + i) % list.length]); return a; })(), true);
@@ -1393,9 +1393,47 @@
   var STARTERS = ['Where were political prisoners held?', 'What do US documents say about the 1986 raid?', 'Show me only the massacres', 'What was Bab al-Aziziya?', 'Take me to Ben Ashour on satellite'];
   var PERIOD_KEYS = { before_1969: 'pre', from_1969_to_2011: 'main', after_2011: 'post' };
   var DISPLAY_KEYS = { district_names: 'districts', uncertainty_rings: 'rings', place_names: 'labels', grid: 'grid', timeline: 'timeline' };
+  /* tiny safe markdown: paragraphs, bold, italic, code, links, bullet/numbered lists, quotes, headings. Builds DOM nodes, never HTML strings. */
+  function mdInline(parent, text) {
+    var re = /(\*\*([^*]+?)\*\*|__([^_]+?)__|`([^`]+?)`|\[([^\]]+?)\]\((https?:\/\/[^\s)]+)\)|(?:^|[^*\w])\*([^*\s][^*]*?)\*(?![*\w])|(https?:\/\/[^\s<>)\]]+[^\s<>)\].,;:!?]))/g, last = 0, m;
+    while ((m = re.exec(text))) {
+      var start = m.index + (m[0].charAt(0) !== m[1].charAt(0) && m[7] != null ? 1 : 0);
+      if (start > last) parent.appendChild(document.createTextNode(text.slice(last, start)));
+      if (m[2] != null || m[3] != null) parent.appendChild(h('strong', { text: m[2] != null ? m[2] : m[3] }));
+      else if (m[4] != null) parent.appendChild(h('code', { text: m[4] }));
+      else if (m[5] != null) parent.appendChild(h('a', { href: m[6], target: '_blank', rel: 'noopener', text: m[5] }));
+      else if (m[7] != null) parent.appendChild(h('em', { text: m[7] }));
+      else parent.appendChild(h('a', { href: m[8], target: '_blank', rel: 'noopener', text: m[8].replace(/^https?:\/\/(www\.)?/, '').slice(0, 48) }));
+      last = re.lastIndex;
+    }
+    if (last < text.length) parent.appendChild(document.createTextNode(text.slice(last)));
+  }
+  function md(text) {
+    var root = document.createDocumentFragment(), lines = String(text || '').replace(/\r/g, '').split('\n'), i = 0, para = [];
+    function flush() { if (!para.length) return; var p = h('p', {}); para.forEach(function (ln, k) { if (k) p.appendChild(document.createElement('br')); mdInline(p, ln); }); root.appendChild(p); para = []; }
+    while (i < lines.length) {
+      var ln = lines[i], t = ln.trim(), mm;
+      if (!t) { flush(); i++; continue; }
+      if ((mm = /^(#{1,4})\s+(.*)$/.exec(t))) { flush(); var hd = h('p', { class: 'md-h' }); mdInline(hd, mm[2].replace(/\*\*/g, '')); root.appendChild(hd); i++; continue; }
+      if (/^(-{3,}|\*{3,}|_{3,})$/.test(t)) { flush(); i++; continue; }
+      if (/^[-*•]\s+/.test(t) || /^\d+[.)]\s+/.test(t)) {
+        flush(); var ord = /^\d+[.)]\s+/.test(t), list = h(ord ? 'ol' : 'ul', {});
+        while (i < lines.length && (ord ? /^\d+[.)]\s+/.test(lines[i].trim()) : /^[-*•]\s+/.test(lines[i].trim()))) {
+          var li = h('li', {}); mdInline(li, lines[i].trim().replace(ord ? /^\d+[.)]\s+/ : /^[-*•]\s+/, '')); list.appendChild(li); i++;
+          while (i < lines.length && /^\s{2,}\S/.test(lines[i]) && !/^\s*([-*•]|\d+[.)])\s+/.test(lines[i])) { li.appendChild(document.createTextNode(' ')); mdInline(li, lines[i].trim()); i++; }
+        }
+        root.appendChild(list); continue;
+      }
+      if (/^>\s?/.test(t)) { flush(); var q = h('blockquote', {}), qs = []; while (i < lines.length && /^>\s?/.test(lines[i].trim())) { qs.push(lines[i].trim().replace(/^>\s?/, '')); i++; } mdInline(q, qs.join(' ')); root.appendChild(q); continue; }
+      para.push(t); i++;
+    }
+    flush();
+    return root;
+  }
   function scrollChat() { var l = $('chat-log'); l.scrollTop = l.scrollHeight; }
   function bubble(role, text) {
-    var m = h('div', { class: 'msg ' + (role === 'user' ? 'me' : 'bot') }, [h('p', { text: text })]);
+    var rich = role !== 'user' && text !== 'Thinking…';
+    var m = h('div', { class: 'msg ' + (role === 'user' ? 'me' : 'bot') + (rich ? ' md' : '') }, rich ? [md(text)] : [h('p', { text: text })]);
     $('chat-log').appendChild(m); scrollChat();
     return m;
   }

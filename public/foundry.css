@@ -572,3 +572,8 @@ html .md blockquote { margin: 0 0 .7em; padding: 2px 0 2px 12px; border-left: 3p
 html .md code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; padding: 1px 5px; border-radius: 4px; background: color-mix(in srgb, var(--fy-border) 60%, transparent); }
 html .md a { color: var(--fy-accent); text-decoration: underline; text-underline-offset: 2px; word-break: break-word; }
 html .ai-out.md { white-space: normal; }
+html .md h4.md-h { margin: 1.1em 0 .4em; padding-bottom: 3px; font-size: 1.02em; font-weight: 700; border-bottom: 1px solid var(--fy-border); max-width: 62ch; }
+html .md > h4.md-h:first-child { margin-top: 0; }
+html .md ul { list-style: none; padding-left: 0; }
+html .md ul li { position: relative; padding-left: 1.1em; }
+html .md ul li::before { content: ''; position: absolute; left: .1em; top: .62em; width: 5px; height: 5px; background: var(--fy-accent); border-radius: 50%; }

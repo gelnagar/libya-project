@@ -1414,7 +1414,7 @@
     while (i < lines.length) {
       var ln = lines[i], t = ln.trim(), mm;
       if (!t) { flush(); i++; continue; }
-      if ((mm = /^(#{1,4})\s+(.*)$/.exec(t))) { flush(); var hd = h('p', { class: 'md-h' }); mdInline(hd, mm[2].replace(/\*\*/g, '')); root.appendChild(hd); i++; continue; }
+      if ((mm = /^(#{1,4})\s+(.*)$/.exec(t))) { flush(); var hd = h('h4', { class: 'md-h' }); mdInline(hd, mm[2].replace(/\*\*/g, '')); root.appendChild(hd); i++; continue; }
       if (/^(-{3,}|\*{3,}|_{3,})$/.test(t)) { flush(); i++; continue; }
       if (/^[-*•]\s+/.test(t) || /^\d+[.)]\s+/.test(t)) {
         flush(); var ord = /^\d+[.)]\s+/.test(t), list = h(ord ? 'ol' : 'ul', {});

@@ -1,0 +1,14 @@
+{
+ "at": "2026-10-19T16:32:39.604352+00:00",
+ "frames": {
+  "kh9-1972-nov": {
+   "error": "global match failed",
+   "agree": 7
+  },
+  "kh9-1976-north": {
+   "error": "too few local points",
+   "points": 0,
+   "global_agree": 21
+  }
+ }
+}

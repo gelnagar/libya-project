@@ -1,0 +1,11 @@
+{
+ "at": "2026-10-19T16:21:43.714985+00:00",
+ "frames": {
+  "kh7-1966": "preview made; Tripoli not found automatically (50 matches agreed)",
+  "kh9-1972-jul": "preview made; Tripoli not found automatically (9 matches agreed)",
+  "kh9-1972-nov": "cut [56652, 11253, 17337, 3775] (reduced 1x) uploaded to https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1972-nov.tif",
+  "kh9-1976-north": "cut [0, 10962, 85956, 9638] (reduced 1x) uploaded to https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1976-north.tif",
+  "kh9-1976-south": "preview made; Tripoli not found automatically (11 matches agreed)",
+  "kh9-1983": "preview made; Tripoli not found automatically (8 matches agreed)"
+ }
+}

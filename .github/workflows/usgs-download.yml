@@ -1,28 +1,47 @@
 name: Download declassified satellite frames
+# Download each frame in archive/maps/usgs-picks.json, find Tripoli on it, cut it out, line it up with today's
+# imagery and tile it. Each step skips frames that are already done, so re-running is cheap.
 on:
   workflow_dispatch: { inputs: { only: { description: 'Pick ids to run, comma separated (blank = all)', required: false, default: '' } } }
-  push: { paths: [archive/maps/usgs-picks.json, scripts/usgs-download.py, .github/workflows/usgs-download.yml] }
+  push: { paths: [archive/maps/usgs-picks.json, scripts/usgs-download.py, scripts/usgs-register.py, .github/workflows/usgs-download.yml] }
 permissions: { contents: write }
 concurrency: { group: usgs-download, cancel-in-progress: false }
 jobs:
   frames:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 240
     steps:
+      # the branch tip, not the commit that triggered the run, so a queued run sees what the run before it committed
       - uses: actions/checkout@v4
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq gdal-bin python3-gdal python3-numpy >/dev/null
+        with: { ref: '${{ github.ref_name }}' }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq gdal-bin python3-gdal python3-numpy python3-opencv jq file >/dev/null
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
       # the frames are 2-5 GB each; /mnt has far more room than the checkout's disk
       - run: sudo mkdir -p /mnt/usgs && sudo chown "$USER" /mnt/usgs && df -h / /mnt
-      - run: python3 scripts/usgs-download.py
+      - name: Download, find Tripoli, cut out
+        run: python3 scripts/usgs-download.py
         env:
           USGS_USERNAME: '${{ secrets.USGS_USERNAME || vars.USGS_USERNAME }}'
           USGS_TOKEN: '${{ secrets.USGS_TOKEN || vars.USGS_TOKEN }}'
           USGS_WORK: /mnt/usgs
           USGS_ONLY: '${{ inputs.only }}'
           GH_TOKEN: '${{ github.token }}'
+      - name: Line up with today's imagery
+        run: python3 scripts/usgs-register.py
+        env:
+          USGS_USERNAME: '${{ secrets.USGS_USERNAME || vars.USGS_USERNAME }}'
+          USGS_TOKEN: '${{ secrets.USGS_TOKEN || vars.USGS_TOKEN }}'
+          USGS_WORK: /mnt/usgs
+          USGS_ONLY: '${{ inputs.only }}'
+          GH_TOKEN: '${{ github.token }}'
+      - name: Tile
+        run: OVERLAY_ONLY=$(jq -r 'map(.id) | join(",")' archive/maps/usgs-picks.json) ./scripts/build-overlays.sh
+        continue-on-error: true
+      - run: node scripts/build-overlays-index.mjs && node --check public/data/overlays.js && node --check public/app.js
       - if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add archive/maps/preview/usgs archive/maps/overlays.json archive/maps/usgs-download-status.json 2>/dev/null || true
-          if git diff --cached --quiet; then echo none; else git commit -m "Declassified satellite frames: previews and cut-outs" && git pull --rebase && git push; fi
+          git add archive/maps/preview/usgs archive/maps/overlays.json archive/maps/usgs-*-status.json public/maps public/data/overlays.js 2>/dev/null || true
+          if git diff --cached --quiet; then echo none; else git commit -m "Declassified satellite frames: cut, lined up and tiled" && git pull --rebase && git push; fi

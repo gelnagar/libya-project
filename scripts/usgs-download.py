@@ -1,12 +1,13 @@
 """Download the scanned spy-satellite frames listed in archive/maps/usgs-picks.json from USGS EarthExplorer (M2M API),
 join their film segments, and cut out Tripoli. Needs USGS_USERNAME and USGS_TOKEN; uploading needs gh and GH_TOKEN.
 
-Pass 1, for a pick with no "crop": writes archive/maps/preview/usgs/<id>-whole.jpg (whole frame, small) and <id>.json,
-so Tripoli can be found on it. Put its window on the pick as "crop": [x, y, w, h] in that preview's pixels.
-Pass 2, for a pick with a "crop": cuts that window at full detail, attaches it to the 'usgs-frames' release as <id>.tif,
-writes a gridded preview of the cut for reading control points, and adds the frame to archive/maps/overlays.json.
-build-overlays.sh then tiles it once "gcps" are added there."""
+For each pick: writes archive/maps/preview/usgs/<id>-whole.jpg (whole frame, small) and <id>.json, then finds Tripoli
+on the frame by matching it against today's imagery (usgs-register.py locate). A pick's own "crop": [x, y, w, h] in
+preview pixels overrides that. The Tripoli window is cut at full detail, attached to the 'usgs-frames' release as
+<id>.tif, previewed with a grid (<id>-cut.jpg) and added to archive/maps/overlays.json. usgs-register.py then lines it
+up and build-overlays.sh tiles it."""
 import datetime, glob, json, os, shutil, subprocess, tarfile, time, urllib.request, zipfile
+import importlib.util
 import numpy as np
 from osgeo import gdal
 
@@ -157,11 +158,19 @@ def overlay_entry(pick, url):
             'url': url, 'license': 'Public domain (U.S. government work)', 'zooms': pick.get('zooms', '12-16'),
             'note': pick.get('note', '') + f" Taken {pick['date']}."}
 
+_REG = None
+def registrar():
+    global _REG
+    if _REG is None:
+        spec = importlib.util.spec_from_file_location('usgs_register', os.path.join(os.path.dirname(__file__), 'usgs-register.py'))
+        _REG = importlib.util.module_from_spec(spec); spec.loader.exec_module(_REG)
+    return _REG
+
 def run(key, pick, overlays):
     pid = pick['id']; meta_path = f'{PREV}/{pid}.json'
     meta = json.load(open(meta_path)) if os.path.exists(meta_path) else {}
-    if 'crop' not in pick and meta.get('whole'): return 'preview already made; add "crop" to the pick'
-    if 'crop' in pick and any(o['id'] == pid for o in overlays): return 'already cut and listed in overlays.json'
+    if any(o['id'] == pid for o in overlays): return 'already cut and listed in overlays.json'
+    if 'crop' not in pick and meta.get('locate_failed'): return 'Tripoli was not found automatically; add "crop" to the pick'
     d = os.path.join(WORK, pid); shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
     url, size = request_url(key, pick)
     print(pid, 'downloading', round((size or 0) / 1e9, 2), 'GB'); t = time.time()
@@ -175,8 +184,15 @@ def run(key, pick, overlays):
     meta.update({'id': pid, 'entityId': pick['entityId'], 'frame': info, 'whole': {'file': f'{pid}-whole.jpg', 'scale': s, 'width': w, 'height': h},
                  'checked': datetime.datetime.utcnow().isoformat()})
     out = 'preview made'
-    if 'crop' in pick:
-        x, y, cw, ch = pick['crop']; sc = meta['whole']['scale']
+    crop = pick.get('crop')
+    if not crop:
+        crop, agree = registrar().locate(gdal.Open(f'{PREV}/{pid}-whole.jpg').ReadAsArray(), s)
+        meta['locate'] = {'crop': crop, 'agree': agree}
+        if not crop:
+            meta['locate_failed'] = True
+            out = f'preview made; Tripoli not found automatically ({agree} matches agreed)'
+    if crop:
+        x, y, cw, ch = crop; sc = meta['whole']['scale']
         win = [max(0, round(x * sc)), max(0, round(y * sc))]
         win += [min(info['width'] - win[0], round(cw * sc)), min(info['height'] - win[1], round(ch * sc))]
         cut = os.path.join(d, pid + '.tif'); factor = 1

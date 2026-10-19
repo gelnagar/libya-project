@@ -7,6 +7,8 @@ set -euo pipefail
 mkdir -p work public/maps archive/maps/preview
 jq -c '.[]' archive/maps/overlays.json | while read -r m; do
   id=$(jq -r .id <<<"$m"); url=$(jq -r .url <<<"$m"); zooms=$(jq -r .zooms <<<"$m")
+  # OVERLAY_ONLY=a,b limits a run to those ids
+  if [ -n "${OVERLAY_ONLY:-}" ] && [[ ",$OVERLAY_ONLY," != *",$id,"* ]]; then continue; fi
   ngcp=$(jq '.gcps // [] | length' <<<"$m")
   [ -f "public/maps/$id/done" ] && { echo "$id already tiled"; continue; }
   echo "== $id"
@@ -58,8 +60,13 @@ jq -c '.[]' archive/maps/overlays.json | while read -r m; do
   else
     gdalwarp -q -t_srs EPSG:3857 -r bilinear -dstalpha -overwrite "$in" "work/$id.3857.tif"
   fi
+  # black-and-white film comes out as grey + alpha; WebP tiles need RGB(A)
+  if [ "$(gdalinfo -json "work/$id.3857.tif" | jq '.bands | length')" = "2" ]; then
+    gdal_translate -q -of VRT -b 1 -b 1 -b 1 -b 2 "work/$id.3857.tif" "work/$id.rgba.vrt"
+    mv "work/$id.rgba.vrt" "work/$id.3857.vrt"; tilesrc="work/$id.3857.vrt"
+  else tilesrc="work/$id.3857.tif"; fi
   rm -rf "public/maps/$id"
-  gdal2tiles.py -q --xyz -z "$zooms" -w none -r bilinear --tiledriver=WEBP --webp-quality=80 --processes=2 "work/$id.3857.tif" "public/maps/$id"
+  gdal2tiles.py -q --xyz -z "$zooms" -w none -r bilinear --tiledriver=WEBP --webp-quality=80 --processes=2 "$tilesrc" "public/maps/$id"
   gdalinfo -json "work/$id.3857.tif" | jq '.wgs84Extent' > "public/maps/$id/extent.json" || true
   find "public/maps/$id" -name '*.png' | wc -l > "public/maps/$id/done"
 done

@@ -2991,7 +2991,8 @@
   /* ---------- then and now: the old map or satellite over today, with the swipe handle ---------- */
   function overlayFor(lat, lon) {
     var inb = function (o) { return lat >= o.bounds[0][0] && lat <= o.bounds[1][0] && lon >= o.bounds[0][1] && lon <= o.bounds[1][1]; };
-    return OVERLAYS.filter(function (o) { return o.kind === 'map' && inb(o); })[0] || OVERLAYS.filter(function (o) { return o.id === 'landsat-1984' && inb(o); })[0] || OVERLAYS.filter(inb)[0] || null;
+    // the sharpest image covering the place (old city plans and spy-satellite frames before Landsat), newest first on ties
+    return OVERLAYS.filter(inb).sort(function (a, b) { return (b.maxZoom || 0) - (a.maxZoom || 0) || b.year - a.year; })[0] || null;
   }
   function thenNowButton(lat, lon) {
     var o = overlayFor(lat, lon); if (!o) return null;
@@ -2999,7 +3000,7 @@
       if (overlayOn[o.id] && swipeOn) { setOverlay(o.id, false); setSwipe(false); status('Back to today’s map.', 2500); return; }
       OVERLAYS.forEach(function (x) { if (x.id !== o.id && overlayOn[x.id]) setOverlay(x.id, false); });
       setOverlay(o.id, true); setSwipe(true);
-      map.flyTo([lat, lon], Math.min(o.kind === 'map' ? 16 : 14, (o.maxZoom || 16) + 1), { duration: 0.8 });
+      map.flyTo([lat, lon], Math.min((o.maxZoom || 13) >= 15 ? 16 : 14, (o.maxZoom || 16) + 1), { duration: 0.8 });
       status(o.title + ': drag the handle across the map — ' + o.year + ' on the left, today on the right. Tap the button again to go back.', 7000);
     } });
   }

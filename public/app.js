@@ -74,14 +74,14 @@
 
   var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
+  /* Light and Dark use CARTO's free grey maps; Esri's old Canvas grey maps stopped working without an API key. */
+  var CARTO = 'https://{s}.basemaps.cartocdn.com/', CARTO_ATTR = 'Basemap &copy; <a href="https://carto.com/attributions">CARTO</a>, ' + OSM_ATTR;
   var BASEMAPS = {
     light: { name: 'Light', note: 'Clean grey map', layers: [
-      L.tileLayer(ESRI + 'Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, attribution: 'Basemap &copy; Esri, HERE, Garmin, ' + OSM_ATTR }),
-      L.tileLayer(ESRI + 'Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19 })
+      L.tileLayer(CARTO + 'light_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 19, attribution: CARTO_ATTR })
     ] },
     dark: { name: 'Dark', note: 'Night view', layers: [
-      L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, attribution: 'Basemap &copy; Esri, HERE, Garmin, ' + OSM_ATTR }),
-      L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19 })
+      L.tileLayer(CARTO + 'dark_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 19, attribution: CARTO_ATTR })
     ] },
     satellite: { name: 'Satellite', note: 'Photos from above', layers: [
       L.tileLayer(ESRI + 'World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 18, maxZoom: 19, attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics' }),
@@ -103,30 +103,12 @@
       THUMB_Y = Math.floor((1 - Math.log(Math.tan(THUMB_LA) + 1 / Math.cos(THUMB_LA)) / Math.PI) / 2 * Math.pow(2, THUMB_Z));
   Object.keys(BASEMAPS).forEach(function (k) {
     var tz = THUMB_Z, tx = THUMB_X, ty = THUMB_Y;
-    var tile = { light: ESRI + 'Canvas/World_Light_Gray_Base/MapServer/tile/' + tz + '/' + ty + '/' + tx, dark: ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/' + tz + '/' + ty + '/' + tx,
+    var tile = { light: 'https://a.basemaps.cartocdn.com/light_all/' + tz + '/' + tx + '/' + ty + '.png', dark: 'https://a.basemaps.cartocdn.com/dark_all/' + tz + '/' + tx + '/' + ty + '.png',
       satellite: ESRI + 'World_Imagery/MapServer/tile/' + tz + '/' + ty + '/' + tx,
       street: 'https://tile.openstreetmap.org/' + tz + '/' + tx + '/' + ty + '.png',
       terrain: 'https://a.tile.opentopomap.org/' + tz + '/' + tx + '/' + ty + '.png' }[k];
     $('basemaps').appendChild(h('button', { 'data-key': k, 'aria-pressed': 'false', onclick: function () { setBase(k); } },
       [h('span', { class: 'thumb', style: 'background-image:url(' + tile + ')' }), h('span', { class: 'nm', text: BASEMAPS[k].name }), h('small', { text: BASEMAPS[k].note })]));
-  });
-
-  /* Light and Dark come from Esri. If its tiles cannot be loaded (blocked network, service trouble), swap in CARTO's matching grey maps so the
-     two styles never show an empty grid. It only triggers when the first few tiles all fail and none has loaded. */
-  ['light', 'dark'].forEach(function (k) {
-    var pair = BASEMAPS[k].layers, ok = 0, bad = 0, done = false;
-    pair[0].on('tileload', function () { ok++; });
-    pair[0].on('tileerror', function () {
-      bad++; if (done || ok > 0 || bad < 4) return;
-      done = true;
-      var style = k === 'dark' ? 'dark_all' : 'light_all';
-      var fb = L.tileLayer('https://{s}.basemaps.cartocdn.com/' + style + '/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 19, attribution: 'Basemap &copy; <a href="https://carto.com/attributions">CARTO</a>, ' + OSM_ATTR });
-      pair.forEach(function (l) { if (map.hasLayer(l)) map.removeLayer(l); });
-      BASEMAPS[k].layers = [fb];
-      if (currentBase === k) fb.addTo(map);
-      var th = document.querySelector('#basemaps [data-key="' + k + '"] .thumb');
-      if (th) th.style.backgroundImage = 'url(https://a.basemaps.cartocdn.com/' + style + '/' + THUMB_Z + '/' + THUMB_X + '/' + THUMB_Y + '.png)';
-    });
   });
 
   $('basemaps').appendChild(h('button', { 'data-key': 'unknown', 'aria-pressed': 'false', title: 'People and groups linked in the files, on a separate black plane', onclick: function () { if (window.ATLAS_UNKNOWN_OPEN) window.ATLAS_UNKNOWN_OPEN(); } },

@@ -50,7 +50,8 @@ How to answer:
 - Never give home addresses or current whereabouts of private individuals, and do not speculate about named private people.
 - If the reader writes in Arabic, answer in Arabic.
 
-After your answer, write a line "FOLLOW-UPS:" and then three short follow-up questions the reader might want to ask next, one per line starting with "- ". Make them specific to this place and to what you just said, and different from questions already asked.`;
+After your answer, write a line "FOLLOW-UPS:" and then three short follow-up questions the reader might want to ask next, one per line starting with "- ". Make them specific to this place and to what you just said, and different from questions already asked.
+Language: answer in the language the reader writes in. If they write in Arabic, or the request is marked as coming from the Arabic interface, answer in clear Modern Standard Arabic with simple words, using the same report shape (Arabic headings). Keep names of documents and sources as they are.`;
 
 function agentSystem(owner, catalog) {
   return `You are the guide inside "Tripoli: Open Source", a family history map of Tripoli, Libya, about the Gaddafi era (1969–2011), the history that shaped it and the city today. You can see and control the map, search the document archive and look things up on the web with your tools.
@@ -79,7 +80,8 @@ How to work (you are in control of the map; act, don't ask):
 Places on the map (id | name | category | when | summary):
 ${catalog}
 
-Never invent places, coordinates, documents, names or numbers. Never give home addresses or current whereabouts of private individuals. If the reader writes in Arabic, answer in Arabic.`;
+Never invent places, coordinates, documents, names or numbers. Never give home addresses or current whereabouts of private individuals. If the reader writes in Arabic, answer in Arabic.
+Language: answer in the language the reader writes in; if they write in Arabic, answer in clear Modern Standard Arabic with the same report shape.`;
 }
 
 const HIST = ['detention', 'security', 'military', 'airstrike', 'battle', 'massacre', 'power', 'landmark'];
@@ -466,7 +468,8 @@ async function api(request, env, url) {
     if (!msgs.length || msgs[msgs.length - 1].role !== 'user') return json({ error: 'Bad request' }, 400, cors);
     const system = [
       { type: 'text', text: agentSystem(owner, clip(body.catalog, 14000)), cache_control: { type: 'ephemeral' } },
-      { type: 'text', text: 'Map state when this step started: ' + clip(body.state, 3000) }
+      { type: 'text', text: 'Map state when this step started: ' + clip(body.state, 3000) },
+      ...(body.lang === 'ar' ? [{ type: 'text', text: 'The reader is using the Arabic interface: answer in Arabic.' }] : [])
     ];
     const r = await askClaude(env, { max_tokens: 1400, system, tools: TOOLS, messages: msgs }, true);
     if (r.error) {
@@ -486,7 +489,7 @@ async function api(request, env, url) {
   const question = clip(body.question || 'Why does this place matter?', 600);
   const place = clip(JSON.stringify(body.place || {}), 5000);
   const context = clip(body.context || '', 16000);
-  const opening = `Place on the map:\n${place}\n\nArchive notes for this place (from the map's own archive; cite by title when you use them):\n${context || '(none)'}`;
+  const opening = (body.lang === 'ar' ? 'The reader is using the Arabic interface: answer in Arabic.\n\n' : '') + `Place on the map:\n${place}\n\nArchive notes for this place (from the map's own archive; cite by title when you use them):\n${context || '(none)'}`;
   const hist = Array.isArray(body.history) ? body.history.slice(-5) : [];
   const messages = [];
   hist.forEach((t, i) => {

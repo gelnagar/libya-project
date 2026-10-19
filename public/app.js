@@ -874,6 +874,25 @@
     if (dated < 3 || t.length < 260) return h('p', { class: 'd-text', text: t });
     return h('div', { class: 'dated' }, groups.map(function (g) { return h('div', { class: 'dl-row' }, [h('b', { text: g.y || '' }), h('span', { text: g.t })]); }));
   }
+  /* source reader: the supporting passage from our archived copy of each source, key sentence highlighted */
+  var quotesP = null;
+  function loadQuotes() {
+    if (window.ATLAS_QUOTES) return Promise.resolve(window.ATLAS_QUOTES);
+    if (!quotesP) quotesP = new Promise(function (res) { var sc = document.createElement('script'); sc.src = 'data/quotes.js'; sc.onload = function () { res(window.ATLAS_QUOTES || {}); }; sc.onerror = function () { res({}); }; document.head.appendChild(sc); });
+    return quotesP;
+  }
+  function addPassages(list, Q) {
+    list.querySelectorAll('li').forEach(function (li) {
+      var q = Q[li.dataset.u]; if (!q || li.querySelector('.qr-btn')) return;
+      var box = h('blockquote', { class: 'qr', hidden: '' }, [
+        h('p', {}, [q.pre ? q.pre + ' ' : '', h('mark', { text: q.hi }), q.post ? ' ' + q.post : '']),
+        h('small', { text: (q.d ? String(q.d).slice(0, 10) + ' · ' : '') + 'From our archived copy. The highlighted sentence is the one that best matches this place; read the original to check the context.' })
+      ]);
+      box.setAttribute('dir', 'auto');
+      var btn = h('button', { class: 'qr-btn', type: 'button', text: 'Read the passage', 'aria-expanded': 'false', onclick: function () { var open = box.hidden; box.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true' : 'false'); btn.textContent = open ? 'Hide the passage' : 'Read the passage'; } });
+      li.appendChild(btn); li.appendChild(box);
+    });
+  }
   function openSite(s) {
     var lay = LAYERS[s.layer];
     var body = newSheet(lay.label);
@@ -901,7 +920,9 @@
     add(body, aiBox({ kind: 'historical site', name: s.name, arabic: s.ar, category: lay.label, evidence: LEVELS[s.level], period: s.period, summary: s.relevance + ' ' + s.text, lat: s.lat, lon: s.lon }, QS[s.id] || [],
       function () { return contextFor({ lat: s.lat, lon: s.lon, places: [s.id], words: [s.name].concat(s.ar ? [s.ar] : []).concat(s.aliases || []) }); }));
     docsSection(body, { places: [s.id], words: [s.name].concat(s.aliases || []) }, 'In the archive', s.name);
-    body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Sources' }), h('ol', { class: 'srcs' }, s.sources.map(function (x) { return h('li', {}, [h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t })]); }))]));
+    var srcList = h('ol', { class: 'srcs' }, s.sources.map(function (x) { var li = h('li', {}, [h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t })]); li.dataset.u = x.u; return li; }));
+    body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Sources' }), srcList]));
+    loadQuotes().then(function (Q) { addPassages(srcList, (Q || {})[s.id] || {}); });
     body.appendChild(h('details', { class: 'more-facts' }, [h('summary', { text: 'Details' }), facts([['Category', lay.label], ['Active', s.y0 ? (s.y1 && s.y1 !== s.y0 ? s.y0 + '–' + s.y1 : String(s.y0)) : ''], ['Accuracy', 'within about ' + s.r + ' km'], ['Coordinates', s.lat.toFixed(4) + ', ' + s.lon.toFixed(4)], ['Reference', s.ref]])]));
     body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Zoom to this place', onclick: function () { map.flyTo([s.lat, s.lon], 16, { duration: 0.8 }); } })]));
     openPanel('sheet');
@@ -1074,6 +1095,7 @@
   $('credit-x').onclick = function () { creditHidden = true; $('credit').hidden = true; fitBanner(); };
   function relay(code, payload) {
     var hd = { 'Content-Type': 'application/json' }; if (!GATED) hd['X-Family-Code'] = code;
+    if (payload && window.ATLAS_LANG === 'ar' && !payload.owner) payload.lang = 'ar';
     return fetch(CFG.aiEndpoint, { method: 'POST', credentials: 'same-origin', headers: hd, body: JSON.stringify(payload) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (j && j.credit) showCredit(j.credit); if (!r.ok) { if (GATED && r.status === 401) { location.href = '/login?next=' + encodeURIComponent(location.pathname); } var e = new Error(j.error || ('Error ' + r.status)); e.code = r.status; throw e; } return j; }); });
   }
@@ -1520,9 +1542,9 @@
   }
   function closeChat() { $('chat-panel').hidden = true; document.body.classList.remove('chat-open'); $('chat-input').blur(); }
   function greet() {
-    var m = bubble('bot', 'Ask me anything about Tripoli under Gaddafi, before and since, or tell me what to show. I can search the archive of documents and the web. I can change the map for you, and if something isn’t here yet I can help you ask ' + OWNER + ' to look into it.');
+    var m = window.ATLAS_LANG === 'ar' ? bubble('bot', 'اسألني أي شيء عن طرابلس في عهد القذافي وما قبله وما بعده، أو اطلب مني ما أعرضه على الخريطة. أبحث في أرشيف الوثائق وفي الإنترنت، وأستطيع تغيير الخريطة لك، وإن لم يكن الشيء موجودًا بعد أساعدك في طلب البحث عنه.') : bubble('bot', 'Ask me anything about Tripoli under Gaddafi, before and since, or tell me what to show. I can search the archive of documents and the web. I can change the map for you, and if something isn’t here yet I can help you ask ' + OWNER + ' to look into it.');
     var box = h('div', { class: 'acts' });
-    STARTERS.forEach(function (t) { box.appendChild(h('button', { class: 'act', text: t, onclick: function () { send(t); } })); });
+    (window.ATLAS_LANG === 'ar' && window.ATLAS_STARTERS_AR ? window.ATLAS_STARTERS_AR : STARTERS).forEach(function (t) { box.appendChild(h('button', { class: 'act', text: t, onclick: function () { send(t); } })); });
     m.appendChild(box);
   }
   function codeCard(after) {

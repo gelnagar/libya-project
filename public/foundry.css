@@ -690,3 +690,30 @@ html.dark .seg button[aria-checked="true"] { background: var(--fy-accent); color
 }
 html .hood em { font-style: normal; font-weight: 500; font-size: .85em; color: var(--fy-muted); }
 html .hood-ar { display: block; }
+
+/* ---- Arabic interface ---- */
+html.ar body { font-family: "Noto Naskh Arabic", "Geeza Pro", "Segoe UI", Tahoma, var(--f-text); }
+html.ar .d-ar { display: none; }
+html.ar .door-choice, html.ar .yc-list button, html.ar .hood { text-align: right; }
+html.ar .msg.bot.md { border-radius: 14px 14px 4px 14px; }
+html.ar .msg.me { border-radius: 14px 14px 14px 4px; }
+html.ar .dated .dl-row b { text-align: left; }
+html.ar .hood { transform: translateX(calc(50% - 60px)); }
+html.ar #timeline { direction: ltr; }
+html.ar .leaflet-container { direction: ltr; }
+html.ar .site-label { font-family: "Noto Naskh Arabic", Tahoma, sans-serif; }
+html.ar .md ul li { padding-left: 0; padding-right: 1.1em; }
+html.ar .md ul li::before { left: auto; right: .1em; }
+#btn-lang .lbl { font-weight: 700; }
+html.ar [dir="auto"] { text-align: start; }
+html.ar .f-when input, html.ar .yc-slide { direction: ltr; }
+/* ---- source reader ---- */
+html .srcs li { margin-bottom: 8px; }
+html .qr-btn { display: inline-block; margin: 4px 0 0; padding: 2px 0; background: none; border: 0; color: var(--fy-accent); font: inherit; font-size: .88em; font-weight: 700; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+html .qr-btn::before { content: '❝ '; text-decoration: none; }
+html blockquote.qr { margin: 8px 0 4px; padding: 10px 12px; border-left: 3px solid var(--fy-accent); background: color-mix(in srgb, var(--fy-border) 25%, transparent); border-radius: 0 8px 8px 0; }
+html.ar blockquote.qr[dir="rtl"] { border-left: 0; border-right: 3px solid var(--fy-accent); border-radius: 8px 0 0 8px; }
+html blockquote.qr p { margin: 0 0 6px; line-height: 1.5; font-size: .93em; }
+html blockquote.qr mark { background: rgba(255, 214, 102, .55); color: inherit; padding: 0 2px; border-radius: 2px; }
+html.dark blockquote.qr mark { background: rgba(255, 196, 0, .3); }
+html blockquote.qr small { color: var(--fy-muted); font-size: .8em; }

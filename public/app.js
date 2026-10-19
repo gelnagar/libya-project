@@ -299,7 +299,7 @@
   }
   var NOTES = {
     detention: 'Prisons and interrogation sites', security: 'Security service and police buildings',
-    military: 'Bases and training sites', airstrike: 'The April 1986 US raid and 2011 NATO strikes', battle: 'Gun battles, coup attempts and attacks, 1979–2011', massacre: 'Killings, executions and crackdowns',
+    military: 'Bases and training sites', airstrike: 'The April 1986 US raid, 2011 NATO strikes and 2014 raids', battle: 'Gun battles, coup attempts and attacks, 1979–2025', massacre: 'Killings, executions and crackdowns',
     power: 'Bab al-Aziziya and the old royal palace', landmark: 'Squares, campuses and events'
   };
   Object.keys(LAYERS).forEach(function (k) {
@@ -1036,7 +1036,7 @@
   AREAS.forEach(function (a) { AREA_BY_ID[a.id] = a; });
 
   /* researched landmarks and buildings: one marker each, opening the full profile */
-  var wpnGroup = L.layerGroup(), profGroup = L.layerGroup(), profOn = store.get('prof', true), milGroup = L.layerGroup(), milOn = store.get('milprof', true);
+  var milCount = 0, wpnGroup = L.layerGroup(), profGroup = L.layerGroup(), profOn = store.get('prof', true), milGroup = L.layerGroup(), milOn = store.get('milprof', true);
   var PROF_SVG = '<path d="M12 2 2 7v2h20V7zM4 11v8H2v3h20v-3h-2v-8h-3v8h-2v-8h-4v8H9v-8z"/>';
   var MISSILE_SVG = '<path d="M2 17.2h20v2.3H2z"/><circle cx="5" cy="21.6" r="1.5"/><circle cx="10" cy="21.6" r="1.5"/><circle cx="15.5" cy="21.6" r="1.5"/><path d="M16.5 11.5H21v5.7h-4.5z"/><path transform="rotate(-55 5.5 16.6)" d="M5.5 14.4h9.6v4.4H5.5z"/><g transform="translate(11.2 9.4) rotate(-55)"><path d="M0-.95H6.6L10 0 6.6.95H0z"/><path d="M0-.95-1.9-2.8H2.2L3.2-.95zM0 .95-1.9 2.8H2.2L3.2.95z"/></g><circle cx="13.6" cy="12.7" r="1.5"/><circle cx="15.3" cy="14.4" r="1.1"/>';
   /* one distinct glyph per weapons-programme site (24x24, drawn in the military colour) */
@@ -1068,7 +1068,7 @@
   function weaponSvg(a) { return WEAPON_ICON[a.id] || (a.sym === 'sam' ? MISSILE_SVG : SYM_ICON[a.sym]) || (isMissile(a) ? MISSILE_SVG : null); }
   function isMissile(a) { return /missile|\bSAM\b|scud|surface-to-air/i.test((a.name || '') + ' ' + (a.summary || '')); }
   function drawProfiles() {
-    profGroup.clearLayers(); milGroup.clearLayers(); wpnGroup.clearLayers();
+    profGroup.clearLayers(); milGroup.clearLayers(); wpnGroup.clearLayers(); milCount = 0;
     var merged = {}; SITES.forEach(function (s) { if (s.profile) merged[s.profile] = 1; });
     AREAS.filter(function (a) { return ['landmark', 'government', 'prison', 'military'].indexOf(a.kind) >= 0 && a.lat && a.lon && !merged[a.id]; }).forEach(function (a) {
       var dup = SITES.some(function (s) { return map.distance([a.lat, a.lon], [s.lat, s.lon]) < 120 && (s.layer === 'landmark' || s.layer === 'power') && fold(s.name).split(' ')[0] === fold(a.name).split(' ')[0]; });
@@ -1079,6 +1079,7 @@
       m.on('click', function (ev) { L.DomEvent.stop(ev); if (picking) { openSpot(ev.latlng); return; } openArea(a); });
       m.on('mouseover', function () { m.closeTooltip(); hoverCard([a.lat, a.lon], isWpn(a) ? '#55603a' : '#6f5f45', '▣', a.name, [['Type', KIND_LABEL[a.kind] || a.kind], ['Arabic', a.ar]], [0, -16]); });
       m.on('mouseout', hideCard);
+      if (a.documented || isWpn(a)) milCount++;
       m.addTo(a.documented ? wpnGroup : isWpn(a) ? milGroup : profGroup);
     });
   }
@@ -1952,7 +1953,7 @@
     var any = false;
     GROUPS.forEach(function (g) { g.parts.forEach(function (p) {
       var i = inputs[p[0]]; if (!i || !i.checked) return; any = true;
-      var n = LAYERS[p[0]] ? SITES.filter(function (s) { return s.layer === p[0] && visible(s); }).length : p[0] === 'profiles' ? AREAS.filter(function (x) { return ['landmark', 'government', 'prison'].indexOf(x.kind) >= 0 || /^wp-/.test(x.id); }).length : p[0] === 'reports' ? REPORTS.length : (savedData[p[0].replace(/^osm-/, '')] ? savedData[p[0].replace(/^osm-/, '')].elements.length : null);
+      var n = LAYERS[p[0]] ? SITES.filter(function (s) { return s.layer === p[0] && visible(s); }).length : p[0] === 'milprof' ? milCount : p[0] === 'profiles' ? AREAS.filter(function (x) { return ['landmark', 'government', 'prison'].indexOf(x.kind) >= 0 || /^wp-/.test(x.id); }).length : p[0] === 'reports' ? REPORTS.length : (savedData[p[0].replace(/^osm-/, '')] ? savedData[p[0].replace(/^osm-/, '')].elements.length : null);
       box.appendChild(row(partColor(p[0]), p[1] + (p[2] === 'now' ? ' (today)' : ''), n, null, p[0]));
     }); });
     if (!any) box.appendChild(h('p', { text: 'Nothing is switched on. Open the Layers tab to choose.' }));

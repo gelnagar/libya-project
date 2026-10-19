@@ -159,7 +159,7 @@ window.ATLAS_SITES = [
     id: 'as-nato-bab', layer: 'airstrike', level: 'documented', y0: 2011, y1: 2011,
     name: '2011 NATO strikes: Bab al-Aziziya', lat: 32.848, lon: 13.151, r: 0.8, period: 'March–August 2011',
     relevance: "The compound was hit again, 25 years after the 1986 raid, during the NATO air campaign against Gaddafi's forces.",
-    text: "Wikipedia reports that on the night of 25 April 2011 two Royal Norwegian Air Force F-16s bombed Gaddafi's residence inside Tripoli, according to US military sources. Gaddafi's forces reportedly kept civilians around the compound and other key sites to deter air strikes. Libyan state television also claimed NATO strikes killed 19 civilians in Tripoli on 24 May and seven on 19 June; those tolls come from the government and were not independently confirmed here.",
+    text: "Wikipedia reports that on the night of 25 April 2011 two Royal Norwegian Air Force F-16s bombed Gaddafi's residence inside Tripoli, according to US military sources. Gaddafi's forces reportedly kept civilians around the compound and other key sites to deter air strikes. NATO said it hit a command and control building there on 1 May, and Al Jazeera reported more raids around the compound on 16 June (it was not clear what was hit). Libyan state television also claimed NATO strikes killed 19 civilians in Tripoli on 24 May and seven on 19 June; those tolls come from the government and were not independently confirmed here.",
     sources: [SRC.wpNato]
   },
 
@@ -252,6 +252,102 @@ window.ATLAS_SITES = [
     relevance: "The worst single killing of Gaddafi's rule. It happened in 1996, inside the prison built under his rule.",
     text: "After prisoners protested about conditions, security forces killed an estimated 1,200 or more inmates in the prison courtyards. The government denied it for years. Families' protests over the killings helped spark the February 2011 uprising.",
     sources: [SRC.hrw1996, SRC.wikiAbuSalim]
+  },
+  {
+    id: 'as-nato-saifarab', layer: 'airstrike', level: 'testimony', y0: 2011, y1: 2011,
+    name: "NATO strike, 30 April 2011: Gaddafi's son and grandchildren reported killed",
+    lat: 32.8954, lon: 13.1839, r: 4, period: "30 April 2011",
+    relevance: "A strike on a house in a residential area with several embassies; Libyan officials said Saif al-Arab Gaddafi and three children died.",
+    text: "Airwars records three children killed and calls it a likely strike. NATO said it hit a command and control building and ammunition storage and had video showing no civilians; Airwars rates that position as unsubstantiated. The sources do not name the street or district, so the marker is a city-level position.",
+    sources: [{ t: "Airwars: 30 April 2011", u: "https://airwars.org/incidents/lib2011-081-april-30-2011" }]
+  },
+  {
+    id: 'as-nato-0619', layer: 'airstrike', level: 'documented', y0: 2011, y1: 2011,
+    name: "NATO strike, 19 June 2011: civilian casualties admitted",
+    lat: 32.87, lon: 13.16, r: 5, period: "18\u201319 June 2011",
+    relevance: "NATO said a weapon aimed at a missile site apparently failed and civilians may have been hurt.",
+    text: "Lt. Gen. Charles Bouchard said a weapons system failure may have caused the civilian casualties. Libyan state television said seven civilians were killed in a house. The sources do not name the street or district, so the marker is a city-level position.",
+    sources: [{ t: "NATO: acknowledges civilian casualties in Tripoli strike", u: "https://www.nato.int/cps/en/natohq/news_75639.htm" }, { t: "Al Jazeera: NATO admits civilian deaths", u: "https://www.aljazeera.com/news/2011/6/19/nato-admits-civilian-deaths-in-libya-raid" }]
+  },
+  {
+    id: 'as-nato-tv', layer: 'airstrike', level: 'testimony', y0: 2011, y1: 2011,
+    name: "NATO strike on state TV, 30 July 2011",
+    lat: 32.8866, lon: 13.1909, r: 4, period: "30 July 2011",
+    relevance: "Al-Jamahiriya TV, the state broadcaster, said three journalists died when its Tripoli headquarters and two installations were hit.",
+    text: "NATO said it disabled three state TV satellite dishes in Tripoli. Al-Jamahiriya reported three journalists killed and 15 to 21 wounded (the figures differ by source); NATO conceded no civilian casualties. The sources do not name the street or district, so the marker is a city-level position.",
+    sources: [{ t: "Reporters Without Borders", u: "https://rsf.org/en/news/nato-attacks-national-tv-headquarters-and-installations-tripoli" }, { t: "Airwars: 30 July 2011", u: "https://airwars.org/incidents/lib2011-131-july-30-2011" }]
+  },
+  {
+    id: 'as-nato-port', layer: 'airstrike', level: 'documented', y0: 2011, y1: 2011,
+    name: "NATO strike on Tripoli port, May 2011",
+    lat: 32.905, lon: 13.195, r: 0.6, period: "May 2011",
+    relevance: "NATO jets hit Libyan navy ships at Tripoli's main port overnight.",
+    text: "Reporters saw flames and smoke over a stricken warship; a port official said damage to the port itself was limited.",
+    sources: [{ t: "NBC News: NATO bombs Gadhafi warships", u: "https://www.nbcnews.com/id/wbna43106115" }]
+  },
+  {
+    id: 'as-2014-air', layer: 'airstrike', level: 'suspected', y0: 2014, y1: 2014,
+    name: "Unidentified air raids around Tripoli, August 2014",
+    lat: 32.6635, lon: 13.159, r: 4, period: "18\u201324 August 2014",
+    relevance: "Raids on militia positions around the airport and south of the city; US officials said the UAE flew them from Egypt, which denied it.",
+    text: "A Friday-night raid around the airport reportedly killed 13. On 23 August a second round hit rocket launchers, vehicles and a warehouse south of the city. Haftar's forces claimed some raids. Attribution is unconfirmed.",
+    sources: [{ t: "Al Jazeera: Unidentified jets attack targets in Tripoli", u: "https://www.aljazeera.com/news/2014/8/24/unidentified-jets-attack-targets-in-tripoli" }, { t: "Al Jazeera: UAE behind air strikes in Libya", u: "https://www.aljazeera.com/news/2014/8/26/uae-behind-air-strikes-in-libya" }]
+  },
+  {
+    id: 'bt-2014-airport', layer: 'battle', level: 'documented', y0: 2014, y1: 2014,
+    name: "Tripoli airport destroyed, July 2014",
+    lat: 32.6635, lon: 13.159, r: 1.5, period: "July\u2013August 2014",
+    relevance: "Fighting between rival armed coalitions wrecked the international airport.",
+    text: "Chronology entry for 13 July 2014; the airport profile covers its later history.",
+    sources: [{ t: "Tripoli International Airport, Wikipedia", u: "https://en.wikipedia.org/wiki/Tripoli_International_Airport" }]
+  },
+  {
+    id: 'bt-2018', layer: 'battle', level: 'documented', y0: 2018, y1: 2018,
+    name: "Battle of Tripoli, 27 August\u201325 September 2018",
+    lat: 32.8241, lon: 13.2201, r: 3, period: "27 Aug\u201325 Sep 2018",
+    relevance: "Militias from Tarhuna and Tripoli fought in the southern suburbs until a ceasefire.",
+    text: "Fighting began in Salah Eddine and Qasr bin Ghashir. The airport closed on 31 August after rocket damage, and 400 prisoners escaped from Ain Zara prison on 2 September.",
+    sources: [{ t: "Battle of Tripoli (2018), Wikipedia", u: "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2018)" }]
+  },
+  {
+    id: 'bt-2025', layer: 'battle', level: 'documented', y0: 2025, y1: 2025,
+    name: "Tripoli clashes, from 12 May 2025",
+    lat: 32.7984, lon: 13.2205, r: 6, period: "12\u201315 May 2025",
+    relevance: "The killing of the Stability Support Apparatus commander at Tekbali camp set off fighting across the south and centre.",
+    text: "Clashes between the 444th Brigade and the SSA followed; fighting was reported near Al Jadida prison, Ain Zara and the port. A ceasefire was announced on 14 May but gunfire continued. The marker is Tekbali camp; the fighting spread over many districts.",
+    sources: [{ t: "2025 Tripoli clashes, Wikipedia", u: "https://en.wikipedia.org/wiki/2025_Tripoli_clashes" }]
+  },
+  {
+    id: 'mk-yarmuk-2011', layer: 'massacre', level: 'documented', y0: 2011, y1: 2011,
+    name: "Yarmuk warehouse killings, 23 August 2011",
+    lat: 32.7764, lon: 13.2009, r: 1.2, period: "23 August 2011",
+    relevance: "Detainees held in a warehouse beside the Yarmuk base were shot and grenaded as Tripoli fell.",
+    text: "About 153 names were read at roll call. Human Rights Watch counted about 45 sets of remains and a survivor said about 20 escaped; Wikipedia's infobox says 124 killed. HRW attributes it to the Khamis Brigade. The marker is the Yarmuk camp profile; the warehouse stood next to the base.",
+    sources: [{ t: "HRW: Evidence suggests Khamis Brigade killed 45 detainees", u: "https://www.hrw.org/news/2011/08/29/libya-evidence-suggests-khamis-brigade-killed-45-detainees" }, { t: "Yarmuk massacre, Wikipedia", u: "https://en.wikipedia.org/wiki/Yarmuk_massacre" }]
+  },
+  {
+    id: 'mk-qasr-2011', layer: 'massacre', level: 'testimony', y0: 2011, y1: 2011,
+    name: "Qasr bin Ghashir camp, 26 August 2011",
+    lat: 32.69, lon: 13.18, r: 4, period: "26 August 2011",
+    relevance: "Eyewitnesses said loyalists killed numerous detainees at a camp in the Tripoli area.",
+    text: "Wikipedia, citing eyewitnesses, says grenades and gunfire were used on a large group of prisoners after about 160 escaped from a metal hangar. It names two camps, Khilit al-Ferjan and Qasr bin Ghashir. The marker is the Qasr bin Ghashir area.",
+    sources: [{ t: "Battle of Tripoli (2011), Wikipedia", u: "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(2011)" }]
+  },
+  {
+    id: 'mk-tajoura-2019', layer: 'massacre', level: 'documented', y0: 2019, y1: 2019,
+    name: "Tajoura detention centre air strike, 2 July 2019",
+    lat: 32.8347, lon: 13.3847, r: 0.5, period: "2 July 2019",
+    relevance: "An air strike on a migrant detention centre killed at least 53 people.",
+    text: "The centre sits inside a complex that also housed a pro-GNA militia. The UN said the strike was probably flown by a state other than Libya; the LNA denied it. The UN Panel of Experts said LNA aircraft could not have delivered the munitions used.",
+    sources: [{ t: "Tajoura migrant center airstrike, Wikipedia", u: "https://en.wikipedia.org/wiki/Tajoura_migrant_center_airstrike" }]
+  },
+  {
+    id: 'mk-hadba-2020', layer: 'massacre', level: 'documented', y0: 2020, y1: 2020,
+    name: "Military college air strike, 4 January 2020",
+    lat: 32.839, lon: 13.2025, r: 0.5, period: "4 January 2020",
+    relevance: "An air strike killed about 30 cadets on the parade ground at al-Hadba.",
+    text: "Reported by Al Jazeera; the site is the Military College profile.",
+    sources: [{ t: "Al Jazeera: Dozens killed in attack on military academy", u: "https://www.aljazeera.com/news/2020/1/5/dozens-killed-in-attack-on-military-academy-in-libyas-tripoli" }]
   },
 
   /* ---------- seats of power ---------- */

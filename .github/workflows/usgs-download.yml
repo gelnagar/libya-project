@@ -43,5 +43,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add archive/maps/preview/usgs archive/maps/overlays.json archive/maps/usgs-*-status.json public/maps public/data/overlays.js 2>/dev/null || true
+          # one path at a time: a single missing path would make git add skip all of them
+          for p in archive/maps/preview/usgs archive/maps/overlays.json archive/maps/usgs-download-status.json archive/maps/usgs-register-status.json public/maps public/data/overlays.js; do [ -e "$p" ] && git add "$p"; done
           if git diff --cached --quiet; then echo none; else git commit -m "Declassified satellite frames: cut, lined up and tiled" && git pull --rebase && git push; fi

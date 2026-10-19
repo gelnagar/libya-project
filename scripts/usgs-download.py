@@ -116,7 +116,8 @@ def mosaic(tifs, vrt):
     mx, my = min(o[0] for o in offs), min(o[1] for o in offs)
     offs = [(x - mx, y - my) for x, y in offs]
     W = max(x + w for (x, _), (w, _) in zip(offs, sizes)); H = max(y + h for (_, y), (_, h) in zip(offs, sizes))
-    dtype = gdal.GetDataTypeName(gdal.Open(tifs[0]).GetRasterBand(1).DataType)
+    first = gdal.Open(tifs[0])  # keep the dataset alive while its band is read
+    dtype = gdal.GetDataTypeName(first.GetRasterBand(1).DataType)
     src = ''.join(f'<SimpleSource><SourceFilename relativeToVRT="0">{os.path.abspath(p)}</SourceFilename><SourceBand>1</SourceBand>'
                   f'<SrcRect xOff="0" yOff="0" xSize="{w}" ySize="{h}"/><DstRect xOff="{x}" yOff="{y}" xSize="{w}" ySize="{h}"/></SimpleSource>'
                   for p, (w, h), (x, y) in zip(tifs, sizes, offs))
@@ -182,7 +183,7 @@ def run(key, pick, overlays):
     os.makedirs(PREV, exist_ok=True)
     s, w, h = preview(vrt, f'{PREV}/{pid}-whole.jpg', PREVIEW_LONG, info['dtype'])
     meta.update({'id': pid, 'entityId': pick['entityId'], 'frame': info, 'whole': {'file': f'{pid}-whole.jpg', 'scale': s, 'width': w, 'height': h},
-                 'checked': datetime.datetime.utcnow().isoformat()})
+                 'checked': datetime.datetime.now(datetime.timezone.utc).isoformat()})
     out = 'preview made'
     crop = pick.get('crop')
     if not crop:
@@ -218,7 +219,7 @@ def main():
     only = set(filter(None, os.environ.get('USGS_ONLY', '').split(',')))
     overlays = json.load(open('archive/maps/overlays.json'))
     key = call('login-token', {'username': user, 'token': tok})
-    status = {'at': datetime.datetime.utcnow().isoformat(), 'frames': {}}
+    status = {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'frames': {}}
     try:
         for pick in picks:
             if only and pick['id'] not in only: continue

@@ -182,7 +182,7 @@ def register(oid, cut_path, ref, origin):
     out = [[round(x, 1), round(y, 1), *[round(v, 7) for v in px2ll(rx + origin[0], ry + origin[1])]] for x, y, rx, ry, _ in Q]
     info = {'points': len(Q), 'dropped': int((~keep).sum()), 'global_agree': n0, 'rms_m': round(rms_m, 1),
             'median_m': round(float(np.median(loo)) * M_PER_PX, 1), 'method': 'SIFT + RANSAC against Esri World Imagery z16, 2nd-order polynomial',
-            'at': datetime.datetime.utcnow().isoformat()}
+            'at': datetime.datetime.now(datetime.timezone.utc).isoformat()}
     check_image(oid, ds, Q, ref)
     return out, info
 
@@ -231,7 +231,7 @@ def main():
             status[o['id']] = {'error': str(e)[:300]}
         print(o['id'], '->', status[o['id']])
         json.dump(overlays, open('archive/maps/overlays.json', 'w'), indent=1, ensure_ascii=False)
-    json.dump({'at': datetime.datetime.utcnow().isoformat(), 'frames': status}, open('archive/maps/usgs-register-status.json', 'w'), indent=1)
+    json.dump({'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'frames': status}, open('archive/maps/usgs-register-status.json', 'w'), indent=1)
 
 if __name__ == '__main__':
     main()

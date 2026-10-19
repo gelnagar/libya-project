@@ -1,0 +1,56 @@
+[
+ {
+  "id": "kh7-1966",
+  "dataset": "declassii",
+  "entityId": "DZB00402500075H027001",
+  "title": "Spy satellite, 1966 (KH-7 GAMBIT)",
+  "year": 1966,
+  "date": "1966-02-20",
+  "note": "KH-7 GAMBIT surveillance camera, declassified 2002. About 0.6–1.2 m detail. Black and white film scan."
+ },
+ {
+  "id": "kh9-1972-jul",
+  "dataset": "declassiii",
+  "entityId": "D3C1203-100014A002",
+  "title": "Spy satellite, July 1972 (KH-9 HEXAGON)",
+  "year": 1972,
+  "date": "1972-07-08",
+  "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. About 0.6–1.2 m detail. Black and white film scan."
+ },
+ {
+  "id": "kh9-1972-nov",
+  "dataset": "declassiii",
+  "entityId": "D3C1204-300332F003",
+  "title": "Spy satellite, November 1972 (KH-9 HEXAGON)",
+  "year": 1972,
+  "date": "1972-11-07",
+  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan."
+ },
+ {
+  "id": "kh9-1976-north",
+  "dataset": "declassiii",
+  "entityId": "D3C1211-400762F005",
+  "title": "Spy satellite, 1976, north (KH-9 HEXAGON)",
+  "year": 1976,
+  "date": "1976-03-20",
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga; the frame after it covers Abu Salim."
+ },
+ {
+  "id": "kh9-1976-south",
+  "dataset": "declassiii",
+  "entityId": "D3C1211-400762F006",
+  "title": "Spy satellite, 1976, south (KH-9 HEXAGON)",
+  "year": 1976,
+  "date": "1976-03-20",
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers Abu Salim and Ain Zara; the frame before it covers the old city."
+ },
+ {
+  "id": "kh9-1983",
+  "dataset": "declassiii",
+  "entityId": "D3C1218-100323A003",
+  "title": "Spy satellite, 1983 (KH-9 HEXAGON)",
+  "year": 1983,
+  "date": "1983-08-13",
+  "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished."
+ }
+]

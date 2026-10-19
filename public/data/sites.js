@@ -770,6 +770,14 @@ window.ATLAS_SITES = [
     relevance: "An Egyptian newspaper said eyewitnesses heard shots inside Gaddafi’s camp and that eight rebels were killed.",
     text: "A Middle East News Agency item datelined Tripoli on 30 June 1986, carried by FBIS, says the Cairo daily Al-Ahram reported that there had been another mutiny in the Libyan armed forces, one of several attempted revolts since the April US strike, the latest several days earlier. It says eyewitnesses stated they heard shots inside the Bab al-Aziziya camp, Gaddafi's headquarters, and that eight rebels had been killed. This is a single report from an Egyptian state-linked source at a time of hostility between Cairo and Tripoli. Libyan media did not report it, and I found no second source, so treat it as unconfirmed.",
     sources: [{ t: "FBIS Daily Report, 27 Jun 1986: Eyewitnesses to Armed Forces mutiny cited (MENA, citing Al-Ahram)", u: "https://archive.org/details/micro_IA41152803_0407" }]
+  },
+  {
+    id: "as-1941-port", layer: "airstrike", level: "documented", y0: 1940, y1: 1943,
+    name: "Allied air raids and naval bombardment of Tripoli port, 1940–43", ar: "غارات الحلفاء وقصف الميناء البحري، 1940–1943",
+    lat: 32.905, lon: 13.195, r: 0.8, period: "Nov 1940 – Jan 1943 (main bombardment 21 April 1941)",
+    relevance: "The Axis supply port for North Africa was attacked from the air and the sea for two and a half years.",
+    text: "A WW2DB timeline of Tripoli lists Fleet Air Arm Swordfish from HMS Eagle striking the harbour on 24 and 26 November 1940, Malta-based Swordfish torpedo-bombers bombing it on 18 March 1941 (one shot down, its two-man crew captured), and a failed attempt on 18 January 1943 to send two Chariot manned torpedoes into the harbour, which was found empty of ships. The largest action was the bombardment on 21 April 1941: a diary published by the Naval Historical Society of Australia says the battleships Warspite, Valiant and Barham, the cruiser Gloucester and nine destroyers fired on the port for 45 minutes from 05:10, each battleship given its own part of the port, calling it the only fully equipped supply port for German and Italian forces in Africa, with carrier HMS Formidable's aircraft spotting and an RAF bombing attack planned beforehand. The diarist gives no damage assessment and reports no British casualties; his estimate of about 600 tons of shell fired per ship is his own guess. No Libyan civilian toll appears in these sources. The marker is the harbour; the airfield raids of 1941–43 are under Castel Benito.",
+    sources: [{ t: "Naval Historical Society of Australia: HMAS Perth, bombardment of Tripoli (diary, April 1941)", u: "https://navyhistory.au/hmas-perth-bombardment-of-tripoli/" }, { t: "WW2DB: Tripoli, Libya timeline", u: "https://m.ww2db.com/event/timeline/place/Libya/_Tripoli" }]
   }
 ];
 

@@ -2807,14 +2807,15 @@
     var z = map.getZoom(), merged = [];
     Object.keys(groups).map(function (k) { return groups[k]; }).sort(function (a, b) { return b.list.length - a.list.length; }).forEach(function (g) {
       var p = map.project([g.d[2], g.d[3]], z), hit = null;
-      merged.forEach(function (m) { if (!hit && Math.abs(m.p.x - p.x) < 130 && Math.abs(m.p.y - p.y) < 50) hit = m; });
+      merged.forEach(function (m) { if (!hit && Math.abs(m.p.x - p.x) < 175 && Math.abs(m.p.y - p.y) < 56) hit = m; });
       if (hit) { hit.list = hit.list.concat(g.list); hit.more.push(g.d[0]); } else merged.push({ d: g.d, list: g.list.slice(), p: p, more: [] });
     });
     merged.forEach(function (g) {
       var n = g.list.length;
       var kinds = {}; g.list.forEach(function (s) { kinds[s.layer] = (kinds[s.layer] || 0) + 1; });
-      var top = Object.keys(kinds).sort(function (a, b) { return kinds[b] - kinds[a]; }).slice(0, 3);
-      var dots = top.map(function (l) { return '<i style="background:' + LAYERS[l].color + '"></i>'; }).join('');
+      var top = Object.keys(kinds).sort(function (a, b) { return kinds[b] - kinds[a]; }).slice(0, 4);
+      // one small layer icon per kind of place, with how many of that kind are here
+      var dots = top.map(function (l) { return '<i class="hk" title="' + esc(LAYERS[l].label) + '">' + glyph(l, 16).outerHTML + '<em>' + kinds[l] + '</em></i>'; }).join('');
       L.marker([g.d[2], g.d[3]], { keyboard: true, title: g.d[0] + ': ' + n + (n === 1 ? ' place' : ' places'), zIndexOffset: 500,
         icon: L.divIcon({ className: '', iconSize: [120, 52], iconAnchor: [60, 26], html: '<div class="hood"><b>' + n + '</b><span>' + esc(g.d[0]) + (g.more.length ? '<em>+ ' + g.more.length + ' nearby</em>' : '') + '<small>' + dots + '</small></span></div>' }) })
         .on('click', function () { openHood(g); }).addTo(hoodLayer);

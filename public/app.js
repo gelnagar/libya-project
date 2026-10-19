@@ -418,7 +418,7 @@
     $('places').appendChild(h('button', { onclick: function () { focusSite(s); } }, [h('span', { class: 'yr', text: s.y0 == null ? '—' : String(s.y0) }), glyph(s.layer), h('span', { text: s.name })]));
   });
   UNPLACED.forEach(function (u) {
-    $('unplaced').appendChild(h('div', {}, [h('b', { text: u.name }), h('span', { text: u.when + '. ' }), u.text, u.src ? h('span', {}, [' ', h('a', { href: u.src.u, target: '_blank', rel: 'noopener', text: 'Source' })]) : null]));
+    $('unplaced').appendChild(h('div', {}, [h('b', { text: u.name }), h('span', { text: u.when + '. ' }), u.text, u.src ? h('span', {}, [].concat(u.src).reduce(function (acc, sr, i, arr) { acc.push(' ', h('a', { href: sr.u, target: '_blank', rel: 'noopener', title: sr.t || '', text: arr.length > 1 ? 'Source ' + (i + 1) : 'Source' })); return acc; }, [])) : null]));
   });
 
   /* on phones the place panel covers the lower part of the map: aim the map so the pin sits in the visible strip above it */

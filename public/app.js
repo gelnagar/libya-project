@@ -1437,6 +1437,30 @@
     $('chat-log').appendChild(m); scrollChat();
     return m;
   }
+  /* drag-to-resize the chat window: top handle = height (all screens), side edges = width (desktop) */
+  (function () {
+    var chat = $('chat'), root = document.documentElement, KEY = 'atlas-chat-size';
+    function save(k, v) { try { var o = JSON.parse(localStorage.getItem(KEY) || '{}'); o[k] = v; localStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {} }
+    try { var o = JSON.parse(localStorage.getItem(KEY) || '{}'); if (o.uh) root.style.setProperty('--chat-uh', o.uh + 'px'); if (o.uw) root.style.setProperty('--chat-uw', o.uw + 'px'); if (o.top != null) root.style.setProperty('--chat-top', o.top + 'px'); } catch (e) {}
+    function grip(cls, onmove, cursorDir) {
+      var g = h('div', { class: cls, 'aria-hidden': 'true', title: 'Drag to resize' });
+      g.addEventListener('pointerdown', function (e) {
+        e.preventDefault(); var r = chat.getBoundingClientRect(), x0 = e.clientX, y0 = e.clientY;
+        g.setPointerCapture(e.pointerId);
+        function mv(ev) { onmove(ev.clientX - x0, ev.clientY - y0, r, ev); }
+        function up() { g.removeEventListener('pointermove', mv); g.removeEventListener('pointerup', up); g.removeEventListener('pointercancel', up); }
+        g.addEventListener('pointermove', mv); g.addEventListener('pointerup', up); g.addEventListener('pointercancel', up);
+      });
+      chat.appendChild(g); return g;
+    }
+    grip('chat-grip', function (dx, dy, r) {
+      if (DESKTOP.matches) { var hh = Math.max(220, Math.min(window.innerHeight - 120, r.height - dy)); root.style.setProperty('--chat-uh', hh + 'px'); save('uh', Math.round(hh)); }
+      else { var top = Math.max(70, Math.min(window.innerHeight - 220, r.top + dy)); root.style.setProperty('--chat-top', top + 'px'); save('top', Math.round(top)); }
+    });
+    function wide(sign) { return function (dx, dy, r) { var w = Math.max(360, Math.min(window.innerWidth - 40, r.width + sign * dx * 2)); root.style.setProperty('--chat-uw', w + 'px'); save('uw', Math.round(w)); }; }
+    grip('chat-grip-x l', wide(-1)); grip('chat-grip-x r', wide(1));
+    chat.style.position = chat.style.position || '';
+  })();
   function openChat() {
     if ($('chat-panel').hidden) {
       $('chat-panel').hidden = false; document.body.classList.add('chat-open');

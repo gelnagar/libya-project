@@ -250,6 +250,10 @@ body.sheet-open #timeline { right: 440px; }
 .credit .btn { background: transparent; border-color: rgba(0,0,0,.45); color: inherit; }
 
 .chat { position: fixed; z-index: 1090; display: flex; flex-direction: column; background: rgba(28,33,39,.88); -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2); border: 1.5px solid var(--edge); }
+.chat-grip { position: absolute; left: 0; right: 0; top: -6px; height: 22px; cursor: ns-resize; touch-action: none; z-index: 3; display: flex; justify-content: center; align-items: center; }
+.chat-grip::after { content: ''; width: 46px; height: 5px; border-radius: 3px; background: rgba(255,255,255,.45); box-shadow: 0 0 0 1px rgba(0,0,0,.25); }
+.chat-grip-x { display: none; touch-action: none; }
+@media (min-width: 900px) { .chat-grip-x { display: block; } }
 .chat-form { display: flex; gap: 8px; padding: 8px; flex: none; }
 .chat-form input { flex: 1; min-width: 0; min-height: 48px; background: var(--bg); border: 1.5px solid var(--edge); border-radius: 0; padding: 0 12px; font-family: var(--f-text); }
 .chat-panel { display: flex; flex-direction: column; min-height: 0; flex: 1; }
@@ -273,16 +277,19 @@ body.sheet-open #timeline { right: 440px; }
 html.has-chat { --chat-h: calc(66px + var(--bot)); }
 @media (max-width: 899px) {
   .chat { left: 0; right: 0; bottom: 0; border-width: 3px 0 0; padding-bottom: var(--bot); }
-  body.chat-open .chat { top: 30vh; }
+  body.chat-open .chat { top: var(--chat-top, 30vh); }
   html.has-chat #map { bottom: var(--chat-h); }
   html.has-chat .tip { bottom: calc(var(--chat-h) + 12px); }
 }
 @media (min-width: 900px) {
-  .chat { left: 10px; right: 10px; bottom: 162px; max-width: 640px; margin: 0 auto; }
+  .chat { left: 10px; right: 10px; bottom: 162px; margin: 0 auto; }
   body.drawer-open .chat { left: 360px; }
   body.sheet-open .chat { right: 440px; }
   body.no-timeline .chat { bottom: 10px; }
-  body.chat-open .chat { height: min(60vh, 560px); }
+  body.chat-open .chat { height: var(--chat-uh, min(60vh, 560px)); }
+  .chat { max-width: var(--chat-uw, 640px); }
+  .chat-grip-x { position: absolute; top: 14px; bottom: 14px; width: 10px; cursor: ew-resize; }
+  .chat-grip-x.l { left: -4px; } .chat-grip-x.r { right: -4px; }
   html.has-chat .tip { bottom: 238px; }
 }
 .tip { position: fixed; z-index: 1200; left: 12px; right: 12px; bottom: calc(16px + var(--bot)); max-width: 480px; margin: 0 auto; background: var(--panel); color: var(--text); border: 1.5px solid var(--edge); border-left: 6px solid var(--accent); padding: 14px 16px; display: flex; gap: 12px; align-items: center; }

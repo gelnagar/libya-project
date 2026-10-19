@@ -45,6 +45,8 @@ var SRC = {
   rgc: { t: 'Revolutionary Guard Corps (Libya), Wikipedia', u: 'https://en.wikipedia.org/wiki/Revolutionary_Guard_Corps_(Libyan_paramilitary_unit)' }
 };
 
+
+var A91 = { t: "Amnesty International, prisoner concerns in the light of recent legal reforms (1991)", u: "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190021991en.pdf" }, A97 = { t: "Amnesty International, Libya: Gross human rights violations amid secrecy and isolation (1997)", u: "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190081997en.pdf" };
 window.ATLAS_SITES = [
   /* ---------- prisons & detention ---------- */
   {
@@ -52,16 +54,16 @@ window.ATLAS_SITES = [
     name: 'Abu Salim prison', ar: 'سجن أبو سليم',
     lat: 32.8333, lon: 13.1739, r: 1, period: 'Completed 1984',
     relevance: "The main prison for political prisoners under Gaddafi. People arrested for opposing the government, or only suspected of it, were held here, often for years without trial.",
-    text: "Built inside the Military Police Command compound to replace the colonial-era Black Horse prison. The first political prisoners arrived after the arrests that followed the May 1984 attack on Bab al-Aziziya. In March 1988, 426 of its 530 political prisoners were released in an amnesty, but many others stayed. More arrests of religious activists and suspected opponents followed in 1989 and 1990.",
-    sources: [SRC.wikiAbuSalim, SRC.hrsly, SRC.ai1992]
+    text: "Built inside the Military Police Command compound to replace the colonial-era Black Horse prison. The first political prisoners arrived after the arrests that followed the May 1984 attack on Bab al-Aziziya. In March 1988, 426 of its 530 political prisoners were released in an amnesty, but many others stayed. More arrests of religious activists and suspected opponents followed in 1989 and 1990. Amnesty's 1997 report describes underground rooms beneath the administration building used for interrogation and torture. On 4 October 2006 security forces reportedly killed at least one prisoner and wounded at least nine during a disturbance. Human Rights Watch was allowed into the prison in April 2009.",
+    sources: [SRC.wikiAbuSalim, SRC.hrsly, SRC.ai1992, { t: "Amnesty International, Libya: Gross human rights violations amid secrecy and isolation (1997)", u: "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190081997en.pdf" }, { t: "Amnesty International, Libya: investigation needed into prison deaths (2006)", u: "https://www.amnesty.org/en/wp-content/uploads/2021/08/mde190062006en.pdf" }]
   },
   {
-    id: 'jdeida', layer: 'detention', level: 'testimony', y0: 1980, y1: 2011,
-    name: 'Jdeida prison', ar: 'سجن الجديدة',
-    lat: 32.73, lon: 13.10, r: 3.5, period: 'Named for the 1980s',
-    relevance: "A civilian prison where political detainees were sent after interrogation elsewhere, including people brought from Benghazi.",
-    text: "Former detainees describe interrogation at the 7 April prison in Benghazi before transfer to Jdeida in Tripoli, and being held in both Jdeida and Abu Salim. The marker shows the Jdeida area only; the exact building is not documented in these sources.",
-    sources: [SRC.shareef, SRC.sahli, SRC.hrw2011]
+    id: 'jdeida', layer: 'detention', level: 'documented', y0: 1979, y1: 2011,
+    name: "Jdeida prison", ar: "سجن الجديدة",
+    lat: 32.73, lon: 13.1, r: 3.5, period: "Named 1979\u20132009",
+    relevance: "A civilian prison under the justice committee where political prisoners were held, and one of three Tripoli prisons Amnesty was allowed into in 2009.",
+    text: "Amnesty reports a prisoner of conscience held in solitary confinement here in 1979, 24 students held incommunicado after sentencing in December 1995, and an Eritrean migrant beaten by a guard in January 2004. Amnesty's 1997 report puts it in the al-Farnaj area just outside Tripoli. Former detainees also describe transfer here after interrogation at the 7 April prison in Benghazi. The marker shows the Jdeida area only; the exact building is not documented in these sources.",
+    sources: [SRC.shareef, SRC.sahli, SRC.hrw2011, { t: "Amnesty International, prisoner concerns in the light of recent legal reforms (1991)", u: "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190021991en.pdf" }, { t: "Amnesty International, Libya: Gross human rights violations amid secrecy and isolation (1997)", u: "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190081997en.pdf" }, { t: "Amnesty International, Libya: Time to make human rights a reality (2004)", u: "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190022004en.pdf" }, { t: "Amnesty International, first fact-finding visit in over five years (May 2009)", u: "https://www.amnesty.org/zh-hant/wp-content/uploads/2021/07/mde190032009eng.pdf" }]
   },
   {
     id: 'maktab', layer: 'detention', level: 'suspected', y0: null, y1: 2011,
@@ -80,12 +82,52 @@ window.ATLAS_SITES = [
     sources: [{ t: 'Reuters (2017)', u: 'https://reuters.screenocean.com/record/877072' }]
   },
   {
-    id: 'ainzara', layer: 'detention', level: 'suspected', y0: null, y1: null,
-    name: 'Ain Zara prison', ar: 'سجن عين زارة',
-    lat: 32.79, lon: 13.27, r: 3, period: 'Dates unverified',
-    relevance: "A long-running state prison on the southeast edge of Tripoli.",
-    text: "A Ministry of Justice prison in the Ain Zara suburb. Human Rights Watch lists it among possible detention sites in 2011. No source found confirms political detention here under Gaddafi. Placed by suburb only.",
-    sources: [{ t: 'USIP, Prisons and Detention in Libya', u: 'https://www.usip.org/sites/default/files/PW119-Prisons-and-Detention-in-Libya.pdf' }, SRC.hrw2011]
+    id: 'ainzara', layer: 'detention', level: 'documented', y0: 2004, y1: 2011,
+    name: "Ain Zara prison", ar: "سجن عين زارة",
+    lat: 32.79, lon: 13.27, r: 3, period: "Documented 2004 and 2009",
+    relevance: "A state prison on the southeast edge of Tripoli that held political prisoners in the 2000s.",
+    text: "Amnesty reports that dissident Fathi al-Jahmi was moved here from Abu Salim during its February 2004 visit, that another prisoner spent most of his detention here, and that a wing was believed to be under Internal Security Agency control. Amnesty delegates were given access to prisoners here in May 2009. No source found shows political detention here before 2004. Placed by suburb only.",
+    sources: [{ t: "Amnesty International, Libya: Time to make human rights a reality (2004)", u: "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190022004en.pdf" }, { t: "Amnesty International, first fact-finding visit in over five years (May 2009)", u: "https://www.amnesty.org/zh-hant/wp-content/uploads/2021/07/mde190032009eng.pdf" }, { t: 'USIP, Prisons and Detention in Libya', u: 'https://www.usip.org/sites/default/files/PW119-Prisons-and-Detention-in-Libya.pdf' }, SRC.hrw2011]
+  },
+  {
+    id: 'tajoura-prison', layer: 'detention', level: 'testimony', y0: 1996, y1: 2000,
+    name: "Tajoura prison and security-agency interrogation site", ar: "سجن تاجوراء",
+    lat: 32.8834, lon: 13.3526, r: 4, period: "Reported 1996 and 2000",
+    relevance: "A prison and an External Security Agency building in the Tajoura suburb, named by Amnesty in the 1990s and 2000.",
+    text: "Amnesty's 1997 report says traders arrested in the 1996 anti-corruption sweep were held in Tajoura prison, reportedly over suspected links to Islamist activists. Its 2004 report says a man returning to Libya in February 2000 was held in solitary confinement and interrogated at the External Security Agency headquarters in Tajoura; the agency's deputy head told Amnesty it ran no place of detention. Neither source gives a street address, so the marker is the Tajoura district.",
+    sources: [{ t: "Amnesty International, Libya: Gross human rights violations amid secrecy and isolation (1997)", u: "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190081997en.pdf" }, { t: "Amnesty International, Libya: Time to make human rights a reality (2004)", u: "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190022004en.pdf" }]
+  },
+  {
+    id: 'blackhorse', layer: 'detention', level: 'testimony', y0: 1980, y1: 1984,
+    name: "\"Black Horse\" prison, airport road",
+    lat: 32.78, lon: 13.16, r: 5, period: "Reported March 1980",
+    relevance: "A Tripoli prison reported in 1980 to hold Tunisian recruits who refused to follow orders, with a second new intelligence prison 7 km from the city.",
+    text: "A Cairo weekly (Akhir Sa'ah, 12 March 1980), translated by the US JPRS service, says refractory recruits were banished or held in the \"Black Horse\" prison on the Tripoli International Airport road, or in a new prison set up by Libyan intelligence 7 km from Tripoli. It rests on one unnamed eyewitness and comes from a press hostile to Gaddafi. Wikipedia says Abu Salim was built to replace Black Horse. The marker sits on the airport road; the exact spot is not known.",
+    sources: [{ t: "JPRS Near East/North Africa Report No. 2124 (1980)", u: "https://archive.org/details/jprs-report_jprs-75801" }, SRC.wikiAbuSalim]
+  },
+  {
+    id: 'towisha', layer: 'detention', level: 'documented', y0: 2009, y1: 2013,
+    name: "Twaisha migrant detention centre",
+    lat: 32.6949, lon: 13.1589, r: 0.6, period: "Documented 2009 and 2013",
+    relevance: "A holding centre for undocumented migrants near Tripoli's airport.",
+    text: "The Global Detention Project lists it as run by the Interior Ministry's anti-infiltration and illegal immigration departments, with a standard capacity of 900 in 2009. Human Rights Watch documented migrant centres in Tripoli and at Twaisha near the airport in June 2009, and Amnesty visited it in 2013. The Detention Project gives the coordinates used here.",
+    sources: [{ t: "Global Detention Project: Towisha detention centre", u: "https://www.globaldetentionproject.org/countries/africa/libya/detention-centres/994/towisha-detention-centre" }, { t: "Detention centres in Libya, Wikipedia", u: "https://en.wikipedia.org/wiki/Detention_centres_in_Libya" }]
+  },
+  {
+    id: 'gharghour-security', layer: 'detention', level: 'documented', y0: 2011, y1: 2011,
+    name: "Internal Security building at Gharghour (Al-Amal al-Akhdar)",
+    lat: 32.859, lon: 13.171, r: 1, period: "August 2011",
+    relevance: "A makeshift prison where about 25 detainees were held in the last days of the regime and at least 17 were shot.",
+    text: "Human Rights Watch reports that about 25 people were held in the Libyan Internal Security building at Gargur, that at least 17 were shot around 21 August 2011, and that two more bodies were found in a closet under the stairs on 26 August. A survivor said he had first been held at a house used by the Khamis Brigade. The 17 bodies were taken to Mitiga hospital on 24 August. The marker is the Gharghour district; the article gives no coordinates.",
+    sources: [{ t: "Human Rights Watch, Gaddafi forces suspected of executing detainees (28 Aug 2011)", u: "https://www.hrw.org/news/2011/08/28/libya-gaddafi-forces-suspected-executing-detainees" }]
+  },
+  {
+    id: 'mitiga-prison', layer: 'detention', level: 'documented', y0: 2014, y1: 2020,
+    name: "Mitiga prison (Special Deterrence Force)",
+    lat: 32.8945, lon: 13.276, r: 1, period: "After 2011",
+    relevance: "A detention facility inside Tripoli's only working airport, run by the Special Deterrence Force (Radaa), not a Gaddafi-era prison.",
+    text: "The UN fact-finding mission calls Mitiga the largest prison in western Libya, with up to 5,000 held and over 40 first-hand accounts of abuse, some held up to seven years. The prosecutor general's office put the number held at about 2,600 at the end of November 2017. The airbase was the Gaddafi-era Wheelus/Okba Ben Nafi base; its use as a prison dates from after 2011.",
+    sources: [{ t: "UN Independent Fact-Finding Mission on Libya, A/HRC/50/63 (2022)", u: "https://digitallibrary.un.org/record/4022642/files/A_HRC_50_63-EN.pdf" }, { t: "UN, Abuse Behind Bars: arbitrary and unlawful detention in Libya (2018)", u: "https://www.ecoi.net/en/file/local/2004491/AbuseBehindBarsArbitraryUnlawful_EN.pdf" }]
   },
 
   /* ---------- security & police ---------- */
@@ -438,12 +480,12 @@ window.ATLAS_SITES = [
     sources: [{ t: "JPRS Near East/North Africa Report No. 2701", u: "https://archive.org/details/jprs-report_jprs-82800" }]
   },
   {
-    id: 'mk-gargaresh-2011', layer: 'massacre', level: 'suspected', y0: 2011, y1: 2011,
-    name: "Prisoners reported killed near Gargaresh, 21 August 2011",
-    lat: 32.8682, lon: 13.1115, r: 3, period: "21 August 2011",
-    relevance: "The Khamis Brigade reportedly killed 17 prisoners in a makeshift prison.",
-    text: "English Wikipedia places it near Gragur; the Arabic article says near Gargaresh. The sources disagree, so this is an area marker.",
-    sources: [{ t: "Khamis Brigade, Wikipedia", u: "https://en.wikipedia.org/wiki/Khamis_Brigade" }]
+    id: 'mk-gargaresh-2011', layer: 'massacre', level: 'documented', y0: 2011, y1: 2011,
+    name: "Detainees shot and bodies dumped near Gharghour, August 2011",
+    lat: 32.8535, lon: 13.161, r: 1.2, period: "21\u201326 August 2011",
+    relevance: "Human Rights Watch found bodies of detainees at the Internal Security building and in a dry riverbed between Gharghour and Bab al-Aziziya.",
+    text: "At least 17 detainees were shot around 21 August at the Internal Security building, and Human Rights Watch found 18 more bodies in the dry riverbed on 26 August, killed in the week before 25 August. HRW did not determine who was responsible. English Wikipedia attributes the 17 killings to the Khamis Brigade. The marker lies between the two places.",
+    sources: [{ t: "Human Rights Watch, Gaddafi forces suspected of executing detainees (28 Aug 2011)", u: "https://www.hrw.org/news/2011/08/28/libya-gaddafi-forces-suspected-executing-detainees" }, { t: "Khamis Brigade, Wikipedia", u: "https://en.wikipedia.org/wiki/Khamis_Brigade" }]
   },
   {
     id: 'mk-janzour-2012', layer: 'massacre', level: 'testimony', y0: 2012, y1: 2012,
@@ -538,12 +580,12 @@ window.ATLAS_SITES = [
     sources: [{ t: 'HRW, 22 Feb 2011: Libya commanders should face justice for killings', u: 'https://www.hrw.org/news/2011/02/22/libya-commanders-should-face-justice-killings' }, { t: 'HRW, 13 Mar 2011: End violent crackdown in Tripoli', u: 'https://www.hrw.org/news/2011/03/13/libya-end-violent-crackdown-tripoli' }]
   },
   {
-    id: 'mk-babcamp-2011', layer: 'massacre', level: 'suspected', y0: 2011, y1: 2011,
-    name: 'Camp near Bab al-Aziziya, August 2011 (reported)', 
-    lat: 32.848, lon: 13.151, r: 1.2, period: 'August 2011',
-    relevance: "A reported killing of at least 29 people at a camp outside the compound during the fall of Tripoli.",
-    text: "Wikipedia's list of massacres in Libya gives at least 29 killed at a camp outside the Bab al-Aziziya compound in August 2011. I found no primary report, so the place and the toll are unconfirmed.",
-    sources: [{ t: 'List of massacres in Libya, Wikipedia', u: 'https://en.wikipedia.org/wiki/List_of_massacres_in_Libya' }]
+    id: 'mk-babcamp-2011', layer: 'massacre', level: 'documented', y0: 2011, y1: 2011,
+    name: "Field clinic outside Bab al-Aziziya: 29 bodies, August 2011",
+    lat: 32.848, lon: 13.151, r: 1.2, period: "August 2011",
+    relevance: "Human Rights Watch found 29 bodies in and around a makeshift field clinic outside the compound, four of them on beds inside it.",
+    text: "HRW did not determine who was responsible. Wikipedia's list of massacres had given at least 29 killed at a camp outside the compound; this is the same figure and the HRW report is the primary source.",
+    sources: [{ t: "Human Rights Watch, Gaddafi forces suspected of executing detainees (28 Aug 2011)", u: "https://www.hrw.org/news/2011/08/28/libya-gaddafi-forces-suspected-executing-detainees" }, SRC.massList]
   }
 ];
 
@@ -583,7 +625,11 @@ window.ATLAS_UNPLACED = [
   { name: 'Revolutionary Guard Corps', when: '1980s', text: 'Grew out of the Revolutionary Committees. It watched soldiers inside barracks, reportedly controlled ammunition at the main bases, and fought regular army units in Tripoli’s streets during a May 1985 coup attempt. No source gives its bases.', src: SRC.rgc },
   { name: 'Police stations and checkpoints', when: '1969–2011', text: 'No published source maps Tripoli’s police posts or checkpoints for this period.' },
   { name: 'Military intelligence prison, Tripoli', when: '1984', text: 'A former detainee describes being held there after the May 1984 arrests. Its location is not given.', src: SRC.shareef },
-  { name: 'Black Horse prison', when: 'Until 1984', text: 'Italian-era prison replaced by Abu Salim. No source places it on a map.', src: SRC.hrsly },
+  { name: 'Tripoli Central Prison', when: '1982–1984', text: 'An old prison, said to date from the Fascist period, where 21 people arrested in February 1982 were held without trial until 1984 and then moved to Abu Salim (Amnesty International, 1991; a 1980 JPRS translation of an exile appeal also names it). No source gives its address.', src: A91 },
+  { name: 'Tripoli military prison', when: 'Late 1980', text: 'Amnesty International names it as the place a prisoner of conscience was moved to in late 1980, with family visits allowed once every three months. No source gives its address.', src: A91 },
+  { name: 'Al-Ataba prison, Tripoli', when: 'June–July 1996', text: 'Amnesty International says Sudanese and other African workers were held here in 1996. No source gives its address.', src: A97 },
+  { name: 'Tobacco-factory prison, Tripoli', when: '2011', text: 'Wikipedia says one of the most notorious hidden prisons of 2011 was set up in a tobacco factory in Tripoli, where inmates were reportedly given half a loaf of bread and a bottle of water a day. The Red Cross was denied access. No source gives its location.', src: { t: 'Libyan civil war (2011), Wikipedia', u: 'https://en.wikipedia.org/wiki/Libyan_civil_war_(2011)' } },
+  { name: 'Al-Ruwaimi prison', when: 'After 2011', text: 'A Tripoli prison where 12 prisoners released by court order in June 2016 were found dead a day later (UNSMIL). It was among the sites the 444th Brigade took in May 2025. No source seen gives its coordinates or when it opened.', src: { t: '2025 Tripoli clashes, Wikipedia', u: 'https://en.wikipedia.org/wiki/2025_Tripoli_clashes' } },
   { name: '7 April, the “Day of Judgement”', when: '1976–1980s', text: 'English Wikipedia says Gaddafi called the anniversary of the 7 April 1976 student protests the “Day of Judgement”. On 7 April 1977 students Omar Dabboub and Mohamed Ben Saoud were hanged in public in Benghazi after a military tribunal in Tripoli; the broadcast was shown on television. Some sources say executions were repeated every 7 April until the late 1980s; that is disputed and no Tripoli venue is named. The University of Tripoli, where students were attacked in 1976 and a student was hanged in April 1984, is on the map.', src: { t: 'Human rights in Libya under Muammar Gaddafi, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_in_Libya_under_Muammar_Gaddafi' } },
   { name: 'Firing-squad executions', when: '30 May 2010', text: 'Eighteen people were shot by firing squad: 14 in Tripoli and 4 in Benghazi, many of them foreign nationals. The Tripoli venue is not named. Amnesty International and the European Parliament condemned the executions.', src: { t: 'Human rights violations during the Gaddafi regime, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime' } },
   { name: 'Public executions', when: 'Late 1970s–1980s', text: 'Public hangings were staged around 7 April anniversaries, including at universities and a sports arena. The documented cases with places are in Benghazi, outside this map, except the April 1984 hanging at the University of Tripoli.', src: { t: 'Human rights violations during the Gaddafi regime, Wikipedia', u: 'https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime' } }

@@ -258,7 +258,7 @@ window.ATLAS_SITES = [
     name: "NATO strike, 30 April 2011: Gaddafi's son and grandchildren reported killed",
     lat: 32.8954, lon: 13.1839, r: 4, period: "30 April 2011",
     relevance: "A strike on a house in a residential area with several embassies; Libyan officials said Saif al-Arab Gaddafi and three children died.",
-    text: "Airwars records three children killed and calls it a likely strike. NATO said it hit a command and control building and ammunition storage and had video showing no civilians; Airwars rates that position as unsubstantiated. The sources do not name the street or district, so the marker is a city-level position.",
+    text: "An alternative account (Arabic Wikipedia) says an air strike hit his home in Gargaresh on 26 April and he died later in hospital. Airwars records three children killed and calls it a likely strike. NATO said it hit a command and control building and ammunition storage and had video showing no civilians; Airwars rates that position as unsubstantiated. The sources do not name the street or district, so the marker is a city-level position.",
     sources: [{ t: "Airwars: 30 April 2011", u: "https://airwars.org/incidents/lib2011-081-april-30-2011" }]
   },
   {
@@ -348,6 +348,134 @@ window.ATLAS_SITES = [
     relevance: "An air strike killed about 30 cadets on the parade ground at al-Hadba.",
     text: "Reported by Al Jazeera; the site is the Military College profile.",
     sources: [{ t: "Al Jazeera: Dozens killed in attack on military academy", u: "https://www.aljazeera.com/news/2020/1/5/dozens-killed-in-attack-on-military-academy-in-libyas-tripoli" }]
+  },
+  {
+    id: 'bt-1980-embassies', layer: 'battle', level: 'documented', y0: 1980, y1: 1984,
+    name: "Embassies sacked by mobs, 1980\u20131984",
+    lat: 32.8772, lon: 13.2126, r: 3, period: "Feb 1980 \u00b7 Feb 1984 \u00b7 Apr 1984",
+    relevance: "Crowds attacked the French embassy in 1980 and the Jordanian, Tunisian and French embassies in 1984, with police standing aside.",
+    text: "FBIS reported demonstrators ransacking the French embassy on 4 February 1980; a CIA report says a mob burned the Jordanian embassy in February 1984 and Libyan-linked mobs sacked the Tunisian and French embassies that spring while the authorities did nothing. The sources give no street addresses; the marker is the Ben Ashour embassy district, where the French embassy stood in 1986.",
+    sources: [{ t: "FBIS, 5 Feb 1980", u: "https://archive.org/details/micro_IA1176908_0539" }, { t: "FBIS, 21 Feb 1984", u: "https://archive.org/details/micro_IA1176909_0354" }, { t: "CIA reading room: Libyan involvement in terrorism", u: "https://www.cia.gov/readingroom/document/cia-rdp90t00114r000800810001-1" }]
+  },
+  {
+    id: 'bt-1985-port-bomb', layer: 'battle', level: 'testimony', y0: 1985, y1: 1985,
+    name: "Car bomb in the port area, September 1985",
+    lat: 32.905, lon: 13.195, r: 1, period: "September 1985",
+    relevance: "A CIA briefing note says a car bomb exploded in the Tripoli port area, possibly aimed at Qadhafi.",
+    text: "The note, written in January 1986, mentions it in the middle of reports of arrests after the August 1985 coup attempt. It gives no casualties or exact place.",
+    sources: [{ t: "CIA reading room: Qadhafi's domestic position (1986)", u: "https://www.cia.gov/readingroom/document/cia-rdp91b00874r000200080011-1" }]
+  },
+  {
+    id: 'bt-1985-bab-shooting', layer: 'battle', level: 'testimony', y0: 1985, y1: 1985,
+    name: "Reported attempt on Gaddafi at Bab al-Aziziya, November 1985",
+    lat: 32.848, lon: 13.151, r: 0.8, period: "November 1985",
+    relevance: "Western diplomats said an assassination attempt at the barracks ended in gunfire that killed a provincial governor.",
+    text: "Reported in January 1986 by CIA files citing Western diplomats; the officer named is Col. Hassan Eshqal. Not confirmed by other sources here.",
+    sources: [{ t: "CIA reading room: Officers feared by Qaddafi reportedly close", u: "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400470002-2" }]
+  },
+  {
+    id: 'bt-2011-feb21', layer: 'battle', level: 'testimony', y0: 2011, y1: 2011,
+    name: "Protesters try to storm Bab al-Aziziya, 21 February 2011",
+    lat: 32.848, lon: 13.151, r: 1.5, period: "21 February 2011",
+    relevance: "Activists said protesters tried to storm the compound and were driven back by heavy gunfire.",
+    text: "Wikipedia's timeline also reports the People's Hall set on fire, the state television building smashed and a police station burned that day, and says activists claimed about 80 dead. These are reports, not confirmed counts.",
+    sources: [{ t: "Timeline of the 2011 Libyan civil war before military intervention, Wikipedia", u: "https://en.wikipedia.org/wiki/Timeline_of_the_2011_Libyan_civil_war_before_military_intervention" }]
+  },
+  {
+    id: 'bt-2012-abusalim', layer: 'battle', level: 'documented', y0: 2012, y1: 2012,
+    name: "Zintan militia clashes with Abu Salim residents, 18 March 2012",
+    lat: 32.8455, lon: 13.1712, r: 1.6, period: "18 March 2012",
+    relevance: "A clash in the district that had stayed loyal to Gaddafi.",
+    text: "Reported in Wikipedia's account of factional violence after the war; no casualty figures in the text used here.",
+    sources: [{ t: "Factional violence in Libya (2011\u20132014), Wikipedia", u: "https://en.wikipedia.org/wiki/Factional_violence_in_Libya_(2011%E2%80%932014)" }]
+  },
+  {
+    id: 'bt-2012-dahmani', layer: 'battle', level: 'documented', y0: 2012, y1: 2012,
+    name: "Al-Shaab Al-Dahmani mosque and shrine bulldozed, 25 August 2012",
+    lat: 32.8937, lon: 13.2075, r: 0.5, period: "25 August 2012",
+    relevance: "Armed Salafists, including members of the security forces, demolished the shrine in daylight.",
+    text: "Witnesses said police kept people back instead of stopping the demolition. The mosque stood in the Zawiyat al-Dahmani area of central Tripoli.",
+    sources: [{ t: "Factional violence in Libya (2011\u20132014), Wikipedia", u: "https://en.wikipedia.org/wiki/Factional_violence_in_Libya_(2011%E2%80%932014)" }]
+  },
+  {
+    id: 'bt-2019-abusalim', layer: 'battle', level: 'documented', y0: 2019, y1: 2019,
+    name: "Rocket attacks on Abu Salim, 15\u201317 April 2019",
+    lat: 32.8455, lon: 13.1712, r: 1.6, period: "15\u201317 April 2019",
+    relevance: "Inaccurate rockets fell on three densely populated residential areas in and near Abu Salim.",
+    text: "Amnesty International called them unlawful attacks that could amount to war crimes.",
+    sources: [{ t: "Western Libya campaign, Wikipedia", u: "https://en.wikipedia.org/wiki/Western_Libya_campaign" }]
+  },
+  {
+    id: 'bt-2019-yarmouk', layer: 'battle', level: 'documented', y0: 2019, y1: 2019,
+    name: "Yarmouk camp changes hands, April\u2013May 2019",
+    lat: 32.7764, lon: 13.2009, r: 0.9, period: "April\u2013May 2019",
+    relevance: "The camp south of Tripoli passed between the GNA and the LNA at least five times in six weeks.",
+    text: "Part of the 2019\u20132020 offensive on Tripoli, which ended in June 2020 when the LNA withdrew.",
+    sources: [{ t: "Western Libya campaign, Wikipedia", u: "https://en.wikipedia.org/wiki/Western_Libya_campaign" }]
+  },
+  {
+    id: 'bt-2023', layer: 'battle', level: 'documented', y0: 2023, y1: 2023,
+    name: "Tripoli clashes, 14\u201315 August 2023",
+    lat: 32.8075, lon: 13.287, r: 4, period: "14\u201315 August 2023",
+    relevance: "The 444 Brigade fought the Al-Radaa force after the arrest of its commander at Mitiga airport.",
+    text: "Fighting was reported in Ain Zara and near Mitiga airport and Tripoli University. The emergency medicine centre counted 27 dead and 106 wounded; flights were diverted to Misrata.",
+    sources: [{ t: "The New Arab: Clashes in Libya capital kill 27", u: "https://www.newarab.com/news/clashes-libya-capital-tripoli-kill-27-wound-over-100" }]
+  },
+  {
+    id: 'mk-sadr-1978', layer: 'massacre', level: 'suspected', y0: 1978, y1: 1978,
+    name: "Reported execution at the Janzur firing range, 1978",
+    lat: 32.8255, lon: 13.0263, r: 4, period: "September 1978 (reported)",
+    relevance: "A 1979 FBIS report said Imam Musa al-Sadr and two companions were executed here; this is unproven.",
+    text: "The report says the three were shot by an officer and four under-officers and that travel documents were falsified. It is a single report. No remains have been found, and the claim is not confirmed.",
+    sources: [{ t: "FBIS, 7 Dec 1979", u: "https://archive.org/details/micro_IA1176908_0500" }]
+  },
+  {
+    id: 'mk-suwani-1982', layer: 'massacre', level: 'testimony', y0: 1982, y1: 1982,
+    name: "Four officers executed south of Tripoli, December 1982",
+    lat: 32.7124, lon: 13.0672, r: 2.5, period: "December 1982",
+    relevance: "Officers who tried an unreported coup were shot in a villa used by intelligence for interrogation and torture.",
+    text: "The US translation service reports the executions took place at a cattle farm at Suwani bin Yadim, in a villa of the former King Idris. The marker is the Sawani area.",
+    sources: [{ t: "JPRS Near East/North Africa Report No. 2701", u: "https://archive.org/details/jprs-report_jprs-82800" }]
+  },
+  {
+    id: 'mk-gargaresh-2011', layer: 'massacre', level: 'suspected', y0: 2011, y1: 2011,
+    name: "Prisoners reported killed near Gargaresh, 21 August 2011",
+    lat: 32.8682, lon: 13.1115, r: 3, period: "21 August 2011",
+    relevance: "The Khamis Brigade reportedly killed 17 prisoners in a makeshift prison.",
+    text: "English Wikipedia places it near Gragur; the Arabic article says near Gargaresh. The sources disagree, so this is an area marker.",
+    sources: [{ t: "Khamis Brigade, Wikipedia", u: "https://en.wikipedia.org/wiki/Khamis_Brigade" }]
+  },
+  {
+    id: 'mk-janzour-2012', layer: 'massacre', level: 'testimony', y0: 2012, y1: 2012,
+    name: "Tawergha camp raided, 6 February 2012",
+    lat: 32.8162, lon: 12.9461, r: 2, period: "6 February 2012",
+    relevance: "Seven black Libyan civilians from Tawergha were killed when militias raided their makeshift camp at the former naval academy.",
+    text: "Survivors said the attackers seemed to be from Misrata because of their number plates; the Misrata militia denied it.",
+    sources: [{ t: "Factional violence in Libya (2011\u20132014), Wikipedia", u: "https://en.wikipedia.org/wiki/Factional_violence_in_Libya_(2011%E2%80%932014)" }]
+  },
+  {
+    id: 'mk-gharghour-2013', layer: 'massacre', level: 'documented', y0: 2013, y1: 2013,
+    name: "Gharghour protest shooting, 15 November 2013",
+    lat: 32.859, lon: 13.171, r: 0.6, period: "15 November 2013",
+    relevance: "Misrata militias fired on unarmed protesters marching against militias.",
+    text: "Human Rights Watch reports that the militias fired from three villas on Gharghour Street. The government said 43 died over the day and 460 were hurt. Security forces present apparently did not protect the marchers.",
+    sources: [{ t: "HRW: Militias kill unarmed protesters", u: "https://hrw.org/news/2013/11/17/libya-militias-kill-unarmed-protesters" }]
+  },
+  {
+    id: 'mk-corinthia-2015', layer: 'massacre', level: 'documented', y0: 2015, y1: 2015,
+    name: "Corinthia Hotel attack, 27 January 2015",
+    lat: 32.8972, lon: 13.1703, r: 0.2, period: "27 January 2015",
+    relevance: "Gunmen killed ten people, five of them foreigners; a car bomb had injured six outside.",
+    text: "A group calling itself Islamic State in Tripoli Province claimed it, saying it was to avenge Abu Anas al-Libi.",
+    sources: [{ t: "Corinthia Hotel Tripoli, Wikipedia", u: "https://en.wikipedia.org/wiki/Corinthia_Hotel_Tripoli" }]
+  },
+  {
+    id: 'as-nato-khamis', layer: 'airstrike', level: 'testimony', y0: 2011, y1: 2011,
+    name: "NATO strike on Khamis Brigade headquarters, 18 April 2011",
+    lat: 32.86, lon: 12.92, r: 8, period: "18 April 2011",
+    relevance: "NATO aircraft reportedly destroyed the brigade's headquarters near Tripoli.",
+    text: "Wikipedia says NATO sources said it was used to coordinate attacks on civilians, and elsewhere that the headquarters was 26 km west of Tripoli when rebels overran it on 21 August. The marker shows that distance and is only approximate.",
+    sources: [{ t: "Khamis Brigade, Wikipedia", u: "https://en.wikipedia.org/wiki/Khamis_Brigade" }]
   },
 
   /* ---------- seats of power ---------- */

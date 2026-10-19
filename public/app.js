@@ -2762,8 +2762,9 @@
       var hd = x.querySelector('h3'); if (!hd || x === sec) return;
       var t = hd.textContent;
       if (t === 'Time period') { x.style.display = 'none'; return; }
-      if (t === 'Map style' || t === 'What to show') {
-        var d = h('details', { class: 'sec more' }, [h('summary', { text: t === 'Time period' ? 'Named periods' : t === 'What to show' ? 'Pick layers one by one' : 'Map style' })]);
+      if (t === 'Map style') { body.insertBefore(x, body.firstChild); return; }
+      if (t === 'What to show') {
+        var d = h('details', { class: 'sec more' }, [h('summary', { text: 'Pick layers one by one' })]);
         hd.remove(); while (x.firstChild) d.appendChild(x.firstChild); x.replaceWith(d);
       }
     });

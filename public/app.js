@@ -125,11 +125,11 @@
     var a = s.y0 == null ? 1969 : s.y0, b = s.y1 == null ? (s.y0 == null ? 2011 : s.y0) : s.y1;
     return [a, b];
   }
-  function inPeriod(s) {
-    var r = span(s);
-    return (periods.pre && r[0] < 1969) || (periods.main && r[0] <= 2011 && r[1] >= 1969) || (periods.post && r[1] > 2011);
-  }
-  function visible(s) { return !!active[s.layer] && inPeriod(s); }
+  var whenRange = store.get('when', [1969, 2011]), sure = store.get('sure', 'all');
+  var SURE_OK = { doc: { documented: 1 }, testimony: { documented: 1, testimony: 1, context: 1 }, all: null };
+  function inPeriod(s) { var r = span(s); return r[1] >= whenRange[0] && r[0] <= whenRange[1]; }
+  function sureOk(s) { var ok = SURE_OK[sure]; return !ok || !!ok[s.level]; }
+  function visible(s) { return !!active[s.layer] && inPeriod(s) && sureOk(s); }
 
   /* ---------- historical markers ---------- */
   var siteLayer = L.layerGroup().addTo(map), ringLayer = L.layerGroup().addTo(map), linkLayer = L.layerGroup().addTo(map);
@@ -264,6 +264,8 @@
     if (typeof syncEraChips === 'function') syncEraChips();
     if (selected) markSelected(selected);
     save();
+    if (typeof syncHoods === 'function' && hoodLayer) { clearHoodHide(); syncHoods(); }
+    if (typeof syncFilters === 'function') syncFilters();
   }
   /* keep map labels from overlapping: place labels in priority order and hide any that would collide */
   var declutterTimer;
@@ -407,10 +409,8 @@
     var changed = false;
     if ((timeRange && !(span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1])) || (timeYear != null && span(s)[0] > timeYear)) { timeRange = null; timeYear = null; stopPlay(); changed = true; }
     if (!active[s.layer]) { active[s.layer] = true; inputs[s.layer].checked = true; changed = true; if (typeof syncGroups === 'function') setTimeout(syncGroups, 0); }
-    if (!inPeriod(s)) {
-      var r = span(s), k = r[0] < 1969 ? 'pre' : r[0] > 2011 ? 'post' : 'main';
-      periods[k] = true; document.querySelector('#periods [data-k="' + k + '"]').setAttribute('aria-pressed', 'true'); changed = true;
-    }
+    if (!inPeriod(s)) { var r = span(s); setWhen([Math.min(whenRange[0], r[0]), Math.max(whenRange[1], r[1])], true); changed = true; }
+    if (!sureOk(s)) { setSure('all', true); changed = true; }
     if (changed) refresh();
   }
 
@@ -448,11 +448,15 @@
     [1992, 2003, 'UN sanctions', 'Sanctions'], [2003, 2011, 'Opening to the West', 'Opening'], [2011, 2012, '2011 uprising and war', '2011'], [2012, 2026, 'After Gaddafi', 'After']];
   var timeRange = null;
   function pos(f) { return 'calc(14px + ' + f.toFixed(4) + ' * (100% - 28px))'; }
-  var TL_LANES = [['Prisons & security', ['detention', 'security']], ['Military', ['military', 'airstrike', 'battle']], ['Killings', ['massacre']], ['Power', ['power']], ['Landmarks', ['landmark']]];
+  var TL_ALL = [['Prisons & security', ['detention', 'security']], ['Military', ['military', 'airstrike', 'battle']], ['Killings', ['massacre']], ['Power', ['power']], ['Landmarks', ['landmark']]];
+  var TL_ONE = [['Events', ['massacre', 'airstrike', 'battle', 'detention', 'security', 'military', 'power', 'landmark']]];
+  var tlAll = store.get('tlAll', false), TL_LANES = tlAll ? TL_ALL : TL_ONE;
   function drawTimeline() {
     var tl = $('timeline');
     tl.querySelectorAll('.tl-lane,.tl-lab,.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-span,.tl-bar,.tl-hint,.tl-hit,.tl-cursor,.tl-ctrl,.tl-era,.tl-grid').forEach(function (e) { e.remove(); });
-    var L0 = 118, R0 = 14, W = Math.max(200, tl.clientWidth - L0 - R0), TOP = 42, LH = 20;
+    TL_LANES = tlAll ? TL_ALL : TL_ONE;
+    var L0 = tlAll ? 118 : 70, R0 = 14, W = Math.max(200, tl.clientWidth - L0 - R0), TOP = 42, LH = tlAll ? 20 : 26;
+    var tlH = TOP + TL_LANES.length * LH + 30; tl.style.height = tlH + 'px'; document.documentElement.style.setProperty('--tl-h', tlH + 'px');
     var X = function (y) { return L0 + tx(y) * W; };
     tl.querySelectorAll('.tl-era,.tl-grid').forEach(function (e) { e.remove(); });
     ERAS.forEach(function (e, i) {
@@ -470,7 +474,7 @@
       var used = {}, laneDots = [];
       SITES.filter(function (s) { return lane[1].indexOf(s.layer) >= 0 && s.y0 != null && visible(s); }).sort(function (a, b) { return a.y0 - b.y0; }).forEach(function (s) {
         var lay = LAYERS[s.layer], x0 = X(s.y0);
-        if (s.y1 != null && s.y1 > s.y0) {
+        if (tlAll && s.y1 != null && s.y1 > s.y0) {
           tl.appendChild(h('div', { class: 'tl-span', title: s.name + ', ' + s.y0 + '–' + s.y1, style: 'left:' + x0.toFixed(1) + 'px;width:' + Math.max(2, X(s.y1) - x0).toFixed(1) + 'px;top:' + (y + 4) + 'px;background:' + lt(lay.color) + (timeRange && !(s.y1 >= timeRange[0] && s.y0 <= timeRange[1]) ? ';opacity:.12' : '') }));
         }
         var slot = Math.round(x0 / 9), n = 0; while (used[slot + n]) n++; used[slot + n] = 1;
@@ -491,7 +495,7 @@
     var last = -99;
     [1911, 1945, 1951, 1969, 1975, 1980, 1985, 1990, 1996, 2000, 2005, 2011, 2020].forEach(function (yr) {
       var x = X(yr); if (x - last < 34) return; last = x;
-      tl.appendChild(h('button', { class: 'tl-tick', style: 'left:' + x.toFixed(1) + 'px;top:' + (axisY + 3) + 'px', text: String(yr), title: 'Look up ' + yr + ' in the Encyclopedia', onclick: function () { openTerm(String(yr)); } }));
+      tl.appendChild(h('button', { class: 'tl-tick', style: 'left:' + x.toFixed(1) + 'px;top:' + (axisY + 3) + 'px', text: String(yr), title: yr >= 1969 && yr <= 2011 ? 'Show ' + yr + ' in Tripoli' : 'Look up ' + yr + ' in the Encyclopedia', onclick: function () { if (yr >= 1969 && yr <= 2011) showYear(yr); else openTerm(String(yr)); } }));
     });
     tl.appendChild(h('div', { class: 'tl-hint', text: timeRange ? 'Showing ' + timeRange[0] + '–' + timeRange[1] + ' only. Click the period again or “All years” to show everything.' : timeYear == null ? 'Click a period to show only it · drag along the lanes to step through time · tap a dot to open a place · tap a year to look it up' : 'Showing ' + timeYear + ': bright = active that year, faded = earlier, hidden = not yet' }));
     var hit = h('div', { class: 'tl-hit', style: 'left:' + L0 + 'px;width:' + W + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 6) + 'px', title: 'Click or drag to pick a year' });
@@ -507,7 +511,8 @@
     if (timeYear != null) tl.appendChild(h('div', { class: 'tl-cursor', style: 'left:' + (X(timeYear) - 1).toFixed(1) + 'px;top:' + (TOP + 2) + 'px;height:' + (TL_LANES.length * LH) + 'px' }, [h('b', { text: String(timeYear) })]));
     tl.appendChild(h('div', { class: 'tl-ctrl' }, [
       h('button', { 'aria-pressed': playTimer ? 'true' : 'false', text: playTimer ? 'Pause' : 'Play 1969–2011', onclick: function () { playTimer ? stopPlay() : startPlay(); } }),
-      timeYear != null || timeRange ? h('button', { text: 'All years', onclick: function () { stopPlay(); timeRange = null; setYear(null); } }) : null
+      timeYear != null || timeRange ? h('button', { text: 'All years', onclick: function () { stopPlay(); timeRange = null; setYear(null); } }) : null,
+      h('button', { 'aria-pressed': tlAll ? 'true' : 'false', text: tlAll ? 'One lane' : 'Show all lanes', onclick: function () { tlAll = !tlAll; store.set('tlAll', tlAll); drawTimeline(); } })
     ]));
     if (timeYear != null) tl.querySelectorAll('.tl-dot').forEach(function (d) { var y = +d.getAttribute('aria-label').slice(0, 4); d.style.opacity = y <= timeYear ? '' : '.15'; });
   }
@@ -2606,8 +2611,8 @@
     var ch = storyCard ? storyCard.getBoundingClientRect().height || 240 : 240;
     return map.unproject(map.project([lat, lon], z).add([0, ch / 2 + (DESKTOP.matches ? 60 : 10)]), z);
   }
-  function startStory(id) { var st = STORIES.filter(function (x) { return x.id === id; })[0]; if (!st) return; storyOn = { story: st, i: 0 }; storyStop(0); }
-  function endStory() { storyOn = null; if (storyCard) storyCard.hidden = true; document.body.classList.remove('story-open'); markSelected(null); applyFocus(); }
+  function startStory(id) { var st = STORIES.filter(function (x) { return x.id === id; })[0]; if (!st) return; storyOn = { story: st, i: 0 }; clearHoodHide(); syncHoods(); storyStop(0); }
+  function endStory() { storyOn = null; setTimeout(function () { clearHoodHide(); syncHoods(); }, 0); if (storyCard) storyCard.hidden = true; document.body.classList.remove('story-open'); markSelected(null); applyFocus(); }
 
   /* ---------- pick a year: show only that year, with a short "this year in Tripoli" card ---------- */
   var yearCard = null;
@@ -2673,6 +2678,133 @@
     door.hidden = false; doorMain();
   }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (door && !door.hidden) closeDoor(true); else if (storyOn) endStory(); else if (yearCard && !yearCard.hidden) endYear(); } });
+
+  /* ---------- three plain filters at the top of the Layers drawer: What, When, How sure ---------- */
+  var WHAT = [
+    ['prisons', 'Prisons & security', ['detention', 'security']],
+    ['killings', 'Killings', ['massacre']],
+    ['war', 'War & attacks', ['airstrike', 'battle', 'military']],
+    ['power', 'Power', ['power', 'landmark']]
+  ];
+  function setWhat(keys) {
+    var want = {}; keys.forEach(function (k) { WHAT.forEach(function (w) { if (w[0] === k) w[2].forEach(function (l) { want[l] = 1; }); }); });
+    Object.keys(LAYERS).forEach(function (l) { var v = keys.length ? !!want[l] : true; if (active[l] !== v) { active[l] = v; if (inputs[l]) inputs[l].checked = v; } });
+    if (typeof syncGroups === 'function') syncGroups(); refresh(); syncFilters();
+  }
+  function setWhen(r, quiet) { whenRange = [Math.min(r[0], r[1]), Math.max(r[0], r[1])]; store.set('when', whenRange); if (!quiet) refresh(); syncFilters(); }
+  function setSure(v, quiet) { sure = v; store.set('sure', v); if (!quiet) refresh(); syncFilters(); }
+  var filt = null;
+  function buildFilters() {
+    var body = $('layers-body'); if (!body || filt) return;
+    filt = {};
+    var whatBox = h('div', { class: 'chips f-what' });
+    filt.what = WHAT.map(function (w) {
+      var b = h('button', { 'aria-pressed': 'false', text: w[1], onclick: function () {
+        var on = filt.what.filter(function (x) { return x.getAttribute('aria-pressed') === 'true'; }).map(function (x) { return x.dataset.k; });
+        var i = on.indexOf(w[0]); if (allOn()) on = [w[0]]; else if (i >= 0) on.splice(i, 1); else on.push(w[0]);
+        setWhat(on);
+      } }); b.dataset.k = w[0]; whatBox.appendChild(b); return b;
+    });
+    filt.all = h('button', { 'aria-pressed': 'false', text: 'Everything', onclick: function () { setWhat([]); } }); whatBox.insertBefore(filt.all, whatBox.firstChild);
+    var lab = h('div', { class: 'f-when-lab' }), from = h('input', { type: 'range', min: '1911', max: '2026', 'aria-label': 'From year' }), to = h('input', { type: 'range', min: '1911', max: '2026', 'aria-label': 'To year' });
+    from.oninput = to.oninput = function () { lab.textContent = Math.min(+from.value, +to.value) + ' – ' + Math.max(+from.value, +to.value); };
+    from.onchange = to.onchange = function () { setWhen([+from.value, +to.value]); };
+    filt.from = from; filt.to = to; filt.lab = lab;
+    var presets = h('div', { class: 'chips f-pre' }, [['Gaddafi years', 1969, 2011], ['Before 1969', 1911, 1968], ['After 2011', 2012, 2026], ['All years', 1911, 2026]].map(function (p) {
+      var b = h('button', { 'aria-pressed': 'false', text: p[0], onclick: function () { setWhen([p[1], p[2]]); } }); b.dataset.r = p[1] + '-' + p[2]; return b; }));
+    filt.pre = presets;
+    var sureBox = h('div', { class: 'seg f-sure', role: 'radiogroup', 'aria-label': 'How sure' });
+    filt.sure = [['doc', 'Documented only'], ['testimony', 'Plus testimony'], ['all', 'Everything']].map(function (o) {
+      var b = h('button', { role: 'radio', 'aria-checked': 'false', text: o[1], onclick: function () { setSure(o[0]); } }); b.dataset.k = o[0]; sureBox.appendChild(b); return b; });
+    var sec = h('div', { class: 'sec filters' }, [
+      h('h3', { text: 'What' }), whatBox,
+      h('h3', { text: 'When' }), lab, h('div', { class: 'f-when' }, [h('span', { text: 'From' }), from, h('span', { text: 'To' }), to]), presets,
+      h('h3', { text: 'How sure' }), sureBox,
+      h('p', { class: 'grp-help', text: 'Documented: confirmed by records or several sources. Testimony: reported by witnesses or one source. Everything also shows unconfirmed reports.' })
+    ]);
+    body.insertBefore(sec, body.firstChild);
+    // tuck the map styles, named periods and the detailed chooser away
+    var secs = body.querySelectorAll(':scope > .sec');
+    secs.forEach(function (x) {
+      var hd = x.querySelector('h3'); if (!hd || x === sec) return;
+      var t = hd.textContent;
+      if (t === 'Map style' || t === 'Time period' || t === 'What to show') {
+        var d = h('details', { class: 'sec more' }, [h('summary', { text: t === 'Time period' ? 'Named periods' : t === 'What to show' ? 'Pick layers one by one' : 'Map style' })]);
+        hd.remove(); while (x.firstChild) d.appendChild(x.firstChild); x.replaceWith(d);
+      }
+    });
+    syncFilters();
+  }
+  function allOn() { return Object.keys(LAYERS).every(function (l) { return active[l]; }); }
+  function syncFilters() {
+    if (!filt) return;
+    var all = allOn();
+    filt.all.setAttribute('aria-pressed', all ? 'true' : 'false');
+    filt.what.forEach(function (b) { var w = WHAT.filter(function (x) { return x[0] === b.dataset.k; })[0]; b.setAttribute('aria-pressed', !all && w[2].every(function (l) { return active[l]; }) ? 'true' : 'false'); });
+    filt.from.value = whenRange[0]; filt.to.value = whenRange[1]; filt.lab.textContent = whenRange[0] + ' – ' + whenRange[1];
+    filt.pre.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.r === whenRange[0] + '-' + whenRange[1] ? 'true' : 'false'); });
+    filt.sure.forEach(function (b) { b.setAttribute('aria-checked', b.dataset.k === sure ? 'true' : 'false'); });
+  }
+  setTimeout(buildFilters, 0);
+
+  /* ---------- neighbourhood view: at city zoom, one badge per neighbourhood instead of every pin ---------- */
+  var hoodLayer = L.layerGroup(), hoodCard = null, HOOD_Z = 14;
+  var HOODS = (DISTRICTS || []).concat([['Bab al-Aziziya', 'باب العزيزية', 32.848, 13.151], ['Airport road', 'طريق المطار', 32.782, 13.148], ['City centre', 'وسط البلاد', 32.8915, 13.184], ['Al-Furnaj', 'الفرناج', 32.853, 13.231]]);
+  function hoodOf(s) {
+    var best = null, bd = 1e9;
+    HOODS.forEach(function (d) { var dd = map.distance([s.lat, s.lon], [d[2], d[3]]); if (dd < bd) { bd = dd; best = d; } });
+    return bd < 7000 ? best : null;
+  }
+  function hoodMode() {
+    var vis = SITES.filter(function (s) { return siteLayer.hasLayer(markers[s.id]) || (s._hoodHidden && visible(s)); });
+    return map.getZoom() < HOOD_Z && !timeRange && timeYear == null && !storyOn && vis.length > 25;
+  }
+  function syncHoods() {
+    var on = hoodMode();
+    hoodLayer.clearLayers();
+    document.body.classList.toggle('hoods', on);
+    if (!on) { if (map.hasLayer(hoodLayer)) map.removeLayer(hoodLayer); return; }
+    var groups = {}, loose = [];
+    SITES.forEach(function (s) {
+      if (!siteLayer.hasLayer(markers[s.id])) return;
+      if (s.id === selected) return;
+      var d = hoodOf(s); if (!d) { loose.push(s); return; }
+      (groups[d[0]] = groups[d[0]] || { d: d, list: [] }).list.push(s);
+    });
+    // merge badges that would overlap on screen into the bigger one
+    var z = map.getZoom(), merged = [];
+    Object.keys(groups).map(function (k) { return groups[k]; }).sort(function (a, b) { return b.list.length - a.list.length; }).forEach(function (g) {
+      var p = map.project([g.d[2], g.d[3]], z), hit = null;
+      merged.forEach(function (m) { if (!hit && Math.abs(m.p.x - p.x) < 130 && Math.abs(m.p.y - p.y) < 50) hit = m; });
+      if (hit) { hit.list = hit.list.concat(g.list); hit.more.push(g.d[0]); } else merged.push({ d: g.d, list: g.list.slice(), p: p, more: [] });
+    });
+    merged.forEach(function (g) {
+      var n = g.list.length;
+      var kinds = {}; g.list.forEach(function (s) { kinds[s.layer] = (kinds[s.layer] || 0) + 1; });
+      var top = Object.keys(kinds).sort(function (a, b) { return kinds[b] - kinds[a]; }).slice(0, 3);
+      var dots = top.map(function (l) { return '<i style="background:' + LAYERS[l].color + '"></i>'; }).join('');
+      L.marker([g.d[2], g.d[3]], { keyboard: true, title: g.d[0] + ': ' + n + (n === 1 ? ' place' : ' places'), zIndexOffset: 500,
+        icon: L.divIcon({ className: '', iconSize: [120, 52], iconAnchor: [60, 26], html: '<div class="hood"><b>' + n + '</b><span>' + esc(g.d[0]) + (g.more.length ? '<em>+ ' + g.more.length + ' nearby</em>' : '') + '<small>' + dots + '</small></span></div>' }) })
+        .on('click', function () { openHood(g); }).addTo(hoodLayer);
+    });
+    hoodLayer.addTo(map); leaderLayer.clearLayers();
+    // in neighbourhood view the individual pins step back (still on the map, faint) so the badges read first
+    SITES.forEach(function (s) { var m = markers[s.id]; if (siteLayer.hasLayer(m) && s.id !== selected && hoodOf(s)) { var el = m.getElement(); if (el) el.classList.add('hood-hide'); } });
+  }
+  function clearHoodHide() { document.querySelectorAll('.hood-hide').forEach(function (e) { e.classList.remove('hood-hide'); }); }
+  function openHood(g) {
+    if (!hoodCard) { hoodCard = h('section', { class: 'story-card hood-card' }); document.body.appendChild(hoodCard); }
+    hoodCard.innerHTML = ''; hoodCard.hidden = false;
+    var list = g.list.slice().sort(function (a, b) { return (a.y0 || 0) - (b.y0 || 0); });
+    hoodCard.appendChild(h('div', { class: 'sc-head' }, [h('div', {}, [h('b', { text: g.d[0] + (g.more && g.more.length ? ' and ' + g.more.join(', ') : '') }), h('small', { text: list.length + ' place' + (list.length > 1 ? 's' : '') + ' on the map' }), h('small', { lang: 'ar', dir: 'rtl', class: 'hood-ar', text: g.d[1] })]), h('button', { class: 'btn ghost', text: 'Close', onclick: function () { hoodCard.hidden = true; } })]));
+    hoodCard.appendChild(h('div', { class: 'yc-list' }, list.map(function (s) { return h('button', { onclick: function () { hoodCard.hidden = true; focusSite(s); } }, [glyph(s.layer), h('span', { text: (s.y0 ? s.y0 + ' · ' : '') + s.name })]); })));
+    var b = L.latLngBounds(list.map(function (s) { return [s.lat, s.lon]; }));
+    map.flyToBounds(b.pad(0.3), { duration: 0.8, minZoom: HOOD_Z, maxZoom: 16, paddingBottomRight: [20, DESKTOP.matches ? 300 : (hoodCard.getBoundingClientRect().height || 260) + 40] });
+    setTimeout(function () { if (map.getZoom() < HOOD_Z) map.setZoom(HOOD_Z); }, 900);
+  }
+  map.on('zoomend', function () { clearHoodHide(); syncHoods(); });
+  setTimeout(function () { clearHoodHide(); syncHoods(); }, 0);
+  map.on('zoomstart', function () { if (hoodCard && !hoodCard.hidden && map.getZoom() >= HOOD_Z) { /* keep */ } });
   var API = null;
   window.ATLAS_API = API = {
     conn: connDetail, map: map, h: h, facts: facts, section: section,

@@ -416,7 +416,7 @@ html .mem-box { max-width: none; width: 96vw; height: 94vh; max-height: 94vh; }
 #timeline .tl-dot { width: 17px; height: 17px; border: 2px solid #111418; border-radius: 0 !important; transform: translateX(-50%) !important; box-shadow: 1px 1px 0 #111418; display: grid; place-items: center; color: #fff; }
 #timeline .tl-dot svg { width: 11px; height: 11px; display: block; }
 #timeline .tl-dot.sel { outline: 2px solid var(--fy-accent); outline-offset: 1px; }
-#timeline { height: 172px !important; }
+#timeline { height: var(--tl-h, 172px) !important; }
 @media (min-width: 900px) { body:not(.no-timeline) .tip { bottom: 250px; } body:not(.no-timeline) .chat { bottom: 192px; } }
 
 /* ================= The Unknown: a separate black plane ================= */
@@ -597,8 +597,8 @@ html details.more-facts[open] summary { margin-bottom: 8px; }
 /* legend groups */
 html .legend h5.lg-grp { margin: 12px 0 2px; font-size: .78em; font-weight: 700; opacity: .7; }
 /* bigger timeline marks when text is enlarged */
-html.big #timeline .tl-dot { width: 14px; height: 14px; }
-html.huge #timeline .tl-dot { width: 16px; height: 16px; }
+html.big #timeline .tl-dot { width: 20px; height: 20px; }
+html.huge #timeline .tl-dot { width: 22px; height: 22px; }
 #timeline { overflow: hidden; }
 /* tip sits above the chat bar, never on it */
 @media (max-width: 899px) { html.has-chat .tip { bottom: calc(var(--chat-h) + 16px); } }
@@ -654,3 +654,39 @@ html .yc-open { margin: 6px 0 0; font-size: .88em; color: var(--fy-muted); }
 html.dark .door-box, html.dark .story-card, html.dark .door-choice { background: #1c2127; color: #f6f7f9; border-color: #404854; }
 html.dark .door-choice:hover { background: #22324a; }
 html.dark .door-head p, html.dark .door-choice small, html.dark .sc-head small, html.dark .sc-place small { color: #abb3bf; }
+
+/* ---- Phase 2A: neighbourhood badges ---- */
+html .hood { display: flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; background: var(--fy-panel); color: var(--fy-text); border: 1.5px solid var(--fy-border); border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.18); cursor: pointer; white-space: nowrap; width: max-content; transform: translateX(calc(60px - 50%)); }
+html .hood:hover { border-color: var(--fy-accent); }
+html .hood b { display: grid; place-items: center; min-width: 34px; height: 34px; border-radius: 50%; background: var(--fy-accent); color: #fff; font-size: 1.02em; font-variant-numeric: tabular-nums; }
+html .hood span { display: flex; flex-direction: column; font-weight: 700; font-size: .92em; line-height: 1.15; }
+html .hood small { display: flex; gap: 3px; margin-top: 3px; }
+html .hood small i { width: 8px; height: 8px; border-radius: 50%; display: block; }
+html.dark .hood { background: #1c2127; color: #f6f7f9; border-color: #404854; }
+html .hood-hide { opacity: 0 !important; pointer-events: none !important; }
+html body.hoods .site-label, html body.hoods .district { display: none !important; }
+/* ---- filters ---- */
+html .filters h3 { margin-bottom: 8px; }
+html .filters h3 ~ h3 { margin-top: 14px; }
+html .filters .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+html .filters .chips button { min-height: 38px; padding: 0 12px; border: 1.5px solid var(--fy-border); background: var(--fy-panel); color: var(--fy-text); border-radius: 999px; font-weight: 600; font-size: .9em; cursor: pointer; }
+html .filters .chips button[aria-pressed="true"] { background: var(--fy-sel); color: var(--fy-sel-text); border-color: var(--fy-accent); }
+html .f-when-lab { font-size: 1.3em; font-weight: 700; font-variant-numeric: tabular-nums; margin-bottom: 4px; }
+html .f-when { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; align-items: center; font-size: .88em; color: var(--fy-muted); margin-bottom: 8px; }
+html .f-when input { width: 100%; accent-color: var(--fy-accent); height: 28px; }
+html .seg { display: flex; border: 1.5px solid var(--fy-border); border-radius: 10px; overflow: hidden; }
+html .seg button { flex: 1; min-height: 42px; border: 0; background: var(--fy-panel); color: var(--fy-text); font-weight: 600; font-size: .86em; cursor: pointer; padding: 0 6px; }
+html .seg button + button { border-left: 1.5px solid var(--fy-border); }
+html .seg button[aria-checked="true"] { background: var(--fy-accent); color: #fff; }
+html.dark .filters .chips button, html.dark .seg button { background: #1c2127; color: #f6f7f9; border-color: #404854; }
+html.dark .filters .chips button[aria-pressed="true"] { background: #22324a; color: #cfe0ff; }
+html.dark .seg button[aria-checked="true"] { background: var(--fy-accent); color: #fff; }
+/* ---- timeline height follows its lanes ---- */
+@media (min-width: 900px) {
+  html body:not(.no-timeline) .chat { bottom: calc(var(--tl-h, 146px) + 20px); }
+  html body:not(.no-timeline) .tip { bottom: calc(var(--tl-h, 146px) + 96px); }
+  html body:not(.no-timeline) .story-card { bottom: calc(var(--tl-h, 146px) + 96px); }
+  html body.no-timeline .story-card { bottom: 96px; }
+}
+html .hood em { font-style: normal; font-weight: 500; font-size: .85em; color: var(--fy-muted); }
+html .hood-ar { display: block; }

@@ -207,12 +207,15 @@
     vis.forEach(function (s) {
       var o = off[s.id]; if (!o || (o.hub && Math.abs(o.dx) < 4 && Math.abs(o.dy) < 4)) return;
       var lay = LAYERS[s.layer], from = map.unproject(o.p, z), to = map.unproject(L.point(o.p.x + o.dx, o.p.y + o.dy - 18), z);
-      L.polyline([from, to], { color: '#111418', weight: 2, opacity: .8, interactive: false }).addTo(leaderLayer);
-      L.circleMarker(from, { radius: 3, color: '#111418', weight: 1.5, fillColor: lay.color, fillOpacity: 1, interactive: false }).addTo(leaderLayer);
+      var close = z >= 15;
+      L.polyline([from, to], { color: '#111418', weight: close ? 2 : 1, opacity: close ? .8 : .3, interactive: false }).addTo(leaderLayer);
+      if (close) L.circleMarker(from, { radius: 3, color: '#111418', weight: 1.5, fillColor: lay.color, fillOpacity: 1, interactive: false }).addTo(leaderLayer);
     });
     if (selected && markers[selected]) markSelected(selected);
   }
   map.on('zoomend', spreadMarkers);
+  map.on('zoomend', function () { syncRings(); });
+  function syncRings() { SITES.forEach(function (s) { var r = rings[s.id], want = siteLayer.hasLayer(markers[s.id]) && active.rings && (selected === s.id || map.getZoom() >= 15); if (want && !ringLayer.hasLayer(r)) ringLayer.addLayer(r); else if (!want) ringLayer.removeLayer(r); }); }
 
   var districtLayer = L.layerGroup();
   DISTRICTS.forEach(function (d) {
@@ -247,7 +250,7 @@
       var on = visible(s) && (timeYear == null || span(s)[0] <= timeYear) && (!timeRange || (span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1]));
       if (on) { if (!siteLayer.hasLayer(markers[s.id])) siteLayer.addLayer(markers[s.id]); markers[s.id].setOpacity(timeYear == null || activeAt(s, timeYear) ? 1 : 0.3); }
       else siteLayer.removeLayer(markers[s.id]);
-      if (on && active.rings) { if (!ringLayer.hasLayer(rings[s.id])) ringLayer.addLayer(rings[s.id]); }
+      if (on && active.rings && (selected === s.id || map.getZoom() >= 15)) { if (!ringLayer.hasLayer(rings[s.id])) ringLayer.addLayer(rings[s.id]); }
       else ringLayer.removeLayer(rings[s.id]);
     });
     if (active.districts) districtLayer.addTo(map); else map.removeLayer(districtLayer);
@@ -418,10 +421,19 @@
     $('unplaced').appendChild(h('div', {}, [h('b', { text: u.name }), h('span', { text: u.when + '. ' }), u.text, u.src ? h('span', {}, [' ', h('a', { href: u.src.u, target: '_blank', rel: 'noopener', text: 'Source' })]) : null]));
   });
 
+  /* on phones the place panel covers the lower part of the map: aim the map so the pin sits in the visible strip above it */
+  function aimAbovePanel(lat, lon, z) {
+    if (DESKTOP.matches) return L.latLng(lat, lon);
+    var mapEl = $('map').getBoundingClientRect(), panel = Math.min(innerHeight * 0.66, mapEl.height * 0.7);
+    var p = map.project([lat, lon], z).add([0, panel / 2]);
+    return map.unproject(p, z);
+  }
+  var aiming = false;
   function focusSite(s) {
     ensureVisible(s);
-    map.flyTo([s.lat, s.lon], Math.max(map.getZoom(), 14), { duration: 0.8 });
-    openSite(s);
+    var z = Math.max(map.getZoom(), 14);
+    aiming = true; map.flyTo(aimAbovePanel(s.lat, s.lon, z), z, { duration: 0.8 });
+    openSite(s); aiming = false;
   }
 
   /* ---------- timeline (desktop) ---------- */
@@ -455,7 +467,7 @@
       var y = TOP + li * LH;
       tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (y - 1) + 'px', text: lane[0] }));
       tl.appendChild(h('div', { class: 'tl-lane', style: 'top:' + (y + 6) + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
-      var used = {};
+      var used = {}, laneDots = [];
       SITES.filter(function (s) { return lane[1].indexOf(s.layer) >= 0 && s.y0 != null && visible(s); }).sort(function (a, b) { return a.y0 - b.y0; }).forEach(function (s) {
         var lay = LAYERS[s.layer], x0 = X(s.y0);
         if (s.y1 != null && s.y1 > s.y0) {
@@ -463,8 +475,16 @@
         }
         var slot = Math.round(x0 / 9), n = 0; while (used[slot + n]) n++; used[slot + n] = 1;
         tl.appendChild(h('button', { class: 'tl-dot ' + lay.shape + (selected === s.id ? ' sel' : ''), title: s.y0 + (s.y1 && s.y1 > s.y0 ? '–' + s.y1 : '') + ' · ' + s.name, 'aria-label': s.y0 + ', ' + s.name,
-          style: 'left:' + (x0 + n * 13).toFixed(1) + 'px;top:' + (y - 2) + 'px;background:' + lay.color + (timeRange && !(span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1]) ? ';opacity:.15' : ''), onclick: function () { focusSite(s); }, html: siteCode(s) }));
+          'data-x0': x0, style: 'left:' + (x0 + n * 13).toFixed(1) + 'px;top:' + (y - 2) + 'px;background:' + lay.color + (timeRange && !(span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1]) ? ';opacity:.15' : ''), onclick: function () { focusSite(s); }, html: siteCode(s) }));
+        laneDots.push({ el: tl.lastChild, x: x0 + n * 13, x0: x0 });
       });
+      // keep a crowded run (2011 and after) inside the timeline: squeeze it rather than let it spill past the edge
+      var xmax = L0 + W - 6, over = laneDots.filter(function (d) { return d.x > xmax; });
+      if (over.length) {
+        var start = Math.min.apply(null, laneDots.filter(function (d) { return d.x0 >= X(2011) - 1; }).map(function (d) { return d.x0; }).concat([X(2011)]));
+        var far = Math.max.apply(null, laneDots.map(function (d) { return d.x; }));
+        laneDots.forEach(function (d) { if (d.x >= start) d.el.style.left = (start + (d.x - start) * (xmax - start) / Math.max(1, far - start)).toFixed(1) + 'px'; });
+      }
     });
     var axisY = TOP + TL_LANES.length * LH + 4;
     tl.appendChild(h('div', { class: 'tl-axis', style: 'top:' + axisY + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
@@ -792,6 +812,7 @@
   }
   function openPanel(id) {
     $(id).classList.add('open');
+    if (id === 'drawer' && DESKTOP.matches) store.set('drawerOpen', true);
     if (id === 'sheet') { decorateSheet(); $('sheet-body').scrollTop = 0; requestAnimationFrame(function () { $('sheet-body').scrollTop = 0; }); }
     if (id === 'drawer') { $('btn-layers').setAttribute('aria-expanded', 'true'); syncGroups(); }
     if (!DESKTOP.matches) { if (id === 'sheet') closePanel('drawer'); if (id === 'drawer') closePanel('sheet'); if (!$('chat-panel').hidden) closeChat(); }
@@ -799,6 +820,7 @@
   }
   function closePanel(id) {
     $(id).classList.remove('open');
+    if (id === 'drawer' && DESKTOP.matches) store.set('drawerOpen', false);
     if (id === 'drawer') $('btn-layers').setAttribute('aria-expanded', 'false');
     if (id === 'sheet') { $('sheet').classList.remove('tall'); document.body.classList.remove('sheet-tall'); markSelected(null); linkLayer.clearLayers(); if (spotMarker) { map.removeLayer(spotMarker); spotMarker = null; } }
     syncBody();
@@ -807,6 +829,7 @@
     document.querySelectorAll('.mk.sel').forEach(function (e) { e.classList.remove('sel'); });
     document.querySelectorAll('.tl-dot.sel').forEach(function (e) { e.classList.remove('sel'); });
     selected = id;
+    if (typeof syncRings === 'function') syncRings();
     if (!id) return;
     var el = markers[id] && markers[id].getElement();
     if (el) el.querySelector('.mk').classList.add('sel');
@@ -829,20 +852,36 @@
     return h('dl', { class: 'meta facts' }, kids);
   }
   function section(title, kids) { return h('div', { class: 'sec' }, [h('h3', { text: title })].concat(kids)); }
+  /* "What is known" as short dated lines when the text moves through several years; otherwise one paragraph */
+  function datedText(text) {
+    var t = String(text || ''), sents = t.match(/[^.!?]+(?:[.!?]+(?=\s+[A-Z0-9“"(]|\s*$)|$)/g) || [t], groups = [], cur = null;
+    // re-join pieces split after abbreviations like "U.S." or "St."
+    var fixed = []; sents.forEach(function (x) { if (fixed.length && /\b(?:U\.S|U\.N|St|Mr|Dr|Col|Gen|Lt|No|al)\.$/.test(fixed[fixed.length - 1].trim())) fixed[fixed.length - 1] += x; else fixed.push(x); });
+    fixed.forEach(function (x) {
+      x = x.trim(); if (!x) return;
+      var m = x.match(/\b(1[89]\d\d|20[0-2]\d)\b/);
+      if (m && (!cur || cur.y !== m[1])) { cur = { y: m[1], t: x }; groups.push(cur); }
+      else if (cur) cur.t += ' ' + x;
+      else { cur = { y: '', t: x }; groups.push(cur); }
+    });
+    var dated = groups.filter(function (g) { return g.y; }).length;
+    if (dated < 3 || t.length < 260) return h('p', { class: 'd-text', text: t });
+    return h('div', { class: 'dated' }, groups.map(function (g) { return h('div', { class: 'dl-row' }, [h('b', { text: g.y || '' }), h('span', { text: g.t })]); }));
+  }
   function openSite(s) {
     var lay = LAYERS[s.layer];
     var body = newSheet(lay.label);
     markSelected(s.id);
     var outside = span(s)[1] < 1969 || span(s)[0] > 2011;
     body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: s.name }), s.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: s.ar }) : null]));
+    var nsrc = (s.sources || []).length;
     body.appendChild(facts([
-      ['Category', lay.label], ['Evidence', LEVELS[s.level]], ['When', s.period],
-      ['Active', s.y0 ? (s.y1 && s.y1 !== s.y0 ? s.y0 + '–' + s.y1 : String(s.y0)) : ''],
-      ['Accuracy', 'within about ' + s.r + ' km'], ['Coordinates', s.lat.toFixed(4) + ', ' + s.lon.toFixed(4)],
-      ['Note', outside ? 'Outside the Gaddafi era (1969–2011)' : ''], ['Reference', s.ref], ['Sources', (s.sources || []).length]
+      ['Evidence', LEVELS[s.level]], ['When', s.period],
+      ['Note', outside ? 'Outside the Gaddafi era (1969–2011)' : '']
     ]));
     body.appendChild(section('Why it matters', [h('p', { class: 'brief', text: s.relevance })]));
-    body.appendChild(section('What is known', [h('p', { class: 'd-text', text: s.text })]));
+    body.appendChild(section('What is known', [datedText(s.text)]));
+    if (nsrc) body.appendChild(h('button', { class: 'src-jump', text: 'Based on ' + nsrc + ' source' + (nsrc > 1 ? 's' : '') + ' — see them', onclick: function () { var t = $('sheet-body').querySelector('.srcs'); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }));
 
     var ls = linksFor(s.id);
     if (ls.length) {
@@ -857,9 +896,11 @@
       function () { return contextFor({ lat: s.lat, lon: s.lon, places: [s.id], words: [s.name].concat(s.ar ? [s.ar] : []).concat(s.aliases || []) }); }));
     docsSection(body, { places: [s.id], words: [s.name].concat(s.aliases || []) }, 'In the archive', s.name);
     body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Sources' }), h('ol', { class: 'srcs' }, s.sources.map(function (x) { return h('li', {}, [h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t })]); }))]));
+    body.appendChild(h('details', { class: 'more-facts' }, [h('summary', { text: 'Details' }), facts([['Category', lay.label], ['Active', s.y0 ? (s.y1 && s.y1 !== s.y0 ? s.y0 + '–' + s.y1 : String(s.y0)) : ''], ['Accuracy', 'within about ' + s.r + ' km'], ['Coordinates', s.lat.toFixed(4) + ', ' + s.lon.toFixed(4)], ['Reference', s.ref]])]));
     body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Zoom to this place', onclick: function () { map.flyTo([s.lat, s.lon], 16, { duration: 0.8 }); } })]));
     openPanel('sheet');
     drawTimeline();
+    if (!DESKTOP.matches && !aiming) { var pt = map.latLngToContainerPoint([s.lat, s.lon]), mh = $('map').clientHeight; if (pt.y > mh * 0.3 || pt.y < 40) map.panTo(aimAbovePanel(s.lat, s.lon, map.getZoom()), { duration: 0.5 }); }
   }
 
   /* ---------- present-day feature details ---------- */
@@ -1083,7 +1124,7 @@
       m.addTo(a.documented ? wpnGroup : isWpn(a) ? milGroup : profGroup);
     });
   }
-  function syncProfiles() { if (profOn && map.getZoom() >= 14) map.addLayer(profGroup); else map.removeLayer(profGroup); if (milOn && map.getZoom() >= 11) map.addLayer(milGroup); else map.removeLayer(milGroup); if (milOn && map.getZoom() >= 9) map.addLayer(wpnGroup); else map.removeLayer(wpnGroup); }
+  function syncProfiles() { if (profOn && map.getZoom() >= 14) map.addLayer(profGroup); else map.removeLayer(profGroup); if (milOn && map.getZoom() >= 14) map.addLayer(milGroup); else map.removeLayer(milGroup); if (milOn && map.getZoom() >= 12) map.addLayer(wpnGroup); else map.removeLayer(wpnGroup); }
   map.on('zoomend', syncProfiles);
   $('hist-toggles').appendChild(toggleRow('profiles', 'Researched landmarks & buildings', 'Ministries, hospitals, mosques, old city and historic sites, with histories', profOn, function (v) { profOn = v; store.set('prof', v); syncProfiles(); }));
   $('hist-toggles').appendChild(toggleRow('milprof', 'Camps & weapons sites', 'Researched military camps, missile and weapons-programme sites; each profile gives the dates its sources cover', milOn, function (v) { milOn = v; store.set('milprof', v); syncProfiles(); }));
@@ -1328,6 +1369,7 @@
     setTimeout(function () { $('term-q').focus(); $('term-q').select(); }, 30);
   }
   function closeTerm() { $('term').hidden = true; }
+  var PLACE_TAG = { detention: 'Prison', security: 'Security', military: 'Base', airstrike: 'Airstrike', battle: 'Fighting', massacre: 'Killing', power: 'Power', landmark: 'Landmark', event: 'Event' };
   function termResults(q) {
     var years = (q.match(/\b(1[89]\d\d|20[0-2]\d)\b(?:\s*[-–]\s*\b(1[89]\d\d|20[0-2]\d)\b)?/) || []);
     var yf = years[1] ? +years[1] : null, yt = years[2] ? +years[2] : yf;
@@ -1338,7 +1380,7 @@
     if (termKind === 'all' || termKind === 'place') SITES.forEach(function (s) {
       var r = span(s); if (yf && (r[1] < yf || r[0] > yt)) return;
       if (words.length && !match(s.name + ' ' + (s.ar || '') + ' ' + s.relevance + ' ' + s.text + ' ' + LAYERS[s.layer].label)) return;
-      out.push({ k: 'place', sort: 0, sc: rel(s.name + ' ' + (s.ar || ''), s.relevance + ' ' + s.text), d: s.period, t: s.name, sub: LAYERS[s.layer].label + ' · ' + s.relevance, go: function () { closeTerm(); focusSite(s); }, s: s });
+      out.push({ k: 'place', tag: PLACE_TAG[s.layer] || 'Place', yk: (s.y0 == null ? 9999 : (s.y0 >= 1969 && s.y0 <= 2011 ? 0 : 5000) + s.y0), sort: 0, sc: rel(s.name + ' ' + (s.ar || ''), s.relevance + ' ' + s.text), d: s.period, t: s.name, sub: LAYERS[s.layer].label + ' · ' + s.relevance, go: function () { closeTerm(); focusSite(s); }, s: s });
     });
     if ((termKind === 'all' || termKind === 'area') && !yf) AREAS.forEach(function (a) {
       if (words.length && !match(areaNames(a).join(' ') + ' ' + (a.summary || '') + ' ' + (a.era || ''))) return;
@@ -1353,16 +1395,17 @@
       out.push({ k: r.y === 'event' ? 'event' : 'doc', sort: r.y === 'event' ? 1.5 : 2, sc: rel(r.t, (r.m || '') + ' ' + (r.s || '')), d: r.d, t: r.t, sub: (TYPE_LABEL[r.y] || r.y) + ' · ' + (r.s || '') + ' · ' + String(r.m || '').slice(0, 160), go: function () { closeTerm(); openRecord(r); } });
     });
     if (!words.length && !yf && termKind === 'all') out = out.filter(function (x) { return x.k !== 'doc'; });
-    out.sort(function (a, b) { return words.length ? (b.sc - a.sc || a.sort - b.sort || String(a.d || '').localeCompare(String(b.d || ''))) : (a.sort - b.sort || String(a.d || '').localeCompare(String(b.d || ''))); });
+    var dk = function (x) { return x.yk != null ? x.yk : String(x.d || ''); }, cmp = function (a, b) { var x = dk(a), y = dk(b); return typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y)); };
+    out.sort(function (a, b) { return words.length ? (b.sc - a.sc || a.sort - b.sort || cmp(a, b)) : (a.sort - b.sort || cmp(a, b)); });
     return out;
   }
   function runTerm() {
     var q = $('term-q').value.trim(), list = $('term-list');
     var res = termResults(q);
     list.innerHTML = '';
-    $('term-meta').textContent = (RECORDS ? '' : 'Loading the archive… ') + res.length + ' result' + (res.length === 1 ? '' : 's') + (q ? ' for “' + q + '”' : '') + (RECORDS ? ' · ' + RECORDS.length + ' documents, ' + AREAS.length + ' area profiles, ' + SITES.length + ' mapped places' : '');
+    $('term-meta').textContent = (RECORDS ? '' : 'Loading the archive… ') + (q ? res.length + ' found for “' + q + '”' : 'Gaddafi years (1969–2011) first. Type a name, place or year to search ' + (RECORDS ? RECORDS.length.toLocaleString() + ' documents' : 'everything') + '.');
     res.slice(0, 200).forEach(function (x) {
-      list.appendChild(h('button', { class: 'trow k-' + x.k, onclick: x.go }, [h('span', { class: 'tk', text: { place: 'PLACE', area: 'AREA', doc: 'DOC', event: 'EVENT' }[x.k] }), h('span', { class: 'td', text: x.d || '' }), h('span', { class: 'tt' }, [h('b', { text: x.t }), h('small', { text: x.sub })])]));
+      list.appendChild(h('button', { class: 'trow k-' + x.k, onclick: x.go }, [h('span', { class: 'tk', text: x.tag || { place: 'Place', area: 'Area', doc: 'Document', event: 'Event' }[x.k] }), h('span', { class: 'td', text: x.d || '' }), h('span', { class: 'tt' }, [h('b', { text: x.t }), h('small', { text: x.sub })])]));
     });
     if (res.length > 200) list.appendChild(h('p', { class: 'd-text muted', text: 'Showing the first 200 of ' + res.length + '. Type a word, a name or a year, or pick a source above, to narrow it down. Add words or a year to narrow it down.' }));
   }
@@ -1465,7 +1508,7 @@
     if ($('chat-panel').hidden) {
       $('chat-panel').hidden = false; document.body.classList.add('chat-open');
       if (!DESKTOP.matches) { closePanel('drawer'); closePanel('sheet'); }
-      if (!$('chat-log').children.length) greet();
+      if (!$('chat-log').children.length) { greet(); $('chat-log').scrollTop = 0; return; }
     }
     scrollChat();
   }
@@ -2013,9 +2056,11 @@
     var row = function (color, label, n, shape, key) { return h('div', { class: 'lg' }, [key ? partGlyph(key) : h('span', { class: 'sw', style: 'background:' + color + (shape === 'ring' ? ';background:none;border:2px dashed ' + color + ';border-radius:50%' : '') }), label, n != null ? h('small', { text: String(n) }) : null]); };
     box.appendChild(h('h4', { text: 'Shown on the map' }));
     var any = false;
-    GROUPS.forEach(function (g) { g.parts.forEach(function (p) {
-      var i = inputs[p[0]]; if (!i || !i.checked) return; any = true;
+    GROUPS.forEach(function (g) { var headed = false; g.parts.forEach(function (p) {
+      var i = inputs[p[0]]; if (!i || !i.checked) return;
       var n = LAYERS[p[0]] ? SITES.filter(function (s) { return s.layer === p[0] && visible(s); }).length : p[0] === 'milprof' ? milCount : p[0] === 'profiles' ? AREAS.filter(function (x) { return ['landmark', 'government', 'prison'].indexOf(x.kind) >= 0 || /^wp-/.test(x.id); }).length : p[0] === 'reports' ? REPORTS.length : (savedData[p[0].replace(/^osm-/, '')] ? savedData[p[0].replace(/^osm-/, '')].elements.length : null);
+      if (n === 0) return; any = true;
+      if (!headed && g.t) { box.appendChild(h('h5', { class: 'lg-grp', text: g.t })); headed = true; }
       box.appendChild(row(partColor(p[0]), p[1] + (p[2] === 'now' ? ' (today)' : ''), n, null, p[0]));
     }); });
     if (!any) box.appendChild(h('p', { text: 'Nothing is switched on. Open the Layers tab to choose.' }));
@@ -2037,7 +2082,7 @@
       var head = h('div', { class: 'selhead' }, [h('div', { class: 'ic', style: c ? '--c:' + c : '', text: curTarget && curTarget.code && !/^<svg/.test(curTarget.code) ? curTarget.code : '' }), h('div', { class: 'tt' })]);
       if (!(curTarget && curTarget.code)) head.firstChild.innerHTML = LAYER_ICON.landmark;
       if (curTarget && /^<svg/.test(curTarget.code || '')) head.firstChild.innerHTML = curTarget.code;
-      var tt = head.querySelector('.tt'); tt.appendChild(t); var ar = wrap.querySelector('.d-ar'); if (ar) tt.appendChild(ar); tt.appendChild(h('div', { class: 'sub', text: kind }));
+      var tt = head.querySelector('.tt'); tt.appendChild(t); var ar = wrap.querySelector('.d-ar'); if (ar) tt.appendChild(ar); 
       if (wrap !== b && !wrap.children.length) wrap.remove();
       b.insertBefore(head, b.firstChild);
     }
@@ -2448,7 +2493,7 @@
   refresh();
   refreshOSM();
   hud(map.getCenter());
-  if (DESKTOP.matches) openPanel('drawer');
+  if (DESKTOP.matches && store.get('drawerOpen', false)) openPanel('drawer');
   maybeWelcome();
   setTheme(store.get('theme', 'light'), true);
   loadReports();

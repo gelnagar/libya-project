@@ -210,7 +210,7 @@
   "width": 6000,
   "height": 400
  },
- "checked": "2026-10-20T00:49:25.836159+00:00",
+ "checked": "2026-10-20T03:09:09.313309+00:00",
  "overview": {
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1983-overview.jpg",
   "reduced_by": 8,
@@ -227,5 +227,20 @@
   "coast_score": 0.902
  },
  "locate_failed": true,
- "mosaic_version": 2
+ "mosaic_version": 2,
+ "cut": {
+  "window_in_frame": [
+   284838,
+   11066,
+   13224,
+   8507
+  ],
+  "reduced_by": 1,
+  "file": "kh9-1983-cut.jpg",
+  "scale": 2.6448,
+  "width": 5000,
+  "height": 3217,
+  "grid_every_px": 1000,
+  "size_bytes": 33974876
+ }
 }

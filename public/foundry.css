@@ -656,7 +656,7 @@ html.dark .door-choice:hover { background: #22324a; }
 html.dark .door-head p, html.dark .door-choice small, html.dark .sc-head small, html.dark .sc-place small { color: #abb3bf; }
 
 /* ---- Phase 2A: neighbourhood badges ---- */
-html .hood { display: flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; background: var(--fy-panel); color: var(--fy-text); border: 1.5px solid var(--fy-border); border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.18); cursor: pointer; white-space: nowrap; width: max-content; transform: translateX(calc(60px - 50%)); }
+html .hood { display: flex; align-items: center; gap: 8px; padding: 6px 14px; background: var(--fy-panel); color: var(--fy-text); border: 1.5px solid var(--fy-border); border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.18); cursor: pointer; white-space: nowrap; width: max-content; transform: translateX(calc(60px - 50%)); }
 html .hood:hover { border-color: var(--fy-accent); }
 html .hood b { display: grid; place-items: center; min-width: 34px; height: 34px; border-radius: 50%; background: var(--fy-accent); color: #fff; font-size: 1.02em; font-variant-numeric: tabular-nums; }
 html .hood span { display: flex; flex-direction: column; font-weight: 700; font-size: .92em; line-height: 1.15; }

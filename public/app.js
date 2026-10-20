@@ -2817,7 +2817,7 @@
       // one small layer icon per kind of place, with how many of that kind are here
       var dots = top.map(function (l) { return '<i class="hk" title="' + esc(LAYERS[l].label) + '">' + glyph(l, 16).outerHTML + '<em>' + kinds[l] + '</em></i>'; }).join('');
       L.marker([g.d[2], g.d[3]], { keyboard: true, title: g.d[0] + ': ' + n + (n === 1 ? ' place' : ' places'), zIndexOffset: 500,
-        icon: L.divIcon({ className: '', iconSize: [120, 52], iconAnchor: [60, 26], html: '<div class="hood"><b>' + n + '</b><span>' + esc(g.d[0]) + (g.more.length ? '<em>+ ' + g.more.length + ' nearby</em>' : '') + '<small>' + dots + '</small></span></div>' }) })
+        icon: L.divIcon({ className: '', iconSize: [120, 52], iconAnchor: [60, 26], html: '<div class="hood"><span>' + esc(g.d[0]) + (g.more.length ? '<em>+ ' + g.more.length + ' nearby</em>' : '') + '<small>' + dots + '</small></span></div>' }) })
         .on('click', function () { openHood(g); }).addTo(hoodLayer);
     });
     hoodLayer.addTo(map); leaderLayer.clearLayers();

@@ -56,7 +56,32 @@ jq -c '.[]' archive/maps/overlays.json | while read -r m; do
     gdal_translate -q -a_srs "$gsrs" $args "$in" "work/$id.gcp.tif"
     in="work/$id.gcp.tif"
     order=$([ "$ngcp" -ge 6 ] && echo 2 || echo 1)
-    gdalwarp -q -order $order -t_srs EPSG:3857 -r bilinear -dstalpha -overwrite "$in" "work/$id.3857.tif"
+    if [ "$(jq -r '.warp // empty' <<<"$m")" = "tps" ]; then
+      # thin-plate spline through every landmark, trimmed to the area they cover (plus ~300 m) so nothing unverified shows
+      jq -c '[.gcps[] | [.[2], .[3]]]' <<<"$m" | python3 -c '
+import json, sys, math
+P = sorted(map(tuple, json.load(sys.stdin)))
+def cross(o, a, b): return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+lo, hi = [], []
+for p in P:
+    while len(lo) >= 2 and cross(lo[-2], lo[-1], p) <= 0: lo.pop()
+    lo.append(p)
+for p in reversed(P):
+    while len(hi) >= 2 and cross(hi[-2], hi[-1], p) <= 0: hi.pop()
+    hi.append(p)
+H = lo[:-1] + hi[:-1]
+cx, cy = sum(p[0] for p in H) / len(H), sum(p[1] for p in H) / len(H)
+ring = []
+for x, y in H:  # push each corner ~300 m out from the centre
+    d = math.hypot(x - cx, y - cy) or 1
+    ring.append([x + (x - cx) / d * 0.0033, y + (y - cy) / d * 0.0027])
+ring.append(ring[0])
+print(json.dumps({"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {}, "geometry": {"type": "Polygon", "coordinates": [ring]}}]}))
+' > "work/$id.hull.geojson"
+      gdalwarp -q -tps -t_srs EPSG:3857 -r bilinear -dstalpha -cutline "work/$id.hull.geojson" -crop_to_cutline -co COMPRESS=DEFLATE -co BIGTIFF=IF_SAFER -overwrite "$in" "work/$id.3857.tif"
+    else
+      gdalwarp -q -order $order -t_srs EPSG:3857 -r bilinear -dstalpha -overwrite "$in" "work/$id.3857.tif"
+    fi
   else
     gdalwarp -q -t_srs EPSG:3857 -r bilinear -dstalpha -overwrite "$in" "work/$id.3857.tif"
   fi

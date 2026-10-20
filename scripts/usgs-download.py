@@ -20,9 +20,8 @@ WORK = os.environ.get('USGS_WORK', 'work/usgs')
 PREV = 'archive/maps/preview/usgs'
 PREVIEW_LONG = 6000   # long side of the whole-frame preview, px
 CUT_PREVIEW_LONG = 5000
-MAX_ASSET = 1_900_000_000
+MAX_ASSET = 1_900_000_000  # GitHub release assets must be under 2 GiB
 MOSAIC_VERSION = 2  # bump when joining the film segments changes, so overviews are rebuilt
-CITY_BOX = (13.09, 32.78, 13.32, 32.92)  # lon0, lat0, lon1, lat1 cut out of each frame (as CITY in usgs-register.py)  # GitHub release assets must be under 2 GiB
 
 def call(endpoint, payload, key=None):
     req = urllib.request.Request(API + endpoint, data=json.dumps(payload).encode(), headers={'Content-Type': 'application/json', **({'X-Auth-Token': key} if key else {})})
@@ -203,13 +202,9 @@ def run(key, pick, overlays):
     crop, sc, gf = pick.get('crop'), s, pick.get('gcps_frame')  # a hand-set crop is in whole-preview pixels
     win = None
     if gf:
-        # landmarks [frame x, frame y, lon, lat]: cut the CITY box they imply, with a margin
+        # landmarks [frame x, frame y, lon, lat]: cut the film around them with a 10% margin (the warp is trimmed to them later)
         P = np.array(gf, float)
-        to_frame = registrar().fit_poly(P[:, 2:4], P[:, :2], 2 if len(P) >= 8 else 1)
-        lons, lats = (CITY_BOX[0], CITY_BOX[2]), (CITY_BOX[1], CITY_BOX[3])
-        edge = [(lo, la) for lo in np.linspace(*lons, 9) for la in lats] + [(lo, la) for la in np.linspace(*lats, 9) for lo in lons]
-        c = to_frame(np.array(edge))
-        (x0, y0), (x1, y1) = c.min(0), c.max(0); pad = 0.04 * max(x1 - x0, y1 - y0)
+        (x0, y0), (x1, y1) = P[:, :2].min(0), P[:, :2].max(0); pad = 0.10 * max(x1 - x0, y1 - y0)
         x0, y0 = max(0, int(x0 - pad)), max(0, int(y0 - pad)); x1, y1 = min(info['width'], int(x1 + pad)), min(info['height'], int(y1 + pad))
         win = [x0, y0, x1 - x0, y1 - y0]
     elif not crop:

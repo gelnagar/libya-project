@@ -288,48 +288,83 @@ def loo_errors(C, R, order=2):
     """Leave-one-out error of each point, metres: how far off the fit is where that point was not used."""
     return [float(np.hypot(*(fit_poly(np.delete(C, i, 0), np.delete(R, i, 0), order)(C[i:i + 1])[0] - R[i]))) * M_PER_PX for i in range(len(C))]
 
+def mls_affine(src, dst, sigma):
+    """Moving least squares: for a query point, an affine map fitted to the src->dst pairs weighted by closeness.
+    Follows a bent image (a panoramic, tilted film frame) where one global formula cannot. Returns f(q) -> (2,3) matrix."""
+    src, dst = np.asarray(src, float), np.asarray(dst, float)
+    X = np.c_[src, np.ones(len(src))]
+    def at(q):
+        w = np.exp(-np.sum((src - q) ** 2, 1) / (2 * sigma ** 2)) + 1e-6
+        coef, *_ = np.linalg.lstsq(X * w[:, None], dst * w[:, None], rcond=None)
+        return coef.T
+    return at
+
+def mls_predict(src, dst, sigma, q):
+    at = mls_affine(src, dst, sigma)
+    return np.array([at(p) @ [p[0], p[1], 1.0] for p in np.asarray(q, float).reshape(-1, 2)])
+
+def mls_loo(C, R, sigma):
+    """Leave-one-out error of each point (reference pixels): its distance from what the others predict there."""
+    return np.array([np.hypot(*(mls_predict(np.delete(C, i, 0), np.delete(R, i, 0), sigma, C[i:i + 1])[0] - R[i])) for i in range(len(C))])
+
+def edge_windows(pyr, ref, C, R, res_m, patch_m, search_m, centres, sigma):
+    """Match today's imagery around each reference-pixel centre against the film, predicted locally from the points so far."""
+    step = res_m / M_PER_PX
+    ref_work = cv2.resize(ref, None, fx=1 / step, fy=1 / step, interpolation=cv2.INTER_AREA) if step > 1 else ref
+    pw, sw = int(patch_m / res_m), int(search_m / res_m)
+    to_cut = mls_affine(R, C, sigma)
+    out = []
+    for cx, cy in centres:
+        tx, ty = int(cx / step) - pw // 2, int(cy / step) - pw // 2
+        if tx < 0 or ty < 0 or tx + pw > ref_work.shape[1] or ty + pw > ref_work.shape[0]: continue
+        tmpl = ref_work[ty:ty + pw, tx:tx + pw]
+        if tmpl.std() < 6 or (tmpl < 5).mean() > 0.25: continue
+        A = to_cut(np.array([cx, cy]))
+        f = lambda p, A=A: np.asarray(p, float).reshape(-1, 2) @ A[:, :2].T + A[:, 2]
+        sx0, sy0 = (tx - sw) * step, (ty - sw) * step
+        win = pyr.warp(f, sx0, sy0, pw + 2 * sw, pw + 2 * sw, step)
+        if (win < 3).mean() > 0.25 or win.std() < 6: continue
+        r = cv2.matchTemplate(edges(win), edges(tmpl), cv2.TM_CCOEFF_NORMED)
+        _, v, _, loc = cv2.minMaxLoc(r)
+        r2 = r.copy(); cv2.circle(r2, loc, max(3, pw // 6), -1, -1)
+        if v < 0.2 or v - r2.max() < 0.05: continue
+        shown = np.array([sx0 + (loc[0] + pw / 2) * step, sy0 + (loc[1] + pw / 2) * step])
+        out.append((f(shown)[0], np.array([(tx + pw / 2) * step, (ty + pw / 2) * step]), float(v)))
+    return out
+
 def register_from_landmarks(oid, pyr, ref, origin, L, W, H):
-    """Start from hand-marked landmarks, then add edge-matched points between them. Keeps the landmarks in the final fit."""
-    C0 = L[:, :2]; R0 = np.array([ref_px(lo, la) for lo, la in L[:, 2:4]])
-    order = 2 if len(L) >= 8 else 1
-    cut_to_ref, ref_to_cut = fit_poly(C0, R0, order), fit_poly(R0, C0, order)
-    base = loo_errors(C0, R0, order)
-    info = {'landmarks': len(L), 'landmarks_median_m': round(float(np.median(base)), 1), 'landmarks_worst_m': round(float(max(base)), 1), 'stages': []}
-    print(oid, f'{len(L)} landmarks, leave-one-out median {np.median(base):.1f} m, worst {max(base):.1f} m')
-    corners = cut_to_ref(np.array([[0, 0], [W, 0], [W, H], [0, H]]))
-    lo, hi = np.maximum(corners.min(0), 0), np.minimum(corners.max(0), [ref.shape[1], ref.shape[0]])
-    box = (lo + 0.03 * (hi - lo), hi - 0.03 * (hi - lo))
-    C, R = C0, R0
-    for res_m, patch_m, search_m, grid_n in ((4, 800, 200, 12), (2, 400, 50, 16)):
-        pairs = edge_stage(pyr, ref, ref_to_cut, cut_to_ref, res_m, patch_m, search_m, grid_n, box)
-        # landmarks always take part; edge points must agree with them
-        allp = [(c, r, 1.0) for c, r in zip(C0, R0)] + pairs
-        f = robust_fit(allp, 2, MIN_POINTS, res_m)
-        kept = 0 if f is None else len(f[2]) - len(C0)
-        info['stages'].append({'res_m': res_m, 'windows_matched': len(pairs), 'edge_points_kept': max(0, kept)})
-        print(oid, f'edges at {res_m} m: {len(pairs)} windows matched, {max(0, kept)} kept')
-        if f is None or kept < 6: continue
-        cut_to_ref, ref_to_cut, C, R, _ = f
-    # never let edge points pull the fit away from the landmarks: compare the landmarks' leave-one-out error both ways
-    final = loo_errors(C, R) if len(C) > len(C0) else base
-    if len(C) > len(C0):
-        lm_err = [float(np.hypot(*(cut_to_ref(C0[i:i + 1])[0] - R0[i]))) * M_PER_PX for i in range(len(C0))]
-        if np.median(lm_err) > 1.5 * np.median(base) + 5:
-            print(oid, 'edge points disagree with the landmarks; keeping the landmarks alone')
-            C, R, final = C0, R0, base
-    info.update({'points': len(C), 'rms_m': round(float(np.sqrt(np.mean(np.square(final)))), 1), 'median_m': round(float(np.median(final)), 1),
-                 'method': 'hand-marked landmarks' + (', refined by edge matching against Esri World Imagery z16' if len(C) > len(C0) else '') + '; 2nd-order polynomial',
-                 'at': datetime.datetime.now(datetime.timezone.utc).isoformat()})
-    gcps = [[round(float(x), 1), round(float(y), 1), *[round(v, 7) for v in px2ll(rx + origin[0], ry + origin[1])]] for (x, y), (rx, ry) in zip(C, R)]
-    check_image(oid, pyr, fit_poly(R, C, 2 if len(C) >= 8 else 1), ref, box)
+    """Hand-marked landmarks are the control points. 1970s film and today's imagery correlate too weakly for window
+    matching (tested on the November 1972 frame: scores near 0.07 even beside the landmarks), so nothing is added
+    automatically. The frame is warped with a thin-plate spline through every landmark and trimmed to the area they cover.
+    Accuracy: each landmark against what its neighbours predict there (local moving least squares, leave-one-out)."""
+    C = L[:, :2].copy(); R = np.array([ref_px(lo, la) for lo, la in L[:, 2:4]])
+    sigma = 1500 / M_PER_PX
+    loo = mls_loo(C, R, sigma) * M_PER_PX
+    info = {'points': len(C), 'rms_m': round(float(np.sqrt(np.mean(loo ** 2))), 1), 'median_m': round(float(np.median(loo)), 1),
+            'p90_m': round(float(np.percentile(loo, 90)), 1),
+            'worst': sorted([[round(float(e), 1), [round(float(v), 6) for v in l[2:4]]] for e, l in zip(loo, L)], reverse=True)[:5],
+            'method': 'hand-marked landmarks against Esri World Imagery z16; thin-plate-spline warp, trimmed to the landmarks',
+            'at': datetime.datetime.now(datetime.timezone.utc).isoformat()}
+    print(oid, f'{len(C)} landmarks, leave-one-out median {info["median_m"]} m, 90% within {info["p90_m"]} m')
+    gcps = [[round(float(x), 1), round(float(y), 1), round(float(lo), 7), round(float(la), 7)] for x, y, lo, la in L]
+    (bx0, by0), (bx1, by1) = R.min(0), R.max(0)
+    check_image(oid, pyr, lambda q: mls_predict(R, C, sigma / 2, q), ref, (np.array([bx0, by0]), np.array([bx1, by1])), size=2000)
     return gcps, info
 
 def check_image(oid, pyr, ref_to_cut, ref, box, size=2400, block=160):
-    """Checkerboard of today's imagery and the warped frame, so the fit can be judged by eye."""
+    """Checkerboard of today's imagery and the warped frame, so the fit can be judged by eye. The map is evaluated on a
+    coarse grid and interpolated, so slow (local) fits stay quick."""
     (x0, y0), (x1, y1) = box
     step = max(x1 - x0, y1 - y0) / size
     w, h = int((x1 - x0) / step), int((y1 - y0) / step)
-    warped = pyr.warp(ref_to_cut, x0, y0, w, h, step)
+    gw, gh = max(2, w // 40), max(2, h // 40)
+    gx, gy = np.meshgrid(np.linspace(x0, x0 + w * step, gw), np.linspace(y0, y0 + h * step, gh))
+    cp = ref_to_cut(np.c_[gx.ravel(), gy.ravel()])
+    mx = cv2.resize(cp[:, 0].reshape(gh, gw).astype(np.float32), (w, h), interpolation=cv2.INTER_LINEAR)
+    my = cv2.resize(cp[:, 1].reshape(gh, gw).astype(np.float32), (w, h), interpolation=cv2.INTER_LINEAR)
+    d = np.hypot(mx[0, 1] - mx[0, 0], my[0, 1] - my[0, 0])
+    level = max(0, min(len(pyr.levels) - 1, int(math.log2(max(1.0, d)))))
+    warped = cv2.remap(pyr.levels[level], mx / 2 ** level, my / 2 ** level, cv2.INTER_LINEAR, borderValue=0)
     today = cv2.resize(ref[int(y0):int(y0 + h * step), int(x0):int(x0 + w * step)], (w, h), interpolation=cv2.INTER_AREA)
     board = ((np.arange(w)[None, :] // block + np.arange(h)[:, None] // block) % 2).astype(bool)
     out = np.where(board, CLAHE.apply(warped), CLAHE.apply(today))
@@ -357,6 +392,7 @@ def main():
             o['registration'] = info
             if gcps:
                 o['gcps'], o['gcp_srs'] = gcps, 'EPSG:4326'
+                if o.get('init_gcps'): o['warp'] = 'tps'
                 o['note'] = o.get('note', '').split(' Lined up automatically')[0] + f" Lined up automatically with today's imagery; typical error about {info['median_m']:.0f} m."
             status[o['id']] = info
             os.remove(cut)

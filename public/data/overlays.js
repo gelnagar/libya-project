@@ -28,7 +28,7 @@ window.ATLAS_OVERLAYS = [
   "kind": "satellite",
   "title": "Spy satellite, November 1972 (KH-9 HEXAGON)",
   "year": 1972,
-  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up automatically with today's imagery; typical error about 184 m.",
+  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up by hand on 20 landmarks (harbour, old city, Mitiga runway, the forest park, stadium, coast); typical error about 180 m, so treat single buildings as approximate.",
   "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003",
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",

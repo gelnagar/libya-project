@@ -190,5 +190,14 @@
   "width": 6000,
   "height": 394
  },
- "checked": "2026-10-19T16:30:11.463546+00:00"
+ "checked": "2026-10-19T23:55:43.890484+00:00",
+ "overview": {
+  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1983-overview.jpg",
+  "reduced_by": 9
+ },
+ "locate": {
+  "crop_in_overview": null,
+  "agree": 0
+ },
+ "locate_failed": true
 }

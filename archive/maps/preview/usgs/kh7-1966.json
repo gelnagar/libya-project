@@ -62,5 +62,14 @@
   "width": 6000,
   "height": 1998
  },
- "checked": "2026-10-19T16:22:49.189708+00:00"
+ "checked": "2026-10-19T23:28:59.003835+00:00",
+ "overview": {
+  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh7-1966-overview.jpg",
+  "reduced_by": 4
+ },
+ "locate": {
+  "crop_in_overview": null,
+  "agree": 0
+ },
+ "locate_failed": true
 }

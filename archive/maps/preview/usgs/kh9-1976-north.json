@@ -126,5 +126,14 @@
   "width": 6000,
   "height": 608
  },
- "checked": "2026-10-19T16:26:49.470667+00:00"
+ "checked": "2026-10-19T23:41:38.902996+00:00",
+ "overview": {
+  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1976-north-overview.jpg",
+  "reduced_by": 6
+ },
+ "locate": {
+  "crop_in_overview": null,
+  "agree": 5
+ },
+ "locate_failed": true
 }

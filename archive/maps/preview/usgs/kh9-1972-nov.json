@@ -78,5 +78,14 @@
   "width": 6000,
   "height": 1034
  },
- "checked": "2026-10-19T16:25:17.018597+00:00"
+ "checked": "2026-10-19T23:36:49.675159+00:00",
+ "overview": {
+  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1972-nov-overview.jpg",
+  "reduced_by": 4
+ },
+ "locate": {
+  "crop_in_overview": null,
+  "agree": 5
+ },
+ "locate_failed": true
 }

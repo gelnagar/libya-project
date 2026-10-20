@@ -126,5 +126,14 @@
   "width": 6000,
   "height": 602
  },
- "checked": "2026-10-19T16:28:16.084241+00:00"
+ "checked": "2026-10-19T23:48:02.092757+00:00",
+ "overview": {
+  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1976-south-overview.jpg",
+  "reduced_by": 6
+ },
+ "locate": {
+  "crop_in_overview": null,
+  "agree": 4
+ },
+ "locate_failed": true
 }

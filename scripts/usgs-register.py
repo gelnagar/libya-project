@@ -393,7 +393,8 @@ def main():
             if gcps:
                 o['gcps'], o['gcp_srs'] = gcps, 'EPSG:4326'
                 if o.get('init_gcps'): o['warp'] = 'tps'
-                o['note'] = o.get('note', '').split(' Lined up automatically')[0] + f" Lined up automatically with today's imagery; typical error about {info['median_m']:.0f} m."
+                how = f"Lined up by hand on {info['points']} landmarks" if o.get('init_gcps') else "Lined up automatically with today's imagery"
+                o['note'] = o.get('note', '').split(' Lined up')[0] + f" {how}; typical error about {info['median_m']:.0f} m."
             status[o['id']] = info
             os.remove(cut)
         except Exception as e:

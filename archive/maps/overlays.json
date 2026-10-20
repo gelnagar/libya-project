@@ -76,7 +76,7 @@
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1972-nov.tif",
   "license": "Public domain (U.S. government work)",
   "zooms": "12-17",
-  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up automatically with today's imagery; typical error about 184 m.",
+  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up by hand on 20 landmarks (harbour, old city, Mitiga runway, the forest park, stadium, coast); typical error about 180 m, so treat single buildings as approximate.",
   "init_gcps": [
    [
     7735.0,

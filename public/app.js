@@ -2823,7 +2823,7 @@
     var z = map.getZoom(), merged = [];
     Object.keys(groups).map(function (k) { return groups[k]; }).sort(function (a, b) { return (b.list.length + Object.keys(b.osm || {}).length) - (a.list.length + Object.keys(a.osm || {}).length); }).forEach(function (g) {
       var p = map.project([g.d[2], g.d[3]], z), hit = null, me = badgeBox(g.list, g.osm);
-      merged.forEach(function (m) { if (!hit && Math.abs(m.p.x - p.x) < (m.box.w + me.w) / 2 + 8 && Math.abs(m.p.y - p.y) < (m.box.h + me.h) / 2 + 8) hit = m; });
+      merged.forEach(function (m) { if (!hit && Math.abs(m.p.x - p.x) < (m.box.w + me.w) / 2 + 8 && p.y - 26 < m.p.y - 26 + m.box.h + 8 && m.p.y - 26 < p.y - 26 + me.h + 8) hit = m; });
       if (hit) { hit.list = hit.list.concat(g.list); hit.more.push(g.d[0]); for (var q in g.osm || {}) hit.osm[q] = (hit.osm[q] || 0) + g.osm[q]; hit.box = badgeBox(hit.list, hit.osm); }
       else merged.push({ d: g.d, list: g.list.slice(), p: p, more: [], osm: Object.assign({}, g.osm || {}), box: me });
     });
@@ -2849,7 +2849,7 @@
   function badgeBox(list, osm) {
     var kinds = {}; list.forEach(function (s) { kinds[s.layer] = 1; });
     var n = Object.keys(kinds).length + Object.keys(osm || {}).length, rows = Math.max(1, Math.ceil(n / 5));
-    return { w: Math.min(230, Math.max(110, 32 + 40 * Math.min(n, 5))), h: 34 + 20 * rows };
+    return { w: Math.min(240, Math.max(110, 24 + 46 * Math.min(n, 4))), h: 60 + 24 * Math.max(1, Math.ceil(n / 4)) };
   }
   function clearHoodHide() { document.querySelectorAll('.hood-hide').forEach(function (e) { e.classList.remove('hood-hide'); }); }
   function openHood(g) {

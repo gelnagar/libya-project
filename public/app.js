@@ -583,6 +583,7 @@
       osmActive[k] = v; store.set('osm', osmActive);
       if (!v) { map.removeLayer(osmGroups[k]); if (osmAbort[k]) osmAbort[k].abort(); if (k !== 'buildings' && (!o.saved || savedState[k] === 'missing')) osmGroups[k].clearLayers(); }
       refreshOSM(true);
+      if (typeof syncHoods === 'function' && hoodLayer) { clearHoodHide(); syncHoods(); }
     }, sw));
   });
   function bboxKey() {
@@ -625,6 +626,7 @@
         savedData[k] = { elements: (j.features || []).map(expand), generated: j.generated };
         savedState[k] = 'ready';
         drawOSM(k, savedData[k]);
+        if (hoodLayer && map.hasLayer(hoodLayer)) { clearHoodHide(); syncHoods(); }
         status(savedData[k].elements.length ? null : 'No ' + OSM[k].label.toLowerCase() + ' mapped around Tripoli.', 3000);
         refreshOSM(true);
       })
@@ -2803,12 +2805,27 @@
       var d = hoodOf(s); if (!d) { loose.push(s); return; }
       (groups[d[0]] = groups[d[0]] || { d: d, list: [] }).list.push(s);
     });
+    // switched-on present-day layers (hospitals, police, embassies…) are counted in the badges too, whatever the zoom
+    Object.keys(OSM).forEach(function (k) {
+      if (!osmActive[k] || !OSM_ICONS[k] || !OSM[k].saved) return;
+      var data = loadSaved(k); if (!data) return;
+      (data.elements || []).forEach(function (el) {
+        var lat = el.lat, lon = el.lon;
+        if (lat == null && el.bounds) { lat = (el.bounds.minlat + el.bounds.maxlat) / 2; lon = (el.bounds.minlon + el.bounds.maxlon) / 2; }
+        if (lat == null) return;
+        var d = hoodOf({ lat: lat, lon: lon }); if (!d) return;
+        var g = (groups[d[0]] = groups[d[0]] || { d: d, list: [] });
+        g.osm = g.osm || {}; g.osm[k] = (g.osm[k] || 0) + 1;
+      });
+      osmGroups[k].eachLayer(function (m) { var el = m.getElement && m.getElement(); if (el) el.classList.add('hood-hide'); });
+    });
     // merge badges that would overlap on screen into the bigger one
     var z = map.getZoom(), merged = [];
-    Object.keys(groups).map(function (k) { return groups[k]; }).sort(function (a, b) { return b.list.length - a.list.length; }).forEach(function (g) {
-      var p = map.project([g.d[2], g.d[3]], z), hit = null;
-      merged.forEach(function (m) { if (!hit && Math.abs(m.p.x - p.x) < 175 && Math.abs(m.p.y - p.y) < 64) hit = m; });
-      if (hit) { hit.list = hit.list.concat(g.list); hit.more.push(g.d[0]); } else merged.push({ d: g.d, list: g.list.slice(), p: p, more: [] });
+    Object.keys(groups).map(function (k) { return groups[k]; }).sort(function (a, b) { return (b.list.length + Object.keys(b.osm || {}).length) - (a.list.length + Object.keys(a.osm || {}).length); }).forEach(function (g) {
+      var p = map.project([g.d[2], g.d[3]], z), hit = null, me = badgeBox(g.list, g.osm);
+      merged.forEach(function (m) { if (!hit && Math.abs(m.p.x - p.x) < (m.box.w + me.w) / 2 + 8 && Math.abs(m.p.y - p.y) < (m.box.h + me.h) / 2 + 8) hit = m; });
+      if (hit) { hit.list = hit.list.concat(g.list); hit.more.push(g.d[0]); for (var q in g.osm || {}) hit.osm[q] = (hit.osm[q] || 0) + g.osm[q]; hit.box = badgeBox(hit.list, hit.osm); }
+      else merged.push({ d: g.d, list: g.list.slice(), p: p, more: [], osm: Object.assign({}, g.osm || {}), box: me });
     });
     merged.forEach(function (g) {
       var n = g.list.length;
@@ -2816,6 +2833,10 @@
       var top = Object.keys(kinds).sort(function (a, b) { return kinds[b] - kinds[a]; });
       // one small layer icon per kind of place, with how many of that kind are here
       var dots = top.map(function (l) { return '<i class="hk" title="' + esc(LAYERS[l].label) + '">' + glyph(l, 16).outerHTML + '<em>' + kinds[l] + '</em></i>'; }).join('');
+      Object.keys(g.osm).sort(function (a, b) { return g.osm[b] - g.osm[a]; }).forEach(function (k) {
+        n += g.osm[k];
+        dots += '<i class="hk" title="' + esc(OSM[k].label) + '"><span class="hk-osm" style="background:' + OSM[k].point + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + OSM_ICONS[k] + '</svg></span><em>' + g.osm[k] + '</em></i>';
+      });
       L.marker([g.d[2], g.d[3]], { keyboard: true, title: g.d[0] + ': ' + n + (n === 1 ? ' place' : ' places'), zIndexOffset: 500,
         icon: L.divIcon({ className: '', iconSize: [120, 52], iconAnchor: [60, 26], html: '<div class="hood"><span>' + esc(g.d[0]) + (g.more.length ? '<em>+ ' + g.more.length + ' nearby</em>' : '') + '<small>' + dots + '</small></span></div>' }) })
         .on('click', function () { openHood(g); }).addTo(hoodLayer);
@@ -2823,6 +2844,12 @@
     hoodLayer.addTo(map); leaderLayer.clearLayers();
     // in neighbourhood view the individual pins step back (still on the map, faint) so the badges read first
     SITES.forEach(function (s) { var m = markers[s.id]; if (siteLayer.hasLayer(m) && s.id !== selected && hoodOf(s)) { var el = m.getElement(); if (el) el.classList.add('hood-hide'); } });
+  }
+  // rough on-screen size of a badge: icons sit five to a row under the name
+  function badgeBox(list, osm) {
+    var kinds = {}; list.forEach(function (s) { kinds[s.layer] = 1; });
+    var n = Object.keys(kinds).length + Object.keys(osm || {}).length, rows = Math.max(1, Math.ceil(n / 5));
+    return { w: Math.min(230, Math.max(110, 32 + 40 * Math.min(n, 5))), h: 34 + 20 * rows };
   }
   function clearHoodHide() { document.querySelectorAll('.hood-hide').forEach(function (e) { e.classList.remove('hood-hide'); }); }
   function openHood(g) {

@@ -664,6 +664,8 @@ html .hood small { display: flex; gap: 3px; margin-top: 3px; }
 html .hood small { gap: 4px 7px; flex-wrap: wrap; max-width: 200px; }
 html .hood small i.hk { display: inline-flex; align-items: center; gap: 2px; font-style: normal; }
 html .hood small i.hk .glyph { flex: none; }
+html .hood small .hk-osm { display: grid; place-items: center; width: 16px; height: 16px; flex: none; border: 1px solid #111418; }
+html .hood small .hk-osm svg { width: 11px; height: 11px; fill: #fff; }
 html .hood small i.hk em { font-size: .9em; font-weight: 700; color: inherit; font-variant-numeric: tabular-nums; }
 html.dark .hood { background: #1c2127; color: #f6f7f9; border-color: #404854; }
 html .hood-hide { opacity: 0 !important; pointer-events: none !important; }

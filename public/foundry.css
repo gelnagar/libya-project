@@ -661,7 +661,7 @@ html .hood:hover { border-color: var(--fy-accent); }
 html .hood b { display: grid; place-items: center; min-width: 34px; height: 34px; border-radius: 50%; background: var(--fy-accent); color: #fff; font-size: 1.02em; font-variant-numeric: tabular-nums; }
 html .hood span { display: flex; flex-direction: column; font-weight: 700; font-size: .92em; line-height: 1.15; }
 html .hood small { display: flex; gap: 3px; margin-top: 3px; }
-html .hood small { gap: 7px; }
+html .hood small { gap: 4px 7px; flex-wrap: wrap; max-width: 200px; }
 html .hood small i.hk { display: inline-flex; align-items: center; gap: 2px; font-style: normal; }
 html .hood small i.hk .glyph { flex: none; }
 html .hood small i.hk em { font-size: .9em; font-weight: 700; color: inherit; font-variant-numeric: tabular-nums; }

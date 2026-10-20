@@ -45,4 +45,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # one path at a time: a single missing path would make git add skip all of them
           for p in archive/maps/preview/usgs archive/maps/overlays.json archive/maps/usgs-download-status.json archive/maps/usgs-register-status.json public/maps public/data/overlays.js; do [ -e "$p" ] && git add "$p"; done
-          if git diff --cached --quiet; then echo none; else git commit -m "Declassified satellite frames: cut, lined up and tiled" && git pull --rebase && git push; fi
+          if git diff --cached --quiet; then echo none; exit 0; fi
+          git commit -m "Declassified satellite frames: cut, lined up and tiled"
+          # other jobs (map overlays, research slices) push to the same branch; retry instead of failing on a race
+          for i in 1 2 3 4 5; do git pull --rebase && git push && exit 0; sleep $((i * 10)); done
+          exit 1

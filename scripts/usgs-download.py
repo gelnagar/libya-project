@@ -20,7 +20,9 @@ WORK = os.environ.get('USGS_WORK', 'work/usgs')
 PREV = 'archive/maps/preview/usgs'
 PREVIEW_LONG = 6000   # long side of the whole-frame preview, px
 CUT_PREVIEW_LONG = 5000
-MAX_ASSET = 1_900_000_000  # GitHub release assets must be under 2 GiB
+MAX_ASSET = 1_900_000_000
+MOSAIC_VERSION = 2  # bump when joining the film segments changes, so overviews are rebuilt
+CITY_BOX = (13.09, 32.78, 13.32, 32.92)  # lon0, lat0, lon1, lat1 cut out of each frame (as CITY in usgs-register.py)  # GitHub release assets must be under 2 GiB
 
 def call(endpoint, payload, key=None):
     req = urllib.request.Request(API + endpoint, data=json.dumps(payload).encode(), headers={'Content-Type': 'application/json', **({'X-Auth-Token': key} if key else {})})
@@ -78,22 +80,26 @@ def small(path, f):
     ds = gdal.Open(path)
     return ds.GetRasterBand(1).ReadAsArray(buf_xsize=max(1, ds.RasterXSize // f), buf_ysize=max(1, ds.RasterYSize // f)).astype(np.float32)
 
+OVERLAP = (300, 4500)  # film segments of one frame overlap by this many full pixels (1,600-2,500 seen so far)
+DEFAULT_OVERLAP = 2000
+
 def seam(a, b, f):
-    """Where b's leading edge sits inside a's trailing edge, joining along x. Returns (dx, dy) in full pixels from a's origin."""
-    band, search = 32, a.shape[1] // 3
-    rows = slice(a.shape[0] // 4, 3 * a.shape[0] // 4)
+    """Where b's leading edge sits inside a's trailing edge, joining along x. Returns (dx, dy, score) in full pixels
+    from a's origin, or (None, None, score) when the overlap is not clear."""
+    band = 24
+    rows = slice(a.shape[0] // 10, 9 * a.shape[0] // 10)  # skip the film's data blocks at top and bottom
     bb = b[rows, :band]; bb = (bb - bb.mean()) / (bb.std() + 1e-6)
-    best = (-2.0, a.shape[1], 0)
-    for dy in range(-8, 9):
+    best = (-2.0, 0, 0)
+    for dy in range(-12, 13):
         r = slice(rows.start + dy, rows.stop + dy)
         if r.start < 0 or r.stop > a.shape[0]: continue
-        for x in range(a.shape[1] - search, a.shape[1] - band + 1):
+        for x in range(max(0, a.shape[1] - OVERLAP[1] // f), a.shape[1] - OVERLAP[0] // f):
             aa = a[r, x:x + band]
+            if aa.shape[1] < band: continue
             s = float(((aa - aa.mean()) / (aa.std() + 1e-6) * bb).mean())
             if s > best[0]: best = (s, x, dy)
     score, x, dy = best
-    if score < 0.5:  # no clear overlap: butt the pieces together
-        return a.shape[1] * f, 0, score
+    if score < 0.35: return None, None, score
     return x * f, dy * f, score
 
 def mosaic(tifs, vrt):
@@ -103,16 +109,23 @@ def mosaic(tifs, vrt):
     along_x = len(tifs) == 1 or max(h for _, h in sizes) - min(h for _, h in sizes) <= max(w for w, _ in sizes) - min(w for w, _ in sizes)
     info['joined_along'] = 'x' if along_x else 'y'
     f = 16
-    offs = [(0, 0)]
+    found = []
     prev = small(tifs[0], f)
-    for p in tifs[1:]:
+    for i, p in enumerate(tifs[1:]):
         cur = small(p, f)
         a, b = (prev, cur) if along_x else (prev.T, cur.T)
-        dx, dy, score = seam(a, b, f)
+        found.append(seam(a, b, f) + ((sizes[i][0] if along_x else sizes[i][1]),))
+        prev = cur
+    # an unclear seam takes the frame's typical overlap rather than none, which would show a strip twice
+    good = [L - dx for dx, dy, sc, L in found if dx is not None]
+    typical = int(np.median(good)) if good else DEFAULT_OVERLAP
+    offs = [(0, 0)]
+    for dx, dy, score, L in found:
+        guessed = dx is None
+        if guessed: dx, dy = L - typical, 0
         ox, oy = offs[-1]
         offs.append((ox + dx, oy + dy) if along_x else (ox + dy, oy + dx))
-        info['seams'].append({'offset': offs[-1], 'score': round(score, 3)})
-        prev = cur
+        info['seams'].append({'offset': offs[-1], 'score': round(score, 3), 'overlap': L - dx, 'guessed': guessed})
     mx, my = min(o[0] for o in offs), min(o[1] for o in offs)
     offs = [(x - mx, y - my) for x, y in offs]
     W = max(x + w for (x, _), (w, _) in zip(offs, sizes)); H = max(y + h for (_, y), (_, h) in zip(offs, sizes))
@@ -171,7 +184,8 @@ def run(key, pick, overlays):
     pid = pick['id']; meta_path = f'{PREV}/{pid}.json'
     meta = json.load(open(meta_path)) if os.path.exists(meta_path) else {}
     if any(o['id'] == pid for o in overlays): return 'already cut and listed in overlays.json'
-    if 'crop' not in pick and meta.get('locate_failed'): return 'Tripoli was not found automatically; add "crop" to the pick'
+    if not pick.get('crop') and not pick.get('gcps_frame') and meta.get('mosaic_version') == MOSAIC_VERSION and meta.get('overview'):
+        return 'overview ready; add landmarks ("gcps_frame") to the pick'
     d = os.path.join(WORK, pid); shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
     url, size = request_url(key, pick)
     print(pid, 'downloading', round((size or 0) / 1e9, 2), 'GB'); t = time.time()
@@ -184,27 +198,40 @@ def run(key, pick, overlays):
     s, w, h = preview(vrt, f'{PREV}/{pid}-whole.jpg', PREVIEW_LONG, info['dtype'])
     meta.update({'id': pid, 'entityId': pick['entityId'], 'frame': info, 'whole': {'file': f'{pid}-whole.jpg', 'scale': s, 'width': w, 'height': h},
                  'checked': datetime.datetime.now(datetime.timezone.utc).isoformat()})
+    meta['mosaic_version'] = MOSAIC_VERSION
     out = 'preview made'
-    crop, sc = pick.get('crop'), s  # a hand-set crop is in whole-preview pixels
-    if not crop:
-        # a detailed overview (about 20 m a pixel for HEXAGON) to search for Tripoli; kept on the release for tuning
+    crop, sc, gf = pick.get('crop'), s, pick.get('gcps_frame')  # a hand-set crop is in whole-preview pixels
+    win = None
+    if gf:
+        # landmarks [frame x, frame y, lon, lat]: cut the CITY box they imply, with a margin
+        P = np.array(gf, float)
+        to_frame = registrar().fit_poly(P[:, 2:4], P[:, :2], 2 if len(P) >= 8 else 1)
+        lons, lats = (CITY_BOX[0], CITY_BOX[2]), (CITY_BOX[1], CITY_BOX[3])
+        edge = [(lo, la) for lo in np.linspace(*lons, 9) for la in lats] + [(lo, la) for la in np.linspace(*lats, 9) for lo in lons]
+        c = to_frame(np.array(edge))
+        (x0, y0), (x1, y1) = c.min(0), c.max(0); pad = 0.04 * max(x1 - x0, y1 - y0)
+        x0, y0 = max(0, int(x0 - pad)), max(0, int(y0 - pad)); x1, y1 = min(info['width'], int(x1 + pad)), min(info['height'], int(y1 + pad))
+        win = [x0, y0, x1 - x0, y1 - y0]
+    elif not crop:
+        # a detailed overview (about 5-10 m a pixel) for marking landmarks; kept on the release
         fo = max(4, math.ceil(max(info['width'], info['height']) / 48000))
         ov = os.path.join(d, pid + '-overview.jpg')
         mem = gdal.Translate('', vrt, format='MEM', width=info['width'] // fo, height=info['height'] // fo, resampleAlg='average', **to_byte(info['dtype']))
-        gdal.GetDriverByName('JPEG').CreateCopy(ov, mem, options=['QUALITY=85'])
+        gdal.GetDriverByName('JPEG').CreateCopy(ov, mem, options=['QUALITY=88'])
         overview = mem.ReadAsArray(); mem = None
-        try: meta['overview'] = {'url': upload(ov), 'reduced_by': fo}
-        except Exception as e: print('overview upload failed', e)
-        crop, agree = registrar().locate(overview, fo)
-        meta['locate'] = {'crop_in_overview': crop, 'agree': agree}
-        sc = fo
-        if not crop:
-            meta['locate_failed'] = True
-            out = f'preview made; Tripoli not found automatically ({agree} matches agreed)'
+        meta['overview'] = {'url': upload(ov), 'reduced_by': fo, 'width': overview.shape[1], 'height': overview.shape[0]}
+        # the coastline search's guess at where the city is, to help find it on the overview
+        try:
+            guess, score, _ = registrar().locate(overview, fo)
+            meta['locate'] = {'city_in_overview': guess, 'coast_score': score}
+        except Exception as e:
+            print('locate failed', e)
+        out = 'overview made; add landmarks ("gcps_frame") to the pick'
     if crop:
         x, y, cw, ch = crop
         win = [max(0, round(x * sc)), max(0, round(y * sc))]
         win += [min(info['width'] - win[0], round(cw * sc)), min(info['height'] - win[1], round(ch * sc))]
+    if win:
         cut = os.path.join(d, pid + '.tif'); factor = 1
         while True:
             gdal.Translate(cut, vrt, srcWin=win, width=win[2] // factor, height=win[3] // factor, resampleAlg='average',
@@ -215,7 +242,10 @@ def run(key, pick, overlays):
         meta['cut'] = {'window_in_frame': win, 'reduced_by': factor, 'file': f'{pid}-cut.jpg', 'scale': cs, 'width': cw2, 'height': ch2,
                        'grid_every_px': 1000, 'size_bytes': os.path.getsize(cut)}
         url = upload(cut)
-        overlays.append(overlay_entry(pick, url))
+        entry = overlay_entry(pick, url)
+        if gf:  # the landmarks in cut-out pixels: usgs-register.py starts from them and keeps them if refinement fails
+            entry['init_gcps'] = [[round((x - win[0]) / factor, 1), round((y - win[1]) / factor, 1), lo, la] for x, y, lo, la in gf]
+        overlays.append(entry)
         out = f'cut {win} (reduced {factor}x) uploaded to {url}'
     json.dump(meta, open(meta_path, 'w'), indent=1)
     shutil.rmtree(d, ignore_errors=True)

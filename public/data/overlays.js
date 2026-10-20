@@ -111,5 +111,27 @@ window.ATLAS_OVERLAYS = [
   ],
   "maxZoom": 13,
   "attribution": "Landsat 1990 (USGS)"
+ },
+ {
+  "id": "landsat-2003",
+  "kind": "satellite",
+  "title": "Satellite, 2004",
+  "year": 2004,
+  "note": "Landsat 5/7, natural colour. Taken 2004-06-27. About 30 m detail: it shows how far the city had spread, not individual buildings.",
+  "source": "USGS Landsat via Microsoft Planetary Computer",
+  "license": "Public domain (USGS)",
+  "tiles": "maps/landsat-2003/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.7,
+    12.95
+   ],
+   [
+    32.95,
+    13.45
+   ]
+  ],
+  "maxZoom": 13,
+  "attribution": "Landsat 2004 (USGS)"
  }
 ];

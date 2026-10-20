@@ -249,7 +249,9 @@ async function noteFail(env, ip) {
 }
 const SECURITY = {
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
-  'Referrer-Policy': 'same-origin',
+  // Map tile servers (OpenStreetMap, Esri) refuse requests that carry no Referer, and 'same-origin' strips it from every cross-origin request.
+  // This sends only our site's address (never the page path) and only over HTTPS.
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
   'X-Frame-Options': 'DENY',
   'X-Content-Type-Options': 'nosniff'
 };

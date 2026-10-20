@@ -74,15 +74,12 @@
 
   var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
+  /* Light and Dark are OpenStreetMap tiles with a grey or night filter (see .tiles-light / .tiles-dark in index.html).
+     CARTO's grey maps now show an "API key required" watermark, Esri's were unreliable, and OSM needs no key. */
+  var OSM_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
   var BASEMAPS = {
-    light: { name: 'Light', note: 'Clean grey map', layers: [
-      L.tileLayer(ESRI + 'Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, attribution: 'Basemap &copy; Esri, HERE, Garmin, ' + OSM_ATTR }),
-      L.tileLayer(ESRI + 'Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19 })
-    ] },
-    dark: { name: 'Dark', note: 'Night view', layers: [
-      L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, attribution: 'Basemap &copy; Esri, HERE, Garmin, ' + OSM_ATTR }),
-      L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19 })
-    ] },
+    light: { name: 'Light', note: 'Clean grey map', layers: [L.tileLayer(OSM_URL, { maxZoom: 19, className: 'tiles-light', attribution: OSM_ATTR })] },
+    dark: { name: 'Dark', note: 'Night view', layers: [L.tileLayer(OSM_URL, { maxZoom: 19, className: 'tiles-dark', attribution: OSM_ATTR })] },
     satellite: { name: 'Satellite', note: 'Photos from above', layers: [
       L.tileLayer(ESRI + 'World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 18, maxZoom: 19, attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics' }),
       L.tileLayer(ESRI + 'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 18, maxZoom: 19 })
@@ -99,15 +96,16 @@
     currentBase = key; store.set('base2', key);
     document.querySelectorAll('#basemaps button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === key ? 'true' : 'false'); });
   }
+  var THUMB_Z = 12, THUMB_X = Math.floor((13.19 + 180) / 360 * Math.pow(2, THUMB_Z)), THUMB_LA = 32.885 * Math.PI / 180,
+      THUMB_Y = Math.floor((1 - Math.log(Math.tan(THUMB_LA) + 1 / Math.cos(THUMB_LA)) / Math.PI) / 2 * Math.pow(2, THUMB_Z));
   Object.keys(BASEMAPS).forEach(function (k) {
-    var tz = 12, tx = Math.floor((13.19 + 180) / 360 * Math.pow(2, tz)), la = 32.885 * Math.PI / 180,
-        ty = Math.floor((1 - Math.log(Math.tan(la) + 1 / Math.cos(la)) / Math.PI) / 2 * Math.pow(2, tz));
-    var tile = { light: ESRI + 'Canvas/World_Light_Gray_Base/MapServer/tile/' + tz + '/' + ty + '/' + tx, dark: ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/' + tz + '/' + ty + '/' + tx,
+    var tz = THUMB_Z, tx = THUMB_X, ty = THUMB_Y;
+    var tile = { light: 'https://tile.openstreetmap.org/' + tz + '/' + tx + '/' + ty + '.png', dark: 'https://tile.openstreetmap.org/' + tz + '/' + tx + '/' + ty + '.png',
       satellite: ESRI + 'World_Imagery/MapServer/tile/' + tz + '/' + ty + '/' + tx,
       street: 'https://tile.openstreetmap.org/' + tz + '/' + tx + '/' + ty + '.png',
       terrain: 'https://a.tile.opentopomap.org/' + tz + '/' + tx + '/' + ty + '.png' }[k];
     $('basemaps').appendChild(h('button', { 'data-key': k, 'aria-pressed': 'false', onclick: function () { setBase(k); } },
-      [h('span', { class: 'thumb', style: 'background-image:url(' + tile + ')' }), h('span', { class: 'nm', text: BASEMAPS[k].name }), h('small', { text: BASEMAPS[k].note })]));
+      [h('span', { class: 'thumb' + (k === 'light' || k === 'dark' ? ' tiles-' + k : ''), style: 'background-image:url(' + tile + ')' }), h('span', { class: 'nm', text: BASEMAPS[k].name }), h('small', { text: BASEMAPS[k].note })]));
   });
 
   $('basemaps').appendChild(h('button', { 'data-key': 'unknown', 'aria-pressed': 'false', title: 'People and groups linked in the files, on a separate black plane', onclick: function () { if (window.ATLAS_UNKNOWN_OPEN) window.ATLAS_UNKNOWN_OPEN(); } },
@@ -418,7 +416,7 @@
     $('places').appendChild(h('button', { onclick: function () { focusSite(s); } }, [h('span', { class: 'yr', text: s.y0 == null ? '—' : String(s.y0) }), glyph(s.layer), h('span', { text: s.name })]));
   });
   UNPLACED.forEach(function (u) {
-    $('unplaced').appendChild(h('div', {}, [h('b', { text: u.name }), h('span', { text: u.when + '. ' }), u.text, u.src ? h('span', {}, [' ', h('a', { href: u.src.u, target: '_blank', rel: 'noopener', text: 'Source' })]) : null]));
+    $('unplaced').appendChild(h('div', {}, [h('b', { text: u.name }), h('span', { text: u.when + '. ' }), u.text, u.src ? h('span', {}, [].concat(u.src).reduce(function (acc, sr, i, arr) { acc.push(' ', h('a', { href: sr.u, target: '_blank', rel: 'noopener', title: sr.t || '', text: arr.length > 1 ? 'Source ' + (i + 1) : 'Source' })); return acc; }, [])) : null]));
   });
 
   /* on phones the place panel covers the lower part of the map: aim the map so the pin sits in the visible strip above it */
@@ -585,6 +583,7 @@
       osmActive[k] = v; store.set('osm', osmActive);
       if (!v) { map.removeLayer(osmGroups[k]); if (osmAbort[k]) osmAbort[k].abort(); if (k !== 'buildings' && (!o.saved || savedState[k] === 'missing')) osmGroups[k].clearLayers(); }
       refreshOSM(true);
+      if (typeof syncHoods === 'function' && hoodLayer) { clearHoodHide(); syncHoods(); }
     }, sw));
   });
   function bboxKey() {
@@ -627,6 +626,7 @@
         savedData[k] = { elements: (j.features || []).map(expand), generated: j.generated };
         savedState[k] = 'ready';
         drawOSM(k, savedData[k]);
+        if (hoodLayer && map.hasLayer(hoodLayer)) { clearHoodHide(); syncHoods(); }
         status(savedData[k].elements.length ? null : 'No ' + OSM[k].label.toLowerCase() + ' mapped around Tripoli.', 3000);
         refreshOSM(true);
       })
@@ -2762,8 +2762,9 @@
       var hd = x.querySelector('h3'); if (!hd || x === sec) return;
       var t = hd.textContent;
       if (t === 'Time period') { x.style.display = 'none'; return; }
-      if (t === 'Map style' || t === 'What to show') {
-        var d = h('details', { class: 'sec more' }, [h('summary', { text: t === 'Time period' ? 'Named periods' : t === 'What to show' ? 'Pick layers one by one' : 'Map style' })]);
+      if (t === 'Map style') { body.insertBefore(x, body.firstChild); return; }
+      if (t === 'What to show') {
+        var d = h('details', { class: 'sec more' }, [h('summary', { text: 'Pick layers one by one' })]);
         hd.remove(); while (x.firstChild) d.appendChild(x.firstChild); x.replaceWith(d);
       }
     });
@@ -2804,25 +2805,51 @@
       var d = hoodOf(s); if (!d) { loose.push(s); return; }
       (groups[d[0]] = groups[d[0]] || { d: d, list: [] }).list.push(s);
     });
+    // switched-on present-day layers (hospitals, police, embassies…) are counted in the badges too, whatever the zoom
+    Object.keys(OSM).forEach(function (k) {
+      if (!osmActive[k] || !OSM_ICONS[k] || !OSM[k].saved) return;
+      var data = loadSaved(k); if (!data) return;
+      (data.elements || []).forEach(function (el) {
+        var lat = el.lat, lon = el.lon;
+        if (lat == null && el.bounds) { lat = (el.bounds.minlat + el.bounds.maxlat) / 2; lon = (el.bounds.minlon + el.bounds.maxlon) / 2; }
+        if (lat == null) return;
+        var d = hoodOf({ lat: lat, lon: lon }); if (!d) return;
+        var g = (groups[d[0]] = groups[d[0]] || { d: d, list: [] });
+        g.osm = g.osm || {}; g.osm[k] = (g.osm[k] || 0) + 1;
+      });
+      osmGroups[k].eachLayer(function (m) { var el = m.getElement && m.getElement(); if (el) el.classList.add('hood-hide'); });
+    });
     // merge badges that would overlap on screen into the bigger one
     var z = map.getZoom(), merged = [];
-    Object.keys(groups).map(function (k) { return groups[k]; }).sort(function (a, b) { return b.list.length - a.list.length; }).forEach(function (g) {
-      var p = map.project([g.d[2], g.d[3]], z), hit = null;
-      merged.forEach(function (m) { if (!hit && Math.abs(m.p.x - p.x) < 130 && Math.abs(m.p.y - p.y) < 50) hit = m; });
-      if (hit) { hit.list = hit.list.concat(g.list); hit.more.push(g.d[0]); } else merged.push({ d: g.d, list: g.list.slice(), p: p, more: [] });
+    Object.keys(groups).map(function (k) { return groups[k]; }).sort(function (a, b) { return (b.list.length + Object.keys(b.osm || {}).length) - (a.list.length + Object.keys(a.osm || {}).length); }).forEach(function (g) {
+      var p = map.project([g.d[2], g.d[3]], z), hit = null, me = badgeBox(g.list, g.osm);
+      merged.forEach(function (m) { if (!hit && Math.abs(m.p.x - p.x) < (m.box.w + me.w) / 2 + 8 && p.y - 26 < m.p.y - 26 + m.box.h + 8 && m.p.y - 26 < p.y - 26 + me.h + 8) hit = m; });
+      if (hit) { hit.list = hit.list.concat(g.list); hit.more.push(g.d[0]); for (var q in g.osm || {}) hit.osm[q] = (hit.osm[q] || 0) + g.osm[q]; hit.box = badgeBox(hit.list, hit.osm); }
+      else merged.push({ d: g.d, list: g.list.slice(), p: p, more: [], osm: Object.assign({}, g.osm || {}), box: me });
     });
     merged.forEach(function (g) {
       var n = g.list.length;
       var kinds = {}; g.list.forEach(function (s) { kinds[s.layer] = (kinds[s.layer] || 0) + 1; });
-      var top = Object.keys(kinds).sort(function (a, b) { return kinds[b] - kinds[a]; }).slice(0, 3);
-      var dots = top.map(function (l) { return '<i style="background:' + LAYERS[l].color + '"></i>'; }).join('');
+      var top = Object.keys(kinds).sort(function (a, b) { return kinds[b] - kinds[a]; });
+      // one small layer icon per kind of place, with how many of that kind are here
+      var dots = top.map(function (l) { return '<i class="hk" title="' + esc(LAYERS[l].label) + '">' + glyph(l, 16).outerHTML + '<em>' + kinds[l] + '</em></i>'; }).join('');
+      Object.keys(g.osm).sort(function (a, b) { return g.osm[b] - g.osm[a]; }).forEach(function (k) {
+        n += g.osm[k];
+        dots += '<i class="hk" title="' + esc(OSM[k].label) + '"><span class="hk-osm" style="background:' + OSM[k].point + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + OSM_ICONS[k] + '</svg></span><em>' + g.osm[k] + '</em></i>';
+      });
       L.marker([g.d[2], g.d[3]], { keyboard: true, title: g.d[0] + ': ' + n + (n === 1 ? ' place' : ' places'), zIndexOffset: 500,
-        icon: L.divIcon({ className: '', iconSize: [120, 52], iconAnchor: [60, 26], html: '<div class="hood"><b>' + n + '</b><span>' + esc(g.d[0]) + (g.more.length ? '<em>+ ' + g.more.length + ' nearby</em>' : '') + '<small>' + dots + '</small></span></div>' }) })
+        icon: L.divIcon({ className: '', iconSize: [120, 52], iconAnchor: [60, 26], html: '<div class="hood"><span>' + esc(g.d[0]) + (g.more.length ? '<em>+ ' + g.more.length + ' nearby</em>' : '') + '<small>' + dots + '</small></span></div>' }) })
         .on('click', function () { openHood(g); }).addTo(hoodLayer);
     });
     hoodLayer.addTo(map); leaderLayer.clearLayers();
     // in neighbourhood view the individual pins step back (still on the map, faint) so the badges read first
     SITES.forEach(function (s) { var m = markers[s.id]; if (siteLayer.hasLayer(m) && s.id !== selected && hoodOf(s)) { var el = m.getElement(); if (el) el.classList.add('hood-hide'); } });
+  }
+  // rough on-screen size of a badge: icons sit five to a row under the name
+  function badgeBox(list, osm) {
+    var kinds = {}; list.forEach(function (s) { kinds[s.layer] = 1; });
+    var n = Object.keys(kinds).length + Object.keys(osm || {}).length, rows = Math.max(1, Math.ceil(n / 5));
+    return { w: Math.min(240, Math.max(110, 24 + 46 * Math.min(n, 4))), h: 60 + 24 * Math.max(1, Math.ceil(n / 4)) };
   }
   function clearHoodHide() { document.querySelectorAll('.hood-hide').forEach(function (e) { e.classList.remove('hood-hide'); }); }
   function openHood(g) {

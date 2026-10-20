@@ -1,0 +1,120 @@
+{
+ "id": "kh9-1972-nov",
+ "entityId": "D3C1204-300332F003",
+ "frame": {
+  "segments": [
+   "D3C1204-300332F003_a.tif",
+   "D3C1204-300332F003_b.tif",
+   "D3C1204-300332F003_c.tif",
+   "D3C1204-300332F003_d.tif"
+  ],
+  "sizes": [
+   [
+    37282,
+    24811
+   ],
+   [
+    37282,
+    24811
+   ],
+   [
+    37282,
+    24811
+   ],
+   [
+    37282,
+    24811
+   ]
+  ],
+  "seams": [
+   {
+    "offset": [
+     35632,
+     -16
+    ],
+    "score": 0.665,
+    "overlap": 1650,
+    "guessed": false
+   },
+   {
+    "offset": [
+     70448,
+     -16
+    ],
+    "score": 0.928,
+    "overlap": 2466,
+    "guessed": false
+   },
+   {
+    "offset": [
+     105344,
+     -64
+    ],
+    "score": 0.926,
+    "overlap": 2386,
+    "guessed": false
+   }
+  ],
+  "joined_along": "x",
+  "width": 142626,
+  "height": 24875,
+  "dtype": "Byte",
+  "offsets": [
+   [
+    0,
+    64
+   ],
+   [
+    35632,
+    48
+   ],
+   [
+    70448,
+    48
+   ],
+   [
+    105344,
+    0
+   ]
+  ]
+ },
+ "whole": {
+  "file": "kh9-1972-nov-whole.jpg",
+  "scale": 23.771,
+  "width": 6000,
+  "height": 1046
+ },
+ "checked": "2026-10-20T02:44:37.103699+00:00",
+ "overview": {
+  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1972-nov-overview.jpg",
+  "reduced_by": 4,
+  "width": 35656,
+  "height": 6218
+ },
+ "locate": {
+  "city_in_overview": [
+   8354,
+   566,
+   2626,
+   2506
+  ],
+  "coast_score": 0.904
+ },
+ "locate_failed": true,
+ "mosaic_version": 2,
+ "cut": {
+  "window_in_frame": [
+   28311,
+   3479,
+   15873,
+   9785
+  ],
+  "reduced_by": 1,
+  "file": "kh9-1972-nov-cut.jpg",
+  "scale": 3.1746,
+  "width": 5000,
+  "height": 3082,
+  "grid_every_px": 1000,
+  "size_bytes": 41232311
+ }
+}

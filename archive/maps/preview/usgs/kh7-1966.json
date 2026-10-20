@@ -1,0 +1,87 @@
+{
+ "id": "kh7-1966",
+ "entityId": "DZB00402500075H027001",
+ "frame": {
+  "segments": [
+   "DZB00402500075H027001_a.tif",
+   "DZB00402500075H027001_b.tif",
+   "DZB00402500075H027001_c.tif"
+  ],
+  "sizes": [
+   [
+    35989,
+    35279
+   ],
+   [
+    35989,
+    35279
+   ],
+   [
+    35989,
+    35279
+   ]
+  ],
+  "seams": [
+   {
+    "offset": [
+     35008,
+     -32
+    ],
+    "score": 0.521,
+    "overlap": 981,
+    "guessed": false
+   },
+   {
+    "offset": [
+     70048,
+     -16
+    ],
+    "score": 0.942,
+    "overlap": 949,
+    "guessed": false
+   }
+  ],
+  "joined_along": "x",
+  "width": 106037,
+  "height": 35311,
+  "dtype": "Byte",
+  "offsets": [
+   [
+    0,
+    32
+   ],
+   [
+    35008,
+    0
+   ],
+   [
+    70048,
+    16
+   ]
+  ]
+ },
+ "whole": {
+  "file": "kh7-1966-whole.jpg",
+  "scale": 17.672833333333333,
+  "width": 6000,
+  "height": 1998
+ },
+ "checked": "2026-10-20T00:35:12.186369+00:00",
+ "overview": {
+  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh7-1966-overview.jpg",
+  "reduced_by": 4,
+  "width": 26509,
+  "height": 8827
+ },
+ "locate": {
+  "city_in_overview": [
+   14519,
+   7127,
+   1724,
+   1615
+  ],
+  "coast_score": 0.702
+ },
+ "locate_failed": true,
+ "mosaic_version": 2
+}

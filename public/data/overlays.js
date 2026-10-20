@@ -24,6 +24,29 @@ window.ATLAS_OVERLAYS = [
   "attribution": "Tripoli city plan, 1962 — Princeton University Library, record princeton-zk51vj17s"
  },
  {
+  "id": "kh9-1972-nov",
+  "kind": "satellite",
+  "title": "Spy satellite, November 1972 (KH-9 HEXAGON)",
+  "year": 1972,
+  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up automatically with today's imagery; typical error about 184 m.",
+  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003",
+  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
+  "license": "Public domain (U.S. government work)",
+  "tiles": "maps/kh9-1972-nov/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.8553435,
+    13.1292889
+   ],
+   [
+    32.9098207,
+    13.3076792
+   ]
+  ],
+  "maxZoom": 17,
+  "attribution": "Spy satellite, November 1972 — USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003"
+ },
+ {
   "id": "landsat-1970s",
   "kind": "satellite",
   "title": "Satellite, 1977",

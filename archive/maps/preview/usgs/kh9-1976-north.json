@@ -1,0 +1,159 @@
+{
+ "id": "kh9-1976-north",
+ "entityId": "D3C1211-400762F005",
+ "frame": {
+  "segments": [
+   "D3C1211-400762F005_a.tif",
+   "D3C1211-400762F005_b.tif",
+   "D3C1211-400762F005_c.tif",
+   "D3C1211-400762F005_d.tif",
+   "D3C1211-400762F005_e.tif",
+   "D3C1211-400762F005_f.tif",
+   "D3C1211-400762F005_g.tif"
+  ],
+  "sizes": [
+   [
+    37230,
+    25047
+   ],
+   [
+    37230,
+    25047
+   ],
+   [
+    37230,
+    25047
+   ],
+   [
+    37230,
+    25047
+   ],
+   [
+    37230,
+    25047
+   ],
+   [
+    37230,
+    25047
+   ],
+   [
+    37230,
+    25047
+   ]
+  ],
+  "seams": [
+   {
+    "offset": [
+     33968,
+     64
+    ],
+    "score": 0.83,
+    "overlap": 3262,
+    "guessed": false
+   },
+   {
+    "offset": [
+     69840,
+     192
+    ],
+    "score": 0.449,
+    "overlap": 1358,
+    "guessed": false
+   },
+   {
+    "offset": [
+     105440,
+     224
+    ],
+    "score": 0.478,
+    "overlap": 1630,
+    "guessed": false
+   },
+   {
+    "offset": [
+     141232,
+     240
+    ],
+    "score": 0.445,
+    "overlap": 1438,
+    "guessed": false
+   },
+   {
+    "offset": [
+     176752,
+     320
+    ],
+    "score": 0.814,
+    "overlap": 1710,
+    "guessed": false
+   },
+   {
+    "offset": [
+     209488,
+     480
+    ],
+    "score": 0.378,
+    "overlap": 4494,
+    "guessed": false
+   }
+  ],
+  "joined_along": "x",
+  "width": 246718,
+  "height": 25527,
+  "dtype": "Byte",
+  "offsets": [
+   [
+    0,
+    0
+   ],
+   [
+    33968,
+    64
+   ],
+   [
+    69840,
+    192
+   ],
+   [
+    105440,
+    224
+   ],
+   [
+    141232,
+    240
+   ],
+   [
+    176752,
+    320
+   ],
+   [
+    209488,
+    480
+   ]
+  ]
+ },
+ "whole": {
+  "file": "kh9-1976-north-whole.jpg",
+  "scale": 41.11966666666667,
+  "width": 6000,
+  "height": 621
+ },
+ "checked": "2026-10-20T00:43:10.826436+00:00",
+ "overview": {
+  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1976-north-overview.jpg",
+  "reduced_by": 6,
+  "width": 41119,
+  "height": 4254
+ },
+ "locate": {
+  "city_in_overview": [
+   28867,
+   2887,
+   1926,
+   1238
+  ],
+  "coast_score": 0.869
+ },
+ "locate_failed": true,
+ "mosaic_version": 2
+}

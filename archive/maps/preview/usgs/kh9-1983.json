@@ -1,0 +1,231 @@
+{
+ "id": "kh9-1983",
+ "entityId": "D3C1218-100323A003",
+ "frame": {
+  "segments": [
+   "D3C1218-100323A003_a.tif",
+   "D3C1218-100323A003_b.tif",
+   "D3C1218-100323A003_c.tif",
+   "D3C1218-100323A003_d.tif",
+   "D3C1218-100323A003_e.tif",
+   "D3C1218-100323A003_f.tif",
+   "D3C1218-100323A003_g.tif",
+   "D3C1218-100323A003_h.tif",
+   "D3C1218-100323A003_i.tif",
+   "D3C1218-100323A003_j.tif",
+   "D3C1218-100323A003_k.tif"
+  ],
+  "sizes": [
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ],
+   [
+    37218,
+    25065
+   ]
+  ],
+  "seams": [
+   {
+    "offset": [
+     34144,
+     0
+    ],
+    "score": 0.183,
+    "overlap": 3074,
+    "guessed": true
+   },
+   {
+    "offset": [
+     68288,
+     0
+    ],
+    "score": 0.281,
+    "overlap": 3074,
+    "guessed": true
+   },
+   {
+    "offset": [
+     102432,
+     0
+    ],
+    "score": 0.14,
+    "overlap": 3074,
+    "guessed": true
+   },
+   {
+    "offset": [
+     136576,
+     0
+    ],
+    "score": 0.149,
+    "overlap": 3074,
+    "guessed": true
+   },
+   {
+    "offset": [
+     170720,
+     0
+    ],
+    "score": 0.3,
+    "overlap": 3074,
+    "guessed": true
+   },
+   {
+    "offset": [
+     204832,
+     -16
+    ],
+    "score": 0.958,
+    "overlap": 3106,
+    "guessed": false
+   },
+   {
+    "offset": [
+     238976,
+     0
+    ],
+    "score": 0.921,
+    "overlap": 3074,
+    "guessed": false
+   },
+   {
+    "offset": [
+     273120,
+     -48
+    ],
+    "score": 0.905,
+    "overlap": 3074,
+    "guessed": false
+   },
+   {
+    "offset": [
+     307392,
+     -96
+    ],
+    "score": 0.912,
+    "overlap": 2946,
+    "guessed": false
+   },
+   {
+    "offset": [
+     340944,
+     -128
+    ],
+    "score": 0.766,
+    "overlap": 3666,
+    "guessed": false
+   }
+  ],
+  "joined_along": "x",
+  "width": 378162,
+  "height": 25193,
+  "dtype": "Byte",
+  "offsets": [
+   [
+    0,
+    128
+   ],
+   [
+    34144,
+    128
+   ],
+   [
+    68288,
+    128
+   ],
+   [
+    102432,
+    128
+   ],
+   [
+    136576,
+    128
+   ],
+   [
+    170720,
+    128
+   ],
+   [
+    204832,
+    112
+   ],
+   [
+    238976,
+    128
+   ],
+   [
+    273120,
+    80
+   ],
+   [
+    307392,
+    32
+   ],
+   [
+    340944,
+    0
+   ]
+  ]
+ },
+ "whole": {
+  "file": "kh9-1983-whole.jpg",
+  "scale": 63.027,
+  "width": 6000,
+  "height": 400
+ },
+ "checked": "2026-10-20T00:49:25.836159+00:00",
+ "overview": {
+  "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1983-overview.jpg",
+  "reduced_by": 8,
+  "width": 47270,
+  "height": 3149
+ },
+ "locate": {
+  "city_in_overview": [
+   34884,
+   0,
+   3593,
+   3018
+  ],
+  "coast_score": 0.902
+ },
+ "locate_failed": true,
+ "mosaic_version": 2
+}

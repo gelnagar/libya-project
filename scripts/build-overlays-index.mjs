@@ -12,7 +12,7 @@ for (const m of JSON.parse(await readFile(ROOT + 'archive/maps/overlays.json', '
   const zmax = +String(m.zooms).split('-')[1];
   const files = await readdir(ROOT + `public/maps/${m.id}/${zmax}`).catch(() => []);
   const sample = files.length ? (await readdir(ROOT + `public/maps/${m.id}/${zmax}/${files[0]}`))[0] : 'x.webp';
-  out.push({ id: m.id, kind: 'map', title: m.title, year: m.year, note: m.note || '', source: m.source, page: m.page, license: m.license,
+  out.push({ id: m.id, kind: m.kind || 'map', title: m.title, year: m.year, note: m.note || '', source: m.source, page: m.page, license: m.license,
     tiles: `maps/${m.id}/{z}/{x}/{y}.` + sample.split('.').pop(), bounds: [[Math.min(...lats), Math.min(...lons)], [Math.max(...lats), Math.max(...lons)]], maxZoom: zmax,
     attribution: `${m.title.split('(')[0].trim()} — ${m.source}` });
 }

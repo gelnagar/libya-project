@@ -1,9 +1,9 @@
 [
  {
-  "id": "landsat-1972",
-  "year": 1972,
-  "date": "1976-07-18",
-  "scene": "LM01_L1TP_203037_19760718_02_T2",
+  "id": "landsat-1970s",
+  "year": 1976,
+  "date": "1977-04-04",
+  "scene": "LM02_L1TP_202037_19770404_02_T1",
   "note": "Landsat 1\u20132 MSS, false colour (vegetation shows red)",
   "bbox": [
    12.95,
@@ -11,8 +11,9 @@
    13.45,
    32.95
   ],
-  "maxZoom": 14,
-  "title": "Satellite image, 1976 (Landsat)",
+  "maxZoom": 13,
+  "ext": "webp",
+  "title": "Satellite image, 1977 (Landsat)",
   "source": "USGS Landsat via Microsoft Planetary Computer",
   "license": "Public domain (USGS)"
  },
@@ -28,7 +29,8 @@
    13.45,
    32.95
   ],
-  "maxZoom": 14,
+  "maxZoom": 13,
+  "ext": "webp",
   "title": "Satellite image, 1985 (Landsat)",
   "source": "USGS Landsat via Microsoft Planetary Computer",
   "license": "Public domain (USGS)"
@@ -45,7 +47,8 @@
    13.45,
    32.95
   ],
-  "maxZoom": 14,
+  "maxZoom": 13,
+  "ext": "webp",
   "title": "Satellite image, 1990 (Landsat)",
   "source": "USGS Landsat via Microsoft Planetary Computer",
   "license": "Public domain (USGS)"
@@ -62,7 +65,8 @@
    13.45,
    32.95
   ],
-  "maxZoom": 14,
+  "maxZoom": 13,
+  "ext": "webp",
   "title": "Satellite image, 2004 (Landsat)",
   "source": "USGS Landsat via Microsoft Planetary Computer",
   "license": "Public domain (USGS)"

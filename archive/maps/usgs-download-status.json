@@ -1,11 +1,11 @@
 {
- "at": "2026-10-20T00:34:11.547444+00:00",
+ "at": "2026-10-20T02:43:53.924874+00:00",
  "frames": {
-  "kh7-1966": "overview made; add landmarks (\"gcps_frame\") to the pick",
-  "kh9-1972-jul": "overview made; add landmarks (\"gcps_frame\") to the pick",
-  "kh9-1972-nov": "overview made; add landmarks (\"gcps_frame\") to the pick",
-  "kh9-1976-north": "overview made; add landmarks (\"gcps_frame\") to the pick",
-  "kh9-1976-south": "overview made; add landmarks (\"gcps_frame\") to the pick",
-  "kh9-1983": "overview made; add landmarks (\"gcps_frame\") to the pick"
+  "kh7-1966": "overview ready; add landmarks (\"gcps_frame\") to the pick",
+  "kh9-1972-jul": "overview ready; add landmarks (\"gcps_frame\") to the pick",
+  "kh9-1972-nov": "cut [28311, 3479, 15873, 9785] (reduced 1x) uploaded to https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1972-nov.tif",
+  "kh9-1976-north": "overview ready; add landmarks (\"gcps_frame\") to the pick",
+  "kh9-1976-south": "overview ready; add landmarks (\"gcps_frame\") to the pick",
+  "kh9-1983": "overview ready; add landmarks (\"gcps_frame\") to the pick"
  }
 }

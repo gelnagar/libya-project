@@ -84,7 +84,7 @@
   "width": 6000,
   "height": 1046
  },
- "checked": "2026-10-20T00:40:48.586003+00:00",
+ "checked": "2026-10-20T02:44:37.103699+00:00",
  "overview": {
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1972-nov-overview.jpg",
   "reduced_by": 4,
@@ -101,5 +101,20 @@
   "coast_score": 0.904
  },
  "locate_failed": true,
- "mosaic_version": 2
+ "mosaic_version": 2,
+ "cut": {
+  "window_in_frame": [
+   28311,
+   3479,
+   15873,
+   9785
+  ],
+  "reduced_by": 1,
+  "file": "kh9-1972-nov-cut.jpg",
+  "scale": 3.1746,
+  "width": 5000,
+  "height": 3082,
+  "grid_every_px": 1000,
+  "size_bytes": 41232311
+ }
 }

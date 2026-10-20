@@ -1,11 +1,11 @@
 {
- "at": "2026-10-19T23:27:52.145278+00:00",
+ "at": "2026-10-20T00:34:11.547444+00:00",
  "frames": {
-  "kh7-1966": "preview made; Tripoli not found automatically (0 matches agreed)",
-  "kh9-1972-jul": "preview made; Tripoli not found automatically (0 matches agreed)",
-  "kh9-1972-nov": "preview made; Tripoli not found automatically (5 matches agreed)",
-  "kh9-1976-north": "preview made; Tripoli not found automatically (5 matches agreed)",
-  "kh9-1976-south": "preview made; Tripoli not found automatically (4 matches agreed)",
-  "kh9-1983": "preview made; Tripoli not found automatically (0 matches agreed)"
+  "kh7-1966": "overview made; add landmarks (\"gcps_frame\") to the pick",
+  "kh9-1972-jul": "overview made; add landmarks (\"gcps_frame\") to the pick",
+  "kh9-1972-nov": "overview made; add landmarks (\"gcps_frame\") to the pick",
+  "kh9-1976-north": "overview made; add landmarks (\"gcps_frame\") to the pick",
+  "kh9-1976-south": "overview made; add landmarks (\"gcps_frame\") to the pick",
+  "kh9-1983": "overview made; add landmarks (\"gcps_frame\") to the pick"
  }
 }

@@ -27,14 +27,18 @@
      35008,
      -32
     ],
-    "score": 0.583
+    "score": 0.521,
+    "overlap": 981,
+    "guessed": false
    },
    {
     "offset": [
      70048,
-     0
+     -16
     ],
-    "score": 0.708
+    "score": 0.942,
+    "overlap": 949,
+    "guessed": false
    }
   ],
   "joined_along": "x",
@@ -52,7 +56,7 @@
    ],
    [
     70048,
-    32
+    16
    ]
   ]
  },
@@ -62,14 +66,22 @@
   "width": 6000,
   "height": 1998
  },
- "checked": "2026-10-19T23:28:59.003835+00:00",
+ "checked": "2026-10-20T00:35:12.186369+00:00",
  "overview": {
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh7-1966-overview.jpg",
-  "reduced_by": 4
+  "reduced_by": 4,
+  "width": 26509,
+  "height": 8827
  },
  "locate": {
-  "crop_in_overview": null,
-  "agree": 0
+  "city_in_overview": [
+   14519,
+   7127,
+   1724,
+   1615
+  ],
+  "coast_score": 0.702
  },
- "locate_failed": true
+ "locate_failed": true,
+ "mosaic_version": 2
 }

@@ -64,140 +64,168 @@
   "seams": [
    {
     "offset": [
-     37216,
+     34144,
      0
     ],
-    "score": 0.152
+    "score": 0.183,
+    "overlap": 3074,
+    "guessed": true
    },
    {
     "offset": [
-     74432,
+     68288,
      0
     ],
-    "score": 0.208
+    "score": 0.281,
+    "overlap": 3074,
+    "guessed": true
    },
    {
     "offset": [
-     111648,
+     102432,
      0
     ],
-    "score": 0.107
+    "score": 0.14,
+    "overlap": 3074,
+    "guessed": true
    },
    {
     "offset": [
-     148864,
+     136576,
      0
     ],
-    "score": 0.288
+    "score": 0.149,
+    "overlap": 3074,
+    "guessed": true
    },
    {
     "offset": [
-     186080,
+     170720,
      0
     ],
-    "score": 0.31
+    "score": 0.3,
+    "overlap": 3074,
+    "guessed": true
    },
    {
     "offset": [
-     220192,
+     204832,
      -16
     ],
-    "score": 0.933
+    "score": 0.958,
+    "overlap": 3106,
+    "guessed": false
    },
    {
     "offset": [
-     254336,
+     238976,
      0
     ],
-    "score": 0.868
+    "score": 0.921,
+    "overlap": 3074,
+    "guessed": false
    },
    {
     "offset": [
-     288480,
+     273120,
      -48
     ],
-    "score": 0.828
+    "score": 0.905,
+    "overlap": 3074,
+    "guessed": false
    },
    {
     "offset": [
-     322752,
+     307392,
      -96
     ],
-    "score": 0.907
+    "score": 0.912,
+    "overlap": 2946,
+    "guessed": false
    },
    {
     "offset": [
-     347568,
-     -176
+     340944,
+     -128
     ],
-    "score": 0.618
+    "score": 0.766,
+    "overlap": 3666,
+    "guessed": false
    }
   ],
   "joined_along": "x",
-  "width": 384786,
-  "height": 25241,
+  "width": 378162,
+  "height": 25193,
   "dtype": "Byte",
   "offsets": [
    [
     0,
-    176
-   ],
-   [
-    37216,
-    176
-   ],
-   [
-    74432,
-    176
-   ],
-   [
-    111648,
-    176
-   ],
-   [
-    148864,
-    176
-   ],
-   [
-    186080,
-    176
-   ],
-   [
-    220192,
-    160
-   ],
-   [
-    254336,
-    176
-   ],
-   [
-    288480,
     128
    ],
    [
-    322752,
+    34144,
+    128
+   ],
+   [
+    68288,
+    128
+   ],
+   [
+    102432,
+    128
+   ],
+   [
+    136576,
+    128
+   ],
+   [
+    170720,
+    128
+   ],
+   [
+    204832,
+    112
+   ],
+   [
+    238976,
+    128
+   ],
+   [
+    273120,
     80
    ],
    [
-    347568,
+    307392,
+    32
+   ],
+   [
+    340944,
     0
    ]
   ]
  },
  "whole": {
   "file": "kh9-1983-whole.jpg",
-  "scale": 64.131,
+  "scale": 63.027,
   "width": 6000,
-  "height": 394
+  "height": 400
  },
- "checked": "2026-10-19T23:55:43.890484+00:00",
+ "checked": "2026-10-20T00:49:25.836159+00:00",
  "overview": {
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1983-overview.jpg",
-  "reduced_by": 9
+  "reduced_by": 8,
+  "width": 47270,
+  "height": 3149
  },
  "locate": {
-  "crop_in_overview": null,
-  "agree": 0
+  "city_in_overview": [
+   34884,
+   0,
+   3593,
+   3018
+  ],
+  "coast_score": 0.902
  },
- "locate_failed": true
+ "locate_failed": true,
+ "mosaic_version": 2
 }

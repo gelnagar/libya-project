@@ -44,96 +44,116 @@
   "seams": [
    {
     "offset": [
-     37264,
+     34832,
      0
     ],
-    "score": 0.184
+    "score": 0.164,
+    "overlap": 2436,
+    "guessed": true
    },
    {
     "offset": [
-     74528,
+     69664,
      0
     ],
-    "score": 0.278
+    "score": 0.235,
+    "overlap": 2436,
+    "guessed": true
    },
    {
     "offset": [
-     111792,
-     0
+     106544,
+     -16
     ],
-    "score": 0.409
+    "score": 0.408,
+    "overlap": 388,
+    "guessed": false
    },
    {
     "offset": [
-     146544,
-     -80
+     141296,
+     -96
     ],
-    "score": 0.945
+    "score": 0.947,
+    "overlap": 2516,
+    "guessed": false
    },
    {
     "offset": [
-     181456,
-     -160
+     176208,
+     -176
     ],
-    "score": 0.891
+    "score": 0.943,
+    "overlap": 2356,
+    "guessed": false
    },
    {
     "offset": [
-     210864,
-     -144
+     210944,
+     -240
     ],
-    "score": 0.711
+    "score": 0.977,
+    "overlap": 2532,
+    "guessed": false
    }
   ],
   "joined_along": "x",
-  "width": 248132,
-  "height": 24965,
+  "width": 248212,
+  "height": 25045,
   "dtype": "Byte",
   "offsets": [
    [
     0,
-    160
+    240
    ],
    [
-    37264,
-    160
+    34832,
+    240
    ],
    [
-    74528,
-    160
+    69664,
+    240
    ],
    [
-    111792,
-    160
+    106544,
+    224
    ],
    [
-    146544,
-    80
+    141296,
+    144
    ],
    [
-    181456,
+    176208,
+    64
+   ],
+   [
+    210944,
     0
-   ],
-   [
-    210864,
-    16
    ]
   ]
  },
  "whole": {
   "file": "kh9-1972-jul-whole.jpg",
-  "scale": 41.355333333333334,
+  "scale": 41.36866666666667,
   "width": 6000,
-  "height": 604
+  "height": 605
  },
- "checked": "2026-10-19T23:33:17.672167+00:00",
+ "checked": "2026-10-20T00:38:33.390706+00:00",
  "overview": {
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1972-jul-overview.jpg",
-  "reduced_by": 6
+  "reduced_by": 6,
+  "width": 41368,
+  "height": 4174
  },
  "locate": {
-  "crop_in_overview": null,
-  "agree": 0
+  "city_in_overview": [
+   21274,
+   1631,
+   1830,
+   1288
+  ],
+  "coast_score": 0.898
  },
- "locate_failed": true
+ "locate_failed": true,
+ "mosaic_version": 2
 }

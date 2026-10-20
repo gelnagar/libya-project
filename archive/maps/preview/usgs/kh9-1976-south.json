@@ -47,47 +47,59 @@
      35328,
      112
     ],
-    "score": 0.943
+    "score": 0.943,
+    "overlap": 1902,
+    "guessed": false
    },
    {
     "offset": [
      70960,
      96
     ],
-    "score": 0.776
+    "score": 0.746,
+    "overlap": 1598,
+    "guessed": false
    },
    {
     "offset": [
-     108176,
-     96
+     106720,
+     64
     ],
-    "score": 0.445
+    "score": 0.518,
+    "overlap": 1470,
+    "guessed": false
    },
    {
     "offset": [
-     143344,
-     160
+     141888,
+     128
     ],
-    "score": 0.899
+    "score": 0.893,
+    "overlap": 2062,
+    "guessed": false
    },
    {
     "offset": [
-     178976,
-     208
-    ],
-    "score": 0.608
-   },
-   {
-    "offset": [
-     214496,
+     177520,
      176
     ],
-    "score": 0.775
+    "score": 0.593,
+    "overlap": 1598,
+    "guessed": false
+   },
+   {
+    "offset": [
+     213040,
+     144
+    ],
+    "score": 0.868,
+    "overlap": 1710,
+    "guessed": false
    }
   ],
   "joined_along": "x",
-  "width": 251726,
-  "height": 25255,
+  "width": 250270,
+  "height": 25223,
   "dtype": "Byte",
   "offsets": [
    [
@@ -103,37 +115,45 @@
     96
    ],
    [
-    108176,
-    96
+    106720,
+    64
    ],
    [
-    143344,
-    160
+    141888,
+    128
    ],
    [
-    178976,
-    208
-   ],
-   [
-    214496,
+    177520,
     176
+   ],
+   [
+    213040,
+    144
    ]
   ]
  },
  "whole": {
   "file": "kh9-1976-south-whole.jpg",
-  "scale": 41.95433333333333,
+  "scale": 41.711666666666666,
   "width": 6000,
-  "height": 602
+  "height": 605
  },
- "checked": "2026-10-19T23:48:02.092757+00:00",
+ "checked": "2026-10-20T00:46:06.927546+00:00",
  "overview": {
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1976-south-overview.jpg",
-  "reduced_by": 6
+  "reduced_by": 6,
+  "width": 41711,
+  "height": 4203
  },
  "locate": {
-  "crop_in_overview": null,
-  "agree": 4
+  "city_in_overview": [
+   37138,
+   949,
+   1219,
+   1060
+  ],
+  "coast_score": 0.849
  },
- "locate_failed": true
+ "locate_failed": true,
+ "mosaic_version": 2
 }

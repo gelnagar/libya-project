@@ -24,6 +24,52 @@ window.ATLAS_OVERLAYS = [
   "attribution": "Tripoli city plan, 1962 — Princeton University Library, record princeton-zk51vj17s"
  },
  {
+  "id": "kh9-1972-nov",
+  "kind": "satellite",
+  "title": "Spy satellite, November 1972 (KH-9 HEXAGON)",
+  "year": 1972,
+  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up with 1039 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 7 m.",
+  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003",
+  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
+  "license": "Public domain (U.S. government work)",
+  "tiles": "maps/kh9-1972-nov/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.7964633,
+    13.106344
+   ],
+   [
+    32.9147177,
+    13.382902
+   ]
+  ],
+  "maxZoom": 17,
+  "attribution": "Spy satellite, November 1972 — USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003"
+ },
+ {
+  "id": "kh9-1976-north",
+  "kind": "satellite",
+  "title": "Spy satellite, 1976, north (KH-9 HEXAGON)",
+  "year": 1976,
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga east of the harbour. Taken 1976-03-20. Lined up with 527 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 4 m.",
+  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005",
+  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
+  "license": "Public domain (U.S. government work)",
+  "tiles": "maps/kh9-1976-north/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.8607253,
+    13.1621209
+   ],
+   [
+    32.9153477,
+    13.3802961
+   ]
+  ],
+  "maxZoom": 17,
+  "attribution": "Spy satellite, 1976, north — USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005"
+ },
+ {
   "id": "landsat-1970s",
   "kind": "satellite",
   "title": "Satellite, 1977",

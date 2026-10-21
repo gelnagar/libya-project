@@ -69,6 +69,29 @@ window.ATLAS_OVERLAYS = [
   "attribution": "Landsat 1977 (USGS)"
  },
  {
+  "id": "kh9-1983",
+  "kind": "satellite",
+  "title": "Spy satellite, 1983 (KH-9 HEXAGON)",
+  "year": 1983,
+  "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished. Taken 1983-08-13. Lined up by hand on 11 landmarks; typical error about 377 m.",
+  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1218-100323A003",
+  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
+  "license": "Public domain (U.S. government work)",
+  "tiles": "maps/kh9-1983/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.8487519,
+    13.1681364
+   ],
+   [
+    32.9083216,
+    13.307667
+   ]
+  ],
+  "maxZoom": 17,
+  "attribution": "Spy satellite, 1983 — USGS EarthExplorer, declassified satellite imagery, frame D3C1218-100323A003"
+ },
+ {
   "id": "landsat-1984",
   "kind": "satellite",
   "title": "Satellite, 1985",

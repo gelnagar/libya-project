@@ -2,13 +2,17 @@ name: Match declassified frames (learned matcher)
 # Proposes landmarks between a film overview and the aligned layers / today's imagery with LoFTR (Kornia, PyTorch on CPU).
 # Needs archive/maps/seeds/<frame>.json (a few hand-marked landmarks). Writes archive/maps/matches/<frame>-<reference>-<matcher>.json.
 on:
+  # runs when the matcher or its seeds change on a branch; workflow_dispatch needs the file on main
+  push: { paths: [scripts/usgs-match.py, 'archive/maps/seeds/**', .github/workflows/usgs-match.yml] }
   workflow_dispatch:
     inputs:
       frame: { description: 'Frame id, e.g. kh9-1976-north', required: true, default: 'kh9-1976-north' }
       refs: { description: 'References, space separated: layers esri', required: false, default: 'layers esri' }
       matcher: { description: 'loftr or sift', required: false, default: 'loftr' }
 permissions: { contents: write }
-concurrency: { group: 'usgs-match-${{ inputs.frame }}', cancel-in-progress: false }
+concurrency:
+  group: usgs-match-${{ inputs.frame || 'kh9-1976-north' }}
+  cancel-in-progress: false
 jobs:
   match:
     runs-on: ubuntu-latest
@@ -25,9 +29,9 @@ jobs:
       - name: Match
         run: venv/bin/python scripts/usgs-match.py "$FRAME" $REFS "--matcher=$MATCHER"
         env:
-          FRAME: '${{ inputs.frame }}'
-          REFS: '${{ inputs.refs }}'
-          MATCHER: '${{ inputs.matcher }}'
+          FRAME: ${{ inputs.frame || 'kh9-1976-north' }}
+          REFS: ${{ inputs.refs || 'layers esri' }}
+          MATCHER: ${{ inputs.matcher || 'loftr' }}
       - if: always()
         run: |
           git config user.name "github-actions[bot]"

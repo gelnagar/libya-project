@@ -172,7 +172,7 @@ def local_affine(BR, BC, q, k=48):
     coef, *_ = np.linalg.lstsq(np.c_[BR[idx], np.ones(len(idx))] * w[:, None], BC[idx] * w[:, None], rcond=None)
     return coef.T
 
-def grow_frame(fid, matcher, ov, seeds, max_rounds=14):
+def grow_frame(fid, matcher, ov, seeds, max_rounds=None):
     """Seeds are rough [film x, film y, lon, lat] points that only say where to look first. Each round matches the patches
     next to the verified points (an affine from the nearest verified points places each patch), thins the matches to one
     per ~120 m, and keeps only points their neighbours agree with (within 40 m). Progress is written after every round."""
@@ -180,7 +180,10 @@ def grow_frame(fid, matcher, ov, seeds, max_rounds=14):
     if os.environ.get('MATCH_REF') == 'layers': ref = layer_reference(ref.shape, origin)   # testing: the aligned film layers as the reference
     Rs = np.array([[a - origin[0], b - origin[1]] for a, b in (ll2px(lo, la) for lo, la in seeds[:, 2:4])]); Cs = seeds[:, :2].copy()
     VC, VR, VG = np.empty((0, 2)), np.empty((0, 2)), np.empty(0)      # verified film px, reference px, confidence
-    rounds = []; out_path = f'archive/maps/matches/{fid}-grow-loftr.json'
+    max_rounds = max_rounds or int(os.environ.get('MATCH_ROUNDS', 10))
+    budget = float(os.environ.get('MATCH_BUDGET_MIN', 0)) * 60        # stop starting patches after this many seconds (0 = no limit)
+    t_start = time.time(); tries = {}                                   # tries: how often each patch centre was attempted
+    rounds = []; out_path = f"archive/maps/matches/{fid}-{os.environ.get('MATCH_OUT', 'grow')}-loftr.json"
     sp = SPACING_M / M_PER_PX; half = PATCH * STEP / 2
     for rnd in range(max_rounds):
         BC, BR = (VC, VR) if len(VR) >= 6 else (Cs, Rs)
@@ -190,12 +193,15 @@ def grow_frame(fid, matcher, ov, seeds, max_rounds=14):
             for x in np.arange(max(lo[0], half), min(hi[0], ref.shape[1] - half), sp):
                 nd = np.hypot(*(BR - [x, y]).T).min()
                 done = (np.hypot(*(VR - [x, y]).T) < 600 / M_PER_PX).sum() if len(VR) else 0
-                if nd < 2000 / M_PER_PX and done < 4: centres.append((x, y, nd))
+                if nd < 2000 / M_PER_PX and done < 4 and tries.get((int(x // 40), int(y // 40)), 0) < 2: centres.append((x, y, nd))
         centres.sort(key=lambda c: c[2])
         if not centres: print('no frontier left'); break
         print(f'round {rnd + 1}: {len(centres)} frontier patches, {len(VR)} verified points so far', flush=True)
         newC, newR, newG = [], [], []
+        out_of_time = False
         for ci, (cx, cy, nd) in enumerate(centres):
+            if budget and time.time() - t_start > budget: out_of_time = True; break
+            tries[(int(cx // 40), int(cy // 40))] = tries.get((int(cx // 40), int(cy // 40)), 0) + 1
             A = local_affine(BR, BC, np.array([cx, cy]))
             if A is None: continue
             px0, py0 = cx - half, cy - half
@@ -214,6 +220,7 @@ def grow_frame(fid, matcher, ov, seeds, max_rounds=14):
                 newC.append(M @ [p[0], p[1], 1.0]); newR.append([px0 + q[0] * STEP, py0 + q[1] * STEP]); newG.append(c)
             if ci % 20 == 0: print(f'   patch {ci}/{len(centres)}: {int(mask.sum())} agree', flush=True)
         if not newC: print('nothing matched this round'); break
+        if out_of_time: print('time budget reached; finishing this round with what was found')
         newC, newR, newG = np.array(newC), np.array(newR), np.array(newG)
         seen, sel = set(), []
         for i in np.argsort(-newG):
@@ -235,7 +242,7 @@ def grow_frame(fid, matcher, ov, seeds, max_rounds=14):
         out = [[round(float(c[0]), 1), round(float(c[1]), 1), *[round(v, 6) for v in px2ll(r[0] + origin[0], r[1] + origin[1])], round(float(g), 3)]
                for c, r, g in zip(VC, VR, VG)]
         json.dump({'info': {'rounds': rounds, 'points': len(out), 'matcher': 'loftr', 'reference': 'esri', 'mode': 'grow'}, 'candidates': out}, open(out_path, 'w'), indent=0)
-        if added < 15 and rnd >= 1: break
+        if out_of_time or (added < 15 and rnd >= 1): break
     return out_path
 
 def main():

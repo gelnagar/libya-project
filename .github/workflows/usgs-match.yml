@@ -39,6 +39,9 @@ jobs:
           FRAME: ${{ matrix.job.frame }}
           REFS: ${{ matrix.job.refs }}
           MATCHER: ${{ matrix.job.matcher }}
+          MATCH_BUDGET_MIN: ${{ matrix.job.budget || 0 }}
+          MATCH_OUT: ${{ matrix.job.out || 'grow' }}
+          MATCH_ROUNDS: ${{ matrix.job.rounds || 10 }}
       - if: always()
         run: |
           git config user.name "github-actions[bot]"

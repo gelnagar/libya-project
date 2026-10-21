@@ -2,21 +2,25 @@
  {
   "frame": "kh9-1972-nov",
   "refs": "grow",
-  "matcher": "loftr"
+  "matcher": "loftr",
+  "budget": 150,
+  "out": "grow2",
+  "rounds": 8
  },
  {
   "frame": "kh9-1983",
   "refs": "grow",
-  "matcher": "loftr"
- },
- {
-  "frame": "kh9-1976-north",
-  "refs": "grow",
-  "matcher": "loftr"
+  "matcher": "loftr",
+  "budget": 150,
+  "out": "grow2",
+  "rounds": 8
  },
  {
   "frame": "kh9-1976-south",
   "refs": "grow",
-  "matcher": "loftr"
+  "matcher": "loftr",
+  "budget": 150,
+  "out": "grow2",
+  "rounds": 8
  }
 ]

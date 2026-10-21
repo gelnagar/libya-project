@@ -12,13 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       jobs: ${{ steps.q.outputs.jobs }}
+      count: ${{ steps.q.outputs.count }}
     steps:
       - uses: actions/checkout@v4
         with: { ref: '${{ github.ref_name }}' }
       - id: q
-        run: echo "jobs=$(python3 -c "import json;print(json.dumps(json.load(open('archive/maps/match-queue.json'))))")" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "jobs=$(python3 -c "import json;print(json.dumps(json.load(open('archive/maps/match-queue.json'))))")" >> "$GITHUB_OUTPUT"
+          echo "count=$(python3 -c "import json;print(len(json.load(open('archive/maps/match-queue.json'))))")" >> "$GITHUB_OUTPUT"
   match:
     needs: plan
+    if: needs.plan.outputs.count != '0'   # an empty queue means nothing to run
     runs-on: ubuntu-latest
     timeout-minutes: 340
     strategy:

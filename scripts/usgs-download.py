@@ -199,7 +199,7 @@ def run(key, pick, overlays):
                  'checked': datetime.datetime.now(datetime.timezone.utc).isoformat()})
     meta['mosaic_version'] = MOSAIC_VERSION
     out = 'preview made'
-    crop, sc, gf = pick.get('crop'), s, pick.get('gcps_frame')  # a hand-set crop is in whole-preview pixels
+    crop, sc, gf = pick.get('crop'), s, pick.get('gcps_frame') or (json.load(open(pick['gcps_file'])) if pick.get('gcps_file') else None)  # a hand-set crop is in whole-preview pixels
     win = None
     if gf:
         # landmarks [frame x, frame y, lon, lat]: cut the film around them with a 10% margin (the warp is trimmed to them later)

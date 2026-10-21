@@ -183,7 +183,7 @@ def run(key, pick, overlays):
     pid = pick['id']; meta_path = f'{PREV}/{pid}.json'
     meta = json.load(open(meta_path)) if os.path.exists(meta_path) else {}
     if any(o['id'] == pid for o in overlays): return 'already cut and listed in overlays.json'
-    if not pick.get('crop') and not pick.get('gcps_frame') and meta.get('mosaic_version') == MOSAIC_VERSION and meta.get('overview'):
+    if not pick.get('crop') and not pick.get('gcps_frame') and not pick.get('gcps_file') and meta.get('mosaic_version') == MOSAIC_VERSION and meta.get('overview'):
         return 'overview ready; add landmarks ("gcps_frame") to the pick'
     d = os.path.join(WORK, pid); shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
     url, size = request_url(key, pick)

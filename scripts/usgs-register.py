@@ -393,8 +393,9 @@ def main():
             if gcps:
                 o['gcps'], o['gcp_srs'] = gcps, 'EPSG:4326'
                 if o.get('init_gcps'): o['warp'] = 'tps'
-                how = f"Lined up by hand on {info['points']} landmarks" if o.get('init_gcps') else "Lined up automatically with today's imagery"
-                o['note'] = o.get('note', '').split(' Lined up')[0] + f" {how}; typical error about {info['median_m']:.0f} m."
+                how = (f"Lined up with {info['points']} control points found by a learned image matcher (LoFTR) and checked against their neighbours" if o.get('matched')
+                       else f"Lined up by hand on {info['points']} landmarks" if o.get('init_gcps') else "Lined up automatically with today's imagery")
+                o['note'] = o.get('note', '').split(' Lined up')[0] + f" {how}: they agree to about {info['median_m']:.0f} m." if o.get('matched') else o.get('note', '').split(' Lined up')[0] + f" {how}; typical error about {info['median_m']:.0f} m."
             status[o['id']] = info
             os.remove(cut)
         except Exception as e:

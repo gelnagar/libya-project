@@ -51,7 +51,7 @@ window.ATLAS_OVERLAYS = [
   "kind": "satellite",
   "title": "Spy satellite, 1976, north (KH-9 HEXAGON)",
   "year": 1976,
-  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga; the frame after it covers Abu Salim. Taken 1976-03-20. Lined up by hand on 594 landmarks; typical error about 6 m.",
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga; the frame after it covers Abu Salim. Taken 1976-03-20. Lined up with 594 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 6 m. At street level it matches today's map in the areas shown.",
   "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005",
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",

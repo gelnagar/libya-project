@@ -239,6 +239,7 @@ def run(key, pick, overlays):
         url = upload(cut)
         entry = overlay_entry(pick, url)
         if gf:  # the landmarks in cut-out pixels: usgs-register.py starts from them and keeps them if refinement fails
+            entry['matched'] = bool(pick.get('gcps_note'))  # points from the learned matcher, not hand-marked
             entry['init_gcps'] = [[round((x - win[0]) / factor, 1), round((y - win[1]) / factor, 1), lo, la] for x, y, lo, la in gf]
         overlays.append(entry)
         out = f'cut {win} (reduced {factor}x) uploaded to {url}'

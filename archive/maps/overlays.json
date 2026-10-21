@@ -574,7 +574,7 @@
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1976-north.tif",
   "license": "Public domain (U.S. government work)",
   "zooms": "12-17",
-  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga; the frame after it covers Abu Salim. Taken 1976-03-20. Lined up by hand on 594 landmarks; typical error about 6 m.",
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga; the frame after it covers Abu Salim. Taken 1976-03-20. Lined up with 594 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 6 m. At street level it matches today's map in the areas shown.",
   "init_gcps": [
    [
     4343.0,

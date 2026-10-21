@@ -70,6 +70,29 @@ window.ATLAS_OVERLAYS = [
   "attribution": "Spy satellite, 1976, north — USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005"
  },
  {
+  "id": "kh9-1976-south",
+  "kind": "satellite",
+  "title": "Spy satellite, 1976, south (KH-9 HEXAGON)",
+  "year": 1976,
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. The frame after the old city: Gargaresh, Bab al-Aziziya, Abu Salim and the southern districts. Taken 1976-03-20. Lined up with 1347 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 5 m.",
+  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F006",
+  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
+  "license": "Public domain (U.S. government work)",
+  "tiles": "maps/kh9-1976-south/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.7975053,
+    13.0313008
+   ],
+   [
+    32.9023237,
+    13.3776392
+   ]
+  ],
+  "maxZoom": 17,
+  "attribution": "Spy satellite, 1976, south — USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F006"
+ },
+ {
   "id": "landsat-1970s",
   "kind": "satellite",
   "title": "Satellite, 1977",
@@ -90,6 +113,29 @@ window.ATLAS_OVERLAYS = [
   ],
   "maxZoom": 13,
   "attribution": "Landsat 1977 (USGS)"
+ },
+ {
+  "id": "kh9-1983",
+  "kind": "satellite",
+  "title": "Spy satellite, 1983 (KH-9 HEXAGON)",
+  "year": 1983,
+  "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished. Taken 1983-08-13. Lined up with 1519 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 6 m.",
+  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1218-100323A003",
+  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
+  "license": "Public domain (U.S. government work)",
+  "tiles": "maps/kh9-1983/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.7553993,
+    13.0308846
+   ],
+   [
+    32.9251087,
+    13.3827734
+   ]
+  ],
+  "maxZoom": 17,
+  "attribution": "Spy satellite, 1983 — USGS EarthExplorer, declassified satellite imagery, frame D3C1218-100323A003"
  },
  {
   "id": "landsat-1984",

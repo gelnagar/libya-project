@@ -1,11 +1,95 @@
 {
- "at": "2026-10-21T15:18:24.890397+00:00",
+ "at": "2026-10-21T15:21:18.811573+00:00",
  "frames": {
   "kh9-1976-south": {
-   "error": "OpenCV(4.6.0) ./modules/imgproc/src/imgwarp.cpp:1724: error: (-215:Assertion failed) dst.cols < SHRT_MAX && dst.rows < SHRT_MAX && src.cols < SHRT_MAX && src.rows < SHRT_MAX in function 'remap'\n"
+   "points": 1347,
+   "rms_m": 14.3,
+   "median_m": 4.6,
+   "p90_m": 13.3,
+   "worst": [
+    [
+     346.0,
+     [
+      13.085198,
+      32.835049
+     ]
+    ],
+    [
+     156.9,
+     [
+      13.054437,
+      32.844004
+     ]
+    ],
+    [
+     93.7,
+     [
+      13.320167,
+      32.811339
+     ]
+    ],
+    [
+     67.2,
+     [
+      13.075297,
+      32.832871
+     ]
+    ],
+    [
+     63.2,
+     [
+      13.05075,
+      32.802345
+     ]
+    ]
+   ],
+   "method": "hand-marked landmarks against Esri World Imagery z16; thin-plate-spline warp, trimmed to the landmarks",
+   "at": "2026-10-21T15:21:13.711208+00:00"
   },
   "kh9-1983": {
-   "error": "OpenCV(4.6.0) ./modules/imgproc/src/imgwarp.cpp:1724: error: (-215:Assertion failed) dst.cols < SHRT_MAX && dst.rows < SHRT_MAX && src.cols < SHRT_MAX && src.rows < SHRT_MAX in function 'remap'\n"
+   "points": 1519,
+   "rms_m": 16.0,
+   "median_m": 6.5,
+   "p90_m": 18.8,
+   "worst": [
+    [
+     374.5,
+     [
+      13.20647,
+      32.795251
+     ]
+    ],
+    [
+     109.6,
+     [
+      13.288073,
+      32.856378
+     ]
+    ],
+    [
+     99.8,
+     [
+      13.299626,
+      32.866455
+     ]
+    ],
+    [
+     97.3,
+     [
+      13.299432,
+      32.866459
+     ]
+    ],
+    [
+     72.6,
+     [
+      13.136458,
+      32.824745
+     ]
+    ]
+   ],
+   "method": "hand-marked landmarks against Esri World Imagery z16; thin-plate-spline warp, trimmed to the landmarks",
+   "at": "2026-10-21T15:21:18.574144+00:00"
   }
  }
 }

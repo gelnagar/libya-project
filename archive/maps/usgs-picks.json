@@ -27,7 +27,7 @@
   "year": 1972,
   "date": "1972-11-07",
   "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan.",
-  "zooms": "12-17",
+  "zooms": "12-16",
   "gcps_file": "archive/maps/gcps/kh9-1972-nov.json",
   "gcps_note": "LoFTR matches against today's imagery, grown outward from rough seeds and filtered by neighbour consistency (scripts/usgs-match.py)"
  },
@@ -39,7 +39,7 @@
   "year": 1976,
   "date": "1976-03-20",
   "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga east of the harbour.",
-  "zooms": "12-17",
+  "zooms": "12-16",
   "gcps_note": "LoFTR matches against today's imagery, grown outward from rough seeds and filtered by neighbour consistency (scripts/usgs-match.py)",
   "gcps_file": "archive/maps/gcps/kh9-1976-north.json"
  },
@@ -51,7 +51,7 @@
   "year": 1976,
   "date": "1976-03-20",
   "note": "KH-9 HEXAGON panoramic camera, declassified 2011. The frame after the old city: Gargaresh, Bab al-Aziziya, Abu Salim and the southern districts.",
-  "zooms": "12-17",
+  "zooms": "12-16",
   "gcps_file": "archive/maps/gcps/kh9-1976-south.json",
   "gcps_note": "LoFTR matches against today's imagery, grown outward from rough seeds and filtered by neighbour consistency (scripts/usgs-match.py)"
  },
@@ -63,7 +63,7 @@
   "year": 1983,
   "date": "1983-08-13",
   "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished.",
-  "zooms": "12-17",
+  "zooms": "12-16",
   "gcps_file": "archive/maps/gcps/kh9-1983.json",
   "gcps_note": "LoFTR matches against today's imagery, grown outward from rough seeds and filtered by neighbour consistency (scripts/usgs-match.py)"
  }

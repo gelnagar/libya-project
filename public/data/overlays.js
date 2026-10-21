@@ -43,7 +43,7 @@ window.ATLAS_OVERLAYS = [
     13.382902
    ]
   ],
-  "maxZoom": 17,
+  "maxZoom": 16,
   "attribution": "Spy satellite, November 1972 — USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003"
  },
  {
@@ -66,7 +66,7 @@ window.ATLAS_OVERLAYS = [
     13.3802961
    ]
   ],
-  "maxZoom": 17,
+  "maxZoom": 16,
   "attribution": "Spy satellite, 1976, north — USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005"
  },
  {
@@ -89,7 +89,7 @@ window.ATLAS_OVERLAYS = [
     13.3776392
    ]
   ],
-  "maxZoom": 17,
+  "maxZoom": 16,
   "attribution": "Spy satellite, 1976, south — USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F006"
  },
  {
@@ -134,7 +134,7 @@ window.ATLAS_OVERLAYS = [
     13.3827734
    ]
   ],
-  "maxZoom": 17,
+  "maxZoom": 16,
   "attribution": "Spy satellite, 1983 — USGS EarthExplorer, declassified satellite imagery, frame D3C1218-100323A003"
  },
  {

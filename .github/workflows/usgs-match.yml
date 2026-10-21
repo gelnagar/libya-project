@@ -1,22 +1,30 @@
 name: Match declassified frames (learned matcher)
-# Proposes landmarks between a film overview and the aligned layers / today's imagery with LoFTR (Kornia, PyTorch on CPU).
-# Needs archive/maps/seeds/<frame>.json (a few hand-marked landmarks). Writes archive/maps/matches/<frame>-<reference>-<matcher>.json.
+# Learned feature matching (LoFTR in Kornia, PyTorch on CPU) between each film overview and today's imagery.
+# Edit archive/maps/match-queue.json and push to run: one parallel job per entry,
+#   {"frame": "kh9-1976-south", "refs": "grow", "matcher": "loftr"}
+# "grow" spreads outward from the rough seeds in archive/maps/seeds/<frame>.json; "layers esri" matches once against each reference.
+# Results go to archive/maps/matches/. (workflow_dispatch would need this file on main; the queue file avoids that.)
 on:
-  # runs when the matcher or its seeds change on a branch; workflow_dispatch needs the file on main
-  push: { paths: [scripts/usgs-match.py, 'archive/maps/seeds/**', .github/workflows/usgs-match.yml] }
-  workflow_dispatch:
-    inputs:
-      frame: { description: 'Frame id, e.g. kh9-1976-north', required: true, default: 'kh9-1976-north' }
-      refs: { description: 'References, space separated: layers esri', required: false, default: 'layers esri' }
-      matcher: { description: 'loftr or sift', required: false, default: 'loftr' }
+  push: { paths: ['archive/maps/match-queue.json', '.github/workflows/usgs-match.yml'] }
 permissions: { contents: write }
-concurrency:
-  group: usgs-match-${{ inputs.frame || 'kh9-1976-north' }}
-  cancel-in-progress: false
 jobs:
-  match:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    outputs:
+      jobs: ${{ steps.q.outputs.jobs }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: '${{ github.ref_name }}' }
+      - id: q
+        run: echo "jobs=$(python3 -c "import json;print(json.dumps(json.load(open('archive/maps/match-queue.json'))))")" >> "$GITHUB_OUTPUT"
+  match:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        job: ${{ fromJson(needs.plan.outputs.jobs) }}
     steps:
       - uses: actions/checkout@v4
         with: { ref: '${{ github.ref_name }}' }
@@ -25,19 +33,18 @@ jobs:
           python3 -m venv venv
           venv/bin/pip install -q torch --index-url https://download.pytorch.org/whl/cpu
           venv/bin/pip install -q numpy opencv-python-headless kornia
-          venv/bin/python -c "import torch, kornia; print('torch', torch.__version__, 'kornia', kornia.__version__)"
       - name: Match
         run: venv/bin/python scripts/usgs-match.py "$FRAME" $REFS "--matcher=$MATCHER"
         env:
-          FRAME: ${{ inputs.frame || 'kh9-1976-north' }}
-          REFS: ${{ inputs.refs || 'layers esri' }}
-          MATCHER: ${{ inputs.matcher || 'loftr' }}
+          FRAME: ${{ matrix.job.frame }}
+          REFS: ${{ matrix.job.refs }}
+          MATCHER: ${{ matrix.job.matcher }}
       - if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           [ -d archive/maps/matches ] && git add archive/maps/matches
           if git diff --cached --quiet; then echo none; exit 0; fi
-          git commit -m "Landmark candidates from the learned matcher"
-          for i in 1 2 3 4 5; do git pull --rebase && git push && exit 0; sleep $((i * 10)); done
+          git commit -m "Landmark candidates from the learned matcher: ${{ matrix.job.frame }}"
+          for i in 1 2 3 4 5 6; do git pull --rebase && git push && exit 0; sleep $((i * 8)); done
           exit 1

@@ -151,6 +151,93 @@ def match_frame(fid, refname, matcher, ov, seeds):
     return thin, {'patches': len(centres), 'matched_patches': sum(1 for s in stats if s[2] >= MIN_INLIERS), 'raw': len(out), 'kept': len(thin),
                   'seed_residual_median_px': round(float(np.median(res)), 1)}
 
+# ---------- grow mode: start from a few rough seeds and spread outward ----------
+
+def consistency(C, R, check, radius=450.0, min_nb=6):
+    """Error in metres of each checked point against an affine fitted to its neighbours (every other point within
+    radius reference pixels). inf where there are too few neighbours to judge."""
+    err = np.full(len(C), np.inf)
+    for i in check:
+        d = np.hypot(*(R - R[i]).T); m = (d < radius) & (d > 0)
+        if m.sum() < min_nb: continue
+        coef, *_ = np.linalg.lstsq(np.c_[C[m], np.ones(m.sum())], R[m], rcond=None)
+        err[i] = float(np.hypot(*(np.r_[C[i], 1.0] @ coef - R[i]))) * M_PER_PX
+    return err
+
+def local_affine(BR, BC, q, k=48):
+    """Affine reference px -> film px fitted to the k points nearest q, nearer ones weighing more. None if there are too few."""
+    if len(BR) < 3: return None
+    d = np.hypot(*(BR - q).T); idx = np.argsort(d)[:k]
+    w = 1.0 / (1.0 + (d[idx] / max(250.0, float(np.median(d[idx])))) ** 2)
+    coef, *_ = np.linalg.lstsq(np.c_[BR[idx], np.ones(len(idx))] * w[:, None], BC[idx] * w[:, None], rcond=None)
+    return coef.T
+
+def grow_frame(fid, matcher, ov, seeds, max_rounds=14):
+    """Seeds are rough [film x, film y, lon, lat] points that only say where to look first. Each round matches the patches
+    next to the verified points (an affine from the nearest verified points places each patch), thins the matches to one
+    per ~120 m, and keeps only points their neighbours agree with (within 40 m). Progress is written after every round."""
+    ref, origin = esri_reference()
+    if os.environ.get('MATCH_REF') == 'layers': ref = layer_reference(ref.shape, origin)   # testing: the aligned film layers as the reference
+    Rs = np.array([[a - origin[0], b - origin[1]] for a, b in (ll2px(lo, la) for lo, la in seeds[:, 2:4])]); Cs = seeds[:, :2].copy()
+    VC, VR, VG = np.empty((0, 2)), np.empty((0, 2)), np.empty(0)      # verified film px, reference px, confidence
+    rounds = []; out_path = f'archive/maps/matches/{fid}-grow-loftr.json'
+    sp = SPACING_M / M_PER_PX; half = PATCH * STEP / 2
+    for rnd in range(max_rounds):
+        BC, BR = (VC, VR) if len(VR) >= 6 else (Cs, Rs)
+        lo, hi = BR.min(0) - 2200 / M_PER_PX, BR.max(0) + 2200 / M_PER_PX
+        centres = []
+        for y in np.arange(max(lo[1], half), min(hi[1], ref.shape[0] - half), sp):
+            for x in np.arange(max(lo[0], half), min(hi[0], ref.shape[1] - half), sp):
+                nd = np.hypot(*(BR - [x, y]).T).min()
+                done = (np.hypot(*(VR - [x, y]).T) < 600 / M_PER_PX).sum() if len(VR) else 0
+                if nd < 2000 / M_PER_PX and done < 4: centres.append((x, y, nd))
+        centres.sort(key=lambda c: c[2])
+        if not centres: print('no frontier left'); break
+        print(f'round {rnd + 1}: {len(centres)} frontier patches, {len(VR)} verified points so far', flush=True)
+        newC, newR, newG = [], [], []
+        for ci, (cx, cy, nd) in enumerate(centres):
+            A = local_affine(BR, BC, np.array([cx, cy]))
+            if A is None: continue
+            px0, py0 = cx - half, cy - half
+            crop = ref[int(py0):int(py0 + PATCH * STEP), int(px0):int(px0 + PATCH * STEP)]
+            if crop.shape[0] < 10 or (crop > 0).mean() < 0.6: continue
+            rp = cv2.resize(crop, (PATCH, PATCH), interpolation=cv2.INTER_AREA)
+            M = np.c_[A[:, :2] * STEP, A @ [px0, py0, 1.0]]
+            fp = cv2.warpAffine(ov, M, (PATCH, PATCH), flags=cv2.INTER_AREA | cv2.WARP_INVERSE_MAP, borderValue=0)
+            if (fp > 0).mean() < 0.6 or fp.std() < 8: continue
+            k0, k1, conf = matcher(CLAHE.apply(fp), CLAHE.apply(rp))
+            if len(k0) < MIN_INLIERS: continue
+            H, mask = cv2.findHomography(k0, k1, cv2.USAC_MAGSAC, 5.0)
+            if H is None or mask is None or int(mask.sum()) < MIN_INLIERS: continue
+            ok = mask.ravel() > 0
+            for p, q, c in zip(k0[ok], k1[ok], conf[ok]):
+                newC.append(M @ [p[0], p[1], 1.0]); newR.append([px0 + q[0] * STEP, py0 + q[1] * STEP]); newG.append(c)
+            if ci % 20 == 0: print(f'   patch {ci}/{len(centres)}: {int(mask.sum())} agree', flush=True)
+        if not newC: print('nothing matched this round'); break
+        newC, newR, newG = np.array(newC), np.array(newR), np.array(newG)
+        seen, sel = set(), []
+        for i in np.argsort(-newG):
+            key = (int(newR[i, 0] // (120 / M_PER_PX)), int(newR[i, 1] // (120 / M_PER_PX)))
+            if key not in seen: seen.add(key); sel.append(i)
+        newC, newR, newG = newC[sel], newR[sel], newG[sel]
+        AC, AR, AG = np.r_[VC, newC], np.r_[VR, newR], np.r_[VG, newG]
+        alive = np.ones(len(AC), bool); is_new = np.r_[np.zeros(len(VC), bool), np.ones(len(newC), bool)]
+        for _ in range(3):
+            sub = np.where(alive)[0]
+            err = consistency(AC[sub], AR[sub], np.where(is_new[sub])[0])
+            bad = np.where(is_new[sub] & (err > 40))[0]
+            if len(bad) == 0: break
+            alive[sub[bad]] = False
+        added = int((alive & is_new).sum())
+        VC, VR, VG = AC[alive], AR[alive], AG[alive]
+        rounds.append({'round': rnd + 1, 'patches': len(centres), 'matched': int(len(newC)), 'added': added, 'verified': int(len(VR))})
+        print(f'round {rnd + 1}: {len(newC)} matches after thinning, {added} verified; {len(VR)} points total', flush=True)
+        out = [[round(float(c[0]), 1), round(float(c[1]), 1), *[round(v, 6) for v in px2ll(r[0] + origin[0], r[1] + origin[1])], round(float(g), 3)]
+               for c, r, g in zip(VC, VR, VG)]
+        json.dump({'info': {'rounds': rounds, 'points': len(out), 'matcher': 'loftr', 'reference': 'esri', 'mode': 'grow'}, 'candidates': out}, open(out_path, 'w'), indent=0)
+        if added < 15 and rnd >= 1: break
+    return out_path
+
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     kind = next((a.split('=', 1)[1] for a in sys.argv[1:] if a.startswith('--matcher=')), 'loftr')
@@ -161,6 +248,8 @@ def main():
     print(fid, 'overview', ov.shape, 'seeds', len(seeds), 'matcher', kind)
     matcher = make_matcher(kind)
     os.makedirs('archive/maps/matches', exist_ok=True)
+    if refs == ['grow']:
+        print('written', grow_frame(fid, matcher, ov, seeds)); return
     for refname in refs:
         t = time.time()
         cands, info = match_frame(fid, refname, matcher, ov, seeds)

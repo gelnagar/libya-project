@@ -4,3 +4,5 @@ manifest service: https://www.davidrumsey.com/luna/servlet/iiif/services/RUMSEY~
 work/atlas-1978.src: JPEG image data, JFIF standard 1.02, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1024x700, components 3
 manifest service: https://www.davidrumsey.com/luna/servlet/iiif/services/RUMSEY~8~1~331655~90100008/search image: https://www.davidrumsey.com/luna/servlet/iiif/RUMSEY~8~1~331655~90100008/full/!1024,1024/0/default.jpg
 work/atlas-1978.src: JPEG image data, JFIF standard 1.02, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1024x700, components 3
+manifest service: https://www.davidrumsey.com/luna/servlet/iiif/services/RUMSEY~8~1~331655~90100008/search image: https://www.davidrumsey.com/luna/servlet/iiif/RUMSEY~8~1~331655~90100008/full/!1024,1024/0/default.jpg
+work/atlas-1978.src: JPEG image data, JFIF standard 1.02, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1024x700, components 3

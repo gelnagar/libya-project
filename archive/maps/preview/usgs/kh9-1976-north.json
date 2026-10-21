@@ -138,7 +138,7 @@
   "width": 6000,
   "height": 621
  },
- "checked": "2026-10-20T00:43:10.826436+00:00",
+ "checked": "2026-10-21T14:54:41.299768+00:00",
  "overview": {
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1976-north-overview.jpg",
   "reduced_by": 6,
@@ -155,5 +155,20 @@
   "coast_score": 0.869
  },
  "locate_failed": true,
- "mosaic_version": 2
+ "mosaic_version": 2,
+ "cut": {
+  "window_in_frame": [
+   166098,
+   16405,
+   27987,
+   9122
+  ],
+  "reduced_by": 1,
+  "file": "kh9-1976-north-cut.jpg",
+  "scale": 5.5974,
+  "width": 5000,
+  "height": 1630,
+  "grid_every_px": 1000,
+  "size_bytes": 48369347
+ }
 }

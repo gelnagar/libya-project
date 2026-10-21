@@ -28,128 +28,8 @@
   "date": "1972-11-07",
   "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan.",
   "zooms": "12-17",
-  "gcps_frame": [
-   [
-    36046.0,
-    6002.0,
-    13.22384,
-    32.90023
-   ],
-   [
-    32186.0,
-    7358.0,
-    13.17241,
-    32.89488
-   ],
-   [
-    32202.0,
-    6594.0,
-    13.17242,
-    32.89983
-   ],
-   [
-    33418.0,
-    10458.0,
-    13.17768,
-    32.86693
-   ],
-   [
-    34894.0,
-    11814.0,
-    13.19518,
-    32.85792
-   ],
-   [
-    30422.0,
-    11942.0,
-    13.13557,
-    32.8599
-   ],
-   [
-    36250.0,
-    8194.0,
-    13.222311,
-    32.885284
-   ],
-   [
-    36714.0,
-    8174.0,
-    13.228005,
-    32.885383
-   ],
-   [
-    36222.0,
-    8602.0,
-    13.221551,
-    32.882483
-   ],
-   [
-    35290.0,
-    8010.0,
-    13.209114,
-    32.885226
-   ],
-   [
-    33050.0,
-    8102.0,
-    13.180562,
-    32.887168
-   ],
-   [
-    32802.0,
-    8422.0,
-    13.176624,
-    32.884588
-   ],
-   [
-    33682.0,
-    8022.0,
-    13.189428,
-    32.887086
-   ],
-   [
-    33290.0,
-    9114.0,
-    13.180513,
-    32.878128
-   ],
-   [
-    29634.0,
-    9762.0,
-    13.132575,
-    32.878982
-   ],
-   [
-    30722.0,
-    10302.0,
-    13.145053,
-    32.872624
-   ],
-   [
-    37682.0,
-    4842.0,
-    13.249088,
-    32.906037
-   ],
-   [
-    36982.0,
-    4802.0,
-    13.237626,
-    32.908312
-   ],
-   [
-    39910.0,
-    5834.0,
-    13.27014,
-    32.89543
-   ],
-   [
-    42862.0,
-    6270.0,
-    13.30438,
-    32.88782
-   ]
-  ]
+  "gcps_file": "archive/maps/gcps/kh9-1972-nov.json",
+  "gcps_note": "LoFTR matches against today's imagery, grown outward from rough seeds and filtered by neighbour consistency (scripts/usgs-match.py)"
  },
  {
   "id": "kh9-1976-north",
@@ -158,8 +38,10 @@
   "title": "Spy satellite, 1976, north (KH-9 HEXAGON)",
   "year": 1976,
   "date": "1976-03-20",
-  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga; the frame after it covers Abu Salim.",
-  "zooms": "12-17"
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga east of the harbour.",
+  "zooms": "12-17",
+  "gcps_note": "LoFTR matches against today's imagery, grown outward from rough seeds and filtered by neighbour consistency (scripts/usgs-match.py)",
+  "gcps_file": "archive/maps/gcps/kh9-1976-north.json"
  },
  {
   "id": "kh9-1976-south",
@@ -168,8 +50,10 @@
   "title": "Spy satellite, 1976, south (KH-9 HEXAGON)",
   "year": 1976,
   "date": "1976-03-20",
-  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers Abu Salim and Ain Zara; the frame before it covers the old city.",
-  "zooms": "12-17"
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. The frame after the old city: Gargaresh, Bab al-Aziziya, Abu Salim and the southern districts.",
+  "zooms": "12-17",
+  "gcps_file": "archive/maps/gcps/kh9-1976-south.json",
+  "gcps_note": "LoFTR matches against today's imagery, grown outward from rough seeds and filtered by neighbour consistency (scripts/usgs-match.py)"
  },
  {
   "id": "kh9-1983",
@@ -180,73 +64,7 @@
   "date": "1983-08-13",
   "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished.",
   "zooms": "12-17",
-  "gcps_frame": [
-   [
-    295970.4,
-    18071.2,
-    13.18986,
-    32.9032
-   ],
-   [
-    295612.8,
-    18471.2,
-    13.19471,
-    32.90632
-   ],
-   [
-    296828.0,
-    17428.0,
-    13.1799,
-    32.8961
-   ],
-   [
-    293220.0,
-    18244.0,
-    13.22384,
-    32.90023
-   ],
-   [
-    295341.6,
-    18342.4,
-    13.198842,
-    32.904335
-   ],
-   [
-    296960.0,
-    14280.0,
-    13.176728,
-    32.869404
-   ],
-   [
-    295332.0,
-    12872.0,
-    13.195337,
-    32.856312
-   ],
-   [
-    293484.0,
-    12168.0,
-    13.216198,
-    32.851444
-   ],
-   [
-    289580.0,
-    18244.0,
-    13.27014,
-    32.89543
-   ],
-   [
-    285916.0,
-    17700.0,
-    13.30438,
-    32.88782
-   ],
-   [
-    297516.0,
-    16868.0,
-    13.171296,
-    32.894354
-   ]
-  ]
+  "gcps_file": "archive/maps/gcps/kh9-1983.json",
+  "gcps_note": "LoFTR matches against today's imagery, grown outward from rough seeds and filtered by neighbour consistency (scripts/usgs-match.py)"
  }
 ]

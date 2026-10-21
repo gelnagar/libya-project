@@ -1,4 +1,5 @@
 name: Download declassified satellite frames
+# Rebuild 1972, 1976 north/south and 1983 from the dense control points in archive/maps/gcps (pushes with thousands of changed files skip the path filter).
 # Download each frame in archive/maps/usgs-picks.json, find Tripoli on it, cut it out, line it up with today's
 # imagery and tile it. Each step skips frames that are already done, so re-running is cheap.
 on:
@@ -14,7 +15,7 @@ jobs:
       # the branch tip, not the commit that triggered the run, so a queued run sees what the run before it committed
       - uses: actions/checkout@v4
         with: { ref: '${{ github.ref_name }}' }
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq gdal-bin python3-gdal python3-numpy python3-opencv jq file >/dev/null
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq gdal-bin python3-gdal python3-numpy python3-opencv python3-shapely jq file >/dev/null
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       # the frames are 2-5 GB each; /mnt has far more room than the checkout's disk

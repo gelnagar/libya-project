@@ -183,7 +183,7 @@ def run(key, pick, overlays):
     pid = pick['id']; meta_path = f'{PREV}/{pid}.json'
     meta = json.load(open(meta_path)) if os.path.exists(meta_path) else {}
     if any(o['id'] == pid for o in overlays): return 'already cut and listed in overlays.json'
-    if not pick.get('crop') and not pick.get('gcps_frame') and meta.get('mosaic_version') == MOSAIC_VERSION and meta.get('overview'):
+    if not pick.get('crop') and not pick.get('gcps_frame') and not pick.get('gcps_file') and meta.get('mosaic_version') == MOSAIC_VERSION and meta.get('overview'):
         return 'overview ready; add landmarks ("gcps_frame") to the pick'
     d = os.path.join(WORK, pid); shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
     url, size = request_url(key, pick)
@@ -199,7 +199,7 @@ def run(key, pick, overlays):
                  'checked': datetime.datetime.now(datetime.timezone.utc).isoformat()})
     meta['mosaic_version'] = MOSAIC_VERSION
     out = 'preview made'
-    crop, sc, gf = pick.get('crop'), s, pick.get('gcps_frame')  # a hand-set crop is in whole-preview pixels
+    crop, sc, gf = pick.get('crop'), s, pick.get('gcps_frame') or (json.load(open(pick['gcps_file'])) if pick.get('gcps_file') else None)  # a hand-set crop is in whole-preview pixels
     win = None
     if gf:
         # landmarks [frame x, frame y, lon, lat]: cut the film around them with a 10% margin (the warp is trimmed to them later)
@@ -239,6 +239,7 @@ def run(key, pick, overlays):
         url = upload(cut)
         entry = overlay_entry(pick, url)
         if gf:  # the landmarks in cut-out pixels: usgs-register.py starts from them and keeps them if refinement fails
+            entry['matched'] = bool(pick.get('gcps_note'))  # points from the learned matcher, not hand-marked
             entry['init_gcps'] = [[round((x - win[0]) / factor, 1), round((y - win[1]) / factor, 1), lo, la] for x, y, lo, la in gf]
         overlays.append(entry)
         out = f'cut {win} (reduced {factor}x) uploaded to {url}'

@@ -1,0 +1,53 @@
+name: Match declassified frames (learned matcher)
+# Learned feature matching (LoFTR in Kornia, PyTorch on CPU) between each film overview and today's imagery.
+# Edit archive/maps/match-queue.json and push to run: one parallel job per entry,
+#   {"frame": "kh9-1976-south", "refs": "grow", "matcher": "loftr"}
+# "grow" spreads outward from the rough seeds in archive/maps/seeds/<frame>.json; "layers esri" matches once against each reference.
+# Results go to archive/maps/matches/. (workflow_dispatch would need this file on main; the queue file avoids that.)
+on:
+  push: { paths: ['archive/maps/match-queue.json', '.github/workflows/usgs-match.yml'] }
+permissions: { contents: write }
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      jobs: ${{ steps.q.outputs.jobs }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: '${{ github.ref_name }}' }
+      - id: q
+        run: echo "jobs=$(python3 -c "import json;print(json.dumps(json.load(open('archive/maps/match-queue.json'))))")" >> "$GITHUB_OUTPUT"
+  match:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        job: ${{ fromJson(needs.plan.outputs.jobs) }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: '${{ github.ref_name }}' }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq python3-venv >/dev/null
+      - run: |
+          python3 -m venv venv
+          venv/bin/pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          venv/bin/pip install -q numpy opencv-python-headless kornia
+      - name: Match
+        run: venv/bin/python scripts/usgs-match.py "$FRAME" $REFS "--matcher=$MATCHER"
+        env:
+          FRAME: ${{ matrix.job.frame }}
+          REFS: ${{ matrix.job.refs }}
+          MATCHER: ${{ matrix.job.matcher }}
+          MATCH_BUDGET_MIN: ${{ matrix.job.budget || 0 }}
+          MATCH_OUT: ${{ matrix.job.out || 'grow' }}
+          MATCH_ROUNDS: ${{ matrix.job.rounds || 10 }}
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          [ -d archive/maps/matches ] && git add archive/maps/matches
+          if git diff --cached --quiet; then echo none; exit 0; fi
+          git commit -m "Landmark candidates from the learned matcher: ${{ matrix.job.frame }}"
+          for i in 1 2 3 4 5 6; do git pull --rebase && git push && exit 0; sleep $((i * 8)); done
+          exit 1

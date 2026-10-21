@@ -364,6 +364,7 @@ def check_image(oid, pyr, ref_to_cut, ref, box, size=2400, block=160):
     my = cv2.resize(cp[:, 1].reshape(gh, gw).astype(np.float32), (w, h), interpolation=cv2.INTER_LINEAR)
     d = np.hypot(mx[0, 1] - mx[0, 0], my[0, 1] - my[0, 0])
     level = max(0, min(len(pyr.levels) - 1, int(math.log2(max(1.0, d)))))
+    while level < len(pyr.levels) - 1 and max(pyr.levels[level].shape) >= 32000: level += 1   # cv2.remap rejects images over 32,767 px
     warped = cv2.remap(pyr.levels[level], mx / 2 ** level, my / 2 ** level, cv2.INTER_LINEAR, borderValue=0)
     today = cv2.resize(ref[int(y0):int(y0 + h * step), int(x0):int(x0 + w * step)], (w, h), interpolation=cv2.INTER_AREA)
     board = ((np.arange(w)[None, :] // block + np.arange(h)[:, None] // block) % 2).astype(bool)
@@ -393,8 +394,9 @@ def main():
             if gcps:
                 o['gcps'], o['gcp_srs'] = gcps, 'EPSG:4326'
                 if o.get('init_gcps'): o['warp'] = 'tps'
-                how = f"Lined up by hand on {info['points']} landmarks" if o.get('init_gcps') else "Lined up automatically with today's imagery"
-                o['note'] = o.get('note', '').split(' Lined up')[0] + f" {how}; typical error about {info['median_m']:.0f} m."
+                how = (f"Lined up with {info['points']} control points found by a learned image matcher (LoFTR) and checked against their neighbours" if o.get('matched')
+                       else f"Lined up by hand on {info['points']} landmarks" if o.get('init_gcps') else "Lined up automatically with today's imagery")
+                o['note'] = o.get('note', '').split(' Lined up')[0] + f" {how}: they agree to about {info['median_m']:.0f} m." if o.get('matched') else o.get('note', '').split(' Lined up')[0] + f" {how}; typical error about {info['median_m']:.0f} m."
             status[o['id']] = info
             os.remove(cut)
         except Exception as e:

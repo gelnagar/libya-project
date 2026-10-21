@@ -28,23 +28,69 @@ window.ATLAS_OVERLAYS = [
   "kind": "satellite",
   "title": "Spy satellite, November 1972 (KH-9 HEXAGON)",
   "year": 1972,
-  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up by hand on 20 landmarks (harbour, old city, Mitiga runway, the forest park, stadium, coast); typical error about 180 m, so treat single buildings as approximate.",
+  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up with 1039 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 7 m.",
   "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003",
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1972-nov/{z}/{x}/{y}.webp",
   "bounds": [
    [
-    32.8553435,
-    13.1292889
+    32.7964633,
+    13.106344
    ],
    [
-    32.9098207,
-    13.3076792
+    32.9147177,
+    13.382902
    ]
   ],
   "maxZoom": 17,
   "attribution": "Spy satellite, November 1972 — USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003"
+ },
+ {
+  "id": "kh9-1976-north",
+  "kind": "satellite",
+  "title": "Spy satellite, 1976, north (KH-9 HEXAGON)",
+  "year": 1976,
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga east of the harbour. Taken 1976-03-20. Lined up with 527 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 4 m.",
+  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005",
+  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
+  "license": "Public domain (U.S. government work)",
+  "tiles": "maps/kh9-1976-north/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.8607253,
+    13.1621209
+   ],
+   [
+    32.9153477,
+    13.3802961
+   ]
+  ],
+  "maxZoom": 17,
+  "attribution": "Spy satellite, 1976, north — USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005"
+ },
+ {
+  "id": "kh9-1976-south",
+  "kind": "satellite",
+  "title": "Spy satellite, 1976, south (KH-9 HEXAGON)",
+  "year": 1976,
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. The frame after the old city: Gargaresh, Bab al-Aziziya, Abu Salim and the southern districts. Taken 1976-03-20. Lined up with 1347 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 5 m.",
+  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F006",
+  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
+  "license": "Public domain (U.S. government work)",
+  "tiles": "maps/kh9-1976-south/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.7975053,
+    13.0313008
+   ],
+   [
+    32.9023237,
+    13.3776392
+   ]
+  ],
+  "maxZoom": 17,
+  "attribution": "Spy satellite, 1976, south — USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F006"
  },
  {
   "id": "landsat-1970s",
@@ -73,19 +119,19 @@ window.ATLAS_OVERLAYS = [
   "kind": "satellite",
   "title": "Spy satellite, 1983 (KH-9 HEXAGON)",
   "year": 1983,
-  "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished. Taken 1983-08-13. Lined up by hand on 11 landmarks; typical error about 377 m.",
+  "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished. Taken 1983-08-13. Lined up with 1519 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 6 m.",
   "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1218-100323A003",
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1983/{z}/{x}/{y}.webp",
   "bounds": [
    [
-    32.8487519,
-    13.1681364
+    32.7553993,
+    13.0308846
    ],
    [
-    32.9083216,
-    13.307667
+    32.9251087,
+    13.3827734
    ]
   ],
   "maxZoom": 17,

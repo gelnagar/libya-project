@@ -1,4 +1,5 @@
 name: Download declassified satellite frames
+# Rebuild 1972, 1976 north/south and 1983 from the dense control points in archive/maps/gcps (pushes with thousands of changed files skip the path filter).
 # Download each frame in archive/maps/usgs-picks.json, find Tripoli on it, cut it out, line it up with today's
 # imagery and tile it. Each step skips frames that are already done, so re-running is cheap.
 on:

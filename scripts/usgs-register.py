@@ -364,6 +364,7 @@ def check_image(oid, pyr, ref_to_cut, ref, box, size=2400, block=160):
     my = cv2.resize(cp[:, 1].reshape(gh, gw).astype(np.float32), (w, h), interpolation=cv2.INTER_LINEAR)
     d = np.hypot(mx[0, 1] - mx[0, 0], my[0, 1] - my[0, 0])
     level = max(0, min(len(pyr.levels) - 1, int(math.log2(max(1.0, d)))))
+    while level < len(pyr.levels) - 1 and max(pyr.levels[level].shape) >= 32000: level += 1   # cv2.remap rejects images over 32,767 px
     warped = cv2.remap(pyr.levels[level], mx / 2 ** level, my / 2 ** level, cv2.INTER_LINEAR, borderValue=0)
     today = cv2.resize(ref[int(y0):int(y0 + h * step), int(x0):int(x0 + w * step)], (w, h), interpolation=cv2.INTER_AREA)
     board = ((np.arange(w)[None, :] // block + np.arange(h)[:, None] // block) % 2).astype(bool)

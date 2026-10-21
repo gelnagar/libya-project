@@ -24,52 +24,6 @@ window.ATLAS_OVERLAYS = [
   "attribution": "Tripoli city plan, 1962 — Princeton University Library, record princeton-zk51vj17s"
  },
  {
-  "id": "kh9-1972-nov",
-  "kind": "satellite",
-  "title": "Spy satellite, November 1972 (KH-9 HEXAGON)",
-  "year": 1972,
-  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up by hand on 20 landmarks (harbour, old city, Mitiga runway, the forest park, stadium, coast); typical error about 180 m, so treat single buildings as approximate.",
-  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003",
-  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
-  "license": "Public domain (U.S. government work)",
-  "tiles": "maps/kh9-1972-nov/{z}/{x}/{y}.webp",
-  "bounds": [
-   [
-    32.8553435,
-    13.1292889
-   ],
-   [
-    32.9098207,
-    13.3076792
-   ]
-  ],
-  "maxZoom": 17,
-  "attribution": "Spy satellite, November 1972 — USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003"
- },
- {
-  "id": "kh9-1976-north",
-  "kind": "satellite",
-  "title": "Spy satellite, 1976, north (KH-9 HEXAGON)",
-  "year": 1976,
-  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga; the frame after it covers Abu Salim. Taken 1976-03-20. Lined up with 594 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 6 m. At street level it matches today's map in the areas shown.",
-  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005",
-  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
-  "license": "Public domain (U.S. government work)",
-  "tiles": "maps/kh9-1976-north/{z}/{x}/{y}.webp",
-  "bounds": [
-   [
-    32.8666177,
-    13.1636068
-   ],
-   [
-    32.9126142,
-    13.3273833
-   ]
-  ],
-  "maxZoom": 17,
-  "attribution": "Spy satellite, 1976, north — USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005"
- },
- {
   "id": "landsat-1970s",
   "kind": "satellite",
   "title": "Satellite, 1977",
@@ -90,29 +44,6 @@ window.ATLAS_OVERLAYS = [
   ],
   "maxZoom": 13,
   "attribution": "Landsat 1977 (USGS)"
- },
- {
-  "id": "kh9-1983",
-  "kind": "satellite",
-  "title": "Spy satellite, 1983 (KH-9 HEXAGON)",
-  "year": 1983,
-  "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished. Taken 1983-08-13. Lined up by hand on 11 landmarks; typical error about 377 m.",
-  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1218-100323A003",
-  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
-  "license": "Public domain (U.S. government work)",
-  "tiles": "maps/kh9-1983/{z}/{x}/{y}.webp",
-  "bounds": [
-   [
-    32.8487519,
-    13.1681364
-   ],
-   [
-    32.9083216,
-    13.307667
-   ]
-  ],
-  "maxZoom": 17,
-  "attribution": "Spy satellite, 1983 — USGS EarthExplorer, declassified satellite imagery, frame D3C1218-100323A003"
  },
  {
   "id": "landsat-1984",

@@ -324,10 +324,25 @@
     $('yearbadge').textContent = on.map(function (o) { return o.year + ' map'; }).join(' · ');
   }
   function markHistButton() { var b = document.querySelector('#basemaps [data-key="historical"]'); if (b) b.setAttribute('aria-pressed', OVERLAYS.some(function (o) { return overlayOn[o.id]; }) ? 'true' : 'false'); }
+  /* some old layers have zoom-17 tiles only near the pinned sites (the site's file limit); this keeps the zoom-16 layer everywhere
+     and draws the sharper tiles over it at zoom 17+, so the layer never goes blank where those tiles are missing */
+  var BLANK_TILE = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+  var HiLayer = L.TileLayer.extend({
+    initialize: function (url, hiUrl, opts) {
+      L.TileLayer.prototype.initialize.call(this, url, opts);
+      this._hi = L.tileLayer(hiUrl, L.extend({}, opts, { minZoom: 17, maxNativeZoom: 17, errorTileUrl: BLANK_TILE, zIndex: (opts.zIndex || 50) + 1 }));
+    },
+    onAdd: function (m) { L.TileLayer.prototype.onAdd.call(this, m); this._hi.addTo(m); },
+    onRemove: function (m) { m.removeLayer(this._hi); L.TileLayer.prototype.onRemove.call(this, m); },
+    setOpacity: function (v) { L.TileLayer.prototype.setOpacity.call(this, v); this._hi.setOpacity(v); }
+  });
   function setOverlay(id, on) {
     var o = OVERLAYS.filter(function (x) { return x.id === id; })[0]; if (!o) return false;
     overlayOn[id] = !!on; store.set('omaps', overlayOn);
-    if (!overlayLayers[id]) overlayLayers[id] = L.tileLayer(o.tiles, { bounds: L.latLngBounds(o.bounds), minZoom: 9, maxNativeZoom: o.maxZoom, maxZoom: 19, opacity: overlayOpacity[id] != null ? overlayOpacity[id] : 0.85, attribution: o.attribution, zIndex: 50 });
+    if (!overlayLayers[id]) {
+      var lopt = { bounds: L.latLngBounds(o.bounds), minZoom: 9, maxNativeZoom: o.maxZoom, maxZoom: 19, opacity: overlayOpacity[id] != null ? overlayOpacity[id] : 0.85, attribution: o.attribution, zIndex: 50 };
+      overlayLayers[id] = o.tilesHi ? new HiLayer(o.tiles, o.tilesHi, lopt) : L.tileLayer(o.tiles, lopt);
+    }
     if (on) overlayLayers[id].addTo(map); else map.removeLayer(overlayLayers[id]);
     if (inputs['om-' + id]) inputs['om-' + id].checked = !!on;
     syncYearBadge(); markHistButton();
@@ -339,10 +354,13 @@
   function clipOverlays() {
     Object.keys(overlayLayers).forEach(function (id) {
       var c = overlayLayers[id].getContainer && overlayLayers[id].getContainer(); if (!c) return;
-      if (!swipeOn || !overlayOn[id]) { c.style.clip = ''; return; }
-      var nw = map.containerPointToLayerPoint([0, 0]), se = map.containerPointToLayerPoint(map.getSize());
-      var x = nw.x + map.getSize().x * swipeX;
-      c.style.clip = 'rect(' + [nw.y, x, se.y, nw.x].join('px,') + 'px)';
+      var hi = overlayLayers[id]._hi && overlayLayers[id]._hi.getContainer && overlayLayers[id]._hi.getContainer(), clip = '';
+      if (swipeOn && overlayOn[id]) {
+        var nw = map.containerPointToLayerPoint([0, 0]), se = map.containerPointToLayerPoint(map.getSize());
+        var x = nw.x + map.getSize().x * swipeX;
+        clip = 'rect(' + [nw.y, x, se.y, nw.x].join('px,') + 'px)';
+      }
+      c.style.clip = clip; if (hi) hi.style.clip = clip;
     });
     if (swipeEl) swipeEl.style.left = (swipeX * 100) + '%';
   }
@@ -3027,7 +3045,7 @@
       if (overlayOn[o.id] && swipeOn) { setOverlay(o.id, false); setSwipe(false); status('Back to today’s map.', 2500); return; }
       OVERLAYS.forEach(function (x) { if (x.id !== o.id && overlayOn[x.id]) setOverlay(x.id, false); });
       setOverlay(o.id, true); setSwipe(true);
-      map.flyTo([lat, lon], Math.min((o.maxZoom || 13) >= 15 ? 16 : 14, (o.maxZoom || 16) + 1), { duration: 0.8 });
+      map.flyTo([lat, lon], Math.min((o.maxZoom || 13) >= 15 ? (o.tilesHi ? 17 : 16) : 14, (o.maxZoom || 16) + (o.tilesHi ? 2 : 1)), { duration: 0.8 });
       status(o.title + ': drag the handle across the map — ' + o.year + ' on the left, today on the right. Tap the button again to go back.', 7000);
     } });
   }

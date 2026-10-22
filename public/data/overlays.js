@@ -24,24 +24,52 @@ window.ATLAS_OVERLAYS = [
   "attribution": "Tripoli city plan, 1962 — Princeton University Library, record princeton-zk51vj17s"
  },
  {
+  "id": "kh7-1966",
+  "kind": "satellite",
+  "title": "Spy satellite, February 1966 (KH-7 GAMBIT)",
+  "year": 1966,
+  "note": "KH-7 GAMBIT surveillance camera, declassified 2002. About 0.6 m detail, the sharpest film here and three years before the 1969 coup. This frame reaches from Gargaresh to the racetrack at Giorgimpopoli. Taken 1966-02-20. Lined up with 412 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 8 m.",
+  "source": "USGS EarthExplorer, declassified satellite imagery, frame DZB00402500075H027001",
+  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
+  "license": "Public domain (U.S. government work)",
+  "tiles": "maps/kh7-1966/{z}/{x}/{y}.webp",
+  "tileSize": 512,
+  "zoomOffset": -1,
+  "tilesHi": "maps/kh7-1966/{z}/{x}/{y}.webp",
+  "bounds": [
+   [
+    32.8348739,
+    13.0329317
+   ],
+   [
+    32.9129091,
+    13.2509773
+   ]
+  ],
+  "maxZoom": 16,
+  "attribution": "Spy satellite, February 1966 — USGS EarthExplorer, declassified satellite imagery, frame DZB00402500075H027001"
+ },
+ {
   "id": "kh9-1972-nov",
   "kind": "satellite",
   "title": "Spy satellite, November 1972 (KH-9 HEXAGON)",
   "year": 1972,
-  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up with 1039 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 7 m.",
+  "note": "KH-9 HEXAGON panoramic camera (forward), declassified 2011. About 0.6–1.2 m detail. Black and white film scan. Taken 1972-11-07. Lined up with 975 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 9 m.",
   "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003",
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1972-nov/{z}/{x}/{y}.webp",
+  "tileSize": 512,
+  "zoomOffset": -1,
   "tilesHi": "maps/kh9-1972-nov/{z}/{x}/{y}.webp",
   "bounds": [
    [
-    32.7964633,
-    13.106344
+    32.7603859,
+    13.0324443
    ],
    [
-    32.9147177,
-    13.382902
+    32.9170701,
+    13.3844759
    ]
   ],
   "maxZoom": 16,
@@ -52,20 +80,22 @@ window.ATLAS_OVERLAYS = [
   "kind": "satellite",
   "title": "Spy satellite, 1976, north (KH-9 HEXAGON)",
   "year": 1976,
-  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga east of the harbour. Taken 1976-03-20. Lined up with 527 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 4 m.",
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga east of the harbour. Taken 1976-03-20. Lined up with 357 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 5 m.",
   "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005",
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1976-north/{z}/{x}/{y}.webp",
+  "tileSize": 512,
+  "zoomOffset": -1,
   "tilesHi": "maps/kh9-1976-north/{z}/{x}/{y}.webp",
   "bounds": [
    [
-    32.8607253,
-    13.1621209
+    32.8608179,
+    13.1535278
    ],
    [
-    32.9153477,
-    13.3802961
+    32.9157244,
+    13.3813172
    ]
   ],
   "maxZoom": 16,
@@ -76,20 +106,22 @@ window.ATLAS_OVERLAYS = [
   "kind": "satellite",
   "title": "Spy satellite, 1976, south (KH-9 HEXAGON)",
   "year": 1976,
-  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. The frame after the old city: Gargaresh, Bab al-Aziziya, Abu Salim and the southern districts. Taken 1976-03-20. Lined up with 1347 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 5 m.",
+  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. The frame after the old city: Gargaresh, Bab al-Aziziya, Abu Salim and the southern districts. Taken 1976-03-20. Lined up with 968 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 6 m.",
   "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F006",
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1976-south/{z}/{x}/{y}.webp",
+  "tileSize": 512,
+  "zoomOffset": -1,
   "tilesHi": "maps/kh9-1976-south/{z}/{x}/{y}.webp",
   "bounds": [
    [
-    32.7975053,
-    13.0313008
+    32.7513149,
+    13.030997
    ],
    [
-    32.9023237,
-    13.3776392
+    32.9024161,
+    13.377563
    ]
   ],
   "maxZoom": 16,
@@ -122,20 +154,22 @@ window.ATLAS_OVERLAYS = [
   "kind": "satellite",
   "title": "Spy satellite, 1983 (KH-9 HEXAGON)",
   "year": 1983,
-  "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished. Taken 1983-08-13. Lined up with 1519 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 6 m.",
+  "note": "KH-9 HEXAGON panoramic camera (aft), declassified 2011. Taken a year before Abu Salim prison was finished. Taken 1983-08-13. Lined up with 1421 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 8 m.",
   "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1218-100323A003",
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1983/{z}/{x}/{y}.webp",
+  "tileSize": 512,
+  "zoomOffset": -1,
   "tilesHi": "maps/kh9-1983/{z}/{x}/{y}.webp",
   "bounds": [
    [
-    32.7553993,
-    13.0308846
+    32.7554919,
+    13.0309949
    ],
    [
-    32.9251087,
-    13.3827734
+    32.9250161,
+    13.3826631
    ]
   ],
   "maxZoom": 16,

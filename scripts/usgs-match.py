@@ -23,9 +23,11 @@ UA = 'TripoliOpenSourceArchive/1.0 (github.com/gelnagar/libya-project)'
 WORK = os.environ.get('USGS_WORK', 'work/match')
 M_PER_PX = 156543.03392 * math.cos(math.radians(32.85)) / 2 ** Z
 LAYERS = os.environ.get('MATCH_LAYERS', 'kh9-1972-nov,kh9-1983').split(',')   # aligned film layers used as the "layers" reference
-STEP = 1.25          # reference pixels per patch pixel (about 3 m)
+STEP = float(os.environ.get('MATCH_STEP', 1.25))   # reference pixels per patch pixel (1.25 = about 3 m; 2.5 = about 6 m, for coarse gap-filling)
 PATCH = 768          # patch size, pixels (about 2.3 km)
-SPACING_M = 1100     # distance between patch centres, metres
+SPACING_M = float(os.environ.get('MATCH_SPACING', 1100))   # distance between patch centres, metres
+REACH_M = float(os.environ.get('MATCH_REACH', 2000))       # how far past the known points a round looks, metres
+TOL_M = float(os.environ.get('MATCH_TOL', 40))             # a new point must agree with its neighbours within this many metres
 MIN_INLIERS = 18
 CLAHE = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
 
@@ -180,6 +182,11 @@ def grow_frame(fid, matcher, ov, seeds, max_rounds=None):
     if os.environ.get('MATCH_REF') == 'layers': ref = layer_reference(ref.shape, origin)   # testing: the aligned film layers as the reference
     Rs = np.array([[a - origin[0], b - origin[1]] for a, b in (ll2px(lo, la) for lo, la in seeds[:, 2:4])]); Cs = seeds[:, :2].copy()
     VC, VR, VG = np.empty((0, 2)), np.empty((0, 2)), np.empty(0)      # verified film px, reference px, confidence
+    nseed = 0
+    if os.environ.get('MATCH_SEEDS_VERIFIED') == '1':
+        # the seeds are already good points (a dense set from an earlier run): only look for patches in the gaps between them,
+        # check new points against them, and write out only the new ones
+        VC, VR, VG = Cs.copy(), Rs.copy(), np.ones(len(Cs)); nseed = len(Cs)
     max_rounds = max_rounds or int(os.environ.get('MATCH_ROUNDS', 10))
     budget = float(os.environ.get('MATCH_BUDGET_MIN', 0)) * 60        # stop starting patches after this many seconds (0 = no limit)
     t_start = time.time(); tries = {}                                   # tries: how often each patch centre was attempted
@@ -187,13 +194,13 @@ def grow_frame(fid, matcher, ov, seeds, max_rounds=None):
     sp = SPACING_M / M_PER_PX; half = PATCH * STEP / 2
     for rnd in range(max_rounds):
         BC, BR = (VC, VR) if len(VR) >= 6 else (Cs, Rs)
-        lo, hi = BR.min(0) - 2200 / M_PER_PX, BR.max(0) + 2200 / M_PER_PX
+        lo, hi = BR.min(0) - (REACH_M + 200) / M_PER_PX, BR.max(0) + (REACH_M + 200) / M_PER_PX
         centres = []
         for y in np.arange(max(lo[1], half), min(hi[1], ref.shape[0] - half), sp):
             for x in np.arange(max(lo[0], half), min(hi[0], ref.shape[1] - half), sp):
                 nd = np.hypot(*(BR - [x, y]).T).min()
                 done = (np.hypot(*(VR - [x, y]).T) < 600 / M_PER_PX).sum() if len(VR) else 0
-                if nd < 2000 / M_PER_PX and done < 4 and tries.get((int(x // 40), int(y // 40)), 0) < 2: centres.append((x, y, nd))
+                if nd < REACH_M / M_PER_PX and done < 4 and tries.get((int(x // 40), int(y // 40)), 0) < 2: centres.append((x, y, nd))
         centres.sort(key=lambda c: c[2])
         if not centres: print('no frontier left'); break
         print(f'round {rnd + 1}: {len(centres)} frontier patches, {len(VR)} verified points so far', flush=True)
@@ -232,7 +239,7 @@ def grow_frame(fid, matcher, ov, seeds, max_rounds=None):
         for _ in range(3):
             sub = np.where(alive)[0]
             err = consistency(AC[sub], AR[sub], np.where(is_new[sub])[0])
-            bad = np.where(is_new[sub] & (err > 40))[0]
+            bad = np.where(is_new[sub] & (err > TOL_M))[0]
             if len(bad) == 0: break
             alive[sub[bad]] = False
         added = int((alive & is_new).sum())
@@ -240,7 +247,7 @@ def grow_frame(fid, matcher, ov, seeds, max_rounds=None):
         rounds.append({'round': rnd + 1, 'patches': len(centres), 'matched': int(len(newC)), 'added': added, 'verified': int(len(VR))})
         print(f'round {rnd + 1}: {len(newC)} matches after thinning, {added} verified; {len(VR)} points total', flush=True)
         out = [[round(float(c[0]), 1), round(float(c[1]), 1), *[round(v, 6) for v in px2ll(r[0] + origin[0], r[1] + origin[1])], round(float(g), 3)]
-               for c, r, g in zip(VC, VR, VG)]
+               for c, r, g in zip(VC[nseed:], VR[nseed:], VG[nseed:])]
         json.dump({'info': {'rounds': rounds, 'points': len(out), 'matcher': 'loftr', 'reference': 'esri', 'mode': 'grow'}, 'candidates': out}, open(out_path, 'w'), indent=0)
         if out_of_time or (added < 15 and rnd >= 1): break
     return out_path
@@ -251,7 +258,7 @@ def main():
     fid = args[0]; refs = args[1:] or ['esri', 'layers']
     meta = json.load(open(f'archive/maps/preview/usgs/{fid}.json'))
     ov = cv2.imread(download(meta['overview']['url'], f'{WORK}/{fid}-overview.jpg'), cv2.IMREAD_GRAYSCALE)
-    seeds = np.array(json.load(open(f'archive/maps/seeds/{fid}.json')), float)
+    seeds = np.array(json.load(open(os.environ.get('MATCH_SEEDS') or f'archive/maps/seeds/{fid}.json')), float)
     print(fid, 'overview', ov.shape, 'seeds', len(seeds), 'matcher', kind)
     matcher = make_matcher(kind)
     os.makedirs('archive/maps/matches', exist_ok=True)

@@ -46,6 +46,12 @@ jobs:
           MATCH_BUDGET_MIN: ${{ matrix.job.budget || 0 }}
           MATCH_OUT: ${{ matrix.job.out || 'grow' }}
           MATCH_ROUNDS: ${{ matrix.job.rounds || 10 }}
+          MATCH_STEP: ${{ matrix.job.step || 1.25 }}
+          MATCH_SPACING: ${{ matrix.job.spacing || 1100 }}
+          MATCH_REACH: ${{ matrix.job.reach || 2000 }}
+          MATCH_TOL: ${{ matrix.job.tol || 40 }}
+          MATCH_SEEDS: ${{ matrix.job.seeds || '' }}
+          MATCH_SEEDS_VERIFIED: ${{ matrix.job.seeds_verified || 0 }}
       - if: always()
         run: |
           git config user.name "github-actions[bot]"

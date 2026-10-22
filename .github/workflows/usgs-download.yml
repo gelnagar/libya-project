@@ -3,14 +3,14 @@ name: Download declassified satellite frames
 # Download each frame in archive/maps/usgs-picks.json, find Tripoli on it, cut it out, line it up with today's
 # imagery and tile it. Each step skips frames that are already done, so re-running is cheap.
 on:
+  # manual only: a push that changes thousands of files kept starting full rebuilds by accident
   workflow_dispatch: { inputs: { only: { description: 'Pick ids to run, comma separated (blank = all)', required: false, default: '' } } }
-  push: { paths: [archive/maps/usgs-picks.json, scripts/usgs-download.py, scripts/usgs-register.py, .github/workflows/usgs-download.yml] }
 permissions: { contents: write }
 concurrency: { group: usgs-download, cancel-in-progress: false }
 jobs:
   frames:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 350
     steps:
       # the branch tip, not the commit that triggered the run, so a queued run sees what the run before it committed
       - uses: actions/checkout@v4
@@ -37,8 +37,12 @@ jobs:
           USGS_ONLY: '${{ inputs.only }}'
           GH_TOKEN: '${{ github.token }}'
       - name: Tile
-        run: OVERLAY_ONLY=$(jq -r 'map(.id) | join(",")' archive/maps/usgs-picks.json) ./scripts/build-overlays.sh
+        run: |
+          ids='${{ inputs.only }}'; [ -n "$ids" ] || ids=$(jq -r 'map(.id) | join(",")' archive/maps/usgs-picks.json)
+          OVERLAY_ONLY="$ids" ./scripts/build-overlays.sh
         continue-on-error: true
+      - name: Keep the sharpest tiles near the pinned sites only
+        run: python3 scripts/prune-hi-tiles.py 16300
       - run: node scripts/build-overlays-index.mjs && node --check public/data/overlays.js && node --check public/app.js
       - if: always()
         run: |

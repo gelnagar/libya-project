@@ -9,12 +9,13 @@ for (const m of JSON.parse(await readFile(ROOT + 'archive/maps/overlays.json', '
   let ext = null; try { ext = JSON.parse(await readFile(ROOT + `public/maps/${m.id}/extent.json`, 'utf8')); } catch {}
   const ring = ext && ext.coordinates ? ext.coordinates[0] : null;
   const lons = ring ? ring.map((p) => p[0]) : [m.bbox[0], m.bbox[2]], lats = ring ? ring.map((p) => p[1]) : [m.bbox[1], m.bbox[3]];
-  const zmax = +String(m.zooms).split('-')[1];
+  const zmax = +String(m.zooms).split('-')[1], ts = m.tilesize || 256;
   const files = await readdir(ROOT + `public/maps/${m.id}/${zmax}`).catch(() => []);
   const sample = files.length ? (await readdir(ROOT + `public/maps/${m.id}/${zmax}/${files[0]}`))[0] : 'x.webp';
   out.push({ id: m.id, kind: m.kind || 'map', title: m.title, year: m.year, note: m.note || '', source: m.source, page: m.page, license: m.license,
     tiles: `maps/${m.id}/{z}/{x}/{y}.` + sample.split('.').pop(),
-    ...((zmax < 17 && (await exists(`public/maps/${m.id}/17`))) ? { tilesHi: `maps/${m.id}/{z}/{x}/{y}.` + sample.split('.').pop() } : {}), bounds: [[Math.min(...lats), Math.min(...lons)], [Math.max(...lats), Math.max(...lons)]], maxZoom: zmax,
+    ...(ts === 512 ? { tileSize: 512, zoomOffset: -1 } : {}),
+    ...((ts === 512 ? files.length > 0 : (zmax < 17 && (await exists(`public/maps/${m.id}/17`)))) ? { tilesHi: `maps/${m.id}/{z}/{x}/{y}.` + sample.split('.').pop() } : {}), bounds: [[Math.min(...lats), Math.min(...lons)], [Math.max(...lats), Math.max(...lons)]], maxZoom: zmax,
     attribution: `${m.title.split('(')[0].trim()} — ${m.source}` });
 }
 for (const d of (await readdir(ROOT + 'public/maps').catch(() => [])).sort()) {

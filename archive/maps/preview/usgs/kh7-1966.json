@@ -66,7 +66,7 @@
   "width": 6000,
   "height": 1998
  },
- "checked": "2026-10-20T00:35:12.186369+00:00",
+ "checked": "2026-10-22T04:05:13.409672+00:00",
  "overview": {
   "url": "https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh7-1966-overview.jpg",
   "reduced_by": 4,
@@ -83,5 +83,20 @@
   "coast_score": 0.702
  },
  "locate_failed": true,
- "mosaic_version": 2
+ "mosaic_version": 2,
+ "cut": {
+  "window_in_frame": [
+   52174,
+   6652,
+   22104,
+   28659
+  ],
+  "reduced_by": 1,
+  "file": "kh7-1966-cut.jpg",
+  "scale": 5.7318,
+  "width": 3856,
+  "height": 5000,
+  "grid_every_px": 1000,
+  "size_bytes": 96381657
+ }
 }

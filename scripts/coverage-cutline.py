@@ -1,8 +1,12 @@
-"""Cutline for a thin-plate-warped film layer: the zone within RADIUS metres of any control point.
-A convex outline around the points would show stretched, unverified film across gaps where nothing matched; this leaves gaps empty.
-Reads a JSON list of [lon, lat] on stdin, writes a GeoJSON polygon collection on stdout. Falls back to a padded convex hull without shapely."""
+"""Cutline for a thin-plate-warped film layer: the zone within RADIUS metres of any control point, with small holes filled.
+A convex outline around the points would show stretched, unverified film across gaps where nothing matched; this leaves large
+gaps empty. A hole smaller than 2 x CLOSE metres that points surround on every side is filled, because a thin-plate warp
+interpolates well between points (it only goes wrong where it has to extrapolate past the outermost ones); the outer edge is not pushed out.
+  python3 scripts/coverage-cutline.py [RADIUS=450] [CLOSE=0]   reads [[lon, lat], ...] on stdin, writes GeoJSON on stdout.
+Falls back to a padded convex hull without shapely."""
 import json, math, sys
 RADIUS = float(sys.argv[1]) if len(sys.argv) > 1 else 450.0
+CLOSE = float(sys.argv[2]) if len(sys.argv) > 2 else 0.0
 P = json.load(sys.stdin)
 lat0 = sum(p[1] for p in P) / len(P); kx = 111320 * math.cos(math.radians(lat0)); ky = 110900
 def to_m(p): return ((p[0] - P[0][0]) * kx, (p[1] - P[0][1]) * ky)
@@ -11,6 +15,7 @@ try:
     from shapely.geometry import MultiPoint
     from shapely.ops import unary_union
     zone = MultiPoint([to_m(p) for p in P]).buffer(RADIUS, quad_segs=6)
+    if CLOSE: zone = zone.buffer(CLOSE, quad_segs=6).buffer(-CLOSE, quad_segs=6)   # morphological closing: fills holes up to 2 x CLOSE across
     geoms = list(zone.geoms) if zone.geom_type == 'MultiPolygon' else [zone]
     feats = [{"type": "Feature", "properties": {}, "geometry": {"type": "Polygon", "coordinates": [[to_deg(*c) for c in g.exterior.coords]] + [[to_deg(*c) for c in h.coords] for h in g.interiors]}} for g in geoms]
 except ImportError:

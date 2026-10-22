@@ -168,7 +168,7 @@ def overlay_entry(pick, url):
     return {'id': pick['id'], 'kind': 'satellite', 'title': pick['title'], 'year': pick['year'],
             'source': f"USGS EarthExplorer, declassified satellite imagery, frame {pick['entityId']}",
             'page': 'https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data',
-            'url': url, 'license': 'Public domain (U.S. government work)', 'zooms': pick.get('zooms', '12-16'),
+            'url': url, 'license': 'Public domain (U.S. government work)', 'zooms': pick.get('zooms', '12-16'), 'tilesize': pick.get('tilesize', 256),
             'note': pick.get('note', '') + f" Taken {pick['date']}."}
 
 _REG = None

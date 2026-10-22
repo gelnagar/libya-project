@@ -340,7 +340,7 @@
     var o = OVERLAYS.filter(function (x) { return x.id === id; })[0]; if (!o) return false;
     overlayOn[id] = !!on; store.set('omaps', overlayOn);
     if (!overlayLayers[id]) {
-      var lopt = { bounds: L.latLngBounds(o.bounds), minZoom: 9, maxNativeZoom: o.maxZoom, maxZoom: 19, opacity: overlayOpacity[id] != null ? overlayOpacity[id] : 0.85, attribution: o.attribution, zIndex: 50 };
+      var lopt = { bounds: L.latLngBounds(o.bounds), minZoom: 9, maxNativeZoom: o.maxZoom, maxZoom: 19, opacity: overlayOpacity[id] != null ? overlayOpacity[id] : 0.85, attribution: o.attribution, zIndex: 50, tileSize: o.tileSize || 256, zoomOffset: o.zoomOffset || 0 };   // 512 px tiles: tile zoom = map zoom - 1
       overlayLayers[id] = o.tilesHi ? new HiLayer(o.tiles, o.tilesHi, lopt) : L.tileLayer(o.tiles, lopt);
     }
     if (on) overlayLayers[id].addTo(map); else map.removeLayer(overlayLayers[id]);

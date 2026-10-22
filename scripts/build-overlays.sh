@@ -72,7 +72,8 @@ jq -c '.[]' archive/maps/overlays.json | while read -r m; do
     mv "work/$id.rgba.vrt" "work/$id.3857.vrt"; tilesrc="work/$id.3857.vrt"
   else tilesrc="work/$id.3857.tif"; fi
   rm -rf "public/maps/$id"
-  gdal2tiles.py -q --xyz -z "$zooms" -w none -r bilinear --tiledriver=WEBP --webp-quality=80 --processes=2 "$tilesrc" "public/maps/$id"
+  ts=$(jq -r '.tilesize // 256' <<<"$m")   # 512 px tiles: one tile-zoom lower covers the same ground, in a quarter of the files
+  gdal2tiles.py -q --xyz -z "$zooms" -w none -r bilinear --tiledriver=WEBP --webp-quality=80 --tilesize="$ts" --processes=4 "$tilesrc" "public/maps/$id"
   gdalinfo -json "work/$id.3857.tif" | jq '.wgs84Extent' > "public/maps/$id/extent.json" || true
   find "public/maps/$id" -name '*.png' | wc -l > "public/maps/$id/done"
 done

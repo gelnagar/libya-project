@@ -48,30 +48,6 @@ window.ATLAS_OVERLAYS = [
   "attribution": "Spy satellite, November 1972 — USGS EarthExplorer, declassified satellite imagery, frame D3C1204-300332F003"
  },
  {
-  "id": "kh9-1976-north",
-  "kind": "satellite",
-  "title": "Spy satellite, 1976, north (KH-9 HEXAGON)",
-  "year": 1976,
-  "note": "KH-9 HEXAGON panoramic camera, declassified 2011. Covers the old city and Mitiga east of the harbour. Taken 1976-03-20. Lined up with 527 control points found by a learned image matcher (LoFTR) and checked against their neighbours: they agree to about 4 m.",
-  "source": "USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005",
-  "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
-  "license": "Public domain (U.S. government work)",
-  "tiles": "maps/kh9-1976-north/{z}/{x}/{y}.webp",
-  "tilesHi": "maps/kh9-1976-north/{z}/{x}/{y}.webp",
-  "bounds": [
-   [
-    32.8607253,
-    13.1621209
-   ],
-   [
-    32.9153477,
-    13.3802961
-   ]
-  ],
-  "maxZoom": 16,
-  "attribution": "Spy satellite, 1976, north — USGS EarthExplorer, declassified satellite imagery, frame D3C1211-400762F005"
- },
- {
   "id": "kh9-1976-south",
   "kind": "satellite",
   "title": "Spy satellite, 1976, south (KH-9 HEXAGON)",

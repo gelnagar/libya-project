@@ -1,6 +1,6 @@
 {
- "at": "2026-10-22T03:53:24.614302+00:00",
+ "at": "2026-10-22T04:00:53.097928+00:00",
  "frames": {
-  "kh9-1976-north": "cut [164886, 16278, 29510, 9249] (reduced 1x) uploaded to https://github.com/gelnagar/libya-project/releases/download/usgs-frames/kh9-1976-north.tif"
+  "kh9-1976-north": "already cut and listed in overlays.json"
  }
 }

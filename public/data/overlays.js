@@ -10,6 +10,7 @@ window.ATLAS_OVERLAYS = [
   "page": "https://maps.princeton.edu/catalog/princeton-zk51vj17s",
   "license": "U.S. government work, public domain",
   "tiles": "maps/ams-1962/{z}/{x}/{y}.webp",
+  "tilesHi": "maps/ams-1962/{z}/{x}/{y}.webp",
   "bounds": [
    [
     32.8578633,

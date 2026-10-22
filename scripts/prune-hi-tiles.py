@@ -10,6 +10,11 @@ BUDGET = int(sys.argv[1]) if len(sys.argv) > 1 else 16300
 KEEP = {'detention', 'security', 'massacre', 'power', 'military', 'landmark'}
 RADII = [8, 6, 5, 4.5, 4, 3.5, 3, 2.5, 2.2, 2, 1.8, 1.5, 1.2, 1, 0.8, 0.6, 0.4]
 
+# GDAL leaves .aux.xml sidecars next to tiles; git ignores them, so they do not count and are removed here
+for root, _, fs in os.walk('public/maps'):
+    for f in fs:
+        if f.endswith('.aux.xml'): os.remove(os.path.join(root, f))
+
 sites = open('public/data/sites.js', encoding='utf8').read()
 pins = [(float(a), float(b)) for l, a, b in re.findall(r"layer:\s*'(\w+)'[^{}]*?lat:\s*(-?[\d.]+),\s*lon:\s*(-?[\d.]+)", sites) if l in KEEP and 32.70 < float(a) < 32.96 and 13.0 < float(b) < 13.42]
 print(len(pins), 'pinned sites')
@@ -23,6 +28,7 @@ for o in layers:
     n = 2 ** zmax
     for xd in os.listdir(base):
         for f in os.listdir(f'{base}/{xd}'):
+            if not f.endswith('.webp'): continue
             x, y = int(xd), int(os.path.splitext(f)[0])
             lon = (x + .5) / n * 360 - 180; lat = math.degrees(math.atan(math.sinh(math.pi * (1 - 2 * (y + .5) / n))))
             tiles.append((f'{base}/{xd}/{f}', (lon - 13.2) * 111.32 * math.cos(math.radians(32.88)), (lat - 32.88) * 110.9))

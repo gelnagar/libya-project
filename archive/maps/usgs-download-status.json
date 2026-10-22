@@ -1,11 +1,6 @@
 {
- "at": "2026-10-22T03:49:05.993228+00:00",
+ "at": "2026-10-22T03:51:11.388604+00:00",
  "frames": {
-  "kh7-1966": "overview ready; add landmarks (\"gcps_frame\") to the pick",
-  "kh9-1972-jul": "overview ready; add landmarks (\"gcps_frame\") to the pick",
-  "kh9-1972-nov": "already cut and listed in overlays.json",
-  "kh9-1976-north": "already cut and listed in overlays.json",
-  "kh9-1976-south": "already cut and listed in overlays.json",
-  "kh9-1983": "already cut and listed in overlays.json"
+  "kh9-1976-north": "already cut and listed in overlays.json"
  }
 }

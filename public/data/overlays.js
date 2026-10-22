@@ -33,6 +33,7 @@ window.ATLAS_OVERLAYS = [
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1972-nov/{z}/{x}/{y}.webp",
+  "tilesHi": "maps/kh9-1972-nov/{z}/{x}/{y}.webp",
   "bounds": [
    [
     32.7964633,
@@ -56,6 +57,7 @@ window.ATLAS_OVERLAYS = [
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1976-north/{z}/{x}/{y}.webp",
+  "tilesHi": "maps/kh9-1976-north/{z}/{x}/{y}.webp",
   "bounds": [
    [
     32.8607253,
@@ -79,6 +81,7 @@ window.ATLAS_OVERLAYS = [
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1976-south/{z}/{x}/{y}.webp",
+  "tilesHi": "maps/kh9-1976-south/{z}/{x}/{y}.webp",
   "bounds": [
    [
     32.7975053,
@@ -124,6 +127,7 @@ window.ATLAS_OVERLAYS = [
   "page": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data",
   "license": "Public domain (U.S. government work)",
   "tiles": "maps/kh9-1983/{z}/{x}/{y}.webp",
+  "tilesHi": "maps/kh9-1983/{z}/{x}/{y}.webp",
   "bounds": [
    [
     32.7553993,

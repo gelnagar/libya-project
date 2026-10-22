@@ -1,1 +1,1 @@
-{"ok": false, "error": "HTTP Error 503: Service Unavailable", "type": "HTTPError", "at": "2026-10-21T19:40:10.768847", "have_username": true, "have_token": true, "env_names_with_usgs": ["USGS_TOKEN", "USGS_USERNAME"]}
+{"ok": true}

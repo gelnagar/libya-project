@@ -37,3 +37,29 @@ Share the link with anyone; share the family password only with family. Phones r
 ## Requests from the family
 
 The chat can offer a **Send to Gordon** button when something is not on the map. Requests are saved in KV. Read them at `/requests.html` on your Worker address with `OWNER_CODE`, and tap **Mark done** to clear one. The family password cannot open that page.
+
+## Visitors and costs dashboard
+
+Open `/stats.html` on your Worker address with `OWNER_CODE`. It shows visits per day, different and returning visitors, the most opened places, records, people and stories, countries, cities, networks, devices, family versus public, where visitors came from, time of day, and what the site costs you this month (AI, Cloudflare, email) with how much of each free allowance is used.
+
+- Data lives in the D1 database `tripoli-atlas-stats` (bound as `STATS` in `wrangler.jsonc`; tables in `worker/stats-schema.sql`, also created automatically).
+- The map sends one small batch about 4 seconds after it opens, then at most one a minute while someone browses, and one when they leave. These are the only Worker requests an ordinary visit makes.
+- Visitors are counted by a keyed one-way hash of IP address and browser. IP addresses are never stored. Location (country, region, city, network) comes from Cloudflare's IP lookup and is approximate.
+- Optional: `STATS_SALT` (secret) for the hash key, otherwise `FAMILY_CODE` is used. `CF_PLAN` set to `paid` if you move to Workers Paid, so the cost estimate includes the $5 a month.
+
+## Email when someone adds to the map
+
+Every new family report (testimony, memory, place) sends you an email with what was added and a link to review or remove it. Your Cloudflare account has no domain of its own, so mail goes through Resend (free: 3,000 a month, 100 a day):
+
+1. Sign up at resend.com **with the address you want the alerts at** (the free test sender can only mail that address).
+2. In Resend, create an API key with "Sending access".
+3. Set the two secrets (the email address stays out of the public repository):
+
+   ```
+   npx wrangler secret put RESEND_API_KEY
+   npx wrangler secret put ALERT_EMAIL
+   ```
+
+4. Add a test report on the map; the email arrives within a minute (check spam the first time). The dashboard shows the last alert's status.
+
+If you later add a domain to Cloudflare or Resend, set `ALERT_FROM` (for example `Tripoli atlas <alerts@yourdomain>`) to send from it.

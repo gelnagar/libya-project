@@ -34,6 +34,20 @@
     LOW_CREDIT_WARNING (text)    warn below this many dollars, default 10
     PRICE_IN, PRICE_OUT (text)   dollars per million tokens, default 2 and 10
 
+  Visitor statistics and costs for the owner dashboard (/stats.html, opened with OWNER_CODE):
+    D1 database bound as STATS (wrangler.jsonc; tables in worker/stats-schema.sql, created on first use).
+    The map sends a few small batches of events per visit (visits and what people open). Each visitor is
+    a keyed one-way hash of their IP address and browser; the IP itself is never stored. Place, region,
+    city and network come from Cloudflare's own IP lookup.
+    STATS_SALT         (secret)  optional key for the visitor hash; defaults to FAMILY_CODE
+    CF_PLAN            (text)    'free' (default) or 'paid', for the Cloudflare cost estimate
+
+  Email to the owner whenever someone adds to the map (sent through Resend, free up to 3,000 a month):
+    RESEND_API_KEY     (secret)  API key from resend.com
+    ALERT_EMAIL        (secret)  where to send it (comma-separate several); kept out of the repository
+    ALERT_FROM         (text)    optional sender, defaults to Resend's test sender onboarding@resend.dev,
+                                 which can only mail the address the Resend account was opened with
+
   The chat guide is an agent: Claude calls map tools, the map runs them and sends back
   the results, and the loop continues until Claude gives its final answer. The tools and
   instructions live here, in the worker; the map only supplies data and tool results.
@@ -140,12 +154,124 @@ async function creditInfo(env) {
   return { tracked: true, remaining: Math.round(remaining * 100) / 100, low: remaining < warnBelow, out: remaining <= 0.05 };
 }
 
-async function recordSpend(env, u) {
+async function recordSpend(env, u, kind) {
   if (!env.ATLAS_KV || !u) return;
   const pin = parseFloat(env.PRICE_IN) || 2, pout = parseFloat(env.PRICE_OUT) || 10;
   const cost = (u.searches || 0) * 0.01 + ((u.input_tokens || 0) * pin + (u.cache_creation_input_tokens || 0) * pin * 1.25 + (u.cache_read_input_tokens || 0) * pin * 0.1 + (u.output_tokens || 0) * pout) / 1e6;
   const spent = parseFloat(await env.ATLAS_KV.get('spent_usd')) || 0;
   await env.ATLAS_KV.put('spent_usd', String(spent + cost));
+  try {
+    const db = await statsDb(env), t = Date.now();
+    if (db) await db.prepare('INSERT INTO ai (ts, day, kind, cost, input, output, searches) VALUES (?, ?, ?, ?, ?, ?, ?)')
+      .bind(t, dayOf(t), kind || 'ai', cost, (u.input_tokens || 0) + (u.cache_creation_input_tokens || 0) + (u.cache_read_input_tokens || 0), u.output_tokens || 0, u.searches || 0).run();
+  } catch {}
+}
+
+/* ---------- visitor statistics (D1, bound as STATS) ---------- */
+const dayOf = (t) => new Date(t).toISOString().slice(0, 10);
+const STATS_SCHEMA = [
+  `CREATE TABLE IF NOT EXISTS events (ts INTEGER NOT NULL, day TEXT NOT NULL, vid TEXT, kind TEXT NOT NULL, item TEXT, name TEXT, country TEXT, region TEXT, city TEXT, org TEXT, device TEXT, ref TEXT, lang TEXT, family INTEGER DEFAULT 0)`,
+  `CREATE INDEX IF NOT EXISTS events_day ON events(day, kind)`,
+  `CREATE INDEX IF NOT EXISTS events_item ON events(kind, item)`,
+  `CREATE TABLE IF NOT EXISTS ai (ts INTEGER NOT NULL, day TEXT NOT NULL, kind TEXT, cost REAL, input INTEGER, output INTEGER, searches INTEGER)`,
+  `CREATE INDEX IF NOT EXISTS ai_day ON ai(day)`,
+  `CREATE TABLE IF NOT EXISTS reqs (day TEXT NOT NULL, kind TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, kind))`,
+  `CREATE TABLE IF NOT EXISTS emails (ts INTEGER NOT NULL, day TEXT NOT NULL, ok INTEGER, info TEXT)`
+];
+let statsReady = null;
+async function statsDb(env) {
+  if (!env.STATS) return null;
+  if (!statsReady) statsReady = env.STATS.batch(STATS_SCHEMA.map((q) => env.STATS.prepare(q))).catch((e) => { statsReady = null; throw e; });
+  await statsReady;
+  return env.STATS;
+}
+// run work after the response is sent, never failing the request
+function later(ctx, p) { const q = Promise.resolve(p).catch(() => {}); if (ctx && ctx.waitUntil) ctx.waitUntil(q); return q; }
+async function countRequest(env, kind) {
+  const db = await statsDb(env); if (!db) return;
+  await db.prepare('INSERT INTO reqs (day, kind, n) VALUES (?, ?, 1) ON CONFLICT(day, kind) DO UPDATE SET n = n + 1').bind(dayOf(Date.now()), kind).run();
+}
+async function visitorId(env, request) {
+  const raw = (request.headers.get('CF-Connecting-IP') || '') + '|' + (request.headers.get('User-Agent') || '');
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode('visitor:' + (env.STATS_SALT || env.FAMILY_CODE || 'atlas')), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const sig = new Uint8Array(await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(raw)));
+  return [...sig.slice(0, 8)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+function deviceOf(ua) { ua = String(ua || ''); return /iPad|Tablet|PlayBook|Silk|(Android(?!.*Mobile))/i.test(ua) ? 'tablet' : /Mobi|iPhone|iPod|Android/i.test(ua) ? 'phone' : 'computer'; }
+const trackHits = new Map();
+const TRACK_KINDS = ['visit', 'open', 'story', 'search'];
+
+/* ---------- email to the owner when someone adds to the map ---------- */
+async function alertNewReport(env, item, origin) {
+  if (!env.RESEND_API_KEY || !env.ALERT_EMAIL) return;
+  const CAT_NAMES = { military: 'Military site', checkpoint: 'Checkpoint', prison: 'Prison', security: 'Security site', event: 'Event', landmark: 'Landmark', home: 'Home (family only)', remember: 'Memory of a person', other: 'Other' };
+  const lines = [
+    ['Type', CAT_NAMES[item.cat] || item.cat], ['About', item.targetName || ''], ['When', item.when], ['Added by', item.by || 'not given'],
+    ['How they know', { saw: 'Saw it myself', family: 'Told by family or friends', read: 'Read or heard it', unsure: 'Not sure' }[item.how] || ''],
+    ['Source', item.src], ['Place', item.lat != null ? item.lat + ', ' + item.lon : ''], ['Photos / voice', item.media && item.media.length ? String(item.media.length) : '']
+  ].filter((x) => x[1]);
+  const subject = 'New on the Tripoli map: ' + item.title;
+  const text = `Someone added to the map.\n\n${item.title}\n\n${lines.map((x) => x[0] + ': ' + x[1]).join('\n')}\n\n${item.text}\n\nMap: ${origin}/\nReview or remove it: ${origin}/requests.html\nVisitors and costs: ${origin}/stats.html`;
+  const html = `<div style="font-family:system-ui,sans-serif;max-width:560px;line-height:1.5"><p style="color:#666;margin:0 0 8px">Someone added to the map.</p><h2 style="margin:0 0 12px">${escHtml(item.title)}</h2>`
+    + `<table style="border-collapse:collapse;margin-bottom:12px">${lines.map((x) => `<tr><td style="color:#666;padding:2px 12px 2px 0;vertical-align:top">${escHtml(x[0])}</td><td style="padding:2px 0">${escHtml(x[1])}</td></tr>`).join('')}</table>`
+    + `<p style="white-space:pre-wrap;border-left:3px solid #ccc;padding-left:12px">${escHtml(item.text)}</p>`
+    + `<p><a href="${origin}/">Open the map</a> · <a href="${origin}/requests.html">Review or remove it</a> · <a href="${origin}/stats.html">Visitors and costs</a></p></div>`;
+  let ok = 0, info = '';
+  try {
+    const r = await fetch('https://api.resend.com/emails', {
+      method: 'POST', headers: { Authorization: 'Bearer ' + env.RESEND_API_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ from: env.ALERT_FROM || 'Tripoli: Open Source <onboarding@resend.dev>', to: String(env.ALERT_EMAIL).split(',').map((x) => x.trim()).filter(Boolean), subject, text, html })
+    });
+    ok = r.ok ? 1 : 0; info = r.ok ? 'sent' : clip(await r.text(), 300);
+  } catch (e) { info = clip(e && e.message, 300); }
+  try { const db = await statsDb(env), t = Date.now(); if (db) await db.prepare('INSERT INTO emails (ts, day, ok, info) VALUES (?, ?, ?, ?)').bind(t, dayOf(t), ok, info).run(); } catch {}
+}
+
+/* ---------- the owner dashboard's numbers ---------- */
+async function ownerStats(env, body) {
+  const days = Math.min(365, Math.max(1, parseInt(body.days, 10) || 30));
+  const t = Date.now(), today = dayOf(t), since = dayOf(t - (days - 1) * 86400000), month = today.slice(0, 8) + '01';
+  const spentAll = env.ATLAS_KV ? parseFloat(await env.ATLAS_KV.get('spent_usd')) || 0 : 0;
+  const out = { days, since, today, month, credit: await creditInfo(env), aiSpentAllTime: spentAll, plan: String(env.CF_PLAN || 'free').toLowerCase(),
+    email: { configured: !!(env.RESEND_API_KEY && env.ALERT_EMAIL) } };
+  const db = await statsDb(env).catch(() => null);
+  if (!db) return { ...out, error: 'The statistics database is not connected.' };
+  const q = (sql, ...a) => db.prepare(sql).bind(...a);
+  const V = `FROM events WHERE kind = 'visit' AND day >= ?`;
+  const r = (await db.batch([
+    q(`SELECT day, COUNT(*) AS visits, COUNT(DISTINCT vid) AS visitors ${V} GROUP BY day ORDER BY day`, since),                                  // 0
+    q(`SELECT day, COUNT(*) AS n FROM events WHERE kind IN ('open', 'story') AND day >= ? GROUP BY day ORDER BY day`, since),                  // 1
+    q(`SELECT item, MAX(name) AS name, COUNT(*) AS n, COUNT(DISTINCT vid) AS u FROM events WHERE kind IN ('open', 'story') AND day >= ? GROUP BY item ORDER BY n DESC LIMIT 25`, since), // 2
+    q(`SELECT country AS k, COUNT(DISTINCT vid) AS u, COUNT(*) AS n ${V} GROUP BY country ORDER BY u DESC, n DESC LIMIT 15`, since),            // 3
+    q(`SELECT city || CASE WHEN country <> '' THEN ', ' || country ELSE '' END AS k, COUNT(DISTINCT vid) AS u, COUNT(*) AS n ${V} AND city <> '' GROUP BY city, country ORDER BY u DESC, n DESC LIMIT 15`, since), // 4
+    q(`SELECT org AS k, COUNT(DISTINCT vid) AS u, COUNT(*) AS n ${V} AND org <> '' GROUP BY org ORDER BY u DESC, n DESC LIMIT 12`, since),     // 5
+    q(`SELECT device AS k, COUNT(DISTINCT vid) AS u, COUNT(*) AS n ${V} GROUP BY device ORDER BY u DESC`, since),                              // 6
+    q(`SELECT ref AS k, COUNT(DISTINCT vid) AS u, COUNT(*) AS n ${V} AND ref <> '' GROUP BY ref ORDER BY n DESC LIMIT 10`, since),             // 7
+    q(`SELECT CAST(strftime('%H', ts / 1000, 'unixepoch') AS INTEGER) AS h, COUNT(*) AS n ${V} GROUP BY h ORDER BY h`, since),                 // 8
+    q(`SELECT family AS k, COUNT(DISTINCT vid) AS u, COUNT(*) AS n ${V} GROUP BY family`, since),                                              // 9
+    q(`SELECT COUNT(*) AS visits, COUNT(DISTINCT vid) AS visitors ${V}`, since),                                                                // 10
+    q(`SELECT COUNT(*) AS n FROM (SELECT vid ${V} GROUP BY vid HAVING COUNT(DISTINCT day) > 1)`, since),                                        // 11
+    q(`SELECT day, SUM(cost) AS cost, COUNT(*) AS calls FROM ai WHERE day >= ? GROUP BY day ORDER BY day`, since),                             // 12
+    q(`SELECT COALESCE(SUM(cost), 0) AS cost, COUNT(*) AS calls FROM ai WHERE day >= ?`, month),                                               // 13
+    q(`SELECT COALESCE(SUM(cost), 0) AS cost, COUNT(*) AS calls FROM ai WHERE day >= ?`, since),                                               // 14
+    q(`SELECT day, SUM(n) AS n FROM reqs WHERE day >= ? GROUP BY day ORDER BY day`, since),                                                    // 15
+    q(`SELECT kind, n FROM reqs WHERE day = ? ORDER BY n DESC`, today),                                                                        // 16
+    q(`SELECT COALESCE(SUM(n), 0) AS n FROM reqs WHERE day >= ?`, month),                                                                      // 17
+    q(`SELECT COUNT(*) AS n, COALESCE(SUM(ok), 0) AS ok FROM emails WHERE day >= ?`, month),                                                   // 18
+    q(`SELECT ts, ok, info FROM emails ORDER BY ts DESC LIMIT 1`),                                                                             // 19
+    q(`SELECT (SELECT COUNT(*) FROM events WHERE day = ?1) + (SELECT COUNT(*) FROM ai WHERE day = ?1) + (SELECT COALESCE(SUM(n), 0) FROM reqs WHERE day = ?1) + (SELECT COUNT(*) FROM emails WHERE day = ?1) AS n`, today), // 20
+    q(`SELECT COUNT(*) AS n FROM events WHERE day = ? AND kind = 'visit'`, today)                                                              // 21
+  ])).map((x) => x.results || []);
+  const reqMonth = (r[17][0] || {}).n || 0;
+  const aiMonth = (r[13][0] || {}).cost || 0;
+  const cfMonth = out.plan === 'paid' ? 5 + Math.max(0, reqMonth - 10e6) / 1e6 * 0.30 : 0;
+  return { ...out,
+    daily: r[0], opensDaily: r[1], top: r[2], countries: r[3], cities: r[4], orgs: r[5], devices: r[6], refs: r[7], hours: r[8], audience: r[9],
+    totals: { ...(r[10][0] || {}), returning: (r[11][0] || {}).n || 0, visitsToday: (r[21][0] || {}).n || 0 },
+    aiDaily: r[12], aiMonth: r[13][0], aiPeriod: r[14][0],
+    reqsDaily: r[15], reqsToday: r[16], reqsMonth: reqMonth, d1WritesToday: (r[20][0] || {}).n || 0,
+    emailsMonth: r[18][0], lastEmail: r[19][0] || null,
+    cost: { aiMonth, cloudflareMonth: cfMonth, emailMonth: 0, totalMonth: aiMonth + cfMonth } };
 }
 
 function json(body, status, headers) {
@@ -336,19 +462,20 @@ async function handleLogin(request, env) {
 const ICONS = new Set(['/favicon.svg', '/favicon-32.png', '/favicon.ico', '/apple-touch-icon.png', '/icon-192.png', '/icon-512.png']);
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const path = url.pathname;
+    if (path !== '/api' && request.method !== 'POST' && request.method !== 'OPTIONS') later(ctx, countRequest(env, path === '/login' || path === '/logout' ? path.slice(1) : 'page'));
 
     if (path === '/robots.txt') return new Response('User-agent: *\nDisallow: /\n', { headers: { ...SECURITY, 'Content-Type': 'text/plain' } });
-    if (path === '/login') return handleLogin(request, env);
+    if (path === '/login') { if (request.method === 'POST') later(ctx, countRequest(env, 'login')); return handleLogin(request, env); }
     if (path === '/logout') {
       const h = new Headers({ ...SECURITY, Location: '/', 'Cache-Control': 'no-store' });
       h.append('Set-Cookie', `${COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`);
       h.append('Set-Cookie', `${HINT}=; Path=/; Max-Age=0; Secure; SameSite=Lax`);
       return new Response(null, { status: 303, headers: h });
     }
-    if (path === '/api' || request.method === 'POST' || request.method === 'OPTIONS') return api(request, env, url);
+    if (path === '/api' || request.method === 'POST' || request.method === 'OPTIONS') return api(request, env, url, ctx);
 
     // The map is public and read-only. Cloudflare normally serves its files before this Worker runs
     // (public/_headers adds the same security headers there); this only handles anything that reaches us.
@@ -362,7 +489,7 @@ export default {
 };
 
 /* ---------- the AI and requests API ---------- */
-async function api(request, env, url) {
+async function api(request, env, url, ctx) {
   const allowed = [url.origin].concat((env.ALLOWED_ORIGINS || 'https://gelnagar.github.io').split(',').map((s) => s.trim()).filter(Boolean));
   const origin = request.headers.get('Origin') || '';
   const cors = {
@@ -381,6 +508,32 @@ async function api(request, env, url) {
 
   let body;
   try { body = await request.json(); } catch { return json({ error: 'Bad request' }, 400, cors); }
+  body = body && typeof body === 'object' ? body : {};
+  const REQ_KINDS = ['track', 'owner', 'agent', 'report', 'reportDelete', 'reports', 'mediaPut', 'mediaGet', 'request', 'status'];
+  later(ctx, countRequest(env, 'api:' + (REQ_KINDS.find((k) => body[k]) || 'question')));
+
+  /* ----- visitor statistics: a small batch of events from the map (anyone; no AI, no KV) ----- */
+  if (body.track) {
+    const tip = request.headers.get('CF-Connecting-IP') || 'unknown', tnow = Date.now();
+    const seen = (trackHits.get(tip) || []).filter((x) => tnow - x < 60000);
+    if (seen.length >= 20) return json({ ok: false }, 429, cors);
+    seen.push(tnow); trackHits.set(tip, seen);
+    if (trackHits.size > 5000) trackHits.clear();
+    const evs = (Array.isArray(body.track) ? body.track : []).filter((e) => e && TRACK_KINDS.includes(e.k)).slice(0, 40);
+    if (evs.length && env.STATS) {
+      later(ctx, (async () => {
+        const db = await statsDb(env); if (!db) return;
+        const cf = request.cf || {}, vid = await visitorId(env, request), device = deviceOf(request.headers.get('User-Agent'));
+        const ins = db.prepare('INSERT INTO events (ts, day, vid, kind, item, name, country, region, city, org, device, ref, lang, family) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        await db.batch(evs.map((e) => {
+          const ts = tnow - Math.min(Math.max(parseInt(e.ago, 10) || 0, 0), 6 * 3600000);
+          const ref = clip(e.ref, 200).replace(/^https?:\/\//, '').split('/')[0].slice(0, 100);
+          return ins.bind(ts, dayOf(ts), vid, e.k, clip(e.id, 120), clip(e.name, 140), clip(cf.country, 4), clip(cf.region, 80), clip(cf.city, 80), clip(cf.asOrganization, 120), device, ref, clip(e.lang, 16), viaSession ? 1 : 0);
+        }));
+      })());
+    }
+    return json({ ok: true }, 200, cors);
+  }
 
   /* ----- owner: read and clear requests ----- */
   if (body.owner) {
@@ -388,6 +541,7 @@ async function api(request, env, url) {
     if ((await failCount(env, ipo)) >= MAX_FAILS) return json({ error: 'Too many wrong passwords. Wait 15 minutes.' }, 429, cors);
     if (!env.OWNER_CODE || norm(request.headers.get('X-Owner-Code')) !== norm(env.OWNER_CODE)) { await noteFail(env, ipo); return json({ error: 'Wrong owner password' }, 401, cors); }
     if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
+    if (body.stats) return json(await ownerStats(env, body), 200, cors);
     if (body.done) { await env.ATLAS_KV.delete(String(body.done)); return json({ ok: true }, 200, cors); }
     if (body.removeReport) {
       let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
@@ -485,6 +639,7 @@ async function api(request, env, url) {
       list.push(item);
       if (list.length > 3000) list = list.slice(-3000);
       await env.ATLAS_KV.put(KEY, JSON.stringify(list));
+      later(ctx, alertNewReport(env, item, url.origin));
       const { tk, ...pub } = item;
       return json({ ok: true, report: pub, token }, 200, cors);
     }
@@ -517,7 +672,7 @@ async function api(request, env, url) {
       if (/credit balance/i.test(r.error)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
       return json({ error: 'AI service error ' + r.status }, 502, cors);
     }
-    await recordSpend(env, r.usage);
+    await recordSpend(env, r.usage, 'chat');
     const content = [];
     for (const b of r.content) {
       if (b.type === 'text') { const last = content[content.length - 1]; if (last && last.type === 'text') last.text += b.text; else content.push({ type: 'text', text: b.text }); }
@@ -545,7 +700,7 @@ async function api(request, env, url) {
     if (/credit balance/i.test(r.error)) return json({ error: 'Out of credit', credit: { tracked: true, remaining: 0, low: true, out: true } }, 402, cors);
     return json({ error: 'AI service error ' + r.status }, 502, cors);
   }
-  await recordSpend(env, r.usage);
+  await recordSpend(env, r.usage, 'question');
   const raw = r.content.filter((c) => c.type === 'text').map((c) => c.text).join('').trim();
   const parts = splitFollowups(raw);
   return json({ text: parts.text, followups: parts.followups, sources: r.sources, credit: await creditInfo(env) }, 200, cors);

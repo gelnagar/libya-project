@@ -13,6 +13,10 @@
   "kv_namespaces": [
     { "binding": "ATLAS_KV", "id": "da3be61a14e648f291931b3d321b3d3d" }
   ],
+  // Visitor statistics and cost tracking for the owner dashboard (public/stats.html). Schema: worker/stats-schema.sql
+  "d1_databases": [
+    { "binding": "STATS", "database_name": "tripoli-atlas-stats", "database_id": "a8624ec7-25ae-444c-bf59-2c6682e20c19" }
+  ],
   // Keep the variables already set in the Cloudflare dashboard (credit, owner name, etc.).
   "keep_vars": true,
   "observability": { "enabled": true }

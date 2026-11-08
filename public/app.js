@@ -35,6 +35,33 @@
   var PUBLIC_VIEW = GATED && !FAMILY;      // visitors: read the map and family notes, no AI, no adding
   var AI_ON = !!CFG.aiEndpoint && !PUBLIC_VIEW;
   if (PUBLIC_VIEW) document.documentElement.classList.add('public-view');
+
+  /* Visitor statistics for the owner dashboard (stats.html). Visits and what people open are queued and sent
+     to /api in a few small batches per visit (no AI is involved). The server derives place and network from
+     the connection and never stores the IP address itself. Only on the online map. */
+  var TRACK = GATED ? [] : null, trackTimer = null;
+  function track(k, id, name) {
+    if (!TRACK) return;
+    TRACK.push({ k: k, id: String(id || '').slice(0, 120), name: String(name || '').slice(0, 140), at: Date.now() });
+    if (TRACK.length >= 30) flushTrack(); else if (!trackTimer) trackTimer = setTimeout(flushTrack, 60000);
+  }
+  function flushTrack(leaving) {
+    clearTimeout(trackTimer); trackTimer = null;
+    if (!TRACK || !TRACK.length) return;
+    var now = Date.now(), data = JSON.stringify({ track: TRACK.splice(0, 40).map(function (e) {
+      var o = { k: e.k, id: e.id, name: e.name, ago: now - e.at }; if (e.ref) o.ref = e.ref; if (e.lang) o.lang = e.lang; return o; }) });
+    try {
+      if (leaving && navigator.sendBeacon && navigator.sendBeacon('/api', new Blob([data], { type: 'text/plain' }))) return;
+      fetch('/api', { method: 'POST', credentials: 'same-origin', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: data }).catch(function () {});
+    } catch (e) {}
+  }
+  if (TRACK) {
+    var ref0 = document.referrer && document.referrer.indexOf(location.origin) !== 0 ? document.referrer : '';
+    TRACK.push({ k: 'visit', id: location.pathname, name: '', at: Date.now(), ref: ref0, lang: (navigator.language || '').slice(0, 16) });
+    trackTimer = setTimeout(flushTrack, 4000);
+    addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') flushTrack(true); });
+    addEventListener('pagehide', function () { flushTrack(true); });
+  }
   var store = {
     get: function (k, d) { try { var v = localStorage.getItem('atlas.' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
     set: function (k, v) { try { localStorage.setItem('atlas.' + k, JSON.stringify(v)); } catch (e) {} }
@@ -990,6 +1017,7 @@
   function streetBtn(lat, lon, name) { return h('button', { class: 'btn', text: 'Street 3D', onclick: function () { openStreet(lat, lon, name || ''); } }); }
 
   function openSite(s) {
+    track('open', 'site:' + s.id, s.name);
     var lay = LAYERS[s.layer], P = PANELS[s.id] || {}, ev = siteKind(s) === 'event';
     var body = newSheet(ev ? 'Event' : 'Site');
     markSelected(s.id);
@@ -1434,6 +1462,7 @@
     return ['What was ' + n + ' like in the 1970s and 1980s?', 'What happened in ' + n + ' during the 1986 US air raid?', 'Were there security offices or prisons in ' + n + '?', 'What is ' + n + ' known for today?', 'Who lived in ' + n + ' under Gaddafi?', 'How did ' + n + ' change after 2011?'];
   }
   function openArea(a) {
+    track('open', 'area:' + a.id, a.name);
     var geo = !!GEO_KINDS[a.kind], P = PANELS[a.id] || {}, label = KIND_LABEL[a.kind] || 'Area';
     var body = newSheet(geo ? 'Geography' : 'Site');
     markSelected(null);
@@ -1485,6 +1514,7 @@
   function capFirst(t) { t = String(t || ''); return t.charAt(0).toUpperCase() + t.slice(1); }
   function niceDate(d) { var m = String(d || '').match(/^(\d{4})(?:-(\d\d))?(?:-(\d\d))?/); if (!m) return d || ''; return (m[3] ? +m[3] + ' ' : '') + (m[2] ? MONTHS[+m[2] - 1] + ' ' : '') + m[1]; }
   function openRecord(r) {
+    track('open', 'record:' + (r.id || r.title || ''), r.title || r.name);
     var body = newSheet('Record');
     markSelected(null);
     var type = capFirst(r.y || 'document');
@@ -2334,6 +2364,7 @@
     var ai = b.querySelector('.ai'); if (ai) b.insertBefore(sec, ai); else b.appendChild(sec);
   }
   function openReport(r) {
+    track('open', 'report:' + r.id, r.title);
     var cat = CAT_BY[r.cat] || CAT_BY.other;
     var body = newSheet('Family report');
     markSelected(null); curTarget = { isReport: true, code: '+' };
@@ -2816,7 +2847,7 @@
     var ch = storyCard ? storyCard.getBoundingClientRect().height || 240 : 240;
     return map.unproject(map.project([lat, lon], z).add([0, ch / 2 + (DESKTOP.matches ? 60 : 10)]), z);
   }
-  function startStory(id) { var st = STORIES.filter(function (x) { return x.id === id; })[0]; if (!st) return; storyOn = { story: st, i: 0 }; clearHoodHide(); syncHoods(); storyStop(0); }
+  function startStory(id) { var st = STORIES.filter(function (x) { return x.id === id; })[0]; if (!st) return; track('story', 'story:' + id, st.title || st.name); storyOn = { story: st, i: 0 }; clearHoodHide(); syncHoods(); storyStop(0); }
   function endStory() { storyOn = null; setTimeout(function () { clearHoodHide(); syncHoods(); }, 0); if (storyCard) storyCard.hidden = true; document.body.classList.remove('story-open'); markSelected(null); applyFocus(); }
 
   /* ---------- pick a year: show only that year, with a short "this year in Tripoli" card ---------- */
@@ -3206,6 +3237,7 @@
 
   /* ---------- people index ---------- */
   function openPerson(pp) {
+    track('open', 'person:' + (pp.id || pp.name || ''), pp.name);
     var body = newSheet('Record'); markSelected(null); curTarget = { isReport: true, code: '' };
     var places = (pp.places || []).map(function (id) { return BY_ID[id]; }).filter(Boolean);
     ppHead(body, { title: pp.name, ar: pp.ar, type: 'Person' });

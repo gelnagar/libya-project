@@ -10,6 +10,7 @@ An interactive map of Tripoli under Gaddafi (1969–2011) for older relatives. A
   - `areas.js` (172 areas, incl. `npic-*` military sites and `lb-`/`lm-`/`lh-` landmarks), `records.js`, `people.js`, `stories.js`, `links.js`, `overlays.js`, `quotes.js` (generated), `unknown.js` (generated).
 - `worker/worker.js` — family sign-in, AI relay, family reports, tools for the chat guide. In `app.js`, `PUBLIC_VIEW` / `AI_ON` / `canReport` / `canRead` decide which buttons show; the server check is what actually protects the AI and writes.
 - `scripts/` — data builders and collectors (Python and Node).
+- `public/stats.html` + `public/requests.html` — owner pages (OWNER_CODE). Stats come from D1 `tripoli-atlas-stats` (binding `STATS`), fed by `track()` in `app.js`; new family reports email the owner via Resend (`RESEND_API_KEY`, `ALERT_EMAIL` secrets). Never store raw IPs or put the owner's email in the repo.
 - `archive/` — source corpora used for research (CIA reading room, FBIS, JPRS, Wikipedia en/ar, country studies, gov). **Not served.** Search it before going to the web.
 
 ## Pin schema (`ATLAS_SITES`)

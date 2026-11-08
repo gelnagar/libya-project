@@ -11,10 +11,17 @@
      date       string                Event: date as it should read, e.g. '28–29 June 1996'
      toll       string                Event: shown only when set, e.g. 'Up to 1,200 (est.)' or 'Disputed'
      area       area id               Event or site: the neighbourhood / district / town it belongs to
-     events     [{ y, d, t, src }]    Site: chronology by year (d = optional day, e.g. '4 Oct')
-     sequence   [{ w, t, src }]       Event: sequence by day or hour (w = when, e.g. '29 Jun 10:45')
-     conflicts  [{ t, src }]          Event: where sources disagree
+     events     [{ y, d, t, src }]    Site: chronology by year (d = optional day, e.g. '4 Oct').
+                                      Shown sorted by y; rows in the same year keep the order written, so write them in date order.
+                                      Leave y out when the sources give no date: the row goes under "Not dated in the sources".
+                                      Never give a row a year the sources do not give it.
+     sequence   [{ w, at, t, src }]   Event: sequence by day or hour, shown in the order written.
+                                      w = the label shown (e.g. '29 Jun 10:45'); at = the same moment as an ISO date
+                                      (e.g. '1996-06-29T10:45', or just '1996-06-29' or '1986-06'), used only to check the order.
+     conflicts  [{ t, src }]          Where sources disagree (any kind)
      reporting  [{ who, t, src }]     Accounts from detainees, residents, witnesses. who = who and how close
+
+   After editing, run:  node scripts/check-panels.mjs
 */
 window.ATLAS_PANELS = {
   abusalim: {
@@ -43,11 +50,11 @@ window.ATLAS_PANELS = {
     date: '28–29 June 1996',
     toll: 'Up to 1,200 (est.)',
     sequence: [
-      { w: '28 Jun 16:30', t: 'Three inmates seize the keys from a guard delivering dinner; Blocks 3 to 6 are opened.', src: [3] },
-      { w: '28 Jun', t: 'Seven men shot dead in the courtyards. The seven dead and 120 seriously ill prisoners are taken away on buses, presumed killed.', src: [3] },
-      { w: '29 Jun dawn', t: 'Prisoners from Blocks 1 and 2 led into a walled courtyard between the political and military wings.', src: [3] },
-      { w: '29 Jun 10:45', t: 'Explosions, then about two hours of automatic fire.', src: [3] },
-      { w: '2010', t: 'About 800 families have received death certificates, without bodies or causes of death.', src: [6] }
+      { w: '28 Jun 16:30', at: '1996-06-28T16:30', t: 'Three inmates seize the keys from a guard delivering dinner; Blocks 3 to 6 are opened.', src: [3] },
+      { w: '28 Jun', at: '1996-06-28', t: 'Seven men shot dead in the courtyards. The seven dead and 120 seriously ill prisoners are taken away on buses, presumed killed.', src: [3] },
+      { w: '29 Jun dawn', at: '1996-06-29', t: 'Prisoners from Blocks 1 and 2 led into a walled courtyard between the political and military wings.', src: [3] },
+      { w: '29 Jun 10:45', at: '1996-06-29T10:45', t: 'Explosions, then about two hours of automatic fire.', src: [3] },
+      { w: '2010', at: '2010', t: 'About 800 families have received death certificates, without bodies or causes of death.', src: [6] }
     ],
     conflicts: [
       { t: 'Date: the survivor dates it 28–29 June; other sources say 29 June.', src: [3] },
@@ -60,10 +67,10 @@ window.ATLAS_PANELS = {
     toll: 'Disputed',
     area: 'ben-ashour',
     sequence: [
-      { w: '15 Apr 1986', t: 'One F-111 assigned to the barracks hits a residential area near the French embassy.', src: [3] },
-      { w: '15 Apr 1986', t: 'About ten apartment buildings damaged; a bomb behind the French embassy kills a family.', src: [1] },
-      { w: '17 Apr 1986', t: 'Western diplomats put the dead at “at least 100” in Tripoli alone. Early estimate, unverified.', src: [6] },
-      { w: 'Jun 1986', t: 'The CIA notes the funeral procession drew only several thousand marchers in a city of about 900,000.', src: [7] }
+      { w: '15 Apr 1986', at: '1986-04-15', t: 'One F-111 assigned to the barracks hits a residential area near the French embassy.', src: [3] },
+      { w: '15 Apr 1986', at: '1986-04-15', t: 'About ten apartment buildings damaged; a bomb behind the French embassy kills a family.', src: [1] },
+      { w: '17 Apr 1986', at: '1986-04-17', t: 'Western diplomats put the dead at “at least 100” in Tripoli alone. Early estimate, unverified.', src: [6] },
+      { w: 'Jun 1986', at: '1986-06', t: 'The CIA notes the funeral procession drew only several thousand marchers in a city of about 900,000.', src: [7] }
     ],
     conflicts: [
       { t: 'Toll: at least 100 in Tripoli alone (diplomats, April 1986) vs 45 military and government personnel and 15 civilians across Tripoli and Benghazi.', src: [6, 8] },
@@ -74,6 +81,24 @@ window.ATLAS_PANELS = {
       { who: 'Neighbours · recollection', t: 'A bomb fell on the Meshergi family’s villa; a blast near the French embassy killed the Shirmit family’s daughter.', src: [4] },
       { who: 'Neighbour · recollection', t: 'A childhood friend of the boy’s brother was left paralysed after a wall fell on him.', src: [4] },
       { who: 'Neighbour · recollection', t: 'A Palestinian neighbour, Bassam Al Wifani, is said to have lost a daughter who died of fear.', src: [4] }
+    ]
+  },
+
+  blackhorse: {
+    events: [
+      { y: 1973, d: '30 Apr', t: 'Saleh Quosmy is arrested in the wave after Gaddafi’s Zuwara speech and interrogated for about three months in the military wing, where guards beat detainees with plastic bricks, sticks and belts.', src: [6] },
+      { y: 1980, d: '12 Mar', t: 'A Cairo weekly reports recruits who refused orders held here, on the airport road. It rests on one unnamed eyewitness, in a press hostile to Gaddafi.', src: [1] },
+      { y: 1980, d: '3 May', t: 'Quosmy is returned to the military wing and loses family visits and access to newspapers, books, radio and television.', src: [6] },
+      { y: 1982, t: 'Students are held here as political prisoners, three women among the first. One describes a cell of about 180 × 180 cm.', src: [3, 4] },
+      { y: 1994, d: '30 Sep', t: 'Quosmy is transferred to Abu Salim.', src: [6] },
+      { t: 'Ali Akermi, sentenced in 1977, is held in the military police wing: about three months of interrogation with beatings by sticks and electric cables, then a move to the civilian police wing.', src: [5] },
+      { t: 'Bashir Jarbou, tried in 1977, is moved here from Kwefya prison in Benghazi after about three years there, then to Abu Salim.', src: [7] },
+      { t: 'Moftah Sharef spends the first 12 years of his sentence in the “White Horse” prison, which he says was later called Black Horse, then Abu Salim until he is freed in March 1988.', src: [8] },
+      { t: 'Abu Salim was built to replace Black Horse.', src: [2] }
+    ],
+    conflicts: [
+      { t: 'Start: this pin’s dates begin in 1980, with the press report. Saleh Quosmy dates his time here to April 1973, and Moftah Sharef describes twelve years here under an earlier name.', src: [6, 8] },
+      { t: 'End: the pin ends in 1984, when Abu Salim replaced it, but Quosmy’s account has him moved to Abu Salim only on 30 September 1994.', src: [2, 6] }
     ]
   },
 

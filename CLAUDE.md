@@ -31,6 +31,8 @@ An interactive map of Tripoli under Gaddafi (1969–2011) for older relatives. A
 
 ## Build and check
 - `node --check public/app.js` and `node --check public/data/sites.js` after every edit.
+- After editing `public/data/panels.js` (hand-written panel timelines, sequences, conflicts, accounts): `node scripts/check-panels.mjs`. It fails on footnotes outside a pin's source list and on timelines out of date order.
+- Place panels never derive dates from free text: a dated timeline appears only from `panels.js`, every line with its own date and source. Pins without one show their text as plain paragraphs.
 - After changing `scripts/place_aliases.py`: `python3 scripts/build-unknown.py` (edges between two mapped nodes are dropped, so those nodes then leave the Intelligence view; that is expected).
 - After research changes that affect quotes: `python3 scripts/build-quotes.py`.
 - Local test: run `python3 -m http.server 8765` inside `public/`, then load `http://localhost:8765/index.html`. A Playwright script can drive it (cloud sandbox has Chromium at `/opt/pw-browsers/chromium`; Esri tile requests may be blocked there, which is harmless).

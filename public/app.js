@@ -876,21 +876,21 @@
     return h('dl', { class: 'meta facts' }, kids);
   }
   function section(title, kids) { return h('div', { class: 'sec' }, [h('h3', { text: title })].concat(kids)); }
-  /* "What is known" as short dated lines when the text moves through several years; otherwise one paragraph */
-  function datedText(text) {
-    var t = String(text || ''), sents = t.match(/[^.!?]+(?:[.!?]+(?=\s+[A-Z0-9“"(]|\s*$)|$)/g) || [t], groups = [], cur = null;
+  /* A pin's record text as plain paragraphs. There is deliberately no year column here: the text is written source by source,
+     not in date order, and labelling each sentence with the first year it mentions made unchecked text look like a dated
+     chronology. Dated timelines come only from data/panels.js, where every line has its own date and source. */
+  function sentencesOf(t) {
+    var sents = t.match(/[^.!?]+(?:[.!?]+(?=\s+[A-Z0-9“"(]|\s*$)|$)/g) || [t], fixed = [];
     // re-join pieces split after abbreviations like "U.S." or "St."
-    var fixed = []; sents.forEach(function (x) { if (fixed.length && /\b(?:U\.S|U\.N|St|Mr|Dr|Col|Gen|Lt|No|al)\.$/.test(fixed[fixed.length - 1].trim())) fixed[fixed.length - 1] += x; else fixed.push(x); });
-    fixed.forEach(function (x) {
-      x = x.trim(); if (!x) return;
-      var m = x.match(/\b(1[89]\d\d|20[0-2]\d)\b/);
-      if (m && (!cur || cur.y !== m[1])) { cur = { y: m[1], t: x }; groups.push(cur); }
-      else if (cur) cur.t += ' ' + x;
-      else { cur = { y: '', t: x }; groups.push(cur); }
-    });
-    var dated = groups.filter(function (g) { return g.y; }).length;
-    if (dated < 3 || t.length < 260) return h('p', { class: 'd-text', text: t });
-    return h('div', { class: 'dated' }, groups.map(function (g) { return h('div', { class: 'dl-row' }, [h('b', { text: g.y || '' }), h('span', { text: g.t })]); }));
+    sents.forEach(function (x) { if (fixed.length && /\b(?:U\.S|U\.N|St|Mr|Dr|Col|Gen|Lt|No|al)\.$/.test(fixed[fixed.length - 1].trim())) fixed[fixed.length - 1] += x; else fixed.push(x); });
+    return fixed.map(function (x) { return x.trim(); }).filter(Boolean);
+  }
+  function plainText(text) {
+    var t = String(text || ''), paras = [], cur = '';
+    if (t.length < 420) return h('p', { class: 'd-text', text: t });
+    sentencesOf(t).forEach(function (x) { cur = cur ? cur + ' ' + x : x; if (cur.length > 380) { paras.push(cur); cur = ''; } });
+    if (cur) paras.push(cur);
+    return h('div', { class: 'pp-text' }, paras.map(function (x) { return h('p', { class: 'd-text', text: x }); }));
   }
   /* source reader: the supporting passage from our archived copy of each source, key sentence highlighted */
   var quotesP = null;
@@ -994,17 +994,21 @@
     else ppStatus(body, [ppField('Existence', existPill(s.level)), ppField('In use', yrs(s) || s.period), ppField('Location', '± ' + s.r + ' km'), ppField('Present condition', P.condition)]);
     ppActs(body, [zoomBtn(s.lat, s.lon), thenNowButton(s.lat, s.lon), streetBtn(s.lat, s.lon, s.name)]);
 
-    // assessment: bottom line, then the hand-written chronology (sites, by year) or sequence (events, by day or hour), else the record text
-    var rows = (ev ? P.sequence : P.events) || [], chron = null;
-    rows = rows.filter(function (e) { return e && e.t; });
-    if (!ev) rows.sort(function (a, b) { return (+a.y || 9999) - (+b.y || 9999); });
-    if (rows.length) chron = h('ol', { class: 'pp-chron' + (ev ? ' seq' : '') }, rows.map(function (e) {
-      return h('li', {}, [h('span', { class: 'y', text: ev ? (e.w || '—') : (e.y ? String(e.y) : '—') }), h('span', {}, [!ev && e.d ? h('span', { class: 'd', text: e.d + ' · ' }) : null, e.t].concat(fn(e.src)))]);
-    }));
+    // assessment: bottom line, then the hand-written chronology (sites, by year) or sequence (events, by day or hour), else the record text.
+    // Site rows are sorted by year (same-year rows keep the order they were written in, so write them in date order);
+    // rows with no year go in their own list rather than getting a guessed date. Event sequences keep the order written;
+    // scripts/check-panels.mjs checks that order against each line's "at" date.
+    var rows = ((ev ? P.sequence : P.events) || []).filter(function (e) { return e && e.t; }), chron = null, undated = [];
+    if (!ev) { undated = rows.filter(function (e) { return !+e.y; }); rows = rows.filter(function (e) { return +e.y; }).sort(function (a, b) { return +a.y - +b.y; }); }
+    var rowLi = function (e, label) { return h('li', {}, [h('span', { class: 'y', text: label }), h('span', {}, [!ev && e.d ? h('span', { class: 'd', text: e.d + ' · ' }) : null, e.t].concat(fn(e.src)))]); };
+    if (rows.length || undated.length) chron = h('div', { class: 'pp-chron-wrap' }, [
+      rows.length ? h('ol', { class: 'pp-chron' + (ev ? ' seq' : '') }, rows.map(function (e) { return rowLi(e, ev ? (e.w || '—') : String(e.y)); })) : null,
+      undated.length ? h('h4', { class: 'pp-sub pp-undated', text: 'Not dated in the sources' }) : null,
+      undated.length ? h('ul', { class: 'pp-chron pp-nodate' }, undated.map(function (e) { return h('li', {}, [h('span', {}, [e.t].concat(fn(e.src)))]); })) : null]);
     var asmt = ppSec(body, 'Assessment', [h('p', { class: 'pp-bl' }, [P.bottom || s.relevance].concat(P.bottomSrc ? fn(P.bottomSrc) : []))]);
     if (span(s)[1] < 1969 || span(s)[0] > 2011) asmt.appendChild(h('p', { class: 'pp-note', text: 'Outside the Gaddafi era (1969–2011).' }));
-    if (chron) { asmt.appendChild(chron); asmt.appendChild(h('details', { class: 'pp-full' }, [h('summary', { text: 'Full record' }), datedText(s.text)])); }
-    else asmt.appendChild(datedText(s.text));
+    if (chron) { asmt.appendChild(chron); asmt.appendChild(h('details', { class: 'pp-full' }, [h('summary', { text: 'Full record' }), plainText(s.text)])); }
+    else asmt.appendChild(plainText(s.text));
     if ((P.conflicts || []).length) asmt.appendChild(h('div', { class: 'pp-conflict' }, [h('b', { text: 'Conflicting reporting' })].concat(P.conflicts.map(function (c) { return h('p', {}, [c.t].concat(fn(c.src))); }))));
     ppSlot(asmt, 'pp-slot-prof');
 
@@ -2700,6 +2704,19 @@
     return { key: 'm:' + c.a + '|' + c.b + '|' + c.kind, kicker: CONN_KIND[c.kind] || 'Connection', ends: [x, y], year: c.year, level: c.confidence === 'documented' ? 'Documented' : 'Reported, not confirmed', why: [c.why], sources: c.sources || [], color: CONN_COL[c.kind] };
   }
   // spec: { key, kicker, ends:[{name, open, pic?}, {…}], year, level, why:[…], sources:[{t,u}], docs:[{t,u,d,r}], color }
+  /* Connection timelines are written by a model and a few come out of order. Each item carries its own written date ("when"),
+     so sort by that: year, then month, then day where given. Items with no year go last; ties keep the written order. */
+  function whenKey(w) {
+    w = String(w || ''); var y = w.match(/\b(1[89]\d\d|20[0-2]\d)\b/); if (!y) return null;
+    var mo = -1; MONTHS.forEach(function (m, i) { if (mo < 0 && new RegExp('\\b' + m.slice(0, 3), 'i').test(w)) mo = i; });
+    var d = mo >= 0 ? w.match(/\b([0-3]?\d)\b(?!\d)/) : null;
+    return +y[1] * 10000 + (mo + 1) * 100 + (d && +d[1] <= 31 ? +d[1] : 0);
+  }
+  function timelineOrder(items) {
+    return items.map(function (t, i) { return { t: t, i: i, k: whenKey(t.when) }; })
+      .sort(function (a, b) { return (a.k == null) - (b.k == null) || (a.k || 0) - (b.k || 0) || a.i - b.i; })
+      .map(function (x) { return x.t; });
+  }
   function connDetail(spec) {
     var body = newSheet('Connection'); markSelected(null); curTarget = { isReport: true, code: LINK_ICON };
     var a = spec.ends[0] || { name: '?' }, b = spec.ends[1] || { name: '?' };
@@ -2722,7 +2739,7 @@
         slot.appendChild(h('p', { class: 'd-text', text: note.explanation }));
         if ((note.established || []).length) slot.appendChild(section('What the sources show', [list(note.established)]));
         if ((note.not_established || []).length) slot.appendChild(section('What they do not show', [list(note.not_established)]));
-        if ((note.timeline || []).length) slot.appendChild(section('Timeline', [h('ol', { class: 'cn-tl' }, note.timeline.map(function (t) { return h('li', {}, [h('b', { text: t.when }), h('span', { text: ' ' + t.what })]); }))]));
+        if ((note.timeline || []).length) slot.appendChild(section('Timeline', [h('ol', { class: 'cn-tl' }, timelineOrder(note.timeline).map(function (t) { return h('li', {}, [h('b', { text: t.when }), h('span', { text: ' ' + t.what })]); }))]));
         if ((note.quotes || []).length) slot.appendChild(section('In their words', note.quotes.map(function (q) { return h('blockquote', { class: 'cn-quote' }, [h('p', { text: '“' + q.text + '”' }), q.doc ? h('small', { text: q.doc.t }) : null]); })));
         if (note.context) slot.appendChild(section('Background', [h('p', { class: 'd-text', text: note.context }), h('small', { class: 'cn-aside', text: 'General background, not evidence for this link.' })]));
         if (note.open_question) slot.appendChild(section('Still open', [h('p', { class: 'd-text', text: note.open_question })]));

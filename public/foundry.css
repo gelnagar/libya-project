@@ -840,3 +840,6 @@ html.dark { --pp-amber: #d9a55a; --pp-amber-soft: #2e261a; --pp-blue: #9cc0dc; -
 #sheet-body .srcs li.pp-hit { background: var(--pp-amber-soft); border-radius: 4px; transition: background 1.2s; }
 #sheet-body .pp-acts a.btn { display: inline-flex; align-items: center; }
 #sheet-body .pp-sec .sec h3, #sheet-body .pp-sec .ai-h, #sheet-body .pp-sub { background: none; box-shadow: none; margin-top: 4px; }
+#sheet-body .pp-nodate li { grid-template-columns: minmax(0, 1fr); }
+#sheet-body .pp-undated { margin-top: 14px; }
+#sheet-body .pp-text p { margin: 0 0 10px; }

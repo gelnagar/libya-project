@@ -1,8 +1,8 @@
-# Putting the site behind the family password
+# The family password: AI and adding to the map
 
-The whole site (map, data, AI) is served by one Cloudflare Worker. Nothing loads until someone types the family password, and the same password turns on "Ask AI". The Anthropic key lives only in Cloudflare.
+The map is open read-only to anyone with the link. The family password turns on "Ask AI", the chat guide and adding notes, photos and voice to the map. Visitors without it cannot use any AI, so they cost no AI credit. The Anthropic key lives only in Cloudflare.
 
-How it works: `worker/worker.js` runs first on every request. No valid cookie means a login page (or a 401 for API calls). A correct password sets a signed cookie for 180 days. After 8 wrong guesses from one address, that address is locked out for 15 minutes. Changing `FAMILY_CODE` logs everyone out. Files in `public/` are the only ones served; `archive/`, `worker/` and `scripts/` are never reachable.
+How it works: Cloudflare serves the files in `public/` directly (`run_worker_first` is `false` in `wrangler.jsonc`), so map visits do not run the Worker or count against its daily request limit. `worker/worker.js` handles `/login`, `/logout` and `/api`. On `/api`, callers without the family password may only read family reports and their photos and voice notes, never the "home" reports (family and friends' places); every AI call and every write is refused with 403. A correct password at `/login` sets a signed cookie for 180 days, plus a readable `atlas_family` cookie that only tells the map to show the family buttons. After 8 wrong guesses from one address, that address is locked out for 15 minutes. Changing `FAMILY_CODE` logs everyone out. Files in `public/` are the only ones served; `archive/`, `worker/` and `scripts/` are never reachable.
 
 ## 1. Set a spending limit first
 
@@ -22,7 +22,7 @@ In the Anthropic Console (console.anthropic.com) open **Settings → Limits** an
 | `SESSION_SECRET` | Secret | optional: any long random text |
 
 4. Optional low-credit warning: **Storage & Databases → KV → Create** (the repo already names the binding `ATLAS_KV`; if Cloudflare asks, bind your namespace to that name). Then add text variables `CREDIT_LOADED` (dollars you added in Anthropic's console) and `LOW_CREDIT_WARNING` (for example `10`).
-5. Open the Worker's address (`https://….workers.dev`) in a private window. You should see only the password page. Enter the family password to open the map.
+5. Open the Worker's address (`https://….workers.dev`) in a private window. The map should open with no chat and no **Add to map** button. Go to Settings → **Family sign-in**, enter the family password, and the AI guide and Add button appear.
 
 Every push to `main` redeploys automatically. Secrets stay as they are.
 
@@ -32,7 +32,7 @@ The previous GitHub Pages copy (`gelnagar.github.io/libya-project`) has no passw
 
 ## 4. Give family the code
 
-Share the family password. The first visit asks for it once; phones remember it for about six months. To cut off access, change `FAMILY_CODE`. To stop AI use, remove the API key.
+Share the link with anyone; share the family password only with family. Phones remember a sign-in for about six months. To cut off family access, change `FAMILY_CODE`. To stop AI use, remove the API key.
 
 ## Requests from the family
 

@@ -1,5 +1,6 @@
-// Cloudflare deploys this repository as one Worker: the password gate, the AI relay and the map.
-// Only the public/ folder is ever served, and only after the family password.
+// Cloudflare deploys this repository as one Worker: the AI relay, family sign-in and the map.
+// The map (public/) is open read-only and served straight from static files, so visitors never run
+// the Worker. /login, /logout and /api have no file, so they reach worker/worker.js.
 {
   "name": "tripoli-atlas-ai",
   "main": "worker/worker.js",
@@ -7,7 +8,7 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
-    "run_worker_first": true
+    "run_worker_first": false
   },
   "kv_namespaces": [
     { "binding": "ATLAS_KV", "id": "da3be61a14e648f291931b3d321b3d3d" }

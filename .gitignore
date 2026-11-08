@@ -1,1 +1,4 @@
 *.aux.xml
+
+.dev.vars
+.wrangler/

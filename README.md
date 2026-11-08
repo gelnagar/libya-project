@@ -1,6 +1,6 @@
 # Tripoli: Open Source
 
-A record of Gaddafi's Tripoli, built from declassified files and the accounts of people who lived there. It maps prisons, security sites, military bases, the 1986 raid and the regime's killings, and backs them with 2,700+ documents. Password-protected. Ask the AI about any place.
+A record of Gaddafi's Tripoli, built from declassified files and the accounts of people who lived there. It maps prisons, security sites, military bases, the 1986 raid and the regime's killings, and backs them with 2,700+ documents. Open read-only to anyone with the link; family members sign in to ask the AI about any place and to add their own notes.
 
 ## System
 

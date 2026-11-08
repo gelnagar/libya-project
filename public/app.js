@@ -26,10 +26,15 @@
     return e;
   }
   function add(parent, child) { if (child) parent.appendChild(child); }
-  /* On Cloudflare the whole site sits behind the family password, so the AI is reached on the same
-     address and the login cookie does the checking. The old GitHub Pages copy still uses the relay. */
+  /* On Cloudflare the map is open to anyone with the link, read-only. Family members sign in at /login
+     for the AI and for adding to the map; the server checks that (worker.js), and the readable
+     atlas_family cookie only tells this page which buttons to show. The old GitHub Pages copy still uses the relay. */
   var GATED = location.protocol !== 'file:' && !/github\.io$/.test(location.hostname);
   if (GATED) CFG.aiEndpoint = '/api';
+  var FAMILY = !GATED || /(?:^|;\s*)atlas_family=1/.test(document.cookie);
+  var PUBLIC_VIEW = GATED && !FAMILY;      // visitors: read the map and family notes, no AI, no adding
+  var AI_ON = !!CFG.aiEndpoint && !PUBLIC_VIEW;
+  if (PUBLIC_VIEW) document.documentElement.classList.add('public-view');
   var store = {
     get: function (k, d) { try { var v = localStorage.getItem('atlas.' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
     set: function (k, v) { try { localStorage.setItem('atlas.' + k, JSON.stringify(v)); } catch (e) {} }
@@ -1014,7 +1019,7 @@
 
     // reporting: accounts from people who were there; family notes join it below
     var accts = P.reporting || [];
-    if (accts.length || canReport) {
+    if (accts.length || canRead) {
       var rep = ppSec(body, 'Reporting', [accts.length ? ppAccounts(accts, fn) : h('p', { class: 'pp-empty', text: 'No witness accounts recorded for this ' + (ev ? 'event' : 'site') + ' yet.' })], 'pp-reporting');
       ppSlot(rep, 'pp-slot-rep');
     }
@@ -1207,7 +1212,7 @@
     var hd = { 'Content-Type': 'application/json' }; if (!GATED) hd['X-Family-Code'] = code;
     if (payload && window.ATLAS_LANG === 'ar' && !payload.owner) payload.lang = 'ar';
     return fetch(CFG.aiEndpoint, { method: 'POST', credentials: 'same-origin', headers: hd, body: JSON.stringify(payload) })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (j && j.credit) showCredit(j.credit); if (!r.ok) { if (GATED && r.status === 401) { location.href = '/login?next=' + encodeURIComponent(location.pathname); } var e = new Error(j.error || ('Error ' + r.status)); e.code = r.status; throw e; } return j; }); });
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (j && j.credit) showCredit(j.credit); if (!r.ok) { if (GATED && (r.status === 401 || (r.status === 403 && j.signin && FAMILY))) { location.href = '/login?next=' + encodeURIComponent(location.pathname); } var e = new Error(j.error || ('Error ' + r.status)); e.code = r.status; throw e; } return j; }); });
   }
   /* ---------- knowledge: area profiles and the document archive ---------- */
   var AREAS = window.ATLAS_AREAS || [];
@@ -1347,7 +1352,7 @@
 
   /* ---------- the question box: answers, follow-ups, sources ---------- */
   function aiBox(place, qs, ctx) {
-    if (!CFG.aiEndpoint) return null;
+    if (!AI_ON) return null;
     var list = (qs || []).slice(), idx = list.length ? Math.floor(Math.random() * list.length) : 0, history = [];
     var q = h('textarea', { 'aria-label': 'Your question', placeholder: 'Or type your own question' });
     var pw = h('input', { type: 'password', autocomplete: 'off', autocapitalize: 'none', 'aria-label': 'Family password' });
@@ -1453,7 +1458,7 @@
 
     // reporting: accounts recorded on the places inside this area, then family notes
     var held = inside.filter(function (s) { return ((PANELS[s.id] || {}).reporting || []).length; });
-    if (held.length || canReport) {
+    if (held.length || canRead) {
       var rep = ppSec(body, 'Reporting', [held.length ? h('div', { class: 'links' }, held.map(function (s) { var n = PANELS[s.id].reporting.length; return linkBtn(glyph(s.layer), s.name, n + ' account' + (n > 1 ? 's' : '') + ' recorded there', function () { focusSite(s); }); }))
         : h('p', { class: 'pp-empty', text: 'No witness accounts recorded for this area yet.' })], 'pp-reporting');
       ppSlot(rep, 'pp-slot-rep');
@@ -2134,7 +2139,7 @@
       })
       .then(function () { $('chat-send').disabled = false; });
   }
-  if (CFG.aiEndpoint) {
+  if (AI_ON) {
     $('chat').hidden = false;
     document.documentElement.classList.add('has-chat');
     $('chat-form').addEventListener('submit', function (e) { e.preventDefault(); send($('chat-input').value); });
@@ -2150,7 +2155,7 @@
   function showTip() { if (!store.get('doorOff', false)) { setTimeout(openDoor, 0); return; } showTipNow(); }
   function closeWelcome() { $('welcome').hidden = true; showTip(); }
   function maybeWelcome() {
-    if (!CFG.aiEndpoint || store.get('code', '') || session.get('skip')) { showTip(); return; }
+    if (!AI_ON || store.get('code', '') || session.get('skip')) { showTip(); return; }
     $('welcome').hidden = false;
     setTimeout(function () { $('wel-code').focus(); }, 50);
   }
@@ -2183,6 +2188,8 @@
     $('settings').hidden = false;
     $('code-field').hidden = !CFG.aiEndpoint || GATED;
     $('sign-out').hidden = !GATED;
+    $('sign-out').textContent = PUBLIC_VIEW ? 'Family sign-in (AI guide and adding to the map)' : 'Sign out on this device';
+    $('sign-out').href = PUBLIC_VIEW ? '/login' : '/logout';
     $('family-code').value = store.get('code', '');
     $('set-close').focus();
   }
@@ -2286,7 +2293,8 @@
   var HOW = { saw: 'Saw it myself', family: 'Told by family or friends', read: 'Read or heard it', unsure: 'Not sure' };
   var REPORTS = [], reportLayer = L.layerGroup(), mine = store.get('myReports', {});
   var PIN_SVG = '<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="3.2"/></svg>';
-  var canReport = !!CFG.aiEndpoint;
+  var canReport = AI_ON;               // adding notes, photos and voice: family only
+  var canRead = !!CFG.aiEndpoint;      // reading family notes: everyone on the online map
   $('hist-toggles').appendChild(toggleRow('reports', 'Family reports', 'Places and notes added by family', store.get('repOn', true), function (v) { store.set('repOn', v); if (v) reportLayer.addTo(map); else map.removeLayer(reportLayer); }));
   GROUPS.splice(0, 0, { t: 'Family reports', n: 'Places and notes added by family, not verified', parts: [['reports', 'Family reports', 'now']] });
   if (store.get('repOn', true)) reportLayer.addTo(map);
@@ -2303,7 +2311,7 @@
     });
   }
   function loadReports() {
-    if (!canReport) return;
+    if (!canRead) return;
     relay(store.get('code', ''), { reports: true }).then(function (j) { REPORTS = (j.reports || []).sort(function (x, y) { return y.at - x.at; }); drawReports(); }).catch(function () {});
   }
   function notesFor(t) {
@@ -2311,14 +2319,15 @@
     return REPORTS.filter(function (r) { return (t.id && r.target === t.id) || (!r.target && t.lat != null && r.lat != null && map.distance([t.lat, t.lon], [r.lat, r.lon]) < 150); });
   }
   function familyNotesSection(b) {
-    if (!canReport || !curTarget || curTarget.isReport) return;
+    if (!canRead || !curTarget || curTarget.isReport) return;
     var old = b.querySelector('.fam-sec'); if (old) old.remove();
     var notes = notesFor(curTarget);
+    if (!canReport && !notes.length) return; // the public sees notes that exist, never an empty "add one" box
     var list = h('div', { class: 'fam-notes' });
     notes.forEach(function (r) { list.appendChild(h('div', { class: 'fam-note' }, [h('b', { text: r.title }), h('small', { text: [r.when, (r.by || 'Family member') + ', ' + new Date(r.at).toLocaleDateString(), HOW[r.how]].filter(Boolean).join(' · ') }), h('div', { text: r.text })])); });
     if (!notes.length) list.appendChild(h('p', { class: 'd-text muted', text: 'No family notes yet. Know something about this place?' }));
-    list.appendChild(h('button', { class: 'btn primary remember-btn', type: 'button', onclick: function () { rememberHere(); } }, [h('span', { class: 'rb-ic', html: '<svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11z" fill="currentColor"/></svg>' }), h('span', {}, [h('b', { text: 'I remember something here' }), h('small', { text: 'Write it, add a photo, or record your voice' })])]));
-    list.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: curTarget.id ? 'Add a note about this' : 'Add something here', onclick: function () { openReportForm({ lat: curTarget.lat, lon: curTarget.lon, target: curTarget.id || '', targetName: curTarget.name || '', cat: curTarget.id ? 'event' : '' }); } })]));
+    if (canReport) list.appendChild(h('button', { class: 'btn primary remember-btn', type: 'button', onclick: function () { rememberHere(); } }, [h('span', { class: 'rb-ic', html: '<svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11z" fill="currentColor"/></svg>' }), h('span', {}, [h('b', { text: 'I remember something here' }), h('small', { text: 'Write it, add a photo, or record your voice' })])]));
+    if (canReport) list.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: curTarget.id ? 'Add a note about this' : 'Add something here', onclick: function () { openReportForm({ lat: curTarget.lat, lon: curTarget.lon, target: curTarget.id || '', targetName: curTarget.name || '', cat: curTarget.id ? 'event' : '' }); } })]));
     var slot = b.querySelector('.pp-slot-rep');
     var sec = h('div', { class: 'sec fam-sec' }, [h('h3', { text: slot ? 'Family reporting · unverified (' + notes.length + ')' : 'Family notes (' + notes.length + ')' }), list]);
     if (slot) { slot.appendChild(sec); return; }
@@ -2370,7 +2379,7 @@
   });
   function pickCat(k) { repState.cat = k; document.querySelectorAll('#rep-cats button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === k ? 'true' : 'false'); }); $('rep-private').hidden = k !== 'home'; }
   function openReportForm(o) {
-    if (!canReport) { status('Adding to the map works on the online, password-protected version.', 5000); return; }
+    if (!canReport) { status(PUBLIC_VIEW ? 'Adding to the map needs family sign-in (Settings).' : 'Adding to the map works on the online version.', 5000); return; }
     repState = Object.assign({ cat: '' }, repState.keep || {}, o || {});
     if (repState.lat == null) { startPick(); return; }
     $('rep-where').innerHTML = '';
@@ -2415,6 +2424,7 @@
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (repPicking) stopPick(); else if (!$('report').hidden) closeReportForm(); } });
   if (!canReport) $('btn-report').title = 'Adding to the map works on the online version';
+  if (PUBLIC_VIEW) $('btn-report').hidden = true;
 
 
   /* ---------- street-level 3D view: MapLibre + OpenFreeMap 3D buildings over satellite, with the atlas pins ---------- */
@@ -2687,7 +2697,7 @@
   setTheme(store.get('theme', 'light'), true);
   loadReports();
   var code = store.get('code', '');
-  if (CFG.aiEndpoint && code) relay(code, { status: true }).catch(function () {});
+  if (AI_ON && code) relay(code, { status: true }).catch(function () {});
   // Small API for unknown.js (Intelligence network view).
 
   /* ---------- the note behind a connection (written by Claude Sonnet, shown on click) ---------- */

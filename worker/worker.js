@@ -1,11 +1,20 @@
 /*
-  Tripoli: Open Source — the whole site, behind the family password (Cloudflare Worker).
+  Tripoli: Open Source — the AI relay, family sign-in and family reports (Cloudflare Worker).
 
-  - Every page, data file and the AI need the family password. Without it, visitors only
-    ever see the login page. The password check happens here, on Cloudflare; nothing in
-    the browser can skip it.
-  - After a correct password the browser gets a signed cookie for 180 days. Changing
-    FAMILY_CODE logs everyone out.
+  - The map itself is open to anyone with the link, read-only. Its pages and data files are
+    served straight from public/ by Cloudflare (wrangler.jsonc: run_worker_first is false),
+    so visitors never run this Worker and never use any AI.
+  - Two kinds of caller reach /api:
+      family  — signed in with the family password (signed cookie), or sending it in X-Family-Code.
+                Can use the AI, add and remove family reports, upload photos and voice notes,
+                and send research requests.
+      public  — everyone else. Can only READ family reports and their media, never the
+                "home" (family or friends' place) reports, which stay family-only.
+                Every AI call and every write is refused here, on the server, so nothing in
+                the browser can spend AI credit or add to the map without the password.
+  - After a correct password the browser gets a signed cookie for 180 days, plus a readable
+    hint cookie (atlas_family=1) that only tells the map to show the family features.
+    Changing FAMILY_CODE logs every family member out.
   - Wrong guesses are limited to 8 per 15 minutes per connection.
   - The map files are served from public/ (see wrangler.jsonc); nothing else in the
     repository is ever served.
@@ -212,6 +221,7 @@ function cleanMessages(list) {
 
 /* ---------- the password gate ---------- */
 const COOKIE = 'tos_session';
+const HINT = 'atlas_family'; // readable by the map; only decides which buttons to show, never grants anything
 const SESSION_DAYS = 180;
 const MAX_FAILS = 8, FAIL_WINDOW = 900; // 8 wrong passwords per 15 minutes per connection
 const failMem = new Map();
@@ -298,8 +308,8 @@ small { color: #abb3bf; }
   <label for="code">Family password</label>
   <input id="code" name="code" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required autofocus>
   <input type="hidden" name="next" value="${escHtml(safeNext(next))}">
-  <button type="submit">Open the map</button>
-  <small>You only need to do this once on each device. Ask ${owner} if you don’t have the password.</small>
+  <button type="submit">Family sign-in</button>
+  <small>The password turns on the AI guide and adding to the map. You only need to do this once on each device. Ask ${owner} if you don’t have it. <a href="/" style="color:inherit">Or keep browsing the map without it.</a></small>
 </form></body></html>`;
   return new Response(html, { status: status || 200, headers: { ...SECURITY, 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } });
 }
@@ -317,7 +327,10 @@ async function handleLogin(request, env) {
   }
   const exp = Date.now() + SESSION_DAYS * 86400000;
   const cookie = `${COOKIE}=v1.${exp}.${await signSession(env, exp)}; Path=/; Max-Age=${SESSION_DAYS * 86400}; HttpOnly; Secure; SameSite=Lax`;
-  return new Response(null, { status: 303, headers: { ...SECURITY, Location: next, 'Set-Cookie': cookie, 'Cache-Control': 'no-store' } });
+  const hint = `${HINT}=1; Path=/; Max-Age=${SESSION_DAYS * 86400}; Secure; SameSite=Lax`;
+  const h = new Headers({ ...SECURITY, Location: next, 'Cache-Control': 'no-store' });
+  h.append('Set-Cookie', cookie); h.append('Set-Cookie', hint);
+  return new Response(null, { status: 303, headers: h });
 }
 
 const ICONS = new Set(['/favicon.svg', '/favicon-32.png', '/favicon.ico', '/apple-touch-icon.png', '/icon-192.png', '/icon-512.png']);
@@ -329,21 +342,16 @@ export default {
 
     if (path === '/robots.txt') return new Response('User-agent: *\nDisallow: /\n', { headers: { ...SECURITY, 'Content-Type': 'text/plain' } });
     if (path === '/login') return handleLogin(request, env);
-    if (path === '/logout') return new Response(null, { status: 303, headers: { ...SECURITY, Location: '/login', 'Set-Cookie': `${COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax` } });
+    if (path === '/logout') {
+      const h = new Headers({ ...SECURITY, Location: '/', 'Cache-Control': 'no-store' });
+      h.append('Set-Cookie', `${COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`);
+      h.append('Set-Cookie', `${HINT}=; Path=/; Max-Age=0; Secure; SameSite=Lax`);
+      return new Response(null, { status: 303, headers: h });
+    }
     if (path === '/api' || request.method === 'POST' || request.method === 'OPTIONS') return api(request, env, url);
 
-    // the site icons are only a logo, so they load before sign-in (the login page and the tab show them)
-    if (request.method === 'GET' && ICONS.has(path) && env.ASSETS) {
-      const ic = await env.ASSETS.fetch(request); const o = new Response(ic.body, ic);
-      for (const [k, v] of Object.entries(SECURITY)) o.headers.set(k, v);
-      o.headers.set('Cache-Control', 'public, max-age=3600'); return o;
-    }
-
-    if (!(await sessionOk(request, env))) {
-      const wantsPage = request.method === 'GET' && /text\/html/.test(request.headers.get('Accept') || '');
-      if (wantsPage) return new Response(null, { status: 303, headers: { ...SECURITY, Location: '/login?next=' + encodeURIComponent(path + url.search), 'Cache-Control': 'no-store' } });
-      return new Response('Password required', { status: 401, headers: { ...SECURITY, 'Cache-Control': 'no-store' } });
-    }
+    // The map is public and read-only. Cloudflare normally serves its files before this Worker runs
+    // (public/_headers adds the same security headers there); this only handles anything that reaches us.
     if (!env.ASSETS) return new Response('Site files are not connected', { status: 500 });
     const res = await env.ASSETS.fetch(request);
     const out = new Response(res.body, res);
@@ -397,12 +405,18 @@ async function api(request, env, url) {
     return json({ items, reports, credit: await creditInfo(env) }, 200, cors);
   }
 
-  /* ----- everything else needs the family password ----- */
-  if (!viaSession) {
+  /* ----- who is calling: family (signed in, or the password in X-Family-Code) or the public ----- */
+  let family = viaSession;
+  if (!family && request.headers.get('X-Family-Code')) {
     const ip0 = request.headers.get('CF-Connecting-IP') || 'unknown';
     if ((await failCount(env, ip0)) >= MAX_FAILS) return json({ error: 'Too many wrong passwords. Wait 15 minutes.' }, 429, cors);
     if (!env.FAMILY_CODE || norm(request.headers.get('X-Family-Code')) !== norm(env.FAMILY_CODE)) { await noteFail(env, ip0); return json({ error: 'Wrong family code' }, 401, cors); }
+    family = true;
   }
+  // The public may only read family reports and their media. Everything else (the AI, adding or removing
+  // reports, uploads, research requests, credit status) needs family sign-in, so no visitor can spend AI credit.
+  const publicRead = (body.reports && !body.report && !body.reportDelete) || body.mediaGet;
+  if (!family && !publicRead) return json({ error: 'Family sign-in needed', signin: true }, 403, cors);
 
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
   const now = Date.now();
@@ -436,6 +450,11 @@ async function api(request, env, url) {
       return json({ ok: true, id, type }, 200, cors);
     }
     const id = String(body.mediaGet || '').replace(/[^a-z0-9]/g, '').slice(0, 40);
+    if (!family) {
+      // the public only sees media attached to a report it can see (never a home)
+      let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
+      if (!reps.some((x) => x.cat !== 'home' && (x.media || []).some((m) => m.id === id))) return json({ error: 'Not found' }, 404, cors);
+    }
     const v = await env.ATLAS_KV.getWithMetadata('media:' + id);
     if (!v || !v.value) return json({ error: 'Not found' }, 404, cors);
     return json({ data: v.value, type: (v.metadata && v.metadata.type) || 'application/octet-stream' }, 200, cors);
@@ -480,7 +499,7 @@ async function api(request, env, url) {
       await env.ATLAS_KV.put(KEY, JSON.stringify(list));
       return json({ ok: true }, 200, cors);
     }
-    return json({ reports: list.map(({ tk, ...x }) => x) }, 200, cors);
+    return json({ reports: list.filter((x) => family || x.cat !== 'home').map(({ tk, ...x }) => x) }, 200, cors);
   }
 
   /* ----- chat guide: one step of the agent loop ----- */

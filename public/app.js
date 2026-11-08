@@ -911,39 +911,126 @@
       li.appendChild(btn); li.appendChild(box);
     });
   }
-  function openSite(s) {
-    var lay = LAYERS[s.layer];
-    var body = newSheet(lay.label);
-    markSelected(s.id);
-    var outside = span(s)[1] < 1969 || span(s)[0] > 2011;
-    body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: s.name }), s.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: s.ar }) : null]));
-    var nsrc = (s.sources || []).length;
-    body.appendChild(facts([
-      ['Evidence', LEVELS[s.level]], ['When', s.period],
-      ['Note', outside ? 'Outside the Gaddafi era (1969–2011)' : '']
-    ]));
-    body.appendChild(section('Why it matters', [h('p', { class: 'brief', text: s.relevance })]));
-    body.appendChild(section('What is known', [datedText(s.text)]));
-    if (nsrc) body.appendChild(h('button', { class: 'src-jump', text: 'Based on ' + nsrc + ' source' + (nsrc > 1 ? 's' : '') + ' — see them', onclick: function () { var t = $('sheet-body').querySelector('.srcs'); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }));
-
-    var ls = linksFor(s.id);
-    if (ls.length) {
-      var box = h('div', { class: 'links' });
-      ls.forEach(function (x) {
-        if (visible(x.other)) L.polyline([[s.lat, s.lon], [x.other.lat, x.other.lon]], { color: '#4c90f0', weight: 2, opacity: 0.85, dashArray: '6 6', interactive: false }).addTo(linkLayer);
-        box.appendChild(h('button', { onclick: function () { focusSite(x.other); } }, [glyph(x.other.layer), h('span', {}, [x.other.name, h('small', { text: x.why })])]));
+  /* ---------- panels: one shape for every kind ----------
+     Header (name, Arabic, type) · Status fields · Actions · Assessment · Reporting · Connected · Sources · Further research.
+     Sites, events, geographies and records share it; only the status fields, the time structure and what counts as connected change.
+     Hand-added detail lives in data/panels.js (see the notes at the top of that file). */
+  var PANELS = window.ATLAS_PANELS || {};
+  var EXIST = { documented: 'Confirmed', testimony: 'Reported', suspected: 'Unconfirmed', context: 'Context' };
+  var EVENT_LAYERS = { airstrike: 1, battle: 1, massacre: 1 };
+  var GEO_KINDS = { neighbourhood: 1, district: 1, town: 1 };
+  function siteKind(s) { var P = PANELS[s.id] || {}; return P.kind || (EVENT_LAYERS[s.layer] ? 'event' : 'site'); }
+  function ppField(label, val, o) {
+    o = o || {};
+    var dd = val == null || val === '' ? h('dd', { class: 'nr', text: o.empty || 'Not recorded' }) : typeof val === 'object' ? h('dd', {}, [val]) : h('dd', { text: String(val) });
+    return h('div', { class: o.wide ? 'wide' : '' }, [h('dt', { text: label }), dd]);
+  }
+  function ppPill(text, tone) { return h('span', { class: 'pp-pill' + (tone ? ' ' + tone : ''), text: text }); }
+  function existPill(level) { return ppPill(EXIST[level] || LEVELS[level] || level, { documented: '', testimony: 'rep', suspected: 'unc' }[level] != null ? { documented: '', testimony: 'rep', suspected: 'unc' }[level] : 'ctx'); }
+  function ppHead(body, o) {
+    body.appendChild(h('div', { class: 'pp-head' }, [o.icon || null, h('div', { class: 'pp-tt' }, [
+      h('h1', { class: 'pp-title', text: o.title }),
+      o.ar ? h('div', { class: 'pp-ar', lang: 'ar', dir: 'rtl', text: o.ar }) : null,
+      h('span', { class: 'pp-type', text: o.type })])]));
+  }
+  function ppStatus(body, fields) { body.appendChild(h('dl', { class: 'pp-status' }, fields.filter(Boolean))); }
+  function ppActs(body, btns) { btns = btns.filter(Boolean); if (btns.length) body.appendChild(h('div', { class: 'pp-acts' }, btns)); }
+  function ppSec(parent, title, kids, cls) { var d = h('div', { class: 'pp-sec' + (cls ? ' ' + cls : '') }, [h('h3', { text: title })].concat((kids || []).filter(Boolean))); parent.appendChild(d); return d; }
+  function ppSlot(parent, cls) { var d = h('div', { class: 'pp-slot ' + cls }); parent.appendChild(d); return d; }
+  // footnotes: a number jumps to its line in the source list and flashes it; a line with no source says so
+  function footnotes(srcs, getList) {
+    return function (nums) {
+      if (!nums || !nums.length) return [h('span', { class: 'pp-un', text: 'source?', title: 'No source given for this line yet' })];
+      return nums.map(function (n) {
+        if (!(n >= 1 && n <= srcs.length)) return h('span', { class: 'pp-un', text: 'source?' });
+        return h('button', { class: 'pp-fn', type: 'button', text: String(n), title: srcs[n - 1].t, 'aria-label': 'Source ' + n + ': ' + srcs[n - 1].t, onclick: function () {
+          var l = getList(), li = l && l.children[n - 1]; if (!li) return;
+          li.scrollIntoView({ behavior: 'smooth', block: 'center' }); li.classList.add('pp-hit'); setTimeout(function () { li.classList.remove('pp-hit'); }, 1600);
+        } });
       });
-      body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Linked places' }), box]));
+    };
+  }
+  function ppAccounts(list, fn) {
+    var rep = h('div', { class: 'pp-rep' }), SHOW = 3;
+    list.forEach(function (r, i) { var d = h('div', { class: 'pp-acct' }, [h('div', { class: 'who', text: r.who || 'Account' }), h('p', {}, [r.t].concat(fn ? fn(r.src) : []))]); if (i >= SHOW) d.hidden = true; rep.appendChild(d); });
+    if (list.length > SHOW) { var more = h('button', { class: 'pp-more', type: 'button', text: '+ ' + (list.length - SHOW) + ' more account' + (list.length - SHOW > 1 ? 's' : ''), onclick: function () { Array.prototype.forEach.call(rep.children, function (c) { c.hidden = false; }); more.remove(); } }); rep.appendChild(more); }
+    return rep;
+  }
+  function ppSources(body, srcs, quoteKey) {
+    if (!srcs || !srcs.length) return null;
+    var list = h('ol', { class: 'srcs' }, srcs.map(function (x) { var li = h('li', {}, [x.u ? h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t }) : x.t]); if (x.u) li.dataset.u = x.u; return li; }));
+    ppSec(body, 'Sources', [list]);
+    if (quoteKey) loadQuotes().then(function (Q) { addPassages(list, (Q || {})[quoteKey] || {}); });
+    return list;
+  }
+  function linkBtn(icon, name, sub, go) { return h('button', { onclick: go }, [icon, h('span', {}, [name, sub ? h('small', { text: sub }) : null])]); }
+  function areaGlyph(a) { return h('span', { class: 'glyph circle', style: 'background:#738091' }, [h('span', { html: areaIcon(a) })]); }
+  function goArea(a) { openArea(a); map.flyTo([a.lat, a.lon], a.kind === 'town' ? 14 : 15, { duration: 0.8 }); }
+  function areasHolding(s) {
+    var P = PANELS[s.id] || {};
+    if (P.area && AREA_BY_ID[P.area]) return [AREA_BY_ID[P.area]];
+    return AREAS.filter(function (a) { return GEO_KINDS[a.kind] && a.r && map.distance([a.lat, a.lon], [s.lat, s.lon]) <= a.r * 1000; }).sort(function (x, y) { return x.r - y.r; });
+  }
+  function sitesInside(a) { return SITES.filter(function (s) { var P = PANELS[s.id] || {}; return P.area ? P.area === a.id : map.distance([a.lat, a.lon], [s.lat, s.lon]) <= a.r * 1000; }); }
+  function yrs(s) { return s.y0 ? (s.y1 && s.y1 !== s.y0 ? s.y0 + '–' + s.y1 : String(s.y0)) : ''; }
+  function furtherResearch(body, ai, docOpts, docMore, elder) {
+    var fr = ppSec(body, 'Further research', [], 'pp-fr');
+    add(fr, ai);
+    if (docOpts) docsSection(fr, docOpts, 'In the archive', docMore);
+    if (elder) fr.appendChild(elder);
+    if (fr.children.length < 2) fr.remove();
+    return fr;
+  }
+  function zoomBtn(lat, lon, z) { return h('button', { class: 'btn', text: 'Zoom', onclick: function () { map.flyTo([lat, lon], z || 16, { duration: 0.8 }); } }); }
+  function streetBtn(lat, lon, name) { return h('button', { class: 'btn', text: 'Street 3D', onclick: function () { openStreet(lat, lon, name || ''); } }); }
+
+  function openSite(s) {
+    var lay = LAYERS[s.layer], P = PANELS[s.id] || {}, ev = siteKind(s) === 'event';
+    var body = newSheet(ev ? 'Event' : 'Site');
+    markSelected(s.id);
+    var srcs = s.sources || [], srcList = null, fn = footnotes(srcs, function () { return srcList; });
+    ppHead(body, { icon: glyph(s.layer), title: s.name, ar: s.ar, type: lay.label });
+    if (ev) ppStatus(body, [ppField('Occurrence', existPill(s.level)), ppField('Date', P.date || s.period || yrs(s)), ppField('Location', '± ' + s.r + ' km'), P.toll ? ppField('Toll', P.toll) : null]);
+    else ppStatus(body, [ppField('Existence', existPill(s.level)), ppField('In use', yrs(s) || s.period), ppField('Location', '± ' + s.r + ' km'), ppField('Present condition', P.condition)]);
+    ppActs(body, [zoomBtn(s.lat, s.lon), thenNowButton(s.lat, s.lon), streetBtn(s.lat, s.lon, s.name)]);
+
+    // assessment: bottom line, then the hand-written chronology (sites, by year) or sequence (events, by day or hour), else the record text
+    var rows = (ev ? P.sequence : P.events) || [], chron = null;
+    rows = rows.filter(function (e) { return e && e.t; });
+    if (!ev) rows.sort(function (a, b) { return (+a.y || 9999) - (+b.y || 9999); });
+    if (rows.length) chron = h('ol', { class: 'pp-chron' + (ev ? ' seq' : '') }, rows.map(function (e) {
+      return h('li', {}, [h('span', { class: 'y', text: ev ? (e.w || '—') : (e.y ? String(e.y) : '—') }), h('span', {}, [!ev && e.d ? h('span', { class: 'd', text: e.d + ' · ' }) : null, e.t].concat(fn(e.src)))]);
+    }));
+    var asmt = ppSec(body, 'Assessment', [h('p', { class: 'pp-bl' }, [P.bottom || s.relevance].concat(P.bottomSrc ? fn(P.bottomSrc) : []))]);
+    if (span(s)[1] < 1969 || span(s)[0] > 2011) asmt.appendChild(h('p', { class: 'pp-note', text: 'Outside the Gaddafi era (1969–2011).' }));
+    if (chron) { asmt.appendChild(chron); asmt.appendChild(h('details', { class: 'pp-full' }, [h('summary', { text: 'Full record' }), datedText(s.text)])); }
+    else asmt.appendChild(datedText(s.text));
+    if ((P.conflicts || []).length) asmt.appendChild(h('div', { class: 'pp-conflict' }, [h('b', { text: 'Conflicting reporting' })].concat(P.conflicts.map(function (c) { return h('p', {}, [c.t].concat(fn(c.src))); }))));
+    ppSlot(asmt, 'pp-slot-prof');
+
+    // reporting: accounts from people who were there; family notes join it below
+    var accts = P.reporting || [];
+    if (accts.length || canReport) {
+      var rep = ppSec(body, 'Reporting', [accts.length ? ppAccounts(accts, fn) : h('p', { class: 'pp-empty', text: 'No witness accounts recorded for this ' + (ev ? 'event' : 'site') + ' yet.' })], 'pp-reporting');
+      ppSlot(rep, 'pp-slot-rep');
     }
-    var eld = elderSection(s); if (eld) body.appendChild(eld);
-    add(body, aiBox({ kind: 'historical site', name: s.name, arabic: s.ar, category: lay.label, evidence: LEVELS[s.level], period: s.period, summary: s.relevance + ' ' + s.text, lat: s.lat, lon: s.lon }, QS[s.id] || [],
-      function () { return contextFor({ lat: s.lat, lon: s.lon, places: [s.id], words: [s.name].concat(s.ar ? [s.ar] : []).concat(s.aliases || []) }); }));
-    docsSection(body, { places: [s.id], words: [s.name].concat(s.aliases || []) }, 'In the archive', s.name);
-    var srcList = h('ol', { class: 'srcs' }, s.sources.map(function (x) { var li = h('li', {}, [h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t })]); li.dataset.u = x.u; return li; }));
-    body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Sources' }), srcList]));
-    loadQuotes().then(function (Q) { addPassages(srcList, (Q || {})[s.id] || {}); });
-    body.appendChild(h('details', { class: 'more-facts' }, [h('summary', { text: 'Details' }), facts([['Category', lay.label], ['Active', s.y0 ? (s.y1 && s.y1 !== s.y0 ? s.y0 + '–' + s.y1 : String(s.y0)) : ''], ['Accuracy', 'within about ' + s.r + ' km'], ['Coordinates', s.lat.toFixed(4) + ', ' + s.lon.toFixed(4)], ['Reference', s.ref]])]));
-    body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Zoom to this place', onclick: function () { map.flyTo([s.lat, s.lon], 16, { duration: 0.8 }); } }), thenNowButton(s.lat, s.lon)]));
+
+    // connected: the area it belongs to, then linked places; documented connections join below
+    var conn = ppSec(body, 'Connected', [], 'pp-connected'), box = h('div', { class: 'links' });
+    areasHolding(s).slice(0, 1).forEach(function (a) { box.appendChild(linkBtn(areaGlyph(a), a.name, (KIND_LABEL[a.kind] || 'Area') + (ev ? ' · where it happened' : ' · the area it is in'), function () { goArea(a); })); });
+    linksFor(s.id).forEach(function (x) {
+      if (visible(x.other)) L.polyline([[s.lat, s.lon], [x.other.lat, x.other.lon]], { color: '#4c90f0', weight: 2, opacity: 0.85, dashArray: '6 6', interactive: false }).addTo(linkLayer);
+      box.appendChild(linkBtn(glyph(x.other.layer), x.other.name, x.why, function () { focusSite(x.other); }));
+    });
+    if (box.children.length) conn.appendChild(box);
+    ppSlot(conn, 'pp-slot-conn');
+
+    srcList = ppSources(body, srcs, s.id);
+    furtherResearch(body,
+      aiBox({ kind: ev ? 'historical event' : 'historical site', name: s.name, arabic: s.ar, category: lay.label, evidence: LEVELS[s.level], period: s.period, summary: s.relevance + ' ' + s.text, lat: s.lat, lon: s.lon }, QS[s.id] || [],
+        function () { return contextFor({ lat: s.lat, lon: s.lon, places: [s.id], words: [s.name].concat(s.ar ? [s.ar] : []).concat(s.aliases || []) }); }),
+      { places: [s.id], words: [s.name].concat(s.aliases || []) }, s.name, elderSection(s));
+    body.appendChild(h('p', { class: 'pp-ref', text: s.lat.toFixed(4) + ', ' + s.lon.toFixed(4) + (s.ref ? ' · ' + s.ref : '') }));
     openPanel('sheet');
     drawTimeline();
     if (!DESKTOP.matches && !aiming) { var pt = map.latLngToContainerPoint([s.lat, s.lon]), mh = $('map').clientHeight; if (pt.y > mh * 0.3 || pt.y < 40) map.panTo(aimAbovePanel(s.lat, s.lon, map.getZoom()), { duration: 0.5 }); }
@@ -1338,59 +1425,92 @@
     return ['What was ' + n + ' like in the 1970s and 1980s?', 'What happened in ' + n + ' during the 1986 US air raid?', 'Were there security offices or prisons in ' + n + '?', 'What is ' + n + ' known for today?', 'Who lived in ' + n + ' under Gaddafi?', 'How did ' + n + ' change after 2011?'];
   }
   function openArea(a) {
-    var body = newSheet(KIND_LABEL[a.kind] || 'Area');
+    var geo = !!GEO_KINDS[a.kind], P = PANELS[a.id] || {}, label = KIND_LABEL[a.kind] || 'Area';
+    var body = newSheet(geo ? 'Geography' : 'Site');
     markSelected(null);
-    body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: a.name }), a.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: a.ar }) : null]));
-    body.appendChild(facts([['Type', KIND_LABEL[a.kind] || a.kind], ['Also known as', (a.aliases || []).join(', ')], ['Coordinates', a.lat.toFixed(4) + ', ' + a.lon.toFixed(4)], ['Accuracy', a.r ? 'within about ' + a.r + ' km' : ''], ['Documented in use', a.documented || ''], ['Sources', (a.sources || []).length]]));
-    if (a.kind === 'military') body.appendChild(h('p', { class: 'd-note', text: 'Dates come only from the sources cited. A base can be older than the document that mentions it, and many Gaddafi-era sites were later taken over by other forces, so a site’s use after 2011 is not assumed here.' }));
-    if (a.summary) body.appendChild(section('Summary', [h('p', { class: 'brief', text: a.summary })]));
-    [['History', a.history], ['Under Gaddafi, 1969–2011', a.era], ['Today', a.today], ['Still unclear', a.uncertain]].forEach(function (x) {
-      if (x[1]) body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: x[0] }), h('p', { class: 'd-text', text: x[1] })]));
-    });
-    var ll = L.latLng(a.lat, a.lon);
-    var near = SITES.map(function (s) { return { s: s, m: map.distance(ll, [s.lat, s.lon]) }; }).filter(function (x) { return x.m < 3000; }).sort(function (x, y) { return x.m - y.m; }).slice(0, 5);
-    if (near.length) {
-      var box = h('div', { class: 'links' });
-      near.forEach(function (x) { box.appendChild(h('button', { onclick: function () { focusSite(x.s); } }, [glyph(x.s.layer), h('span', {}, [x.s.name, h('small', { text: km(x.m) + ' away' })])])); });
-      body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Mapped places nearby' }), box]));
+    var srcs = a.sources || [], ll = L.latLng(a.lat, a.lon);
+    ppHead(body, { icon: areaGlyph(a), title: a.name, ar: a.ar, type: label });
+    var inside = geo ? sitesInside(a).sort(function (x, y) { return (x.y0 || 0) - (y.y0 || 0); }) : [];
+    if (geo) {
+      var aka = (a.aliases || []).filter(function (x) { return x !== a.name && !/[؀-ۿ]/.test(x); });
+      ppStatus(body, [ppField('Type', label), ppField('Also known as', aka.slice(0, 3).join(', ') + (aka.length > 3 ? ' +' + (aka.length - 3) : ''), { empty: 'None recorded' }),
+        ppField('Extent', a.r ? '≈ ' + a.r + ' km radius' : ''), ppField('Mapped inside', inside.length + ' site' + (inside.length === 1 ? '' : 's'))]);
+    } else {
+      ppStatus(body, [ppField('Type', label), ppField('In use', a.documented, { empty: 'Not dated in the sources' }), ppField('Location', a.r ? '± ' + a.r + ' km' : ''),
+        ppField('Present condition', P.condition || (a.today && a.today.length <= 90 ? a.today : ''), { empty: a.today ? 'See “After 2011”' : 'Not recorded' })]);
     }
-    add(body, aiBox({ kind: KIND_LABEL[a.kind] || a.kind, name: a.name, arabic: a.ar, lat: a.lat, lon: a.lon }, areaQuestions(a), function () { return contextFor({ areas: [a], lat: a.lat, lon: a.lon, places: [a.id], words: areaNames(a) }); }));
-    docsSection(body, { places: [a.id], words: areaNames(a).filter(function (x) { return x && x.length > 3; }) }, 'In the archive', a.name);
-    if ((a.sources || []).length) body.appendChild(sourcesList(a.sources));
-    body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: 'Zoom to ' + a.name, onclick: function () { map.flyTo(ll, a.kind === 'town' ? 14 : 15, { duration: 0.8 }); } })]));
+    ppActs(body, [zoomBtn(a.lat, a.lon, a.kind === 'town' ? 14 : 15), thenNowButton(a.lat, a.lon), streetBtn(a.lat, a.lon, a.name)]);
+
+    // assessment: bottom line, then periods (before 1969 · 1969–2011 · after 2011) and what is still unknown
+    var per = [['Before 1969', a.history], ['1969–2011', a.era], ['After 2011', a.today], ['Gaps', a.uncertain, 1]].filter(function (x) { return x[1]; });
+    var asmt = ppSec(body, 'Assessment', [a.summary ? h('p', { class: 'pp-bl', text: a.summary }) : null,
+      per.length ? h('ol', { class: 'pp-chron per' }, per.map(function (x) { return h('li', {}, [h('span', { class: 'y' + (x[2] ? ' g' : ''), text: x[0] }), h('span', { text: x[1] })]); })) : null]);
+    if (a.kind === 'military') asmt.appendChild(h('p', { class: 'pp-note', text: 'Dates come only from the sources cited. A base can be older than the document that mentions it, and many Gaddafi-era sites were later taken over by other forces, so a site’s use after 2011 is not assumed here.' }));
+
+    // reporting: accounts recorded on the places inside this area, then family notes
+    var held = inside.filter(function (s) { return ((PANELS[s.id] || {}).reporting || []).length; });
+    if (held.length || canReport) {
+      var rep = ppSec(body, 'Reporting', [held.length ? h('div', { class: 'links' }, held.map(function (s) { var n = PANELS[s.id].reporting.length; return linkBtn(glyph(s.layer), s.name, n + ' account' + (n > 1 ? 's' : '') + ' recorded there', function () { focusSite(s); }); }))
+        : h('p', { class: 'pp-empty', text: 'No witness accounts recorded for this area yet.' })], 'pp-reporting');
+      ppSlot(rep, 'pp-slot-rep');
+    }
+
+    // connected: sites and events inside it (geographies), or the nearest mapped places
+    var conn = ppSec(body, 'Connected', [], 'pp-connected'), box = h('div', { class: 'links' });
+    var near = inside.length ? inside.map(function (s) { return { s: s, sub: (siteKind(s) === 'event' ? 'Event' : 'Site') + ' inside' + (yrs(s) ? ' · ' + yrs(s) : '') }; })
+      : SITES.map(function (s) { return { s: s, m: map.distance(ll, [s.lat, s.lon]) }; }).filter(function (x) { return x.m < 3000; }).sort(function (x, y) { return x.m - y.m; }).slice(0, 5).map(function (x) { return { s: x.s, sub: km(x.m) + ' away' }; });
+    near.slice(0, 12).forEach(function (x) { box.appendChild(linkBtn(glyph(x.s.layer), x.s.name, x.sub, function () { focusSite(x.s); })); });
+    if (near.length > 12) box.appendChild(h('p', { class: 'pp-note', text: '+ ' + (near.length - 12) + ' more on the map' }));
+    if (box.children.length) { if (!inside.length) conn.appendChild(h('h4', { class: 'pp-sub', text: 'Nearby' })); conn.appendChild(box); }
+    ppSlot(conn, 'pp-slot-conn');
+
+    ppSources(body, srcs, null);
+    furtherResearch(body,
+      aiBox({ kind: label, name: a.name, arabic: a.ar, lat: a.lat, lon: a.lon }, areaQuestions(a), function () { return contextFor({ areas: [a], lat: a.lat, lon: a.lon, places: [a.id], words: areaNames(a) }); }),
+      { places: [a.id], words: areaNames(a).filter(function (x) { return x && x.length > 3; }) }, a.name, null);
+    body.appendChild(h('p', { class: 'pp-ref', text: a.lat.toFixed(4) + ', ' + a.lon.toFixed(4) }));
     openPanel('sheet');
   }
+  // archive titles often come in capitals; title case keeps names like Qaddafi readable
+  function titleCase(t) { t = String(t || ''); return /[a-z]/.test(t) ? t : t.toLowerCase().replace(/(^|[\s(\-"“'/])([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); }); }
+  function capFirst(t) { t = String(t || ''); return t.charAt(0).toUpperCase() + t.slice(1); }
+  function niceDate(d) { var m = String(d || '').match(/^(\d{4})(?:-(\d\d))?(?:-(\d\d))?/); if (!m) return d || ''; return (m[3] ? +m[3] + ' ' : '') + (m[2] ? MONTHS[+m[2] - 1] + ' ' : '') + m[1]; }
   function openRecord(r) {
-    var body = newSheet('Archive document');
+    var body = newSheet('Record');
     markSelected(null);
-    body.appendChild(h('div', { class: 'idrow' }, [h('span', { text: r.i }), h('span', { text: r.d || 'undated' })]));
-    body.appendChild(h('div', { class: 'tags' }, [h('span', { class: 'tag', style: '--c:#4c90f0', text: TYPE_LABEL[r.y] || r.y }), h('span', { class: 'tag', style: '--c:#abb3bf', text: r.rt || r.r })]));
-    body.appendChild(h('h1', { class: 'd-title', text: r.t }));
-    body.appendChild(h('dl', { class: 'meta' }, [h('dt', { text: 'Date' }), h('dd', { text: r.d || 'undated' }), h('dt', { text: 'Source' }), h('dd', { text: r.c || r.s || '' })].concat(r.a ? [h('dt', { text: 'Held at' }), h('dd', { text: r.a })] : [])));
-    if (r.m) body.appendChild(h('p', { class: 'brief', text: r.m }));
+    var type = capFirst(r.y || 'document');
+    ppHead(body, { title: titleCase(r.t), type: 'Archive record · ' + type });
+    ppStatus(body, [ppField('Type', type), ppField('Date', niceDate(r.d), { empty: 'Undated' }), ppField('Origin', r.s), ppField('Collection', r.c),
+      ppField('Rights', r.rt || r.r), ppField('Text', r.f ? 'Full text available' : 'Summary and link only'), ppField('Reference', r.i, { wide: true })]);
+    var full = h('div', { class: 'pp-fulltext' });
+    var readBtn = null;
+    if (r.f) {
+      readBtn = h('button', { class: 'btn', text: 'Read full text' });
+      readBtn.onclick = function () {
+        readBtn.disabled = true; readBtn.textContent = 'Loading…';
+        fetch('data/docs/' + encodeURIComponent(r.i) + '.txt').then(function (x) { if (!x.ok) throw new Error(); return x.text(); })
+          .then(function (t) { readBtn.remove(); full.appendChild(h('div', { class: 'fulltext', text: t })); full.scrollIntoView({ behavior: 'smooth', block: 'start' }); })
+          .catch(function () { readBtn.disabled = false; readBtn.textContent = 'Could not load. Try again'; });
+      };
+    }
+    ppActs(body, [r.u ? h('a', { class: 'btn', href: r.u, target: '_blank', rel: 'noopener', text: 'Open original' }) : null,
+      /^https?:/.test(r.a || '') ? h('a', { class: 'btn', href: r.a, target: '_blank', rel: 'noopener', text: 'Open mirror' }) : null, readBtn]);
+
+    var asmt = ppSec(body, 'Assessment', [r.m ? h('p', { class: 'pp-bl', text: r.m }) : h('p', { class: 'pp-empty', text: 'No summary written for this record yet.' }), r.rn ? h('p', { class: 'pp-note', text: r.rn }) : null]);
+    if (r.a && !/^https?:/.test(r.a)) asmt.appendChild(h('p', { class: 'pp-note', text: 'Held at: ' + r.a }));
+    asmt.appendChild(full);
+    if ((r.k || []).length) ppSec(body, 'Named in this record', [h('ul', { class: 'pp-kw' }, r.k.map(function (k) { return h('li', { text: k }); }))]);
     var pl = (r.p || []).map(function (id) { return BY_ID[id] ? { s: BY_ID[id] } : AREA_BY_ID[id] ? { a: AREA_BY_ID[id] } : null; }).filter(Boolean);
     if (pl.length) {
       var box = h('div', { class: 'links' });
-      pl.slice(0, 8).forEach(function (x) { box.appendChild(x.s ? h('button', { onclick: function () { focusSite(x.s); } }, [glyph(x.s.layer), h('span', { text: x.s.name })]) : h('button', { onclick: function () { openArea(x.a); map.flyTo([x.a.lat, x.a.lon], 14, { duration: 0.8 }); } }, [h('span', { class: 'dtag', text: KIND_LABEL[x.a.kind] || '' }), h('span', { text: x.a.name })])); });
-      body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'Places mentioned' }), box]));
+      pl.slice(0, 10).forEach(function (x) { box.appendChild(x.s ? linkBtn(glyph(x.s.layer), x.s.name, siteKind(x.s) === 'event' ? 'Event' : 'Site', function () { focusSite(x.s); })
+        : linkBtn(areaGlyph(x.a), x.a.name, KIND_LABEL[x.a.kind] || 'Area', function () { goArea(x.a); })); });
+      ppSec(body, 'Places it mentions', [box]);
     }
-    var full = h('div', { class: 'sec' });
-    if (r.f) {
-      var bt = h('button', { class: 'btn', text: 'Read the full text' });
-      bt.onclick = function () {
-        bt.disabled = true; bt.textContent = 'Loading…';
-        fetch('data/docs/' + encodeURIComponent(r.i) + '.txt').then(function (x) { if (!x.ok) throw new Error(); return x.text(); })
-          .then(function (t) { bt.remove(); full.appendChild(h('div', { class: 'fulltext', text: t })); })
-          .catch(function () { bt.disabled = false; bt.textContent = 'Could not load. Try again'; });
-      };
-      full.appendChild(h('h3', { text: 'Full text' })); full.appendChild(bt);
-    }
-    body.appendChild(full);
-    add(body, aiBox({ kind: 'archive document', id: r.i, title: r.t, date: r.d, source: r.c || r.s, type: r.y }, ['What does this document tell us, in plain words?', 'Why does this matter for people in Tripoli?', 'What happened next?', 'Who are the people named in it?', 'How reliable is this source?', 'What was going on in Libya at the time?'],
-      function () { return 'THIS DOCUMENT\n' + recLine(r) + '\n\n' + (r._full || '') + '\n\nRELATED\n' + recordsFor({ places: r.p || [], words: [] }, 6).filter(function (x) { return x.i !== r.i; }).map(recLine).join('\n'); }));
+    body.appendChild(h('p', { class: 'pp-note', text: 'No reporting or source list: a record is itself the source.' }));
+    furtherResearch(body, aiBox({ kind: 'archive document', id: r.i, title: r.t, date: r.d, source: r.c || r.s, type: r.y }, ['What does this document tell us, in plain words?', 'Why does this matter for people in Tripoli?', 'What happened next?', 'Who are the people named in it?', 'How reliable is this source?', 'What was going on in Libya at the time?'],
+      function () { return 'THIS DOCUMENT\n' + recLine(r) + '\n\n' + (r._full || '') + '\n\nRELATED\n' + recordsFor({ places: r.p || [], words: [] }, 6).filter(function (x) { return x.i !== r.i; }).map(recLine).join('\n'); }), null, null, null);
     if (r.f && !r._full) fetch('data/docs/' + encodeURIComponent(r.i) + '.txt').then(function (x) { return x.ok ? x.text() : ''; }).then(function (t) { r._full = String(t).slice(0, 9000); }).catch(function () {});
-    if (r.u) body.appendChild(h('p', { class: 'd-text' }, [h('a', { href: r.u, target: '_blank', rel: 'noopener', text: 'Open the original' })]));
-    body.appendChild(h('p', { class: 'd-text muted small', text: r.rn || '' }));
     openPanel('sheet');
   }
 
@@ -2145,7 +2265,8 @@
     connSection(b);
     profileSections(b);
     var old3 = b.querySelector('.st-open'); if (old3) old3.remove();
-    if (curTarget && curTarget.lat != null && !curTarget.isReport) {
+    b.querySelectorAll('.pp-connected').forEach(function (c) { c.hidden = !c.querySelector('button, .conn-row'); });
+    if (curTarget && curTarget.lat != null && !curTarget.isReport && !b.querySelector('.pp-head')) {
       var t3 = curTarget, btn3 = h('div', { class: 'row-btns st-open' }, [h('button', { class: 'btn', text: 'Street-level 3D view', onclick: function () { openStreet(t3.lat, t3.lon, t3.name || ''); } })]);
       var head3 = b.querySelector('.selhead'); if (head3 && head3.nextSibling) b.insertBefore(btn3, head3.nextSibling); else b.appendChild(btn3);
     }
@@ -2194,7 +2315,9 @@
     if (!notes.length) list.appendChild(h('p', { class: 'd-text muted', text: 'No family notes yet. Know something about this place?' }));
     list.appendChild(h('button', { class: 'btn primary remember-btn', type: 'button', onclick: function () { rememberHere(); } }, [h('span', { class: 'rb-ic', html: '<svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11z" fill="currentColor"/></svg>' }), h('span', {}, [h('b', { text: 'I remember something here' }), h('small', { text: 'Write it, add a photo, or record your voice' })])]));
     list.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn', text: curTarget.id ? 'Add a note about this' : 'Add something here', onclick: function () { openReportForm({ lat: curTarget.lat, lon: curTarget.lon, target: curTarget.id || '', targetName: curTarget.name || '', cat: curTarget.id ? 'event' : '' }); } })]));
-    var sec = h('div', { class: 'sec fam-sec' }, [h('h3', { text: 'Family notes (' + notes.length + ')' }), list]);
+    var slot = b.querySelector('.pp-slot-rep');
+    var sec = h('div', { class: 'sec fam-sec' }, [h('h3', { text: slot ? 'Family reporting · unverified (' + notes.length + ')' : 'Family notes (' + notes.length + ')' }), list]);
+    if (slot) { slot.appendChild(sec); return; }
     var ai = b.querySelector('.ai'); if (ai) b.insertBefore(sec, ai); else b.appendChild(sec);
   }
   function openReport(r) {
@@ -2412,6 +2535,7 @@
     var x = AREA_BY_ID[curTarget.profile], box = h('div', { class: 'prof-secs' });
     [['History', x.history], ['Under Gaddafi, 1969–2011', x.era], ['Today', x.today], ['Still unclear', x.uncertain]].forEach(function (y) { if (y[1]) box.appendChild(h('div', { class: 'sec' }, [h('h3', { text: y[0] }), h('p', { class: 'd-text', text: y[1] })])); });
     if (!box.children.length) return;
+    var pslot = b.querySelector('.pp-slot-prof'); if (pslot) { pslot.appendChild(box); return; }
     var anchor = b.querySelector('.conn-sec') || b.querySelector('.fam-sec') || b.querySelector('.ai'); if (anchor) b.insertBefore(box, anchor); else b.appendChild(box);
   }
   function connSection(b) {
@@ -2435,7 +2559,9 @@
       ]));
     });
     if (same.length) box.appendChild(h('p', { class: 'conn-same' }, ['Also in the atlas as: '].concat(same.map(function (x, i) { return h('span', {}, [i ? ', ' : '', h('button', { class: 'linkbtn', text: x.other.name, title: x.c.why, onclick: x.other.open })]); }))));
-    var sec = h('div', { class: 'sec conn-sec' }, [h('h3', { text: list.length ? 'Connections (' + list.length + ')' : 'Other entries' }), box]);
+    var cslot = b.querySelector('.pp-slot-conn');
+    var sec = h('div', { class: 'sec conn-sec' }, [h('h3', { text: cslot ? (list.length ? 'Documented links (' + list.length + ')' : 'Other entries') : list.length ? 'Connections (' + list.length + ')' : 'Other entries' }), box]);
+    if (cslot) { cslot.appendChild(sec); return; }
     var anchor = b.querySelector('.fam-sec') || b.querySelector('.ai'); if (anchor) b.insertBefore(sec, anchor); else b.appendChild(sec);
   }
   // network layer: every connection as a faint line
@@ -2577,10 +2703,11 @@
   function connDetail(spec) {
     var body = newSheet('Connection'); markSelected(null); curTarget = { isReport: true, code: LINK_ICON };
     var a = spec.ends[0] || { name: '?' }, b = spec.ends[1] || { name: '?' };
-    body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: a.name + ' ↔ ' + b.name })]));
+    ppHead(body, { icon: h('span', { class: 'glyph circle', style: 'background:#738091' }, [h('span', { html: LINK_ICON })]), title: a.name + ' ↔ ' + b.name, type: 'Connection' + (spec.kicker ? ' · ' + spec.kicker : '') });
     if (a.pic || b.pic) body.appendChild(h('div', { class: 'cn-pair' }, [h('span', { html: a.pic || '' }), h('i', { text: '↔' }), h('span', { html: b.pic || '' })]));
-    var slot = h('div', { class: 'cn-slot' }); var facts0 = [['Kind', spec.kicker], ['Year', spec.year], ['Evidence', spec.level]];
-    var fx = facts(facts0); body.appendChild(fx); body.appendChild(slot);
+    var slot = h('div', { class: 'cn-slot pp-sec' });
+    ppStatus(body, [ppField('Link', spec.kicker), ppField('Year', spec.year, { empty: 'Not dated' }), ppField('Basis', /^documented/i.test(spec.level || '') ? ppPill('Confirmed') : /^reported/i.test(spec.level || '') ? ppPill('Reported', 'rep') : spec.level)]);
+    body.appendChild(slot);
     var goes = h('div', { class: 'row-btns' }, [a.open ? h('button', { class: 'btn', type: 'button', text: 'Go to ' + (a.name.length > 26 ? a.name.slice(0, 24) + '…' : a.name), onclick: a.open }) : null, b.open ? h('button', { class: 'btn', type: 'button', text: 'Go to ' + (b.name.length > 26 ? b.name.slice(0, 24) + '…' : b.name), onclick: b.open }) : null]);
     slot.appendChild(h('p', { class: 'd-text cn-wait', text: 'Reading the sources…' }));
     function list(items) { return h('ul', { class: 'cn-list' }, items.map(function (t) { return h('li', { text: t }); })); }
@@ -3052,13 +3179,13 @@
 
   /* ---------- people index ---------- */
   function openPerson(pp) {
-    var body = newSheet('Person'); markSelected(null); curTarget = { isReport: true, code: '' };
-    body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: pp.name }), pp.ar ? h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: pp.ar }) : null]));
-    body.appendChild(h('p', { class: 'brief', text: pp.role }));
-    var box = h('div', { class: 'links' });
-    (pp.places || []).forEach(function (id) { var x = BY_ID[id]; if (!x) return; box.appendChild(h('button', { onclick: function () { focusSite(x); } }, [glyph(x.layer), h('span', {}, [x.name, h('small', { text: x.period })])])); });
-    body.appendChild(h('div', { class: 'sec' }, [h('h3', { text: 'On the map' }), box]));
-    body.appendChild(h('p', { class: 'grp-help', text: 'Only public figures and people already named in the published sources behind these places are listed.' }));
+    var body = newSheet('Record'); markSelected(null); curTarget = { isReport: true, code: '' };
+    var places = (pp.places || []).map(function (id) { return BY_ID[id]; }).filter(Boolean);
+    ppHead(body, { title: pp.name, ar: pp.ar, type: 'Person' });
+    ppStatus(body, [ppField('Role', pp.role, { wide: true }), ppField('Named in', places.length + ' place' + (places.length === 1 ? '' : 's'))]);
+    ppSec(body, 'Assessment', [h('p', { class: 'pp-bl', text: pp.role }), h('p', { class: 'pp-note', text: 'Only public figures and people already named in the published sources behind these places are listed. What is known about them is on the panels of those places.' })]);
+    if (places.length) ppSec(body, 'Connected', [h('div', { class: 'links' }, places.map(function (x) { return linkBtn(glyph(x.layer), x.name, (siteKind(x) === 'event' ? 'Event' : 'Site') + (x.period ? ' · ' + x.period : ''), function () { focusSite(x); }); }))], 'pp-connected');
+    furtherResearch(body, null, { places: [], words: [pp.name] }, pp.name, null);
     openPanel('sheet');
   }
 
@@ -3131,6 +3258,7 @@
     recordExists: function (id) { return loadRecords().then(function () { return !!REC_BY_ID[id]; }); },
     openRecordById: function (id) { loadRecords().then(function () { if (REC_BY_ID[id]) openRecord(REC_BY_ID[id]); }); },
     closeDrawer: function () { closePanel('drawer'); },
+    openPerson: function (name) { var pp = (window.ATLAS_PEOPLE || []).filter(function (x) { return x.name === name; })[0]; if (pp) openPerson(pp); },
     startStory: startStory, showYear: showYear, openDoor: openDoor,
     markBase: function (key) { document.querySelectorAll('#basemaps button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === (key || currentBase) ? 'true' : 'false'); }); }
   };

@@ -779,3 +779,64 @@ html .bk-place { break-inside: avoid; border-top: 1px solid #d3d8de; }
   html .bk-bar { display: none; }
   html .bk-page { box-shadow: none; margin: 0; padding: 0; max-width: none; }
 }
+
+/* ---------- place panels: one shape for every kind (see openSite / openArea / openRecord in app.js) ---------- */
+:root { --pp-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --pp-amber: #8a5a14; --pp-amber-soft: #f3e9d8; --pp-blue: #3f5d75; --pp-blue-soft: #e3eaf0;
+  --pp-red: #9b3b2a; --pp-red-soft: #f6e3de; --pp-green: #4b5d4a; --pp-green-soft: #e6ece4; }
+html.dark { --pp-amber: #d9a55a; --pp-amber-soft: #2e261a; --pp-blue: #9cc0dc; --pp-blue-soft: #1c2a35;
+  --pp-red: #e79a85; --pp-red-soft: #3a221c; --pp-green: #b5c9b2; --pp-green-soft: #1f2a1e; }
+#sheet-body .pp-head { display: flex; gap: 12px; align-items: flex-start; }
+#sheet-body .pp-head > .glyph { flex: none; margin-top: 4px; }
+#sheet-body .pp-tt { min-width: 0; }
+#sheet-body .pp-title { font-family: var(--f-text); font-size: 1.4em; font-weight: 600; line-height: 1.2; margin: 0; text-wrap: balance; overflow-wrap: anywhere; }
+#sheet-body .pp-ar { font-family: "Noto Naskh Arabic", var(--f-text); color: var(--muted); margin-top: 2px; text-align: left; }
+#sheet-body .pp-type { display: block; font-family: var(--pp-mono); font-size: .66rem; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+#sheet-body .pp-status { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin: 14px 0 0; padding: 12px 0 0; border-top: 1px solid var(--fy-line); }
+#sheet-body .pp-status > div { min-width: 0; }
+#sheet-body .pp-status .wide { grid-column: 1 / -1; }
+#sheet-body .pp-status dt { font-family: var(--pp-mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; font-weight: 400; }
+#sheet-body .pp-status dd { margin: 2px 0 0; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+#sheet-body .pp-status dd.nr { font-weight: 400; font-style: italic; color: var(--muted); }
+#sheet-body .pp-pill { display: inline-block; border-radius: 4px; padding: 0 7px; font-weight: 600; background: var(--pp-amber-soft); color: var(--pp-amber); }
+#sheet-body .pp-pill.rep { background: var(--pp-blue-soft); color: var(--pp-blue); }
+#sheet-body .pp-pill.unc { background: var(--pp-red-soft); color: var(--pp-red); }
+#sheet-body .pp-pill.ctx { background: var(--panel-3); color: var(--muted); }
+#sheet-body .pp-acts { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; }
+#sheet-body .pp-acts .btn { margin: 0; text-decoration: none; }
+#sheet-body .pp-sec { border-top: 1px solid var(--fy-line); padding-top: 12px; margin-top: 18px; }
+#sheet-body .pp-sec > h3 { font-family: var(--pp-mono); font-size: .66rem; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; padding: 0; border: 0; font-weight: 500; }
+#sheet-body .pp-sec .sec { margin: 14px 0 0; padding: 0; border: 0; }
+#sheet-body .pp-sec .sec h3, #sheet-body .pp-sec .ai-h, #sheet-body .pp-sub { font-family: var(--pp-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; padding: 0; border: 0; font-weight: 500; }
+#sheet-body .pp-fr .ai { margin-top: 0; }
+#sheet-body .pp-bl { font-weight: 600; line-height: 1.5; margin: 0 0 12px; }
+#sheet-body .pp-chron { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+#sheet-body .pp-chron li { display: grid; grid-template-columns: 3.4em minmax(0, 1fr); gap: 10px; line-height: 1.45; }
+#sheet-body .pp-chron.seq li, #sheet-body .pp-chron.per li { grid-template-columns: 6.8em minmax(0, 1fr); }
+#sheet-body .pp-chron .y { font-family: var(--pp-mono); font-size: .78em; color: var(--pp-amber); font-variant-numeric: tabular-nums; padding-top: .2em; }
+#sheet-body .pp-chron .y.g { color: var(--pp-red); }
+#sheet-body .pp-chron .d { color: var(--muted); }
+#sheet-body .pp-fn { font-family: var(--pp-mono); font-size: .66em; vertical-align: super; line-height: 0; color: var(--pp-blue); background: none; border: 0; padding: 0 2px; margin: 0; min-height: 0; min-width: 0; cursor: pointer; box-shadow: none; }
+#sheet-body .pp-fn:hover { text-decoration: underline; }
+#sheet-body .pp-un { font-family: var(--pp-mono); font-size: .6em; vertical-align: super; line-height: 0; color: var(--muted); border: 1px dashed var(--muted); border-radius: 3px; padding: 0 3px; margin-left: 3px; }
+#sheet-body .pp-conflict { background: var(--pp-red-soft); color: var(--pp-red); border-radius: 6px; padding: 9px 12px; margin-top: 14px; font-size: .93em; }
+#sheet-body .pp-conflict b { display: block; font-family: var(--pp-mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
+#sheet-body .pp-conflict p { margin: 5px 0 0; line-height: 1.45; }
+#sheet-body .pp-conflict .pp-fn { color: inherit; }
+#sheet-body .pp-rep { display: grid; gap: 8px; }
+#sheet-body .pp-acct { border-left: 3px solid var(--pp-green); background: var(--pp-green-soft); padding: 7px 11px; border-radius: 0 6px 6px 0; }
+#sheet-body .pp-acct .who { font-family: var(--pp-mono); font-size: .6rem; letter-spacing: .07em; text-transform: uppercase; color: var(--pp-green); margin-bottom: 2px; }
+#sheet-body .pp-acct p { margin: 0; line-height: 1.45; }
+#sheet-body .pp-more { background: none; border: 0; color: var(--link); padding: 0; font: inherit; font-size: .9em; cursor: pointer; text-align: left; min-height: 0; box-shadow: none; }
+#sheet-body .pp-empty { color: var(--muted); font-style: italic; margin: 0; }
+#sheet-body .pp-note { color: var(--muted); font-size: .86em; margin: 8px 0 0; line-height: 1.45; }
+#sheet-body .pp-full { margin-top: 12px; }
+#sheet-body .pp-full > summary { cursor: pointer; color: var(--link); font-size: .9em; }
+#sheet-body .pp-full[open] > summary { margin-bottom: 8px; }
+#sheet-body .pp-kw { display: flex; flex-wrap: wrap; gap: 5px; list-style: none; margin: 0; padding: 0; }
+#sheet-body .pp-kw li { font-size: .86em; border: 1px solid var(--fy-line); border-radius: 4px; padding: 1px 8px; background: var(--panel-2); }
+#sheet-body .pp-slot:empty { display: none; }
+#sheet-body .pp-ref { font-family: var(--pp-mono); font-size: .66rem; color: var(--muted); margin: 18px 0 0; }
+#sheet-body .srcs li.pp-hit { background: var(--pp-amber-soft); border-radius: 4px; transition: background 1.2s; }
+#sheet-body .pp-acts a.btn { display: inline-flex; align-items: center; }
+#sheet-body .pp-sec .sec h3, #sheet-body .pp-sec .ai-h, #sheet-body .pp-sub { background: none; box-shadow: none; margin-top: 4px; }

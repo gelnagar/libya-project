@@ -32,7 +32,11 @@ Standing rules for every chunk
 - [~] A5 Regions, part done. Done: `region` on every model record; `scripts/build-regions.mjs` writes six regions with town positions taken from Wikipedia articles and a count of stored documents naming each (C1 done here: Benghazi 881, Fezzan 477, Cyrenaica 466, Greater Tripolitania 399, Sirte 261; Tripoli 6,776); country view on the map (key 0, or the Libya crumb) with one marker per region and a region sheet. Checked in the browser by script: six region markers, pins hidden at country zoom, crumbs read Libya / Regions; NOT checked by eye (the screenshot timed out). Still to do (A5b): load a region's pins on demand from `public/data/regions/<id>/`; needs the marker code in app.js turned into an add-a-list function, tested with a fixture.
       Original wording: a `region` on every record, per-region data files loaded on demand,
       country view with counts per region
-- [ ] A6 Security: strict script policy (move inline scripts in stats/requests pages to files); spending ceiling
+- [x] A6 Security. Built: strict script policy in `public/_headers` (scripts only from the site itself; inline scripts of stats, requests and schematic pages moved to files); daily AI spending ceiling enforced in the Worker (`DAILY_AI_LIMIT_USD`, default 3); wrong-password counting moved from KV to D1 by keyed hash; constant-time password comparison; request size limit; new family reports held until the owner approves them on the requests page; visitors never receive the contributor's name or the "who told you" field.
+      Checks: `node scripts/test-worker.mjs` 39 passed, 0 failed. Every page loaded from a local server sending the real headers (map, 3D street view, statistics, requests, review, schematic) with no policy violation in the console.
+      Not covered: the sign-in page is produced by the Worker and carries no script policy yet; the policy was tested locally, not on Cloudflare.
+      Behaviour change for the owner to accept: reports added from now on are hidden from visitors until approved (existing ones stay visible).
+      Original wording: strict script policy (move inline scripts in stats/requests pages to files); spending ceiling
       per day in the Worker; failed-password counting moved off KV; contributor names hidden from visitors;
       family reports held for owner review before visitors see them; tests for each
 - [ ] A7 Cost and funnel report page for the owner (documents found, read, candidates, decided; cost per entry)
@@ -56,10 +60,14 @@ Standing rules for every chunk
       free-plan file limit)
 
 ## Log
+- 2026-11-13 (5:51 run): chunks 0, A1, A2, A3, A4, A6 done; A5 part done; C1 done. Archived copies now on record for 439 of 547 cited sources.
 - 2026-11-13: speeches finder, shared downloader, cable collector written on `more-sources`; UN sites forbid
   automated collection (archive/SOURCES.md).
 
 ## Waiting for the owner
 - Read the Embassy Tripoli cables with the extraction model? 386 are downloaded (about $0.16 by the script's count); the other 4,494 would need downloading first (about 3 hours, free) and about $2 to read.
 - Push to main: speeches in the review queue, cable collector, shared downloader (branch `more-sources`), and everything on branch `libya`.
+- Family reports now wait for your approval before visitors see them, and visitors no longer see who added a report. Accept this change?
+- Daily AI ceiling is set to $3 a day by default. Keep, change, or switch off?
+- 48 source websites are graded F (not classified); list in `archive/model/sources.json`. Grade them, or leave as F?
 - UN human-rights cases cannot be collected by machine (archive/SOURCES.md). Download the Libya cases by hand, or leave them out?

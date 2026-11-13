@@ -154,12 +154,24 @@ async function creditInfo(env) {
   return { tracked: true, remaining: Math.round(remaining * 100) / 100, low: remaining < warnBelow, out: remaining <= 0.05 };
 }
 
+// A hard stop, enforced here and not only shown as a warning: once today's tracked AI spending reaches the ceiling,
+// AI requests are refused until midnight UTC. DAILY_AI_LIMIT_USD sets it (default 3; 0 switches the ceiling off).
+async function overDailyLimit(env) {
+  const raw = env.DAILY_AI_LIMIT_USD, limit = raw == null || raw === '' ? 3 : parseFloat(raw);
+  if (!(limit > 0)) return null;
+  let spent = null;
+  try { const db = await statsDb(env); if (db) { const r = await db.prepare('SELECT COALESCE(SUM(cost), 0) AS c FROM ai WHERE day = ?').bind(dayOf(Date.now())).first(); spent = r ? r.c : 0; } } catch {}
+  if (spent == null && env.ATLAS_KV) spent = parseFloat(await env.ATLAS_KV.get('spent_day:' + dayOf(Date.now()))) || 0;
+  return spent != null && spent >= limit ? { limit, spent: Math.round(spent * 100) / 100 } : null;
+}
+
 async function recordSpend(env, u, kind) {
   if (!env.ATLAS_KV || !u) return;
   const pin = parseFloat(env.PRICE_IN) || 2, pout = parseFloat(env.PRICE_OUT) || 10;
   const cost = (u.searches || 0) * 0.01 + ((u.input_tokens || 0) * pin + (u.cache_creation_input_tokens || 0) * pin * 1.25 + (u.cache_read_input_tokens || 0) * pin * 0.1 + (u.output_tokens || 0) * pout) / 1e6;
   const spent = parseFloat(await env.ATLAS_KV.get('spent_usd')) || 0;
   await env.ATLAS_KV.put('spent_usd', String(spent + cost));
+  if (!env.STATS) { const dk = 'spent_day:' + dayOf(Date.now()); await env.ATLAS_KV.put(dk, String((parseFloat(await env.ATLAS_KV.get(dk)) || 0) + cost), { expirationTtl: 172800 }); }
   try {
     const db = await statsDb(env), t = Date.now();
     if (db) await db.prepare('INSERT INTO ai (ts, day, kind, cost, input, output, searches) VALUES (?, ?, ?, ?, ?, ?, ?)')
@@ -180,7 +192,10 @@ const STATS_SCHEMA = [
   // review queue (public/review.html): candidates are loaded by scripts/build-review.mjs; decisions are the owner's
   `CREATE TABLE IF NOT EXISTS cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT)`,
   `CREATE TABLE IF NOT EXISTS decision (id TEXT PRIMARY KEY, verdict TEXT NOT NULL, reason TEXT, note TEXT, at INTEGER)`,
-  `CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC)`
+  `CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC)`,
+  // wrong-password attempts, by a keyed hash of the address (never the address)
+  `CREATE TABLE IF NOT EXISTS fails (who TEXT NOT NULL, at INTEGER NOT NULL)`,
+  `CREATE INDEX IF NOT EXISTS fails_who ON fails(who, at)`
 ];
 let statsReady = null;
 async function statsDb(env) {
@@ -418,14 +433,27 @@ async function sessionOk(request, env) {
   if (!m || Number(m[1]) < Date.now()) return false;
   return sameText(m[2], await signSession(env, m[1]));
 }
+// Wrong-password attempts are counted in D1 when it is bound, because the free plan allows only 1,000 KV writes a day
+// and a burst of bad guesses must not be able to use them up. The address is stored only as a keyed hash.
+async function failKey(env, ip) {
+  const key = await crypto.subtle.importKey('raw', enc.encode('fails:' + (env.STATS_SALT || env.SESSION_SECRET || env.FAMILY_CODE || 'atlas')), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  return hex(await crypto.subtle.sign('HMAC', key, enc.encode(String(ip)))).slice(0, 24);
+}
 async function failCount(env, ip) {
-  if (env.ATLAS_KV) return parseInt(await env.ATLAS_KV.get('fail:' + ip)) || 0;
+  try { const db = await statsDb(env); if (db) { const r = await db.prepare('SELECT COUNT(*) AS n FROM fails WHERE who = ? AND at > ?').bind(await failKey(env, ip), Date.now() - FAIL_WINDOW * 1000).first(); return r ? r.n : 0; } } catch {}
   const f = failMem.get(ip); return f && Date.now() - f.at < FAIL_WINDOW * 1000 ? f.n : 0;
 }
 async function noteFail(env, ip) {
-  const n = (await failCount(env, ip)) + 1;
-  if (env.ATLAS_KV) await env.ATLAS_KV.put('fail:' + ip, String(n), { expirationTtl: FAIL_WINDOW });
-  else failMem.set(ip, { n, at: Date.now() });
+  try { const db = await statsDb(env); if (db) { const now = Date.now();
+    await db.batch([db.prepare('INSERT INTO fails (who, at) VALUES (?, ?)').bind(await failKey(env, ip), now), db.prepare('DELETE FROM fails WHERE at < ?').bind(now - 86400000)]); return; } } catch {}
+  const f = failMem.get(ip), n = f && Date.now() - f.at < FAIL_WINDOW * 1000 ? f.n + 1 : 1;
+  failMem.set(ip, { n, at: f && n > 1 ? f.at : Date.now() }); if (failMem.size > 5000) failMem.clear();
+}
+// passwords are compared in constant time, on fixed-length digests, so timing says nothing about how close a guess was
+async function samePassword(given, real) {
+  if (!real) return false;
+  const d = async (v) => hex(await crypto.subtle.digest('SHA-256', enc.encode(norm(v))));
+  return sameText(await d(given), await d(real));
 }
 const SECURITY = {
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
@@ -491,7 +519,7 @@ async function handleLogin(request, env) {
   if ((await failCount(env, ip)) >= MAX_FAILS) return loginPage(env, 'Too many wrong tries. Wait 15 minutes, then try again.', '/', 429);
   let form; try { form = await request.formData(); } catch { form = new FormData(); }
   const next = safeNext(form.get('next'));
-  if (!env.FAMILY_CODE || norm(form.get('code')) !== norm(env.FAMILY_CODE)) {
+  if (!(await samePassword(form.get('code'), env.FAMILY_CODE))) {
     await noteFail(env, ip);
     return loginPage(env, 'That password isn’t right. Try again.', next, 401);
   }
@@ -550,10 +578,11 @@ async function api(request, env, url, ctx) {
   const viaSession = await sessionOk(request, env);
   if (!origin && !viaSession) return json({ error: 'Not allowed' }, 403, cors);
 
+  if (Number(request.headers.get('Content-Length')) > 4500000) return json({ error: 'Too large' }, 413, cors);
   let body;
-  try { body = await request.json(); } catch { return json({ error: 'Bad request' }, 400, cors); }
+  try { const raw = await request.text(); if (raw.length > 4500000) return json({ error: 'Too large' }, 413, cors); body = JSON.parse(raw); } catch { return json({ error: 'Bad request' }, 400, cors); }
   body = body && typeof body === 'object' ? body : {};
-  const REQ_KINDS = ['track', 'review', 'owner', 'agent', 'report', 'reportDelete', 'reports', 'mediaPut', 'mediaGet', 'request', 'status'];
+  const REQ_KINDS = ['track', 'review', 'approveReport', 'owner', 'agent', 'report', 'reportDelete', 'reports', 'mediaPut', 'mediaGet', 'request', 'status'];
   later(ctx, countRequest(env, 'api:' + (REQ_KINDS.find((k) => body[k]) || 'question')));
 
   /* ----- visitor statistics: a small batch of events from the map (anyone; no AI, no KV) ----- */
@@ -583,11 +612,18 @@ async function api(request, env, url, ctx) {
   if (body.owner) {
     const ipo = request.headers.get('CF-Connecting-IP') || 'unknown';
     if ((await failCount(env, ipo)) >= MAX_FAILS) return json({ error: 'Too many wrong passwords. Wait 15 minutes.' }, 429, cors);
-    if (!env.OWNER_CODE || norm(request.headers.get('X-Owner-Code')) !== norm(env.OWNER_CODE)) { await noteFail(env, ipo); return json({ error: 'Wrong owner password' }, 401, cors); }
+    if (!(await samePassword(request.headers.get('X-Owner-Code'), env.OWNER_CODE))) { await noteFail(env, ipo); return json({ error: 'Wrong owner password' }, 401, cors); }
     if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
     if (body.stats) return json(await ownerStats(env, body), 200, cors);
     if (body.review) return json(await ownerReview(env, body.review), 200, cors);
     if (body.done) { await env.ATLAS_KV.delete(String(body.done)); return json({ ok: true }, 200, cors); }
+    if (body.approveReport) { // release a held family report to visitors (or hold it again with hold: true)
+      let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
+      const r = reps.find((x) => x.id === String(body.approveReport)); if (!r) return json({ error: 'Not found' }, 404, cors);
+      if (body.hold) r.held = true; else delete r.held;
+      await env.ATLAS_KV.put('reports:v1', JSON.stringify(reps));
+      return json({ ok: true, held: !!r.held }, 200, cors);
+    }
     if (body.removeReport) {
       let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
       await env.ATLAS_KV.put('reports:v1', JSON.stringify(reps.filter((x) => x.id !== String(body.removeReport))));
@@ -609,7 +645,7 @@ async function api(request, env, url, ctx) {
   if (!family && request.headers.get('X-Family-Code')) {
     const ip0 = request.headers.get('CF-Connecting-IP') || 'unknown';
     if ((await failCount(env, ip0)) >= MAX_FAILS) return json({ error: 'Too many wrong passwords. Wait 15 minutes.' }, 429, cors);
-    if (!env.FAMILY_CODE || norm(request.headers.get('X-Family-Code')) !== norm(env.FAMILY_CODE)) { await noteFail(env, ip0); return json({ error: 'Wrong family code' }, 401, cors); }
+    if (!(await samePassword(request.headers.get('X-Family-Code'), env.FAMILY_CODE))) { await noteFail(env, ip0); return json({ error: 'Wrong family code' }, 401, cors); }
     family = true;
   }
   // The public may only read family reports and their media. Everything else (the AI, adding or removing
@@ -652,7 +688,7 @@ async function api(request, env, url, ctx) {
     if (!family) {
       // the public only sees media attached to a report it can see (never a home)
       let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
-      if (!reps.some((x) => x.cat !== 'home' && (x.media || []).some((m) => m.id === id))) return json({ error: 'Not found' }, 404, cors);
+      if (!reps.some((x) => x.cat !== 'home' && !x.held && (x.media || []).some((m) => m.id === id))) return json({ error: 'Not found' }, 404, cors);
     }
     const v = await env.ATLAS_KV.getWithMetadata('media:' + id);
     if (!v || !v.value) return json({ error: 'Not found' }, 404, cors);
@@ -681,6 +717,7 @@ async function api(request, env, url, ctx) {
       if (!placed && !item.target) return json({ error: 'Pick a place on the map first.' }, 400, cors);
       const token = [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, '0')).join('');
       item.tk = await hash(token);
+      item.held = true; // visitors see it only after the owner approves it (requests.html)
       list.push(item);
       if (list.length > 3000) list = list.slice(-3000);
       await env.ATLAS_KV.put(KEY, JSON.stringify(list));
@@ -690,7 +727,7 @@ async function api(request, env, url, ctx) {
     }
     if (body.reportDelete) {
       const id = String(body.reportDelete.id || ''), t = await hash(body.reportDelete.token);
-      const isOwner = env.OWNER_CODE && norm(request.headers.get('X-Owner-Code')) === norm(env.OWNER_CODE);
+      const isOwner = await samePassword(request.headers.get('X-Owner-Code'), env.OWNER_CODE);
       const i = list.findIndex((x) => x.id === id);
       if (i < 0) return json({ error: 'Not found' }, 404, cors);
       if (!isOwner && list[i].tk !== t) return json({ error: 'Only the person who added it can remove it.' }, 403, cors);
@@ -699,8 +736,13 @@ async function api(request, env, url, ctx) {
       await env.ATLAS_KV.put(KEY, JSON.stringify(list));
       return json({ ok: true }, 200, cors);
     }
-    return json({ reports: list.filter((x) => family || x.cat !== 'home').map(({ tk, ...x }) => x) }, 200, cors);
+    // family see everything; visitors see only approved, non-home reports, and never the name of who added them
+    return json({ reports: list.filter((x) => family || (x.cat !== 'home' && !x.held)).map(({ tk, ...x }) => { if (!family) { delete x.by; delete x.src; } return x; }) }, 200, cors);
   }
+
+  /* ----- everything below spends AI credit: stop at the daily ceiling ----- */
+  const over = await overDailyLimit(env);
+  if (over) return json({ error: 'The AI guide has reached its limit for today ($' + over.limit + '). It opens again after midnight UTC.', limit: true }, 429, cors);
 
   /* ----- chat guide: one step of the agent loop ----- */
   if (body.agent) {

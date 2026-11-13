@@ -13,13 +13,16 @@ Standing rules for every chunk
 - Each chunk ends with a check that is written down here: what was run and what it showed.
 
 ## Chunk 0. Finish the current collection work
-- [ ] Cable re-download finished; count cables with text, and those naming a specific place
-- [ ] Estimate what reading them would cost; commit `more-sources`; report to the owner
+- [x] Cable re-download finished. 4,938 Embassy Tripoli telegrams listed (1973-79); 444 downloaded (the ones whose subject line suggested security, arrests, the university, the embassy and so on); 386 have text, 58 pages had none.
+      156 of the 386 mention a kind of place (prison, street, square, hospital...); only 13 use a Tripoli place name from the map's list.
+- [x] Cost to read: at the last run's rate by the script's own count ($0.00041 a document) the 386 cost about $0.16 and all 4,938 about $2. The script's price figures are unverified, so treat these as a floor. Waiting for the owner (see below).
 
 ## Phase A. Foundations
-- [ ] A1 Claim model: one schema for place, event, person, source, claim (level, reviewer, date). SQL file + JSON
+- [x] A1 Claim model (`scripts/build-claims.mjs`, `archive/model/`): 620 subjects, 547 sources, 1,122 claims; loads into SQLite with no orphan rows.
+      Original wording: one schema for place, event, person, source, claim (level, reviewer, date). SQL file + JSON
       export; documented in CLAUDE.md
-- [ ] A2 Migrate Tripoli: every pin and unplaced item reproduced from claims with nothing lost
+- [x] A2 Migrate Tripoli. Check run: `node scripts/build-claims.mjs --check` rebuilt 103 pins, 172 areas, 173 unplaced items and 172 connections from the model; 0 differ; 19 of 19 panel lines are claims. `node scripts/check-model.mjs`: all 110 stored quotations found word for word in their stored source. Finding: 161 of 271 pin claims cite a source but never stored the supporting words; those need passages before they meet evidence rule 1.
+      Original wording: every pin and unplaced item reproduced from claims with nothing lost
       (check: counts match; 30 sampled entries have their quoted passage in a stored source)
 - [ ] A3 Provenance on every stored source: fetch date, checksum, archived copy where there is one
 - [ ] A4 Source grading the way analysts do it: reliability of the source (A–F) and credibility of the item (1–6),
@@ -52,3 +55,8 @@ Standing rules for every chunk
 ## Log
 - 2026-11-13: speeches finder, shared downloader, cable collector written on `more-sources`; UN sites forbid
   automated collection (archive/SOURCES.md).
+
+## Waiting for the owner
+- Read the Embassy Tripoli cables with the extraction model? 386 are downloaded (about $0.16 by the script's count); the other 4,494 would need downloading first (about 3 hours, free) and about $2 to read.
+- Push to main: speeches in the review queue, cable collector, shared downloader (branch `more-sources`), and everything on branch `libya`.
+- UN human-rights cases cannot be collected by machine (archive/SOURCES.md). Download the Libya cases by hand, or leave them out?

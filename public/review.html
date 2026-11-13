@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<script src="boot.js"></script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<title>Review Queue</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="review.css">
+</head>
+<body>
+<header class="top">
+  <b>Tripoli: Open Source</b><span class="crumb">/ Review queue</span>
+  <span class="grow"></span>
+  <span id="progress" class="num"></span><span class="meter"><i id="bar"></i></span>
+  <a href="./">Map</a><a href="stats.html">Visitors and costs</a><a href="requests.html">Requests</a>
+  <button type="button" id="theme" title="Light or dark">Theme</button>
+  <button type="button" id="signout">Sign out</button>
+</header>
+
+<form id="signin">
+  <label for="code">Owner password</label>
+  <input id="code" type="password" autocomplete="current-password">
+  <button class="primary" type="submit">Open the queue</button>
+  <p id="signin-msg" aria-live="polite"></p>
+</form>
+
+<main id="app" hidden>
+  <section class="list" aria-label="Candidates">
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="st-open">To review</button><button type="button" role="tab" id="st-approve">Place it</button><button type="button" role="tab" id="st-unplaced">No location</button><button type="button" role="tab" id="st-defer">Put off</button><button type="button" role="tab" id="st-reject">Rejected</button><button type="button" role="tab" id="st-all">All</button>
+    </div>
+    <div class="filters">
+      <input id="q" type="search" placeholder="Name or year" aria-label="Filter by name or year">
+      <select id="kind" aria-label="Kind"><option value="">Places and events</option><option value="place">Places</option><option value="event">Events</option></select>
+      <label class="chk"><input id="multi" type="checkbox"> 2+ documents</label>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th style="width:52px">Kind</th><th style="width:84px">Date</th><th>Candidate</th><th style="width:36px" title="Documents">Docs</th><th style="width:24px" title="Found in the stored text">Txt</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <button type="button" id="more" hidden>Show more</button>
+    </div>
+    <div class="foot"><span id="count" class="num"></span><span class="grow"></span><span>Ranked by documents in agreement</span></div>
+  </section>
+
+  <section class="pane" aria-label="Candidate">
+    <div id="detail" class="scroll"></div>
+    <div class="decide">
+      <div class="row">
+        <button type="button" class="primary" id="approve" title="Worth adding, and a source may place it (A)">Approve: place it <kbd>A</kbd></button>
+        <button type="button" id="unplaced" title="Worth adding, but no source names where (U)">Approve: no location <kbd>U</kbd></button>
+        <button type="button" id="defer" title="Decide later (D)">Put off <kbd>D</kbd></button>
+        <span class="grow"></span>
+        <select id="reason" aria-label="Reason for rejecting">
+          <option value="">Reason…</option><option>Already on the map</option><option>Not in Tripoli</option><option>Too vague to use</option><option>Passage does not support it</option><option>Out of scope</option><option>Privacy or safety</option>
+        </select>
+        <button type="button" id="reject" title="Do not add (R)">Reject <kbd>R</kbd></button>
+        <button type="button" id="undo" hidden title="Remove the decision (Z)">Undo <kbd>Z</kbd></button>
+      </div>
+      <div class="row"><input id="note" type="text" maxlength="800" placeholder="Note for the write-up (N)" aria-label="Note"><span id="msg" role="status"></span></div>
+      <p class="rule">Approving records that an item is worth adding. It does not put it on the map: each approved item is written up with its sources afterwards, and a position is used only where a source gives one. <kbd>J</kbd> <kbd>K</kbd> move down and up.</p>
+    </div>
+  </section>
+</main>
+<script src="data/config.js"></script>
+<script src="review.js"></script>
+</body>
+</html>

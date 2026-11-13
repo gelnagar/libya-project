@@ -70,3 +70,8 @@ Old spy-satellite film (Feb 1966 GAMBIT; Nov 1972, 1976 north and south, 1983 HE
 - Timeline (`drawTimeline`): click a year, drag for a range (`timeRange`), places within 13px fold into a numbered box with a list.
 - `--text-faint` is below AA: placeholders and dividers only.
 - `AUDIT.md` (git-ignored, the repo is public) lists open security and research findings.
+
+## Review queue (2026-11)
+- `node scripts/build-review.mjs --sql out.sql` turns the extraction output (`archive/crest/extract*.jsonl`) into ranked candidates: places not on the map and dated Tripoli events, each with every document that mentions it and the passage found in the stored text (no AI calls). Load with `npx wrangler d1 execute tripoli-atlas-stats --remote --file out.sql -y`; reloading keeps decisions (separate `decision` table).
+- `public/review.html` (owner password) lists them; the owner approves (place it / no location), rejects with a reason, or puts off. Worker: `ownerReview` behind `{owner:true, review:{...}}`; `review:{export:true}` returns the approved ones.
+- Approval is not publication. Approved items still need a written entry with fetched sources, and a position only where a source gives one.

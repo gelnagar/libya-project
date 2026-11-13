@@ -176,7 +176,11 @@ const STATS_SCHEMA = [
   `CREATE TABLE IF NOT EXISTS ai (ts INTEGER NOT NULL, day TEXT NOT NULL, kind TEXT, cost REAL, input INTEGER, output INTEGER, searches INTEGER)`,
   `CREATE INDEX IF NOT EXISTS ai_day ON ai(day)`,
   `CREATE TABLE IF NOT EXISTS reqs (day TEXT NOT NULL, kind TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, kind))`,
-  `CREATE TABLE IF NOT EXISTS emails (ts INTEGER NOT NULL, day TEXT NOT NULL, ok INTEGER, info TEXT)`
+  `CREATE TABLE IF NOT EXISTS emails (ts INTEGER NOT NULL, day TEXT NOT NULL, ok INTEGER, info TEXT)`,
+  // review queue (public/review.html): candidates are loaded by scripts/build-review.mjs; decisions are the owner's
+  `CREATE TABLE IF NOT EXISTS cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT)`,
+  `CREATE TABLE IF NOT EXISTS decision (id TEXT PRIMARY KEY, verdict TEXT NOT NULL, reason TEXT, note TEXT, at INTEGER)`,
+  `CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC)`
 ];
 let statsReady = null;
 async function statsDb(env) {
@@ -228,6 +232,46 @@ async function alertNewReport(env, item, origin) {
 }
 
 /* ---------- the owner dashboard's numbers ---------- */
+/* ---------- owner review queue: candidates found in the archive, each approved, rejected or put off by the owner ---------- */
+const VERDICTS = ['approve', 'unplaced', 'reject', 'defer'];
+async function ownerReview(env, r) {
+  const db = await statsDb(env).catch(() => null);
+  if (!db) return { error: 'The database is not connected.' };
+  r = r && typeof r === 'object' ? r : {};
+  if (r.decide) {
+    const id = clip(r.decide.id, 24), v = String(r.decide.verdict || '');
+    if (!id) return { error: 'Bad request' };
+    if (v === 'clear') await db.prepare('DELETE FROM decision WHERE id = ?').bind(id).run();
+    else if (VERDICTS.includes(v)) await db.prepare('INSERT OR REPLACE INTO decision (id, verdict, reason, note, at) VALUES (?, ?, ?, ?, ?)').bind(id, v, clip(r.decide.reason, 60), clip(r.decide.note, 800), Date.now()).run();
+    else return { error: 'Bad request' };
+    return { ok: true };
+  }
+  if (r.get) {
+    const row = await db.prepare('SELECT c.data, d.verdict, d.reason, d.note, d.at FROM cand c LEFT JOIN decision d ON d.id = c.id WHERE c.id = ?').bind(clip(r.get, 24)).first();
+    if (!row) return { error: 'Not found' };
+    let cand = null; try { cand = JSON.parse(row.data); } catch {}
+    return { cand, decision: row.verdict ? { verdict: row.verdict, reason: row.reason, note: row.note, at: row.at } : null };
+  }
+  if (r.export) {
+    const rows = await db.prepare("SELECT c.data, d.verdict, d.note, d.at FROM decision d JOIN cand c ON c.id = d.id WHERE d.verdict IN ('approve', 'unplaced') ORDER BY d.at").all();
+    return { approved: (rows.results || []).map((x) => { let c = null; try { c = JSON.parse(x.data); } catch {} return { verdict: x.verdict, note: x.note, at: x.at, cand: c }; }) };
+  }
+  const status = ['open', 'all'].concat(VERDICTS).includes(r.status) ? r.status : 'open';
+  const kind = ['place', 'event'].includes(r.kind) ? r.kind : '';
+  const where = [], args = [];
+  if (status === 'open') where.push('d.id IS NULL'); else if (status !== 'all') { where.push('d.verdict = ?'); args.push(status); }
+  if (kind) { where.push('c.kind = ?'); args.push(kind); }
+  if (r.q) { where.push('(c.name LIKE ? OR c.date LIKE ?)'); const q = '%' + clip(r.q, 60).replace(/[%_]/g, '') + '%'; args.push(q, q); }
+  if (r.multi) where.push('c.docs > 1');
+  const W = where.length ? ' WHERE ' + where.join(' AND ') : '';
+  const offset = Math.max(0, parseInt(r.offset, 10) || 0);
+  const [list, counts] = await db.batch([
+    db.prepare('SELECT c.id, c.kind, c.name, c.date, c.docs, c.found, c.score, d.verdict FROM cand c LEFT JOIN decision d ON d.id = c.id' + W + ' ORDER BY c.score DESC, c.date LIMIT 100 OFFSET ?').bind(...args, offset),
+    db.prepare("SELECT COALESCE(d.verdict, 'open') AS v, c.kind AS kind, COUNT(*) AS n FROM cand c LEFT JOIN decision d ON d.id = c.id GROUP BY v, c.kind")
+  ]);
+  return { items: list.results || [], counts: counts.results || [], offset };
+}
+
 async function ownerStats(env, body) {
   const days = Math.min(365, Math.max(1, parseInt(body.days, 10) || 30));
   const t = Date.now(), today = dayOf(t), since = dayOf(t - (days - 1) * 86400000), month = today.slice(0, 8) + '01';
@@ -509,7 +553,7 @@ async function api(request, env, url, ctx) {
   let body;
   try { body = await request.json(); } catch { return json({ error: 'Bad request' }, 400, cors); }
   body = body && typeof body === 'object' ? body : {};
-  const REQ_KINDS = ['track', 'owner', 'agent', 'report', 'reportDelete', 'reports', 'mediaPut', 'mediaGet', 'request', 'status'];
+  const REQ_KINDS = ['track', 'review', 'owner', 'agent', 'report', 'reportDelete', 'reports', 'mediaPut', 'mediaGet', 'request', 'status'];
   later(ctx, countRequest(env, 'api:' + (REQ_KINDS.find((k) => body[k]) || 'question')));
 
   /* ----- visitor statistics: a small batch of events from the map (anyone; no AI, no KV) ----- */
@@ -542,6 +586,7 @@ async function api(request, env, url, ctx) {
     if (!env.OWNER_CODE || norm(request.headers.get('X-Owner-Code')) !== norm(env.OWNER_CODE)) { await noteFail(env, ipo); return json({ error: 'Wrong owner password' }, 401, cors); }
     if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
     if (body.stats) return json(await ownerStats(env, body), 200, cors);
+    if (body.review) return json(await ownerReview(env, body.review), 200, cors);
     if (body.done) { await env.ATLAS_KV.delete(String(body.done)); return json({ ok: true }, 200, cors); }
     if (body.removeReport) {
       let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}

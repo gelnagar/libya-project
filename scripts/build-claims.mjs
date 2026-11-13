@@ -13,6 +13,8 @@ import { storedCopies, addProvenance, gradeSource, gradeClaims } from './lib/pro
 
 const W = {};
 for (const f of ['sites', 'areas', 'unplaced', 'panels', 'quotes', 'links']) { const p = `public/data/${f}.js`; if (!fs.existsSync(p)) continue; const c = { window: {} }; vm.runInNewContext(fs.readFileSync(p, 'utf8'), c); Object.assign(W, c.window); }
+// other regions add their pins to the same list (public/data/regions/<id>.js); files starting with _ are test fixtures
+for (const f of fs.existsSync('public/data/regions') ? fs.readdirSync('public/data/regions').filter((x) => x.endsWith('.js') && !x.startsWith('_')).sort() : []) { const c = { window: W }; vm.runInNewContext(fs.readFileSync(`public/data/regions/${f}`, 'utf8'), c); }
 const SITES = W.ATLAS_SITES || [], AREAS = W.ATLAS_AREAS || [], UNPLACED = W.ATLAS_UNPLACED || [], MORE = W.ATLAS_UNPLACED_MORE || [], PANELS = W.ATLAS_PANELS || {}, QUOTES = W.ATLAS_QUOTES || {}, CONN = W.ATLAS_CONNECTIONS || [];
 const EVENT_LAYERS = new Set(['airstrike', 'battle', 'massacre']);
 const REGION = 'tripoli'; // everything published so far; other regions arrive with their own data files
@@ -38,7 +40,7 @@ const quote = (id, u) => { const q = QUOTES[id] && u && QUOTES[id][u]; return q 
 for (const s of SITES) {
   const { id, sources: srcs, ...rest } = s;
   const uid = 'site:' + id;
-  subjects.push({ uid, id, class: EVENT_LAYERS.has(s.layer) ? 'event' : 'place', region: REGION, order: subjects.length, set: 'sites', ...rest });
+  subjects.push({ uid, id, class: EVENT_LAYERS.has(s.layer) ? 'event' : 'place', region: s.region || REGION, order: subjects.length, set: 'sites', ...rest });
   (srcs || []).forEach((x, n) => claim(uid, 'account', x, { n, level: s.level, passage: quote(id, x.u) }));
   const P = PANELS[id];
   if (P) { // hand-written panel: each dated line is its own claim, tied to the numbered sources it cites

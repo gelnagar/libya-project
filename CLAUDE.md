@@ -75,3 +75,11 @@ Old spy-satellite film (Feb 1966 GAMBIT; Nov 1972, 1976 north and south, 1983 HE
 - `node scripts/build-review.mjs --sql out.sql` turns the extraction output (`archive/crest/extract*.jsonl`) into ranked candidates: places not on the map and dated Tripoli events, each with every document that mentions it and the passage found in the stored text (no AI calls). Load with `npx wrangler d1 execute tripoli-atlas-stats --remote --file out.sql -y`; reloading keeps decisions (separate `decision` table).
 - `public/review.html` (owner password) lists them; the owner approves (place it / no location), rejects with a reason, or puts off. Worker: `ownerReview` behind `{owner:true, review:{...}}`; `review:{export:true}` returns the approved ones.
 - Approval is not publication. Approved items still need a written entry with fetched sources, and a position only where a source gives one.
+
+## All-Libya build (2026-11, branch `libya`)
+- `LIBYA-PROGRESS.md` is the chunk list and hand-over file; read it first.
+- Claim model: `node scripts/build-claims.mjs --check` writes `archive/model/` (subjects, sources, claims, model.sql), `public/data/grades.js`, and proves public/data can be rebuilt from the model. `node scripts/check-model.mjs` confirms every stored quotation is in its stored source. See `archive/model/README.md`.
+- Grades beside citations are defaults from rules in `scripts/lib/provenance.mjs` (reliability A-F by type of source, credibility 1-6 by evidence level and corroboration). Owner overrides: `archive/model/grades.json`.
+- Regions: `node scripts/build-regions.mjs` writes `public/data/regions.js` (town positions from Wikipedia articles, counts of stored documents). The map shows one region at a time (`curRegion` in app.js, `ATLAS_API.setRegion`); a new region's pins go in `public/data/regions/<id>.js` with `region: '<id>'` on each pin and a script tag after `data/sites.js`.
+- Collectors use `scripts/lib/fetcher.mjs` (one User-Agent, robots.txt obeyed, Retry-After honoured, checksum per document). What may and may not be collected: `archive/SOURCES.md`.
+- Worker tests: `node scripts/test-worker.mjs` (39 checks; run before any push that touches worker/worker.js). New family reports are held (`held: true`) until the owner approves them on requests.html.

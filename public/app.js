@@ -158,7 +158,11 @@
   var SURE_OK = { doc: { documented: 1 }, testimony: { documented: 1, testimony: 1, context: 1 }, all: null };
   function inPeriod(s) { var r = span(s); return r[1] >= whenRange[0] && r[0] <= whenRange[1]; }
   function sureOk(s) { var ok = SURE_OK[sure]; return !ok || !!ok[s.level]; }
-  function visible(s) { return !!active[s.layer] && inPeriod(s) && sureOk(s); }
+  /* One region at a time. Every pin belongs to a region ("tripoli" unless its data file says otherwise, see
+     public/data/regions/); only the open region's pins are drawn, listed and counted. */
+  var curRegion = 'tripoli';
+  function regionOf(s) { return s.region || 'tripoli'; }
+  function visible(s) { return regionOf(s) === curRegion && !!active[s.layer] && inPeriod(s) && sureOk(s); }
 
   /* ---------- historical markers ---------- */
   var siteLayer = L.layerGroup().addTo(map), ringLayer = L.layerGroup().addTo(map), linkLayer = L.layerGroup().addTo(map);
@@ -455,6 +459,7 @@
   setTimeout(buildEraChips, 0);
   function ensureVisible(s) {
     var changed = false;
+    if (regionOf(s) !== curRegion) { curRegion = regionOf(s); changed = true; }
     if ((timeRange && !(span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1])) || (timeYear != null && span(s)[0] > timeYear)) { timeRange = null; timeYear = null; stopPlay(); changed = true; }
     if (!active[s.layer]) { active[s.layer] = true; inputs[s.layer].checked = true; changed = true; if (typeof syncGroups === 'function') setTimeout(syncGroups, 0); }
     if (!inPeriod(s)) { var r = span(s); setWhen([Math.min(whenRange[0], r[0]), Math.max(whenRange[1], r[1])], true); changed = true; }
@@ -3431,6 +3436,8 @@
     openTerm: openTerm, openSettings: openSettings, setTheme: setTheme, openSpot: openSpot, openStreet: openStreet, openReportForm: openReportForm, status: status,
     marker: function (id) { return markers[id]; }, timeline: function (on) { setInput('timeline', on == null ? !active.timeline : on); }, timelineOn: function () { return !!active.timeline; },
     home: function () { map.flyToBounds(HOME, { duration: 0.8 }); }, print: function (list) { printBooklet('Places on the map', '', list); },
+    region: function () { return curRegion; }, regionOf: regionOf,
+    setRegion: function (id) { if (id === curRegion) return; curRegion = id; if (selected && BY_ID[selected] && regionOf(BY_ID[selected]) !== id) closePanel('sheet'); refresh(); },
     onSelect: null, onRefresh: null,
     markBase: function (key) { document.querySelectorAll('#basemaps button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === (key || currentBase) ? 'true' : 'false'); }); }
   };

@@ -33,7 +33,7 @@
   $('btn-legend').onclick = function () { railTab('legend'); };
   $('btn-timeline').onclick = function () { A.timeline(); syncRail(); };
   $('btn-intel').onclick = function () { if (window.ATLAS_UNKNOWN_OPEN) window.ATLAS_UNKNOWN_OPEN(); };
-  $('btn-home').onclick = function () { A.home(); };
+  $('btn-home').onclick = function () { regionHome(); };
   function syncRail() {
     var open = drawerOpen();
     $('btn-layers').setAttribute('aria-expanded', open && tab === 'layers' ? 'true' : 'false');
@@ -114,7 +114,7 @@
     $('sb-sel').appendChild(document.createTextNode('SEL '));
     $('sb-sel').appendChild(h('b', { text: String(n) }));
     $('sb-sel').appendChild(document.createTextNode('  SHOWN '));
-    $('sb-sel').appendChild(h('b', { text: shown + '/' + SITES.length }));
+    $('sb-sel').appendChild(h('b', { text: shown + '/' + SITES.filter(function (s) { return A.regionOf(s) === A.region(); }).length }));
   }
   function syncConn() {
     var on = navigator.onLine !== false, el = $('sb-conn');
@@ -136,7 +136,7 @@
     var view = document.body.classList.contains('unknown-on') ? 'Intelligence' : 'Map';
     // Libya / region / view / selection. "Libya" steps back to the country view.
     if (REGIONS.length) { c.appendChild(h('i', { text: '/' })); c.appendChild(h('button', { type: 'button', class: 'crumb-btn', text: 'Libya', title: 'Country view: every region (0)', onclick: countryView })); }
-    var reg = REGIONS.length ? (inCountry() ? null : 'Tripoli') : null;
+    var reg = REGIONS.length ? (inCountry() ? null : (curRegionRec() || {}).name || 'Tripoli') : null;
     [reg, inCountry() ? 'Regions' : view].concat(name ? [name] : []).filter(Boolean).forEach(function (t) { c.appendChild(h('i', { text: '/' })); c.appendChild(h('span', { text: t })); });
   }
 
@@ -226,7 +226,7 @@
         h('td', { text: lay.label }), h('td', { class: 'ws-num', text: String(c0(s.y0)) }), h('td', { class: 'ws-num', text: String(c0(s.y1)) })]));
     });
     if (!rows.length) tb.appendChild(h('tr', {}, [h('td', { colspan: '4', class: 'ws-empty', text: 'No places match. Clear the filters or switch more layers on.' })]));
-    $('tbl-count').textContent = rows.length + ' of ' + SITES.length + ' places';
+    $('tbl-count').textContent = rows.length + ' of ' + SITES.filter(function (s) { return A.regionOf(s) === A.region(); }).length + ' places';
     markRows();
   }
   function c0(v) { return v == null ? '' : v; }
@@ -291,6 +291,10 @@
   /* ---------- country view: one marker per region, with what is published and what the archive holds ---------- */
   var REGIONS = window.ATLAS_REGIONS || [], regionLayer = L.layerGroup(), COUNTRY_Z = 9;
   function inCountry() { return REGIONS.length > 0 && map.getZoom() < COUNTRY_Z; }
+  function curRegionRec() { return REGIONS.filter(function (r) { return r.id === A.region(); })[0] || null; }
+  // open a published region: its pins replace the last region's, and the map moves to its frame
+  function openRegion(r) { A.setRegion(r.id); if (r.id === 'tripoli' || !r.box) A.home(); else map.flyToBounds(r.box, { duration: 0.9 }); }
+  function regionHome() { var r = curRegionRec(); if (r && r.id !== 'tripoli' && r.box) map.flyToBounds(r.box, { duration: 0.8 }); else A.home(); }
   function nf(n) { return Number(n).toLocaleString('en-US'); }
   function regionSheet(r) {
     A.sheet('Region', '', function (body) {
@@ -306,7 +310,7 @@
       body.appendChild(h('p', { class: 'd-text muted small', text: r.status === 'published'
         ? 'Document counts are a plain word count over the stored texts. They show where the material is, not what it says.'
         : 'This region has not been researched. The count shows how many stored documents name its towns; none of them has been read for this region, and nothing here is a finding.' }));
-      if (r.status === 'published') body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn primary', text: 'Open ' + r.name, onclick: function () { A.home(); } })]));
+      if (r.status === 'published') body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn primary', text: 'Open ' + r.name, onclick: function () { openRegion(r); } })]));
     });
   }
   REGIONS.forEach(function (r) {
@@ -315,7 +319,7 @@
     var m = L.marker([r.lat, r.lon], { keyboard: true, title: r.name, icon: L.divIcon({ className: '', iconSize: [170, 40], iconAnchor: [6, 6],
       html: '<div class="region ' + r.status + '"><i></i><span><b></b><small></small></span></div>' }) });
     m.on('add', function () { var el = m.getElement(); if (!el) return; el.querySelector('b').textContent = r.name; el.querySelector('small').textContent = total ? nf(total) + ' entries' : 'planned · ' + nf(r.docs) + ' documents'; });
-    m.on('click', function () { if (r.status === 'published') A.home(); else { regionSheet(r); if (r.box) map.flyToBounds(r.box, { duration: 0.8, maxZoom: 8 }); } });
+    m.on('click', function () { if (r.status === 'published') openRegion(r); else { regionSheet(r); if (r.box) map.flyToBounds(r.box, { duration: 0.8, maxZoom: 8 }); } });
     m.on('contextmenu', function (e) { L.DomEvent.stop(e); regionSheet(r); });
     m.addTo(regionLayer);
   });
@@ -336,7 +340,7 @@
     if (document.querySelector('.modal:not([hidden]):not(.float), .term:not([hidden]), #street:not([hidden])')) return;
     var k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
     var run = { l: function () { railTab('layers'); }, b: function () { railTab('table'); }, g: function () { railTab('legend'); }, t: function () { $('btn-timeline').click(); },
-      e: function () { exportMenu($('btn-export')); }, h: A.home, '0': countryView, d: toggleTheme, ',': A.openSettings, '?': showKeys }[k];
+      e: function () { exportMenu($('btn-export')); }, h: function () { regionHome(); }, '0': countryView, d: toggleTheme, ',': A.openSettings, '?': showKeys }[k];
     if (run) { e.preventDefault(); run(); }
   });
 

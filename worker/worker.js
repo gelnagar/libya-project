@@ -257,7 +257,7 @@ async function ownerReview(env, r) {
     return { approved: (rows.results || []).map((x) => { let c = null; try { c = JSON.parse(x.data); } catch {} return { verdict: x.verdict, note: x.note, at: x.at, cand: c }; }) };
   }
   const status = ['open', 'all'].concat(VERDICTS).includes(r.status) ? r.status : 'open';
-  const kind = ['place', 'event'].includes(r.kind) ? r.kind : '';
+  const kind = ['place', 'event', 'speech'].includes(r.kind) ? r.kind : '';
   const where = [], args = [];
   if (status === 'open') where.push('d.id IS NULL'); else if (status !== 'all') { where.push('d.verdict = ?'); args.push(status); }
   if (kind) { where.push('c.kind = ?'); args.push(kind); }

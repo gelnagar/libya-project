@@ -92,13 +92,22 @@ for (const g of events.values()) {
   out.push({ kind: 'event', name: clip(what, 150), also: [], date: g.date, site: g.site, place: g.site ? NAME[g.site] : g.place, killed: g.killed,
     docs: nd, found: ok, score: nd * 3 + rel * 2 + (ok ? 2 : 0) + (g.killed ? 3 : 0) + (g.site ? 2 : 0), near: already(g), items: g.items.sort((a, b) => b.rel - a.rel).slice(0, 6), key: 'e|' + g.key });
 }
+// speeches given in Tripoli (scripts/build-speeches.mjs). The description is the source's own words, so each source counts as found.
+if (fs.existsSync('archive/review/speeches.json')) for (const s of JSON.parse(fs.readFileSync('archive/review/speeches.json', 'utf8'))) {
+  const whereTxt = s.venue || 'Tripoli, venue not stated';
+  out.push({ kind: 'speech', name: clip((s.speaker || 'Speaker not read') + ': ' + s.kind + ', ' + whereTxt, 150), also: [], date: s.date, dateIs: s.dateIs, site: s.pin ? s.pin.id : null, place: s.pin ? s.pin.name : '',
+    venue: s.venue, occasion: s.occasion, transcript: s.transcript, chars: s.chars, docs: s.sources.length, found: s.sources.length,
+    score: s.sources.length * 3 + (s.venue ? 6 : 0) + (s.pin ? 2 : 0) + (s.transcript ? 2 : 0), near: [],
+    items: s.sources.slice(0, 6).map((x) => ({ doc: x.ref, rec: null, title: x.title, date: x.date, url: x.url, mirror: '', rel: 3, detail: s.description, found: 'exact', hit: s.venue || 'Tripoli',
+      passage: clip(s.description + ' ' + x.opening, 760), start: x.start, chars: x.chars })), key: 's|' + s.id });
+}
 out.forEach((c) => { c.id = crypto.createHash('sha1').update(c.key).digest('hex').slice(0, 12); delete c.key; });
 out.sort((a, b) => b.score - a.score || (a.date < b.date ? -1 : 1));
 
 fs.mkdirSync('archive/review', { recursive: true });
 fs.writeFileSync('archive/review/candidates.json', JSON.stringify(out));
 const n = (k) => out.filter((c) => c.kind === k).length, nf = out.filter((c) => !c.found).length;
-console.log(`documents with extraction: ${read}; candidates: ${out.length} (${n('place')} places, ${n('event')} events); name not found in any stored text: ${nf}; two or more documents: ${out.filter((c) => c.docs > 1).length}`);
+console.log(`documents with extraction: ${read}; candidates: ${out.length} (${n('place')} places, ${n('event')} events, ${n('speech')} speeches); name not found in any stored text: ${nf}; two or more documents: ${out.filter((c) => c.docs > 1).length}`);
 
 const si = process.argv.indexOf('--sql');
 if (si > 0) {

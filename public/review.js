@@ -48,7 +48,7 @@
     var tb = $('rows'); tb.innerHTML = '';
     items.forEach(function (it, i) {
       tb.appendChild(el('tr', { 'data-i': i, tabindex: '0', 'aria-selected': i === cur ? 'true' : 'false', class: it.verdict ? 'v-' + it.verdict : '' }, [
-        el('td', { class: 'k', text: it.kind === 'place' ? 'PLACE' : 'EVENT' }), el('td', { class: 'num', text: it.date || '' }),
+        el('td', { class: 'k', text: it.kind.toUpperCase() }), el('td', { class: 'num', text: it.date || '' }),
         el('td', { text: it.name, title: it.name }), el('td', { class: 'num', text: String(it.docs), title: it.docs + ' document' + (it.docs > 1 ? 's' : '') }),
         el('td', { class: 'f ' + (it.found ? 'ok' : 'bad'), text: it.found ? '●' : '○', title: it.found ? 'Found in the stored text of ' + it.found + ' document' + (it.found > 1 ? 's' : '') : 'Not found in any stored text' })]));
     });
@@ -71,11 +71,16 @@
   }
   function draw(c, dec) {
     curCand = c; var d = $('detail'); d.innerHTML = ''; d.scrollTop = 0;
-    d.appendChild(el('div', { class: 'head' }, [el('span', { class: 'tag', text: c.kind === 'place' ? 'Place not on the map' : 'Dated event' }), dec ? el('span', { class: 'tag v-' + dec.verdict, text: VERDICT[dec.verdict] }) : null]));
+    d.appendChild(el('div', { class: 'head' }, [el('span', { class: 'tag', text: c.kind === 'place' ? 'Place not on the map' : c.kind === 'speech' ? 'Speech in Tripoli' : 'Dated event' }), dec ? el('span', { class: 'tag v-' + dec.verdict, text: VERDICT[dec.verdict] }) : null]));
     d.appendChild(el('h1', { text: c.name }));
     var dl = el('dl');
     function row(k, v) { if (v == null || v === '') return; dl.appendChild(el('dt', { text: k })); dl.appendChild(typeof v === 'string' ? el('dd', { text: v }) : el('dd', {}, [v])); }
-    row(c.kind === 'place' ? 'First mention' : 'Date', c.date);
+    row(c.kind === 'place' ? 'First mention' : c.kind === 'speech' ? (c.dateIs === 'broadcast' ? 'Broadcast date' : 'Date in the catalogue') : 'Date', c.date);
+    if (c.kind === 'speech') {
+      row('Venue, as the source names it', c.venue || 'Not stated. The source says only that it was in Tripoli.');
+      row('Occasion', c.occasion); row('On the map as', c.place);
+      row('Transcript', c.transcript ? 'Stored: about ' + Math.round(c.chars / 1000) + ',000 characters of the translation' : 'None stored: only the description');
+    }
     if (c.kind === 'event') { row('Place', c.place); row('Killed, as stated', c.killed); }
     row('Also written', (c.also || []).join('; '));
     row('Documents', c.docs + (c.docs > 1 ? ' separate documents' : ' document only'));
@@ -87,7 +92,7 @@
       var f = FOUND[it.found] || FOUND.none;
       d.appendChild(el('section', { class: 'item' }, [
         el('div', { class: 'ih' }, [el('span', { class: 'num', text: String(n + 1) }), el('b', { text: it.title }), el('span', { class: 'num', text: it.date || 'undated' })]),
-        el('p', { class: 'said' }, [el('span', { class: 'lab', text: 'Summary by the reading model ' }), it.detail]),
+        el('p', { class: 'said' }, [el('span', { class: 'lab', text: c.kind === 'speech' ? "The translators' description " : 'Summary by the reading model ' }), it.detail]),
         el('div', { class: 'chk ' + f[1], text: f[0] }),
         it.passage ? mark(it.passage, it.hit) : null,
         el('div', { class: 'links' }, [it.url ? el('a', { href: it.url, target: '_blank', rel: 'noopener', text: 'Original' }) : null, it.mirror ? el('a', { href: it.mirror, target: '_blank', rel: 'noopener', text: 'Archive copy' }) : null,

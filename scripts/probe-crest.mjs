@@ -1,6 +1,6 @@
 // Politeness probe: read robots.txt first, then fetch ONE search page and record what comes back.
 import fs from 'node:fs';
-const UA = 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)';
+const UA = 'TripoliOpenSource-research/1.0 (historical research; github.com/gelnagar/libya-project)';
 const out = {};
 async function get(u) {
   try {

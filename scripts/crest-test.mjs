@@ -1,6 +1,6 @@
 // Check whether real document/print pages are served (vs. the home page) to an honest, polite client.
 import fs from 'node:fs';
-const UA = 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)';
+const UA = 'TripoliOpenSource-research/1.0 (historical research; github.com/gelnagar/libya-project)';
 const H = { 'user-agent': UA, accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'accept-language': 'en-US,en;q=0.9' };
 const urls = [
   'https://www.cia.gov/readingroom/document/cia-rdp79t00975a019600020002-1',

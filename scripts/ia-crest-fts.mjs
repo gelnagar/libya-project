@@ -1,7 +1,7 @@
 // Aggressive CREST discovery: full-text (OCR) search of the archive.org ciareadingroom mirror, plus wider title/description queries.
 // Finds documents whose TITLE does not mention Libya but whose text does. Writes archive/crest/ia-extra.json (consumed by ia-crest-fetch.mjs).
 import fs from 'node:fs';
-const UA = 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)';
+const UA = 'TripoliOpenSource-research/1.0 (historical research; github.com/gelnagar/libya-project)';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function get(u, as = 'text') { for (let k = 0; k < 4; k++) { try { const r = await fetch(u, { headers: { 'user-agent': UA } }); if (r.ok) return as === 'json' ? await r.json() : await r.text(); if (r.status === 404) return null; await sleep(3000 * (k + 1)); } catch { await sleep(3000 * (k + 1)); } } return null; }
 const ID = /cia-readingroom-document-[A-Za-z0-9_.\-]+/g;

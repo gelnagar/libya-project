@@ -1,7 +1,7 @@
 // Fetch OCR text for Libya-relevant CREST + JPRS items from archive.org's mirror.
 // Resumable (skips ids already in docs.jsonl.gz), 3 concurrent, polite, dedupes by text hash.
 import fs from 'node:fs'; import zlib from 'node:zlib'; import crypto from 'node:crypto';
-const UA = 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)';
+const UA = 'TripoliOpenSource-research/1.0 (historical research; github.com/gelnagar/libya-project)';
 const DIR = 'archive/crest', OUT = `${DIR}/docs.jsonl.gz`, T0 = Date.now(), BUDGET = 5.3 * 3600e3;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function get(u, as = 'text') {

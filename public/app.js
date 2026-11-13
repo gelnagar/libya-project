@@ -87,15 +87,14 @@
     airstrike: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .8l1.1 3.2.5 4.3 7.6 6.2 1.6 3.3-1 .5-6.6-2.2.3 4.2 2.4 2.7v.9L13 22.6h-2l-3.8 1.3v-.9l2.4-2.7.3-4.2-6.6 2.2-1-.5 1.6-3.3 7.6-6.2.5-4.3z"/></svg>',
     battle: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M.8 9.4 5.6 9.1v3.6L1.3 13.6z"/><path d="M5.4 8.9h6.3v3.5H5.4z"/><path d="M11.4 9.5h4.9v2.8h-4.9z"/><path d="M13.2 8.3h5.9v1.1h-5.9z"/><path d="M16 10.2h6.8v1.1H16z"/><path d="M20.2 8.7h1.1v2.2h-1.1z"/><path d="M22.7 9.8h.9v1.4h-.9z"/><path d="M6.6 12.4h2.4l-.8 4.9-2.1-.4z"/><path d="M10.1 12.3h2.8c.4 2.6 1.6 5.2 3.1 7.2l-2.3 1.2c-2-2.3-3.3-5-3.6-8.4z"/></svg>' };
   // Lighter tone of a layer colour for thin lines on the dark theme (markers keep the full colour and a white outline).
-  function lt(c) { if (!document.documentElement.classList.contains('dark')) return c; var n = parseInt(c.slice(1), 16), r = n >> 16, g = (n >> 8) & 255, b = n & 255, f = function (v) { return Math.round(v + (255 - v) * 0.5); }; return 'rgb(' + f(r) + ',' + f(g) + ',' + f(b) + ')'; }
+  function lt(c) { return c; }
+  /* Flat marker shapes. Each layer has a shape and a colour, so no category is told apart by colour alone. */
+  var SHAPE = { circle: '<circle cx="7" cy="7" r="5.4"/>', square: '<rect x="1.6" y="1.6" width="10.8" height="10.8"/>', diamond: '<path d="M7 .7 13.3 7 7 13.3.7 7z"/>', triangle: '<path d="M7 1.1 13.4 12.6H.6z"/>', tridown: '<path d="M.6 1.4h12.8L7 12.9z"/>' };
+  function shapeSvg(shape, color, cls) { return '<svg class="shp' + (cls ? ' ' + cls : '') + '" viewBox="0 0 14 14" aria-hidden="true" style="--c:' + color + '">' + (SHAPE[shape] || SHAPE.square) + '</svg>'; }
   function codeHtml(k) { return LAYER_ICON[k] || LAYERS[k].code; }
   var SITE_ICON = { university: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M1 9l11-7 11 7v3H1zm3 5h4v6H4zm6 0h4v6h-4zm6 0h4v6h-4zM1 21h22v2H1z"/></svg>' };
   function siteCode(s) { return SITE_ICON[s.icon] || codeHtml(s.layer); }
-  function glyph(layerKey, size) {
-    var lay = LAYERS[layerKey];
-    var g = h('span', { class: 'glyph ' + lay.shape, style: 'background:' + lay.color + (size ? ';width:' + size + 'px;height:' + size + 'px' : '') }, [h('span', { html: codeHtml(layerKey) })]);
-    return g;
-  }
+  function glyph(layerKey) { var lay = LAYERS[layerKey]; return h('span', { class: 'glyph g-shp', html: shapeSvg(lay.shape, lay.color) }); }
   function km(m) { return m < 1000 ? Math.round(m / 10) * 10 + ' m' : (m / 1000).toFixed(1) + ' km'; }
 
   /* ---------- map ---------- */
@@ -179,16 +178,16 @@
 
   function siteIcon(s) {
     var lay = LAYERS[s.layer];
-    return L.divIcon({ className: '', iconSize: [28, 36], iconAnchor: [14 - s.dx, 36 - s.dy],
-      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '"><b>' + siteCode(s) + '</b></div>' });
+    return L.divIcon({ className: '', iconSize: [24, 24], iconAnchor: [12 - s.dx, 12 - s.dy],
+      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '">' + shapeSvg(lay.shape, lay.color) + '</div>' });
   }
   SITES.forEach(function (s) {
     var lay = LAYERS[s.layer];
     var icon = siteIcon(s);
     markers[s.id] = L.marker([s.lat, s.lon], { icon: icon, title: s.name, keyboard: true, riseOnHover: true })
-      .bindTooltip(s.name, { permanent: true, direction: 'right', offset: [16 + s.dx, -22 + s.dy], className: 'site-label', interactive: false })
+      .bindTooltip(s.name, { permanent: true, direction: 'right', offset: [9 + s.dx, s.dy], className: 'site-label', interactive: false })
       .on('click', function () { openSite(s); })
-      .on('mouseover', function () { hoverCard([s.lat, s.lon], lay.color, siteCode(s), s.name, [['When', s.period], ['Type', lay.label], ['Evidence', LEVELS[s.level]], ['Accuracy', '± ' + s.r + ' km']], [-s.dx, -36 + s.dy]); })
+      .on('mouseover', function () { hoverCard([s.lat, s.lon], lay.color, siteCode(s), s.name, [['When', s.period], ['Type', lay.label], ['Evidence', LEVELS[s.level]], ['Accuracy', '± ' + s.r + ' km']], [s.dx, -8 + s.dy]); })
       .on('mouseout', hideCard);
     rings[s.id] = L.circle([s.lat, s.lon], { radius: s.r * 1000, color: lt(lay.color), weight: 1.2, dashArray: '5 5', fillColor: lt(lay.color), fillOpacity: 0.03, interactive: false }); rings[s.id]._base = lay.color;
   });
@@ -204,7 +203,7 @@
     var pts = vis.map(function (s) { return { s: s, p: map.project([s.lat, s.lon], z), g: -1 }; }), groups = [];
     if (z >= 13) pts.forEach(function (a, i) {
       if (a.g >= 0) return; var g = groups.length; groups.push([a]); a.g = g;
-      pts.forEach(function (b) { if (b.g < 0 && Math.hypot(b.p.x - a.p.x, b.p.y - a.p.y) < 34) { b.g = g; groups[g].push(b); } });
+      pts.forEach(function (b) { if (b.g < 0 && Math.hypot(b.p.x - a.p.x, b.p.y - a.p.y) < 15) { b.g = g; groups[g].push(b); } });
     });
     var off = {};
     groups.forEach(function (g) {
@@ -216,8 +215,8 @@
       if (hub) { off[hub.s.id] = { dx: Math.round(cx - hub.p.x), dy: Math.round(cy - hub.p.y), p: hub.p, hub: true }; g = g.filter(function (a) { return a !== hub; }); }
       var n = g.length, rings = n <= 8 ? [n] : [6, n - 6], k = 0;
       rings.forEach(function (m, ri) {
-        var R = ri ? 82 + Math.max(0, m - 12) * 3 : (hub ? Math.max(50, 31 / Math.sin(Math.PI / Math.max(m, 3))) : Math.max(30, 25 / Math.sin(Math.PI / Math.max(m, 3))));
-        if (ri === 0 && n > 8) R = 46;
+        var R = ri ? 38 + Math.max(0, m - 12) * 2 : (hub ? Math.max(22, 14 / Math.sin(Math.PI / Math.max(m, 3))) : Math.max(14, 11 / Math.sin(Math.PI / Math.max(m, 3))));
+        if (ri === 0 && n > 8) R = 21;
         for (var j = 0; j < m; j++, k++) {
           var ang = -Math.PI / 2 + (j + (ri ? .5 : 0)) * 2 * Math.PI / m, a = g[k];
           off[a.s.id] = { dx: Math.round(cx + Math.cos(ang) * R - a.p.x), dy: Math.round(cy + Math.sin(ang) * R - a.p.y), p: a.p };
@@ -231,15 +230,15 @@
     changed.forEach(function (s) {
       var m = markers[s.id], on = siteLayer.hasLayer(m);
       m.setIcon(siteIcon(s));
-      var left = s.dx < -8;   // icons fanned to the left keep their name on the left, so labels do not cover the neighbours
-      m.unbindTooltip().bindTooltip(s.name, { permanent: true, direction: left ? 'left' : 'right', offset: [(left ? -16 : 16) + s.dx, -22 + s.dy], className: 'site-label', interactive: false });
+      var left = s.dx < -4;   // icons fanned to the left keep their name on the left, so labels do not cover the neighbours
+      m.unbindTooltip().bindTooltip(s.name, { permanent: true, direction: left ? 'left' : 'right', offset: [(left ? -9 : 9) + s.dx, s.dy], className: 'site-label', interactive: false });
     });
     vis.forEach(function (s) {
       var o = off[s.id]; if (!o || (o.hub && Math.abs(o.dx) < 4 && Math.abs(o.dy) < 4)) return;
-      var lay = LAYERS[s.layer], from = map.unproject(o.p, z), to = map.unproject(L.point(o.p.x + o.dx, o.p.y + o.dy - 18), z);
+      var lay = LAYERS[s.layer], from = map.unproject(o.p, z), to = map.unproject(L.point(o.p.x + o.dx, o.p.y + o.dy), z);
       var close = z >= 15;
-      L.polyline([from, to], { color: '#111418', weight: close ? 2 : 1, opacity: close ? .8 : .3, interactive: false }).addTo(leaderLayer);
-      if (close) L.circleMarker(from, { radius: 3, color: '#111418', weight: 1.5, fillColor: lay.color, fillOpacity: 1, interactive: false }).addTo(leaderLayer);
+      L.polyline([from, to], { color: '#738091', weight: 1, opacity: close ? .9 : .5, interactive: false }).addTo(leaderLayer);
+      if (close) L.circleMarker(from, { radius: 2, color: '#738091', weight: 1, fillColor: lay.color, fillOpacity: 1, interactive: false }).addTo(leaderLayer);
     });
     if (selected && markers[selected]) markSelected(selected);
   }
@@ -296,6 +295,7 @@
     save();
     if (typeof syncHoods === 'function' && hoodLayer) { clearHoodHide(); syncHoods(); }
     if (typeof syncFilters === 'function') syncFilters();
+    if (typeof API !== 'undefined' && API && API.onRefresh) API.onRefresh();
   }
   /* keep map labels from overlapping: place labels in priority order and hide any that would collide */
   var declutterTimer;
@@ -499,71 +499,152 @@
   var TL_ALL = [['Prisons & security', ['detention', 'security']], ['Military', ['military', 'airstrike', 'battle']], ['Killings', ['massacre']], ['Power', ['power']], ['Landmarks', ['landmark']]];
   var TL_ONE = [['Events', ['massacre', 'airstrike', 'battle', 'detention', 'security', 'military', 'power', 'landmark']]];
   var tlAll = store.get('tlAll', false), TL_LANES = tlAll ? TL_ALL : TL_ONE;
+  var tlPop = null;
+  function tlClosePop() { if (tlPop) { tlPop.remove(); tlPop = null; } }
+  function tlCount(y) { var n = 0; SITES.forEach(function (s) { if (visible(s) && activeAt(s, y)) n++; }); return n; }
+  function tlStep(d) { stopPlay(); setYear(timeYear == null ? (d > 0 ? 1969 : 2011) : Math.max(1905, Math.min(2026, timeYear + d))); }
+  function tlPopup(anchor, list) {
+    tlClosePop();
+    var tl = $('timeline'), r = anchor.getBoundingClientRect(), t = tl.getBoundingClientRect();
+    tlPop = h('div', { class: 'tl-pop', role: 'menu', style: 'left:' + Math.max(4, Math.min(t.width - 304, r.left - t.left - 8)).toFixed(0) + 'px;bottom:' + (t.bottom - r.top + 4).toFixed(0) + 'px' },
+      list.map(function (s) { var lay = LAYERS[s.layer]; return h('button', { type: 'button', role: 'menuitem', onclick: function () { tlClosePop(); focusSite(s); } },
+        [h('span', { class: 'g-shp', html: shapeSvg(lay.shape, lay.color) }), h('span', { class: 'yr', text: String(s.y0) }), h('span', { class: 'nm', text: s.name })]); }));
+    tl.appendChild(tlPop);
+  }
+  document.addEventListener('click', function (e) { if (tlPop && !tlPop.contains(e.target) && !(e.target.closest && e.target.closest('.tl-n'))) tlClosePop(); });
+  /* The strip, top to bottom: header (readout and controls), new places per year, periods, lanes, year axis.
+     Click a year to step to it; drag for a range; places that fall on the same few pixels fold into one numbered box. */
   function drawTimeline() {
     var tl = $('timeline');
-    tl.querySelectorAll('.tl-lane,.tl-lab,.tl-axis,.tl-band,.tl-tick,.tl-dot,.tl-span,.tl-bar,.tl-hint,.tl-hit,.tl-cursor,.tl-ctrl,.tl-era,.tl-grid').forEach(function (e) { e.remove(); });
+    tl.innerHTML = ''; tlPop = null;
     TL_LANES = tlAll ? TL_ALL : TL_ONE;
-    var L0 = tlAll ? 118 : 70, R0 = 14, W = Math.max(200, tl.clientWidth - L0 - R0), TOP = 42, LH = tlAll ? 20 : 26;
-    var tlH = TOP + TL_LANES.length * LH + 30; tl.style.height = tlH + 'px'; document.documentElement.style.setProperty('--tl-h', tlH + 'px');
+    var L0 = 112, R0 = 12, W = Math.max(200, tl.clientWidth - L0 - R0);
+    var HEAD = 24, HIST = 20, ERA = 16, LH = tlAll ? 18 : 22, AX = 18;
+    var yHist = HEAD + 3, yEra = yHist + HIST + 3, yLanes = yEra + ERA + 3, lanesH = TL_LANES.length * LH, yAxis = yLanes + lanesH + 2, tlH = yAxis + AX;
+    tl.style.height = tlH + 'px'; document.documentElement.style.setProperty('--tl-h', tlH + 'px');
     var X = function (y) { return L0 + tx(y) * W; };
-    tl.querySelectorAll('.tl-era,.tl-grid').forEach(function (e) { e.remove(); });
+    var yearAt = function (cx) { var r = tl.getBoundingClientRect(), f = Math.max(0, Math.min(1, (cx - r.left - L0) / W));
+      return Math.round(f < 0.17 ? 1905 + f / 0.17 * 64 : f <= 0.92 ? 1969 + (f - 0.17) / 0.75 * 43 : 2012 + (f - 0.92) / 0.08 * 14); };
+    var shown = SITES.filter(function (s) { return s.y0 != null && visible(s); });
+    var inSel = function (s) { var r = span(s); return timeRange ? (r[1] >= timeRange[0] && r[0] <= timeRange[1]) : timeYear != null ? r[0] <= timeYear : true; };
+    var px = function (v) { return v.toFixed(1) + 'px'; };
+
+    /* header */
+    var readText = (timeRange ? timeRange[0] + '–' + timeRange[1] : timeYear != null ? String(timeYear) : 'All years') + '  ·  ' +
+      (timeYear != null ? tlCount(timeYear) + ' active' : shown.filter(inSel).length + ' of ' + shown.length + ' places');
+    var readEl = h('span', { class: 'tl-read', text: readText });
+    var btn = function (label, title, fn, pressed, off) { return h('button', { type: 'button', title: title, 'aria-label': title, 'aria-pressed': pressed == null ? null : String(!!pressed), disabled: off ? '' : null, text: label, onclick: fn }); };
+    tl.appendChild(h('div', { class: 'tl-head' }, [h('span', { class: 'tl-title', text: 'Timeline' }), readEl,
+      h('span', { class: 'tl-hint', text: 'Click a year, drag for a range, arrow keys to step' }),
+      h('div', { class: 'tl-ctrl' }, [
+        btn('‹', 'Previous year (Left arrow)', function () { tlStep(-1); }),
+        btn(playTimer ? 'Pause' : 'Play', 'Play 1969 to 2011 (Space)', function () { playTimer ? stopPlay() : startPlay(); }, !!playTimer),
+        btn('›', 'Next year (Right arrow)', function () { tlStep(1); }),
+        btn('All years', 'Clear the time filter (Esc)', function () { stopPlay(); timeRange = null; setYear(null); }, null, timeYear == null && !timeRange),
+        btn('Lanes', 'One lane per subject, with how long each place was in use', function () { tlAll = !tlAll; store.set('tlAll', tlAll); drawTimeline(); }, tlAll)
+      ])]));
+
+    /* new places per year */
+    var counts = {}, maxC = 1;
+    shown.forEach(function (s) { counts[s.y0] = (counts[s.y0] || 0) + 1; maxC = Math.max(maxC, counts[s.y0]); });
+    tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (yHist + 3) + 'px', text: 'New per year' }));
+    tl.appendChild(h('div', { class: 'tl-max', style: 'top:' + (yHist - 1) + 'px;left:' + (L0 - 26) + 'px', text: String(maxC), title: 'Most in one year' }));
+    Object.keys(counts).forEach(function (k) {
+      var y = +k, x = X(y), w = Math.max(2, X(y + 1) - x - 1), hh = Math.max(2, Math.round(counts[k] / maxC * HIST));
+      var dim = timeRange ? (y < timeRange[0] || y > timeRange[1]) : timeYear != null && y > timeYear;
+      tl.appendChild(h('div', { class: 'tl-bar' + (dim ? ' dim' : ''), style: 'left:' + px(x) + ';width:' + px(w) + ';top:' + (yHist + HIST - hh) + 'px;height:' + hh + 'px' }));
+    });
+
+    /* periods */
+    tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (yEra + 1) + 'px', text: 'Period' }));
     ERAS.forEach(function (e, i) {
       var x0 = X(e[0]), w = X(e[1]) - x0, sel = timeRange && timeRange[0] === e[0] && timeRange[1] === e[1];
-      var label = w > e[2].length * 5.6 + 10 ? e[2] : w > e[3].length * 5.4 + 4 ? e[3] : w > 22 ? e[3].slice(0, 3) + '.' : '';
-      tl.appendChild(h('button', { class: 'tl-era' + (i % 2 ? ' alt' : '') + (sel ? ' sel' : ''), style: 'left:' + x0.toFixed(1) + 'px;width:' + Math.max(2, w - 1).toFixed(1) + 'px', title: e[2] + ', ' + e[0] + '–' + e[1] + '. Click to show only this period.', 'aria-pressed': sel ? 'true' : 'false',
-        text: label, onclick: function () { stopPlay(); timeYear = null; timeRange = sel ? null : [e[0], e[1]]; refresh(); } }));
-      if (i) tl.appendChild(h('div', { class: 'tl-grid', style: 'left:' + x0.toFixed(1) + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 8) + 'px' }));
+      var label = w > e[2].length * 5.8 + 10 ? e[2] : w > e[3].length * 5.8 + 4 ? e[3] : w > 24 ? e[3].slice(0, 3) + '.' : '';
+      tl.appendChild(h('button', { type: 'button', class: 'tl-era' + (i % 2 ? ' alt' : '') + (sel ? ' sel' : ''), style: 'left:' + px(x0) + ';width:' + px(Math.max(2, w - 1)) + ';top:' + yEra + 'px;height:' + ERA + 'px',
+        title: e[2] + ', ' + e[0] + '–' + e[1] + '. Click to show only this period.', 'aria-pressed': sel ? 'true' : 'false', text: label,
+        onclick: function () { stopPlay(); timeYear = null; timeRange = sel ? null : [e[0], e[1]]; refresh(); } }));
+      if (i) tl.appendChild(h('div', { class: 'tl-grid', style: 'left:' + px(x0) + ';top:' + yLanes + 'px;height:' + lanesH + 'px' }));
     });
-    tl.appendChild(h('div', { class: 'tl-band', style: 'left:' + X(1969).toFixed(1) + 'px;width:' + (X(2011.7) - X(1969)).toFixed(1) + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 6) + 'px', title: 'Gaddafi era, 1969–2011' }));
+
+    /* lanes */
     TL_LANES.forEach(function (lane, li) {
-      var y = TOP + li * LH;
-      tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (y - 1) + 'px', text: lane[0] }));
-      tl.appendChild(h('div', { class: 'tl-lane', style: 'top:' + (y + 6) + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
-      var used = {}, laneDots = [];
-      SITES.filter(function (s) { return lane[1].indexOf(s.layer) >= 0 && s.y0 != null && visible(s); }).sort(function (a, b) { return a.y0 - b.y0; }).forEach(function (s) {
-        var lay = LAYERS[s.layer], x0 = X(s.y0);
-        if (tlAll && s.y1 != null && s.y1 > s.y0) {
-          tl.appendChild(h('div', { class: 'tl-span', title: s.name + ', ' + s.y0 + '–' + s.y1, style: 'left:' + x0.toFixed(1) + 'px;width:' + Math.max(2, X(s.y1) - x0).toFixed(1) + 'px;top:' + (y + 4) + 'px;background:' + lt(lay.color) + (timeRange && !(s.y1 >= timeRange[0] && s.y0 <= timeRange[1]) ? ';opacity:.12' : '') }));
-        }
-        var slot = Math.round(x0 / 9), n = 0; while (used[slot + n]) n++; used[slot + n] = 1;
-        tl.appendChild(h('button', { class: 'tl-dot ' + lay.shape + (selected === s.id ? ' sel' : ''), title: s.y0 + (s.y1 && s.y1 > s.y0 ? '–' + s.y1 : '') + ' · ' + s.name, 'aria-label': s.y0 + ', ' + s.name,
-          'data-x0': x0, style: 'left:' + (x0 + n * 13).toFixed(1) + 'px;top:' + (y - 2) + 'px;background:' + lay.color + (timeRange && !(span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1]) ? ';opacity:.15' : ''), onclick: function () { focusSite(s); }, html: siteCode(s) }));
-        laneDots.push({ el: tl.lastChild, x: x0 + n * 13, x0: x0 });
+      var mid = yLanes + li * LH + LH / 2;
+      tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (mid - 7) + 'px', text: lane[0] }));
+      tl.appendChild(h('div', { class: 'tl-lane', style: 'top:' + mid + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
+      var items = shown.filter(function (s) { return lane[1].indexOf(s.layer) >= 0; }).sort(function (a, b) { return a.y0 - b.y0; });
+      if (tlAll) items.forEach(function (s) {
+        if (s.y1 == null || s.y1 <= s.y0) return;
+        var x0 = X(s.y0);
+        tl.appendChild(h('div', { class: 'tl-span' + (inSel(s) ? '' : ' dim'), title: s.name + ', ' + s.y0 + '–' + s.y1, style: 'left:' + px(x0) + ';width:' + px(Math.max(2, X(s.y1) - x0)) + ';top:' + (mid - 1) + 'px;--c:' + LAYERS[s.layer].color }));
       });
-      // keep a crowded run (2011 and after) inside the timeline: squeeze it rather than let it spill past the edge
-      var xmax = L0 + W - 6, over = laneDots.filter(function (d) { return d.x > xmax; });
-      if (over.length) {
-        var start = Math.min.apply(null, laneDots.filter(function (d) { return d.x0 >= X(2011) - 1; }).map(function (d) { return d.x0; }).concat([X(2011)]));
-        var far = Math.max.apply(null, laneDots.map(function (d) { return d.x; }));
-        laneDots.forEach(function (d) { if (d.x >= start) d.el.style.left = (start + (d.x - start) * (xmax - start) / Math.max(1, far - start)).toFixed(1) + 'px'; });
-      }
+      var buckets = [];
+      items.forEach(function (s) { var x = Math.min(X(s.y0), L0 + W - 6), b = buckets[buckets.length - 1]; if (b && x - b.x < 13) b.list.push(s); else buckets.push({ x: x, list: [s] }); });
+      buckets.forEach(function (b) {
+        var one = b.list.length === 1, s = b.list[0], lay = LAYERS[s.layer], ids = b.list.map(function (q) { return q.id; });
+        var ya = s.y0, yb = b.list[b.list.length - 1].y0;
+        var label = one ? yrs(s) + ' · ' + s.name : b.list.length + ' places, ' + ya + (yb !== ya ? '–' + yb : '') + '. Click for the list.';
+        var el = h('button', { type: 'button', class: 'tl-dot' + (one ? '' : ' tl-n') + (selected && ids.indexOf(selected) >= 0 ? ' sel' : '') + (b.list.some(inSel) ? '' : ' dim'),
+          'data-ids': ids.join(' '), title: label, 'aria-label': label, style: 'left:' + px(b.x) + ';top:' + (mid - 7) + 'px',
+          html: one ? shapeSvg(lay.shape, lay.color) : '<b>' + b.list.length + '</b>' });
+        el.addEventListener('click', function (e) { e.stopPropagation(); if (one) { tlClosePop(); focusSite(s); } else tlPopup(el, b.list); });
+        tl.appendChild(el);
+      });
     });
-    var axisY = TOP + TL_LANES.length * LH + 4;
-    tl.appendChild(h('div', { class: 'tl-axis', style: 'top:' + axisY + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
+
+    /* year axis; the scale is wider for 1969–2011, so the two joins are marked */
+    tl.appendChild(h('div', { class: 'tl-axis', style: 'top:' + yAxis + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
     var last = -99;
     [1911, 1945, 1951, 1969, 1975, 1980, 1985, 1990, 1996, 2000, 2005, 2011, 2020].forEach(function (yr) {
-      var x = X(yr); if (x - last < 34) return; last = x;
-      tl.appendChild(h('button', { class: 'tl-tick', style: 'left:' + x.toFixed(1) + 'px;top:' + (axisY + 3) + 'px', text: String(yr), title: yr >= 1969 && yr <= 2011 ? 'Show ' + yr + ' in Tripoli' : 'Look up ' + yr + ' in the Encyclopedia', onclick: function () { if (yr >= 1969 && yr <= 2011) showYear(yr); else openTerm(String(yr)); } }));
+      var x = X(yr); if (x - last < 36) return; last = x;
+      tl.appendChild(h('button', { type: 'button', class: 'tl-tick', style: 'left:' + px(x) + ';top:' + (yAxis + 1) + 'px', text: String(yr), title: yr >= 1969 && yr <= 2011 ? 'Show ' + yr + ' in Tripoli' : 'Look up ' + yr + ' in the Encyclopedia', onclick: function () { if (yr >= 1969 && yr <= 2011) showYear(yr); else openTerm(String(yr)); } }));
     });
-    tl.appendChild(h('div', { class: 'tl-hint', text: timeRange ? 'Showing ' + timeRange[0] + '–' + timeRange[1] + ' only. Click the period again or “All years” to show everything.' : timeYear == null ? 'Click a period to show only it · drag along the lanes to step through time · tap a dot to open a place · tap a year to look it up' : 'Showing ' + timeYear + ': bright = active that year, faded = earlier, hidden = not yet' }));
-    var hit = h('div', { class: 'tl-hit', style: 'left:' + L0 + 'px;width:' + W + 'px;top:' + (TOP - 4) + 'px;height:' + (TL_LANES.length * LH + 6) + 'px', title: 'Click or drag to pick a year' });
-    var yearAt = function (cx) { var r = tl.getBoundingClientRect(), f = (cx - r.left - L0) / W; f = Math.max(0, Math.min(1, f));
-      var y = f < 0.17 ? 1905 + f / 0.17 * 64 : f <= 0.92 ? 1969 + (f - 0.17) / 0.75 * 43 : 2012 + (f - 0.92) / 0.08 * 14; return Math.round(y); };
+    [1969, 2012].forEach(function (yr) { tl.appendChild(h('div', { class: 'tl-break', style: 'left:' + px(X(yr)) + ';top:' + (yAxis - 4) + 'px', title: 'The scale changes here: 1969–2011 is drawn wider than the years before and after' })); });
+
+    /* pointer: hover readout, click for a year, drag for a range, Shift+click to extend */
+    var bandTop = 'top:' + yHist + 'px;height:' + (yAxis - yHist) + 'px';
+    var hit = h('div', { class: 'tl-hit', style: 'left:' + L0 + 'px;width:' + W + 'px;' + bandTop });
+    var hov = h('div', { class: 'tl-hover', hidden: '', style: bandTop }, [h('b')]);
+    var drag = false;
+    hit.addEventListener('pointermove', function (e) { if (drag) return; var y = yearAt(e.clientX); hov.hidden = false; hov.style.left = px(X(y)); hov.firstChild.textContent = String(y); readEl.textContent = y + '  ·  ' + tlCount(y) + ' active'; });
+    hit.addEventListener('pointerleave', function () { if (drag) return; hov.hidden = true; readEl.textContent = readText; });
     hit.addEventListener('pointerdown', function (e) {
-      e.preventDefault(); stopPlay(); setYear(yearAt(e.clientX));
-      var mv = function (ev) { var y = yearAt(ev.clientX); if (y !== timeYear) setYear(y); };
-      var up = function () { document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', up); };
+      if (e.button) return;
+      e.preventDefault(); stopPlay(); tlClosePop(); try { tl.focus({ preventScroll: true }); } catch (err) {}
+      var x0 = e.clientX, ya = yearAt(x0), moved = false, band = null, r = null;
+      if (e.shiftKey && timeYear != null && ya !== timeYear) { timeRange = [Math.min(timeYear, ya), Math.max(timeYear, ya)]; timeYear = null; refresh(); return; }
+      drag = true; hov.hidden = true;
+      var mv = function (ev) {
+        if (!moved && Math.abs(ev.clientX - x0) < 5) return; moved = true;
+        var yb = yearAt(ev.clientX); r = [Math.min(ya, yb), Math.max(ya, yb)];
+        if (!band) { band = h('div', { class: 'tl-brush', style: bandTop }); tl.appendChild(band); }
+        band.style.left = px(X(r[0])); band.style.width = px(Math.max(2, X(r[1]) - X(r[0]))); readEl.textContent = r[0] + '–' + r[1];
+      };
+      var up = function () { document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', up); drag = false;
+        if (moved && r && r[1] > r[0]) { timeYear = null; timeRange = r; refresh(); } else setYear(ya); };
       document.addEventListener('pointermove', mv); document.addEventListener('pointerup', up);
     });
-    tl.insertBefore(hit, tl.firstChild);
-    if (timeYear != null) tl.appendChild(h('div', { class: 'tl-cursor', style: 'left:' + (X(timeYear) - 1).toFixed(1) + 'px;top:' + (TOP + 2) + 'px;height:' + (TL_LANES.length * LH) + 'px' }, [h('b', { text: String(timeYear) })]));
-    tl.appendChild(h('div', { class: 'tl-ctrl' }, [
-      h('button', { 'aria-pressed': playTimer ? 'true' : 'false', text: playTimer ? 'Pause' : 'Play 1969–2011', onclick: function () { playTimer ? stopPlay() : startPlay(); } }),
-      timeYear != null || timeRange ? h('button', { text: 'All years', onclick: function () { stopPlay(); timeRange = null; setYear(null); } }) : null,
-      h('button', { 'aria-pressed': tlAll ? 'true' : 'false', text: tlAll ? 'One lane' : 'Show all lanes', onclick: function () { tlAll = !tlAll; store.set('tlAll', tlAll); drawTimeline(); } })
-    ]));
-    if (timeYear != null) tl.querySelectorAll('.tl-dot').forEach(function (d) { var y = +d.getAttribute('aria-label').slice(0, 4); d.style.opacity = y <= timeYear ? '' : '.15'; });
+    tl.insertBefore(hit, tl.firstChild); tl.appendChild(hov);
+    if (timeRange) {
+      var br = h('div', { class: 'tl-brush', style: bandTop + ';left:' + px(X(timeRange[0])) + ';width:' + px(Math.max(2, X(timeRange[1]) - X(timeRange[0]))) }, [h('i', { class: 'tl-hd l', title: 'Drag to change the first year' }), h('i', { class: 'tl-hd r', title: 'Drag to change the last year' })]);
+      [0, 1].forEach(function (side) {
+        br.children[side].addEventListener('pointerdown', function (e) {
+          e.preventDefault(); e.stopPropagation(); var r = timeRange.slice();
+          var mv = function (ev) { r[side] = yearAt(ev.clientX); var a = Math.min(r[0], r[1]), b = Math.max(r[0], r[1]); br.style.left = px(X(a)); br.style.width = px(Math.max(2, X(b) - X(a))); readEl.textContent = a + '–' + b; };
+          var up = function () { document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', up); var a = Math.min(r[0], r[1]), b = Math.max(r[0], r[1]); if (b > a) timeRange = [a, b]; refresh(); };
+          document.addEventListener('pointermove', mv); document.addEventListener('pointerup', up);
+        });
+      });
+      tl.appendChild(br);
+    }
+    if (timeYear != null) tl.appendChild(h('div', { class: 'tl-cursor', style: bandTop + ';left:' + px(X(timeYear)) }, [h('b', { text: String(timeYear) })]));
   }
+  $('timeline').tabIndex = 0;
+  $('timeline').addEventListener('keydown', function (e) {
+    if (e.target !== this) return;
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); tlStep(e.key === 'ArrowLeft' ? -1 : 1); this.focus(); }
+    else if (e.key === ' ') { e.preventDefault(); playTimer ? stopPlay() : startPlay(); }
+    else if (e.key === 'Escape' && (timeYear != null || timeRange)) { e.stopPropagation(); stopPlay(); timeRange = null; setYear(null); }
+  });
   function setYear(y) { timeYear = y; if (y != null) timeRange = null; refresh(); }
   function startPlay() { if (timeYear == null || timeYear >= 2011) timeYear = 1968; playTimer = setInterval(function () { if (timeYear >= 2011) { stopPlay(); return; } setYear(timeYear + 1); }, 700); setYear(timeYear + 1); }
   function stopPlay() { if (playTimer) { clearInterval(playTimer); playTimer = null; drawTimeline(); } }
@@ -571,7 +652,9 @@
 
   /* ---------- HUD ---------- */
   function hud(ll) {
-    $('hud').innerHTML = 'LAT <b>' + ll.lat.toFixed(5) + '°N</b> · LON <b>' + ll.lng.toFixed(5) + '°E</b> · ZOOM <b>' + map.getZoom() + '</b>';
+    if (!$('sb-pos')) return;
+    $('sb-pos').textContent = ll.lat.toFixed(5) + '°N  ' + ll.lng.toFixed(5) + '°E';
+    $('sb-zoom').textContent = 'Z' + map.getZoom();
   }
   map.on('mousemove', function (e) { hud(e.latlng); });
   map.on('moveend', function () { hud(map.getCenter()); });
@@ -604,7 +687,7 @@
   };
   function osmIconHtml(k) { return '<div class="osm-ic" style="--c:' + OSM[k].point + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + OSM_ICONS[k] + '</svg></div>'; }
   function osmIcon(k) { return L.divIcon({ className: '', iconSize: [26, 26], iconAnchor: [13, 13], html: osmIconHtml(k) }); }
-  var ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
+  var ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
 
   /* more present-day places, saved from OpenStreetMap: hospitals, campuses, government offices, police, embassies, mosques, sights, cemeteries */
   var EXTRA = [['hospitals', 'Hospitals & clinics', 11, 'Public and private hospitals', '#9c3a4c', '<path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/>', function (t) { return t.healthcare === 'clinic' ? 'Clinic' : 'Hospital'; }, 'A hospital or clinic mapped today. Many of these were rebuilt or reopened after 2011; during the 2011 fighting and the 2019–2020 war some received the dead and wounded.'],
@@ -882,7 +965,8 @@
   }
   function markSelected(id) {
     document.querySelectorAll('.mk.sel').forEach(function (e) { e.classList.remove('sel'); });
-    document.querySelectorAll('.tl-dot.sel').forEach(function (e) { e.classList.remove('sel'); });
+    document.querySelectorAll('#timeline [data-ids]').forEach(function (e) { e.classList.toggle('sel', !!id && (' ' + e.getAttribute('data-ids') + ' ').indexOf(' ' + id + ' ') >= 0); });
+    if (typeof API !== 'undefined' && API && API.onSelect) API.onSelect(id);
     selected = id;
     if (typeof syncRings === 'function') syncRings();
     if (typeof applyFocus === 'function') applyFocus();
@@ -1201,7 +1285,7 @@
   });
   new PickControl().addTo(map);
   map.on('click', function (e) { if (picking) openSpot(e.latlng); });
-  map.on('contextmenu', function (e) { openSpot(e.latlng); });
+  map.on('contextmenu', function (e) { if (window.ATLAS_CTX && window.ATLAS_CTX(e)) return; openSpot(e.latlng); });
   (function longPress() {
     var el = map.getContainer(), timer = null, start = null;
     el.addEventListener('touchstart', function (e) {
@@ -2251,9 +2335,9 @@
   /* ---------- Foundry workspace: theme, legend tab, selection header ---------- */
   function setTheme(t, keepBase) {
     var dark = t === 'dark';
-    document.documentElement.classList.toggle('dark', dark); store.set('theme', dark ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', dark); document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light'); store.set('theme', dark ? 'dark' : 'light');
     document.querySelectorAll('#themes button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.theme === (dark ? 'dark' : 'light') ? 'true' : 'false'); });
-    var m = document.querySelector('meta[name=theme-color]'); if (m) m.content = dark ? '#252a31' : '#ffffff';
+    var m = document.querySelector('meta[name=theme-color]'); if (m) m.content = dark ? '#1c2127' : '#ffffff';
     if (!keepBase && (currentBase === 'light' || currentBase === 'dark')) setBase(dark ? 'dark' : 'light');
     try { Object.keys(rings).forEach(function (id) { var r = rings[id]; if (r._base) r.setStyle({ color: lt(r._base), fillColor: lt(r._base) }); }); if (typeof drawTimeline === 'function') drawTimeline(); } catch (e) {}
   }
@@ -2281,11 +2365,11 @@
     }); });
     if (!any) box.appendChild(h('p', { text: 'Nothing is switched on. Open the Layers tab to choose.' }));
     box.appendChild(h('h4', { text: 'How to read the pins' }));
-    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:#5d3f6a' }), 'Solid pin: documented']));
-    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:#fff;border:2px solid #5d3f6a' }), 'White pin: reported, not confirmed']));
-    box.appendChild(row('#5d3f6a', 'Dashed circle: how far off the position could be', null, 'ring'));
-    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:#6f5f45' }), 'Brown building: researched profile']));
-    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'sw', style: 'background:#d1980b;border-radius:50% 50% 50% 0' }), 'Teardrop: added by family, not verified']));
+    [['documented', 'Filled: documented'], ['testimony', 'Half tone: reported by witnesses'], ['suspected', 'Outline: suspected, not confirmed']].forEach(function (x) {
+      box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'glyph g-shp v-' + x[0], html: shapeSvg('circle', '#B052B0') }), x[1]])); });
+    box.appendChild(row('#738091', 'Dashed circle: how far off the position could be', null, 'ring'));
+    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'glyph g-shp', html: shapeSvg('tridown', '#BD8A0A') }), 'Inverted triangle: added by family, not verified']));
+    box.appendChild(h('div', { class: 'lg' }, [h('span', { class: 'glyph g-shp', html: '<span class="hood-n">7</span>' }), 'Numbered circle: that many places in one neighbourhood']));
     if (timeYear != null) box.appendChild(h('p', { text: 'Time filter: ' + timeYear + '. Faded pins were active earlier; later ones are hidden.' }));
   }
 
@@ -2333,9 +2417,9 @@
     REPORTS.forEach(function (r) {
       if (r.lat == null || r.cat === 'remember') return;
       var c = (CAT_BY[r.cat] || CAT_BY.other).c;
-      var m = L.marker([r.lat, r.lon], { title: r.title, keyboard: true, icon: L.divIcon({ className: '', iconSize: [26, 26], iconAnchor: [13, 30], html: '<div class="rep-pin" style="--c:' + c + '">' + PIN_SVG + '</div>' }) });
+      var m = L.marker([r.lat, r.lon], { title: r.title, keyboard: true, icon: L.divIcon({ className: '', iconSize: [24, 24], iconAnchor: [12, 12], html: '<div class="mk rep" style="--c:' + c + '">' + shapeSvg('tridown', c) + '</div>' }) });
       m.on('click', function (ev) { L.DomEvent.stop(ev); openReport(r); });
-      m.on('mouseover', function () { hoverCard([r.lat, r.lon], c, '+', r.title, [['Type', (CAT_BY[r.cat] || CAT_BY.other).t], ['When', r.when], ['Added by', r.by || 'family member'], ['Status', 'Not verified']], [0, -30]); });
+      m.on('mouseover', function () { hoverCard([r.lat, r.lon], c, '+', r.title, [['Type', (CAT_BY[r.cat] || CAT_BY.other).t], ['When', r.when], ['Added by', r.by || 'family member'], ['Status', 'Not verified']], [0, -8]); });
       m.on('mouseout', hideCard);
       m.addTo(reportLayer);
     });
@@ -2565,7 +2649,7 @@
     var s = BY_ID[o.id];
     if (s) {
       if (siteLayer.hasLayer(markers[s.id]) && map.hasLayer(siteLayer)) return;
-      L.marker([s.lat, s.lon], { icon: markers[s.id].options.icon, title: s.name, zIndexOffset: 400 }).bindTooltip(s.name, { direction: 'right', offset: [16, -22], className: 'site-label' }).on('click', function () { focusSite(s); }).addTo(linkLayer);
+      L.marker([s.lat, s.lon], { icon: markers[s.id].options.icon, title: s.name, zIndexOffset: 400 }).bindTooltip(s.name, { direction: 'right', offset: [9, 0], className: 'site-label' }).on('click', function () { focusSite(s); }).addTo(linkLayer);
       return;
     }
     var x = AREA_BY_ID[o.id]; if (!x) return;
@@ -3041,7 +3125,7 @@
         dots += '<i class="hk" title="' + esc(OSM[k].label) + '"><span class="hk-osm" style="background:' + OSM[k].point + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + OSM_ICONS[k] + '</svg></span><em>' + g.osm[k] + '</em></i>';
       });
       L.marker([g.d[2], g.d[3]], { keyboard: true, title: g.d[0] + ': ' + n + (n === 1 ? ' place' : ' places'), zIndexOffset: 500,
-        icon: L.divIcon({ className: '', iconSize: [120, 52], iconAnchor: [60, 26], html: '<div class="hood"><span>' + esc(g.d[0]) + (g.more.length ? '<em>+ ' + g.more.length + ' nearby</em>' : '') + '<small>' + dots + '</small></span></div>' }) })
+        icon: L.divIcon({ className: '', iconSize: [120, 52], iconAnchor: [60, 26], html: '<div class="hood"><b class="hood-n">' + n + '</b><span>' + esc(g.d[0]) + (g.more.length ? '<em>+ ' + g.more.length + ' nearby</em>' : '') + '<small>' + dots + '</small></span></div>' }) })
         .on('click', function () { openHood(g); }).addTo(hoodLayer);
     });
     hoodLayer.addTo(map); leaderLayer.clearLayers();
@@ -3319,6 +3403,12 @@
     closeDrawer: function () { closePanel('drawer'); },
     openPerson: function (name) { var pp = (window.ATLAS_PEOPLE || []).filter(function (x) { return x.name === name; })[0]; if (pp) openPerson(pp); },
     startStory: startStory, showYear: showYear, openDoor: openDoor,
+    sites: SITES, layers: LAYERS, levels: LEVELS, visible: function (s) { return siteLayer.hasLayer(markers[s.id]); }, focusSite: focusSite, selected: function () { return selected; },
+    shapeSvg: shapeSvg, yrs: yrs, store: store, desktop: DESKTOP, publicView: PUBLIC_VIEW, family: FAMILY, gated: GATED, canReport: canReport,
+    openTerm: openTerm, openSettings: openSettings, setTheme: setTheme, openSpot: openSpot, openStreet: openStreet, openReportForm: openReportForm, status: status,
+    marker: function (id) { return markers[id]; }, timeline: function (on) { setInput('timeline', on == null ? !active.timeline : on); }, timelineOn: function () { return !!active.timeline; },
+    home: function () { map.flyToBounds(HOME, { duration: 0.8 }); }, print: function (list) { printBooklet('Places on the map', '', list); },
+    onSelect: null, onRefresh: null,
     markBase: function (key) { document.querySelectorAll('#basemaps button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === (key || currentBase) ? 'true' : 'false'); }); }
   };
 })();

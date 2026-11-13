@@ -1,6 +1,6 @@
 // Probe other archives for Gaddafi-era material. Polite: sequential, 2 s gaps; reads robots.txt of third-party sites.
 import fs from 'node:fs';
-const UA = 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)';
+const UA = 'TripoliOpenSource-research/1.0 (historical research; github.com/gelnagar/libya-project)';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function get(u) { try { const r = await fetch(u, { headers: { 'user-agent': UA } }); return { status: r.status, t: await r.text() }; } catch (e) { return { status: 0, t: String(e) }; } }
 const out = { at: new Date().toISOString(), ia: {}, robots: {}, items: {} };

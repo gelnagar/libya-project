@@ -1,7 +1,7 @@
 // Enumerate Libya-relevant CREST items on archive.org's ciareadingroom mirror (+ JPRS NENA), via the Scrape API.
 // Polite: sequential, ~1 req/s. Writes archive/crest/ia-list.json and stats.
 import fs from 'node:fs';
-const UA = 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)';
+const UA = 'TripoliOpenSource-research/1.0 (historical research; github.com/gelnagar/libya-project)';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function j(u) { for (let k = 0; k < 4; k++) { try { const r = await fetch(u, { headers: { 'user-agent': UA } }); if (r.ok) return await r.json(); await sleep(3000 * (k + 1)); } catch { await sleep(3000); } } return null; }
 async function scrape(q, fields = 'identifier,title,date') {

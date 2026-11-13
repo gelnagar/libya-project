@@ -131,7 +131,7 @@
     b.title = LANG === 'ar' ? 'English' : 'العربية';
     b.innerHTML = '<span class="lbl">' + (LANG === 'ar' ? 'English' : 'العربية') + '</span>';
     b.onclick = function () { window.ATLAS_SET_LANG(LANG === 'ar' ? 'en' : 'ar'); };
-    bar.insertBefore(b, document.getElementById('btn-settings'));
+    bar.insertBefore(b, bar.firstChild);
     var set = document.getElementById('tip-again');
     if (set && !document.getElementById('lang-set')) {
       var s = document.createElement('button'); s.className = 'btn'; s.id = 'lang-set'; s.type = 'button';

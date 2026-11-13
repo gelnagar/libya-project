@@ -51,7 +51,8 @@ Standing rules for every chunk
 ## Phase C. Benghazi pilot
 - [x] C1 Done under A5: the order in the plan holds (Benghazi first).
 - [ ] C2 Gazetteer for Benghazi: place names and spellings from sources, positions only where a source gives one
-- [ ] C3 Run filter, extraction (go-ahead needed), review queue for Benghazi
+- [~] C3 Free part done for every region: the 5,627 documents already read were sorted by the town each place or event names (`scripts/lib/regions.mjs`). Review candidates outside Tripoli: Benghazi 110, Fezzan 57, Greater Tripolitania 51, Cyrenaica 50, Sirte 28 (296 in all), with a region filter on the review page. Names that are only a town are dropped. Paid part (reading the unread documents that name these towns) waits for the owner.
+      Original wording: Run filter, extraction (go-ahead needed), review queue for Benghazi
 - [ ] C4 Written safety check for the region; 30-entry sample check
 
 ## Phase D. Remaining regions (one at a time, same steps as C)
@@ -67,6 +68,8 @@ Standing rules for every chunk
   automated collection (archive/SOURCES.md).
 
 ## Waiting for the owner
+- BY 6 PM 13 NOV: give the owner a short summary (what each chunk built and how it was checked), the local copy to click through, and this list as yes/no decisions.
+- Reload the live review queue: the candidate table gained a region column, so load the new SQL (`node scripts/build-review.mjs --sql out.sql`, then wrangler d1 execute) in the same step as pushing the Worker.
 - Read the Embassy Tripoli cables with the extraction model? 386 are downloaded (about $0.16 by the script's count); the other 4,494 would need downloading first (about 3 hours, free) and about $2 to read.
 - Push to main: speeches in the review queue, cable collector, shared downloader (branch `more-sources`), and everything on branch `libya`.
 - Family reports now wait for your approval before visitors see them, and visitors no longer see who added a report. Accept this change?

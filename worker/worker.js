@@ -190,7 +190,7 @@ const STATS_SCHEMA = [
   `CREATE TABLE IF NOT EXISTS reqs (day TEXT NOT NULL, kind TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, kind))`,
   `CREATE TABLE IF NOT EXISTS emails (ts INTEGER NOT NULL, day TEXT NOT NULL, ok INTEGER, info TEXT)`,
   // review queue (public/review.html): candidates are loaded by scripts/build-review.mjs; decisions are the owner's
-  `CREATE TABLE IF NOT EXISTS cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT)`,
+  `CREATE TABLE IF NOT EXISTS cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, region TEXT, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT)`,
   `CREATE TABLE IF NOT EXISTS decision (id TEXT PRIMARY KEY, verdict TEXT NOT NULL, reason TEXT, note TEXT, at INTEGER)`,
   `CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC)`,
   `CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)`,
@@ -277,13 +277,15 @@ async function ownerReview(env, r) {
   const where = [], args = [];
   if (status === 'open') where.push('d.id IS NULL'); else if (status !== 'all') { where.push('d.verdict = ?'); args.push(status); }
   if (kind) { where.push('c.kind = ?'); args.push(kind); }
+  const region = clip(r.region, 24).replace(/[^a-z-]/g, '');
+  if (region) { where.push('c.region = ?'); args.push(region); }
   if (r.q) { where.push('(c.name LIKE ? OR c.date LIKE ?)'); const q = '%' + clip(r.q, 60).replace(/[%_]/g, '') + '%'; args.push(q, q); }
   if (r.multi) where.push('c.docs > 1');
   const W = where.length ? ' WHERE ' + where.join(' AND ') : '';
   const offset = Math.max(0, parseInt(r.offset, 10) || 0);
   const [list, counts] = await db.batch([
     db.prepare('SELECT c.id, c.kind, c.name, c.date, c.docs, c.found, c.score, d.verdict FROM cand c LEFT JOIN decision d ON d.id = c.id' + W + ' ORDER BY c.score DESC, c.date LIMIT 100 OFFSET ?').bind(...args, offset),
-    db.prepare("SELECT COALESCE(d.verdict, 'open') AS v, c.kind AS kind, COUNT(*) AS n FROM cand c LEFT JOIN decision d ON d.id = c.id GROUP BY v, c.kind")
+    db.prepare("SELECT COALESCE(d.verdict, 'open') AS v, c.kind AS kind, COUNT(*) AS n FROM cand c LEFT JOIN decision d ON d.id = c.id" + (region ? ' WHERE c.region = ?' : '') + ' GROUP BY v, c.kind').bind(...(region ? [region] : []))
   ]);
   let funnel = null; try { const m = await db.prepare("SELECT v FROM meta WHERE k = 'funnel'").first(); funnel = m ? JSON.parse(m.v) : null; } catch {}
   return { items: list.results || [], counts: counts.results || [], offset, funnel };

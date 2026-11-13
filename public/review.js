@@ -18,14 +18,14 @@
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.error) { var e = new Error(j.error || r.status); e.code = r.status; throw e; } return j; }); });
   }
 
-  var state = { status: 'open', kind: '', q: '', multi: false }, items = [], cur = -1, curCand = null, more = false;
+  var state = { status: 'open', kind: '', region: '', q: '', multi: false }, items = [], cur = -1, curCand = null, more = false;
   var VERDICT = { approve: 'Approved: place it', unplaced: 'Approved: no location', reject: 'Rejected', defer: 'Put off' };
   var FOUND = { exact: ['Name is in the text', 'ok'], word: ['Part of the name is in the text', 'warn'], none: ['Name not found in the text', 'bad'], 'no-text': ['No stored text', 'bad'] };
 
   function msg(t) { $('msg').textContent = t || ''; }
   function load(append) {
     msg('Loading…');
-    return call({ status: state.status, kind: state.kind, q: state.q, multi: state.multi, offset: append ? items.length : 0 }).then(function (j) {
+    return call({ status: state.status, kind: state.kind, region: state.region, q: state.q, multi: state.multi, offset: append ? items.length : 0 }).then(function (j) {
       items = append ? items.concat(j.items) : j.items; more = j.items.length === 100;
       $('signin').hidden = true; $('app').hidden = false; msg('');
       drawCounts(j.counts); drawFunnel(j.funnel, j.counts); drawList();
@@ -88,6 +88,7 @@
     d.appendChild(el('h1', { text: c.name }));
     var dl = el('dl');
     function row(k, v) { if (v == null || v === '') return; dl.appendChild(el('dt', { text: k })); dl.appendChild(typeof v === 'string' ? el('dd', { text: v }) : el('dd', {}, [v])); }
+    row('Region', { tripoli: 'Tripoli', benghazi: 'Benghazi', tripolitania: 'Greater Tripolitania', cyrenaica: 'Cyrenaica', sirte: 'Sirte and the central coast', fezzan: 'Fezzan and the south' }[c.region] || c.region);
     row(c.kind === 'place' ? 'First mention' : c.kind === 'speech' ? (c.dateIs === 'broadcast' ? 'Broadcast date' : 'Date in the catalogue') : 'Date', c.date);
     if (c.kind === 'speech') {
       row('Venue, as the source names it', c.venue || 'Not stated. The source says only that it was in Tripoli.');
@@ -127,13 +128,14 @@
       var keep = state.status === 'all' || (v !== 'clear' && state.status === v);
       if (!keep) { items.splice(cur, 1); drawList(); if (items.length) open(Math.min(cur, items.length - 1)); else load(); }
       else { drawList(); open(Math.min(cur + (v === 'clear' ? 0 : 1), items.length - 1)); }
-      call({ status: 'none-list', offset: 1e9 }).then(function (j) { drawCounts(j.counts); }).catch(function () {});
+      call({ status: 'none-list', region: state.region, offset: 1e9 }).then(function (j) { drawCounts(j.counts); }).catch(function () {});
     }).catch(function (e) { msg('Not saved: ' + e.message); });
   }
 
   $('signin').addEventListener('submit', function (e) { e.preventDefault(); var v = $('code').value.trim(); if (v) { setCode(v); $('signin-msg').textContent = ''; load(); } });
   ['open', 'approve', 'unplaced', 'defer', 'reject', 'all'].forEach(function (s) { $('st-' + s).onclick = function () { state.status = s; load(); }; });
   $('kind').onchange = function () { state.kind = this.value; load(); };
+  $('region').onchange = function () { state.region = this.value; load(); };
   $('multi').onchange = function () { state.multi = this.checked; load(); };
   var qt; $('q').oninput = function () { var v = this.value; clearTimeout(qt); qt = setTimeout(function () { state.q = v; load(); }, 300); };
   $('more').onclick = function () { load(true); };

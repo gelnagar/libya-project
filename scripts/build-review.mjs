@@ -7,6 +7,7 @@
 // For each mention the script looks the name up in the stored text and keeps the passage around it, so the
 // reviewer reads the source's own words; a mention whose name is not in the text is marked "not found".
 import fs from 'node:fs'; import zlib from 'node:zlib'; import vm from 'node:vm'; import crypto from 'node:crypto';
+import { regionOfText, townOnly } from './lib/regions.mjs';
 
 const DIR = 'archive/crest', arr = (v) => (Array.isArray(v) ? v : []);
 const fold = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’'`ʿʾ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
@@ -55,19 +56,21 @@ for (const f of ['extract', 'extract-other']) { const p = `${DIR}/${f}.jsonl`; i
     if (!(x.relevance >= 1)) continue; read++;
     const d = docs.get(x.id);
     for (const pl of arr(x.places)) {
-      if (!pl || !pl.name || !pl.in_tripoli || (pl.site_id && NAME[pl.site_id])) continue;
+      if (!pl || !pl.name || (pl.site_id && NAME[pl.site_id])) continue;
+      // a place outside Tripoli is kept when its own name puts it in another region of the plan
+      const preg = pl.in_tripoli ? 'tripoli' : regionOfText(pl.name); if (!preg || (!pl.in_tripoli && preg === 'tripoli') || townOnly(pl.name)) continue;
       const key = fold(String(pl.name).replace(/,?\s*(tripoli|libya)\s*$/i, ''));
       if (!key || GENERIC.has(key) || GENERIC.has(fold(pl.name)) || onMap.has(key) || onMap.has(fold(pl.name))) continue;
-      const g = places.get(key) || { kind: 'place', key, names: {}, items: [] }; places.set(key, g);
+      const g = places.get(preg + '|' + key) || { kind: 'place', key: preg + '|' + key, region: preg, names: {}, items: [] }; places.set(preg + '|' + key, g);
       g.names[pl.name] = (g.names[pl.name] || 0) + 1;
       if (!g.items.some((i) => i.doc === x.id)) g.items.push(item(x, d, pl.detail, pl.name));
     }
     for (const e of arr(x.events)) {
       if (!e || !e.what || !/^\d{4}-\d\d-\d\d$/.test(e.date || '')) continue;
       const site = e.site_id && NAME[e.site_id] ? e.site_id : null;
-      if (!site && !/tripoli/i.test((e.place || '') + ' ' + e.what)) continue;
-      const key = e.date + '|' + (site || fold(e.place || 'tripoli'));
-      const g = events.get(key) || { kind: 'event', key, date: e.date, site, place: e.place || '', killed: null, whats: [], items: [] }; events.set(key, g);
+      const ereg = site ? 'tripoli' : regionOfText(e.place || '') || (/tripoli/i.test(e.what) ? 'tripoli' : regionOfText(e.what)); if (!ereg) continue;
+      const key = e.date + '|' + (site || ereg + ' ' + fold(e.place || ereg));
+      const g = events.get(key) || { kind: 'event', key, region: ereg, date: e.date, site, place: e.place || '', killed: null, whats: [], items: [] }; events.set(key, g);
       if (e.killed != null && e.killed !== '') g.killed = g.killed == null ? String(e.killed) : g.killed;
       g.whats.push(e.what);
       if (!g.items.some((i) => i.doc === x.id)) g.items.push(item(x, d, e.what, e.place && !/^tripoli$/i.test(e.place) ? e.place : '', e.what));
@@ -83,19 +86,19 @@ const out = [];
 for (const g of places.values()) {
   const name = Object.keys(g.names).sort((a, b) => g.names[b] - g.names[a] || a.length - b.length)[0];
   const nd = g.items.length, rel = Math.max(...g.items.map((i) => i.rel)), ok = g.items.filter((i) => i.found === 'exact').length;
-  out.push({ kind: 'place', name, also: Object.keys(g.names).filter((n) => n !== name).slice(0, 5), date: g.items.map((i) => i.date).filter(Boolean).sort()[0] || '',
+  out.push({ kind: 'place', region: g.region, name, also: Object.keys(g.names).filter((n) => n !== name).slice(0, 5), date: g.items.map((i) => i.date).filter(Boolean).sort()[0] || '',
     docs: nd, found: ok, score: nd * 3 + rel * 2 + (ok ? 3 : 0) + (SPECIFIC.test(name) ? 2 : 0), near: [], items: g.items.sort((a, b) => b.rel - a.rel).slice(0, 6), key: 'p|' + g.key });
 }
 for (const g of events.values()) {
   const what = g.whats.sort((a, b) => b.length - a.length)[0];
   const nd = g.items.length, rel = Math.max(...g.items.map((i) => i.rel)), ok = g.items.filter((i) => i.found !== 'none' && i.found !== 'no-text').length;
-  out.push({ kind: 'event', name: clip(what, 150), also: [], date: g.date, site: g.site, place: g.site ? NAME[g.site] : g.place, killed: g.killed,
+  out.push({ kind: 'event', region: g.region, name: clip(what, 150), also: [], date: g.date, site: g.site, place: g.site ? NAME[g.site] : g.place, killed: g.killed,
     docs: nd, found: ok, score: nd * 3 + rel * 2 + (ok ? 2 : 0) + (g.killed ? 3 : 0) + (g.site ? 2 : 0), near: already(g), items: g.items.sort((a, b) => b.rel - a.rel).slice(0, 6), key: 'e|' + g.key });
 }
 // speeches given in Tripoli (scripts/build-speeches.mjs). The description is the source's own words, so each source counts as found.
 if (fs.existsSync('archive/review/speeches.json')) for (const s of JSON.parse(fs.readFileSync('archive/review/speeches.json', 'utf8'))) {
   const whereTxt = s.venue || 'Tripoli, venue not stated';
-  out.push({ kind: 'speech', name: clip((s.speaker || 'Speaker not read') + ': ' + s.kind + ', ' + whereTxt, 150), also: [], date: s.date, dateIs: s.dateIs, site: s.pin ? s.pin.id : null, place: s.pin ? s.pin.name : '',
+  out.push({ kind: 'speech', region: 'tripoli', name: clip((s.speaker || 'Speaker not read') + ': ' + s.kind + ', ' + whereTxt, 150), also: [], date: s.date, dateIs: s.dateIs, site: s.pin ? s.pin.id : null, place: s.pin ? s.pin.name : '',
     venue: s.venue, occasion: s.occasion, transcript: s.transcript, chars: s.chars, docs: s.sources.length, found: s.sources.length,
     score: s.sources.length * 3 + (s.venue ? 6 : 0) + (s.pin ? 2 : 0) + (s.transcript ? 2 : 0), near: [],
     items: s.sources.slice(0, 6).map((x) => ({ doc: x.ref, rec: null, title: x.title, date: x.date, url: x.url, mirror: '', rel: 3, detail: s.description, found: 'exact', hit: s.venue || 'Tripoli',
@@ -107,6 +110,8 @@ out.sort((a, b) => b.score - a.score || (a.date < b.date ? -1 : 1));
 fs.mkdirSync('archive/review', { recursive: true });
 fs.writeFileSync('archive/review/candidates.json', JSON.stringify(out));
 const n = (k) => out.filter((c) => c.kind === k).length, nf = out.filter((c) => !c.found).length;
+const byReg = out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {});
+console.log('by region', JSON.stringify(byReg));
 console.log(`documents with extraction: ${read}; candidates: ${out.length} (${n('place')} places, ${n('event')} events, ${n('speech')} speeches); name not found in any stored text: ${nf}; two or more documents: ${out.filter((c) => c.docs > 1).length}`);
 
 // the funnel, for the owner's review page: what was collected, read and raised, and what the reading cost.
@@ -117,15 +122,17 @@ const ledger = fs.existsSync('archive/crest/cost-ledger.json') ? JSON.parse(fs.r
 const funnel = { at: new Date().toISOString(),
   collected: countLines('archive/crest/docs.jsonl.gz') + countLines('archive/crest/docs-other.jsonl.gz') + countLines('archive/cables/docs.jsonl.gz') + countTxt('archive/fbis') + countTxt('archive/gov'),
   listedNotFetched: fs.existsSync('archive/cables/index.json') ? Math.max(0, JSON.parse(fs.readFileSync('archive/cables/index.json', 'utf8')).cables.length - countLines('archive/cables/docs.jsonl.gz')) : 0,
-  read, candidates: out.length, places: n('place'), events: n('event'), speeches: n('speech'), twoOrMore: out.filter((c) => c.docs > 1).length, notFound: nf,
+  read, candidates: out.length, byRegion: out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {}), places: n('place'), events: n('event'), speeches: n('speech'), twoOrMore: out.filter((c) => c.docs > 1).length, notFound: nf,
   costUsd: Math.round(ledger.reduce((s, r) => s + r.usd, 0) * 100) / 100, runs: ledger };
 fs.writeFileSync('archive/review/funnel.json', JSON.stringify(funnel, null, 1));
 const si = process.argv.indexOf('--sql');
 if (si > 0) {
   const q = (v) => "'" + String(v == null ? '' : v).replace(/'/g, "''") + "'";
-  const rows = out.map((c) => `INSERT OR REPLACE INTO cand (id, kind, name, date, docs, found, score, data) VALUES (${q(c.id)}, ${q(c.kind)}, ${q(c.name)}, ${q(c.date)}, ${c.docs}, ${c.found}, ${c.score}, ${q(JSON.stringify(c))});`);
+  const rows = out.map((c) => `INSERT OR REPLACE INTO cand (id, kind, region, name, date, docs, found, score, data) VALUES (${q(c.id)}, ${q(c.kind)}, ${q(c.region)}, ${q(c.name)}, ${q(c.date)}, ${c.docs}, ${c.found}, ${c.score}, ${q(JSON.stringify(c))});`);
   fs.writeFileSync(process.argv[si + 1], [
-    'CREATE TABLE IF NOT EXISTS cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT);',
+    '-- candidates are rebuilt whole on every load; decisions live in their own table and are kept',
+    'DROP TABLE IF EXISTS cand;',
+    'CREATE TABLE cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, region TEXT, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT);',
     'CREATE TABLE IF NOT EXISTS decision (id TEXT PRIMARY KEY, verdict TEXT NOT NULL, reason TEXT, note TEXT, at INTEGER);',
     'CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC);',
     'CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT);',

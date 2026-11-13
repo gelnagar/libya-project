@@ -8,17 +8,7 @@
 // A region's frame on the map is the box around its towns' positions. It is a way to move the map, not a claim.
 import fs from 'node:fs'; import zlib from 'node:zlib';
 import { get } from './lib/fetcher.mjs';
-
-// order follows the plan: where the stored material is thickest first
-const REGIONS = [
-  { id: 'tripoli', name: 'Tripoli', ar: 'طرابلس', towns: [['Tripoli', 'Tripoli, Libya', /tripoli|tarabulus/i]] },
-  { id: 'benghazi', name: 'Benghazi', ar: 'بنغازي', towns: [['Benghazi', 'Benghazi', /b[ea]ng[h]?azi|bengasi/i]] },
-  { id: 'tripolitania', name: 'Greater Tripolitania', ar: 'إقليم طرابلس', towns: [['Zawiya', 'Zawiya, Libya', /\b(?:az[- ])?zawiya[h]?\b/i], ['Misrata', 'Misrata', /mis[u]?rata[h]?/i], ['Tarhuna', 'Tarhuna', /tarhuna[h]?/i], ['Bani Walid', 'Bani Walid', /bani wal[i]?d/i],
-    ['Gharyan', 'Gharyan', /gh?ar[i]?yan|garian/i], ['Zuwara', 'Zuwarah', /zuwara[h]?|zuara/i], ['Khoms', 'Khoms, Libya', /\bkhoms\b|al[- ]khums|\bhoms\b(?=.{0,40}liby)/i], ['Zliten', 'Zliten', /zl[i]?t[ae]n/i], ['Nalut', 'Nalut', /\bnalut\b/i], ['Zintan', 'Zintan', /z[i]?ntan/i], ['Yafran', 'Yafran', /yafran|yefren|jefren/i]] },
-  { id: 'cyrenaica', name: 'Cyrenaica', ar: 'برقة', towns: [['Derna', 'Derna, Libya', /\bderna\b|darna[h]?\b/i], ['Bayda', 'Bayda, Libya', /al[- ]bayda|\bbeida\b|\bbayda\b/i], ['Tobruk', 'Tobruk', /tobru[kq]|tubru[kq]/i], ['Ajdabiya', 'Ajdabiya', /ajdabiya[h]?|agedabia/i]] },
-  { id: 'sirte', name: 'Sirte and the central coast', ar: 'سرت والساحل الأوسط', towns: [['Sirte', 'Sirte', /\bsirte\b|\bsurt\b/i], ['Ras Lanuf', 'Ras Lanuf', /ras lanu[f]/i], ['Brega', 'Brega', /\bbrega\b|burayqa[h]?/i]] },
-  { id: 'fezzan', name: 'Fezzan and the south', ar: 'فزان والجنوب', towns: [['Sabha', 'Sabha, Libya', /\bs[ae]bha[h]?\b/i], ['Murzuq', 'Murzuk', /murzu[kq]/i], ['Kufra', 'Kufra', /kufra[h]?/i], ['Ghat', 'Ghat, Libya', /\bghat\b/i], ['Ghadames', 'Ghadames', /ghadam[ei]s/i]] }
-];
+import { REGIONS } from './lib/regions.mjs';
 
 const DIR = 'archive/wikipedia/en', safe = (t) => t.replace(/[\/\\:*?"<>|]/g, '_').slice(0, 150);
 async function article(title) {

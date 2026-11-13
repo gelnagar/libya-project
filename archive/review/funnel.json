@@ -1,14 +1,22 @@
 {
- "at": "2026-11-13T14:25:12.870Z",
+ "at": "2026-11-13T14:29:00.482Z",
  "collected": 15214,
  "listedNotFetched": 4494,
  "read": 5627,
- "candidates": 2009,
- "places": 299,
- "events": 1645,
+ "candidates": 2280,
+ "byRegion": {
+  "tripoli": 1984,
+  "benghazi": 110,
+  "fezzan": 57,
+  "sirte": 28,
+  "tripolitania": 51,
+  "cyrenaica": 50
+ },
+ "places": 369,
+ "events": 1846,
  "speeches": 65,
- "twoOrMore": 280,
- "notFound": 142,
+ "twoOrMore": 316,
+ "notFound": 179,
  "costUsd": 2.48,
  "runs": [
   {

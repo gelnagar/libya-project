@@ -1,0 +1,62 @@
+// Regions of Libya for the country view: which towns each holds, where they are, how much is published,
+// and how often the documents already stored mention them (a free count that shows where the material is).
+//   node scripts/build-regions.mjs [--fetch]     --fetch downloads any missing town article from Wikipedia first
+// Reads  archive/wikipedia/en/*.json (town positions come from here, never typed in by hand),
+//        archive/crest/docs*.jsonl.gz, archive/fbis/*.txt, archive/gov/*.txt, archive/cables/docs.jsonl.gz,
+//        archive/model/subjects.json (what is published per region)
+// Writes public/data/regions.js and archive/model/regions.json
+// A region's frame on the map is the box around its towns' positions. It is a way to move the map, not a claim.
+import fs from 'node:fs'; import zlib from 'node:zlib';
+import { get } from './lib/fetcher.mjs';
+
+// order follows the plan: where the stored material is thickest first
+const REGIONS = [
+  { id: 'tripoli', name: 'Tripoli', ar: 'طرابلس', towns: [['Tripoli', 'Tripoli, Libya', /tripoli|tarabulus/i]] },
+  { id: 'benghazi', name: 'Benghazi', ar: 'بنغازي', towns: [['Benghazi', 'Benghazi', /b[ea]ng[h]?azi|bengasi/i]] },
+  { id: 'tripolitania', name: 'Greater Tripolitania', ar: 'إقليم طرابلس', towns: [['Zawiya', 'Zawiya, Libya', /\b(?:az[- ])?zawiya[h]?\b/i], ['Misrata', 'Misrata', /mis[u]?rata[h]?/i], ['Tarhuna', 'Tarhuna', /tarhuna[h]?/i], ['Bani Walid', 'Bani Walid', /bani wal[i]?d/i],
+    ['Gharyan', 'Gharyan', /gh?ar[i]?yan|garian/i], ['Zuwara', 'Zuwarah', /zuwara[h]?|zuara/i], ['Khoms', 'Khoms, Libya', /\bkhoms\b|al[- ]khums|\bhoms\b(?=.{0,40}liby)/i], ['Zliten', 'Zliten', /zl[i]?t[ae]n/i], ['Nalut', 'Nalut', /\bnalut\b/i], ['Zintan', 'Zintan', /z[i]?ntan/i], ['Yafran', 'Yafran', /yafran|yefren|jefren/i]] },
+  { id: 'cyrenaica', name: 'Cyrenaica', ar: 'برقة', towns: [['Derna', 'Derna, Libya', /\bderna\b|darna[h]?\b/i], ['Bayda', 'Bayda, Libya', /al[- ]bayda|\bbeida\b|\bbayda\b/i], ['Tobruk', 'Tobruk', /tobru[kq]|tubru[kq]/i], ['Ajdabiya', 'Ajdabiya', /ajdabiya[h]?|agedabia/i]] },
+  { id: 'sirte', name: 'Sirte and the central coast', ar: 'سرت والساحل الأوسط', towns: [['Sirte', 'Sirte', /\bsirte\b|\bsurt\b/i], ['Ras Lanuf', 'Ras Lanuf', /ras lanu[f]/i], ['Brega', 'Brega', /\bbrega\b|burayqa[h]?/i]] },
+  { id: 'fezzan', name: 'Fezzan and the south', ar: 'فزان والجنوب', towns: [['Sabha', 'Sabha, Libya', /\bs[ae]bha[h]?\b/i], ['Murzuq', 'Murzuk', /murzu[kq]/i], ['Kufra', 'Kufra', /kufra[h]?/i], ['Ghat', 'Ghat, Libya', /\bghat\b/i], ['Ghadames', 'Ghadames', /ghadam[ei]s/i]] }
+];
+
+const DIR = 'archive/wikipedia/en', safe = (t) => t.replace(/[\/\\:*?"<>|]/g, '_').slice(0, 150);
+async function article(title) {
+  const f = `${DIR}/${safe(title)}.json`;
+  if (fs.existsSync(f)) return JSON.parse(fs.readFileSync(f, 'utf8'));
+  if (!process.argv.includes('--fetch')) return null;
+  const j = await get('https://en.wikipedia.org/w/api.php?' + new URLSearchParams({ format: 'json', formatversion: '2', action: 'query', prop: 'extracts|coordinates|info', explaintext: '1', redirects: '1', titles: title, inprop: 'url' }), { as: 'json', gap: 800, robots: false }); // the MediaWiki API is Wikipedia's sanctioned route for programs; its robots.txt speaks to page crawlers
+  const p = j && j.query && j.query.pages && j.query.pages[0]; if (!p || p.missing || !p.extract) return null;
+  const rec = { title: p.title, lang: 'en', url: p.fullurl, revid: p.lastrevid, coords: p.coordinates && p.coordinates[0] ? [p.coordinates[0].lat, p.coordinates[0].lon] : null, other_language: null, license: 'CC BY-SA 4.0', fetched: new Date().toISOString().slice(0, 10), text: p.extract };
+  fs.writeFileSync(f, JSON.stringify(rec, null, 1)); if (safe(p.title) !== safe(title)) fs.writeFileSync(`${DIR}/${safe(p.title)}.json`, JSON.stringify(rec, null, 1));
+  return rec;
+}
+
+// every stored text once: [text, year]
+const texts = [];
+for (const f of ['archive/crest/docs.jsonl.gz', 'archive/crest/docs-other.jsonl.gz', 'archive/cables/docs.jsonl.gz']) { if (!fs.existsSync(f)) continue;
+  for (const l of zlib.gunzipSync(fs.readFileSync(f)).toString().split('\n')) { if (!l) continue; const d = JSON.parse(l); if (d.text && d.src !== 'wikipedia') texts.push(d.text); } }
+for (const dir of ['archive/fbis', 'archive/gov']) for (const f of fs.existsSync(dir) ? fs.readdirSync(dir).filter((x) => x.endsWith('.txt')) : []) texts.push(fs.readFileSync(`${dir}/${f}`, 'utf8'));
+
+const subjects = fs.existsSync('archive/model/subjects.json') ? JSON.parse(fs.readFileSync('archive/model/subjects.json', 'utf8')) : [];
+const out = [];
+for (const r of REGIONS) {
+  const towns = [];
+  for (const [name, title, rx] of r.towns) {
+    const a = await article(title);
+    const docs = texts.reduce((n, t) => n + (rx.test(t) ? 1 : 0), 0);
+    towns.push({ name, lat: a && a.coords ? +a.coords[0].toFixed(4) : null, lon: a && a.coords ? +a.coords[1].toFixed(4) : null, source: a ? a.url : null, docs });
+  }
+  const placed = towns.filter((t) => t.lat != null), any = new RegExp(r.towns.map((t) => t[2].source).join('|'), 'i');
+  const pub = subjects.filter((s) => s.region === r.id), count = (c) => pub.filter((s) => c.includes(s.class)).length;
+  out.push({ id: r.id, name: r.name, ar: r.ar, status: pub.length ? 'published' : 'planned',
+    lat: placed.length ? +(placed.reduce((s, t) => s + t.lat, 0) / placed.length).toFixed(4) : null, lon: placed.length ? +(placed.reduce((s, t) => s + t.lon, 0) / placed.length).toFixed(4) : null,
+    box: placed.length ? [[Math.min(...placed.map((t) => t.lat)) - 0.25, Math.min(...placed.map((t) => t.lon)) - 0.35], [Math.max(...placed.map((t) => t.lat)) + 0.25, Math.max(...placed.map((t) => t.lon)) + 0.35]].map((p) => p.map((v) => +v.toFixed(3))) : null,
+    published: { places: count(['place', 'area']), events: count(['event']), unplaced: count(['unplaced']) },
+    docs: texts.reduce((n, t) => n + (any.test(t) ? 1 : 0), 0), towns });
+}
+fs.mkdirSync('archive/model', { recursive: true });
+fs.writeFileSync('archive/model/regions.json', JSON.stringify({ at: new Date().toISOString(), textsCounted: texts.length, regions: out }, null, 1));
+fs.writeFileSync('public/data/regions.js', '/* Generated by scripts/build-regions.mjs. Town positions are from the Wikipedia article named in "source". Do not hand-edit. */' + String.fromCharCode(10) + 'window.ATLAS_REGIONS = ' + JSON.stringify(out) + ';' + String.fromCharCode(10));
+console.log(`stored texts counted: ${texts.length}`);
+for (const r of out) console.log(`${r.id.padEnd(13)} ${r.status.padEnd(9)} documents naming it: ${String(r.docs).padStart(5)}  published: ${r.published.places} places, ${r.published.events} events, ${r.published.unplaced} unplaced  towns: ${r.towns.map((t) => t.name + (t.lat == null ? ' (no position)' : '') + ' ' + t.docs).join(', ')}`);

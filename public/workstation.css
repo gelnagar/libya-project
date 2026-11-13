@@ -536,3 +536,15 @@ html[data-theme] #timeline .tl-span { height: 2px; opacity: .4; }
 .grade.g-D, .grade.g-E { border-color: var(--danger); }
 .grade.g-F { border-style: dashed; color: var(--text-muted); }
 html[data-theme] .grade-key { margin: 6px 0 0; font-size: 11px; color: var(--text-muted); }
+
+/* ---------- country view ---------- */
+.region { display: flex; align-items: flex-start; gap: 6px; cursor: pointer; white-space: nowrap; }
+.region i { flex: none; width: 12px; height: 12px; border: 1px solid var(--mk-line); background: var(--text-faint); }
+.region.published i { background: var(--accent); }
+.region span { display: flex; flex-direction: column; padding: 0 5px; background: color-mix(in srgb, var(--bg-panel) 90%, transparent); border: 1px solid var(--border); }
+.region b { font-size: 11px; font-weight: 600; line-height: 16px; color: var(--text); }
+.region small { font-family: var(--f-mono) !important; font-size: 10px; line-height: 14px; color: var(--text-muted); }
+.region:hover span { border-color: var(--accent); }
+html[data-theme] body.country :is(.hood, .leaflet-marker-icon .mk, .site-label, .district, .osm-ic, .rep) { display: none !important; }
+html[data-theme] .crumb-btn { height: 20px; min-height: 0; padding: 0 4px; background: none; border: 0; color: var(--text-muted); font-size: 12px; font-weight: 400; cursor: pointer; }
+html[data-theme] .crumb-btn:hover { color: var(--accent); background: none; }

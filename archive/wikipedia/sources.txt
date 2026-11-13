@@ -206,3 +206,29 @@ ar|category:تاريخ طرابلس (ليبيا)
 ar|category:مباني ومنشآت في طرابلس (ليبيا)
 ar|category:سجون ليبيا
 ar|category:قواعد عسكرية في ليبيا
+
+# Towns outside Tripoli: used for region positions and background (added 2026-11-13)
+en|Sirte
+en|Derna, Libya
+en|Tobruk
+en|Zawiya, Libya
+en|Bayda, Libya
+en|Ajdabiya
+en|Kufra
+en|Gharyan
+en|Bani Walid
+en|Tarhuna
+en|Zuwarah
+en|Murzuk
+en|Ghadames
+en|Ghat, Libya
+en|Ras Lanuf
+en|Brega
+en|Khoms, Libya
+en|Zliten
+en|Nalut
+en|Zintan
+en|Yafran
+en|Cyrenaica
+en|Fezzan
+en|Tripolitania

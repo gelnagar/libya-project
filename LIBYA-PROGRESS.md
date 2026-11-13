@@ -24,10 +24,13 @@ Standing rules for every chunk
 - [x] A2 Migrate Tripoli. Check run: `node scripts/build-claims.mjs --check` rebuilt 103 pins, 172 areas, 173 unplaced items and 172 connections from the model; 0 differ; 19 of 19 panel lines are claims. `node scripts/check-model.mjs`: all 110 stored quotations found word for word in their stored source. Finding: 161 of 271 pin claims cite a source but never stored the supporting words; those need passages before they meet evidence rule 1.
       Original wording: every pin and unplaced item reproduced from claims with nothing lost
       (check: counts match; 30 sampled entries have their quoted passage in a stored source)
-- [ ] A3 Provenance on every stored source: fetch date, checksum, archived copy where there is one
-- [ ] A4 Source grading the way analysts do it: reliability of the source (A–F) and credibility of the item (1–6),
+- [x] A3 Provenance (`scripts/lib/provenance.mjs`, `scripts/wayback.mjs`): 225 of 547 cited sources have a stored copy with a checksum. Fetch dates were only recorded for Wikipedia and the cables; older collectors did not record them. Archived copies: 39 are on archive.org already; a Wayback lookup for the rest runs with `node scripts/wayback.mjs` (free), then `node scripts/build-claims.mjs`.
+      Original wording: fetch date, checksum, archived copy where there is one
+- [x] A4 Grades: source reliability A-F by type of source (243 B, 256 C, 48 not classified = F), entry credibility 1-6 by evidence level and corroboration (157 confirmed, 299 probably true, 157 possibly true, 509 cannot be judged). Every grade is marked as a default from a rule; overrides go in `archive/model/grades.json`. Shown beside each citation on the map (checked in the browser: Abu Salim lists C1, F1, B1...). The 48 unclassified hosts need the owner's grade.
+      Original wording: reliability of the source (A–F) and credibility of the item (1–6),
       shown on each claim; evidence wording fixed (documented / reported / suspected)
-- [ ] A5 Region support in data and map: a `region` on every record, per-region data files loaded on demand,
+- [~] A5 Regions, part done. Done: `region` on every model record; `scripts/build-regions.mjs` writes six regions with town positions taken from Wikipedia articles and a count of stored documents naming each (C1 done here: Benghazi 881, Fezzan 477, Cyrenaica 466, Greater Tripolitania 399, Sirte 261; Tripoli 6,776); country view on the map (key 0, or the Libya crumb) with one marker per region and a region sheet. Checked in the browser by script: six region markers, pins hidden at country zoom, crumbs read Libya / Regions; NOT checked by eye (the screenshot timed out). Still to do (A5b): load a region's pins on demand from `public/data/regions/<id>/`; needs the marker code in app.js turned into an add-a-list function, tested with a fixture.
+      Original wording: a `region` on every record, per-region data files loaded on demand,
       country view with counts per region
 - [ ] A6 Security: strict script policy (move inline scripts in stats/requests pages to files); spending ceiling
       per day in the Worker; failed-password counting moved off KV; contributor names hidden from visitors;
@@ -40,7 +43,7 @@ Standing rules for every chunk
 - [ ] B3 Cables read (needs the owner's go-ahead on cost) and added to the queue
 
 ## Phase C. Benghazi pilot
-- [ ] C1 Count what the stored documents say about each region (free) to confirm the order of regions
+- [x] C1 Done under A5: the order in the plan holds (Benghazi first).
 - [ ] C2 Gazetteer for Benghazi: place names and spellings from sources, positions only where a source gives one
 - [ ] C3 Run filter, extraction (go-ahead needed), review queue for Benghazi
 - [ ] C4 Written safety check for the region; 30-entry sample check

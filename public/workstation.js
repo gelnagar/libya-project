@@ -134,7 +134,10 @@
   function crumb(name) {
     var c = $('crumbs'); c.innerHTML = '';
     var view = document.body.classList.contains('unknown-on') ? 'Intelligence' : 'Map';
-    [view].concat(name ? [name] : []).forEach(function (t) { c.appendChild(h('i', { text: '/' })); c.appendChild(h('span', { text: t })); });
+    // Libya / region / view / selection. "Libya" steps back to the country view.
+    if (REGIONS.length) { c.appendChild(h('i', { text: '/' })); c.appendChild(h('button', { type: 'button', class: 'crumb-btn', text: 'Libya', title: 'Country view: every region (0)', onclick: countryView })); }
+    var reg = REGIONS.length ? (inCountry() ? null : 'Tripoli') : null;
+    [reg, inCountry() ? 'Regions' : view].concat(name ? [name] : []).filter(Boolean).forEach(function (t) { c.appendChild(h('i', { text: '/' })); c.appendChild(h('span', { text: t })); });
   }
 
   /* ---------- resizable panels ---------- */
@@ -285,15 +288,55 @@
   var North = L.Control.extend({ options: { position: 'topright' }, onAdd: function () { return h('div', { class: 'ws-north leaflet-control', title: 'North is up', html: '<div><svg viewBox="0 0 10 12" aria-hidden="true"><path d="M5 0 10 12 5 9 0 12z"/></svg>N</div>' }); } });
   new North().addTo(map);
 
+  /* ---------- country view: one marker per region, with what is published and what the archive holds ---------- */
+  var REGIONS = window.ATLAS_REGIONS || [], regionLayer = L.layerGroup(), COUNTRY_Z = 9;
+  function inCountry() { return REGIONS.length > 0 && map.getZoom() < COUNTRY_Z; }
+  function nf(n) { return Number(n).toLocaleString('en-US'); }
+  function regionSheet(r) {
+    A.sheet('Region', '', function (body) {
+      body.appendChild(h('div', { class: 'tags' }, [h('span', { class: 'tag', style: '--c:' + (r.status === 'published' ? 'var(--ok)' : 'var(--text-muted)'), text: r.status === 'published' ? 'Published' : 'Not yet researched' })]));
+      body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: r.name }), h('div', { class: 'd-ar', lang: 'ar', dir: 'rtl', text: r.ar })]));
+      var pub = r.published, total = pub.places + pub.events + pub.unplaced;
+      body.appendChild(A.facts([['Status', r.status === 'published' ? 'Published' : 'Planned. Nothing is published for this region yet.'],
+        ['Published entries', total ? nf(total) + ' (' + pub.places + ' places, ' + pub.events + ' events, ' + pub.unplaced + ' with no location)' : 'None'],
+        ['Stored documents naming it', nf(r.docs)], ['Towns counted', r.towns.length]]));
+      body.appendChild(A.section('Towns', [h('table', { class: 'kv' }, [h('tbody', {}, r.towns.map(function (t) {
+        return h('tr', {}, [h('td', {}, [t.source ? h('a', { href: t.source, target: '_blank', rel: 'noopener', text: t.name, title: 'Position from this article' }) : t.name]),
+          h('td', { class: 'ws-num', text: nf(t.docs) + ' documents' }), h('td', { class: 'ws-num', text: t.lat != null ? t.lat.toFixed(3) + ', ' + t.lon.toFixed(3) : 'no position' })]); }))])]));
+      body.appendChild(h('p', { class: 'd-text muted small', text: r.status === 'published'
+        ? 'Document counts are a plain word count over the stored texts. They show where the material is, not what it says.'
+        : 'This region has not been researched. The count shows how many stored documents name its towns; none of them has been read for this region, and nothing here is a finding.' }));
+      if (r.status === 'published') body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn primary', text: 'Open ' + r.name, onclick: function () { A.home(); } })]));
+    });
+  }
+  REGIONS.forEach(function (r) {
+    if (r.lat == null) return;
+    var pub = r.published, total = pub.places + pub.events + pub.unplaced;
+    var m = L.marker([r.lat, r.lon], { keyboard: true, title: r.name, icon: L.divIcon({ className: '', iconSize: [170, 40], iconAnchor: [6, 6],
+      html: '<div class="region ' + r.status + '"><i></i><span><b></b><small></small></span></div>' }) });
+    m.on('add', function () { var el = m.getElement(); if (!el) return; el.querySelector('b').textContent = r.name; el.querySelector('small').textContent = total ? nf(total) + ' entries' : 'planned · ' + nf(r.docs) + ' documents'; });
+    m.on('click', function () { if (r.status === 'published') A.home(); else { regionSheet(r); if (r.box) map.flyToBounds(r.box, { duration: 0.8, maxZoom: 8 }); } });
+    m.on('contextmenu', function (e) { L.DomEvent.stop(e); regionSheet(r); });
+    m.addTo(regionLayer);
+  });
+  function countryView() { if (!REGIONS.length) return; var pts = REGIONS.filter(function (r) { return r.lat != null; }).map(function (r) { return [r.lat, r.lon]; }); map.flyToBounds(L.latLngBounds(pts).pad(0.25), { duration: 0.9 }); }
+  function syncCountry() {
+    var on = inCountry();
+    document.body.classList.toggle('country', on);
+    if (on && !map.hasLayer(regionLayer)) regionLayer.addTo(map); else if (!on && map.hasLayer(regionLayer)) map.removeLayer(regionLayer);
+    crumb(A.selected() ? (SITES.filter(function (x) { return x.id === A.selected(); })[0] || {}).name : '');
+  }
+  if (REGIONS.length) { map.setMinZoom(5); map.on('zoomend', syncCountry); }
+
   /* ---------- keyboard shortcuts ---------- */
-  var KEYS = [['/', 'Search'], ['L', 'Layers'], ['B', 'Table of places'], ['G', 'Legend'], ['T', 'Timeline'], ['E', 'Export'], ['H', 'Show all of Tripoli'], ['D', 'Light or dark'], [',', 'Settings'], ['Esc', 'Close the open panel'], ['← →', 'Step the timeline (when it has focus)']];
+  var KEYS = [['/', 'Search'], ['L', 'Layers'], ['B', 'Table of places'], ['G', 'Legend'], ['T', 'Timeline'], ['E', 'Export'], ['H', 'Show all of Tripoli'], ['0', 'Country view: every region'], ['D', 'Light or dark'], [',', 'Settings'], ['Esc', 'Close the open panel'], ['← →', 'Step the timeline (when it has focus)']];
   function showKeys() { openMenu([{ hd: 'Keyboard shortcuts' }].concat(KEYS.map(function (k) { return [k[1], k[0], function () {}]; })), innerWidth / 2 - 130, 80); }
   document.addEventListener('keydown', function (e) {
     if (typing(e) || e.ctrlKey || e.metaKey || e.altKey) return;
     if (document.querySelector('.modal:not([hidden]):not(.float), .term:not([hidden]), #street:not([hidden])')) return;
     var k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
     var run = { l: function () { railTab('layers'); }, b: function () { railTab('table'); }, g: function () { railTab('legend'); }, t: function () { $('btn-timeline').click(); },
-      e: function () { exportMenu($('btn-export')); }, h: A.home, d: toggleTheme, ',': A.openSettings, '?': showKeys }[k];
+      e: function () { exportMenu($('btn-export')); }, h: A.home, '0': countryView, d: toggleTheme, ',': A.openSettings, '?': showKeys }[k];
     if (run) { e.preventDefault(); run(); }
   });
 
@@ -305,6 +348,6 @@
   };
   A.onRefresh = function () { syncStatus(); drawMapLegend(); if (built && !$('table-body').hidden) drawTable(); syncRail(); };
   new MutationObserver(function () { if (!$('sheet').classList.contains('open')) crumb(''); else if (!A.selected()) { var t = $('sheet-body').querySelector('.pp-title, .d-title'); crumb(t ? t.textContent : $('sheet-kind').textContent); } }).observe($('sheet'), { attributes: true, attributeFilter: ['class'] });
-  crumb(''); syncStatus(); drawMapLegend(); syncRail();
+  crumb(''); syncStatus(); drawMapLegend(); syncRail(); if (REGIONS.length) syncCountry();
   setTimeout(function () { map.invalidateSize({ pan: false }); }, 0);
 })();

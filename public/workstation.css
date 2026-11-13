@@ -527,3 +527,4 @@ html[data-theme] #timeline .tl-tick { transform: translateX(-50%); top: auto; co
 html[data-theme] #timeline .tl-era { text-align: center; font-size: 10px; letter-spacing: .02em; }
 html[data-theme] #timeline .tl-lane { background: var(--border); }
 html[data-theme] #timeline .tl-ctrl button { min-width: 44px; }
+html[data-theme] #timeline .tl-span { height: 2px; opacity: .4; }

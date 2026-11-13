@@ -568,7 +568,7 @@
     tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (yEra + 1) + 'px', text: 'Period' }));
     ERAS.forEach(function (e, i) {
       var x0 = X(e[0]), w = X(e[1]) - x0, sel = timeRange && timeRange[0] === e[0] && timeRange[1] === e[1];
-      var label = w > e[2].length * 5.8 + 10 ? e[2] : w > e[3].length * 5.8 + 4 ? e[3] : w > 24 ? e[3].slice(0, 3) + '.' : '';
+      var label = w > e[2].length * 6.2 + 12 ? e[2] : w > e[3].length * 6.2 + 12 ? e[3] : '';
       tl.appendChild(h('button', { type: 'button', class: 'tl-era' + (i % 2 ? ' alt' : '') + (sel ? ' sel' : ''), style: 'left:' + px(x0) + ';width:' + px(Math.max(2, w - 1)) + ';top:' + yEra + 'px;height:' + ERA + 'px',
         title: e[2] + ', ' + e[0] + '–' + e[1] + '. Click to show only this period.', 'aria-pressed': sel ? 'true' : 'false', text: label,
         onclick: function () { stopPlay(); timeYear = null; timeRange = sel ? null : [e[0], e[1]]; refresh(); } }));

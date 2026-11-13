@@ -93,3 +93,13 @@ mark { background: color-mix(in srgb, var(--accent) 30%, transparent); color: va
   .top a, .meter { display: none; }
   button, input, select { height: 36px; font-size: 14px; }
 }
+
+/* funnel strip: documents collected to entries approved */
+.funnel { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(6, 1fr); border-bottom: 1px solid var(--border); background: var(--bg-panel); }
+.fn { display: flex; flex-direction: column; padding: 4px 12px 6px; border-right: 1px solid var(--border); min-width: 0; }
+.fn:last-child { border-right: 0; }
+.fn span { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }
+.fn b { font-size: 15px; font-weight: 500; line-height: 20px; }
+.fn small { font-size: 11px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#app { grid-template-rows: auto minmax(0, 1fr); }
+@media (max-width: 820px) { .funnel { grid-template-columns: repeat(2, 1fr); } }

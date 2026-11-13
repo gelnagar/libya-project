@@ -193,6 +193,7 @@ const STATS_SCHEMA = [
   `CREATE TABLE IF NOT EXISTS cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT)`,
   `CREATE TABLE IF NOT EXISTS decision (id TEXT PRIMARY KEY, verdict TEXT NOT NULL, reason TEXT, note TEXT, at INTEGER)`,
   `CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC)`,
+  `CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)`,
   // wrong-password attempts, by a keyed hash of the address (never the address)
   `CREATE TABLE IF NOT EXISTS fails (who TEXT NOT NULL, at INTEGER NOT NULL)`,
   `CREATE INDEX IF NOT EXISTS fails_who ON fails(who, at)`
@@ -284,7 +285,8 @@ async function ownerReview(env, r) {
     db.prepare('SELECT c.id, c.kind, c.name, c.date, c.docs, c.found, c.score, d.verdict FROM cand c LEFT JOIN decision d ON d.id = c.id' + W + ' ORDER BY c.score DESC, c.date LIMIT 100 OFFSET ?').bind(...args, offset),
     db.prepare("SELECT COALESCE(d.verdict, 'open') AS v, c.kind AS kind, COUNT(*) AS n FROM cand c LEFT JOIN decision d ON d.id = c.id GROUP BY v, c.kind")
   ]);
-  return { items: list.results || [], counts: counts.results || [], offset };
+  let funnel = null; try { const m = await db.prepare("SELECT v FROM meta WHERE k = 'funnel'").first(); funnel = m ? JSON.parse(m.v) : null; } catch {}
+  return { items: list.results || [], counts: counts.results || [], offset, funnel };
 }
 
 async function ownerStats(env, body) {

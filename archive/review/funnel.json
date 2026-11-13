@@ -1,0 +1,33 @@
+{
+ "at": "2026-11-13T14:25:12.870Z",
+ "collected": 15214,
+ "listedNotFetched": 4494,
+ "read": 5627,
+ "candidates": 2009,
+ "places": 299,
+ "events": 1645,
+ "speeches": 65,
+ "twoOrMore": 280,
+ "notFound": 142,
+ "costUsd": 2.48,
+ "runs": [
+  {
+   "date": "2026-10-18",
+   "what": "CIA reading room and JPRS, first reading run",
+   "documents": 1568,
+   "usd": 0.7311
+  },
+  {
+   "date": "2026-10-18",
+   "what": "Wikipedia, country study and other texts",
+   "documents": 2657,
+   "usd": 1.0346
+  },
+  {
+   "date": "2026-11-13",
+   "what": "CIA reading room: unread documents naming a Tripoli place",
+   "documents": 1738,
+   "usd": 0.7116
+  }
+ ]
+}

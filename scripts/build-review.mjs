@@ -109,6 +109,17 @@ fs.writeFileSync('archive/review/candidates.json', JSON.stringify(out));
 const n = (k) => out.filter((c) => c.kind === k).length, nf = out.filter((c) => !c.found).length;
 console.log(`documents with extraction: ${read}; candidates: ${out.length} (${n('place')} places, ${n('event')} events, ${n('speech')} speeches); name not found in any stored text: ${nf}; two or more documents: ${out.filter((c) => c.docs > 1).length}`);
 
+// the funnel, for the owner's review page: what was collected, read and raised, and what the reading cost.
+// Costs are the reading script's own count (archive/crest/cost-ledger.json), not a bill.
+const countLines = (p) => fs.existsSync(p) ? zlib.gunzipSync(fs.readFileSync(p)).toString().split('\n').filter(Boolean).length : 0;
+const countTxt = (d) => fs.existsSync(d) ? fs.readdirSync(d).filter((x) => x.endsWith('.txt')).length : 0;
+const ledger = fs.existsSync('archive/crest/cost-ledger.json') ? JSON.parse(fs.readFileSync('archive/crest/cost-ledger.json', 'utf8')) : [];
+const funnel = { at: new Date().toISOString(),
+  collected: countLines('archive/crest/docs.jsonl.gz') + countLines('archive/crest/docs-other.jsonl.gz') + countLines('archive/cables/docs.jsonl.gz') + countTxt('archive/fbis') + countTxt('archive/gov'),
+  listedNotFetched: fs.existsSync('archive/cables/index.json') ? Math.max(0, JSON.parse(fs.readFileSync('archive/cables/index.json', 'utf8')).cables.length - countLines('archive/cables/docs.jsonl.gz')) : 0,
+  read, candidates: out.length, places: n('place'), events: n('event'), speeches: n('speech'), twoOrMore: out.filter((c) => c.docs > 1).length, notFound: nf,
+  costUsd: Math.round(ledger.reduce((s, r) => s + r.usd, 0) * 100) / 100, runs: ledger };
+fs.writeFileSync('archive/review/funnel.json', JSON.stringify(funnel, null, 1));
 const si = process.argv.indexOf('--sql');
 if (si > 0) {
   const q = (v) => "'" + String(v == null ? '' : v).replace(/'/g, "''") + "'";
@@ -116,7 +127,9 @@ if (si > 0) {
   fs.writeFileSync(process.argv[si + 1], [
     'CREATE TABLE IF NOT EXISTS cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT);',
     'CREATE TABLE IF NOT EXISTS decision (id TEXT PRIMARY KEY, verdict TEXT NOT NULL, reason TEXT, note TEXT, at INTEGER);',
-    'CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC);'
+    'CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC);',
+    'CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT);',
+    `INSERT OR REPLACE INTO meta (k, v) VALUES ('funnel', ${q(JSON.stringify(funnel))});`
   ].concat(rows).join('\n') + '\n');
   console.log('wrote', process.argv[si + 1], rows.length, 'rows');
 }

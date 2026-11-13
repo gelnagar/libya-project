@@ -39,7 +39,8 @@ Standing rules for every chunk
       Original wording: strict script policy (move inline scripts in stats/requests pages to files); spending ceiling
       per day in the Worker; failed-password counting moved off KV; contributor names hidden from visitors;
       family reports held for owner review before visitors see them; tests for each
-- [ ] A7 Cost and funnel report page for the owner (documents found, read, candidates, decided; cost per entry)
+- [x] A7 Funnel and cost strip on the review page (`archive/review/funnel.json`, `archive/crest/cost-ledger.json`): collected 15,214 (4,494 more cables listed, not downloaded), read 5,627, candidates 2,009, decided 0, reading cost $2.48 by the script's own count over three runs. Checked on the local review page: six figures shown, speeches filter lists 65 with venue, occasion and transcript rows; tests still 39 of 39.
+      Original wording: Cost and funnel report page for the owner (documents found, read, candidates, decided; cost per entry)
 
 ## Phase B. Clear the Tripoli backlog
 - [ ] B1 Review-queue export: approved items become draft entries with their sources, for the owner to check

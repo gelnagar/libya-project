@@ -28,7 +28,7 @@
     return call({ status: state.status, kind: state.kind, q: state.q, multi: state.multi, offset: append ? items.length : 0 }).then(function (j) {
       items = append ? items.concat(j.items) : j.items; more = j.items.length === 100;
       $('signin').hidden = true; $('app').hidden = false; msg('');
-      drawCounts(j.counts); drawList();
+      drawCounts(j.counts); drawFunnel(j.funnel, j.counts); drawList();
       if (!append) { if (items.length) open(0); else { cur = -1; curCand = null; $('detail').innerHTML = ''; $('detail').appendChild(el('p', { class: 'empty', text: 'Nothing in this view.' })); } }
     }).catch(function (e) {
       if (e.code === 401 || e.code === 429) { setCode(''); $('signin').hidden = false; $('app').hidden = true; $('signin-msg').textContent = e.code === 401 ? 'That owner password is not right.' : e.message; }
@@ -43,6 +43,19 @@
     [['open', 'To review'], ['approve', 'Place it'], ['unplaced', 'No location'], ['defer', 'Put off'], ['reject', 'Rejected'], ['all', 'All']].forEach(function (s) {
       var b = $('st-' + s[0]); b.textContent = s[1] + ' ' + (s[0] === 'all' ? total : (by[s[0]] || 0)); b.setAttribute('aria-selected', state.status === s[0] ? 'true' : 'false');
     });
+  }
+  // the funnel strip: collected, read, raised, decided, approved, and what the reading has cost
+  function drawFunnel(f, counts) {
+    var box = $('funnel'); box.innerHTML = ''; if (!f) { box.hidden = true; return; } box.hidden = false;
+    var by = {}, total = 0; counts.forEach(function (c) { by[c.v] = (by[c.v] || 0) + c.n; total += c.n; });
+    var decided = total - (by.open || 0), approved = (by.approve || 0) + (by.unplaced || 0), n = function (v) { return Number(v).toLocaleString('en-US'); };
+    [['Collected', n(f.collected), f.listedNotFetched ? n(f.listedNotFetched) + ' more listed, not yet downloaded' : 'documents stored'],
+      ['Read', n(f.read), Math.round(100 * f.read / Math.max(1, f.collected)) + '% of collected'],
+      ['Candidates', n(f.candidates), n(f.twoOrMore) + ' backed by 2+ documents'],
+      ['Decided', n(decided), Math.round(100 * decided / Math.max(1, total)) + '% of candidates'],
+      ['Approved', n(approved), (by.reject || 0) + ' rejected, ' + (by.defer || 0) + ' put off'],
+      ['Reading cost', '$' + f.costUsd.toFixed(2), approved ? '$' + (f.costUsd / approved).toFixed(2) + ' per approved entry' : 'no approved entries yet']
+    ].forEach(function (x) { box.appendChild(el('div', { class: 'fn', title: x[0] === 'Reading cost' ? "By the reading script's own count across " + f.runs.length + ' runs; not a bill.' : '' }, [el('span', { text: x[0] }), el('b', { class: 'num', text: x[1] }), el('small', { text: x[2] })])); });
   }
   function drawList() {
     var tb = $('rows'); tb.innerHTML = '';

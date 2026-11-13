@@ -1,6 +1,6 @@
 // CREST demo: robots-compliant (sitemap only, no /search/), one request at a time, >=10 s apart.
 import fs from 'node:fs';
-const UA = 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)';
+const UA = 'TripoliOpenSource-research/1.0 (historical research; github.com/gelnagar/libya-project)';
 const BUDGET_MS = 5 * 60 * 1000, GAP = 10500, T0 = Date.now();
 const OUT = 'archive/crest'; fs.mkdirSync(`${OUT}/demo-pages`, { recursive: true });
 let last = 0; const log = [];

@@ -61,3 +61,12 @@ Old spy-satellite film (Feb 1966 GAMBIT; Nov 1972, 1976 north and south, 1983 HE
 - **Site size limit:** this Worker is on the free plan. Deploys of 37,275 and 18,055 files failed in Cloudflare Workers Builds; 14,481, 16,286 and 15,841 passed. `prune-hi-tiles.py` sizes the sharp level to keep `public/` at or under 16,300 files; do not add files without checking the count.
 - **Layers show only where points exist** (450 m zone, holes under 2.4 km filled by interpolation), so gaps stay empty on purpose. Abu Salim is covered in 1972, 1976 south and 1983.
 - Pushes that change thousands of files can skip workflow path filters; dispatch manually. `usgs-declass.json` lists the frames USGS has scanned; frames still without control points: July 1972 and most others (each needs a seed, a matcher run and a rebuild).
+
+## Workstation look (2026-11)
+- `public/workstation.css` is loaded last and restyles everything: tokens on `html[data-theme="dark"|"light"]` (set by `boot.js` and `setTheme`), a flat reset (no shadows, radius 0 or 2px, Inter and JetBrains Mono), then the docked shell. The inline styles in `index.html` and `foundry.css` are older layers underneath; new styling goes in `workstation.css`.
+- Shell from 900px wide: 32px top bar, 48px rail (`#rail`), left panel `#drawer` (tabs Layers, Legend, Table), map, right panel `#sheet`, timeline strip, 24px `#statusbar`. The map is docked between the panels (`--map-l`, `--map-r`, `--map-b`), so anything fixed over the map must use those variables. Phones keep bottom sheets.
+- `public/workstation.js` holds the rail, top search, account menu, table, export, right-click menu, shortcuts and map legend. It reaches the map only through `window.ATLAS_API` (end of `app.js`); add to that object instead of reaching into `app.js`.
+- Markers are 12px flat shapes from `shapeSvg()`: each layer in `ATLAS_LAYERS` has a `shape` (circle, square, triangle, diamond) and a `color`, validated together for colour-blind separation. Family reports are inverted triangles. Evidence level is fill: filled, half tone, outline.
+- Timeline (`drawTimeline`): click a year, drag for a range (`timeRange`), places within 13px fold into a numbered box with a list.
+- `--text-faint` is below AA: placeholders and dividers only.
+- `AUDIT.md` (git-ignored, the repo is public) lists open security and research findings.

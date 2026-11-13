@@ -62,7 +62,7 @@ async function sampleDocs(n) {
   const pick = L.filter((x) => /NATIONAL INTELLIGENCE|LIBYA|QADH|QADD|GADH/i.test(x.title)).slice(0, 200);
   const step = Math.max(1, Math.floor(pick.length / n)); const out = [];
   for (let i = 0; i < pick.length && out.length < n; i += step) {
-    const it = pick[i]; const ua = { 'user-agent': 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)' };
+    const it = pick[i]; const ua = { 'user-agent': 'TripoliOpenSource-research/1.0 (historical research; github.com/gelnagar/libya-project)' };
     const meta = await (await fetch(`https://archive.org/metadata/${it.identifier}`, { headers: ua })).json().catch(() => null);
     const f = (meta?.files || []).find((x) => /_djvu\.txt$/.test(x.name)); if (!f) continue;
     const rr = await fetch(`https://archive.org/download/${it.identifier}/${encodeURIComponent(f.name)}`, { headers: ua }); if (!rr.ok) continue;

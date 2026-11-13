@@ -1,6 +1,6 @@
 // Probe permissible mirrors of CREST/JPRS/FBIS. Different hosts, polite (2 s gaps per host).
 import fs from 'node:fs';
-const UA = 'TripoliOpenSource-research/1.0 (historical research; contact gsea2020@mymail.pomona.edu)';
+const UA = 'TripoliOpenSource-research/1.0 (historical research; github.com/gelnagar/libya-project)';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function get(u, h = {}) {
   try { const r = await fetch(u, { headers: { 'user-agent': UA, ...h } }); const t = await r.text(); return { status: r.status, t }; }

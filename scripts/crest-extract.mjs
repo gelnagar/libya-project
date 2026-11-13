@@ -44,10 +44,14 @@ const TOOL = { name: 'record', description: 'Structured facts from one document.
   quote: { type: 'string', description: 'Most informative verbatim sentence, max 250 characters, or empty.' } } } };
 
 const RX = /liby|tripoli|qadh|qadd|gadh|gadd|aziziy|azizia|abu salim|mitiga|wheelus|okba|tajou?ra|jamahir/gi;
-function trim(t, max = 24000) { // keep the head + windows around key terms
+// ONLY=tripoli reads just the documents that name a place in Tripoli, and only the text around those names:
+// the filter costs nothing and keeps the model on the passages that can yield a place or a dated event.
+const ONLY = process.env.ONLY === 'tripoli' ? /tripoli|aziziy|azizia|abu sal[ie]m|wheelus|mitiga|okba|uqba|tajou?ra|ain zara|janzur|gargaresh|ben ashour|hadba|green square|suq al|bab al/i : null;
+const WIN = ONLY ? new RegExp(ONLY.source, 'gi') : RX, HEAD = ONLY ? 2500 : 6000;
+function trim(t, max = ONLY ? 16000 : 24000) { // keep the head + windows around key terms
   if (t.length <= max) return t;
-  const head = t.slice(0, 6000), win = []; let m; RX.lastIndex = 6000;
-  while ((m = RX.exec(t))) { const a = Math.max(6000, m.index - 1200), b = Math.min(t.length, m.index + 1200); if (win.length && a <= win[win.length - 1][1]) win[win.length - 1][1] = b; else win.push([a, b]); }
+  const head = t.slice(0, HEAD), win = []; let m; WIN.lastIndex = HEAD;
+  while ((m = WIN.exec(t))) { const a = Math.max(HEAD, m.index - 1200), b = Math.min(t.length, m.index + 1200); if (win.length && a <= win[win.length - 1][1]) win[win.length - 1][1] = b; else win.push([a, b]); }
   let s = head; for (const [a, b] of win) { if (s.length > max) break; s += '\n[…]\n' + t.slice(a, b); } return s.slice(0, max);
 }
 const params = (d) => ({ model: MODEL, max_tokens: 1800,
@@ -79,6 +83,7 @@ let oldJ = new Set(); try { oldJ = new Set(JSON.parse(fs.readFileSync('archive/g
 const done = new Set(fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l).id) : []);
 const junk = (t) => /Internal Server Error|<html|<\/head>|502 Bad Gateway|503 Service/i.test(t.slice(0, 600));
 let todo = docs.filter((d) => !junk(d.text) && !done.has(d.id) && !(d.src === 'jprs' && oldJ.has(d.id)));
+if (ONLY) todo = todo.filter((d) => ONLY.test(d.text));
 // Sample: rank-diverse pick (NIS first, then spread across the list)
 if (SAMPLE) { const step = Math.max(1, Math.floor(todo.length / SAMPLE)); todo = todo.filter((d, i) => d.src === 'nis' || i % step === 0).slice(0, SAMPLE); }
 console.log('docs', docs.length, 'done', done.size, 'skipped old JPRS', docs.filter((d) => d.src === 'jprs' && oldJ.has(d.id)).length, 'todo', todo.length);

@@ -1,0 +1,13 @@
+{
+ "at": "2026-11-13T06:36:54.172Z",
+ "listed": 4938,
+ "stored": 444,
+ "withText": 386,
+ "chars": 829722,
+ "requests": {
+  "requests": 303,
+  "blocked": 0,
+  "retried": 4,
+  "failed": 1
+ }
+}

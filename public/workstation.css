@@ -528,3 +528,11 @@ html[data-theme] #timeline .tl-era { text-align: center; font-size: 10px; letter
 html[data-theme] #timeline .tl-lane { background: var(--border); }
 html[data-theme] #timeline .tl-ctrl button { min-width: 44px; }
 html[data-theme] #timeline .tl-span { height: 2px; opacity: .4; }
+
+/* analyst grades beside citations */
+.grade { display: inline-block; min-width: 20px; margin-inline-end: 6px; padding: 0 3px; border: 1px solid var(--border-strong); border-radius: 2px; font-family: var(--f-mono) !important; font-size: 10px; line-height: 14px; text-align: center; color: var(--text); cursor: help; vertical-align: 1px; }
+.grade.g-B, .grade.g-A { border-color: var(--ok); }
+.grade.g-C { border-color: var(--border-strong); }
+.grade.g-D, .grade.g-E { border-color: var(--danger); }
+.grade.g-F { border-style: dashed; color: var(--text-muted); }
+html[data-theme] .grade-key { margin: 6px 0 0; font-size: 11px; color: var(--text-muted); }

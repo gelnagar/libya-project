@@ -509,3 +509,21 @@ html[data-theme] #timeline .tl-hint, html[data-theme] #timeline .tl-max, html[da
 html[data-theme] #timeline .tl-era { color: var(--text); }
 html[data-theme] :is(.places button, .links button, .yc-list button, .trow):hover :is(small, .yr, .td), .ws-table tbody tr:hover td.ws-num, .ws-table tbody tr[aria-selected="true"] td.ws-num { color: var(--text); }
 html[data-theme] #sheet-body .pp-chron .y.g { color: var(--text); font-weight: 500; }
+
+/* ---------- timeline, formal dress: even year scale, a tick per year, end sections set apart ---------- */
+html[data-theme] #timeline .tl-lab { width: 136px; color: var(--text); font-weight: 500; }
+html[data-theme] #timeline .tl-title { color: var(--text); }
+#timeline .tl-read { min-width: 170px; padding: 0 8px; border-left: 1px solid var(--border); border-right: 1px solid var(--border); line-height: 23px; }
+html[data-theme] #timeline .tl-hint { display: flex; align-items: center; gap: 6px; color: var(--text-muted); }
+#timeline .tl-hint .g-shp { display: inline-grid; margin-left: 8px; }
+#timeline .tl-hint .shp { width: 9px; height: 9px; }
+#timeline .tl-tk { position: absolute; width: 1px; height: 3px; background: var(--border-strong); pointer-events: none; }
+#timeline .tl-tk.major { height: 6px; background: var(--text-muted); }
+html[data-theme] #timeline .tl-tick { transform: translateX(-50%); top: auto; color: var(--text); font-size: 10px; line-height: 14px; height: 14px; }
+#timeline .tl-cap { position: absolute; height: 17px; margin-top: 0; text-align: center; pointer-events: auto; }
+#timeline .tl-cap span { font-family: var(--f-mono) !important; font-size: 10px; line-height: 17px; color: var(--text-muted); white-space: nowrap; }
+#timeline .tl-gap { position: absolute; z-index: 5; background: var(--bg-app); border-left: 1px solid var(--border-strong); border-right: 1px solid var(--border-strong); pointer-events: none; }
+
+html[data-theme] #timeline .tl-era { text-align: center; font-size: 10px; letter-spacing: .02em; }
+html[data-theme] #timeline .tl-lane { background: var(--border); }
+html[data-theme] #timeline .tl-ctrl button { min-width: 44px; }

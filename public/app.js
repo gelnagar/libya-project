@@ -486,19 +486,28 @@
 
   /* ---------- timeline (desktop) ---------- */
   /* timeline: one lane per subject, years run left to right; spans show how long a place was in use */
+  /* Time scale: 1969-2011 runs at an even rate, one year the same width as the next. Earlier and later years sit in two
+     narrow end sections, each with its own even scale and set apart by a gap, so nothing in the main run is stretched. */
+  var TL_A = 1905, TL_B = 1969, TL_C = 2012, TL_D = 2026, TL_F = [0, 0.085, 0.10, 0.925, 0.94, 1];
   function tx(y) {
-    if (y < 1969) return 0.17 * Math.max(0, y - 1905) / 64;
-    if (y <= 2012) return 0.17 + 0.75 * (y - 1969) / 43;
-    return 0.92 + 0.08 * (Math.min(y, 2026) - 2012) / 14;
+    if (y < TL_B) return TL_F[0] + (TL_F[1] - TL_F[0]) * Math.max(0, y - TL_A) / (TL_B - TL_A);
+    if (y <= TL_C) return TL_F[2] + (TL_F[3] - TL_F[2]) * (y - TL_B) / (TL_C - TL_B);
+    return TL_F[4] + (TL_F[5] - TL_F[4]) * (Math.min(y, TL_D) - TL_C) / (TL_D - TL_C);
   }
-  var ERAS = [[1905, 1911, 'Ottoman', 'Ott.'], [1911, 1943, 'Italian colony', 'Italian'], [1943, 1951, 'British rule', 'UK'], [1951, 1969, 'Kingdom of Libya', 'Kingdom'],
-    [1969, 1977, 'Revolution', 'Revolution'], [1977, 1986, 'Jamahiriya and terror', 'Jamahiriya'], [1986, 1992, 'US raid and Lockerbie', '1986–92'],
-    [1992, 2003, 'UN sanctions', 'Sanctions'], [2003, 2011, 'Opening to the West', 'Opening'], [2011, 2012, '2011 uprising and war', '2011'], [2012, 2026, 'After Gaddafi', 'After']];
+  function txInv(f) {
+    f = Math.max(0, Math.min(1, f));
+    if (f < (TL_F[1] + TL_F[2]) / 2) return Math.min(TL_B - 1, Math.round(TL_A + (f - TL_F[0]) / (TL_F[1] - TL_F[0]) * (TL_B - TL_A)));
+    if (f <= (TL_F[3] + TL_F[4]) / 2) return Math.max(TL_B, Math.min(TL_C, Math.round(TL_B + (f - TL_F[2]) / (TL_F[3] - TL_F[2]) * (TL_C - TL_B))));
+    return Math.max(TL_C, Math.round(TL_C + (f - TL_F[4]) / (TL_F[5] - TL_F[4]) * (TL_D - TL_C)));
+  }
+  var ERAS = [[1905, 1911, 'Ottoman rule', 'Ottoman'], [1911, 1943, 'Italian colonial rule', 'Italian'], [1943, 1951, 'British Military Administration', 'BMA'], [1951, 1969, 'Kingdom of Libya', 'Kingdom'],
+    [1969, 1977, 'Revolutionary Command Council', 'RCC'], [1977, 1986, 'Jamahiriya', 'Jamahiriya'], [1986, 1992, 'US air strikes; Lockerbie', '1986–92'],
+    [1992, 2003, 'UN sanctions', 'Sanctions'], [2003, 2011, 'Rapprochement with the West', 'Rapprochement'], [2011, 2012, 'Uprising and civil war', '2011'], [2012, 2026, 'After Gaddafi', 'Post-2011']];
   var timeRange = null;
   function pos(f) { return 'calc(14px + ' + f.toFixed(4) + ' * (100% - 28px))'; }
-  var TL_ALL = [['Prisons & security', ['detention', 'security']], ['Military', ['military', 'airstrike', 'battle']], ['Killings', ['massacre']], ['Power', ['power']], ['Landmarks', ['landmark']]];
-  var TL_ONE = [['Events', ['massacre', 'airstrike', 'battle', 'detention', 'security', 'military', 'power', 'landmark']]];
-  var tlAll = store.get('tlAll', false), TL_LANES = tlAll ? TL_ALL : TL_ONE;
+  var TL_ALL = [['Detention & security', ['detention', 'security']], ['Military & armed action', ['military', 'airstrike', 'battle']], ['Killings & repression', ['massacre']], ['Seats of power', ['power']], ['Landmarks & events', ['landmark']]];
+  var TL_ONE = [['All records', ['massacre', 'airstrike', 'battle', 'detention', 'security', 'military', 'power', 'landmark']]];
+  var tlAll = store.get('tlAll', true), TL_LANES = tlAll ? TL_ALL : TL_ONE;
   var tlPop = null;
   function tlClosePop() { if (tlPop) { tlPop.remove(); tlPop = null; } }
   function tlCount(y) { var n = 0; SITES.forEach(function (s) { if (visible(s) && activeAt(s, y)) n++; }); return n; }
@@ -508,7 +517,7 @@
     var tl = $('timeline'), r = anchor.getBoundingClientRect(), t = tl.getBoundingClientRect();
     tlPop = h('div', { class: 'tl-pop', role: 'menu', style: 'left:' + Math.max(4, Math.min(t.width - 304, r.left - t.left - 8)).toFixed(0) + 'px;bottom:' + (t.bottom - r.top + 4).toFixed(0) + 'px' },
       list.map(function (s) { var lay = LAYERS[s.layer]; return h('button', { type: 'button', role: 'menuitem', onclick: function () { tlClosePop(); focusSite(s); } },
-        [h('span', { class: 'g-shp', html: shapeSvg(lay.shape, lay.color) }), h('span', { class: 'yr', text: String(s.y0) }), h('span', { class: 'nm', text: s.name })]); }));
+        [h('span', { class: 'g-shp v-' + s.level, html: shapeSvg(lay.shape, lay.color) }), h('span', { class: 'yr', text: yrs(s) }), h('span', { class: 'nm', text: s.name })]); }));
     tl.appendChild(tlPop);
   }
   document.addEventListener('click', function (e) { if (tlPop && !tlPop.contains(e.target) && !(e.target.closest && e.target.closest('.tl-n'))) tlClosePop(); });
@@ -518,39 +527,39 @@
     var tl = $('timeline');
     tl.innerHTML = ''; tlPop = null;
     TL_LANES = tlAll ? TL_ALL : TL_ONE;
-    var L0 = 112, R0 = 12, W = Math.max(200, tl.clientWidth - L0 - R0);
+    var L0 = 148, R0 = 12, W = Math.max(200, tl.clientWidth - L0 - R0);
     var HEAD = 24, HIST = 20, ERA = 16, LH = tlAll ? 18 : 22, AX = 18;
     var yHist = HEAD + 3, yEra = yHist + HIST + 3, yLanes = yEra + ERA + 3, lanesH = TL_LANES.length * LH, yAxis = yLanes + lanesH + 2, tlH = yAxis + AX;
     tl.style.height = tlH + 'px'; document.documentElement.style.setProperty('--tl-h', tlH + 'px');
     var X = function (y) { return L0 + tx(y) * W; };
-    var yearAt = function (cx) { var r = tl.getBoundingClientRect(), f = Math.max(0, Math.min(1, (cx - r.left - L0) / W));
-      return Math.round(f < 0.17 ? 1905 + f / 0.17 * 64 : f <= 0.92 ? 1969 + (f - 0.17) / 0.75 * 43 : 2012 + (f - 0.92) / 0.08 * 14); };
+    var yearAt = function (cx) { var r = tl.getBoundingClientRect(); return txInv((cx - r.left - L0) / W); };
     var shown = SITES.filter(function (s) { return s.y0 != null && visible(s); });
     var inSel = function (s) { var r = span(s); return timeRange ? (r[1] >= timeRange[0] && r[0] <= timeRange[1]) : timeYear != null ? r[0] <= timeYear : true; };
     var px = function (v) { return v.toFixed(1) + 'px'; };
 
     /* header */
-    var readText = (timeRange ? timeRange[0] + '–' + timeRange[1] : timeYear != null ? String(timeYear) : 'All years') + '  ·  ' +
-      (timeYear != null ? tlCount(timeYear) + ' active' : shown.filter(inSel).length + ' of ' + shown.length + ' places');
+    var readText = (timeRange ? timeRange[0] + '–' + timeRange[1] : timeYear != null ? String(timeYear) : TL_A + '–' + TL_D) + '   ' +
+      (timeYear != null ? tlCount(timeYear) + ' in use' : shown.filter(inSel).length + ' of ' + shown.length + ' records');
     var readEl = h('span', { class: 'tl-read', text: readText });
     var btn = function (label, title, fn, pressed, off) { return h('button', { type: 'button', title: title, 'aria-label': title, 'aria-pressed': pressed == null ? null : String(!!pressed), disabled: off ? '' : null, text: label, onclick: fn }); };
     tl.appendChild(h('div', { class: 'tl-head' }, [h('span', { class: 'tl-title', text: 'Timeline' }), readEl,
-      h('span', { class: 'tl-hint', text: 'Click a year, drag for a range, arrow keys to step' }),
+      h('span', { class: 'tl-hint', title: 'Click a year to step to it. Drag across years for a range; Shift+click extends. Left and right arrows step one year.' }, [
+        h('span', { class: 'g-shp', html: shapeSvg('circle', '#738091') }), 'Documented', h('span', { class: 'g-shp v-testimony', html: shapeSvg('circle', '#738091') }), 'Reported', h('span', { class: 'g-shp v-suspected', html: shapeSvg('circle', '#738091') }), 'Suspected']),
       h('div', { class: 'tl-ctrl' }, [
-        btn('‹', 'Previous year (Left arrow)', function () { tlStep(-1); }),
+        btn('◀ Year', 'Previous year (Left arrow)', function () { tlStep(-1); }),
         btn(playTimer ? 'Pause' : 'Play', 'Play 1969 to 2011 (Space)', function () { playTimer ? stopPlay() : startPlay(); }, !!playTimer),
-        btn('›', 'Next year (Right arrow)', function () { tlStep(1); }),
-        btn('All years', 'Clear the time filter (Esc)', function () { stopPlay(); timeRange = null; setYear(null); }, null, timeYear == null && !timeRange),
-        btn('Lanes', 'One lane per subject, with how long each place was in use', function () { tlAll = !tlAll; store.set('tlAll', tlAll); drawTimeline(); }, tlAll)
+        btn('Year ▶', 'Next year (Right arrow)', function () { tlStep(1); }),
+        btn('Reset', 'Clear the time filter and show all years (Esc)', function () { stopPlay(); timeRange = null; setYear(null); }, null, timeYear == null && !timeRange),
+        btn('By subject', 'One lane per subject, with a bar for the years each place was in use', function () { tlAll = !tlAll; store.set('tlAll', tlAll); drawTimeline(); }, tlAll)
       ])]));
 
     /* new places per year */
     var counts = {}, maxC = 1;
     shown.forEach(function (s) { counts[s.y0] = (counts[s.y0] || 0) + 1; maxC = Math.max(maxC, counts[s.y0]); });
-    tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (yHist + 3) + 'px', text: 'New per year' }));
+    tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (yHist + 3) + 'px', text: 'Records by first year' }));
     tl.appendChild(h('div', { class: 'tl-max', style: 'top:' + (yHist - 1) + 'px;left:' + (L0 - 26) + 'px', text: String(maxC), title: 'Most in one year' }));
     Object.keys(counts).forEach(function (k) {
-      var y = +k, x = X(y), w = Math.max(2, X(y + 1) - x - 1), hh = Math.max(2, Math.round(counts[k] / maxC * HIST));
+      var y = +k, x = X(y), w = Math.max(2, Math.min(X(y + 1) - x - 1, W * (TL_F[3] - TL_F[2]) / (TL_C - TL_B) - 1)), hh = Math.max(2, Math.round(counts[k] / maxC * HIST));
       var dim = timeRange ? (y < timeRange[0] || y > timeRange[1]) : timeYear != null && y > timeYear;
       tl.appendChild(h('div', { class: 'tl-bar' + (dim ? ' dim' : ''), style: 'left:' + px(x) + ';width:' + px(w) + ';top:' + (yHist + HIST - hh) + 'px;height:' + hh + 'px' }));
     });
@@ -582,8 +591,8 @@
       buckets.forEach(function (b) {
         var one = b.list.length === 1, s = b.list[0], lay = LAYERS[s.layer], ids = b.list.map(function (q) { return q.id; });
         var ya = s.y0, yb = b.list[b.list.length - 1].y0;
-        var label = one ? yrs(s) + ' · ' + s.name : b.list.length + ' places, ' + ya + (yb !== ya ? '–' + yb : '') + '. Click for the list.';
-        var el = h('button', { type: 'button', class: 'tl-dot' + (one ? '' : ' tl-n') + (selected && ids.indexOf(selected) >= 0 ? ' sel' : '') + (b.list.some(inSel) ? '' : ' dim'),
+        var label = one ? yrs(s) + '  ' + s.name + '. ' + lay.label + '. ' + LEVELS[s.level] + '.' : b.list.length + ' records, ' + ya + (yb !== ya ? '–' + yb : '') + '. Select to list them.';
+        var el = h('button', { type: 'button', class: 'tl-dot' + (one ? ' v-' + s.level : ' tl-n') + (selected && ids.indexOf(selected) >= 0 ? ' sel' : '') + (b.list.some(inSel) ? '' : ' dim'),
           'data-ids': ids.join(' '), title: label, 'aria-label': label, style: 'left:' + px(b.x) + ';top:' + (mid - 7) + 'px',
           html: one ? shapeSvg(lay.shape, lay.color) : '<b>' + b.list.length + '</b>' });
         el.addEventListener('click', function (e) { e.stopPropagation(); if (one) { tlClosePop(); focusSite(s); } else tlPopup(el, b.list); });
@@ -593,19 +602,24 @@
 
     /* year axis; the scale is wider for 1969–2011, so the two joins are marked */
     tl.appendChild(h('div', { class: 'tl-axis', style: 'top:' + yAxis + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
-    var last = -99;
-    [1911, 1945, 1951, 1969, 1975, 1980, 1985, 1990, 1996, 2000, 2005, 2011, 2020].forEach(function (yr) {
-      var x = X(yr); if (x - last < 36) return; last = x;
-      tl.appendChild(h('button', { type: 'button', class: 'tl-tick', style: 'left:' + px(x) + ';top:' + (yAxis + 1) + 'px', text: String(yr), title: yr >= 1969 && yr <= 2011 ? 'Show ' + yr + ' in Tripoli' : 'Look up ' + yr + ' in the Encyclopedia', onclick: function () { if (yr >= 1969 && yr <= 2011) showYear(yr); else openTerm(String(yr)); } }));
+    for (var yr = TL_B; yr <= TL_C - 1; yr++) {
+      var major = yr % 5 === 0 || yr === TL_B || yr === TL_C - 1, x = X(yr);
+      tl.appendChild(h('div', { class: 'tl-tk' + (major ? ' major' : ''), style: 'left:' + px(x) + ';top:' + yAxis + 'px' }));
+      if (!major || (yr === 1970) || (yr === 2010)) continue;
+      (function (y) { tl.appendChild(h('button', { type: 'button', class: 'tl-tick', style: 'left:' + px(x) + ';top:' + (yAxis + 3) + 'px', text: String(y), title: 'Show ' + y + ' in Tripoli', onclick: function () { showYear(y); } })); })(yr);
+    }
+    [[TL_A, TL_B - 1, 'Before 1969'], [TL_C, TL_D, 'After 2011']].forEach(function (c) {
+      var x0 = X(c[0]), x1 = X(c[1]);
+      tl.appendChild(h('div', { class: 'tl-cap', style: 'left:' + px(x0) + ';width:' + px(x1 - x0) + ';top:' + yAxis + 'px', title: c[2] + ', ' + c[0] + '–' + c[1] + ', on a compressed scale' }, [h('span', { text: c[0] + '–' + String(c[1]).slice(2) })]));
     });
-    [1969, 2012].forEach(function (yr) { tl.appendChild(h('div', { class: 'tl-break', style: 'left:' + px(X(yr)) + ';top:' + (yAxis - 4) + 'px', title: 'The scale changes here: 1969–2011 is drawn wider than the years before and after' })); });
+    [[TL_F[1], TL_F[2]], [TL_F[3], TL_F[4]]].forEach(function (g) { tl.appendChild(h('div', { class: 'tl-gap', style: 'left:' + px(L0 + g[0] * W + 1) + ';width:' + px((g[1] - g[0]) * W - 2) + ';top:' + yHist + 'px;height:' + (yAxis - yHist + AX) + 'px', title: 'Change of scale' })); });
 
     /* pointer: hover readout, click for a year, drag for a range, Shift+click to extend */
     var bandTop = 'top:' + yHist + 'px;height:' + (yAxis - yHist) + 'px';
     var hit = h('div', { class: 'tl-hit', style: 'left:' + L0 + 'px;width:' + W + 'px;' + bandTop });
     var hov = h('div', { class: 'tl-hover', hidden: '', style: bandTop }, [h('b')]);
     var drag = false;
-    hit.addEventListener('pointermove', function (e) { if (drag) return; var y = yearAt(e.clientX); hov.hidden = false; hov.style.left = px(X(y)); hov.firstChild.textContent = String(y); readEl.textContent = y + '  ·  ' + tlCount(y) + ' active'; });
+    hit.addEventListener('pointermove', function (e) { if (drag) return; var y = yearAt(e.clientX); hov.hidden = false; hov.style.left = px(X(y)); hov.firstChild.textContent = String(y); readEl.textContent = y + '   ' + tlCount(y) + ' in use'; });
     hit.addEventListener('pointerleave', function () { if (drag) return; hov.hidden = true; readEl.textContent = readText; });
     hit.addEventListener('pointerdown', function (e) {
       if (e.button) return;

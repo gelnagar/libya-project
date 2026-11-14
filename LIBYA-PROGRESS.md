@@ -56,7 +56,11 @@ Standing rules for every chunk
       Original wording: place names and spellings from sources, positions only where a source gives one
 - [~] C3 Free part done for every region: the 5,627 documents already read were sorted by the town each place or event names (`scripts/lib/regions.mjs`). Review candidates outside Tripoli: Benghazi 110, Fezzan 57, Greater Tripolitania 51, Cyrenaica 50, Sirte 28 (296 in all), with a region filter on the review page. Names that are only a town are dropped. Paid part (reading the unread documents that name these towns) waits for the owner.
       Original wording: Run filter, extraction (go-ahead needed), review queue for Benghazi
-- [ ] C4 Written safety check for the region; 30-entry sample check
+- [~] C4 Tools and the written check done; the independent half of the sample check waits for a person.
+      Safety: `node scripts/safety-check.mjs benghazi` over the 110 Benghazi candidates (no pins yet): 94 raise nothing; 0 private persons in a security or informer role; 0 private homes; 5 name victims already named in published sources (allowed, with limits); 5 are after 2011 (Benghazi 2012, Operation Dignity 2014: left out); 1 coup-plot leader named only by a hostile Cairo paper (not to be used without a second source). Written up in `archive/regions/benghazi-safety.md`.
+      Sample: `node scripts/sample-check.mjs benghazi` draws 30 by a fixed hash and re-reads every cited document from the stored copy: 35 of 36 quoted passages found word for word, 0 not found, 1 citation with no passage quoted; the entry's name or a distinctive word of it in the passage for 30; the year borne out for 28. Entries with a verbatim passage that carries the name: 28 of 30. Sheet for the checker: `archive/review/sample-benghazi.md` (rebuilt by the command, not committed).
+      Not done: the plan's pass mark is an independent check of each fact by a person; the machine part shows only that the quotations are real. The sample is of candidates because no Benghazi entries are written yet; run both commands again on the written pins.
+      Original wording: Written safety check for the region; 30-entry sample check
 
 ## Phase D. Remaining regions (one at a time, same steps as C)
 - [ ] D1 Greater Tripolitania  - [ ] D2 Cyrenaica  - [ ] D3 Sirte and the central coast  - [ ] D4 Fezzan and the south
@@ -75,12 +79,15 @@ Standing rules for every chunk
 - Open: hosting beyond the free plan's file limit (E1); moving reports to D1; when to switch the source of truth.
 
 ## Log
+- 2026-11-14: C4 tools (`scripts/safety-check.mjs`, `scripts/sample-check.mjs`, shared `scripts/lib/stored.mjs`) and the Benghazi safety check written. D1-D4 not started: each needs its region's paid reading (C3) and written entries first.
 - 2026-11-13 (10:51 run): B1, B2, C2 done; C3 free part done for all regions.
 - 2026-11-13 (5:51 run): chunks 0, A1, A2, A3, A4, A6 done; A5 part done; C1 done. Archived copies now on record for 439 of 547 cited sources.
 - 2026-11-13: speeches finder, shared downloader, cable collector written on `more-sources`; UN sites forbid
   automated collection (archive/SOURCES.md).
 
 ## Waiting for the owner
+- Benghazi sample check, human half: someone other than the person who wrote the entries checks the 30 entries on `archive/review/sample-benghazi.md` (run `node scripts/sample-check.mjs benghazi` first). Best done after the Benghazi entries are written, not on raw candidates.
+- In the review queue, reject the five Benghazi candidates dated after 2011 ("after the period of the map"); see `archive/regions/benghazi-safety.md`.
 - BY 6 PM 13 NOV: give the owner a short summary (what each chunk built and how it was checked), the local copy to click through, and this list as yes/no decisions.
 - Reload the live review queue: the candidate table gained a region column, so load the new SQL (`node scripts/build-review.mjs --sql out.sql`, then wrangler d1 execute) in the same step as pushing the Worker.
 - Read the Embassy Tripoli cables with the extraction model? 386 are downloaded (about $0.16 by the script's count); the other 4,494 would need downloading first (about 3 hours, free) and about $2 to read.

@@ -25,7 +25,8 @@ for (const f of ['archive/crest/extract.jsonl', 'archive/crest/extract-other.jso
 const PUBLIC = /\b(leader|head of state|president|king|queen|crown prince|emir|sultan|prime minister|premier|minister|secretary|ambassador|consul|envoy|chargé|charge d'affaires|chairman|spokesman|governor|mayor|general|admiral|colonel|lieutenant colonel|major|commander|chief of staff|member of the rcc|revolutionary command council|deputy|senator|congressman|pope|official|delegat|foreign|party|movement leader|press|journalist|author|scholar|historian)\b/i;
 const ROLE = /\b(informer|informant|agent of|intelligence officer|security officer|interrogat|torture|guard|warden|executioner|hangman|revolutionary committee member|committee member|militia|prosecutor|judge|killer|assassin|hit ?man|accused of|carried out the execution|denounced)\b/i;
 const VICTIM = /\b(executed|hanged|hung|shot dead|killed|murdered|assassinated|victim|prisoner|detainee|detained|arrested|disappeared|tortured|sentenced|condemned|defendant|dissident|exile|student|hostage)\b/i;
-const HOME = /\b(home of|house of|residence of|his home|her home|family home|private house|lives at|lived at)\b/i;
+// "House of Representatives" and "the return home of a unit" are not homes
+const HOME = /\b((?<!return )home of (?!a |an |the )|house of (?!representatives|commons|lords|the people|congress)|residence of|his home|her home|family home|private house|lives at|lived at)\b/i;
 
 const entries = [
   ...pins.map((p) => ({ id: p.id, kind: 'pin', name: p.name, date: p.y0 ? String(p.y0) : '', text: p.text || '', docs: [], sources: (p.sources || []).map((s) => s.t) })),

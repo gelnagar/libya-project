@@ -64,6 +64,14 @@ Standing rules for every chunk
 
 ## Phase D. Remaining regions (one at a time, same steps as C)
 - [ ] D1 Greater Tripolitania  - [ ] D2 Cyrenaica  - [ ] D3 Sirte and the central coast  - [ ] D4 Fezzan and the south
+      First pass (2026-11-14), free steps only, on the review candidates: `node scripts/safety-check.mjs <region>` and `node scripts/sample-check.mjs <region>`.
+      | Region | Candidates | Raise nothing | Private role | Named victims | After 2011 | Quoted passages found word for word |
+      |---|---|---|---|---|---|---|
+      | Greater Tripolitania | 51 | 40 | 0 | 2 | 7 | 32 of 34 citations (2 with none quoted) |
+      | Cyrenaica | 50 | 41 | 0 | 1 | 7 | 28 of 31 (3 with none quoted) |
+      | Sirte | 28 | 24 | 0 | 0 | 2 | 37 of 40 (3 with none quoted) |
+      | Fezzan | 57 | 46 | 0 | 0 | 9 | 36 of 41 (5 with none quoted) |
+      No quoted passage was missing from its stored source in any region. One point to carry into the written checks: Greater Tripolitania names Farahat 'Ammar Jlab, sentenced to death at Zuwarah in 1984 and called a "Muslim Brotherhood agent" by the regime's own report; if used, that label must be attributed to the regime, not stated. The "home" test gave false hits on "House of Representatives" and "return home of a unit" and was narrowed. Each region still needs its paid reading (C3), written entries, and its own written check before it is ticked.
 
 ## Phase E. Public opening
 - [ ] E1 Country view, correction and removal route, hosting sized for the data (tiles and region data off the

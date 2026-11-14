@@ -44,8 +44,10 @@ Standing rules for every chunk
       Original wording: Cost and funnel report page for the owner (documents found, read, candidates, decided; cost per entry)
 
 ## Phase B. Clear the Tripoli backlog
-- [ ] B1 Review-queue export: approved items become draft entries with their sources, for the owner to check
-- [ ] B2 Speeches layer: approved speeches shown at their venue with the transcript, by date
+- [x] B1 `node scripts/review-export.mjs approvals.json` (the review page's owner export) writes drafts with each item's sources, quoted passages and a list of what is still missing (position, years, wording). Places and events are never published by it. Checked with 8 made-up approvals (test only, removed afterwards): 3 drafts written, sources that lack the name flagged as such.
+      Original wording: approved items become draft entries with their sources, for the owner to check
+- [x] B2 Approved speeches go to `public/data/speeches.js` with their transcripts in `public/data/docs/`. On the map: a Speeches button in the rail (shown only when there are any) opens a dated list; a venue's own panel gets a section "Speeches recorded here". Checked in the browser with 5 test speeches (removed afterwards): list showed 5, Green Square panel showed 3, Abu Salim none, transcript file served. Live count is 0 until the owner approves speeches in the review queue.
+      Original wording: approved speeches shown at their venue with the transcript, by date
 - [ ] B3 Cables read (needs the owner's go-ahead on cost) and added to the queue
 
 ## Phase C. Benghazi pilot

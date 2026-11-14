@@ -332,6 +332,42 @@
   }
   if (REGIONS.length) { map.setMinZoom(5); map.on('zoomend', syncCountry); }
 
+  /* ---------- speeches: what a source records as said, where and when (only those the owner approved) ---------- */
+  var SPEECHES = window.ATLAS_SPEECHES || [];
+  function speechWhere(sp) { return sp.venue || 'Tripoli, venue not stated'; }
+  function speechRow(sp, withVenue) {
+    var d = h('details', { class: 'sp' }, [h('summary', {}, [h('span', { class: 'yr', text: sp.date || 'undated' }), h('span', { class: 'sp-who', text: sp.speaker || 'Speaker not read' }),
+      withVenue ? h('span', { class: 'sp-at', text: speechWhere(sp) }) : (sp.occasion ? h('span', { class: 'sp-at', text: sp.occasion }) : null)])]);
+    d.appendChild(h('p', { class: 'sp-desc', text: sp.description }));
+    d.appendChild(A.facts([[sp.dateIs === 'broadcast' ? 'Broadcast' : 'Date', sp.date], ['Venue, as the source names it', sp.venue || 'Not stated'], ['Occasion', sp.occasion],
+      ['Transcript', sp.doc ? 'About ' + Math.round(sp.chars / 1000) + ',000 characters, U.S. government translation' : 'None stored']]));
+    if (sp.opening) d.appendChild(h('p', { class: 'sp-open', text: sp.opening + (sp.doc ? ' …' : '') }));
+    var links = [];
+    if (sp.doc) links.push(h('a', { class: 'btn', href: 'data/docs/' + sp.doc + '.txt', target: '_blank', rel: 'noopener', text: 'Full transcript' }));
+    var pinSite = sp.pin && SITES.filter(function (x) { return x.id === sp.pin; })[0];
+    if (withVenue && pinSite) links.push(h('button', { class: 'btn', type: 'button', text: 'Show the venue', onclick: function () { A.focusSite(pinSite); } }));
+    if (links.length) d.appendChild(h('div', { class: 'row-btns' }, links));
+    d.appendChild(h('ol', { class: 'srcs' }, sp.src.map(function (x) { return h('li', {}, [x.u ? h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t }) : x.t]); })));
+    return d;
+  }
+  function speechesSheet() {
+    A.sheet('Speeches', '', function (body) {
+      body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: 'Speeches given in Tripoli' })]));
+      var placed = SPEECHES.filter(function (s) { return s.venue; }).length;
+      body.appendChild(A.facts([['Speeches', SPEECHES.length], ['With a venue the source names', placed], ['With a stored transcript', SPEECHES.filter(function (s) { return s.doc; }).length]]));
+      body.appendChild(h('p', { class: 'd-text muted small', text: 'Each entry is the translators’ own description of a broadcast speech. The venue is given only where that description names one. Texts are U.S. government translations of Libyan radio and television; scanning errors are likely.' }));
+      body.appendChild(A.section('By date', SPEECHES.map(function (sp) { return speechRow(sp, true); })));
+    });
+  }
+  // on a venue's own panel: the speeches recorded there
+  function speechesAt(id) {
+    var here = SPEECHES.filter(function (s) { return s.pin === id; }), b = $('sheet-body');
+    if (!here.length || !b || b.querySelector('.sp-here')) return;
+    var sec = A.section('Speeches recorded here (' + here.length + ')', here.map(function (sp) { return speechRow(sp, false); })); sec.classList.add('sp-here', 'pp-sec');
+    var before = b.querySelector('.pp-sec.pp-fr, .ai'); if (before && before.parentNode === b) b.insertBefore(sec, before); else b.appendChild(sec);
+  }
+  if (SPEECHES.length) { $('btn-speeches').hidden = false; $('btn-speeches').onclick = speechesSheet; } else $('btn-speeches').hidden = true;
+
   /* ---------- keyboard shortcuts ---------- */
   var KEYS = [['/', 'Search'], ['L', 'Layers'], ['B', 'Table of places'], ['G', 'Legend'], ['T', 'Timeline'], ['E', 'Export'], ['H', 'Show all of Tripoli'], ['0', 'Country view: every region'], ['D', 'Light or dark'], [',', 'Settings'], ['Esc', 'Close the open panel'], ['← →', 'Step the timeline (when it has focus)']];
   function showKeys() { openMenu([{ hd: 'Keyboard shortcuts' }].concat(KEYS.map(function (k) { return [k[1], k[0], function () {}]; })), innerWidth / 2 - 130, 80); }
@@ -348,6 +384,7 @@
   A.onSelect = function (id) {
     var s = id && SITES.filter(function (x) { return x.id === id; })[0];
     crumb(s ? s.name : ''); syncStatus(); markRows();
+    if (id && SPEECHES.length) setTimeout(function () { if (A.selected() === id) speechesAt(id); }, 0);
     var tr = id && $('tbl-rows') && $('tbl-rows').querySelector('tr.cur'); if (tr && tr.scrollIntoView) tr.scrollIntoView({ block: 'nearest' });
   };
   A.onRefresh = function () { syncStatus(); drawMapLegend(); if (built && !$('table-body').hidden) drawTable(); syncRail(); };

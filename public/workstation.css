@@ -548,3 +548,16 @@ html[data-theme] .grade-key { margin: 6px 0 0; font-size: 11px; color: var(--tex
 html[data-theme] body.country :is(.hood, .leaflet-marker-icon .mk, .site-label, .district, .osm-ic, .rep) { display: none !important; }
 html[data-theme] .crumb-btn { height: 20px; min-height: 0; padding: 0 4px; background: none; border: 0; color: var(--text-muted); font-size: 12px; font-weight: 400; cursor: pointer; }
 html[data-theme] .crumb-btn:hover { color: var(--accent); background: none; }
+
+/* speeches */
+html[data-theme] details.sp { border-bottom: 1px solid var(--border); }
+html[data-theme] details.sp > summary { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 0 8px; min-height: 24px; padding: 3px 0; cursor: pointer; list-style: none; font-size: 12px; }
+html[data-theme] details.sp > summary::-webkit-details-marker { display: none; }
+html[data-theme] details.sp > summary:hover { background: var(--bg-hover); }
+html[data-theme] details.sp .yr { color: var(--text-muted); font-size: 11px; grid-row: span 2; padding-top: 1px; }
+html[data-theme] details.sp .sp-who { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+html[data-theme] details.sp .sp-at { color: var(--text-muted); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+html[data-theme] details.sp[open] > summary { background: var(--bg-raised); }
+html[data-theme] details.sp > :not(summary) { margin: 6px 0; }
+html[data-theme] .sp-desc { font-size: 12px; border-left: 2px solid var(--border-strong); padding-left: 8px; }
+html[data-theme] .sp-open { font-family: var(--f-mono) !important; font-size: 11px; line-height: 1.55; padding: 8px; background: var(--bg-app); border: 1px solid var(--border); max-height: 220px; overflow-y: auto; }

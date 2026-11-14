@@ -7,3 +7,6 @@ archive/review/candidates.json
 archive/review/speeches.json
 public/data/regions/_*.js
 archive/review/drafts.*
+archive/review/safety-*.json
+archive/review/sample-*.json
+archive/review/sample-*.md

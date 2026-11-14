@@ -74,8 +74,11 @@ Standing rules for every chunk
       No quoted passage was missing from its stored source in any region. One point to carry into the written checks: Greater Tripolitania names Farahat 'Ammar Jlab, sentenced to death at Zuwarah in 1984 and called a "Muslim Brotherhood agent" by the regime's own report; if used, that label must be attributed to the regime, not stated. The "home" test gave false hits on "House of Representatives" and "return home of a unit" and was narrowed. Each region still needs its paid reading (C3), written entries, and its own written check before it is ticked.
 
 ## Phase E. Public opening
-- [ ] E1 Country view, correction and removal route, hosting sized for the data (tiles and region data off the
-      free-plan file limit)
+- [~] E1 Country view done under A5. Correction and removal route done. Hosting beyond the free plan waits for the owner.
+      Route: `public/corrections.html` (anyone; states what will be corrected or removed and that requests are answered) posts `{ correction: { kind, item, name, text, contact } }` to the Worker, which stores it in D1 table `corrections` (created by the Worker on first use; no manual database step), limits each address to 5 a day by keyed hash, and never shows requests to visitors. The owner lists them on requests.html and marks them answered. Every place panel ends with a link to the page, filled in with that entry.
+      Checks: `node scripts/test-worker.mjs` 47 passed, 0 failed (8 new: a visitor can send one; an empty one is refused; the sixth in a day from one address is refused; another address still can; stored by hash, not address; visitors cannot read them; the owner sees the contact but not the hash; the owner can mark one answered). In the browser with the real security headers: the page loads with no policy violation, the entry and "removal" are filled in from the link; on the map, Abu Salim's panel carries one link to `corrections.html?item=abusalim&name=Abu%20Salim%20prison`. public/ holds 15,858 files.
+      Not checked: sending from the page to a live Worker (the local server takes no POST), and the owner's list in a browser (the owner API needs the password and the live Worker). The page states no reply time, because none has been agreed.
+      Original wording: Country view, correction and removal route, hosting sized for the data (tiles and region data off the free-plan file limit)
 
 ## Architecture decisions (settled unless the owner says otherwise)
 - Source of truth today: `public/data/*.js`. The claim model in `archive/model/` is generated from it and proved lossless. The switch to "model is the source, public/data is generated" has NOT been made; it is the one large decision left (after the owner starts approving items).
@@ -87,6 +90,7 @@ Standing rules for every chunk
 - Open: hosting beyond the free plan's file limit (E1); moving reports to D1; when to switch the source of truth.
 
 ## Log
+- 2026-11-14: E1 correction and removal route (page, Worker route, owner list, 8 tests).
 - 2026-11-14: C4 tools (`scripts/safety-check.mjs`, `scripts/sample-check.mjs`, shared `scripts/lib/stored.mjs`) and the Benghazi safety check written. D1-D4 not started: each needs its region's paid reading (C3) and written entries first.
 - 2026-11-13 (10:51 run): B1, B2, C2 done; C3 free part done for all regions.
 - 2026-11-13 (5:51 run): chunks 0, A1, A2, A3, A4, A6 done; A5 part done; C1 done. Archived copies now on record for 439 of 547 cited sources.
@@ -94,6 +98,8 @@ Standing rules for every chunk
   automated collection (archive/SOURCES.md).
 
 ## Waiting for the owner
+- Corrections page: it promises answers but gives no reply time. Set one (for example two weeks), or keep it open? Requests reach you on requests.html only; no email alert was added.
+- Hosting for all of Libya (E1): the free plan caps the site at about 16,300 files and public/ is at 15,858. Region data and more satellite tiles will not fit. Options to decide: Workers paid plan ($5 a month, 100,000 files), or serving tiles from R2.
 - Benghazi sample check, human half: someone other than the person who wrote the entries checks the 30 entries on `archive/review/sample-benghazi.md` (run `node scripts/sample-check.mjs benghazi` first). Best done after the Benghazi entries are written, not on raw candidates.
 - In the review queue, reject the five Benghazi candidates dated after 2011 ("after the period of the map"); see `archive/regions/benghazi-safety.md`.
 - BY 6 PM 13 NOV: give the owner a short summary (what each chunk built and how it was checked), the local copy to click through, and this list as yes/no decisions.

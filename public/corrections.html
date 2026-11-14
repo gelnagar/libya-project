@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<title>Corrections and Removals</title>
+<script src="boot.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+:root { --bg: #F6F7F9; --panel: #FFFFFF; --line: #D3D8DE; --text: #1C2127; --muted: #5F6B7C; --accent: #2D72D2; --accent-text: #FFFFFF; --ok: #1C6E42; --warn: #935610; color-scheme: light; }
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) { --bg: #111418; --panel: #1C2127; --line: #383E47; --text: #F6F7F9; --muted: #ABB3BF; --accent: #4C90F0; --accent-text: #0B1A2E; --ok: #72CA9B; --warn: #FBB360; color-scheme: dark; } }
+html[data-theme="dark"] { --bg: #111418; --panel: #1C2127; --line: #383E47; --text: #F6F7F9; --muted: #ABB3BF; --accent: #4C90F0; --accent-text: #0B1A2E; --ok: #72CA9B; --warn: #FBB360; color-scheme: dark; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 Inter, system-ui, sans-serif; padding: 32px 16px 56px; }
+main { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+h1 { margin: 0; font-size: 22px; font-weight: 600; }
+h2 { margin: 0; font-size: 15px; font-weight: 600; }
+p, li { margin: 0; color: var(--muted); }
+ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+a { color: var(--accent); }
+.kicker { font: 11px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+section, form { background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+label { font-weight: 500; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+label small { font-weight: 400; color: var(--muted); }
+input, textarea { background: var(--bg); color: inherit; border: 1px solid var(--line); border-radius: 2px; padding: 8px 10px; font: inherit; min-height: 36px; }
+textarea { min-height: 140px; resize: vertical; }
+fieldset { border: 0; margin: 0; padding: 0; display: flex; gap: 16px; flex-wrap: wrap; }
+legend { padding: 0; margin-bottom: 6px; width: 100%; }
+fieldset label { flex-direction: row; align-items: center; gap: 6px; font-weight: 400; }
+fieldset input { min-height: 0; }
+button { align-self: flex-start; min-height: 36px; padding: 0 16px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-text); border-radius: 2px; font: 500 14px Inter, sans-serif; cursor: pointer; }
+button:disabled { opacity: .6; cursor: default; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.msg { font-size: 13px; }
+.msg.ok { color: var(--ok); }
+.msg.err { color: var(--warn); }
+.entry { font: 13px "JetBrains Mono", monospace; color: var(--text); }
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <p class="kicker">Tripoli: Open Source</p>
+    <h1>Corrections and removals</h1>
+  </div>
+  <p>This record is assembled from published documents, and some of it will be wrong. If an entry misstates a fact, misplaces a site, or names someone who should not be named, say so here. The editor reads every request, and none is shown on the site.</p>
+
+  <section aria-labelledby="h-policy">
+    <h2 id="h-policy">What we will do</h2>
+    <ul>
+      <li>Correct a fact where a source shows the entry is wrong, and note the correction on the entry.</li>
+      <li>Remove the name of a victim at the family's request, even where a published source names them.</li>
+      <li>Remove any private person named as a perpetrator, informer or member of a security body. The record does not name such people.</li>
+      <li>Answer each request that leaves a way to reply.</li>
+    </ul>
+  </section>
+
+  <form id="f" novalidate>
+    <fieldset>
+      <legend class="kicker">Request</legend>
+      <label><input type="radio" name="kind" value="correction" checked> A fact is wrong</label>
+      <label><input type="radio" name="kind" value="removal"> Remove a name or entry</label>
+    </fieldset>
+    <p class="entry" id="entry" hidden></p>
+    <label for="name">Which entry <small>The place or event, as named on the map.</small><input id="name" maxlength="200" autocomplete="off"></label>
+    <label for="text">What is wrong, and how you know <small>A document, a date or a first-hand account helps.</small><textarea id="text" maxlength="4000" required></textarea></label>
+    <label for="contact">How to reply to you (optional) <small>An email address or telephone number. Used only to answer you; never published.</small><input id="contact" maxlength="200" autocomplete="email"></label>
+    <button type="submit" id="send">Send request</button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </form>
+  <p><a href="./">Back to the map</a></p>
+</main>
+<script src="data/config.js"></script>
+<script src="corrections.js"></script>
+</body>
+</html>

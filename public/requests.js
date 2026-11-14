@@ -50,13 +50,33 @@
       c.appendChild(rm); box.appendChild(c);
     });
   }
+  function renderCorrections(list, code) {
+    var box = document.getElementById('corr'); box.innerHTML = '';
+    var open = list.filter(function (x) { return !x.done; }).length;
+    document.getElementById('ccount').textContent = list.length ? open + ' open, ' + (list.length - open) + ' answered.' : 'No correction or removal requests yet.';
+    list.forEach(function (it) {
+      var c = el('article', 'card');
+      var meta = el('div', 'meta');
+      meta.appendChild(el('span', null, new Date(it.at).toLocaleString()));
+      meta.appendChild(el('span', null, (it.kind === 'removal' ? 'Removal' : 'Correction') + (it.done ? ' · answered' : ' · open')));
+      c.appendChild(meta);
+      c.appendChild(el('h2', null, it.name || it.item || '(no entry named)'));
+      if (it.item) c.appendChild(el('p', 'ctx', 'Entry id: ' + it.item));
+      c.appendChild(el('p', 'details', it.text || ''));
+      c.appendChild(el('p', 'ctx', it.contact ? 'Reply to: ' + it.contact : 'No way to reply was left.'));
+      var b = el('button', null, it.done ? 'Reopen' : 'Mark answered');
+      b.onclick = function () { b.disabled = true; call(code, { correctionDone: it.id, reopen: !!it.done }).then(function () { load(code); }).catch(function () { b.disabled = false; }); };
+      c.appendChild(b);
+      box.appendChild(c);
+    });
+  }
   function load(code) {
     var msg = document.getElementById('login-msg');
     msg.textContent = 'Loading…';
     return call(code, {}).then(function (j) {
       set(code); msg.textContent = '';
       document.getElementById('login').hidden = true; document.getElementById('list').hidden = false;
-      render(j.items || [], code); renderReports(j.reports || [], code);
+      render(j.items || [], code); renderReports(j.reports || [], code); renderCorrections(j.corrections || [], code);
     }).catch(function (e) {
       document.getElementById('login').hidden = false; document.getElementById('list').hidden = true;
       msg.textContent = e.code === 401 ? 'That owner password is not right.' : e.code === 503 ? 'Storage is not set up in Cloudflare yet (ATLAS_KV).' : 'Could not reach the relay. Check your connection.';

@@ -380,11 +380,19 @@
     if (run) { e.preventDefault(); run(); }
   });
 
+  /* ---------- correction and removal route: a link at the foot of every place panel ---------- */
+  function correctionLink(id, name) {
+    var b = $('sheet-body'); if (!b || b.querySelector('.corr-link')) return;
+    var p = h('p', { class: 'corr-link d-text muted small' }, [h('a', { href: 'corrections.html?item=' + encodeURIComponent(id) + '&name=' + encodeURIComponent(name || ''), text: 'Report an error in this entry, or ask for a name to be removed' })]);
+    b.appendChild(p);
+  }
+
   /* ---------- keep everything in step with the map ---------- */
   A.onSelect = function (id) {
     var s = id && SITES.filter(function (x) { return x.id === id; })[0];
     crumb(s ? s.name : ''); syncStatus(); markRows();
     if (id && SPEECHES.length) setTimeout(function () { if (A.selected() === id) speechesAt(id); }, 0);
+    if (id) setTimeout(function () { if (A.selected() === id) correctionLink(id, s ? s.name : ''); }, 0);
     var tr = id && $('tbl-rows') && $('tbl-rows').querySelector('tr.cur'); if (tr && tr.scrollIntoView) tr.scrollIntoView({ block: 'nearest' });
   };
   A.onRefresh = function () { syncStatus(); drawMapLegend(); if (built && !$('table-body').hidden) drawTable(); syncRail(); };

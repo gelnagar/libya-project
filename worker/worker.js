@@ -196,7 +196,10 @@ const STATS_SCHEMA = [
   `CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)`,
   // wrong-password attempts, by a keyed hash of the address (never the address)
   `CREATE TABLE IF NOT EXISTS fails (who TEXT NOT NULL, at INTEGER NOT NULL)`,
-  `CREATE INDEX IF NOT EXISTS fails_who ON fails(who, at)`
+  `CREATE INDEX IF NOT EXISTS fails_who ON fails(who, at)`,
+  // correction and removal requests from anyone (public/corrections.html); "who" is a keyed hash, only for the daily limit
+  `CREATE TABLE IF NOT EXISTS corrections (id TEXT PRIMARY KEY, at INTEGER NOT NULL, kind TEXT NOT NULL, item TEXT, name TEXT, text TEXT, contact TEXT, who TEXT, done INTEGER DEFAULT 0)`,
+  `CREATE INDEX IF NOT EXISTS corrections_who ON corrections(who, at)`
 ];
 let statsReady = null;
 async function statsDb(env) {
@@ -443,6 +446,16 @@ async function failKey(env, ip) {
   const key = await crypto.subtle.importKey('raw', enc.encode('fails:' + (env.STATS_SALT || env.SESSION_SECRET || env.FAMILY_CODE || 'atlas')), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
   return hex(await crypto.subtle.sign('HMAC', key, enc.encode(String(ip)))).slice(0, 24);
 }
+// The same keyed hash, under its own label, limits correction requests per address without storing the address.
+async function corrKey(env, ip) {
+  const key = await crypto.subtle.importKey('raw', enc.encode('corr:' + (env.STATS_SALT || env.SESSION_SECRET || env.FAMILY_CODE || 'atlas')), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  return hex(await crypto.subtle.sign('HMAC', key, enc.encode(String(ip)))).slice(0, 24);
+}
+const CORR_PER_DAY = 5, CORR_KINDS = ['correction', 'removal'];
+async function correctionsList(db) {
+  const r = await db.prepare('SELECT id, at, kind, item, name, text, contact, done FROM corrections ORDER BY done, at DESC LIMIT 200').all();
+  return r.results || [];
+}
 async function failCount(env, ip) {
   try { const db = await statsDb(env); if (db) { const r = await db.prepare('SELECT COUNT(*) AS n FROM fails WHERE who = ? AND at > ?').bind(await failKey(env, ip), Date.now() - FAIL_WINDOW * 1000).first(); return r ? r.n : 0; } } catch {}
   const f = failMem.get(ip); return f && Date.now() - f.at < FAIL_WINDOW * 1000 ? f.n : 0;
@@ -586,7 +599,7 @@ async function api(request, env, url, ctx) {
   let body;
   try { const raw = await request.text(); if (raw.length > 4500000) return json({ error: 'Too large' }, 413, cors); body = JSON.parse(raw); } catch { return json({ error: 'Bad request' }, 400, cors); }
   body = body && typeof body === 'object' ? body : {};
-  const REQ_KINDS = ['track', 'review', 'approveReport', 'owner', 'agent', 'report', 'reportDelete', 'reports', 'mediaPut', 'mediaGet', 'request', 'status'];
+  const REQ_KINDS = ['track', 'correction', 'review', 'approveReport', 'owner', 'agent', 'report', 'reportDelete', 'reports', 'mediaPut', 'mediaGet', 'request', 'status'];
   later(ctx, countRequest(env, 'api:' + (REQ_KINDS.find((k) => body[k]) || 'question')));
 
   /* ----- visitor statistics: a small batch of events from the map (anyone; no AI, no KV) ----- */
@@ -612,6 +625,21 @@ async function api(request, env, url, ctx) {
     return json({ ok: true }, 200, cors);
   }
 
+  /* ----- correction or removal request: anyone may send one; held for the owner, never shown to visitors ----- */
+  if (body.correction) {
+    const c = body.correction && typeof body.correction === 'object' ? body.correction : {};
+    const kind = CORR_KINDS.includes(c.kind) ? c.kind : 'correction', text = clip(c.text, 4000).trim();
+    if (text.length < 10) return json({ error: 'Please say what is wrong (at least a sentence).' }, 400, cors);
+    const db = await statsDb(env).catch(() => null); if (!db) return json({ error: 'Requests cannot be received just now.' }, 503, cors);
+    const who = await corrKey(env, request.headers.get('CF-Connecting-IP') || 'unknown'), now = Date.now();
+    const seen = await db.prepare('SELECT COUNT(*) AS n FROM corrections WHERE who = ? AND at > ?').bind(who, now - 86400000).first();
+    if (seen && seen.n >= CORR_PER_DAY) return json({ error: 'Too many requests from here today. Please try again tomorrow.' }, 429, cors);
+    const id = 'c' + now.toString(36) + Math.random().toString(36).slice(2, 7);
+    await db.prepare('INSERT INTO corrections (id, at, kind, item, name, text, contact, who, done) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)')
+      .bind(id, now, kind, clip(c.item, 120).replace(/[^w:.-]/g, ''), clip(c.name, 200), text, clip(c.contact, 200).trim(), who).run();
+    return json({ ok: true, id }, 200, cors);
+  }
+
   /* ----- owner: read and clear requests ----- */
   if (body.owner) {
     const ipo = request.headers.get('CF-Connecting-IP') || 'unknown';
@@ -620,6 +648,7 @@ async function api(request, env, url, ctx) {
     if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
     if (body.stats) return json(await ownerStats(env, body), 200, cors);
     if (body.review) return json(await ownerReview(env, body.review), 200, cors);
+    if (body.correctionDone) { const db = await statsDb(env); await db.prepare('UPDATE corrections SET done = ? WHERE id = ?').bind(body.reopen ? 0 : 1, String(body.correctionDone)).run(); return json({ ok: true }, 200, cors); }
     if (body.done) { await env.ATLAS_KV.delete(String(body.done)); return json({ ok: true }, 200, cors); }
     if (body.approveReport) { // release a held family report to visitors (or hold it again with hold: true)
       let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
@@ -641,7 +670,8 @@ async function api(request, env, url, ctx) {
     }
     items.sort((a, b) => (b.at || 0) - (a.at || 0));
     let reports = []; try { reports = (JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []).map(({ tk, ...x }) => x).reverse(); } catch {}
-    return json({ items, reports, credit: await creditInfo(env) }, 200, cors);
+    let corrections = []; try { const db = await statsDb(env); if (db) corrections = await correctionsList(db); } catch {}
+    return json({ items, reports, corrections, credit: await creditInfo(env) }, 200, cors);
   }
 
   /* ----- who is calling: family (signed in, or the password in X-Family-Code) or the public ----- */

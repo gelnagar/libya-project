@@ -97,6 +97,19 @@ env.DAILY_AI_LIMIT_USD = '1';
 ok('review queue needs the owner password', (await api({ owner: true, review: {} }, { 'X-Owner-Code': 'x' }, '10.7.0.1')).s === 401 && (await api({ review: {} })).s === 403);
 ok('statistics need the owner password', (await api({ owner: true, stats: true }, { 'X-Owner-Code': 'x' }, '10.7.0.2')).s === 401);
 ok('owner statistics load', (await api({ owner: true, stats: true }, own, '10.7.0.3')).s === 200);
-ok('no raw address anywhere in the database', !JSON.stringify(['events', 'fails', 'ai', 'reqs'].map((t) => sql.prepare('SELECT * FROM ' + t).all())).includes('10.'));
+ok('no raw address anywhere in the database', !JSON.stringify(['events', 'fails', 'ai', 'reqs', 'corrections'].map((t) => sql.prepare('SELECT * FROM ' + t).all())).includes('10.'));
+
+/* correction and removal requests */
+const c1 = await api({ correction: { kind: 'removal', item: 'abu-salim', name: 'Abu Salim prison', text: 'My uncle is named in a source here; please remove his name.', contact: 'reply@example.test' } }, {}, '10.8.0.1');
+ok('a visitor can send a correction or removal request', c1.s === 200 && /^c[0-9a-z]+$/.test(c1.j.id || ''), JSON.stringify(c1));
+ok('an empty request is refused', (await api({ correction: { text: 'x' } }, {}, '10.8.0.1')).s === 400);
+let c6; for (let i = 0; i < 5; i++) c6 = await api({ correction: { text: 'Another point about the same place.' } }, {}, '10.8.0.1');
+ok('the sixth request in a day from one address is refused', c6.s === 429, String(c6.s));
+ok('another address can still send one', (await api({ correction: { text: 'A date on this page is wrong.' } }, {}, '10.8.0.2')).s === 200);
+ok('requests are stored by keyed hash, never by address', sql.prepare('SELECT who FROM corrections').all().every((r) => /^[0-9a-f]{24}$/.test(r.who)));
+ok('visitors cannot read requests', !JSON.stringify((await api({ reports: true })).j).includes('My uncle') && (await api({ owner: true }, { 'X-Owner-Code': 'x' }, '10.8.0.3')).s === 401);
+const ol = await api({ owner: true }, own, '10.8.0.4'), mine = (ol.j.corrections || []).find((x) => x.id === c1.j.id);
+ok('the owner sees each request with its contact, but not the hash', !!mine && mine.kind === 'removal' && mine.contact === 'reply@example.test' && !('who' in mine));
+ok('the owner can mark a request answered', (await api({ owner: true, correctionDone: c1.j.id }, own, '10.8.0.4')).s === 200 && sql.prepare('SELECT done FROM corrections WHERE id = ?').get(c1.j.id).done === 1);
 
 console.log(`\n${pass} passed, ${fail} failed`); process.exit(fail ? 1 : 0);

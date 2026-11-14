@@ -1,0 +1,137 @@
+{
+ "region": "sirte",
+ "at": "2026-11-14T01:55:54.339Z",
+ "note": "Lookup list for research. Positions are from the Wikipedia article in \"source\". Not map content.",
+ "places": [
+  {
+   "name": "Second Battle of Brega",
+   "lat": 30.435,
+   "lon": 19.66694,
+   "town": "Brega",
+   "km": 0,
+   "ar": "معركة البريقة الثانية",
+   "source": "https://en.wikipedia.org/wiki/Second_Battle_of_Brega",
+   "kind": "Battle for control of Brega during Libyan Civil War"
+  },
+  {
+   "name": "Brega",
+   "lat": 30.435,
+   "lon": 19.66694,
+   "town": "Brega",
+   "km": 0,
+   "ar": "مرسى البريقة",
+   "source": "https://en.wikipedia.org/wiki/Brega",
+   "kind": "Town in Cyrenaica, Libya"
+  },
+  {
+   "name": "Fourth Battle of Brega",
+   "lat": 30.435,
+   "lon": 19.66694,
+   "town": "Brega",
+   "km": 0,
+   "ar": "معركة البريقة الرابعة",
+   "source": "https://en.wikipedia.org/wiki/Fourth_Battle_of_Brega",
+   "kind": "Battle of the Libyan Civil War, fought 14–21 July 2011"
+  },
+  {
+   "name": "First Battle of Brega",
+   "lat": 30.435,
+   "lon": 19.66694,
+   "town": "Brega",
+   "km": 0,
+   "ar": "معركة البريقة الأولى",
+   "source": "https://en.wikipedia.org/wiki/First_Battle_of_Brega",
+   "kind": "2011 battle in Libya"
+  },
+  {
+   "name": "Third Battle of Brega",
+   "lat": 30.435,
+   "lon": 19.66694,
+   "town": "Brega",
+   "km": 0,
+   "ar": "معركة البريقة الثالثة",
+   "source": "https://en.wikipedia.org/wiki/Third_Battle_of_Brega",
+   "kind": "Battle for control of Brega during Libyan Civil War"
+  },
+  {
+   "name": "Raid on Ras Lanuf",
+   "lat": 30.58667,
+   "lon": 18.41194,
+   "town": "Ras Lanuf",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Raid_on_Ras_Lanuf",
+   "kind": "Military action during the Libyan Civil War"
+  },
+  {
+   "name": "Ras Lanuf",
+   "lat": 30.58667,
+   "lon": 18.41194,
+   "town": "Ras Lanuf",
+   "km": 0,
+   "ar": "راس لانوف",
+   "source": "https://en.wikipedia.org/wiki/Ras_Lanuf",
+   "kind": "Town in Tripolitania, Libya"
+  },
+  {
+   "name": "Sidra, Libya",
+   "lat": 30.62944,
+   "lon": 18.35028,
+   "town": "Ras Lanuf",
+   "km": 7.6,
+   "ar": "ميناء السدرة النفطي",
+   "source": "https://en.wikipedia.org/wiki/Sidra,_Libya",
+   "kind": "Town in Tripolitania, Libya"
+  },
+  {
+   "name": "Sirte",
+   "lat": 31.205,
+   "lon": 16.58861,
+   "town": "Sirte",
+   "km": 0,
+   "ar": "سرت",
+   "source": "https://en.wikipedia.org/wiki/Sirte",
+   "kind": "Place in Tripolitania, Libya"
+  },
+  {
+   "name": "Battle of Sirte (2011)",
+   "lat": 31.20528,
+   "lon": 16.58889,
+   "town": "Sirte",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Sirte_(2011)",
+   "kind": "Final battle of the First Libyan Civil War"
+  },
+  {
+   "name": "Sirte District",
+   "lat": 31.20484,
+   "lon": 16.58793,
+   "town": "Sirte",
+   "km": 0.1,
+   "ar": "شعبية سرت",
+   "source": "https://en.wikipedia.org/wiki/Sirte_District",
+   "kind": "District of Libya"
+  },
+  {
+   "name": "Battle of Sirte (2016)",
+   "lat": 31.2072,
+   "lon": 16.5917,
+   "town": "Sirte",
+   "km": 0.4,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Sirte_(2016)",
+   "kind": "Battle in the spring of 2016, in the region of Sirte, Libya"
+  },
+  {
+   "name": "Sirte Stadium",
+   "lat": 31.19361,
+   "lon": 16.59778,
+   "town": "Sirte",
+   "km": 1.5,
+   "ar": "ملعب سرت",
+   "source": "https://en.wikipedia.org/wiki/Sirte_Stadium",
+   "kind": "Sports venue in Sirte, Libya"
+  }
+ ]
+}

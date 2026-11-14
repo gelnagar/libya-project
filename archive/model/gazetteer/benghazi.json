@@ -1,0 +1,247 @@
+{
+ "region": "benghazi",
+ "at": "2026-11-14T01:55:34.482Z",
+ "note": "Lookup list for research. Positions are from the Wikipedia article in \"source\". Not map content.",
+ "places": [
+  {
+   "name": "First Battle of Benghazi",
+   "lat": 32.1167,
+   "lon": 20.0667,
+   "town": "Benghazi",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/First_Battle_of_Benghazi",
+   "kind": "2011 battle of the Libyan Civil War"
+  },
+  {
+   "name": "Battle of Benghazi (2014–2017)",
+   "lat": 32.1167,
+   "lon": 20.0667,
+   "town": "Benghazi",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Benghazi_(2014%E2%80%932017)",
+   "kind": "Battle during the Second Libyan Civil War"
+  },
+  {
+   "name": "Benghazi",
+   "lat": 32.11667,
+   "lon": 20.06667,
+   "town": "Benghazi",
+   "km": 0,
+   "ar": "بنغازي",
+   "source": "https://en.wikipedia.org/wiki/Benghazi",
+   "kind": "City in Cyrenaica, Libya"
+  },
+  {
+   "name": "Second Battle of Benghazi",
+   "lat": 32.11667,
+   "lon": 20.06667,
+   "town": "Benghazi",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Second_Battle_of_Benghazi",
+   "kind": "2011 battle of the Libyan Civil War"
+  },
+  {
+   "name": "National Library of Libya",
+   "lat": 32.11933,
+   "lon": 20.06924,
+   "town": "Benghazi",
+   "km": 0.4,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/National_Library_of_Libya",
+   "kind": null
+  },
+  {
+   "name": "Maydan al Shajara",
+   "lat": 32.115,
+   "lon": 20.0625,
+   "town": "Benghazi",
+   "km": 0.4,
+   "ar": "ميدان الشجرة",
+   "source": "https://en.wikipedia.org/wiki/Maydan_al_Shajara",
+   "kind": "Square in Benghazi, Libya"
+  },
+  {
+   "name": "Tibesti Hotel",
+   "lat": 32.11152,
+   "lon": 20.06938,
+   "town": "Benghazi",
+   "km": 0.6,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Tibesti_Hotel",
+   "kind": null
+  },
+  {
+   "name": "Atiq Mosque (Benghazi)",
+   "lat": 32.12155,
+   "lon": 20.0615,
+   "town": "Benghazi",
+   "km": 0.7,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Atiq_Mosque_(Benghazi)",
+   "kind": "Mosque in Benghazi, Libya"
+  },
+  {
+   "name": "Benghazi Cathedral",
+   "lat": 32.11389,
+   "lon": 20.05944,
+   "town": "Benghazi",
+   "km": 0.8,
+   "ar": "كاتدرائية بنغازي",
+   "source": "https://en.wikipedia.org/wiki/Benghazi_Cathedral",
+   "kind": "Former Roman Catholic church in Benghazi, Libya"
+  },
+  {
+   "name": "Benghazi Municipal Hall",
+   "lat": 32.12145,
+   "lon": 20.06072,
+   "town": "Benghazi",
+   "km": 0.8,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Benghazi_Municipal_Hall",
+   "kind": "Building in Benghazi, Libya"
+  },
+  {
+   "name": "Governor's Palace, Benghazi",
+   "lat": 32.11682,
+   "lon": 20.05795,
+   "town": "Benghazi",
+   "km": 0.8,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Governor%27s_Palace,_Benghazi",
+   "kind": "Building in Benghazi, Libya"
+  },
+  {
+   "name": "Benghazi Lighthouse",
+   "lat": 32.12496,
+   "lon": 20.06358,
+   "town": "Benghazi",
+   "km": 1,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Benghazi_Lighthouse",
+   "kind": null
+  },
+  {
+   "name": "23rd July Lake",
+   "lat": 32.10417,
+   "lon": 20.06389,
+   "town": "Benghazi",
+   "km": 1.4,
+   "ar": "بحيرة 23 يوليو",
+   "source": "https://en.wikipedia.org/wiki/23rd_July_Lake",
+   "kind": "Lake in Libya"
+  },
+  {
+   "name": "Suliman Ad-Dharrath Arena",
+   "lat": 32.10417,
+   "lon": 20.07333,
+   "town": "Benghazi",
+   "km": 1.5,
+   "ar": "مجمع سليمان الضراط",
+   "source": "https://en.wikipedia.org/wiki/Suliman_Ad-Dharrath_Arena",
+   "kind": "Sports venue in Benghazi, Libya"
+  },
+  {
+   "name": "Benghazi International Stadium",
+   "lat": 32.10181,
+   "lon": 20.07242,
+   "town": "Benghazi",
+   "km": 1.7,
+   "ar": "ملعب بنغازي الدولي",
+   "source": "https://en.wikipedia.org/wiki/Benghazi_International_Stadium",
+   "kind": "Stadium in Benghazi, Libya"
+  },
+  {
+   "name": "Battle of Benghazi (1911)",
+   "lat": 32.12065,
+   "lon": 20.08617,
+   "town": "Benghazi",
+   "km": 1.9,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Benghazi_(1911)",
+   "kind": "Part of the Italo-Turkish War"
+  },
+  {
+   "name": "Port of Benghazi",
+   "lat": 32.10917,
+   "lon": 20.0475,
+   "town": "Benghazi",
+   "km": 2,
+   "ar": "ميناء بنغازي",
+   "source": "https://en.wikipedia.org/wiki/Port_of_Benghazi",
+   "kind": "Port in Benghazi, Libya"
+  },
+  {
+   "name": "Al-Jalah Hospital",
+   "lat": 32.1101,
+   "lon": 20.0902,
+   "town": "Benghazi",
+   "km": 2.3,
+   "ar": "مستشفى الجلاء",
+   "source": "https://en.wikipedia.org/wiki/Al-Jalah_Hospital",
+   "kind": "Hospital in Benghazi, Libya"
+  },
+  {
+   "name": "Al-Berka",
+   "lat": 32.0983,
+   "lon": 20.0817,
+   "town": "Benghazi",
+   "km": 2.5,
+   "ar": "البركة (بنغازي)",
+   "source": "https://en.wikipedia.org/wiki/Al-Berka",
+   "kind": "Basic People's Congress division in Benghazi District, Libya"
+  },
+  {
+   "name": "Italian destroyer Aquilone (1927)",
+   "lat": 32.10778,
+   "lon": 20.025,
+   "town": "Benghazi",
+   "km": 4.1,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Italian_destroyer_Aquilone_(1927)",
+   "kind": "Destroyer of the Regia Marina"
+  },
+  {
+   "name": "Benghazi Zoo",
+   "lat": 32.0825,
+   "lon": 20.09556,
+   "town": "Benghazi",
+   "km": 4.7,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Benghazi_Zoo",
+   "kind": "Zoo in Benghazi, Libya"
+  },
+  {
+   "name": "Al-Fuwayhat",
+   "lat": 32.08333,
+   "lon": 20.11667,
+   "town": "Benghazi",
+   "km": 6,
+   "ar": "الفويهات",
+   "source": "https://en.wikipedia.org/wiki/Al-Fuwayhat",
+   "kind": "Basic People's Congress division in Benghazi District, Libya"
+  },
+  {
+   "name": "American fatalities and injuries of the 2012 Benghazi attack",
+   "lat": 32.06133,
+   "lon": 20.08092,
+   "town": "Benghazi",
+   "km": 6.3,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/American_fatalities_and_injuries_of_the_2012_Benghazi_attack",
+   "kind": null
+  },
+  {
+   "name": "Al-Quwarsha",
+   "lat": 32.03306,
+   "lon": 20.06667,
+   "town": "Benghazi",
+   "km": 9.3,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Al-Quwarsha",
+   "kind": "Basic People's Congress division in Benghazi District, Libya"
+  }
+ ]
+}

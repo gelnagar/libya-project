@@ -1,0 +1,217 @@
+{
+ "region": "fezzan",
+ "at": "2026-11-14T01:55:59.810Z",
+ "note": "Lookup list for research. Positions are from the Wikipedia article in \"source\". Not map content.",
+ "places": [
+  {
+   "name": "Raid on Ghadames",
+   "lat": 30.13333,
+   "lon": 9.5,
+   "town": "Ghadames",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Raid_on_Ghadames",
+   "kind": "Series of attacks on Ghadames, Libya in 2011"
+  },
+  {
+   "name": "Ghadames District",
+   "lat": 30.13333,
+   "lon": 9.5,
+   "town": "Ghadames",
+   "km": 0,
+   "ar": "شعبية غدامس",
+   "source": "https://en.wikipedia.org/wiki/Ghadames_District",
+   "kind": "Former district of Libya"
+  },
+  {
+   "name": "Ghadames",
+   "lat": 30.13333,
+   "lon": 9.5,
+   "town": "Ghadames",
+   "km": 0,
+   "ar": "غدامس",
+   "source": "https://en.wikipedia.org/wiki/Ghadames",
+   "kind": "Town in Tripolitania, Libya"
+  },
+  {
+   "name": "Atiq Mosque (Ghadames)",
+   "lat": 30.13275,
+   "lon": 9.49733,
+   "town": "Ghadames",
+   "km": 0.3,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Atiq_Mosque_(Ghadames)",
+   "kind": "Mosque in Ghadames, Libya"
+  },
+  {
+   "name": "Old town of Ghadames",
+   "lat": 30.13194,
+   "lon": 9.49694,
+   "town": "Ghadames",
+   "km": 0.3,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Old_town_of_Ghadames",
+   "kind": "UNESCO World Heritage Site in Ghadames, Libya"
+  },
+  {
+   "name": "Ghadames Museum",
+   "lat": 30.1318,
+   "lon": 9.49503,
+   "town": "Ghadames",
+   "km": 0.5,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Ghadames_Museum",
+   "kind": "Archaeological museum in Ghadames, Libya"
+  },
+  {
+   "name": "Ghat, Libya",
+   "lat": 24.95944,
+   "lon": 10.17583,
+   "town": "Ghat",
+   "km": 0,
+   "ar": "غات",
+   "source": "https://en.wikipedia.org/wiki/Ghat,_Libya",
+   "kind": "Town in Fezzan, Libya"
+  },
+  {
+   "name": "Fortress of Ghat",
+   "lat": 24.96702,
+   "lon": 10.18051,
+   "town": "Ghat",
+   "km": 1,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Fortress_of_Ghat",
+   "kind": "Fort in Libya"
+  },
+  {
+   "name": "Acacus Sandstone",
+   "lat": 25,
+   "lon": 10.2,
+   "town": "Ghat",
+   "km": 5.1,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Acacus_Sandstone",
+   "kind": "Silurian geologic formation in Ghat, Libya"
+  },
+  {
+   "name": "Kufra",
+   "lat": 24.18333,
+   "lon": 23.28333,
+   "town": "Kufra",
+   "km": 0,
+   "ar": "الكفرة (ليبيا)",
+   "source": "https://en.wikipedia.org/wiki/Kufra",
+   "kind": "Place in Cyrenaica, Libya"
+  },
+  {
+   "name": "Kufra Airport",
+   "lat": 24.17778,
+   "lon": 23.31389,
+   "town": "Kufra",
+   "km": 3.2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Kufra_Airport",
+   "kind": "Airport serving Al Jawf, Libya"
+  },
+  {
+   "name": "Al Jawf, Libya",
+   "lat": 24.21667,
+   "lon": 23.3,
+   "town": "Kufra",
+   "km": 4.1,
+   "ar": "الجوف (ليبيا)",
+   "source": "https://en.wikipedia.org/wiki/Al_Jawf,_Libya",
+   "kind": "Town in Cyrenaica, Libya"
+  },
+  {
+   "name": "El Tag",
+   "lat": 24.20939,
+   "lon": 23.32809,
+   "town": "Kufra",
+   "km": 5.4,
+   "ar": "التاج (ليبيا)",
+   "source": "https://en.wikipedia.org/wiki/El_Tag",
+   "kind": "Village in Cyrenaica, Libya"
+  },
+  {
+   "name": "Murzuk",
+   "lat": 25.9,
+   "lon": 13.9,
+   "town": "Murzuq",
+   "km": 0,
+   "ar": "مرزق",
+   "source": "https://en.wikipedia.org/wiki/Murzuk",
+   "kind": "Town in Fezzan, Libya"
+  },
+  {
+   "name": "Murzuq District",
+   "lat": 25.9,
+   "lon": 13.9,
+   "town": "Murzuq",
+   "km": 0,
+   "ar": "شعبية مرزق",
+   "source": "https://en.wikipedia.org/wiki/Murzuq_District",
+   "kind": "District of Libya"
+  },
+  {
+   "name": "Sabha, Libya",
+   "lat": 27.03889,
+   "lon": 14.42639,
+   "town": "Sabha",
+   "km": 0,
+   "ar": "سبها",
+   "source": "https://en.wikipedia.org/wiki/Sabha,_Libya",
+   "kind": "City in Fezzan, Libya"
+  },
+  {
+   "name": "Sabha District",
+   "lat": 27.03333,
+   "lon": 14.43333,
+   "town": "Sabha",
+   "km": 0.9,
+   "ar": "شعبية سبها",
+   "source": "https://en.wikipedia.org/wiki/Sabha_District",
+   "kind": "District of Libya"
+  },
+  {
+   "name": "Jadid, Libya",
+   "lat": 27.05,
+   "lon": 14.4,
+   "town": "Sabha",
+   "km": 2.9,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Jadid,_Libya",
+   "kind": "Town in Fezzan, Libya"
+  },
+  {
+   "name": "Hagiara",
+   "lat": 27.01667,
+   "lon": 14.46833,
+   "town": "Sabha",
+   "km": 4.8,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Hagiara",
+   "kind": "Town in Fezzan, Libya"
+  },
+  {
+   "name": "Sabha Airport",
+   "lat": 27,
+   "lon": 14.46111,
+   "town": "Sabha",
+   "km": 5.5,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Sabha_Airport",
+   "kind": "Airport"
+  },
+  {
+   "name": "Sabha Airbase",
+   "lat": 26.99583,
+   "lon": 14.46917,
+   "town": "Sabha",
+   "km": 6.4,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Sabha_Airbase",
+   "kind": "Airport in Libya"
+  }
+ ]
+}

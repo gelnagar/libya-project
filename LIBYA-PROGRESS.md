@@ -52,7 +52,8 @@ Standing rules for every chunk
 
 ## Phase C. Benghazi pilot
 - [x] C1 Done under A5: the order in the plan holds (Benghazi first).
-- [ ] C2 Gazetteer for Benghazi: place names and spellings from sources, positions only where a source gives one
+- [x] C2 Place-name lookup for every planned region (`scripts/build-gazetteer.mjs`, `archive/model/gazetteer/`): named places within 10 km of each town from Wikipedia's nearby-articles list, with position, Arabic name where there is one, and the article as source. Benghazi 24, Greater Tripolitania 51, Cyrenaica 31, Sirte 13, Fezzan 21. Read through the Benghazi list: it mixes buildings (library, cathedral, stadium, port, hospital) with battles and a ship, so entries need a kind filter before they are used to place anything. Not yet used by the review queue.
+      Original wording: place names and spellings from sources, positions only where a source gives one
 - [~] C3 Free part done for every region: the 5,627 documents already read were sorted by the town each place or event names (`scripts/lib/regions.mjs`). Review candidates outside Tripoli: Benghazi 110, Fezzan 57, Greater Tripolitania 51, Cyrenaica 50, Sirte 28 (296 in all), with a region filter on the review page. Names that are only a town are dropped. Paid part (reading the unread documents that name these towns) waits for the owner.
       Original wording: Run filter, extraction (go-ahead needed), review queue for Benghazi
 - [ ] C4 Written safety check for the region; 30-entry sample check
@@ -64,7 +65,17 @@ Standing rules for every chunk
 - [ ] E1 Country view, correction and removal route, hosting sized for the data (tiles and region data off the
       free-plan file limit)
 
+## Architecture decisions (settled unless the owner says otherwise)
+- Source of truth today: `public/data/*.js`. The claim model in `archive/model/` is generated from it and proved lossless. The switch to "model is the source, public/data is generated" has NOT been made; it is the one large decision left (after the owner starts approving items).
+- One region at a time on the map; a region's pins live in `public/data/regions/<id>.js`, loaded at page start.
+- Research pipeline: collect (scripts/lib/fetcher.mjs) -> filter by place name (free) -> read with the small model (paid, owner's go-ahead) -> build-review (free) -> owner review page -> review-export drafts -> written entry.
+- Review data in D1 (`cand`, `decision`, `meta`); family reports still in one KV value (move to D1 is open).
+- Grades are rule-based defaults with owner overrides in one JSON file.
+- Shell code reaches the map only through `window.ATLAS_API`.
+- Open: hosting beyond the free plan's file limit (E1); moving reports to D1; when to switch the source of truth.
+
 ## Log
+- 2026-11-13 (10:51 run): B1, B2, C2 done; C3 free part done for all regions.
 - 2026-11-13 (5:51 run): chunks 0, A1, A2, A3, A4, A6 done; A5 part done; C1 done. Archived copies now on record for 439 of 547 cited sources.
 - 2026-11-13: speeches finder, shared downloader, cable collector written on `more-sources`; UN sites forbid
   automated collection (archive/SOURCES.md).

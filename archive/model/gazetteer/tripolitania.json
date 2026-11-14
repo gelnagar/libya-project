@@ -1,0 +1,517 @@
+{
+ "region": "tripolitania",
+ "at": "2026-11-14T01:55:46.185Z",
+ "note": "Lookup list for research. Positions are from the Wikipedia article in \"source\". Not map content.",
+ "places": [
+  {
+   "name": "Bani Walid",
+   "lat": 31.76194,
+   "lon": 14.01389,
+   "town": "Bani Walid",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Bani_Walid",
+   "kind": "City in Libya"
+  },
+  {
+   "name": "Battle of Bani Walid",
+   "lat": 31.76667,
+   "lon": 13.98333,
+   "town": "Bani Walid",
+   "km": 2.9,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Bani_Walid",
+   "kind": "2011 battle of the Libyan Civil War"
+  },
+  {
+   "name": "Bani Walid Airport",
+   "lat": 31.74083,
+   "lon": 13.95361,
+   "town": "Bani Walid",
+   "km": 6.2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Bani_Walid_Airport",
+   "kind": "Airport"
+  },
+  {
+   "name": "Battle of Gharyan (2011)",
+   "lat": 32.16972,
+   "lon": 13.01667,
+   "town": "Gharyan",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Gharyan_(2011)",
+   "kind": "Battle during the Nafusa Mountains campaign"
+  },
+  {
+   "name": "Gharyan",
+   "lat": 32.16972,
+   "lon": 13.01667,
+   "town": "Gharyan",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Gharyan",
+   "kind": "City in Tripolitania, Libya"
+  },
+  {
+   "name": "Gharyan District",
+   "lat": 32.16667,
+   "lon": 13.01667,
+   "town": "Gharyan",
+   "km": 0.3,
+   "ar": "شعبية غريان",
+   "source": "https://en.wikipedia.org/wiki/Gharyan_District",
+   "kind": "Former district of Libya"
+  },
+  {
+   "name": "Jafara",
+   "lat": 32.15,
+   "lon": 13,
+   "town": "Gharyan",
+   "km": 2.7,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Jafara",
+   "kind": "District of Libya"
+  },
+  {
+   "name": "Al-Khums",
+   "lat": 32.64972,
+   "lon": 14.26444,
+   "town": "Khoms",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Al-Khums",
+   "kind": "Place in Tripolitania, Libya"
+  },
+  {
+   "name": "Al Khums District",
+   "lat": 32.65,
+   "lon": 14.26667,
+   "town": "Khoms",
+   "km": 0.2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Al_Khums_District",
+   "kind": null
+  },
+  {
+   "name": "Murqub District",
+   "lat": 32.65,
+   "lon": 14.26667,
+   "town": "Khoms",
+   "km": 0.2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Murqub_District",
+   "kind": "District of Libya"
+  },
+  {
+   "name": "Leptis Magna",
+   "lat": 32.63917,
+   "lon": 14.29056,
+   "town": "Khoms",
+   "km": 2.7,
+   "ar": "لبدة الكبرى",
+   "source": "https://en.wikipedia.org/wiki/Leptis_Magna",
+   "kind": "Ancient city in modern Libya"
+  },
+  {
+   "name": "Arch of Septimius Severus (Leptis Magna)",
+   "lat": 32.63417,
+   "lon": 14.29472,
+   "town": "Khoms",
+   "km": 3.3,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Arch_of_Septimius_Severus_(Leptis_Magna)",
+   "kind": "Roman triumphal arch in Libya"
+  },
+  {
+   "name": "Wadi Lebda Dam",
+   "lat": 32.6,
+   "lon": 14.28194,
+   "town": "Khoms",
+   "km": 5.8,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Wadi_Lebda_Dam",
+   "kind": "Dam in Khoms, Libya"
+  },
+  {
+   "name": "2018 Libya migrant shipwrecks",
+   "lat": 32.708,
+   "lon": 14.333,
+   "town": "Khoms",
+   "km": 9.1,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/2018_Libya_migrant_shipwrecks",
+   "kind": "Maritime incidents in Libya"
+  },
+  {
+   "name": "Battle of Misrata (1912)",
+   "lat": 32.37753,
+   "lon": 15.09202,
+   "town": "Misrata",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Misrata_(1912)",
+   "kind": "Battle during the Italo-Turkish War"
+  },
+  {
+   "name": "Battle of Misrata (2011)",
+   "lat": 32.37753,
+   "lon": 15.09202,
+   "town": "Misrata",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Misrata_(2011)",
+   "kind": "Battle of the 2011 Libyan Civil War"
+  },
+  {
+   "name": "Misrata",
+   "lat": 32.37753,
+   "lon": 15.09202,
+   "town": "Misrata",
+   "km": 0,
+   "ar": "مصراتة",
+   "source": "https://en.wikipedia.org/wiki/Misrata",
+   "kind": "City in Tripolitania, Libya"
+  },
+  {
+   "name": "Fist Crushing a U.S. Fighter Plane",
+   "lat": 32.38116,
+   "lon": 15.08571,
+   "town": "Misrata",
+   "km": 0.7,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Fist_Crushing_a_U.S._Fighter_Plane",
+   "kind": "1986 monument in Libya"
+  },
+  {
+   "name": "Apostolic Prefecture of Misurata",
+   "lat": 32.384,
+   "lon": 15.08,
+   "town": "Misrata",
+   "km": 1.3,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Apostolic_Prefecture_of_Misurata",
+   "kind": "Latin Catholic missionary jurisdiction in Libya"
+  },
+  {
+   "name": "Misurata University",
+   "lat": 32.37294,
+   "lon": 15.07841,
+   "town": "Misrata",
+   "km": 1.4,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Misurata_University",
+   "kind": "University in Misrata, Libya"
+  },
+  {
+   "name": "Murbat Stadium",
+   "lat": 32.4075,
+   "lon": 15.07194,
+   "town": "Misrata",
+   "km": 3.8,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Murbat_Stadium",
+   "kind": "Sports venue in Misrata, Libya"
+  },
+  {
+   "name": "Misurata Stadium",
+   "lat": 32.36333,
+   "lon": 15.04583,
+   "town": "Misrata",
+   "km": 4.6,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Misurata_Stadium",
+   "kind": "Football stadium in Misrata, Libya"
+  },
+  {
+   "name": "Ghiran",
+   "lat": 32.35,
+   "lon": 15.03333,
+   "town": "Misrata",
+   "km": 6.3,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Ghiran",
+   "kind": "Town in Tripolitania, Libya"
+  },
+  {
+   "name": "Misrata Airport",
+   "lat": 32.32556,
+   "lon": 15.05972,
+   "town": "Misrata",
+   "km": 6.5,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Misrata_Airport",
+   "kind": "Misrata international Airport"
+  },
+  {
+   "name": "Nalut",
+   "lat": 31.86833,
+   "lon": 10.9825,
+   "town": "Nalut",
+   "km": 0,
+   "ar": "نالوت",
+   "source": "https://en.wikipedia.org/wiki/Nalut",
+   "kind": "Place in Tripolitania, Libya"
+  },
+  {
+   "name": "Ksar Nalut",
+   "lat": 31.868,
+   "lon": 10.9855,
+   "town": "Nalut",
+   "km": 0.3,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Ksar_Nalut",
+   "kind": null
+  },
+  {
+   "name": "Nalut Dinosaur Museum",
+   "lat": 31.86484,
+   "lon": 10.98251,
+   "town": "Nalut",
+   "km": 0.4,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Nalut_Dinosaur_Museum",
+   "kind": "Paleontological museum in Nalut, Libya"
+  },
+  {
+   "name": "Tarhuna",
+   "lat": 32.43389,
+   "lon": 13.63444,
+   "town": "Tarhuna",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Tarhuna",
+   "kind": "Town in Tripolitania, Libya"
+  },
+  {
+   "name": "Tarhuna Municipality",
+   "lat": 32.43361,
+   "lon": 13.63472,
+   "town": "Tarhuna",
+   "km": 0,
+   "ar": "ترهونة (مقاطعة)",
+   "source": "https://en.wikipedia.org/wiki/Tarhuna_Municipality",
+   "kind": null
+  },
+  {
+   "name": "Mausoleum of Gasr Doga",
+   "lat": 32.48803,
+   "lon": 13.69881,
+   "town": "Tarhuna",
+   "km": 8.5,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Mausoleum_of_Gasr_Doga",
+   "kind": "Ancient mausoleum in Libya"
+  },
+  {
+   "name": "Yafran",
+   "lat": 32.0629,
+   "lon": 12.5267,
+   "town": "Yafran",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Yafran",
+   "kind": "City in Tripolitania, Libya"
+  },
+  {
+   "name": "Yafran District",
+   "lat": 32.06667,
+   "lon": 12.53333,
+   "town": "Yafran",
+   "km": 0.8,
+   "ar": "شعبية يفرن",
+   "source": "https://en.wikipedia.org/wiki/Yafran_District",
+   "kind": "Former district of Libya"
+  },
+  {
+   "name": "Henscir Suffit",
+   "lat": 32.02822,
+   "lon": 12.59336,
+   "town": "Yafran",
+   "km": 7.4,
+   "ar": "هنشير صفيت",
+   "source": "https://en.wikipedia.org/wiki/Henscir_Suffit",
+   "kind": "Archaeological site in western Libya"
+  },
+  {
+   "name": "Zawiya skirmish",
+   "lat": 32.75222,
+   "lon": 12.72778,
+   "town": "Zawiya",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Zawiya_skirmish",
+   "kind": "Armed engagement in Libya in 2011"
+  },
+  {
+   "name": "First Battle of Zawiya",
+   "lat": 32.75222,
+   "lon": 12.72778,
+   "town": "Zawiya",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/First_Battle_of_Zawiya",
+   "kind": "2011 battle in the Libyan civil war"
+  },
+  {
+   "name": "Zawiya, Libya",
+   "lat": 32.75222,
+   "lon": 12.72778,
+   "town": "Zawiya",
+   "km": 0,
+   "ar": "الزاوية (ليبيا)",
+   "source": "https://en.wikipedia.org/wiki/Zawiya,_Libya",
+   "kind": "City in Tripolitania, Libya"
+  },
+  {
+   "name": "Al Zawiya University",
+   "lat": 32.75,
+   "lon": 12.71667,
+   "town": "Zawiya",
+   "km": 1.1,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Al_Zawiya_University",
+   "kind": "University in Zawia, Libya"
+  },
+  {
+   "name": "Zawiya District",
+   "lat": 32.75,
+   "lon": 12.71667,
+   "town": "Zawiya",
+   "km": 1.1,
+   "ar": "شعبية الزاوية",
+   "source": "https://en.wikipedia.org/wiki/Zawiya_District",
+   "kind": "District of Libya"
+  },
+  {
+   "name": "Zaawia Stadium",
+   "lat": 32.75389,
+   "lon": 12.73917,
+   "town": "Zawiya",
+   "km": 1.1,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Zaawia_Stadium",
+   "kind": "Sports venue in Zawiya, Libya"
+  },
+  {
+   "name": "2026 Zawiya refinery drone attacks",
+   "lat": 32.78336,
+   "lon": 12.70193,
+   "town": "Zawiya",
+   "km": 4.2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/2026_Zawiya_refinery_drone_attacks",
+   "kind": "Drone strikes in Libya"
+  },
+  {
+   "name": "Joudaim",
+   "lat": 32.7778,
+   "lon": 12.7826,
+   "town": "Zawiya",
+   "km": 5.9,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Joudaim",
+   "kind": "Town in Tripolitania, Libya"
+  },
+  {
+   "name": "Zintan",
+   "lat": 31.93056,
+   "lon": 12.24833,
+   "town": "Zintan",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Zintan",
+   "kind": "City in Libya"
+  },
+  {
+   "name": "Battle of Zliten",
+   "lat": 32.4667,
+   "lon": 14.5667,
+   "town": "Zliten",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Zliten",
+   "kind": "Battle of the 2011 Libyan Civil War"
+  },
+  {
+   "name": "Zlitan Municipality",
+   "lat": 32.46667,
+   "lon": 14.56667,
+   "town": "Zliten",
+   "km": 0,
+   "ar": "زليتن (مقاطعة)",
+   "source": "https://en.wikipedia.org/wiki/Zlitan_Municipality",
+   "kind": null
+  },
+  {
+   "name": "Zliten",
+   "lat": 32.46667,
+   "lon": 14.56667,
+   "town": "Zliten",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Zliten",
+   "kind": "Town in Tripolitania, Libya"
+  },
+  {
+   "name": "Zliten truck bombing",
+   "lat": 32.46389,
+   "lon": 14.5725,
+   "town": "Zliten",
+   "km": 0.6,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Zliten_truck_bombing",
+   "kind": "2016 Libyan militant attack"
+  },
+  {
+   "name": "Zuwarah",
+   "lat": 32.93333,
+   "lon": 12.08333,
+   "town": "Zuwara",
+   "km": 0,
+   "ar": "زوارة",
+   "source": "https://en.wikipedia.org/wiki/Zuwarah",
+   "kind": "City in Tripolitania, Libya"
+  },
+  {
+   "name": "Zuwara Stadium",
+   "lat": 32.924,
+   "lon": 12.1016,
+   "town": "Zuwara",
+   "km": 2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Zuwara_Stadium",
+   "kind": "Sports venue in Zuwara, Libya"
+  },
+  {
+   "name": "2019 Zuwarah airstrike",
+   "lat": 32.9554,
+   "lon": 12.0218,
+   "town": "Zuwara",
+   "km": 6.2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/2019_Zuwarah_airstrike",
+   "kind": "Drone air strike by Libyan National Army"
+  },
+  {
+   "name": "Zuwarah Airport",
+   "lat": 32.95278,
+   "lon": 12.01667,
+   "town": "Zuwara",
+   "km": 6.6,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Zuwarah_Airport",
+   "kind": "Airport"
+  },
+  {
+   "name": "Jumayl, Libya",
+   "lat": 32.85278,
+   "lon": 12.06111,
+   "town": "Zuwara",
+   "km": 9.2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Jumayl,_Libya",
+   "kind": "Town in Nuqat al Khams, Libya"
+  }
+ ]
+}

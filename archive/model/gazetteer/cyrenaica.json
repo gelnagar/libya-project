@@ -1,0 +1,317 @@
+{
+ "region": "cyrenaica",
+ "at": "2026-11-14T01:55:50.721Z",
+ "note": "Lookup list for research. Positions are from the Wikipedia article in \"source\". Not map content.",
+ "places": [
+  {
+   "name": "Agedabia Airfield Complex",
+   "lat": 30.75556,
+   "lon": 20.22528,
+   "town": "Ajdabiya",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Agedabia_Airfield_Complex",
+   "kind": "Workd War II airfield complex in Libya"
+  },
+  {
+   "name": "Ajdabiya",
+   "lat": 30.75556,
+   "lon": 20.22528,
+   "town": "Ajdabiya",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Ajdabiya",
+   "kind": "Town in Cyrenaica, Libya"
+  },
+  {
+   "name": "Battle of Ajdabiya",
+   "lat": 30.75556,
+   "lon": 20.22528,
+   "town": "Ajdabiya",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Ajdabiya",
+   "kind": "Battle of the 2011 Libyan Civil War"
+  },
+  {
+   "name": "Agedabia concentration camp",
+   "lat": 30.752,
+   "lon": 20.23,
+   "town": "Ajdabiya",
+   "km": 0.6,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Agedabia_concentration_camp",
+   "kind": null
+  },
+  {
+   "name": "Ajdabiya District",
+   "lat": 30.75,
+   "lon": 20.21667,
+   "town": "Ajdabiya",
+   "km": 1,
+   "ar": "شعبية إجدابيا",
+   "source": "https://en.wikipedia.org/wiki/Ajdabiya_District",
+   "kind": "Former district of Libya"
+  },
+  {
+   "name": "Al Bayda Stadium",
+   "lat": 32.76639,
+   "lon": 21.74167,
+   "town": "Bayda",
+   "km": 0,
+   "ar": "استاد البيضاء",
+   "source": "https://en.wikipedia.org/wiki/Al_Bayda_Stadium",
+   "kind": "Sports venue in Bayda, Libya"
+  },
+  {
+   "name": "Bayda, Libya",
+   "lat": 32.76639,
+   "lon": 21.74167,
+   "town": "Bayda",
+   "km": 0,
+   "ar": "البيضاء (ليبيا)",
+   "source": "https://en.wikipedia.org/wiki/Bayda,_Libya",
+   "kind": "City in Cyrenaica, Libya"
+  },
+  {
+   "name": "Battle of Bayda",
+   "lat": 32.76639,
+   "lon": 21.74167,
+   "town": "Bayda",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Bayda",
+   "kind": "First battle of the First Libyan Civil War"
+  },
+  {
+   "name": "Sheikh Chadae Stadium",
+   "lat": 32.76038,
+   "lon": 21.7421,
+   "town": "Bayda",
+   "km": 0.7,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Sheikh_Chadae_Stadium",
+   "kind": "Sports venue in Bayda, Libya"
+  },
+  {
+   "name": "Omar Al-Mukhtar University",
+   "lat": 32.75833,
+   "lon": 21.71222,
+   "town": "Bayda",
+   "km": 2.9,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Omar_Al-Mukhtar_University",
+   "kind": "University in Bayda, Libya"
+  },
+  {
+   "name": "Ahqaf al Jabhiya",
+   "lat": 32.72417,
+   "lon": 21.72139,
+   "town": "Bayda",
+   "km": 5.1,
+   "ar": "أحقاف الجبيهية",
+   "source": "https://en.wikipedia.org/wiki/Ahqaf_al_Jabhiya",
+   "kind": "Village in Cyrenaica, Libya"
+  },
+  {
+   "name": "Wardama",
+   "lat": 32.79181,
+   "lon": 21.79425,
+   "town": "Bayda",
+   "km": 5.7,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Wardama",
+   "kind": "Village in Cyrenaica, Libya"
+  },
+  {
+   "name": "Kaf Miyas",
+   "lat": 32.72222,
+   "lon": 21.70278,
+   "town": "Bayda",
+   "km": 6.1,
+   "ar": "كهف مياز",
+   "source": "https://en.wikipedia.org/wiki/Kaf_Miyas",
+   "kind": "Village in Cyrenaica, Libya"
+  },
+  {
+   "name": "Derna, Libya",
+   "lat": 32.76361,
+   "lon": 22.63611,
+   "town": "Derna",
+   "km": 0,
+   "ar": "درنة",
+   "source": "https://en.wikipedia.org/wiki/Derna,_Libya",
+   "kind": "Port city in Derna District, Libya"
+  },
+  {
+   "name": "Apostolic Vicariate of Derna",
+   "lat": 32.76661,
+   "lon": 22.637,
+   "town": "Derna",
+   "km": 0.3,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Apostolic_Vicariate_of_Derna",
+   "kind": "Latin Catholic missionary jurisdiction in Libya"
+  },
+  {
+   "name": "Battle of Derna (1805)",
+   "lat": 32.76667,
+   "lon": 22.63333,
+   "town": "Derna",
+   "km": 0.4,
+   "ar": "معركة درنة (1805)",
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Derna_(1805)",
+   "kind": "Part of the First Barbary War"
+  },
+  {
+   "name": "Battle of Derna (2018–2019)",
+   "lat": 32.76667,
+   "lon": 22.63333,
+   "town": "Derna",
+   "km": 0.4,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Derna_(2018%E2%80%932019)",
+   "kind": "Battle in Libya fought from 2018 to 2019"
+  },
+  {
+   "name": "As-Sahabah Mosque",
+   "lat": 32.76157,
+   "lon": 22.64239,
+   "town": "Derna",
+   "km": 0.6,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/As-Sahabah_Mosque",
+   "kind": "Mosque in Derna, Libya"
+  },
+  {
+   "name": "Battle of Derna (1912)",
+   "lat": 32.75561,
+   "lon": 22.63774,
+   "town": "Derna",
+   "km": 0.9,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Derna_(1912)",
+   "kind": "Part of the Italo-Turkish War"
+  },
+  {
+   "name": "Wadi Derna",
+   "lat": 32.7672,
+   "lon": 22.6514,
+   "town": "Derna",
+   "km": 1.5,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Wadi_Derna",
+   "kind": "Ephemeral river bed in Libya"
+  },
+  {
+   "name": "Derna Stadium",
+   "lat": 32.75157,
+   "lon": 22.66222,
+   "town": "Derna",
+   "km": 2.8,
+   "ar": "ملعب درنة",
+   "source": "https://en.wikipedia.org/wiki/Derna_Stadium",
+   "kind": "Multi-use stadium in Derna, Libya"
+  },
+  {
+   "name": "Derna waterfalls",
+   "lat": 32.71806,
+   "lon": 22.61472,
+   "town": "Derna",
+   "km": 5.4,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Derna_waterfalls",
+   "kind": "Waterfall near Deena, Libya"
+  },
+  {
+   "name": "British capture of Tobruk",
+   "lat": 32.07611,
+   "lon": 23.96139,
+   "town": "Tobruk",
+   "km": 0,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/British_capture_of_Tobruk",
+   "kind": "Battle fought in the Western Desert Campaign of the Second World War"
+  },
+  {
+   "name": "Tobruk",
+   "lat": 32.07611,
+   "lon": 23.96139,
+   "town": "Tobruk",
+   "km": 0,
+   "ar": "طبرق",
+   "source": "https://en.wikipedia.org/wiki/Tobruk",
+   "kind": "City in Cyrenaica, Libya"
+  },
+  {
+   "name": "Battle of Tobruk (1911)",
+   "lat": 32.07611,
+   "lon": 23.96139,
+   "town": "Tobruk",
+   "km": 0,
+   "ar": "معركة طبرق",
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Tobruk_(1911)",
+   "kind": "Part of the Italo-Turkish War"
+  },
+  {
+   "name": "HMS Ladybird (1916)",
+   "lat": 32.07583,
+   "lon": 23.9725,
+   "town": "Tobruk",
+   "km": 1,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/HMS_Ladybird_(1916)",
+   "kind": "Insect-class gunboat of the Royal Navy"
+  },
+  {
+   "name": "Hotel Tobruk",
+   "lat": 32.08037,
+   "lon": 23.97236,
+   "town": "Tobruk",
+   "km": 1.1,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Hotel_Tobruk",
+   "kind": "Hotel in Tobruk, Libya"
+  },
+  {
+   "name": "Port of Tobruk",
+   "lat": 32.078,
+   "lon": 23.983,
+   "town": "Tobruk",
+   "km": 2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Port_of_Tobruk",
+   "kind": "Port in Libya"
+  },
+  {
+   "name": "Ali bin Abi Talib Mosque (Tobruk)",
+   "lat": 32.08044,
+   "lon": 23.98444,
+   "town": "Tobruk",
+   "km": 2.2,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Ali_bin_Abi_Talib_Mosque_(Tobruk)",
+   "kind": "Mosque in Tobruk, Butnan, Libya"
+  },
+  {
+   "name": "Tobruk Power Station",
+   "lat": 32.05611,
+   "lon": 23.97,
+   "town": "Tobruk",
+   "km": 2.4,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/Tobruk_Power_Station",
+   "kind": null
+  },
+  {
+   "name": "HMS Sikh (F82)",
+   "lat": 32.09778,
+   "lon": 24,
+   "town": "Tobruk",
+   "km": 4.4,
+   "ar": null,
+   "source": "https://en.wikipedia.org/wiki/HMS_Sikh_(F82)",
+   "kind": "Destroyer of the Royal Navy"
+  }
+ ]
+}

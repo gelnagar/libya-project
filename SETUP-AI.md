@@ -4,6 +4,13 @@ The map is open read-only to anyone with the link. The family password turns on 
 
 How it works: Cloudflare serves the files in `public/` directly (`run_worker_first` is `false` in `wrangler.jsonc`), so map visits do not run the Worker or count against its daily request limit. `worker/worker.js` handles `/login`, `/logout` and `/api`. On `/api`, callers without the family password may only read family reports and their photos and voice notes, never the "home" reports (family and friends' places); every AI call and every write is refused with 403. A correct password at `/login` sets a signed cookie for 180 days, plus a readable `atlas_family` cookie that only tells the map to show the family buttons. After 8 wrong guesses from one address, that address is locked out for 15 minutes. Changing `FAMILY_CODE` logs everyone out. Files in `public/` are the only ones served; `archive/`, `worker/` and `scripts/` are never reachable.
 
+## Protecting the passwords
+
+- Never write `FAMILY_CODE`, `OWNER_CODE`, an API key or a token in this repository, in a document or in a message that is published. The repository is public. `node scripts/check-secrets.mjs` refuses a push that contains one (it also reads `.secret-words`, a git-ignored list of words that must never appear).
+- Choose a family password of three or more unrelated words: capitals and spaces are ignored, so one word is easy to guess. Wrong guesses are limited to 8 per address per 15 minutes, which slows guessing but does not stop a short word.
+- If a password has ever been written somewhere public, treat it as known: change it (`npx.cmd wrangler secret put FAMILY_CODE --name tripoli-atlas-ai`), tell the family the new one, and keep the old one in `.secret-words`. Deleting it from the file does not remove it from Git history.
+- A rollback (`wrangler rollback`) restores the secrets of the version rolled back to. After a password change, never roll back to an older version.
+
 ## 1. Set a spending limit first
 
 In the Anthropic Console (console.anthropic.com) open **Settings → Limits** and set a low monthly limit, for example $10.

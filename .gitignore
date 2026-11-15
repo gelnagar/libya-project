@@ -10,3 +10,5 @@ archive/review/drafts.*
 archive/review/safety-*.json
 archive/review/sample-*.json
 archive/review/sample-*.md
+
+.secret-words

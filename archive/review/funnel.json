@@ -1,8 +1,11 @@
 {
- "at": "2026-11-13T14:29:00.482Z",
+ "at": "2026-11-15T07:34:57.536Z",
  "collected": 15214,
  "listedNotFetched": 4494,
- "read": 5627,
+ "read": 5856,
+ "rated": 5627,
+ "extracted": 5991,
+ "placeholders": 135,
  "candidates": 2280,
  "byRegion": {
   "tripoli": 1984,

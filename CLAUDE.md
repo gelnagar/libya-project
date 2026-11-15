@@ -77,6 +77,7 @@ Old spy-satellite film (Feb 1966 GAMBIT; Nov 1972, 1976 north and south, 1983 HE
 - Approval is not publication. Approved items still need a written entry with fetched sources, and a position only where a source gives one.
 
 ## All-Libya build (2026-11, branch `libya`)
+- Before any push to `main`: `node scripts/preflight.mjs` (must end `0 FAIL`) and follow `PUSH-CHECKLIST.md`. `node scripts/check-secrets.mjs` refuses a secret in any tracked file; a local `pre-push` hook runs it. Never write a password, key or token in any tracked file or message (the repo is public); `.secret-words` is git-ignored and lists words that must never appear.
 - `LIBYA-PROGRESS.md` is the chunk list and hand-over file; read it first.
 - Claim model: `node scripts/build-claims.mjs --check` writes `archive/model/` (subjects, sources, claims, model.sql), `public/data/grades.js`, and proves public/data can be rebuilt from the model. `node scripts/check-model.mjs` confirms every stored quotation is in its stored source. See `archive/model/README.md`.
 - Grades beside citations are defaults from rules in `scripts/lib/provenance.mjs` (reliability A-F by type of source, credibility 1-6 by evidence level and corroboration). Owner overrides: `archive/model/grades.json`.

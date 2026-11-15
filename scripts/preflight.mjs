@@ -1,0 +1,73 @@
+// One command to run before any push to main: do the code, the data, the documents and the Cloudflare settings agree?
+//   node scripts/preflight.mjs            (about two minutes; no network except `git fetch`; writes nothing but the
+//                                          model files `build-claims.mjs --check` always rewrites)
+// Prints PASS, WARN or FAIL per check; exit code 1 on any FAIL. WARN means "read this before you push", not "stop".
+import fs from 'node:fs'; import vm from 'node:vm'; import { execFileSync, execSync } from 'node:child_process';
+
+let fails = 0, warns = 0;
+const say = (lvl, what, extra = '') => { if (lvl === 'FAIL') fails++; if (lvl === 'WARN') warns++; console.log(lvl.padEnd(5) + what + (extra ? '  ' + extra : '')); };
+const run = (args, o = {}) => { try { return { ok: true, out: execFileSync(process.execPath, args, { encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'pipe'], ...o }) }; } catch (e) { return { ok: false, out: String(e.stdout || '') + String(e.stderr || '') }; } };
+const sh = (c) => { try { return execSync(c, { encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'pipe'] }).trim(); } catch { return ''; } };
+const load = (f) => { const w = {}; vm.runInNewContext(fs.readFileSync(f, 'utf8'), { window: w }); return w; };
+
+// 1. git state
+const branch = sh('git branch --show-current'); sh('git fetch origin');
+const [behind, ahead] = (sh('git rev-list --left-right --count origin/main...HEAD') || '0 0').split(/\s+/).map(Number);
+const dirty = sh('git status --porcelain').split('\n').filter(Boolean);
+say(dirty.length ? 'WARN' : 'PASS', `working tree: ${dirty.length ? dirty.length + ' uncommitted file(s)' : 'clean'}`, `branch ${branch}`);
+say('PASS', `branch ${branch} is ${ahead} commit(s) ahead of origin/main and ${behind} behind`);
+if (behind) {
+  const theirs = sh('git diff --name-only HEAD...origin/main').split('\n').filter(Boolean), mine = new Set(sh('git diff --name-only origin/main...HEAD').split('\n').filter(Boolean));
+  const clash = theirs.filter((f) => mine.has(f));
+  say(clash.length ? 'FAIL' : 'WARN', `origin/main has ${behind} commit(s) this branch lacks (${theirs.length} file(s)); merge or rebase first (git pull --rebase)`, clash.length ? 'both changed: ' + clash.join(', ') : 'no file changed on both sides');
+}
+
+// 2. syntax of everything the site and the Worker run
+const js = ['worker/worker.js', ...fs.readdirSync('public').filter((f) => f.endsWith('.js')).map((f) => 'public/' + f), ...fs.readdirSync('public/data').filter((f) => f.endsWith('.js')).map((f) => 'public/data/' + f),
+  ...fs.readdirSync('scripts').filter((f) => f.endsWith('.mjs')).map((f) => 'scripts/' + f)];
+const bad = js.filter((f) => !run(['--check', f]).ok);
+say(bad.length ? 'FAIL' : 'PASS', `syntax: ${js.length} JavaScript files`, bad.join(', '));
+
+// 3. Cloudflare config
+let cfg = null; try { cfg = JSON.parse(fs.readFileSync('wrangler.jsonc', 'utf8').replace(/^\s*\/\/.*$/gm, '')); } catch (e) { say('FAIL', 'wrangler.jsonc does not parse', e.message); }
+if (cfg) {
+  say(cfg.assets && cfg.assets.directory === './public' && cfg.assets.run_worker_first === false ? 'PASS' : 'FAIL', 'wrangler.jsonc: static files served first, from public/');
+  say(cfg.vars && cfg.vars.CF_PLAN === 'paid' ? 'PASS' : 'WARN', 'wrangler.jsonc: CF_PLAN is paid, so the cost estimate includes the $5 a month', cfg.vars ? JSON.stringify(cfg.vars) : 'no vars');
+  say(cfg.keep_vars ? 'PASS' : 'WARN', 'wrangler.jsonc: keep_vars on, so dashboard settings survive a deploy');
+  const text = JSON.stringify(cfg); say(/FAMILY_CODE|OWNER_CODE|API_KEY/i.test(text) ? 'FAIL' : 'PASS', 'wrangler.jsonc holds no secret names or values');
+}
+
+// 4. Worker tests, and the number the documents quote
+const t = run(['scripts/test-worker.mjs']), m = t.out.match(/(\d+) passed, (\d+) failed/);
+say(m && m[2] === '0' && t.ok ? 'PASS' : 'FAIL', `Worker tests: ${m ? m[1] + ' passed, ' + m[2] + ' failed' : 'did not run'}`, m && m[2] !== '0' ? t.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
+const claude = fs.readFileSync('CLAUDE.md', 'utf8'), quoted = (claude.match(/test-worker\.mjs`\s*\((\d+) checks/) || [])[1];
+if (m && quoted) say(+quoted === +m[1] ? 'PASS' : 'FAIL', `CLAUDE.md quotes ${quoted} Worker checks; there are ${m[1]}`);
+
+// 5. data and model
+const p = run(['scripts/check-panels.mjs']); say(p.ok ? 'PASS' : 'FAIL', 'panels: footnotes are in each pin\'s source list, timelines in date order', p.ok ? '' : p.out.split('\n').slice(0, 3).join(' | '));
+const bc = run(['scripts/build-claims.mjs', '--check']), diff = (bc.out.match(/(\d+) differ/) || [])[1];
+say(bc.ok && diff === '0' ? 'PASS' : 'FAIL', `claim model: public/data rebuilt from the model with ${diff == null ? '?' : diff} difference(s)`);
+const cm = run(['scripts/check-model.mjs']), nf = (cm.out.match(/passage NOT in the stored source (\d+)/) || [])[1];
+say(cm.ok && nf === '0' ? 'PASS' : 'FAIL', `stored quotations: ${nf == null ? '?' : nf} not found word for word in their stored source`);
+
+// 6. secrets
+const sc = run(['scripts/check-secrets.mjs']); say(sc.ok ? 'PASS' : 'FAIL', 'no secret in a tracked file', sc.ok ? '' : sc.out.split('\n').filter((l) => l.startsWith('FOUND')).join('; '));
+
+// 7. size and headers
+const files = +sh('git ls-files public | wc -l') || fs.readdirSync('public', { recursive: true }).length;
+say(files > 100000 ? 'FAIL' : files > 20000 ? 'WARN' : 'PASS', `public/ holds ${files} files (Workers Paid allows 100,000; Free allowed 20,000)`);
+const hdr = fs.existsSync('public/_headers') ? fs.readFileSync('public/_headers', 'utf8') : '';
+say(/script-src 'self'/.test(hdr) && !/script-src[^;\n]*unsafe-inline/.test(hdr) ? 'PASS' : 'FAIL', "public/_headers: scripts only from the site itself");
+
+// 8. documents against the data
+try {
+  const sites = load('public/data/sites.js'), areas = load('public/data/areas.js'), links = load('public/data/links.js');
+  const want = { 'Site \\(curated event or place\\)[^|]*\\|[^|]*\\|\\s*(\\d+)': sites.ATLAS_SITES.length, 'Area \\(profile[^|]*\\|[^|]*\\|\\s*(\\d+)': areas.ATLAS_AREAS.length, 'Connection \\(evidence-based[^|]*\\|[^|]*\\|\\s*(\\d+)': links.ATLAS_CONNECTIONS.length };
+  const readme = fs.readFileSync('README.md', 'utf8');
+  for (const [re, n] of Object.entries(want)) { const g = (readme.match(new RegExp(re)) || [])[1]; say(g && +g === n ? 'PASS' : 'FAIL', `README count ${re.split('[')[0].replace(/\\\(/g, '(').replace(/\\\)/g, ')')}: says ${g || '?'}, data has ${n}`); }
+} catch (e) { say('FAIL', 'could not compare README counts to the data', e.message); }
+const prog = fs.readFileSync('LIBYA-PROGRESS.md', 'utf8');
+say(/free-plan limit|about 16,300 files.*cap|caps the site at about 16,300/i.test(prog + claude) ? 'FAIL' : 'PASS', 'documents no longer present the old free-plan file cap as a limit');
+
+console.log(`\npreflight: ${fails} FAIL, ${warns} WARN`);
+process.exit(fails ? 1 : 0);

@@ -40,7 +40,7 @@ Standing rules for every chunk
       Original wording: strict script policy (move inline scripts in stats/requests pages to files); spending ceiling
       per day in the Worker; failed-password counting moved off KV; contributor names hidden from visitors;
       family reports held for owner review before visitors see them; tests for each
-- [x] A7 Funnel and cost strip on the review page (`archive/review/funnel.json`, `archive/crest/cost-ledger.json`): collected 15,214 (4,494 more cables listed, not downloaded), read 5,627, candidates 2,280 (the funnel file of 13 Nov; 2,009 was an earlier count), decided 0, reading cost $2.48 by the script's own count over three runs. Checked on the local review page: six figures shown, speeches filter lists 65 with venue, occasion and transcript rows; tests still 39 of 39.
+- [x] A7 Funnel and cost strip on the review page (`archive/review/funnel.json`, `archive/crest/cost-ledger.json`): collected 15,214 (4,494 more cables listed, not downloaded), read 5,856 (documents with a real extraction; 5,627 of them rated relevant, 135 more rows are "placeholder", 5,991 rows in all; the cost ledger counts 5,963 documents sent, and the first CIA/JPRS file holds 28 more rows than its ledger line, origin not recorded), candidates 2,280 (funnel file; 2,009 was an earlier count), decided 0, reading cost $2.48 by the script's own count over three runs. Checked on the local review page: six figures shown, speeches filter lists 65 with venue, occasion and transcript rows; tests still 39 of 39.
       Original wording: Cost and funnel report page for the owner (documents found, read, candidates, decided; cost per entry)
 
 ## Phase B. Clear the Tripoli backlog
@@ -106,6 +106,7 @@ The chunk list above covered the PRD's phases A to E but left out requirements s
 - Hosting: Workers Paid, 100,000 files per version (settled 15 Nov 2026). Open: moving reports to D1; when to switch the source of truth.
 
 ## Log
+- 2026-11-15 (second pass): `scripts/check-secrets.mjs` and a pre-push hook; `scripts/preflight.mjs` (one command: syntax, Worker tests, claim model, secrets, file count, headers, and documents against data); `PUSH-CHECKLIST.md`; the funnel's "read" figure made honest (see A7); two unused secrets removed from the live Worker.
 - 2026-11-15: audit of documents against code, data and Cloudflare. Fixed in the repo: a stripped-entry-id bug in the corrections route (found by the audit; test added, proven to fail on the old code), the Worker now adds the region column to an older review table, README (architecture, counts), SETUP-AI.md, CLAUDE.md, `CF_PLAN`. Added Phase F for PRD requirements no chunk covered. Worker tests now 49.
 - 2026-11-14: E1 correction and removal route (page, Worker route, owner list, 8 tests).
 - 2026-11-14: C4 tools (`scripts/safety-check.mjs`, `scripts/sample-check.mjs`, shared `scripts/lib/stored.mjs`) and the Benghazi safety check written. D1-D4 not started: each needs its region's paid reading (C3) and written entries first.
@@ -118,13 +119,15 @@ The chunk list above covered the PRD's phases A to E but left out requirements s
 - Corrections page: it promises answers but gives no reply time. Set one (for example two weeks), or keep it open? Requests reach you on requests.html only; no email alert was added.
 - Benghazi sample check, human half: someone other than the person who wrote the entries checks the 30 entries on `archive/review/sample-benghazi.md` (run `node scripts/sample-check.mjs benghazi` first). Best done after the Benghazi entries are written, not on raw candidates.
 - In the review queue, reject the five Benghazi candidates dated after 2011 ("after the period of the map"); see `archive/regions/benghazi-safety.md`.
-- BY 6 PM 13 NOV: give the owner a short summary (what each chunk built and how it was checked), the local copy to click through, and this list as yes/no decisions.
+- The summary requested for 6 pm on 13 Nov is not recorded as delivered. `PUSH-CHECKLIST.md` is now the summary of what is ready, what the push changes and what is untested; this list is the decisions.
 - Reload the live review queue: the candidate table gained a region column, so load the new SQL (`node scripts/build-review.mjs --sql out.sql`, then wrangler d1 execute) in the same step as pushing the Worker.
 - Read the Embassy Tripoli cables with the extraction model? 386 are downloaded (about $0.16 by the script's count); the other 4,494 would need downloading first (about 3 hours, free) and about $2 to read.
 - Push to main: speeches in the review queue, cable collector, shared downloader (branch `more-sources`), and everything on branch `libya`.
 - Family reports now wait for your approval before visitors see them, and visitors no longer see who added a report. Accept this change?
 - Daily AI ceiling is set to $3 a day by default. Keep, change, or switch off?
-- Audit of 15 Nov 2026 (full list in AUDIT.md, which is git-ignored): act first on its section 0 (a secret found in a public file). Then, on the live Worker: set `CREDIT_LOADED` (it holds placeholder text, so the low-credit warning cannot work); decide whether to set `RESEND_API_KEY` and `ALERT_EMAIL` (neither is set, so no email alert is sent); unpublish the old GitHub Pages copy and then drop `ALLOWED_ORIGINS`; remove the two USGS secrets from the Worker (it does not use them). `CF_PLAN` is now set to paid in `wrangler.jsonc` and takes effect on the next push.
-- The PRD itself is out of date in section 13 (it still says the site is at the free-plan limit) and section 2 (12 Nov figures). A suggestion was laid in the document for section 13; section 2 is dated, so left as a record.
+- Push to main: follow `PUSH-CHECKLIST.md` (the order matters: change the family password first; do not roll back to a version older than that). `node scripts/preflight.mjs` is the one-command check.
+- Live Worker settings that only the owner can set (dashboard): `CREDIT_LOADED` (it holds placeholder text, so the low-credit warning cannot work: set the dollars loaded, or delete it) and, optionally, `RESEND_API_KEY` and `ALERT_EMAIL` (without them no email alert is sent). `ALLOWED_ORIGINS` can be cleared once the old GitHub Pages copy is unpublished. The two USGS secrets were removed from the Worker on 15 Nov 2026 (they stay in GitHub Actions). `CF_PLAN` is set to paid in `wrangler.jsonc` and goes live with the push.
+- Security items for the owner are in `AUDIT.md` (git-ignored); act on its section 0 first.
+- The PRD itself is out of date in section 13 (it still describes the site as held back by the free plan) and section 2 (12 Nov figures). A suggestion was laid in the document for section 13; section 2 is dated, so left as a record.
 - 48 source websites are graded F (not classified); list in `archive/model/sources.json`. Grade them, or leave as F?
 - UN human-rights cases cannot be collected by machine (archive/SOURCES.md). Download the Libya cases by hand, or leave them out?

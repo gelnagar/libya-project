@@ -50,9 +50,10 @@ function item(x, d, detail, phrase, extra) {
 }
 
 const places = new Map(), events = new Map();
-let read = 0;
+let read = 0, extracted = 0, placeholders = 0; // read = rated relevant (relevance 1 or more); extracted = every row in the extraction files
 for (const f of ['extract', 'extract-other']) { const p = `${DIR}/${f}.jsonl`; if (!fs.existsSync(p)) continue;
   for (const l of fs.readFileSync(p, 'utf8').split('\n')) { if (!l) continue; let x; try { x = JSON.parse(l); } catch { continue; }
+    extracted++; if (x.summary === 'placeholder') placeholders++;
     if (!(x.relevance >= 1)) continue; read++;
     const d = docs.get(x.id);
     for (const pl of arr(x.places)) {
@@ -112,7 +113,7 @@ fs.writeFileSync('archive/review/candidates.json', JSON.stringify(out));
 const n = (k) => out.filter((c) => c.kind === k).length, nf = out.filter((c) => !c.found).length;
 const byReg = out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {});
 console.log('by region', JSON.stringify(byReg));
-console.log(`documents with extraction: ${read}; candidates: ${out.length} (${n('place')} places, ${n('event')} events, ${n('speech')} speeches); name not found in any stored text: ${nf}; two or more documents: ${out.filter((c) => c.docs > 1).length}`);
+console.log(`documents rated relevant: ${read} of ${extracted} extracted; candidates: ${out.length} (${n('place')} places, ${n('event')} events, ${n('speech')} speeches); name not found in any stored text: ${nf}; two or more documents: ${out.filter((c) => c.docs > 1).length}`);
 
 // the funnel, for the owner's review page: what was collected, read and raised, and what the reading cost.
 // Costs are the reading script's own count (archive/crest/cost-ledger.json), not a bill.
@@ -122,7 +123,8 @@ const ledger = fs.existsSync('archive/crest/cost-ledger.json') ? JSON.parse(fs.r
 const funnel = { at: new Date().toISOString(),
   collected: countLines('archive/crest/docs.jsonl.gz') + countLines('archive/crest/docs-other.jsonl.gz') + countLines('archive/cables/docs.jsonl.gz') + countTxt('archive/fbis') + countTxt('archive/gov'),
   listedNotFetched: fs.existsSync('archive/cables/index.json') ? Math.max(0, JSON.parse(fs.readFileSync('archive/cables/index.json', 'utf8')).cables.length - countLines('archive/cables/docs.jsonl.gz')) : 0,
-  read, candidates: out.length, byRegion: out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {}), places: n('place'), events: n('event'), speeches: n('speech'), twoOrMore: out.filter((c) => c.docs > 1).length, notFound: nf,
+  // read = documents with a real extraction; rated = those the model rated relevant (1 or more); the cost ledger counts documents sent, which can differ
+  read: extracted - placeholders, rated: read, extracted, placeholders, candidates: out.length, byRegion: out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {}), places: n('place'), events: n('event'), speeches: n('speech'), twoOrMore: out.filter((c) => c.docs > 1).length, notFound: nf,
   costUsd: Math.round(ledger.reduce((s, r) => s + r.usd, 0) * 100) / 100, runs: ledger };
 fs.writeFileSync('archive/review/funnel.json', JSON.stringify(funnel, null, 1));
 const si = process.argv.indexOf('--sql');

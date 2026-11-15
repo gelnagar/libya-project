@@ -78,21 +78,15 @@
     s.textContent = msg; s.hidden = false;
     if (ms) statusTimer = setTimeout(function () { s.hidden = true; }, ms);
   }
-  var LAYER_ICON = { massacre: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M11 0h2v4h-2z"/><path d="M8 4h8v1.8H8zM8 7h8v1.8H8zM8 10h8v1.8H8z"/><path fill-rule="evenodd" d="M12 12.4a5.8 5.8 0 1 0 0 11.6 5.8 5.8 0 1 0 0-11.6zm0 2.7a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 1 1 0-6.2z"/></svg>',
-    detention: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M2 2h20v20H2zm3 3v14h14V5z"/><path d="M7.6 5h2v14h-2zM11 5h2v14h-2zM14.4 5h2v14h-2z"/></svg>',
-    security: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M3 2h18v10l-9 10-9-10zm4 4v5l5 5.6 5-5.6V6z"/></svg>',
-    military: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M1 21V10l4-5h14l4 5v11zm5-9v3h12v-3z"/></svg>',
-    power: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M1 22v-4h3v-4h4V9h8v5h4v4h3v4z"/></svg>',
-    landmark: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M7 1h10v18h4v4H3v-4h4zm3 4v2h4V5zm0 5v2h4v-2zm0 5v2h4v-2z"/></svg>',
-    airstrike: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .8l1.1 3.2.5 4.3 7.6 6.2 1.6 3.3-1 .5-6.6-2.2.3 4.2 2.4 2.7v.9L13 22.6h-2l-3.8 1.3v-.9l2.4-2.7.3-4.2-6.6 2.2-1-.5 1.6-3.3 7.6-6.2.5-4.3z"/></svg>',
-    battle: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M.8 9.4 5.6 9.1v3.6L1.3 13.6z"/><path d="M5.4 8.9h6.3v3.5H5.4z"/><path d="M11.4 9.5h4.9v2.8h-4.9z"/><path d="M13.2 8.3h5.9v1.1h-5.9z"/><path d="M16 10.2h6.8v1.1H16z"/><path d="M20.2 8.7h1.1v2.2h-1.1z"/><path d="M22.7 9.8h.9v1.4h-.9z"/><path d="M6.6 12.4h2.4l-.8 4.9-2.1-.4z"/><path d="M10.1 12.3h2.8c.4 2.6 1.6 5.2 3.1 7.2l-2.3 1.2c-2-2.3-3.3-5-3.6-8.4z"/></svg>' };
+  // one drawing per layer, from layer-icons.js (rules: archive/design/not-claude-style.md); a layer without one falls back to its code letter
+  var LAYER_ICON = {}; Object.keys(window.ATLAS_ICONS || {}).forEach(function (k) { LAYER_ICON[k] = window.ATLAS_ICON_SVG(k); });
   // Lighter tone of a layer colour for thin lines on the dark theme (markers keep the full colour and a white outline).
   function lt(c) { return c; }
   /* Flat marker shapes. Each layer has a shape and a colour, so no category is told apart by colour alone. */
   var SHAPE = { circle: '<circle cx="7" cy="7" r="5.4"/>', square: '<rect x="1.6" y="1.6" width="10.8" height="10.8"/>', diamond: '<path d="M7 .7 13.3 7 7 13.3.7 7z"/>', triangle: '<path d="M7 1.1 13.4 12.6H.6z"/>', tridown: '<path d="M.6 1.4h12.8L7 12.9z"/>' };
   function shapeSvg(shape, color, cls) { return '<svg class="shp' + (cls ? ' ' + cls : '') + '" viewBox="0 0 14 14" aria-hidden="true" style="--c:' + color + '">' + (SHAPE[shape] || SHAPE.square) + '</svg>'; }
   function codeHtml(k) { return LAYER_ICON[k] || LAYERS[k].code; }
-  var SITE_ICON = { university: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M1 9l11-7 11 7v3H1zm3 5h4v6H4zm6 0h4v6h-4zm6 0h4v6h-4zM1 21h22v2H1z"/></svg>' };
+  var SITE_ICON = { university: '<svg class="lic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M1 9l11-7 11 7v3H1zm3 5h4v6H4zm6 0h4v6h-4zm6 0h4v6h-4zM1 21h22v2H1z"/></svg>' };
   function siteCode(s) { return SITE_ICON[s.icon] || codeHtml(s.layer); }
   function glyph(layerKey) { var lay = LAYERS[layerKey]; return h('span', { class: 'glyph g-shp', html: shapeSvg(lay.shape, lay.color) }); }
   function km(m) { return m < 1000 ? Math.round(m / 10) * 10 + ' m' : (m / 1000).toFixed(1) + ' km'; }
@@ -183,7 +177,7 @@
   function siteIcon(s) {
     var lay = LAYERS[s.layer];
     return L.divIcon({ className: '', iconSize: [24, 24], iconAnchor: [12 - s.dx, 12 - s.dy],
-      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '">' + shapeSvg(lay.shape, lay.color) + '</div>' });
+      html: '<div class="mk ' + lay.shape + ' v-' + s.level + '" style="--c:' + lay.color + '">' + shapeSvg(lay.shape, lay.color) + '<span class="mkI">' + (LAYER_ICON[s.layer] || '') + '</span></div>' });
   }
   SITES.forEach(function (s) {
     var lay = LAYERS[s.layer];
@@ -324,6 +318,7 @@
     el.classList.toggle('hide-labels', !active.labels || z < 14);
     el.classList.toggle('hide-districts', z < 12);
     el.classList.toggle('hide-osm-icons', z < 13);
+    el.classList.toggle('z-icons', z >= 15); // close in, markers show the layer's drawing as well as its shape
   }
   map.on('zoomend', zoomClasses);
 
@@ -1902,12 +1897,12 @@
   ];
   var groupEls = [];
   function mkGlyph(color, html) { return h('span', { class: 'glyph square', style: 'background:' + color }, [h('span', { html: html })]); }
-  var PART_ICON = { profiles: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M1 9l11-7 11 7v3H1zm3 5h4v6H4zm6 0h4v6h-4zm6 0h4v6h-4zM1 21h22v2H1z"/></svg>',
-    net: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M2 3h6v6H2zM16 15h6v6h-6zM6 8h2v5h8v2H6z"/></svg>',
-    reports: '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>' };
+  var PART_ICON = { profiles: '<svg class="lic" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M1 9l11-7 11 7v3H1zm3 5h4v6H4zm6 0h4v6h-4zm6 0h4v6h-4zM1 21h22v2H1z"/></svg>',
+    net: '<svg class="lic" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M2 3h6v6H2zM16 15h6v6h-6zM6 8h2v5h8v2H6z"/></svg>',
+    reports: '<svg class="lic" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>' };
   function partGlyph(k) {
     if (LAYERS[k]) return glyph(k);
-    if (k === 'milprof') return mkGlyph('#55603a', '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' + MISSILE_SVG + '</svg>');
+    if (k === 'milprof') return mkGlyph('#55603a', '<svg class="lic" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' + MISSILE_SVG + '</svg>');
     if (PART_ICON[k]) return mkGlyph(partColor(k), PART_ICON[k]);
     var o = k.replace(/^osm-/, '');
     if (OSM[o] && OSM_ICONS[o]) return h('span', { class: 'glyph', html: osmIconHtml(o) });
@@ -2502,8 +2497,8 @@
   // remember what each sheet is about, so notes can be attached to it
   var _openSite = openSite; openSite = function (s) { curTarget = { id: s.id, name: s.name, lat: s.lat, lon: s.lon, code: siteCode(s), profile: s.profile }; _openSite(s); };
   var _openArea = openArea; openArea = function (x) { var host = SITES.filter(function (s) { return s.profile === x.id; })[0]; if (host) { focusSite(host); return; } curTarget = { id: x.id, name: x.name, lat: x.lat, lon: x.lon, code: areaIcon(x) }; _openArea(x); };
-  function areaIcon(x) { var m = { prison: 'detention', military: 'military', government: 'power', landmark: 'landmark', police: 'security', security: 'security' }; if (/universit|college|school/i.test(x.name)) return SITE_ICON.university; var wi = WEAPON_ICON[x.id] || (x.sym === 'sam' ? MISSILE_SVG : SYM_ICON[x.sym]); if (wi) return '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' + wi + '</svg>'; return LAYER_ICON[m[x.kind] || 'landmark']; }
-  var LINK_ICON = '<svg class="noose" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M2 9h6v6H2zM16 9h6v6h-6z"/><path d="M8 11h8v2H8z"/></svg>';
+  function areaIcon(x) { var m = { prison: 'detention', military: 'military', government: 'power', landmark: 'landmark', police: 'security', security: 'security' }; if (/universit|college|school/i.test(x.name)) return SITE_ICON.university; var wi = WEAPON_ICON[x.id] || (x.sym === 'sam' ? MISSILE_SVG : SYM_ICON[x.sym]); if (wi) return '<svg class="lic" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' + wi + '</svg>'; return LAYER_ICON[m[x.kind] || 'landmark']; }
+  var LINK_ICON = '<svg class="lic" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M2 9h6v6H2zM16 9h6v6h-6z"/><path d="M8 11h8v2H8z"/></svg>';
   var _openSpot = openSpot; openSpot = function (ll) { curTarget = { lat: ll.lat, lon: ll.lng, name: '' }; _openSpot(ll); };
   var _openFeature = openFeature; openFeature = function (k, el) { var lat = el.lat || (el.bounds ? (el.bounds.minlat + el.bounds.maxlat) / 2 : null), lon = el.lon || (el.bounds ? (el.bounds.minlon + el.bounds.maxlon) / 2 : null); curTarget = lat != null ? { id: 'osm-' + el.type + '-' + el.id, name: (el.tags && (el.tags['name:en'] || el.tags.name)) || '', lat: lat, lon: lon } : null; _openFeature(k, el); };
   var _openRecord = openRecord; openRecord = function (r) { curTarget = null; _openRecord(r); };

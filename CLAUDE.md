@@ -69,6 +69,7 @@ Old spy-satellite film (Feb 1966 GAMBIT; Nov 1972, 1976 north and south, 1983 HE
 - Markers are 12px flat shapes from `shapeSvg()`: each layer in `ATLAS_LAYERS` has a `shape` (circle, square, triangle, diamond) and a `color`, validated together for colour-blind separation. Family reports are inverted triangles. Evidence level is fill: filled, half tone, outline.
 - Timeline (`drawTimeline`): click a year, drag for a range (`timeRange`), places within 13px fold into a numbered box with a list.
 - `--text-faint` is below AA: placeholders and dividers only.
+- Layer icons: `public/layer-icons.js` holds one drawing per layer (`ATLAS_ICON_SVG(key)`); `app.js` builds `LAYER_ICON` from it for hover cards and panels. Below map zoom 15 markers stay the validated shapes; from zoom 15 (`.z-icons` on the map, set in `zoomClasses`) each site marker is a 20px tile with the drawing, the evidence level still shown by fill. Rules for drawing them: `archive/design/not-claude-style.md`; check sheet (developer page, not served): `archive/design/icons.html`. A new layer needs an icon, and `scripts/preflight.mjs` fails without one.
 - `AUDIT.md` (git-ignored, the repo is public) lists open security and research findings.
 
 ## Review queue (2026-11)

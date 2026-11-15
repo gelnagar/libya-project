@@ -561,3 +561,14 @@ html[data-theme] details.sp[open] > summary { background: var(--bg-raised); }
 html[data-theme] details.sp > :not(summary) { margin: 6px 0; }
 html[data-theme] .sp-desc { font-size: 12px; border-left: 2px solid var(--border-strong); padding-left: 8px; }
 html[data-theme] .sp-open { font-family: var(--f-mono) !important; font-size: 11px; line-height: 1.55; padding: 8px; background: var(--bg-app); border: 1px solid var(--border); max-height: 220px; overflow-y: auto; }
+
+/* Close in (map zoom 15 and up) a site marker becomes a 20px tile carrying the layer's drawing (layer-icons.js). The shape and colour
+   stay the same channel pair; the evidence level keeps its fill: solid tile (documented), half tone (reported), outline (suspected).
+   White on every layer colour is at least 3.09:1 (the weakest, the gold of seats of power). */
+html[data-theme] .mk .mkI { display: none; }
+html[data-theme] .z-icons .mk .shp { display: none; }
+html[data-theme] .z-icons .mk .mkI { display: grid; place-items: center; position: absolute; left: -4px; top: -4px; width: 20px; height: 20px; background: var(--c); color: #fff; border: 1px solid var(--mk-line); }
+html[data-theme] .z-icons .mk .mkI svg { width: 16px; height: 16px; display: block; }
+html[data-theme] .z-icons .mk.v-testimony .mkI { background: color-mix(in srgb, var(--c) 45%, var(--map-bg)); color: var(--c); border-color: var(--c); }
+html[data-theme] .z-icons .mk.v-suspected .mkI { background: var(--halo); color: var(--c); border: 2px solid var(--c); }
+html[data-theme] .z-icons .mk.sel::before { inset: -9px; }

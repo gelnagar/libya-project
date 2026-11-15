@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Layer icons: check sheet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Developer sheet, not served by the site. Open through any local server started in the repository root. -->
+<style>
+:root { --bg: #F6F7F9; --panel: #FFFFFF; --line: #D3D8DE; --text: #1C2127; --muted: #5F6B7C; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px 16px 48px; background: var(--bg); color: var(--text); font: 13px/1.5 Inter, system-ui, sans-serif; }
+main { max-width: 1180px; margin: 0 auto; }
+h1 { font-size: 18px; margin: 0 0 4px; font-weight: 600; }
+p { margin: 0 0 12px; color: var(--muted); max-width: 760px; }
+table { border-collapse: collapse; width: 100%; background: var(--panel); border: 1px solid var(--line); }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: center; vertical-align: middle; }
+th { font: 600 11px "JetBrains Mono", ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); background: var(--bg); }
+td.l { text-align: left; font-weight: 500; white-space: nowrap; }
+td.l small { display: block; font: 400 11px "JetBrains Mono", ui-monospace, monospace; color: var(--muted); }
+.t { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 8px 10px; }
+.light { background: #fff; } .dark { background: #1C2127; }
+.t svg { display: block; flex: none; }
+.lic { color: var(--c); }
+.on { width: 30px; height: 30px; display: inline-grid; place-items: center; background: var(--c); color: #fff; }
+.on svg { width: 22px; height: 22px; color: #fff; }
+canvas.px { width: 84px; height: 84px; image-rendering: pixelated; border: 1px solid var(--line); background: #fff; }
+.grey svg { filter: grayscale(1); } .blur svg { filter: blur(1px); }
+.old svg { color: var(--c); }
+.sw { display: inline-block; width: 10px; height: 10px; background: var(--c); vertical-align: -1px; margin-right: 6px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Layer icons: check sheet</h1>
+<p>Left: the set that was in <code>app.js</code>. Right: <code>public/layer-icons.js</code>. Each new icon is shown at 14, 24 and 48 units, on both themes, on the colour tile the place panel uses, in greyscale, blurred by one pixel, and through red-green and blue-yellow colour-blindness simulations.</p>
+<table id="t"><thead><tr><th>Layer</th><th>Before 24</th><th>After 14</th><th>After 24</th><th>After 48</th><th>Dark 24</th><th>Panel tile</th><th>Grey 14</th><th>Blur 1px 14</th><th>14 px, ×6</th><th>Protan 14</th><th>Deutan 14</th><th>Tritan 14</th></tr></thead><tbody></tbody></table>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="protan"><feColorMatrix type="matrix" values="0.567 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0"/></filter>
+<filter id="deutan"><feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/></filter>
+<filter id="tritan"><feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"/></filter>
+</defs></svg>
+</main>
+<script src="../../public/data/sites.js"></script>
+<script src="../../public/layer-icons.js"></script>
+<script>
+(function () {
+  var L = window.ATLAS_LAYERS, tb = document.querySelector('#t tbody');
+  function wrap(svg, px, cls, style) { var d = document.createElement('div'); d.className = 't ' + (cls || 'light'); d.style.cssText = '--c:' + style; d.innerHTML = svg; var s = d.firstChild; s.style.width = s.style.height = px + 'px'; return d; }
+  fetch('../../public/app.js').then(function (r) { return r.text(); }).then(function (js) {
+    var m = js.match(/var LAYER_ICON = (\{[\s\S]*?\n  \});/), old = {}; try { old = (new Function('return ' + m[1]))(); } catch (e) {}
+    Object.keys(L).forEach(function (k) {
+      var c = L[k].color, tr = document.createElement('tr'), td;
+      function cell(node) { td = document.createElement('td'); td.appendChild(node); tr.appendChild(td); }
+      td = document.createElement('td'); td.className = 'l'; td.innerHTML = '<span class="sw" style="--c:' + c + '"></span>' + L[k].label + '<small>' + k + '</small>'; tr.appendChild(td);
+      cell(wrap(old[k] || '', 24, 'light old', c));
+      cell(wrap(ATLAS_ICON_SVG(k), 14, 'light', c)); cell(wrap(ATLAS_ICON_SVG(k), 24, 'light', c)); cell(wrap(ATLAS_ICON_SVG(k), 48, 'light', c));
+      cell(wrap(ATLAS_ICON_SVG(k), 24, 'dark', c));
+      var on = document.createElement('div'); on.className = 'on'; on.style.cssText = '--c:' + c; on.innerHTML = ATLAS_ICON_SVG(k); cell(on);
+      cell(wrap(ATLAS_ICON_SVG(k), 14, 'light grey', c)); cell(wrap(ATLAS_ICON_SVG(k), 14, 'light blur', c));
+      (function () { var cv = document.createElement('canvas'); cv.className = 'px'; cv.width = cv.height = 14; var img = new Image(), svg = ATLAS_ICON_SVG(k).replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" style="color:' + c + '" '); img.onload = function () { cv.getContext('2d').drawImage(img, 0, 0, 14, 14); }; img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg.replace(/currentColor/g, c)); cell(cv); })();
+      ['protan', 'deutan', 'tritan'].forEach(function (f) { var w = wrap(ATLAS_ICON_SVG(k), 14, 'light', c); w.style.filter = 'url(#' + f + ')'; cell(w); });
+      tb.appendChild(tr);
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -46,10 +46,15 @@ if (m && quoted) say(+quoted === +m[1] ? 'PASS' : 'FAIL', `CLAUDE.md quotes ${qu
 const tt = run(['scripts/test-timeline.mjs']), tm = tt.out.match(/(\d+) passed, (\d+) failed/);
 say(tm && tm[2] === '0' && tt.ok ? 'PASS' : 'FAIL', `timeline: ${tm ? tm[1] + ' passed, ' + tm[2] + ' failed' : 'did not run'} (dates read from text; no record dropped)`, tm && tm[2] !== '0' ? tt.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
 
+const ev = run(['scripts/check-evidence.mjs']), em = ev.out.match(/(\d+) documented killing entries; (\d+) have two or more publishers; (\d+) rest on one/);
+say(!em ? 'FAIL' : +em[3] ? 'WARN' : 'PASS', em ? `evidence rule 8: ${em[1]} documented killing entries, ${em[3]} rest on one publisher (list: node scripts/check-evidence.mjs)` : 'evidence rule 8: check did not run');
+
 // 5. data and model
 const p = run(['scripts/check-panels.mjs']); say(p.ok ? 'PASS' : 'FAIL', 'panels: footnotes are in each pin\'s source list, timelines in date order', p.ok ? '' : p.out.split('\n').slice(0, 3).join(' | '));
 const bc = run(['scripts/build-claims.mjs', '--check']), diff = (bc.out.match(/(\d+) differ/) || [])[1];
 say(bc.ok && diff === '0' ? 'PASS' : 'FAIL', `claim model: public/data rebuilt from the model with ${diff == null ? '?' : diff} difference(s)`);
+const r9 = bc.out.match(/rule 9\): (\d+) of (\d+)/);
+say(!r9 ? 'FAIL' : +r9[1] < +r9[2] ? 'WARN' : 'PASS', r9 ? `evidence rule 9: ${r9[1]} of ${r9[2]} claims record who reviewed them and when` : 'evidence rule 9: not reported');
 const cm = run(['scripts/check-model.mjs']), nf = (cm.out.match(/passage NOT in the stored source (\d+)/) || [])[1];
 say(cm.ok && nf === '0' ? 'PASS' : 'FAIL', `stored quotations: ${nf == null ? '?' : nf} not found word for word in their stored source`);
 

@@ -1,0 +1,99 @@
+{
+ "at": "2026-11-15T19:58:28.208Z",
+ "rule": "documented + killing needs two independent publishers",
+ "documentedKillings": 18,
+ "meet": 9,
+ "breaking": 9,
+ "entries": [
+  {
+   "id": "mk-sharshatt",
+   "name": "Shar al-Shatt killings",
+   "year": 1911,
+   "sources": 2,
+   "publishers": [
+    "wikipedia.org"
+   ],
+   "ok": false
+  },
+  {
+   "id": "mk-tajoura-2019",
+   "name": "Tajoura detention centre air strike, 2 July 2019",
+   "year": 2019,
+   "sources": 1,
+   "publishers": [
+    "wikipedia.org"
+   ],
+   "ok": false
+  },
+  {
+   "id": "mk-hadba-2020",
+   "name": "Military college air strike, 4 January 2020",
+   "year": 2020,
+   "sources": 1,
+   "publishers": [
+    "aljazeera.com"
+   ],
+   "ok": false
+  },
+  {
+   "id": "mk-gharghour-2013",
+   "name": "Gharghour protest shooting, 15 November 2013",
+   "year": 2013,
+   "sources": 1,
+   "publishers": [
+    "hrw.org"
+   ],
+   "ok": false
+  },
+  {
+   "id": "mk-corinthia-2015",
+   "name": "Corinthia Hotel attack, 27 January 2015",
+   "year": 2015,
+   "sources": 1,
+   "publishers": [
+    "wikipedia.org"
+   ],
+   "ok": false
+  },
+  {
+   "id": "mk-feb2011",
+   "name": "Tripoli crackdown, 20–25 February 2011",
+   "year": 2011,
+   "sources": 2,
+   "publishers": [
+    "hrw.org"
+   ],
+   "ok": false
+  },
+  {
+   "id": "mk-1945-janzur",
+   "name": "Janzur (Zanzur) pogrom, November 1945",
+   "year": 1945,
+   "sources": 2,
+   "publishers": [
+    "wikipedia.org"
+   ],
+   "ok": false
+  },
+  {
+   "id": "mk-1945-tajura",
+   "name": "Tajura pogrom, November 1945",
+   "year": 1945,
+   "sources": 2,
+   "publishers": [
+    "wikipedia.org"
+   ],
+   "ok": false
+  },
+  {
+   "id": "mk-abusalim-1999",
+   "name": "Two political prisoners die in Abu Salim, July–August 1999",
+   "year": 1999,
+   "sources": 1,
+   "publishers": [
+    "amnesty.org"
+   ],
+   "ok": false
+  }
+ ]
+}

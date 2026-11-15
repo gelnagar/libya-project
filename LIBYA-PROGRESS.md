@@ -74,7 +74,8 @@ Standing rules for every chunk
       No quoted passage was missing from its stored source in any region. One point to carry into the written checks: Greater Tripolitania names Farahat 'Ammar Jlab, sentenced to death at Zuwarah in 1984 and called a "Muslim Brotherhood agent" by the regime's own report; if used, that label must be attributed to the regime, not stated. The "home" test gave false hits on "House of Representatives" and "return home of a unit" and was narrowed. Each region still needs its paid reading (C3), written entries, and its own written check before it is ticked.
 
 ## Phase E. Public opening
-- [~] E1 Country view done under A5. Correction and removal route done. Hosting beyond the free plan waits for the owner.
+- [~] E1 Country view done under A5. Correction and removal route done. Hosting: settled (Workers Paid, 100,000 files); proved only by the first deploy over 20,000 files, which needs a push to main.
+      Hosting (2026-11-15): the owner confirmed the account is on Workers Paid, whose limit is 100,000 static files per Worker version; public/ holds 15,858. The Workers Builds API shows 103 builds of tripoli-atlas-ai; the four failures (21 Oct 2026) were refused with code 10304, "37,275 static asset files ... exceeds the Workers Free limit of 20,000", so the account was on the free plan then. The old ceiling of about 16,300 came from that period and was too low even for the free plan; no 18,055-file failure is in the build log. Region data and more satellite tiles now fit; no spending is needed.
       Route: `public/corrections.html` (anyone; states what will be corrected or removed and that requests are answered) posts `{ correction: { kind, item, name, text, contact } }` to the Worker, which stores it in D1 table `corrections` (created by the Worker on first use; no manual database step), limits each address to 5 a day by keyed hash, and never shows requests to visitors. The owner lists them on requests.html and marks them answered. Every place panel ends with a link to the page, filled in with that entry.
       Checks: `node scripts/test-worker.mjs` 47 passed, 0 failed (8 new: a visitor can send one; an empty one is refused; the sixth in a day from one address is refused; another address still can; stored by hash, not address; visitors cannot read them; the owner sees the contact but not the hash; the owner can mark one answered). In the browser with the real security headers: the page loads with no policy violation, the entry and "removal" are filled in from the link; on the map, Abu Salim's panel carries one link to `corrections.html?item=abusalim&name=Abu%20Salim%20prison`. public/ holds 15,858 files.
       Not checked: sending from the page to a live Worker (the local server takes no POST), and the owner's list in a browser (the owner API needs the password and the live Worker). The page states no reply time, because none has been agreed.
@@ -87,7 +88,7 @@ Standing rules for every chunk
 - Review data in D1 (`cand`, `decision`, `meta`); family reports still in one KV value (move to D1 is open).
 - Grades are rule-based defaults with owner overrides in one JSON file.
 - Shell code reaches the map only through `window.ATLAS_API`.
-- Open: hosting beyond the free plan's file limit (E1); moving reports to D1; when to switch the source of truth.
+- Hosting: Workers Paid, 100,000 files per version (settled 15 Nov 2026). Open: moving reports to D1; when to switch the source of truth.
 
 ## Log
 - 2026-11-14: E1 correction and removal route (page, Worker route, owner list, 8 tests).
@@ -99,7 +100,6 @@ Standing rules for every chunk
 
 ## Waiting for the owner
 - Corrections page: it promises answers but gives no reply time. Set one (for example two weeks), or keep it open? Requests reach you on requests.html only; no email alert was added.
-- Hosting for all of Libya (E1): public/ is at 15,858 files. The "about 16,300" ceiling in CLAUDE.md came from deploys that failed at 18,055 and 37,275 files, not from a check of the plan; the account plan was never checked (the Cloudflare connection here cannot read billing). The owner reports already paying for Workers Paid ($5 a month), whose limit is 100,000 files per version. To do: confirm the plan in the dashboard (Workers & Pages > Plans), then find the real cause of the 18,055-file failure from its build log before adding files. No new spending is needed for this.
 - Benghazi sample check, human half: someone other than the person who wrote the entries checks the 30 entries on `archive/review/sample-benghazi.md` (run `node scripts/sample-check.mjs benghazi` first). Best done after the Benghazi entries are written, not on raw candidates.
 - In the review queue, reject the five Benghazi candidates dated after 2011 ("after the period of the map"); see `archive/regions/benghazi-safety.md`.
 - BY 6 PM 13 NOV: give the owner a short summary (what each chunk built and how it was checked), the local copy to click through, and this list as yes/no decisions.

@@ -572,3 +572,16 @@ html[data-theme] .z-icons .mk .mkI svg { width: 16px; height: 16px; display: blo
 html[data-theme] .z-icons .mk.v-testimony .mkI { background: color-mix(in srgb, var(--c) 45%, var(--map-bg)); color: var(--c); border-color: var(--c); }
 html[data-theme] .z-icons .mk.v-suspected .mkI { background: var(--halo); color: var(--c); border: 2px solid var(--c); }
 html[data-theme] .z-icons .mk.sel::before { inset: -9px; }
+
+/* Timeline lane for records with no map position (see unLane in app.js): neutral grey, a tick at the first year; hollow when the
+   date is only a decade or "about"; a bar where the text gives a range. The list opens to each record's text and sources. */
+html[data-theme] #timeline .tl-span.un { background: var(--text-muted); }
+html[data-theme] #timeline .tl-dot.tl-un:not(.tl-n) i { display: block; width: 3px; height: 10px; background: var(--text-muted); box-sizing: border-box; }
+html[data-theme] #timeline .tl-dot.tl-un.approx i { width: 5px; background: none; border: 1px solid var(--text-muted); }
+html[data-theme] .tl-pop.tl-pop-un { width: 420px; max-height: 320px; }
+html[data-theme] .tl-pop .un-item { border-top: 1px solid var(--border); }
+html[data-theme] .tl-pop .un-item:first-child { border-top: 0; }
+html[data-theme] .tl-pop .un-body { padding: 2px 12px 8px 30px; font-size: 12px; line-height: 1.45; color: var(--text); }
+html[data-theme] .tl-pop .un-body p { margin: 0 0 4px; }
+html[data-theme] .tl-pop .un-src { color: var(--text-muted); }
+html[data-theme] .tl-pop .un-src a { color: var(--accent); }

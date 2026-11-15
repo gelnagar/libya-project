@@ -43,6 +43,9 @@ say(m && m[2] === '0' && t.ok ? 'PASS' : 'FAIL', `Worker tests: ${m ? m[1] + ' p
 const claude = fs.readFileSync('CLAUDE.md', 'utf8'), quoted = (claude.match(/test-worker\.mjs`\s*\((\d+) checks/) || [])[1];
 if (m && quoted) say(+quoted === +m[1] ? 'PASS' : 'FAIL', `CLAUDE.md quotes ${quoted} Worker checks; there are ${m[1]}`);
 
+const tt = run(['scripts/test-timeline.mjs']), tm = tt.out.match(/(\d+) passed, (\d+) failed/);
+say(tm && tm[2] === '0' && tt.ok ? 'PASS' : 'FAIL', `timeline: ${tm ? tm[1] + ' passed, ' + tm[2] + ' failed' : 'did not run'} (dates read from text; no record dropped)`, tm && tm[2] !== '0' ? tt.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
+
 // 5. data and model
 const p = run(['scripts/check-panels.mjs']); say(p.ok ? 'PASS' : 'FAIL', 'panels: footnotes are in each pin\'s source list, timelines in date order', p.ok ? '' : p.out.split('\n').slice(0, 3).join(' | '));
 const bc = run(['scripts/build-claims.mjs', '--check']), diff = (bc.out.match(/(\d+) differ/) || [])[1];

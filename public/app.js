@@ -504,6 +504,12 @@
     [1969, 1977, 'Revolutionary Command Council', 'RCC'], [1977, 1986, 'Jamahiriya', 'Jamahiriya'], [1986, 1992, 'US air strikes; Lockerbie', '1986–92'],
     [1992, 2003, 'UN sanctions', 'Sanctions'], [2003, 2011, 'Rapprochement with the West', 'Rapprochement'], [2011, 2012, 'Uprising and civil war', '2011'], [2012, 2026, 'After Gaddafi', 'Post-2011']];
   var timeRange = null;
+  /* Records with no map position (ATLAS_UNPLACED) are dated from their own "when" text by when-years.js, which reads only
+     what the text says, and drawn in a lane of their own. Those whose text gives no drawable date, and pins with no year,
+     are listed under "Not drawn" in the header, so nothing is dropped without being counted. */
+  var UN_ALL = UNPLACED.map(function (u) { return { u: u, d: window.ATLAS_WHEN ? window.ATLAS_WHEN(u.when, TL_A, TL_D) : { kind: 'none' } }; });
+  var UN_LANE = ['No map position', ['__un']];
+  function srcLinks(src) { var out = []; [].concat(src || []).forEach(function (x, i) { if (!x || !/^https?:/i.test(x.u || '')) return; if (out.length) out.push(' · '); out.push(h('a', { href: x.u, target: '_blank', rel: 'noopener', title: x.t || '', text: x.t || 'Source ' + (i + 1) })); }); return out; }
   function pos(f) { return 'calc(14px + ' + f.toFixed(4) + ' * (100% - 28px))'; }
   var TL_ALL = [['Detention & security', ['detention', 'security']], ['Military & armed action', ['military', 'airstrike', 'battle']], ['Killings & repression', ['massacre']], ['Seats of power', ['power']], ['Landmarks & events', ['landmark']]];
   var TL_ONE = [['All records', ['massacre', 'airstrike', 'battle', 'detention', 'security', 'military', 'power', 'landmark']]];
@@ -520,13 +526,33 @@
         [h('span', { class: 'g-shp v-' + s.level, html: shapeSvg(lay.shape, lay.color) }), h('span', { class: 'yr', text: yrs(s) }), h('span', { class: 'nm', text: s.name })]); }));
     tl.appendChild(tlPop);
   }
+  /* the list for records with no map position, and for the ones the timeline cannot draw: each row opens to its text and sources */
+  function tlPopupUn(anchor, entries) {
+    tlClosePop();
+    var tl = $('timeline'), r = anchor.getBoundingClientRect(), t = tl.getBoundingClientRect();
+    tlPop = h('div', { class: 'tl-pop tl-pop-un', role: 'menu', style: 'left:' + Math.max(4, Math.min(t.width - 424, r.left - t.left - 8)).toFixed(0) + 'px;bottom:' + (t.bottom - r.top + 4).toFixed(0) + 'px' },
+      entries.map(function (e) {
+        if (e.s) { var lay = LAYERS[e.s.layer]; return h('button', { type: 'button', role: 'menuitem', onclick: function () { tlClosePop(); focusSite(e.s); } },
+          [h('span', { class: 'g-shp v-' + e.s.level, html: shapeSvg(lay.shape, lay.color) }), h('span', { class: 'yr', text: 'no year' }), h('span', { class: 'nm', text: e.s.name })]); }
+        var u = e.u, body = h('div', { class: 'un-body', hidden: '' }, [h('p', { text: u.text || '' }), h('p', { class: 'un-src' }, srcLinks(u.src))]);
+        var row = h('button', { type: 'button', role: 'menuitem', 'aria-expanded': 'false', onclick: function () { var open = body.hidden; body.hidden = !open; row.setAttribute('aria-expanded', String(open)); } },
+          [h('span', { class: 'g-shp', html: shapeSvg('square', '#738091') }), h('span', { class: 'yr', text: u.when || 'no date' }), h('span', { class: 'nm', text: u.name })]);
+        return h('div', { class: 'un-item' }, [row, body]);
+      }));
+    tl.appendChild(tlPop);
+  }
   document.addEventListener('click', function (e) { if (tlPop && !tlPop.contains(e.target) && !(e.target.closest && e.target.closest('.tl-n'))) tlClosePop(); });
   /* The strip, top to bottom: header (readout and controls), new places per year, periods, lanes, year axis.
      Click a year to step to it; drag for a range; places that fall on the same few pixels fold into one numbered box. */
   function drawTimeline() {
     var tl = $('timeline');
     tl.innerHTML = ''; tlPop = null;
-    TL_LANES = tlAll ? TL_ALL : TL_ONE;
+    var unReg = UN_ALL.filter(function (x) { return (x.u.region || 'tripoli') === curRegion; });
+    var UN_DRAW = unReg.filter(function (x) { return x.d.kind === 'point' || x.d.kind === 'range' || x.d.kind === 'decade'; })
+      .map(function (x) { return { u: x.u, y0: x.d.y0, y1: x.d.y1, approx: x.d.approx, kind: x.d.kind, also: x.d.also }; }).filter(function (x) { return inPeriod(x); });
+    var UN_OFF = unReg.filter(function (x) { return x.d.kind === 'none' || x.d.kind === 'outside'; });
+    var PIN_OFF = SITES.filter(function (s) { return s.y0 == null && regionOf(s) === curRegion && !!active[s.layer]; });
+    TL_LANES = (tlAll ? TL_ALL : TL_ONE).concat(UN_DRAW.length ? [UN_LANE] : []);
     var L0 = 148, R0 = 12, W = Math.max(200, tl.clientWidth - L0 - R0);
     var HEAD = 24, HIST = 20, ERA = 16, LH = tlAll ? 18 : 22, AX = 18;
     var yHist = HEAD + 3, yEra = yHist + HIST + 3, yLanes = yEra + ERA + 3, lanesH = TL_LANES.length * LH, yAxis = yLanes + lanesH + 2, tlH = yAxis + AX;
@@ -539,9 +565,12 @@
 
     /* header */
     var readText = (timeRange ? timeRange[0] + '–' + timeRange[1] : timeYear != null ? String(timeYear) : TL_A + '–' + TL_D) + '   ' +
-      (timeYear != null ? tlCount(timeYear) + ' in use' : shown.filter(inSel).length + ' of ' + shown.length + ' records');
+      (timeYear != null ? tlCount(timeYear) + ' in use' : shown.filter(inSel).length + ' of ' + shown.length + ' mapped') +
+      (UN_DRAW.length ? '  ·  ' + (timeYear != null ? UN_DRAW.filter(function (x) { return timeYear >= x.y0 && timeYear <= x.y1; }).length + ' unmapped' : UN_DRAW.filter(inSel).length + ' of ' + UN_DRAW.length + ' unmapped') : '');
     var readEl = h('span', { class: 'tl-read', text: readText });
     var btn = function (label, title, fn, pressed, off) { return h('button', { type: 'button', title: title, 'aria-label': title, 'aria-pressed': pressed == null ? null : String(!!pressed), disabled: off ? '' : null, text: label, onclick: fn }); };
+    var offN = PIN_OFF.length + UN_OFF.length, offBtn = offN ? btn('Not drawn ' + offN, 'Records that cannot be placed on the timeline: pins with no year, and records with no map position whose date text gives no year, or a year before ' + TL_A + '. Select to list them.', function (e) {
+      e.stopPropagation(); tlPopupUn(e.currentTarget, PIN_OFF.map(function (s) { return { s: s }; }).concat(UN_OFF.map(function (x) { return { u: x.u }; }))); }) : null;
     tl.appendChild(h('div', { class: 'tl-head' }, [h('span', { class: 'tl-title', text: 'Timeline' }), readEl,
       h('span', { class: 'tl-hint', title: 'Click a year to step to it. Drag across years for a range; Shift+click extends. Left and right arrows step one year.' }, [
         h('span', { class: 'g-shp', html: shapeSvg('circle', '#738091') }), 'Documented', h('span', { class: 'g-shp v-testimony', html: shapeSvg('circle', '#738091') }), 'Reported', h('span', { class: 'g-shp v-suspected', html: shapeSvg('circle', '#738091') }), 'Suspected']),
@@ -551,7 +580,7 @@
         btn('Year ▶', 'Next year (Right arrow)', function () { tlStep(1); }),
         btn('Reset', 'Clear the time filter and show all years (Esc)', function () { stopPlay(); timeRange = null; setYear(null); }, null, timeYear == null && !timeRange),
         btn('By subject', 'One lane per subject, with a bar for the years each place was in use', function () { tlAll = !tlAll; store.set('tlAll', tlAll); drawTimeline(); }, tlAll)
-      ])]));
+      ].concat(offBtn ? [offBtn] : []))]));
 
     /* new places per year */
     var counts = {}, maxC = 1;
@@ -575,11 +604,34 @@
       if (i) tl.appendChild(h('div', { class: 'tl-grid', style: 'left:' + px(x0) + ';top:' + yLanes + 'px;height:' + lanesH + 'px' }));
     });
 
+    /* the lane of records with no map position: a tick at the first year, a bar where the text gives a range or a decade
+       (hollow tick when approximate), neutral grey because they belong to no layer; same folding as the other lanes */
+    function unLane(mid) {
+      var items = UN_DRAW.slice().sort(function (a, b) { return a.y0 - b.y0; });
+      if (tlAll) items.forEach(function (x) {
+        if (x.y1 <= x.y0) return;
+        var x0 = X(x.y0);
+        tl.appendChild(h('div', { class: 'tl-span un' + (inSel(x) ? '' : ' dim'), title: x.u.name + ', ' + x.u.when, style: 'left:' + px(x0) + ';width:' + px(Math.max(2, X(x.y1) - x0)) + ';top:' + (mid - 1) + 'px' }));
+      });
+      var buckets = [];
+      items.forEach(function (x) { var xx = Math.min(X(x.y0), L0 + W - 6), b = buckets[buckets.length - 1]; if (b && xx - b.x < 13) b.list.push(x); else buckets.push({ x: xx, list: [x] }); });
+      buckets.forEach(function (b) {
+        var one = b.list.length === 1, x = b.list[0];
+        var label = one ? x.u.name + '. ' + x.u.when + (x.kind === 'decade' ? ' (decade only)' : '') + '. No map position. Select to read it.'
+          : b.list.length + ' records with no map position, ' + b.list[0].y0 + (b.list[b.list.length - 1].y0 !== b.list[0].y0 ? '–' + b.list[b.list.length - 1].y0 : '') + '. Select to list them.';
+        var el = h('button', { type: 'button', class: 'tl-dot tl-un' + (one ? (x.approx ? ' approx' : '') : ' tl-n') + (b.list.some(inSel) ? '' : ' dim'), title: label, 'aria-label': label,
+          style: 'left:' + px(b.x) + ';top:' + (mid - 7) + 'px', html: one ? '<i></i>' : '<b>' + b.list.length + '</b>' });
+        el.addEventListener('click', function (e) { e.stopPropagation(); tlPopupUn(el, b.list.map(function (z) { return { u: z.u }; })); });
+        tl.appendChild(el);
+      });
+    }
+
     /* lanes */
     TL_LANES.forEach(function (lane, li) {
       var mid = yLanes + li * LH + LH / 2;
       tl.appendChild(h('div', { class: 'tl-lab', style: 'top:' + (mid - 7) + 'px', text: lane[0] }));
       tl.appendChild(h('div', { class: 'tl-lane', style: 'top:' + mid + 'px;left:' + L0 + 'px;right:' + R0 + 'px' }));
+      if (lane[1][0] === '__un') { unLane(mid); return; }
       var items = shown.filter(function (s) { return lane[1].indexOf(s.layer) >= 0; }).sort(function (a, b) { return a.y0 - b.y0; });
       if (tlAll) items.forEach(function (s) {
         if (s.y1 == null || s.y1 <= s.y0) return;

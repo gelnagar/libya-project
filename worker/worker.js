@@ -204,7 +204,10 @@ const STATS_SCHEMA = [
 let statsReady = null;
 async function statsDb(env) {
   if (!env.STATS) return null;
-  if (!statsReady) statsReady = env.STATS.batch(STATS_SCHEMA.map((q) => env.STATS.prepare(q))).catch((e) => { statsReady = null; throw e; });
+  // the review table gained a region column after it was first created; add it to an older table (fails harmlessly if it is there)
+  if (!statsReady) statsReady = env.STATS.batch(STATS_SCHEMA.map((q) => env.STATS.prepare(q)))
+    .then(() => env.STATS.prepare('ALTER TABLE cand ADD COLUMN region TEXT').run().catch(() => {}))
+    .catch((e) => { statsReady = null; throw e; });
   await statsReady;
   return env.STATS;
 }
@@ -636,7 +639,7 @@ async function api(request, env, url, ctx) {
     if (seen && seen.n >= CORR_PER_DAY) return json({ error: 'Too many requests from here today. Please try again tomorrow.' }, 429, cors);
     const id = 'c' + now.toString(36) + Math.random().toString(36).slice(2, 7);
     await db.prepare('INSERT INTO corrections (id, at, kind, item, name, text, contact, who, done) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)')
-      .bind(id, now, kind, clip(c.item, 120).replace(/[^w:.-]/g, ''), clip(c.name, 200), text, clip(c.contact, 200).trim(), who).run();
+      .bind(id, now, kind, clip(c.item, 120).replace(/[^\w:.-]/g, ''), clip(c.name, 200), text, clip(c.contact, 200).trim(), who).run();
     return json({ ok: true, id }, 200, cors);
   }
 

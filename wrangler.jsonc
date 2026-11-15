@@ -17,6 +17,8 @@
   "d1_databases": [
     { "binding": "STATS", "database_name": "tripoli-atlas-stats", "database_id": "a8624ec7-25ae-444c-bf59-2c6682e20c19" }
   ],
+  // The account is on Workers Paid (owner, 15 Nov 2026), so the cost estimate on stats.html includes the $5 a month.
+  "vars": { "CF_PLAN": "paid" },
   // Keep the variables already set in the Cloudflare dashboard (credit, owner name, etc.).
   "keep_vars": true,
   "observability": { "enabled": true }

@@ -1,6 +1,6 @@
 """Keep the sharpest tile level of the 512-pixel satellite layers only near the pinned sites, so the whole site fits a file budget.
 
-The Cloudflare Worker is on the free plan: deploys of 18,055 and 37,275 files failed, 16,286 passed. So the layers are tiled in full
+The budget dates from the free plan (20,000 files; the Workers Builds log of 21 Oct 2026 shows 37,275 refused with code 10304). The account is now on Workers Paid (100,000 files, owner 15 Nov 2026), so the budget is a choice, not a limit. The layers are tiled in full
 (tile level zmax is about 1 m a pixel, shown at map zoom 17), and this script then deletes the zmax tiles that are farther than R from
 every pin. R is the largest radius whose tiles still keep the whole of public/ inside the budget.
   python3 scripts/prune-hi-tiles.py [budget=16300]

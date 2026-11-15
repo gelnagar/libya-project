@@ -17,7 +17,7 @@ In the Anthropic Console (console.anthropic.com) open **Settings → Limits** an
 | Name | Type | Value |
 | --- | --- | --- |
 | `ANTHROPIC_API_KEY` | Secret | your Anthropic API key |
-| `FAMILY_CODE` | Secret | `Nubie` (capitals and spaces are ignored) |
+| `FAMILY_CODE` | Secret | the family password you choose (capitals and spaces are ignored). Never write it in this repository. |
 | `OWNER_CODE` | Secret | your own password for the requests page (different from the family one) |
 | `SESSION_SECRET` | Secret | optional: any long random text |
 
@@ -45,7 +45,7 @@ Open `/stats.html` on your Worker address with `OWNER_CODE`. It shows visits per
 - Data lives in the D1 database `tripoli-atlas-stats` (bound as `STATS` in `wrangler.jsonc`; tables in `worker/stats-schema.sql`, also created automatically).
 - The map sends one small batch about 4 seconds after it opens, then at most one a minute while someone browses, and one when they leave. These are the only Worker requests an ordinary visit makes.
 - Visitors are counted by a keyed one-way hash of IP address and browser. IP addresses are never stored. Location (country, region, city, network) comes from Cloudflare's IP lookup and is approximate.
-- Optional: `STATS_SALT` (secret) for the hash key, otherwise `FAMILY_CODE` is used. `CF_PLAN` set to `paid` if you move to Workers Paid, so the cost estimate includes the $5 a month.
+- Optional: `STATS_SALT` (secret) for the hash key, otherwise `FAMILY_CODE` is used. `CF_PLAN` (text variable): set it to `paid` on Workers Paid, so the cost estimate includes the $5 a month. The owner confirmed on 15 Nov 2026 that the account is on Workers Paid; the variable was found unset that day, so the dashboard was still estimating the free plan.
 
 ## Email when someone adds to the map
 

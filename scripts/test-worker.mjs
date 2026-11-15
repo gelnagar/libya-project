@@ -8,6 +8,8 @@ const copy = path.join(os.tmpdir(), 'atlas-worker-under-test.mjs'); fs.copyFileS
 const W = (await import(pathToFileURL(copy).href + '?t=' + Date.now())).default;
 
 const sql = new DatabaseSync(':memory:');
+// the live review table predates the region column: start from that older shape
+sql.exec('CREATE TABLE cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT)');
 class Stmt { constructor(q, a = []) { this.q = q; this.a = a; } bind(...a) { return new Stmt(this.q, a); }
   exec() { const st = sql.prepare(this.q); return /^\s*(SELECT|WITH)/i.test(this.q) ? { results: st.all(...this.a) } : (st.run(...this.a), { results: [] }); }
   async run() { return this.exec(); } async all() { return this.exec(); } async first() { return this.exec().results[0] || null; } }
@@ -110,6 +112,8 @@ ok('requests are stored by keyed hash, never by address', sql.prepare('SELECT wh
 ok('visitors cannot read requests', !JSON.stringify((await api({ reports: true })).j).includes('My uncle') && (await api({ owner: true }, { 'X-Owner-Code': 'x' }, '10.8.0.3')).s === 401);
 const ol = await api({ owner: true }, own, '10.8.0.4'), mine = (ol.j.corrections || []).find((x) => x.id === c1.j.id);
 ok('the owner sees each request with its contact, but not the hash', !!mine && mine.kind === 'removal' && mine.contact === 'reply@example.test' && !('who' in mine));
+ok('an older review table gets its region column', sql.prepare('PRAGMA table_info(cand)').all().some((c) => c.name === 'region'));
+ok('the entry id sent with a request is kept, not stripped', !!mine && mine.item === 'abu-salim', JSON.stringify(mine && mine.item));
 ok('the owner can mark a request answered', (await api({ owner: true, correctionDone: c1.j.id }, own, '10.8.0.4')).s === 200 && sql.prepare('SELECT done FROM corrections WHERE id = ?').get(c1.j.id).done === 1);
 
 console.log(`\n${pass} passed, ${fail} failed`); process.exit(fail ? 1 : 0);

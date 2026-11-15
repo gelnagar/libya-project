@@ -1,16 +1,16 @@
 # Tripoli: Open Source
 
-A record of Gaddafi's Tripoli, built from declassified files and the accounts of people who lived there. It maps prisons, security sites, military bases, the 1986 raid and the regime's killings, and backs them with 2,700+ documents. Open read-only to anyone with the link; family members sign in to ask the AI about any place and to add their own notes.
+A record of Gaddafi's Tripoli, built from declassified files and the accounts of people who lived there. It maps prisons, security sites, military bases, the 1986 raid and the regime's killings, and backs them with 4,000+ documents (4,290 records on the map's side; 15,214 collected for research). Open read-only to anyone with the link; family members sign in to ask the AI about any place and to add their own notes.
 
 ## System
 
 ```mermaid
 flowchart LR
-  U[Browser / phone] -->|every request| W[Cloudflare Worker<br/>worker/worker.js]
-  W -->|no cookie| L[Login page]
-  W -->|cookie ok| A[Static site<br/>public/]
-  W -->|/api| C[Claude API<br/>+ web search]
+  U[Browser / phone] -->|pages, data, tiles| A[Static site<br/>public/, served directly]
+  U -->|/login /logout /api only| W[Cloudflare Worker<br/>worker/worker.js]
+  W -->|family cookie| C[Claude API<br/>+ web search]
   W <--> K[(KV: reports,<br/>requests, spend)]
+  W <--> S[(D1: visits, costs, review queue,<br/>corrections, sign-in failures)]
   A --> D[(public/data/*.js<br/>public/maps/ tiles)]
 ```
 
@@ -79,14 +79,14 @@ erDiagram
 
 | Entity | File | Count |
 |---|---|---|
-| Site (curated event or place) | `public/data/sites.js` | 23 |
-| Area (profile of a neighbourhood, building or camp) | `archive/areas/*` → `public/data/areas.js` | 170 (+58 without coordinates) |
+| Site (curated event or place) | `public/data/sites.js` | 103 (+ 115 unplaced items) |
+| Area (profile of a neighbourhood, building or camp) | `archive/areas/*` → `public/data/areas.js` | 172 (incl. 58 without coordinates) |
 | Record (document or event) | `archive/*` → `public/data/records.js` | 4,290 |
-| Connection (evidence-based link between two places) | `archive/research/links*.json` → `public/data/links.js` (`scripts/build-links.mjs`, `scripts/auto-links.py`) | 159 |
-| Unknown entity (person, group or outside place linked in the files) | `archive/crest/extract*.jsonl` → `public/data/unknown.js` (`scripts/build-unknown.py`; free pictures via `scripts/unknown-photos.mjs`) | 285 entities, 268 links, 66 pictures |
+| Connection (evidence-based link between two places) | `archive/research/links*.json` → `public/data/links.js` (`scripts/build-links.mjs`, `scripts/auto-links.py`) | 172 |
+| Unknown entity (person, group or outside place linked in the files) | `archive/crest/extract*.jsonl` → `public/data/unknown.js` (`scripts/build-unknown.py`; free pictures via `scripts/unknown-photos.mjs`) | 259 entities, 247 links |
 | Report (added by family) | Cloudflare KV `reports:v1` | live |
-| OSM feature (today's map data) | `public/data/osm/*.json` | ~2,300 |
-| Overlay (old map or satellite image) | `public/data/overlays.js` + `public/maps/` | 4 |
+| OSM feature (today's map data) | `public/data/osm/*.json` | ~3,700 items in 14 files |
+| Overlay (old map or satellite image) | `public/data/overlays.js` + `public/maps/` | 10 |
 
 Evidence level is one of `documented`, `testimony`, `suspected` or `context`. Record rights is `public-domain` (full text shown), `cc-by-sa` (full text shown), or `link-only` (summary and link only).
 
@@ -121,6 +121,10 @@ flowchart LR
 **Labels:** after each zoom or pan, labels are placed in priority order (sites, then districts), and any label whose box overlaps one already placed is hidden.
 
 **Overlays:** IIIF scan → ground control points from the map's corner coordinates (ED50) → `gdalwarp` → WebP tiles, zoom 12–17.
+
+## All-Libya work
+
+The plan to extend this to the whole country is the PRD named in `LIBYA-PROGRESS.md`, which is also the hand-over file (what is done, what was run to check it, what waits for the owner).
 
 ## Run
 

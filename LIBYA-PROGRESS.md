@@ -24,7 +24,7 @@ Standing rules for every chunk
 - [x] A2 Migrate Tripoli. Check run: `node scripts/build-claims.mjs --check` rebuilt 103 pins, 172 areas, 173 unplaced items and 172 connections from the model; 0 differ; 19 of 19 panel lines are claims. `node scripts/check-model.mjs`: all 110 stored quotations found word for word in their stored source. Finding: 161 of 271 pin claims cite a source but never stored the supporting words; those need passages before they meet evidence rule 1.
       Original wording: every pin and unplaced item reproduced from claims with nothing lost
       (check: counts match; 30 sampled entries have their quoted passage in a stored source)
-- [x] A3 Provenance (`scripts/lib/provenance.mjs`, `scripts/wayback.mjs`): 225 of 547 cited sources have a stored copy with a checksum. Fetch dates were only recorded for Wikipedia and the cables; older collectors did not record them. Archived copies: 39 are on archive.org already; a Wayback lookup for the rest runs with `node scripts/wayback.mjs` (free), then `node scripts/build-claims.mjs`.
+- [x] A3 Provenance (`scripts/lib/provenance.mjs`, `scripts/wayback.mjs`): 227 of 547 cited sources have a stored copy with a checksum (225 when first written; 227 on the audit of 15 Nov). Fetch dates were only recorded for Wikipedia and the cables; older collectors did not record them. Archived copies: 39 are on archive.org already; a Wayback lookup for the rest runs with `node scripts/wayback.mjs` (free), then `node scripts/build-claims.mjs`.
       Original wording: fetch date, checksum, archived copy where there is one
 - [x] A4 Grades: source reliability A-F by type of source (243 B, 256 C, 48 not classified = F), entry credibility 1-6 by evidence level and corroboration (157 confirmed, 299 probably true, 157 possibly true, 509 cannot be judged). Every grade is marked as a default from a rule; overrides go in `archive/model/grades.json`. Shown beside each citation on the map (checked in the browser: Abu Salim lists C1, F1, B1...). The 48 unclassified hosts need the owner's grade.
       Original wording: reliability of the source (A–F) and credibility of the item (1–6),
@@ -40,7 +40,7 @@ Standing rules for every chunk
       Original wording: strict script policy (move inline scripts in stats/requests pages to files); spending ceiling
       per day in the Worker; failed-password counting moved off KV; contributor names hidden from visitors;
       family reports held for owner review before visitors see them; tests for each
-- [x] A7 Funnel and cost strip on the review page (`archive/review/funnel.json`, `archive/crest/cost-ledger.json`): collected 15,214 (4,494 more cables listed, not downloaded), read 5,627, candidates 2,009, decided 0, reading cost $2.48 by the script's own count over three runs. Checked on the local review page: six figures shown, speeches filter lists 65 with venue, occasion and transcript rows; tests still 39 of 39.
+- [x] A7 Funnel and cost strip on the review page (`archive/review/funnel.json`, `archive/crest/cost-ledger.json`): collected 15,214 (4,494 more cables listed, not downloaded), read 5,627, candidates 2,280 (the funnel file of 13 Nov; 2,009 was an earlier count), decided 0, reading cost $2.48 by the script's own count over three runs. Checked on the local review page: six figures shown, speeches filter lists 65 with venue, occasion and transcript rows; tests still 39 of 39.
       Original wording: Cost and funnel report page for the owner (documents found, read, candidates, decided; cost per entry)
 
 ## Phase B. Clear the Tripoli backlog
@@ -73,6 +73,21 @@ Standing rules for every chunk
       | Fezzan | 57 | 46 | 0 | 0 | 9 | 36 of 41 (5 with none quoted) |
       No quoted passage was missing from its stored source in any region. One point to carry into the written checks: Greater Tripolitania names Farahat 'Ammar Jlab, sentenced to death at Zuwarah in 1984 and called a "Muslim Brotherhood agent" by the regime's own report; if used, that label must be attributed to the regime, not stated. The "home" test gave false hits on "House of Representatives" and "return home of a unit" and was narrowed. Each region still needs its paid reading (C3), written entries, and its own written check before it is ticked.
 
+## Phase F. PRD features that were in no chunk (found by the audit of 15 Nov 2026)
+The chunk list above covered the PRD's phases A to E but left out requirements stated elsewhere in the PRD. Each is unticked; none needs the owner except where marked.
+- [ ] F1 Evidence rule 8 (PRD s5): an entry at level "documented" that alleges a killing needs two independent sources. Nothing in the code enforces it yet. Add a check to `build-claims.mjs --check` that lists the entries that break it.
+- [ ] F2 Evidence rule 9 and PRD s12: every claim records who approved it and when. Today every migrated claim has reviewer "owner" and a null review date (`scripts/build-claims.mjs`).
+- [ ] F3 PRD s12 target "100% of entries have a stored, checksummed source". Measured 15 Nov: 227 of 547 cited sources stored; 161 of 271 pin claims never stored their supporting passage. A2 and A3 are ticked because their own tests passed, not because this target is met.
+- [ ] F4 Share links that keep the selected place, period and layers (PRD s10). No code for it in `app.js`.
+- [ ] F5 Entry page showing each claim: source, quoted passage, level, date reviewed (PRD s10). Grades are shown beside citations; the quoted passage and review date are not.
+- [ ] F6 Search across Arabic and English spelling variants (PRD s10; the table filter matches Arabic names, the encyclopedia does not).
+- [ ] F7 Offline copy of a region (PRD s10): no service worker exists.
+- [ ] F8 Self-hosted fonts (PRD s9). Every page, including the new `corrections.html`, still loads Inter and JetBrains Mono from Google Fonts, so Google sees each visitor's address.
+- [ ] F9 Weekly funnel and cost report, list of rejected candidates with reasons, review time per candidate (PRD s10 and s12). The review page shows the funnel and cost strip (A7); nothing is reported weekly and review time is not measured.
+- [ ] F10 Pipeline stages 1 and 3 of PRD s8: name lists in Arabic, French and Italian, "new since the last run", and an OCR-quality score. The Tripoli-in-Lebanon filter exists in some collectors only.
+- [ ] F11 Reports and review data in D1 with a row per record (PRD s13); family reports are still one KV value. Needs the owner's go-ahead because it moves live data.
+- [ ] F12 Custom domain so the address stops showing the owner's account name (PRD s13). Needs the owner.
+
 ## Phase E. Public opening
 - [~] E1 Country view done under A5. Correction and removal route done. Hosting: settled (Workers Paid, 100,000 files); proved only by the first deploy over 20,000 files, which needs a push to main.
       Hosting (2026-11-15): the owner confirmed the account is on Workers Paid, whose limit is 100,000 static files per Worker version; public/ holds 15,858. The Workers Builds API shows 103 builds of tripoli-atlas-ai; the four failures (21 Oct 2026) were refused with code 10304, "37,275 static asset files ... exceeds the Workers Free limit of 20,000", so the account was on the free plan then. The old ceiling of about 16,300 came from that period and was too low even for the free plan; no 18,055-file failure is in the build log. Region data and more satellite tiles now fit; no spending is needed.
@@ -91,6 +106,7 @@ Standing rules for every chunk
 - Hosting: Workers Paid, 100,000 files per version (settled 15 Nov 2026). Open: moving reports to D1; when to switch the source of truth.
 
 ## Log
+- 2026-11-15: audit of documents against code, data and Cloudflare. Fixed in the repo: a stripped-entry-id bug in the corrections route (found by the audit; test added, proven to fail on the old code), the Worker now adds the region column to an older review table, README (architecture, counts), SETUP-AI.md, CLAUDE.md, `CF_PLAN`. Added Phase F for PRD requirements no chunk covered. Worker tests now 49.
 - 2026-11-14: E1 correction and removal route (page, Worker route, owner list, 8 tests).
 - 2026-11-14: C4 tools (`scripts/safety-check.mjs`, `scripts/sample-check.mjs`, shared `scripts/lib/stored.mjs`) and the Benghazi safety check written. D1-D4 not started: each needs its region's paid reading (C3) and written entries first.
 - 2026-11-13 (10:51 run): B1, B2, C2 done; C3 free part done for all regions.
@@ -108,5 +124,7 @@ Standing rules for every chunk
 - Push to main: speeches in the review queue, cable collector, shared downloader (branch `more-sources`), and everything on branch `libya`.
 - Family reports now wait for your approval before visitors see them, and visitors no longer see who added a report. Accept this change?
 - Daily AI ceiling is set to $3 a day by default. Keep, change, or switch off?
+- Audit of 15 Nov 2026 (full list in AUDIT.md, which is git-ignored): act first on its section 0 (a secret found in a public file). Then, on the live Worker: set `CREDIT_LOADED` (it holds placeholder text, so the low-credit warning cannot work); decide whether to set `RESEND_API_KEY` and `ALERT_EMAIL` (neither is set, so no email alert is sent); unpublish the old GitHub Pages copy and then drop `ALLOWED_ORIGINS`; remove the two USGS secrets from the Worker (it does not use them). `CF_PLAN` is now set to paid in `wrangler.jsonc` and takes effect on the next push.
+- The PRD itself is out of date in section 13 (it still says the site is at the free-plan limit) and section 2 (12 Nov figures). A suggestion was laid in the document for section 13; section 2 is dated, so left as a record.
 - 48 source websites are graded F (not classified); list in `archive/model/sources.json`. Grade them, or leave as F?
 - UN human-rights cases cannot be collected by machine (archive/SOURCES.md). Download the Libya cases by hand, or leave them out?

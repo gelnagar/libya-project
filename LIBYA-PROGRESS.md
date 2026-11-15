@@ -99,7 +99,7 @@ Standing rules for every chunk
 
 ## Waiting for the owner
 - Corrections page: it promises answers but gives no reply time. Set one (for example two weeks), or keep it open? Requests reach you on requests.html only; no email alert was added.
-- Hosting for all of Libya (E1): the free plan caps the site at about 16,300 files and public/ is at 15,858. Region data and more satellite tiles will not fit. Options to decide: Workers paid plan ($5 a month, 100,000 files), or serving tiles from R2.
+- Hosting for all of Libya (E1): public/ is at 15,858 files. The "about 16,300" ceiling in CLAUDE.md came from deploys that failed at 18,055 and 37,275 files, not from a check of the plan; the account plan was never checked (the Cloudflare connection here cannot read billing). The owner reports already paying for Workers Paid ($5 a month), whose limit is 100,000 files per version. To do: confirm the plan in the dashboard (Workers & Pages > Plans), then find the real cause of the 18,055-file failure from its build log before adding files. No new spending is needed for this.
 - Benghazi sample check, human half: someone other than the person who wrote the entries checks the 30 entries on `archive/review/sample-benghazi.md` (run `node scripts/sample-check.mjs benghazi` first). Best done after the Benghazi entries are written, not on raw candidates.
 - In the review queue, reject the five Benghazi candidates dated after 2011 ("after the period of the map"); see `archive/regions/benghazi-safety.md`.
 - BY 6 PM 13 NOV: give the owner a short summary (what each chunk built and how it was checked), the local copy to click through, and this list as yes/no decisions.

@@ -242,7 +242,9 @@
   }
   map.on('zoomend', spreadMarkers);
   map.on('zoomend', function () { syncRings(); });
-  function syncRings() { SITES.forEach(function (s) { var r = rings[s.id], want = siteLayer.hasLayer(markers[s.id]) && active.rings && (selected === s.id || map.getZoom() >= 15); if (want && !ringLayer.hasLayer(r)) ringLayer.addLayer(r); else if (!want) ringLayer.removeLayer(r); }); }
+  /* Uncertainty rings: only for the selected place and the places connected to it. */
+  function ringIds() { var o = {}; if (!selected) return o; o[selected] = 1; if (typeof CONN !== 'undefined') CONN.forEach(function (c) { if (c.a === selected) o[c.b] = 1; else if (c.b === selected) o[c.a] = 1; }); return o; }
+  function syncRings() { var ids = ringIds(); SITES.forEach(function (s) { var r = rings[s.id], want = siteLayer.hasLayer(markers[s.id]) && active.rings && !!ids[s.id]; if (want && !ringLayer.hasLayer(r)) ringLayer.addLayer(r); else if (!want) ringLayer.removeLayer(r); }); }
 
   var districtLayer = L.layerGroup();
   DISTRICTS.forEach(function (d) {
@@ -273,11 +275,12 @@
   function hideCard() { if (cardTip) map.closeTooltip(cardTip); }
   function esc(t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function refresh() {
+    if (typeof shareSync === "function") shareSync();
     SITES.forEach(function (s) {
       var on = visible(s) && (timeYear == null || span(s)[0] <= timeYear) && (!timeRange || (span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1]));
       if (on) { if (!siteLayer.hasLayer(markers[s.id])) siteLayer.addLayer(markers[s.id]); markers[s.id].setOpacity(timeYear == null || activeAt(s, timeYear) ? 1 : 0.3); }
       else siteLayer.removeLayer(markers[s.id]);
-      if (on && active.rings && (selected === s.id || map.getZoom() >= 15)) { if (!ringLayer.hasLayer(rings[s.id])) ringLayer.addLayer(rings[s.id]); }
+      if (on && active.rings && ringIds()[s.id]) { if (!ringLayer.hasLayer(rings[s.id])) ringLayer.addLayer(rings[s.id]); }
       else ringLayer.removeLayer(rings[s.id]);
     });
     if (active.districts) districtLayer.addTo(map); else map.removeLayer(districtLayer);
@@ -341,7 +344,7 @@
     $('hist-toggles').appendChild(toggleRow(k, LAYERS[k].label, NOTES[k], active[k], function (v) { active[k] = v; refresh(); }, glyph(k), n));
   });
   [['districts', 'District names', 'English and Arabic, approximate'],
-   ['rings', 'Uncertainty rings', 'How far off each marker could be'],
+   ['rings', 'Uncertainty rings', 'Shown for the selected place and the places connected to it'],
    ['labels', 'Place names on markers', 'Shown when zoomed in'],
    ['grid', 'Coordinate grid', 'Lines every 0.05°'],
    ['timeline', 'Timeline bar', 'Computer screens only']].forEach(function (d) {
@@ -1033,7 +1036,7 @@
     document.querySelectorAll('.mk.sel').forEach(function (e) { e.classList.remove('sel'); });
     document.querySelectorAll('#timeline [data-ids]').forEach(function (e) { e.classList.toggle('sel', !!id && (' ' + e.getAttribute('data-ids') + ' ').indexOf(' ' + id + ' ') >= 0); });
     if (typeof API !== 'undefined' && API && API.onSelect) API.onSelect(id);
-    selected = id;
+    selected = id; if (typeof shareSync === 'function') shareSync();
     if (typeof syncRings === 'function') syncRings();
     if (typeof applyFocus === 'function') applyFocus();
     if (!id) return;
@@ -1142,6 +1145,11 @@
   var GRADES = window.ATLAS_GRADES || { rel: {}, cred: {} };
   var REL_TEXT = { A: 'Completely reliable', B: 'Usually reliable', C: 'Fairly reliable', D: 'Not usually reliable', E: 'Unreliable', F: 'Reliability cannot be judged' };
   var CRED_TEXT = { 1: 'Confirmed by other sources', 2: 'Probably true', 3: 'Possibly true', 4: 'Doubtful', 5: 'Improbable', 6: 'Truth cannot be judged' };
+  /* One publisher: when every source on an entry comes from the same organisation (registered domain), say so, next to the sources.
+     Same rule as scripts/check-evidence.mjs and scripts/lib/provenance.mjs (publisherOf). Applies to every entry with sources. */
+  function publisherOf(u) { var h = ''; try { h = new URL(u).hostname.toLowerCase(); } catch (e) { return ''; } var p = h.split('.'); if (p.length <= 2) return h; var t2 = p.slice(-2).join('.'); return /^(co|com|org|gov|ac|net).[a-z]{2}$/.test(t2) ? p.slice(-3).join('.') : t2; }
+  function onePublisher(srcs) { var set = {}, n = 0; (srcs || []).forEach(function (x) { var p = x && x.u ? publisherOf(x.u) : ''; if (p && !set[p]) { set[p] = 1; n++; } }); return n === 1 ? Object.keys(set)[0] : null; }
+  function pubNote(srcs) { var p = onePublisher(srcs); return p ? h('p', { class: 'one-pub', title: 'Every source listed here comes from ' + p + '. Another organisation repeating the same report would still count as separate, so even two publishers is a floor, not proof.', text: 'One publisher only: ' + p + '. Not yet backed by a second, independent source.' }) : null; }
   function gradeTag(x, key) {
     var g = x && x.u && GRADES.rel[x.u]; if (!g) return null;
     var c = key && GRADES.cred[key] ? GRADES.cred[key][x.u] : null;
@@ -1150,7 +1158,7 @@
   function ppSources(body, srcs, quoteKey) {
     if (!srcs || !srcs.length) return null;
     var list = h('ol', { class: 'srcs' }, srcs.map(function (x) { var li = h('li', {}, [gradeTag(x, quoteKey), x.u ? h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t }) : x.t]); if (x.u) li.dataset.u = x.u; return li; }));
-    ppSec(body, 'Sources', [list, list.querySelector('.grade') ? h('p', { class: 'grade-key', text: 'Letter: reliability of the source, A to F. Number: how well this entry is corroborated, 1 to 6. Hover for the meaning.' }) : null]);
+    ppSec(body, 'Sources', [pubNote(srcs), list, list.querySelector('.grade') ? h('p', { class: 'grade-key', text: 'Letter: reliability of the source, A to F. Number: how well this entry is corroborated, 1 to 6. Hover for the meaning.' }) : null]);
     if (quoteKey) loadQuotes().then(function (Q) { addPassages(list, (Q || {})[quoteKey] || {}); });
     return list;
   }
@@ -1594,7 +1602,7 @@
 
   /* ---------- sheets for areas and documents ---------- */
   function sourcesList(srcs) {
-    return h('div', { class: 'sec' }, [h('h3', { text: 'Sources' }), h('ol', { class: 'srcs' }, srcs.map(function (x) { return h('li', {}, [typeof gradeTag === 'function' ? gradeTag(x, null) : null, x.u ? h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t }) : x.t]); }))]);
+    return h('div', { class: 'sec' }, [h('h3', { text: 'Sources' }), pubNote(srcs), h('ol', { class: 'srcs' }, srcs.map(function (x) { return h('li', {}, [typeof gradeTag === 'function' ? gradeTag(x, null) : null, x.u ? h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t }) : x.t]); }))]);
   }
   function docList(recs, more) {
     var box = h('div', { class: 'links docs' });
@@ -2951,7 +2959,7 @@
       if (note && (spec.why || []).length) slot.appendChild(section('As recorded', (spec.why || []).slice(0, 4).map(function (w) { return h('p', { class: 'd-text', text: w }); })));
       var srcs = (spec.sources || []).map(function (s) { return h('li', {}, [h('a', { href: s.u, target: '_blank', rel: 'noopener', text: s.t })]); });
       (spec.docs || []).forEach(function (d) { srcs.push(h('li', {}, [h('a', { href: d.u, target: '_blank', rel: 'noopener', text: d.t }), d.d ? h('small', { text: ' ' + String(d.d).slice(0, 10) }) : null, d.r ? h('button', { class: 'linkish', type: 'button', text: 'Open in archive', onclick: function () { API.openRecordById(d.r); } }) : null])); });
-      if (srcs.length) slot.appendChild(section('Sources', [h('ol', { class: 'srcs' }, srcs)]));
+      if (srcs.length) slot.appendChild(section('Sources', [pubNote(spec.sources), h('ol', { class: 'srcs' }, srcs)]));
       slot.appendChild(goes);
       slot.appendChild(h('p', { class: 'cn-aside', text: note ? 'Explained by Claude Sonnet from the documents above. It can make mistakes; check the sources.' : '' }));
     }
@@ -3469,8 +3477,53 @@
     document.body.appendChild(bk); document.body.classList.add('printing');
   }
   var API = null;
+  /* ---------- share link (PRD s10): the address keeps the place, region, period and layers ---------- */
+  /* The state lives in the part after "#", which a browser never sends to any server. Format:
+       #p=<place id>&r=<region>&t=<year or from-to>&off=<layers switched off, comma separated>&v=<lat,lon,zoom>
+     Only what differs from the defaults is written. Reading is strict: unknown ids and malformed values are ignored. */
+  var shareTimer = null, shareReady = false;
+  function shareState() {
+    var q = [];
+    if (selected && (BY_ID[selected] || AREA_BY_ID[selected])) q.push('p=' + encodeURIComponent(selected));
+    if (curRegion && curRegion !== 'tripoli') q.push('r=' + encodeURIComponent(curRegion));
+    if (timeRange) q.push('t=' + Math.round(timeRange[0]) + '-' + Math.round(timeRange[1])); else if (timeYear != null) q.push('t=' + Math.round(timeYear));
+    var off = Object.keys(LAYERS).filter(function (k) { return !active[k]; }); if (off.length) q.push('off=' + off.join(','));
+    if (!selected) { var c = map.getCenter(); q.push('v=' + c.lat.toFixed(4) + ',' + c.lng.toFixed(4) + ',' + map.getZoom()); }
+    return q.join('&');
+  }
+  function shareLink() { var s = shareState(); return location.origin + location.pathname + (s ? '#' + s : ''); }
+  function shareSync() {
+    if (!shareReady) return; clearTimeout(shareTimer);
+    shareTimer = setTimeout(function () { try { history.replaceState(null, '', shareLink()); } catch (e) {} }, 400);
+  }
+  function shareApply() {
+    var p = {}; String(location.hash || '').replace(/^#/, '').split('&').forEach(function (kv) { var i = kv.indexOf('='); if (i > 0) { try { p[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); } catch (e) {} } });
+    if (!Object.keys(p).length) return;
+    if (p.r && /^[a-z]+$/.test(p.r) && p.r !== curRegion && (window.ATLAS_REGIONS || []).some(function (r) { return r.id === p.r; })) { try { API.setRegion(p.r); } catch (e) {} }
+    if (p.off) { var offs = p.off.split(',').filter(function (k) { return LAYERS[k]; }); Object.keys(LAYERS).forEach(function (k) { active[k] = offs.indexOf(k) < 0; }); try { syncInputs(); } catch (e) {} }
+    var m = /^(\d{4})(?:-(\d{4}))?$/.exec(p.t || '');
+    if (m) { if (m[2]) { timeYear = null; timeRange = [+m[1], +m[2]]; } else { timeYear = +m[1]; timeRange = null; } }
+    refresh();
+    var v = /^(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?),(\d{1,2})$/.exec(p.v || '');
+    if (p.p && BY_ID[p.p]) focusSite(BY_ID[p.p]);
+    else if (p.p && AREA_BY_ID[p.p]) { var a = AREA_BY_ID[p.p]; map.setView([a.lat, a.lon], 15); openArea(a); }
+    else if (v && Math.abs(+v[1]) <= 90 && Math.abs(+v[2]) <= 180) map.setView([+v[1], +v[2]], Math.min(19, +v[3]));
+  }
+  function shareCopy() {
+    var url = shareLink();
+    var done = function () { status('Link copied: it keeps this place, period and layers.'); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link', url); });
+    else window.prompt('Copy this link', url);
+  }
+  map.on('moveend', shareSync);
+  setTimeout(function () {
+    shareApply(); shareReady = true; shareSync();
+    var sb = document.getElementById('statusbar');
+    if (sb && !document.getElementById('sb-share')) { var b = document.createElement('span'); b.id = 'sb-share'; b.setAttribute('role', 'button'); b.tabIndex = 0; b.title = 'Copy a link that keeps the selected place, period and layers'; b.textContent = 'Copy link'; b.style.cursor = 'pointer'; b.addEventListener('click', shareCopy); b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); shareCopy(); } }); sb.appendChild(b); }
+  }, 600);
+
   window.ATLAS_API = API = {
-    conn: connDetail, map: map, h: h, facts: facts, section: section,
+    conn: connDetail, shareLink: shareLink, map: map, h: h, facts: facts, section: section,
     sheet: function (kind, icon, fill) { var body = newSheet(kind); markSelected(null); curTarget = { isReport: true, code: icon }; fill(body); openPanel('sheet'); },
     openPlace: function (id) { if (BY_ID[id]) { focusSite(BY_ID[id]); return; } var a = AREA_BY_ID[id]; if (a) { map.flyTo([a.lat, a.lon], 15, { duration: 0.8 }); openArea(a); } },
     recordExists: function (id) { return loadRecords().then(function () { return !!REC_BY_ID[id]; }); },

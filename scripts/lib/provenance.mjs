@@ -74,3 +74,13 @@ export function gradeClaims(claims, sources, over = {}) {
 }
 export const RELIABILITY = { A: 'Completely reliable', B: 'Usually reliable', C: 'Fairly reliable', D: 'Not usually reliable', E: 'Unreliable', F: 'Reliability cannot be judged' };
 export const CREDIBILITY = { 1: 'Confirmed by other sources', 2: 'Probably true', 3: 'Possibly true', 4: 'Doubtful', 5: 'Improbable', 6: 'Truth cannot be judged' };
+
+/* ---------- publishers: how many independent organisations stand behind an entry ---------- */
+const TWO_LEVEL = /^(co|com|org|gov|ac|net).[a-z]{2}$/;
+export function publisherOf(u) { let h = ''; try { h = new URL(u).hostname.toLowerCase(); } catch { return ''; } const p = h.split('.'); if (p.length <= 2) return h; const t2 = p.slice(-2).join('.'); return TWO_LEVEL.test(t2) ? p.slice(-3).join('.') : t2; }
+/** Adds to each claim: publishers (distinct organisations cited for its subject) and single_publisher (true when that is exactly one). */
+export function addPublishers(claims, sources) {
+  const src = new Map(sources.map((s) => [s.id, s])), by = new Map();
+  for (const c of claims) { const s = src.get(c.source); const p = s && s.url ? publisherOf(s.url) : ''; if (!p) continue; if (!by.has(c.subject)) by.set(c.subject, new Set()); by.get(c.subject).add(p); }
+  for (const c of claims) { const set = by.get(c.subject); c.publishers = set ? set.size : 0; c.single_publisher = !!set && set.size === 1; }
+}

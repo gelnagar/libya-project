@@ -78,6 +78,12 @@ for (const e of entries) {
     && jac(x.tk, e.tk) >= (e.c.kind === 'place' ? 0.5 : 0.45));
   if (g) g.more.push(e); else groups.push({ ...e, more: [] });
 }
+// pairs the word match misses but a person can see are one event (the killing of Col. Hassan Ishkal, 1985, and the US report that
+// Gaddafi ordered it): the second is folded into the first
+for (const [keep, fold2] of [['01c703323ece', '9bc5bea9b21c']]) {
+  const a = groups.find((g) => g.c.id === keep), j = groups.findIndex((g) => g.c.id === fold2);
+  if (a && j >= 0) { const b = groups[j]; a.more.push(b, ...b.more); groups.splice(j, 1); }
+}
 const merged = groups.reduce((n, g) => n + g.more.length, 0);
 
 const out = {}, written = [];

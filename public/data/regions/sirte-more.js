@@ -124,29 +124,12 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "23 November 1985",
   "relevance": "Col. Hassan Ishkal, head of the Sirte military region and third most powerful man in Libya, was killed; officially a car accident, but reports said he was shot at least…",
-  "text": "Col. Hassan Ishkal, head of the Sirte military region and third most powerful man in Libya, was killed; officially a car accident, but reports said he was shot at least six times near a military barracks. This rests on one document: LIBYAN MILITARY TERMED RESTIVE UNDER QADDAFI (13 January 1986). No second source is held for it. It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Sirte: the document names the town, not the site.",
+  "text": "Col. Hassan Ishkal, head of the Sirte military region and third most powerful man in Libya, was killed; officially a car accident, but reports said he was shot at least six times near a military barracks. The same event appears in 2 separate readings, also described as: According to U.S. intelligence officials, Gadhafi ordered the murder of Col.…. 3 documents mention it (all from one publisher, cia.gov). It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Sirte: the document names the town, not the site.",
   "sources": [
    {
     "t": "LIBYAN MILITARY TERMED RESTIVE UNDER QADDAFI (1986-01-13)",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00552r000505250009-7"
-   }
-  ]
- },
- {
-  "id": "c-9bc5bea9b21c",
-  "region": "sirte",
-  "layer": "massacre",
-  "level": "suspected",
-  "y0": 1985,
-  "y1": 1985,
-  "name": "According to U.S. intelligence officials, Gadhafi ordered the murder of Col. Hassan Ishkal, the…",
-  "lat": 31.205,
-  "lon": 16.5886,
-  "r": 12,
-  "period": "23 November 1985",
-  "relevance": "According to U.S. intelligence officials, Gadhafi ordered the murder of Col. Hassan Ishkal, the third-highest-ranking officer in the military; Ishkal was reportedly…",
-  "text": "According to U.S. intelligence officials, Gadhafi ordered the murder of Col. Hassan Ishkal, the third-highest-ranking officer in the military; Ishkal was reportedly shot, probably by revolutionary guardsmen, on his way to meet Gadhafi. 2 documents mention it (all from one publisher, cia.gov). It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Sirte: the document names the town, not the site.",
-  "sources": [
+   },
    {
     "t": "CIA BOOSTING COVERT EFFORTS AGAINST GADHAFI (1986-09-02)",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp90b01390r000100080018-2"

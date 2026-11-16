@@ -11418,13 +11418,13 @@
   "single_publisher": true
  },
  {
-  "id": "c-abccf07119e5",
-  "subject": "site:c-9bc5bea9b21c",
+  "id": "c-120036455bb6",
+  "subject": "site:c-01c703323ece",
   "field": "account",
   "source": "src-b43e1708995f",
   "cite": "CIA BOOSTING COVERT EFFORTS AGAINST GADHAFI (1986-09-02)",
   "url_blank": false,
-  "n": 0,
+  "n": 1,
   "statement": null,
   "date": null,
   "level": "suspected",
@@ -11440,13 +11440,13 @@
   "single_publisher": true
  },
  {
-  "id": "c-e0d6a23fe7cd",
-  "subject": "site:c-9bc5bea9b21c",
+  "id": "c-dcebf79e37ff",
+  "subject": "site:c-01c703323ece",
   "field": "account",
   "source": "src-81753067438e",
   "cite": "CIA BOOSTING COVERT EFFORTS AGAINST GADHAFI",
   "url_blank": false,
-  "n": 1,
+  "n": 2,
   "statement": null,
   "date": null,
   "level": "suspected",

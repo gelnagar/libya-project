@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T07:18:18.155Z",
+ "at": "2026-11-16T07:28:03.960Z",
  "textsCounted": 14855,
  "regions": [
   {
@@ -244,7 +244,7 @@
    ],
    "published": {
     "places": 15,
-    "events": 7,
+    "events": 6,
     "unplaced": 0
    },
    "docs": 261,

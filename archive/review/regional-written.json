@@ -1,26 +1,31 @@
 {
- "at": "2026-11-16T07:18:02.070Z",
- "written": 193,
- "mergedDuplicates": 20,
+ "at": "2026-11-16T07:27:48.829Z",
+ "written": 192,
+ "mergedDuplicates": 21,
  "byRegion": {
-  "sirte": 20,
+  "sirte": 19,
   "cyrenaica": 30,
   "fezzan": 38,
   "benghazi": 74,
   "tripolitania": 31
  },
  "byLayer": {
-  "massacre": 8,
+  "massacre": 7,
   "landmark": 143,
   "military": 31,
   "battle": 10,
   "airstrike": 1
  },
  "byLevel": {
-  "suspected": 8,
+  "suspected": 7,
   "documented": 185
  },
  "mergedEntries": [
+  {
+   "id": "c-01c703323ece",
+   "name": "Col. Hassan Ishkal, head of the Sirte military region and third most powerful man in Libya, was killed",
+   "merged": 1
+  },
   {
    "id": "c-3a7820216de9",
    "name": "al-Kufrah oasis",

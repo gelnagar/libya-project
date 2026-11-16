@@ -32,7 +32,7 @@ function claim(subject, field, src, o = {}) {
     statement: o.statement ?? null, date: o.date ?? null, level: o.level ?? null,
     passage: o.passage ?? null, passage_status: o.passage ? 'stored' : 'not recorded',
     reliability: null, credibility: null, // analyst grades, set by scripts/grade-sources.mjs
-    reviewer: null, reviewed: null, origin: 'migrated from public/data; reviewer and review date were never recorded' }); // not 'owner': naming a reviewer nobody recorded would claim a review that is not on record
+    reviewer: 'owner (by statement)', reviewed: '2026-11-16', origin: 'migrated from public/data. The original review was never recorded; on 16 Nov 2026 the owner stated in chat that these claims are good. That is a statement, not a per-claim review, and the date is the date of the statement.' });
 }
 const quote = (id, u) => { const q = QUOTES[id] && u && QUOTES[id][u]; return q ? { before: q.pre || '', text: q.hi || '', after: q.post || '', from: q.t || null, date: q.d || null } : null; };
 

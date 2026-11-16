@@ -1,5 +1,5 @@
 {
- "at": "2026-11-15T07:34:57.536Z",
+ "at": "2026-11-16T06:36:03.077Z",
  "collected": 15214,
  "listedNotFetched": 4494,
  "read": 5856,
@@ -20,6 +20,8 @@
  "speeches": 65,
  "twoOrMore": 316,
  "notFound": 179,
+ "newSinceLastRun": 0,
+ "previousRunAt": "2026-11-16",
  "costUsd": 2.48,
  "runs": [
   {

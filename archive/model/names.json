@@ -1,0 +1,4941 @@
+{
+ "at": "2026-11-16T06:36:40.686Z",
+ "languages": [
+  "en",
+  "ar"
+ ],
+ "note": "Forms copied from the map, the gazetteers and the documents; none translated here. ar null = no Arabic form known.",
+ "coverage": {
+  "place": {
+   "entries": 39,
+   "withArabic": 15,
+   "withVariants": 19
+  },
+  "event": {
+   "entries": 83,
+   "withArabic": 41,
+   "withVariants": 0
+  },
+  "area": {
+   "entries": 172,
+   "withArabic": 137,
+   "withVariants": 140
+  },
+  "gazetteer": {
+   "entries": 140,
+   "withArabic": 51,
+   "withVariants": 0
+  }
+ },
+ "sharedKeys": 20,
+ "entries": [
+  {
+   "id": "site:abusalim",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Abu Salim prison",
+   "ar": "سجن أبو سليم",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:jdeida",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Jdeida prison",
+   "ar": "سجن الجديدة",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:maktab",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Maktab al-Nasser",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:hadba",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Hadba al-Khadra prison",
+   "ar": "سجن الهضبة الخضراء",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:ainzara",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Ain Zara prison",
+   "ar": "سجن عين زارة",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:tajoura-prison",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Tajoura prison and security-agency interrogation site",
+   "ar": "سجن تاجوراء",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:blackhorse",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "\"Black Horse\" prison, airport road",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:towisha",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Twaisha migrant detention centre",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:gharghour-security",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Internal Security building at Gharghour (Al-Amal al-Akhdar)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mitiga-prison",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Mitiga prison (Special Deterrence Force)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:cso",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Central Security Organization (reported)",
+   "ar": "جهاز الأمن المركزي",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:wheelus",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Okba Ben Nafi Air Base (former Wheelus)",
+   "ar": "قاعدة عقبة بن نافع الجوية",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:tip",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Tripoli military airport",
+   "ar": "مطار طرابلس الدولي",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:sidibilal",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Sidi Bilal naval school",
+   "ar": "سيدي بلال",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-bab",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "1986 US strike: Bab al-Aziziya",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-benashour",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "1986 US strike: Ben Ashour homes",
+   "ar": "بن عاشور",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-tip",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "1986 US strike: Tripoli military airport",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-sidibilal",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "1986 US strike: Sidi Bilal",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-nato-bab",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "2011 NATO strikes: Bab al-Aziziya",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1979-embassy",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "US Embassy burned, 2 December 1979",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1984-bab",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Attack on Bab al-Aziziya, 8 May 1984",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-uprising",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli rises: Fashloum and Souq al-Juma, 20 August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-tajoura",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tajoura captured, 21 August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-mitiga",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Mitiga airbase fighting, 20–21 August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-green",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Green Square taken, 21–22 August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-bab",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Fall of Bab al-Aziziya, 23 August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-abusalim",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Abu Salim district fighting, 24–26 August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-airport",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli airport road, 24 August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-sharshatt",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Shar al-Shatt killings",
+   "ar": "معركة الشط",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-riots",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli pogrom, 5–7 November 1945",
+   "ar": "أعمال العنف ضد اليهود في طرابلس، نوفمبر 1945",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-abusalim",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Abu Salim prison massacre",
+   "ar": "مجزرة سجن أبو سليم",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-nato-saifarab",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "NATO strike, 30 April 2011: Gaddafi's son and grandchildren reported killed",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-nato-0619",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "NATO strike, 19 June 2011: civilian casualties admitted",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-nato-tv",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "NATO strike on state TV, 30 July 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-nato-port",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "NATO strike on Tripoli port, May 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-2014-air",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Unidentified air raids around Tripoli, August 2014",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2014-airport",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli airport destroyed, July 2014",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2018",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Battle of Tripoli, 27 August–25 September 2018",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2025",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli clashes, from 12 May 2025",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-yarmuk-2011",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Yarmuk warehouse killings, 23 August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-qasr-2011",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Qasr bin Ghashir camp, 26 August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-tajoura-2019",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tajoura detention centre air strike, 2 July 2019",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-hadba-2020",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Military college air strike, 4 January 2020",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1980-embassies",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Embassies sacked by mobs, 1980–1984",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1985-port-bomb",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Car bomb near the Tripoli fair, 14 September 1985",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1985-bab-shooting",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Reported attempt on Gaddafi at Bab al-Aziziya, November 1985",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-feb21",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Protesters try to storm Bab al-Aziziya, 21 February 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2012-abusalim",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Zintan militia clashes with Abu Salim residents, 18 March 2012",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2012-dahmani",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Al-Shaab Al-Dahmani mosque and shrine bulldozed, 25 August 2012",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2019-abusalim",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Rocket attacks on Abu Salim, 15–17 April 2019",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2019-yarmouk",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Yarmouk camp changes hands, April–May 2019",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2023",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli clashes, 14–15 August 2023",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-sadr-1978",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Reported execution at the Janzur firing range, 1978",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-suwani-1982",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Four officers executed south of Tripoli, December 1982",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-gargaresh-2011",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Detainees shot and bodies dumped near Gharghour, August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-janzour-2012",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tawergha camp raided, 6 February 2012",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-gharghour-2013",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Gharghour protest shooting, 15 November 2013",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-corinthia-2015",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Corinthia Hotel attack, 27 January 2015",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-nato-khamis",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "NATO strike on Khamis Brigade headquarters, 18 April 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bab",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Bab al-Aziziya compound",
+   "ar": "باب العزيزية",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:palace",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Royal Palace (People's Palace)",
+   "ar": "قصر الشعب",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:green",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Green Square (Martyrs’ Square)",
+   "ar": "الساحة الخضراء",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:fateh",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "University of Tripoli / Al-Fateh University",
+   "ar": "جامعة طرابلس / جامعة الفاتح",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-jan1976",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Student protests and arrests, January 1976",
+   "ar": "مظاهرات الطلبة واعتقالات يناير 1976",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-april1976",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "7 April 1976 crackdown on students",
+   "ar": "قمع الطلاب في 7 أبريل 1976",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-hang-1983-eng",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Student hanged at the Faculty of Engineering, 7 April 1983",
+   "ar": "إعدام محمد حفاف في كلية الهندسة",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-hang-1984-agri",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Student hanged at the Faculty of Agriculture, 16 April 1984",
+   "ar": "إعدام حافظ المدني في كلية الزراعة",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-hang-1984",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "University of Tripoli hanging, April 1984",
+   "ar": "إعدام طالب في جامعة الفاتح",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-feb2011",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli crackdown, 20–25 February 2011",
+   "ar": "قمع احتجاجات طرابلس",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-babcamp-2011",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Field clinic outside Bab al-Aziziya: 29 bodies, August 2011",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-daghis-1980",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Lawyer Amir al-Daghis dies after his arrest, February 1980",
+   "ar": "وفاة المحامي عامر الدغيس بعد اعتقاله، فبراير 1980",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-zirti-1984",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Othman Zirti hanged in public after the May 1984 raid, 5 June 1984",
+   "ar": "إعدام عثمان علي زرتي شنقاً بعد هجوم باب العزيزية، يونيو 1984",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-fateh",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Students seize Al-Fateh University overnight, 20–21 August 2011",
+   "ar": "طلاب جامعة الفاتح يسيطرون على الجامعة ليلاً، 20–21 أغسطس 2011",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-janzour",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Rebels enter Tripoli through Janzour, 20–21 August 2011",
+   "ar": "دخول الثوار طرابلس عبر جنزور، 20–21 أغسطس 2011",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-west",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Rebels clear Syhia, Hay al-Andalus and Gergarish, 21 August 2011",
+   "ar": "الثوار يطهّرون السياحية وحي الأندلس وقرقارش، 21 أغسطس 2011",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-rixos",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Rixos Al Nasr hotel: loyalist stronghold, 21–24 August 2011",
+   "ar": "فندق ريكسوس النصر، 21–24 أغسطس 2011",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2011-salaheddin",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Salaheddin base falls, the last loyalist base in Tripoli, late August 2011",
+   "ar": "سقوط معسكر صلاح الدين، أواخر أغسطس 2011",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2016-rixos",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Rixos hotel: Ghwell seizes it, then is driven out, 2016–2017",
+   "ar": "فندق ريكسوس: سيطرة الغويل ثم طرده، 2016–2017",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2017-abusalim",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Abu Salim fighting, February 2017",
+   "ar": "اشتباكات أبوسليم، فبراير 2017",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2017-may",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli fighting, 26–29 May 2017",
+   "ar": "معارك طرابلس، 26–29 مايو 2017",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2017-jul-beach",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Rocket-propelled grenade attack on a beach near Mitiga airport, 4 July 2017",
+   "ar": "هجوم بقذائف آر بي جي على شاطئ قرب مطار معيتيقة، 4 يوليو 2017",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2018-mitiga",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Attack on Mitiga airport, 15 January 2018",
+   "ar": "الهجوم على مطار معيتيقة، 15 يناير 2018",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-2022-jul",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Rada and the Tripoli Revolutionaries Brigade fight in the east, 21–22 July 2022",
+   "ar": "اشتباكات الردع وكتيبة ثوار طرابلس، 21–22 يوليو 2022",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1911-landing",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Italian bombardment and landing, Tripoli taken, 3–5 October 1911",
+   "ar": "القصف الإيطالي والإنزال واحتلال طرابلس، 3–5 أكتوبر 1911",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1911-ainzara",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Battle of Ain Zara, 4 December 1911",
+   "ar": "معركة عين زارة، 4 ديسمبر 1911",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1912-zanzur",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Battles of Zanzur, 8 June and 20 September 1912",
+   "ar": "معارك جنزور، 8 يونيو و20 سبتمبر 1912",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1911-sharshatt",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Battle of Shar al-Shatt and Bu Meliana, 23 and 26 October 1911",
+   "ar": "معركتا الشط وبومليانة، 23 و26 أكتوبر 1911",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1943-castelbenito",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Castel Benito airfield: Allied air raids and the capture of Tripoli, 1941–43",
+   "ar": "مطار كاستيل بينيتو: غارات الحلفاء ودخول طرابلس، 1941–1943",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1986-bab-gunfight",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Brief gun battle outside Bab al-Aziziya after the US raid, April 1986",
+   "ar": "اشتباك قصير خارج باب العزيزية بعد الغارة الأمريكية، أبريل 1986",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bt-1986-jun-bab",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Reported mutiny and shooting inside Bab al-Aziziya camp, late June 1986",
+   "ar": "تمرد وإطلاق نار مزعوم داخل معسكر باب العزيزية، أواخر يونيو 1986",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-1941-port",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Allied air raids and naval bombardment of Tripoli port, 1940–43",
+   "ar": "غارات الحلفاء وقصف الميناء البحري، 1940–1943",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-fakheri-2009",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Ibn al-Sheikh al-Libi found dead in his cell at Abu Salim, May 2009",
+   "ar": "العثور على ابن الشيخ الليبي ميتاً في زنزانته بأبو سليم، مايو 2009",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-abusalim-2006",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Clashes between prisoners and guards at Abu Salim, 4 October 2006",
+   "ar": "اشتباكات بين السجناء والحراس في أبو سليم، 4 أكتوبر 2006",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-stadium-1996",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Shooting at a Tripoli football match, July 1996",
+   "ar": "إطلاق نار في مباراة كرة قدم بطرابلس، يوليو 1996",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:dt-gurji-2003",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Police raid on Ethiopian and Eritrean migrants in Gurji, September 2003",
+   "ar": "مداهمة الشرطة لمهاجرين إثيوبيين وإريتريين في قرجي، سبتمبر 2003",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-riots-1948",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli anti-Jewish riot, 12 June 1948",
+   "ar": "أعمال الشغب ضد اليهود في طرابلس، يونيو 1948",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-riots-1967",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tripoli anti-Jewish riots, 5 June 1967",
+   "ar": "أعمال العنف ضد اليهود في طرابلس، يونيو 1967",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-mechiya-1911",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Mechiya oasis reprisal, 24–26 October 1911",
+   "ar": "مجزرة واحة المنشية، أكتوبر 1911",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-1945-janzur",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Janzur (Zanzur) pogrom, November 1945",
+   "ar": "أحداث جنزور ضد اليهود، نوفمبر 1945",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-1945-tajura",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Tajura pogrom, November 1945",
+   "ar": "أحداث تاجوراء ضد اليهود، نوفمبر 1945",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:as-1912-janzur",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Italian airship bombing at Janzur, 6 March 1912",
+   "ar": "قصف المناطيد الإيطالية لجنزور، مارس 1912",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:mk-abusalim-1999",
+   "from": "map",
+   "class": "event",
+   "region": "tripoli",
+   "en": "Two political prisoners die in Abu Salim, July–August 1999",
+   "ar": "وفاة سجينين سياسيين في سجن أبو سليم، 1999",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:dt-tajoura-home",
+   "from": "map",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Social Welfare Home for Women, Tajoura",
+   "ar": "دار الرعاية الاجتماعية للنساء، تاجوراء",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:old-city",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Old City (Medina)",
+   "ar": "المدينة القديمة",
+   "variants": [
+    "Medina",
+    "Old Town",
+    "Tripoli Medina",
+    "Old city of Tripoli",
+    "Hara Kabira",
+    "Hara Saghira",
+    "Bab al-Bahr"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:city-centre",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "City centre (Italian-era downtown)",
+   "ar": "وسط البلاد",
+   "variants": [
+    "City centre",
+    "Downtown Tripoli",
+    "Wast al-Balad",
+    "Omar al-Mukhtar Street",
+    "Algeria Square",
+    "Maydan al-Jazair",
+    "1st September Street",
+    "Mizran Street",
+    "Galleria De Bono",
+    "Tripoli Cathedral",
+    "Gamal Abdel Nasser Mosque",
+    "Jamal Abdel Nasser Mosque"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:dahra",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Dahra",
+   "ar": "الظهرة",
+   "variants": [
+    "al-Dahra",
+    "Al Dhahra",
+    "Thahra",
+    "Dhahra"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:ben-ashour",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ben Ashour",
+   "ar": "بن عاشور",
+   "variants": [
+    "Bin Ashour",
+    "Ben Achour",
+    "Ben Ashur",
+    "Garden City"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:fashloum",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Fashloum",
+   "ar": "فشلوم",
+   "variants": [
+    "Fashlum",
+    "Fashloom",
+    "Fashlom"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:zawiyat-dahmani",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Zawiyat al-Dahmani",
+   "ar": "زاوية الدهماني",
+   "variants": [
+    "Zawiat al-Dahmani",
+    "Zawiyat Dahmani",
+    "Shar al-Shatt",
+    "Sciara Sciat"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:hani",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Hani",
+   "ar": "الهاني",
+   "variants": [
+    "Hani",
+    "El Hani",
+    "Henni"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:bab-ben-ghashir",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Bab Ben Ghashir",
+   "ar": "باب بن غشير",
+   "variants": [
+    "Bab Bin Ghashir",
+    "Bab bin Gashir"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:sidi-masri",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Sidi al-Masri",
+   "ar": "سيدي المصري",
+   "variants": [
+    "Sidi el-Masri",
+    "Sidi Masri"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:ras-hassan",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ras Hassan",
+   "ar": "رأس حسن",
+   "variants": [
+    "Ras Hasan"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:zanata",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Zanata",
+   "ar": "زناتة",
+   "variants": [
+    "Zenata",
+    "Bab Zanata"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:abu-sitta",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Abu Sitta",
+   "ar": "أبو ستة",
+   "variants": [
+    "Abusitta",
+    "Bu Sitta",
+    "Abu Setta"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:gurji",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Gurji",
+   "ar": "قرجي",
+   "variants": [
+    "Gorji",
+    "Qarji",
+    "Gurgi",
+    "Bab Gorji",
+    "Bab Qarji"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:mansoura",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Mansoura",
+   "ar": "المنصورة",
+   "variants": [
+    "Mansoura",
+    "Mansura"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:bab-akara",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Bab Akara",
+   "ar": "باب عكارة",
+   "variants": [
+    "Bab Akkara"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:bab-aziziya-area",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Bab al-Aziziya (neighbourhood)",
+   "ar": "باب العزيزية",
+   "variants": [
+    "Bab Azizia neighbourhood"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:hay-dimashq",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Hay Dimashq",
+   "ar": "حي دمشق",
+   "variants": [
+    "Damascus district",
+    "Hay Damascus"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:tekbali-camp",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tekbali camp",
+   "ar": "معسكر التكبالي",
+   "variants": [
+    "The Tekbali camp",
+    "Takbali camp",
+    "Tikbali camp",
+    "Khalifa al-Takbali camp",
+    "معسكر خليفة التكبالي"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:yarmouk-camp",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Yarmouk camp (32nd Brigade)",
+   "ar": "معسكر اليرموك",
+   "variants": [
+    "Yarmouk camp",
+    "Yarmuk camp",
+    "Al-Yarmouk military camp",
+    "Major General 32 Camp",
+    "32nd Reinforced Brigade",
+    "Khamis Brigade base",
+    "معسكر اليرموك -اللواء 32 المعزز",
+    "اللواء 32 المعزز"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:artillery-school",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Artillery and Missile School",
+   "ar": "مدرسة المدفعية والصواريخ",
+   "variants": [
+    "al-Sawarikh camp",
+    "Sawarikh camp",
+    "Missile camp",
+    "معسكر الصواريخ"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:hamza-camp",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Hamza camp",
+   "ar": "معسكر حمزة",
+   "variants": [
+    "Hamza military camp"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:transport-camp",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Transport camp",
+   "ar": "معسكر النقلية",
+   "variants": [
+    "al-Naqliya camp"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:camp-7-april",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "7 April camp",
+   "ar": "معسكر 7 أبريل",
+   "variants": [
+    "7th April Camp",
+    "7 April Camp",
+    "7th of April camp",
+    "Seventh of April camp"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:camp-27",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Camp 27",
+   "ar": "معسكر 27",
+   "variants": [
+    "27 Base",
+    "Kilometre 27 camp",
+    "معسكر 27"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:military-college",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Military College, al-Hadba",
+   "ar": "الكلية العسكرية",
+   "variants": [
+    "Military College",
+    "Military academy Tripoli",
+    "الكلية العسكرية"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:central-security",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Central Security headquarters",
+   "ar": "الإدارة العامة للأمن المركزي",
+   "variants": [
+    "General Administration of Central Security at the Ministry of Interior",
+    "Central Security",
+    "الادارة العامة للامن المركزي بوزارة الداخلية"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:ghut-shaal-camp",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ghut al-Shaal mobilisation camp",
+   "ar": "تجييش غوط الشعال",
+   "variants": [
+    "Army Camp",
+    "Tajyeesh camp",
+    "تجييش غوط الشعال",
+    "Ghut al-Shaal camp"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:abu-sitta-base",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Abu Sitta naval base",
+   "ar": "قاعدة أبو ستة البحرية",
+   "variants": [
+    "Abu Sitta Naval Base",
+    "Abusitta naval base"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:tajura-naval",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tajura naval base",
+   "ar": "قاعدة تاجوراء البحرية",
+   "variants": [
+    "Tajura Naval Base",
+    "Tajoura naval base"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:naval-academy",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Libyan Naval Academy, Janzour (Sidi Bilal)",
+   "ar": "الأكاديمية البحرية الليبية",
+   "variants": [
+    "Naval academy",
+    "Libyan Naval Academy",
+    "Sidi Bilal naval academy"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:sam-site",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Air-defence missile site",
+   "ar": "موقع دفاع جوي",
+   "variants": [
+    "SAM Site"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:brigade-42",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "42nd Brigade headquarters",
+   "ar": "مقر اللواء 42",
+   "variants": [
+    "42nd Brigade Headquarters"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:brigade-55",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "55th Brigade",
+   "ar": "اللواء 55",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:maasra",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Ma‘asra",
+   "ar": "المعصرة",
+   "variants": [
+    "Elmaasra",
+    "Al Maasra"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:electronic-support",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Electronic support site",
+   "ar": "الدعم الإلكتروني",
+   "variants": [
+    "الدعم الاكتروني"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:tajura-camp",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Military camp, Tajura",
+   "ar": "مخيم عسكري",
+   "variants": [
+    "Military Camp"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:mitiga",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Mitiga airport (former Wheelus Air Base)",
+   "ar": "مطار معيتيقة",
+   "variants": [
+    "Mitiga International Airport",
+    "Mitiga",
+    "Maitiga",
+    "Mellaha",
+    "Okba Ben Nafi Air Base",
+    "Wheelus Air Base",
+    "مطار معيتيقة الدولي"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:tajoura-nuclear",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tajoura Nuclear Research Centre",
+   "ar": "مركز تاجوراء للبحوث النووية",
+   "variants": [
+    "Tajoura Nuclear Research Center",
+    "Tajura nuclear centre",
+    "Renewable Energies and Water Desalination Research Centre"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:red-castle",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Red Castle (Assaraya al-Hamra)",
+   "ar": "السراي الحمراء",
+   "variants": [
+    "Red Castle",
+    "Assaraya al-Hamra",
+    "Red Castle Museum",
+    "Jamahiriya Museum",
+    "السرايا الحمراء",
+    "Saraya"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:turkish-prison",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "The Turkish Prison (Old City)",
+   "ar": "السجن التركي",
+   "variants": [
+    "The Turkish Prison",
+    "Turkish prison"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:ain-zara-prison",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ain Zara prison (“the political prison”)",
+   "ar": "السجن السياسي - عين زارة",
+   "variants": [
+    "Ain Zara prison",
+    "السجن السياسي- عين زاره- طرابلس",
+    "Ain Zara political prison"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:mabani",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Mabani detention centre",
+   "ar": "مركز احتجاز المباني",
+   "variants": [
+    "Mabani Detention centre",
+    "al-Mabani"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:zoo",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tripoli Zoo",
+   "ar": "حديقة الحيوان",
+   "variants": [
+    "Abu Salim zoo",
+    "Zoo"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:port",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Port of Tripoli",
+   "ar": "ميناء طرابلس",
+   "variants": [
+    "Tripoli harbour",
+    "Tripoli port"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:amazons-academy",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Former women’s military academy",
+   "ar": "الكلية العسكرية للبنات سابقاً",
+   "variants": [
+    "Women’s military academy",
+    "Amazonian Guard academy",
+    "Amazons barracks"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:abu-salim",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Abu Salim",
+   "ar": "أبو سليم",
+   "variants": [
+    "Abusalim",
+    "Abu Sleem",
+    "Abu Slim",
+    "Abou Slim",
+    "Bu Salim",
+    "Abuslim"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:hadba",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Hadba al-Khadra",
+   "ar": "الهضبة الخضراء",
+   "variants": [
+    "Hadba",
+    "al-Hadba",
+    "Hadhba",
+    "Al Hadba Al Khadra",
+    "Green Plateau",
+    "Eastern Hadba",
+    "Al Hadba Al Badri"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:salah-al-din",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Salah al-Din",
+   "ar": "صلاح الدين",
+   "variants": [
+    "Salah Eddin",
+    "Salahuddin",
+    "Salah Aldeen",
+    "Salah ad-Din"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:ain-zara",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ain Zara",
+   "ar": "عين زارة",
+   "variants": [
+    "Ayn Zara",
+    "Ain Zarah",
+    "Ain Zara center"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:furnaj",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Furnaj (University area)",
+   "ar": "الفرناج",
+   "variants": [
+    "Furnaj",
+    "Firnaj",
+    "Al Firnaj",
+    "University of Tripoli",
+    "Al-Fateh University",
+    "Bab al-Furnaj"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:souq-al-juma",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Souq al-Juma",
+   "ar": "سوق الجمعة",
+   "variants": [
+    "Souq al-Jumaa",
+    "Suq al-Juma",
+    "Souk el Jouma",
+    "Suq Aljumea",
+    "Souq al-Joumaa",
+    "Mishasha",
+    "Ghararat",
+    "Alghararat"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:tajura",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tajura",
+   "ar": "تاجوراء",
+   "variants": [
+    "Tajoura",
+    "Tagiura",
+    "Tajurah"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:janzour",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Janzour",
+   "ar": "جنزور",
+   "variants": [
+    "Janzur",
+    "Zanzur",
+    "Janzour town"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:gargaresh",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Gargaresh",
+   "ar": "قرقارش",
+   "variants": [
+    "Gargarash",
+    "Qarqarish",
+    "Gargaresh Road",
+    "Bab Ghirgharish"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:hay-andalus",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Hay al-Andalus",
+   "ar": "حي الأندلس",
+   "variants": [
+    "Hay al Andalus",
+    "Hey al-Andalus",
+    "Andalus"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:siyahiya",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Siyahiya",
+   "ar": "السياحية",
+   "variants": [
+    "Siyahiya",
+    "Siahia",
+    "Al Siyahiya",
+    "Tourist area"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:ghut-shaal",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ghut al-Shaal",
+   "ar": "غوط الشعال",
+   "variants": [
+    "Ghot Alsha'al",
+    "Ghout al-Shaal",
+    "Ghut Shaal"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:dribi",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Dribi",
+   "ar": "الدريبي",
+   "variants": [
+    "Dribi",
+    "Adribe",
+    "Hay al-Zohour"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:islamic-call",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "World Islamic Call Society",
+   "ar": "جمعية الدعوة الإسلامية العالمية",
+   "variants": [
+    "Islamic Call Society",
+    "Islamic Call College",
+    "al-Daawa al-Islamiya",
+    "Hay al-Islami"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:qasr-ben-ghashir",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Qasr bin Ghashir",
+   "ar": "قصر بن غشير",
+   "variants": [
+    "Qasr Ben Ghashir",
+    "Gasr ben Gashir",
+    "Qasr bin Ghashir town"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:karimia",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Karimia",
+   "ar": "الكريمية",
+   "variants": [
+    "Kirimiya",
+    "Al kirimiya",
+    "Karimiya"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:sawani",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Sawani bin Adam",
+   "ar": "سواني بن آدم",
+   "variants": [
+    "Swani",
+    "Swani bin Adam",
+    "Sawani"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:hadba-project",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Hadba Project",
+   "ar": "مشروع الهضبة",
+   "variants": [
+    "Mashrou al-Hadba",
+    "Hadba Project"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:former-huts",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Former shanty neighbourhood (Hay al-Akwakh)",
+   "ar": "حي الأكواخ سابقاً",
+   "variants": [
+    "Hay al-Akwakh",
+    "the former tin neighborhood",
+    "former huts neighbourhood"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-rabta-pharma-150-chemical-plant",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Rabta chemical plant (Pharma 150)",
+   "ar": "مصنع الرابطة للأدوية",
+   "variants": [
+    "Rabta",
+    "Pharma 150",
+    "Qabilat az Zaribah"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-military-police-command",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Military Police Command compound (reported)",
+   "ar": null,
+   "variants": [
+    "Military Police Command",
+    "Military Police compound"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-tarhuna-underground-facility",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tarhuna (Tarhunah) underground facility",
+   "ar": "منشأة ترهونة",
+   "variants": [
+    "Tarhunah",
+    "Targhuna",
+    "Pharma 300"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-tripoli-central-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tripoli Central Hospital",
+   "ar": "مستشفى طرابلس المركزي",
+   "variants": [
+    "TCH",
+    "Tripoli General Hospital",
+    "Vittorio Emanuele III Colonial Hospital (Italian era)"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-tripoli-cathedral",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Italian Cathedral (Algeria Square / Gamal Abdel Nasser Mosque)",
+   "ar": "جامع جمال عبد الناصر",
+   "variants": [
+    "Cattedrale di Tripoli",
+    "Algeria Square Mosque",
+    "Piazza della Cattedrale",
+    "Sacred Heart Cathedral"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-university-of-tripoli",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "University of Tripoli / Al-Fateh University",
+   "ar": "جامعة طرابلس / جامعة الفاتح",
+   "variants": [
+    "Al Fateh University",
+    "Tripoli University",
+    "Jami'at Tarabulus"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-ruwagha-chemical-depot",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ruwagha chemical weapons depot",
+   "ar": "مستودع الرواغة",
+   "variants": [
+    "Ruwagha",
+    "Rawagha",
+    "Waddan area"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-italian-cemetery-hammangi",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Italian Cemetery and Memorial (Hammangi)",
+   "ar": "مقبرة الإيطاليين",
+   "variants": [
+    "Italian Christian Cemetery",
+    "Cimitero italiano di Hammangi",
+    "Sacrario militare italiano",
+    "Municipal Christian Cemetery"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-mellaha-wheelus-mitiga",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Mellaha Air Base / Wheelus Air Base / Okba Ben Nafi / Mitiga",
+   "ar": "قاعدة عقبة بن نافع الجوية / معيتيقة",
+   "variants": [
+    "Wheelus Field",
+    "Okba Ben Nafi Air Base",
+    "Mitiga Airport",
+    "Mellaha airfield"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-bin-ghashir-scud-facility",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Bin Ghashir tactical missile (Scud and FROG) facility",
+   "ar": null,
+   "variants": [
+    "Bin Ghashir",
+    "Bin Ghashir TAC SSM facility",
+    "Scud garrison"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-castel-benito-airport",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Castel Benito Airfield (Tripoli Idris Airport)",
+   "ar": "مطار طرابلس العالمي",
+   "variants": [
+    "Tripoli-Castel Benito",
+    "Idris el Awal Airport",
+    "Tripoli International Airport"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-tripoli-tower-al-fateh",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al Fateh Tower (Tripoli Tower)",
+   "ar": "برج الفاتح",
+   "variants": [
+    "Tripoli Tower",
+    "Burj al-Fateh",
+    "Fateh Tower",
+    "Burj Tarablus"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-tripoli-international-airport",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tripoli International Airport",
+   "ar": "مطار طرابلس العالمي",
+   "variants": [
+    "Castel Benito",
+    "Idris el Awal Airport",
+    "Tripoli Airport"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-royal-palace-governors-palace",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Royal Palace of Tripoli (Qasr al-Khuld) / Italian Governor's Palace",
+   "ar": "قصر الخلد",
+   "variants": [
+    "Palazzo del Governo",
+    "Governor's Palace",
+    "Government Palace",
+    "Qasr al-Khuld",
+    "King Idris palace"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-martyrs-square",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Martyrs' Square (formerly Green Square)",
+   "ar": "ميدان الشهداء",
+   "variants": [
+    "Green Square",
+    "Piazza Italia",
+    "Independence Square",
+    "Al-Sahat al-Khadra"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-radisson-blu-al-mahary",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Radisson Blu Al Mahary Hotel",
+   "ar": "فندق راديسون بلو المهاري",
+   "variants": [
+    "Al Mahary Hotel",
+    "Mahari Hotel",
+    "Hotel del Mehari",
+    "Al Mehari"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-jarmah-otrag-launch-site",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Jarmah missile launch site (OTRAG), later used for Libyan missile development",
+   "ar": null,
+   "variants": [
+    "OTRAG Libya",
+    "Jarmah launch site",
+    "Jarmah missile launch site"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-jewish-cemetery",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Jewish Cemetery of Tripoli",
+   "ar": "مقبرة اليهود",
+   "variants": [
+    "Old Jews Graveyard",
+    "Hammangi Jewish cemetery"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-mitiga-okba-ben-nafi-air-base",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Mitiga (Okba Ben Nafi) air base",
+   "ar": "قاعدة عقبة بن نافع الجوية / مطار معيتيقة",
+   "variants": [
+    "Mitiga",
+    "Okba Ben Nafi",
+    "Wheelus Air Base",
+    "Tripoli military airfield"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-sebha-airfield",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Sebha airfield",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-karamanli-house-museum",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Karamanli House Museum (Harem of Ali Karamanli)",
+   "ar": "متحف دار القرمانلي",
+   "variants": [
+    "Karamanly House",
+    "Tripoli Historical Exhibition",
+    "The Harem House"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-corinthia-bab-africa-hotel",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Corinthia Hotel Tripoli (Corinthia Bab Africa)",
+   "ar": "فندق كورنثيا باب أفريقيا",
+   "variants": [
+    "Corinthia Bab Africa Hotel",
+    "Bab Africa Hotel"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-janzour-machine-shop",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Janzour (reported centrifuge machine shop site)",
+   "ar": "جنزور",
+   "variants": [
+    "Janzour",
+    "Jenzur"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-al-razi-psychiatric-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Razi Psychiatric Hospital",
+   "ar": "مستشفى الرازي للأمراض العقلية",
+   "variants": [
+    "Razi Mental Hospital",
+    "Al Razi Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-murat-sidi-bilal-camp",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Murat Sidi Bilal naval commando camp",
+   "ar": "معسكر مراد سيدي بلال",
+   "variants": [
+    "Sidi Bilal",
+    "Sidi Bilal camp"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-janzur",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Janzur (Zanzur) and Italian Giorgimpopoli",
+   "ar": "جنزور",
+   "variants": [
+    "Zanzur",
+    "Zanzour",
+    "Giorgimpopoli"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-abu-salim-prison",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Abu Salim Prison",
+   "ar": "سجن أبوسليم",
+   "variants": [
+    "Abu Slim Prison"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-arch-of-marcus-aurelius",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Arch of Marcus Aurelius",
+   "ar": "قوس ماركوس أوريليوس",
+   "variants": [
+    "Marcus Aurelius Arch",
+    "Arco di Marco Aurelio",
+    "Roman arch of Oea"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-gazelle-fountain",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Gazelle Fountain (Gazelle and the Beauty)",
+   "ar": "نافورة الغزالة",
+   "variants": [
+    "Sorgente di Vita",
+    "Fontana della Gazzella",
+    "Gazelle statue",
+    "Gazalla"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-abu-salim-trauma-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Abu Salim Trauma Hospital",
+   "ar": "مستشفى أبوسليم للحوادث",
+   "variants": [
+    "Abu Slim Hospital",
+    "Abu Salim Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-tripoli-war-cemetery",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tripoli War Cemetery (Commonwealth)",
+   "ar": "مقبرة الكومنولث",
+   "variants": [
+    "Tripoli Military Cemetery",
+    "CWGC Tripoli"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-tarabulus-port-facilities-military-deliv",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tarabulus port facilities (military deliveries)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-al-jufrah-airfield",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al Jufrah airfield",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-dragut-mosque",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Dragut (Sidi Darghut) Mosque and tomb",
+   "ar": "جامع درغوث",
+   "variants": [
+    "Darghut Mosque",
+    "Sidi Dargut Mosque",
+    "Dragut Pasha Mosque"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-british-embassy-tripoli",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "British Embassy, Tripoli",
+   "ar": "السفارة البريطانية",
+   "variants": [
+    "UK Embassy Tripoli"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-al-khadra-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Khadra General Hospital",
+   "ar": "مستشفى الخضراء",
+   "variants": [
+    "Elkhadra Hospital",
+    "Khadra Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-al-hashan-site-a",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al Hashan (Site A), Libya's first centrifuge site",
+   "ar": null,
+   "variants": [
+    "Al Hashan",
+    "Al-Hashan",
+    "Site A"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-grand-hotel-tripoli",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Grand Hotel Tripoli",
+   "ar": "فندق قراند",
+   "variants": [
+    "Grand Hotel",
+    "Gran Hotel Tripoli"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-tripoli-international-stadium",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tripoli International Stadium (11 June Stadium)",
+   "ar": "ملعب طرابلس الدولي",
+   "variants": [
+    "June 11 Stadium",
+    "Stade 11 Juin",
+    "Tripoli Stadium"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-tripoli-medical-center",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tripoli Medical Center",
+   "ar": "مركز طرابلس الطبي",
+   "variants": [
+    "TMC",
+    "Tripoli Medical Centre",
+    "Markaz Tarabulus at-Tibbi"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-naqa-mosque",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Naqa (Al-Naqah) Mosque",
+   "ar": "جامع الناقة",
+   "variants": [
+    "Mosque of the Camel",
+    "Naga Mosque",
+    "Jama'a al-Naqa'a"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-libyan-academy-graduate-studies",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Libyan Academy for Postgraduate Studies (Academy of Graduate Studies)",
+   "ar": "الأكاديمية الليبية للدراسات العليا",
+   "variants": [
+    "Academy of Graduate Studies",
+    "Libyan Academy"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-al-waddan-hotel",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Uaddan Hotel and Casino (Al Waddan Hotel)",
+   "ar": "فندق الودان",
+   "variants": [
+    "Hotel Uaddan",
+    "Al Waddan Hotel"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-shar-al-shatt",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Shar al-Shatt (Sciara Sciat) battlefield",
+   "ar": "الشط",
+   "variants": [
+    "Sciara Sciat",
+    "Shara Shatt",
+    "Rebab cemetery"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-old-british-consulate",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Old British Consulate (Karamanli-era house)",
+   "ar": "القنصلية البريطانية القديمة",
+   "variants": [
+    "British Consul's residence",
+    "Old British Consulate"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-gurgi-mosque",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Gurgi Mosque",
+   "ar": "جامع قرجي",
+   "variants": [
+    "Gorji Mosque",
+    "Gurji Mosque",
+    "Jami al-Gurgi"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-tarabulus-scud-storage-southeast",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tarabulus Military Storage Area Southeast (first confirmed Scud-B launcher)",
+   "ar": null,
+   "variants": [
+    "Scud-B storage",
+    "Tripoli military storage area southeast"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-ain-zara-battle",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ain Zara battlefield and memorial",
+   "ar": "عين زارة",
+   "variants": [
+    "Battle of Ain Zara",
+    "Ain Zara Oasis"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-mellaha-grand-prix-circuit",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Mellaha Lake Grand Prix Circuit",
+   "ar": null,
+   "variants": [
+    "Tripoli Grand Prix",
+    "Mellaha circuit",
+    "Circuito di Mellaha"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-al-khalla-site-c",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al Khalla (Site C), centrifuge and conversion site",
+   "ar": null,
+   "variants": [
+    "Al Khalla",
+    "Al-Khalla",
+    "Site C"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-el-ezeizia-site-k",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "El Ezeizia (Site K), construction-materials store",
+   "ar": null,
+   "variants": [
+    "El Ezeizia",
+    "Site K",
+    "Al Aziziyah"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-islamic-museum",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Islamic Museum of Tripoli",
+   "ar": "المتحف الإسلامي",
+   "variants": [
+    "Yusuf Pasha summer palace"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-umm-aitiqah-ecm-site-and-tarabulus-army-",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Umm Aitiqah ECM site and Tarabulus Army Barracks East",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-ottoman-clock-tower",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ottoman Clock Tower",
+   "ar": "ساعة طرابلس",
+   "variants": [
+    "Torre dell'Orologio",
+    "Hamidiye Clock Tower",
+    "Al-Sa'a Tower"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-us-embassy-tripoli",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "US Embassy, Tripoli",
+   "ar": "السفارة الأمريكية",
+   "variants": [
+    "American Embassy Tripoli"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-scud-launch-august-2011",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "First Scud launch of the 2011 war (about 80 km east of Sirte)",
+   "ar": null,
+   "variants": [
+    "Scud launch August 2011"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lh-hani-battle-monument",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Monument to the Battle of Hani",
+   "ar": "النصب التذكاري لمعركة الهاني",
+   "variants": [
+    "Hani Memorial"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-wmd-training-3198-1379",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Western Military District training area (31.98°N 13.79°E)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-al-fallah-site-b",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al Fallah (Site B), second centrifuge site",
+   "ar": null,
+   "variants": [
+    "Al Fallah",
+    "Site B",
+    "Fallah Industrial Zone"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-murad-agha-mosque",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Murad Agha Mosque",
+   "ar": "جامع مراد آغا",
+   "variants": [
+    "Murad Aga Mosque",
+    "Tajoura Great Mosque"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-salah-eddin-site-d",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Salah Eddin (Site D), uranium conversion facility",
+   "ar": null,
+   "variants": [
+    "Salah Eddin",
+    "Salah al-Din uranium conversion"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-tarabulus-army-barracks-prinn",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tarabulus Army Barracks Prinn",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-sebha-sa-2-site",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Sebha SA-2 site",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-italian-embassy-tripoli",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Italian Embassy, Tripoli",
+   "ar": "السفارة الإيطالية",
+   "variants": [
+    "Embassy of Italy"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-tarabulus-sam-training-facility-east-sou",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tarabulus SAM training facility (east-south-east)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-mitiga-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Mitiga Hospital",
+   "ar": "مستشفى امعيتيقة",
+   "variants": [
+    "Matiga Hospital",
+    "Maiteeqa Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-faculty-of-engineering-tripoli",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Faculty of Engineering, University of Tripoli",
+   "ar": "كلية الهندسة - جامعة طرابلس",
+   "variants": [
+    "Tripoli University Engineering Faculty",
+    "Faculty of High Technical Studies"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-bir-ganem-training-camp",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Bir Ganem training camp",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-sebha-training-facility-east",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Sebha training facility east",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-national-archives-of-libya",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "National Archives of Libya (Libyan Historical Archives)",
+   "ar": "دار المحفوظات التاريخية",
+   "variants": [
+    "Dar al-Mahfuzat al-Tarikhiyya"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-tarabulus-air-defence-barracks",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tarabulus Air Defence Barracks",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-ghurdabiyah-airfield",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ghurdabiyah airfield",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-sebha-staging-area-for-tanks-sent-to-cha",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Sebha staging area for tanks sent to Chad",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-ministry-of-foreign-affairs",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ministry of Foreign Affairs and International Cooperation",
+   "ar": "وزارة الخارجية والتعاون الدولي",
+   "variants": [
+    "Foreign Ministry"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-ben-nabi-mosque",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ben Nabi Mosque",
+   "ar": "جامع بن نابي",
+   "variants": [
+    "Masjid Ben Nabi"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-al-jalaa-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Jalaa Children's Hospital",
+   "ar": "مستشفى الجلاء للأطفال",
+   "variants": [
+    "Aljala Hospital",
+    "Tripoli Children's Hospital",
+    "Jalaa Maternity Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-tajura-sa-3-site",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tajura SA-3 site",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-that-el-emad-towers",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "That El Emad Towers",
+   "ar": null,
+   "variants": [
+    "Thatelemad Towers"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-abu-kammash-drone-support-facility",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Abu Kammash drone support facility",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:wp-al-karamia-site-h",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al Karamia (Site H), first conversion-module store",
+   "ar": null,
+   "variants": [
+    "Al Karamia",
+    "Site H",
+    "Al-Karamia"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-brach-airfield-2",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Brach airfield 2",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-misratah-port-facility",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Misratah port facility",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-bani-walid-airfield",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Bani Walid airfield",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-ghat-airfield-north",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ghat airfield (north)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-bab-darghouth",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Bab Darghouth",
+   "ar": "باب درغوث",
+   "variants": [
+    "Darghut Gate",
+    "Bab Dargut"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-7-october-stadium",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "7 October Stadium (Municipal Stadium)",
+   "ar": null,
+   "variants": [
+    "Tripoli Municipal Stadium"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-ministry-of-interior",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ministry of Interior",
+   "ar": "وزارة الداخلية",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-ministry-of-health",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ministry of Health",
+   "ar": "وزارة الصحة",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-ministry-of-justice",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ministry of Justice",
+   "ar": "وزارة العدل",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-ministry-of-higher-education",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ministry of Higher Education and Scientific Research",
+   "ar": "وزارة التعليم العالي",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-ministry-of-education",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ministry of Education",
+   "ar": "وزارة التعليم",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-ministry-of-youth-sports",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Ministry of Youth and Sports",
+   "ar": "وزارة الشباب والرياضة",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-tripoli-supreme-court",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tripoli Supreme Court",
+   "ar": "المحكمة العليا",
+   "variants": [
+    "Libyan Supreme Court"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-wmd-training-3170-1502",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Western Military District training area (31.70°N 15.02°E)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:npic-al-wigh-airfield",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al Wigh airfield",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lm-tripoli-courts-complex",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tripoli Courts Complex",
+   "ar": "مجمع المحاكم طرابلس",
+   "variants": [
+    "Supreme Judicial Council building"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-burn-plastic-surgery-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Burn and Plastic Surgery Hospital",
+   "ar": "مستشفى جراحة الحروق والتجميل",
+   "variants": [
+    "Surface and Beauty Surgery Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-abu-sitta-chest-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Abu Sitta Hospital for Chest Diseases",
+   "ar": "مستشفى أبوستة للأمراض الصدرية",
+   "variants": [
+    "Abu Setta Chest Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-ibn-al-manzour-dental-college",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Faculty of Dentistry (Ibn al-Manzour), University of Tripoli",
+   "ar": "كلية ابن المنظور لطب الأسنان",
+   "variants": [
+    "Dental College Tripoli University"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-faculty-of-education-tripoli",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Faculty of Education, University of Tripoli",
+   "ar": "كلية التربية - جامعة طرابلس",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-tripoli-eye-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tripoli Eye Hospital",
+   "ar": "مستشفى العيون",
+   "variants": [
+    "Hospital of Eyes"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-libyan-olympic-committee",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Libyan Olympic Committee",
+   "ar": "اللجنة الأولمبية الليبية",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-tajoura-heart-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Tajoura Heart Hospital",
+   "ar": "مستشفى القلب تاجوراء",
+   "variants": [
+    "Tajoura Cardiac Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-janzour-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Janzour Hospital",
+   "ar": "مستشفى جنزور",
+   "variants": [
+    "Janzur Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-college-medical-sciences-technology",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "College of Medical Sciences and Technology, Tripoli",
+   "ar": "كلية العلوم والتقنيات الطبية",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-tripoli-diabetes-hospital",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Diabetes Hospital, Tripoli",
+   "ar": "مستشفى السكري",
+   "variants": [
+    "Tripoli Diabetes Hospital"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-al-hani-cemetery",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Al-Hani Cemetery",
+   "ar": "مقبرة الهاني",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "area:lb-sidi-munaidar-cemetery",
+   "from": "map",
+   "class": "area",
+   "region": "tripoli",
+   "en": "Sidi Munaidar Cemetery",
+   "ar": "مقبرة سيدي منيدر",
+   "variants": [
+    "Sidi Munadir Cemetery"
+   ],
+   "source": "the map entry"
+  },
+  {
+   "id": "gaz:benghazi:first-battle-of-benghazi",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "First Battle of Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/First_Battle_of_Benghazi"
+  },
+  {
+   "id": "gaz:benghazi:battle-of-benghazi-2014-2017",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Battle of Benghazi (2014–2017)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Benghazi_(2014%E2%80%932017)"
+  },
+  {
+   "id": "gaz:benghazi:benghazi",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Benghazi",
+   "ar": "بنغازي",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Benghazi"
+  },
+  {
+   "id": "gaz:benghazi:second-battle-of-benghazi",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Second Battle of Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Second_Battle_of_Benghazi"
+  },
+  {
+   "id": "gaz:benghazi:national-library-of-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "National Library of Libya",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/National_Library_of_Libya"
+  },
+  {
+   "id": "gaz:benghazi:maydan-al-shajara",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Maydan al Shajara",
+   "ar": "ميدان الشجرة",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Maydan_al_Shajara"
+  },
+  {
+   "id": "gaz:benghazi:tibesti-hotel",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Tibesti Hotel",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Tibesti_Hotel"
+  },
+  {
+   "id": "gaz:benghazi:atiq-mosque-benghazi",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Atiq Mosque (Benghazi)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Atiq_Mosque_(Benghazi)"
+  },
+  {
+   "id": "gaz:benghazi:benghazi-cathedral",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Benghazi Cathedral",
+   "ar": "كاتدرائية بنغازي",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Benghazi_Cathedral"
+  },
+  {
+   "id": "gaz:benghazi:benghazi-municipal-hall",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Benghazi Municipal Hall",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Benghazi_Municipal_Hall"
+  },
+  {
+   "id": "gaz:benghazi:governors-palace-benghazi",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Governor's Palace, Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Governor%27s_Palace,_Benghazi"
+  },
+  {
+   "id": "gaz:benghazi:benghazi-lighthouse",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Benghazi Lighthouse",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Benghazi_Lighthouse"
+  },
+  {
+   "id": "gaz:benghazi:23rd-july-lake",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "23rd July Lake",
+   "ar": "بحيرة 23 يوليو",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/23rd_July_Lake"
+  },
+  {
+   "id": "gaz:benghazi:suliman-ad-dharrath-arena",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Suliman Ad-Dharrath Arena",
+   "ar": "مجمع سليمان الضراط",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Suliman_Ad-Dharrath_Arena"
+  },
+  {
+   "id": "gaz:benghazi:benghazi-international-stadium",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Benghazi International Stadium",
+   "ar": "ملعب بنغازي الدولي",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Benghazi_International_Stadium"
+  },
+  {
+   "id": "gaz:benghazi:battle-of-benghazi-1911",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Battle of Benghazi (1911)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Benghazi_(1911)"
+  },
+  {
+   "id": "gaz:benghazi:port-of-benghazi",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Port of Benghazi",
+   "ar": "ميناء بنغازي",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Port_of_Benghazi"
+  },
+  {
+   "id": "gaz:benghazi:al-jalah-hospital",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Al-Jalah Hospital",
+   "ar": "مستشفى الجلاء",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Al-Jalah_Hospital"
+  },
+  {
+   "id": "gaz:benghazi:al-berka",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Al-Berka",
+   "ar": "البركة (بنغازي)",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Al-Berka"
+  },
+  {
+   "id": "gaz:benghazi:italian-destroyer-aquilone-1927",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Italian destroyer Aquilone (1927)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Italian_destroyer_Aquilone_(1927)"
+  },
+  {
+   "id": "gaz:benghazi:benghazi-zoo",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Benghazi Zoo",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Benghazi_Zoo"
+  },
+  {
+   "id": "gaz:benghazi:al-fuwayhat",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Al-Fuwayhat",
+   "ar": "الفويهات",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Al-Fuwayhat"
+  },
+  {
+   "id": "gaz:benghazi:american-fatalities-and-injuries-of-the-2012-benghazi-attack",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "American fatalities and injuries of the 2012 Benghazi attack",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/American_fatalities_and_injuries_of_the_2012_Benghazi_attack"
+  },
+  {
+   "id": "gaz:benghazi:al-quwarsha",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "benghazi",
+   "en": "Al-Quwarsha",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Al-Quwarsha"
+  },
+  {
+   "id": "gaz:cyrenaica:agedabia-airfield-complex",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Agedabia Airfield Complex",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Agedabia_Airfield_Complex"
+  },
+  {
+   "id": "gaz:cyrenaica:ajdabiya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Ajdabiya",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ajdabiya"
+  },
+  {
+   "id": "gaz:cyrenaica:battle-of-ajdabiya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Battle of Ajdabiya",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Ajdabiya"
+  },
+  {
+   "id": "gaz:cyrenaica:agedabia-concentration-camp",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Agedabia concentration camp",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Agedabia_concentration_camp"
+  },
+  {
+   "id": "gaz:cyrenaica:ajdabiya-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Ajdabiya District",
+   "ar": "شعبية إجدابيا",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ajdabiya_District"
+  },
+  {
+   "id": "gaz:cyrenaica:al-bayda-stadium",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Al Bayda Stadium",
+   "ar": "استاد البيضاء",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Al_Bayda_Stadium"
+  },
+  {
+   "id": "gaz:cyrenaica:bayda-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Bayda, Libya",
+   "ar": "البيضاء (ليبيا)",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Bayda,_Libya"
+  },
+  {
+   "id": "gaz:cyrenaica:battle-of-bayda",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Battle of Bayda",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Bayda"
+  },
+  {
+   "id": "gaz:cyrenaica:sheikh-chadae-stadium",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Sheikh Chadae Stadium",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Sheikh_Chadae_Stadium"
+  },
+  {
+   "id": "gaz:cyrenaica:omar-al-mukhtar-university",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Omar Al-Mukhtar University",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Omar_Al-Mukhtar_University"
+  },
+  {
+   "id": "gaz:cyrenaica:ahqaf-al-jabhiya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Ahqaf al Jabhiya",
+   "ar": "أحقاف الجبيهية",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ahqaf_al_Jabhiya"
+  },
+  {
+   "id": "gaz:cyrenaica:wardama",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Wardama",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Wardama"
+  },
+  {
+   "id": "gaz:cyrenaica:kaf-miyas",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Kaf Miyas",
+   "ar": "كهف مياز",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Kaf_Miyas"
+  },
+  {
+   "id": "gaz:cyrenaica:derna-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Derna, Libya",
+   "ar": "درنة",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Derna,_Libya"
+  },
+  {
+   "id": "gaz:cyrenaica:apostolic-vicariate-of-derna",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Apostolic Vicariate of Derna",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Apostolic_Vicariate_of_Derna"
+  },
+  {
+   "id": "gaz:cyrenaica:battle-of-derna-1805",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Battle of Derna (1805)",
+   "ar": "معركة درنة (1805)",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Derna_(1805)"
+  },
+  {
+   "id": "gaz:cyrenaica:battle-of-derna-2018-2019",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Battle of Derna (2018–2019)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Derna_(2018%E2%80%932019)"
+  },
+  {
+   "id": "gaz:cyrenaica:as-sahabah-mosque",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "As-Sahabah Mosque",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/As-Sahabah_Mosque"
+  },
+  {
+   "id": "gaz:cyrenaica:battle-of-derna-1912",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Battle of Derna (1912)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Derna_(1912)"
+  },
+  {
+   "id": "gaz:cyrenaica:wadi-derna",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Wadi Derna",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Wadi_Derna"
+  },
+  {
+   "id": "gaz:cyrenaica:derna-stadium",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Derna Stadium",
+   "ar": "ملعب درنة",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Derna_Stadium"
+  },
+  {
+   "id": "gaz:cyrenaica:derna-waterfalls",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Derna waterfalls",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Derna_waterfalls"
+  },
+  {
+   "id": "gaz:cyrenaica:british-capture-of-tobruk",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "British capture of Tobruk",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/British_capture_of_Tobruk"
+  },
+  {
+   "id": "gaz:cyrenaica:tobruk",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Tobruk",
+   "ar": "طبرق",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Tobruk"
+  },
+  {
+   "id": "gaz:cyrenaica:battle-of-tobruk-1911",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Battle of Tobruk (1911)",
+   "ar": "معركة طبرق",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Tobruk_(1911)"
+  },
+  {
+   "id": "gaz:cyrenaica:hms-ladybird-1916",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "HMS Ladybird (1916)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/HMS_Ladybird_(1916)"
+  },
+  {
+   "id": "gaz:cyrenaica:hotel-tobruk",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Hotel Tobruk",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Hotel_Tobruk"
+  },
+  {
+   "id": "gaz:cyrenaica:port-of-tobruk",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Port of Tobruk",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Port_of_Tobruk"
+  },
+  {
+   "id": "gaz:cyrenaica:ali-bin-abi-talib-mosque-tobruk",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Ali bin Abi Talib Mosque (Tobruk)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ali_bin_Abi_Talib_Mosque_(Tobruk)"
+  },
+  {
+   "id": "gaz:cyrenaica:tobruk-power-station",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "Tobruk Power Station",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Tobruk_Power_Station"
+  },
+  {
+   "id": "gaz:cyrenaica:hms-sikh-f82",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "cyrenaica",
+   "en": "HMS Sikh (F82)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/HMS_Sikh_(F82)"
+  },
+  {
+   "id": "gaz:fezzan:raid-on-ghadames",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Raid on Ghadames",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Raid_on_Ghadames"
+  },
+  {
+   "id": "gaz:fezzan:ghadames-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Ghadames District",
+   "ar": "شعبية غدامس",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ghadames_District"
+  },
+  {
+   "id": "gaz:fezzan:ghadames",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Ghadames",
+   "ar": "غدامس",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ghadames"
+  },
+  {
+   "id": "gaz:fezzan:atiq-mosque-ghadames",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Atiq Mosque (Ghadames)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Atiq_Mosque_(Ghadames)"
+  },
+  {
+   "id": "gaz:fezzan:old-town-of-ghadames",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Old town of Ghadames",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Old_town_of_Ghadames"
+  },
+  {
+   "id": "gaz:fezzan:ghadames-museum",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Ghadames Museum",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ghadames_Museum"
+  },
+  {
+   "id": "gaz:fezzan:ghat-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Ghat, Libya",
+   "ar": "غات",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ghat,_Libya"
+  },
+  {
+   "id": "gaz:fezzan:fortress-of-ghat",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Fortress of Ghat",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
+  },
+  {
+   "id": "gaz:fezzan:acacus-sandstone",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Acacus Sandstone",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Acacus_Sandstone"
+  },
+  {
+   "id": "gaz:fezzan:kufra",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Kufra",
+   "ar": "الكفرة (ليبيا)",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Kufra"
+  },
+  {
+   "id": "gaz:fezzan:kufra-airport",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Kufra Airport",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Kufra_Airport"
+  },
+  {
+   "id": "gaz:fezzan:al-jawf-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Al Jawf, Libya",
+   "ar": "الجوف (ليبيا)",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Al_Jawf,_Libya"
+  },
+  {
+   "id": "gaz:fezzan:el-tag",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "El Tag",
+   "ar": "التاج (ليبيا)",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/El_Tag"
+  },
+  {
+   "id": "gaz:fezzan:murzuk",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Murzuk",
+   "ar": "مرزق",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Murzuk"
+  },
+  {
+   "id": "gaz:fezzan:murzuq-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Murzuq District",
+   "ar": "شعبية مرزق",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Murzuq_District"
+  },
+  {
+   "id": "gaz:fezzan:sabha-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Sabha, Libya",
+   "ar": "سبها",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
+  {
+   "id": "gaz:fezzan:sabha-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Sabha District",
+   "ar": "شعبية سبها",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Sabha_District"
+  },
+  {
+   "id": "gaz:fezzan:jadid-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Jadid, Libya",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Jadid,_Libya"
+  },
+  {
+   "id": "gaz:fezzan:hagiara",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Hagiara",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Hagiara"
+  },
+  {
+   "id": "gaz:fezzan:sabha-airport",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Sabha Airport",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Sabha_Airport"
+  },
+  {
+   "id": "gaz:fezzan:sabha-airbase",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "fezzan",
+   "en": "Sabha Airbase",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Sabha_Airbase"
+  },
+  {
+   "id": "gaz:sirte:second-battle-of-brega",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Second Battle of Brega",
+   "ar": "معركة البريقة الثانية",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Second_Battle_of_Brega"
+  },
+  {
+   "id": "gaz:sirte:brega",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Brega",
+   "ar": "مرسى البريقة",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Brega"
+  },
+  {
+   "id": "gaz:sirte:fourth-battle-of-brega",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Fourth Battle of Brega",
+   "ar": "معركة البريقة الرابعة",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Fourth_Battle_of_Brega"
+  },
+  {
+   "id": "gaz:sirte:first-battle-of-brega",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "First Battle of Brega",
+   "ar": "معركة البريقة الأولى",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/First_Battle_of_Brega"
+  },
+  {
+   "id": "gaz:sirte:third-battle-of-brega",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Third Battle of Brega",
+   "ar": "معركة البريقة الثالثة",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Third_Battle_of_Brega"
+  },
+  {
+   "id": "gaz:sirte:raid-on-ras-lanuf",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Raid on Ras Lanuf",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Raid_on_Ras_Lanuf"
+  },
+  {
+   "id": "gaz:sirte:ras-lanuf",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Ras Lanuf",
+   "ar": "راس لانوف",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ras_Lanuf"
+  },
+  {
+   "id": "gaz:sirte:sidra-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Sidra, Libya",
+   "ar": "ميناء السدرة النفطي",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Sidra,_Libya"
+  },
+  {
+   "id": "gaz:sirte:sirte",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Sirte",
+   "ar": "سرت",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Sirte"
+  },
+  {
+   "id": "gaz:sirte:battle-of-sirte-2011",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Battle of Sirte (2011)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Sirte_(2011)"
+  },
+  {
+   "id": "gaz:sirte:sirte-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Sirte District",
+   "ar": "شعبية سرت",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Sirte_District"
+  },
+  {
+   "id": "gaz:sirte:battle-of-sirte-2016",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Battle of Sirte (2016)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Sirte_(2016)"
+  },
+  {
+   "id": "gaz:sirte:sirte-stadium",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "sirte",
+   "en": "Sirte Stadium",
+   "ar": "ملعب سرت",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Sirte_Stadium"
+  },
+  {
+   "id": "gaz:tripolitania:bani-walid",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Bani Walid",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Bani_Walid"
+  },
+  {
+   "id": "gaz:tripolitania:battle-of-bani-walid",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Battle of Bani Walid",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Bani_Walid"
+  },
+  {
+   "id": "gaz:tripolitania:bani-walid-airport",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Bani Walid Airport",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Bani_Walid_Airport"
+  },
+  {
+   "id": "gaz:tripolitania:battle-of-gharyan-2011",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Battle of Gharyan (2011)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Gharyan_(2011)"
+  },
+  {
+   "id": "gaz:tripolitania:gharyan",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Gharyan",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Gharyan"
+  },
+  {
+   "id": "gaz:tripolitania:gharyan-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Gharyan District",
+   "ar": "شعبية غريان",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Gharyan_District"
+  },
+  {
+   "id": "gaz:tripolitania:jafara",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Jafara",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Jafara"
+  },
+  {
+   "id": "gaz:tripolitania:al-khums",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Al-Khums",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Al-Khums"
+  },
+  {
+   "id": "gaz:tripolitania:al-khums-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Al Khums District",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Al_Khums_District"
+  },
+  {
+   "id": "gaz:tripolitania:murqub-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Murqub District",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Murqub_District"
+  },
+  {
+   "id": "gaz:tripolitania:leptis-magna",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Leptis Magna",
+   "ar": "لبدة الكبرى",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Leptis_Magna"
+  },
+  {
+   "id": "gaz:tripolitania:arch-of-septimius-severus-leptis-magna",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Arch of Septimius Severus (Leptis Magna)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Arch_of_Septimius_Severus_(Leptis_Magna)"
+  },
+  {
+   "id": "gaz:tripolitania:wadi-lebda-dam",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Wadi Lebda Dam",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Wadi_Lebda_Dam"
+  },
+  {
+   "id": "gaz:tripolitania:2018-libya-migrant-shipwrecks",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "2018 Libya migrant shipwrecks",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/2018_Libya_migrant_shipwrecks"
+  },
+  {
+   "id": "gaz:tripolitania:battle-of-misrata-1912",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Battle of Misrata (1912)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Misrata_(1912)"
+  },
+  {
+   "id": "gaz:tripolitania:battle-of-misrata-2011",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Battle of Misrata (2011)",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Misrata_(2011)"
+  },
+  {
+   "id": "gaz:tripolitania:misrata",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Misrata",
+   "ar": "مصراتة",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Misrata"
+  },
+  {
+   "id": "gaz:tripolitania:fist-crushing-a-u-s-fighter-plane",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Fist Crushing a U.S. Fighter Plane",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Fist_Crushing_a_U.S._Fighter_Plane"
+  },
+  {
+   "id": "gaz:tripolitania:apostolic-prefecture-of-misurata",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Apostolic Prefecture of Misurata",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Apostolic_Prefecture_of_Misurata"
+  },
+  {
+   "id": "gaz:tripolitania:misurata-university",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Misurata University",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Misurata_University"
+  },
+  {
+   "id": "gaz:tripolitania:murbat-stadium",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Murbat Stadium",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Murbat_Stadium"
+  },
+  {
+   "id": "gaz:tripolitania:misurata-stadium",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Misurata Stadium",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Misurata_Stadium"
+  },
+  {
+   "id": "gaz:tripolitania:ghiran",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Ghiran",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ghiran"
+  },
+  {
+   "id": "gaz:tripolitania:misrata-airport",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Misrata Airport",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Misrata_Airport"
+  },
+  {
+   "id": "gaz:tripolitania:nalut",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Nalut",
+   "ar": "نالوت",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Nalut"
+  },
+  {
+   "id": "gaz:tripolitania:ksar-nalut",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Ksar Nalut",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Ksar_Nalut"
+  },
+  {
+   "id": "gaz:tripolitania:nalut-dinosaur-museum",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Nalut Dinosaur Museum",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Nalut_Dinosaur_Museum"
+  },
+  {
+   "id": "gaz:tripolitania:tarhuna",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Tarhuna",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Tarhuna"
+  },
+  {
+   "id": "gaz:tripolitania:tarhuna-municipality",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Tarhuna Municipality",
+   "ar": "ترهونة (مقاطعة)",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Tarhuna_Municipality"
+  },
+  {
+   "id": "gaz:tripolitania:mausoleum-of-gasr-doga",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Mausoleum of Gasr Doga",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Mausoleum_of_Gasr_Doga"
+  },
+  {
+   "id": "gaz:tripolitania:yafran",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Yafran",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Yafran"
+  },
+  {
+   "id": "gaz:tripolitania:yafran-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Yafran District",
+   "ar": "شعبية يفرن",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Yafran_District"
+  },
+  {
+   "id": "gaz:tripolitania:henscir-suffit",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Henscir Suffit",
+   "ar": "هنشير صفيت",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Henscir_Suffit"
+  },
+  {
+   "id": "gaz:tripolitania:zawiya-skirmish",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zawiya skirmish",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zawiya_skirmish"
+  },
+  {
+   "id": "gaz:tripolitania:first-battle-of-zawiya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "First Battle of Zawiya",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/First_Battle_of_Zawiya"
+  },
+  {
+   "id": "gaz:tripolitania:zawiya-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zawiya, Libya",
+   "ar": "الزاوية (ليبيا)",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zawiya,_Libya"
+  },
+  {
+   "id": "gaz:tripolitania:al-zawiya-university",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Al Zawiya University",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Al_Zawiya_University"
+  },
+  {
+   "id": "gaz:tripolitania:zawiya-district",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zawiya District",
+   "ar": "شعبية الزاوية",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zawiya_District"
+  },
+  {
+   "id": "gaz:tripolitania:zaawia-stadium",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zaawia Stadium",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zaawia_Stadium"
+  },
+  {
+   "id": "gaz:tripolitania:2026-zawiya-refinery-drone-attacks",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "2026 Zawiya refinery drone attacks",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/2026_Zawiya_refinery_drone_attacks"
+  },
+  {
+   "id": "gaz:tripolitania:joudaim",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Joudaim",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Joudaim"
+  },
+  {
+   "id": "gaz:tripolitania:zintan",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zintan",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zintan"
+  },
+  {
+   "id": "gaz:tripolitania:battle-of-zliten",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Battle of Zliten",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Zliten"
+  },
+  {
+   "id": "gaz:tripolitania:zlitan-municipality",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zlitan Municipality",
+   "ar": "زليتن (مقاطعة)",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zlitan_Municipality"
+  },
+  {
+   "id": "gaz:tripolitania:zliten",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zliten",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zliten"
+  },
+  {
+   "id": "gaz:tripolitania:zliten-truck-bombing",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zliten truck bombing",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zliten_truck_bombing"
+  },
+  {
+   "id": "gaz:tripolitania:zuwarah",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zuwarah",
+   "ar": "زوارة",
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zuwarah"
+  },
+  {
+   "id": "gaz:tripolitania:zuwara-stadium",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zuwara Stadium",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zuwara_Stadium"
+  },
+  {
+   "id": "gaz:tripolitania:2019-zuwarah-airstrike",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "2019 Zuwarah airstrike",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/2019_Zuwarah_airstrike"
+  },
+  {
+   "id": "gaz:tripolitania:zuwarah-airport",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Zuwarah Airport",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Zuwarah_Airport"
+  },
+  {
+   "id": "gaz:tripolitania:jumayl-libya",
+   "from": "gazetteer",
+   "class": "gazetteer",
+   "region": "tripolitania",
+   "en": "Jumayl, Libya",
+   "ar": null,
+   "variants": [],
+   "source": "https://en.wikipedia.org/wiki/Jumayl,_Libya"
+  },
+  {
+   "id": "cand:666f50aba5b1",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "People's Hall, Tripoli",
+   "ar": null,
+   "variants": [
+    "People's Hall"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:e5995f5d1de6",
+   "from": "candidate",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Kufra airfield",
+   "ar": null,
+   "variants": [
+    "Kufra Airfield"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:c793bba73f0f",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "French Embassy, Tripoli",
+   "ar": null,
+   "variants": [
+    "French embassy, Tripoli"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:ff61f3ee76ff",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Al-Khadra Square",
+   "ar": null,
+   "variants": [
+    "Al-Khadra Square, Tripoli"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:5daaa46d54ad",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Tripoli refinery",
+   "ar": null,
+   "variants": [
+    "Tripoli Refinery"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:ba8945511285",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Idriss Field near Tripoli",
+   "ar": null,
+   "variants": [
+    "Idriss Field, near Tripoli"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:61d1ac683865",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Tripoli Prison",
+   "ar": null,
+   "variants": [
+    "Tripoli prison"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:8a4aa2e91813",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Umm Aitiqah airfield",
+   "ar": null,
+   "variants": [
+    "Umm Aitiqah Airfield"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:845fde76ead7",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Khamis Brigade headquarters 26 km west of Tripoli",
+   "ar": null,
+   "variants": [
+    "Khamis Brigade headquarters, 26 km west of Tripoli"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:a80efe87dd91",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Rixos Al Nasr hotel",
+   "ar": null,
+   "variants": [
+    "فندق ريكسوس النصر (Rixos al-Nasr hotel)"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:c6bf448ec672",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Ash-Sha'b Palace",
+   "ar": null,
+   "variants": [
+    "Ash-Sha'b palace"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:61f065e6fac1",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Tripoli naval base",
+   "ar": null,
+   "variants": [
+    "طرابلس (Tripoli naval base)"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:09c9875ac4cb",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Residential area near the French Embassy",
+   "ar": null,
+   "variants": [
+    "Residential area near the French Embassy, Tripoli"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:42ad41b246fd",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Tarabulus AW Radar Facility (TALL KING)",
+   "ar": null,
+   "variants": [
+    "Tarabulus AW radar facility (Tall King)"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:b4195e389e3a",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Ash-Shati Hotel",
+   "ar": null,
+   "variants": [
+    "Ash-Shati Hotel, Tripoli",
+    "Ash-Shati' Hotel, Tripoli"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:80adbeea208b",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Al-Amal al-Akhdar Hall",
+   "ar": null,
+   "variants": [
+    "Al-Amal al-Akhdar Hall, Tripoli"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:3a7820216de9",
+   "from": "candidate",
+   "class": "place",
+   "region": "fezzan",
+   "en": "al-Kufrah oasis",
+   "ar": null,
+   "variants": [
+    "Al Kufrah Oasis"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:790a8e740d8d",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "al-Aziziyah area",
+   "ar": null,
+   "variants": [
+    "al-'Aziziyah area"
+   ],
+   "source": "the documents that mention it"
+  },
+  {
+   "id": "cand:1ab7213495ac",
+   "from": "candidate",
+   "class": "place",
+   "region": "tripoli",
+   "en": "Al-Qarabulli dock and lighthouse",
+   "ar": null,
+   "variants": [
+    "al-Qarabulli dock and lighthouse"
+   ],
+   "source": "the documents that mention it"
+  }
+ ]
+}

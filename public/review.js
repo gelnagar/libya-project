@@ -55,7 +55,7 @@
     var decided = total - (by.open || 0), approved = (by.approve || 0) + (by.unplaced || 0), n = function (v) { return Number(v).toLocaleString('en-US'); };
     [['Collected', n(f.collected), f.listedNotFetched ? n(f.listedNotFetched) + ' more listed, not yet downloaded' : 'documents stored'],
       ['Read', n(f.read), Math.round(100 * f.read / Math.max(1, f.collected)) + '% of collected'],
-      ['Candidates', n(f.candidates), n(f.twoOrMore) + ' backed by 2+ documents'],
+      ['Candidates', n(f.candidates), n(f.twoOrMore) + ' backed by 2+ documents' + (f.newSinceLastRun != null ? '; ' + n(f.newSinceLastRun) + ' new since the last run' : '')],
       ['Decided', n(decided), Math.round(100 * decided / Math.max(1, total)) + '% of candidates'],
       ['Approved', n(approved), (by.reject || 0) + ' rejected, ' + (by.defer || 0) + ' put off'],
       ['Reading cost', '$' + f.costUsd.toFixed(2), approved ? '$' + (f.costUsd / approved).toFixed(2) + ' per approved entry' : 'no approved entries yet']
@@ -88,7 +88,7 @@
   }
   function draw(c, dec) {
     curCand = c; var d = $('detail'); d.innerHTML = ''; d.scrollTop = 0;
-    d.appendChild(el('div', { class: 'head' }, [el('span', { class: 'tag', text: c.kind === 'place' ? 'Place not on the map' : c.kind === 'speech' ? 'Speech in Tripoli' : 'Dated event' }), dec ? el('span', { class: 'tag v-' + dec.verdict, text: VERDICT[dec.verdict] }) : null]));
+    d.appendChild(el('div', { class: 'head' }, [el('span', { class: 'tag', text: c.kind === 'place' ? 'Place not on the map' : c.kind === 'speech' ? 'Speech in Tripoli' : 'Dated event' }), c.firstSeen ? el('span', { class: 'tag', title: 'The date this candidate first appeared in a build of the queue', text: 'First raised ' + c.firstSeen }) : null, dec ? el('span', { class: 'tag v-' + dec.verdict, text: VERDICT[dec.verdict] }) : null]));
     d.appendChild(el('h1', { text: c.name }));
     var dl = el('dl');
     function row(k, v) { if (v == null || v === '') return; dl.appendChild(el('dt', { text: k })); dl.appendChild(typeof v === 'string' ? el('dd', { text: v }) : el('dd', {}, [v])); }
@@ -110,6 +110,7 @@
       var f = FOUND[it.found] || FOUND.none;
       d.appendChild(el('section', { class: 'item' }, [
         el('div', { class: 'ih' }, [el('span', { class: 'num', text: String(n + 1) }), el('b', { text: it.title }), el('span', { class: 'num', text: it.date || 'undated' })]),
+        it.ocr != null && it.ocr < 80 ? el('p', { class: 'ocrwarn', title: 'Scan-quality score of the stored text, 0 to 100 (scripts/ocr-score.mjs). Check the passage against the original page.', text: (it.ocr < 70 ? 'Poor scan' : 'Fair scan') + ' (score ' + it.ocr + '): read the passage against the original page.' }) : null,
         el('p', { class: 'said' }, [el('span', { class: 'lab', text: c.kind === 'speech' ? "The translators' description " : 'Summary by the reading model ' }), it.detail]),
         el('div', { class: 'chk ' + f[1], text: f[0] }),
         it.passage ? mark(it.passage, it.hit) : null,

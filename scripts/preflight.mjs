@@ -52,6 +52,9 @@ say(tsm && tsm[2] === '0' && ts.ok ? 'PASS' : 'FAIL', `search spelling variants:
 const tw = run(['scripts/test-sw.mjs']), twm = tw.out.match(/(\d+) passed, (\d+) failed/);
 say(twm && twm[2] === '0' && tw.ok ? 'PASS' : 'FAIL', `offline worker: ${twm ? twm[1] + ' passed, ' + twm[2] + ' failed' : 'did not run'} (simulated; a real browser still needs a hand check)`);
 
+const oc = run(['scripts/ocr-score.mjs', '--self-test']);
+say(oc.ok && /self-test passed/.test(oc.out) ? 'PASS' : 'FAIL', 'scan-quality score: a clean text scores good, a garbled one poor, a short one is not scored', oc.ok ? '' : oc.out.slice(0, 120));
+
 const ev = run(['scripts/check-evidence.mjs']), em = ev.out.match(/(\d+) documented killing entries; (\d+) have two or more publishers; (\d+) rest on one/);
 say(!em ? 'FAIL' : +em[3] ? 'WARN' : 'PASS', em ? `evidence rule 8: ${em[1]} documented killing entries, ${em[3]} rest on one publisher (list: node scripts/check-evidence.mjs)` : 'evidence rule 8: check did not run');
 

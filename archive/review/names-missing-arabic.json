@@ -1,0 +1,207 @@
+{
+ "at": "2026-11-16T06:36:40.688Z",
+ "note": "Map places and areas with no Arabic name on record. Add one only from a source (a sign, a document, an Arabic Wikipedia title).",
+ "count": 40,
+ "missing": [
+  {
+   "id": "site:maktab",
+   "class": "place",
+   "en": "Maktab al-Nasser"
+  },
+  {
+   "id": "site:blackhorse",
+   "class": "place",
+   "en": "\"Black Horse\" prison, airport road"
+  },
+  {
+   "id": "site:towisha",
+   "class": "place",
+   "en": "Twaisha migrant detention centre"
+  },
+  {
+   "id": "site:gharghour-security",
+   "class": "place",
+   "en": "Internal Security building at Gharghour (Al-Amal al-Akhdar)"
+  },
+  {
+   "id": "site:mitiga-prison",
+   "class": "place",
+   "en": "Mitiga prison (Special Deterrence Force)"
+  },
+  {
+   "id": "area:lh-military-police-command",
+   "class": "area",
+   "en": "Military Police Command compound (reported)"
+  },
+  {
+   "id": "area:wp-bin-ghashir-scud-facility",
+   "class": "area",
+   "en": "Bin Ghashir tactical missile (Scud and FROG) facility"
+  },
+  {
+   "id": "area:wp-jarmah-otrag-launch-site",
+   "class": "area",
+   "en": "Jarmah missile launch site (OTRAG), later used for Libyan missile development"
+  },
+  {
+   "id": "area:npic-sebha-airfield",
+   "class": "area",
+   "en": "Sebha airfield"
+  },
+  {
+   "id": "area:npic-tarabulus-port-facilities-military-deliv",
+   "class": "area",
+   "en": "Tarabulus port facilities (military deliveries)"
+  },
+  {
+   "id": "area:npic-al-jufrah-airfield",
+   "class": "area",
+   "en": "Al Jufrah airfield"
+  },
+  {
+   "id": "area:wp-al-hashan-site-a",
+   "class": "area",
+   "en": "Al Hashan (Site A), Libya's first centrifuge site"
+  },
+  {
+   "id": "area:wp-tarabulus-scud-storage-southeast",
+   "class": "area",
+   "en": "Tarabulus Military Storage Area Southeast (first confirmed Scud-B launcher)"
+  },
+  {
+   "id": "area:lh-mellaha-grand-prix-circuit",
+   "class": "area",
+   "en": "Mellaha Lake Grand Prix Circuit"
+  },
+  {
+   "id": "area:wp-al-khalla-site-c",
+   "class": "area",
+   "en": "Al Khalla (Site C), centrifuge and conversion site"
+  },
+  {
+   "id": "area:wp-el-ezeizia-site-k",
+   "class": "area",
+   "en": "El Ezeizia (Site K), construction-materials store"
+  },
+  {
+   "id": "area:npic-umm-aitiqah-ecm-site-and-tarabulus-army-",
+   "class": "area",
+   "en": "Umm Aitiqah ECM site and Tarabulus Army Barracks East"
+  },
+  {
+   "id": "area:wp-scud-launch-august-2011",
+   "class": "area",
+   "en": "First Scud launch of the 2011 war (about 80 km east of Sirte)"
+  },
+  {
+   "id": "area:npic-wmd-training-3198-1379",
+   "class": "area",
+   "en": "Western Military District training area (31.98°N 13.79°E)"
+  },
+  {
+   "id": "area:wp-al-fallah-site-b",
+   "class": "area",
+   "en": "Al Fallah (Site B), second centrifuge site"
+  },
+  {
+   "id": "area:wp-salah-eddin-site-d",
+   "class": "area",
+   "en": "Salah Eddin (Site D), uranium conversion facility"
+  },
+  {
+   "id": "area:npic-tarabulus-army-barracks-prinn",
+   "class": "area",
+   "en": "Tarabulus Army Barracks Prinn"
+  },
+  {
+   "id": "area:npic-sebha-sa-2-site",
+   "class": "area",
+   "en": "Sebha SA-2 site"
+  },
+  {
+   "id": "area:npic-tarabulus-sam-training-facility-east-sou",
+   "class": "area",
+   "en": "Tarabulus SAM training facility (east-south-east)"
+  },
+  {
+   "id": "area:npic-bir-ganem-training-camp",
+   "class": "area",
+   "en": "Bir Ganem training camp"
+  },
+  {
+   "id": "area:npic-sebha-training-facility-east",
+   "class": "area",
+   "en": "Sebha training facility east"
+  },
+  {
+   "id": "area:npic-tarabulus-air-defence-barracks",
+   "class": "area",
+   "en": "Tarabulus Air Defence Barracks"
+  },
+  {
+   "id": "area:npic-ghurdabiyah-airfield",
+   "class": "area",
+   "en": "Ghurdabiyah airfield"
+  },
+  {
+   "id": "area:npic-sebha-staging-area-for-tanks-sent-to-cha",
+   "class": "area",
+   "en": "Sebha staging area for tanks sent to Chad"
+  },
+  {
+   "id": "area:npic-tajura-sa-3-site",
+   "class": "area",
+   "en": "Tajura SA-3 site"
+  },
+  {
+   "id": "area:lm-that-el-emad-towers",
+   "class": "area",
+   "en": "That El Emad Towers"
+  },
+  {
+   "id": "area:npic-abu-kammash-drone-support-facility",
+   "class": "area",
+   "en": "Abu Kammash drone support facility"
+  },
+  {
+   "id": "area:wp-al-karamia-site-h",
+   "class": "area",
+   "en": "Al Karamia (Site H), first conversion-module store"
+  },
+  {
+   "id": "area:npic-brach-airfield-2",
+   "class": "area",
+   "en": "Brach airfield 2"
+  },
+  {
+   "id": "area:npic-misratah-port-facility",
+   "class": "area",
+   "en": "Misratah port facility"
+  },
+  {
+   "id": "area:npic-bani-walid-airfield",
+   "class": "area",
+   "en": "Bani Walid airfield"
+  },
+  {
+   "id": "area:npic-ghat-airfield-north",
+   "class": "area",
+   "en": "Ghat airfield (north)"
+  },
+  {
+   "id": "area:lm-7-october-stadium",
+   "class": "area",
+   "en": "7 October Stadium (Municipal Stadium)"
+  },
+  {
+   "id": "area:npic-wmd-training-3170-1502",
+   "class": "area",
+   "en": "Western Military District training area (31.70°N 15.02°E)"
+  },
+  {
+   "id": "area:npic-al-wigh-airfield",
+   "class": "area",
+   "en": "Al Wigh airfield"
+  }
+ ]
+}

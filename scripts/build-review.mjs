@@ -43,10 +43,12 @@ function passage(doc, phrase, extra) {
   return { found: 'none', text: '' };
 }
 function recId(d) { return (d.src === 'jprs' ? 'jprs2-' : 'crest-') + d.id.replace(/^cia-readingroom-document-|^ufiche-test-document_/, ''); }
+// scan quality of each stored text (node scripts/ocr-score.mjs): carried onto every item so the review page can warn about a poor scan
+const OCR = fs.existsSync('archive/review/ocr-quality.json') ? JSON.parse(fs.readFileSync('archive/review/ocr-quality.json', 'utf8')).scores : {};
 function item(x, d, detail, phrase, extra) {
   const p = passage(d, phrase, extra);
   return { doc: x.id, rec: d && d.cia !== undefined ? recId(d) : null, title: clip(d ? d.title : x.id, 160), date: /^\d{4}/.test(x.date || '') ? x.date : '', url: d ? (d.cia || d.url || d.ia || '') : '', mirror: d && d.ia ? d.ia : '',
-    rel: x.relevance || 0, detail: clip(detail, 420), found: p.found, hit: p.hit || '', passage: clip(p.text, 760) };
+    ocr: OCR[x.id] == null ? null : OCR[x.id], rel: x.relevance || 0, detail: clip(detail, 420), found: p.found, hit: p.hit || '', passage: clip(p.text, 760) };
 }
 
 const places = new Map(), events = new Map();
@@ -109,6 +111,20 @@ out.forEach((c) => { c.id = crypto.createHash('sha1').update(c.key).digest('hex'
 out.sort((a, b) => b.score - a.score || (a.date < b.date ? -1 : 1));
 
 fs.mkdirSync('archive/review', { recursive: true });
+// "new since the last run" (PRD s8 stage 3): each candidate keeps the date it was first raised (archive/review/first-seen.json, id to date);
+// the ones this run raised that the previous run did not are listed in archive/review/new-since-last-run.json and counted in the funnel.
+// The first time this runs after the file is missing, the candidates already on disk are the baseline, dated by the previous funnel.
+const prevFile = 'archive/review/candidates.json', FS_FILE = 'archive/review/first-seen.json', today = new Date().toISOString().slice(0, 10);
+const prevList = fs.existsSync(prevFile) ? JSON.parse(fs.readFileSync(prevFile, 'utf8')) : null, prevIds = new Set((prevList || []).map((c) => c.id));
+const prevAt = fs.existsSync('archive/review/funnel.json') ? String(JSON.parse(fs.readFileSync('archive/review/funnel.json', 'utf8')).at || '').slice(0, 10) : '';
+const seen = fs.existsSync(FS_FILE) ? JSON.parse(fs.readFileSync(FS_FILE, 'utf8')) : {};
+if (prevList) for (const c of prevList) if (!seen[c.id]) seen[c.id] = prevAt || today;
+const fresh = prevList ? out.filter((c) => !prevIds.has(c.id)) : [];
+for (const c of out) { if (!seen[c.id]) seen[c.id] = today; c.firstSeen = seen[c.id]; }
+fs.writeFileSync(FS_FILE, JSON.stringify(seen));
+fs.writeFileSync('archive/review/new-since-last-run.json', JSON.stringify({ at: new Date().toISOString(), previousRun: prevAt || null, baseline: !prevList, candidates: out.length, newCount: fresh.length, new: fresh.map((c) => ({ id: c.id, kind: c.kind, region: c.region, name: c.name, date: c.date, docs: c.docs })) }, null, 1));
+console.log(prevList ? `new since the last run (${prevAt || 'unknown date'}): ${fresh.length} of ${out.length} candidates` : 'no previous run on disk: this run is the baseline');
+
 fs.writeFileSync('archive/review/candidates.json', JSON.stringify(out));
 const n = (k) => out.filter((c) => c.kind === k).length, nf = out.filter((c) => !c.found).length;
 const byReg = out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {});
@@ -125,7 +141,7 @@ const funnel = { at: new Date().toISOString(),
   listedNotFetched: fs.existsSync('archive/cables/index.json') ? Math.max(0, JSON.parse(fs.readFileSync('archive/cables/index.json', 'utf8')).cables.length - countLines('archive/cables/docs.jsonl.gz')) : 0,
   // read = documents with a real extraction; rated = those the model rated relevant (1 or more); the cost ledger counts documents sent, which can differ
   read: extracted - placeholders, rated: read, extracted, placeholders, candidates: out.length, byRegion: out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {}), places: n('place'), events: n('event'), speeches: n('speech'), twoOrMore: out.filter((c) => c.docs > 1).length, notFound: nf,
-  costUsd: Math.round(ledger.reduce((s, r) => s + r.usd, 0) * 100) / 100, runs: ledger };
+  newSinceLastRun: prevList ? fresh.length : null, previousRunAt: prevAt || null, costUsd: Math.round(ledger.reduce((s, r) => s + r.usd, 0) * 100) / 100, runs: ledger };
 fs.writeFileSync('archive/review/funnel.json', JSON.stringify(funnel, null, 1));
 const si = process.argv.indexOf('--sql');
 if (si > 0) {

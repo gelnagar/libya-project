@@ -116,4 +116,16 @@ ok('an older review table gets its region column', sql.prepare('PRAGMA table_inf
 ok('the entry id sent with a request is kept, not stripped', !!mine && mine.item === 'abu-salim', JSON.stringify(mine && mine.item));
 ok('the owner can mark a request answered', (await api({ owner: true, correctionDone: c1.j.id }, own, '10.8.0.4')).s === 200 && sql.prepare('SELECT done FROM corrections WHERE id = ?').get(c1.j.id).done === 1);
 
+/* review report (F9): decisions by week, rejections with reasons, time per candidate */
+for (const [id, kind, name] of [['c1', 'place', 'Place One'], ['c2', 'place', 'Place Two'], ['c3', 'event', 'Event Three'], ['c4', 'event', 'Event Four']]) sql.prepare('INSERT INTO cand (id, kind, region, name, date, docs, found, score, data) VALUES (?, ?, ?, ?, ?, 1, 1, 1, ?)').run(id, kind, 'tripoli', name, '1986', '{}');
+const rv = (decide) => api({ owner: true, review: { decide } }, own, '10.9.0.1');
+ok('a decision is saved with the time spent', (await rv({ id: 'c1', verdict: 'approve', ms: 20000 })).s === 200 && (await rv({ id: 'c2', verdict: 'reject', reason: 'Not in Tripoli', ms: 40000 })).s === 200 && (await rv({ id: 'c3', verdict: 'reject', reason: 'Not in Tripoli', ms: 9e9 })).s === 200 && (await rv({ id: 'c4', verdict: 'defer' })).s === 200);
+ok('a time over ten minutes is capped, and a missing time is simply absent', sql.prepare('SELECT ms FROM rtime WHERE id = ?').get('c3').ms === 600000 && !sql.prepare('SELECT ms FROM rtime WHERE id = ?').get('c4'));
+const rp = (await api({ owner: true, review: { report: true } }, own, '10.9.0.1')).j.report;
+ok('the report counts decisions by week', rp && rp.decided === 4 && rp.weeks.length === 1 && /^[0-9]{4}-W[0-9]{2}$/.test(rp.weeks[0].week) && rp.weeks[0].reject === 2 && rp.weeks[0].approve === 1 && rp.weeks[0].defer === 1, JSON.stringify(rp && rp.weeks));
+ok('the report lists each rejection with its reason', rp.rejected.length === 2 && rp.rejected.every((x) => x.reason === 'Not in Tripoli' && x.name) && rp.reasons[0].reason === 'Not in Tripoli' && rp.reasons[0].n === 2);
+ok('the report gives the median time and says how many are unmeasured', rp.time.measured === 3 && rp.time.unmeasured === 1 && rp.time.medianMs === 40000 && rp.time.byVerdict.reject.n === 2, JSON.stringify(rp.time));
+ok('the report needs the owner password', (await api({ owner: true, review: { report: true } }, { 'X-Owner-Code': 'x' }, '10.9.0.2')).s === 401);
+ok('undoing a decision removes its time', (await rv({ id: 'c1', verdict: 'clear' })).s === 200 && !sql.prepare('SELECT ms FROM rtime WHERE id = ?').get('c1') && !sql.prepare('SELECT id FROM decision WHERE id = ?').get('c1'));
+
 console.log(`\n${pass} passed, ${fail} failed`); process.exit(fail ? 1 : 0);

@@ -16,7 +16,7 @@
   <b>Tripoli: Open Source</b><span class="crumb">/ Review queue</span>
   <span class="grow"></span>
   <span id="progress" class="num"></span><span class="meter"><i id="bar"></i></span>
-  <a href="./">Map</a><a href="stats.html">Visitors and costs</a><a href="requests.html">Requests</a>
+  <button type="button" id="rep-btn" title="Decisions by week, rejections with reasons, time per candidate">Report</button><a href="./">Map</a><a href="stats.html">Visitors and costs</a><a href="requests.html">Requests</a>
   <button type="button" id="theme" title="Light or dark">Theme</button>
   <button type="button" id="signout">Sign out</button>
 </header>
@@ -30,6 +30,7 @@
 
 <main id="app" hidden>
   <div id="funnel" class="funnel" hidden aria-label="From documents to approved entries"></div>
+  <section id="report" hidden aria-label="Weekly report"></section>
   <section class="list" aria-label="Candidates">
     <div class="tabs" role="tablist">
       <button type="button" role="tab" id="st-open">To review</button><button type="button" role="tab" id="st-approve">Place it</button><button type="button" role="tab" id="st-unplaced">No location</button><button type="button" role="tab" id="st-defer">Put off</button><button type="button" role="tab" id="st-reject">Rejected</button><button type="button" role="tab" id="st-all">All</button>

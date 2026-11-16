@@ -192,6 +192,8 @@ const STATS_SCHEMA = [
   // review queue (public/review.html): candidates are loaded by scripts/build-review.mjs; decisions are the owner's
   `CREATE TABLE IF NOT EXISTS cand (id TEXT PRIMARY KEY, kind TEXT NOT NULL, region TEXT, name TEXT, date TEXT, docs INTEGER, found INTEGER, score INTEGER, data TEXT)`,
   `CREATE TABLE IF NOT EXISTS decision (id TEXT PRIMARY KEY, verdict TEXT NOT NULL, reason TEXT, note TEXT, at INTEGER)`,
+  // how long the owner spent on each candidate before deciding (milliseconds the page was open and visible, capped), for the weekly report
+  `CREATE TABLE IF NOT EXISTS rtime (id TEXT PRIMARY KEY, ms INTEGER NOT NULL)`,
   `CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC)`,
   `CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)`,
   // wrong-password attempts, by a keyed hash of the address (never the address)
@@ -256,6 +258,10 @@ async function alertNewReport(env, item, origin) {
 /* ---------- the owner dashboard's numbers ---------- */
 /* ---------- owner review queue: candidates found in the archive, each approved, rejected or put off by the owner ---------- */
 const VERDICTS = ['approve', 'unplaced', 'reject', 'defer'];
+const REVIEW_MS_CAP = 600000; // a candidate left open longer than ten minutes counts as ten: the page was probably abandoned, not read
+const median = (a) => { if (!a.length) return null; const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : Math.round((s[m - 1] + s[m]) / 2); };
+// ISO week of a timestamp, as 2026-W47 (weeks start on Monday, UTC)
+const weekOf = (t) => { const d = new Date(t); d.setUTCHours(0, 0, 0, 0); d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7)); const y = d.getUTCFullYear(), n = Math.ceil(((d - Date.UTC(y, 0, 1)) / 864e5 + 1) / 7); return y + '-W' + String(n).padStart(2, '0'); };
 async function ownerReview(env, r) {
   const db = await statsDb(env).catch(() => null);
   if (!db) return { error: 'The database is not connected.' };
@@ -263,8 +269,12 @@ async function ownerReview(env, r) {
   if (r.decide) {
     const id = clip(r.decide.id, 24), v = String(r.decide.verdict || '');
     if (!id) return { error: 'Bad request' };
-    if (v === 'clear') await db.prepare('DELETE FROM decision WHERE id = ?').bind(id).run();
-    else if (VERDICTS.includes(v)) await db.prepare('INSERT OR REPLACE INTO decision (id, verdict, reason, note, at) VALUES (?, ?, ?, ?, ?)').bind(id, v, clip(r.decide.reason, 60), clip(r.decide.note, 800), Date.now()).run();
+    if (v === 'clear') await db.batch([db.prepare('DELETE FROM decision WHERE id = ?').bind(id), db.prepare('DELETE FROM rtime WHERE id = ?').bind(id)]);
+    else if (VERDICTS.includes(v)) {
+      const ms = Number(r.decide.ms), stmts = [db.prepare('INSERT OR REPLACE INTO decision (id, verdict, reason, note, at) VALUES (?, ?, ?, ?, ?)').bind(id, v, clip(r.decide.reason, 60), clip(r.decide.note, 800), Date.now())];
+      if (Number.isFinite(ms) && ms >= 0) stmts.push(db.prepare('INSERT OR REPLACE INTO rtime (id, ms) VALUES (?, ?)').bind(id, Math.min(Math.round(ms), REVIEW_MS_CAP)));
+      await db.batch(stmts);
+    }
     else return { error: 'Bad request' };
     return { ok: true };
   }
@@ -273,6 +283,24 @@ async function ownerReview(env, r) {
     if (!row) return { error: 'Not found' };
     let cand = null; try { cand = JSON.parse(row.data); } catch {}
     return { cand, decision: row.verdict ? { verdict: row.verdict, reason: row.reason, note: row.note, at: row.at } : null };
+  }
+  if (r.report) {
+    // decisions by week, every rejection with its reason, and the time spent per candidate (PRD s10, s12)
+    const [dec, tm] = await db.batch([
+      db.prepare('SELECT d.id, d.verdict, d.reason, d.note, d.at, c.kind, c.name, c.date, c.region FROM decision d LEFT JOIN cand c ON c.id = d.id ORDER BY d.at DESC LIMIT 5000'),
+      db.prepare('SELECT t.ms, d.verdict FROM rtime t JOIN decision d ON d.id = t.id')
+    ]);
+    const rows = dec.results || [], times = tm.results || [], weeks = {}, reasons = {};
+    for (const x of rows) { const k = weekOf(x.at), w = weeks[k] || (weeks[k] = { week: k, decided: 0, approve: 0, unplaced: 0, reject: 0, defer: 0 }); w.decided++; w[x.verdict]++; if (x.verdict === 'reject') { const q = x.reason || 'no reason given'; reasons[q] = (reasons[q] || 0) + 1; } }
+    const ms = times.map((x) => x.ms), byVerdict = {};
+    for (const v of VERDICTS) { const a = times.filter((x) => x.verdict === v).map((x) => x.ms); if (a.length) byVerdict[v] = { n: a.length, medianMs: median(a) }; }
+    return { report: {
+      decided: rows.length,
+      weeks: Object.values(weeks).sort((a, b) => (a.week < b.week ? 1 : -1)),
+      rejected: rows.filter((x) => x.verdict === 'reject').slice(0, 1000).map((x) => ({ id: x.id, kind: x.kind, name: x.name, date: x.date, region: x.region, reason: x.reason || '', note: x.note || '', at: x.at })),
+      reasons: Object.entries(reasons).map(([reason, n]) => ({ reason, n })).sort((a, b) => b.n - a.n),
+      time: { measured: ms.length, unmeasured: rows.length - ms.length, medianMs: median(ms), meanMs: ms.length ? Math.round(ms.reduce((s, v) => s + v, 0) / ms.length) : null, totalMs: ms.reduce((s, v) => s + v, 0), capMs: REVIEW_MS_CAP, byVerdict }
+    } };
   }
   if (r.export) {
     const rows = await db.prepare("SELECT c.data, d.verdict, d.note, d.at FROM decision d JOIN cand c ON c.id = d.id WHERE d.verdict IN ('approve', 'unplaced') ORDER BY d.at").all();

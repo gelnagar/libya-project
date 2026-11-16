@@ -18,6 +18,10 @@
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.error) { var e = new Error(j.error || r.status); e.code = r.status; throw e; } return j; }); });
   }
 
+  // review time: milliseconds the page was visible between opening a candidate and deciding it (the server caps it)
+  var openedAt = 0, hiddenAt = 0, hiddenMs = 0;
+  document.addEventListener('visibilitychange', function () { if (document.hidden) hiddenAt = Date.now(); else if (hiddenAt) { hiddenMs += Date.now() - hiddenAt; hiddenAt = 0; } });
+  function spent() { return Math.max(0, Date.now() - openedAt - hiddenMs - (hiddenAt ? Date.now() - hiddenAt : 0)); }
   var state = { status: 'open', kind: '', region: '', q: '', multi: false }, items = [], cur = -1, curCand = null, more = false;
   var VERDICT = { approve: 'Approved: place it', unplaced: 'Approved: no location', reject: 'Rejected', defer: 'Put off' };
   var FOUND = { exact: ['Name is in the text', 'ok'], word: ['Part of the name is in the text', 'warn'], none: ['Name not found in the text', 'bad'], 'no-text': ['No stored text', 'bad'] };
@@ -77,7 +81,7 @@
   }
   function open(i) {
     if (i < 0 || i >= items.length) return;
-    cur = i;
+    cur = i; openedAt = Date.now(); hiddenMs = 0; hiddenAt = document.hidden ? openedAt : 0;
     [].forEach.call($('rows').children, function (tr, k) { tr.setAttribute('aria-selected', k === i ? 'true' : 'false'); if (k === i && tr.scrollIntoView) tr.scrollIntoView({ block: 'nearest' }); });
     var id = items[i].id; $('detail').innerHTML = ''; $('detail').appendChild(el('p', { class: 'empty', text: 'Loading…' }));
     call({ get: id }).then(function (j) { if (items[cur] && items[cur].id === id) draw(j.cand, j.decision); }).catch(function (e) { msg('Could not open: ' + e.message); });
@@ -122,7 +126,7 @@
     var it = items[cur], reason = v === 'reject' ? $('reason').value : '';
     if (v === 'reject' && !reason) { msg('Pick a reason for the rejection first.'); $('reason').focus(); return; }
     msg('Saving…');
-    call({ decide: { id: it.id, verdict: v, reason: reason, note: $('note').value } }).then(function () {
+    call({ decide: { id: it.id, verdict: v, reason: reason, note: $('note').value, ms: v === 'clear' || !openedAt ? undefined : spent() } }).then(function () {
       msg(v === 'clear' ? 'Decision removed.' : VERDICT[v] + '.');
       it.verdict = v === 'clear' ? null : v;
       var keep = state.status === 'all' || (v !== 'clear' && state.status === v);
@@ -142,6 +146,27 @@
   $('rows').addEventListener('click', function (e) { var tr = e.target.closest('tr'); if (tr) open(+tr.getAttribute('data-i')); });
   $('rows').addEventListener('keydown', function (e) { var tr = e.target.closest('tr'); if (tr && e.key === 'Enter') open(+tr.getAttribute('data-i')); });
   [['approve', 'approve'], ['unplaced', 'unplaced'], ['reject', 'reject'], ['defer', 'defer'], ['undo', 'clear']].forEach(function (b) { $(b[0]).onclick = function () { decide(b[1]); }; });
+  // the weekly report: decisions by week, every rejection with its reason, time per candidate
+  var reportData = null;
+  function dur(ms) { if (ms == null) return 'not measured'; var s = Math.round(ms / 1000); return s < 60 ? s + ' s' : Math.floor(s / 60) + ' min ' + String(s % 60).padStart(2, '0') + ' s'; }
+  function table(head, rows) { return el('table', {}, [el('thead', {}, [el('tr', {}, head.map(function (h) { return el('th', { text: h }); }))]), el('tbody', {}, rows.map(function (r) { return el('tr', {}, r.map(function (c) { return el('td', { text: c == null ? '' : String(c) }); })); }))]); }
+  function drawReport(R) {
+    var box = $('report'); box.innerHTML = ''; reportData = R;
+    var t = R.time;
+    box.appendChild(el('div', { class: 'bar' }, [el('b', { text: 'Report' }), el('span', { class: 'note', text: R.decided + ' decisions in all.' }), el('span', { class: 'grow' }), el('button', { type: 'button', id: 'rep-dl', text: 'Download JSON', onclick: function () { var a = el('a', { href: URL.createObjectURL(new Blob([JSON.stringify(R, null, 1)], { type: 'application/json' })), download: 'review-report.json' }); document.body.appendChild(a); a.click(); a.remove(); } })]));
+    box.appendChild(el('h2', { text: 'Decisions by week' }));
+    box.appendChild(R.weeks.length ? table(['Week (Mon to Sun, UTC)', 'Decided', 'Approved: place', 'Approved: no location', 'Rejected', 'Put off'], R.weeks.map(function (w) { return [w.week, w.decided, w.approve, w.unplaced, w.reject, w.defer]; })) : el('p', { class: 'note', text: 'Nothing decided yet.' }));
+    box.appendChild(el('h2', { text: 'Review time per candidate' }));
+    box.appendChild(el('p', { class: 'note', text: t.measured ? 'Median ' + dur(t.medianMs) + ', mean ' + dur(t.meanMs) + ', total ' + dur(t.totalMs) + ' over ' + t.measured + ' candidates. Time counts only while this page is visible and stops at ' + dur(t.capMs) + ' per candidate. ' + (t.unmeasured ? t.unmeasured + ' earlier decisions have no time recorded.' : '') : 'No time recorded yet: it is measured from the first decision made after this version is live.' + (R.decided ? ' ' + R.decided + ' earlier decisions have none.' : '')}));
+    var bv = Object.keys(t.byVerdict || {}); if (bv.length) box.appendChild(table(['Verdict', 'Candidates', 'Median time'], bv.map(function (k) { return [VERDICT[k] || k, t.byVerdict[k].n, dur(t.byVerdict[k].medianMs)]; })));
+    box.appendChild(el('h2', { text: 'Rejected, and why' }));
+    if (R.reasons.length) box.appendChild(table(['Reason', 'Rejected'], R.reasons.map(function (x) { return [x.reason, x.n]; })));
+    box.appendChild(R.rejected.length ? el('div', { style: 'margin-top:10px' }, [table(['Kind', 'Date', 'Candidate', 'Region', 'Reason', 'Note', 'Decided'], R.rejected.map(function (x) { return [x.kind, x.date, x.name, x.region, x.reason, x.note, new Date(x.at).toISOString().slice(0, 10)]; }))]) : el('p', { class: 'note', text: 'Nothing rejected yet.' }));
+  }
+  $('rep-btn').onclick = function () {
+    var on = $('app').classList.toggle('rep'); $('report').hidden = !on; this.setAttribute('aria-pressed', on ? 'true' : 'false');
+    if (on) { $('report').textContent = 'Loading…'; call({ report: true }).then(function (j) { drawReport(j.report); }).catch(function (e) { $('report').textContent = 'Could not load the report: ' + e.message; }); }
+  };
   $('signout').onclick = function () { setCode(''); location.reload(); };
   $('theme').onclick = function () { var d = document.documentElement, t = d.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; d.setAttribute('data-theme', t); try { localStorage.setItem('atlas.theme', JSON.stringify(t)); } catch (e) {} };
   document.addEventListener('keydown', function (e) {

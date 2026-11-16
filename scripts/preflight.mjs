@@ -46,7 +46,7 @@ if (m && quoted) say(+quoted === +m[1] ? 'PASS' : 'FAIL', `CLAUDE.md quotes ${qu
 const tt = run(['scripts/test-timeline.mjs']), tm = tt.out.match(/(\d+) passed, (\d+) failed/);
 say(tm && tm[2] === '0' && tt.ok ? 'PASS' : 'FAIL', `timeline: ${tm ? tm[1] + ' passed, ' + tm[2] + ' failed' : 'did not run'} (dates read from text; no record dropped)`, tm && tm[2] !== '0' ? tt.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
 
-const ts = run(['scripts/test-search.mjs']), tsm = ts.out.match(/(d+) passed, (d+) failed/);
+const ts = run(['scripts/test-search.mjs']), tsm = ts.out.match(/(\d+) passed, (\d+) failed/);
 say(tsm && tsm[2] === '0' && ts.ok ? 'PASS' : 'FAIL', `search spelling variants: ${tsm ? tsm[1] + ' passed, ' + tsm[2] + ' failed' : 'did not run'}`);
 
 const ev = run(['scripts/check-evidence.mjs']), em = ev.out.match(/(\d+) documented killing entries; (\d+) have two or more publishers; (\d+) rest on one/);
@@ -71,7 +71,7 @@ const hdr = fs.existsSync('public/_headers') ? fs.readFileSync('public/_headers'
 say(/script-src 'self'/.test(hdr) && !/script-src[^;\n]*unsafe-inline/.test(hdr) ? 'PASS' : 'FAIL', "public/_headers: scripts only from the site itself");
 
 // 7b. no page asks Google for fonts (PRD s9: visitors' addresses stay with us)
-{ const hit = fs.readdirSync('public').filter((f) => /.(html|css|js)$/.test(f)).filter((f) => /fonts.(googleapis|gstatic).com/.test(fs.readFileSync('public/' + f, 'utf8'))); say(hit.length || /googleapis|gstatic/.test(hdr) ? 'FAIL' : 'PASS', 'fonts are served from the site itself, not Google', hit.join(', ')); }
+{ const hit = fs.readdirSync('public').filter((f) => /\.(html|css|js)$/.test(f)).filter((f) => /fonts\.(googleapis|gstatic)\.com/.test(fs.readFileSync('public/' + f, 'utf8'))); say(hit.length || /googleapis|gstatic/.test(hdr) ? 'FAIL' : 'PASS', 'fonts are served from the site itself, not Google', hit.join(', ')); }
 
 // 8a. every layer has an icon
 try { const lay = load('public/data/sites.js').ATLAS_LAYERS, ic = (() => { const w = {}; vm.runInNewContext(fs.readFileSync('public/layer-icons.js', 'utf8'), { window: w }); return w.ATLAS_ICONS; })(); const miss = Object.keys(lay).filter((k) => !ic[k]); say(miss.length ? 'FAIL' : 'PASS', `layer icons: ${Object.keys(lay).length} layers, ${miss.length} without an icon`, miss.join(', ')); } catch (e) { say('FAIL', 'could not check layer icons', e.message); }

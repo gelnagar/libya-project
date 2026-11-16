@@ -19,7 +19,7 @@
     ['place', 'Places'], ['mapped', 'On the map'], ['event', 'Events'], ['unknown', 'Unidentified']];
   function picOf(n) { return n.pic === 'place' && /air ?field|air ?base|airport/i.test(n.name) ? 'airfield' : (PICS[n.pic] ? n.pic : 'unknown'); }
   function famOf(p) { return { leader: 'official', person: 'unknown', airfield: 'place' }[p] || p; }
-  function caseNo(i) { return 'UNK-' + String(i + 1).padStart(4, '0'); }
+  function caseNo(i) { return 'OBJ-' + String(i + 1).padStart(4, '0'); }
   function size(n) { return Math.round(36 + Math.min(44, Math.sqrt(n.n) * 9)); }
 
   /* a small picture for lists and the panel header */
@@ -39,11 +39,11 @@
     D.edges.forEach(function (e, i) { adj[e.s].push(i); adj[e.t].push(i); });
     root = h('div', { id: 'unknown', role: 'region', 'aria-label': 'Intelligence: people and groups linked in the files', hidden: '' });
     var head = h('div', { class: 'un-head' }, [
-      h('div', { class: 'un-title' }, [h('h2', { text: 'Intelligence' }), h('p', { text: 'People, groups and places beyond Tripoli that the declassified files tie together. Real pictures appear where a free one exists; the rest are stand-ins, not likenesses.' })]),
+      h('div', { class: 'un-title' }, [h('h2', { text: 'Intelligence' }), h('p', { text: 'Entity graph. People, groups and places outside the map, linked by declassified documents. Icons are symbolic unless a free photograph exists; none is a likeness.' })]),
       h('div', { class: 'un-tools' }, [
-        h('input', { type: 'search', id: 'un-q', placeholder: 'Find a name', 'aria-label': 'Find a name in Intelligence', autocomplete: 'off' }),
-        h('button', { class: 'btn', type: 'button', id: 'un-fit', text: 'Show all' }),
-        h('button', { class: 'btn primary', type: 'button', id: 'un-back', text: 'Back to the map' })])
+        h('input', { type: 'search', id: 'un-q', placeholder: 'Search objects', 'aria-label': 'Search objects in Intelligence', autocomplete: 'off' }),
+        h('button', { class: 'btn', type: 'button', id: 'un-fit', text: 'Fit view' }),
+        h('button', { class: 'btn primary', type: 'button', id: 'un-back', text: 'Return to map' })])
     ]);
     svg = el('svg', { class: 'un-svg', role: 'img', 'aria-label': D.nodes.length + ' entities and ' + D.edges.length + ' links' });
     var defs = el('defs', {});
@@ -184,7 +184,7 @@
   function why(ei) {
     var e = D.edges[ei], a = D.nodes[e.s], b = D.nodes[e.t];
     sel = null; hover = null; paint(); edgeEls.forEach(function (x, k) { x.classList.toggle('on', k === ei); });
-    API.conn({ key: 'u:' + a.id + '|' + b.id, kicker: 'Link in the files', ends: [{ name: a.name, pic: picSvg(a, 64), open: function () { select(e.s, true); } }, { name: b.name, pic: picSvg(b, 64), open: function () { select(e.t, true); } }],
+    API.conn({ key: 'u:' + a.id + '|' + b.id, kicker: 'Link', ends: [{ name: a.name, pic: picSvg(a, 64), open: function () { select(e.s, true); } }, { name: b.name, pic: picSvg(b, 64), open: function () { select(e.t, true); } }],
       level: e.n + ' document' + (e.n === 1 ? '' : 's'), why: e.why, docs: e.docs, same: 'person' });
   }
 
@@ -194,29 +194,29 @@
     var n = D.nodes[i], p = picOf(n);
     var docs = {}, links = adj[i].map(function (ei) { var e = D.edges[ei]; e.docs.forEach(function (d) { docs[d.id] = d; }); return { e: e, other: e.s === i ? e.t : e.s }; });
     links.sort(function (a, b) { return b.e.n - a.e.n; });
-    API.sheet('Intelligence', picSvg(n, 40), function (body) {
+    API.sheet('Object', picSvg(n, 40), function (body) {
       body.appendChild(h('div', {}, [h('h1', { class: 'd-title', text: n.name })]));
       body.appendChild(h('div', { class: 'un-portrait', html: picSvg(n, 132) }, [h('span', { class: 'un-case', text: caseNo(i) })]));
-      body.appendChild(API.facts([['What it is', PIC_LABEL[p]], ['Role in the files', (n.roles || []).join('; ')], ['Also called', (n.aka || []).join(', ')],
-        ['Documents', n.n], ['Years in the files', n.y0 ? (n.y1 && n.y1 !== n.y0 ? n.y0 + '–' + n.y1 : String(n.y0)) : ''], ['Connections', links.length], ['Case file', caseNo(i)]]));
+      body.appendChild(API.facts([['Object type', PIC_LABEL[p]], ['Roles', (n.roles || []).join('; ')], ['Aliases', (n.aka || []).join(', ')],
+        ['Documents', n.n], ['Date range', n.y0 ? (n.y1 && n.y1 !== n.y0 ? n.y0 + '–' + n.y1 : String(n.y0)) : ''], ['Links', links.length], ['Object ID', caseNo(i)]]));
       if (n.img || n.wiki) body.appendChild(h('p', { class: 'un-credit' }, [
         n.img ? h('span', { text: 'Picture: ' + n.img.artist + ', ' + n.img.lic + ', ' }) : null, n.img ? h('a', { href: n.img.url, target: '_blank', rel: 'noopener', text: 'Wikimedia Commons' }) : null,
         n.img && n.wiki ? h('span', { text: '. ' }) : null, n.wiki ? h('a', { href: n.wiki, target: '_blank', rel: 'noopener', text: 'Wikipedia article' }) : null]));
-      if (n.map) body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn primary', text: 'Show on the Tripoli map', onclick: function () { close(); API.openPlace(n.map); } })]));
+      if (n.map) body.appendChild(h('div', { class: 'row-btns' }, [h('button', { class: 'btn primary', text: 'Open on map', onclick: function () { close(); API.openPlace(n.map); } })]));
       var box = h('div', { class: 'links un-links' });
       links.forEach(function (x) {
         var o = D.nodes[x.other];
         box.appendChild(h('div', { class: 'un-lrow' }, [h('button', { onclick: function () { select(x.other, true); } }, [h('span', { class: 'un-mini', html: picSvg(o, 30) }), h('span', {}, [o.name, h('small', { text: x.e.why[0] || '' })])]),
           h('button', { class: 'un-why', type: 'button', title: 'Why are these connected?', 'aria-label': 'Why are ' + n.name + ' and ' + o.name + ' connected?', text: 'Why?', onclick: function () { why(D.edges.indexOf(x.e)); } })]));
       });
-      body.appendChild(API.section('Linked in the files', [box]));
+      body.appendChild(API.section('Links', [box]));
       var list = h('ol', { class: 'srcs un-docs' });
       Object.keys(docs).map(function (k) { return docs[k]; }).sort(function (a, b) { return String(a.d).localeCompare(String(b.d)); }).forEach(function (d) {
         var li = h('li', {}, [h('a', { href: d.u, target: '_blank', rel: 'noopener', text: d.t }), d.d ? h('small', { text: ' ' + String(d.d).slice(0, 10) }) : null]);
         if (d.r) API.recordExists(d.r).then(function (ok) { if (ok) li.appendChild(h('button', { class: 'linkish', type: 'button', text: 'Open in archive', onclick: function () { API.openRecordById(d.r); } })); });
         list.appendChild(li);
       });
-      body.appendChild(API.section('In the files', [list]));
+      body.appendChild(API.section('Source documents', [list]));
       body.appendChild(API.section('How this was made', [h('p', { class: 'd-text', text: 'Claude Haiku read each document and noted who or what it connects. Spellings were merged where they clearly name the same person. The picture only shows the kind of entity; nobody’s face is known or drawn.' })]));
     });
   }

@@ -103,14 +103,14 @@
      CARTO's grey maps now show an "API key required" watermark, Esri's were unreliable, and OSM needs no key. */
   var OSM_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
   var BASEMAPS = {
-    light: { name: 'Light', note: 'Clean grey map', layers: [L.tileLayer(OSM_URL, { maxZoom: 19, className: 'tiles-light', attribution: OSM_ATTR })] },
-    dark: { name: 'Dark', note: 'Night view', layers: [L.tileLayer(OSM_URL, { maxZoom: 19, className: 'tiles-dark', attribution: OSM_ATTR })] },
-    satellite: { name: 'Satellite', note: 'Photos from above', layers: [
+    light: { name: 'Light', note: 'Neutral', layers: [L.tileLayer(OSM_URL, { maxZoom: 19, className: 'tiles-light', attribution: OSM_ATTR })] },
+    dark: { name: 'Dark', note: 'Low light', layers: [L.tileLayer(OSM_URL, { maxZoom: 19, className: 'tiles-dark', attribution: OSM_ATTR })] },
+    satellite: { name: 'Satellite', note: 'Aerial imagery', layers: [
       L.tileLayer(ESRI + 'World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 18, maxZoom: 19, attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics' }),
       L.tileLayer(ESRI + 'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 18, maxZoom: 19 })
     ] },
-    street: { name: 'Streets', note: 'Roads & buildings', layers: [L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: OSM_ATTR })] },
-    terrain: { name: 'Terrain', note: 'Hills, wadis, coast', layers: [L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { subdomains: 'abc', maxNativeZoom: 17, maxZoom: 19, attribution: OSM_ATTR + ', SRTM | &copy; <a href="https://opentopomap.org">OpenTopoMap</a>' })] }
+    street: { name: 'Streets', note: 'Road network', layers: [L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: OSM_ATTR })] },
+    terrain: { name: 'Terrain', note: 'Relief', layers: [L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { subdomains: 'abc', maxNativeZoom: 17, maxZoom: 19, attribution: OSM_ATTR + ', SRTM | &copy; <a href="https://opentopomap.org">OpenTopoMap</a>' })] }
   };
   var currentBase = null;
   function setBase(key) {
@@ -133,9 +133,9 @@
       [h('span', { class: 'thumb' + (k === 'light' || k === 'dark' ? ' tiles-' + k : ''), style: 'background-image:url(' + tile + ')' }), h('span', { class: 'nm', text: BASEMAPS[k].name }), h('small', { text: BASEMAPS[k].note })]));
   });
 
-  $('basemaps').appendChild(h('button', { 'data-key': 'unknown', 'aria-pressed': 'false', title: 'People and groups linked in the files, on a separate black plane', onclick: function () { if (window.ATLAS_UNKNOWN_OPEN) window.ATLAS_UNKNOWN_OPEN(); } },
+  $('basemaps').appendChild(h('button', { 'data-key': 'unknown', 'aria-pressed': 'false', title: 'Entity graph of people, groups and places linked in the declassified files', onclick: function () { if (window.ATLAS_UNKNOWN_OPEN) window.ATLAS_UNKNOWN_OPEN(); } },
     [h('span', { class: 'thumb un-thumb', html: '<svg viewBox="0 0 100 60" aria-hidden="true"><path d="M14 44 38 18 62 40 86 14M38 18 50 50M62 40 86 46" stroke="#5a5650" stroke-width="1.6" fill="none"/><rect x="8" y="38" width="12" height="12" fill="#26262a" stroke="#4a4a50"/><rect x="32" y="12" width="12" height="12" fill="#26262a" stroke="#4a4a50"/><rect x="56" y="34" width="12" height="12" fill="#26262a" stroke="#4a4a50"/><rect x="80" y="8" width="12" height="12" fill="#26262a" stroke="#b0405c"/><rect x="44" y="44" width="12" height="12" fill="#26262a" stroke="#4a4a50"/><rect x="80" y="40" width="12" height="12" fill="#26262a" stroke="#4a4a50"/></svg>' }),
-     h('span', { class: 'nm', text: 'Intelligence' }), h('small', { text: 'People and groups in the files' })]));
+     h('span', { class: 'nm', text: 'Intelligence' }), h('small', { text: 'Entity graph: people, groups, places' })]));
 
   /* ---------- state ---------- */
   var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, battle: true, massacre: true, power: true, landmark: true, districts: true, rings: true, labels: true, grid: true, timeline: true };
@@ -419,7 +419,7 @@
   map.on('move zoom resize viewreset zoomend moveend', clipOverlays);
   if (OVERLAYS.length) {
     var hb = h('button', { 'data-key': 'historical', style: 'grid-column:1 / -1', 'aria-pressed': 'false', 'aria-haspopup': 'dialog', onclick: function () { $('hist-modal').hidden = false; $('hist-close').focus(); } },
-      [h('span', { class: 'thumb', style: 'background:#14171c url(img/federation-1971.jpg) 60% 40% / cover no-repeat;height:170px' }), h('span', { class: 'nm', text: 'Historical' }), h('small', { text: 'Old maps and satellite, 1943–1990' })]);
+      [h('span', { class: 'thumb', style: 'background:#14171c url(img/federation-1971.jpg) 60% 40% / cover no-repeat;height:170px' }), h('span', { class: 'nm', text: 'Historical Satellite Data' }), h('small', { text: 'Declassified film and old maps, 1943–1990' })]);
     $('basemaps').appendChild(hb);
     var closeHist = function () { $('hist-modal').hidden = true; };
     $('hist-close').onclick = closeHist;
@@ -432,16 +432,16 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('hist-modal').hidden) closeHist(); });
     OVERLAYS.forEach(function (o) {
       var cb = h('input', { type: 'checkbox', id: 'om-' + o.id }); inputs['om-' + o.id] = cb;
-      var rng = h('input', { type: 'range', min: '0.2', max: '1', step: '0.05', value: String(overlayOpacity[o.id] != null ? overlayOpacity[o.id] : 0.85), 'aria-label': 'See-through amount for the ' + o.year + ' map' });
+      var rng = h('input', { type: 'range', min: '0.2', max: '1', step: '0.05', value: String(overlayOpacity[o.id] != null ? overlayOpacity[o.id] : 0.85), 'aria-label': 'Opacity of the ' + o.year + ' layer' });
       cb.addEventListener('change', function () { setOverlay(o.id, cb.checked); if (cb.checked && !map.getBounds().intersects(o.bounds)) map.flyToBounds(o.bounds, { duration: 0.8 }); });
       rng.addEventListener('input', function () { overlayOpacity[o.id] = +rng.value; store.set('omapsOp', overlayOpacity); if (overlayLayers[o.id]) overlayLayers[o.id].setOpacity(+rng.value); });
       $('old-maps').appendChild(h('div', { class: 'omap' }, [
         h('label', { class: 'row', for: 'om-' + o.id }, [cb, h('span', { class: 't' }, [o.title, h('small', { text: o.note || o.source })]), h('span', { class: 'yr', text: String(o.year) })]),
-        h('div', { class: 'op' }, [h('span', { text: 'See-through' }), rng])
+        h('div', { class: 'op' }, [h('span', { text: 'Opacity' }), rng])
       ]));
       if (overlayOn[o.id]) setOverlay(o.id, true);
     });
-    $('old-maps').appendChild(toggleRow('swipe', 'Compare with today', 'Drag the handle across the map: old map on the left, today on the right', false, function (v) { setSwipe(v); }));
+    $('old-maps').appendChild(toggleRow('swipe', 'Swipe against current imagery', 'Drag the handle: historical layer left, current imagery right', false, function (v) { setSwipe(v); }));
   }
   // Time period: the same historical periods as the timeline; one at a time, or all years
   periods.pre = periods.main = periods.post = true;
@@ -3136,7 +3136,7 @@
         setWhat(on);
       } }); b.dataset.k = w[0]; whatBox.appendChild(b); return b;
     });
-    filt.all = h('button', { 'aria-pressed': 'false', text: 'Everything', onclick: function () { setWhat([]); } }); whatBox.insertBefore(filt.all, whatBox.firstChild);
+    filt.all = h('button', { 'aria-pressed': 'false', text: 'All types', onclick: function () { setWhat([]); } }); whatBox.insertBefore(filt.all, whatBox.firstChild);
     var lab = h('div', { class: 'f-when-lab' }), from = h('input', { type: 'range', min: '1905', max: '2026', 'aria-label': 'From year' }), to = h('input', { type: 'range', min: '1905', max: '2026', 'aria-label': 'To year' });
     from.oninput = to.oninput = function () { lab.textContent = Math.min(+from.value, +to.value) + ' – ' + Math.max(+from.value, +to.value); };
     from.onchange = to.onchange = function () { setWhen([+from.value, +to.value]); };
@@ -3146,9 +3146,9 @@
       var b = h('button', { 'aria-pressed': 'false', text: p[0], title: p[1] + '–' + p[2], onclick: function () { stopPlay(); timeRange = null; timeYear = null; var same = whenRange[0] === p[1] && whenRange[1] === p[2] && p[0] !== 'Gaddafi years'; setWhen(same ? [1969, 2011] : [p[1], p[2]]); } }); b.dataset.r = p[1] + '-' + p[2]; return b; }));
     filt.pre = presets;
     var sec = h('div', { class: 'sec filters' }, [
-      h('h3', { text: 'What' }), whatBox,
-      h('h3', { text: 'When' }), lab, h('div', { class: 'f-when' }, [h('span', { text: 'From' }), from, h('span', { text: 'To' }), to]), presets,
-      h('p', { class: 'grp-help', text: 'Drag the sliders, or tap a period to jump to it. Each place shows how well it is sourced when you open it.' })
+      h('h3', { text: 'Object type' }), whatBox,
+      h('h3', { text: 'Date range' }), lab, h('div', { class: 'f-when' }, [h('span', { text: 'From' }), from, h('span', { text: 'To' }), to]), presets,
+      h('p', { class: 'grp-help', text: 'Drag the sliders or select a period. Evidence level and sources show on each object.' })
     ]);
     body.insertBefore(sec, body.firstChild);
     // tuck the map styles, named periods and the detailed chooser away
@@ -3159,7 +3159,7 @@
       if (t === 'Time period') { x.style.display = 'none'; return; }
       if (t === 'Map style') { body.insertBefore(x, body.firstChild); return; }
       if (t === 'What to show') {
-        var d = h('details', { class: 'sec more' }, [h('summary', { text: 'Pick layers one by one' })]);
+        var d = h('details', { class: 'sec more' }, [h('summary', { text: 'Individual layers' })]);
         hd.remove(); while (x.firstChild) d.appendChild(x.firstChild); x.replaceWith(d);
       }
     });

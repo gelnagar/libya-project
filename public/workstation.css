@@ -597,3 +597,44 @@ html[data-theme] .trow { align-items: start; }
 html[data-theme] .trow .tt { min-width: 0; overflow-wrap: anywhere; }
 
 #places [hidden] { display: none !important; }
+
+/* ---------- 11. Intelligence: the entity graph in the workstation look ----------
+   Same tokens as the rest of the shell (both themes): flat panel header with a 1px rule, mono object IDs, accent for selection,
+   square nodes with 1px frames, no grain, no vignette. The symbolic pictures keep their own dark tones inside a 1px frame. */
+html[data-theme] #unknown { background: var(--bg-app); color: var(--text); background-image: radial-gradient(var(--border) 1px, transparent 1px); background-size: 24px 24px; }
+html[data-theme] #unknown .un-grain { display: none; }
+html[data-theme] #unknown .un-head { padding: 0; gap: 0; align-items: stretch; flex-wrap: nowrap; background: var(--bg-panel); border-bottom: 1px solid var(--border); height: var(--bar-h); }
+html[data-theme] #unknown .un-title { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 0 12px; }
+html[data-theme] #unknown .un-title h2 { margin: 0; font: 600 13px/1 var(--f-ui); letter-spacing: 0; color: var(--text); white-space: nowrap; }
+html[data-theme] #unknown .un-title p { margin: 0; max-width: none; font-size: 12px; line-height: 1.2; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+html[data-theme] #unknown .un-tools { align-items: center; gap: 6px; padding: 0 8px; flex-wrap: nowrap; flex: none; }
+html[data-theme] #unknown .un-tools input { height: 24px; min-width: 200px; padding: 0 8px; background: var(--bg-app); color: var(--text); border: 1px solid var(--border-strong); border-radius: 2px; font: 12px var(--f-ui); }
+html[data-theme] #unknown .un-tools input:focus { outline: none; border-color: var(--accent); }
+html[data-theme] #unknown .btn { height: 24px; padding: 0 10px; background: var(--bg-raised); color: var(--text); border: 1px solid var(--border-strong); border-radius: 2px; font: 12px var(--f-ui); }
+html[data-theme] #unknown .btn:hover { background: var(--bg-hover); }
+html[data-theme] #unknown .btn.primary { background: var(--accent-strong); color: #fff; border-color: var(--accent-strong); }
+html[data-theme] #unknown .btn.primary:hover { background: var(--accent); }
+html[data-theme] #unknown .un-e { stroke: var(--border-strong); opacity: .55; }
+html[data-theme] #unknown .un-e.hot, html[data-theme] #unknown .un-e.on { stroke: var(--accent); opacity: 1; }
+html[data-theme] #unknown .un-n .shadow { display: none; }
+html[data-theme] #unknown .un-n .frame { stroke: var(--border-strong); stroke-width: 1; }
+html[data-theme] #unknown .un-n.f-mapped .frame { stroke: var(--ok); }
+html[data-theme] #unknown .un-n:hover .frame, html[data-theme] #unknown .un-n:focus-visible .frame, html[data-theme] #unknown .un-n.hot .frame { stroke: var(--text); }
+html[data-theme] #unknown .un-n.sel .frame { stroke: var(--accent); stroke-width: 2; }
+html[data-theme] #unknown .un-n .cn { fill: var(--text-faint); font-family: var(--f-mono) !important; font-size: 9px; letter-spacing: 0; }
+html[data-theme] #unknown .un-n .nm { fill: var(--text); font-size: 11px; font-weight: 500; stroke: var(--bg-app); stroke-width: 3px; }
+html[data-theme] #unknown .un-legend { left: 8px; bottom: 8px; gap: 4px; max-width: 760px; }
+html[data-theme] #unknown .un-legend button { padding: 2px 8px 2px 2px; background: var(--bg-panel); color: var(--text); border: 1px solid var(--border); border-radius: 2px; font: 12px var(--f-ui); }
+html[data-theme] #unknown .un-legend button:hover { background: var(--bg-hover); }
+html[data-theme] #unknown .un-legend button small { color: var(--text-faint); font-family: var(--f-mono) !important; }
+html[data-theme] #unknown .un-legend button[aria-pressed="true"] { border-color: var(--accent); background: var(--tint); }
+html[data-theme] #unknown .un-note { color: var(--text-faint); font-size: 11px; }
+html[data-theme] .un-portrait svg { border: 1px solid var(--border-strong); }
+html[data-theme] .un-portrait .un-case { background: var(--bg-panel); color: var(--text-muted); font-family: var(--f-mono) !important; border: 1px solid var(--border); }
+html[data-theme] .un-links .un-mini svg { border: 1px solid var(--border-strong); }
+html[data-theme] .un-lrow .un-why { border: 1px solid var(--border-strong) !important; color: var(--accent); border-radius: 2px; }
+@media (max-width: 899px) {
+  html[data-theme] #unknown .un-head { height: auto; flex-wrap: wrap; padding: 6px 8px; gap: 6px; }
+  html[data-theme] #unknown .un-title { padding: 0; } html[data-theme] #unknown .un-title p { display: none; }
+  html[data-theme] #unknown .un-tools { padding: 0; width: 100%; flex-wrap: wrap; } html[data-theme] #unknown .un-tools input { flex: 1; min-width: 0; }
+}

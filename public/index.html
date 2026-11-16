@@ -477,37 +477,37 @@ details.more[open] > summary::after { content: '–'; }
 <div id="timeline" role="group" aria-label="Timeline of events"></div>
 <footer id="statusbar" aria-label="Status"><span id="sb-pos" title="Position under the pointer">–</span><span id="sb-zoom" title="Zoom level">Z–</span><span id="sb-sel" title="Selected, and places shown out of all places"></span><span class="grow"></span><span id="sb-data" title="When the place data was last published">DATA –</span><span id="sb-conn" title="Connection and access"></span></footer>
 
-<aside id="drawer" class="panel" aria-label="Map layers">
+<aside id="drawer" class="panel" aria-label="Layers">
   <div class="grab" aria-hidden="true"></div>
   <div class="panel-head"><div class="fy-tabs" role="tablist"><button role="tab" id="tab-layers" aria-selected="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 0 5l8 4 8-4zM1.6 7.8 0 8.6l8 4 8-4-1.6-.8L8 11zm0 3.4L0 12l8 4 8-4-1.6-.8L8 14.4z"/></svg>Layers</button><button role="tab" id="tab-legend" aria-selected="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2h3v3H1zm5 .75h9v1.5H6zM1 6.5h3v3H1zm5 .75h9v1.5H6zM1 11h3v3H1zm5 .75h9v1.5H6z"/></svg>Legend</button><button role="tab" id="tab-table" aria-selected="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2h14v12H1zm1.5 1.5v2h11v-2zm0 3.5v2h3v-2zm4.5 0v2h6.5v-2zm-4.5 3.5v2h3v-2zm4.5 0v2h6.5v-2z"/></svg>Table</button></div><button class="btn" id="drawer-close">Done</button></div>
   <div class="panel-body" id="table-body" hidden></div>
   <div class="panel-body" id="legend-body" hidden><div class="legend" id="legend"></div></div>
   <div class="panel-body" id="layers-body">
     <div class="sec">
-      <h3>Map style</h3>
+      <h3>Basemap</h3>
       <div class="basemaps" id="basemaps"></div>
     </div>
     <div class="sec">
-      <h3>Time period</h3>
+      <h3>Time filter</h3>
       <div class="chips" id="periods"></div>
     </div>
     <div class="sec">
-      <h3>What to show</h3>
-      <p class="grp-help">Tap a heading to switch the whole group. Tap the small buttons to pick parts of it. <span class="k-then">Then</span> means 1969–2011 research, <span class="k-now">Now</span> means today’s map data.</p>
+      <h3>Object layers</h3>
+      <p class="grp-help">Group header toggles all members; chips toggle one. <span class="k-then">Then</span> = 1969–2011 research. <span class="k-now">Now</span> = current map data.</p>
       <div id="groups"></div>
       <div id="hist-toggles" hidden></div>
       <div id="osm-toggles" hidden></div>
     </div>
     <details class="sec more">
-      <summary>Display options</summary>
+      <summary>Display</summary>
       <div id="display-toggles"></div>
     </details>
     <details class="sec more">
-      <summary>All mapped events, by year</summary>
+      <summary>Objects by year</summary>
       <div class="places" id="places"></div>
     </details>
     <details class="sec more">
-      <summary>Known but not on the map</summary>
+      <summary>Unlocated objects</summary>
       <div class="unplaced" id="unplaced"></div>
     </details>
     <div class="row-btns"><button class="btn" id="reset-view">Show all of Tripoli</button><button class="btn" id="btn-settings-2">Settings</button></div>
@@ -567,7 +567,7 @@ details.more[open] > summary::after { content: '–'; }
 
 <div id="hist-modal" class="modal float" hidden>
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="hist-title">
-    <div class="panel-head"><h2 id="hist-title">Historical maps <small style="font-weight:400;opacity:.7;font-size:.6em">drag to move</small></h2><button class="btn" id="hist-close">Done</button></div>
+    <div class="panel-head"><h2 id="hist-title">Historical Satellite Data <small style="font-weight:400;opacity:.7;font-size:.6em">drag to move</small></h2><button class="btn" id="hist-close">Done</button></div>
     <div class="panel-body"><div id="old-maps"></div><p class="d-text muted" style="font-size:.8em">Icon photo: Sadat, Gaddafi and Assad sign the Federation of Arab Republics, April 1971 (marked public domain on Wikimedia Commons).</p></div>
   </div>
 </div>

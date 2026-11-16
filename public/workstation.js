@@ -400,3 +400,35 @@
   crumb(''); syncStatus(); drawMapLegend(); syncRail(); if (REGIONS.length) syncCountry();
   setTimeout(function () { map.invalidateSize({ pan: false }); }, 0);
 })();
+
+/* ---------- offline copy (PRD s10): "Save offline" in the status bar; see sw.js for what is and is not kept ---------- */
+(function () {
+  var A = window.ATLAS_API; if (!A || !('serviceWorker' in navigator) || location.protocol === 'file:') return;
+  var sb = document.getElementById('statusbar'); if (!sb) return;
+  var LAZY = ['data/quotes.js', 'data/records.js', 'data/connection-notes.js', 'data/unknown.js', 'data/buildings/index.json'];
+  function abs(u) { return new URL(u, location.href).href; }
+  function urls() {
+    var set = {}; var add = function (u) { if (u) set[abs(u)] = 1; };
+    add(location.pathname.replace(/[^\/]*$/, '')); add('index.html'); add('sw.js');
+    document.querySelectorAll('script[src], link[rel="stylesheet"][href]').forEach(function (e) { add(e.getAttribute('src') || e.getAttribute('href')); });
+    LAZY.forEach(add); (A.osmKeys ? A.osmKeys() : []).forEach(function (k) { add('data/osm/' + k + '.json'); });
+    return fetch('fonts/fonts.css').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+      (t.match(/url\(([^)]+\.woff2)\)/g) || []).forEach(function (m) { add('fonts/' + m.replace(/^url\(|\)$/g, '')); });
+      return Object.keys(set);
+    }, function () { return Object.keys(set); });
+  }
+  function ask(msg) { return navigator.serviceWorker.ready.then(function (reg) { return new Promise(function (res) { var ch = new MessageChannel(); ch.port1.onmessage = function (e) { if (msg.type === 'save' && !e.data.done) { A.status('Saving for offline: ' + e.data.progress + ' of ' + e.data.total + ' files…', 4000); return; } res(e.data); }; (reg.active || navigator.serviceWorker.controller).postMessage(msg, [ch.port2]); }); }); }
+  var btn = document.createElement('span'); btn.id = 'sb-offline'; btn.setAttribute('role', 'button'); btn.tabIndex = 0; btn.style.cursor = 'pointer'; btn.textContent = 'Save offline'; btn.title = 'Keep the places and records on this device so the map opens without a connection';
+  var saved = false;
+  function show(n) { saved = n > 0; btn.textContent = saved ? 'Offline copy saved · remove' : 'Save offline'; btn.title = saved ? 'Delete the copy kept on this device' : 'Keep the places and records on this device so the map opens without a connection'; }
+  function go() {
+    if (saved) { if (!window.confirm('Delete the offline copy kept on this device? The map will need a connection again.')) return; ask({ type: 'forget' }).then(function () { show(0); A.status('Offline copy removed.'); }); return; }
+    if (!window.confirm('Keep the map\'s places and records on this device (about 8 MB) so it opens without a connection?\n\nNot included: the base-map pictures, the satellite film and the archive documents. Offline you get the places and their text on a plain background. Nothing you type or sign in with is stored.')) return;
+    navigator.serviceWorker.register('sw.js').then(function () { return urls(); }).then(function (list) { return ask({ type: 'save', urls: list }); }).then(function (r) {
+      show(r.ok); A.status(r.failed.length ? 'Saved ' + r.ok + ' of ' + r.total + ' files; ' + r.failed.length + ' could not be saved. Try again online.' : 'Saved ' + r.ok + ' files (' + (r.bytes / 1048576).toFixed(1) + ' MB). The map now opens offline in this browser.', 7000);
+    }, function () { A.status('Could not set up the offline copy in this browser.', 6000); });
+  }
+  btn.addEventListener('click', go); btn.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+  sb.appendChild(btn);
+  navigator.serviceWorker.getRegistration().then(function (reg) { if (reg) ask({ type: 'status' }).then(function (r) { show(r.count || 0); }); });
+})();

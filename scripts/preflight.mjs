@@ -49,6 +49,9 @@ say(tm && tm[2] === '0' && tt.ok ? 'PASS' : 'FAIL', `timeline: ${tm ? tm[1] + ' 
 const ts = run(['scripts/test-search.mjs']), tsm = ts.out.match(/(\d+) passed, (\d+) failed/);
 say(tsm && tsm[2] === '0' && ts.ok ? 'PASS' : 'FAIL', `search spelling variants: ${tsm ? tsm[1] + ' passed, ' + tsm[2] + ' failed' : 'did not run'}`);
 
+const tw = run(['scripts/test-sw.mjs']), twm = tw.out.match(/(\d+) passed, (\d+) failed/);
+say(twm && twm[2] === '0' && tw.ok ? 'PASS' : 'FAIL', `offline worker: ${twm ? twm[1] + ' passed, ' + twm[2] + ' failed' : 'did not run'} (simulated; a real browser still needs a hand check)`);
+
 const ev = run(['scripts/check-evidence.mjs']), em = ev.out.match(/(\d+) documented killing entries; (\d+) have two or more publishers; (\d+) rest on one/);
 say(!em ? 'FAIL' : +em[3] ? 'WARN' : 'PASS', em ? `evidence rule 8: ${em[1]} documented killing entries, ${em[3]} rest on one publisher (list: node scripts/check-evidence.mjs)` : 'evidence rule 8: check did not run');
 

@@ -3532,7 +3532,7 @@
   }, 600);
 
   window.ATLAS_API = API = {
-    conn: connDetail, fold: fold, shareLink: shareLink, map: map, h: h, facts: facts, section: section,
+    conn: connDetail, osmKeys: function () { return Object.keys(OSM); }, fold: fold, shareLink: shareLink, map: map, h: h, facts: facts, section: section,
     sheet: function (kind, icon, fill) { var body = newSheet(kind); markSelected(null); curTarget = { isReport: true, code: icon }; fill(body); openPanel('sheet'); },
     openPlace: function (id) { if (BY_ID[id]) { focusSite(BY_ID[id]); return; } var a = AREA_BY_ID[id]; if (a) { map.flyTo([a.lat, a.lon], 15, { duration: 0.8 }); openArea(a); } },
     recordExists: function (id) { return loadRecords().then(function () { return !!REC_BY_ID[id]; }); },

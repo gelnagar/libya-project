@@ -12,3 +12,4 @@ archive/review/sample-*.json
 archive/review/sample-*.md
 
 .secret-words
+archive/cited-cache/

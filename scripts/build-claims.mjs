@@ -72,7 +72,7 @@ const out = { subjects, sources: [...sources.values()], claims };
 // provenance, then the analyst grades (see lib/provenance.mjs); owner overrides live in archive/model/grades.json
 const readJson = (p, d) => { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return d; } };
 const over = readJson('archive/model/grades.json', {}), wayback = readJson('archive/model/wayback.json', {});
-addProvenance(out.sources, storedCopies(), wayback);
+addProvenance(out.sources, storedCopies(), wayback, readJson('archive/model/fetched.json', {}));
 out.sources.forEach((s) => Object.assign(s, gradeSource(s, over.sources || {})));
 gradeClaims(claims, out.sources, over.claims || {});
 for (const k of Object.keys(out)) fs.writeFileSync(`archive/model/${k}.json`, JSON.stringify(out[k], null, 1));

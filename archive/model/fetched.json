@@ -1,0 +1,1765 @@
+{
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190031992en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "4c4cc65ed63977711037174a93fc3afe",
+  "chars": 25974,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190081997en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "4b8917100866c6d86618bef16d746f39",
+  "chars": 104576,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/en/wp-content/uploads/2021/08/mde190062006en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "031085cc2cbbcfb646c0da8f7f494ea1",
+  "chars": 5951,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190031992en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "4c4cc65ed63977711037174a93fc3afe",
+  "chars": 25974,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190021991en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "3ca41a4ecd0aafb587c09ef8a3389684",
+  "chars": 79644,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Abu_Salim_prison": {
+  "fetched": "2026-11-16",
+  "sha256": "49a042710662d82ae6d6c496ffcf11eb",
+  "chars": 28836,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://hrsly.com/en/annex-1-the-abu-salim-prison-massacre/": {
+  "fetched": "2026-11-16",
+  "sha256": "e31f29993303fb018eccfadc5b1979c8",
+  "chars": 13458,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/dheiba-diaf-zirti/": {
+  "fetched": "2026-11-16",
+  "sha256": "317d5f20e7215f176e2e71f6083404f4",
+  "chars": 7000,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/maayouf-halasa/": {
+  "fetched": "2026-11-16",
+  "sha256": "10244f7c3385428e29545e28acf38f67",
+  "chars": 6560,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/ausama-shwehdy/": {
+  "fetched": "2026-11-16",
+  "sha256": "8cdc5b6485ceab23a8d2617f4424ce55",
+  "chars": 8890,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/jamila-fallag/": {
+  "fetched": "2026-11-16",
+  "sha256": "f40f867e0c47e3b0ea4e3e85fad9af86",
+  "chars": 8855,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190011991en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "9f85ffe582428056cb0849e8c5e4287f",
+  "chars": 28743,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/abdelkader-tholthy/": {
+  "fetched": "2026-11-16",
+  "sha256": "edb65c0fc55f1fb95b3cd0defd962e09",
+  "chars": 10411,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/salah-houni/": {
+  "fetched": "2026-11-16",
+  "sha256": "0e3cb22f8e6248f423e8039f6ccafb3e",
+  "chars": 8641,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnestyusa.org/reports/annual-report-libya-2010/": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.hrw.org/news/2009/10/16/libya-free-all-unjustly-detained-prisoners": {
+  "fetched": "2026-11-16",
+  "sha256": "6dd0abe3bb7d18b815a9713bb583bc81",
+  "chars": 6358,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.refworld.org/node/78703": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://jewishvirtuallibrary.org/report-on-human-rights-practices-for-2006-libya": {
+  "fetched": "2026-11-16",
+  "sha256": "18824780e945056805e31d8eb00f7535",
+  "chars": 45819,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.omct.org/en/resources/urgent-interventions/follow-up-of-case-lby-031207-two-released-and-eleven-demonstration-organisers-sentenced": {
+  "fetched": "2026-11-16",
+  "sha256": "01cbe65c029d15d1db0f1a7451b1a54f",
+  "chars": 10494,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/abubaker-shareef/": {
+  "fetched": "2026-11-16",
+  "sha256": "56940c8bb5fd6a5c34a2dbade1227def",
+  "chars": 7502,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/?p=356": {
+  "fetched": "2026-11-16",
+  "sha256": "7525b23579d29075f0e55cf2350cf74f",
+  "chars": 7967,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/node/97287": {
+  "fetched": "2026-11-16",
+  "sha256": "8e746b8fd9477b1de750d68d32c35255",
+  "chars": 12582,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190022004en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "8160c9d7e778be551c5b7238b33b1eff",
+  "chars": 185703,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/zh-hant/wp-content/uploads/2021/07/mde190032009eng.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "591c4416fda2ad46c8f1f3e1b16c0a42",
+  "chars": 8027,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190062009en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "97fd110ca35ea17318f333e366f11d0c",
+  "chars": 6003,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.hrw.org/world-report/2011/country-chapters/libya": {
+  "fetched": "2026-11-16",
+  "sha256": "c6bac078bb51a2c86ad4ae4e515c07a7",
+  "chars": 13542,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/moftah-sharef/": {
+  "fetched": "2026-11-16",
+  "sha256": "5ad0ef2c0626bc7e8dc3201e4140d35f",
+  "chars": 6877,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://reuters.screenocean.com/record/877072": {
+  "fetched": "2026-11-16",
+  "sha256": "ad14f1293f2323f241edf1185bd165a0",
+  "chars": 2747,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.usip.org/sites/default/files/PW119-Prisons-and-Detention-in-Libya.pdf": {
+  "fetched": "2026-11-16",
+  "status": "fetched but no readable text (script-built page or scanned file)",
+  "kind": "pdf",
+  "bytes": 109004
+ },
+ "https://tarikhi.org/interview/abubaker-ghiryani/": {
+  "fetched": "2026-11-16",
+  "sha256": "df3f670e271fb93e181006bf7d49c0f8",
+  "chars": 5946,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/ali-akermi/": {
+  "fetched": "2026-11-16",
+  "sha256": "2bca525ed2c4418ae60167f2cca3ed3c",
+  "chars": 9423,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/saleh-quosmy/": {
+  "fetched": "2026-11-16",
+  "sha256": "b5d26d90ba543d8cba3e4d9230cce19c",
+  "chars": 7619,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/bashir-jarbou/": {
+  "fetched": "2026-11-16",
+  "sha256": "81eb09473e60e10bd6617bb79514c217",
+  "chars": 9502,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.globaldetentionproject.org/countries/africa/libya/detention-centres/994/towisha-detention-centre": {
+  "fetched": "2026-11-16",
+  "sha256": "b504749f2f97fb7f8df8b5fef2eb5512",
+  "chars": 1787,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/news/2011/08/28/libya-gaddafi-forces-suspected-executing-detainees": {
+  "fetched": "2026-11-16",
+  "sha256": "5af74576e49b53844cac3a1c7c322217",
+  "chars": 12280,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://digitallibrary.un.org/record/4022642/files/A_HRC_50_63-EN.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "d35cd00e4ef1e71ee6674c3d129a0fa2",
+  "chars": 88041,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.ecoi.net/en/file/local/2004491/AbuseBehindBarsArbitraryUnlawful_EN.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "e5d29ede89e2f320fb0846bf7119cee5",
+  "chars": 132594,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Mitiga": {
+  "fetched": "2026-11-16",
+  "sha256": "fbf450a5f4877d15c05b0216f4701783",
+  "chars": 49860,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.afhistory.af.mil/FAQs/Fact-Sheets/Article/458950/operation-el-dorado-canyon": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.merip.org/1986/07/us-raid-haunts-libya/": {
+  "fetched": "2026-11-16",
+  "sha256": "202f76d0b1fd8ee8a26e438b8ea4e74b",
+  "chars": 16576,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Bab_al-Azizia": {
+  "fetched": "2026-11-16",
+  "sha256": "24da1e75b5bf0b1ff70a0b7861a07152",
+  "chars": 21491,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanwanderer.com/35-years-later-stories-from-libyans-during-the-us-raid-on-libya-1986/": {
+  "fetched": "2026-11-16",
+  "sha256": "2882762a2141dd8b8d2c6305e18caae9",
+  "chars": 8894,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://history.state.gov/historicaldocuments/frus1981-88v24/d225": {
+  "fetched": "2026-11-16",
+  "sha256": "c3115a399b06001c6f54664fbedcf485",
+  "chars": 14271,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.jewishrefugees.org.uk/2018/11/remembering-libyan-riots-of-1945.html": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.jewishrefugees.org.uk/2025/10/in-the-1945-libyan-riots-the-british-also-blamed-the-victims.html": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://hrvoices.org/assets/attachments/documents/Libyan_riots.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "810250168f50d833948d604eab3d2218",
+  "chars": 8422,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.hrw.org/reports/2006/06/28/libya-june-1996-killings-abu-salim-prison": {
+  "fetched": "2026-11-16",
+  "sha256": "5654cc0a49532d632a9b2cf7c2d15350",
+  "chars": 1188,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/features/2011/10/21/libya-survivor-describes-1996-prison-massacre/": {
+  "fetched": "2026-11-16",
+  "sha256": "d9762116bb6237eef40de775b44eb6c0",
+  "chars": 11142,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190041996en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "59f8096400d80c1e1d4cc31a3424cf5c",
+  "chars": 2448,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190051996en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "b03e2204f40138bdbc05927e9916d288",
+  "chars": 3742,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/es/wp-content/uploads/2021/06/mde190082010en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "5ddaae5990d4eaf66682a37b8919deab",
+  "chars": 34382,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://jewishvirtuallibrary.org/report-on-human-rights-practices-for-2008-libya": {
+  "fetched": "2026-11-16",
+  "sha256": "4c0e23650ebd73d12a2e95a2ab39261e",
+  "chars": 56870,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://jewishvirtuallibrary.org/report-on-human-rights-practices-for-2007-libya": {
+  "fetched": "2026-11-16",
+  "sha256": "dd71295cd81bbbc438d7b796b6aa80b4",
+  "chars": 54996,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://airwars.org/incidents/lib2011-081-april-30-2011": {
+  "fetched": "2026-11-16",
+  "sha256": "1c116f3bd97134f2edc47736b132bcea",
+  "chars": 6537,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.nato.int/cps/en/natohq/news_75639.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "c9016bf1968b5b9dff68b32df8d81016",
+  "chars": 8765,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/news/2011/6/19/nato-admits-civilian-deaths-in-libya-raid": {
+  "fetched": "2026-11-16",
+  "sha256": "35db3248127016025c2d975437141ba9",
+  "chars": 4560,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://rsf.org/en/news/nato-attacks-national-tv-headquarters-and-installations-tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "49d56fc96f97ab7cb4180bd3ad94ece4",
+  "chars": 4658,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://airwars.org/incidents/lib2011-131-july-30-2011": {
+  "fetched": "2026-11-16",
+  "sha256": "580164caef0c92cddaf737c20b0632ff",
+  "chars": 7499,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.nbcnews.com/id/wbna43106115": {
+  "fetched": "2026-11-16",
+  "sha256": "3a0d4b747b3581dd47458480865b2239",
+  "chars": 9454,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/news/2014/8/24/unidentified-jets-attack-targets-in-tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "fb4addb9988febf2c12d42a3c7d86fe4",
+  "chars": 2639,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/news/2014/8/26/uae-behind-air-strikes-in-libya": {
+  "fetched": "2026-11-16",
+  "sha256": "daa1581fdeeba4aedda40e154e6ba675",
+  "chars": 2822,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/news/2011/08/29/libya-evidence-suggests-khamis-brigade-killed-45-detainees": {
+  "fetched": "2026-11-16",
+  "sha256": "911f2d2e1d1176d7dbce83d517caedfe",
+  "chars": 10995,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Tajoura_migrant_center_airstrike": {
+  "fetched": "2026-11-16",
+  "sha256": "5443b3a7b8ea60010f7d69529b20043d",
+  "chars": 24413,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/news/2020/1/5/dozens-killed-in-attack-on-military-academy-in-libyas-tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "f9d67f380b6d50ab639c5c8c706aafae",
+  "chars": 5150,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.newarab.com/news/clashes-libya-capital-tripoli-kill-27-wound-over-100": {
+  "fetched": "2026-11-16",
+  "sha256": "c92d49aa7611542935748d30e9bc888b",
+  "chars": 6700,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://hrw.org/news/2013/11/17/libya-militias-kill-unarmed-protesters": {
+  "fetched": "2026-11-16",
+  "sha256": "6f04e21f634f245ec2bfcd6611369df7",
+  "chars": 11316,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/ilham-dabboub/": {
+  "fetched": "2026-11-16",
+  "sha256": "de2b8aa9a1e1957f51b833e37470dbb6",
+  "chars": 7216,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.washingtonpost.com/archive/politics/1984/04/22/libya-hanged-2-students-monday-for-treason/f639373f-d89a-4259-bd91-11ffbfbc2fab/": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://aawsat.com/node/4263251": {
+  "fetched": "2026-11-16",
+  "sha256": "7429b2c1df6bb93a1714317e1787fd06",
+  "chars": 23970,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/news/2011/02/22/libya-commanders-should-face-justice-killings": {
+  "fetched": "2026-11-16",
+  "sha256": "792f83531fa043c71e67c005c05b1239",
+  "chars": 7789,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/news/2011/03/13/libya-end-violent-crackdown-tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "8e746b8fd9477b1de750d68d32c35255",
+  "chars": 12582,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Western_Libya_clashes_(2016%E2%80%932018)": {
+  "fetched": "2026-11-16",
+  "sha256": "a4da7ef30f9d05e977e391daa6a0c946",
+  "chars": 61950,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libya-analysis.com/fragile-ceasefire-in-tripoli-as-ghwell-ousted-from-rixos": {
+  "fetched": "2026-11-16",
+  "sha256": "c3bd1325026eb5831c8a18eccb82bc5d",
+  "chars": 1765,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyasecuritymonitor.com/24-30-june-anti-gna-militias-evicted-from-tripoli/": {
+  "fetched": "2026-11-16",
+  "sha256": "76ba324a2846e8a4b2fdd7c0f2f8253c",
+  "chars": 2585,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyasecuritymonitor.com/10-16-jan-major-clashes-break-out-at-tripolis-mitiga-airport-leaving-as-many-as-twenty-dead/": {
+  "fetched": "2026-11-16",
+  "sha256": "08320a89c4a9f1868d296527d61df38d",
+  "chars": 1310,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.timesofisrael.com/clashes-kill-9-at-libyas-main-international-airport/": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://libyasecuritymonitor.com/clashes-in-tripoli-between-rada-and-trb/": {
+  "fetched": "2026-11-16",
+  "sha256": "08f0fa67359d9675f1b19f98edbf21a6",
+  "chars": 1217,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(1911)": {
+  "fetched": "2026-11-16",
+  "sha256": "af064ec1f4e60246524a6fd86b151fb7",
+  "chars": 13560,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Battles_of_Zanzur_(1912)": {
+  "fetched": "2026-11-16",
+  "sha256": "787fae3c77379789b355e75e4da41d68",
+  "chars": 17903,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Tripoli_(1943)": {
+  "fetched": "2026-11-16",
+  "sha256": "194982c9beafff67405db1c935ffadb3",
+  "chars": 5988,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://navyhistory.au/hmas-perth-bombardment-of-tripoli/": {
+  "fetched": "2026-11-16",
+  "sha256": "ea55db95fad2bb0a3a02282964d7242c",
+  "chars": 6558,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://m.ww2db.com/event/timeline/place/Libya/_Tripoli": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://archivecollections.uea.ac.uk/sz.bsu.1.10.2-3": {
+  "fetched": "2026-11-16",
+  "sha256": "693e6374cba5a1b760e50170694a9ca7",
+  "chars": 1222,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.awm.gov.au/collection/MED1230": {
+  "fetched": "2026-11-16",
+  "sha256": "48c65e6ad892ad7dfe6fff7583be63e9",
+  "chars": 941,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/report/2012/09/05/delivered-enemy-hands/us-led-abuse-and-rendition-opponents-gaddafis-libya": {
+  "fetched": "2026-11-16",
+  "sha256": "ef40c795e9071e8423f59aedacbf8ac2",
+  "chars": 389684,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.workingwithcrowds.com/?p=38163": {
+  "fetched": "2026-11-16",
+  "sha256": "79ecc8ac8c0cb7c473eb38768c277a2c",
+  "chars": 14643,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/report/2006/09/12/stemming-flow/abuses-against-migrants-asylum-seekers-and-refugees": {
+  "fetched": "2026-11-16",
+  "sha256": "350a1b932f48f18ee438c76177698718",
+  "chars": 353974,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/1948_anti-Jewish_riots_in_Tripolitania": {
+  "fetched": "2026-11-16",
+  "sha256": "30c1f4953dafcfedad63212f4f71c62c",
+  "chars": 15799,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.jewishrefugees.org.uk/2023/01/tripoli-1967-the-mob-was-chanting-kill-the-jews.html": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://history.state.gov/historicaldocuments/frus1964-68v24/d85": {
+  "fetched": "2026-11-16",
+  "sha256": "546818882626ff4fef6a0d0290e54aea",
+  "chars": 8924,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://history.state.gov/historicaldocuments/frus1964-68v24/d92": {
+  "fetched": "2026-11-16",
+  "sha256": "6d3f4320e914ee3b1e70f2296b2ccaef",
+  "chars": 17603,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Italian_war_crimes": {
+  "fetched": "2026-11-16",
+  "sha256": "315d51de759394144f9dc91347c03e9d",
+  "chars": 62416,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.cambridge.org/core/journals/international-review-of-social-history/article/other-at-home-deportation-and-transportation-of-libyans-to-italy-during-the-colonial-era-19111943/FAFA1592C6350550622B210623CF57CE": {
+  "fetched": "2026-11-16",
+  "sha256": "c62ac74cde190a53383a7e93fcdc7a57",
+  "chars": 69259,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190061999en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "090d80c6ae25b83221dd73f4a2444bfa",
+  "chars": 4355,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.hrw.org/reports/2006/libya0206/": {
+  "fetched": "2026-11-16",
+  "sha256": "b4259e387a5c2215c2dcd7340194ab5b",
+  "chars": 99346,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/reports/2006/libya0206/5.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "150c39355c09b1921759326a0b4e7bea",
+  "chars": 20384,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Old_City_of_Tripoli": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.aljazeera.net/news/ebusiness/2020/2/11/جريمة-تراثية-كيف-تحولت-المدينة-القديمة-بطرابلس-إلى-أسواق-لبيع-العملة": {
+  "fetched": "2026-11-16",
+  "sha256": "0571bba4af80771cc4ddb4971c300b58",
+  "chars": 6014,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Italian_settlers_in_Libya": {
+  "fetched": "2026-11-16",
+  "sha256": "6df857bbb99d647d08c22bcc78e9c561",
+  "chars": 21597,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Fashloom": {
+  "fetched": "2026-11-16",
+  "sha256": "b30d1cea582c3eefabe8e86aed223a7a",
+  "chars": 6740,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/2011_Tripoli_clashes": {
+  "fetched": "2026-11-16",
+  "sha256": "77831529878c1f5e7033b6b26d8cbb74",
+  "chars": 30683,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://lana.gov.ly/art.php?id=25973&lang=ar": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.aljazeera.com/news/2020/5/23/libya-gna-retakes-military-camps-near-tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "065b12fa1afae915c1cc247555fe3a27",
+  "chars": 4963,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyasecuritymonitor.com/clashes-break-out-between-52nd-and-55th-brigades-over-control-of-camp-27/": {
+  "fetched": "2026-11-16",
+  "sha256": "c42bff0f0ea086b88a33f89f5eb5c308",
+  "chars": 1995,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyaanalysis.substack.com/p/20-may-2026-tripoli-court-sentences": {
+  "fetched": "2026-11-16",
+  "sha256": "cce681eaa0bc18abb6a98a72efc328ed",
+  "chars": 17058,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Tajoura_Nuclear_Research_Center": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://en.wikipedia.org/wiki/Red_Castle_of_Tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "90904f363ef6c4503669424dc832ba38",
+  "chars": 8563,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.icj.org/libya-investigate-unidentified-bodies-and-reported-mass-graves-in-abu-salim/": {
+  "fetched": "2026-11-16",
+  "sha256": "54d505670e4a65a60948c902db6a3a73",
+  "chars": 4911,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://kuwaittimes.com/libyans-chill-at-ex-barracks-for-gaddafis-amazons/": {
+  "fetched": "2026-11-16",
+  "sha256": "628adc9f7d95dd4fe66f4f4ee31d3cd2",
+  "chars": 5051,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Abu_Salim_prison_massacre": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.washingtonpost.com/archive/politics/1984/04/23/hangings-in-tripoli-focus-attention-on-libyan-dissent/9c2481e3-1b2d-4b74-8d69-4304afe24ed1/": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://en.wikipedia.org/wiki/Souq_al-Juma": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://en.wikipedia.org/wiki/Janzour": {
+  "fetched": "2026-11-16",
+  "sha256": "963a79fa2080e760ad60be691a7934f9",
+  "chars": 8091,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Gargaresh": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://en.wikipedia.org/wiki/Hay_al-Andalus": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/rabta.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "ca72db654f0a66553039d05de00af49c",
+  "chars": 7517,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.opcw.org/news/article/libya-completes-destruction-of-its-category-1-chemical-weapons": {
+  "fetched": "2026-11-16",
+  "sha256": "d7bdfb977ed81e859fc4c86f01ba415a",
+  "chars": 3151,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.wisconsinproject.org/libya-has-trouble-building-the-most-deadly-weapons/": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Disarm GOV200412.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "479354c7fe315b30acece063c15a87b0",
+  "chars": 31046,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://nuke.fas.org/guide/libya/index.html": {
+  "fetched": "2026-11-16",
+  "sha256": "f7b2c481d077c200b456e5a45946ba8b",
+  "chars": 6778,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://bigenoughlie.wordpress.com/2011/06/30/rabta-cwpf-libya/": {
+  "fetched": "2026-11-16",
+  "sha256": "48ae0082c992406bd80e858cf0ddecfc",
+  "chars": 5359,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Abu_Salim_Prison": {
+  "fetched": "2026-11-16",
+  "sha256": "5f13aa3cf243776d17750443731b340d",
+  "chars": 28873,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/reports/libya0106webwcover.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "258e43ddca52c21be33521339beda944",
+  "chars": 198985,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.armscontrolwonk.com/archive/201440/targhuna-cw-facility/": {
+  "fetched": "2026-11-16",
+  "sha256": "aba9623e7ac38342e4f75b1df8d6133d",
+  "chars": 7706,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.armscontrolwonk.com/page/709/?id=401": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/tarhuna.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "1eacc7991ccb30962d82dd40a703257b",
+  "chars": 8320,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/news/2011/8/24/tripoli-hospital-struggling-to-cope": {
+  "fetched": "2026-11-16",
+  "sha256": "02eef13ab12300b65123390cb14cce18",
+  "chars": 774,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/amp/features/2011/9/15/doctors-reveal-hospital-horrors-under-gaddafi": {
+  "fetched": "2026-11-16",
+  "sha256": "59a2ff8adea65d73771bc58bdf5b0640",
+  "chars": 7569,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://iol.co.za/news/africa/2011-10-17-libyans-discover-secret-morgue/": {
+  "fetched": "2026-11-16",
+  "sha256": "6cb569cc430eb3df34834bd4275b3e95",
+  "chars": 4078,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.africanews.com/amp/2020/05/15/un-deplores-attacks-on-libyan-hospitals/": {
+  "fetched": "2026-11-16",
+  "sha256": "581063af8aaed562a1b7a512f44be607",
+  "chars": 2206,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/news/2019/7/4/libya-migrants-recount-horrors-of-tajoura-detention-centre-attack": {
+  "fetched": "2026-11-16",
+  "sha256": "bed68aaf504e2390e5fb672d0a642b00",
+  "chars": 6125,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanwanderer.com/?p=2905": {
+  "fetched": "2026-11-16",
+  "sha256": "9d974a8937844bec0b2cc24742e4106e",
+  "chars": 4419,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://magazine.zenith.me/en/society/libya’s-italians": {
+  "fetched": "2026-11-16",
+  "sha256": "242786f6c3111a2c188cb5c4ca753d03",
+  "chars": 11870,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.ecoi.net/de/dokument/185092": {
+  "fetched": "2026-11-16",
+  "sha256": "78ea9ee51a6abd00c30086e9a178da9b",
+  "chars": 6741,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.opcw.org/news/article/libya-completes-destruction-of-its-bulk-sulfur-mustard-stockpile": {
+  "fetched": "2026-11-16",
+  "sha256": "00ea262433e617a768679c31fa42695d",
+  "chars": 2191,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://mg.co.za/article/2011-11-04-libyan-chemical-weapons-stockpile-intact/": {
+  "fetched": "2026-11-16",
+  "sha256": "e73744635382f235aeb02454f533114a",
+  "chars": 2918,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.esteri.it/it/sala_stampa/archivionotizie/retediplomatica/2020/10/libia-rinasce-il-sacrario-italiano-di-hammangi/": {
+  "fetched": "2026-11-16",
+  "sha256": "c55788f24b88d5ee47859bf16536bd03",
+  "chars": 9088,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.ww2cemeteries.com/lib-tripoli-war-cemetery.html": {
+  "fetched": "2026-11-16",
+  "sha256": "12f903cd87a9499770d3fd78af91207c",
+  "chars": 3823,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanheritagehouse.org/wheelus-a-microcosm-of-american-life/wheelus-radio-tv-station": {
+  "fetched": "2026-11-16",
+  "sha256": "e225f81128765fa02bdffdc33452b6e7",
+  "chars": 4356,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanheritagehouse.org/a-turbulent-time-closure-of-wheelus-pan-arabism/project-one-f5w4d-w2bym": {
+  "fetched": "2026-11-16",
+  "sha256": "8f4d7e50f68d63fd915459a661799245",
+  "chars": 4175,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyamonitor.com/taxonomy/term/12/rocket-attack-main-tripoli-business-district": {
+  "fetched": "2026-11-16",
+  "sha256": "5579320e6a10e19871e61db931f91ab0",
+  "chars": 4201,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanwanderer.com/?p=2069": {
+  "fetched": "2026-11-16",
+  "sha256": "c1577d669b2f667db02193bca2451e2a",
+  "chars": 19050,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Green_Square,_Tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "e3bde6c625e0e7c14cd211854831d8eb",
+  "chars": 14060,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Radisson_Blu_Al_Mahary_Hotel_Tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "b909b6753f4d39a5f0991b248955bfa6",
+  "chars": 4864,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/High_Council_of_State_(Libya)": {
+  "fetched": "2026-11-16",
+  "sha256": "89356404c7c065e9ded5347474c2546f",
+  "chars": 10368,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/jarmah.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "f7ce6a3ae3469d9a093a53979d46deb8",
+  "chars": 1130,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://archive.org/details/fbis-1981-03-17-0868": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.timesofisrael.com/libyas-jewish-graveyards-were-destroyed-they-are-being-rebuilt-online/": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.jewishrefugees.org.uk/2011/02/gaddafi-bulldozed-jewish-cemetery-into.html": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://temehu.com/Cities_sites/museum-of-karamanli-house.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "ab1005c4e2222f669310fc3707ea3087",
+  "chars": 4185,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.temehu.com/Cities_sites/Tripoli.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "0404a08de0c152b752c878e0a5981257",
+  "chars": 11494,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.nti.org/analysis/articles/libya-nuclear-facilities/": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://foreignpolicy.com/2011/09/01/the-mad-dogs-madhouse-2/": {
+  "fetched": "2026-11-16",
+  "sha256": "c68b8c7387e171be652995595f7e4cdd",
+  "chars": 14769,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://pmc.ncbi.nlm.nih.gov/articles/PMC6735120": {
+  "fetched": "2026-11-16",
+  "status": "fetched but no readable text (script-built page or scanned file)",
+  "kind": "html",
+  "bytes": 21400
+ },
+ "https://en.wikipedia.org/wiki/1945_Tripoli_pogrom": {
+  "fetched": "2026-11-16",
+  "sha256": "d4dde4fc1fd3205ed36a72bd66dba854",
+  "chars": 21447,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Human_rights_violations_during_the_Gaddafi_regime": {
+  "fetched": "2026-11-16",
+  "sha256": "0451845902d73214d4f86bbc23a3cbbc",
+  "chars": 30867,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanwanderer.com/7-years-after-the-gazalla-disappearance/": {
+  "fetched": "2026-11-16",
+  "sha256": "ce1abaa6489dd89b37557d35b971c2e7",
+  "chars": 4534,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.heraldnet.com/2013/02/14/libyas-naked-lady-offers-bronzed-defiance-to-islamists/": {
+  "fetched": "2026-11-16",
+  "sha256": "7b8d1863cf2efdebc852a81f677bca4e",
+  "chars": 8024,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://gulfnews.com/amp/story/world%2Fmena%2Fpiles-of-dead-bodies-left-behind-at-empty-tripoli-hospital-1.857433": {
+  "fetched": "2026-11-16",
+  "sha256": "98e1cebb04ce80019f9b8a6ff0c0ddbc",
+  "chars": 7959,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://mg.co.za/article/2011-08-27-tripoli-hospital-closes-as-fighting-rages-on/": {
+  "fetched": "2026-11-16",
+  "sha256": "7f6e96efb3010cc26d1c8e67a725320d",
+  "chars": 6261,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://airwars.org/incidents/lib2011-152-august-26-2011": {
+  "fetched": "2026-11-16",
+  "sha256": "dd57411ba185cbc2e22894a7faa21e24",
+  "chars": 3408,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.msf.hk/en/latest/news-and-stories/news/libya-msf-scales-medical-response-tripoli-amid-shocking-scenes-hospitals": {
+  "fetched": "2026-11-16",
+  "sha256": "e1f30f5a5d623ce5e1fe931e8342076e",
+  "chars": 5527,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/news/2013/11/17/libya-militias-kill-unarmed-protesters": {
+  "fetched": "2026-11-16",
+  "sha256": "6f04e21f634f245ec2bfcd6611369df7",
+  "chars": 11316,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Dragut_Mosque": {
+  "fetched": "2026-11-16",
+  "sha256": "9f790d8beb684751fea3ff2cea692f98",
+  "chars": 10977,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://alive-in.org/unveiling-al-madinas-gates-and-alleys-a-photographic-journey-through-the-tripolis-historical-old-city-in-libya": {
+  "fetched": "2026-11-16",
+  "sha256": "4895151a4f8de7c36d5dc67da4bac0cd",
+  "chars": 5381,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Yvonne_Fletcher": {
+  "fetched": "2026-11-16",
+  "sha256": "db383a4b908bab550374c46a036976bc",
+  "chars": 52392,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.atlanticcouncil.org/blogs/natosource/libyans-burn-british-and-italian-embassies-after-nato-strike/": {
+  "fetched": "2026-11-16",
+  "sha256": "d398784452467c3681ce322bedf03e72",
+  "chars": 2158,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.globalsecurity.org/wmd/library/news/libya/2011/libya-111017-rianovosti02.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "d1e4d60da00554c2a80acf64954857e1",
+  "chars": 1540,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/news/2020/04/condemns-rocket-attack-tripoli-hospital-200407140610239.html": {
+  "fetched": "2026-11-16",
+  "sha256": "d584550beb3a1c0fef8a41f24ef13d03",
+  "chars": 3178,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.malaymail.com/news/life/2020/01/23/at-gates-of-libyas-war-a-tripoli-hospital-struggles-to-cope/1830795": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/al-hashan.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "8d57dd9c05dd0391426d667a3ba3d5dc",
+  "chars": 2559,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://offshoreleaks.icij.org/nodes/58054849": {
+  "fetched": "2026-11-16",
+  "sha256": "4c66147adb79e5c46e15b60eb7e10600",
+  "chars": 2668,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Grand_Hotel_Tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "5e929fd091c613322848c43e5fa8a564",
+  "chars": 5981,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanwanderer.com/the-grand-hotel-of-tripoli-another-lost-architectural-beauty/": {
+  "fetched": "2026-11-16",
+  "sha256": "3cdf1d44614cd329b17dd9df03277b70",
+  "chars": 3739,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Al-Ahli_SC_(Tripoli)": {
+  "fetched": "2026-11-16",
+  "sha256": "200e261a13fb27f3c1d1cab2c9145f76",
+  "chars": 14004,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.meduniwien.ac.at/web/internationales/muvi/our-projects/tripoli-medical-center/": {
+  "fetched": "2026-11-16",
+  "sha256": "094625a303f336a68ceb71f4c8470220",
+  "chars": 4593,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://academy.edu.ly/en/about": {
+  "fetched": "2026-11-16",
+  "sha256": "a3d5a0c0d58c94bcbf4e6011311b5d27",
+  "chars": 2354,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Al_Waddan_Hotel": {
+  "fetched": "2026-11-16",
+  "sha256": "6f859f0eb25bb087fe13c89dfad05b24",
+  "chars": 4920,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://next.archnet.org/sites/3517": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://en.wikipedia.org/wiki/Karamanli_dynasty": {
+  "fetched": "2026-11-16",
+  "sha256": "9c99099547b05bcb2aa95c9811b3e9d9",
+  "chars": 11773,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/al-khalla.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "9c59289e75a5ba1f6337148b4cbb8dbc",
+  "chars": 2170,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/el-ezeizia.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "088bd395482e360a8f85792b2dd981f9",
+  "chars": 2723,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Islamic_Museum_of_Tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "66a1dff5fe92122eeb5af707f459ec6f",
+  "chars": 9473,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://dome.mit.edu/handle/1721.3/176102?show=full": {
+  "fetched": "2026-11-16",
+  "sha256": "87c4cbdbd0dad283f6917e3bd57d7bd6",
+  "chars": 1015,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanwanderer.com/?p=1029": {
+  "fetched": "2026-11-16",
+  "sha256": "9778ab4fbc238f4b3b651616a86dbcf6",
+  "chars": 5113,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://abcnews.com/blogs/politics/2011/09/american-flag-raised-over-u-s-embassy-in-tripoli": {
+  "fetched": "2026-11-16",
+  "sha256": "cfca7bf24286d2e4e6e378ab56bd7f57",
+  "chars": 1588,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/news/2011/8/16/gaddafi-forces-fire-first-scud-missile": {
+  "fetched": "2026-11-16",
+  "sha256": "214797ae2642b825f946d661221649f8",
+  "chars": 5662,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://globalnews.ca/news/147079/as-libyan-rebels-secure-tripoli-regime-forces-launch-second-scud-missile/": {
+  "fetched": "2026-11-16",
+  "sha256": "efc14878fb0bf2e2fbd910fae110acf4",
+  "chars": 5260,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/al-fallah.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "a9262178d2364f86e717256abdfce97b",
+  "chars": 2037,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Murad_Agha_Mosque": {
+  "fetched": "2026-11-16",
+  "sha256": "d49758f7ed9e0162a24bf8d6026ee41a",
+  "chars": 8913,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/salah-eddin.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "90ffd1128d2c162af36e0c34ce77a758",
+  "chars": 2468,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.libya-analysis.com/blogs/how-libyas-archives-survived-the-war": {
+  "fetched": "2026-11-16",
+  "sha256": "ce217b3e79db82caa7ae8915eef7bc80",
+  "chars": 1594,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.unicef.org/mena/press-releases/statement-unicef-impact-escalating-hostilities-children-tripoli-libya": {
+  "fetched": "2026-11-16",
+  "sha256": "dc123d7f27a10a5317586d869ea159c9",
+  "chars": 3528,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Health_in_Libya": {
+  "fetched": "2026-11-16",
+  "sha256": "7829168cb8bc414905f45e0f45fe613d",
+  "chars": 13075,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/al-karamia.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "1d58666f71df57aae762326dde7c9a56",
+  "chars": 1685,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Libyan_Arab_Jamahiriya": {
+  "fetched": "2026-11-16",
+  "sha256": "91c88c1c2f875744861d68f8239e981d",
+  "chars": 125548,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/en/latest/press-release/2010/06/libya-executes-18-firing-squad/": {
+  "fetched": "2026-11-16",
+  "sha256": "80a07c4eef31df56a319e706909b3822",
+  "chars": 4375,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.executedtoday.com/2011/05/30/2010-18-in-libya/": {
+  "fetched": "2026-11-16",
+  "sha256": "f86e90195b968910060fde4f7238352f",
+  "chars": 1893,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190051992en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "5d35b569f2e7b60ef1163236663248a3",
+  "chars": 3620,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/fathi-terbil/": {
+  "fetched": "2026-11-16",
+  "sha256": "8238fcab65d381728a7913e63301fe7b",
+  "chars": 8319,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.ecoi.net/de/dokument/240320": {
+  "fetched": "2026-11-16",
+  "sha256": "2268cd3da8fa377ed32c1c9e06c5ddfb",
+  "chars": 22980,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://jamestown.org/political-islam-in-libya-2/": {
+  "fetched": "2026-11-16",
+  "sha256": "ec4211d129841717a098df98f1c565b9",
+  "chars": 13902,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/es/wp-content/uploads/2021/06/mde190031993en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "7812cddc08fc7521fdd918414ea5a2dc",
+  "chars": 5520,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.atlanticcouncil.org/blogs/natosource/us-and-britain-have-deployed-clandestine-forces-in-libya/": {
+  "fetched": "2026-11-16",
+  "sha256": "6f909baf8161f58a403559d3257b3b79",
+  "chars": 3320,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.atlanticcouncil.org/?p=63267": {
+  "fetched": "2026-11-16",
+  "sha256": "2db2dad8827963f2afe46e8d44fe4a4f",
+  "chars": 3459,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/2022_Tripoli_clashes": {
+  "fetched": "2026-11-16",
+  "sha256": "c22cad4f5a1ff2fb576b6f378eb0c853",
+  "chars": 10931,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyasecuritymonitor.com/?p=7366": {
+  "fetched": "2026-11-16",
+  "sha256": "1c6fd799bd7e55cafa1f86e48bd52b03",
+  "chars": 707,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.nbcnews.com/news/world/23-killed-140-wounded-clashes-break-libyas-capital-rcna45136": {
+  "fetched": "2026-11-16",
+  "sha256": "6d991d2e570b99689d9db7b5d866080a",
+  "chars": 6406,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.rescue.org/eu/press-release/deadly-clashes-libyas-capital-result-civilian-casualties": {
+  "fetched": "2026-11-16",
+  "sha256": "442c833bbda0a2dd26a6f65d9797e404",
+  "chars": 2845,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190021997en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "9680ea1c4a310ab1a7828dc8e1bde492",
+  "chars": 3083,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.executedtoday.com/2014/01/02/1997-eight-foes-of-qaddafi/": {
+  "fetched": "2026-11-16",
+  "sha256": "3b2f18f6b4bda93c2e549b4a157bcc03",
+  "chars": 1999,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.refworld.org/node/30583": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.amnesty.org/en/wp-content/uploads/2021/06/mde190202003en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "2c32b3174ab1a34de5e40ba4894aa66a",
+  "chars": 4705,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://jamestown.org/?p=63378": {
+  "fetched": "2026-11-16",
+  "sha256": "efaf0df1822c81461f7710af40b2b3a1",
+  "chars": 3508,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190022002en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "11d05128980017b5d39670b3366a0a6d",
+  "chars": 6116,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://jewishvirtuallibrary.org/report-on-human-rights-practices-for-2005-libya": {
+  "fetched": "2026-11-16",
+  "sha256": "40baf4834a1515d0cc36fff3527e02aa",
+  "chars": 36548,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.rferl.org/a/1077564.html": {
+  "fetched": "2026-11-16",
+  "sha256": "81fe9ef38e5f544d4f90b3fda4e3e2dd",
+  "chars": 3527,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/en/wp-content/uploads/2021/08/mde190052006en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "d7f4f37b5f3eeddff736aa6dfdbd83bd",
+  "chars": 3527,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.hrw.org/news/2008/03/28/libya-free-hospitalized-political-prisoner": {
+  "fetched": "2026-11-16",
+  "sha256": "5ef135a8190a3fd0ddcc190a66750a35",
+  "chars": 13854,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hhrjournal.org/2009/11/04/two-libyan-prisoners-two-paradoxical-fates/": {
+  "fetched": "2026-11-16",
+  "sha256": "97fe56b7443a3967f54a3dd3e1ed24fe",
+  "chars": 7536,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/reports/italy0909webwcover.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "d88b126b9d6eef898ca695335b54acd5",
+  "chars": 236743,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.swissinfo.ch/eng/swiss-hostage-in-libya-freed/9074240": {
+  "fetched": "2026-11-16",
+  "sha256": "c79026a5754d2b2d7224514ba2beee88",
+  "chars": 12068,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://researchportal.bath.ac.uk/en/publications/libyan-deportees-on-the-italian-island-of-ustica-remembering-colo/": {
+  "fetched": "2026-11-16",
+  "sha256": "ce746f4fddab0b94960624f02a279988",
+  "chars": 10231,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/1952_Libyan_general_election": {
+  "fetched": "2026-11-16",
+  "sha256": "19a3098ea1401592f83b0086e030d480",
+  "chars": 5689,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://uca.edu/politicalscience/dadm-project/middle-eastnorth-africapersian-gulf-region/libya-1951-present": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://history.state.gov/historicaldocuments/frus1964-68v24/d83": {
+  "fetched": "2026-11-16",
+  "sha256": "d3328256e1c1ecb0912b6843d624e045",
+  "chars": 2956,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/es/wp-content/uploads/2021/06/nws210051977en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "51690dc369a14a4f694228c5c678e19b",
+  "chars": 65959,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://history.state.gov/historicaldocuments/frus1969-76ve05p2/d77": {
+  "fetched": "2026-11-16",
+  "sha256": "93ca1a33f15a896f0a9a4b4e7cdbfc87",
+  "chars": 16052,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://history.state.gov/historicaldocuments/frus1977-80v17p3/d132": {
+  "fetched": "2026-11-16",
+  "sha256": "15b28a88b8124dedba4fd5a6355cd0dc",
+  "chars": 6736,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://history.state.gov/historicaldocuments/frus1977-80v17p3/d52": {
+  "fetched": "2026-11-16",
+  "sha256": "ce0283ee9ac728423d4c13d01c2780df",
+  "chars": 4264,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.refworld.org/node/24059": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://tarikhi.org/interview/mabrouka-kedo/": {
+  "fetched": "2026-11-16",
+  "sha256": "d246c4d358faae70fee737f012fe1d6e",
+  "chars": 5963,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/amina-jornazi/": {
+  "fetched": "2026-11-16",
+  "sha256": "8bb1464e0b8e7e03ad4cf71d82aedb97",
+  "chars": 8994,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://tarikhi.org/interview/majda-sahli/": {
+  "fetched": "2026-11-16",
+  "sha256": "7525b23579d29075f0e55cf2350cf74f",
+  "chars": 7967,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Ghanaians-in-Libya-Massacred-11358": {
+  "fetched": "2026-11-16",
+  "sha256": "02f43d9254e3d0cab87a31dba0fe67f2",
+  "chars": 9751,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://migration.ucdavis.edu/mn/more.php?id=2248": {
+  "fetched": "2026-11-16",
+  "sha256": "948a175009a41e68adfed8a446be4be2",
+  "chars": 7040,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://strauss.tacc.utexas.edu/ccaps/armedConflictLocation/show/5636388": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://neftegaz.ru/en/news/autos/437717-libya-orders-race-riot-executions/": {
+  "fetched": "2026-11-16",
+  "status": "fetched but no readable text (script-built page or scanned file)",
+  "kind": "html",
+  "bytes": 13602
+ },
+ "https://cpj.org/2005/06/libya/amp/": {
+  "fetched": "2026-11-16",
+  "sha256": "a60d3feb4e534855422dc0969e766e58",
+  "chars": 2058,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://csmonitor.com/World/Middle-East/2011/0822/Spots-to-watch-in-the-battle-for-Tripoli/Rixos-Hotel": {
+  "fetched": "2026-11-16",
+  "sha256": "b0015d3f9b7eba99d6a724b1f0add102",
+  "chars": 4063,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Libyan_Jamahiriya_Broadcasting_Corporation": {
+  "fetched": "2026-11-16",
+  "sha256": "b6e58560d11db3de252eb702383f1d4b",
+  "chars": 10632,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.globalsecurity.org/wmd/world/libya/missile.htm": {
+  "fetched": "2026-11-16",
+  "sha256": "c4799db98fe50a5380b9ce7aa7d8dee3",
+  "chars": 12201,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://english.ahram.org.eg/News/88705.aspx": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://diarna.org/?p=65": {
+  "fetched": "2026-11-16",
+  "sha256": "38f3285d685f1bf49d20bdd6e9c69ff9",
+  "chars": 5108,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://internationalhistory.intesasanpaolo.com/world-map/countries/detail/IT-ISP-MAPPAESTERA-0000123/libya": {
+  "fetched": "2026-11-16",
+  "sha256": "5c856b77451f91dd913896b3a682af42",
+  "chars": 1995,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Libyan_missile_attack_against_Lampedusa": {
+  "fetched": "2026-11-16",
+  "sha256": "4735e64bd20c8053996b3ab7a8720d09",
+  "chars": 10716,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanwanderer.com/tripolis-lost-elegance-of-miramare-theatre/": {
+  "fetched": "2026-11-16",
+  "sha256": "9d974a8937844bec0b2cc24742e4106e",
+  "chars": 4419,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Italian_Libya_Railways": {
+  "fetched": "2026-11-16",
+  "sha256": "e8ca3d1944e483aae05c18cf1833e957",
+  "chars": 8988,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyanwanderer.com/othman-pasha-school-in-tripoli/": {
+  "fetched": "2026-11-16",
+  "sha256": "b071b54b8779feb7417ff32cf0d3b949",
+  "chars": 4090,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://datainforms.faraafrica.org/node/242376": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.tabanlioglu.com/project/tripoli-congress-center/": {
+  "fetched": "2026-11-16",
+  "sha256": "4f01cc71c74c801cc81a074b6462cdf5",
+  "chars": 2120,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aljazeera.com/amp/news/2018/9/10/libya-national-oil-corporations-tripoli-offices-attacked": {
+  "fetched": "2026-11-16",
+  "sha256": "9a437ea83ae65378c9d2d58d9d23771d",
+  "chars": 6193,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://en.wikipedia.org/wiki/Al-Madina_SC": {
+  "fetched": "2026-11-16",
+  "sha256": "1ff7b0e27a1344b8876ceab6524d7f1c",
+  "chars": 6357,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://travel2unlimited.com/libya-tripoli-fish-market/": {
+  "fetched": "2026-11-16",
+  "sha256": "7d2fe2eecd47e4489c79e74ca56ab370",
+  "chars": 10645,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/reports/2006/libya0106/": {
+  "fetched": "2026-11-16",
+  "sha256": "948a70066ca53991538021ea84c63948",
+  "chars": 188308,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/news/2009/12/12/libya-repressive-atmosphere-pockets-improvement": {
+  "fetched": "2026-11-16",
+  "sha256": "1014bd495571999767bb5fc285eb8976",
+  "chars": 12991,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/ar/wp-content/uploads/2021/06/mde190081997en.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "4b8917100866c6d86618bef16d746f39",
+  "chars": 104576,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.hrw.org/news/2015/10/26/libya-gaddafi-son-speaks-jail": {
+  "fetched": "2026-11-16",
+  "sha256": "11100e6e25075b29cdb6df7178f4983e",
+  "chars": 22200,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.amnesty.org/fr/wp-content/uploads/2021/05/MDE1923102015ENGLISH.pdf": {
+  "fetched": "2026-11-16",
+  "sha256": "0422a54451ac708c0b0c9207d754f0cf",
+  "chars": 7524,
+  "kind": "pdf",
+  "status": "ok"
+ },
+ "https://www.right-docs.org/doc/a-hrc-17-44/": {
+  "fetched": "2026-11-16",
+  "status": "not retrievable (blocked by robots.txt, missing, or refused)"
+ },
+ "https://www.alkarama.org/en/node/19901": {
+  "fetched": "2026-11-16",
+  "sha256": "f4dabc23b046f7a1dc938c5a79b39944",
+  "chars": 4509,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.hrw.org/news/2019/07/03/libya-deadly-attack-highlights-disregard-civilians": {
+  "fetched": "2026-11-16",
+  "sha256": "59d4b887c0fe7140a3612dc74d354bce",
+  "chars": 7184,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://unsmil.unmissions.org/en/node/56475": {
+  "fetched": "2026-11-16",
+  "sha256": "dd01f469148751d56686b454d643ee84",
+  "chars": 7546,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyasecuritymonitor.com/two-bodies-discovered-in-mass-grave-in-abu-salim/": {
+  "fetched": "2026-11-16",
+  "sha256": "82e266405e35d3bc9a56a0d529203b52",
+  "chars": 951,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://www.aa.com.tr/en/europe/un-rights-chief-urges-action-on-mass-graves-abuse-sites-in-libya/3588969": {
+  "fetched": "2026-11-16",
+  "sha256": "6b750ae177f94fcb79c63356e7f668c0",
+  "chars": 3991,
+  "kind": "html",
+  "status": "ok"
+ },
+ "https://libyasecuritymonitor.com/attorney-general-and-gnu-release-new-details-on-tripoli-clashes/": {
+  "fetched": "2026-11-16",
+  "sha256": "68bf927dc60ac092ccc4d12acc16abcb",
+  "chars": 1653,
+  "kind": "html",
+  "status": "ok"
+ }
+}

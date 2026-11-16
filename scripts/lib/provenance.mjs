@@ -29,11 +29,11 @@ export function storedCopies() {
 function safe(fn, v) { try { return fn(v); } catch { return v; } }
 const sha = (t) => crypto.createHash('sha256').update(String(t)).digest('hex').slice(0, 32);
 
-export function addProvenance(sources, store, wayback = {}) {
+export function addProvenance(sources, store, wayback = {}, fetched = {}) {
   for (const s of sources) {
     const copies = s.url ? store.get(s.url) : null;
     if (copies) { const best = copies.slice().sort((a, b) => b.text.length - a.text.length)[0]; s.stored = best.ref; s.sha256 = sha(best.text); s.chars = best.text.length; s.fetched = best.fetched || null; s.copies = copies.length; }
-    else { s.stored = null; s.sha256 = null; }
+    else { s.stored = null; s.sha256 = null; const f = s.url && fetched[s.url]; if (f && f.sha256) { s.sha256 = f.sha256; s.fetched = f.fetched; s.chars = f.chars; s.held = 'checksum only: text kept off the public repository (rights)'; } else if (f) s.fetch_status = f.status; }
     s.archived = s.url && /(^|\.)archive\.org$/.test(s.origin || '') ? s.url : (s.url && wayback[s.url]) || null;
   }
 }

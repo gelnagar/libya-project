@@ -437,7 +437,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-b3649db1ee61",
   "region": "fezzan",
-  "layer": "battle",
+  "layer": "military",
   "level": "documented",
   "y0": 1982,
   "y1": 1982,
@@ -504,7 +504,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-3c309879d1e0",
   "region": "fezzan",
-  "layer": "security",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1983,
   "y1": 1983,
@@ -598,7 +598,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "14 October 1985",
   "relevance": "The column says Soviet SA-5 missiles are deployed around the al-Kufrah oasis in Libya.",
-  "text": "The column says Soviet SA-5 missiles are deployed around the al-Kufrah oasis in Libya. 2 documents mention it (from 2 publishers). Mapped at the centre of Kufra: the document names the town, not the site.",
+  "text": "The column says Soviet SA-5 missiles are deployed around the al-Kufrah oasis in Libya. The same place appears in 3 separate readings, also described as: Kufra Oasis; Kufra airfield (Libya). 6 documents mention it (from 2 publishers). Mapped at the centre of Kufra: the document names the town, not the site.",
   "sources": [
    {
     "t": "TERROR, INC. (1985-10-14)",
@@ -607,6 +607,22 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
    {
     "t": "Libya - Climate",
     "u": "http://countrystudies.us/libya/36.htm"
+   },
+   {
+    "t": "QADDAFI PLANS 'WATER WAR' WITH EGYPT (1985-11-15)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00965r000706950010-7"
+   },
+   {
+    "t": "QADDAFI PLANS 'WATER WAR' WITH EGYPT (1985-11-15)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00552r000505250031-2"
+   },
+   {
+    "t": "QADDAFI PLANS 'WATER WAR' WITH EGYPT (1985-11-15)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00965r000100120017-3"
+   },
+   {
+    "t": "LIBYA-CHAD CONFLICT",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200650001-9"
    }
   ]
  },
@@ -653,35 +669,6 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-fae933130677",
-  "region": "fezzan",
-  "layer": "landmark",
-  "level": "documented",
-  "y0": 1985,
-  "y1": 1985,
-  "name": "Kufra Oasis",
-  "lat": 24.1833,
-  "lon": 23.2833,
-  "r": 12,
-  "period": "15 November 1985",
-  "relevance": "Underground lake in the Kufra Oasis in southern Libya is the proposed water source for the Great Manmade River pipeline.",
-  "text": "Underground lake in the Kufra Oasis in southern Libya is the proposed water source for the Great Manmade River pipeline. 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Kufra: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "QADDAFI PLANS 'WATER WAR' WITH EGYPT (1985-11-15)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00965r000706950010-7"
-   },
-   {
-    "t": "QADDAFI PLANS 'WATER WAR' WITH EGYPT (1985-11-15)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00552r000505250031-2"
-   },
-   {
-    "t": "QADDAFI PLANS 'WATER WAR' WITH EGYPT (1985-11-15)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00965r000100120017-3"
-   }
-  ]
- },
- {
   "id": "c-868958ab0af3",
   "region": "fezzan",
   "layer": "landmark",
@@ -703,27 +690,6 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
    {
     "t": "Libya - Third Universal Theory (1987)",
     "u": "http://countrystudies.us/libya/78.htm"
-   }
-  ]
- },
- {
-  "id": "c-a5cdebb4aec9",
-  "region": "fezzan",
-  "layer": "landmark",
-  "level": "documented",
-  "y0": 1988,
-  "y1": 1988,
-  "name": "Ghudamis (Ghadames)",
-  "lat": 30.1333,
-  "lon": 9.5,
-  "r": 12,
-  "period": "7 April 1988",
-  "relevance": "Named as the southern end of the open border stretch running from Ra's Jadir to Ghudamis.",
-  "text": "Named as the southern end of the open border stretch running from Ra's Jadir to Ghudamis. This rests on one document: AL-QADHDHAFI SPEECH AT TUNISIAN BORDER (7 April 1988). No second source is held for it. Mapped at the centre of Ghadames: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "AL-QADHDHAFI SPEECH AT TUNISIAN BORDER (1988-04-07)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400430027-9"
    }
   ]
  },
@@ -764,25 +730,6 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
    {
     "t": "PROBABLE LIBYAN SUPPORT TO CHADIAN DISSIDENTS SEBHA TRAINING FACILITY EAST, LIBYA",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200530002-4"
-   }
-  ]
- },
- {
-  "id": "c-6ac5b3bacd5c",
-  "region": "fezzan",
-  "layer": "battle",
-  "level": "documented",
-  "name": "Sebha airfield (Libya)",
-  "lat": 27.0389,
-  "lon": 14.4264,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "Aircraft activity is reported at Sebha, including a Libyan Arab Airlines 707 and SF.260 light-attack aircraft.",
-  "text": "Aircraft activity is reported at Sebha, including a Libyan Arab Airlines 707 and SF.260 light-attack aircraft. This rests on one document: LIBYA-CHAD CONFLICT. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "LIBYA-CHAD CONFLICT",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200650001-9"
    }
   ]
  },
@@ -846,7 +793,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-b9c458982651",
   "region": "fezzan",
-  "layer": "landmark",
+  "layer": "military",
   "level": "documented",
   "name": "Sebha camp",
   "lat": 27.0389,
@@ -854,49 +801,19 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "Date not given",
   "relevance": "Large tank depot in western Libya, reportedly visited by Soviet repair personnel.",
-  "text": "Large tank depot in western Libya, reportedly visited by Soviet repair personnel. This rests on one document: Near East/North Africa Report No. 2117. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
+  "text": "Large tank depot in western Libya, reportedly visited by Soviet repair personnel. The same place appears in 3 separate readings, also described as: Sebha SAM site; Sebha airfield (Libya). 3 documents mention it (from 2 publishers). Mapped at the centre of Sabha: the document names the town, not the site.",
   "sources": [
    {
     "t": "Near East/North Africa Report No. 2117",
     "u": "https://archive.org/details/jprs-report_jprs-75720"
-   }
-  ]
- },
- {
-  "id": "c-bdb333c54ecd",
-  "region": "fezzan",
-  "layer": "military",
-  "level": "documented",
-  "name": "Kufra airfield (Libya)",
-  "lat": 24.1833,
-  "lon": 23.2833,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "Aircraft departures from Kufra are reported, including Fishbed and Flogger fighters and C-130 transports.",
-  "text": "Aircraft departures from Kufra are reported, including Fishbed and Flogger fighters and C-130 transports. This rests on one document: LIBYA-CHAD CONFLICT. No second source is held for it. Mapped at the centre of Kufra: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "LIBYA-CHAD CONFLICT",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200650001-9"
-   }
-  ]
- },
- {
-  "id": "c-df0fc9a84dab",
-  "region": "fezzan",
-  "layer": "military",
-  "level": "documented",
-  "name": "Sebha SAM site",
-  "lat": 27.0389,
-  "lon": 14.4264,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "Newly identified field-deployed SA-2 site about 3 NM east of Sebha airfield in central Libya, at 27-00-50N 014-31-45E.",
-  "text": "Newly identified field-deployed SA-2 site about 3 NM east of Sebha airfield in central Libya, at 27-00-50N 014-31-45E. This rests on one document: FIELD-DEPLOYED SA-2 SITE SEBHA SAM SITE, LIBYA. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
-  "sources": [
+   },
    {
     "t": "FIELD-DEPLOYED SA-2 SITE SEBHA SAM SITE, LIBYA",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100040010-0"
+   },
+   {
+    "t": "LIBYA-CHAD CONFLICT",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200650001-9"
    }
   ]
  },
@@ -911,11 +828,15 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "Date not given",
   "relevance": "Near the Tunisian-Algerian-Libyan border, with construction first observed in July 1978 and nearly complete by 1982.",
-  "text": "Near the Tunisian-Algerian-Libyan border, with construction first observed in July 1978 and nearly complete by 1982. This rests on one document: MILITARY AIRFIELD CONSTRUCTION AND RENOVATION IN LIBYA. No second source is held for it. Mapped at the centre of Ghadames: the document names the town, not the site.",
+  "text": "Near the Tunisian-Algerian-Libyan border, with construction first observed in July 1978 and nearly complete by 1982. The same place appears in 2 separate readings, also described as: Ghudamis (Ghadames). 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Ghadames: the document names the town, not the site.",
   "sources": [
    {
     "t": "MILITARY AIRFIELD CONSTRUCTION AND RENOVATION IN LIBYA",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp82t00709r000201000001-4"
+   },
+   {
+    "t": "AL-QADHDHAFI SPEECH AT TUNISIAN BORDER (1988-04-07)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400430027-9"
    }
   ]
  }

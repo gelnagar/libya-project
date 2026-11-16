@@ -5,7 +5,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-4c6c95e07393",
   "region": "cyrenaica",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1976,
   "y1": 1976,
@@ -110,7 +110,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-a91d983cddee",
   "region": "cyrenaica",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1978,
   "y1": 1978,
@@ -257,7 +257,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-1cd2821cb585",
   "region": "cyrenaica",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1981,
   "y1": 1981,
@@ -301,30 +301,9 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-806265287739",
-  "region": "cyrenaica",
-  "layer": "landmark",
-  "level": "documented",
-  "y0": 1982,
-  "y1": 1982,
-  "name": "Tubruq (Tobruk) port facilities",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "period": "4 February 1982",
-  "relevance": "The document says Soviet vessels were at Tubruq port facilities, with coordinates given as 32-02-00N 023-59-20E.",
-  "text": "The document says Soviet vessels were at Tubruq port facilities, with coordinates given as 32-02-00N 023-59-20E. This rests on one document: SOVIET PORT CALL TUBRUQ PORT FACILITIES, LIBYA (4 February 1982). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "SOVIET PORT CALL TUBRUQ PORT FACILITIES, LIBYA (1982-02-04)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100230007-0"
-   }
-  ]
- },
- {
   "id": "c-519f048ec34b",
   "region": "cyrenaica",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1983,
   "y1": 1983,
@@ -406,30 +385,9 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-05a05eb8f9ed",
-  "region": "cyrenaica",
-  "layer": "landmark",
-  "level": "documented",
-  "y0": 1985,
-  "y1": 1985,
-  "name": "Jamal 'Abd al-Nasir Base, Tobruq",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "period": "28 March 1985",
-  "relevance": "The speech says Qadhafi made a similar statement a year earlier at this base in Tobruq.",
-  "text": "The speech says Qadhafi made a similar statement a year earlier at this base in Tobruq. This rests on one document: AL-QADHDHAFI SPEECH (28 March 1985). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "AL-QADHDHAFI SPEECH (1985-03-28)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400390056-2"
-   }
-  ]
- },
- {
   "id": "c-2d62ad53bbd5",
   "region": "cyrenaica",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1985,
   "y1": 1985,
@@ -471,7 +429,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-b5aed7aebf81",
   "region": "cyrenaica",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1985,
   "y1": 1985,
@@ -490,30 +448,9 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-c0eb536b891d",
-  "region": "cyrenaica",
-  "layer": "battle",
-  "level": "documented",
-  "y0": 1985,
-  "y1": 1985,
-  "name": "Jamal 'Abd al-Nasir Base (al-'Adem Base, Tobruk)",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "period": "28 March 1985",
-  "relevance": "Speech says the base where the anniversary was marked was called al-'Adem Base after the revolution, and that raids on Egypt were launched from it in 1956; it is…",
-  "text": "Speech says the base where the anniversary was marked was called al-'Adem Base after the revolution, and that raids on Egypt were launched from it in 1956; it is described as in Tobruk. This rests on one document: AL-QADHDHAFI ANNIVERSARY SPEECH (28 March 1985). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "AL-QADHDHAFI ANNIVERSARY SPEECH (1985-03-28)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400390063-4"
-   }
-  ]
- },
- {
   "id": "c-52a45f3afddd",
   "region": "cyrenaica",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1986,
   "y1": 1986,
@@ -555,7 +492,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-02cefa1fcdc4",
   "region": "cyrenaica",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1988,
   "y1": 1988,
@@ -574,27 +511,6 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-66690dab375f",
-  "region": "cyrenaica",
-  "layer": "military",
-  "level": "documented",
-  "y0": 1988,
-  "y1": 1988,
-  "name": "Jamal Abd al-Nasir Air Base, Tobruk",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "period": "28 March 1988",
-  "relevance": "Former British base in Tobruk, evacuated 18 years earlier, where Qadhdhafi gave the speech on 28 March 1988.",
-  "text": "Former British base in Tobruk, evacuated 18 years earlier, where Qadhdhafi gave the speech on 28 March 1988. This rests on one document: AL-QADHDHAFI ON 'LIBERATION,' EGYPT, FREEDOM (28 March 1988). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "AL-QADHDHAFI ON 'LIBERATION,' EGYPT, FREEDOM (1988-03-28)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400430025-1"
-   }
-  ]
- },
- {
   "id": "c-456563cb66cc",
   "region": "cyrenaica",
   "layer": "military",
@@ -605,46 +521,16 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "Date not given",
   "relevance": "Housed a tank battalion with at least 30 medium tanks, normally parked in sheds, dispersed within the facility in 1983.",
-  "text": "Housed a tank battalion with at least 30 medium tanks, normally parked in sheds, dispersed within the facility in 1983. This rests on one document: EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING…. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Housed a tank battalion with at least 30 medium tanks, normally parked in sheds, dispersed within the facility in 1983. The same place appears in 3 separate readings, also described as: Tubruq Airfield; Tubrug (Tobruk) SA-6 SAM Support Facility South. 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Tobruk: the document names the town, not the site.",
   "sources": [
    {
     "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACILITY, LIBYA",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
-   }
-  ]
- },
- {
-  "id": "c-703a9576aa2f",
-  "region": "cyrenaica",
-  "layer": "military",
-  "level": "documented",
-  "name": "Tubruq Airfield",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "On the western outskirts of Tubruq in eastern Libya, with slow and sporadic construction.",
-  "text": "On the western outskirts of Tubruq in eastern Libya, with slow and sporadic construction. This rests on one document: MILITARY AIRFIELD CONSTRUCTION AND RENOVATION IN LIBYA. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
-  "sources": [
+   },
    {
     "t": "MILITARY AIRFIELD CONSTRUCTION AND RENOVATION IN LIBYA",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp82t00709r000201000001-4"
-   }
-  ]
- },
- {
-  "id": "c-85a31bede47a",
-  "region": "cyrenaica",
-  "layer": "military",
-  "level": "documented",
-  "name": "Tubrug (Tobruk) SA-6 SAM Support Facility South",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "The document says imagery revealed a LONG TRACK radar in operational mode at this SA-6 SAM support facility near Tobruk.",
-  "text": "The document says imagery revealed a LONG TRACK radar in operational mode at this SA-6 SAM support facility near Tobruk. This rests on one document: FIRST IDENTIFICATION OF LONG TRACK RADAR IN LIBYA. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
-  "sources": [
+   },
    {
     "t": "FIRST IDENTIFICATION OF LONG TRACK RADAR IN LIBYA",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp80t01782r000100490001-3"
@@ -667,25 +553,6 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
    {
     "t": "AIR WARNING RADAR SITES IN EGYPT, LIBYA, AND SUDAN",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp78t05162a000300010053-0"
-   }
-  ]
- },
- {
-  "id": "c-ab6b769110a5",
-  "region": "cyrenaica",
-  "layer": "landmark",
-  "level": "documented",
-  "name": "Jamal 'Abd an-Nasir Airbase (Tobruk)",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "Former British RAF base in Tobruk, eastern Libya, renamed after Nasser; Qadhdhafi addressed a ceremony there on 28 March 1983.",
-  "text": "Former British RAF base in Tobruk, eastern Libya, renamed after Nasser; Qadhdhafi addressed a ceremony there on 28 March 1983. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 061, 29 March 1983. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 061, 29 March 1983",
-    "u": "https://archive.org/details/micro_IA1176909_0118"
    }
   ]
  },
@@ -719,18 +586,34 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "Date not given",
   "relevance": "Former British Adem base in Tobruk, renamed after Nasser when Libya took it over in 1970; Gaddafi spoke there on 28 March 1984.",
-  "text": "Former British Adem base in Tobruk, renamed after Nasser when Libya took it over in 1970; Gaddafi spoke there on 28 March 1984. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 062, 29 March 1984. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Former British Adem base in Tobruk, renamed after Nasser when Libya took it over in 1970; Gaddafi spoke there on 28 March 1984. The same place appears in 5 separate readings, also described as: Jamal 'Abd an-Nasir Airbase (Tobruk); Jamal 'Abd al-Nasir Base, Tobruq; Jamal 'Abd al-Nasir Base (al-'Adem Base, Tobruk); Jamal Abd al-Nasir Air Base, Tobruk. 5 documents mention it (from 2 publishers). Mapped at the centre of Tobruk: the document names the town, not the site.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 062, 29 March 1984",
     "u": "https://archive.org/details/micro_IA1176909_0382"
+   },
+   {
+    "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 061, 29 March 1983",
+    "u": "https://archive.org/details/micro_IA1176909_0118"
+   },
+   {
+    "t": "AL-QADHDHAFI SPEECH (1985-03-28)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400390056-2"
+   },
+   {
+    "t": "AL-QADHDHAFI ANNIVERSARY SPEECH (1985-03-28)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400390063-4"
+   },
+   {
+    "t": "AL-QADHDHAFI ON 'LIBERATION,' EGYPT, FREEDOM (1988-03-28)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400430025-1"
    }
   ]
  },
  {
   "id": "c-ccfd8db49f05",
   "region": "cyrenaica",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "name": "Ajdabiyah schools",
   "lat": 30.7556,
@@ -747,25 +630,6 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-ed5ed2c3003d",
-  "region": "cyrenaica",
-  "layer": "landmark",
-  "level": "documented",
-  "name": "Tubruq port facilities",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "The two Natya minesweepers are expected to be stationed at Tubruq (Tobruk) port facilities, where the first two Libyan Natya minesweepers have been berthed since March…",
-  "text": "The two Natya minesweepers are expected to be stationed at Tubruq (Tobruk) port facilities, where the first two Libyan Natya minesweepers have been berthed since March 1981. This rests on one document: NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200570002-0"
-   }
-  ]
- },
- {
   "id": "c-ef4bd8ecb59a",
   "region": "cyrenaica",
   "layer": "landmark",
@@ -776,11 +640,19 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "Date not given",
   "relevance": "Port where the RO/RO ship with HAZE A helicopter containers arrived offshore; the containers were unlikely to be offloaded here.",
-  "text": "Port where the RO/RO ship with HAZE A helicopter containers arrived offshore; the containers were unlikely to be offloaded here. This rests on one document: ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Port where the RO/RO ship with HAZE A helicopter containers arrived offshore; the containers were unlikely to be offloaded here. The same place appears in 3 separate readings, also described as: Tubruq port facilities; Tubruq (Tobruk) port facilities. 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Tobruk: the document names the town, not the site.",
   "sources": [
    {
     "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200500007-2"
+   },
+   {
+    "t": "NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200570002-0"
+   },
+   {
+    "t": "SOVIET PORT CALL TUBRUQ PORT FACILITIES, LIBYA (1982-02-04)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100230007-0"
    }
   ]
  }

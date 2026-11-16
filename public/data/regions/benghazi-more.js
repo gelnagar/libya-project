@@ -63,7 +63,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-3a5061c0a3d8",
   "region": "benghazi",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1976,
   "y1": 1976,
@@ -105,7 +105,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-ca1f2c0781ae",
   "region": "benghazi",
-  "layer": "landmark",
+  "layer": "military",
   "level": "documented",
   "y0": 1976,
   "y1": 1976,
@@ -782,27 +782,6 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-6dabb1aea6f8",
-  "region": "benghazi",
-  "layer": "landmark",
-  "level": "documented",
-  "y0": 1981,
-  "y1": 1981,
-  "name": "Ben Ghazi (Benghazi)",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "period": "30 August 1981",
-  "relevance": "The article says Wilson had established facilities in Benghazi and Tobruk for making bombs from plastic explosive.",
-  "text": "The article says Wilson had established facilities in Benghazi and Tobruk for making bombs from plastic explosive. This rests on one document: 20-TON EXPLOSIVES SHIPMENT TO LIBYA LINKED TO EX-AGENT (30 August 1981). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "20-TON EXPLOSIVES SHIPMENT TO LIBYA LINKED TO EX-AGENT (1981-08-30)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00552r000100760007-2"
-   }
-  ]
- },
- {
   "id": "c-6fd055e72693",
   "region": "benghazi",
   "layer": "landmark",
@@ -952,7 +931,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-e03f1458779c",
   "region": "benghazi",
-  "layer": "landmark",
+  "layer": "battle",
   "level": "documented",
   "y0": 1982,
   "y1": 1982,
@@ -994,7 +973,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-fc2eec316e2e",
   "region": "benghazi",
-  "layer": "landmark",
+  "layer": "military",
   "level": "documented",
   "y0": 1982,
   "y1": 1982,
@@ -1099,7 +1078,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-e6c71682104e",
   "region": "benghazi",
-  "layer": "landmark",
+  "layer": "military",
   "level": "documented",
   "y0": 1983,
   "y1": 1983,
@@ -1120,8 +1099,8 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-cc474c39eb5d",
   "region": "benghazi",
-  "layer": "massacre",
-  "level": "suspected",
+  "layer": "landmark",
+  "level": "documented",
   "y0": 1984,
   "y1": 1984,
   "name": "Mass demonstration of anger and challenge against the 'plotters' and Muslim Brotherhood cliques, with…",
@@ -1130,7 +1109,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "16 May 1984",
   "relevance": "Mass demonstration of anger and challenge against the 'plotters' and Muslim Brotherhood cliques, with slogans calling for execution of 'agent terrorists' and for the…",
-  "text": "Mass demonstration of anger and challenge against the 'plotters' and Muslim Brotherhood cliques, with slogans calling for execution of 'agent terrorists' and for the overthrow of the Sudanese Numayri regime. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 097, 17 May 1984 (17 May 1984). No second source is held for it. It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Mass demonstration of anger and challenge against the 'plotters' and Muslim Brotherhood cliques, with slogans calling for execution of 'agent terrorists' and for the overthrow of the Sudanese Numayri regime. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 097, 17 May 1984 (17 May 1984). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 097, 17 May 1984 (1984-05-17)",
@@ -1162,7 +1141,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-34a0cc76ab3e",
   "region": "benghazi",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1986,
   "y1": 1986,
@@ -1246,7 +1225,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-56d1d65b5ddd",
   "region": "benghazi",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1987,
   "y1": 1987,
@@ -1288,7 +1267,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-b70d869b84b5",
   "region": "benghazi",
-  "layer": "landmark",
+  "layer": "military",
   "level": "documented",
   "y0": 1988,
   "y1": 1988,
@@ -1351,7 +1330,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-27e16dcd3eaf",
   "region": "benghazi",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1991,
   "y1": 1991,
@@ -1393,8 +1372,8 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-f9cd4c3d8fd1",
   "region": "benghazi",
-  "layer": "massacre",
-  "level": "suspected",
+  "layer": "landmark",
+  "level": "documented",
   "y0": 2006,
   "y1": 2006,
   "name": "Protests after Minister Roberto Calderoli wore a Muhammad caricature T-shirt led to the closure of the…",
@@ -1403,7 +1382,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "16 February 2006",
   "relevance": "Protests after Minister Roberto Calderoli wore a Muhammad caricature T-shirt led to the closure of the Italian consulate in Benghazi; the article says 11 Libyans were…",
-  "text": "Protests after Minister Roberto Calderoli wore a Muhammad caricature T-shirt led to the closure of the Italian consulate in Benghazi; the article says 11 Libyans were killed and 60 wounded. This rests on one document: Italian Libyans (Wikipedia). No second source is held for it. It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Protests after Minister Roberto Calderoli wore a Muhammad caricature T-shirt led to the closure of the Italian consulate in Benghazi; the article says 11 Libyans were killed and 60 wounded. This rests on one document: Italian Libyans (Wikipedia). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
   "sources": [
    {
     "t": "Italian Libyans (Wikipedia)",
@@ -1472,11 +1451,19 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "Date not given",
   "relevance": "A U.S. facility in Benghazi was under heavy mortar and RPG fire from about 0430 on 12 September 2012; evacuation preparations had begun.",
-  "text": "A U.S. facility in Benghazi was under heavy mortar and RPG fire from about 0430 on 12 September 2012; evacuation preparations had begun. This rests on one document: SUBSTANTIVE REVISION: SITUATION REPORT AS OF 0630 12 SEPTEMBER 2012 (LOCAL TIME) IN BENGHAZI, LIBYA: UPDATE ON ATTACK…. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "A U.S. facility in Benghazi was under heavy mortar and RPG fire from about 0430 on 12 September 2012; evacuation preparations had begun. The same place appears in 4 separate readings, also described as: Banghazi AW Radar Fac; Racetrack near the U.S. facility, Benghazi; Ben Ghazi (Benghazi). 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Benghazi: the document names the town, not the site.",
   "sources": [
    {
     "t": "SUBSTANTIVE REVISION: SITUATION REPORT AS OF 0630 12 SEPTEMBER 2012 (LOCAL TIME) IN BENGHAZI, LIBYA: UPDATE ON ATTACK TO U.S. FACILITY IN BENGHAZI,…",
     "u": "https://www.cia.gov/readingroom/document/06398501"
+   },
+   {
+    "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+   },
+   {
+    "t": "20-TON EXPLOSIVES SHIPMENT TO LIBYA LINKED TO EX-AGENT (1981-08-30)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00552r000100760007-2"
    }
   ]
  },
@@ -1491,30 +1478,15 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "Date not given",
   "relevance": "A Soviet Kapitan Kushnarenko-class merchant ship with Fishbed aircraft crates was off-loading cargo at Banghazi port facilities.",
-  "text": "A Soviet Kapitan Kushnarenko-class merchant ship with Fishbed aircraft crates was off-loading cargo at Banghazi port facilities. This rests on one document: ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "A Soviet Kapitan Kushnarenko-class merchant ship with Fishbed aircraft crates was off-loading cargo at Banghazi port facilities. The same place appears in 2 separate readings, also described as: Benghazi port facilities (naval base). 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Benghazi: the document names the town, not the site.",
   "sources": [
    {
     "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000300580003-4"
-   }
-  ]
- },
- {
-  "id": "c-46b12ad40d24",
-  "region": "benghazi",
-  "layer": "military",
-  "level": "documented",
-  "name": "Banghazi AW Radar Fac",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "Libyan AW radar site 104 in Benghazi, listed as occupied with TALL KING and SCORE BOARD radars.",
-  "text": "Libyan AW radar site 104 in Benghazi, listed as occupied with TALL KING and SCORE BOARD radars. This rests on one document: AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
-  "sources": [
+   },
    {
-    "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+    "t": "NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200570002-0"
    }
   ]
  },
@@ -1576,47 +1548,9 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-8679ea767f6f",
-  "region": "benghazi",
-  "layer": "military",
-  "level": "documented",
-  "name": "Benghazi port facilities (naval base)",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "The second Nanuchka-II patrol boat is berthed at the naval base within the port facilities at Benghazi.",
-  "text": "The second Nanuchka-II patrol boat is berthed at the naval base within the port facilities at Benghazi. This rests on one document: NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200570002-0"
-   }
-  ]
- },
- {
-  "id": "c-98a5dbd96fcd",
-  "region": "benghazi",
-  "layer": "landmark",
-  "level": "documented",
-  "name": "Racetrack near the U.S. facility, Benghazi",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "The mortar fire was reportedly launched from a racetrack in close proximity to the U.S. facility.",
-  "text": "The mortar fire was reportedly launched from a racetrack in close proximity to the U.S. facility. This rests on one document: SUBSTANTIVE REVISION: SITUATION REPORT AS OF 0630 12 SEPTEMBER 2012 (LOCAL TIME) IN BENGHAZI, LIBYA: UPDATE ON ATTACK…. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "SUBSTANTIVE REVISION: SITUATION REPORT AS OF 0630 12 SEPTEMBER 2012 (LOCAL TIME) IN BENGHAZI, LIBYA: UPDATE ON ATTACK TO U.S. FACILITY IN BENGHAZI,…",
-    "u": "https://www.cia.gov/readingroom/document/06398501"
-   }
-  ]
- },
- {
   "id": "c-9a3afa081f72",
   "region": "benghazi",
-  "layer": "landmark",
+  "layer": "military",
   "level": "documented",
   "name": "Commando Training Facility, Banghazi",
   "lat": 32.1167,

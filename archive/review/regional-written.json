@@ -1,25 +1,82 @@
 {
- "at": "2026-11-16T07:09:06.415Z",
- "written": 213,
+ "at": "2026-11-16T07:18:02.070Z",
+ "written": 193,
+ "mergedDuplicates": 20,
  "byRegion": {
-  "sirte": 21,
-  "cyrenaica": 38,
-  "fezzan": 43,
-  "benghazi": 78,
-  "tripolitania": 33
+  "sirte": 20,
+  "cyrenaica": 30,
+  "fezzan": 38,
+  "benghazi": 74,
+  "tripolitania": 31
  },
  "byLayer": {
-  "massacre": 10,
-  "landmark": 134,
-  "military": 43,
-  "battle": 22,
-  "security": 3,
+  "massacre": 8,
+  "landmark": 143,
+  "military": 31,
+  "battle": 10,
   "airstrike": 1
  },
  "byLevel": {
-  "suspected": 10,
-  "documented": 203
+  "suspected": 8,
+  "documented": 185
  },
+ "mergedEntries": [
+  {
+   "id": "c-3a7820216de9",
+   "name": "al-Kufrah oasis",
+   "merged": 2
+  },
+  {
+   "id": "c-456563cb66cc",
+   "name": "Tubruq SA-6 SAM Support Facility",
+   "merged": 2
+  },
+  {
+   "id": "c-16836d4945d6",
+   "name": "Benghazi, U.S. facility",
+   "merged": 3
+  },
+  {
+   "id": "c-ef4bd8ecb59a",
+   "name": "Tubruq port (Tobruk)",
+   "merged": 2
+  },
+  {
+   "id": "c-c30e2231eab9",
+   "name": "Misratah port",
+   "merged": 1
+  },
+  {
+   "id": "c-b9c458982651",
+   "name": "Sebha camp",
+   "merged": 2
+  },
+  {
+   "id": "c-3e9b13de7557",
+   "name": "Surt missile base",
+   "merged": 1
+  },
+  {
+   "id": "c-fb1988e0f851",
+   "name": "Ghadames East Airfield",
+   "merged": 1
+  },
+  {
+   "id": "c-c6910e1b3964",
+   "name": "Jamal 'Abd an-Nasir base, Tobruk",
+   "merged": 4
+  },
+  {
+   "id": "c-44029b1f56e4",
+   "name": "Benghazi port facilities",
+   "merged": 1
+  },
+  {
+   "id": "c-6065c66e6d35",
+   "name": "Qadhdhafi speech marking the anniversary of the battle of Al-Kardun, threatening Egypt and Tunisia and…",
+   "merged": 1
+  }
+ ],
  "skipped": {
   "names Tripoli (belongs to the Tripoli entries)": {
    "count": 23,

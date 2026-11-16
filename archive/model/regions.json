@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T07:09:28.064Z",
+ "at": "2026-11-16T07:18:18.155Z",
  "textsCounted": 14855,
  "regions": [
   {
@@ -53,8 +53,8 @@
     ]
    ],
    "published": {
-    "places": 69,
-    "events": 11,
+    "places": 70,
+    "events": 6,
     "unplaced": 0
    },
    "docs": 881,
@@ -86,8 +86,8 @@
     ]
    ],
    "published": {
-    "places": 26,
-    "events": 9,
+    "places": 28,
+    "events": 5,
     "unplaced": 0
    },
    "docs": 399,
@@ -189,8 +189,8 @@
     ]
    ],
    "published": {
-    "places": 34,
-    "events": 4,
+    "places": 28,
+    "events": 2,
     "unplaced": 0
    },
    "docs": 466,
@@ -244,7 +244,7 @@
    ],
    "published": {
     "places": 15,
-    "events": 8,
+    "events": 7,
     "unplaced": 0
    },
    "docs": 261,
@@ -290,8 +290,8 @@
     ]
    ],
    "published": {
-    "places": 44,
-    "events": 3,
+    "places": 41,
+    "events": 1,
     "unplaced": 0
    },
    "docs": 477,

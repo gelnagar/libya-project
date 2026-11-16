@@ -26,7 +26,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-b650129bd457",
   "region": "sirte",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1980,
   "y1": 1980,
@@ -160,7 +160,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-3becec266dbe",
   "region": "sirte",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1986,
   "y1": 1986,
@@ -195,11 +195,15 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "April 1986",
   "relevance": "Libyan missile base struck by US forces in the first strike of the operation, per the article.",
-  "text": "Libyan missile base struck by US forces in the first strike of the operation, per the article. This rests on one document: SAILING IN HARM'S WAY (April 1986). No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
+  "text": "Libyan missile base struck by US forces in the first strike of the operation, per the article. The same place appears in 2 separate readings, also described as: Syrte (Sirte) SAM-5 site. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Sirte: the document names the town, not the site.",
   "sources": [
    {
     "t": "SAILING IN HARM'S WAY (1986-04)",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00965r000706460001-1"
+   },
+   {
+    "t": "BLOWN OUT OF THE WATER",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00965r000302030010-6"
    }
   ]
  },
@@ -317,25 +321,6 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
    {
     "t": "Great Man-Made River (Wikipedia)",
     "u": "https://en.wikipedia.org/wiki/Great_Man-Made_River"
-   }
-  ]
- },
- {
-  "id": "c-12c36cf1f619",
-  "region": "sirte",
-  "layer": "military",
-  "level": "documented",
-  "name": "Syrte (Sirte) SAM-5 site",
-  "lat": 31.205,
-  "lon": 16.5886,
-  "r": 12,
-  "period": "Date not given",
-  "relevance": "Soviet-made SA-5 missile site on Libya's northern coast that fired missiles at US aircraft and was hit by two US HARM missiles.",
-  "text": "Soviet-made SA-5 missile site on Libya's northern coast that fired missiles at US aircraft and was hit by two US HARM missiles. This rests on one document: BLOWN OUT OF THE WATER. No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "BLOWN OUT OF THE WATER",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00965r000302030010-6"
    }
   ]
  },

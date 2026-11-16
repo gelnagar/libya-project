@@ -68,7 +68,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-a2aea422ce39",
   "region": "tripolitania",
-  "layer": "landmark",
+  "layer": "military",
   "level": "documented",
   "y0": 1975,
   "y1": 1975,
@@ -82,30 +82,9 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "sources": []
  },
  {
-  "id": "c-5b0b9f9fb20a",
-  "region": "tripolitania",
-  "layer": "battle",
-  "level": "documented",
-  "y0": 1976,
-  "y1": 1976,
-  "name": "Speech on the anniversary of the Battle of al-Kardun, denying sabotage and assassination charges against…",
-  "lat": 31.9306,
-  "lon": 12.2483,
-  "r": 12,
-  "period": "30 March 1976",
-  "relevance": "Speech on the anniversary of the Battle of al-Kardun, denying sabotage and assassination charges against Egypt and Tunisia.",
-  "text": "Speech on the anniversary of the Battle of al-Kardun, denying sabotage and assassination charges against Egypt and Tunisia. This rests on one document: QADHAFI'S SPEECHES--MARCH - JUNE 1976--BY SUBJECT. No second source is held for it. Mapped at the centre of Zintan: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "QADHAFI'S SPEECHES--MARCH - JUNE 1976--BY SUBJECT",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400370002-3"
-   }
-  ]
- },
- {
   "id": "c-6065c66e6d35",
   "region": "tripolitania",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1976,
   "y1": 1976,
@@ -115,11 +94,15 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "30 March 1976",
   "relevance": "Qadhdhafi speech marking the anniversary of the battle of Al-Kardun, threatening Egypt and Tunisia and denying assassination plots.",
-  "text": "Qadhdhafi speech marking the anniversary of the battle of Al-Kardun, threatening Egypt and Tunisia and denying assassination plots. This rests on one document: AL-QADHDHAFI DENOUNCES, THREATENS EGYPT, TUNISIA (31 March 1976). No second source is held for it. Mapped at the centre of Zintan: the document names the town, not the site.",
+  "text": "Qadhdhafi speech marking the anniversary of the battle of Al-Kardun, threatening Egypt and Tunisia and denying assassination plots. The same event appears in 2 separate readings, also described as: Speech on the anniversary of the Battle of al-Kardun, denying sabotage and…. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Zintan: the document names the town, not the site.",
   "sources": [
    {
     "t": "AL-QADHDHAFI DENOUNCES, THREATENS EGYPT, TUNISIA (1976-03-31)",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400370049-2"
+   },
+   {
+    "t": "QADHAFI'S SPEECHES--MARCH - JUNE 1976--BY SUBJECT",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp05-01559r000400370002-3"
    }
   ]
  },
@@ -147,7 +130,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-c3fb0df7cf66",
   "region": "tripolitania",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1976,
   "y1": 1976,
@@ -252,7 +235,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-3a419bf6bbc3",
   "region": "tripolitania",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "y0": 1981,
   "y1": 1981,
@@ -309,27 +292,6 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 054, 19 March 1982",
     "u": "https://archive.org/details/micro_IA1176908_1133"
-   }
-  ]
- },
- {
-  "id": "c-c711683e889b",
-  "region": "tripolitania",
-  "layer": "landmark",
-  "level": "documented",
-  "y0": 1982,
-  "y1": 1982,
-  "name": "Misratah port transshipment facility",
-  "lat": 32.3775,
-  "lon": 15.092,
-  "r": 12,
-  "period": "19 December 1982",
-  "relevance": "Transshipment mole at Misratah port where six HAZE A helicopter fuselage containers were observed in late 1982.",
-  "text": "Transshipment mole at Misratah port where six HAZE A helicopter fuselage containers were observed in late 1982. This rests on one document: ARMS TRANSSHIPMENT MISRATAH PORT FACILITY, LIBYA (19 December 1982). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "ARMS TRANSSHIPMENT MISRATAH PORT FACILITY, LIBYA (1982-12-19)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100080006-1"
    }
   ]
  },
@@ -487,7 +449,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-49de0c71f362",
   "region": "tripolitania",
-  "layer": "security",
+  "layer": "landmark",
   "level": "documented",
   "y0": 2011,
   "y1": 2011,
@@ -550,7 +512,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-b74c0b1539e3",
   "region": "tripolitania",
-  "layer": "military",
+  "layer": "battle",
   "level": "documented",
   "y0": 2011,
   "y1": 2011,
@@ -571,7 +533,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-1908efd2bafa",
   "region": "tripolitania",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "name": "Misrata International Airport",
   "lat": 32.3775,
@@ -590,7 +552,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-499989ddc9d5",
   "region": "tripolitania",
-  "layer": "security",
+  "layer": "landmark",
   "level": "documented",
   "name": "Zuwarah sea fishing port",
   "lat": 32.9333,
@@ -640,18 +602,22 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "r": 12,
   "period": "Date not given",
   "relevance": "Expected destination for transport of the HAZE A containers; delivery of such containers was observed here.",
-  "text": "Expected destination for transport of the HAZE A containers; delivery of such containers was observed here. This rests on one document: ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
+  "text": "Expected destination for transport of the HAZE A containers; delivery of such containers was observed here. The same place appears in 2 separate readings, also described as: Misratah port transshipment facility. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Misrata: the document names the town, not the site.",
   "sources": [
    {
     "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA",
     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200500007-2"
+   },
+   {
+    "t": "ARMS TRANSSHIPMENT MISRATAH PORT FACILITY, LIBYA (1982-12-19)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100080006-1"
    }
   ]
  },
  {
   "id": "c-f447fbcbbe6c",
   "region": "tripolitania",
-  "layer": "battle",
+  "layer": "landmark",
   "level": "documented",
   "name": "Misrata War Museum",
   "lat": 32.3775,
@@ -670,7 +636,7 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
  {
   "id": "c-fb7829cc5be7",
   "region": "tripolitania",
-  "layer": "military",
+  "layer": "landmark",
   "level": "documented",
   "name": "Tarhuna (Terhouna) teachers' institute",
   "lat": 32.4339,

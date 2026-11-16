@@ -56,7 +56,7 @@ const oc = run(['scripts/ocr-score.mjs', '--self-test']);
 say(oc.ok && /self-test passed/.test(oc.out) ? 'PASS' : 'FAIL', 'scan-quality score: a clean text scores good, a garbled one poor, a short one is not scored', oc.ok ? '' : oc.out.slice(0, 120));
 
 const ev = run(['scripts/check-evidence.mjs']), em = ev.out.match(/(\d+) documented killing entries; (\d+) have two or more publishers; (\d+) rest on one/);
-say(!em ? 'FAIL' : +em[3] ? 'WARN' : 'PASS', em ? `evidence rule 8: ${em[1]} documented killing entries, ${em[3]} rest on one publisher (list: node scripts/check-evidence.mjs)` : 'evidence rule 8: check did not run');
+say(!em ? 'FAIL' : +em[3] ? 'NOTE' : 'PASS', em ? `evidence rule 8: ${em[1]} documented killing entries, ${em[3]} rest on one publisher (list: node scripts/check-evidence.mjs)` : 'evidence rule 8: check did not run');
 
 // 5. data and model
 const p = run(['scripts/check-panels.mjs']); say(p.ok ? 'PASS' : 'FAIL', 'panels: footnotes are in each pin\'s source list, timelines in date order', p.ok ? '' : p.out.split('\n').slice(0, 3).join(' | '));

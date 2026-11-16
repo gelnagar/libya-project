@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<title>Who Uses the Atlas</title>
+<script src="boot.js"></script>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root { --bg: #F6F7F9; --panel: #FFFFFF; --line: #D3D8DE; --text: #1C2127; --muted: #5F6B7C; --accent: #2D72D2; --bar: #2D72D2; color-scheme: light; }
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) { --bg: #111418; --panel: #1C2127; --line: #383E47; --text: #F6F7F9; --muted: #ABB3BF; --accent: #4C90F0; --bar: #4C90F0; color-scheme: dark; } }
+html[data-theme="dark"] { --bg: #111418; --panel: #1C2127; --line: #383E47; --text: #F6F7F9; --muted: #ABB3BF; --accent: #4C90F0; --bar: #4C90F0; color-scheme: dark; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 Inter, system-ui, sans-serif; padding: 32px 16px 56px; }
+main { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+h1 { margin: 0; font-size: 22px; font-weight: 600; }
+h2 { margin: 0; font-size: 15px; font-weight: 600; }
+p { margin: 0; color: var(--muted); }
+a { color: var(--accent); }
+.kicker { font: 11px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+section { background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.figs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.fig { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.fig span { font: 11px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.fig b { font-size: 26px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.fig small { color: var(--muted); font-size: 12px; }
+.bars { display: flex; align-items: flex-end; gap: 3px; height: 120px; border-bottom: 1px solid var(--line); }
+.bars i { flex: 1; min-width: 2px; background: var(--bar); border-radius: 2px 2px 0 0; }
+.axis { display: flex; justify-content: space-between; font: 11px "JetBrains Mono", monospace; color: var(--muted); }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+th { font: 11px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+td.n { font-variant-numeric: tabular-nums; text-align: right; }
+.top td .bar { display: block; height: 4px; background: var(--bar); border-radius: 2px; margin-top: 4px; }
+details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 520px) { .figs { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <p class="kicker">Tripoli: Open Source</p>
+    <h1>Who uses the Atlas</h1>
+  </div>
+  <p id="lead" role="status">Loading…</p>
+
+  <section id="s-figs" hidden aria-label="Totals for the last 30 days">
+    <div class="figs">
+      <div class="fig"><span>Visitors</span><b id="f-vis" class="num">0</b><small>different visitors, last 30 days</small></div>
+      <div class="fig"><span>Visits</span><b id="f-vst" class="num">0</b><small>times the map was opened</small></div>
+      <div class="fig"><span>Counted since</span><b id="f-since" class="num">-</b><small id="f-since-s"></small></div>
+    </div>
+  </section>
+
+  <section id="s-days" hidden aria-labelledby="h-days">
+    <h2 id="h-days">Visitors each day</h2>
+    <div id="bars" class="bars" role="img" aria-label="Bar chart of visitors per day"></div>
+    <div class="axis"><span id="ax-a"></span><span id="ax-b"></span></div>
+    <details><summary>Show as a table</summary><table id="t-days"><thead><tr><th>Day</th><th class="n" style="text-align:right">Visitors</th><th class="n" style="text-align:right">Visits</th></tr></thead><tbody></tbody></table></details>
+  </section>
+
+  <section id="s-top" hidden aria-labelledby="h-top">
+    <h2 id="h-top">What people opened most</h2>
+    <table class="top"><thead><tr><th>Place, area or story</th><th class="n" style="text-align:right">Visitors</th></tr></thead><tbody id="t-top"></tbody></table>
+    <p id="top-note"></p>
+  </section>
+
+  <section aria-labelledby="h-priv">
+    <h2 id="h-priv">What is counted, and what is not</h2>
+    <p>These are totals only. The Atlas does not record names, addresses, accounts or what anyone typed into a search box. A visitor is one device on one connection, counted by a scrambled code that cannot be turned back into an address; the same person on two devices counts twice, and two people sharing a connection and browser count once. Anything opened by fewer than five different people is left out, so a small number never points at one person. Pages about individual people and family reports are never listed. Sign-ins by the family are not counted.</p>
+  </section>
+  <p><a href="./">Back to the map</a></p>
+</main>
+<script src="data/config.js"></script>
+<script src="data/sites.js"></script>
+<script src="data/areas.js"></script>
+<script src="data/stories.js"></script>
+<script src="analytics.js"></script>
+</body>
+</html>

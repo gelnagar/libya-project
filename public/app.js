@@ -3528,7 +3528,7 @@
   setTimeout(function () {
     shareApply(); shareReady = true; shareSync();
     var sb = document.getElementById('statusbar');
-    if (sb && !document.getElementById('sb-share')) { var b = document.createElement('span'); b.id = 'sb-share'; b.setAttribute('role', 'button'); b.tabIndex = 0; b.title = 'Copy a link that keeps the selected place, period and layers'; b.textContent = 'Copy link'; b.style.cursor = 'pointer'; b.addEventListener('click', shareCopy); b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); shareCopy(); } }); sb.appendChild(b); }
+    if (sb && !document.getElementById('sb-share')) { var b = document.createElement('span'); b.id = 'sb-share'; b.setAttribute('role', 'button'); b.tabIndex = 0; b.title = 'Copy a link that keeps the selected place, period and layers'; b.textContent = 'Copy link'; b.style.cursor = 'pointer'; b.addEventListener('click', shareCopy); b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); shareCopy(); } }); sb.appendChild(b); var st = document.createElement('a'); st.id = 'sb-stats'; st.href = 'analytics.html'; st.textContent = 'Visitor counts'; st.title = 'How many people use the Atlas and what they open most (totals only)'; st.style.marginLeft = '12px'; sb.appendChild(st); }
   }, 600);
 
   window.ATLAS_API = API = {

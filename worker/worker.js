@@ -196,6 +196,8 @@ const STATS_SCHEMA = [
   `CREATE TABLE IF NOT EXISTS rtime (id TEXT PRIMARY KEY, ms INTEGER NOT NULL)`,
   `CREATE INDEX IF NOT EXISTS cand_score ON cand(score DESC)`,
   `CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)`,
+  `CREATE TABLE IF NOT EXISTS reports (id TEXT PRIMARY KEY, at INTEGER NOT NULL, cat TEXT, held INTEGER NOT NULL DEFAULT 0, data TEXT NOT NULL)`,
+  `CREATE INDEX IF NOT EXISTS reports_at ON reports(at)`,
   // wrong-password attempts, by a keyed hash of the address (never the address)
   `CREATE TABLE IF NOT EXISTS fails (who TEXT NOT NULL, at INTEGER NOT NULL)`,
   `CREATE INDEX IF NOT EXISTS fails_who ON fails(who, at)`,
@@ -256,6 +258,58 @@ async function alertNewReport(env, item, origin) {
 }
 
 /* ---------- the owner dashboard's numbers ---------- */
+/* ---------- public analytics: counts only, for the page everyone can open (public/analytics.html) ---------- */
+// What it shows: visitors and visits per day, and the most-opened entries. What it never shows: addresses, places, devices, search
+// words, who is family, people or family reports, or any entry opened by fewer than PUBLIC_MIN different visitors (a small count could point at one person).
+// Names are not sent: the page labels the ids from its own data, so nothing a visitor typed can appear on it. Family sign-ins are left out.
+const PUBLIC_MIN = 5, PUBLIC_DAYS = 30; let publicCache = null;
+async function publicStats(env) {
+  if (publicCache && Date.now() - publicCache.at < 600000) return publicCache.v;
+  const db = await statsDb(env).catch(() => null);
+  if (!db) return { error: 'Statistics are not available.' };
+  const t = Date.now(), today = dayOf(t), since = dayOf(t - (PUBLIC_DAYS - 1) * 86400000), q = (s, ...a) => db.prepare(s).bind(...a);
+  const r = (await db.batch([
+    q("SELECT day, COUNT(*) AS visits, COUNT(DISTINCT vid) AS visitors FROM events WHERE kind = 'visit' AND family = 0 AND day >= ? GROUP BY day ORDER BY day", since),
+    q("SELECT COUNT(*) AS visits, COUNT(DISTINCT vid) AS visitors FROM events WHERE kind = 'visit' AND family = 0 AND day >= ?", since),
+    q("SELECT item, COUNT(*) AS views, COUNT(DISTINCT vid) AS visitors FROM events WHERE kind IN ('open', 'story') AND family = 0 AND day >= ? AND (item LIKE 'site:%' OR item LIKE 'area:%' OR item LIKE 'story:%') GROUP BY item HAVING COUNT(DISTINCT vid) >= ? ORDER BY visitors DESC, views DESC LIMIT 15", since, PUBLIC_MIN),
+    q("SELECT MIN(day) AS first FROM events WHERE kind = 'visit' AND family = 0")
+  ])).map((x) => x.results || []);
+  const v = { days: PUBLIC_DAYS, since, today, firstDay: (r[3][0] || {}).first || null, minVisitors: PUBLIC_MIN, totals: r[1][0] || { visits: 0, visitors: 0 }, daily: r[0], top: r[2] };
+  publicCache = { at: Date.now(), v };
+  return v;
+}
+
+/* ---------- family reports: one database row per report (PRD s13); older ones were a single value in KV ---------- */
+// The whole report is kept as JSON in `data` (with the hash of its removal token, which is never sent out); id, time, category and the
+// held flag are columns so the owner can count and filter without opening every report. Without the database the Worker still works
+// from the KV value, as before. The first read after this change copies any reports found in KV into rows (the KV value is left
+// in place as a backup and is no longer written).
+async function reportsAll(env) {
+  const db = env.STATS ? await statsDb(env).catch(() => null) : null;
+  if (!db) { try { return JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch { return []; } }
+  const done = await db.prepare("SELECT v FROM meta WHERE k = 'reports_migrated'").first();
+  if (!done) {
+    let old = []; try { old = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
+    const ins = db.prepare('INSERT OR IGNORE INTO reports (id, at, cat, held, data) VALUES (?, ?, ?, ?, ?)');
+    if (old.length) await db.batch(old.map((x) => ins.bind(String(x.id), x.at || 0, x.cat || 'other', x.held ? 1 : 0, JSON.stringify(x))));
+    await db.prepare("INSERT OR REPLACE INTO meta (k, v) VALUES ('reports_migrated', ?)").bind(String(old.length)).run();
+  }
+  const rows = (await db.prepare('SELECT data FROM reports ORDER BY at, id LIMIT 3000').all()).results || [];
+  return rows.map((r) => { try { return JSON.parse(r.data); } catch { return null; } }).filter(Boolean);
+}
+async function reportPut(env, item) {
+  const db = env.STATS ? await statsDb(env).catch(() => null) : null;
+  if (!db) { const l = await reportsAll(env); const i = l.findIndex((x) => x.id === item.id); if (i >= 0) l[i] = item; else l.push(item); await env.ATLAS_KV.put('reports:v1', JSON.stringify(l.slice(-3000))); return; }
+  await reportsAll(env); // make sure any older reports are in the table first
+  await db.prepare('INSERT OR REPLACE INTO reports (id, at, cat, held, data) VALUES (?, ?, ?, ?, ?)').bind(String(item.id), item.at || 0, item.cat || 'other', item.held ? 1 : 0, JSON.stringify(item)).run();
+}
+async function reportDrop(env, id) {
+  const db = env.STATS ? await statsDb(env).catch(() => null) : null;
+  if (!db) { const l = await reportsAll(env); await env.ATLAS_KV.put('reports:v1', JSON.stringify(l.filter((x) => x.id !== id))); return; }
+  await reportsAll(env);
+  await db.prepare('DELETE FROM reports WHERE id = ?').bind(String(id)).run();
+}
+
 /* ---------- owner review queue: candidates found in the archive, each approved, rejected or put off by the owner ---------- */
 const VERDICTS = ['approve', 'unplaced', 'reject', 'defer'];
 const REVIEW_MS_CAP = 600000; // a candidate left open longer than ten minutes counts as ten: the page was probably abandoned, not read
@@ -630,8 +684,11 @@ async function api(request, env, url, ctx) {
   let body;
   try { const raw = await request.text(); if (raw.length > 4500000) return json({ error: 'Too large' }, 413, cors); body = JSON.parse(raw); } catch { return json({ error: 'Bad request' }, 400, cors); }
   body = body && typeof body === 'object' ? body : {};
-  const REQ_KINDS = ['track', 'correction', 'review', 'approveReport', 'owner', 'agent', 'report', 'reportDelete', 'reports', 'mediaPut', 'mediaGet', 'request', 'status'];
+  const REQ_KINDS = ['publicStats', 'track', 'correction', 'review', 'approveReport', 'owner', 'agent', 'report', 'reportDelete', 'reports', 'mediaPut', 'mediaGet', 'request', 'status'];
   later(ctx, countRequest(env, 'api:' + (REQ_KINDS.find((k) => body[k]) || 'question')));
+
+  /* ----- the public analytics page: aggregate counts, no sign-in ----- */
+  if (body.publicStats) return json(await publicStats(env), 200, { ...cors, 'Cache-Control': 'public, max-age=300' });
 
   /* ----- visitor statistics: a small batch of events from the map (anyone; no AI, no KV) ----- */
   if (body.track) {
@@ -682,15 +739,14 @@ async function api(request, env, url, ctx) {
     if (body.correctionDone) { const db = await statsDb(env); await db.prepare('UPDATE corrections SET done = ? WHERE id = ?').bind(body.reopen ? 0 : 1, String(body.correctionDone)).run(); return json({ ok: true }, 200, cors); }
     if (body.done) { await env.ATLAS_KV.delete(String(body.done)); return json({ ok: true }, 200, cors); }
     if (body.approveReport) { // release a held family report to visitors (or hold it again with hold: true)
-      let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
+      const reps = await reportsAll(env);
       const r = reps.find((x) => x.id === String(body.approveReport)); if (!r) return json({ error: 'Not found' }, 404, cors);
       if (body.hold) r.held = true; else delete r.held;
-      await env.ATLAS_KV.put('reports:v1', JSON.stringify(reps));
+      await reportPut(env, r);
       return json({ ok: true, held: !!r.held }, 200, cors);
     }
     if (body.removeReport) {
-      let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
-      await env.ATLAS_KV.put('reports:v1', JSON.stringify(reps.filter((x) => x.id !== String(body.removeReport))));
+      await reportDrop(env, String(body.removeReport));
       return json({ ok: true }, 200, cors);
     }
     const list = await env.ATLAS_KV.list({ prefix: 'req:', limit: 200 });
@@ -700,7 +756,7 @@ async function api(request, env, url, ctx) {
       if (v) { try { items.push({ key: k.name, ...JSON.parse(v) }); } catch {} }
     }
     items.sort((a, b) => (b.at || 0) - (a.at || 0));
-    let reports = []; try { reports = (JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []).map(({ tk, ...x }) => x).reverse(); } catch {}
+    let reports = []; try { reports = (await reportsAll(env)).map(({ tk, ...x }) => x).reverse(); } catch {}
     let corrections = []; try { const db = await statsDb(env); if (db) corrections = await correctionsList(db); } catch {}
     return json({ items, reports, corrections, credit: await creditInfo(env) }, 200, cors);
   }
@@ -752,7 +808,7 @@ async function api(request, env, url, ctx) {
     const id = String(body.mediaGet || '').replace(/[^a-z0-9]/g, '').slice(0, 40);
     if (!family) {
       // the public only sees media attached to a report it can see (never a home)
-      let reps = []; try { reps = JSON.parse(await env.ATLAS_KV.get('reports:v1')) || []; } catch {}
+      const reps = await reportsAll(env);
       if (!reps.some((x) => x.cat !== 'home' && !x.held && (x.media || []).some((m) => m.id === id))) return json({ error: 'Not found' }, 404, cors);
     }
     const v = await env.ATLAS_KV.getWithMetadata('media:' + id);
@@ -763,9 +819,7 @@ async function api(request, env, url, ctx) {
   /* ----- family reports: places and notes added by family members ----- */
   if (body.reports || body.report || body.reportDelete) {
     if (!env.ATLAS_KV) return json({ error: 'Storage is not set up' }, 503, cors);
-    const KEY = 'reports:v1';
-    let list = [];
-    try { list = JSON.parse(await env.ATLAS_KV.get(KEY)) || []; } catch { list = []; }
+    const list = await reportsAll(env);
     const hash = async (t) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(t || ''))))].map((b) => b.toString(16).padStart(2, '0')).join('');
     if (body.report) {
       const r = body.report;
@@ -783,9 +837,7 @@ async function api(request, env, url, ctx) {
       const token = [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, '0')).join('');
       item.tk = await hash(token);
       item.held = true; // visitors see it only after the owner approves it (requests.html)
-      list.push(item);
-      if (list.length > 3000) list = list.slice(-3000);
-      await env.ATLAS_KV.put(KEY, JSON.stringify(list));
+      await reportPut(env, item);
       later(ctx, alertNewReport(env, item, url.origin));
       const { tk, ...pub } = item;
       return json({ ok: true, report: pub, token }, 200, cors);
@@ -797,8 +849,7 @@ async function api(request, env, url, ctx) {
       if (i < 0) return json({ error: 'Not found' }, 404, cors);
       if (!isOwner && list[i].tk !== t) return json({ error: 'Only the person who added it can remove it.' }, 403, cors);
       for (const m of list[i].media || []) { try { await env.ATLAS_KV.delete('media:' + m.id); } catch {} }
-      list.splice(i, 1);
-      await env.ATLAS_KV.put(KEY, JSON.stringify(list));
+      await reportDrop(env, id);
       return json({ ok: true }, 200, cors);
     }
     // family see everything; visitors see only approved, non-home reports, and never the name of who added them

@@ -128,4 +128,31 @@ ok('the report gives the median time and says how many are unmeasured', rp.time.
 ok('the report needs the owner password', (await api({ owner: true, review: { report: true } }, { 'X-Owner-Code': 'x' }, '10.9.0.2')).s === 401);
 ok('undoing a decision removes its time', (await rv({ id: 'c1', verdict: 'clear' })).s === 200 && !sql.prepare('SELECT ms FROM rtime WHERE id = ?').get('c1') && !sql.prepare('SELECT id FROM decision WHERE id = ?').get('c1'));
 
+/* public analytics: counts only, small counts hidden, nothing a visitor typed, no family sessions */
+{
+  const ins = sql.prepare('INSERT INTO events (ts, day, vid, kind, item, name, country, region, city, org, device, ref, lang, family) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'), now = Date.now(), day = new Date(now).toISOString().slice(0, 10);
+  for (let i = 0; i < 6; i++) { ins.run(now, day, 'pv' + i, 'visit', '', '', 'LY', 'x', 'Tripoli', 'SomeISP', 'mobile', '', 'en', 0); ins.run(now, day, 'pv' + i, 'open', 'site:abusalim', 'Typed <b>name</b>', 'LY', 'x', 'Tripoli', 'SomeISP', 'mobile', '', 'en', 0); }
+  for (let i = 0; i < 3; i++) ins.run(now, day, 'pr' + i, 'open', 'site:rare-place', 'Rare', 'LY', 'x', 'Tripoli', 'SomeISP', 'mobile', '', 'en', 0);
+  for (let i = 0; i < 8; i++) ins.run(now, day, 'pp' + i, 'open', 'person:someone', 'A person', 'LY', 'x', 'Tripoli', 'SomeISP', 'mobile', '', 'en', 0);
+  for (let i = 0; i < 8; i++) ins.run(now, day, 'fam' + i, 'open', 'family-only', 'Fam', 'LY', 'x', 'Tripoli', 'SomeISP', 'mobile', '', 'en', 1);
+  const pubs = await api({ publicStats: true }, {}, '10.10.0.1'), P = pubs.j;
+  ok('the public statistics need no password', pubs.s === 200 && P.totals && P.totals.visitors === 6, JSON.stringify(P).slice(0, 200));
+  ok('an entry opened by fewer than five visitors is not listed', P.top.length === 1 && P.top[0].item === 'site:abusalim' && P.top[0].visitors === 6, JSON.stringify(P.top));
+  ok('family sessions are not counted', !JSON.stringify(P).includes('family-only'));
+  ok('pages about people and family reports are never listed', !JSON.stringify(P).includes('person:'));
+  ok('the public statistics carry no name, place, device, organisation or address', !/Typed|SomeISP|Tripoli|mobile|country|city|org|10\.10/.test(JSON.stringify(P)), JSON.stringify(P).slice(0, 300));
+}
+
+/* family reports in the database (F11): one row each; an older KV list is copied in once and left in place */
+{
+  ok('a family report is stored as a row, with its flags as columns', sql.prepare('SELECT COUNT(*) AS n FROM reports').get().n >= 1 && sql.prepare('SELECT held FROM reports WHERE id = ?').get(id) !== undefined);
+  const legacy = { id: 'legacy1', at: 1700000000000, cat: 'landmark', title: 'Old KV report', when: '1990', text: 'Kept in the old single value.', how: 'family', src: '', by: 'Omar', lat: 32.9, lon: 13.2, target: '', targetName: '', media: [], tk: 'x'.repeat(64) };
+  store.set('reports:v1', { v: JSON.stringify([legacy]) }); sql.prepare('DELETE FROM reports').run(); sql.prepare("DELETE FROM meta WHERE k = 'reports_migrated'").run();
+  const rl = (await api({ reports: true }, fam)).j.reports;
+  ok('reports found in the old KV value are copied into rows on first read', rl.some((r) => r.id === 'legacy1') && sql.prepare("SELECT id FROM reports WHERE id = 'legacy1'").get() !== undefined);
+  ok('the old KV value is left in place as a backup', JSON.parse(store.get('reports:v1').v).length === 1);
+  ok('the copy happens once: a later read does not bring back a removed report', (await api({ owner: true, removeReport: 'legacy1' }, own, '10.11.0.1')).s === 200 && !(await api({ reports: true }, fam)).j.reports.some((r) => r.id === 'legacy1') && !sql.prepare("SELECT id FROM reports WHERE id = 'legacy1'").get());
+  ok('the removal token hash is never sent to anyone', !JSON.stringify((await api({ reports: true }, fam)).j).includes('"tk"') && !JSON.stringify((await api({ owner: true }, own, '10.11.0.2')).j.reports).includes('"tk"'));
+}
+
 console.log(`\n${pass} passed, ${fail} failed`); process.exit(fail ? 1 : 0);

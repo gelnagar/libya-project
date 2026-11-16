@@ -90,6 +90,8 @@ The chunk list above covered the PRD's phases A to E but left out requirements s
 - [ ] F11 Reports and review data in D1 with a row per record (PRD s13); family reports are still one KV value. Needs the owner's go-ahead because it moves live data.
 - [ ] F12 Custom domain so the address stops showing the owner's account name (PRD s13). Needs the owner.
 
+- [ ] F6b (later, noted 16 Nov by the owner) Search: match a Latin spelling to an Arabic-only name; match a missing vowel (Salim, Slim); French and Italian spellings.
+
 ## Phase E. Public opening
 - [~] E1 Country view done under A5. Correction and removal route done. Hosting: settled (Workers Paid, 100,000 files); proved only by the first deploy over 20,000 files, which needs a push to main.
       Hosting (2026-11-15): the owner confirmed the account is on Workers Paid, whose limit is 100,000 static files per Worker version; public/ holds 15,858. The Workers Builds API shows 103 builds of tripoli-atlas-ai; the four failures (21 Oct 2026) were refused with code 10304, "37,275 static asset files ... exceeds the Workers Free limit of 20,000", so the account was on the free plan then. The old ceiling of about 16,300 came from that period and was too low even for the free plan; no 18,055-file failure is in the build log. Region data and more satellite tiles now fit; no spending is needed.

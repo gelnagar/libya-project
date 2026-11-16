@@ -1095,6 +1095,7 @@
       var btn = h('button', { class: 'qr-btn', type: 'button', text: 'Read the passage', 'aria-expanded': 'false', onclick: function () { var open = box.hidden; box.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true' : 'false'); btn.textContent = open ? 'Hide the passage' : 'Read the passage'; } });
       li.appendChild(btn); li.appendChild(box);
     });
+    list.querySelectorAll('li').forEach(function (li) { if (li.dataset.u && !li.querySelector('.qr-btn') && !li.querySelector('.no-qr')) li.appendChild(h('small', { class: 'no-qr', text: 'No supporting passage stored for this source.' })); });
   }
   /* ---------- panels: one shape for every kind ----------
      Header (name, Arabic, type) · Status fields · Actions · Assessment · Reporting · Connected · Sources · Further research.
@@ -1155,10 +1156,17 @@
     var c = key && GRADES.cred[key] ? GRADES.cred[key][x.u] : null;
     return h('span', { class: 'grade g-' + g[0], text: g[0] + (c ? c : ''), title: 'Source: ' + REL_TEXT[g[0]] + ' (' + g[1] + ').' + (c ? ' This entry: ' + CRED_TEXT[c] + '.' : '') + (g[2] ? '' : ' Default grade by type of source, not an individual assessment.') });
   }
+  /* Per entry: its evidence level, and who approved it and when (PRD s10, evidence rule 9). Says "not recorded" rather than leaving it out. */
+  var LEVEL_WORDS = { documented: 'Documented', testimony: 'Testimony', suspected: 'Suspected', context: 'Context' };
+  function evidenceLine(key) {
+    var s = key && BY_ID[key], lv = s && s.level; if (!lv) return null;
+    var rv = GRADES.rev && GRADES.rev[key];
+    return h('p', { class: 'evi', text: 'Level: ' + (LEVEL_WORDS[lv] || lv) + '. ' + (rv ? 'Approved by ' + rv[0] + ' on ' + rv[1] + '.' : 'Approval: no reviewer or date is on record for this entry.') });
+  }
   function ppSources(body, srcs, quoteKey) {
     if (!srcs || !srcs.length) return null;
     var list = h('ol', { class: 'srcs' }, srcs.map(function (x) { var li = h('li', {}, [gradeTag(x, quoteKey), x.u ? h('a', { href: x.u, target: '_blank', rel: 'noopener', text: x.t }) : x.t]); if (x.u) li.dataset.u = x.u; return li; }));
-    ppSec(body, 'Sources', [pubNote(srcs), list, list.querySelector('.grade') ? h('p', { class: 'grade-key', text: 'Letter: reliability of the source, A to F. Number: how well this entry is corroborated, 1 to 6. Hover for the meaning.' }) : null]);
+    ppSec(body, 'Sources', [pubNote(srcs), evidenceLine(quoteKey), list, list.querySelector('.grade') ? h('p', { class: 'grade-key', text: 'Letter: reliability of the source, A to F. Number: how well this entry is corroborated, 1 to 6. Hover for the meaning.' }) : null]);
     if (quoteKey) loadQuotes().then(function (Q) { addPassages(list, (Q || {})[quoteKey] || {}); });
     return list;
   }

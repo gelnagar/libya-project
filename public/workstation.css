@@ -588,3 +588,5 @@ html[data-theme] .tl-pop .un-src a { color: var(--accent); }
 
 /* One-publisher note beside a source list */
 html[data-theme] .one-pub { margin: 0 0 6px; padding: 3px 6px; font-size: 11px; line-height: 1.4; color: var(--text); border-left: 2px solid var(--text-muted); background: var(--surface-2, transparent); }
+html[data-theme] .evi { margin: 0 0 6px; font-size: 11px; color: var(--text-muted); }
+html[data-theme] .no-qr { display: block; font-size: 11px; color: var(--text-muted); }

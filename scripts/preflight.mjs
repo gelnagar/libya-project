@@ -46,6 +46,9 @@ if (m && quoted) say(+quoted === +m[1] ? 'PASS' : 'FAIL', `CLAUDE.md quotes ${qu
 const tt = run(['scripts/test-timeline.mjs']), tm = tt.out.match(/(\d+) passed, (\d+) failed/);
 say(tm && tm[2] === '0' && tt.ok ? 'PASS' : 'FAIL', `timeline: ${tm ? tm[1] + ' passed, ' + tm[2] + ' failed' : 'did not run'} (dates read from text; no record dropped)`, tm && tm[2] !== '0' ? tt.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
 
+const ts = run(['scripts/test-search.mjs']), tsm = ts.out.match(/(d+) passed, (d+) failed/);
+say(tsm && tsm[2] === '0' && ts.ok ? 'PASS' : 'FAIL', `search spelling variants: ${tsm ? tsm[1] + ' passed, ' + tsm[2] + ' failed' : 'did not run'}`);
+
 const ev = run(['scripts/check-evidence.mjs']), em = ev.out.match(/(\d+) documented killing entries; (\d+) have two or more publishers; (\d+) rest on one/);
 say(!em ? 'FAIL' : +em[3] ? 'WARN' : 'PASS', em ? `evidence rule 8: ${em[1]} documented killing entries, ${em[3]} rest on one publisher (list: node scripts/check-evidence.mjs)` : 'evidence rule 8: check did not run');
 

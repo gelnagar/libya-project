@@ -167,7 +167,7 @@
     { k: 'y1', t: 'To', w: '14%', num: true, get: function (s) { return s.y1 == null ? '' : s.y1; } }
   ];
   var sort = store.get('tblSort', { k: 'y0', d: 1 }), filt = {}, rows = [], lastIdx = -1, built = false;
-  function fold(t) { return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  function fold(t) { var f = String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); return window.ATLAS_NAMEFOLD ? window.ATLAS_NAMEFOLD(f) : f; }
   function matches(c, s) {
     var f = filt[c.k]; if (!f) return true;
     var v = c.get(s);

@@ -1489,7 +1489,8 @@
     return recordsWaiting;
   }
   setTimeout(loadRecords, 2500);
-  var fold = function (t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[ً-ٟـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/[’'`ʿʾ\-_.,()]/g, ' ').replace(/\s+/g, ' ').trim(); };
+  var fold0 = function (t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[ً-ٟـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/[’'`ʿʾ\-_.,()]/g, ' ').replace(/\s+/g, ' ').trim(); };
+  var fold = function (t) { var f = fold0(t); return window.ATLAS_NAMEFOLD ? window.ATLAS_NAMEFOLD(f) : f; };
   var squash = function (t) { return fold(t).replace(/^(al|el|ar|as|az|ad|an|at|ash) /, '').replace(/ /g, ''); };
   function areaNames(a) { return [a.name, a.ar].concat(a.aliases || []); }
   function areaByName(name) {
@@ -3531,7 +3532,7 @@
   }, 600);
 
   window.ATLAS_API = API = {
-    conn: connDetail, shareLink: shareLink, map: map, h: h, facts: facts, section: section,
+    conn: connDetail, fold: fold, shareLink: shareLink, map: map, h: h, facts: facts, section: section,
     sheet: function (kind, icon, fill) { var body = newSheet(kind); markSelected(null); curTarget = { isReport: true, code: icon }; fill(body); openPanel('sheet'); },
     openPlace: function (id) { if (BY_ID[id]) { focusSite(BY_ID[id]); return; } var a = AREA_BY_ID[id]; if (a) { map.flyTo([a.lat, a.lon], 15, { duration: 0.8 }); openArea(a); } },
     recordExists: function (id) { return loadRecords().then(function () { return !!REC_BY_ID[id]; }); },

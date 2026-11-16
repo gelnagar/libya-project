@@ -70,6 +70,9 @@ say(files > 100000 ? 'FAIL' : files > 20000 ? 'WARN' : 'PASS', `public/ holds ${
 const hdr = fs.existsSync('public/_headers') ? fs.readFileSync('public/_headers', 'utf8') : '';
 say(/script-src 'self'/.test(hdr) && !/script-src[^;\n]*unsafe-inline/.test(hdr) ? 'PASS' : 'FAIL', "public/_headers: scripts only from the site itself");
 
+// 7b. no page asks Google for fonts (PRD s9: visitors' addresses stay with us)
+{ const hit = fs.readdirSync('public').filter((f) => /.(html|css|js)$/.test(f)).filter((f) => /fonts.(googleapis|gstatic).com/.test(fs.readFileSync('public/' + f, 'utf8'))); say(hit.length || /googleapis|gstatic/.test(hdr) ? 'FAIL' : 'PASS', 'fonts are served from the site itself, not Google', hit.join(', ')); }
+
 // 8a. every layer has an icon
 try { const lay = load('public/data/sites.js').ATLAS_LAYERS, ic = (() => { const w = {}; vm.runInNewContext(fs.readFileSync('public/layer-icons.js', 'utf8'), { window: w }); return w.ATLAS_ICONS; })(); const miss = Object.keys(lay).filter((k) => !ic[k]); say(miss.length ? 'FAIL' : 'PASS', `layer icons: ${Object.keys(lay).length} layers, ${miss.length} without an icon`, miss.join(', ')); } catch (e) { say('FAIL', 'could not check layer icons', e.message); }
 

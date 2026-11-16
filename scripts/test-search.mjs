@@ -10,4 +10,15 @@ same('Tajoura', 'Tajura'); same('Tarhouna', 'Tarhuna'); same('Ben Ashour', 'Bin 
 same('Benghazi', 'Benghazy'); same('Ghadames', 'Gadames'); same('Souq al-Jumaa', 'Suq al-Jumaa');
 diff('Tripoli', 'Tarhuna'); diff('Misrata', 'Sirte'); diff('Zawiya', 'Zliten'); diff('Abu Salim', 'Ain Zara');
 ok('Arabic passes through', f('أبو سليم') === 'أبو سليم'); ok('digits kept', f('1984') === '1984'); ok('empty', f('') === '' && f(null) === '');
+// a name typed without its vowels, and a name given in the other language
+const sk = w.ATLAS_SKELETON, alt = w.ATLAS_NAMEALT, P = [['Abu Salim prison', 'سجن أبو سليم'], ['Ain Zara prison', 'سجن عين زارة'], ['Tajoura', 'تاجوراء']];
+ok('Slim has the same consonants as Salim', sk('Slim').join() === sk('Salim').join());
+ok('Abu Salim keeps the consonants of Salim', sk('Abu Salim').includes('slm'));
+ok('different names keep different consonants', sk('Tripoli').join() !== sk('Tarhuna').join());
+ok('one-consonant words are not matched on', sk('Abu').length === 0 && sk('a').length === 0);
+ok('Arabic text has no Latin skeleton', sk('أبو سليم').length === 0);
+ok('a Latin name gives the Arabic name of the place', alt('Abu Salim', P).join() === 'سجن أبو سليم');
+ok('a spelling variant still finds the Arabic name', alt('Tajura', P).join() === 'تاجوراء');
+ok('an Arabic query gives the English name', alt('سليم', P).join() === 'Abu Salim prison');
+ok('a name not on the map gives nothing', alt('Atlantis', P).length === 0 && alt('', P).length === 0 && alt('x', null).length === 0);
 console.log(`${pass} passed, ${fail} failed`); process.exit(fail ? 1 : 0);

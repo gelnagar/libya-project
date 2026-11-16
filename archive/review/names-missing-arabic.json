@@ -1,7 +1,7 @@
 {
- "at": "2026-11-16T06:36:40.688Z",
+ "at": "2026-11-16T14:24:07.059Z",
  "note": "Map places and areas with no Arabic name on record. Add one only from a source (a sign, a document, an Arabic Wikipedia title).",
- "count": 40,
+ "count": 222,
  "missing": [
   {
    "id": "site:maktab",
@@ -27,6 +27,916 @@
    "id": "site:mitiga-prison",
    "class": "place",
    "en": "Mitiga prison (Special Deterrence Force)"
+  },
+  {
+   "id": "site:c-9eed01386367",
+   "class": "place",
+   "en": "LTC Aadim al-Hawwaaz, former Defense Minister, asked an Embassy Branch Office Benghazi officer at the end of…"
+  },
+  {
+   "id": "site:c-b7690e02dbc2",
+   "class": "place",
+   "en": "Student rally at which Qadhafi gave a speech that students regarded as a failure"
+  },
+  {
+   "id": "site:c-3a5061c0a3d8",
+   "class": "place",
+   "en": "Students demonstrated against government manipulation of student representative elections"
+  },
+  {
+   "id": "site:c-7b8443a57651",
+   "class": "place",
+   "en": "Qadhdhafi addressed Benghazi University students and faculty"
+  },
+  {
+   "id": "site:c-ca1f2c0781ae",
+   "class": "place",
+   "en": "Libyan fighter aircraft ordered to fly twice-daily reconnaissance missions along the northeastern Libyan coast"
+  },
+  {
+   "id": "site:c-e59cdb259b7d",
+   "class": "place",
+   "en": "Shooting at Benghazi university struggle, described by Qadhdhafi as part of the popular revolution"
+  },
+  {
+   "id": "site:c-51e21ab48481",
+   "class": "place",
+   "en": "Castro visited the iron pipes plant, cement complex, north Benghazi power station and Wadi al-Gattara farm,…"
+  },
+  {
+   "id": "site:c-5b88ed61d44e",
+   "class": "place",
+   "en": "Egyptian burning of the Libyan Relations Office, which Fahmy said was retaliation for Libyan action against…"
+  },
+  {
+   "id": "site:c-4bd793769b59",
+   "class": "place",
+   "en": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins"
+  },
+  {
+   "id": "site:c-81e4aad1d4ac",
+   "class": "place",
+   "en": "Qadhdhafi gave a recorded interview at an agricultural project in Southwest Benghazi, explaining why he did…"
+  },
+  {
+   "id": "site:c-0abcd9a926fb",
+   "class": "place",
+   "en": "First congress of the Free Unionist Officers Movement condemns the Egypt-Israel treaty and pledges to call…"
+  },
+  {
+   "id": "site:c-1b4fe075b0b2",
+   "class": "place",
+   "en": "23 July Avenue, Benghazi"
+  },
+  {
+   "id": "site:c-258c87f8bef8",
+   "class": "place",
+   "en": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at…"
+  },
+  {
+   "id": "site:c-4b6d976c1593",
+   "class": "place",
+   "en": "Libya closed the PLO office in Benghazi and ordered the expulsion of three top PLO leaders (Abu Tariq, Abu…"
+  },
+  {
+   "id": "site:c-52a3f4b903a7",
+   "class": "place",
+   "en": "Qadhdhafi held a meeting with members of the Governors Council of the Arab central banks on using Arab funds…"
+  },
+  {
+   "id": "site:c-59a98f0c7c16",
+   "class": "place",
+   "en": "Qadhdhafi and King Khalid meet at the guest palace in Benghazi"
+  },
+  {
+   "id": "site:c-69054984a1c9",
+   "class": "place",
+   "en": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by…"
+  },
+  {
+   "id": "site:c-90e41725f793",
+   "class": "place",
+   "en": "Tenth anniversary of the revolution: Qadhafi gave a speech and parade attended by Arab leaders and…"
+  },
+  {
+   "id": "site:c-b164a246a5a4",
+   "class": "place",
+   "en": "Qadhafi addressed a massive revolutionary rally on the 8 March anniversary of the Syrian revolution, calling…"
+  },
+  {
+   "id": "site:c-c129e91c4563",
+   "class": "place",
+   "en": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya"
+  },
+  {
+   "id": "site:c-c62ac047bff1",
+   "class": "place",
+   "en": "Qadhdhafi announces at the Benghazi Festival that Libya would support any uprising in Egypt, Morocco or Yemen"
+  },
+  {
+   "id": "site:c-05accf1aa4b9",
+   "class": "place",
+   "en": "Qadhdhafi holds a press conference attended by representatives of major Arab and international newspapers"
+  },
+  {
+   "id": "site:c-060e34c6509f",
+   "class": "place",
+   "en": "Basic People's Congress of Banghazi Central held an emergency session and passed 14 resolutions on Tunisia,…"
+  },
+  {
+   "id": "site:c-0a9b5b196c5b",
+   "class": "place",
+   "en": "Ahmad Jibril (PFLP-GC secretary) arrived in Banghazi on a visit and made a statement backing Libya against…"
+  },
+  {
+   "id": "site:c-1ae8504b375a",
+   "class": "place",
+   "en": "Qadhdhafi press conference in Banghazi (AFP) on Tunisia, France and the Qafsah incident"
+  },
+  {
+   "id": "site:c-2c0643671db7",
+   "class": "place",
+   "en": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25…"
+  },
+  {
+   "id": "site:c-6039ff67e5f3",
+   "class": "place",
+   "en": "Colonel Qadhdhafi received Kountche in Banghazi"
+  },
+  {
+   "id": "site:c-717e64a46c9f",
+   "class": "place",
+   "en": "Qadhdhafi received Khaddam and the Mauritanian foreign minister"
+  },
+  {
+   "id": "site:c-7d8c78ea3e23",
+   "class": "place",
+   "en": "Revolutionary Committees' third session announces policy of physical liquidation of regime enemies abroad"
+  },
+  {
+   "id": "site:c-bda5b0e61513",
+   "class": "place",
+   "en": "Banghazi Barracks and Training Center"
+  },
+  {
+   "id": "site:c-2338a30e9cb9",
+   "class": "place",
+   "en": "Mass demonstration denouncing U.S. plots, with effigy of Reagan burned at the Square of the Popular Congress"
+  },
+  {
+   "id": "site:c-3d3058de2a45",
+   "class": "place",
+   "en": "Benghazi Coast camp and Southwest Farm"
+  },
+  {
+   "id": "site:c-4d786801defa",
+   "class": "place",
+   "en": "Turkish workers demonstrated against the recent U.S. aggression, burned the American flag in front of the…"
+  },
+  {
+   "id": "site:c-63dfe4d39338",
+   "class": "place",
+   "en": "Egyptian Arab residents demonstrated against the U.S. action and Camp David"
+  },
+  {
+   "id": "site:c-68ea9b1058b6",
+   "class": "place",
+   "en": "Qadhdhafi receives a visiting Chadian popular delegation"
+  },
+  {
+   "id": "site:c-6fd055e72693",
+   "class": "place",
+   "en": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya"
+  },
+  {
+   "id": "site:c-6fd606d1b778",
+   "class": "place",
+   "en": "Grand equestrian show where Qadhdhafi announced the formation of a people's cavalry division inside the…"
+  },
+  {
+   "id": "site:c-85083136ec68",
+   "class": "place",
+   "en": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi"
+  },
+  {
+   "id": "site:c-ba531243cbe4",
+   "class": "place",
+   "en": "Mass demonstration in Benghazi denouncing the U.S. closure of the Libyan People's Bureau in Washington and…"
+  },
+  {
+   "id": "site:c-e4c690a4027c",
+   "class": "place",
+   "en": "Third batch of Libyan Armed Forces units returned from Chad"
+  },
+  {
+   "id": "site:c-093bc12f7ee3",
+   "class": "place",
+   "en": "Alleged assassination attempt discovered (one of four claimed attempts, March–April 1982)"
+  },
+  {
+   "id": "site:c-f1075fea89e2",
+   "class": "place",
+   "en": "Qadhdhafi met with student groups in Benghazi as part of meetings urging the masses to escalate…"
+  },
+  {
+   "id": "site:c-fc2eec316e2e",
+   "class": "place",
+   "en": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in…"
+  },
+  {
+   "id": "site:c-529a84b5b669",
+   "class": "place",
+   "en": "Qadhdhafi addressed a group of secondary school students and called for a people's resistance army in Lebanon"
+  },
+  {
+   "id": "site:c-a213475a7729",
+   "class": "place",
+   "en": "Tunisian Foreign Minister Beji Caid es-Sebsi arrived in Benghazi"
+  },
+  {
+   "id": "site:c-b943d82cfa58",
+   "class": "place",
+   "en": "Second Nanuchka-II patrol boat arrives at the port"
+  },
+  {
+   "id": "site:c-d59e96b87ecd",
+   "class": "place",
+   "en": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000…"
+  },
+  {
+   "id": "site:c-e6c71682104e",
+   "class": "place",
+   "en": "A US aircraft reportedly violated Libyan airspace and approached Benghazi to within 80 km before being…"
+  },
+  {
+   "id": "site:c-cc474c39eb5d",
+   "class": "place",
+   "en": "Mass demonstration of anger and challenge against the 'plotters' and Muslim Brotherhood cliques, with…"
+  },
+  {
+   "id": "site:c-2bf7e33e7d6f",
+   "class": "place",
+   "en": "Qadhdhafi addressed a mass public rally in Banghazi, after a route of popular demonstrations from Thulug and…"
+  },
+  {
+   "id": "site:c-34a0cc76ab3e",
+   "class": "place",
+   "en": "Qadhdhafi speech vowing to arm Libyan cities, prepare slaughterhouses for American 'sheep', and threatening…"
+  },
+  {
+   "id": "site:c-73cc89116d3b",
+   "class": "place",
+   "en": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report)"
+  },
+  {
+   "id": "site:c-d3c9e1e28706",
+   "class": "place",
+   "en": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's…"
+  },
+  {
+   "id": "site:c-dc8f2c40e5bc",
+   "class": "place",
+   "en": "Al-Asad and Qadhdhafi resumed talks at the Syrian president's residence"
+  },
+  {
+   "id": "site:c-56d1d65b5ddd",
+   "class": "place",
+   "en": "Rally and military parade on the first anniversary of the US raid, with calls to destroy American bases and…"
+  },
+  {
+   "id": "site:c-3791a18a12e6",
+   "class": "place",
+   "en": "JANA reported a U.S. military aircraft flew at very low altitude over the Libyan ship Gharnatah on a voyage…"
+  },
+  {
+   "id": "site:c-b70d869b84b5",
+   "class": "place",
+   "en": "US fighter made a low-level flight over the Libyan passenger ship Gharnatah, sailing from Izmir to Benghazi"
+  },
+  {
+   "id": "site:c-f33e42545598",
+   "class": "place",
+   "en": "Ibn Ashur Street, Benghazi"
+  },
+  {
+   "id": "site:c-27e16dcd3eaf",
+   "class": "place",
+   "en": "Libya called an emergency meeting of Arab Maghreb Union foreign ministers to discuss the Persian Gulf war"
+  },
+  {
+   "id": "site:c-d32b9c438c99",
+   "class": "place",
+   "en": "A Libyan court sentenced six foreign medical workers to death over the HIV infection case at El-Fatih…"
+  },
+  {
+   "id": "site:c-f9cd4c3d8fd1",
+   "class": "place",
+   "en": "Protests after Minister Roberto Calderoli wore a Muhammad caricature T-shirt led to the closure of the…"
+  },
+  {
+   "id": "site:c-26b10860d953",
+   "class": "place",
+   "en": "Gaddafi and Italian Prime Minister Berlusconi signed a cooperation treaty in Benghazi, with Italy agreeing…"
+  },
+  {
+   "id": "site:c-5aa1cce3520f",
+   "class": "place",
+   "en": "Lawyer Fathi Tarbel, who represented victims' families, was arrested"
+  },
+  {
+   "id": "site:c-16836d4945d6",
+   "class": "place",
+   "en": "Benghazi, U.S. facility"
+  },
+  {
+   "id": "site:c-44029b1f56e4",
+   "class": "place",
+   "en": "Benghazi port facilities"
+  },
+  {
+   "id": "site:c-742b791c7f67",
+   "class": "place",
+   "en": "Martyrs of February Stadium, Benghazi"
+  },
+  {
+   "id": "site:c-7a5cd16dc479",
+   "class": "place",
+   "en": "Benghazi Military College"
+  },
+  {
+   "id": "site:c-7f8541606267",
+   "class": "place",
+   "en": "Euhesperides (Berenice, Benghazi)"
+  },
+  {
+   "id": "site:c-9a3afa081f72",
+   "class": "place",
+   "en": "Commando Training Facility, Banghazi"
+  },
+  {
+   "id": "site:bn-1969-coup",
+   "class": "place",
+   "en": "The coup of 1 September 1969 is launched from Benghazi"
+  },
+  {
+   "id": "site:c-4c6c95e07393",
+   "class": "place",
+   "en": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the…"
+  },
+  {
+   "id": "site:c-d94c54151d33",
+   "class": "place",
+   "en": "Qadhdhafi speech inaugurating a new power station and honoring the 'Martyrs of Darna' who fell at Al-Gargah"
+  },
+  {
+   "id": "site:c-5697bc4bbe2f",
+   "class": "place",
+   "en": "Qadhdhafi speech on the anniversary of the evacuation of American troops from Libya (Wheelus), comparing…"
+  },
+  {
+   "id": "site:c-04866ac1754a",
+   "class": "place",
+   "en": "Tobruk naval base"
+  },
+  {
+   "id": "site:c-06d8ea5f409e",
+   "class": "place",
+   "en": "Qadhdhafi attended a naval exercise in the Mediterranean launched from Tobruk naval base, including missile…"
+  },
+  {
+   "id": "site:c-a91d983cddee",
+   "class": "place",
+   "en": "Qadhdhafi speech at the eighth anniversary celebrations of the end of the British presence in Libya, calling…"
+  },
+  {
+   "id": "site:c-77b53ad3a247",
+   "class": "place",
+   "en": "Ninth anniversary of the evacuation of the last British soldier from Libya celebrated at Tobruk"
+  },
+  {
+   "id": "site:c-b4bc06007055",
+   "class": "place",
+   "en": "Workers seized Kurkub Contractors and the Al-Bahr Tourist Hotel, forming people's committees"
+  },
+  {
+   "id": "site:c-972a6aeaa783",
+   "class": "place",
+   "en": "According to an opposition communique reported by AFP, the 9th Libyan Army brigade based at Tobruq revolted…"
+  },
+  {
+   "id": "site:c-da24f4394a81",
+   "class": "place",
+   "en": "A large popular demonstration and rally in support of the revolution took place in Tobruq for the 11th…"
+  },
+  {
+   "id": "site:c-1cd2821cb585",
+   "class": "place",
+   "en": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation"
+  },
+  {
+   "id": "site:c-195be392fae6",
+   "class": "place",
+   "en": "Tobruk flour mill"
+  },
+  {
+   "id": "site:c-519f048ec34b",
+   "class": "place",
+   "en": "Angry popular demonstration in Darnah denouncing British military exercises on Egyptian territory near the…"
+  },
+  {
+   "id": "site:c-90ffb880d8f2",
+   "class": "place",
+   "en": "Qadhdhafi met officers of the Libyan Armed Forces in Tobruk on the 13th anniversary of the removal of…"
+  },
+  {
+   "id": "site:c-dfb01eb0384e",
+   "class": "place",
+   "en": "Al Bumbah airfield North (Al Bumbah, near Tubruq)"
+  },
+  {
+   "id": "site:c-cea80e3aa2d3",
+   "class": "place",
+   "en": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in…"
+  },
+  {
+   "id": "site:c-2d62ad53bbd5",
+   "class": "place",
+   "en": "Qadhdhafi attended a live-ammunition military exercise south of Al-Mukhayla and gave a speech on Vengeance Day"
+  },
+  {
+   "id": "site:c-92085ba25e3d",
+   "class": "place",
+   "en": "Al-Magharibah tribe held a popular rally welcoming Qadhdhafi"
+  },
+  {
+   "id": "site:c-b5aed7aebf81",
+   "class": "place",
+   "en": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and…"
+  },
+  {
+   "id": "site:c-52a45f3afddd",
+   "class": "place",
+   "en": "Qadhdhafi speech at 7 April Square calling for an end to use of foreign goods, after the U.S. raid on Libya"
+  },
+  {
+   "id": "site:c-e565e8097dc7",
+   "class": "place",
+   "en": "Qadhdhafi delivers speech in Darnah calling for the city to be made an armed city against possible US…"
+  },
+  {
+   "id": "site:c-02cefa1fcdc4",
+   "class": "place",
+   "en": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base"
+  },
+  {
+   "id": "site:c-456563cb66cc",
+   "class": "place",
+   "en": "Tubruq SA-6 SAM Support Facility"
+  },
+  {
+   "id": "site:c-941a90e438cd",
+   "class": "place",
+   "en": "Tubruq AW Radar Facility"
+  },
+  {
+   "id": "site:c-b1355a338041",
+   "class": "place",
+   "en": "Tubruq Military Facility West"
+  },
+  {
+   "id": "site:c-c6910e1b3964",
+   "class": "place",
+   "en": "Jamal 'Abd an-Nasir base, Tobruk"
+  },
+  {
+   "id": "site:c-ccfd8db49f05",
+   "class": "place",
+   "en": "Ajdabiyah schools"
+  },
+  {
+   "id": "site:c-ef4bd8ecb59a",
+   "class": "place",
+   "en": "Tubruq port (Tobruk)"
+  },
+  {
+   "id": "site:c-b9726dc702d7",
+   "class": "place",
+   "en": "Jallud addressed mass rally in Sabha supporting the revolution against Egyptian and Tunisian campaigns"
+  },
+  {
+   "id": "site:c-0d264be6cafb",
+   "class": "place",
+   "en": "Fidel Castro and delegation made a five-hour visit to the Kufra agricultural project"
+  },
+  {
+   "id": "site:c-6ff2c0cb2d43",
+   "class": "place",
+   "en": "Emergency session of the General People's Congress approved the creation of the direct people's democracy…"
+  },
+  {
+   "id": "site:c-dfc79f0e20c3",
+   "class": "place",
+   "en": "Qadhdhafi delivered the closing session speech of the General People's Congress on the Wednesday night, the…"
+  },
+  {
+   "id": "site:c-57a97d07feaa",
+   "class": "place",
+   "en": "Quadripartite talks of Libya, Niger, Chad and Sudan ended with agreement on Chad's internal situation and on…"
+  },
+  {
+   "id": "site:c-a3f65ab06981",
+   "class": "place",
+   "en": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents…"
+  },
+  {
+   "id": "site:c-cc8f7a166e40",
+   "class": "place",
+   "en": "Foreign Secretary Dr Ali Abd as-Salam at-Turayki press conference on Chad reconciliation talks and…"
+  },
+  {
+   "id": "site:c-d81185d12b81",
+   "class": "place",
+   "en": "A summit of Libya, Chad, Sudan and Niger in Sabha agreed to hold a meeting between Chadian government…"
+  },
+  {
+   "id": "site:c-f353b3ee8145",
+   "class": "place",
+   "en": "Expected quadripartite meeting of heads of state of Libya, Sudan, Chad and Niger to settle Libyan-Chadian…"
+  },
+  {
+   "id": "site:c-ad2dba2dbbf4",
+   "class": "place",
+   "en": "Workers seized the Wadi al Zeit contractors, post office branch, Libyan Airlines branch, Public Transport…"
+  },
+  {
+   "id": "site:c-22b8249f03a1",
+   "class": "place",
+   "en": "Large popular rally in Sebha supporting the third meeting of the revolutionary committees"
+  },
+  {
+   "id": "site:c-36410b4bca1c",
+   "class": "place",
+   "en": "Goukouni held a press conference at Sabhah thanking Libya for support to Frolinat and the Chadian government"
+  },
+  {
+   "id": "site:c-60e0f9bea355",
+   "class": "place",
+   "en": "Qadhdhafi speech at rally marking the return of Libyan troops from Chad"
+  },
+  {
+   "id": "site:c-611562da81ac",
+   "class": "place",
+   "en": "Demonstration against U.S. aggression in Sabhah"
+  },
+  {
+   "id": "site:c-661fbef4d87e",
+   "class": "place",
+   "en": "Libyan forces in Ndjamena, Chad, receive orders to withdraw"
+  },
+  {
+   "id": "site:c-874cc3c084ca",
+   "class": "place",
+   "en": "Statement issued after Qadhdhafi and Arafat met, condemning Sadat's visit to Khartoum and calling for…"
+  },
+  {
+   "id": "site:c-ac57651fb925",
+   "class": "place",
+   "en": "Rally at Sabhah marking the anniversary of Qadhdhafi's 1961 student demonstration against the separation of…"
+  },
+  {
+   "id": "site:c-d4c273ba826e",
+   "class": "place",
+   "en": "Al Kufrah military site"
+  },
+  {
+   "id": "site:c-1c6015dae366",
+   "class": "place",
+   "en": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft…"
+  },
+  {
+   "id": "site:c-69bc7017e903",
+   "class": "place",
+   "en": "Sabha flour mill"
+  },
+  {
+   "id": "site:c-b3649db1ee61",
+   "class": "place",
+   "en": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine"
+  },
+  {
+   "id": "site:c-c99a0c9d417d",
+   "class": "place",
+   "en": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982)"
+  },
+  {
+   "id": "site:c-237568286890",
+   "class": "place",
+   "en": "Kufra military storage area"
+  },
+  {
+   "id": "site:c-3c309879d1e0",
+   "class": "place",
+   "en": "Qadhdhafi addresses participants in the second session of the sixth meeting of the revolutionary committee,…"
+  },
+  {
+   "id": "site:c-3ebac1bb4ddc",
+   "class": "place",
+   "en": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel…"
+  },
+  {
+   "id": "site:c-fd05d8b5291d",
+   "class": "place",
+   "en": "Fifteen Flogger aircraft present"
+  },
+  {
+   "id": "site:c-3a7820216de9",
+   "class": "place",
+   "en": "al-Kufrah oasis"
+  },
+  {
+   "id": "site:c-8344da7030eb",
+   "class": "place",
+   "en": "Popular demonstrations held against the U.S. 6th Fleet exercises"
+  },
+  {
+   "id": "site:c-afe2927a9169",
+   "class": "place",
+   "en": "Qadhafi's annual foreign policy address at a rally marking the 16th anniversary of the revolution, in which…"
+  },
+  {
+   "id": "site:c-868958ab0af3",
+   "class": "place",
+   "en": "Qadhdhafi gives a live speech at the 2 March session of the Sabha General People's Congress commemorating…"
+  },
+  {
+   "id": "site:c-32b07fb2cd50",
+   "class": "place",
+   "en": "Anti-Gaddafi forces discover two warehouses with barrels marked 'radioactive' and bags of yellow powder near…"
+  },
+  {
+   "id": "site:c-518459d3a3bd",
+   "class": "place",
+   "en": "Sebha Army Barracks"
+  },
+  {
+   "id": "site:c-744cf5dae5a8",
+   "class": "place",
+   "en": "Janet (Janet/Ghat)"
+  },
+  {
+   "id": "site:c-775ccab90d84",
+   "class": "place",
+   "en": "Fortress of Ghat (Koukemen hill, Ghat)"
+  },
+  {
+   "id": "site:c-afaa74d2691b",
+   "class": "place",
+   "en": "Sabha AW Radar Fac"
+  },
+  {
+   "id": "site:c-b9c458982651",
+   "class": "place",
+   "en": "Sebha camp"
+  },
+  {
+   "id": "site:c-fb1988e0f851",
+   "class": "place",
+   "en": "Ghadames East Airfield"
+  },
+  {
+   "id": "site:fz-kufra-airfield",
+   "class": "place",
+   "en": "Kufra airfield"
+  },
+  {
+   "id": "site:fz-kufrah-barracks",
+   "class": "place",
+   "en": "Al Kufrah barracks"
+  },
+  {
+   "id": "site:fz-otrag-1981",
+   "class": "place",
+   "en": "Otrag rocket launch near Sabha, 1 March 1981"
+  },
+  {
+   "id": "site:fz-sebha-airfield-1983",
+   "class": "place",
+   "en": "Sebha airfield: transporters and armoured carriers, August 1983"
+  },
+  {
+   "id": "site:c-b650129bd457",
+   "class": "place",
+   "en": "Gulf of Sirte"
+  },
+  {
+   "id": "site:c-ffe9431d54a5",
+   "class": "place",
+   "en": "Libyan Arab Armed Forces (navy, air defence and land forces) conducted a live-ammunition anti-landing…"
+  },
+  {
+   "id": "site:c-be403bb39168",
+   "class": "place",
+   "en": "Esso Standard (Libya) Limited and Esso (Sirte) Limited served notice of abandonment of all their interests…"
+  },
+  {
+   "id": "site:c-e864d100b6bf",
+   "class": "place",
+   "en": "Armed forces commander Abu Bakr Yunis Jabir welcomed back a Libyan unit returning from Chad at a reception…"
+  },
+  {
+   "id": "site:c-3becec266dbe",
+   "class": "place",
+   "en": "Qadhafi speech commemorating the 16th anniversary of the end of Italian authority in Libya, calling for…"
+  },
+  {
+   "id": "site:c-3e9b13de7557",
+   "class": "place",
+   "en": "Surt missile base"
+  },
+  {
+   "id": "site:c-de63b2b34620",
+   "class": "place",
+   "en": "Qadhdhafi says the U.S. fired two missiles at a suburb of Surt to strike SAM-5 missiles and that one…"
+  },
+  {
+   "id": "site:c-43e88a7cb387",
+   "class": "place",
+   "en": "Qadhdhafi gave an interview to Le Monde correspondent Alain Frachon near Surt, denying Libyan intervention…"
+  },
+  {
+   "id": "site:c-255c5c1acba6",
+   "class": "place",
+   "en": "Surt AW Radar Fac"
+  },
+  {
+   "id": "site:c-2e05e9199930",
+   "class": "place",
+   "en": "Sarir-to-Surt pipeline"
+  },
+  {
+   "id": "site:c-35453697cf09",
+   "class": "place",
+   "en": "Ras Lanuf petrochemical complex"
+  },
+  {
+   "id": "site:c-3a4f395a6309",
+   "class": "place",
+   "en": "Mersa Brega"
+  },
+  {
+   "id": "site:c-7b63a26c85b1",
+   "class": "place",
+   "en": "Surt military base"
+  },
+  {
+   "id": "site:c-f4ec6110b6cf",
+   "class": "place",
+   "en": "Brega pipe manufacturing plant"
+  },
+  {
+   "id": "site:st-brega",
+   "class": "place",
+   "en": "Marsa el Brega: oil port, gas plant and university"
+  },
+  {
+   "id": "site:c-34b6a5692cdb",
+   "class": "place",
+   "en": "Gaddafi proclaimed the start of the 'Popular Revolution' in a speech at Zuwarah"
+  },
+  {
+   "id": "site:c-8c257eb87768",
+   "class": "place",
+   "en": "Gaddafi proposes the Third International Theory in his Zuwara speech"
+  },
+  {
+   "id": "site:c-a2aea422ce39",
+   "class": "place",
+   "en": "Libyan note alleges US carrier aircraft made three flights to within 10 miles of the coast and pursued an…"
+  },
+  {
+   "id": "site:c-6065c66e6d35",
+   "class": "place",
+   "en": "Qadhdhafi speech marking the anniversary of the battle of Al-Kardun, threatening Egypt and Tunisia and…"
+  },
+  {
+   "id": "site:c-8f4edb804ab7",
+   "class": "place",
+   "en": "Qadhafi addressed a popular march and rally in Misrata, saying disturbances at Libyan universities had been…"
+  },
+  {
+   "id": "site:c-c3fb0df7cf66",
+   "class": "place",
+   "en": "Az-Zintan"
+  },
+  {
+   "id": "site:c-d1fc8da63002",
+   "class": "place",
+   "en": "Qadhdhafi addressed a rally marking the seventh anniversary of the Day of Revenge, when the Italian…"
+  },
+  {
+   "id": "site:c-3bf387a16f18",
+   "class": "place",
+   "en": "Qadhdhafi gives an ideological lecture on the Green Book to students and officers of the college in…"
+  },
+  {
+   "id": "site:c-2569f427ee24",
+   "class": "place",
+   "en": "Massive student demonstration condemning Fatah's leadership"
+  },
+  {
+   "id": "site:c-e91060594383",
+   "class": "place",
+   "en": "Zuwara or Tunis-area resort (Misratah hotel project)"
+  },
+  {
+   "id": "site:c-3a419bf6bbc3",
+   "class": "place",
+   "en": "Huge demonstrations condemning the U.S. attack on two Libyan jet fighters"
+  },
+  {
+   "id": "site:c-b4c932233fe5",
+   "class": "place",
+   "en": "Demonstration against U.S. aggression in Misratah"
+  },
+  {
+   "id": "site:c-0652ebe76847",
+   "class": "place",
+   "en": "Qadhdhafi met students from schools in the Al Khums and Zlaytah areas as part of a tour to expand the…"
+  },
+  {
+   "id": "site:c-cb31c7f3d4ca",
+   "class": "place",
+   "en": "Sixth general congress of jamahiriyah students issued statements denouncing U.S. imperialism and Saudi…"
+  },
+  {
+   "id": "site:c-ead1502d3019",
+   "class": "place",
+   "en": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and…"
+  },
+  {
+   "id": "site:c-4d1500bf2de5",
+   "class": "place",
+   "en": "Qadhafi gave a speech on the 14th anniversary of the expulsion of Italian residents from Libya, demanding…"
+  },
+  {
+   "id": "site:c-8194f48b580f",
+   "class": "place",
+   "en": "Masses of the Basic People's Congresses held angry demonstrations against infiltrators and 'hired agents of…"
+  },
+  {
+   "id": "site:c-26e31bc456a2",
+   "class": "place",
+   "en": "Qadhdhafi speech to secondary school students and training college teachers in Nalut, Yafran and Jadu,…"
+  },
+  {
+   "id": "site:c-08c31afe9210",
+   "class": "place",
+   "en": "Anti-Gaddafi forces, with NATO air support, forced loyalist troops to retreat, gaining control of most of…"
+  },
+  {
+   "id": "site:c-49de0c71f362",
+   "class": "place",
+   "en": "Small demonstrations in Misrata in solidarity with Benghazi protesters"
+  },
+  {
+   "id": "site:c-1908efd2bafa",
+   "class": "place",
+   "en": "Misrata International Airport"
+  },
+  {
+   "id": "site:c-499989ddc9d5",
+   "class": "place",
+   "en": "Zuwarah sea fishing port"
+  },
+  {
+   "id": "site:c-66ab310a5f13",
+   "class": "place",
+   "en": "Az Zawiyah refinery"
+  },
+  {
+   "id": "site:c-c30e2231eab9",
+   "class": "place",
+   "en": "Misratah port"
+  },
+  {
+   "id": "site:c-f447fbcbbe6c",
+   "class": "place",
+   "en": "Misrata War Museum"
+  },
+  {
+   "id": "site:c-fb7829cc5be7",
+   "class": "place",
+   "en": "Tarhuna (Terhouna) teachers' institute"
+  },
+  {
+   "id": "site:tp-zuwarah-1973",
+   "class": "place",
+   "en": "Gaddafi proclaims the Cultural Revolution at Zuwarah, 15 April 1973"
+  },
+  {
+   "id": "site:tp-misrata-1983",
+   "class": "place",
+   "en": "Students of Misrata reported to demonstrate, 10 May 1983"
   },
   {
    "id": "area:lh-military-police-command",

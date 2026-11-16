@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T06:36:40.686Z",
+ "at": "2026-11-16T14:24:07.046Z",
  "languages": [
   "en",
   "ar"
@@ -7,12 +7,12 @@
  "note": "Forms copied from the map, the gazetteers and the documents; none translated here. ar null = no Arabic form known.",
  "coverage": {
   "place": {
-   "entries": 39,
+   "entries": 221,
    "withArabic": 15,
    "withVariants": 19
   },
   "event": {
-   "entries": 83,
+   "entries": 103,
    "withArabic": 41,
    "withVariants": 0
   },
@@ -27,7 +27,7 @@
    "withVariants": 0
   }
  },
- "sharedKeys": 20,
+ "sharedKeys": 22,
  "entries": [
   {
    "id": "site:abusalim",
@@ -1056,6 +1056,2026 @@
    "region": "tripoli",
    "en": "Social Welfare Home for Women, Tajoura",
    "ar": "دار الرعاية الاجتماعية للنساء، تاجوراء",
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-9eed01386367",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "LTC Aadim al-Hawwaaz, former Defense Minister, asked an Embassy Branch Office Benghazi officer at the end of…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b7690e02dbc2",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Student rally at which Qadhafi gave a speech that students regarded as a failure",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-aa541c270153",
+   "from": "map",
+   "class": "event",
+   "region": "benghazi",
+   "en": "Libyan authorities reportedly foiled a coup plot against Qadhdhafi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3a5061c0a3d8",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Students demonstrated against government manipulation of student representative elections",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-7b8443a57651",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi addressed Benghazi University students and faculty",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-ca1f2c0781ae",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Libyan fighter aircraft ordered to fly twice-daily reconnaissance missions along the northeastern Libyan coast",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-e59cdb259b7d",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Shooting at Benghazi university struggle, described by Qadhdhafi as part of the popular revolution",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-51e21ab48481",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Castro visited the iron pipes plant, cement complex, north Benghazi power station and Wadi al-Gattara farm,…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-5b88ed61d44e",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Egyptian burning of the Libyan Relations Office, which Fahmy said was retaliation for Libyan action against…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-4bd793769b59",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-81e4aad1d4ac",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi gave a recorded interview at an agricultural project in Southwest Benghazi, explaining why he did…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-0abcd9a926fb",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "First congress of the Free Unionist Officers Movement condemns the Egypt-Israel treaty and pledges to call…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-1b4fe075b0b2",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "23 July Avenue, Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-258c87f8bef8",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-4b6d976c1593",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Libya closed the PLO office in Benghazi and ordered the expulsion of three top PLO leaders (Abu Tariq, Abu…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-52a3f4b903a7",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi held a meeting with members of the Governors Council of the Arab central banks on using Arab funds…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-59a98f0c7c16",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi and King Khalid meet at the guest palace in Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-69054984a1c9",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-90e41725f793",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Tenth anniversary of the revolution: Qadhafi gave a speech and parade attended by Arab leaders and…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b164a246a5a4",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhafi addressed a massive revolutionary rally on the 8 March anniversary of the Syrian revolution, calling…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-c129e91c4563",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-c62ac047bff1",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi announces at the Benghazi Festival that Libya would support any uprising in Egypt, Morocco or Yemen",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-05accf1aa4b9",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi holds a press conference attended by representatives of major Arab and international newspapers",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-060e34c6509f",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Basic People's Congress of Banghazi Central held an emergency session and passed 14 resolutions on Tunisia,…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-0a9b5b196c5b",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Ahmad Jibril (PFLP-GC secretary) arrived in Banghazi on a visit and made a statement backing Libya against…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-1ae8504b375a",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi press conference in Banghazi (AFP) on Tunisia, France and the Qafsah incident",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-2c0643671db7",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3a757372e265",
+   "from": "map",
+   "class": "event",
+   "region": "benghazi",
+   "en": "Demonstrators attacked the French consulate in Banghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-6039ff67e5f3",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Colonel Qadhdhafi received Kountche in Banghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-717e64a46c9f",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi received Khaddam and the Mauritanian foreign minister",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-7d8c78ea3e23",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Revolutionary Committees' third session announces policy of physical liquidation of regime enemies abroad",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-bda5b0e61513",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Banghazi Barracks and Training Center",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-2338a30e9cb9",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Mass demonstration denouncing U.S. plots, with effigy of Reagan burned at the Square of the Popular Congress",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3d3058de2a45",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Benghazi Coast camp and Southwest Farm",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-4d786801defa",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Turkish workers demonstrated against the recent U.S. aggression, burned the American flag in front of the…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-63dfe4d39338",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Egyptian Arab residents demonstrated against the U.S. action and Camp David",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-68ea9b1058b6",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi receives a visiting Chadian popular delegation",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-6fd055e72693",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-6fd606d1b778",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Grand equestrian show where Qadhdhafi announced the formation of a people's cavalry division inside the…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-85083136ec68",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-ba531243cbe4",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Mass demonstration in Benghazi denouncing the U.S. closure of the Libyan People's Bureau in Washington and…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-e4c690a4027c",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Third batch of Libyan Armed Forces units returned from Chad",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-093bc12f7ee3",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Alleged assassination attempt discovered (one of four claimed attempts, March–April 1982)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-1e4d241606e6",
+   "from": "map",
+   "class": "event",
+   "region": "benghazi",
+   "en": "Sudan's SUNA reported that Qaddafi had put down a coup attempt in Benghazi earlier in the month",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-e03f1458779c",
+   "from": "map",
+   "class": "event",
+   "region": "benghazi",
+   "en": "Libya reportedly shot down an American reconnaissance aircraft over the Benghazi Region",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-f1075fea89e2",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi met with student groups in Benghazi as part of meetings urging the masses to escalate…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-fc2eec316e2e",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-529a84b5b669",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi addressed a group of secondary school students and called for a people's resistance army in Lebanon",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-a213475a7729",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Tunisian Foreign Minister Beji Caid es-Sebsi arrived in Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b943d82cfa58",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Second Nanuchka-II patrol boat arrives at the port",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-d59e96b87ecd",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-e6c71682104e",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "A US aircraft reportedly violated Libyan airspace and approached Benghazi to within 80 km before being…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-cc474c39eb5d",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Mass demonstration of anger and challenge against the 'plotters' and Muslim Brotherhood cliques, with…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-2bf7e33e7d6f",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi addressed a mass public rally in Banghazi, after a route of popular demonstrations from Thulug and…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-34a0cc76ab3e",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi speech vowing to arm Libyan cities, prepare slaughterhouses for American 'sheep', and threatening…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-73cc89116d3b",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-d3c9e1e28706",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-dc8f2c40e5bc",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Al-Asad and Qadhdhafi resumed talks at the Syrian president's residence",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-56d1d65b5ddd",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Rally and military parade on the first anniversary of the US raid, with calls to destroy American bases and…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3791a18a12e6",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "JANA reported a U.S. military aircraft flew at very low altitude over the Libyan ship Gharnatah on a voyage…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b70d869b84b5",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "US fighter made a low-level flight over the Libyan passenger ship Gharnatah, sailing from Izmir to Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-f33e42545598",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Ibn Ashur Street, Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-998745872d38",
+   "from": "map",
+   "class": "event",
+   "region": "benghazi",
+   "en": "Rioting reported",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-27e16dcd3eaf",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Libya called an emergency meeting of Arab Maghreb Union foreign ministers to discuss the Persian Gulf war",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-d32b9c438c99",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "A Libyan court sentenced six foreign medical workers to death over the HIV infection case at El-Fatih…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-f9cd4c3d8fd1",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Protests after Minister Roberto Calderoli wore a Muhammad caricature T-shirt led to the closure of the…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-26b10860d953",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Gaddafi and Italian Prime Minister Berlusconi signed a cooperation treaty in Benghazi, with Italy agreeing…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-5aa1cce3520f",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Lawyer Fathi Tarbel, who represented victims' families, was arrested",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-16836d4945d6",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Benghazi, U.S. facility",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-44029b1f56e4",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Benghazi port facilities",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-742b791c7f67",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Martyrs of February Stadium, Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-7a5cd16dc479",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Benghazi Military College",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-7f8541606267",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Euhesperides (Berenice, Benghazi)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-9a3afa081f72",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "Commando Training Facility, Banghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bn-1969-coup",
+   "from": "map",
+   "class": "place",
+   "region": "benghazi",
+   "en": "The coup of 1 September 1969 is launched from Benghazi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:bn-1977-hangings",
+   "from": "map",
+   "class": "event",
+   "region": "benghazi",
+   "en": "Public hanging of students, Benghazi, April 1977 (reported)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-4c6c95e07393",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-d94c54151d33",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi speech inaugurating a new power station and honoring the 'Martyrs of Darna' who fell at Al-Gargah",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-5697bc4bbe2f",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi speech on the anniversary of the evacuation of American troops from Libya (Wheelus), comparing…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-04866ac1754a",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Tobruk naval base",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-06d8ea5f409e",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi attended a naval exercise in the Mediterranean launched from Tobruk naval base, including missile…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-a91d983cddee",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi speech at the eighth anniversary celebrations of the end of the British presence in Libya, calling…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-77b53ad3a247",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Ninth anniversary of the evacuation of the last British soldier from Libya celebrated at Tobruk",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b4bc06007055",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Workers seized Kurkub Contractors and the Al-Bahr Tourist Hotel, forming people's committees",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-279306026a7e",
+   "from": "map",
+   "class": "event",
+   "region": "cyrenaica",
+   "en": "Die Welt reported a foiled coup attempt six days earlier in which an officer allegedly tried to seize the…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-741fd0b6b429",
+   "from": "map",
+   "class": "event",
+   "region": "cyrenaica",
+   "en": "Reported mutiny in the Libyan armed forces, put down with more than 400 killed (as alleged in article)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-972a6aeaa783",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "According to an opposition communique reported by AFP, the 9th Libyan Army brigade based at Tobruq revolted…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-da24f4394a81",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "A large popular demonstration and rally in support of the revolution took place in Tobruq for the 11th…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-1cd2821cb585",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-195be392fae6",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Tobruk flour mill",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-519f048ec34b",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Angry popular demonstration in Darnah denouncing British military exercises on Egyptian territory near the…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-90ffb880d8f2",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi met officers of the Libyan Armed Forces in Tobruk on the 13th anniversary of the removal of…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-dfb01eb0384e",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Al Bumbah airfield North (Al Bumbah, near Tubruq)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-cea80e3aa2d3",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-2d62ad53bbd5",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi attended a live-ammunition military exercise south of Al-Mukhayla and gave a speech on Vengeance Day",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-92085ba25e3d",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Al-Magharibah tribe held a popular rally welcoming Qadhdhafi",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b5aed7aebf81",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-52a45f3afddd",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi speech at 7 April Square calling for an end to use of foreign goods, after the U.S. raid on Libya",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-e565e8097dc7",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi delivers speech in Darnah calling for the city to be made an armed city against possible US…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-02cefa1fcdc4",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-456563cb66cc",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Tubruq SA-6 SAM Support Facility",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-941a90e438cd",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Tubruq AW Radar Facility",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b1355a338041",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Tubruq Military Facility West",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-c6910e1b3964",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Jamal 'Abd an-Nasir base, Tobruk",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-ccfd8db49f05",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Ajdabiyah schools",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-ef4bd8ecb59a",
+   "from": "map",
+   "class": "place",
+   "region": "cyrenaica",
+   "en": "Tubruq port (Tobruk)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b9726dc702d7",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Jallud addressed mass rally in Sabha supporting the revolution against Egyptian and Tunisian campaigns",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-0d264be6cafb",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Fidel Castro and delegation made a five-hour visit to the Kufra agricultural project",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-6ff2c0cb2d43",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Emergency session of the General People's Congress approved the creation of the direct people's democracy…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-dfc79f0e20c3",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Qadhdhafi delivered the closing session speech of the General People's Congress on the Wednesday night, the…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-57a97d07feaa",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Quadripartite talks of Libya, Niger, Chad and Sudan ended with agreement on Chad's internal situation and on…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-a3f65ab06981",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-cc8f7a166e40",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Foreign Secretary Dr Ali Abd as-Salam at-Turayki press conference on Chad reconciliation talks and…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-d81185d12b81",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "A summit of Libya, Chad, Sudan and Niger in Sabha agreed to hold a meeting between Chadian government…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-f353b3ee8145",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Expected quadripartite meeting of heads of state of Libya, Sudan, Chad and Niger to settle Libyan-Chadian…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-ad2dba2dbbf4",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Workers seized the Wadi al Zeit contractors, post office branch, Libyan Airlines branch, Public Transport…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-22b8249f03a1",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Large popular rally in Sebha supporting the third meeting of the revolutionary committees",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-36410b4bca1c",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Goukouni held a press conference at Sabhah thanking Libya for support to Frolinat and the Chadian government",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-60e0f9bea355",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Qadhdhafi speech at rally marking the return of Libyan troops from Chad",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-611562da81ac",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Demonstration against U.S. aggression in Sabhah",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-661fbef4d87e",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Libyan forces in Ndjamena, Chad, receive orders to withdraw",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-874cc3c084ca",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Statement issued after Qadhdhafi and Arafat met, condemning Sadat's visit to Khartoum and calling for…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-ac57651fb925",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Rally at Sabhah marking the anniversary of Qadhdhafi's 1961 student demonstration against the separation of…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-d4c273ba826e",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Al Kufrah military site",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-1c6015dae366",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-69bc7017e903",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Sabha flour mill",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b3649db1ee61",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-c99a0c9d417d",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-237568286890",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Kufra military storage area",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3c309879d1e0",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Qadhdhafi addresses participants in the second session of the sixth meeting of the revolutionary committee,…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3ebac1bb4ddc",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-d1b8ddbcc7f3",
+   "from": "map",
+   "class": "event",
+   "region": "fezzan",
+   "en": "Sixteen Flogger air-superiority fighters and one L-100 medium transport deployed to Kufra",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-fd05d8b5291d",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Fifteen Flogger aircraft present",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3a7820216de9",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "al-Kufrah oasis",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-8344da7030eb",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Popular demonstrations held against the U.S. 6th Fleet exercises",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-afe2927a9169",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Qadhafi's annual foreign policy address at a rally marking the 16th anniversary of the revolution, in which…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-868958ab0af3",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Qadhdhafi gives a live speech at the 2 March session of the Sabha General People's Congress commemorating…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-32b07fb2cd50",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Anti-Gaddafi forces discover two warehouses with barrels marked 'radioactive' and bags of yellow powder near…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-518459d3a3bd",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Sebha Army Barracks",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-744cf5dae5a8",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Janet (Janet/Ghat)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-775ccab90d84",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Fortress of Ghat (Koukemen hill, Ghat)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-afaa74d2691b",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Sabha AW Radar Fac",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b9c458982651",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Sebha camp",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-fb1988e0f851",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Ghadames East Airfield",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:fz-kufra-airfield",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Kufra airfield",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:fz-kufrah-barracks",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Al Kufrah barracks",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:fz-otrag-1981",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Otrag rocket launch near Sabha, 1 March 1981",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:fz-sebha-airfield-1983",
+   "from": "map",
+   "class": "place",
+   "region": "fezzan",
+   "en": "Sebha airfield: transporters and armoured carriers, August 1983",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-8b1f951d8cd4",
+   "from": "map",
+   "class": "event",
+   "region": "sirte",
+   "en": "Administrative complex and nearby hotel blown up before a planned Qadhdhafi inauguration",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b650129bd457",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Gulf of Sirte",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-ffe9431d54a5",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Libyan Arab Armed Forces (navy, air defence and land forces) conducted a live-ammunition anti-landing…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-be403bb39168",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Esso Standard (Libya) Limited and Esso (Sirte) Limited served notice of abandonment of all their interests…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-e864d100b6bf",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Armed forces commander Abu Bakr Yunis Jabir welcomed back a Libyan unit returning from Chad at a reception…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-01c703323ece",
+   "from": "map",
+   "class": "event",
+   "region": "sirte",
+   "en": "Col. Hassan Ishkal, head of the Sirte military region and third most powerful man in Libya, was killed",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3becec266dbe",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Qadhafi speech commemorating the 16th anniversary of the end of Italian authority in Libya, calling for…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3e9b13de7557",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Surt missile base",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-8df310f50e47",
+   "from": "map",
+   "class": "event",
+   "region": "sirte",
+   "en": "Libyan claims that three US aircraft were downed over the Gulf of Sidra during US naval exercises",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-de63b2b34620",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Qadhdhafi says the U.S. fired two missiles at a suburb of Surt to strike SAM-5 missiles and that one…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-43e88a7cb387",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Qadhdhafi gave an interview to Le Monde correspondent Alain Frachon near Surt, denying Libyan intervention…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b710d786611d",
+   "from": "map",
+   "class": "event",
+   "region": "sirte",
+   "en": "Mutassim Gaddafi was captured when Sirte fell, then shot and killed",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-c979d781a223",
+   "from": "map",
+   "class": "event",
+   "region": "sirte",
+   "en": "NATO air strike hits the Brega pipe-making plant",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-255c5c1acba6",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Surt AW Radar Fac",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-2e05e9199930",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Sarir-to-Surt pipeline",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-35453697cf09",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Ras Lanuf petrochemical complex",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3a4f395a6309",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Mersa Brega",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-7b63a26c85b1",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Surt military base",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-f4ec6110b6cf",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Brega pipe manufacturing plant",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:st-gulf-sidra-1986",
+   "from": "map",
+   "class": "event",
+   "region": "sirte",
+   "en": "Gulf of Sidra clash, 24 March 1986",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:st-brega",
+   "from": "map",
+   "class": "place",
+   "region": "sirte",
+   "en": "Marsa el Brega: oil port, gas plant and university",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-34b6a5692cdb",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Gaddafi proclaimed the start of the 'Popular Revolution' in a speech at Zuwarah",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-8c257eb87768",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Gaddafi proposes the Third International Theory in his Zuwara speech",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-21e04e857f3f",
+   "from": "map",
+   "class": "event",
+   "region": "tripolitania",
+   "en": "A coup attempt by 20 military officers, mostly from Misrata, was launched and the plotters were arrested and…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-a2aea422ce39",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Libyan note alleges US carrier aircraft made three flights to within 10 miles of the coast and pursued an…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-6065c66e6d35",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Qadhdhafi speech marking the anniversary of the battle of Al-Kardun, threatening Egypt and Tunisia and…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-8f4edb804ab7",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Qadhafi addressed a popular march and rally in Misrata, saying disturbances at Libyan universities had been…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-c3fb0df7cf66",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Az-Zintan",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-d1fc8da63002",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Qadhdhafi addressed a rally marking the seventh anniversary of the Day of Revenge, when the Italian…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3bf387a16f18",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Qadhdhafi gives an ideological lecture on the Green Book to students and officers of the college in…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-2569f427ee24",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Massive student demonstration condemning Fatah's leadership",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-e91060594383",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Zuwara or Tunis-area resort (Misratah hotel project)",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-3a419bf6bbc3",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Huge demonstrations condemning the U.S. attack on two Libyan jet fighters",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b4c932233fe5",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Demonstration against U.S. aggression in Misratah",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-0652ebe76847",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Qadhdhafi met students from schools in the Al Khums and Zlaytah areas as part of a tour to expand the…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-cb31c7f3d4ca",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Sixth general congress of jamahiriyah students issued statements denouncing U.S. imperialism and Saudi…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-ead1502d3019",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-4d1500bf2de5",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Qadhafi gave a speech on the 14th anniversary of the expulsion of Italian residents from Libya, demanding…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-8194f48b580f",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Masses of the Basic People's Congresses held angry demonstrations against infiltrators and 'hired agents of…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-26e31bc456a2",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Qadhdhafi speech to secondary school students and training college teachers in Nalut, Yafran and Jadu,…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-08c31afe9210",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Anti-Gaddafi forces, with NATO air support, forced loyalist troops to retreat, gaining control of most of…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-1d4499605db4",
+   "from": "map",
+   "class": "event",
+   "region": "tripolitania",
+   "en": "Pro-Gaddafi forces resumed shelling and besieged Misrata",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-49de0c71f362",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Small demonstrations in Misrata in solidarity with Benghazi protesters",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-7b1548ace246",
+   "from": "map",
+   "class": "event",
+   "region": "tripolitania",
+   "en": "Reported that Jalloud had defected to the rebels and was heading from Zintan to Djerba, then to Italy",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-a81e33a96e62",
+   "from": "map",
+   "class": "event",
+   "region": "tripolitania",
+   "en": "Khamis Gaddafi reported killed in fighting in Tarhuna",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-b74c0b1539e3",
+   "from": "map",
+   "class": "event",
+   "region": "tripolitania",
+   "en": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down…",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-1908efd2bafa",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Misrata International Airport",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-499989ddc9d5",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Zuwarah sea fishing port",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-66ab310a5f13",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Az Zawiyah refinery",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-c30e2231eab9",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Misratah port",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-f447fbcbbe6c",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Misrata War Museum",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:c-fb7829cc5be7",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Tarhuna (Terhouna) teachers' institute",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:tp-zuwarah-1973",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Gaddafi proclaims the Cultural Revolution at Zuwarah, 15 April 1973",
+   "ar": null,
+   "variants": [],
+   "source": "the map entry"
+  },
+  {
+   "id": "site:tp-misrata-1983",
+   "from": "map",
+   "class": "place",
+   "region": "tripolitania",
+   "en": "Students of Misrata reported to demonstrate, 10 May 1983",
+   "ar": null,
    "variants": [],
    "source": "the map entry"
   },

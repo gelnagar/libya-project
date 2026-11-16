@@ -1755,25 +1755,37 @@
   }
   function closeTerm() { $('term').hidden = true; }
   var PLACE_TAG = { detention: 'Prison', security: 'Security', military: 'Base', airstrike: 'Airstrike', battle: 'Fighting', massacre: 'Killing', power: 'Power', landmark: 'Landmark', event: 'Event' };
-  function termResults(q) {
+  var termLoose = false; // the last search found nothing exact and fell back to matching consonants
+  function termResults(q, loose) {
+    termLoose = !!loose;
     var years = (q.match(/\b(1[89]\d\d|20[0-2]\d)\b(?:\s*[-–]\s*\b(1[89]\d\d|20[0-2]\d)\b)?/) || []);
     var yf = years[1] ? +years[1] : null, yt = years[2] ? +years[2] : yf;
     var words = fold(q.replace(years[0] || '', '')).split(' ').filter(function (w) { return w.length > 1; });
-    var match = function (text) { var t = fold(text); return words.every(function (w) { return t.indexOf(w) >= 0; }); };
-    var rel = function (title, rest) { var t = fold(title), r = fold(rest), sc = 0; words.forEach(function (w) { if (t.indexOf(w) >= 0) sc += 3; else if (r.indexOf(w) >= 0) sc += 1; }); if (words.length && t.indexOf(words.join(' ')) >= 0) sc += 4; return sc; };
+    // the same name in the other language (public/data/names.js), and, only when nothing matches, names with the same consonants (Slim finds Salim)
+    var altF = (!loose && window.ATLAS_NAMEALT ? window.ATLAS_NAMEALT(q.replace(years[0] || '', ''), window.ATLAS_NAMES) : []).map(fold);
+    var skW = loose && window.ATLAS_SKELETON ? words.map(function (w) { return window.ATLAS_SKELETON(w)[0]; }) : null;
+    // a word typed without its vowels (Slim) also matches a whole name word with the same consonants (Salim); only names are checked this way
+    var skQ = words.map(function (w) { var s = window.ATLAS_SKELETON ? window.ATLAS_SKELETON(w)[0] : null; return s && s.length >= 3 ? s : null; });
+    var match = function (text, nm) {
+      var t = fold(text);
+      if (skW) { var sk0 = window.ATLAS_SKELETON(nm || text); return skW.every(function (s) { return s && sk0.indexOf(s) >= 0; }); }
+      var sk = null;
+      return words.every(function (w, i) { return t.indexOf(w) >= 0 || (skQ[i] && nm && (sk = sk || window.ATLAS_SKELETON(nm)).indexOf(skQ[i]) >= 0); }) || altF.some(function (a) { return a && t.indexOf(a) >= 0; });
+    };
+    var rel = function (title, rest) { var t = fold(title), r = fold(rest), sc = 0, skT = null; words.forEach(function (w, i) { if (t.indexOf(w) >= 0) sc += 3; else if (skQ[i] && (skT = skT || window.ATLAS_SKELETON(title)).indexOf(skQ[i]) >= 0) sc += 3; else if (r.indexOf(w) >= 0) sc += 1; }); if (words.length && t.indexOf(words.join(' ')) >= 0) sc += 4; return sc; };
     var out = [];
     if (termKind === 'all' || termKind === 'people') (window.ATLAS_PEOPLE || []).forEach(function (pp) {
-      if (words.length && !match(pp.name + ' ' + (pp.ar || '') + ' ' + pp.role)) return;
+      if (words.length && !match(pp.name + ' ' + (pp.ar || '') + ' ' + pp.role, pp.name)) return;
       if (yf) return;
       out.push({ k: 'person', tag: 'Person', sort: termKind === 'people' ? 0 : 0.5, sc: rel(pp.name + ' ' + (pp.ar || ''), pp.role), d: '', t: pp.name, sub: pp.role, go: function () { closeTerm(); openPerson(pp); } });
     });
     if (termKind === 'all' || termKind === 'place') SITES.forEach(function (s) {
       var r = span(s); if (yf && (r[1] < yf || r[0] > yt)) return;
-      if (words.length && !match(s.name + ' ' + (s.ar || '') + ' ' + s.relevance + ' ' + s.text + ' ' + LAYERS[s.layer].label)) return;
+      if (words.length && !match(s.name + ' ' + (s.ar || '') + ' ' + s.relevance + ' ' + s.text + ' ' + LAYERS[s.layer].label, s.name)) return;
       out.push({ k: 'place', tag: PLACE_TAG[s.layer] || 'Place', yk: (s.y0 == null ? 9999 : (s.y0 >= 1969 && s.y0 <= 2011 ? 0 : 5000) + s.y0), sort: 0, sc: rel(s.name + ' ' + (s.ar || ''), s.relevance + ' ' + s.text), d: s.period, t: s.name, sub: LAYERS[s.layer].label + ' · ' + s.relevance, go: function () { closeTerm(); focusSite(s); }, s: s });
     });
     if ((termKind === 'all' || termKind === 'area') && !yf) AREAS.forEach(function (a) {
-      if (words.length && !match(areaNames(a).join(' ') + ' ' + (a.summary || '') + ' ' + (a.era || ''))) return;
+      if (words.length && !match(areaNames(a).join(' ') + ' ' + (a.summary || '') + ' ' + (a.era || ''), areaNames(a).join(' '))) return;
       out.push({ k: 'area', sort: 1, sc: rel(areaNames(a).join(' '), (a.summary || '') + ' ' + (a.era || '')), d: KIND_LABEL[a.kind], t: a.name + (a.ar ? ' · ' + a.ar : ''), sub: a.summary || '', go: function () { closeTerm(); openArea(a); map.flyTo([a.lat, a.lon], a.kind === 'town' ? 13 : 15, { duration: 0.8 }); } });
     });
     if (termKind !== 'place' && termKind !== 'area') (RECORDS || []).forEach(function (r) {
@@ -1781,12 +1793,13 @@
       if (termKind === 'doc' && r.y === 'event') return;
       if (termKind === 'doc' && termSrc !== 'all' && srcGroup(r) !== termSrc) return;
       var y = +(r.d || '0').slice(0, 4); if (yf && (y < yf || y > yt)) return;
-      if (words.length && !match(r.t + ' ' + (r.m || '') + ' ' + (r.s || '') + ' ' + (r.k || []).join(' '))) return;
+      if (words.length && !match(r.t + ' ' + (r.m || '') + ' ' + (r.s || '') + ' ' + (r.k || []).join(' '), r.t)) return;
       out.push({ k: r.y === 'event' ? 'event' : 'doc', sort: r.y === 'event' ? 1.5 : 2, sc: rel(r.t, (r.m || '') + ' ' + (r.s || '')), d: r.d, t: r.t, sub: (TYPE_LABEL[r.y] || r.y) + ' · ' + (r.s || '') + ' · ' + String(r.m || '').slice(0, 160), go: function () { closeTerm(); openRecord(r); } });
     });
     if (!words.length && !yf && termKind === 'all') out = out.filter(function (x) { return x.k !== 'doc'; });
     var dk = function (x) { return x.yk != null ? x.yk : String(x.d || ''); }, cmp = function (a, b) { var x = dk(a), y = dk(b); return typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y)); };
     out.sort(function (a, b) { return words.length ? (b.sc - a.sc || a.sort - b.sort || cmp(a, b)) : (a.sort - b.sort || cmp(a, b)); });
+    if (!out.length && words.length && !loose && window.ATLAS_SKELETON) return termResults(q, true);
     return out;
   }
   function runTerm() {
@@ -1794,7 +1807,7 @@
     if (termKind === 'overview') { archiveOverview(list); return; }
     var res = termResults(q);
     list.innerHTML = '';
-    $('term-meta').textContent = (RECORDS ? '' : 'Loading the archive… ') + (q ? res.length + ' found for “' + q + '”' : 'Gaddafi years (1969–2011) first. Type a name, place or year to search ' + (RECORDS ? RECORDS.length.toLocaleString() + ' documents' : 'everything') + '.');
+    $('term-meta').textContent = (RECORDS ? '' : 'Loading the archive… ') + (q ? res.length + ' found for “' + q + '”' + (termLoose && res.length ? ' (no exact match, so showing names with the same consonants)' : '') : 'Gaddafi years (1969–2011) first. Type a name, place or year to search ' + (RECORDS ? RECORDS.length.toLocaleString() + ' documents' : 'everything') + '.');
     res.slice(0, 200).forEach(function (x) {
       list.appendChild(h('button', { class: 'trow k-' + x.k, onclick: x.go }, [h('span', { class: 'tk', text: x.tag || { place: 'Place', area: 'Area', doc: 'Document', event: 'Event' }[x.k] }), h('span', { class: 'td', text: x.d || '' }), h('span', { class: 'tt' }, [h('b', { text: x.t }), h('small', { text: x.sub })])]));
     });

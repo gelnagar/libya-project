@@ -26,7 +26,7 @@ An interactive map of Tripoli under Gaddafi (1969–2011) for older relatives. A
 - Pin only when a source names a place in Tripoli; use an honest `r` and `level`. Otherwise add to `ATLAS_UNPLACED`.
 - Killings, executions and deaths in custody go in layer `massacre`, never labelled as battles.
 - Report unverified claims as such ("reported", "says"). Note where sources disagree.
-- Check for duplicates in `sites.js` before adding. Items outside Tripoli (for example the Feb 1987 hangings in Benghazi) do not belong in `sites.js`; since the All-Libya build they go in `public/data/regions/<id>.js` with a `region` (see the last section).
+- Check for duplicates in `sites.js` before adding. Items outside Tripoli (for example the 1977 hangings in Benghazi) do not belong in `sites.js`; since the All-Libya build they go in `public/data/regions/<id>.js` with a `region` (see the last section).
 - Many FBIS/JPRS "Tripoli" hits are Tripoli, Lebanon. Exclude them.
 - Sources that worked: CIA reading-room copies of Washington Post and Times, FBIS and JPRS texts, Amnesty PDFs (MDE 19 series), tarikhi.org interviews, MERIP, Wikipedia. WebFetch only works for URLs surfaced by WebSearch or given in a message.
 

@@ -14,7 +14,8 @@ import { storedCopies, addProvenance, gradeSource, gradeClaims, addPublishers } 
 const W = {};
 for (const f of ['sites', 'areas', 'unplaced', 'panels', 'quotes', 'links']) { const p = `public/data/${f}.js`; if (!fs.existsSync(p)) continue; const c = { window: {} }; vm.runInNewContext(fs.readFileSync(p, 'utf8'), c); Object.assign(W, c.window); }
 // other regions add their pins to the same list (public/data/regions/<id>.js); files starting with _ are test fixtures
-for (const f of fs.existsSync('public/data/regions') ? fs.readdirSync('public/data/regions').filter((x) => x.endsWith('.js') && !x.startsWith('_')).sort() : []) { const c = { window: W }; vm.runInNewContext(fs.readFileSync(`public/data/regions/${f}`, 'utf8'), c); }
+const DRAFTED = new Set(); // ids of pins written from review candidates under the owner's instruction of 16 Nov 2026 (public/data/regions/)
+for (const f of fs.existsSync('public/data/regions') ? fs.readdirSync('public/data/regions').filter((x) => x.endsWith('.js') && !x.startsWith('_')).sort() : []) { const before = (W.ATLAS_SITES || []).length, c = { window: W }; vm.runInNewContext(fs.readFileSync(`public/data/regions/${f}`, 'utf8'), c); (W.ATLAS_SITES || []).slice(before).forEach((p) => DRAFTED.add(p.id)); }
 const SITES = W.ATLAS_SITES || [], AREAS = W.ATLAS_AREAS || [], UNPLACED = W.ATLAS_UNPLACED || [], MORE = W.ATLAS_UNPLACED_MORE || [], PANELS = W.ATLAS_PANELS || {}, QUOTES = W.ATLAS_QUOTES || {}, CONN = W.ATLAS_CONNECTIONS || [];
 const EVENT_LAYERS = new Set(['airstrike', 'battle', 'massacre']);
 const REGION = 'tripoli'; // everything published so far; other regions arrive with their own data files
@@ -32,7 +33,7 @@ function claim(subject, field, src, o = {}) {
     statement: o.statement ?? null, date: o.date ?? null, level: o.level ?? null,
     passage: o.passage ?? null, passage_status: o.passage ? 'stored' : 'not recorded',
     reliability: null, credibility: null, // analyst grades, set by scripts/grade-sources.mjs
-    reviewer: 'owner (by statement)', reviewed: '2026-11-16', origin: 'migrated from public/data. The original review was never recorded; on 16 Nov 2026 the owner stated in chat that these claims are good. That is a statement, not a per-claim review, and the date is the date of the statement.' });
+    ...(DRAFTED.has(String(subject).replace(/^site:/, '')) ? { reviewer: 'owner (by instruction)', reviewed: '2026-11-16', origin: 'drafted from the review candidates that two or more stored documents support, on the owner\'s chat instruction of 16 Nov 2026 to finish the remaining regions. No person reviewed this claim; the date is the date of the instruction.' } : { reviewer: 'owner (by statement)', reviewed: '2026-11-16', origin: 'migrated from public/data. The original review was never recorded; on 16 Nov 2026 the owner stated in chat that these claims are good. That is a statement, not a per-claim review, and the date is the date of the statement.' }) });
 }
 const quote = (id, u) => { const q = QUOTES[id] && u && QUOTES[id][u]; return q ? { before: q.pre || '', text: q.hi || '', after: q.post || '', from: q.t || null, date: q.d || null } : null; };
 
@@ -111,7 +112,7 @@ if (process.argv.includes('--check')) {
   const cited = (id, field) => M.claims.filter((c) => c.subject === id && c.field === field && c.source).sort((a, b) => a.n - b.n);
   const uniqueN = (list) => { const seen = new Set(); return list.filter((c) => !seen.has(c.n) && seen.add(c.n)); };
   const pair = (c) => { const s = src.get(c.source), o = {}; if (c.cite != null) o.t = c.cite; if (s.url != null) o.u = s.url; else if (c.url_blank) o.u = null; return o; };
-  const strip = (s, extra = []) => { const o = { ...s }; for (const k of ['uid', 'class', 'region', 'order', 'set', 'hasSources', 'srcShape', ...extra]) delete o[k]; return o; };
+  const strip = (s, extra = []) => { const o = { ...s }; for (const k of ['uid', 'class', 'region', 'order', 'set', 'hasSources', 'srcShape', ...extra]) delete o[k]; if (s.region && s.region !== REGION && s.set === 'sites') o.region = s.region; return o; }; // a pin outside Tripoli keeps its region, as its data file wrote it
   const key = (o) => JSON.stringify(Object.keys(o).sort().reduce((m, k) => { m[k] = o[k]; return m; }, {}));
   const same = (a, b, what) => { try { assert.equal(key(a), key(b)); return true; } catch { console.log('DIFFERS', what, '\n  was', key(a).slice(0, 300), '\n  now', key(b).slice(0, 300)); return false; } };
   let bad = 0;

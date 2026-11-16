@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T14:28:34.736Z",
+ "at": "2026-11-16T07:00:35.022Z",
  "textsCounted": 14855,
  "regions": [
   {
@@ -39,7 +39,7 @@
    "id": "benghazi",
    "name": "Benghazi",
    "ar": "بنغازي",
-   "status": "planned",
+   "status": "published",
    "lat": 32.1167,
    "lon": 20.0667,
    "box": [
@@ -53,8 +53,8 @@
     ]
    ],
    "published": {
-    "places": 0,
-    "events": 0,
+    "places": 1,
+    "events": 1,
     "unplaced": 0
    },
    "docs": 881,
@@ -72,7 +72,7 @@
    "id": "tripolitania",
    "name": "Greater Tripolitania",
    "ar": "إقليم طرابلس",
-   "status": "planned",
+   "status": "published",
    "lat": 32.3097,
    "lon": 13.1961,
    "box": [
@@ -86,7 +86,7 @@
     ]
    ],
    "published": {
-    "places": 0,
+    "places": 2,
     "events": 0,
     "unplaced": 0
    },
@@ -229,7 +229,7 @@
    "id": "sirte",
    "name": "Sirte and the central coast",
    "ar": "سرت والساحل الأوسط",
-   "status": "planned",
+   "status": "published",
    "lat": 30.7422,
    "lon": 18.2225,
    "box": [
@@ -243,8 +243,8 @@
     ]
    ],
    "published": {
-    "places": 0,
-    "events": 0,
+    "places": 1,
+    "events": 1,
     "unplaced": 0
    },
    "docs": 261,
@@ -276,7 +276,7 @@
    "id": "fezzan",
    "name": "Fezzan and the south",
    "ar": "فزان والجنوب",
-   "status": "planned",
+   "status": "published",
    "lat": 26.443,
    "lon": 14.2571,
    "box": [
@@ -290,7 +290,7 @@
     ]
    ],
    "published": {
-    "places": 0,
+    "places": 4,
     "events": 0,
     "unplaced": 0
    },

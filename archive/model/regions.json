@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T07:00:35.022Z",
+ "at": "2026-11-16T07:09:28.064Z",
  "textsCounted": 14855,
  "regions": [
   {
@@ -53,8 +53,8 @@
     ]
    ],
    "published": {
-    "places": 1,
-    "events": 1,
+    "places": 69,
+    "events": 11,
     "unplaced": 0
    },
    "docs": 881,
@@ -86,8 +86,8 @@
     ]
    ],
    "published": {
-    "places": 2,
-    "events": 0,
+    "places": 26,
+    "events": 9,
     "unplaced": 0
    },
    "docs": 399,
@@ -175,7 +175,7 @@
    "id": "cyrenaica",
    "name": "Cyrenaica",
    "ar": "برقة",
-   "status": "planned",
+   "status": "published",
    "lat": 32.0904,
    "lon": 22.1411,
    "box": [
@@ -189,8 +189,8 @@
     ]
    ],
    "published": {
-    "places": 0,
-    "events": 0,
+    "places": 34,
+    "events": 4,
     "unplaced": 0
    },
    "docs": 466,
@@ -243,8 +243,8 @@
     ]
    ],
    "published": {
-    "places": 1,
-    "events": 1,
+    "places": 15,
+    "events": 8,
     "unplaced": 0
    },
    "docs": 261,
@@ -290,8 +290,8 @@
     ]
    ],
    "published": {
-    "places": 4,
-    "events": 0,
+    "places": 44,
+    "events": 3,
     "unplaced": 0
    },
    "docs": 477,

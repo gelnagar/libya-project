@@ -1,0 +1,465 @@
+{
+ "at": "2026-11-16T07:09:06.415Z",
+ "written": 213,
+ "byRegion": {
+  "sirte": 21,
+  "cyrenaica": 38,
+  "fezzan": 43,
+  "benghazi": 78,
+  "tripolitania": 33
+ },
+ "byLayer": {
+  "massacre": 10,
+  "landmark": 134,
+  "military": 43,
+  "battle": 22,
+  "security": 3,
+  "airstrike": 1
+ },
+ "byLevel": {
+  "suspected": 10,
+  "documented": 203
+ },
+ "skipped": {
+  "names Tripoli (belongs to the Tripoli entries)": {
+   "count": 23,
+   "items": [
+    {
+     "id": "77e7154164c7",
+     "region": "benghazi",
+     "name": "US airstrikes on Tripoli and Benghazi ordered by Reagan nine or ten days after the bombing"
+    },
+    {
+     "id": "952be287e6d8",
+     "region": "benghazi",
+     "name": "U.S. air raid on Tripoli and Benghazi, described by Tanenbaum as a justified reprisal; Lib"
+    },
+    {
+     "id": "d4639cd82116",
+     "region": "tripolitania",
+     "name": "Misrata Airport"
+    },
+    {
+     "id": "150054272dfa",
+     "region": "tripolitania",
+     "name": "Wadi Maymun in Bani Walid"
+    },
+    {
+     "id": "1cf811d46388",
+     "region": "benghazi",
+     "name": "Reagan announces US air strikes against Libya, citing intercepted messages to the Libyan P"
+    },
+    {
+     "id": "313e6b0615ec",
+     "region": "tripolitania",
+     "name": "al-Zawiyah road"
+    },
+    {
+     "id": "8d4540fd1214",
+     "region": "benghazi",
+     "name": "Egyptian troop movements into Libya confirmed by US Embassy Tripoli; at least two battalio"
+    },
+    {
+     "id": "c2e7461bef1d",
+     "region": "benghazi",
+     "name": "Major Hasan Ashkal accompanied Qadhafi on a Libyan VIP aircraft flight from Tripoli to Ben"
+    },
+    {
+     "id": "8753b47048a7",
+     "region": "tripolitania",
+     "name": "Qadhdhafi addresses the Basic People's Congress of Shari' al-Zawiyah on mobilization and t"
+    },
+    {
+     "id": "4f46911ce6bf",
+     "region": "sirte",
+     "name": "Qadhdhafi delivers Loyalty Day speech at celebrations in Surt, broadcast live by Tripoli T"
+    },
+    {
+     "id": "bc49f63e6d69",
+     "region": "tripolitania",
+     "name": "Al-Qadhdhafi speech to the second extraordinary session of the General People's Congress, "
+    },
+    {
+     "id": "7427ea3aa70d",
+     "region": "tripolitania",
+     "name": "Khamis reportedly killed when his vehicle was hit in an airstrike or attack about 60 km so"
+    },
+    {
+     "id": "61e0aa8ee034",
+     "region": "sirte",
+     "name": "Surt SA-5 complex"
+    },
+    {
+     "id": "cb89323bba44",
+     "region": "benghazi",
+     "name": "Libyan Ministry of Unity and Foreign Affairs told Ambassador Palmer that the US Mission in"
+    },
+    {
+     "id": "462b70580255",
+     "region": "benghazi",
+     "name": "Students of universities in Tripoli and Benghazi protested against human rights violations"
+    },
+    {
+     "id": "3f5cd24e2d1a",
+     "region": "cyrenaica",
+     "name": "Qaddafi says Libya will not mass troops against the Egyptian army on its eastern border an"
+    },
+    {
+     "id": "9ba5a4898a00",
+     "region": "cyrenaica",
+     "name": "Qadhdhafi speech in Darnah marking the seventh anniversary of the evacuation of U.S. force"
+    },
+    {
+     "id": "5666fc2676d8",
+     "region": "benghazi",
+     "name": "Opposition source claims four officers from the armored service stormed the camp to attack"
+    },
+    {
+     "id": "eb0ad5e758b0",
+     "region": "benghazi",
+     "name": "Libyan demonstrators attacked the French Embassy in Tripoli and the French Consulate in Be"
+    },
+    {
+     "id": "4205f8f79f81",
+     "region": "benghazi",
+     "name": "Libyan Air Defense downed an American spy aircraft dispatched by the U.S. 6th Fleet, per T"
+    },
+    {
+     "id": "a5d3365fe60a",
+     "region": "benghazi",
+     "name": "A group of 30 soldiers in Benghazi reportedly planned to fly an armed plane to Tripoli and"
+    },
+    {
+     "id": "0fa8decf4e8c",
+     "region": "benghazi",
+     "name": "US retaliatory air raids on Tripoli and Benghazi, after Reagan said Libya planned the bomb"
+    },
+    {
+     "id": "1d41e74d2a8e",
+     "region": "benghazi",
+     "name": "U.S. Air Force and Navy planes bombed Benghazi and Tripoli"
+    }
+   ]
+  },
+  "written by hand already": {
+   "count": 11,
+   "items": [
+    {
+     "id": "e5995f5d1de6",
+     "region": "fezzan",
+     "name": "Kufra airfield"
+    },
+    {
+     "id": "ae856549c274",
+     "region": "benghazi",
+     "name": "About 70 young army officers and enlisted men, mostly from the Signal Corps, overthrew Kin"
+    },
+    {
+     "id": "c71c7c26d530",
+     "region": "benghazi",
+     "name": "Three students transported from Tripoli Central Prison to Benghazi and hanged in the main "
+    },
+    {
+     "id": "a734bf02829a",
+     "region": "fezzan",
+     "name": "Al Kufrah Barracks"
+    },
+    {
+     "id": "8d3b1035b5ae",
+     "region": "sirte",
+     "name": "Marsa al Burayqah"
+    },
+    {
+     "id": "d87cf40edf82",
+     "region": "sirte",
+     "name": "Marsa Brega"
+    },
+    {
+     "id": "52d979f33f42",
+     "region": "sirte",
+     "name": "US warplanes sank two Libyan Combattante patrol boats and hit a SAM-5 missile site at Sirt"
+    },
+    {
+     "id": "f765a85f7255",
+     "region": "tripolitania",
+     "name": "Gaddafi declares the Cultural Revolution in a speech in Zuwarah, instead of announcing his"
+    },
+    {
+     "id": "4404240d56fd",
+     "region": "fezzan",
+     "name": "Otrag rocket, 12 m long, launched from the desert launch pad at the oasis of Sebha, Libya."
+    },
+    {
+     "id": "c8a5cea7b8d0",
+     "region": "tripolitania",
+     "name": "Students of Misratah municipality staged a demonstration protesting the Lebanese-Israeli a"
+    },
+    {
+     "id": "2cfc65968238",
+     "region": "fezzan",
+     "name": "Libyan heavy-lift transporters carrying mechanized APCs assembled north of the airfield; t"
+    }
+   ]
+  },
+  "safety flag: after-2011": {
+   "count": 30,
+   "items": [
+    {
+     "id": "235f833353d7",
+     "region": "benghazi",
+     "name": "Attack on the US consulate in Benghazi that killed Ambassador Stevens and three other Amer"
+    },
+    {
+     "id": "0dd44ef1b4e3",
+     "region": "benghazi",
+     "name": "Fighting at the U.S. Consulate ceased by 0030 local time; all U.S. personnel evacuated exc"
+    },
+    {
+     "id": "e707de58d294",
+     "region": "fezzan",
+     "name": "Fighting between Tobu and Zuwayya tribes killed 17 people and wounded 22 over 12 and 13 Fe"
+    },
+    {
+     "id": "29f302c3e57c",
+     "region": "fezzan",
+     "name": "Fighting erupted after a Tobu man was reportedly killed by Zuwayya tribesmen; three more T"
+    },
+    {
+     "id": "55b33e7ee169",
+     "region": "fezzan",
+     "name": "Fighting flared between Tobu tribesmen and former rebels of the Libya Shield Battalion, ki"
+    },
+    {
+     "id": "6b248e20adcc",
+     "region": "fezzan",
+     "name": "Fighting continued for three days, killing another 47 people and wounding 100."
+    },
+    {
+     "id": "32275dd41baa",
+     "region": "cyrenaica",
+     "name": "Demonstrations in support of the attacks in Benghazi."
+    },
+    {
+     "id": "83b5bc70f8b2",
+     "region": "fezzan",
+     "name": "Afriqiyah Airways Flight 209 from Sabha to Mitiga was hijacked and diverted to Malta."
+    },
+    {
+     "id": "25df789160af",
+     "region": "tripolitania",
+     "name": "Protests resumed calling for the end of the GNU and the dissolution of armed militias."
+    },
+    {
+     "id": "6b475fe839ad",
+     "region": "cyrenaica",
+     "name": "Three men accused of being homosexual were executed by being shot in the head by ISIS, rep"
+    },
+    {
+     "id": "ecc2de68be8f",
+     "region": "fezzan",
+     "name": "Libyan National Army was dispatched to Kufra to enforce the peace."
+    },
+    {
+     "id": "c816e61189c9",
+     "region": "fezzan",
+     "name": "A UN team began providing relief supplies, and a ceasefire between the tribes was reported"
+    },
+    {
+     "id": "40660db041cc",
+     "region": "tripolitania",
+     "name": "Deputy prime minister claimed Khamis was killed in fighting in Bani Walid."
+    },
+    {
+     "id": "c7736bbd6e8e",
+     "region": "cyrenaica",
+     "name": "Egyptian air force strikes on ISIS positions in Libya, retaliating for the beheading of 21"
+    },
+    {
+     "id": "ce437740fe5b",
+     "region": "cyrenaica",
+     "name": "Reported Egyptian special forces raid on an ISIS camp south of Derna; sources cited more t"
+    },
+    {
+     "id": "44f8f1a5e5d0",
+     "region": "tripolitania",
+     "name": "Defence Ministry decree named the Libya Shield central force (Libya Shield - Central Regio"
+    },
+    {
+     "id": "40b79ee56851",
+     "region": "benghazi",
+     "name": "Attackers breached the Consulate compound with explosives, set the guard building and othe"
+    },
+    {
+     "id": "2d07711c3db8",
+     "region": "benghazi",
+     "name": "Attackers fired small arms and an RPG at the facility around 0100, then returned around 05"
+    },
+    {
+     "id": "c74e04758f17",
+     "region": "tripolitania",
+     "name": "Vessel brought to port of Zawiya and handed over to Libyan authorities after escort by USS"
+    },
+    {
+     "id": "f1330c6a4bd3",
+     "region": "tripolitania",
+     "name": "The airport was closed to flights due to clashes at Tripoli International Airport; flights"
+    },
+    {
+     "id": "f44a4a2f4003",
+     "region": "sirte",
+     "name": "Kidnapping of Egyptian Coptic migrant workers in two separate attacks (one of two dates gi"
+    },
+    {
+     "id": "04b6ab5e2df7",
+     "region": "sirte",
+     "name": "IS released a Dabiq report showing photos of 21 kidnapped Egyptian Copts and threatened to"
+    },
+    {
+     "id": "b9fb672ba6ff",
+     "region": "cyrenaica",
+     "name": "Tobruk-based House of Representatives government in east Libya issued a reciprocal travel "
+    },
+    {
+     "id": "06563fd5a124",
+     "region": "tripolitania",
+     "name": "A fire destroyed the airport's passenger terminal."
+    },
+    {
+     "id": "e274ba24180f",
+     "region": "cyrenaica",
+     "name": "Speaker of the House of Representatives announced a no-confidence vote against the Governm"
+    },
+    {
+     "id": "d0b47ed7c934",
+     "region": "fezzan",
+     "name": "He filed his candidacy papers for the presidential election at the electoral commission br"
+    },
+    {
+     "id": "b61f4ad1ec0b",
+     "region": "fezzan",
+     "name": "The Sabha Court of Appeal accepted his appeal, which returned him to the presidential race"
+    },
+    {
+     "id": "d925cc8bc7d6",
+     "region": "tripolitania",
+     "name": "He was killed in an assassination in Zintan, according to the article."
+    },
+    {
+     "id": "83d4161dd415",
+     "region": "benghazi",
+     "name": "Haftar announced Operation Dignity, with joint air and ground attacks on Islamist factions"
+    },
+    {
+     "id": "f87a26c7f3cf",
+     "region": "cyrenaica",
+     "name": "Ashmawi captured by Libyan National Army forces (unit of the 106th Brigade) in a mountaino"
+    }
+   ]
+  },
+  "safety flag: victim": {
+   "count": 7,
+   "items": [
+    {
+     "id": "9a80e12450a7",
+     "region": "benghazi",
+     "name": "Benghazi basketball stadium"
+    },
+    {
+     "id": "d06f5c780f1c",
+     "region": "tripolitania",
+     "name": "Car accident involving Jalloud and RCC member Mohammed Abu Bakr Al-Magariaf; Magariaf was "
+    },
+    {
+     "id": "6cc2cbe730d0",
+     "region": "benghazi",
+     "name": "Public execution of Al-Sadek Hamed Al-Shuwehdy at the conclusion of a show trial at a bask"
+    },
+    {
+     "id": "45e7f0b4b237",
+     "region": "tripolitania",
+     "name": "Zuwarah Basic People's Conference cabled Qadhdhafi that it had held an extraordinary sessi"
+    },
+    {
+     "id": "457f63404617",
+     "region": "cyrenaica",
+     "name": "Palestinian detainees in Al-Bayda prisons continued an open hunger strike for the fifth da"
+    },
+    {
+     "id": "dd8100122e6b",
+     "region": "benghazi",
+     "name": "Public execution of Al-Sadek Hamed Al-Shuwehdy, a Libyan engineer, in a Benghazi basketbal"
+    },
+    {
+     "id": "a9e1d6cd895f",
+     "region": "benghazi",
+     "name": "Protests began after the arrest of lawyer Fathi Terbil, which led to demands for the regim"
+    }
+   ]
+  },
+  "before 1969 (the map is of the Gaddafi years)": {
+   "count": 12,
+   "items": [
+    {
+     "id": "f1c049aa7421",
+     "region": "benghazi",
+     "name": "Yusuf Karamanli had leaders of the Al-Jawazi tribe executed at his castle in Benghazi, lea"
+    },
+    {
+     "id": "34eef795ebce",
+     "region": "benghazi",
+     "name": "Egypt's minister-designate to the new state of Libya arrived in Benghazi unannounced and u"
+    },
+    {
+     "id": "309323e3d050",
+     "region": "cyrenaica",
+     "name": "Libyan resistance defeated an American-led expedition that attacked Darna with seven ships"
+    },
+    {
+     "id": "b50d696255c5",
+     "region": "cyrenaica",
+     "name": "Idriss unexpectedly summoned Crown Prince Rida and Prime Minister Ben Halim to a meeting a"
+    },
+    {
+     "id": "926484881841",
+     "region": "fezzan",
+     "name": "Two French military aircraft conducted 20-minute low-level surveillance over Ghat and two "
+    },
+    {
+     "id": "d4c7201cbe1e",
+     "region": "benghazi",
+     "name": "US Embassy in Benghazi attacked by a large mob; embassy burning its papers."
+    },
+    {
+     "id": "030d3f13bfc7",
+     "region": "benghazi",
+     "name": "Mobs attacked the US consulate in Benghazi."
+    },
+    {
+     "id": "101a944d1e05",
+     "region": "benghazi",
+     "name": "Celebration held for the founding of a new campus in Benghazi, attended by King Idris I an"
+    },
+    {
+     "id": "fbdf2fceeb03",
+     "region": "benghazi",
+     "name": "Idris announced the establishment of the United Kingdom of Libya."
+    },
+    {
+     "id": "a3534a07edd2",
+     "region": "benghazi",
+     "name": "King Idriss reportedly seriously ill; Prime Minister Muntasser requested a doctor be sent "
+    },
+    {
+     "id": "5d39b847556f",
+     "region": "benghazi",
+     "name": "Pro-Egyptian demonstrations; police maintained control."
+    },
+    {
+     "id": "a96097521b11",
+     "region": "tripolitania",
+     "name": "Battle of al-Shaqiqa (the 'forgotten sister' battle), in which Ahmed al-Mrid's fighters to"
+    }
+   ]
+  }
+ }
+}

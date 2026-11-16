@@ -274,7 +274,10 @@
   }
   function hideCard() { if (cardTip) map.closeTooltip(cardTip); }
   function esc(t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  // the Places list holds every pin; only the open region's are shown
+  function syncPlaces() { var b = $('places').children, i; for (i = 0; i < b.length; i++) b[i].hidden = b[i].getAttribute('data-r') !== curRegion; }
   function refresh() {
+    syncPlaces();
     if (typeof shareSync === "function") shareSync();
     SITES.forEach(function (s) {
       var on = visible(s) && (timeYear == null || span(s)[0] <= timeYear) && (!timeRange || (span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1]));
@@ -466,7 +469,7 @@
   }
 
   SITES.slice().sort(function (a, b) { return (a.y0 == null ? 9999 : a.y0) - (b.y0 == null ? 9999 : b.y0); }).forEach(function (s) {
-    $('places').appendChild(h('button', { onclick: function () { focusSite(s); } }, [h('span', { class: 'yr', text: s.y0 == null ? '—' : String(s.y0) }), glyph(s.layer), h('span', { text: s.name })]));
+    $('places').appendChild(h('button', { 'data-r': regionOf(s), onclick: function () { focusSite(s); } }, [h('span', { class: 'yr', text: s.y0 == null ? '—' : String(s.y0) }), glyph(s.layer), h('span', { text: s.name })]));
   });
   UNPLACED.forEach(function (u) {
     $('unplaced').appendChild(h('div', {}, [h('b', { text: u.name }), h('span', { text: u.when + '. ' }), u.text, u.src ? h('span', {}, [].concat(u.src).reduce(function (acc, sr, i, arr) { acc.push(' ', h('a', { href: sr.u, target: '_blank', rel: 'noopener', title: sr.t || '', text: arr.length > 1 ? 'Source ' + (i + 1) : 'Source' })); return acc; }, [])) : null]));

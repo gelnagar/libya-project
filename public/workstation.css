@@ -595,3 +595,5 @@ html[data-theme] .no-qr { display: block; font-size: 11px; color: var(--text-mut
 html[data-theme] .term-list > * { flex: none; }
 html[data-theme] .trow { align-items: start; }
 html[data-theme] .trow .tt { min-width: 0; overflow-wrap: anywhere; }
+
+#places [hidden] { display: none !important; }

@@ -13,6 +13,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "17 August 1976",
   "relevance": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the previous 30 days.",
   "text": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the previous 30 days. This rests on one document: THE PRESIDENT'S DAILY BRIEF 27 AUGUST 1976 (27 August 1976). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -34,6 +39,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.7636,
   "lon": 22.6361,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Derna",
+   "u": "https://en.wikipedia.org/wiki/Derna,_Libya"
+  },
   "period": "15 October 1976",
   "relevance": "Qadhdhafi speech inaugurating a new power station and honoring the 'Martyrs of Darna' who fell at Al-Gargah; he saluted POLISARIO and SDAR leaders.",
   "text": "Qadhdhafi speech inaugurating a new power station and honoring the 'Martyrs of Darna' who fell at Al-Gargah; he saluted POLISARIO and SDAR leaders. This rests on one document: AL-QADHDHAFI WELCOMES POLISARIO GROUP 15 OCTOBER (19 October 1976). No second source is held for it. Mapped at the centre of Derna: the document names the town, not the site.",
@@ -55,6 +65,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.7636,
   "lon": 22.6361,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Derna",
+   "u": "https://en.wikipedia.org/wiki/Derna,_Libya"
+  },
   "period": "16 September 1977",
   "relevance": "Qadhdhafi speech on the anniversary of the evacuation of American troops from Libya (Wheelus), comparing current terrorism with the 1805 Derna resistance",
   "text": "Qadhdhafi speech on the anniversary of the evacuation of American troops from Libya (Wheelus), comparing current terrorism with the 1805 Derna resistance. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 42, 2 March 1978 (2 March 1978). No second source is held for it. Mapped at the centre of Derna: the document names the town, not the site.",
@@ -76,6 +91,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "30 March 1978",
   "relevance": "Naval exercise in the Mediterranean was launched from the Tobruk naval base on 28 March 1978, attended by Qadhdhafi.",
   "text": "Naval exercise in the Mediterranean was launched from the Tobruk naval base on 28 March 1978, attended by Qadhdhafi. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 62, 30 March 1978 (30 March 1978). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -97,6 +117,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "28 March 1978",
   "relevance": "Qadhdhafi attended a naval exercise in the Mediterranean launched from Tobruk naval base, including missile boats, submarines and vertical take-off jets; he boarded the…",
   "text": "Qadhdhafi attended a naval exercise in the Mediterranean launched from Tobruk naval base, including missile boats, submarines and vertical take-off jets; he boarded the submarine Fateh. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 62, 30 March 1978 (30 March 1978). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -118,6 +143,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "28 March 1978",
   "relevance": "Qadhdhafi speech at the eighth anniversary celebrations of the end of the British presence in Libya, calling for a joint Libyan-Egyptian military command against Israel…",
   "text": "Qadhdhafi speech at the eighth anniversary celebrations of the end of the British presence in Libya, calling for a joint Libyan-Egyptian military command against Israel and rejecting Egypt's peace course. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 61, 29 March 1978. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -139,6 +169,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "28 March 1979",
   "relevance": "Ninth anniversary of the evacuation of the last British soldier from Libya celebrated at Tobruk; Qadhdhafi attended around one o'clock.",
   "text": "Ninth anniversary of the evacuation of the last British soldier from Libya celebrated at Tobruk; Qadhdhafi attended around one o'clock. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 063, 30 March 1979 (30 March 1979). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -160,6 +195,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.7636,
   "lon": 22.6361,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Derna",
+   "u": "https://en.wikipedia.org/wiki/Derna,_Libya"
+  },
   "period": "12 January 1979",
   "relevance": "Workers seized Kurkub Contractors and the Al-Bahr Tourist Hotel, forming people's committees.",
   "text": "Workers seized Kurkub Contractors and the Al-Bahr Tourist Hotel, forming people's committees. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 010, 15 Jan 79. No second source is held for it. Mapped at the centre of Derna: the document names the town, not the site.",
@@ -181,6 +221,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "14 August 1980",
   "relevance": "Die Welt reported a foiled coup attempt six days earlier in which an officer allegedly tried to seize the Tobruk transmitting station; JANA denied the report as…",
   "text": "Die Welt reported a foiled coup attempt six days earlier in which an officer allegedly tried to seize the Tobruk transmitting station; JANA denied the report as fabricated. This rests on one document: FBIS DAILY REPORT—Middle East & Africa, Vol. V No. 159, 14 August 1980 (14 August 1980). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -202,6 +247,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "1 August 1980",
   "relevance": "Reported mutiny in the Libyan armed forces, put down with more than 400 killed (as alleged in article).",
   "text": "Reported mutiny in the Libyan armed forces, put down with more than 400 killed (as alleged in article). This rests on one document: Near East/North Africa Report No. 2340 (9 March 1981). No second source is held for it. It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -223,6 +273,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "6 August 1980",
   "relevance": "According to an opposition communique reported by AFP, the 9th Libyan Army brigade based at Tobruq revolted under 'free officers'; the Libyan JANA agency denied the…",
   "text": "According to an opposition communique reported by AFP, the 9th Libyan Army brigade based at Tobruq revolted under 'free officers'; the Libyan JANA agency denied the uprising. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 164, 21 August 1980 (21 August 1980). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -244,6 +299,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "20 August 1980",
   "relevance": "A large popular demonstration and rally in support of the revolution took place in Tobruq for the 11th anniversary of the 1 September Revolution.",
   "text": "A large popular demonstration and rally in support of the revolution took place in Tobruq for the 11th anniversary of the 1 September Revolution. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 164, 21 August 1980 (21 August 1980). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -265,6 +325,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "28 March 1981",
   "relevance": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation; announces end of military confrontation with Egypt and withdrawal of…",
   "text": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation; announces end of military confrontation with Egypt and withdrawal of regular forces from Tobruk region. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 060, 30 March 1981 (30 March 1981). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -286,6 +351,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "4 December 1982",
   "relevance": "The Tobruk flour mill lost 124 hours in July to electrical and technical breakdowns, with further breakdowns and outages in September.",
   "text": "The Tobruk flour mill lost 124 hours in July to electrical and technical breakdowns, with further breakdowns and outages in September. 2 documents mention it (all from one publisher, archive.org). Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -311,6 +381,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.7636,
   "lon": 22.6361,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Derna",
+   "u": "https://en.wikipedia.org/wiki/Derna,_Libya"
+  },
   "period": "29 October 1983",
   "relevance": "Angry popular demonstration in Darnah denouncing British military exercises on Egyptian territory near the Libyan border.",
   "text": "Angry popular demonstration in Darnah denouncing British military exercises on Egyptian territory near the Libyan border. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 213, 2 November 1983 (2 November 1983). No second source is held for it. Mapped at the centre of Derna: the document names the town, not the site.",
@@ -332,6 +407,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "30 March 1983",
   "relevance": "Qadhdhafi met officers of the Libyan Armed Forces in Tobruk on the 13th anniversary of the removal of British bases; Brigadier General Abu Bakr Yunis Jabir, commander…",
   "text": "Qadhdhafi met officers of the Libyan Armed Forces in Tobruk on the 13th anniversary of the removal of British bases; Brigadier General Abu Bakr Yunis Jabir, commander in chief of the armed forces, attended. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 063, 31 March 1983 (31 March 1983). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -353,6 +433,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "23 September 1983",
   "relevance": "Thirteen Flogger B aircraft were on the main parking apron and taxiways, six of them armed with Apex missiles; the airfield is 48 NM northwest of Tubruq on Libya's…",
   "text": "Thirteen Flogger B aircraft were on the main parking apron and taxiways, six of them armed with Apex missiles; the airfield is 48 NM northwest of Tubruq on Libya's northeast coast. This rests on one document: FLOGGER B WITH APEX MISSILES AL MUMBAH AIRFIELD NORTH, LIBYA (SANITIZED) (23 September 1983). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -374,6 +459,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "28 March 1984",
   "relevance": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in Libya",
   "text": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in Libya. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 062, 29 March 1984. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -395,6 +485,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.7636,
   "lon": 22.6361,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Derna",
+   "u": "https://en.wikipedia.org/wiki/Derna,_Libya"
+  },
   "period": "7 October 1985",
   "relevance": "Qadhdhafi attended a live-ammunition military exercise south of Al-Mukhayla and gave a speech on Vengeance Day.",
   "text": "Qadhdhafi attended a live-ammunition military exercise south of Al-Mukhayla and gave a speech on Vengeance Day. This rests on one document: AL-AHRAM ON LIBYAN-USSR JOINT NAVAL OPERATIONS. No second source is held for it. Mapped at the centre of Derna: the document names the town, not the site.",
@@ -416,6 +511,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 30.7556,
   "lon": 20.2253,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Ajdabiya",
+   "u": "https://en.wikipedia.org/wiki/Ajdabiya"
+  },
   "period": "6 October 1985",
   "relevance": "Al-Magharibah tribe held a popular rally welcoming Qadhdhafi.",
   "text": "Al-Magharibah tribe held a popular rally welcoming Qadhdhafi. This rests on one document: AL-AHRAM ON LIBYAN-USSR JOINT NAVAL OPERATIONS. No second source is held for it. Mapped at the centre of Ajdabiya: the document names the town, not the site.",
@@ -437,6 +537,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "28 March 1985",
   "relevance": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and air display at Jamal 'Abd al-Nasir Air Base.",
   "text": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and air display at Jamal 'Abd al-Nasir Air Base. This rests on one document: AL-SAFIR INTERVIEWS AL-QADHDHAFI, PART TWO (21 March 1985). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -458,6 +563,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.7664,
   "lon": 21.7417,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Bayda",
+   "u": "https://en.wikipedia.org/wiki/Bayda,_Libya"
+  },
   "period": "12 May 1986",
   "relevance": "Qadhdhafi speech at 7 April Square calling for an end to use of foreign goods, after the U.S. raid on Libya.",
   "text": "Qadhdhafi speech at 7 April Square calling for an end to use of foreign goods, after the U.S. raid on Libya. This rests on one document: AL-QADHDHAFI CALLS FOR END TO USE OF FOREIGN GOODS. No second source is held for it. Mapped at the centre of Bayda: the document names the town, not the site.",
@@ -479,6 +589,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.7636,
   "lon": 22.6361,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Derna",
+   "u": "https://en.wikipedia.org/wiki/Derna,_Libya"
+  },
   "period": "10 June 1986",
   "relevance": "Qadhdhafi delivers speech in Darnah calling for the city to be made an armed city against possible US occupation.",
   "text": "Qadhdhafi delivers speech in Darnah calling for the city to be made an armed city against possible US occupation. This rests on one document: AL-QADHDHAFI DARNAH SPEECH (11 June 1986). No second source is held for it. Mapped at the centre of Derna: the document names the town, not the site.",
@@ -500,6 +615,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "28 March 1988",
   "relevance": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base; he announced withdrawal of all Libyan military forces from the…",
   "text": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base; he announced withdrawal of all Libyan military forces from the Libyan-Egyptian border. This rests on one document: AL-QADHDHAFI ON 'LIBERATION,' EGYPT, FREEDOM (28 March 1988). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -519,6 +639,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "Date not given",
   "relevance": "Housed a tank battalion with at least 30 medium tanks, normally parked in sheds, dispersed within the facility in 1983.",
   "text": "Housed a tank battalion with at least 30 medium tanks, normally parked in sheds, dispersed within the facility in 1983. The same place appears in 3 separate readings, also described as: Tubruq Airfield; Tubrug (Tobruk) SA-6 SAM Support Facility South. 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -546,6 +671,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "Date not given",
   "relevance": "A Libyan air warning radar site under construction in June 1973 with six radar mounds, a radar bunker and a control bunker, located in eastern Libya (Tubruq).",
   "text": "A Libyan air warning radar site under construction in June 1973 with six radar mounds, a radar bunker and a control bunker, located in eastern Libya (Tubruq). This rests on one document: AIR WARNING RADAR SITES IN EGYPT, LIBYA, AND SUDAN. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -565,6 +695,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "Date not given",
   "relevance": "Had a 122mm self-propelled howitzer battalion, a BMP mechanized infantry company and support units defensively deployed there.",
   "text": "Had a 122mm self-propelled howitzer battalion, a BMP mechanized infantry company and support units defensively deployed there. This rests on one document: EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING…. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -584,6 +719,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "Date not given",
   "relevance": "Former British Adem base in Tobruk, renamed after Nasser when Libya took it over in 1970; Gaddafi spoke there on 28 March 1984.",
   "text": "Former British Adem base in Tobruk, renamed after Nasser when Libya took it over in 1970; Gaddafi spoke there on 28 March 1984. The same place appears in 5 separate readings, also described as: Jamal 'Abd an-Nasir Airbase (Tobruk); Jamal 'Abd al-Nasir Base, Tobruq; Jamal 'Abd al-Nasir Base (al-'Adem Base, Tobruk); Jamal Abd al-Nasir Air Base, Tobruk. 5 documents mention it (from 2 publishers). Mapped at the centre of Tobruk: the document names the town, not the site.",
@@ -619,6 +759,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 30.7556,
   "lon": 20.2253,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Ajdabiya",
+   "u": "https://en.wikipedia.org/wiki/Ajdabiya"
+  },
   "period": "Date not given",
   "relevance": "Student congresses at the Al Shouala and Al Fateh Alzeem schools in Ajdabiyah also voted to become military barracks.",
   "text": "Student congresses at the Al Shouala and Al Fateh Alzeem schools in Ajdabiyah also voted to become military barracks. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 222, 14 November 1980. No second source is held for it. Mapped at the centre of Ajdabiya: the document names the town, not the site.",
@@ -638,6 +783,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.0761,
   "lon": 23.9614,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tobruk",
+   "u": "https://en.wikipedia.org/wiki/Tobruk"
+  },
   "period": "Date not given",
   "relevance": "Port where the RO/RO ship with HAZE A helicopter containers arrived offshore; the containers were unlikely to be offloaded here.",
   "text": "Port where the RO/RO ship with HAZE A helicopter containers arrived offshore; the containers were unlikely to be offloaded here. The same place appears in 3 separate readings, also described as: Tubruq port facilities; Tubruq (Tobruk) port facilities. 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Tobruk: the document names the town, not the site.",

@@ -13,6 +13,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "12 September 1979",
   "relevance": "Administrative complex and nearby hotel blown up before a planned Qadhdhafi inauguration; reportedly 80 Libyans and Pakistanis preparing the welcome were killed.",
   "text": "Administrative complex and nearby hotel blown up before a planned Qadhdhafi inauguration; reportedly 80 Libyans and Pakistanis preparing the welcome were killed. This rests on one document: Near East/North Africa Report No. 2054 (5 December 1979). No second source is held for it. It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -34,6 +39,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "11 June 1980",
   "relevance": "Libyan naval forces held joint exercises with the Soviet Navy in the Gulf of Sirte, ending the week before 6 October 1985.",
   "text": "Libyan naval forces held joint exercises with the Soviet Navy in the Gulf of Sirte, ending the week before 6 October 1985. 2 documents mention it (from 2 publishers). Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -59,6 +69,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "10 June 1980",
   "relevance": "Libyan Arab Armed Forces (navy, air defence and land forces) conducted a live-ammunition anti-landing maneuver in the Gulf of Sirte, part of the 10th anniversary…",
   "text": "Libyan Arab Armed Forces (navy, air defence and land forces) conducted a live-ammunition anti-landing maneuver in the Gulf of Sirte, part of the 10th anniversary celebrations of the eviction of U.S. bases. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 114, 11 June 1980 (11 June 1980). No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -80,6 +95,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "4 November 1981",
   "relevance": "Esso Standard (Libya) Limited and Esso (Sirte) Limited served notice of abandonment of all their interests in Libya",
   "text": "Esso Standard (Libya) Limited and Esso (Sirte) Limited served notice of abandonment of all their interests in Libya. This rests on one document: FBIS DAILY REPORT—Middle East & Africa, Vol. V No. 220, 16 November 1981 (16 November 1981). No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -101,6 +121,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "17 June 1981",
   "relevance": "Armed forces commander Abu Bakr Yunis Jabir welcomed back a Libyan unit returning from Chad at a reception in the Surt district.",
   "text": "Armed forces commander Abu Bakr Yunis Jabir welcomed back a Libyan unit returning from Chad at a reception in the Surt district. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 117, 18 June 1981. No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -122,6 +147,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "23 November 1985",
   "relevance": "Col. Hassan Ishkal, head of the Sirte military region and third most powerful man in Libya, was killed; officially a car accident, but reports said he was shot at least…",
   "text": "Col. Hassan Ishkal, head of the Sirte military region and third most powerful man in Libya, was killed; officially a car accident, but reports said he was shot at least six times near a military barracks. The same event appears in 2 separate readings, also described as: According to U.S. intelligence officials, Gadhafi ordered the murder of Col.…. 3 documents mention it (all from one publisher, cia.gov). It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -151,6 +181,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "7 October 1986",
   "relevance": "Qadhafi speech commemorating the 16th anniversary of the end of Italian authority in Libya, calling for mining the coast, trenches and barbed wire, and threatening…",
   "text": "Qadhafi speech commemorating the 16th anniversary of the end of Italian authority in Libya, calling for mining the coast, trenches and barbed wire, and threatening terrorism against the US if attacked again. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -176,6 +211,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "April 1986",
   "relevance": "Libyan missile base struck by US forces in the first strike of the operation, per the article.",
   "text": "Libyan missile base struck by US forces in the first strike of the operation, per the article. The same place appears in 2 separate readings, also described as: Syrte (Sirte) SAM-5 site. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -201,6 +241,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "24 March 1986",
   "relevance": "Libyan claims that three US aircraft were downed over the Gulf of Sidra during US naval exercises; US reports of an attack on SAM sites near Surt.",
   "text": "Libyan claims that three US aircraft were downed over the Gulf of Sidra during US naval exercises; US reports of an attack on SAM sites near Surt. This rests on one document: MONTHLY REPORT -- NICOSIA BUREAU -- MARCH (3 April 1986). No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -222,6 +267,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "28 March 1986",
   "relevance": "Qadhdhafi says the U.S. fired two missiles at a suburb of Surt to strike SAM-5 missiles and that one remained intact.",
   "text": "Qadhdhafi says the U.S. fired two missiles at a suburb of Surt to strike SAM-5 missiles and that one remained intact. This rests on one document: AL-QADHDHAFI ADDRESSES RALLY (28 March 1986). No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -243,6 +293,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "4 February 1987",
   "relevance": "Qadhdhafi gave an interview to Le Monde correspondent Alain Frachon near Surt, denying Libyan intervention in Chad and urging French withdrawal.",
   "text": "Qadhdhafi gave an interview to Le Monde correspondent Alain Frachon near Surt, denying Libyan intervention in Chad and urging French withdrawal. This rests on one document: AL-QADHDHAFI DEMANDS FRENCH WITHDRAWAL FROM CHAD. No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -264,6 +319,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "20 October 2011",
   "relevance": "Sirte was captured, NATO airstrikes hit Gaddafi's escape convoy, and Gaddafi was killed by rebel fighters.",
   "text": "Sirte was captured, NATO airstrikes hit Gaddafi's escape convoy, and Gaddafi was killed by rebel fighters. 4 documents mention it (from 2 publishers). It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -297,6 +357,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 30.435,
   "lon": 19.6669,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Brega",
+   "u": "https://en.wikipedia.org/wiki/Brega"
+  },
   "period": "22 July 2011",
   "relevance": "NATO air strike hits the Brega pipe-making plant; NATO later claimed rockets and rocket launchers were stored there.",
   "text": "NATO air strike hits the Brega pipe-making plant; NATO later claimed rockets and rocket launchers were stored there. This rests on one document: Great Man-Made River (Wikipedia). No second source is held for it. Mapped at the centre of Brega: the document names the town, not the site.",
@@ -316,6 +381,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "Date not given",
   "relevance": "Libyan AW radar site 113 near Surt, listed in Table 1.",
   "text": "Libyan AW radar site 113 near Surt, listed in Table 1. This rests on one document: AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA. No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -335,6 +405,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "Date not given",
   "relevance": "Pipeline under construction as part of the Great Manmade River Project, shown on Figure 1.",
   "text": "Pipeline under construction as part of the Great Manmade River Project, shown on Figure 1. This rests on one document: LIBYA'S GREAT MANMADE RIVER PROJECT: PLANS AND REALITIES. No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -354,6 +429,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 30.5867,
   "lon": 18.4119,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Ras Lanuf",
+   "u": "https://en.wikipedia.org/wiki/Ras_Lanuf"
+  },
   "period": "Date not given",
   "relevance": "Visited by Senegalese President Diouf during his March 1989 trip to Libya.",
   "text": "Visited by Senegalese President Diouf during his March 1989 trip to Libya. This rests on one document: DTIC ADA348497: JPRS Report, Near East & South Asia.. No second source is held for it. Mapped at the centre of Ras Lanuf: the document names the town, not the site.",
@@ -373,6 +453,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 30.435,
   "lon": 19.6669,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Brega",
+   "u": "https://en.wikipedia.org/wiki/Brega"
+  },
   "period": "Date not given",
   "relevance": "Oilfields about 400 km east of Misurata, intended to supply natural gas to the steel plant.",
   "text": "Oilfields about 400 km east of Misurata, intended to supply natural gas to the steel plant. This rests on one document: JPRS ID: 8748 NEAR EAST/NORTH AFRICA REPORT. No second source is held for it. Mapped at the centre of Brega: the document names the town, not the site.",
@@ -392,6 +477,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.205,
   "lon": 16.5886,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sirte",
+   "u": "https://en.wikipedia.org/wiki/Sirte"
+  },
   "period": "Date not given",
   "relevance": "Major military base about 250 miles southeast of the capital, mentioned as the base of the purported plotter Col. Hassan Eshqal.",
   "text": "Major military base about 250 miles southeast of the capital, mentioned as the base of the purported plotter Col. Hassan Eshqal. This rests on one document: OFFICERS FEARED BY QADDAFI REPORTEDLY CLOSE. No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
@@ -411,6 +501,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 30.435,
   "lon": 19.6669,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Brega",
+   "u": "https://en.wikipedia.org/wiki/Brega"
+  },
   "period": "Date not given",
   "relevance": "Visited by Senegalese President Diouf during his March 1989 trip to Libya; location not stated in the document.",
   "text": "Visited by Senegalese President Diouf during his March 1989 trip to Libya; location not stated in the document. This rests on one document: DTIC ADA348497: JPRS Report, Near East & South Asia.. No second source is held for it. Mapped at the centre of Brega: the document names the town, not the site.",

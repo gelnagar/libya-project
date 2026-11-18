@@ -108,7 +108,7 @@ for (const g of groups) {
   ].filter(Boolean).join(' ');
   const entry = {
     id: 'c-' + c.id, region: c.region, layer, level, ...(y ? { y0: +y, y1: +y } : {}),
-    name: c.kind === 'place' ? clip(c.name, 90) : clip(c.name.replace(/\.$/, '').split(/;\s/)[0], 110), lat: g.town.lat, lon: g.town.lon, r: 12,
+    name: c.kind === 'place' ? clip(c.name, 90) : clip(c.name.replace(/\.$/, '').split(/;\s/)[0], 110), lat: g.town.lat, lon: g.town.lon, r: 12, pos: 'town', posSrc: { t: 'Wikipedia: ' + g.town.name, u: g.town.source },
     period: when || (docWhen ? 'Described in a document of ' + docWhen : 'Date not given'),
     relevance: clip(detail, 170), text: body,
     sources: items.slice(0, 6).map((x) => ({ t: clip(x.title, 150) + (x.date ? ' (' + x.date + ')' : ''), u: x.url }))

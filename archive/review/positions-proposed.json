@@ -1,0 +1,3429 @@
+{
+ "at": "2026-11-18T06:35:22.522Z",
+ "note": "Proposals only. Nothing moves until a person approves an entry in archive/model/positions.json.",
+ "entries": 200,
+ "proposed": 18,
+ "ambiguous": 2,
+ "none": 180,
+ "byMethod": {
+  "wikipedia": 3,
+  "doc-coord": 14,
+  "gazetteer": 1
+ },
+ "list": [
+  {
+   "id": "c-9eed01386367",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "LTC Aadim al-Hawwaaz, former Defense Minister, asked an Embassy Branch Office Benghazi officer at the end of…",
+   "layer": "landmark",
+   "year": 1969,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b7690e02dbc2",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Student rally at which Qadhafi gave a speech that students regarded as a failure",
+   "layer": "landmark",
+   "year": 1969,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-aa541c270153",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Libyan authorities reportedly foiled a coup plot against Qadhdhafi",
+   "layer": "battle",
+   "year": 1975,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-3a5061c0a3d8",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Students demonstrated against government manipulation of student representative elections",
+   "layer": "landmark",
+   "year": 1976,
+   "named": [
+    "University of Benghazi"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-7b8443a57651",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi addressed Benghazi University students and faculty",
+   "layer": "landmark",
+   "year": 1976,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-ca1f2c0781ae",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Libyan fighter aircraft ordered to fly twice-daily reconnaissance missions along the northeastern Libyan coast",
+   "layer": "military",
+   "year": 1976,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-e59cdb259b7d",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Shooting at Benghazi university struggle, described by Qadhdhafi as part of the popular revolution",
+   "layer": "landmark",
+   "year": 1976,
+   "named": [
+    "Shooting at Benghazi university"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-51e21ab48481",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Castro visited the iron pipes plant, cement complex, north Benghazi power station and Wadi al-Gattara farm,…",
+   "layer": "landmark",
+   "year": 1977,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-5b88ed61d44e",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Egyptian burning of the Libyan Relations Office, which Fahmy said was retaliation for Libyan action against…",
+   "layer": "landmark",
+   "year": 1977,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-4bd793769b59",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [],
+   "alsoNamed": [
+    "Benghazi airport"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": [
+    {
+     "method": "wikipedia-near",
+     "named": "Benghazi airport",
+     "title": "Benina International Airport",
+     "lat": 32.09722,
+     "lon": 20.26944,
+     "fromTown": 19.2,
+     "src": {
+      "t": "Wikipedia: Benina International Airport",
+      "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+     },
+     "note": "title words differ from the name in the entry; shown for a person to judge, not proposed"
+    }
+   ]
+  },
+  {
+   "id": "c-81e4aad1d4ac",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi gave a recorded interview at an agricultural project in Southwest Benghazi, explaining why he did…",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-0abcd9a926fb",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "First congress of the Free Unionist Officers Movement condemns the Egypt-Israel treaty and pledges to call…",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-1b4fe075b0b2",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "23 July Avenue, Benghazi",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [
+    "23 July Avenue, Benghazi"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-258c87f8bef8",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at…",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [
+    "at Benina airport"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-4b6d976c1593",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Libya closed the PLO office in Benghazi and ordered the expulsion of three top PLO leaders (Abu Tariq, Abu…",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-52a3f4b903a7",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi held a meeting with members of the Governors Council of the Arab central banks on using Arab funds…",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-59a98f0c7c16",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi and King Khalid meet at the guest palace in Benghazi",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-69054984a1c9",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by…",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-90e41725f793",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Tenth anniversary of the revolution: Qadhafi gave a speech and parade attended by Arab leaders and…",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b164a246a5a4",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhafi addressed a massive revolutionary rally on the 8 March anniversary of the Syrian revolution, calling…",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-c129e91c4563",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-c62ac047bff1",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi announces at the Benghazi Festival that Libya would support any uprising in Egypt, Morocco or Yemen",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-05accf1aa4b9",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi holds a press conference attended by representatives of major Arab and international newspapers",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-060e34c6509f",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Basic People's Congress of Banghazi Central held an emergency session and passed 14 resolutions on Tunisia,…",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-0a9b5b196c5b",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Ahmad Jibril (PFLP-GC secretary) arrived in Banghazi on a visit and made a statement backing Libya against…",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-1ae8504b375a",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi press conference in Banghazi (AFP) on Tunisia, France and the Qafsah incident",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-2c0643671db7",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25…",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [
+    "Benina airport"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "wikipedia",
+    "named": "Benina airport",
+    "title": "Benina International Airport",
+    "lat": 32.09722,
+    "lon": 20.26944,
+    "r": 2,
+    "fromTown": 19.2,
+    "src": {
+     "t": "Wikipedia: Benina International Airport",
+     "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+    }
+   },
+   "options": [
+    {
+     "method": "wikipedia",
+     "named": "Benina airport",
+     "title": "Benina International Airport",
+     "lat": 32.09722,
+     "lon": 20.26944,
+     "r": 2,
+     "fromTown": 19.2,
+     "src": {
+      "t": "Wikipedia: Benina International Airport",
+      "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c-3a757372e265",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Demonstrators attacked the French consulate in Banghazi",
+   "layer": "battle",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-6039ff67e5f3",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Colonel Qadhdhafi received Kountche in Banghazi",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-717e64a46c9f",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi received Khaddam and the Mauritanian foreign minister",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-7d8c78ea3e23",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Revolutionary Committees' third session announces policy of physical liquidation of regime enemies abroad",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-bda5b0e61513",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Banghazi Barracks and Training Center",
+   "layer": "military",
+   "year": 1980,
+   "named": [
+    "Banghazi Barracks and Training Center"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-2338a30e9cb9",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Mass demonstration denouncing U.S. plots, with effigy of Reagan burned at the Square of the Popular Congress",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [
+    "Square of the Popular Congress"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-3d3058de2a45",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Benghazi Coast camp and Southwest Farm",
+   "layer": "military",
+   "year": 1981,
+   "named": [
+    "Benghazi Coast camp and Southwest Farm",
+    "Benghazi Coast camp"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-4d786801defa",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Turkish workers demonstrated against the recent U.S. aggression, burned the American flag in front of the…",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-63dfe4d39338",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Egyptian Arab residents demonstrated against the U.S. action and Camp David",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-68ea9b1058b6",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi receives a visiting Chadian popular delegation",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-6fd055e72693",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-6fd606d1b778",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Grand equestrian show where Qadhdhafi announced the formation of a people's cavalry division inside the…",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-85083136ec68",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [
+    "at Benina airport"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-ba531243cbe4",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Mass demonstration in Benghazi denouncing the U.S. closure of the Libyan People's Bureau in Washington and…",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-e4c690a4027c",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Third batch of Libyan Armed Forces units returned from Chad",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-093bc12f7ee3",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Alleged assassination attempt discovered (one of four claimed attempts, March–April 1982)",
+   "layer": "landmark",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-1e4d241606e6",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Sudan's SUNA reported that Qaddafi had put down a coup attempt in Benghazi earlier in the month",
+   "layer": "battle",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-e03f1458779c",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Libya reportedly shot down an American reconnaissance aircraft over the Benghazi Region",
+   "layer": "battle",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-f1075fea89e2",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi met with student groups in Benghazi as part of meetings urging the masses to escalate…",
+   "layer": "landmark",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-fc2eec316e2e",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in…",
+   "layer": "military",
+   "year": 1982,
+   "named": [
+    "Banghazi port"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 32.12056,
+    "lon": 20.05194,
+    "r": 1,
+    "fromTown": 1.5,
+    "raw": "32-07-14N 020-03-07E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000300580003-4"
+    },
+    "docHash": "21c45772501211da",
+    "context": "(S/D) THE FISHBED CRATES MAY BE DESTINED FOR SOME COUNTRY OTHER THAN LIBYA. SOVIET ARMS SHIPMENTS TO LIBYA ARE NORMALLY PROCESSED AT TARABULUS PORT FACILITIES . IN ADDITION, THE LIBYANS HAVE NOT PURCHASE BED FOR SOME TIME, OPTING FOR THE MORE SOPHISTICATED FLOGGER AIRCRAFT. ce COORDINATES 32-07-14N 020-03-07E COMMENTS AND QUER"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 32.12056,
+     "lon": 20.05194,
+     "r": 1,
+     "fromTown": 1.5,
+     "raw": "32-07-14N 020-03-07E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000300580003-4"
+     },
+     "docHash": "21c45772501211da",
+     "context": "(S/D) THE FISHBED CRATES MAY BE DESTINED FOR SOME COUNTRY OTHER THAN LIBYA. SOVIET ARMS SHIPMENTS TO LIBYA ARE NORMALLY PROCESSED AT TARABULUS PORT FACILITIES . IN ADDITION, THE LIBYANS HAVE NOT PURCHASE BED FOR SOME TIME, OPTING FOR THE MORE SOPHISTICATED FLOGGER AIRCRAFT. ce COORDINATES 32-07-14N 020-03-07E COMMENTS AND QUER"
+    }
+   ]
+  },
+  {
+   "id": "c-529a84b5b669",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi addressed a group of secondary school students and called for a people's resistance army in Lebanon",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-a213475a7729",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Tunisian Foreign Minister Beji Caid es-Sebsi arrived in Benghazi",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b943d82cfa58",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Second Nanuchka-II patrol boat arrives at the port",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [
+    "at the port"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 32.12056,
+    "lon": 20.05194,
+    "r": 1,
+    "fromTown": 1.5,
+    "raw": "32-07-14N 020-03-07E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200570002-0"
+    },
+    "docHash": "50ababeafd27dd14",
+    "context": "LIBYA ON 25X1 THE TWO MSF ARE THE THIRD AND FOURTH NATYA MSF TO BE DELIVERED TO LIBYA AND WILL PROBABLY BE STATIONED AT TUBRUQ PORT FACILITIES WHERE THE FIRST TWO 25X11 LIBYAN NATYA HAVE BEEN BERTHED SINCE DELIVERY IN MARCH 1981. (NFOIO-SMA 33-83, 030413Z FEB 83 SECRET 25K1 Ss COORDINATES 32-07-14N 020-03-07E. 25X11 25XK1 -2"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 32.12056,
+     "lon": 20.05194,
+     "r": 1,
+     "fromTown": 1.5,
+     "raw": "32-07-14N 020-03-07E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200570002-0"
+     },
+     "docHash": "50ababeafd27dd14",
+     "context": "LIBYA ON 25X1 THE TWO MSF ARE THE THIRD AND FOURTH NATYA MSF TO BE DELIVERED TO LIBYA AND WILL PROBABLY BE STATIONED AT TUBRUQ PORT FACILITIES WHERE THE FIRST TWO 25X11 LIBYAN NATYA HAVE BEEN BERTHED SINCE DELIVERY IN MARCH 1981. (NFOIO-SMA 33-83, 030413Z FEB 83 SECRET 25K1 Ss COORDINATES 32-07-14N 020-03-07E. 25X11 25XK1 -2"
+    }
+   ]
+  },
+  {
+   "id": "c-d59e96b87ecd",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000…",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-e6c71682104e",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "A US aircraft reportedly violated Libyan airspace and approached Benghazi to within 80 km before being…",
+   "layer": "military",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-cc474c39eb5d",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Mass demonstration of anger and challenge against the 'plotters' and Muslim Brotherhood cliques, with…",
+   "layer": "landmark",
+   "year": 1984,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-2bf7e33e7d6f",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi addressed a mass public rally in Banghazi, after a route of popular demonstrations from Thulug and…",
+   "layer": "landmark",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-34a0cc76ab3e",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi speech vowing to arm Libyan cities, prepare slaughterhouses for American 'sheep', and threatening…",
+   "layer": "landmark",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-73cc89116d3b",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report)",
+   "layer": "landmark",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-d3c9e1e28706",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's…",
+   "layer": "landmark",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-dc8f2c40e5bc",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Al-Asad and Qadhdhafi resumed talks at the Syrian president's residence",
+   "layer": "landmark",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-56d1d65b5ddd",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Rally and military parade on the first anniversary of the US raid, with calls to destroy American bases and…",
+   "layer": "landmark",
+   "year": 1987,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-3791a18a12e6",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "JANA reported a U.S. military aircraft flew at very low altitude over the Libyan ship Gharnatah on a voyage…",
+   "layer": "military",
+   "year": 1988,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b70d869b84b5",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "US fighter made a low-level flight over the Libyan passenger ship Gharnatah, sailing from Izmir to Benghazi",
+   "layer": "military",
+   "year": 1988,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-f33e42545598",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Ibn Ashur Street, Benghazi",
+   "layer": "landmark",
+   "year": 1988,
+   "named": [
+    "Ibn Ashur Street, Benghazi"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-998745872d38",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Rioting reported",
+   "layer": "massacre",
+   "year": 1989,
+   "named": [],
+   "alsoNamed": [
+    "Qadhafi's Benghazi camp"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-27e16dcd3eaf",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Libya called an emergency meeting of Arab Maghreb Union foreign ministers to discuss the Persian Gulf war",
+   "layer": "landmark",
+   "year": 1991,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-d32b9c438c99",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "A Libyan court sentenced six foreign medical workers to death over the HIV infection case at El-Fatih…",
+   "layer": "landmark",
+   "year": 2004,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-f9cd4c3d8fd1",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Protests after Minister Roberto Calderoli wore a Muhammad caricature T-shirt led to the closure of the…",
+   "layer": "landmark",
+   "year": 2006,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-26b10860d953",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Gaddafi and Italian Prime Minister Berlusconi signed a cooperation treaty in Benghazi, with Italy agreeing…",
+   "layer": "landmark",
+   "year": 2008,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-5aa1cce3520f",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Lawyer Fathi Tarbel, who represented victims' families, was arrested",
+   "layer": "landmark",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-16836d4945d6",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Benghazi, U.S. facility",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Benghazi, U.S. facility"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-44029b1f56e4",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Benghazi port facilities",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Benghazi port facilities",
+    "Benghazi port"
+   ],
+   "alsoNamed": [
+    "at Banghazi port"
+   ],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 32.12056,
+    "lon": 20.05194,
+    "r": 1,
+    "fromTown": 1.5,
+    "raw": "32-07-14N 020-03-07E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000300580003-4"
+    },
+    "docHash": "21c45772501211da",
+    "context": "(S/D) THE FISHBED CRATES MAY BE DESTINED FOR SOME COUNTRY OTHER THAN LIBYA. SOVIET ARMS SHIPMENTS TO LIBYA ARE NORMALLY PROCESSED AT TARABULUS PORT FACILITIES . IN ADDITION, THE LIBYANS HAVE NOT PURCHASE BED FOR SOME TIME, OPTING FOR THE MORE SOPHISTICATED FLOGGER AIRCRAFT. ce COORDINATES 32-07-14N 020-03-07E COMMENTS AND QUER"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 32.12056,
+     "lon": 20.05194,
+     "r": 1,
+     "fromTown": 1.5,
+     "raw": "32-07-14N 020-03-07E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000300580003-4"
+     },
+     "docHash": "21c45772501211da",
+     "context": "(S/D) THE FISHBED CRATES MAY BE DESTINED FOR SOME COUNTRY OTHER THAN LIBYA. SOVIET ARMS SHIPMENTS TO LIBYA ARE NORMALLY PROCESSED AT TARABULUS PORT FACILITIES . IN ADDITION, THE LIBYANS HAVE NOT PURCHASE BED FOR SOME TIME, OPTING FOR THE MORE SOPHISTICATED FLOGGER AIRCRAFT. ce COORDINATES 32-07-14N 020-03-07E COMMENTS AND QUER"
+    }
+   ]
+  },
+  {
+   "id": "c-742b791c7f67",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Martyrs of February Stadium, Benghazi",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Martyrs of February Stadium, Benghazi"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-7a5cd16dc479",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Benghazi Military College",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Benghazi Military College"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-7f8541606267",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Euhesperides (Berenice, Benghazi)",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Euhesperides"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-9a3afa081f72",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Commando Training Facility, Banghazi",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Commando Training Facility, Banghazi"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "bn-1969-coup",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "The coup of 1 September 1969 is launched from Benghazi",
+   "layer": "landmark",
+   "year": 1969,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "bn-1977-hangings",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Public hanging of students, Benghazi, April 1977 (reported)",
+   "layer": "massacre",
+   "year": 1977,
+   "named": [],
+   "alsoNamed": [
+    "at the port",
+    "square of Benghazi",
+    "port of Benghazi"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": [
+    {
+     "method": "possible",
+     "named": "port of Benghazi",
+     "title": "Port of Benghazi",
+     "lat": 32.10917,
+     "lon": 20.0475,
+     "r": 1,
+     "fromTown": 2,
+     "src": {
+      "t": "Wikipedia: Port of Benghazi",
+      "u": "https://en.wikipedia.org/wiki/Port_of_Benghazi"
+     },
+     "note": "named only in a supporting passage"
+    }
+   ]
+  },
+  {
+   "id": "c-4c6c95e07393",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the…",
+   "layer": "landmark",
+   "year": 1976,
+   "named": [
+    "Nasir airfield"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-d94c54151d33",
+   "region": "cyrenaica",
+   "town": "Derna",
+   "name": "Qadhdhafi speech inaugurating a new power station and honoring the 'Martyrs of Darna' who fell at Al-Gargah",
+   "layer": "landmark",
+   "year": 1976,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-5697bc4bbe2f",
+   "region": "cyrenaica",
+   "town": "Derna",
+   "name": "Qadhdhafi speech on the anniversary of the evacuation of American troops from Libya (Wheelus), comparing…",
+   "layer": "landmark",
+   "year": 1977,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-04866ac1754a",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tobruk naval base",
+   "layer": "military",
+   "year": 1978,
+   "named": [
+    "Tobruk naval base"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-06d8ea5f409e",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Qadhdhafi attended a naval exercise in the Mediterranean launched from Tobruk naval base, including missile…",
+   "layer": "military",
+   "year": 1978,
+   "named": [
+    "Tobruk naval base"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-a91d983cddee",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Qadhdhafi speech at the eighth anniversary celebrations of the end of the British presence in Libya, calling…",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-77b53ad3a247",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Ninth anniversary of the evacuation of the last British soldier from Libya celebrated at Tobruk",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b4bc06007055",
+   "region": "cyrenaica",
+   "town": "Derna",
+   "name": "Workers seized Kurkub Contractors and the Al-Bahr Tourist Hotel, forming people's committees",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-279306026a7e",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Die Welt reported a foiled coup attempt six days earlier in which an officer allegedly tried to seize the…",
+   "layer": "battle",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-741fd0b6b429",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Reported mutiny in the Libyan armed forces, put down with more than 400 killed (as alleged in article)",
+   "layer": "massacre",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-972a6aeaa783",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "According to an opposition communique reported by AFP, the 9th Libyan Army brigade based at Tobruq revolted…",
+   "layer": "military",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-da24f4394a81",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "A large popular demonstration and rally in support of the revolution took place in Tobruq for the 11th…",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-1cd2821cb585",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-195be392fae6",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tobruk flour mill",
+   "layer": "landmark",
+   "year": 1982,
+   "named": [
+    "Tobruk flour mill"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-519f048ec34b",
+   "region": "cyrenaica",
+   "town": "Derna",
+   "name": "Angry popular demonstration in Darnah denouncing British military exercises on Egyptian territory near the…",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-90ffb880d8f2",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Qadhdhafi met officers of the Libyan Armed Forces in Tobruk on the 13th anniversary of the removal of…",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-dfb01eb0384e",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Al Bumbah airfield North (Al Bumbah, near Tubruq)",
+   "layer": "military",
+   "year": 1983,
+   "named": [
+    "Al Bumbah airfield North"
+   ],
+   "alsoNamed": [
+    "airfield"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-cea80e3aa2d3",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in…",
+   "layer": "landmark",
+   "year": 1984,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-2d62ad53bbd5",
+   "region": "cyrenaica",
+   "town": "Derna",
+   "name": "Qadhdhafi attended a live-ammunition military exercise south of Al-Mukhayla and gave a speech on Vengeance Day",
+   "layer": "landmark",
+   "year": 1985,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-92085ba25e3d",
+   "region": "cyrenaica",
+   "town": "Ajdabiya",
+   "name": "Al-Magharibah tribe held a popular rally welcoming Qadhdhafi",
+   "layer": "landmark",
+   "year": 1985,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b5aed7aebf81",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and…",
+   "layer": "landmark",
+   "year": 1985,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-52a45f3afddd",
+   "region": "cyrenaica",
+   "town": "Bayda",
+   "name": "Qadhdhafi speech at 7 April Square calling for an end to use of foreign goods, after the U.S. raid on Libya",
+   "layer": "landmark",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-e565e8097dc7",
+   "region": "cyrenaica",
+   "town": "Derna",
+   "name": "Qadhdhafi delivers speech in Darnah calling for the city to be made an armed city against possible US…",
+   "layer": "landmark",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-02cefa1fcdc4",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base",
+   "layer": "landmark",
+   "year": 1988,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-456563cb66cc",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tubruq SA-6 SAM Support Facility",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Tubruq SA-6 SAM Support Facility"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 32.07972,
+    "lon": 23.89167,
+    "r": 2,
+    "fromTown": 6.6,
+    "raw": "32-04-47N 023-53-30E",
+    "coordsInDoc": 2,
+    "src": {
+     "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
+    },
+    "docHash": "839de5e337a819ca",
+    "context": "eens Z-15772/83 age of | achment '0/\"NPIC/PEG (11/83 ; | |_(3=PART_GRAPHIC Wie he ee : a i aa Baa TUBRUQ IS APPROXIMATELY 70 NM WEST. NORTHWEST OF THE LIBYA-EGYPT BORDER. RAS AL HILAL IS APPROXIMATELY 125 NM EAST OF BANGHAZI AND 200 NM WEST OF THE LIBYA-EGYPT BORDER. (SWN) 3. COORDINATES 32-04-47N 023-53-30E 25X11 COORDINATES"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 32.07972,
+     "lon": 23.89167,
+     "r": 2,
+     "fromTown": 6.6,
+     "raw": "32-04-47N 023-53-30E",
+     "coordsInDoc": 2,
+     "src": {
+      "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
+     },
+     "docHash": "839de5e337a819ca",
+     "context": "eens Z-15772/83 age of | achment '0/\"NPIC/PEG (11/83 ; | |_(3=PART_GRAPHIC Wie he ee : a i aa Baa TUBRUQ IS APPROXIMATELY 70 NM WEST. NORTHWEST OF THE LIBYA-EGYPT BORDER. RAS AL HILAL IS APPROXIMATELY 125 NM EAST OF BANGHAZI AND 200 NM WEST OF THE LIBYA-EGYPT BORDER. (SWN) 3. COORDINATES 32-04-47N 023-53-30E 25X11 COORDINATES"
+    },
+    {
+     "method": "doc-coord",
+     "lat": 32.07972,
+     "lon": 23.87528,
+     "r": 2,
+     "fromTown": 8.1,
+     "raw": "32-04-47N 023-52-31E",
+     "coordsInDoc": 2,
+     "src": {
+      "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
+     },
+     "docHash": "839de5e337a819ca",
+     "context": "IC/PEG (11/83 ; | |_(3=PART_GRAPHIC Wie he ee : a i aa Baa TUBRUQ IS APPROXIMATELY 70 NM WEST. NORTHWEST OF THE LIBYA-EGYPT BORDER. RAS AL HILAL IS APPROXIMATELY 125 NM EAST OF BANGHAZI AND 200 NM WEST OF THE LIBYA-EGYPT BORDER. (SWN) 3. COORDINATES 32-04-47N 023-53-30E 25X11 COORDINATES 32-04-47N 023-52-31E ; COORDINATES 32-5"
+    }
+   ]
+  },
+  {
+   "id": "c-941a90e438cd",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tubruq AW Radar Facility",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Tubruq AW Radar Facility"
+   ],
+   "alsoNamed": [],
+   "status": "ambiguous",
+   "proposal": null,
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 31.86611,
+     "lon": 23.89861,
+     "r": 1,
+     "fromTown": 24.1,
+     "raw": "31-51-58N 023-53-55E",
+     "coordsInDoc": 75,
+     "src": {
+      "t": "AIR WARNING RADAR SITES IN EGYPT, LIBYA, AND SUDAN (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp78t05162a000300010053-0"
+     },
+     "docHash": "7348b5a9b1dd91cf",
+     "context": "mounds 1 BIG BAR 1 poss dummy BIG BAR _BADAR FACILITY soft Numerous vehicle 1 SIDE NET 1 poss dummy SIDE site revetments NET 29-10-20N 032-38-30E LIBYA ; : : ay GAMAL ABD-EL-NASSAR 2 Oco “ 1redar mound “1.BIG BAR “1 BG BAR AIRFIELD AW RADAR soft. 6 vohicie bunkers t ae x FACHLITY site hy i ‘31-51-58N 023-53-55E : 4 ' ee : TARABUL"
+    }
+   ]
+  },
+  {
+   "id": "c-b1355a338041",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tubruq Military Facility West",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Tubruq Military Facility West"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 32.07972,
+    "lon": 23.89167,
+    "r": 2,
+    "fromTown": 6.6,
+    "raw": "32-04-47N 023-53-30E",
+    "coordsInDoc": 2,
+    "src": {
+     "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
+    },
+    "docHash": "839de5e337a819ca",
+    "context": "eens Z-15772/83 age of | achment '0/\"NPIC/PEG (11/83 ; | |_(3=PART_GRAPHIC Wie he ee : a i aa Baa TUBRUQ IS APPROXIMATELY 70 NM WEST. NORTHWEST OF THE LIBYA-EGYPT BORDER. RAS AL HILAL IS APPROXIMATELY 125 NM EAST OF BANGHAZI AND 200 NM WEST OF THE LIBYA-EGYPT BORDER. (SWN) 3. COORDINATES 32-04-47N 023-53-30E 25X11 COORDINATES"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 32.07972,
+     "lon": 23.89167,
+     "r": 2,
+     "fromTown": 6.6,
+     "raw": "32-04-47N 023-53-30E",
+     "coordsInDoc": 2,
+     "src": {
+      "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
+     },
+     "docHash": "839de5e337a819ca",
+     "context": "eens Z-15772/83 age of | achment '0/\"NPIC/PEG (11/83 ; | |_(3=PART_GRAPHIC Wie he ee : a i aa Baa TUBRUQ IS APPROXIMATELY 70 NM WEST. NORTHWEST OF THE LIBYA-EGYPT BORDER. RAS AL HILAL IS APPROXIMATELY 125 NM EAST OF BANGHAZI AND 200 NM WEST OF THE LIBYA-EGYPT BORDER. (SWN) 3. COORDINATES 32-04-47N 023-53-30E 25X11 COORDINATES"
+    },
+    {
+     "method": "doc-coord",
+     "lat": 32.07972,
+     "lon": 23.87528,
+     "r": 2,
+     "fromTown": 8.1,
+     "raw": "32-04-47N 023-52-31E",
+     "coordsInDoc": 2,
+     "src": {
+      "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
+     },
+     "docHash": "839de5e337a819ca",
+     "context": "IC/PEG (11/83 ; | |_(3=PART_GRAPHIC Wie he ee : a i aa Baa TUBRUQ IS APPROXIMATELY 70 NM WEST. NORTHWEST OF THE LIBYA-EGYPT BORDER. RAS AL HILAL IS APPROXIMATELY 125 NM EAST OF BANGHAZI AND 200 NM WEST OF THE LIBYA-EGYPT BORDER. (SWN) 3. COORDINATES 32-04-47N 023-53-30E 25X11 COORDINATES 32-04-47N 023-52-31E ; COORDINATES 32-5"
+    }
+   ]
+  },
+  {
+   "id": "c-c6910e1b3964",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Jamal 'Abd an-Nasir base, Tobruk",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Jamal 'Abd an-Nasir base, Tobruk"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-ccfd8db49f05",
+   "region": "cyrenaica",
+   "town": "Ajdabiya",
+   "name": "Ajdabiyah schools",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Ajdabiyah schools"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-ef4bd8ecb59a",
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tubruq port (Tobruk)",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Tubruq port"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 32.07833,
+    "lon": 23.98056,
+    "r": 1,
+    "fromTown": 1.8,
+    "raw": "32-04-42N 023-58-50E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200500007-2"
+    },
+    "docHash": "80b8d44572adf7a4",
+    "context": "DELIVERY OF HAZE A CONTAINERS 25X14 WAS OBSERVED | THE 5X1 HELICOPTER PROBABLY ARE DESTINED FOR GHURDABIYAH AIRFIELD | | 25x1 (SWN) HAZE A IS AN ANTISUBMARINE WARFARE/SEARCH-RESCUE HELICOPTER WHICH CURRENTLY IS OPERATED ONLY BY SYRIA AND LIBYA OUTSIDE THE WARSAW PACT NATIONS. 3. COORDINATES 32-04-42N 023-58-50E 5X4 25X1 These n"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 32.07833,
+     "lon": 23.98056,
+     "r": 1,
+     "fromTown": 1.8,
+     "raw": "32-04-42N 023-58-50E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200500007-2"
+     },
+     "docHash": "80b8d44572adf7a4",
+     "context": "DELIVERY OF HAZE A CONTAINERS 25X14 WAS OBSERVED | THE 5X1 HELICOPTER PROBABLY ARE DESTINED FOR GHURDABIYAH AIRFIELD | | 25x1 (SWN) HAZE A IS AN ANTISUBMARINE WARFARE/SEARCH-RESCUE HELICOPTER WHICH CURRENTLY IS OPERATED ONLY BY SYRIA AND LIBYA OUTSIDE THE WARSAW PACT NATIONS. 3. COORDINATES 32-04-42N 023-58-50E 5X4 25X1 These n"
+    }
+   ]
+  },
+  {
+   "id": "c-b9726dc702d7",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Jallud addressed mass rally in Sabha supporting the revolution against Egyptian and Tunisian campaigns",
+   "layer": "landmark",
+   "year": 1976,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-0d264be6cafb",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Fidel Castro and delegation made a five-hour visit to the Kufra agricultural project",
+   "layer": "landmark",
+   "year": 1977,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-6ff2c0cb2d43",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Emergency session of the General People's Congress approved the creation of the direct people's democracy…",
+   "layer": "landmark",
+   "year": 1977,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-dfc79f0e20c3",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Qadhdhafi delivered the closing session speech of the General People's Congress on the Wednesday night, the…",
+   "layer": "landmark",
+   "year": 1977,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-57a97d07feaa",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Quadripartite talks of Libya, Niger, Chad and Sudan ended with agreement on Chad's internal situation and on…",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-a3f65ab06981",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents…",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [],
+   "alsoNamed": [
+    "at Sabha airport"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": [
+    {
+     "method": "possible",
+     "named": "at Sabha airport",
+     "title": "Sabha Airport",
+     "lat": 27,
+     "lon": 14.46111,
+     "r": 2,
+     "fromTown": 5.5,
+     "src": {
+      "t": "Wikipedia: Sabha Airport",
+      "u": "https://en.wikipedia.org/wiki/Sabha_Airport"
+     },
+     "note": "named only in a supporting passage"
+    }
+   ]
+  },
+  {
+   "id": "c-cc8f7a166e40",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Foreign Secretary Dr Ali Abd as-Salam at-Turayki press conference on Chad reconciliation talks and…",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-d81185d12b81",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "A summit of Libya, Chad, Sudan and Niger in Sabha agreed to hold a meeting between Chadian government…",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-f353b3ee8145",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Expected quadripartite meeting of heads of state of Libya, Sudan, Chad and Niger to settle Libyan-Chadian…",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-ad2dba2dbbf4",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Workers seized the Wadi al Zeit contractors, post office branch, Libyan Airlines branch, Public Transport…",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-22b8249f03a1",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Large popular rally in Sebha supporting the third meeting of the revolutionary committees",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-36410b4bca1c",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Goukouni held a press conference at Sabhah thanking Libya for support to Frolinat and the Chadian government",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-60e0f9bea355",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Qadhdhafi speech at rally marking the return of Libyan troops from Chad",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-611562da81ac",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Demonstration against U.S. aggression in Sabhah",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-661fbef4d87e",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Libyan forces in Ndjamena, Chad, receive orders to withdraw",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [
+    "Sebha oasis"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-874cc3c084ca",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Statement issued after Qadhdhafi and Arafat met, condemning Sadat's visit to Khartoum and calling for…",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-ac57651fb925",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Rally at Sabhah marking the anniversary of Qadhdhafi's 1961 student demonstration against the separation of…",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-d4c273ba826e",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Al Kufrah military site",
+   "layer": "military",
+   "year": 1981,
+   "named": [
+    "Al Kufrah military site"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-1c6015dae366",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft…",
+   "layer": "military",
+   "year": 1982,
+   "named": [
+    "Sebha airfield"
+   ],
+   "alsoNamed": [
+    "the airfield"
+   ],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 27.00139,
+    "lon": 14.46389,
+    "r": 1,
+    "fromTown": 5.6,
+    "raw": "27-00-05N 014-27-50E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "FOXBAT DEPLOYMENT SEBHA AIRFIELD, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100150003-3"
+    },
+    "docHash": "68e140e2c209efdc",
+    "context": "RON ON THE WEST SIDE OF THE AIRFIELD. OME POL TRUCK WITH TRATLER IS NEXT TO ONE OF THE FOXBAT. THESE ATRCRAFT PROBABLY ASE FROM OKBA IBN NAFA ATRFIELD WHICH HOUSES THE ONLY FOXBAT UNITS IN LIBYA. 25X4 (S/2).. SERIA APRS LELIY 18 33° 4) BOUT SsQUTHEAST “Ol SEBHA IN Wg POs LEB YA ae COORDINATES 27-00-05N 014-27-50E 25X1 COMMENTS AND"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 27.00139,
+     "lon": 14.46389,
+     "r": 1,
+     "fromTown": 5.6,
+     "raw": "27-00-05N 014-27-50E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "FOXBAT DEPLOYMENT SEBHA AIRFIELD, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100150003-3"
+     },
+     "docHash": "68e140e2c209efdc",
+     "context": "RON ON THE WEST SIDE OF THE AIRFIELD. OME POL TRUCK WITH TRATLER IS NEXT TO ONE OF THE FOXBAT. THESE ATRCRAFT PROBABLY ASE FROM OKBA IBN NAFA ATRFIELD WHICH HOUSES THE ONLY FOXBAT UNITS IN LIBYA. 25X4 (S/2).. SERIA APRS LELIY 18 33° 4) BOUT SsQUTHEAST “Ol SEBHA IN Wg POs LEB YA ae COORDINATES 27-00-05N 014-27-50E 25X1 COMMENTS AND"
+    }
+   ]
+  },
+  {
+   "id": "c-69bc7017e903",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Sabha flour mill",
+   "layer": "landmark",
+   "year": 1982,
+   "named": [
+    "Sabha flour mill"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b3649db1ee61",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine",
+   "layer": "military",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 24.18194,
+    "lon": 23.31889,
+    "r": 1,
+    "fromTown": 3.6,
+    "raw": "24-10-55N 023-19-08E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+    },
+    "docHash": "69b9ec0b7d485451",
+    "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 24.18194,
+     "lon": 23.31889,
+     "r": 1,
+     "fromTown": 3.6,
+     "raw": "24-10-55N 023-19-08E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+     },
+     "docHash": "69b9ec0b7d485451",
+     "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
+    }
+   ]
+  },
+  {
+   "id": "c-c99a0c9d417d",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982)",
+   "layer": "military",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-237568286890",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Kufra military storage area",
+   "layer": "military",
+   "year": 1983,
+   "named": [
+    "Kufra military storage area"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 24.22556,
+    "lon": 23.24722,
+    "r": 1,
+    "fromTown": 6,
+    "raw": "24-13-32N 023-14-50E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "LIBYA-CHAD CONFLICT (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100180002-2"
+    },
+    "docHash": "74a4f3d03a2789b5",
+    "context": "THE FROBABLE LOGISTICS/SUPPORT FCKCE NEAR THE CENTER GF THE BARRACKS ON | IS NOW FORMED INTO CONVOYS PREPARING TO DEPART. ECUIPMENT INCLUDES AT LEAST 18 VEHICLES. SIX BTR-€0 ARMORED PFRSONNEL CARRIERS REMAIN AT THE GARRISON. THE PROBABLE LOGISTICS/SUFFORT FCRCE 2.5 NM WEST OF THE BARRACKS AT 24-13-32N 023-14-50E BRAS DEPARTED AND A"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 24.22556,
+     "lon": 23.24722,
+     "r": 1,
+     "fromTown": 6,
+     "raw": "24-13-32N 023-14-50E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "LIBYA-CHAD CONFLICT (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100180002-2"
+     },
+     "docHash": "74a4f3d03a2789b5",
+     "context": "THE FROBABLE LOGISTICS/SUPPORT FCKCE NEAR THE CENTER GF THE BARRACKS ON | IS NOW FORMED INTO CONVOYS PREPARING TO DEPART. ECUIPMENT INCLUDES AT LEAST 18 VEHICLES. SIX BTR-€0 ARMORED PFRSONNEL CARRIERS REMAIN AT THE GARRISON. THE PROBABLE LOGISTICS/SUFFORT FCRCE 2.5 NM WEST OF THE BARRACKS AT 24-13-32N 023-14-50E BRAS DEPARTED AND A"
+    }
+   ]
+  },
+  {
+   "id": "c-3c309879d1e0",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Qadhdhafi addresses participants in the second session of the sixth meeting of the revolutionary committee,…",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-3ebac1bb4ddc",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel…",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 27.025,
+    "lon": 14.5,
+    "r": 1,
+    "fromTown": 7.5,
+    "raw": "27-01-30N 014-30-00E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "DISSIDENT TRAINING ACTIVITY IN LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000100460001-1"
+    },
+    "docHash": "f2c2a44076a796f2",
+    "context": "OBSERVED AT THE FACILITY, SUGGESTS A LIBYAN INTENTION TO PROVIDE MORE SOPHISTICATED MILITARY EQUIPMENT TO CHADIAN OR OTHER DISSIDENT FORCES. IN THE PAST, LANDROVERS AND JEEPS HAVE BEEN THE MAIN VEHICLES SEEN AT THIS FACILITY, AND WITH | DISSIDENT FORCES IN LIBYA. (SWN) 25X1 ; 35) COORDINATES 27-01-30N 014-30-00E (S) 25X1 : { I '"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 27.025,
+     "lon": 14.5,
+     "r": 1,
+     "fromTown": 7.5,
+     "raw": "27-01-30N 014-30-00E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "DISSIDENT TRAINING ACTIVITY IN LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000100460001-1"
+     },
+     "docHash": "f2c2a44076a796f2",
+     "context": "OBSERVED AT THE FACILITY, SUGGESTS A LIBYAN INTENTION TO PROVIDE MORE SOPHISTICATED MILITARY EQUIPMENT TO CHADIAN OR OTHER DISSIDENT FORCES. IN THE PAST, LANDROVERS AND JEEPS HAVE BEEN THE MAIN VEHICLES SEEN AT THIS FACILITY, AND WITH | DISSIDENT FORCES IN LIBYA. (SWN) 25X1 ; 35) COORDINATES 27-01-30N 014-30-00E (S) 25X1 : { I '"
+    }
+   ]
+  },
+  {
+   "id": "c-d1b8ddbcc7f3",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Sixteen Flogger air-superiority fighters and one L-100 medium transport deployed to Kufra",
+   "layer": "battle",
+   "year": 1983,
+   "named": [
+    "Kufra airfield"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "wikipedia",
+    "named": "Kufra airfield",
+    "title": "Kufra Airport",
+    "lat": 24.17778,
+    "lon": 23.31389,
+    "r": 2,
+    "fromTown": 3.2,
+    "src": {
+     "t": "Wikipedia: Kufra Airport",
+     "u": "https://en.wikipedia.org/wiki/Kufra_Airport"
+    }
+   },
+   "options": [
+    {
+     "method": "wikipedia",
+     "named": "Kufra airfield",
+     "title": "Kufra Airport",
+     "lat": 24.17778,
+     "lon": 23.31389,
+     "r": 2,
+     "fromTown": 3.2,
+     "src": {
+      "t": "Wikipedia: Kufra Airport",
+      "u": "https://en.wikipedia.org/wiki/Kufra_Airport"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c-fd05d8b5291d",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Fifteen Flogger aircraft present",
+   "layer": "military",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 24.18194,
+    "lon": 23.31889,
+    "r": 1,
+    "fromTown": 3.6,
+    "raw": "24-10-55N 023-19-08E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100260005-0"
+    },
+    "docHash": "4d7e7767cbb6350e",
+    "context": "REPARING TO ROTATE BACK TO THEIR HOME BASE; HOWEVER, A STRIKE MISSION INTO CHAD CANNOT BE RULED OUT. (SWN) , KUFRA AIRFIELD, APPROXIMATELY 200 NM NORTHEAST OF THE CHAD BORDER, SUPPORTS A FISEBED FIGHTER UNIT AND SERVES AS A MAJOR SUPPORT/LOGISTICS BASE IN SOUTHERN LIBYA. (SWN) 3. COORDINATES 24-10-55N 023-19-08E 25X11 25X1 25X1"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 24.18194,
+     "lon": 23.31889,
+     "r": 1,
+     "fromTown": 3.6,
+     "raw": "24-10-55N 023-19-08E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100260005-0"
+     },
+     "docHash": "4d7e7767cbb6350e",
+     "context": "REPARING TO ROTATE BACK TO THEIR HOME BASE; HOWEVER, A STRIKE MISSION INTO CHAD CANNOT BE RULED OUT. (SWN) , KUFRA AIRFIELD, APPROXIMATELY 200 NM NORTHEAST OF THE CHAD BORDER, SUPPORTS A FISEBED FIGHTER UNIT AND SERVES AS A MAJOR SUPPORT/LOGISTICS BASE IN SOUTHERN LIBYA. (SWN) 3. COORDINATES 24-10-55N 023-19-08E 25X11 25X1 25X1"
+    }
+   ]
+  },
+  {
+   "id": "c-3a7820216de9",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "al-Kufrah oasis",
+   "layer": "landmark",
+   "year": 1985,
+   "named": [
+    "al-Kufrah oasis",
+    "Kufrah oasis"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-8344da7030eb",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Popular demonstrations held against the U.S. 6th Fleet exercises",
+   "layer": "landmark",
+   "year": 1985,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-afe2927a9169",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Qadhafi's annual foreign policy address at a rally marking the 16th anniversary of the revolution, in which…",
+   "layer": "landmark",
+   "year": 1985,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-868958ab0af3",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Qadhdhafi gives a live speech at the 2 March session of the Sabha General People's Congress commemorating…",
+   "layer": "landmark",
+   "year": 1987,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-32b07fb2cd50",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Anti-Gaddafi forces discover two warehouses with barrels marked 'radioactive' and bags of yellow powder near…",
+   "layer": "landmark",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-518459d3a3bd",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Sebha Army Barracks",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Sebha Army Barracks"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 27.025,
+    "lon": 14.5,
+    "r": 1,
+    "fromTown": 7.5,
+    "raw": "27-01-30N 014-30-00E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "PROBABLE LIBYAN SUPPORT TO CHADIAN DISSIDENTS SEBHA TRAINING FACILITY EAST, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200530002-4"
+    },
+    "docHash": "aa7163127f0957af",
+    "context": "D CURL AIRCRAFT FROM SEBHA AIRFIELD 25X1 THE ARRIVAL OF FIGHTER/BOMBER AND TRANSPORT AIRCRAFT AT AOZOU AIRFIELD | | TODAY. AND THE ARRIVAL OF TRANSPORT 25X11 AIRCRAFT TO GOURO AIRFIELD YESTERDAY. AT LEAST 25X1 SOME OF THE AIRCRAFT THAT DEPARTED SEBHA MAY HAVE DEPLOYED TO AOZOU. 3. COORDINATES 27-01-30N 014-30-00E 25X1 25X1 These n"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 27.025,
+     "lon": 14.5,
+     "r": 1,
+     "fromTown": 7.5,
+     "raw": "27-01-30N 014-30-00E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "PROBABLE LIBYAN SUPPORT TO CHADIAN DISSIDENTS SEBHA TRAINING FACILITY EAST, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200530002-4"
+     },
+     "docHash": "aa7163127f0957af",
+     "context": "D CURL AIRCRAFT FROM SEBHA AIRFIELD 25X1 THE ARRIVAL OF FIGHTER/BOMBER AND TRANSPORT AIRCRAFT AT AOZOU AIRFIELD | | TODAY. AND THE ARRIVAL OF TRANSPORT 25X11 AIRCRAFT TO GOURO AIRFIELD YESTERDAY. AT LEAST 25X1 SOME OF THE AIRCRAFT THAT DEPARTED SEBHA MAY HAVE DEPLOYED TO AOZOU. 3. COORDINATES 27-01-30N 014-30-00E 25X1 25X1 These n"
+    }
+   ]
+  },
+  {
+   "id": "c-744cf5dae5a8",
+   "region": "fezzan",
+   "town": "Ghat",
+   "name": "Janet (Janet/Ghat)",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Janet"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-775ccab90d84",
+   "region": "fezzan",
+   "town": "Ghat",
+   "name": "Fortress of Ghat (Koukemen hill, Ghat)",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Fortress of Ghat"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "gazetteer",
+    "named": "Fortress of Ghat",
+    "lat": 24.96702,
+    "lon": 10.18051,
+    "r": 1.5,
+    "fromTown": 1,
+    "src": {
+     "t": "Wikipedia: Fortress of Ghat",
+     "u": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
+    }
+   },
+   "options": [
+    {
+     "method": "gazetteer",
+     "named": "Fortress of Ghat",
+     "lat": 24.96702,
+     "lon": 10.18051,
+     "r": 1.5,
+     "fromTown": 1,
+     "src": {
+      "t": "Wikipedia: Fortress of Ghat",
+      "u": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c-afaa74d2691b",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Sabha AW Radar Fac",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Sabha AW Radar Fac"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b9c458982651",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Sebha camp",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Sebha camp"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-fb1988e0f851",
+   "region": "fezzan",
+   "town": "Ghadames",
+   "name": "Ghadames East Airfield",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Ghadames East Airfield"
+   ],
+   "alsoNamed": [],
+   "status": "ambiguous",
+   "proposal": null,
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 30.13333,
+     "lon": 9.7,
+     "r": 1,
+     "fromTown": 19.2,
+     "raw": "30-08-00N 009-42-00E",
+     "coordsInDoc": 19,
+     "src": {
+      "t": "MILITARY AIRFIELD CONSTRUCTION AND RENOVATION IN LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp82t00709r000201000001-4"
+     },
+     "docHash": "be705595e660e91e",
+     "context": "-47 Progress 3 Umm Aitigah ESE/WNW; 3,450 x 60 Asphalt with concrete Fighter/bomber base; 13 Ghadames East NE/SW; 3,601 x 45 Asphalt with concrete Final stages of cons; touchdowns BLINDER, FOXBAT, N/S: 1,968 x 40 touchdowns support facs being built 25X1 32-53-46N 013-16-32E Mirage HII/V, L-39, & 30-08-00N 009-42-00E 7 5 lel taxi Ps :"
+    }
+   ]
+  },
+  {
+   "id": "fz-kufra-airfield",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Kufra airfield",
+   "layer": "military",
+   "year": 1982,
+   "named": [
+    "Kufra airfield"
+   ],
+   "alsoNamed": [
+    "airfield"
+   ],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 24.18194,
+    "lon": 23.31889,
+    "r": 1,
+    "fromTown": 3.6,
+    "raw": "24-10-55N 023-19-08E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+    },
+    "docHash": "69b9ec0b7d485451",
+    "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 24.18194,
+     "lon": 23.31889,
+     "r": 1,
+     "fromTown": 3.6,
+     "raw": "24-10-55N 023-19-08E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+     },
+     "docHash": "69b9ec0b7d485451",
+     "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
+    }
+   ]
+  },
+  {
+   "id": "fz-kufrah-barracks",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Al Kufrah barracks",
+   "layer": "military",
+   "year": 1980,
+   "named": [
+    "Al Kufrah barracks"
+   ],
+   "alsoNamed": [
+    "at Al Kufrah barracks",
+    "barracks"
+   ],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 24.21944,
+    "lon": 23.30361,
+    "r": 1,
+    "fromTown": 4.5,
+    "raw": "24-13-10N 023-18-13E",
+    "coordsInDoc": 2,
+    "src": {
+     "t": "LIBYAN/DISSIDENT ACTIVITY FAYA LARGEAU, CHAD AL KUFRAH BARRACKS, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200050001-5"
+    },
+    "docHash": "03f87e0b2f16e3ad",
+    "context": "in Part - Sanitized Copy Approved for Release 2012/02/07 : CIA-RDP84T00171R000200050001-5 SECRET 20X1 (c) NATIONAL PHOTOGRAPHIC INTERPRETATION CENTER 2 Z-11759/83 Pa of _ Attach t t as Se nn? NPTCT REC (1483) Cony FOUR-PART GRAPAIC 25X1 3. COORDINATES 17-55-00N 019-07-00E COORDINATES 24-13-10N 023-18-13E COMMENTS AND QUERI"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 24.21944,
+     "lon": 23.30361,
+     "r": 1,
+     "fromTown": 4.5,
+     "raw": "24-13-10N 023-18-13E",
+     "coordsInDoc": 2,
+     "src": {
+      "t": "LIBYAN/DISSIDENT ACTIVITY FAYA LARGEAU, CHAD AL KUFRAH BARRACKS, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200050001-5"
+     },
+     "docHash": "03f87e0b2f16e3ad",
+     "context": "in Part - Sanitized Copy Approved for Release 2012/02/07 : CIA-RDP84T00171R000200050001-5 SECRET 20X1 (c) NATIONAL PHOTOGRAPHIC INTERPRETATION CENTER 2 Z-11759/83 Pa of _ Attach t t as Se nn? NPTCT REC (1483) Cony FOUR-PART GRAPAIC 25X1 3. COORDINATES 17-55-00N 019-07-00E COORDINATES 24-13-10N 023-18-13E COMMENTS AND QUERI"
+    }
+   ]
+  },
+  {
+   "id": "fz-otrag-1981",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Otrag rocket launch near Sabha, 1 March 1981",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [
+    "at the oasis",
+    "oasis of Sebha"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-8b1f951d8cd4",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Administrative complex and nearby hotel blown up before a planned Qadhdhafi inauguration",
+   "layer": "massacre",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b650129bd457",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Gulf of Sirte",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [
+    "Gulf of Sirte"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-ffe9431d54a5",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Libyan Arab Armed Forces (navy, air defence and land forces) conducted a live-ammunition anti-landing…",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-be403bb39168",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Esso Standard (Libya) Limited and Esso (Sirte) Limited served notice of abandonment of all their interests…",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-e864d100b6bf",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Armed forces commander Abu Bakr Yunis Jabir welcomed back a Libyan unit returning from Chad at a reception…",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-01c703323ece",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Col. Hassan Ishkal, head of the Sirte military region and third most powerful man in Libya, was killed",
+   "layer": "massacre",
+   "year": 1985,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-3becec266dbe",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Qadhafi speech commemorating the 16th anniversary of the end of Italian authority in Libya, calling for…",
+   "layer": "landmark",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-3e9b13de7557",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Surt missile base",
+   "layer": "military",
+   "year": 1986,
+   "named": [
+    "Surt missile base"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-8df310f50e47",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Libyan claims that three US aircraft were downed over the Gulf of Sidra during US naval exercises",
+   "layer": "battle",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-de63b2b34620",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Qadhdhafi says the U.S. fired two missiles at a suburb of Surt to strike SAM-5 missiles and that one…",
+   "layer": "military",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-43e88a7cb387",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Qadhdhafi gave an interview to Le Monde correspondent Alain Frachon near Surt, denying Libyan intervention…",
+   "layer": "landmark",
+   "year": 1987,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b710d786611d",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Mutassim Gaddafi was captured when Sirte fell, then shot and killed",
+   "layer": "massacre",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-c979d781a223",
+   "region": "sirte",
+   "town": "Brega",
+   "name": "NATO air strike hits the Brega pipe-making plant",
+   "layer": "airstrike",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-255c5c1acba6",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Surt AW Radar Fac",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Surt AW Radar Fac"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-2e05e9199930",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Sarir-to-Surt pipeline",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Sarir-to-Surt pipeline"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-35453697cf09",
+   "region": "sirte",
+   "town": "Ras Lanuf",
+   "name": "Ras Lanuf petrochemical complex",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Ras Lanuf petrochemical complex"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": [
+    {
+     "method": "wikipedia-near",
+     "named": "Ras Lanuf petrochemical complex",
+     "title": "Ras Lanuf Refinery",
+     "lat": 30.47472,
+     "lon": 18.57361,
+     "fromTown": 19.9,
+     "src": {
+      "t": "Wikipedia: Ras Lanuf Refinery",
+      "u": "https://en.wikipedia.org/wiki/Ras_Lanuf_Refinery"
+     },
+     "note": "title words differ from the name in the entry; shown for a person to judge, not proposed"
+    }
+   ]
+  },
+  {
+   "id": "c-3a4f395a6309",
+   "region": "sirte",
+   "town": "Brega",
+   "name": "Mersa Brega",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Mersa Brega"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-7b63a26c85b1",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Surt military base",
+   "layer": "military",
+   "year": null,
+   "named": [
+    "Surt military base"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-f4ec6110b6cf",
+   "region": "sirte",
+   "town": "Brega",
+   "name": "Brega pipe manufacturing plant",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Brega pipe manufacturing plant"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "st-gulf-sidra-1986",
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Gulf of Sidra clash, 24 March 1986",
+   "layer": "battle",
+   "year": 1986,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-34b6a5692cdb",
+   "region": "tripolitania",
+   "town": "Zuwara",
+   "name": "Gaddafi proclaimed the start of the 'Popular Revolution' in a speech at Zuwarah",
+   "layer": "landmark",
+   "year": 1973,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-8c257eb87768",
+   "region": "tripolitania",
+   "town": "Zuwara",
+   "name": "Gaddafi proposes the Third International Theory in his Zuwara speech",
+   "layer": "landmark",
+   "year": 1973,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-21e04e857f3f",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "A coup attempt by 20 military officers, mostly from Misrata, was launched and the plotters were arrested and…",
+   "layer": "massacre",
+   "year": 1975,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-a2aea422ce39",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Libyan note alleges US carrier aircraft made three flights to within 10 miles of the coast and pursued an…",
+   "layer": "military",
+   "year": 1975,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-6065c66e6d35",
+   "region": "tripolitania",
+   "town": "Zintan",
+   "name": "Qadhdhafi speech marking the anniversary of the battle of Al-Kardun, threatening Egypt and Tunisia and…",
+   "layer": "landmark",
+   "year": 1976,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-8f4edb804ab7",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Qadhafi addressed a popular march and rally in Misrata, saying disturbances at Libyan universities had been…",
+   "layer": "landmark",
+   "year": 1976,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-c3fb0df7cf66",
+   "region": "tripolitania",
+   "town": "Zintan",
+   "name": "Az-Zintan",
+   "layer": "landmark",
+   "year": 1976,
+   "named": [
+    "Az-Zintan"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-d1fc8da63002",
+   "region": "tripolitania",
+   "town": "Tarhuna",
+   "name": "Qadhdhafi addressed a rally marking the seventh anniversary of the Day of Revenge, when the Italian…",
+   "layer": "landmark",
+   "year": 1977,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-3bf387a16f18",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Qadhdhafi gives an ideological lecture on the Green Book to students and officers of the college in…",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [
+    "the college"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-2569f427ee24",
+   "region": "tripolitania",
+   "town": "Bani Walid",
+   "name": "Massive student demonstration condemning Fatah's leadership",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-e91060594383",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Zuwara or Tunis-area resort (Misratah hotel project)",
+   "layer": "landmark",
+   "year": 1980,
+   "named": [
+    "Zuwara or Tunis-area resort",
+    "Misratah hotel"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-3a419bf6bbc3",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Huge demonstrations condemning the U.S. attack on two Libyan jet fighters",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b4c932233fe5",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Demonstration against U.S. aggression in Misratah",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-0652ebe76847",
+   "region": "tripolitania",
+   "town": "Khoms",
+   "name": "Qadhdhafi met students from schools in the Al Khums and Zlaytah areas as part of a tour to expand the…",
+   "layer": "landmark",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-cb31c7f3d4ca",
+   "region": "tripolitania",
+   "town": "Zawiya",
+   "name": "Sixth general congress of jamahiriyah students issued statements denouncing U.S. imperialism and Saudi…",
+   "layer": "landmark",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-ead1502d3019",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and…",
+   "layer": "landmark",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-4d1500bf2de5",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Qadhafi gave a speech on the 14th anniversary of the expulsion of Italian residents from Libya, demanding…",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-8194f48b580f",
+   "region": "tripolitania",
+   "town": "Khoms",
+   "name": "Masses of the Basic People's Congresses held angry demonstrations against infiltrators and 'hired agents of…",
+   "layer": "landmark",
+   "year": 1984,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-26e31bc456a2",
+   "region": "tripolitania",
+   "town": "Nalut",
+   "name": "Qadhdhafi speech to secondary school students and training college teachers in Nalut, Yafran and Jadu,…",
+   "layer": "landmark",
+   "year": 1985,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-08c31afe9210",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Anti-Gaddafi forces, with NATO air support, forced loyalist troops to retreat, gaining control of most of…",
+   "layer": "landmark",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-1d4499605db4",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Pro-Gaddafi forces resumed shelling and besieged Misrata",
+   "layer": "battle",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-49de0c71f362",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Small demonstrations in Misrata in solidarity with Benghazi protesters",
+   "layer": "landmark",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-7b1548ace246",
+   "region": "tripolitania",
+   "town": "Zintan",
+   "name": "Reported that Jalloud had defected to the rebels and was heading from Zintan to Djerba, then to Italy",
+   "layer": "battle",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-a81e33a96e62",
+   "region": "tripolitania",
+   "town": "Tarhuna",
+   "name": "Khamis Gaddafi reported killed in fighting in Tarhuna",
+   "layer": "massacre",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-b74c0b1539e3",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down…",
+   "layer": "battle",
+   "year": 2011,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-1908efd2bafa",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Misrata International Airport",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Misrata International Airport"
+   ],
+   "alsoNamed": [
+    "International airport",
+    "an air base"
+   ],
+   "status": "proposed",
+   "proposal": {
+    "method": "wikipedia",
+    "named": "Misrata International Airport",
+    "title": "Misrata Airport",
+    "lat": 32.32556,
+    "lon": 15.05972,
+    "r": 2,
+    "fromTown": 6.5,
+    "src": {
+     "t": "Wikipedia: Misrata Airport",
+     "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
+    }
+   },
+   "options": [
+    {
+     "method": "wikipedia",
+     "named": "Misrata International Airport",
+     "title": "Misrata Airport",
+     "lat": 32.32556,
+     "lon": 15.05972,
+     "r": 2,
+     "fromTown": 6.5,
+     "src": {
+      "t": "Wikipedia: Misrata Airport",
+      "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c-499989ddc9d5",
+   "region": "tripolitania",
+   "town": "Zuwara",
+   "name": "Zuwarah sea fishing port",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Zuwarah sea fishing port"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-66ab310a5f13",
+   "region": "tripolitania",
+   "town": "Zawiya",
+   "name": "Az Zawiyah refinery",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Az Zawiyah refinery"
+   ],
+   "alsoNamed": [
+    "Government-owned refinery"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-c30e2231eab9",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Misratah port",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Misratah port"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": [
+    {
+     "method": "wikipedia-near",
+     "named": "Misratah port",
+     "title": "Qasr Ahmad#Port of Misrata",
+     "lat": 32.35833,
+     "lon": 15.20583,
+     "fromTown": 10.9,
+     "src": {
+      "t": "Wikipedia: Qasr Ahmad#Port of Misrata",
+      "u": "https://en.wikipedia.org/wiki/Qasr_Ahmad#Port_of_Misrata"
+     },
+     "note": "title words differ from the name in the entry; shown for a person to judge, not proposed"
+    }
+   ]
+  },
+  {
+   "id": "c-f447fbcbbe6c",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Misrata War Museum",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Misrata War Museum"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "c-fb7829cc5be7",
+   "region": "tripolitania",
+   "town": "Tarhuna",
+   "name": "Tarhuna (Terhouna) teachers' institute",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Tarhuna teachers' institute"
+   ],
+   "alsoNamed": [
+    "Na'eb institute",
+    "institute"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "tp-zuwarah-1973",
+   "region": "tripolitania",
+   "town": "Zuwara",
+   "name": "Gaddafi proclaims the Cultural Revolution at Zuwarah, 15 April 1973",
+   "layer": "landmark",
+   "year": 1973,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  },
+  {
+   "id": "tp-misrata-1983",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Students of Misrata reported to demonstrate, 10 May 1983",
+   "layer": "landmark",
+   "year": 1983,
+   "named": [],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": []
+  }
+ ]
+}

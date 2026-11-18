@@ -13,6 +13,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.9333,
   "lon": 12.0833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Zuwara",
+   "u": "https://en.wikipedia.org/wiki/Zuwarah"
+  },
   "period": "16 April 1973",
   "relevance": "Gaddafi proclaimed the start of the 'Popular Revolution' in a speech at Zuwarah.",
   "text": "Gaddafi proclaimed the start of the 'Popular Revolution' in a speech at Zuwarah. This rests on one document: Muammar Gaddafi (Wikipedia). No second source is held for it. Mapped at the centre of Zuwara: the document names the town, not the site.",
@@ -34,6 +39,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.9333,
   "lon": 12.0833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Zuwara",
+   "u": "https://en.wikipedia.org/wiki/Zuwarah"
+  },
   "period": "15 April 1973",
   "relevance": "Gaddafi proposes the Third International Theory in his Zuwara speech",
   "text": "Gaddafi proposes the Third International Theory in his Zuwara speech. This rests on one document: Third International Theory (Wikipedia). No second source is held for it. Mapped at the centre of Zuwara: the document names the town, not the site.",
@@ -55,6 +65,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "25 October 1975",
   "relevance": "A coup attempt by 20 military officers, mostly from Misrata, was launched and the plotters were arrested and executed.",
   "text": "A coup attempt by 20 military officers, mostly from Misrata, was launched and the plotters were arrested and executed. This rests on one document: Libya (Wikipedia). No second source is held for it. It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -76,6 +91,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "10 January 1975",
   "relevance": "Libyan note alleges US carrier aircraft made three flights to within 10 miles of the coast and pursued an Algerian civilian passenger aircraft",
   "text": "Libyan note alleges US carrier aircraft made three flights to within 10 miles of the coast and pursued an Algerian civilian passenger aircraft. This rests on one document: Telegram 38 From the Embassy in Libya to the Department of State | Tripoli , January 10, 1975, 1705Z . | 38. Subject:… (10 January 1975). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -92,6 +112,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.9306,
   "lon": 12.2483,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Zintan",
+   "u": "https://en.wikipedia.org/wiki/Zintan"
+  },
   "period": "30 March 1976",
   "relevance": "Qadhdhafi speech marking the anniversary of the battle of Al-Kardun, threatening Egypt and Tunisia and denying assassination plots.",
   "text": "Qadhdhafi speech marking the anniversary of the battle of Al-Kardun, threatening Egypt and Tunisia and denying assassination plots. The same event appears in 2 separate readings, also described as: Speech on the anniversary of the Battle of al-Kardun, denying sabotage and…. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Zintan: the document names the town, not the site.",
@@ -117,6 +142,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "10 April 1976",
   "relevance": "Qadhafi addressed a popular march and rally in Misrata, saying disturbances at Libyan universities had been settled in favour of revolutionary forces and warning…",
   "text": "Qadhafi addressed a popular march and rally in Misrata, saying disturbances at Libyan universities had been settled in favour of revolutionary forces and warning enemies of the revolution. This rests on one document: AL-QADHDHAFI ADDRESSES MISRATA MARCHEPS RALLY (11 April 1976). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -138,6 +168,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.9306,
   "lon": 12.2483,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Zintan",
+   "u": "https://en.wikipedia.org/wiki/Zintan"
+  },
   "period": "31 March 1976",
   "relevance": "Location where Qadhdhafi gave a speech on 30 March 1976 marking the anniversary of the battle of Al-Kardun.",
   "text": "Location where Qadhdhafi gave a speech on 30 March 1976 marking the anniversary of the battle of Al-Kardun. This rests on one document: AL-QADHDHAFI DENOUNCES, THREATENS EGYPT, TUNISIA (31 March 1976). No second source is held for it. Mapped at the centre of Zintan: the document names the town, not the site.",
@@ -159,6 +194,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.4339,
   "lon": 13.6344,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tarhuna",
+   "u": "https://en.wikipedia.org/wiki/Tarhuna"
+  },
   "period": "7 October 1977",
   "relevance": "Qadhdhafi addressed a rally marking the seventh anniversary of the Day of Revenge, when the Italian community was expelled from Libya.",
   "text": "Qadhdhafi addressed a rally marking the seventh anniversary of the Day of Revenge, when the Italian community was expelled from Libya. This rests on one document: AL-QADHDHAFI ADDRESSES 1 DAY FO REVENGE ANNIVERSARY RALLY. No second source is held for it. Mapped at the centre of Tarhuna: the document names the town, not the site.",
@@ -180,6 +220,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "27 July 1978",
   "relevance": "Qadhdhafi gives an ideological lecture on the Green Book to students and officers of the college in Misratah, attended by Brigadier Abu Bakr Yunis Jabir",
   "text": "Qadhdhafi gives an ideological lecture on the Green Book to students and officers of the college in Misratah, attended by Brigadier Abu Bakr Yunis Jabir. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 148, 1 August 1978 (1 August 1978). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -201,6 +246,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.7619,
   "lon": 14.0139,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Bani Walid",
+   "u": "https://en.wikipedia.org/wiki/Bani_Walid"
+  },
   "period": "15 December 1979",
   "relevance": "Massive student demonstration condemning Fatah's leadership.",
   "text": "Massive student demonstration condemning Fatah's leadership. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 243, 17 December 1979 (17 December 1979). No second source is held for it. Mapped at the centre of Bani Walid: the document names the town, not the site.",
@@ -222,6 +272,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "23 January 1980",
   "relevance": "A second resort village was to be built at a site near the sea named in the text as 'ryunis' (OCR garbled), and another 250-room hotel at Misratah.",
   "text": "A second resort village was to be built at a site near the sea named in the text as 'ryunis' (OCR garbled), and another 250-room hotel at Misratah. This rests on one document: Near East/North Africa Report (23 January 1980). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -243,6 +298,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "21 August 1981",
   "relevance": "Huge demonstrations condemning the U.S. attack on two Libyan jet fighters",
   "text": "Huge demonstrations condemning the U.S. attack on two Libyan jet fighters. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 163, 24 August 1981 (24 August 1981). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -264,6 +324,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "21 August 1981",
   "relevance": "Demonstration against U.S. aggression in Misratah.",
   "text": "Demonstration against U.S. aggression in Misratah. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 162, 21 August 1981 (21 August 1981). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -285,6 +350,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.6497,
   "lon": 14.2644,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Khoms",
+   "u": "https://en.wikipedia.org/wiki/Al-Khums"
+  },
   "period": "18 March 1982",
   "relevance": "Qadhdhafi met students from schools in the Al Khums and Zlaytah areas as part of a tour to expand the revolutionary committees.",
   "text": "Qadhdhafi met students from schools in the Al Khums and Zlaytah areas as part of a tour to expand the revolutionary committees. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 054, 19 March 1982. No second source is held for it. Mapped at the centre of Khoms: the document names the town, not the site.",
@@ -306,6 +376,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.7522,
   "lon": 12.7278,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Zawiya",
+   "u": "https://en.wikipedia.org/wiki/Zawiya,_Libya"
+  },
   "period": "4 March 1982",
   "relevance": "Sixth general congress of jamahiriyah students issued statements denouncing U.S. imperialism and Saudi Arabia and pledging support for the revolution.",
   "text": "Sixth general congress of jamahiriyah students issued statements denouncing U.S. imperialism and Saudi Arabia and pledging support for the revolution. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 047, 10 March 1982. No second source is held for it. Mapped at the centre of Zawiya: the document names the town, not the site.",
@@ -327,6 +402,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "30 October 1982",
   "relevance": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and desalination plant at the Misrata iron and steel works.",
   "text": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and desalination plant at the Misrata iron and steel works. 2 documents mention it (all from one publisher, archive.org). Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -352,6 +432,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "7 October 1983",
   "relevance": "Qadhafi gave a speech on the 14th anniversary of the expulsion of Italian residents from Libya, demanding Italy pay double in colonial-era damages and saying an open…",
   "text": "Qadhafi gave a speech on the 14th anniversary of the expulsion of Italian residents from Libya, demanding Italy pay double in colonial-era damages and saying an open file now existed between the two governments. This rests on one document: QADHAFI'S SPEECH IN MISURATA (8 October 1983). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -373,6 +458,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.6497,
   "lon": 14.2644,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Khoms",
+   "u": "https://en.wikipedia.org/wiki/Al-Khums"
+  },
   "period": "13 May 1984",
   "relevance": "Masses of the Basic People's Congresses held angry demonstrations against infiltrators and 'hired agents of colonialism', condemning the US and Sudan.",
   "text": "Masses of the Basic People's Congresses held angry demonstrations against infiltrators and 'hired agents of colonialism', condemning the US and Sudan. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 095, 15 May 1984. No second source is held for it. Mapped at the centre of Khoms: the document names the town, not the site.",
@@ -394,6 +484,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.8683,
   "lon": 10.9825,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Nalut",
+   "u": "https://en.wikipedia.org/wiki/Nalut"
+  },
   "period": "14 April 1985",
   "relevance": "Qadhdhafi speech to secondary school students and training college teachers in Nalut, Yafran and Jadu, marking the 7 April students' revolution anniversary",
   "text": "Qadhdhafi speech to secondary school students and training college teachers in Nalut, Yafran and Jadu, marking the 7 April students' revolution anniversary. This rests on one document: AL-QADHDHAFI ADDRESSES STUDENTS, TEACHER 15 APR. No second source is held for it. Mapped at the centre of Nalut: the document names the town, not the site.",
@@ -415,6 +510,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "21 April 2011",
   "relevance": "Anti-Gaddafi forces, with NATO air support, forced loyalist troops to retreat, gaining control of most of the city by mid-May.",
   "text": "Anti-Gaddafi forces, with NATO air support, forced loyalist troops to retreat, gaining control of most of the city by mid-May. This rests on one document: Misrata (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -436,6 +536,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "20 March 2011",
   "relevance": "Pro-Gaddafi forces resumed shelling and besieged Misrata; the city was shelled for over 40 days and its water supply was cut off.",
   "text": "Pro-Gaddafi forces resumed shelling and besieged Misrata; the city was shelled for over 40 days and its water supply was cut off. This rests on one document: Misrata (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -457,6 +562,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "20 February 2011",
   "relevance": "Small demonstrations in Misrata in solidarity with Benghazi protesters; police arrests sparked larger protests that security forces met with live ammunition.",
   "text": "Small demonstrations in Misrata in solidarity with Benghazi protesters; police arrests sparked larger protests that security forces met with live ammunition. This rests on one document: Misrata (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -478,6 +588,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 31.9306,
   "lon": 12.2483,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Zintan",
+   "u": "https://en.wikipedia.org/wiki/Zintan"
+  },
   "period": "19 August 2011",
   "relevance": "Reported that Jalloud had defected to the rebels and was heading from Zintan to Djerba, then to Italy.",
   "text": "Reported that Jalloud had defected to the rebels and was heading from Zintan to Djerba, then to Italy. This rests on one document: Abdessalam Jalloud (Wikipedia). No second source is held for it. Mapped at the centre of Zintan: the document names the town, not the site.",
@@ -499,6 +614,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.4339,
   "lon": 13.6344,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tarhuna",
+   "u": "https://en.wikipedia.org/wiki/Tarhuna"
+  },
   "period": "29 August 2011",
   "relevance": "Khamis Gaddafi reported killed in fighting in Tarhuna.",
   "text": "Khamis Gaddafi reported killed in fighting in Tarhuna. This rests on one document: Khamis Brigade (Wikipedia). No second source is held for it. It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Tarhuna: the document names the town, not the site.",
@@ -520,6 +640,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "24 March 2011",
   "relevance": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down or destroyed on the runway by a French AASM missile after…",
   "text": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down or destroyed on the runway by a French AASM missile after landing. This rests on one document: Misrata Airport (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -539,6 +664,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "Date not given",
   "relevance": "International airport serving Misrata, also an air base and training centre for the Libyan Air Force; created in 1939 as a small landing site in Italian Libya.",
   "text": "International airport serving Misrata, also an air base and training centre for the Libyan Air Force; created in 1939 as a small landing site in Italian Libya. This rests on one document: Misrata Airport (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -558,6 +688,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.9333,
   "lon": 12.0833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Zuwara",
+   "u": "https://en.wikipedia.org/wiki/Zuwarah"
+  },
   "period": "Date not given",
   "relevance": "The committee ordered technical expertise to run the Zuwarah sea fishing port.",
   "text": "The committee ordered technical expertise to run the Zuwarah sea fishing port. This rests on one document: DTIC ADA367992: JPRS Report, Near East and South Asia. No second source is held for it. Mapped at the centre of Zuwara: the document names the town, not the site.",
@@ -577,6 +712,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.7522,
   "lon": 12.7278,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Zawiya",
+   "u": "https://en.wikipedia.org/wiki/Zawiya,_Libya"
+  },
   "period": "Date not given",
   "relevance": "Government-owned refinery with 120,000 b/d capacity, described as one of three domestic refineries.",
   "text": "Government-owned refinery with 120,000 b/d capacity, described as one of three domestic refineries. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Zawiya: the document names the town, not the site.",
@@ -600,6 +740,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "Date not given",
   "relevance": "Expected destination for transport of the HAZE A containers; delivery of such containers was observed here.",
   "text": "Expected destination for transport of the HAZE A containers; delivery of such containers was observed here. The same place appears in 2 separate readings, also described as: Misratah port transshipment facility. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -623,6 +768,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.3775,
   "lon": 15.092,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Misrata",
+   "u": "https://en.wikipedia.org/wiki/Misrata"
+  },
   "period": "Date not given",
   "relevance": "The sculpture is now displayed at the Misrata War Museum.",
   "text": "The sculpture is now displayed at the Misrata War Museum. This rests on one document: Fist Crushing a U.S. Fighter Plane (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
@@ -642,6 +792,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.4339,
   "lon": 13.6344,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Tarhuna",
+   "u": "https://en.wikipedia.org/wiki/Tarhuna"
+  },
   "period": "Date not given",
   "relevance": "The student congress at the Ahmad al-Na'eb institute for teachers in Terhouna held an emergency meeting and voted to turn the institute into a barracks.",
   "text": "The student congress at the Ahmad al-Na'eb institute for teachers in Terhouna held an emergency meeting and voted to turn the institute into a barracks. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 222, 14 November 1980. No second source is held for it. Mapped at the centre of Tarhuna: the document names the town, not the site.",

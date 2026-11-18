@@ -13,6 +13,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "10 April 1976",
   "relevance": "Jallud addressed mass rally in Sabha supporting the revolution against Egyptian and Tunisian campaigns.",
   "text": "Jallud addressed mass rally in Sabha supporting the revolution against Egyptian and Tunisian campaigns. This rests on one document: AL-QADHDHAFI MEETS WITH NEWSMEN IN ALGERIA (April 1976). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -34,6 +39,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 24.1833,
   "lon": 23.2833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Kufra",
+   "u": "https://en.wikipedia.org/wiki/Kufra"
+  },
   "period": "4 March 1977",
   "relevance": "Fidel Castro and delegation made a five-hour visit to the Kufra agricultural project.",
   "text": "Fidel Castro and delegation made a five-hour visit to the Kufra agricultural project. This rests on one document: AL-QADHDHAFI CLOSING SPEECH AT PEOPLE'S CONGRESS REPORTED (5 March 1977). No second source is held for it. Mapped at the centre of Kufra: the document names the town, not the site.",
@@ -55,6 +65,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "28 February 1977",
   "relevance": "Emergency session of the General People's Congress approved the creation of the direct people's democracy government (Jamahiriyah), renaming Libya the Socialist…",
   "text": "Emergency session of the General People's Congress approved the creation of the direct people's democracy government (Jamahiriyah), renaming Libya the Socialist People's Libyan Arab Jamahiriyah. This rests on one document: Near East/North Africa Report No. 2039 (29 August 1979). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -76,6 +91,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "2 March 1977",
   "relevance": "Qadhdhafi delivered the closing session speech of the General People's Congress on the Wednesday night, the Prophet's birthday, proclaiming the age of the masses and…",
   "text": "Qadhdhafi delivered the closing session speech of the General People's Congress on the Wednesday night, the Prophet's birthday, proclaiming the age of the masses and the Jamahiriyah. This rests on one document: AL-QADHDHAFI CLOSING SPEECH AT PEOPLE'S CONGRESS REPORTED (5 March 1977). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -97,6 +117,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "23 February 1978",
   "relevance": "Quadripartite talks of Libya, Niger, Chad and Sudan ended with agreement on Chad's internal situation and on restoring the Libyan ambassador to Ndjamena.",
   "text": "Quadripartite talks of Libya, Niger, Chad and Sudan ended with agreement on Chad's internal situation and on restoring the Libyan ambassador to Ndjamena. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 38, 24 February 1978. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -118,6 +143,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "25 February 1978",
   "relevance": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents at Sabha airport",
   "text": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents at Sabha airport. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 40, 28 February 1978 (28 February 1978). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -139,6 +169,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "24 March 1978",
   "relevance": "Foreign Secretary Dr Ali Abd as-Salam at-Turayki press conference on Chad reconciliation talks and Libyan-Sudanese relations.",
   "text": "Foreign Secretary Dr Ali Abd as-Salam at-Turayki press conference on Chad reconciliation talks and Libyan-Sudanese relations. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 61, 29 March 1978. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -160,6 +195,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "26 February 1978",
   "relevance": "A summit of Libya, Chad, Sudan and Niger in Sabha agreed to hold a meeting between Chadian government representatives and FORLINAT on 21 March.",
   "text": "A summit of Libya, Chad, Sudan and Niger in Sabha agreed to hold a meeting between Chadian government representatives and FORLINAT on 21 March. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 43, 3 March 1978 (3 March 1978). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -181,6 +221,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "22 February 1978",
   "relevance": "Expected quadripartite meeting of heads of state of Libya, Sudan, Chad and Niger to settle Libyan-Chadian differences",
   "text": "Expected quadripartite meeting of heads of state of Libya, Sudan, Chad and Niger to settle Libyan-Chadian differences. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 37, 23 February 1978. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -202,6 +247,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "12 January 1979",
   "relevance": "Workers seized the Wadi al Zeit contractors, post office branch, Libyan Airlines branch, Public Transport Corporation branch, Alwahadiri Contractors, and Ali Ibrahim…",
   "text": "Workers seized the Wadi al Zeit contractors, post office branch, Libyan Airlines branch, Public Transport Corporation branch, Alwahadiri Contractors, and Ali Ibrahim al-Alem Company sites, forming people's committees. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 010, 15 Jan 79. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -223,6 +273,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "25 May 1980",
   "relevance": "Large popular rally in Sebha supporting the third meeting of the revolutionary committees",
   "text": "Large popular rally in Sebha supporting the third meeting of the revolutionary committees. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 103, 27 May 1980 (27 May 1980). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -244,6 +299,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "4 November 1980",
   "relevance": "Goukouni held a press conference at Sabhah thanking Libya for support to Frolinat and the Chadian government",
   "text": "Goukouni held a press conference at Sabhah thanking Libya for support to Frolinat and the Chadian government. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 218, 7 November 1980. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -265,6 +325,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "28 November 1981",
   "relevance": "Qadhdhafi speech at rally marking the return of Libyan troops from Chad; announced formation of a rapid deployment force.",
   "text": "Qadhdhafi speech at rally marking the return of Libyan troops from Chad; announced formation of a rapid deployment force. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 229, 30 November 1981. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -286,6 +351,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "20 August 1981",
   "relevance": "Demonstration against U.S. aggression in Sabhah.",
   "text": "Demonstration against U.S. aggression in Sabhah. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 162, 21 August 1981 (21 August 1981). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -307,6 +377,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "3 November 1981",
   "relevance": "Libyan forces in Ndjamena, Chad, receive orders to withdraw; an airlift between Ndjamena and the Sebha oasis in Libya is set up",
   "text": "Libyan forces in Ndjamena, Chad, receive orders to withdraw; an airlift between Ndjamena and the Sebha oasis in Libya is set up. This rests on one document: JPRS ID: 10469 SUB-SAHARAN AFRICA REPORT (20 April 1982). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -328,6 +403,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "24 May 1981",
   "relevance": "Statement issued after Qadhdhafi and Arafat met, condemning Sadat's visit to Khartoum and calling for measures against Numayri's regime and the US",
   "text": "Statement issued after Qadhdhafi and Arafat met, condemning Sadat's visit to Khartoum and calling for measures against Numayri's regime and the US. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 100, 26 May 1981. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -349,6 +429,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "5 October 1981",
   "relevance": "Rally at Sabhah marking the anniversary of Qadhdhafi's 1961 student demonstration against the separation of Syria and Egypt; the Basic People's Congress secretary…",
   "text": "Rally at Sabhah marking the anniversary of Qadhdhafi's 1961 student demonstration against the separation of Syria and Egypt; the Basic People's Congress secretary pledged support for the Chadian people. 2 documents mention it (all from one publisher, archive.org). Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -374,6 +459,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 24.1833,
   "lon": 23.2833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Kufra",
+   "u": "https://en.wikipedia.org/wiki/Kufra"
+  },
   "period": "28 November 1981",
   "relevance": "Desert military site on the Chad and Sudan border where some Pakistanis were moved.",
   "text": "Desert military site on the Chad and Sudan border where some Pakistanis were moved. 2 documents mention it (all from one publisher, archive.org). Mapped at the centre of Kufra: the document names the town, not the site.",
@@ -399,6 +489,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "18 January 1982",
   "relevance": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft observed on the transient cargo apron on the west side of the…",
   "text": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft observed on the transient cargo apron on the west side of the airfield; first identification of Foxbat at Sebha. This rests on one document: FOXBAT DEPLOYMENT SEBHA AIRFIELD, LIBYA (18 January 1982). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -420,6 +515,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "4 December 1982",
   "relevance": "The Sabha flour mill recorded 1,499 idle hours from January to September, including 734 hours from technical and mechanical breakdowns.",
   "text": "The Sabha flour mill recorded 1,499 idle hours from January to September, including 734 hours from technical and mechanical breakdowns. 2 documents mention it (all from one publisher, archive.org). Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -445,6 +545,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 24.1833,
   "lon": 23.2833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Kufra",
+   "u": "https://en.wikipedia.org/wiki/Kufra"
+  },
   "period": "16 December 1982",
   "relevance": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine; pre/postflight activity observed, possibly linked to support of Chad…",
   "text": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine; pre/postflight activity observed, possibly linked to support of Chad operations. This rests on one document: GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA. No second source is held for it. Mapped at the centre of Kufra: the document names the town, not the site.",
@@ -466,6 +571,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "4 May 1982",
   "relevance": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982)",
   "text": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982). This rests on one document: RECENT AIRCRAFT ACCIDENTS IN LIBYA SEBHA AIRFIELD AND GHURDABIYAH AIRFIELD 4 MAY AND 21 APRIL 1982 (7 May 1982). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -487,6 +597,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 24.1833,
   "lon": 23.2833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Kufra",
+   "u": "https://en.wikipedia.org/wiki/Kufra"
+  },
   "period": "15 August 1983",
   "relevance": "High logistics activity, with cargo trucks forming convoys.",
   "text": "High logistics activity, with cargo trucks forming convoys. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Kufra: the document names the town, not the site.",
@@ -512,6 +627,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "24 August 1983",
   "relevance": "Qadhdhafi addresses participants in the second session of the sixth meeting of the revolutionary committee, stressing building a revolutionary ideological movement and…",
   "text": "Qadhdhafi addresses participants in the second session of the sixth meeting of the revolutionary committee, stressing building a revolutionary ideological movement and saying Libya is a target of America and Zionism. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 166, 25 August 1983 (25 August 1983). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -533,6 +653,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "1 June 1983",
   "relevance": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel watching; four more BTR-60PB were parked within the facility.",
   "text": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel watching; four more BTR-60PB were parked within the facility. This rests on one document: DISSIDENT TRAINING ACTIVITY IN LIBYA. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -554,6 +679,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 24.1833,
   "lon": 23.2833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Kufra",
+   "u": "https://en.wikipedia.org/wiki/Kufra"
+  },
   "period": "17 February 1983",
   "relevance": "Sixteen Flogger air-superiority fighters and one L-100 medium transport deployed to Kufra; air order-of-battle there increased significantly since the previous day.",
   "text": "Sixteen Flogger air-superiority fighters and one L-100 medium transport deployed to Kufra; air order-of-battle there increased significantly since the previous day. This rests on one document: FLOGGER DEPLOYMENT KUFRA AIRFIELD, LIBYA (17 February 1983). No second source is held for it. Mapped at the centre of Kufra: the document names the town, not the site.",
@@ -575,6 +705,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 24.1833,
   "lon": 23.2833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Kufra",
+   "u": "https://en.wikipedia.org/wiki/Kufra"
+  },
   "period": "6 September 1983",
   "relevance": "Fifteen Flogger aircraft present; ten appear to be preparing for flight operations, either a return to home base Benina or a possible strike mission into Chad.",
   "text": "Fifteen Flogger aircraft present; ten appear to be preparing for flight operations, either a return to home base Benina or a possible strike mission into Chad. This rests on one document: PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA. No second source is held for it. Mapped at the centre of Kufra: the document names the town, not the site.",
@@ -596,6 +731,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 24.1833,
   "lon": 23.2833,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Kufra",
+   "u": "https://en.wikipedia.org/wiki/Kufra"
+  },
   "period": "14 October 1985",
   "relevance": "The column says Soviet SA-5 missiles are deployed around the al-Kufrah oasis in Libya.",
   "text": "The column says Soviet SA-5 missiles are deployed around the al-Kufrah oasis in Libya. The same place appears in 3 separate readings, also described as: Kufra Oasis; Kufra airfield (Libya). 6 documents mention it (from 2 publishers). Mapped at the centre of Kufra: the document names the town, not the site.",
@@ -637,6 +777,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "29 January 1985",
   "relevance": "Popular demonstrations held against the U.S. 6th Fleet exercises.",
   "text": "Popular demonstrations held against the U.S. 6th Fleet exercises. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 021, 31 January 1985 (31 January 1985). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -658,6 +803,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "1 September 1985",
   "relevance": "Qadhafi's annual foreign policy address at a rally marking the 16th anniversary of the revolution, in which he urged Syria to annex Lebanon.",
   "text": "Qadhafi's annual foreign policy address at a rally marking the 16th anniversary of the revolution, in which he urged Syria to annex Lebanon. This rests on one document: QADHAFI URGES SYRIAN ANNEXATION OF LEBANON TO END FACTIONAL FEUDS (3 September 1985). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -679,6 +829,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "2 March 1987",
   "relevance": "Qadhdhafi gives a live speech at the 2 March session of the Sabha General People's Congress commemorating ten years of the Jamahiriyah.",
   "text": "Qadhdhafi gives a live speech at the 2 March session of the Sabha General People's Congress commemorating ten years of the Jamahiriyah. 2 documents mention it (from 2 publishers). Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -704,6 +859,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "22 September 2011",
   "relevance": "Anti-Gaddafi forces discover two warehouses with barrels marked 'radioactive' and bags of yellow powder near Sabha",
   "text": "Anti-Gaddafi forces discover two warehouses with barrels marked 'radioactive' and bags of yellow powder near Sabha. This rests on one document: Elimination of Libya's WMD programs (Wikipedia). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -723,6 +883,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "Date not given",
   "relevance": "Vehicles may have come from Sebha army barracks, where a similar decrease in Land Rover-type vehicles has occurred.",
   "text": "Vehicles may have come from Sebha army barracks, where a similar decrease in Land Rover-type vehicles has occurred. This rests on one document: PROBABLE LIBYAN SUPPORT TO CHADIAN DISSIDENTS SEBHA TRAINING FACILITY EAST, LIBYA. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -742,6 +907,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 24.9594,
   "lon": 10.1758,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Ghat",
+   "u": "https://en.wikipedia.org/wiki/Ghat,_Libya"
+  },
   "period": "Date not given",
   "relevance": "The article says Aisha gave birth shortly after arriving in the southeastern city of Ghat (written as Janat) in Algeria.",
   "text": "The article says Aisha gave birth shortly after arriving in the southeastern city of Ghat (written as Janat) in Algeria. This rests on one document: عائشة القذافي (Arabic Wikipedia). No second source is held for it. Mapped at the centre of Ghat: the document names the town, not the site.",
@@ -761,6 +931,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 24.9594,
   "lon": 10.1758,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Ghat",
+   "u": "https://en.wikipedia.org/wiki/Ghat,_Libya"
+  },
   "period": "Date not given",
   "relevance": "A fort on the hill of Koukemen in Ghat, Libya, started under the Ottoman Empire and rebuilt in the 1930s after partial destruction in the Italian campaign.",
   "text": "A fort on the hill of Koukemen in Ghat, Libya, started under the Ottoman Empire and rebuilt in the 1930s after partial destruction in the Italian campaign. This rests on one document: Fortress of Ghat (Wikipedia). No second source is held for it. Mapped at the centre of Ghat: the document names the town, not the site.",
@@ -780,6 +955,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "Date not given",
   "relevance": "Libyan AW radar site 112 in Sabha, listed in Table 1.",
   "text": "Libyan AW radar site 112 in Sabha, listed in Table 1. This rests on one document: AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -799,6 +979,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 27.0389,
   "lon": 14.4264,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Sabha",
+   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+  },
   "period": "Date not given",
   "relevance": "Large tank depot in western Libya, reportedly visited by Soviet repair personnel.",
   "text": "Large tank depot in western Libya, reportedly visited by Soviet repair personnel. The same place appears in 3 separate readings, also described as: Sebha SAM site; Sebha airfield (Libya). 3 documents mention it (from 2 publishers). Mapped at the centre of Sabha: the document names the town, not the site.",
@@ -826,6 +1011,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 30.1333,
   "lon": 9.5,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Ghadames",
+   "u": "https://en.wikipedia.org/wiki/Ghadames"
+  },
   "period": "Date not given",
   "relevance": "Near the Tunisian-Algerian-Libyan border, with construction first observed in July 1978 and nearly complete by 1982.",
   "text": "Near the Tunisian-Algerian-Libyan border, with construction first observed in July 1978 and nearly complete by 1982. The same place appears in 2 separate readings, also described as: Ghudamis (Ghadames). 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Ghadames: the document names the town, not the site.",

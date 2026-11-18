@@ -638,3 +638,12 @@ html[data-theme] .un-lrow .un-why { border: 1px solid var(--border-strong) !impo
   html[data-theme] #unknown .un-title { padding: 0; } html[data-theme] #unknown .un-title p { display: none; }
   html[data-theme] #unknown .un-tools { padding: 0; width: 100%; flex-wrap: wrap; } html[data-theme] #unknown .un-tools input { flex: 1; min-width: 0; }
 }
+
+/* ---------- 12. town markers: entries the sources place only by town (pos 'town'), one marker per town with a count ---------- */
+html[data-theme] .mk-town { position: relative; width: 34px; height: 30px; cursor: pointer; }
+html[data-theme] .mk-town b { position: absolute; left: 0; right: 0; top: 0; height: 20px; display: flex; align-items: center; justify-content: center; background: var(--bg-panel); color: var(--text); border: 1px solid var(--border-strong); font: 600 11px/1 var(--f-mono) !important; font-variant-numeric: tabular-nums; }
+html[data-theme] .mk-town i { position: absolute; left: 16px; top: 20px; width: 1px; height: 8px; background: var(--border-strong); }
+html[data-theme] .mk-town i::after { content: ''; position: absolute; left: -2px; top: 7px; width: 5px; height: 5px; background: var(--border-strong); }
+html[data-theme] .leaflet-marker-icon:hover .mk-town b, html[data-theme] .leaflet-marker-icon:focus-visible .mk-town b { border-color: var(--accent); color: var(--accent); }
+html[data-theme] .site-label.town-label { color: var(--text-muted); font-style: normal; }
+html[data-theme] .glyph.g-town { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 22px; padding: 0 4px; border: 1px solid var(--border-strong); font: 600 11px var(--f-mono) !important; color: var(--text); }

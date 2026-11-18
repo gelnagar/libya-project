@@ -13,6 +13,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "2 December 1969",
   "relevance": "LTC Aadim al-Hawwaaz, former Defense Minister, asked an Embassy Branch Office Benghazi officer at the end of a routine meeting whether the USG would give him a…",
   "text": "LTC Aadim al-Hawwaaz, former Defense Minister, asked an Embassy Branch Office Benghazi officer at the end of a routine meeting whether the USG would give him a substantial sum of money to counter individuals working against Libya; the officer gave no encouragement. This rests on one document: Telegram 3711 From the Embassy in Libya to the Department of State | Tripoli , December 13, 1969, 1355Z | Contingency… (13 December 1969). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -29,6 +34,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "6 November 1969",
   "relevance": "Student rally at which Qadhafi gave a speech that students regarded as a failure",
   "text": "Student rally at which Qadhafi gave a speech that students regarded as a failure. This rests on one document: DISSATISFACTION OF LIBYAN STUDENTS WITH ATTITUDE OF REVOLUTIONARY COMMAND COUNCIL TOWARDS STUDENT COMMUNITY AND PRESS… (2 December 1969). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -50,6 +60,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "5 August 1975",
   "relevance": "Libyan authorities reportedly foiled a coup plot against Qadhdhafi; the plot's leader, Maj. Abd al-Fattah Yunis, commander of the republican guard in Benghazi, was…",
   "text": "Libyan authorities reportedly foiled a coup plot against Qadhdhafi; the plot's leader, Maj. Abd al-Fattah Yunis, commander of the republican guard in Benghazi, was arrested along with 20 guard officers (reported by Cairo Al-Jumhuriyah, relayed by Amman Ad-Dustur). This rests on one document: COUP ATTEMPT AGAINST AL-QADHDHAFI REPORTED (5 August 1975). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -71,6 +86,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "4 January 1976",
   "relevance": "Students demonstrated against government manipulation of student representative elections; students beat three policemen to death and were then fired upon; clashes with…",
   "text": "Students demonstrated against government manipulation of student representative elections; students beat three policemen to death and were then fired upon; clashes with police the following week resulted in at least ten deaths. This rests on one document: THE PRESIDENT'S DAILY BRIEF 14 JANUARY 1976 (14 January 1976). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -92,6 +112,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "4 April 1976",
   "relevance": "Qadhdhafi addressed Benghazi University students and faculty; the meeting reportedly included calls for a purge of the faculty and student body and for support of the 1…",
   "text": "Qadhdhafi addressed Benghazi University students and faculty; the meeting reportedly included calls for a purge of the faculty and student body and for support of the 1 September Revolution. This rests on one document: AL-QADHDHAFI ADDRESSES BENGHAZI UNIVERSITY STUDENTS. No second source is held for it. The scan of at least one of these documents is of poor quality; errors in the text are likely. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -113,6 +138,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "26 August 1976",
   "relevance": "Libyan fighter aircraft ordered to fly twice-daily reconnaissance missions along the northeastern Libyan coast.",
   "text": "Libyan fighter aircraft ordered to fly twice-daily reconnaissance missions along the northeastern Libyan coast. This rests on one document: THE PRESIDENT'S DAILY BRIEF 28 AUGUST 1976. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -134,6 +164,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "14 January 1976",
   "relevance": "Shooting at Benghazi university struggle, described by Qadhdhafi as part of the popular revolution",
   "text": "Shooting at Benghazi university struggle, described by Qadhdhafi as part of the popular revolution. This rests on one document: AL-QADHDHAFI COMMENTS ON BENGHAZI INCIDENT, SIT-INS. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -155,6 +190,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "6 March 1977",
   "relevance": "Castro visited the iron pipes plant, cement complex, north Benghazi power station and Wadi al-Gattara farm, and laid a wreath at the Umar al-Mukhtar mausoleum.",
   "text": "Castro visited the iron pipes plant, cement complex, north Benghazi power station and Wadi al-Gattara farm, and laid a wreath at the Umar al-Mukhtar mausoleum. This rests on one document: AL-QADHDHAFI CLOSING SPEECH AT PEOPLE'S CONGRESS REPORTED (5 March 1977). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -176,6 +216,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "16 April 1977",
   "relevance": "Egyptian burning of the Libyan Relations Office, which Fahmy said was retaliation for Libyan action against the Egyptian Public Relations Office in Benghazi",
   "text": "Egyptian burning of the Libyan Relations Office, which Fahmy said was retaliation for Libyan action against the Egyptian Public Relations Office in Benghazi. This rests on one document: Telegram From the Embassy in Egypt to the Department of State | Cairo , April 16, 1977, 1245Z | 6378. Subj: Fahmy on… (16 April 1977). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -192,6 +237,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "4 April 1978",
   "relevance": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins; he later departs from Benghazi airport on 6 April",
   "text": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins; he later departs from Benghazi airport on 6 April. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 68, 7 April 1978. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -213,6 +263,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "4 November 1978",
   "relevance": "Qadhdhafi gave a recorded interview at an agricultural project in Southwest Benghazi, explaining why he did not attend the Baghdad Arab summit.",
   "text": "Qadhdhafi gave a recorded interview at an agricultural project in Southwest Benghazi, explaining why he did not attend the Baghdad Arab summit. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 215, 6 November 1978 (6 November 1978). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -234,6 +289,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "11 April 1979",
   "relevance": "First congress of the Free Unionist Officers Movement condemns the Egypt-Israel treaty and pledges to call on the Libyan masses to carry arms, per a JANA report",
   "text": "First congress of the Free Unionist Officers Movement condemns the Egypt-Israel treaty and pledges to call on the Libyan masses to carry arms, per a JANA report. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 073, 13 April 1979. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -255,6 +315,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "4 September 1979",
   "relevance": "The main 1 September 1979 anniversary rally, with Qadhdhafi's speech, was held on 23 July Avenue in Benghazi.",
   "text": "The main 1 September 1979 anniversary rally, with Qadhdhafi's speech, was held on 23 July Avenue in Benghazi. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 172, 4 September 1979 (4 September 1979). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -276,6 +341,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "20 December 1979",
   "relevance": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at Benina airport.",
   "text": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at Benina airport. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 247, 21 December 1979. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -297,6 +367,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "16 December 1979",
   "relevance": "Libya closed the PLO office in Benghazi and ordered the expulsion of three top PLO leaders (Abu Tariq, Abu Sayir, Ibrahim Tubawi).",
   "text": "Libya closed the PLO office in Benghazi and ordered the expulsion of three top PLO leaders (Abu Tariq, Abu Sayir, Ibrahim Tubawi). This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 243, 17 December 1979 (17 December 1979). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -318,6 +393,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "27 September 1979",
   "relevance": "Qadhdhafi held a meeting with members of the Governors Council of the Arab central banks on using Arab funds against countries hostile to Arab causes and on…",
   "text": "Qadhdhafi held a meeting with members of the Governors Council of the Arab central banks on using Arab funds against countries hostile to Arab causes and on implementing Baghdad summit sanctions against Egypt. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 190, 28 September 1979. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -339,6 +419,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "30 September 1979",
   "relevance": "Qadhdhafi and King Khalid meet at the guest palace in Benghazi; Qadhdhafi gives a banquet speech on Arab nationalism, Egypt, Israel and Lebanon",
   "text": "Qadhdhafi and King Khalid meet at the guest palace in Benghazi; Qadhdhafi gives a banquet speech on Arab nationalism, Egypt, Israel and Lebanon. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 191, 1 October 1979 (1 October 1979). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -360,6 +445,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "12 July 1979",
   "relevance": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by thousands.",
   "text": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by thousands. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 136, 13 July 1979. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -381,6 +471,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "1 September 1979",
   "relevance": "Tenth anniversary of the revolution: Qadhafi gave a speech and parade attended by Arab leaders and international delegations, in which he signalled a more gradualist…",
   "text": "Tenth anniversary of the revolution: Qadhafi gave a speech and parade attended by Arab leaders and international delegations, in which he signalled a more gradualist approach to Pan-Arabism. 2 documents mention it (from 2 publishers). Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -406,6 +501,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "8 March 1979",
   "relevance": "Qadhafi addressed a massive revolutionary rally on the 8 March anniversary of the Syrian revolution, calling on Ba'ath youth to form revolutionary committees and…",
   "text": "Qadhafi addressed a massive revolutionary rally on the 8 March anniversary of the Syrian revolution, calling on Ba'ath youth to form revolutionary committees and denouncing Arab political parties. 2 documents mention it (from 2 publishers). Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -431,6 +531,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "29 September 1979",
   "relevance": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya",
   "text": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 191, 1 October 1979 (1 October 1979). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -452,6 +557,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "9 March 1979",
   "relevance": "Qadhdhafi announces at the Benghazi Festival that Libya would support any uprising in Egypt, Morocco or Yemen.",
   "text": "Qadhdhafi announces at the Benghazi Festival that Libya would support any uprising in Egypt, Morocco or Yemen. This rests on one document: Near East/North Africa Report No. 2002. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -473,6 +583,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "13 January 1980",
   "relevance": "Qadhdhafi holds a press conference attended by representatives of major Arab and international newspapers",
   "text": "Qadhdhafi holds a press conference attended by representatives of major Arab and international newspapers. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 010, 15 January 1980. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -494,6 +609,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "20 February 1980",
   "relevance": "Basic People's Congress of Banghazi Central held an emergency session and passed 14 resolutions on Tunisia, including support for revolutionary forces and a call for…",
   "text": "Basic People's Congress of Banghazi Central held an emergency session and passed 14 resolutions on Tunisia, including support for revolutionary forces and a call for union with Algeria. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 037, 22 February 1980. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -515,6 +635,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "24 June 1980",
   "relevance": "Ahmad Jibril (PFLP-GC secretary) arrived in Banghazi on a visit and made a statement backing Libya against Egypt's state of emergency on the border",
   "text": "Ahmad Jibril (PFLP-GC secretary) arrived in Banghazi on a visit and made a statement backing Libya against Egypt's state of emergency on the border. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 124, 25 June 1980. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -536,6 +661,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "8 February 1980",
   "relevance": "Qadhdhafi press conference in Banghazi (AFP) on Tunisia, France and the Qafsah incident; Venezuelan President Herrera visits Libya and leaves Banghazi on 8 February",
   "text": "Qadhdhafi press conference in Banghazi (AFP) on Tunisia, France and the Qafsah incident; Venezuelan President Herrera visits Libya and leaves Banghazi on 8 February. This rests on one document: FBIS DAILY REPORT—Middle East & N. Africa, Vol. V No. 029, 11 February 1980. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -557,6 +687,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "25 January 1980",
   "relevance": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25 January 1980",
   "text": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25 January 1980. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 021, 30 January 1980 (30 January 1980). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -578,6 +713,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "4 February 1980",
   "relevance": "Demonstrators attacked the French consulate in Banghazi; the French consulate was reportedly completely ransacked and staff had left beforehand.",
   "text": "Demonstrators attacked the French consulate in Banghazi; the French consulate was reportedly completely ransacked and staff had left beforehand. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 025, 5 February 1980. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -599,6 +739,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "23 March 1980",
   "relevance": "Colonel Qadhdhafi received Kountche in Banghazi",
   "text": "Colonel Qadhdhafi received Kountche in Banghazi. This rests on one document: FBIS DAILY REPORT—Middle East & N. Africa, Vol. V No. 058, 24 March 1980. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -620,6 +765,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "30 March 1980",
   "relevance": "Qadhdhafi received Khaddam and the Mauritanian foreign minister.",
   "text": "Qadhdhafi received Khaddam and the Mauritanian foreign minister. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 063, 31 March 1980. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -641,6 +791,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "28 April 1980",
   "relevance": "Revolutionary Committees' third session announces policy of physical liquidation of regime enemies abroad; deadline for exiles to return set as 11 June",
   "text": "Revolutionary Committees' third session announces policy of physical liquidation of regime enemies abroad; deadline for exiles to return set as 11 June. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 092, 9 May 1980 (9 May 1980). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -662,6 +817,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "December 1980",
   "relevance": "Holds two SCUD brigades in Benghazi area.",
   "text": "Holds two SCUD brigades in Benghazi area. This rests on one document: TACTICAL SURFACE-TO-SURFACE MISSILE ORGANIZATION AND DEPLOYMENT IN LIBYA (December 1980). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -683,6 +843,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "23 December 1981",
   "relevance": "Mass demonstration denouncing U.S. plots, with effigy of Reagan burned at the Square of the Popular Congress.",
   "text": "Mass demonstration denouncing U.S. plots, with effigy of Reagan burned at the Square of the Popular Congress. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 247, 24 December 1981. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -704,6 +869,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "28 November 1981",
   "relevance": "Two camps near Benghazi; Benghazi Coast was a military camp holding Pakistani commandos.",
   "text": "Two camps near Benghazi; Benghazi Coast was a military camp holding Pakistani commandos. 2 documents mention it (all from one publisher, archive.org). Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -729,6 +899,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "12 September 1981",
   "relevance": "Turkish workers demonstrated against the recent U.S. aggression, burned the American flag in front of the Turkish Consulate, and called for withdrawal of American bases…",
   "text": "Turkish workers demonstrated against the recent U.S. aggression, burned the American flag in front of the Turkish Consulate, and called for withdrawal of American bases from the Mediterranean region. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 177, 14 September 1981. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -750,6 +925,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "21 August 1981",
   "relevance": "Egyptian Arab residents demonstrated against the U.S. action and Camp David",
   "text": "Egyptian Arab residents demonstrated against the U.S. action and Camp David. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 163, 24 August 1981 (24 August 1981). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -771,6 +951,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "10 February 1981",
   "relevance": "Qadhdhafi receives a visiting Chadian popular delegation",
   "text": "Qadhdhafi receives a visiting Chadian popular delegation. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 029, 12 February 1981. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -792,6 +977,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "15 September 1981",
   "relevance": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya.",
   "text": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 181, 18 September 1981. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -813,6 +1003,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "31 March 1981",
   "relevance": "Grand equestrian show where Qadhdhafi announced the formation of a people's cavalry division inside the Urban Militarization Command",
   "text": "Grand equestrian show where Qadhdhafi announced the formation of a people's cavalry division inside the Urban Militarization Command. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 063, 2 April 1981 (2 April 1981). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -834,6 +1029,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "26 March 1981",
   "relevance": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
   "text": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 059, 27 March 1981 (27 March 1981). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -855,6 +1055,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "16 May 1981",
   "relevance": "Mass demonstration in Benghazi denouncing the U.S. closure of the Libyan People's Bureau in Washington and deportation of its staff",
   "text": "Mass demonstration in Benghazi denouncing the U.S. closure of the Libyan People's Bureau in Washington and deportation of its staff. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 095, 18 May 1981. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -876,6 +1081,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "23 June 1981",
   "relevance": "Third batch of Libyan Armed Forces units returned from Chad; mass popular reception held on Martyrs Street in Al-Abyar District.",
   "text": "Third batch of Libyan Armed Forces units returned from Chad; mass popular reception held on Martyrs Street in Al-Abyar District. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 121, 24 June 1981. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -897,6 +1107,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "26 March 1982",
   "relevance": "Alleged assassination attempt discovered (one of four claimed attempts, March–April 1982)",
   "text": "Alleged assassination attempt discovered (one of four claimed attempts, March–April 1982). This rests on one document: DTIC ADA353630: Near East/North Africa Report No. 2568 (9 June 1982). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -918,6 +1133,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "9 January 1982",
   "relevance": "Sudan's SUNA reported that Qaddafi had put down a coup attempt in Benghazi earlier in the month.",
   "text": "Sudan's SUNA reported that Qaddafi had put down a coup attempt in Benghazi earlier in the month. This rests on one document: CIA HAS FOUND EVIDENCE OF ATTACK ON QADDAFI (28 February 1982). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -939,6 +1159,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "2 September 1982",
   "relevance": "Libya reportedly shot down an American reconnaissance aircraft over the Benghazi Region; the US denied the incident.",
   "text": "Libya reportedly shot down an American reconnaissance aircraft over the Benghazi Region; the US denied the incident. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 004, 6 January 1983. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -960,6 +1185,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "1 April 1982",
   "relevance": "Qadhdhafi met with student groups in Benghazi as part of meetings urging the masses to escalate revolutionary work against enemies",
   "text": "Qadhdhafi met with student groups in Benghazi as part of meetings urging the masses to escalate revolutionary work against enemies. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 064, 2 April 1982. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -981,6 +1211,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "5 April 1982",
   "relevance": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in fifth hold off-loading cargo; floating crane moored alongside.",
   "text": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in fifth hold off-loading cargo; floating crane moored alongside. This rests on one document: ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1002,6 +1237,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "8 December 1983",
   "relevance": "Qadhdhafi addressed a group of secondary school students and called for a people's resistance army in Lebanon",
   "text": "Qadhdhafi addressed a group of secondary school students and called for a people's resistance army in Lebanon. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 238, 9 December 1983. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1023,6 +1263,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "7 April 1983",
   "relevance": "Tunisian Foreign Minister Beji Caid es-Sebsi arrived in Benghazi",
   "text": "Tunisian Foreign Minister Beji Caid es-Sebsi arrived in Benghazi. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 069, 8 April 1983 (8 April 1983). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1044,6 +1289,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "4 February 1983",
   "relevance": "Second Nanuchka-II patrol boat arrives at the port",
   "text": "Second Nanuchka-II patrol boat arrives at the port. This rests on one document: NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1065,6 +1315,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "7 April 1983",
   "relevance": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000 participants and 100 journalists",
   "text": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000 participants and 100 journalists. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 068, 7 April 1983. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1086,6 +1341,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "16 February 1983",
   "relevance": "A US aircraft reportedly violated Libyan airspace and approached Benghazi to within 80 km before being forced to flee.",
   "text": "A US aircraft reportedly violated Libyan airspace and approached Benghazi to within 80 km before being forced to flee. This rests on one document: FBIS DAILY REPORT—Middle East & Africa, Vol. V No. 036, 22 February 1983. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1107,6 +1367,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "16 May 1984",
   "relevance": "Mass demonstration of anger and challenge against the 'plotters' and Muslim Brotherhood cliques, with slogans calling for execution of 'agent terrorists' and for the…",
   "text": "Mass demonstration of anger and challenge against the 'plotters' and Muslim Brotherhood cliques, with slogans calling for execution of 'agent terrorists' and for the overthrow of the Sudanese Numayri regime. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 097, 17 May 1984 (17 May 1984). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1128,6 +1393,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "8 May 1986",
   "relevance": "Qadhdhafi addressed a mass public rally in Banghazi, after a route of popular demonstrations from Thulug and Nawwagiyah.",
   "text": "Qadhdhafi addressed a mass public rally in Banghazi, after a route of popular demonstrations from Thulug and Nawwagiyah. This rests on one document: AL-QADHDHAFI TRAVELS TO BANGHAZI, DELIVERS ORATION. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1149,6 +1419,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "8 May 1986",
   "relevance": "Qadhdhafi speech vowing to arm Libyan cities, prepare slaughterhouses for American 'sheep', and threatening to attack Italy if U.S. operations continue from there.",
   "text": "Qadhdhafi speech vowing to arm Libyan cities, prepare slaughterhouses for American 'sheep', and threatening to attack Italy if U.S. operations continue from there. This rests on one document: QADHDHAFI RHETORIC. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1170,6 +1445,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "25 February 1986",
   "relevance": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report)",
   "text": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report). This rests on one document: AL-QADHDHAFI ON GULF WAR, U.S. ISRAEL, EGYPT (22 February 1986). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1191,6 +1471,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "2 March 1986",
   "relevance": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's power",
   "text": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's power. This rests on one document: AL-QADHDHAFI ON PROCLAMATION OF 'PEOPLE'S POWER' (2 March 1986). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1212,6 +1497,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "25 August 1986",
   "relevance": "Al-Asad and Qadhdhafi resumed talks at the Syrian president's residence.",
   "text": "Al-Asad and Qadhdhafi resumed talks at the Syrian president's residence. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 164, 25 August 1986. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1233,6 +1523,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "15 April 1987",
   "relevance": "Rally and military parade on the first anniversary of the US raid, with calls to destroy American bases and embassies.",
   "text": "Rally and military parade on the first anniversary of the US raid, with calls to destroy American bases and embassies. This rests on one document: AL-QADHDHAFI'S CHILDREN CITED. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1254,6 +1549,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "9 January 1988",
   "relevance": "JANA reported a U.S. military aircraft flew at very low altitude over the Libyan ship Gharnatah on a voyage from Benghazi to Izmir and circled it three times",
   "text": "JANA reported a U.S. military aircraft flew at very low altitude over the Libyan ship Gharnatah on a voyage from Benghazi to Izmir and circled it three times. This rests on one document: AL-QADHDHAFI ADDRESSES PALESTINIANS (8 January 1988). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1275,6 +1575,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "7 January 1988",
   "relevance": "US fighter made a low-level flight over the Libyan passenger ship Gharnatah, sailing from Izmir to Benghazi; Libya protested to the UN Secretary-General",
   "text": "US fighter made a low-level flight over the Libyan passenger ship Gharnatah, sailing from Izmir to Benghazi; Libya protested to the UN Secretary-General. This rests on one document: AL-QADHDHAFI BBC INTERVIEWS 'DISTORTED'. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1296,6 +1601,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "13 April 1988",
   "relevance": "Speech says families on Ibn 'Ashur Street in Benghazi were among those hit by the 1986 U.S. aggression.",
   "text": "Speech says families on Ibn 'Ashur Street in Benghazi were among those hit by the 1986 U.S. aggression. This rests on one document: AL-QADHDHAFI ADDRESSES TERRORISM SEMINAR (13 April 1988). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1317,6 +1627,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "20 January 1989",
   "relevance": "Rioting reported; Qadhafi's Benghazi camp reportedly attacked, people killed, fighting continuing into the morning of 20 January.",
   "text": "Rioting reported; Qadhafi's Benghazi camp reportedly attacked, people killed, fighting continuing into the morning of 20 January. This rests on one document: OUTBREAK OF RIOTING IN BANGHAZI, LIBYA. No second source is held for it. It describes a death or killing, so it is shown as reported and not confirmed. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1338,6 +1653,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "3 January 1991",
   "relevance": "Libya called an emergency meeting of Arab Maghreb Union foreign ministers to discuss the Persian Gulf war",
   "text": "Libya called an emergency meeting of Arab Maghreb Union foreign ministers to discuss the Persian Gulf war. This rests on one document: IRAQ-KUWAIT: SITUATION REPORT #588 - IRAQIS SEEK ASYLUM IN TURKEY; ARAB MAGHREB (3 January 1991). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1359,6 +1679,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "6 May 2004",
   "relevance": "A Libyan court sentenced six foreign medical workers to death over the HIV infection case at El-Fatih Children's Hospital in Benghazi.",
   "text": "A Libyan court sentenced six foreign medical workers to death over the HIV infection case at El-Fatih Children's Hospital in Benghazi. This rests on one document: Human rights in Libya (Wikipedia). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1380,6 +1705,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "16 February 2006",
   "relevance": "Protests after Minister Roberto Calderoli wore a Muhammad caricature T-shirt led to the closure of the Italian consulate in Benghazi; the article says 11 Libyans were…",
   "text": "Protests after Minister Roberto Calderoli wore a Muhammad caricature T-shirt led to the closure of the Italian consulate in Benghazi; the article says 11 Libyans were killed and 60 wounded. This rests on one document: Italian Libyans (Wikipedia). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1401,6 +1731,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "30 August 2008",
   "relevance": "Silvio Berlusconi signed the Friendship Treaty with Gaddafi in Benghazi, including a $5 billion reparation payment",
   "text": "Silvio Berlusconi signed the Friendship Treaty with Gaddafi in Benghazi, including a $5 billion reparation payment. 3 documents mention it (from 2 publishers). Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1430,6 +1765,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "15 February 2011",
   "relevance": "Lawyer Fathi Tarbel, who represented victims' families, was arrested; he was released the next day after protests in Benghazi, and the arrest is described as a spark…",
   "text": "Lawyer Fathi Tarbel, who represented victims' families, was arrested; he was released the next day after protests in Benghazi, and the arrest is described as a spark for the uprising. This rests on one document: مجزرة سجن أبو سليم (Arabic Wikipedia). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1449,6 +1789,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "Date not given",
   "relevance": "A U.S. facility in Benghazi was under heavy mortar and RPG fire from about 0430 on 12 September 2012; evacuation preparations had begun.",
   "text": "A U.S. facility in Benghazi was under heavy mortar and RPG fire from about 0430 on 12 September 2012; evacuation preparations had begun. The same place appears in 4 separate readings, also described as: Banghazi AW Radar Fac; Racetrack near the U.S. facility, Benghazi; Ben Ghazi (Benghazi). 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1476,6 +1821,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "Date not given",
   "relevance": "A Soviet Kapitan Kushnarenko-class merchant ship with Fishbed aircraft crates was off-loading cargo at Banghazi port facilities.",
   "text": "A Soviet Kapitan Kushnarenko-class merchant ship with Fishbed aircraft crates was off-loading cargo at Banghazi port facilities. The same place appears in 2 separate readings, also described as: Benghazi port facilities (naval base). 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1499,6 +1849,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "Date not given",
   "relevance": "Hosted Libya's first home game since 2013, a 2–5 loss to Tunisia on 25 March 2021.",
   "text": "Hosted Libya's first home game since 2013, a 2–5 loss to Tunisia on 25 March 2021. This rests on one document: Libya national football team (Wikipedia). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1518,6 +1873,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "Date not given",
   "relevance": "Gaddafi graduated from the Benghazi Military College in 1965.",
   "text": "Gaddafi graduated from the Benghazi Military College in 1965. This rests on one document: Muammar Gaddafi (Wikipedia). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1537,6 +1897,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "Date not given",
   "relevance": "Greek city later called Berenice, present-day Benghazi.",
   "text": "Greek city later called Berenice, present-day Benghazi. This rests on one document: Libya - Cyrenaica and the Greeks. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
@@ -1556,6 +1921,11 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "lat": 32.1167,
   "lon": 20.0667,
   "r": 12,
+  "pos": "town",
+  "posSrc": {
+   "t": "Wikipedia: Benghazi",
+   "u": "https://en.wikipedia.org/wiki/Benghazi"
+  },
   "period": "Date not given",
   "relevance": "Advanced commando training site in Benghazi where the most radical trainees go.",
   "text": "Advanced commando training site in Benghazi where the most radical trainees go. This rests on one document: QADHAFI'S CONTINUING PROGRAM OF SUBVERSION IN AFRICA. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",

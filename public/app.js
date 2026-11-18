@@ -190,6 +190,47 @@
     rings[s.id] = L.circle([s.lat, s.lon], { radius: s.r * 1000, color: lt(lay.color), weight: 1.2, dashArray: '5 5', fillColor: lt(lay.color), fillOpacity: 0.03, interactive: false }); rings[s.id]._base = lay.color;
   });
 
+  /* Town-level entries (pos 'town'): the documents name the town but not the site, so these entries share the town centre. Drawing
+     dozens of icons on one point would suggest a precision the sources do not have, so each town gets one marker with a count and a
+     dashed ring for the uncertainty; a click lists the entries. The Table and Places list still show every entry, and the entry that
+     is selected is drawn on its own. An entry leaves the town marker only when a source locates it and a person has checked it. */
+  var townLayer = L.layerGroup().addTo(map), TOWNS = {}, townOn = {}, townPick = null;
+  function townName(s) { var best = null; (window.ATLAS_REGIONS || []).forEach(function (r) { (r.towns || []).forEach(function (t) { var d = Math.abs(t.lat - s.lat) + Math.abs(t.lon - s.lon); if (d < 0.02 && (!best || d < best.d)) best = { d: d, n: t.name, u: t.source }; }); }); return best; }
+  function regionName(id) { var r = (window.ATLAS_REGIONS || []).filter(function (x) { return x.id === id; })[0]; return r ? r.name : 'Town'; }
+  SITES.forEach(function (s) {
+    if (s.pos !== 'town') return;
+    var k = regionOf(s) + '|' + s.lat.toFixed(3) + ',' + s.lon.toFixed(3), tn = townName(s);
+    var g = TOWNS[k] || (TOWNS[k] = { k: k, lat: s.lat, lon: s.lon, name: tn ? tn.n : regionName(regionOf(s)), src: tn && tn.u ? { t: 'Wikipedia: ' + tn.n, u: tn.u } : null, r: 0, list: [], shown: 0, lastN: -1 });
+    g.list.push(s); g.r = Math.max(g.r, s.r || 0); if (!g.src && s.posSrc) g.src = s.posSrc;
+  });
+  function townIcon(n) { return L.divIcon({ className: '', iconSize: [34, 30], iconAnchor: [17, 30], html: '<div class="mk-town"><b>' + n + '</b><i></i></div>' }); }
+  Object.keys(TOWNS).forEach(function (k) {
+    var g = TOWNS[k];
+    g.ring = L.circle([g.lat, g.lon], { radius: g.r * 1000, color: '#738091', weight: 1, dashArray: '4 4', fill: false, interactive: false });
+    g.m = L.marker([g.lat, g.lon], { icon: townIcon(g.list.length), title: g.name + ': entries placed at the town centre', keyboard: true, riseOnHover: true, zIndexOffset: -100 })
+      .bindTooltip(g.name, { permanent: true, direction: 'right', offset: [18, -15], className: 'site-label town-label', interactive: false })
+      .on('click', function () { openTown(g); })
+      .on('mouseover', function () { hoverCard([g.lat, g.lon], '#738091', '#', g.name, [['Entries', String(g.shown)], ['Position', 'Town centre, ± ' + g.r + ' km'], ['Why grouped', 'The sources name the town, not the site']], [0, -30]); })
+      .on('mouseout', hideCard);
+  });
+  function syncTowns() {
+    Object.keys(TOWNS).forEach(function (k) {
+      var g = TOWNS[k], n = 0;
+      g.list.forEach(function (s) { if (townOn[s.id]) n++; });
+      g.shown = n;
+      if (n) { if (n !== g.lastN) { g.m.setIcon(townIcon(n)); g.lastN = n; } if (!townLayer.hasLayer(g.m)) townLayer.addLayer(g.m); if (!townLayer.hasLayer(g.ring)) townLayer.addLayer(g.ring); }
+      else { townLayer.removeLayer(g.m); townLayer.removeLayer(g.ring); }
+    });
+  }
+  // the selected town-level entry is drawn on its own (on the town centre, under the town marker's stem)
+  function syncTownPick(id) {
+    if (townPick && townPick !== id && markers[townPick]) siteLayer.removeLayer(markers[townPick]);
+    townPick = null;
+    var s = id && BY_ID[id];
+    if (s && s.pos === 'town' && markers[id]) { if (!siteLayer.hasLayer(markers[id])) siteLayer.addLayer(markers[id]); townPick = id; }
+  }
+  function locLabel(s) { return (s.pos === 'town' ? 'Town centre, ± ' : '± ') + s.r + ' km'; }
+
 
   /* Spread icons that sit on top of each other (Bab al-Aziziya, Abu Salim, the airfield...). Done in screen pixels at the current zoom:
      icons closer than one icon width are fanned out around their middle, each keeps a thin line back to its true position.
@@ -281,11 +322,13 @@
     if (typeof shareSync === "function") shareSync();
     SITES.forEach(function (s) {
       var on = visible(s) && (timeYear == null || span(s)[0] <= timeYear) && (!timeRange || (span(s)[1] >= timeRange[0] && span(s)[0] <= timeRange[1]));
+      if (s.pos === 'town') { townOn[s.id] = on; on = selected === s.id; }
       if (on) { if (!siteLayer.hasLayer(markers[s.id])) siteLayer.addLayer(markers[s.id]); markers[s.id].setOpacity(timeYear == null || activeAt(s, timeYear) ? 1 : 0.3); }
       else siteLayer.removeLayer(markers[s.id]);
       if (on && active.rings && ringIds()[s.id]) { if (!ringLayer.hasLayer(rings[s.id])) ringLayer.addLayer(rings[s.id]); }
       else ringLayer.removeLayer(rings[s.id]);
     });
+    syncTowns();
     if (active.districts) districtLayer.addTo(map); else map.removeLayer(districtLayer);
     if (active.grid) gridLayer.addTo(map); else map.removeLayer(gridLayer);
     $('timeline').hidden = !active.timeline;
@@ -1040,6 +1083,7 @@
     document.querySelectorAll('#timeline [data-ids]').forEach(function (e) { e.classList.toggle('sel', !!id && (' ' + e.getAttribute('data-ids') + ' ').indexOf(' ' + id + ' ') >= 0); });
     if (typeof API !== 'undefined' && API && API.onSelect) API.onSelect(id);
     selected = id; if (typeof shareSync === 'function') shareSync();
+    syncTownPick(id);
     if (typeof syncRings === 'function') syncRings();
     if (typeof applyFocus === 'function') applyFocus();
     if (!id) return;
@@ -1194,6 +1238,21 @@
   function zoomBtn(lat, lon, z) { return h('button', { class: 'btn', text: 'Zoom', onclick: function () { map.flyTo([lat, lon], z || 16, { duration: 0.8 }); } }); }
   function streetBtn(lat, lon, name) { return h('button', { class: 'btn', text: 'Street 3D', onclick: function () { openStreet(lat, lon, name || ''); } }); }
 
+  /* the list behind a town marker */
+  function openTown(g) {
+    var body = newSheet('Town');
+    markSelected(null);
+    var list = g.list.filter(function (s) { return townOn[s.id]; }).sort(function (a, b) { return (a.y0 || 9999) - (b.y0 || 9999) || (a.name < b.name ? -1 : 1); });
+    ppHead(body, { icon: h('span', { class: 'glyph g-town', text: String(list.length) }), title: g.name, type: 'Entries placed at the town centre' });
+    ppStatus(body, [ppField('Entries', String(list.length) + (list.length !== g.list.length ? ' of ' + g.list.length + ' (filters hide the rest)' : '')), ppField('Location', 'Town centre, ± ' + g.r + ' km'),
+      ppField('Position source', g.src ? h('a', { href: g.src.u, target: '_blank', rel: 'noopener', text: g.src.t }) : null)]);
+    ppActs(body, [zoomBtn(g.lat, g.lon, 12)]);
+    ppSec(body, 'Assessment', [h('p', { class: 'pp-bl', text: 'The documents behind these entries name ' + g.name + ' but not the building, street or site, so each entry is placed at the town centre and listed here rather than drawn as its own icon. An entry moves to its own position only when a source locates it and a person has checked the match.' })]);
+    var box = h('div', { class: 'links' });
+    list.forEach(function (s) { box.appendChild(linkBtn(glyph(s.layer), s.name, [s.y0 || 'No date', LAYERS[s.layer].label, LEVELS[s.level]].join(' · '), function () { openSite(s); })); });
+    ppSec(body, 'Entries', [list.length ? box : h('p', { class: 'pp-empty', text: 'No entry here matches the current filters.' })]);
+    openPanel('sheet');
+  }
   function openSite(s) {
     track('open', 'site:' + s.id, s.name);
     var lay = LAYERS[s.layer], P = PANELS[s.id] || {}, ev = siteKind(s) === 'event';
@@ -1201,8 +1260,8 @@
     markSelected(s.id);
     var srcs = s.sources || [], srcList = null, fn = footnotes(srcs, function () { return srcList; });
     ppHead(body, { icon: glyph(s.layer), title: s.name, ar: s.ar, type: lay.label });
-    if (ev) ppStatus(body, [ppField('Occurrence', existPill(s.level)), ppField('Date', P.date || s.period || yrs(s)), ppField('Location', '± ' + s.r + ' km'), P.toll ? ppField('Toll', P.toll) : null]);
-    else ppStatus(body, [ppField('Existence', existPill(s.level)), ppField('In use', yrs(s) || s.period), ppField('Location', '± ' + s.r + ' km'), ppField('Present condition', P.condition)]);
+    if (ev) ppStatus(body, [ppField('Occurrence', existPill(s.level)), ppField('Date', P.date || s.period || yrs(s)), ppField('Location', locLabel(s)), P.toll ? ppField('Toll', P.toll) : null]);
+    else ppStatus(body, [ppField('Existence', existPill(s.level)), ppField('In use', yrs(s) || s.period), ppField('Location', locLabel(s)), ppField('Present condition', P.condition)]);
     ppActs(body, [zoomBtn(s.lat, s.lon), thenNowButton(s.lat, s.lon), streetBtn(s.lat, s.lon, s.name)]);
 
     // assessment: bottom line, then the hand-written chronology (sites, by year) or sequence (events, by day or hour), else the record text.
@@ -3556,7 +3615,7 @@
     closeDrawer: function () { closePanel('drawer'); },
     openPerson: function (name) { var pp = (window.ATLAS_PEOPLE || []).filter(function (x) { return x.name === name; })[0]; if (pp) openPerson(pp); },
     startStory: startStory, showYear: showYear, openDoor: openDoor,
-    sites: SITES, layers: LAYERS, levels: LEVELS, visible: function (s) { return siteLayer.hasLayer(markers[s.id]); }, focusSite: focusSite, selected: function () { return selected; },
+    sites: SITES, layers: LAYERS, levels: LEVELS, visible: function (s) { return siteLayer.hasLayer(markers[s.id]) || !!townOn[s.id]; }, focusSite: focusSite, selected: function () { return selected; },
     shapeSvg: shapeSvg, yrs: yrs, store: store, desktop: DESKTOP, publicView: PUBLIC_VIEW, family: FAMILY, gated: GATED, canReport: canReport,
     openTerm: openTerm, openSettings: openSettings, setTheme: setTheme, openSpot: openSpot, openStreet: openStreet, openReportForm: openReportForm, status: status,
     marker: function (id) { return markers[id]; }, timeline: function (on) { setInput('timeline', on == null ? !active.timeline : on); }, timelineOn: function () { return !!active.timeline; },

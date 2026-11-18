@@ -20,6 +20,8 @@ import { REGIONS } from './lib/regions.mjs';
 const WRITTEN_BY_HAND = new Set(['ae856549c274', 'c71c7c26d530', 'f765a85f7255', 'c8a5cea7b8d0', '52d979f33f42', 'd87cf40edf82', '8d3b1035b5ae', 'e5995f5d1de6', 'a734bf02829a', '4404240d56fd', '2cfc65968238']);
 const cands = JSON.parse(fs.readFileSync('archive/review/candidates.json', 'utf8')).filter((c) => c.region !== 'tripoli' && (c.kind === 'place' || c.kind === 'event'));
 const towns = {}; for (const r of JSON.parse(fs.readFileSync('archive/model/regions.json', 'utf8')).regions) towns[r.id] = r.towns;
+// positions of their own that a person approved (scripts/locate-regional.mjs proposes, scripts/approve-positions.mjs records)
+const APPROVED = fs.existsSync('archive/model/positions.json') ? JSON.parse(fs.readFileSync('archive/model/positions.json', 'utf8')).approved || {} : {};
 const flags = {}; for (const r of ['benghazi', 'cyrenaica', 'fezzan', 'sirte', 'tripolitania']) { const f = `archive/review/safety-${r}.json`; if (fs.existsSync(f)) for (const e of JSON.parse(fs.readFileSync(f, 'utf8')).entries) flags[e.id] = e.flags.map((x) => x.flag); }
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -98,17 +100,21 @@ for (const g of groups) {
   const poor = items.some((x) => x.ocr != null && x.ocr < 80);
   const when = period(c.date), docWhen = period(it.date);
   const others = [...new Set(g.more.map((e) => clip(e.c.name.replace(/\.$/, ''), 80)).filter((n) => n && fold(n) !== fold(c.name)))].slice(0, 4);
+  const ap = APPROVED['c-' + c.id] || null;
+  const where = !ap ? `Mapped at the centre of ${g.town.name}: the document names the town, not the site.`
+    : ap.method === 'doc-coord' ? `Mapped at the coordinates printed in ${ap.posSrc.t.replace(/ \(coordinates printed in the document\)$/, '')} (${ap.printed}), ${ap.r} km margin; position checked by ${ap.by} on ${ap.date}.`
+    : `Mapped at the position of ${ap.posSrc.t.replace(/^Wikipedia: /, '')} given by Wikipedia${ap.named ? ', the place the entry names ("' + ap.named + '")' : ''}, ${ap.r} km margin; position checked by ${ap.by} on ${ap.date}.`;
   const body = [
     detail.replace(/\.?$/, '.'),
     g.more.length ? 'The same ' + (c.kind === 'place' ? 'place' : 'event') + ' appears in ' + all.length + ' separate readings' + (others.length ? ', also described as: ' + others.join('; ') : '') + '.' : '',
     items.length > 1 ? `${items.length} documents mention it (${pub.length === 1 ? 'all from one publisher, ' + pub[0] : 'from ' + pub.length + ' publishers'}).` : `This rests on one document: ${clip(it.title, 120)}${docWhen ? ' (' + docWhen + ')' : ''}. No second source is held for it.`,
     level === 'suspected' ? 'It describes a death or killing, so it is shown as reported and not confirmed.' : '',
     poor ? 'The scan of at least one of these documents is of poor quality; errors in the text are likely.' : '',
-    `Mapped at the centre of ${g.town.name}: the document names the town, not the site.`
+    where
   ].filter(Boolean).join(' ');
   const entry = {
     id: 'c-' + c.id, region: c.region, layer, level, ...(y ? { y0: +y, y1: +y } : {}),
-    name: c.kind === 'place' ? clip(c.name, 90) : clip(c.name.replace(/\.$/, '').split(/;\s/)[0], 110), lat: g.town.lat, lon: g.town.lon, r: 12, pos: 'town', posSrc: { t: 'Wikipedia: ' + g.town.name, u: g.town.source },
+    name: c.kind === 'place' ? clip(c.name, 90) : clip(c.name.replace(/\.$/, '').split(/;\s/)[0], 110), ...(ap ? { lat: ap.lat, lon: ap.lon, r: ap.r, pos: 'site', posSrc: ap.posSrc } : { lat: g.town.lat, lon: g.town.lon, r: 12, pos: 'town', posSrc: { t: 'Wikipedia: ' + g.town.name, u: g.town.source } }),
     period: when || (docWhen ? 'Described in a document of ' + docWhen : 'Date not given'),
     relevance: clip(detail, 170), text: body,
     sources: items.slice(0, 6).map((x) => ({ t: clip(x.title, 150) + (x.date ? ' (' + x.date + ')' : ''), u: x.url }))

@@ -48,8 +48,8 @@ say(tm && tm[2] === '0' && tt.ok ? 'PASS' : 'FAIL', `timeline: ${tm ? tm[1] + ' 
 
 const ts = run(['scripts/test-search.mjs']), tsm = ts.out.match(/(\d+) passed, (\d+) failed/);
 say(tsm && tsm[2] === '0' && ts.ok ? 'PASS' : 'FAIL', `search spelling variants: ${tsm ? tsm[1] + ' passed, ' + tsm[2] + ' failed' : 'did not run'}`);
-const tt = run(['scripts/test-text.mjs']), ttm = tt.out.match(/(\d+) passed, (\d+) failed/);
-say(ttm && ttm[2] === '0' && tt.ok ? 'PASS' : 'FAIL', 'pin texts shown whole: ' + (ttm ? ttm[1] + ' passed, ' + ttm[2] + ' failed' : 'did not run'), ttm && ttm[2] !== '0' ? tt.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
+const tx = run(['scripts/test-text.mjs']), ttm = tx.out.match(/(\d+) passed, (\d+) failed/);
+say(ttm && ttm[2] === '0' && tx.ok ? 'PASS' : 'FAIL', 'pin texts shown whole: ' + (ttm ? ttm[1] + ' passed, ' + ttm[2] + ' failed' : 'did not run'), ttm && ttm[2] !== '0' ? tx.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
 const tp = run(['scripts/test-positions.mjs']), tpm = tp.out.match(/(\d+) passed, (\d+) failed/), tpc = tp.out.match(/town-level (\d+), site-level (\d+)/);
 say(tpm && tpm[2] === '0' && tp.ok ? 'PASS' : 'FAIL', 'regional positions: ' + (tpm ? tpm[1] + ' passed, ' + tpm[2] + ' failed' : 'did not run') + (tpc ? ' (' + tpc[1] + ' placed only by town, ' + tpc[2] + ' at their own site)' : ''), tpm && tpm[2] !== '0' ? tp.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
 

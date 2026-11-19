@@ -2,7 +2,7 @@ name: Haiku extraction (CREST/JPRS)
 on:
   workflow_dispatch:
     inputs:
-      mode: { description: 'sample or batch', default: 'sample' }
+      mode: { description: 'sample, batch, or positions (the two-stage position reading, scripts/read-positions.mjs)', default: 'sample' }
       n: { description: 'sample size', default: '30' }
       set: { description: 'crest or other', default: 'crest' }
       only: { description: 'tripoli = read only documents that name a Tripoli place', default: '' }
@@ -20,9 +20,9 @@ jobs:
         run: |
           mkdir -p archive/crest; echo "{\"secret_present\": $([ -n \"$ANTHROPIC_API_KEY\" ] && echo true || echo false), \"at\": \"$(date -u +%FT%TZ)\"}" > archive/crest/extract-check.json
           if [ -z "$ANTHROPIC_API_KEY" ]; then echo '{"error":"ANTHROPIC_API_KEY secret missing in GitHub"}' > archive/crest/extract-status.json; else
-          if [ "${{ inputs.mode }}" = "batch" ]; then node scripts/crest-extract.mjs --batch; else node scripts/crest-extract.mjs --sample ${{ inputs.n }}; fi; fi
+          if [ "${{ inputs.mode }}" = "positions" ]; then node scripts/read-positions.mjs; elif [ "${{ inputs.mode }}" = "batch" ]; then node scripts/crest-extract.mjs --batch; else node scripts/crest-extract.mjs --sample ${{ inputs.n }}; fi; fi
       - if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for i in 1 2 3; do git add archive/crest && git commit -m "Haiku extraction ${{ inputs.mode }}" ; git pull --rebase && git push && break; sleep 5; done
+          for i in 1 2 3; do git add archive/crest archive/review && git commit -m "Haiku extraction ${{ inputs.mode }}" ; git pull --rebase && git push && break; sleep 5; done

@@ -1,7 +1,12 @@
 {
+ "23_July_Avenue": null,
  "23_July_Avenue,_Benghazi": null,
+ "7_April_Square": null,
+ "AL_BUMBAH_AIRFIELD_NORTH": null,
  "AW_Radar": null,
  "AW_radar": null,
+ "Ahmad_Al-Na'Eb_Institute_For_Teachers_In_Terhouna": null,
+ "Ahmad_al-Na'eb_institute_for_teachers_in_Terhouna": null,
  "Airfield": {
   "asked": "Airfield",
   "title": "Aerodrome",
@@ -37,6 +42,8 @@
  "Az_Zawiyah_refinery": null,
  "Banghazi_Barracks_And_Training_Center": null,
  "Banghazi_Barracks_and_Training_Center": null,
+ "Bayan_Al-Awal_Institutes_For_Girls,_Al-Alwiya_Al-Khadra'S_Secondary_School_For_Girls,_The_Electricity_Institute,_Lst_September_School_And_Economic_Science_Institute": null,
+ "Bayan_al-Awal_Institutes_for_Girls,_Al-Alwiya_Al-Khadra's_Secondary_School_for_Girls,_the_Electricity_Institute,_lst_September_School_and_Economic_Science_Institute": null,
  "Benghazi,_U.S._Facility": null,
  "Benghazi,_U.S._facility": null,
  "Benghazi_Air_Base": null,
@@ -48,8 +55,9 @@
   "lat": 32.09722,
   "lon": 20.26944,
   "disamb": false,
-  "checksum": "4e5dc69615bc2305661297bcaf68562f",
-  "fetched": "2026-11-18"
+  "lead": "Benina International Airport (IATA: BEN, ICAO: HLLB) (Arabic: مطار بنينا الدولي) serves Benghazi, Libya. It is located in the borough of Benina, 19 kilometres (12 mi) east of Benghazi, from which it takes its name. The airport is operated by the Civil Aviation and Meteorology Bureau of Libya and is the second largest in the country after Tripoli International Airport. Benina was a critical airport during the North African Campaign of World War II. Benina International is also the secondary hub of both Buraq Air and flag carrier, Libyan Airlines. In July 2014 all flights to the airport were su…",
+  "checksum": "ac2d799fe5a57652826896ac51aed1d0",
+  "fetched": "2026-11-19"
  },
  "Benghazi_Coast_Camp": null,
  "Benghazi_Coast_Camp_And_Southwest_Farm": null,
@@ -87,14 +95,32 @@
   "lat": 32.09722,
   "lon": 20.26944,
   "disamb": false,
-  "checksum": "7e3d6ea065c58838c960f5509d2dadac",
-  "fetched": "2026-11-18"
+  "lead": "Benina International Airport (IATA: BEN, ICAO: HLLB) (Arabic: مطار بنينا الدولي) serves Benghazi, Libya. It is located in the borough of Benina, 19 kilometres (12 mi) east of Benghazi, from which it takes its name. The airport is operated by the Civil Aviation and Meteorology Bureau of Libya and is the second largest in the country after Tripoli International Airport. Benina was a critical airport during the North African Campaign of World War II. Benina International is also the secondary hub of both Buraq Air and flag carrier, Libyan Airlines. In July 2014 all flights to the airport were su…",
+  "checksum": "971bb8415d16eebe64f6a72e22611145",
+  "fetched": "2026-11-19"
  },
  "Benina_airport": null,
+ "Beninah_Air_Base": null,
+ "Beninah_Airbase": null,
+ "Beninah_Airport": null,
+ "Beninah_International_Airport": null,
  "Brega_Pipe_Manufacturing_Plant": null,
+ "Brega_Plant": null,
  "Brega_pipe_manufacturing_plant": null,
+ "Commando_Training_Facility": null,
  "Commando_Training_Facility,_Banghazi": null,
  "Euhesperides": null,
+ "Fortress_of_Ghat": {
+  "asked": "Fortress of Ghat",
+  "title": "Fortress of Ghat",
+  "url": "https://en.wikipedia.org/wiki/Fortress_of_Ghat",
+  "lat": 24.96702,
+  "lon": 10.18051,
+  "disamb": false,
+  "lead": "The Fortress of Ghat is a fort on top of the hill of Koukemen in Ghat, Libya. It was started by the Military of the Ottoman Empire and rebuilt in 1930s after partial destruction caused by the Italian campaign against Libya.",
+  "checksum": "69491473a156e3e7f664b6ecc922d029",
+  "fetched": "2026-11-19"
+ },
  "Ghadames_East_Air_Base": null,
  "Ghadames_East_Airbase": null,
  "Ghadames_East_Airfield": null,
@@ -102,6 +128,7 @@
  "Ghadames_East_International_Airport": null,
  "Government-Owned_Refinery": null,
  "Government-owned_refinery": null,
+ "Guest_Palace_In_Benghazi": null,
  "Gulf_Of_Sirte": null,
  "Gulf_of_Sirte": {
   "asked": "Gulf of Sirte",
@@ -113,6 +140,10 @@
   "checksum": "14c6dc9efa5dbfc4ed27e19a58341898",
   "fetched": "2026-11-18"
  },
+ "Ibinina_Air_Base": null,
+ "Ibinina_Airbase": null,
+ "Ibinina_Airport": null,
+ "Ibinina_International_Airport": null,
  "Ibn_Ashur_Street,_Benghazi": null,
  "Institute": {
   "asked": "Institute",
@@ -124,6 +155,7 @@
   "checksum": "d1c137d6052d2f69f3cde9a3076258e4",
   "fetched": "2026-11-18"
  },
+ "Integrated_Iron_And_Steel_Works_Under_Construction_At_The_Coastal_Town_Of_Misrata": null,
  "International_Airport": {
   "asked": "International Airport",
   "title": "International airport",
@@ -144,7 +176,18 @@
   "checksum": "72625252954c8803d020d7a74980825d",
   "fetched": "2026-11-18"
  },
+ "Italian_Consulate_In_Benghazi": null,
+ "Italian_consulate_in_Benghazi": null,
+ "Jamal_'Abd_Al-Nasir_Air_Base": null,
+ "Jamal_'Abd_Al-Nasir_Airbase": null,
+ "Jamal_'Abd_Al-Nasir_Airport": null,
+ "Jamal_'Abd_Al-Nasir_International_Airport": null,
+ "Jamal_'Abd_An-Nasir_Base": null,
  "Jamal_'Abd_An-Nasir_Base,_Tobruk": null,
+ "Jamal_'Abd_An-Nasir_Base_(Formerly_Al-Adem_Base)": null,
+ "Jamal_'Abd_al-Nasir_Air_Base": null,
+ "Jamal_'Abd_an-Nasir_Base_(formerly_Al-Adem_Base)": null,
+ "Jamal_'Abd_an-Nasir_base": null,
  "Jamal_'Abd_an-Nasir_base,_Tobruk": null,
  "Janet": {
   "asked": "Janet",
@@ -156,6 +199,7 @@
   "checksum": "119afb273919e7a7e38be7f4e4803202",
   "fetched": "2026-11-18"
  },
+ "Kufra_Agricultural_Project": null,
  "Kufra_Air_Base": null,
  "Kufra_Airbase": null,
  "Kufra_Airfield": null,
@@ -166,10 +210,12 @@
   "lat": 24.17778,
   "lon": 23.31389,
   "disamb": false,
-  "checksum": "41e550b0a2b76c5f6888657e71ec1cdd",
-  "fetched": "2026-11-18"
+  "lead": "Kufra Airport (IATA: AKF, ICAO: HLKF) is an airport serving Al Jawf, capital of the Kufra District in southeastern Libya. The airport is just east of the city.",
+  "checksum": "12c436363d296b6884728d853795faaa",
+  "fetched": "2026-11-19"
  },
  "Kufra_International_Airport": null,
+ "Kufra_agricultural_project": null,
  "Kufra_airfield": null,
  "Kufrah_Oasis": {
   "asked": "Kufrah Oasis",
@@ -182,7 +228,20 @@
   "fetched": "2026-11-18"
  },
  "Kufrah_oasis": null,
+ "Martyrs_Of_February_Stadium": null,
  "Martyrs_Of_February_Stadium,_Benghazi": null,
+ "Martyrs_Street": null,
+ "Martyrs_of_February_Stadium": {
+  "asked": "Martyrs of February Stadium",
+  "title": "Benina Martyrs Stadium",
+  "url": "https://en.wikipedia.org/wiki/Benina_Martyrs_Stadium",
+  "lat": 32.08,
+  "lon": 20.26167,
+  "disamb": false,
+  "lead": "Benina Martyrs Stadium (Arabic: ملعب شهداء بنينة), until 2011 officially named Hugo Chávez Football Stadium (Arabic: ملعب هوغو شافيز), is a Libyan football stadium located in Benina, a town 19 km east of Benghazi. The stadium was constructed by the same company that built the Brita-Arena in Germany. The stadium holds 10,550 people. This is Libya's first all-seater stadium. The stadium is used by most Benghazi clubs, and may be used by the national team as well. The surface of the pitch is artificial. The pitch's dimensions are 105m x 68m. The cost of construction of the stadium was around LYD…",
+  "checksum": "816ee909aec739f6d290a3824333090e",
+  "fetched": "2026-11-19"
+ },
  "Martyrs_of_February_Stadium,_Benghazi": null,
  "Mersa_Brega": {
   "asked": "Mersa Brega",
@@ -203,8 +262,9 @@
   "lat": 32.32556,
   "lon": 15.05972,
   "disamb": false,
-  "checksum": "235f51dee63aab78bbfc09be24e6e20f",
-  "fetched": "2026-11-18"
+  "lead": "Misrata International Airport (IATA: MRA, ICAO: HLMS) is an international airport serving Misrata, a Mediterranean coastal city in the Misrata District of Libya. It also acts as an air base and training center for the Libyan Air Force.",
+  "checksum": "5b19ad4d495ed1ca2ef5b1f60edafcbb",
+  "fetched": "2026-11-19"
  },
  "Misrata_International_Airport": {
   "asked": "Misrata International Airport",
@@ -223,13 +283,18 @@
   "lat": null,
   "lon": null,
   "disamb": false,
-  "checksum": "9114a0ca1bc478ee0168be30f074072c",
-  "fetched": "2026-11-18"
+  "lead": "The Misrata War Museum (Arabic: متحف مصراتة الحربي) contains a collection of weapons, photos and objects linked to the Libyan War of 2011. It is located in the Libyan city of Misrata.",
+  "checksum": "ae7b9f5f090052fcbf8d56f5684f055b",
+  "fetched": "2026-11-19"
  },
  "Misratah_Hotel": null,
  "Misratah_Port": null,
  "Misratah_hotel": null,
  "Misratah_port": null,
+ "Multistory_Commercial_Center_On_The_Road_To_Banninah_Air_Base": null,
+ "Multistory_Commercial_Center_On_The_Road_To_Banninah_Airbase": null,
+ "Multistory_Commercial_Center_On_The_Road_To_Banninah_Airport": null,
+ "Multistory_Commercial_Center_On_The_Road_To_Banninah_International_Airport": null,
  "Na'Eb_Institute": null,
  "Na'eb_institute": null,
  "Nasir_Air_Base": null,
@@ -238,7 +303,11 @@
  "Nasir_Airport": null,
  "Nasir_International_Airport": null,
  "Nasir_airfield": null,
+ "New_Powerstation_In_Darna": null,
  "Oasis_Of_Sebha": null,
+ "People'S_Hall_At_Sabha": null,
+ "People's_Hall_at_Sabha": null,
+ "Popular_Reception_Held_In_The_(?Surt)_District": null,
  "Port_of_At_The": null,
  "Port_of_Benghazi": {
   "asked": "Port of Benghazi",
@@ -257,13 +326,18 @@
   "lat": 32.35833,
   "lon": 15.20583,
   "disamb": false,
-  "checksum": "ae27d7de2e0e6cae4ab2a03bca66db5f",
-  "fetched": "2026-11-18"
+  "lead": "Qasr Ahmad or Gasr Ahmed (Arabic: ميناء قصر أحمد) is a neighborhood and port in the eastern region of the city of Misrata in northwestern Libya. The neighborhood was developed to provide housing for port workers.",
+  "checksum": "4b42c713b7cb5e16cc13675f05dcda7e",
+  "fetched": "2026-11-19"
  },
  "Port_of_Misratah": null,
  "Port_of_Zuwarah_Sea_Fishing": null,
+ "President'S_Place_Of_Residence": null,
+ "Project_In_Southwest_Benghazi": null,
  "Qadhafi'S_Benghazi_Camp": null,
  "Qadhafi's_Benghazi_camp": null,
+ "Qar_Yunis_University": null,
+ "Qaryunis_University": null,
  "Ras_Lanuf_Petrochemical_Complex": null,
  "Ras_Lanuf_petrochemical_complex": {
   "asked": "Ras Lanuf petrochemical complex",
@@ -272,9 +346,13 @@
   "lat": 30.47472,
   "lon": 18.57361,
   "disamb": false,
-  "checksum": "ec7492ebc1ce087a37ae0237cf183f41",
-  "fetched": "2026-11-18"
+  "lead": "The Ras Lanuf Refinery is a topping and reforming oil refinery in Ras Lanuf, Libya. It is part of a larger petrochemical complex also consisting of an ethylene plant, a polyethylene plant, plant utilities, and Ra's Lanuf Harbor. Until 9 March 2009, the complex was operated by the RASCO, a subsidiary of the National Oil Corporation. The current operator is the Libyan Emirates Oil Refining Company.",
+  "checksum": "a34901731958d5dff048cd79ad5841b2",
+  "fetched": "2026-11-19"
  },
+ "Republican_Guard_In_Benghazi": null,
+ "SAM-S_Missile_Sites_Near_The_Town_Of_Surt": null,
+ "SAM-S_missile_sites_near_the_town_of_Surt": null,
  "Sabha_AW_Radar_Fac": null,
  "Sabha_Airport": {
   "asked": "Sabha Airport",
@@ -283,22 +361,27 @@
   "lat": 27,
   "lon": 14.46111,
   "disamb": false,
-  "checksum": "fe5930057b908495782a4b9d804180d4",
-  "fetched": "2026-11-18"
+  "lead": "Sebha International Airport (IATA: SEB, ICAO: HLLS) is an airport serving Sabha, capital of the Sabha District of Libya. The airport is 4 kilometres (2.5 mi) southeast of the city.",
+  "checksum": "57bfc4efea25874c0d9d60c3b6a294ba",
+  "fetched": "2026-11-19"
  },
  "Sabha_Flour_Mill": null,
+ "Sabha_Rally": null,
  "Sabha_flour_mill": null,
+ "Sabha_rally": null,
  "Sarir-To-Surt_Pipeline": null,
  "Sarir-to-Surt_pipeline": null,
  "Sebha_Camp": null,
  "Sebha_Oasis": null,
  "Sebha_camp": null,
  "Sebha_oasis": null,
+ "Seven-Storey_Administrative_Complex_Housing_The_Health,_Education_And_Services_Offices,_And_A_Nearby_Hotel": null,
  "Shooting_At_Benghazi_University": null,
  "Shooting_at_Benghazi_university": null,
  "Square_Of_Benghazi": null,
  "Square_Of_The_Popular_Congress": null,
  "Square_of_the_Popular_Congress": null,
+ "Student_Rally_In_Benghazi": null,
  "Surt_AW_Radar_Fac": null,
  "Surt_Military_Base": null,
  "Surt_Missile_Base": null,
@@ -316,6 +399,7 @@
   "checksum": "7f568f778ad78dd88cca689464611eb9",
   "fetched": "2026-11-18"
  },
+ "The_College_In_Misratah": null,
  "Tobruk_Airport": {
   "asked": "Tobruk Airport",
   "title": "Tobruk Airport",
@@ -330,7 +414,13 @@
  "Tobruk_Naval_Base": null,
  "Tobruk_flour_mill": null,
  "Tobruk_naval_base": null,
+ "Transmitting_Station": null,
  "Tubruq_AW_Radar_Facility": null,
+ "Turkish_Consulate": null,
+ "U.S._Facility_In_Benghazi": null,
+ "U.S._facility_in_Benghazi": null,
+ "Umar_Al-Mukhtar_Mausoleum": null,
+ "Umar_al-Mukhtar_mausoleum": null,
  "University_Of_Benghazi": null,
  "University_of_Benghazi": {
   "asked": "University of Benghazi",
@@ -339,8 +429,9 @@
   "lat": null,
   "lon": null,
   "disamb": false,
-  "checksum": "fb71efafcf1b307f0088361fae2ad727",
-  "fetched": "2026-11-18"
+  "lead": "The University of Benghazi (Arabic: جامعة بنغازي), formerly known as Garyounis University, is a public university in Benghazi, Libya, the country's second-largest city as well as one of the most prestigious institutes of higher education in the country. It was founded as the University of Libya on December 15, 1955.",
+  "checksum": "b5039cee577657a0b37330832364e0e9",
+  "fetched": "2026-11-19"
  },
  "Zuwara_Or_Tunis-Area_Resort": null,
  "Zuwara_or_Tunis-area_resort": null,
@@ -361,6 +452,7 @@
  "at_Benina_airport": null,
  "at_the_oasis": null,
  "at_the_port": null,
+ "guest_palace_in_Benghazi": null,
  "institute": {
   "asked": "institute",
   "title": "Institute",
@@ -371,8 +463,17 @@
   "checksum": "d1c137d6052d2f69f3cde9a3076258e4",
   "fetched": "2026-11-18"
  },
+ "integrated_iron_and_steel_works_under_construction_at_the_coastal_town_of_Misrata": null,
+ "multistory_commercial_center_on_the_road_to_Banninah_airport": null,
+ "new_powerstation_in_Darna": null,
  "oasis_of_Sebha": null,
+ "popular_reception_held_in_the_(?Surt)_District": null,
+ "president's_place_of_residence": null,
+ "project_in_Southwest_Benghazi": null,
+ "republican_guard_in_Benghazi": null,
+ "seven-storey_administrative_complex_housing_the_health,_education_and_services_offices,_and_a_nearby_hotel": null,
  "square_of_Benghazi": null,
+ "student_rally_in_Benghazi": null,
  "the_college": {
   "asked": "the college",
   "title": "College",
@@ -382,5 +483,7 @@
   "disamb": false,
   "checksum": "57b21d4631591b7e488691755e2d2dab",
   "fetched": "2026-11-18"
- }
+ },
+ "the_college_in_Misratah": null,
+ "transmitting_station": null
 }

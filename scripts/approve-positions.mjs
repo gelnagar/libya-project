@@ -1,6 +1,7 @@
 // Records a person's approval of a proposed position (archive/review/positions-sheet.md) in archive/model/positions.json.
 //   node scripts/approve-positions.mjs --by <initials> <id> [<id>:<option> ...]     approve; <option> picks one of several (1, 2, ...)
 //   node scripts/approve-positions.mjs --list                                        show what is approved
+//   node scripts/approve-positions.mjs --by <initials> --verified-only <id> ...       approve only what passed both stages of read-positions.mjs
 //   node scripts/approve-positions.mjs --revoke <id>                                 take an approval back
 // The approval is the person's: run it only on their word, with their initials. Only an option the locator listed can be
 // approved, so no position is typed in by hand. Then:
@@ -19,15 +20,26 @@ const by = flag('--by');
 if (!by || !/^[A-Za-z .'-]{2,40}$/.test(by)) { console.log('Give the approver: --by <initials>'); process.exit(1); }
 if (!fs.existsSync(PROP)) { console.log('Run node scripts/locate-regional.mjs first'); process.exit(1); }
 const P = new Map(JSON.parse(fs.readFileSync(PROP, 'utf8')).list.map((r) => [r.id, r]));
+// positions from the paid two-stage reading (scripts/read-positions.mjs) can be approved only when both stages passed
+const READ = 'archive/review/positions-read.json', RD = fs.existsSync(READ) ? JSON.parse(fs.readFileSync(READ, 'utf8')) : { read: {}, check: {} };
+for (const [id, c] of Object.entries(RD.check || {})) {
+  const r = P.get(id); if (!r) continue;
+  if (c.from === 'reader') { const pos = RD.read[id] && RD.read[id].checks && RD.read[id].checks.position; if (!pos) continue;
+    const o = { ...pos, verified: !!c.verified, verdict: c.verdict }; delete o.lead; r.options = [...r.options.filter((x) => !String(x.method).startsWith('read-')), o];
+    if (c.verified) r.proposal = o; else if (r.proposal && String(r.proposal.method).startsWith('read-')) r.proposal = null; }
+  else if (r.proposal && r.proposal.lat === c.lat && r.proposal.lon === c.lon) { r.proposal.verified = !!c.verified; r.proposal.verdict = c.verdict; }
+}
+const ONLY_VERIFIED = args.includes('--verified-only'); if (ONLY_VERIFIED) args.splice(args.indexOf('--verified-only'), 1);
 const date = new Date().toISOString().slice(0, 10);
 let bad = 0;
 for (const a of args) {
   const [id, opt] = a.split(':'), r = P.get(id);
   if (!r) { console.log('not in the proposals: ' + id); bad++; continue; }
-  const choices = r.options.filter((o) => ['doc-coord', 'gazetteer', 'wikipedia', 'wikipedia-near', 'possible'].includes(o.method));
+  const choices = r.options.filter((o) => ['doc-coord', 'gazetteer', 'wikipedia', 'wikipedia-near', 'possible', 'read-coord', 'read-wikipedia'].includes(o.method) && (!String(o.method).startsWith('read-') || o.verified));
   const o = opt ? choices[+opt - 1] : r.proposal;
+  if (o && ONLY_VERIFIED && !o.verified) { console.log(id + ': not verified by both stages of scripts/read-positions.mjs; not approved'); bad++; continue; }
   if (!o) { console.log(id + ': ' + (opt ? 'no option ' + opt : 'no single proposal; pick one of ' + choices.length + ' with ' + id + ':<n>') + '; options:'); choices.forEach((c, i) => console.log('   ' + (i + 1) + '. ' + c.method + ' ' + c.lat + ', ' + c.lon + ' ' + c.src.t)); bad++; continue; }
-  store.approved[id] = { region: r.region, town: r.town, name: r.name, method: o.method, lat: o.lat, lon: o.lon, r: o.r || 1, posSrc: o.src, ...(o.raw ? { printed: o.raw } : {}), ...(o.named ? { named: o.named } : {}), by, date };
+  store.approved[id] = { region: r.region, town: r.town, name: r.name, method: o.method, lat: o.lat, lon: o.lon, r: o.r || 1, posSrc: o.src, ...(o.raw ? { printed: o.raw } : {}), ...(o.named ? { named: o.named } : {}), ...(o.verdict ? { checked: { by: 'second reading, ' + (RD.model || 'model'), verdict: o.verdict.passage_places_entry + '/' + o.verdict.source_is_same_place, reason: o.verdict.reason } } : {}), by, date };
   console.log('approved ' + id + ' -> ' + o.lat + ', ' + o.lon + ' (' + o.method + ', ' + o.src.t + ')');
   if (!id.startsWith('c-')) applyHand(id, store.approved[id]);
 }

@@ -1,13 +1,13 @@
 {
- "at": "2026-11-19T11:26:00.273Z",
+ "at": "2026-11-19T11:27:51.285Z",
  "model": "claude-haiku-5-5",
  "note": "Stage 1 (reader) and stage 2 (independent checker) of the paid position reading, H1 Phase 3. A position is verified only when the checks without a model and the checker both pass. Approval is recorded separately in archive/model/positions.json.",
  "usage": {
-  "in": 1671175,
-  "out": 50573,
-  "calls": 200,
-  "fail": 1,
-  "costUSD": 0.1924,
+  "in": 13351,
+  "out": 292,
+  "calls": 1,
+  "fail": 0,
+  "costUSD": 0.0015,
   "priceBasis": "USD 0.10 per million input tokens, 0.50 per million output (Haiku 5.5 list price, prompts under 100K tokens)"
  },
  "read": {
@@ -3556,12 +3556,20 @@
   "st-gulf-sidra-1986": {
    "at": "2026-11-19",
    "town": "Sirte",
-   "answer": null,
+   "answer": {
+    "found": true,
+    "site": "Syrte SAM-5 installation",
+    "kind": "missile or radar site",
+    "doc": 1,
+    "quote": "U.S. forces south of the 32/30 line responded to the missile attacks by launching two HARM high-speed anti-radiation missiles at the SA-5 site at Syrte.",
+    "coordinates": "",
+    "reason": "The entry's subject is the missile base struck in the 24 March 1986 clash, and Document 1 names the SA-5 missile site at Syrte as the target of the US strike."
+   },
    "checks": {
-    "quoteInDoc": false,
+    "quoteInDoc": true,
     "siteInQuote": false,
     "position": null,
-    "why": "no site named"
+    "why": "site name not in the quotation"
    }
   },
   "tp-misrata-1983": {

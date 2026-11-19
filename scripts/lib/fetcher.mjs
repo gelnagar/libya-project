@@ -81,5 +81,9 @@ export const strip = (html) => String(html).replace(/<(script|style|head|nav|foo
   .replace(/[ \t]+/g, ' ').replace(/ *\n */g, '\n').replace(/\n{3,}/g, '\n\n').trim();
 /** Names that mark a text as being about a place in Tripoli (the same list crest-extract.mjs uses with ONLY=tripoli). */
 export const TRIPOLI = /tripoli|aziziy|azizia|abu sal[ie]m|wheelus|mitiga|okba|uqba|tajou?ra|ain zara|janzur|gargaresh|ben ashour|hadba|green square|suq al|bab al/i;
-/** Tripoli in Lebanon: a text that names Lebanon's Tripoli and never Libya. */
-export const lebanonOnly = (t) => /lebanon|beirut|karami|bekaa/i.test(t) && !/liby|qadh|qadd|gadd|jamahir/i.test(t);
+/** Tripoli in Lebanon: a text that never names Libya and plainly points to Lebanon: "Tripoli, Lebanon" written out, Lebanon or
+    Beirut in the title, or Lebanon named three or more times. A passing mention of Beirut is not enough: a President's Daily Brief
+    of 13 Feb 1974 reports the Arab oil ministers' meeting in Tripoli, Libya, and quotes "the Kuwait Embassy in Beirut" without
+    naming Libya once (found 19 Nov 2026 when the looser first version of this test set it aside). */
+export const lebanonOnly = (t, title = '') => !/liby|qadh|qadd|gadd|gadh|jamahir/i.test(t + ' ' + title)
+  && (/tripoli\W{1,4}(?:north(?:ern)?\s+)?leban/i.test(t) || /leban|beirut/i.test(title) || (t.match(/leban/gi) || []).length >= 3);

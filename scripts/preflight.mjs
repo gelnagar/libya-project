@@ -50,6 +50,8 @@ const ts = run(['scripts/test-search.mjs']), tsm = ts.out.match(/(\d+) passed, (
 say(tsm && tsm[2] === '0' && ts.ok ? 'PASS' : 'FAIL', `search spelling variants: ${tsm ? tsm[1] + ' passed, ' + tsm[2] + ' failed' : 'did not run'}`);
 const tx = run(['scripts/test-text.mjs']), ttm = tx.out.match(/(\d+) passed, (\d+) failed/);
 say(ttm && ttm[2] === '0' && tx.ok ? 'PASS' : 'FAIL', 'pin texts shown whole: ' + (ttm ? ttm[1] + ' passed, ' + ttm[2] + ' failed' : 'did not run'), ttm && ttm[2] !== '0' ? tx.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
+const tl = run(['scripts/test-lebanon.mjs']), tlm = tl.out.match(/(\d+) passed, (\d+) failed/);
+say(tlm && tlm[2] === '0' && tl.ok ? 'PASS' : 'FAIL', 'Tripoli-in-Lebanon test: ' + (tlm ? tlm[1] + ' passed, ' + tlm[2] + ' failed' : 'did not run'), tlm && tlm[2] !== '0' ? tl.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
 const tp = run(['scripts/test-positions.mjs']), tpm = tp.out.match(/(\d+) passed, (\d+) failed/), tpc = tp.out.match(/town-level (\d+), site-level (\d+)/);
 say(tpm && tpm[2] === '0' && tp.ok ? 'PASS' : 'FAIL', 'regional positions: ' + (tpm ? tpm[1] + ' passed, ' + tpm[2] + ' failed' : 'did not run') + (tpc ? ' (' + tpc[1] + ' placed only by town, ' + tpc[2] + ' at their own site)' : ''), tpm && tpm[2] !== '0' ? tp.out.split('\n').filter((l) => l.startsWith('FAIL')).join('; ') : '');
 

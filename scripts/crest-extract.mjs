@@ -3,6 +3,7 @@
 //   node scripts/crest-extract.mjs --batch       # everything left: Message Batches API (50% off), polls to completion
 // Resumable: ids already in extract.jsonl are skipped. Needs ANTHROPIC_API_KEY.
 import fs from 'node:fs'; import zlib from 'node:zlib'; import vm from 'node:vm';
+import { lebanonOnly } from './lib/fetcher.mjs';
 const KEY = process.env.ANTHROPIC_API_KEY; if (!KEY) { console.error('ANTHROPIC_API_KEY missing'); process.exit(2); }
 const MODEL = process.env.EXTRACT_MODEL || 'claude-haiku-5-5';
 const DIR = 'archive/crest', SET = process.env.SET === 'other' ? 'other' : 'crest';
@@ -83,7 +84,7 @@ let oldJ = new Set(); try { oldJ = new Set(JSON.parse(fs.readFileSync('archive/g
 const done = new Set(fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l).id) : []);
 const junk = (t) => /Internal Server Error|<html|<\/head>|502 Bad Gateway|503 Service/i.test(t.slice(0, 600));
 let todo = docs.filter((d) => !junk(d.text) && !done.has(d.id) && !(d.src === 'jprs' && oldJ.has(d.id)));
-if (ONLY) todo = todo.filter((d) => ONLY.test(d.text));
+if (ONLY) todo = todo.filter((d) => ONLY.test(d.text) && !lebanonOnly(d.text, d.title)); // not Tripoli in Lebanon
 // Sample: rank-diverse pick (NIS first, then spread across the list)
 if (SAMPLE) { const step = Math.max(1, Math.floor(todo.length / SAMPLE)); todo = todo.filter((d, i) => d.src === 'nis' || i % step === 0).slice(0, SAMPLE); }
 console.log('docs', docs.length, 'done', done.size, 'skipped old JPRS', docs.filter((d) => d.src === 'jprs' && oldJ.has(d.id)).length, 'todo', todo.length);

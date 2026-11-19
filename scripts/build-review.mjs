@@ -8,6 +8,7 @@
 // reviewer reads the source's own words; a mention whose name is not in the text is marked "not found".
 import fs from 'node:fs'; import zlib from 'node:zlib'; import vm from 'node:vm'; import crypto from 'node:crypto';
 import { regionOfText, townOnly } from './lib/regions.mjs';
+import { lebanonOnly } from './lib/fetcher.mjs';
 
 const DIR = 'archive/crest', arr = (v) => (Array.isArray(v) ? v : []);
 const fold = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’'`ʿʾ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
@@ -52,12 +53,13 @@ function item(x, d, detail, phrase, extra) {
 }
 
 const places = new Map(), events = new Map();
-let read = 0, extracted = 0, placeholders = 0; // read = rated relevant (relevance 1 or more); extracted = every row in the extraction files
+let read = 0, extracted = 0, placeholders = 0, lebanon = 0, lebanonEv = 0; // read = rated relevant (relevance 1 or more); extracted = every row in the extraction files
 for (const f of ['extract', 'extract-other']) { const p = `${DIR}/${f}.jsonl`; if (!fs.existsSync(p)) continue;
   for (const l of fs.readFileSync(p, 'utf8').split('\n')) { if (!l) continue; let x; try { x = JSON.parse(l); } catch { continue; }
     extracted++; if (x.summary === 'placeholder') placeholders++;
     if (!(x.relevance >= 1)) continue; read++;
     const d = docs.get(x.id);
+    if (d && d.text && lebanonOnly(d.text, d.title)) { lebanon++; continue; } // Tripoli in Lebanon: the text never names Libya and points to Lebanon (lib/fetcher.mjs)
     for (const pl of arr(x.places)) {
       if (!pl || !pl.name || (pl.site_id && NAME[pl.site_id])) continue;
       // a place outside Tripoli is kept when its own name puts it in another region of the plan
@@ -70,6 +72,7 @@ for (const f of ['extract', 'extract-other']) { const p = `${DIR}/${f}.jsonl`; i
     }
     for (const e of arr(x.events)) {
       if (!e || !e.what || !/^\d{4}-\d\d-\d\d$/.test(e.date || '')) continue;
+      if (/leban/i.test(e.place || '')) { lebanonEv++; continue; } // the reading itself placed it in Lebanon (the description alone is not used: Libyan events often name Lebanon)
       const site = e.site_id && NAME[e.site_id] ? e.site_id : null;
       const ereg = site ? 'tripoli' : regionOfText(e.place || '') || (/tripoli/i.test(e.what) ? 'tripoli' : regionOfText(e.what)); if (!ereg) continue;
       const key = e.date + '|' + (site || ereg + ' ' + fold(e.place || ereg));
@@ -129,7 +132,7 @@ fs.writeFileSync('archive/review/candidates.json', JSON.stringify(out));
 const n = (k) => out.filter((c) => c.kind === k).length, nf = out.filter((c) => !c.found).length;
 const byReg = out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {});
 console.log('by region', JSON.stringify(byReg));
-console.log(`documents rated relevant: ${read} of ${extracted} extracted; candidates: ${out.length} (${n('place')} places, ${n('event')} events, ${n('speech')} speeches); name not found in any stored text: ${nf}; two or more documents: ${out.filter((c) => c.docs > 1).length}`);
+console.log(`documents rated relevant: ${read} of ${extracted} extracted (${lebanon} documents and ${lebanonEv} events set aside as Tripoli in Lebanon); candidates: ${out.length} (${n('place')} places, ${n('event')} events, ${n('speech')} speeches); name not found in any stored text: ${nf}; two or more documents: ${out.filter((c) => c.docs > 1).length}`);
 
 // the funnel, for the owner's review page: what was collected, read and raised, and what the reading cost.
 // Costs are the reading script's own count (archive/crest/cost-ledger.json), not a bill.
@@ -140,7 +143,7 @@ const funnel = { at: new Date().toISOString(),
   collected: countLines('archive/crest/docs.jsonl.gz') + countLines('archive/crest/docs-other.jsonl.gz') + countLines('archive/cables/docs.jsonl.gz') + countTxt('archive/fbis') + countTxt('archive/gov'),
   listedNotFetched: fs.existsSync('archive/cables/index.json') ? Math.max(0, JSON.parse(fs.readFileSync('archive/cables/index.json', 'utf8')).cables.length - countLines('archive/cables/docs.jsonl.gz')) : 0,
   // read = documents with a real extraction; rated = those the model rated relevant (1 or more); the cost ledger counts documents sent, which can differ
-  read: extracted - placeholders, rated: read, extracted, placeholders, candidates: out.length, byRegion: out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {}), places: n('place'), events: n('event'), speeches: n('speech'), twoOrMore: out.filter((c) => c.docs > 1).length, notFound: nf,
+  read: extracted - placeholders, rated: read, lebanonOnly: lebanon, lebanonEvents: lebanonEv, extracted, placeholders, candidates: out.length, byRegion: out.reduce((m, c) => { m[c.region] = (m[c.region] || 0) + 1; return m; }, {}), places: n('place'), events: n('event'), speeches: n('speech'), twoOrMore: out.filter((c) => c.docs > 1).length, notFound: nf,
   newSinceLastRun: prevList ? fresh.length : null, previousRunAt: prevAt || null, costUsd: Math.round(ledger.reduce((s, r) => s + r.usd, 0) * 100) / 100, runs: ledger };
 fs.writeFileSync('archive/review/funnel.json', JSON.stringify(funnel, null, 1));
 const si = process.argv.indexOf('--sql');

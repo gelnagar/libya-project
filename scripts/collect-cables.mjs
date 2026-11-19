@@ -8,7 +8,7 @@
 // Output: archive/cables/docs.jsonl.gz, one record per cable, each with its address, fetch time and checksum.
 // Resumable. Requests are spaced 2.5 s apart; robots.txt is obeyed (lib/fetcher.mjs).
 import fs from 'node:fs';
-import { get, record, loadDocs, saveDocs, strip, stats, TRIPOLI } from './lib/fetcher.mjs';
+import { get, record, loadDocs, saveDocs, strip, stats, TRIPOLI, lebanonOnly } from './lib/fetcher.mjs';
 
 const DIR = 'archive/cables', INDEX = `${DIR}/index.json`, DOCS = `${DIR}/docs.jsonl.gz`;
 const SEARCH = 'https://search.wikileaks.org/plusd/', SETS = ['ps', 'cc', 'fp', 'ee']; // Kissinger, Carter 1-3
@@ -65,7 +65,7 @@ async function fetchTexts(max) {
     if (++n % 25 === 0) { saveDocs(DOCS, docs); process.stdout.write(`\r${n} fetched`); }
   }
   saveDocs(DOCS, docs);
-  const all = [...docs.values()], withText = all.filter((d) => d.chars > 200), trip = withText.filter((d) => TRIPOLI.test(d.text.replace(/^[\s\S]{0,400}?(?=\n)/, '')));
+  const all = [...docs.values()], withText = all.filter((d) => d.chars > 200), trip = withText.filter((d) => TRIPOLI.test(d.text.replace(/^[\s\S]{0,400}?(?=\n)/, '')) && !lebanonOnly(d.text, d.title));
   fs.writeFileSync(`${DIR}/status.json`, JSON.stringify({ at: new Date().toISOString(), listed: list.length, stored: all.length, withText: withText.length, chars: withText.reduce((s, d) => s + d.chars, 0), requests: stats }, null, 1));
   console.log(`\nfetched now ${n} (${empty} unavailable); stored ${all.length} of ${list.length}; with text ${withText.length}; ${Math.round(withText.reduce((s, d) => s + d.chars, 0) / 1000)}k characters`);
 }

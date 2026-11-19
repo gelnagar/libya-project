@@ -93,12 +93,12 @@ const cost = () => (usage.in * 0.10 + usage.out * 0.50) / 1e6;
 async function call(system, tool, content, maxTokens) {
   if (cost() > CEILING) throw new Error('cost ceiling reached: $' + cost().toFixed(3));
   const body = JSON.stringify({ model: MODEL, max_tokens: maxTokens, system, tools: [tool], tool_choice: { type: 'tool', name: tool.name }, messages: [{ role: 'user', content }] });
-  for (let k = 0; k < 4; k++) {
+  for (let k = 0; k < 7; k++) {
     const r = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: H, body });
     if (r.ok) { const m = await r.json(); usage.calls++; usage.in += m.usage?.input_tokens || 0; usage.out += m.usage?.output_tokens || 0;
       const tu = (m.content || []).find((c) => c.type === 'tool_use'); if (!tu) { usage.fail++; return null; } return tu.input; }
     const t = await r.text(); console.log('HTTP', r.status, t.slice(0, 200)); if (r.status === 400 || r.status === 401 || r.status === 403) { usage.fail++; return null; }
-    await sleep(5000 * (k + 1));
+    await sleep(r.status === 429 ? 20000 * (k + 1) : 5000 * (k + 1)); // the rate limit is 500,000 input tokens a minute
   }
   usage.fail++; return null;
 }
@@ -177,7 +177,7 @@ if (DRY) {
 }
 
 async function pool(items, n, fn) { let i = 0; await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) { const it = items[i++]; await fn(it); } })); }
-await pool(queue, 4, async ({ s, town }) => {
+await pool(queue, 2, async ({ s, town }) => {
   if (read[s.id] && read[s.id].answer) return;
   const q = readRequest(s, town); if (!q.ds.length) { read[s.id] = { answer: null, checks: { why: 'no stored document' } }; return; }
   const ans = await call(READ_SYS, READ_TOOL, q.content, 1500);

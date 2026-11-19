@@ -21,6 +21,10 @@ const WRITTEN_BY_HAND = new Set(['ae856549c274', 'c71c7c26d530', 'f765a85f7255',
 const cands = JSON.parse(fs.readFileSync('archive/review/candidates.json', 'utf8')).filter((c) => c.region !== 'tripoli' && (c.kind === 'place' || c.kind === 'event'));
 const towns = {}; for (const r of JSON.parse(fs.readFileSync('archive/model/regions.json', 'utf8')).regions) towns[r.id] = r.towns;
 // positions of their own that a person approved (scripts/locate-regional.mjs proposes, scripts/approve-positions.mjs records)
+// who found and checked an approved position, in words. MODEL_NAME is the model of scripts/read-positions.mjs (owner's choice, 18 Nov 2026).
+const MODEL_NAME = 'Claude Haiku 5.5';
+const checkedBy = (ap) => (/^read-/.test(ap.method) ? `The site was found by a machine reading of the documents (${MODEL_NAME}) and confirmed by a second, separate reading; `
+  : ap.checked ? `The position was confirmed by a separate machine reading of the passage (${MODEL_NAME}); ` : '') + `approved by ${ap.by} on ${ap.date}.`;
 const APPROVED = fs.existsSync('archive/model/positions.json') ? JSON.parse(fs.readFileSync('archive/model/positions.json', 'utf8')).approved || {} : {};
 const flags = {}; for (const r of ['benghazi', 'cyrenaica', 'fezzan', 'sirte', 'tripolitania']) { const f = `archive/review/safety-${r}.json`; if (fs.existsSync(f)) for (const e of JSON.parse(fs.readFileSync(f, 'utf8')).entries) flags[e.id] = e.flags.map((x) => x.flag); }
 
@@ -102,8 +106,8 @@ for (const g of groups) {
   const others = [...new Set(g.more.map((e) => clip(e.c.name.replace(/\.$/, ''), 80)).filter((n) => n && fold(n) !== fold(c.name)))].slice(0, 4);
   const ap = APPROVED['c-' + c.id] || null;
   const where = !ap ? `Mapped at the centre of ${g.town.name}: the document names the town, not the site.`
-    : ap.method === 'doc-coord' ? `Mapped at the coordinates printed in ${ap.posSrc.t.replace(/ \(coordinates printed in the document\)$/, '')} (${ap.printed}), ${ap.r} km margin; position checked by ${ap.by} on ${ap.date}.`
-    : `Mapped at the position of ${ap.posSrc.t.replace(/^Wikipedia: /, '')} given by Wikipedia${ap.named ? ', the place the entry names ("' + ap.named + '")' : ''}, ${ap.r} km margin; position checked by ${ap.by} on ${ap.date}.`;
+    : /-coord$/.test(ap.method) ? `Mapped at the coordinates printed in ${ap.posSrc.t.replace(/ \(coordinates printed in the document\)$/, '')} (${ap.printed}), ${ap.r} km margin. ${checkedBy(ap)}`
+    : `Mapped at the position of ${ap.posSrc.t.replace(/^Wikipedia: /, '')} given by Wikipedia${ap.named ? ', the place the entry names ("' + ap.named + '")' : ''}, ${ap.r} km margin. ${checkedBy(ap)}`;
   const body = [
     detail.replace(/\.?$/, '.'),
     g.more.length ? 'The same ' + (c.kind === 'place' ? 'place' : 'event') + ' appears in ' + all.length + ' separate readings' + (others.length ? ', also described as: ' + others.join('; ') : '') + '.' : '',

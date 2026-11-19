@@ -8,7 +8,9 @@
 //   2. a town-level pin sits on the centre of a town of its region as recorded in archive/model/regions.json
 //   3. a site-level pin names where its position comes from (posSrc with a link)
 //   4. site-level pins do not stack: no more than MAX_STACK share one point (the old problem would come back as a failure here)
-//   5. app.js draws town-level pins as town markers (the code is present)
+//   5. approved positions are ones a locator or the two-stage reading listed (a reading's only when both stages passed), applied,
+//      with who and when
+//   6. app.js draws town-level pins as town markers (the code is present)
 import fs from 'node:fs'; import vm from 'node:vm';
 const MAX_STACK = 3;
 let pass = 0, fail = 0;
@@ -43,6 +45,9 @@ ok(!onTown.length, 'no site-level pin sits on a town centre unless the town is i
 if (fs.existsSync('archive/model/positions.json')) {
   const A = JSON.parse(fs.readFileSync('archive/model/positions.json', 'utf8')).approved || {};
   const P = fs.existsSync('archive/review/positions-proposed.json') ? new Map(JSON.parse(fs.readFileSync('archive/review/positions-proposed.json', 'utf8')).list.map((r) => [r.id, r])) : new Map();
+  // positions from the paid reading count as listed only when both of its stages passed (archive/review/positions-read.json)
+  const RD = fs.existsSync('archive/review/positions-read.json') ? JSON.parse(fs.readFileSync('archive/review/positions-read.json', 'utf8')) : { read: {}, check: {} };
+  for (const [id, c] of Object.entries(RD.check || {})) { const pos = c.from === 'reader' && c.verified && RD.read[id] && RD.read[id].checks.position; if (pos && P.get(id)) P.get(id).options.push(pos); }
   const notListed = Object.entries(A).filter(([id, a]) => !(P.get(id) || { options: [] }).options.some((o) => o.lat === a.lat && o.lon === a.lon));
   ok(!notListed.length, `${Object.keys(A).length} approved positions are each one the locator listed`, notListed.map(([id]) => id).join(', '));
   const byId = new Map(pins.map((s) => [s.id, s]));

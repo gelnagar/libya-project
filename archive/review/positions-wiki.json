@@ -1,5 +1,7 @@
 {
  "23_July_Avenue,_Benghazi": null,
+ "AW_Radar": null,
+ "AW_radar": null,
  "Airfield": {
   "asked": "Airfield",
   "title": "Aerodrome",
@@ -74,8 +76,9 @@
   "lat": 32.09722,
   "lon": 20.26944,
   "disamb": false,
+  "lead": "Benina International Airport (IATA: BEN, ICAO: HLLB) (Arabic: مطار بنينا الدولي) serves Benghazi, Libya. It is located in the borough of Benina, 19 kilometres (12 mi) east of Benghazi, from which it takes its name. The airport is operated by the Civil Aviation and Meteorology Bureau of Libya and is the second largest in the country after Tripoli International Airport. Benina was a critical airport during the North African Campaign of World War II. Benina International is also the secondary hub of both Buraq Air and flag carrier, Libyan Airlines. In July 2014 all flights to the airport were su…",
   "checksum": "1d049a7590750dacff59bec7043b75af",
-  "fetched": "2026-11-18"
+  "fetched": "2026-11-19"
  },
  "Benina_International_Airport": {
   "asked": "Benina International Airport",

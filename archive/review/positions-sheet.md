@@ -1,6 +1,6 @@
 # Regional positions: proposals for a person to check
 
-Generated 2026-11-18 by `node scripts/locate-regional.mjs`. 200 entries are placed only by town. 18 have a proposed position of their own, 2 have more than one possible position, 180 have none (they stay at the town centre).
+Generated 2026-11-19 by `node scripts/locate-regional.mjs`. 200 entries are placed only by town. 18 have a proposed position of their own, 2 have more than one possible position, 180 have none (they stay at the town centre).
 
 To approve, copy the entry id into `archive/model/positions.json` as described in its note, with your initials and the date, then run `node scripts/write-regional.mjs`. Refuse by leaving it out. Check: does the source really describe the place this entry is about, and is the point on the right facility (open the link)?
 

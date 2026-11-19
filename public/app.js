@@ -1112,7 +1112,9 @@
      not in date order, and labelling each sentence with the first year it mentions made unchecked text look like a dated
      chronology. Dated timelines come only from data/panels.js, where every line has its own date and source. */
   function sentencesOf(t) {
-    var sents = t.match(/[^.!?]+(?:[.!?]+(?=\s+[A-Z0-9“"(]|\s*$)|$)/g) || [t], fixed = [];
+    // a sentence runs to the first . ! or ? followed by a space and a capital, digit or quote (or the end). Fixed 19 Nov 2026: the
+    // old pattern stopped at any full stop, so a decimal inside a sentence ("1.5 km", "5.5") dropped the text before it unseen
+    var sents = t.match(/[\s\S]+?(?:[.!?]+(?=\s+[A-Z0-9“"(]|\s*$)|$)/g) || [t], fixed = [];
     // re-join pieces split after abbreviations like "U.S." or "St."
     sents.forEach(function (x) { if (fixed.length && /\b(?:U\.S|U\.N|St|Mr|Dr|Col|Gen|Lt|No|al)\.$/.test(fixed[fixed.length - 1].trim())) fixed[fixed.length - 1] += x; else fixed.push(x); });
     return fixed.map(function (x) { return x.trim(); }).filter(Boolean);

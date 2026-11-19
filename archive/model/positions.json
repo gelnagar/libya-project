@@ -1,0 +1,152 @@
+{
+ "note": "Positions of regional entries approved by a person. Written by scripts/approve-positions.mjs; applied by scripts/write-regional.mjs (generated entries) and by approve-positions.mjs itself (hand-written entries). Each records the source of the position and who approved it, when.",
+ "approved": {
+  "c-1908efd2bafa": {
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Misrata International Airport",
+   "method": "wikipedia",
+   "lat": 32.32556,
+   "lon": 15.05972,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Misrata Airport",
+    "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
+   },
+   "named": "Misrata International Airport",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "yes/yes",
+    "reason": "The passage names the airport itself (Misrata International Airport) and says it was created in 1939 as a landing site in Misrata province, so the entry is the airport. The position source is the Wikipedia article on that same airport, whose opening paragraph describes the same facility; it gives no coordinates, but it is the same site rather than a different one."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-19"
+  },
+  "c-258c87f8bef8": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at…",
+   "method": "read-wikipedia",
+   "lat": 32.09722,
+   "lon": 20.26944,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Benina International Airport",
+    "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+   },
+   "named": "Benina airport",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "yes/yes",
+    "reason": "The passage says Khaddam \"had arrived at Benina airport this morning\" and the meeting is datelined Benghazi, so the entry is tied to Benina airport. The Wikipedia article places Benina International Airport in the Benina borough, 19 km east of Benghazi, so it describes the same airport."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-19"
+  },
+  "c-775ccab90d84": {
+   "region": "fezzan",
+   "town": "Ghat",
+   "name": "Fortress of Ghat (Koukemen hill, Ghat)",
+   "method": "gazetteer",
+   "lat": 24.96702,
+   "lon": 10.18051,
+   "r": 1.5,
+   "posSrc": {
+    "t": "Wikipedia: Fortress of Ghat",
+    "u": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
+   },
+   "named": "Fortress of Ghat",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "yes/yes",
+    "reason": "The passage places the fort on top of the Koukemen hill in Ghat, which is the same site the proposed position names, and the source article describes that same fortress. The source gives no coordinates, but the proposed place is the fortress itself, not just the town."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-19"
+  },
+  "c-85083136ec68": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
+   "method": "read-wikipedia",
+   "lat": 32.09722,
+   "lon": 20.26944,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Benina International Airport",
+    "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+   },
+   "named": "Benina airport",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "yes/yes",
+    "reason": "The passage says the soldiers were welcomed in Banghazi, with veterans decorating them with roses \"when they arrived at the Benina airport\" and a guard of honor there, so the airport is named as a welcome site for this entry. The Wikipedia source describes Benina International Airport as serving Benghazi, 19 km east of the city, so it is the same facility."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-19"
+  },
+  "c-a3f65ab06981": {
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents…",
+   "method": "read-wikipedia",
+   "lat": 27,
+   "lon": 14.46111,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Sabha Airport",
+    "u": "https://en.wikipedia.org/wiki/Sabha_Airport"
+   },
+   "named": "Sabha International Airport",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "yes/yes",
+    "reason": "The passage says Qadhdhafi saw Chadian and Niger presidents off at Sabha International Airport, which matches the entry's event. The Wikipedia article describes Sabha International Airport as serving Sabha, so it is the same facility the passage names."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-19"
+  },
+  "c-b3649db1ee61": {
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine",
+   "method": "doc-coord",
+   "lat": 24.18194,
+   "lon": 23.31889,
+   "r": 1,
+   "posSrc": {
+    "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+   },
+   "printed": "24-10-55N 023-19-08E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "yes/yes",
+    "reason": "The passage states that five SF.260 aircraft deployed to Kufra Airfield, bringing the total to nine, and the document is about Kufra Airfield. The printed coordinates 24-10-55N 023-19-08E appear as the single coordinate set in the document and are tied to the Kufra Airfield briefing, which also says it lies 1.6 NM SSE of Al Jawf."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-19"
+  },
+  "fz-kufra-airfield": {
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Kufra airfield",
+   "method": "doc-coord",
+   "lat": 24.18194,
+   "lon": 23.31889,
+   "r": 1,
+   "posSrc": {
+    "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+   },
+   "printed": "24-10-55N 023-19-08E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "yes/yes",
+    "reason": "The passage is headed \"Kufra Airfield, Libya\" and states the coordinates 24-10-55N 023-19-08E directly after describing Kufra Airfield, which is the same facility. The printed coordinates appear to belong to this document's single site entry, with no other site listed."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-19"
+  }
+ }
+}

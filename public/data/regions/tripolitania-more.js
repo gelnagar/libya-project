@@ -661,17 +661,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "landmark",
   "level": "documented",
   "name": "Misrata International Airport",
-  "lat": 32.3775,
-  "lon": 15.092,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.32556,
+  "lon": 15.05972,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Misrata",
-   "u": "https://en.wikipedia.org/wiki/Misrata"
+   "t": "Wikipedia: Misrata Airport",
+   "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
   },
   "period": "Date not given",
   "relevance": "International airport serving Misrata, also an air base and training centre for the Libyan Air Force; created in 1939 as a small landing site in Italian Libya.",
-  "text": "International airport serving Misrata, also an air base and training centre for the Libyan Air Force; created in 1939 as a small landing site in Italian Libya. This rests on one document: Misrata Airport (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
+  "text": "International airport serving Misrata, also an air base and training centre for the Libyan Air Force; created in 1939 as a small landing site in Italian Libya. This rests on one document: Misrata Airport (Wikipedia). No second source is held for it. Mapped at the position of Misrata Airport given by Wikipedia, the place the entry names (\"Misrata International Airport\"), 2 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-19.",
   "sources": [
    {
     "t": "Misrata Airport (Wikipedia)",

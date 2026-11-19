@@ -1,16 +1,255 @@
 {
- "at": "2026-11-19T03:12:29.042Z",
+ "at": "2026-11-19T11:30:30.055Z",
  "note": "Proposals only. Nothing moves until a person approves an entry in archive/model/positions.json.",
  "entries": 200,
- "proposed": 18,
+ "proposed": 14,
  "ambiguous": 2,
- "none": 180,
+ "none": 177,
  "byMethod": {
-  "wikipedia": 3,
-  "doc-coord": 14,
-  "gazetteer": 1
+  "wikipedia": 2,
+  "doc-coord": 12
  },
  "list": [
+  {
+   "id": "c-1908efd2bafa",
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Misrata International Airport",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Misrata International Airport"
+   ],
+   "alsoNamed": [
+    "International airport",
+    "an air base"
+   ],
+   "status": "proposed",
+   "proposal": {
+    "method": "wikipedia",
+    "named": "Misrata International Airport",
+    "title": "Misrata Airport",
+    "lat": 32.32556,
+    "lon": 15.05972,
+    "r": 2,
+    "fromTown": 6.5,
+    "src": {
+     "t": "Wikipedia: Misrata Airport",
+     "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
+    }
+   },
+   "options": [
+    {
+     "method": "wikipedia",
+     "named": "Misrata International Airport",
+     "title": "Misrata Airport",
+     "lat": 32.32556,
+     "lon": 15.05972,
+     "r": 2,
+     "fromTown": 6.5,
+     "src": {
+      "t": "Wikipedia: Misrata Airport",
+      "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
+     }
+    }
+   ],
+   "approved": true
+  },
+  {
+   "id": "c-258c87f8bef8",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at…",
+   "layer": "landmark",
+   "year": 1979,
+   "named": [],
+   "alsoNamed": [
+    "at Benina airport"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": [],
+   "approved": true
+  },
+  {
+   "id": "c-775ccab90d84",
+   "region": "fezzan",
+   "town": "Ghat",
+   "name": "Fortress of Ghat (Koukemen hill, Ghat)",
+   "layer": "landmark",
+   "year": null,
+   "named": [
+    "Fortress of Ghat"
+   ],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "gazetteer",
+    "named": "Fortress of Ghat",
+    "lat": 24.96702,
+    "lon": 10.18051,
+    "r": 1.5,
+    "fromTown": 1,
+    "src": {
+     "t": "Wikipedia: Fortress of Ghat",
+     "u": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
+    }
+   },
+   "options": [
+    {
+     "method": "gazetteer",
+     "named": "Fortress of Ghat",
+     "lat": 24.96702,
+     "lon": 10.18051,
+     "r": 1.5,
+     "fromTown": 1,
+     "src": {
+      "t": "Wikipedia: Fortress of Ghat",
+      "u": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
+     }
+    }
+   ],
+   "approved": true
+  },
+  {
+   "id": "c-85083136ec68",
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
+   "layer": "landmark",
+   "year": 1981,
+   "named": [
+    "at Benina airport"
+   ],
+   "alsoNamed": [],
+   "status": "none",
+   "proposal": null,
+   "options": [],
+   "approved": true
+  },
+  {
+   "id": "c-a3f65ab06981",
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents…",
+   "layer": "landmark",
+   "year": 1978,
+   "named": [],
+   "alsoNamed": [
+    "at Sabha airport"
+   ],
+   "status": "none",
+   "proposal": null,
+   "options": [
+    {
+     "method": "possible",
+     "named": "at Sabha airport",
+     "title": "Sabha Airport",
+     "lat": 27,
+     "lon": 14.46111,
+     "r": 2,
+     "fromTown": 5.5,
+     "src": {
+      "t": "Wikipedia: Sabha Airport",
+      "u": "https://en.wikipedia.org/wiki/Sabha_Airport"
+     },
+     "note": "named only in a supporting passage"
+    }
+   ],
+   "approved": true
+  },
+  {
+   "id": "c-b3649db1ee61",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine",
+   "layer": "military",
+   "year": 1982,
+   "named": [],
+   "alsoNamed": [],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 24.18194,
+    "lon": 23.31889,
+    "r": 1,
+    "fromTown": 3.6,
+    "raw": "24-10-55N 023-19-08E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+    },
+    "docHash": "69b9ec0b7d485451",
+    "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 24.18194,
+     "lon": 23.31889,
+     "r": 1,
+     "fromTown": 3.6,
+     "raw": "24-10-55N 023-19-08E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+     },
+     "docHash": "69b9ec0b7d485451",
+     "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
+    }
+   ],
+   "approved": true
+  },
+  {
+   "id": "fz-kufra-airfield",
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Kufra airfield",
+   "layer": "military",
+   "year": 1982,
+   "named": [
+    "Kufra airfield"
+   ],
+   "alsoNamed": [
+    "airfield"
+   ],
+   "status": "proposed",
+   "proposal": {
+    "method": "doc-coord",
+    "lat": 24.18194,
+    "lon": 23.31889,
+    "r": 1,
+    "fromTown": 3.6,
+    "raw": "24-10-55N 023-19-08E",
+    "coordsInDoc": 1,
+    "src": {
+     "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+    },
+    "docHash": "69b9ec0b7d485451",
+    "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
+   },
+   "options": [
+    {
+     "method": "doc-coord",
+     "lat": 24.18194,
+     "lon": 23.31889,
+     "r": 1,
+     "fromTown": 3.6,
+     "raw": "24-10-55N 023-19-08E",
+     "coordsInDoc": 1,
+     "src": {
+      "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+      "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+     },
+     "docHash": "69b9ec0b7d485451",
+     "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
+    }
+   ],
+   "approved": true
+  },
   {
    "id": "c-9eed01386367",
    "region": "benghazi",
@@ -198,21 +437,6 @@
     "23 July Avenue, Benghazi"
    ],
    "alsoNamed": [],
-   "status": "none",
-   "proposal": null,
-   "options": []
-  },
-  {
-   "id": "c-258c87f8bef8",
-   "region": "benghazi",
-   "town": "Benghazi",
-   "name": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at…",
-   "layer": "landmark",
-   "year": 1979,
-   "named": [],
-   "alsoNamed": [
-    "at Benina airport"
-   ],
    "status": "none",
    "proposal": null,
    "options": []
@@ -572,21 +796,6 @@
    "layer": "landmark",
    "year": 1981,
    "named": [],
-   "alsoNamed": [],
-   "status": "none",
-   "proposal": null,
-   "options": []
-  },
-  {
-   "id": "c-85083136ec68",
-   "region": "benghazi",
-   "town": "Benghazi",
-   "name": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
-   "layer": "landmark",
-   "year": 1981,
-   "named": [
-    "at Benina airport"
-   ],
    "alsoNamed": [],
    "status": "none",
    "proposal": null,
@@ -1808,36 +2017,6 @@
    "options": []
   },
   {
-   "id": "c-a3f65ab06981",
-   "region": "fezzan",
-   "town": "Sabha",
-   "name": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents…",
-   "layer": "landmark",
-   "year": 1978,
-   "named": [],
-   "alsoNamed": [
-    "at Sabha airport"
-   ],
-   "status": "none",
-   "proposal": null,
-   "options": [
-    {
-     "method": "possible",
-     "named": "at Sabha airport",
-     "title": "Sabha Airport",
-     "lat": 27,
-     "lon": 14.46111,
-     "r": 2,
-     "fromTown": 5.5,
-     "src": {
-      "t": "Wikipedia: Sabha Airport",
-      "u": "https://en.wikipedia.org/wiki/Sabha_Airport"
-     },
-     "note": "named only in a supporting passage"
-    }
-   ]
-  },
-  {
    "id": "c-cc8f7a166e40",
    "region": "fezzan",
    "town": "Sabha",
@@ -2058,49 +2237,6 @@
    "status": "none",
    "proposal": null,
    "options": []
-  },
-  {
-   "id": "c-b3649db1ee61",
-   "region": "fezzan",
-   "town": "Kufra",
-   "name": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine",
-   "layer": "military",
-   "year": 1982,
-   "named": [],
-   "alsoNamed": [],
-   "status": "proposed",
-   "proposal": {
-    "method": "doc-coord",
-    "lat": 24.18194,
-    "lon": 23.31889,
-    "r": 1,
-    "fromTown": 3.6,
-    "raw": "24-10-55N 023-19-08E",
-    "coordsInDoc": 1,
-    "src": {
-     "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
-     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
-    },
-    "docHash": "69b9ec0b7d485451",
-    "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
-   },
-   "options": [
-    {
-     "method": "doc-coord",
-     "lat": 24.18194,
-     "lon": 23.31889,
-     "r": 1,
-     "fromTown": 3.6,
-     "raw": "24-10-55N 023-19-08E",
-     "coordsInDoc": 1,
-     "src": {
-      "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
-      "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
-     },
-     "docHash": "69b9ec0b7d485451",
-     "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
-    }
-   ]
   },
   {
    "id": "c-c99a0c9d417d",
@@ -2429,45 +2565,6 @@
    "options": []
   },
   {
-   "id": "c-775ccab90d84",
-   "region": "fezzan",
-   "town": "Ghat",
-   "name": "Fortress of Ghat (Koukemen hill, Ghat)",
-   "layer": "landmark",
-   "year": null,
-   "named": [
-    "Fortress of Ghat"
-   ],
-   "alsoNamed": [],
-   "status": "proposed",
-   "proposal": {
-    "method": "gazetteer",
-    "named": "Fortress of Ghat",
-    "lat": 24.96702,
-    "lon": 10.18051,
-    "r": 1.5,
-    "fromTown": 1,
-    "src": {
-     "t": "Wikipedia: Fortress of Ghat",
-     "u": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
-    }
-   },
-   "options": [
-    {
-     "method": "gazetteer",
-     "named": "Fortress of Ghat",
-     "lat": 24.96702,
-     "lon": 10.18051,
-     "r": 1.5,
-     "fromTown": 1,
-     "src": {
-      "t": "Wikipedia: Fortress of Ghat",
-      "u": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
-     }
-    }
-   ]
-  },
-  {
    "id": "c-afaa74d2691b",
    "region": "fezzan",
    "town": "Sabha",
@@ -2525,53 +2622,6 @@
      },
      "docHash": "be705595e660e91e",
      "context": "-47 Progress 3 Umm Aitigah ESE/WNW; 3,450 x 60 Asphalt with concrete Fighter/bomber base; 13 Ghadames East NE/SW; 3,601 x 45 Asphalt with concrete Final stages of cons; touchdowns BLINDER, FOXBAT, N/S: 1,968 x 40 touchdowns support facs being built 25X1 32-53-46N 013-16-32E Mirage HII/V, L-39, & 30-08-00N 009-42-00E 7 5 lel taxi Ps :"
-    }
-   ]
-  },
-  {
-   "id": "fz-kufra-airfield",
-   "region": "fezzan",
-   "town": "Kufra",
-   "name": "Kufra airfield",
-   "layer": "military",
-   "year": 1982,
-   "named": [
-    "Kufra airfield"
-   ],
-   "alsoNamed": [
-    "airfield"
-   ],
-   "status": "proposed",
-   "proposal": {
-    "method": "doc-coord",
-    "lat": 24.18194,
-    "lon": 23.31889,
-    "r": 1,
-    "fromTown": 3.6,
-    "raw": "24-10-55N 023-19-08E",
-    "coordsInDoc": 1,
-    "src": {
-     "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
-     "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
-    },
-    "docHash": "69b9ec0b7d485451",
-    "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
-   },
-   "options": [
-    {
-     "method": "doc-coord",
-     "lat": 24.18194,
-     "lon": 23.31889,
-     "r": 1,
-     "fromTown": 3.6,
-     "raw": "24-10-55N 023-19-08E",
-     "coordsInDoc": 1,
-     "src": {
-      "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
-      "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
-     },
-     "docHash": "69b9ec0b7d485451",
-     "context": "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
     }
    ]
   },
@@ -3260,50 +3310,6 @@
    "status": "none",
    "proposal": null,
    "options": []
-  },
-  {
-   "id": "c-1908efd2bafa",
-   "region": "tripolitania",
-   "town": "Misrata",
-   "name": "Misrata International Airport",
-   "layer": "landmark",
-   "year": null,
-   "named": [
-    "Misrata International Airport"
-   ],
-   "alsoNamed": [
-    "International airport",
-    "an air base"
-   ],
-   "status": "proposed",
-   "proposal": {
-    "method": "wikipedia",
-    "named": "Misrata International Airport",
-    "title": "Misrata Airport",
-    "lat": 32.32556,
-    "lon": 15.05972,
-    "r": 2,
-    "fromTown": 6.5,
-    "src": {
-     "t": "Wikipedia: Misrata Airport",
-     "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
-    }
-   },
-   "options": [
-    {
-     "method": "wikipedia",
-     "named": "Misrata International Airport",
-     "title": "Misrata Airport",
-     "lat": 32.32556,
-     "lon": 15.05972,
-     "r": 2,
-     "fromTown": 6.5,
-     "src": {
-      "t": "Wikipedia: Misrata Airport",
-      "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
-     }
-    }
-   ]
   },
   {
    "id": "c-499989ddc9d5",

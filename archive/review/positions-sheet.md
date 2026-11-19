@@ -1,6 +1,6 @@
 # Regional positions: proposals for a person to check
 
-Generated 2026-11-19 by `node scripts/locate-regional.mjs`. 200 entries are placed only by town. 18 have a proposed position of their own, 2 have more than one possible position, 180 have none (they stay at the town centre).
+Generated 2026-11-19 by `node scripts/locate-regional.mjs`. 193 entries are placed only by town (7 more have been moved by an approval; see archive/model/positions.json). 14 have a proposed position of their own, 2 have more than one possible position, 177 have none (they stay at the town centre).
 
 To approve, copy the entry id into `archive/model/positions.json` as described in its note, with your initials and the date, then run `node scripts/write-regional.mjs`. Refuse by leaving it out. Check: does the source really describe the place this entry is about, and is the point on the right facility (open the link)?
 
@@ -56,19 +56,6 @@ Methods: doc-coord = coordinates printed in a document the entry rests on; gazet
   source: [ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA (coordinates printed in the document)](https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200500007-2) · printed as `32-04-42N 023-58-50E`
   text before it: "DELIVERY OF HAZE A CONTAINERS 25X14 WAS OBSERVED | THE 5X1 HELICOPTER PROBABLY ARE DESTINED FOR GHURDABIYAH AIRFIELD | | 25x1 (SWN) HAZE A IS AN ANTISUBMARINE WARFARE/SEARCH-RESCUE HELICOPTER WHICH CURRENTLY IS OPERATED ONLY BY SYRIA AND LIBYA OUTSIDE THE WARSAW PACT NATIONS. 3. COORDINATES 32-04-42N 023-58-50E 5X4 25X1 These n"
 
-### c-775ccab90d84 · fezzan · Ghat
-**Fortress of Ghat (Koukemen hill, Ghat)**
-
-- gazetteer for "Fortress of Ghat": 24.96702, 10.18051 (1 km from the town centre, radius 1.5 km) [map](https://www.openstreetmap.org/?mlat=24.96702&mlon=10.18051#map=15/24.96702/10.18051)
-  source: [Wikipedia: Fortress of Ghat](https://en.wikipedia.org/wiki/Fortress_of_Ghat)
-
-### c-b3649db1ee61 · fezzan · Kufra
-**Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine** (1982)
-
-- doc-coord: 24.18194, 23.31889 (3.6 km from the town centre, radius 1 km) [map](https://www.openstreetmap.org/?mlat=24.18194&mlon=23.31889#map=15/24.18194/23.31889)
-  source: [GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)](https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3) · printed as `24-10-55N 023-19-08E`
-  text before it: "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
-
 ### c-237568286890 · fezzan · Kufra
 **Kufra military storage area** (1983)
 
@@ -88,13 +75,6 @@ Methods: doc-coord = coordinates printed in a document the entry rests on; gazet
 - doc-coord: 24.18194, 23.31889 (3.6 km from the town centre, radius 1 km) [map](https://www.openstreetmap.org/?mlat=24.18194&mlon=23.31889#map=15/24.18194/23.31889)
   source: [PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA (coordinates printed in the document)](https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100260005-0) · printed as `24-10-55N 023-19-08E`
   text before it: "REPARING TO ROTATE BACK TO THEIR HOME BASE; HOWEVER, A STRIKE MISSION INTO CHAD CANNOT BE RULED OUT. (SWN) , KUFRA AIRFIELD, APPROXIMATELY 200 NM NORTHEAST OF THE CHAD BORDER, SUPPORTS A FISEBED FIGHTER UNIT AND SERVES AS A MAJOR SUPPORT/LOGISTICS BASE IN SOUTHERN LIBYA. (SWN) 3. COORDINATES 24-10-55N 023-19-08E 25X11 25X1 25X1"
-
-### fz-kufra-airfield · fezzan · Kufra
-**Kufra airfield** (1982)
-
-- doc-coord: 24.18194, 23.31889 (3.6 km from the town centre, radius 1 km) [map](https://www.openstreetmap.org/?mlat=24.18194&mlon=23.31889#map=15/24.18194/23.31889)
-  source: [GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)](https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3) · printed as `24-10-55N 023-19-08E`
-  text before it: "OF 25X11 SEVEN SF.260 WAS OBSERVED . 25XK1 (SWN) KUFRA AIRFIELD, 1.6 NM SOUTH-SOUTHEAST OF AL JAWF AND 200 NM NORTHEAST OF THE LIBYA-CHAD BORDER, SUPPORTS A FISHBED FIGHTER UNIT AND HAS SERVED AS A MAJOR STAGING AND LOGISTICAL SUPPORT BASE DURING MILITARY OPERATIONS IN CHAD. Oe COORDINATES 24-10-55N 023-19-08E 25X11 COMMENTS TR"
 
 ### fz-kufrah-barracks · fezzan · Kufra
 **Al Kufrah barracks** (1980)
@@ -124,12 +104,6 @@ Methods: doc-coord = coordinates printed in a document the entry rests on; gazet
   source: [PROBABLE LIBYAN SUPPORT TO CHADIAN DISSIDENTS SEBHA TRAINING FACILITY EAST, LIBYA (coordinates printed in the document)](https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200530002-4) · printed as `27-01-30N 014-30-00E`
   text before it: "D CURL AIRCRAFT FROM SEBHA AIRFIELD 25X1 THE ARRIVAL OF FIGHTER/BOMBER AND TRANSPORT AIRCRAFT AT AOZOU AIRFIELD | | TODAY. AND THE ARRIVAL OF TRANSPORT 25X11 AIRCRAFT TO GOURO AIRFIELD YESTERDAY. AT LEAST 25X1 SOME OF THE AIRCRAFT THAT DEPARTED SEBHA MAY HAVE DEPLOYED TO AOZOU. 3. COORDINATES 27-01-30N 014-30-00E 25X1 25X1 These n"
 
-### c-1908efd2bafa · tripolitania · Misrata
-**Misrata International Airport**
-
-- wikipedia for "Misrata International Airport": 32.32556, 15.05972 (6.5 km from the town centre, radius 2 km) [map](https://www.openstreetmap.org/?mlat=32.32556&mlon=15.05972#map=15/32.32556/15.05972)
-  source: [Wikipedia: Misrata Airport](https://en.wikipedia.org/wiki/Misrata_Airport)
-
 ## More than one possible position (choose or refuse)
 
 ### c-941a90e438cd · cyrenaica · Tobruk
@@ -150,7 +124,6 @@ Methods: doc-coord = coordinates printed in a document the entry rests on; gazet
 
 - c-4bd793769b59 · Benghazi · Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins: the entry says "Benghazi airport"; article [Benina International Airport](https://en.wikipedia.org/wiki/Benina_International_Airport) at 32.09722, 20.26944, 19.2 km from the town centre
 - bn-1977-hangings · Benghazi · Public hanging of students, Benghazi, April 1977 (reported): a supporting passage names "port of Benghazi"; article [Port of Benghazi](https://en.wikipedia.org/wiki/Port_of_Benghazi) at 32.10917, 20.0475, 2 km from the town centre
-- c-a3f65ab06981 · Sabha · Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian a…: a supporting passage names "at Sabha airport"; article [Sabha Airport](https://en.wikipedia.org/wiki/Sabha_Airport) at 27, 14.46111, 5.5 km from the town centre
 - c-35453697cf09 · Ras Lanuf · Ras Lanuf petrochemical complex: the entry says "Ras Lanuf petrochemical complex"; article [Ras Lanuf Refinery](https://en.wikipedia.org/wiki/Ras_Lanuf_Refinery) at 30.47472, 18.57361, 19.9 km from the town centre
 - c-c30e2231eab9 · Misrata · Misratah port: the entry says "Misratah port"; article [Qasr Ahmad#Port of Misrata](https://en.wikipedia.org/wiki/Qasr_Ahmad#Port_of_Misrata) at 32.35833, 15.20583, 10.9 km from the town centre
 
@@ -168,7 +141,6 @@ Methods: doc-coord = coordinates printed in a document the entry rests on; gazet
 - c-81e4aad1d4ac · Benghazi · Qadhdhafi gave a recorded interview at an agricultural project in Southwest Benghazi, exp…
 - c-0abcd9a926fb · Benghazi · First congress of the Free Unionist Officers Movement condemns the Egypt-Israel treaty an…
 - c-1b4fe075b0b2 · Benghazi · 23 July Avenue, Benghazi (named: 23 July Avenue, Benghazi)
-- c-258c87f8bef8 · Benghazi · Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam…
 - c-4b6d976c1593 · Benghazi · Libya closed the PLO office in Benghazi and ordered the expulsion of three top PLO leader…
 - c-52a3f4b903a7 · Benghazi · Qadhdhafi held a meeting with members of the Governors Council of the Arab central banks …
 - c-59a98f0c7c16 · Benghazi · Qadhdhafi and King Khalid meet at the guest palace in Benghazi
@@ -193,7 +165,6 @@ Methods: doc-coord = coordinates printed in a document the entry rests on; gazet
 - c-68ea9b1058b6 · Benghazi · Qadhdhafi receives a visiting Chadian popular delegation
 - c-6fd055e72693 · Benghazi · PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya
 - c-6fd606d1b778 · Benghazi · Grand equestrian show where Qadhdhafi announced the formation of a people's cavalry divis…
-- c-85083136ec68 · Benghazi · Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in … (named: at Benina airport)
 - c-ba531243cbe4 · Benghazi · Mass demonstration in Benghazi denouncing the U.S. closure of the Libyan People's Bureau …
 - c-e4c690a4027c · Benghazi · Third batch of Libyan Armed Forces units returned from Chad
 - c-093bc12f7ee3 · Benghazi · Alleged assassination attempt discovered (one of four claimed attempts, March–April 1982)

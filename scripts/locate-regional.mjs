@@ -59,7 +59,10 @@ function docCoords(docList, town) {
 
 
 // ---------- run ----------
-const out = [];
+// entries already moved by an approval keep the record they were approved from (the approval is checked against it)
+const APPROVED = fs.existsSync('archive/model/positions.json') ? JSON.parse(fs.readFileSync('archive/model/positions.json', 'utf8')).approved || {} : {};
+const OLD = fs.existsSync('archive/review/positions-proposed.json') ? new Map(JSON.parse(fs.readFileSync('archive/review/positions-proposed.json', 'utf8')).list.map((r) => [r.id, r])) : new Map();
+const out = Object.keys(APPROVED).filter((id) => OLD.has(id)).map((id) => ({ ...OLD.get(id), approved: true }));
 for (const s of entries) {
   const town = townOf(s); if (!town) { out.push({ id: s.id, region: s.region, name: s.name, status: 'none', why: 'not on a recorded town centre' }); continue; }
   const c = s.id.startsWith('c-') ? CAND.get(s.id.slice(2)) : null;
@@ -106,18 +109,18 @@ for (const s of entries) {
 }
 saveWiki();
 
-const n = (st) => out.filter((r) => r.status === st).length;
-const byMethod = out.filter((r) => r.proposal).reduce((m, r) => { m[r.proposal.method] = (m[r.proposal.method] || 0) + 1; return m; }, {});
+const open = out.filter((r) => !r.approved), n = (st) => open.filter((r) => r.status === st).length;
+const byMethod = open.filter((r) => r.proposal).reduce((m, r) => { m[r.proposal.method] = (m[r.proposal.method] || 0) + 1; return m; }, {});
 fs.writeFileSync('archive/review/positions-proposed.json', JSON.stringify({ at: new Date().toISOString(), note: 'Proposals only. Nothing moves until a person approves an entry in archive/model/positions.json.', entries: out.length, proposed: n('proposed'), ambiguous: n('ambiguous'), none: n('none'), byMethod, list: out }, null, 1));
 
 // the sheet a person marks
 const L = [`# Regional positions: proposals for a person to check`, '',
-  `Generated ${new Date().toISOString().slice(0, 10)} by \`node scripts/locate-regional.mjs\`. ${out.length} entries are placed only by town. ${n('proposed')} have a proposed position of their own, ${n('ambiguous')} have more than one possible position, ${n('none')} have none (they stay at the town centre).`, '',
+  `Generated ${new Date().toISOString().slice(0, 10)} by \`node scripts/locate-regional.mjs\`. ${open.length} entries are placed only by town (${out.length - open.length} more have been moved by an approval; see archive/model/positions.json). ${n('proposed')} have a proposed position of their own, ${n('ambiguous')} have more than one possible position, ${n('none')} have none (they stay at the town centre).`, '',
   'To approve, copy the entry id into `archive/model/positions.json` as described in its note, with your initials and the date, then run `node scripts/write-regional.mjs`. Refuse by leaving it out. Check: does the source really describe the place this entry is about, and is the point on the right facility (open the link)?', '',
   `Methods: doc-coord = coordinates printed in a document the entry rests on; gazetteer / wikipedia = the place the entry names has a Wikipedia article of the same name with coordinates.`, ''];
 for (const st of ['proposed', 'ambiguous']) {
   L.push(`## ${st === 'proposed' ? 'Proposed' : 'More than one possible position (choose or refuse)'}`, '');
-  for (const r of out.filter((x) => x.status === st).sort((a, b) => a.region.localeCompare(b.region) || a.town.localeCompare(b.town))) {
+  for (const r of open.filter((x) => x.status === st).sort((a, b) => a.region.localeCompare(b.region) || a.town.localeCompare(b.town))) {
     L.push(`### ${r.id} · ${r.region} · ${r.town}`, `**${r.name}**${r.year ? ' (' + r.year + ')' : ''}`, '');
     const show = st === 'proposed' ? [r.proposal] : r.options.filter((o) => o.method === 'doc-coord' || o.method === 'gazetteer' || o.method === 'wikipedia');
     for (const o of show) {
@@ -131,12 +134,12 @@ for (const st of ['proposed', 'ambiguous']) {
 // near misses: a Wikipedia article close to the town whose title is not word for word the name in the entry (e.g. "Benghazi airport"
 // and "Benina International Airport"). Not proposed; a person may approve one if the documents make the identity clear.
 const NEAR = (o) => o.method === 'wikipedia-near' || o.method === 'possible';
-const near = out.filter((x) => x.status === 'none' && x.options.some(NEAR));
+const near = open.filter((x) => x.status === 'none' && x.options.some(NEAR));
 L.push('## Possible, not proposed (the article title differs from the name, or the place is named only in a supporting passage)', '');
 for (const r of near) { const o = r.options.find(NEAR); L.push(`- ${r.id} · ${r.town} · ${clip(r.name, 90)}: ${o.method === 'possible' ? 'a supporting passage names' : 'the entry says'} "${o.named}"; article [${o.title}](${o.src.u}) at ${o.lat}, ${o.lon}, ${o.fromTown} km from the town centre`); }
 L.push('');
-L.push('## No position found (stay at the town centre)', '', ...out.filter((x) => x.status === 'none' && !near.includes(x)).map((r) => `- ${r.id} · ${r.town} · ${clip(r.name, 90)}${r.named.length ? ' (named: ' + r.named.slice(0, 3).join('; ') + ')' : ''}`), '');
+L.push('## No position found (stay at the town centre)', '', ...open.filter((x) => x.status === 'none' && !near.includes(x)).map((r) => `- ${r.id} · ${r.town} · ${clip(r.name, 90)}${r.named.length ? ' (named: ' + r.named.slice(0, 3).join('; ') + ')' : ''}`), '');
 fs.writeFileSync('archive/review/positions-sheet.md', L.join('\n'));
-console.log(`${out.length} town-level entries: ${n('proposed')} proposed (${JSON.stringify(byMethod)}), ${n('ambiguous')} ambiguous, ${n('none')} none`);
+console.log(`${open.length} town-level entries (${out.length - open.length} approved and moved): ${n('proposed')} proposed (${JSON.stringify(byMethod)}), ${n('ambiguous')} ambiguous, ${n('none')} none`);
 console.log(`Wikipedia: ${Object.keys(wiki).length} titles looked up so far; this run ${stats.requests} requests, ${stats.blocked} refused by robots.txt`);
 console.log('Wrote archive/review/positions-proposed.json and archive/review/positions-sheet.md');

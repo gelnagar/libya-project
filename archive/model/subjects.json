@@ -2338,17 +2338,17 @@
   "y0": 1979,
   "y1": 1979,
   "name": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at…",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.09722,
+  "lon": 20.26944,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Benina International Airport",
+   "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
   },
   "period": "20 December 1979",
   "relevance": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at Benina airport.",
-  "text": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at Benina airport. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 247, 21 December 1979. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site."
+  "text": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at Benina airport. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 247, 21 December 1979. No second source is held for it. Mapped at the position of Benina International Airport given by Wikipedia, the place the entry names (\"Benina airport\"), 2 km margin. The site was found by a machine reading of the documents (Claude Haiku 5.5) and confirmed by a second, separate reading; approved by Claude on the owner's instruction on 2026-11-19."
  },
  {
   "uid": "site:c-4b6d976c1593",
@@ -2962,17 +2962,17 @@
   "y0": 1981,
   "y1": 1981,
   "name": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.09722,
+  "lon": 20.26944,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Benina International Airport",
+   "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
   },
   "period": "26 March 1981",
   "relevance": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
-  "text": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 059, 27 March 1981 (27 March 1981). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site."
+  "text": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 059, 27 March 1981 (27 March 1981). No second source is held for it. Mapped at the position of Benina International Airport given by Wikipedia, the place the entry names (\"Benina airport\"), 2 km margin. The site was found by a machine reading of the documents (Claude Haiku 5.5) and confirmed by a second, separate reading; approved by Claude on the owner's instruction on 2026-11-19."
  },
  {
   "uid": "site:c-ba531243cbe4",
@@ -4658,17 +4658,17 @@
   "y0": 1978,
   "y1": 1978,
   "name": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents…",
-  "lat": 27.0389,
-  "lon": 14.4264,
-  "r": 12,
-  "pos": "town",
+  "lat": 27,
+  "lon": 14.46111,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Sabha",
-   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+   "t": "Wikipedia: Sabha Airport",
+   "u": "https://en.wikipedia.org/wiki/Sabha_Airport"
   },
   "period": "25 February 1978",
   "relevance": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents at Sabha airport",
-  "text": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents at Sabha airport. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 40, 28 February 1978 (28 February 1978). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site."
+  "text": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents at Sabha airport. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 40, 28 February 1978 (28 February 1978). No second source is held for it. Mapped at the position of Sabha Airport given by Wikipedia, the place the entry names (\"Sabha International Airport\"), 2 km margin. The site was found by a machine reading of the documents (Claude Haiku 5.5) and confirmed by a second, separate reading; approved by Claude on the owner's instruction on 2026-11-19."
  },
  {
   "uid": "site:c-cc8f7a166e40",
@@ -5018,17 +5018,17 @@
   "y0": 1982,
   "y1": 1982,
   "name": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine",
-  "lat": 24.1833,
-  "lon": 23.2833,
-  "r": 12,
-  "pos": "town",
+  "lat": 24.18194,
+  "lon": 23.31889,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Kufra",
-   "u": "https://en.wikipedia.org/wiki/Kufra"
+   "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
   },
   "period": "16 December 1982",
   "relevance": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine; pre/postflight activity observed, possibly linked to support of Chad…",
-  "text": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine; pre/postflight activity observed, possibly linked to support of Chad operations. This rests on one document: GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA. No second source is held for it. Mapped at the centre of Kufra: the document names the town, not the site."
+  "text": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine; pre/postflight activity observed, possibly linked to support of Chad operations. This rests on one document: GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA. No second source is held for it. Mapped at the coordinates printed in GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (24-10-55N 023-19-08E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-19."
  },
  {
   "uid": "site:c-c99a0c9d417d",
@@ -5348,17 +5348,17 @@
   "layer": "landmark",
   "level": "documented",
   "name": "Fortress of Ghat (Koukemen hill, Ghat)",
-  "lat": 24.9594,
-  "lon": 10.1758,
-  "r": 12,
-  "pos": "town",
+  "lat": 24.96702,
+  "lon": 10.18051,
+  "r": 1.5,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Ghat",
-   "u": "https://en.wikipedia.org/wiki/Ghat,_Libya"
+   "t": "Wikipedia: Fortress of Ghat",
+   "u": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
   },
   "period": "Date not given",
   "relevance": "A fort on the hill of Koukemen in Ghat, Libya, started under the Ottoman Empire and rebuilt in the 1930s after partial destruction in the Italian campaign.",
-  "text": "A fort on the hill of Koukemen in Ghat, Libya, started under the Ottoman Empire and rebuilt in the 1930s after partial destruction in the Italian campaign. This rests on one document: Fortress of Ghat (Wikipedia). No second source is held for it. Mapped at the centre of Ghat: the document names the town, not the site."
+  "text": "A fort on the hill of Koukemen in Ghat, Libya, started under the Ottoman Empire and rebuilt in the 1930s after partial destruction in the Italian campaign. This rests on one document: Fortress of Ghat (Wikipedia). No second source is held for it. Mapped at the position of Fortress of Ghat given by Wikipedia, the place the entry names (\"Fortress of Ghat\"), 1.5 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-19."
  },
  {
   "uid": "site:c-afaa74d2691b",
@@ -5433,18 +5433,22 @@
   "region": "fezzan",
   "order": 247,
   "set": "sites",
-  "pos": "town",
+  "pos": "site",
+  "posSrc": {
+   "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
+  },
   "layer": "military",
   "level": "documented",
   "y0": 1982,
   "y1": 1983,
   "name": "Kufra airfield",
-  "lat": 24.1833,
-  "lon": 23.2833,
-  "r": 15,
+  "lat": 24.18194,
+  "lon": 23.31889,
+  "r": 1,
   "period": "Observed 1982-1983",
   "relevance": "A military airfield in the far south-east, watched by US satellite imagery during the Libya-Chad conflict.",
-  "text": "US National Photographic Interpretation Center (NPIC) reports from 1982 and 1983 describe the airfield as hosting a Fishbed fighter unit and serving as a support base in southern Libya for operations towards Chad. One report (January 1982) records an increased number of SF.260 light ground-attack aircraft there; another (September 1983) says ten Flogger fighters were probably preparing to depart; a third records four SF.260s, a G.222T transport and two Twin Otter aircraft arriving while four Fishbed fighters, a Candid transport and two C-130s departed; a further report says a third Blinder medium bomber had deployed there, probably from Umm Aitiqah. The reports are US intelligence products and describe equipment seen in imagery; they do not say what the aircraft were used for on any given day. Mapped at the centre of Kufra, because none of the documents gives the airfield's own coordinates."
+  "text": "US National Photographic Interpretation Center (NPIC) reports from 1982 and 1983 describe the airfield as hosting a Fishbed fighter unit and serving as a support base in southern Libya for operations towards Chad. One report (January 1982) records an increased number of SF.260 light ground-attack aircraft there; another (September 1983) says ten Flogger fighters were probably preparing to depart; a third records four SF.260s, a G.222T transport and two Twin Otter aircraft arriving while four Fishbed fighters, a Candid transport and two C-130s departed; a further report says a third Blinder medium bomber had deployed there, probably from Umm Aitiqah. The reports are US intelligence products and describe equipment seen in imagery; they do not say what the aircraft were used for on any given day. Mapped at the coordinates printed in the NPIC report \"Ground attack aircraft deployment, Kufra airfield, Libya\" (24-10-55N 023-19-08E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-19."
  },
  {
   "uid": "site:fz-kufrah-barracks",
@@ -6608,17 +6612,17 @@
   "layer": "landmark",
   "level": "documented",
   "name": "Misrata International Airport",
-  "lat": 32.3775,
-  "lon": 15.092,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.32556,
+  "lon": 15.05972,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Misrata",
-   "u": "https://en.wikipedia.org/wiki/Misrata"
+   "t": "Wikipedia: Misrata Airport",
+   "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
   },
   "period": "Date not given",
   "relevance": "International airport serving Misrata, also an air base and training centre for the Libyan Air Force; created in 1939 as a small landing site in Italian Libya.",
-  "text": "International airport serving Misrata, also an air base and training centre for the Libyan Air Force; created in 1939 as a small landing site in Italian Libya. This rests on one document: Misrata Airport (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site."
+  "text": "International airport serving Misrata, also an air base and training centre for the Libyan Air Force; created in 1939 as a small landing site in Italian Libya. This rests on one document: Misrata Airport (Wikipedia). No second source is held for it. Mapped at the position of Misrata Airport given by Wikipedia, the place the entry names (\"Misrata International Airport\"), 2 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-19."
  },
  {
   "uid": "site:c-499989ddc9d5",

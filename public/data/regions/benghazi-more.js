@@ -338,17 +338,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1979,
   "y1": 1979,
   "name": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at…",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.09722,
+  "lon": 20.26944,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Benina International Airport",
+   "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
   },
   "period": "20 December 1979",
   "relevance": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at Benina airport.",
-  "text": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at Benina airport. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 247, 21 December 1979. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Qadhdhafi received Syrian Deputy Prime Minister and Foreign Minister Abd al-Halim Khaddam, who arrived at Benina airport. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 247, 21 December 1979. No second source is held for it. Mapped at the position of Benina International Airport given by Wikipedia, the place the entry names (\"Benina airport\"), 2 km margin. The site was found by a machine reading of the documents (Claude Haiku 5.5) and confirmed by a second, separate reading; approved by Claude on the owner's instruction on 2026-11-19.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 247, 21 December 1979",
@@ -1026,17 +1026,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1981,
   "y1": 1981,
   "name": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.09722,
+  "lon": 20.26944,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Benina International Airport",
+   "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
   },
   "period": "26 March 1981",
   "relevance": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi",
-  "text": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 059, 27 March 1981 (27 March 1981). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Libyan soldiers returning from Chad welcomed at Benina airport and in a popular march in Banghazi. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 059, 27 March 1981 (27 March 1981). No second source is held for it. Mapped at the position of Benina International Airport given by Wikipedia, the place the entry names (\"Benina airport\"), 2 km margin. The site was found by a machine reading of the documents (Claude Haiku 5.5) and confirmed by a second, separate reading; approved by Claude on the owner's instruction on 2026-11-19.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 059, 27 March 1981 (1981-03-27)",

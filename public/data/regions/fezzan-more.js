@@ -140,17 +140,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1978,
   "y1": 1978,
   "name": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents…",
-  "lat": 27.0389,
-  "lon": 14.4264,
-  "r": 12,
-  "pos": "town",
+  "lat": 27,
+  "lon": 14.46111,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Sabha",
-   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+   "t": "Wikipedia: Sabha Airport",
+   "u": "https://en.wikipedia.org/wiki/Sabha_Airport"
   },
   "period": "25 February 1978",
   "relevance": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents at Sabha airport",
-  "text": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents at Sabha airport. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 40, 28 February 1978 (28 February 1978). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
+  "text": "Qadhdhafi comments on Chad peace prospects from the Sabha summit as he sees off Chadian and Niger presidents at Sabha airport. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 40, 28 February 1978 (28 February 1978). No second source is held for it. Mapped at the position of Sabha Airport given by Wikipedia, the place the entry names (\"Sabha International Airport\"), 2 km margin. The site was found by a machine reading of the documents (Claude Haiku 5.5) and confirmed by a second, separate reading; approved by Claude on the owner's instruction on 2026-11-19.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & North Africa, Vol. V No. 40, 28 February 1978 (1978-02-28)",
@@ -542,17 +542,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1982,
   "y1": 1982,
   "name": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine",
-  "lat": 24.1833,
-  "lon": 23.2833,
-  "r": 12,
-  "pos": "town",
+  "lat": 24.18194,
+  "lon": 23.31889,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Kufra",
-   "u": "https://en.wikipedia.org/wiki/Kufra"
+   "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000100070005-3"
   },
   "period": "16 December 1982",
   "relevance": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine; pre/postflight activity observed, possibly linked to support of Chad…",
-  "text": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine; pre/postflight activity observed, possibly linked to support of Chad operations. This rests on one document: GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA. No second source is held for it. Mapped at the centre of Kufra: the document names the town, not the site.",
+  "text": "Five SF.260 light ground attack aircraft deployed to Kufra, bringing the total there to nine; pre/postflight activity observed, possibly linked to support of Chad operations. This rests on one document: GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA. No second source is held for it. Mapped at the coordinates printed in GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA (24-10-55N 023-19-08E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-19.",
   "sources": [
    {
     "t": "GROUND ATTACK AIRCRAFT DEPLOYMENT KUFRA AIRFIELD, LIBYA",
@@ -928,17 +928,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "landmark",
   "level": "documented",
   "name": "Fortress of Ghat (Koukemen hill, Ghat)",
-  "lat": 24.9594,
-  "lon": 10.1758,
-  "r": 12,
-  "pos": "town",
+  "lat": 24.96702,
+  "lon": 10.18051,
+  "r": 1.5,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Ghat",
-   "u": "https://en.wikipedia.org/wiki/Ghat,_Libya"
+   "t": "Wikipedia: Fortress of Ghat",
+   "u": "https://en.wikipedia.org/wiki/Fortress_of_Ghat"
   },
   "period": "Date not given",
   "relevance": "A fort on the hill of Koukemen in Ghat, Libya, started under the Ottoman Empire and rebuilt in the 1930s after partial destruction in the Italian campaign.",
-  "text": "A fort on the hill of Koukemen in Ghat, Libya, started under the Ottoman Empire and rebuilt in the 1930s after partial destruction in the Italian campaign. This rests on one document: Fortress of Ghat (Wikipedia). No second source is held for it. Mapped at the centre of Ghat: the document names the town, not the site.",
+  "text": "A fort on the hill of Koukemen in Ghat, Libya, started under the Ottoman Empire and rebuilt in the 1930s after partial destruction in the Italian campaign. This rests on one document: Fortress of Ghat (Wikipedia). No second source is held for it. Mapped at the position of Fortress of Ghat given by Wikipedia, the place the entry names (\"Fortress of Ghat\"), 1.5 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-19.",
   "sources": [
    {
     "t": "Fortress of Ghat (Wikipedia)",

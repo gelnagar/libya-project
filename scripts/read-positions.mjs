@@ -162,8 +162,10 @@ const townOf = (s) => (TOWNS[s.region] || []).find((t) => km(t.lat, t.lon, s.lat
 const todo = PROP.list.filter((r) => r.status !== 'proposed' && (!ONLY || r.id === ONLY));
 const proposed = PROP.list.filter((r) => r.status === 'proposed' && (!ONLY || r.id === ONLY));
 const read = prev.read || {}, check = prev.check || {};
+// each run's own count is kept, so the total is the sum of every run (the first, of 19 Nov 2026, kept only its own)
+const STARTED = new Date().toISOString(), RUNS = prev.runs || (prev.usage ? [{ at: prev.at, ...prev.usage }] : []);
 let chars = 0, reqs = 0;
-const save = () => { saveWiki(); fs.writeFileSync(OUT, JSON.stringify({ at: new Date().toISOString(), model: MODEL, note: 'Stage 1 (reader) and stage 2 (independent checker) of the paid position reading, H1 Phase 3. A position is verified only when the checks without a model and the checker both pass. Approval is recorded separately in archive/model/positions.json.', usage: { ...usage, costUSD: +cost().toFixed(4), priceBasis: 'USD 0.10 per million input tokens, 0.50 per million output (Haiku 5.5 list price, prompts under 100K tokens)' }, read: Object.fromEntries(Object.entries(read).sort()), check: Object.fromEntries(Object.entries(check).sort()) }, null, 1) + '\n'); };
+const save = () => { saveWiki(); fs.writeFileSync(OUT, JSON.stringify({ at: new Date().toISOString(), model: MODEL, note: 'Stage 1 (reader) and stage 2 (independent checker) of the paid position reading, H1 Phase 3. A position is verified only when the checks without a model and the checker both pass. Approval is recorded separately in archive/model/positions.json.', usage: { ...usage, costUSD: +cost().toFixed(4), priceBasis: 'USD 0.10 per million input tokens, 0.50 per million output (Haiku 5.5 list price, prompts under 100K tokens)' }, runs: [...RUNS, { at: STARTED, ...usage, costUSD: +cost().toFixed(4) }], totalUSD: +(RUNS.reduce((t, r) => t + (r.costUSD || 0), 0) + cost()).toFixed(4), read: Object.fromEntries(Object.entries(read).sort()), check: Object.fromEntries(Object.entries(check).sort()) }, null, 1) + '\n'); };
 
 const queue = [];
 for (const r of todo) { const s = byId.get(r.id), town = s && townOf(s); if (!town) continue; queue.push({ s, town }); }

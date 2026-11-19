@@ -601,7 +601,7 @@ html[data-theme] .trow .tt { min-width: 0; overflow-wrap: anywhere; }
 /* ---------- 11. Intelligence: the entity graph in the workstation look ----------
    Same tokens as the rest of the shell (both themes): flat panel header with a 1px rule, mono object IDs, accent for selection,
    square nodes with 1px frames, no grain, no vignette. The symbolic pictures keep their own dark tones inside a 1px frame. */
-html[data-theme] #unknown { background: var(--bg-app); color: var(--text); background-image: radial-gradient(var(--border) 1px, transparent 1px); background-size: 24px 24px; }
+html[data-theme] #unknown { background: var(--bg-app); color: var(--text); }
 html[data-theme] #unknown .un-grain { display: none; }
 html[data-theme] #unknown .un-head { padding: 0; gap: 0; align-items: stretch; flex-wrap: nowrap; background: var(--bg-panel); border-bottom: 1px solid var(--border); height: var(--bar-h); }
 html[data-theme] #unknown .un-title { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 0 12px; }
@@ -614,24 +614,6 @@ html[data-theme] #unknown .btn { height: 24px; padding: 0 10px; background: var(
 html[data-theme] #unknown .btn:hover { background: var(--bg-hover); }
 html[data-theme] #unknown .btn.primary { background: var(--accent-strong); color: #fff; border-color: var(--accent-strong); }
 html[data-theme] #unknown .btn.primary:hover { background: var(--accent); }
-html[data-theme] #unknown .un-e { stroke: var(--border-strong); opacity: .55; }
-html[data-theme] #unknown .un-e.hot, html[data-theme] #unknown .un-e.on { stroke: var(--accent); opacity: 1; }
-html[data-theme] #unknown .un-n .shadow { display: none; }
-html[data-theme] #unknown .un-n .frame { stroke: var(--border-strong); stroke-width: 1; }
-html[data-theme] #unknown .un-n.f-mapped .frame { stroke: var(--ok); }
-html[data-theme] #unknown .un-n:hover .frame, html[data-theme] #unknown .un-n:focus-visible .frame, html[data-theme] #unknown .un-n.hot .frame { stroke: var(--text); }
-html[data-theme] #unknown .un-n.sel .frame { stroke: var(--accent); stroke-width: 2; }
-html[data-theme] #unknown .un-n .cn { fill: var(--text-faint); font-family: var(--f-mono) !important; font-size: 9px; letter-spacing: 0; }
-html[data-theme] #unknown .un-n .nm { fill: var(--text); font-size: 11px; font-weight: 500; stroke: var(--bg-app); stroke-width: 3px; }
-html[data-theme] #unknown .un-legend { left: 8px; bottom: 8px; gap: 4px; max-width: 760px; }
-html[data-theme] #unknown .un-legend button { padding: 2px 8px 2px 2px; background: var(--bg-panel); color: var(--text); border: 1px solid var(--border); border-radius: 2px; font: 12px var(--f-ui); }
-html[data-theme] #unknown .un-legend button:hover { background: var(--bg-hover); }
-html[data-theme] #unknown .un-legend button small { color: var(--text-faint); font-family: var(--f-mono) !important; }
-html[data-theme] #unknown .un-legend button[aria-pressed="true"] { border-color: var(--accent); background: var(--tint); }
-html[data-theme] #unknown .un-note { color: var(--text-faint); font-size: 11px; }
-html[data-theme] .un-portrait svg { border: 1px solid var(--border-strong); }
-html[data-theme] .un-portrait .un-case { background: var(--bg-panel); color: var(--text-muted); font-family: var(--f-mono) !important; border: 1px solid var(--border); }
-html[data-theme] .un-links .un-mini svg { border: 1px solid var(--border-strong); }
 html[data-theme] .un-lrow .un-why { border: 1px solid var(--border-strong) !important; color: var(--accent); border-radius: 2px; }
 @media (max-width: 899px) {
   html[data-theme] #unknown .un-head { height: auto; flex-wrap: wrap; padding: 6px 8px; gap: 6px; }
@@ -647,3 +629,69 @@ html[data-theme] .mk-town i::after { content: ''; position: absolute; left: -2px
 html[data-theme] .leaflet-marker-icon:hover .mk-town b, html[data-theme] .leaflet-marker-icon:focus-visible .mk-town b { border-color: var(--accent); color: var(--accent); }
 html[data-theme] .site-label.town-label { color: var(--text-muted); font-style: normal; }
 html[data-theme] .glyph.g-town { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 22px; padding: 0 4px; border: 1px solid var(--border-strong); font: 600 11px var(--f-mono) !important; color: var(--text); }
+
+/* ---------- 13. Intelligence as a link-analysis graph (19 Nov 2026) ----------
+   The conventions of analyst link-chart tools: round nodes with one flat glyph per object type, type colour on the ring and
+   glyph only, thin neutral links that turn accent when selected, a measured grid that pans with the graph, a type histogram
+   that filters, mono object IDs. No drawn faces, grain, shadows or draw-in animation. Type colours are the shell's own
+   status hues plus one violet, and every type also has its own glyph, so colour is never the only cue. */
+html[data-theme="dark"] { --ty-person: #4c90f0; --ty-org: #ec9a3c; --ty-place: #32a467; --ty-mapped: #2ec4b6; --ty-event: #bdadff; --ty-militant: #e76a6e; --ty-unknown: #8f99a8; }
+html[data-theme="light"] { --ty-person: #2d72d2; --ty-org: #c87619; --ty-place: #238551; --ty-mapped: #00857a; --ty-event: #7961db; --ty-militant: #cd4246; --ty-unknown: #738091; }
+html[data-theme] .t-agent, html[data-theme] .t-official, html[data-theme] .t-dissident, html[data-theme] .t-trader { --tc: var(--ty-person); }
+html[data-theme] .t-militant { --tc: var(--ty-militant); }
+html[data-theme] .t-org, html[data-theme] .t-state { --tc: var(--ty-org); }
+html[data-theme] .t-place { --tc: var(--ty-place); }
+html[data-theme] .t-mapped { --tc: var(--ty-mapped); }
+html[data-theme] .t-event { --tc: var(--ty-event); }
+html[data-theme] .t-unknown { --tc: var(--ty-unknown); }
+
+html[data-theme] .un-pic { overflow: visible; }
+html[data-theme] .un-pic .disc { fill: var(--bg-panel); }
+html[data-theme] .un-pic .ring { fill: none; stroke: var(--tc, var(--border-strong)); stroke-width: 6; }
+html[data-theme] .un-pic .gl { fill: var(--tc, var(--text-muted)); }
+html[data-theme] .un-pic .gl .gc { fill: var(--bg-panel); }
+html[data-theme] .un-pic.real .ph { filter: grayscale(1) contrast(1.05); }
+
+html[data-theme] #unknown .un-gridbg { pointer-events: all; }
+html[data-theme] #unknown pattern .g1 { fill: none; stroke: var(--border); stroke-width: .6; opacity: .6; }
+html[data-theme] #unknown pattern .g5 { fill: none; stroke: var(--border); stroke-width: 1; opacity: .7; }
+html[data-theme] #unknown .un-e { stroke: var(--border-strong); opacity: .5; animation: none; stroke-dasharray: none; }
+html[data-theme] #unknown .un-e.strong { opacity: .75; }
+html[data-theme] #unknown.dim .un-e { opacity: .12; }
+html[data-theme] #unknown .un-e.hot { stroke: var(--accent); opacity: .95; }
+html[data-theme] #unknown .un-e.on { stroke: var(--accent); opacity: 1; stroke-width: 2.5; }
+
+html[data-theme] #unknown .un-n { transition: opacity .15s; }
+html[data-theme] #unknown.dim .un-n { opacity: .18; }
+html[data-theme] #unknown .un-n.hot { opacity: 1; }
+html[data-theme] #unknown .un-n .halo { fill: none; stroke: none; }
+html[data-theme] #unknown .un-n:hover .disc, html[data-theme] #unknown .un-n:focus-visible .disc { fill: var(--bg-hover); }
+html[data-theme] #unknown .un-n:focus-visible .halo { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 3 2; }
+html[data-theme] #unknown .un-n.sel .halo { fill: var(--tint); stroke: var(--accent); stroke-width: 2; }
+html[data-theme] #unknown .un-n text { text-anchor: middle; }
+html[data-theme] #unknown .un-n .nm { fill: var(--text); font-size: 10.5px; font-weight: 500; paint-order: stroke; stroke: var(--bg-app); stroke-width: 3px; stroke-linejoin: round; }
+html[data-theme] #unknown .un-n .cn { fill: var(--text-faint); font-family: var(--f-mono) !important; font-size: 8.5px; paint-order: stroke; stroke: var(--bg-app); stroke-width: 3px; }
+html[data-theme] #unknown .un-n.sel .nm { font-weight: 600; }
+
+html[data-theme] #unknown .un-sep { width: 1px; align-self: stretch; margin: 7px 0; background: var(--border); flex: none; }
+html[data-theme] #unknown .un-legend { left: 8px; top: calc(var(--bar-h) + 8px); bottom: auto; right: auto; width: 208px; display: block; padding: 0 0 4px; max-width: none;
+  background: var(--bg-panel); border: 1px solid var(--border); border-radius: 2px; }
+html[data-theme] #unknown .un-lg-h { display: flex; justify-content: space-between; padding: 6px 8px; border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; }
+html[data-theme] #unknown .un-lg-h small { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--text-faint); }
+html[data-theme] #unknown .un-legend button { position: relative; display: grid; grid-template-columns: 16px 1fr auto; align-items: center; gap: 8px; width: 100%; height: 26px; padding: 0 8px;
+  background: transparent; color: var(--text); border: 0; border-left: 2px solid transparent; border-radius: 0; font: 12px var(--f-ui); text-align: left; cursor: pointer; }
+html[data-theme] #unknown .un-legend button:hover { background: var(--bg-hover); }
+html[data-theme] #unknown .un-legend button[aria-pressed="true"] { background: var(--tint); border-left-color: var(--accent); }
+html[data-theme] #unknown .un-legend button small { color: var(--text-muted); font-family: var(--f-mono) !important; font-size: 11px; }
+html[data-theme] #unknown .un-legend .lg-bar { position: absolute; left: 0; top: 3px; bottom: 3px; max-width: 100%; background: var(--tc); opacity: .1; pointer-events: none; }
+html[data-theme] #unknown .un-legend button > :not(.lg-bar) { position: relative; }
+html[data-theme] #unknown .un-legend .lg-pic svg { display: block; }
+html[data-theme] .un-portrait svg { border: 0; box-shadow: none; }
+html[data-theme] .un-portrait .un-case { left: 50%; bottom: -4px; transform: translateX(-50%); white-space: nowrap; }
+html[data-theme] .un-links .un-mini svg { border: 0; }
+@media (max-width: 899px) {
+  html[data-theme] #unknown .un-legend { top: auto; bottom: 8px; left: 8px; right: 8px; width: auto; display: flex; overflow-x: auto; padding: 0; }
+  html[data-theme] #unknown .un-lg-h { display: none; }
+  html[data-theme] #unknown .un-legend button { width: auto; flex: none; grid-template-columns: 16px auto auto; }
+  html[data-theme] #unknown .un-sep { display: none; }
+}

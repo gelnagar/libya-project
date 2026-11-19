@@ -1,5 +1,5 @@
-/* Intelligence: a separate black plane showing the people, groups and outside places that the declassified files connect.
-   Data: data/unknown.js (scripts/build-unknown.py). Pictures are symbolic stand-ins drawn here, never likenesses. */
+/* Intelligence: a link-analysis graph of the people, groups and outside places that the declassified files connect.
+   Data: data/unknown.js (scripts/build-unknown.py). Each object is a disc with its type's glyph (or a free photograph); never a likeness. */
 (function () {
   'use strict';
   var API = window.ATLAS_API, h = API.h;
@@ -7,8 +7,7 @@
   var D = null, root = null, svg = null, vp = null, edgeEls = [], nodeEls = [], adj = [], sel = null, hover = null, typeFilter = null;
   var view = { x: 0, y: 0, k: 1 };
 
-  /* ---------- the pictures (viewBox 0 0 100 100; classes set the tones) ---------- */
-  var ART = window.ATLAS_ART;
+  /* ---------- object types ---------- */
   var PICS = { person: 1, agent: 1, official: 1, leader: 1, dissident: 1, militant: 1, trader: 1, org: 1, state: 1, place: 1, airfield: 1, mapped: 1, event: 1, unknown: 1 };
   var PIC_LABEL = {
     agent: 'Person in intelligence, covert or security work', official: 'Person: official or officer', leader: 'Person: head of state', dissident: 'Person: dissident, exile or student',
@@ -20,15 +19,35 @@
   function picOf(n) { return n.pic === 'place' && /air ?field|air ?base|airport/i.test(n.name) ? 'airfield' : (PICS[n.pic] ? n.pic : 'unknown'); }
   function famOf(p) { return { leader: 'official', person: 'unknown', airfield: 'place' }[p] || p; }
   function caseNo(i) { return 'OBJ-' + String(i + 1).padStart(4, '0'); }
-  function size(n) { return Math.round(36 + Math.min(44, Math.sqrt(n.n) * 9)); }
 
-  /* a small picture for lists and the panel header */
+  function size(n) { return Math.round(13 + Math.min(17, Math.sqrt(n.n) * 3.4)); }  // node radius
+
+  /* Type glyphs, link-analysis style: one flat shape per object type on a 20x20 grid, drawn in the type's colour.
+     .gc parts are cut-outs drawn in the disc colour. No glyph is a likeness. */
+  var GLYPH = {
+    agent: '<path d="M10 2l6.5 2.4v5.1c0 3.9-2.7 6.9-6.5 8.5-3.8-1.6-6.5-4.6-6.5-8.5V4.4z"/><path class="gc" d="M10 5.2l3.8 1.4v3c0 2.3-1.5 4.1-3.8 5.2z"/>',
+    official: '<path d="M10 2.2l2.3 4.7 5.2.8-3.8 3.6.9 5.1L10 14l-4.6 2.4.9-5.1-3.8-3.6 5.2-.8z"/>',
+    dissident: '<circle cx="10" cy="6.3" r="3.6"/><path d="M3.2 18c0-4.1 3-6.8 6.8-6.8s6.8 2.7 6.8 6.8z"/>',
+    militant: '<path d="M10 2.4l8.2 14.8H1.8z"/><path class="gc" d="M9.1 7.4h1.8l-.3 5.2h-1.2zM10 13.6a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1z"/>',
+    trader: '<path d="M10 2.4l7 3.6v8L10 17.6 3 14V6z"/><path class="gc" d="M10 9.6L4.4 6.8l.9-.5L10 8.7l4.7-2.4.9.5zM9.4 9.6h1.2v6.6H9.4z"/>',
+    org: '<path d="M3.5 17.6V3.4h8.2v14.2zM12.9 8h3.6v9.6h-3.6z"/><path class="gc" d="M5.4 5.4h1.6V7H5.4zm2.8 0h1.6V7H8.2zM5.4 8.6h1.6v1.6H5.4zm2.8 0h1.6v1.6H8.2zM5.4 11.8h1.6v1.6H5.4zm2.8 0h1.6v1.6H8.2zM6.8 15h1.6v2.6H6.8z"/>',
+    state: '<path d="M4 2.4h1.6v15.2H4z"/><path d="M5.6 3.4h10.6l-2.3 3.2 2.3 3.2H5.6z"/>',
+    place: '<path d="M10 1.8a5.7 5.7 0 0 0-5.7 5.7c0 4.2 5.7 10.7 5.7 10.7s5.7-6.5 5.7-10.7A5.7 5.7 0 0 0 10 1.8z"/><circle class="gc" cx="10" cy="7.5" r="2.1"/>',
+    airfield: '<path d="M10 1.8c.8 0 1.3.8 1.3 1.9v4.4l6.3 3.7v1.8l-6.3-1.9v3.8l1.9 1.4v1.5L10 17.6l-3.2.8v-1.5l1.9-1.4v-3.8l-6.3 1.9v-1.8l6.3-3.7V3.7c0-1.1.5-1.9 1.3-1.9z"/>',
+    mapped: '<path d="M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/><circle cx="10" cy="10" r="2.4"/><path d="M9.3 0h1.4v4.2H9.3zm0 15.8h1.4V20H9.3zM0 9.3h4.2v1.4H0zm15.8 0H20v1.4h-4.2z"/>',
+    event: '<path d="M3 4.6h14v12.8H3z"/><path d="M6 2.4h1.6v3.4H6zm6.4 0H14v3.4h-1.6z"/><path class="gc" d="M4.5 8.2h11v7.7h-11z"/><path d="M6 9.8h2.4v2.2H6zm3.8 0h2.4v2.2H9.8z"/>',
+    unknown: '<path d="M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 1.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4z"/><path d="M7.4 7.8c.1-1.6 1.2-2.6 2.8-2.6 1.6 0 2.7 1 2.7 2.3 0 1.1-.6 1.7-1.5 2.3-.7.4-.9.7-.9 1.4v.3H9v-.4c0-1.1.4-1.7 1.3-2.2.6-.4.9-.7.9-1.3 0-.6-.5-1-1.1-1-.7 0-1.1.4-1.2 1.2zM10 12.6a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1z"/>'
+  };
+  function glyphOf(p) { return GLYPH[{ leader: 'official', person: 'dissident' }[p] || p] || GLYPH.unknown; }
+
+  /* a small picture for lists, legend chips and the panel header: the type disc, or the free photograph in the disc */
+  var clipN = 0;
   function picSvg(n, px) {
-    ART.defs();
-    var p = picOf(n), art = '<g class="' + ART.cls(p, n.seed) + '">' + ART.draw(p, n.seed) + '</g>', fin = ART.finish();
-    if (n.img) return '<svg class="un-pic real" viewBox="0 0 100 100" width="' + px + '" height="' + px + '" aria-hidden="true"><rect class="bg" width="100" height="100"/>' + art + '<image class="ph" href="' + n.img.thumb.replace(/"/g, '&quot;') + '" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMin slice"/>' + fin + '</svg>';
-    var eye = ART.eye(p), bar = eye ? '<rect class="redact" x="27" y="' + (eye - 4) + '" width="46" height="8"/>' : '';
-    return '<svg class="un-pic' + (p === 'mapped' ? ' on-map' : '') + '" viewBox="0 0 100 100" width="' + px + '" height="' + px + '" aria-hidden="true"><rect class="bg" width="100" height="100"/>' + art + bar + fin + '</svg>';
+    var p = picOf(n), f = famOf(p), id = 'unc' + (++clipN);
+    var body = n.img
+      ? '<clipPath id="' + id + '"><circle cx="50" cy="50" r="46"/></clipPath><image class="ph" clip-path="url(#' + id + ')" href="' + n.img.thumb.replace(/"/g, '&quot;') + '" x="4" y="4" width="92" height="92" preserveAspectRatio="xMidYMin slice"/>'
+      : '<g class="gl" transform="translate(21 21) scale(2.9)">' + glyphOf(p) + '</g>';
+    return '<svg class="un-pic t-' + f + (n.img ? ' real' : '') + '" viewBox="0 0 100 100" width="' + px + '" height="' + px + '" aria-hidden="true"><circle class="disc" cx="50" cy="50" r="46"/>' + body + '<circle class="ring" cx="50" cy="50" r="46"/></svg>';
   }
   function el(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
 
@@ -39,7 +58,7 @@
     D.edges.forEach(function (e, i) { adj[e.s].push(i); adj[e.t].push(i); });
     root = h('div', { id: 'unknown', role: 'region', 'aria-label': 'Intelligence: people and groups linked in the files', hidden: '' });
     var head = h('div', { class: 'un-head' }, [
-      h('div', { class: 'un-title' }, [h('h2', { text: 'Intelligence' }), h('p', { text: 'Entity graph. People, groups and places outside the map, linked by declassified documents. Icons are symbolic unless a free photograph exists; none is a likeness.' })]),
+      h('div', { class: 'un-title' }, [h('h2', { text: 'Intelligence' }), h('span', { class: 'un-sep', 'aria-hidden': 'true' }), h('p', { text: 'Link graph · ' + D.nodes.length + ' objects · ' + D.edges.length + ' links · source: declassified CIA, FBIS, JPRS and State Department files. Icons show the object type; photographs only where a free one exists.' })]),
       h('div', { class: 'un-tools' }, [
         h('input', { type: 'search', id: 'un-q', placeholder: 'Search objects', 'aria-label': 'Search objects in Intelligence', autocomplete: 'off' }),
         h('button', { class: 'btn', type: 'button', id: 'un-fit', text: 'Fit view' }),
@@ -47,15 +66,16 @@
     ]);
     svg = el('svg', { class: 'un-svg', role: 'img', 'aria-label': D.nodes.length + ' entities and ' + D.edges.length + ' links' });
     var defs = el('defs', {});
-    defs.innerHTML = '<filter id="un-grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 .8  0 0 0 0 .78  0 0 0 0 .72  0 0 0 .55 0"/></filter>';
+    defs.innerHTML = '<pattern id="un-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path class="g1" d="M24 0H0V24"/></pattern>' +
+      '<pattern id="un-grid5" width="120" height="120" patternUnits="userSpaceOnUse"><rect width="120" height="120" fill="url(#un-grid)"/><path class="g5" d="M120 0H0V120"/></pattern>';
     svg.appendChild(defs);
-    vp = el('g', {}); svg.appendChild(vp);
+    var gridR = el('rect', { class: 'un-gridbg', x: -6000, y: -6000, width: 12000, height: 12000, fill: 'url(#un-grid5)' });
+    vp = el('g', {}); svg.appendChild(vp); vp.appendChild(gridR);
     var eg = el('g', { class: 'un-edges' }), ng = el('g', { class: 'un-nodes' });
     vp.appendChild(eg); vp.appendChild(ng);
     D.edges.forEach(function (e, i) {
       var a = D.nodes[e.s], b = D.nodes[e.t];
-      var ln = el('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, 'stroke-width': (0.8 + Math.log(1 + e.n) * 0.9).toFixed(2), pathLength: '1', class: 'un-e' });
-      ln.style.animationDelay = (Math.min(1, Math.hypot(a.x, a.y) / 700) * 0.9).toFixed(2) + 's';
+      var ln = el('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, 'stroke-width': (0.7 + Math.log(1 + e.n) * 0.55).toFixed(2), class: 'un-e' + (e.n >= 3 ? ' strong' : '') });
       eg.appendChild(ln); edgeEls.push(ln);
     });
     D.edges.forEach(function (e, i) {
@@ -65,30 +85,29 @@
       eg.appendChild(hit);
     });
     D.nodes.forEach(function (n, i) {
-      var s = size(n), p = picOf(n);
-      var g = el('g', { class: 'un-n f-' + famOf(p) + (n.n >= 4 ? ' big' : ''), transform: 'translate(' + n.x + ' ' + n.y + ')', tabindex: '0', role: 'button', 'aria-label': n.name + ', ' + PIC_LABEL[p] });
-      g.innerHTML = '<rect class="shadow" x="' + (-s / 2 + 3) + '" y="' + (-s / 2 + 3) + '" width="' + s + '" height="' + s + '"/>' +
-        '<g transform="translate(' + (-s / 2) + ' ' + (-s / 2) + ')">' + picSvg(n, s) + '</g>' +
-        '<rect class="frame" x="' + (-s / 2) + '" y="' + (-s / 2) + '" width="' + s + '" height="' + s + '"/>' +
-        '<text class="cn" x="' + (-s / 2) + '" y="' + (s / 2 + 11) + '">' + caseNo(i) + '</text>' +
-        '<text class="nm" x="' + (-s / 2) + '" y="' + (s / 2 + 24) + '"></text>';
+      var r = size(n), p = picOf(n), d = r * 2;
+      var g = el('g', { class: 'un-n t-' + famOf(p) + (n.n >= 4 ? ' big' : ''), transform: 'translate(' + n.x + ' ' + n.y + ')', tabindex: '0', role: 'button', 'aria-label': n.name + ', ' + PIC_LABEL[p] });
+      g.innerHTML = '<circle class="halo" r="' + (r + 5) + '"/>' +
+        '<g transform="translate(' + (-r) + ' ' + (-r) + ')">' + picSvg(n, d) + '</g>' +
+        '<text class="nm" y="' + (r + 13) + '"></text>' +
+        '<text class="cn" y="' + (r + 24) + '">' + caseNo(i) + '</text>';
       g.querySelector('.nm').textContent = n.name.length > 34 ? n.name.slice(0, 32) + '…' : n.name;
       g.addEventListener('pointerenter', function () { hover = i; paint(); });
       g.addEventListener('pointerleave', function () { if (hover === i) { hover = null; paint(); } });
       g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); select(i, true); } });
       g._i = i; ng.appendChild(g); nodeEls.push(g);
     });
-    var grain = h('div', { class: 'un-grain', 'aria-hidden': 'true' });
-    var legend = h('div', { class: 'un-legend', role: 'group', 'aria-label': 'Picture types' });
-    var counts = {}; D.nodes.forEach(function (n) { var f = famOf(picOf(n)); counts[f] = (counts[f] || 0) + 1; });
+    var legend = h('div', { class: 'un-legend', role: 'group', 'aria-label': 'Object types: click one to filter' }, [h('div', { class: 'un-lg-h' }, [h('span', { text: 'Object types' }), h('small', { text: 'Count' })])]);
+    var counts = {}, most = 1; D.nodes.forEach(function (n) { var f = famOf(picOf(n)); counts[f] = (counts[f] || 0) + 1; most = Math.max(most, counts[f]); });
     LEGEND.forEach(function (l) {
       if (!counts[l[0]]) return;
-      var b = h('button', { type: 'button', 'aria-pressed': 'false', title: PIC_LABEL[l[0]] }, [h('span', { class: 'lg-pic', html: picSvg({ pic: l[0], seed: 0, name: '' }, 22) }), h('span', { text: l[1] }), h('small', { text: String(counts[l[0]]) })]);
+      var b = h('button', { type: 'button', 'aria-pressed': 'false', title: PIC_LABEL[l[0]] }, [h('span', { class: 'lg-pic', html: picSvg({ pic: l[0], seed: 0, name: '' }, 16) }), h('span', { class: 'lg-l', text: l[1] }), h('small', { text: String(counts[l[0]]) }), h('i', { class: 'lg-bar t-' + l[0], 'aria-hidden': 'true' })]);
+      b.querySelector('.lg-bar').style.width = (counts[l[0]] / most * 100).toFixed(1) + '%';
       b.addEventListener('click', function () { typeFilter = typeFilter === l[0] ? null : l[0]; legend.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); if (typeFilter) b.setAttribute('aria-pressed', 'true'); paint(); });
       legend.appendChild(b);
     });
     var note = h('p', { class: 'un-note', text: 'Names and links were read from CIA, FBIS, JPRS and State Department files by AI (Claude Haiku). They can be wrong: open a card to see the documents behind it.' });
-    root.appendChild(svg); root.appendChild(grain); root.appendChild(head); root.appendChild(legend); root.appendChild(note);
+    root.appendChild(svg); root.appendChild(head); root.appendChild(legend); root.appendChild(note);
     document.body.appendChild(root);
     $id('un-back').onclick = close;
     $id('un-fit').onclick = function () { fit(true); };

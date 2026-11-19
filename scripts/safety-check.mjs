@@ -1,21 +1,29 @@
 // Safety check for one region, before its entries go anywhere public (plan section 9: "who could be harmed by this
 // region's entries, and what was left out for that reason"). Free: no network, no AI calls.
 //   node scripts/safety-check.mjs <region>
-// Reads the region's review candidates (archive/review/candidates.json), its map pins if any
-// (public/data/regions/<region>.js), and the people the reading model listed for each cited document.
+// Reads the region's review candidates (archive/review/candidates.json), its published pins
+// (public/data/regions/<region>.js and the generated <region>-more.js), and the people the reading model listed for each cited document.
 // Flags, per entry:
 //   private-role  a person named in a security, informer or enforcement role who is not a public official  -> leave out the name
 //   victim        a person named as executed, arrested, detained or killed                                  -> name only if a published source names them
 //   home          a passage pointing to a private home or residence                                         -> never published
 //   after-2011    an event after the period of the map, in a conflict that is still live                    -> out of scope
 // Writes archive/review/safety-<region>.json. The written judgement goes in archive/regions/<region>-safety.md.
-import fs from 'node:fs'; import vm from 'node:vm';
+import fs from 'node:fs'; import vm from 'node:vm'; import zlib from 'node:zlib';
 import { flat } from './lib/stored.mjs';
 
 const region = process.argv[2]; if (!region) { console.log('usage: node scripts/safety-check.mjs <region>'); process.exit(2); }
 const all = JSON.parse(fs.readFileSync('archive/review/candidates.json', 'utf8')); const cands = (all.candidates || all).filter((c) => c.region === region);
-let pins = []; const pf = `public/data/regions/${region}.js`;
-if (fs.existsSync(pf)) { const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(pf, 'utf8'), ctx); pins = Object.values(ctx.window).flat().filter((x) => x && x.region === region); }
+// the region's published pins: the hand-written file and the generated one (<region>-more.js, write-regional.mjs)
+let pins = [];
+for (const pf of [`public/data/regions/${region}.js`, `public/data/regions/${region}-more.js`]) { if (!fs.existsSync(pf)) continue;
+  const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(pf, 'utf8'), ctx); pins.push(...Object.values(ctx.window).flat().filter((x) => x && x.region === region)); }
+// a pin's documents, from its source links, looked up in the stored documents' own addresses, so the people check reaches pins too
+const BYURL = new Map(), key = (u) => String(u || '').replace(/^https?:\/\/(www\.)?/, '').replace(/[?#].*$/, '').replace(/\/+$/, '');
+for (const f of ['archive/crest/docs.jsonl.gz', 'archive/crest/docs-other.jsonl.gz']) { if (!fs.existsSync(f)) continue;
+  for (const l of zlib.gunzipSync(fs.readFileSync(f)).toString().split('\n')) { if (!l) continue; let d; try { d = JSON.parse(l); } catch { continue; }
+    for (const u of [d.url, d.ia, d.cia]) if (u) BYURL.set(key(u), d.id); } }
+const docOf = (u) => BYURL.get(key(u)) || null;
 
 // people per document, as the reading model listed them
 const people = new Map();
@@ -29,7 +37,7 @@ const VICTIM = /\b(executed|hanged|hung|shot dead|killed|murdered|assassinated|v
 const HOME = /\b((?<!return )home of (?!a |an |the )|house of (?!representatives|commons|lords|the people|congress)|residence of|his home|her home|family home|private house|lives at|lived at)\b/i;
 
 const entries = [
-  ...pins.map((p) => ({ id: p.id, kind: 'pin', name: p.name, date: p.y0 ? String(p.y0) : '', text: p.text || '', docs: [], sources: (p.sources || []).map((s) => s.t) })),
+  ...pins.map((p) => ({ id: p.id, kind: 'pin', name: p.name, date: p.y0 ? String(p.y0) : '', text: (p.name || '') + ' ' + (p.text || ''), docs: (p.sources || []).map((s) => docOf(s.u)).filter(Boolean), sources: (p.sources || []).map((s) => s.t) })),
   ...cands.map((c) => ({ id: c.id, kind: c.kind, name: c.name, date: c.date || '', text: [c.name, ...c.items.map((i) => i.detail + ' ' + i.passage)].join(' '), docs: c.items.map((i) => i.doc), sources: c.items.map((i) => i.title) })),
 ];
 const out = [];

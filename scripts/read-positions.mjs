@@ -18,7 +18,7 @@ import fs from 'node:fs'; import zlib from 'node:zlib'; import vm from 'node:vm'
 import { km, clip, TOWN_RE, words, same, classOnly, wiki, saveWiki, titlesFor, R_BY, COORD, dms, article } from './lib/places.mjs';
 
 const args = process.argv.slice(2), DRY = args.includes('--dry'), ONLY = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
-const KEY = process.env.ANTHROPIC_API_KEY; if (!DRY && !KEY) { console.error('ANTHROPIC_API_KEY missing'); process.exit(2); }
+const KEY = process.env.ANTHROPIC_API_KEY; if (!DRY && !KEY && !process.argv.includes('--inputs')) { console.error('ANTHROPIC_API_KEY missing'); process.exit(2); }
 const MODEL = process.env.EXTRACT_MODEL || 'claude-haiku-5-5';
 const CEILING = 2.0; // US dollars: the run stops if its own count passes this (the estimate is about $0.20)
 const OUT = 'archive/review/positions-read.json';
@@ -30,7 +30,17 @@ const norm = (t) => String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
 const W = {}; W.window = W;
 for (const f of fs.readdirSync('public/data/regions').filter((x) => x.endsWith('.js') && !x.startsWith('_'))) vm.runInNewContext(fs.readFileSync('public/data/regions/' + f, 'utf8'), W);
 const byId = new Map((W.ATLAS_SITES || []).map((s) => [s.id, s]));
-const CAND = new Map(JSON.parse(fs.readFileSync('archive/review/candidates.json', 'utf8')).map((c) => [c.id, c]));
+// candidates.json is git-ignored, so a run in GitHub Actions reads positions-inputs.json: the same fields, for the regional entries only
+// (written locally with --inputs, before a run there)
+const INPUTS = 'archive/review/positions-inputs.json', HAVE_CAND = fs.existsSync('archive/review/candidates.json');
+const CAND = HAVE_CAND ? new Map(JSON.parse(fs.readFileSync('archive/review/candidates.json', 'utf8')).map((c) => [c.id, c]))
+  : new Map(Object.entries(JSON.parse(fs.readFileSync(INPUTS, 'utf8')).entries));
+if (args.includes('--inputs')) {
+  const ids = JSON.parse(fs.readFileSync('archive/review/positions-proposed.json', 'utf8')).list.filter((r) => r.id.startsWith('c-')).map((r) => r.id.slice(2)), out = {};
+  for (const id of ids) { const c = CAND.get(id); if (c) out[id] = { id, kind: c.kind, name: c.name, site: c.site || '', place: c.place || '', items: (c.items || []).map((x) => ({ doc: x.doc, detail: x.detail || '', passage: x.passage || '' })) }; }
+  fs.writeFileSync(INPUTS, JSON.stringify({ note: 'The fields of archive/review/candidates.json (git-ignored) that scripts/read-positions.mjs needs, for the regional entries already written up in public/data/regions/*-more.js only. Written by node scripts/read-positions.mjs --inputs.', entries: out }, null, 1) + '\n');
+  console.log('wrote ' + INPUTS + ': ' + Object.keys(out).length + ' entries'); process.exit(0);
+}
 const docs = new Map();
 for (const f of ['docs', 'docs-other']) { const p = `archive/crest/${f}.jsonl.gz`; if (!fs.existsSync(p)) continue;
   for (const l of zlib.gunzipSync(fs.readFileSync(p)).toString().split('\n')) { if (!l) continue; const d = JSON.parse(l); docs.set(d.id, d); } }

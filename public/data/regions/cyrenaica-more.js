@@ -10,17 +10,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1976,
   "y1": 1976,
   "name": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the…",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 31.8613889,
+  "lon": 23.906778,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+   "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
   },
   "period": "17 August 1976",
   "relevance": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the previous 30 days.",
-  "text": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the previous 30 days. This rests on one document: THE PRESIDENT'S DAILY BRIEF 27 AUGUST 1976 (27 August 1976). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the previous 30 days. This rests on one document: THE PRESIDENT'S DAILY BRIEF 27 AUGUST 1976 (27 August 1976). No second source is held for it. Mapped at the position of Gamal Abdel Nasser Airbase given by Wikipedia, the place the entry names (\"Nasir airfield near Tobruk\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "THE PRESIDENT'S DAILY BRIEF 27 AUGUST 1976 (1976-08-27)",
@@ -322,17 +322,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1981,
   "y1": 1981,
   "name": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 31.8613889,
+  "lon": 23.906778,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+   "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
   },
   "period": "28 March 1981",
   "relevance": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation; announces end of military confrontation with Egypt and withdrawal of…",
-  "text": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation; announces end of military confrontation with Egypt and withdrawal of regular forces from Tobruk region. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 060, 30 March 1981 (30 March 1981). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation; announces end of military confrontation with Egypt and withdrawal of regular forces from Tobruk region. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 060, 30 March 1981 (30 March 1981). No second source is held for it. Mapped at the position of Gamal Abdel Nasser Airbase given by Wikipedia, the place the entry names (\"Jamal 'Abd an-Nasir Base (formerly Al-Adem Base), Tobruk\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 060, 30 March 1981 (1981-03-30)",
@@ -430,17 +430,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1983,
   "y1": 1983,
   "name": "Al Bumbah airfield North (Al Bumbah, near Tubruq)",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.45361,
+  "lon": 23.11944,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "FLOGGER B WITH APEX MISSILES AL MUMBAH AIRFIELD NORTH, LIBYA (SANITIZED) (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000201950001-5"
   },
   "period": "23 September 1983",
   "relevance": "Thirteen Flogger B aircraft were on the main parking apron and taxiways, six of them armed with Apex missiles; the airfield is 48 NM northwest of Tubruq on Libya's…",
-  "text": "Thirteen Flogger B aircraft were on the main parking apron and taxiways, six of them armed with Apex missiles; the airfield is 48 NM northwest of Tubruq on Libya's northeast coast. This rests on one document: FLOGGER B WITH APEX MISSILES AL MUMBAH AIRFIELD NORTH, LIBYA (SANITIZED) (23 September 1983). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Thirteen Flogger B aircraft were on the main parking apron and taxiways, six of them armed with Apex missiles; the airfield is 48 NM northwest of Tubruq on Libya's northeast coast. This rests on one document: FLOGGER B WITH APEX MISSILES AL MUMBAH AIRFIELD NORTH, LIBYA (SANITIZED) (23 September 1983). No second source is held for it. Mapped at the coordinates printed in FLOGGER B WITH APEX MISSILES AL MUMBAH AIRFIELD NORTH, LIBYA (SANITIZED) (32-27-13N 023-07-10E), 1 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FLOGGER B WITH APEX MISSILES AL MUMBAH AIRFIELD NORTH, LIBYA (SANITIZED) (1983-09-23)",
@@ -456,17 +456,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1984,
   "y1": 1984,
   "name": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in…",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 31.8613889,
+  "lon": 23.906778,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+   "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
   },
   "period": "28 March 1984",
   "relevance": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in Libya",
-  "text": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in Libya. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 062, 29 March 1984. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in Libya. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 062, 29 March 1984. No second source is held for it. Mapped at the position of Gamal Abdel Nasser Airbase given by Wikipedia, the place the entry names (\"Jamal 'Abd an-Nasir base, Tobruk\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 062, 29 March 1984",
@@ -534,17 +534,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1985,
   "y1": 1985,
   "name": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and…",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 31.8613889,
+  "lon": 23.906778,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+   "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
   },
   "period": "28 March 1985",
   "relevance": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and air display at Jamal 'Abd al-Nasir Air Base.",
-  "text": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and air display at Jamal 'Abd al-Nasir Air Base. This rests on one document: AL-SAFIR INTERVIEWS AL-QADHDHAFI, PART TWO (21 March 1985). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and air display at Jamal 'Abd al-Nasir Air Base. This rests on one document: AL-SAFIR INTERVIEWS AL-QADHDHAFI, PART TWO (21 March 1985). No second source is held for it. Mapped at the position of Gamal Abdel Nasser Airbase given by Wikipedia, the place the entry names (\"Jamal 'Abd al-Nasir Air Base, Tobruk\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "AL-SAFIR INTERVIEWS AL-QADHDHAFI, PART TWO (1985-03-21)",
@@ -612,17 +612,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1988,
   "y1": 1988,
   "name": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 31.8613889,
+  "lon": 23.906778,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+   "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
   },
   "period": "28 March 1988",
   "relevance": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base; he announced withdrawal of all Libyan military forces from the…",
-  "text": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base; he announced withdrawal of all Libyan military forces from the Libyan-Egyptian border. This rests on one document: AL-QADHDHAFI ON 'LIBERATION,' EGYPT, FREEDOM (28 March 1988). No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base; he announced withdrawal of all Libyan military forces from the Libyan-Egyptian border. This rests on one document: AL-QADHDHAFI ON 'LIBERATION,' EGYPT, FREEDOM (28 March 1988). No second source is held for it. Mapped at the position of Gamal Abdel Nasser Airbase given by Wikipedia, the place the entry names (\"Jamal 'Abd al-Nasir Air Base, Tobruk (former RAF El Adem)\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "AL-QADHDHAFI ON 'LIBERATION,' EGYPT, FREEDOM (1988-03-28)",
@@ -636,17 +636,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "military",
   "level": "documented",
   "name": "Tubruq SA-6 SAM Support Facility",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.07972,
+  "lon": 23.89167,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
   },
   "period": "Date not given",
   "relevance": "Housed a tank battalion with at least 30 medium tanks, normally parked in sheds, dispersed within the facility in 1983.",
-  "text": "Housed a tank battalion with at least 30 medium tanks, normally parked in sheds, dispersed within the facility in 1983. The same place appears in 3 separate readings, also described as: Tubruq Airfield; Tubrug (Tobruk) SA-6 SAM Support Facility South. 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Housed a tank battalion with at least 30 medium tanks, normally parked in sheds, dispersed within the facility in 1983. The same place appears in 3 separate readings, also described as: Tubruq Airfield; Tubrug (Tobruk) SA-6 SAM Support Facility South. 3 documents mention it (all from one publisher, cia.gov). Mapped at the coordinates printed in EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (32-04-47N 023-53-30E), 2 km margin. approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACILITY, LIBYA",
@@ -668,17 +668,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "military",
   "level": "documented",
   "name": "Tubruq AW Radar Facility",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 31.87222,
+  "lon": 23.95417,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
   },
   "period": "Date not given",
   "relevance": "A Libyan air warning radar site under construction in June 1973 with six radar mounds, a radar bunker and a control bunker, located in eastern Libya (Tubruq).",
-  "text": "A Libyan air warning radar site under construction in June 1973 with six radar mounds, a radar bunker and a control bunker, located in eastern Libya (Tubruq). This rests on one document: AIR WARNING RADAR SITES IN EGYPT, LIBYA, AND SUDAN. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "A Libyan air warning radar site under construction in June 1973 with six radar mounds, a radar bunker and a control bunker, located in eastern Libya (Tubruq). This rests on one document: AIR WARNING RADAR SITES IN EGYPT, LIBYA, AND SUDAN. No second source is held for it. Mapped at the coordinates printed in AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (31-52-20N 023-57-15E), 1 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "AIR WARNING RADAR SITES IN EGYPT, LIBYA, AND SUDAN",
@@ -692,17 +692,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "military",
   "level": "documented",
   "name": "Tubruq Military Facility West",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.07972,
+  "lon": 23.87528,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
   },
   "period": "Date not given",
   "relevance": "Had a 122mm self-propelled howitzer battalion, a BMP mechanized infantry company and support units defensively deployed there.",
-  "text": "Had a 122mm self-propelled howitzer battalion, a BMP mechanized infantry company and support units defensively deployed there. This rests on one document: EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING…. No second source is held for it. Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Had a 122mm self-propelled howitzer battalion, a BMP mechanized infantry company and support units defensively deployed there. This rests on one document: EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING…. No second source is held for it. Mapped at the coordinates printed in EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (32-04-47N 023-52-31E), 2 km margin. approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACILITY, LIBYA",
@@ -716,17 +716,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "landmark",
   "level": "documented",
   "name": "Jamal 'Abd an-Nasir base, Tobruk",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 31.8613889,
+  "lon": 23.906778,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+   "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
   },
   "period": "Date not given",
   "relevance": "Former British Adem base in Tobruk, renamed after Nasser when Libya took it over in 1970; Gaddafi spoke there on 28 March 1984.",
-  "text": "Former British Adem base in Tobruk, renamed after Nasser when Libya took it over in 1970; Gaddafi spoke there on 28 March 1984. The same place appears in 5 separate readings, also described as: Jamal 'Abd an-Nasir Airbase (Tobruk); Jamal 'Abd al-Nasir Base, Tobruq; Jamal 'Abd al-Nasir Base (al-'Adem Base, Tobruk); Jamal Abd al-Nasir Air Base, Tobruk. 5 documents mention it (from 2 publishers). Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Former British Adem base in Tobruk, renamed after Nasser when Libya took it over in 1970; Gaddafi spoke there on 28 March 1984. The same place appears in 5 separate readings, also described as: Jamal 'Abd an-Nasir Airbase (Tobruk); Jamal 'Abd al-Nasir Base, Tobruq; Jamal 'Abd al-Nasir Base (al-'Adem Base, Tobruk); Jamal Abd al-Nasir Air Base, Tobruk. 5 documents mention it (from 2 publishers). Mapped at the position of Gamal Abdel Nasser Airbase given by Wikipedia, the place the entry names (\"Jamal 'Abd an-Nasir base, Tobruk\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 062, 29 March 1984",
@@ -780,17 +780,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "landmark",
   "level": "documented",
   "name": "Tubruq port (Tobruk)",
-  "lat": 32.0761,
-  "lon": 23.9614,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.07833,
+  "lon": 23.98056,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Tobruk",
-   "u": "https://en.wikipedia.org/wiki/Tobruk"
+   "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200500007-2"
   },
   "period": "Date not given",
   "relevance": "Port where the RO/RO ship with HAZE A helicopter containers arrived offshore; the containers were unlikely to be offloaded here.",
-  "text": "Port where the RO/RO ship with HAZE A helicopter containers arrived offshore; the containers were unlikely to be offloaded here. The same place appears in 3 separate readings, also described as: Tubruq port facilities; Tubruq (Tobruk) port facilities. 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Tobruk: the document names the town, not the site.",
+  "text": "Port where the RO/RO ship with HAZE A helicopter containers arrived offshore; the containers were unlikely to be offloaded here. The same place appears in 3 separate readings, also described as: Tubruq port facilities; Tubruq (Tobruk) port facilities. 3 documents mention it (all from one publisher, cia.gov). Mapped at the coordinates printed in ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA (32-04-42N 023-58-50E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA",

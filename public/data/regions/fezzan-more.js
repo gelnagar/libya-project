@@ -486,17 +486,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1982,
   "y1": 1982,
   "name": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft…",
-  "lat": 27.0389,
-  "lon": 14.4264,
-  "r": 12,
-  "pos": "town",
+  "lat": 27.00139,
+  "lon": 14.46389,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Sabha",
-   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+   "t": "FOXBAT DEPLOYMENT SEBHA AIRFIELD, LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100150003-3"
   },
   "period": "18 January 1982",
   "relevance": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft observed on the transient cargo apron on the west side of the…",
-  "text": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft observed on the transient cargo apron on the west side of the airfield; first identification of Foxbat at Sebha. This rests on one document: FOXBAT DEPLOYMENT SEBHA AIRFIELD, LIBYA (18 January 1982). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
+  "text": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft observed on the transient cargo apron on the west side of the airfield; first identification of Foxbat at Sebha. This rests on one document: FOXBAT DEPLOYMENT SEBHA AIRFIELD, LIBYA (18 January 1982). No second source is held for it. Mapped at the coordinates printed in FOXBAT DEPLOYMENT SEBHA AIRFIELD, LIBYA (27-00-05N 014-27-50E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FOXBAT DEPLOYMENT SEBHA AIRFIELD, LIBYA (1982-01-18)",
@@ -568,17 +568,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1982,
   "y1": 1982,
   "name": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982)",
-  "lat": 27.0389,
-  "lon": 14.4264,
-  "r": 12,
-  "pos": "town",
+  "lat": 27,
+  "lon": 14.46111,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Sabha",
-   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+   "t": "Wikipedia: Sabha Airport",
+   "u": "https://en.wikipedia.org/wiki/Sabha_Airport"
   },
   "period": "4 May 1982",
   "relevance": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982)",
-  "text": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982). This rests on one document: RECENT AIRCRAFT ACCIDENTS IN LIBYA SEBHA AIRFIELD AND GHURDABIYAH AIRFIELD 4 MAY AND 21 APRIL 1982 (7 May 1982). No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
+  "text": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982). This rests on one document: RECENT AIRCRAFT ACCIDENTS IN LIBYA SEBHA AIRFIELD AND GHURDABIYAH AIRFIELD 4 MAY AND 21 APRIL 1982 (7 May 1982). No second source is held for it. Mapped at the position of Sabha Airport given by Wikipedia, the place the entry names (\"Sebha airfield\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "RECENT AIRCRAFT ACCIDENTS IN LIBYA SEBHA AIRFIELD AND GHURDABIYAH AIRFIELD 4 MAY AND 21 APRIL 1982 (1982-05-07)",
@@ -650,17 +650,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1983,
   "y1": 1983,
   "name": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel…",
-  "lat": 27.0389,
-  "lon": 14.4264,
-  "r": 12,
-  "pos": "town",
+  "lat": 27.025,
+  "lon": 14.5,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Sabha",
-   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+   "t": "DISSIDENT TRAINING ACTIVITY IN LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000100460001-1"
   },
   "period": "1 June 1983",
   "relevance": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel watching; four more BTR-60PB were parked within the facility.",
-  "text": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel watching; four more BTR-60PB were parked within the facility. This rests on one document: DISSIDENT TRAINING ACTIVITY IN LIBYA. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
+  "text": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel watching; four more BTR-60PB were parked within the facility. This rests on one document: DISSIDENT TRAINING ACTIVITY IN LIBYA. No second source is held for it. Mapped at the coordinates printed in DISSIDENT TRAINING ACTIVITY IN LIBYA (27-01-30N 014-30-00E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "DISSIDENT TRAINING ACTIVITY IN LIBYA",
@@ -676,17 +676,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1983,
   "y1": 1983,
   "name": "Sixteen Flogger air-superiority fighters and one L-100 medium transport deployed to Kufra",
-  "lat": 24.1833,
-  "lon": 23.2833,
-  "r": 12,
-  "pos": "town",
+  "lat": 24.17778,
+  "lon": 23.31389,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Kufra",
-   "u": "https://en.wikipedia.org/wiki/Kufra"
+   "t": "Wikipedia: Kufra Airport",
+   "u": "https://en.wikipedia.org/wiki/Kufra_Airport"
   },
   "period": "17 February 1983",
   "relevance": "Sixteen Flogger air-superiority fighters and one L-100 medium transport deployed to Kufra; air order-of-battle there increased significantly since the previous day.",
-  "text": "Sixteen Flogger air-superiority fighters and one L-100 medium transport deployed to Kufra; air order-of-battle there increased significantly since the previous day. This rests on one document: FLOGGER DEPLOYMENT KUFRA AIRFIELD, LIBYA (17 February 1983). No second source is held for it. Mapped at the centre of Kufra: the document names the town, not the site.",
+  "text": "Sixteen Flogger air-superiority fighters and one L-100 medium transport deployed to Kufra; air order-of-battle there increased significantly since the previous day. This rests on one document: FLOGGER DEPLOYMENT KUFRA AIRFIELD, LIBYA (17 February 1983). No second source is held for it. Mapped at the position of Kufra Airport given by Wikipedia, the place the entry names (\"Kufra airfield\"), 2 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FLOGGER DEPLOYMENT KUFRA AIRFIELD, LIBYA (1983-02-17)",
@@ -702,17 +702,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1983,
   "y1": 1983,
   "name": "Fifteen Flogger aircraft present",
-  "lat": 24.1833,
-  "lon": 23.2833,
-  "r": 12,
-  "pos": "town",
+  "lat": 24.18194,
+  "lon": 23.31889,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Kufra",
-   "u": "https://en.wikipedia.org/wiki/Kufra"
+   "t": "PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100260005-0"
   },
   "period": "6 September 1983",
   "relevance": "Fifteen Flogger aircraft present; ten appear to be preparing for flight operations, either a return to home base Benina or a possible strike mission into Chad.",
-  "text": "Fifteen Flogger aircraft present; ten appear to be preparing for flight operations, either a return to home base Benina or a possible strike mission into Chad. This rests on one document: PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA. No second source is held for it. Mapped at the centre of Kufra: the document names the town, not the site.",
+  "text": "Fifteen Flogger aircraft present; ten appear to be preparing for flight operations, either a return to home base Benina or a possible strike mission into Chad. This rests on one document: PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA. No second source is held for it. Mapped at the coordinates printed in PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA (24-10-55N 023-19-08E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA",
@@ -952,17 +952,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "military",
   "level": "documented",
   "name": "Sabha AW Radar Fac",
-  "lat": 27.0389,
-  "lon": 14.4264,
-  "r": 12,
-  "pos": "town",
+  "lat": 26.82472,
+  "lon": 14.4725,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Sabha",
-   "u": "https://en.wikipedia.org/wiki/Sabha,_Libya"
+   "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
   },
   "period": "Date not given",
   "relevance": "Libyan AW radar site 112 in Sabha, listed in Table 1.",
-  "text": "Libyan AW radar site 112 in Sabha, listed in Table 1. This rests on one document: AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA. No second source is held for it. Mapped at the centre of Sabha: the document names the town, not the site.",
+  "text": "Libyan AW radar site 112 in Sabha, listed in Table 1. This rests on one document: AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA. No second source is held for it. Mapped at the coordinates printed in AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (26-49-29N 0O14-28-21E), 1 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA",
@@ -1008,17 +1008,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "military",
   "level": "documented",
   "name": "Ghadames East Airfield",
-  "lat": 30.1333,
-  "lon": 9.5,
-  "r": 12,
-  "pos": "town",
+  "lat": 30.13333,
+  "lon": 9.7,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Ghadames",
-   "u": "https://en.wikipedia.org/wiki/Ghadames"
+   "t": "MILITARY AIRFIELD CONSTRUCTION AND RENOVATION IN LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp82t00709r000201000001-4"
   },
   "period": "Date not given",
   "relevance": "Near the Tunisian-Algerian-Libyan border, with construction first observed in July 1978 and nearly complete by 1982.",
-  "text": "Near the Tunisian-Algerian-Libyan border, with construction first observed in July 1978 and nearly complete by 1982. The same place appears in 2 separate readings, also described as: Ghudamis (Ghadames). 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Ghadames: the document names the town, not the site.",
+  "text": "Near the Tunisian-Algerian-Libyan border, with construction first observed in July 1978 and nearly complete by 1982. The same place appears in 2 separate readings, also described as: Ghudamis (Ghadames). 2 documents mention it (all from one publisher, cia.gov). Mapped at the coordinates printed in MILITARY AIRFIELD CONSTRUCTION AND RENOVATION IN LIBYA (30-08-00N 009-42-00E), 1 km margin. approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "MILITARY AIRFIELD CONSTRUCTION AND RENOVATION IN LIBYA",

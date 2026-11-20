@@ -18,10 +18,10 @@
       ]
     },
     {
-      id: 'fz-kufrah-barracks', region: 'fezzan', pos: 'town', layer: 'military', level: 'documented', y0: 1980, y1: 1983,
-      name: 'Al Kufrah barracks', lat: 24.1833, lon: 23.2833, r: 15, period: 'Explosion September 1980; observed to 1983',
+      id: 'fz-kufrah-barracks', region: 'fezzan', pos: 'site', posSrc: { t: 'LIBYAN/DISSIDENT ACTIVITY FAYA LARGEAU, CHAD AL KUFRAH BARRACKS, LIBYA (coordinates printed in the document)', u: 'https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200050001-5' }, layer: 'military', level: 'documented', y0: 1980, y1: 1983,
+      name: 'Al Kufrah barracks', lat: 24.21944, lon: 23.30361, r: 1, period: 'Explosion September 1980; observed to 1983',
       relevance: 'A military barracks at Kufra, the scene of an explosion in 1980 and a staging area during the Libya-Chad conflict.',
-      text: 'A US imagery analysis report of September 1980 describes damage from an explosion at Al Kufrah barracks, in which four buildings were destroyed and at least five other large buildings damaged, together with vehicles and weapons. The report does not give a cause or any casualties. Later NPIC reports (August 1983) show logistics and support forces forming convoys, a long-range artillery battery moving in, nine BTR-60 armoured personnel carriers (four on heavy-lift transporters) and three BM-21 multiple rocket launchers parked in the centre of the facility. These are US intelligence readings of imagery. Mapped at the centre of Kufra; the documents give no coordinates for the barracks.',
+      text: 'A US imagery analysis report of September 1980 describes damage from an explosion at Al Kufrah barracks, in which four buildings were destroyed and at least five other large buildings damaged, together with vehicles and weapons. The report does not give a cause or any casualties. Later NPIC reports (August 1983) show logistics and support forces forming convoys, a long-range artillery battery moving in, nine BTR-60 armoured personnel carriers (four on heavy-lift transporters) and three BM-21 multiple rocket launchers parked in the centre of the facility. These are US intelligence readings of imagery. Mapped at the coordinates the August 1983 NPIC report prints for the barracks (24-13-10N 023-18-13E), 1 km margin; the earlier text here said that no document gives them, which was wrong. Position read in the report and approved by Claude on the owner’s instruction on 20 November 2026.',
       sources: [
         cia('cia-rdp80t01782r000100360001-7', 'Damage from explosion to Al Kufrah barracks, Libya (imagery analysis report, September 1980)'),
         cia('cia-rdp84t00171r000200330001-4', 'Libya-Chad conflict (NPIC, August 1983)'),

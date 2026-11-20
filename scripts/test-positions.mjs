@@ -48,6 +48,9 @@ if (fs.existsSync('archive/model/positions.json')) {
   // positions from the paid reading count as listed only when both of its stages passed (archive/review/positions-read.json)
   const RD = fs.existsSync('archive/review/positions-read.json') ? JSON.parse(fs.readFileSync('archive/review/positions-read.json', 'utf8')) : { read: {}, check: {} };
   for (const [id, c] of Object.entries(RD.check || {})) { const pos = c.from === 'reader' && c.verified && RD.read[id] && RD.read[id].checks.position; if (pos && P.get(id)) P.get(id).options.push(pos); }
+  // positions found by reading in the session count as listed only when scripts/review-positions.mjs passed them
+  const RV = fs.existsSync('archive/review/positions-reviewed.json') ? JSON.parse(fs.readFileSync('archive/review/positions-reviewed.json', 'utf8')) : { records: {} };
+  for (const [id, rec] of Object.entries(RV.records || {})) { if (!rec.checked || !rec.checked.ok) continue; if (!P.get(id)) P.set(id, { options: [] }); P.get(id).options.push({ lat: rec.checked.lat, lon: rec.checked.lon }); }
   const notListed = Object.entries(A).filter(([id, a]) => !(P.get(id) || { options: [] }).options.some((o) => o.lat === a.lat && o.lon === a.lon));
   ok(!notListed.length, `${Object.keys(A).length} approved positions are each one the locator listed`, notListed.map(([id]) => id).join(', '));
   const byId = new Map(pins.map((s) => [s.id, s]));

@@ -234,17 +234,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1978,
   "y1": 1978,
   "name": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.09722,
+  "lon": 20.26944,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Benina International Airport",
+   "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
   },
   "period": "4 April 1978",
   "relevance": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins; he later departs from Benghazi airport on 6 April",
-  "text": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins; he later departs from Benghazi airport on 6 April. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 68, 7 April 1978. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins; he later departs from Benghazi airport on 6 April. This rests on one document: FBIS Daily Report: Middle East & North Africa, Vol. V No. 68, 7 April 1978. No second source is held for it. Mapped at the position of Benina International Airport given by Wikipedia, the place the entry names (\"Benghazi airport\"), 1 km margin. approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & North Africa, Vol. V No. 68, 7 April 1978",
@@ -442,17 +442,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1979,
   "y1": 1979,
   "name": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by…",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.09722,
+  "lon": 20.26944,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Benina International Airport",
+   "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
   },
   "period": "12 July 1979",
   "relevance": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by thousands.",
-  "text": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by thousands. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 136, 13 July 1979. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by thousands. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 136, 13 July 1979. No second source is held for it. Mapped at the position of Benina International Airport given by Wikipedia, the place the entry names (\"Benina airport, Benghazi\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 136, 13 July 1979",
@@ -528,17 +528,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1979,
   "y1": 1979,
   "name": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.09722,
+  "lon": 20.26944,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Benina International Airport",
+   "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
   },
   "period": "29 September 1979",
   "relevance": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya",
-  "text": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 191, 1 October 1979 (1 October 1979). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 191, 1 October 1979 (1 October 1979). No second source is held for it. Mapped at the position of Benina International Airport given by Wikipedia, the place the entry names (\"Benghazi airport (Benina)\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 191, 1 October 1979 (1979-10-01)",
@@ -684,17 +684,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1980,
   "y1": 1980,
   "name": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25…",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.09722,
+  "lon": 20.26944,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Benina International Airport",
+   "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
   },
   "period": "25 January 1980",
   "relevance": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25 January 1980",
-  "text": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25 January 1980. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 021, 30 January 1980 (30 January 1980). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25 January 1980. This rests on one document: FBIS Daily Report: Middle East & N. Africa, Vol. V No. 021, 30 January 1980 (30 January 1980). No second source is held for it. Mapped at the position of Benina International Airport given by Wikipedia, the place the entry names (\"Benina airport\"), 2 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & N. Africa, Vol. V No. 021, 30 January 1980 (1980-01-30)",
@@ -974,17 +974,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1981,
   "y1": 1981,
   "name": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.09722,
+  "lon": 20.26944,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Benina International Airport",
+   "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
   },
   "period": "15 September 1981",
   "relevance": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya.",
-  "text": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 181, 18 September 1981. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 181, 18 September 1981. No second source is held for it. Mapped at the position of Benina International Airport given by Wikipedia, the place the entry names (\"Benina airport, Benghazi\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 181, 18 September 1981",
@@ -1078,17 +1078,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1981,
   "y1": 1981,
   "name": "Third batch of Libyan Armed Forces units returned from Chad",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.18889,
+  "lon": 20.59667,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Abyar, Libya",
+   "u": "https://en.wikipedia.org/wiki/Abyar,_Libya"
   },
   "period": "23 June 1981",
   "relevance": "Third batch of Libyan Armed Forces units returned from Chad; mass popular reception held on Martyrs Street in Al-Abyar District.",
-  "text": "Third batch of Libyan Armed Forces units returned from Chad; mass popular reception held on Martyrs Street in Al-Abyar District. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 121, 24 June 1981. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Third batch of Libyan Armed Forces units returned from Chad; mass popular reception held on Martyrs Street in Al-Abyar District. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 121, 24 June 1981. No second source is held for it. Mapped at the position of Abyar, Libya given by Wikipedia, the place the entry names (\"Martyrs Street, Al-Abyar\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 121, 24 June 1981",
@@ -1208,17 +1208,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1982,
   "y1": 1982,
   "name": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in…",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.12056,
+  "lon": 20.05194,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000300580003-4"
   },
   "period": "5 April 1982",
   "relevance": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in fifth hold off-loading cargo; floating crane moored alongside.",
-  "text": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in fifth hold off-loading cargo; floating crane moored alongside. This rests on one document: ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in fifth hold off-loading cargo; floating crane moored alongside. This rests on one document: ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the coordinates printed in ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (32-07-14N 020-03-07E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA",
@@ -1286,17 +1286,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1983,
   "y1": 1983,
   "name": "Second Nanuchka-II patrol boat arrives at the port",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.12056,
+  "lon": 20.05194,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200570002-0"
   },
   "period": "4 February 1983",
   "relevance": "Second Nanuchka-II patrol boat arrives at the port",
-  "text": "Second Nanuchka-II patrol boat arrives at the port. This rests on one document: NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Second Nanuchka-II patrol boat arrives at the port. This rests on one document: NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA. No second source is held for it. Mapped at the coordinates printed in NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA (32-07-14N 020-03-07E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA",
@@ -1312,17 +1312,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1983,
   "y1": 1983,
   "name": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000…",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.0274,
+  "lon": 20.0412583,
+  "r": 1.5,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Qar Yunis",
+   "u": "https://en.wikipedia.org/wiki/Qar_Yunis"
   },
   "period": "7 April 1983",
   "relevance": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000 participants and 100 journalists",
-  "text": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000 participants and 100 journalists. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 068, 7 April 1983. No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000 participants and 100 journalists. This rests on one document: FBIS Daily Report: Middle East & Africa, Vol. V No. 068, 7 April 1983. No second source is held for it. Mapped at the position of Qar Yunis given by Wikipedia, the place the entry names (\"Qar Yunis University, Benghazi\"), 1.5 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "FBIS Daily Report: Middle East & Africa, Vol. V No. 068, 7 April 1983",
@@ -1442,17 +1442,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1986,
   "y1": 1986,
   "name": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report)",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.0274,
+  "lon": 20.0412583,
+  "r": 1.5,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Qar Yunis",
+   "u": "https://en.wikipedia.org/wiki/Qar_Yunis"
   },
   "period": "25 February 1986",
   "relevance": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report)",
-  "text": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report). This rests on one document: AL-QADHDHAFI ON GULF WAR, U.S. ISRAEL, EGYPT (22 February 1986). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report). This rests on one document: AL-QADHDHAFI ON GULF WAR, U.S. ISRAEL, EGYPT (22 February 1986). No second source is held for it. Mapped at the position of Qar Yunis given by Wikipedia, the place the entry names (\"Qar Yunis University, Benghazi\"), 1.5 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "AL-QADHDHAFI ON GULF WAR, U.S. ISRAEL, EGYPT (1986-02-22)",
@@ -1468,17 +1468,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1986,
   "y1": 1986,
   "name": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's…",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.0274,
+  "lon": 20.0412583,
+  "r": 1.5,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "Wikipedia: Qar Yunis",
+   "u": "https://en.wikipedia.org/wiki/Qar_Yunis"
   },
   "period": "2 March 1986",
   "relevance": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's power",
-  "text": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's power. This rests on one document: AL-QADHDHAFI ON PROCLAMATION OF 'PEOPLE'S POWER' (2 March 1986). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's power. This rests on one document: AL-QADHDHAFI ON PROCLAMATION OF 'PEOPLE'S POWER' (2 March 1986). No second source is held for it. Mapped at the position of Qar Yunis given by Wikipedia, the place the entry names (\"Qaryunis University, Benghazi\"), 1.5 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "AL-QADHDHAFI ON PROCLAMATION OF 'PEOPLE'S POWER' (1986-03-02)",
@@ -1781,54 +1781,22 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-16836d4945d6",
-  "region": "benghazi",
-  "layer": "landmark",
-  "level": "documented",
-  "name": "Benghazi, U.S. facility",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
-  "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
-  },
-  "period": "Date not given",
-  "relevance": "A U.S. facility in Benghazi was under heavy mortar and RPG fire from about 0430 on 12 September 2012; evacuation preparations had begun.",
-  "text": "A U.S. facility in Benghazi was under heavy mortar and RPG fire from about 0430 on 12 September 2012; evacuation preparations had begun. The same place appears in 4 separate readings, also described as: Banghazi AW Radar Fac; Racetrack near the U.S. facility, Benghazi; Ben Ghazi (Benghazi). 3 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Benghazi: the document names the town, not the site.",
-  "sources": [
-   {
-    "t": "SUBSTANTIVE REVISION: SITUATION REPORT AS OF 0630 12 SEPTEMBER 2012 (LOCAL TIME) IN BENGHAZI, LIBYA: UPDATE ON ATTACK TO U.S. FACILITY IN BENGHAZI,…",
-    "u": "https://www.cia.gov/readingroom/document/06398501"
-   },
-   {
-    "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
-   },
-   {
-    "t": "20-TON EXPLOSIVES SHIPMENT TO LIBYA LINKED TO EX-AGENT (1981-08-30)",
-    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00552r000100760007-2"
-   }
-  ]
- },
- {
   "id": "c-44029b1f56e4",
   "region": "benghazi",
   "layer": "landmark",
   "level": "documented",
   "name": "Benghazi port facilities",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.12056,
+  "lon": 20.05194,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000300580003-4"
   },
   "period": "Date not given",
   "relevance": "A Soviet Kapitan Kushnarenko-class merchant ship with Fishbed aircraft crates was off-loading cargo at Banghazi port facilities.",
-  "text": "A Soviet Kapitan Kushnarenko-class merchant ship with Fishbed aircraft crates was off-loading cargo at Banghazi port facilities. The same place appears in 2 separate readings, also described as: Benghazi port facilities (naval base). 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "text": "A Soviet Kapitan Kushnarenko-class merchant ship with Fishbed aircraft crates was off-loading cargo at Banghazi port facilities. The same place appears in 2 separate readings, also described as: Benghazi port facilities (naval base). 2 documents mention it (all from one publisher, cia.gov). Mapped at the coordinates printed in ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (32-07-14N 020-03-07E), 1 km margin. The position was confirmed by a separate machine reading of the passage (Claude Haiku 5.5); approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA",
@@ -1841,26 +1809,30 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   ]
  },
  {
-  "id": "c-742b791c7f67",
+  "id": "c-46b12ad40d24",
   "region": "benghazi",
-  "layer": "landmark",
+  "layer": "military",
   "level": "documented",
-  "name": "Martyrs of February Stadium, Benghazi",
-  "lat": 32.1167,
-  "lon": 20.0667,
-  "r": 12,
-  "pos": "town",
+  "name": "Banghazi AW Radar Fac",
+  "lat": 32.09278,
+  "lon": 20.345,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Benghazi",
-   "u": "https://en.wikipedia.org/wiki/Benghazi"
+   "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
   },
   "period": "Date not given",
-  "relevance": "Hosted Libya's first home game since 2013, a 2–5 loss to Tunisia on 25 March 2021.",
-  "text": "Hosted Libya's first home game since 2013, a 2–5 loss to Tunisia on 25 March 2021. This rests on one document: Libya national football team (Wikipedia). No second source is held for it. Mapped at the centre of Benghazi: the document names the town, not the site.",
+  "relevance": "Libyan AW radar site 104 in Benghazi, listed as occupied with TALL KING and SCORE BOARD radars.",
+  "text": "Libyan AW radar site 104 in Benghazi, listed as occupied with TALL KING and SCORE BOARD radars. The same place appears in 2 separate readings, also described as: Ben Ghazi (Benghazi). 2 documents mention it (all from one publisher, cia.gov). Mapped at the coordinates printed in AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (32-05-34N 020-20-42E), 1 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
-    "t": "Libya national football team (Wikipedia)",
-    "u": "https://en.wikipedia.org/wiki/Libya_national_football_team"
+    "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+   },
+   {
+    "t": "20-TON EXPLOSIVES SHIPMENT TO LIBYA LINKED TO EX-AGENT (1981-08-30)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90-00552r000100760007-2"
    }
   ]
  },

@@ -1,6 +1,28 @@
 {
  "note": "Positions of regional entries approved by a person. Written by scripts/approve-positions.mjs; applied by scripts/write-regional.mjs (generated entries) and by approve-positions.mjs itself (hand-written entries). Each records the source of the position and who approved it, when.",
  "approved": {
+  "c-02cefa1fcdc4": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base",
+   "method": "reviewed-wikipedia",
+   "lat": 31.8613889,
+   "lon": 23.906778,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+    "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+   },
+   "named": "Jamal 'Abd al-Nasir Air Base, Tobruk (former RAF El Adem)",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Jamal 'Abd al-Nasir Air Base, Tobruk (former RAF El Adem)",
+    "quote": "at the Jamal ‘Abd al-Nasir Air Base in Tobruk",
+    "note": "The speech was given at the base itself."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
   "c-1908efd2bafa": {
    "region": "tripolitania",
    "town": "Misrata",
@@ -22,6 +44,71 @@
    "by": "Claude on the owner's instruction",
    "date": "2026-11-19"
   },
+  "c-1c6015dae366": {
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Two Foxbat A interceptors, one Foxbat A/C (interceptor/trainer) and one Foxbat B/D reconnaissance aircraft…",
+   "method": "doc-coord",
+   "lat": 27.00139,
+   "lon": 14.46389,
+   "r": 1,
+   "posSrc": {
+    "t": "FOXBAT DEPLOYMENT SEBHA AIRFIELD, LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000100150003-3"
+   },
+   "printed": "27-00-05N 014-27-50E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "yes/unclear",
+    "reason": "The passage places the Foxbat aircraft on the transient cargo apron on the west side of Sebha airfield, so the entry is at the airfield. However, the proposed source is a document whose coordinates 27-00-05N 014-27-50E are printed in the OCR text with a garbled map caption (\"SERIA APRS... 33 deg... SOUTHEAST OF SEBHA\"), so it is unclear whether these coordinates belong to the airfield itself or to another point in the map inset; the text also says the document names the town and the aircraft were on the apron, not that the coordinates are for the apron."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-1cd2821cb585": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation",
+   "method": "reviewed-wikipedia",
+   "lat": 31.8613889,
+   "lon": 23.906778,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+    "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+   },
+   "named": "Jamal 'Abd an-Nasir Base (formerly Al-Adem Base), Tobruk",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Jamal 'Abd an-Nasir Base (formerly Al-Adem Base), Tobruk",
+    "quote": "the Jamal ‘Abd an-Nasir Base, formerely the Al-Adem Base",
+    "note": "The document names the base by both names; the Wikipedia article is the same base (former RAF El Adem)."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-255c5c1acba6": {
+   "region": "sirte",
+   "town": "Sirte",
+   "name": "Surt AW Radar Fac",
+   "method": "reviewed-coord",
+   "lat": 31.15583,
+   "lon": 16.99417,
+   "r": 1,
+   "posSrc": {
+    "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+   },
+   "printed": "31-09-21 N 016-59-39E",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Surt AW Radar Fac (NPIC no. 113)",
+    "quote": "Surt AW Radar Fac 113",
+    "note": "Table 1 of the NPIC report prints the site's coordinates on the line after its name; they lie about 39 km east of Sirte."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
   "c-258c87f8bef8": {
    "region": "benghazi",
    "town": "Benghazi",
@@ -42,6 +129,227 @@
    },
    "by": "Claude on the owner's instruction",
    "date": "2026-11-19"
+  },
+  "c-2c0643671db7": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Lebanese patriotic movement delegation leaves Benghazi (Benina airport) after a visit to Libya of 20-25…",
+   "method": "wikipedia",
+   "lat": 32.09722,
+   "lon": 20.26944,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Benina International Airport",
+    "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+   },
+   "named": "Benina airport",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "unclear/no",
+    "reason": "The passage says the delegation left Benghazi and that the send-off was present at Benina airport, so the airport is named as the departure point. However, the entry's event is the delegation leaving Benghazi, and the passage does not say the entry is at Benina airport specifically beyond the send-off. The Wikipedia source describes Benina International Airport, which is 19 km east of Benghazi in the borough of Benina, so it is a different place from the town centre and its own description is about the airport, not the event."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-35453697cf09": {
+   "region": "sirte",
+   "town": "Ras Lanuf",
+   "name": "Ras Lanuf petrochemical complex",
+   "method": "wikipedia-near",
+   "lat": 30.47472,
+   "lon": 18.57361,
+   "r": 1,
+   "posSrc": {
+    "t": "Wikipedia: Ras Lanuf Refinery",
+    "u": "https://en.wikipedia.org/wiki/Ras_Lanuf_Refinery"
+   },
+   "named": "Ras Lanuf petrochemical complex",
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-3ebac1bb4ddc": {
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Imagery shows two BTR-60PB APCs used for driver training by probable dissidents, with a group of personnel…",
+   "method": "doc-coord",
+   "lat": 27.025,
+   "lon": 14.5,
+   "r": 1,
+   "posSrc": {
+    "t": "DISSIDENT TRAINING ACTIVITY IN LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000100460001-1"
+   },
+   "printed": "27-01-30N 014-30-00E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "unclear/no",
+    "reason": "The passage places the observed training activity at the \"SEBHA TRAINING FACILITY EAST\" (heading), which matches the first reading's site, not the document title. The proposed place is the document's own title, and the coordinates 27-01-30N 014-30-00E are printed in a coordinate line (\"COORDINATES\") with no clear tie to a named site beyond the Sebha facility, and the OCR text is garbled around that location, so these coordinates cannot be confidently matched to the facility."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-44029b1f56e4": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Benghazi port facilities",
+   "method": "doc-coord",
+   "lat": 32.12056,
+   "lon": 20.05194,
+   "r": 1,
+   "posSrc": {
+    "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000300580003-4"
+   },
+   "printed": "32-07-14N 020-03-07E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "yes/unclear",
+    "reason": "The passage places the Kapitan Kushnarenko-class ship at \"BANGHAZI PORT FACILITIES\" (the title reads \"ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA\"), so the entry is at the port facilities. The printed coordinates 32-07-14N 020-03-07E are the only set, and they are attached to this briefing, but the OCR is garbled and the document does not state whether the coordinates are for the port or for the town, so the match to the specific site is not confirmed."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-456563cb66cc": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tubruq SA-6 SAM Support Facility",
+   "method": "doc-coord",
+   "lat": 32.07972,
+   "lon": 23.89167,
+   "r": 2,
+   "posSrc": {
+    "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
+   },
+   "printed": "32-04-47N 023-53-30E",
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-46b12ad40d24": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Banghazi AW Radar Fac",
+   "method": "reviewed-coord",
+   "lat": 32.09278,
+   "lon": 20.345,
+   "r": 1,
+   "posSrc": {
+    "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+   },
+   "printed": "32-05-34N 020-20-42E",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Banghazi AW Radar Fac (NPIC no. 104)",
+    "quote": "Banghazi AW Radar Fac 104",
+    "note": "Table 1 of the NPIC report prints the site's coordinates on the line after its name; about 25 km east of the centre of Benghazi."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-4bd793769b59": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Jordanian Prime Minister Mudar Badran's three-day official visit to Libya begins",
+   "method": "wikipedia-near",
+   "lat": 32.09722,
+   "lon": 20.26944,
+   "r": 1,
+   "posSrc": {
+    "t": "Wikipedia: Benina International Airport",
+    "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+   },
+   "named": "Benghazi airport",
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-4c6c95e07393": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the…",
+   "method": "reviewed-wikipedia",
+   "lat": 31.8613889,
+   "lon": 23.906778,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+    "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+   },
+   "named": "Nasir airfield near Tobruk",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Nasir airfield near Tobruk",
+    "quote": "C-130 flights to Nasir airfield near Tobruk",
+    "note": "Nasir airfield near Tobruk is the Gamal Abdel Nasser air base."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-69054984a1c9": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by…",
+   "method": "reviewed-wikipedia",
+   "lat": 32.09722,
+   "lon": 20.26944,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Benina International Airport",
+    "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+   },
+   "named": "Benina airport, Benghazi",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Benina airport, Benghazi",
+    "quote": "arrival at Ibinina Airport in Benghazi",
+    "note": "'Ibinina' is an OCR or transliteration form of Benina."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-6fd055e72693": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya",
+   "method": "reviewed-wikipedia",
+   "lat": 32.09722,
+   "lon": 20.26944,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Benina International Airport",
+    "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+   },
+   "named": "Benina airport, Benghazi",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Benina airport, Benghazi",
+    "quote": "arrived in Beninah Airport",
+    "note": "The arrival was at Benina airport."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-73cc89116d3b": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report)",
+   "method": "reviewed-wikipedia",
+   "lat": 32.0274,
+   "lon": 20.0412583,
+   "r": 1.5,
+   "posSrc": {
+    "t": "Wikipedia: Qar Yunis",
+    "u": "https://en.wikipedia.org/wiki/Qar_Yunis"
+   },
+   "named": "Qar Yunis University, Benghazi",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Qar Yunis University, Benghazi",
+    "quote": "in Qar Yunis University ithe city of Bayan",
+    "note": "The congress met at Qar Yunis University (the scan reads 'ithe' for 'in the'); the position is the Qar Yunis quarter's, where the university stands."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
   },
   "c-775ccab90d84": {
    "region": "fezzan",
@@ -85,6 +393,28 @@
    "by": "Claude on the owner's instruction",
    "date": "2026-11-19"
   },
+  "c-941a90e438cd": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tubruq AW Radar Facility",
+   "method": "reviewed-coord",
+   "lat": 31.87222,
+   "lon": 23.95417,
+   "r": 1,
+   "posSrc": {
+    "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+   },
+   "printed": "31-52-20N 023-57-15E",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Tubruq AW Radar Facility",
+    "quote": "Tubruq AW Radar Facility, were under construction in June 1973",
+    "note": "The entry's own 1973 report lost this site's coordinates in the scan (the locator's only option was the Gamal Abd-El-Nassar airfield radar on the line above, a different site). The 1980 NPIC report, a stored document, lists the same facility (Tubrug AW Radar Fac 115) with coordinates."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
   "c-a3f65ab06981": {
    "region": "fezzan",
    "town": "Sabha",
@@ -105,6 +435,44 @@
    },
    "by": "Claude on the owner's instruction",
    "date": "2026-11-19"
+  },
+  "c-afaa74d2691b": {
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Sabha AW Radar Fac",
+   "method": "reviewed-coord",
+   "lat": 26.82472,
+   "lon": 14.4725,
+   "r": 1,
+   "posSrc": {
+    "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+   },
+   "printed": "26-49-29N 0O14-28-21E",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Sabha AW Radar Fac (NPIC no. 112)",
+    "quote": "Sabha AW Radar Fac 112",
+    "note": "Table 1 of the NPIC report; the longitude is printed '0O14' (an OCR slip for 014)."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-b1355a338041": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tubruq Military Facility West",
+   "method": "doc-coord",
+   "lat": 32.07972,
+   "lon": 23.87528,
+   "r": 2,
+   "posSrc": {
+    "t": "EQUIPMENT DISPERSAL TUBRUQ SA-6 SAM SUPPORT FACILITY TUBRUG MILITARY FACILITY WEST RAS AL HILAL TERRORIST TRAINING FACI… (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000200460001-1"
+   },
+   "printed": "32-04-47N 023-52-31E",
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
   },
   "c-b3649db1ee61": {
    "region": "fezzan",
@@ -127,6 +495,407 @@
    "by": "Claude on the owner's instruction",
    "date": "2026-11-19"
   },
+  "c-b5aed7aebf81": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and…",
+   "method": "reviewed-wikipedia",
+   "lat": 31.8613889,
+   "lon": 23.906778,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+    "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+   },
+   "named": "Jamal 'Abd al-Nasir Air Base, Tobruk",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Jamal 'Abd al-Nasir Air Base, Tobruk",
+    "quote": "At the Jamal ‘Abd al-Nasir Air Base, a",
+    "note": "The parade and air display were held at the base."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-b74c0b1539e3": {
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down…",
+   "method": "reviewed-wikipedia",
+   "lat": 32.32556,
+   "lon": 15.05972,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Misrata Airport",
+    "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
+   },
+   "named": "Misrata airport",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Misrata airport",
+    "quote": "the plane was destroyed on the runway",
+    "note": "The entry's own source is the airport's article: the aircraft took off from Misrata and was destroyed on the runway there."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-b943d82cfa58": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Second Nanuchka-II patrol boat arrives at the port",
+   "method": "doc-coord",
+   "lat": 32.12056,
+   "lon": 20.05194,
+   "r": 1,
+   "posSrc": {
+    "t": "NANUCHKA-II PGG DELIVERY BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200570002-0"
+   },
+   "printed": "32-07-14N 020-03-07E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "no/unclear",
+    "reason": "The passage says the second Nanuchka-II arrived \"at this port\" and names \"BANGHAZ\" (Benghazi) only, with no site beyond \"the naval base within the port facilities.\" The printed coordinates 32-07-14N 020-03-07E appear once, after the text, with no clear label tying them to the naval base rather than to the port or town generally, so the document does not clearly pin this entry to a specific site."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-c129e91c4563": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya",
+   "method": "reviewed-wikipedia",
+   "lat": 32.09722,
+   "lon": 20.26944,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Benina International Airport",
+    "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+   },
+   "named": "Benghazi airport (Benina)",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Benghazi airport (Benina)",
+    "quote": "were on hand at the airport to welcome him",
+    "note": "The document says the king arrived in Benghazi and was met at the airport; Benghazi's airport is Benina (the Wikipedia article: it serves Benghazi). The name Benina is not in the document."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-c30e2231eab9": {
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Misratah port",
+   "method": "wikipedia-near",
+   "lat": 32.35833,
+   "lon": 15.20583,
+   "r": 1,
+   "posSrc": {
+    "t": "Wikipedia: Qasr Ahmad#Port of Misrata",
+    "u": "https://en.wikipedia.org/wiki/Qasr_Ahmad#Port_of_Misrata"
+   },
+   "named": "Misratah port",
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-c6910e1b3964": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Jamal 'Abd an-Nasir base, Tobruk",
+   "method": "reviewed-wikipedia",
+   "lat": 31.8613889,
+   "lon": 23.906778,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+    "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+   },
+   "named": "Jamal 'Abd an-Nasir base, Tobruk",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Jamal 'Abd an-Nasir base, Tobruk",
+    "quote": "the Jamal ‘Abd an-Nasir base in Tobrug",
+    "note": "The celebration and speech were held at the base."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-c99a0c9d417d": {
+   "region": "fezzan",
+   "town": "Sabha",
+   "name": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982)",
+   "method": "reviewed-wikipedia",
+   "lat": 27,
+   "lon": 14.46111,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Sabha Airport",
+    "u": "https://en.wikipedia.org/wiki/Sabha_Airport"
+   },
+   "named": "Sebha airfield",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Sebha airfield",
+    "quote": "THE NORTHEAST END OF SEBHA AIRFIELD",
+    "note": "The crash was at the northeast end of Sebha airfield (the NPIC note); the airfield is Sabha Airport."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-cea80e3aa2d3": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in…",
+   "method": "reviewed-wikipedia",
+   "lat": 31.8613889,
+   "lon": 23.906778,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+    "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+   },
+   "named": "Jamal 'Abd an-Nasir base, Tobruk",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Jamal 'Abd an-Nasir base, Tobruk",
+    "quote": "the Jamal ‘Abd an-Nasir base in Tobrug",
+    "note": "The celebration was held at the base."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-d1b8ddbcc7f3": {
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Sixteen Flogger air-superiority fighters and one L-100 medium transport deployed to Kufra",
+   "method": "wikipedia",
+   "lat": 24.17778,
+   "lon": 23.31389,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Kufra Airport",
+    "u": "https://en.wikipedia.org/wiki/Kufra_Airport"
+   },
+   "named": "Kufra airfield",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "no/unclear",
+    "reason": "The passage describes Kufra Airfield (a major staging base, with coordinates 24-10-55N 023-19-08E, garbled) and mentions a Fishbed unit there, but the entry's event (16 Flogger fighters and an L-100 deployed to Kufra) is not clearly tied to that airfield in this excerpt; the Flogger deployment text is not in the passage. The Wikipedia source describes Kufra Airport as just east of Al Jawf town, which is a different place name and site description from the military airfield in the document, and the printed coordinates in the passage are not confirmed to match that airport."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-d3c9e1e28706": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's…",
+   "method": "reviewed-wikipedia",
+   "lat": 32.0274,
+   "lon": 20.0412583,
+   "r": 1.5,
+   "posSrc": {
+    "t": "Wikipedia: Qar Yunis",
+    "u": "https://en.wikipedia.org/wiki/Qar_Yunis"
+   },
+   "named": "Qaryunis University, Benghazi",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Qaryunis University, Benghazi",
+    "quote": "at Qaryunis University in Ban- ghazi",
+    "note": "The session was held at Qaryunis (Garyounis) University, named after the Qar Yunis quarter of Benghazi where it stands; the position is the quarter's, from its Wikipedia article (the university's own article gives no coordinates), hence the 1.5 km margin."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-d59e96b87ecd": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000…",
+   "method": "reviewed-wikipedia",
+   "lat": 32.0274,
+   "lon": 20.0412583,
+   "r": 1.5,
+   "posSrc": {
+    "t": "Wikipedia: Qar Yunis",
+    "u": "https://en.wikipedia.org/wiki/Qar_Yunis"
+   },
+   "named": "Qar Yunis University, Benghazi",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Qar Yunis University, Benghazi",
+    "quote": "will open at 0900 tomorrow in Qar Yunis University",
+    "note": "As above: the position is the Qar Yunis quarter's, where the university stands."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-dfb01eb0384e": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Al Bumbah airfield North (Al Bumbah, near Tubruq)",
+   "method": "reviewed-coord",
+   "lat": 32.45361,
+   "lon": 23.11944,
+   "r": 1,
+   "posSrc": {
+    "t": "FLOGGER B WITH APEX MISSILES AL MUMBAH AIRFIELD NORTH, LIBYA (SANITIZED) (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000201950001-5"
+   },
+   "printed": "32-27-13N 023-07-10E",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Al Bumbah Airfield North",
+    "quote": "AL BUMBAH AIRFIELD NORTH",
+    "note": "The airfield is 48 NM northwest of Tubruq (the document); it is filed under Tobruk because the document names it, and its own printed coordinates put it at Bomba."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-e4c690a4027c": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Third batch of Libyan Armed Forces units returned from Chad",
+   "method": "reviewed-wikipedia",
+   "lat": 32.18889,
+   "lon": 20.59667,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Abyar, Libya",
+    "u": "https://en.wikipedia.org/wiki/Abyar,_Libya"
+   },
+   "named": "Martyrs Street, Al-Abyar",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Martyrs Street, Al-Abyar",
+    "quote": "in the Martyrs Street in Benghazi's Al-Abyar District",
+    "note": "Al-Abyar was then a district of the Benghazi municipality; the position is the town of Abyar's, from its Wikipedia article (the street itself has none)."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-ead1502d3019": {
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and…",
+   "method": "reviewed-wikipedia",
+   "lat": 32.33694,
+   "lon": 15.22,
+   "r": 2,
+   "posSrc": {
+    "t": "Wikipedia: Libyan Iron and Steel Company",
+    "u": "https://en.wikipedia.org/wiki/Libyan_Iron_and_Steel_Company"
+   },
+   "named": "Misrata iron and steel works",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Misrata iron and steel works",
+    "quote": "iron and steel works under construction at the coastal town of Misrata",
+    "note": "The works under construction became the Libyan Iron and Steel Company plant at Misrata."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-ef4bd8ecb59a": {
+   "region": "cyrenaica",
+   "town": "Tobruk",
+   "name": "Tubruq port (Tobruk)",
+   "method": "doc-coord",
+   "lat": 32.07833,
+   "lon": 23.98056,
+   "r": 1,
+   "posSrc": {
+    "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp90t00784r000200500007-2"
+   },
+   "printed": "32-04-42N 023-58-50E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "unclear/unclear",
+    "reason": "The passage names \"Tubruq port facilities\" as where the ship arrived offshore and gives the entry's title as \"Arms transshipment Tubruq port facilities\", with coordinates 32-04-42N 023-58-50E printed under \"3. COORDINATES\". The document does not say explicitly that these coordinates belong to the port facility, and the text is garbled OCR, so the link between the printed coordinates and the port site cannot be confirmed as clearly as needed."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-f447fbcbbe6c": {
+   "region": "tripolitania",
+   "town": "Misrata",
+   "name": "Misrata War Museum",
+   "method": "reviewed-wikipedia",
+   "lat": 32.38116476,
+   "lon": 15.08571006,
+   "r": 0.5,
+   "posSrc": {
+    "t": "Wikipedia: Fist Crushing a U.S. Fighter Plane",
+    "u": "https://en.wikipedia.org/wiki/Fist_Crushing_a_U.S._Fighter_Plane"
+   },
+   "named": "Misrata War Museum",
+   "reviewed": {
+    "by": "Claude Opus 5.5",
+    "site": "Misrata War Museum",
+    "quote": "Misrata War Museum",
+    "note": "The entry's own source is the article on the sculpture; its coordinates are where it is displayed, in Misrata."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-fb1988e0f851": {
+   "region": "fezzan",
+   "town": "Ghadames",
+   "name": "Ghadames East Airfield",
+   "method": "doc-coord",
+   "lat": 30.13333,
+   "lon": 9.7,
+   "r": 1,
+   "posSrc": {
+    "t": "MILITARY AIRFIELD CONSTRUCTION AND RENOVATION IN LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp82t00709r000201000001-4"
+   },
+   "printed": "30-08-00N 009-42-00E",
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-fc2eec316e2e": {
+   "region": "benghazi",
+   "town": "Benghazi",
+   "name": "Soviet merchant ship with nine Fishbed type C crates on deck and two possible Fishbed component crates in…",
+   "method": "doc-coord",
+   "lat": 32.12056,
+   "lon": 20.05194,
+   "r": 1,
+   "posSrc": {
+    "t": "ARMS TRANSSHIPMENT BANGHAZI PORT FACILITIES, LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp89-00121r000300580003-4"
+   },
+   "printed": "32-07-14N 020-03-07E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "unclear/unclear",
+    "reason": "The passage places the ship at \"BANGHAZI PORT FACILITIES\" (the title and remarks), so the entry is at Benghazi port, not a precise site within it. The printed coordinates 32-07-14N 020-03-07E appear once and are attached to this briefing, but the document gives no statement that they mark the port facilities versus another point, and the spelling \"Banghazi\" is OCR-garbled, so the match to the entry is not certain enough for a site-level pin."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
+  "c-fd05d8b5291d": {
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Fifteen Flogger aircraft present",
+   "method": "doc-coord",
+   "lat": 24.18194,
+   "lon": 23.31889,
+   "r": 1,
+   "posSrc": {
+    "t": "PROBABLE FLOGGER DEPARTURE PREPARATIONS KUFRA AIRFIELD, LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp91t00712r000100260005-0"
+   },
+   "printed": "24-10-55N 023-19-08E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "unclear/yes",
+    "reason": "The passage clearly concerns Kufra Airfield and the Flogger aircraft there, and prints coordinates 24-10-55N 023-19-08E labelled as the airfield's coordinates (item 3). However, the coordinates are printed once and the passage does not explicitly tie the entry to a specific site beyond the airfield name, and the OCR is garbled around the coordinate line (redacted fields), so the printed coordinates cannot be fully verified as belonging to this entry rather than another listing."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
+  },
   "fz-kufra-airfield": {
    "region": "fezzan",
    "town": "Kufra",
@@ -147,6 +916,27 @@
    },
    "by": "Claude on the owner's instruction",
    "date": "2026-11-19"
+  },
+  "fz-kufrah-barracks": {
+   "region": "fezzan",
+   "town": "Kufra",
+   "name": "Al Kufrah barracks",
+   "method": "doc-coord",
+   "lat": 24.21944,
+   "lon": 23.30361,
+   "r": 1,
+   "posSrc": {
+    "t": "LIBYAN/DISSIDENT ACTIVITY FAYA LARGEAU, CHAD AL KUFRAH BARRACKS, LIBYA (coordinates printed in the document)",
+    "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000200050001-5"
+   },
+   "printed": "24-13-10N 023-18-13E",
+   "checked": {
+    "by": "second reading, claude-haiku-5-5",
+    "verdict": "unclear/no",
+    "reason": "The passage places the BTR-60 staging at \"AL KUFRAH BARRACKS IN LIBYA\" but gives no coordinates tied to it; the printed coordinates 24-13-10N 023-18-13E sit beside a second set (17-55-00N 019-07-00E, which is in Chad near Faya Largeau), and the document is a briefing board whose coordinates are not explicitly labelled as the barracks' location. The 24-13N latitude is plausible for Kufra, but the passage does not link that specific printed pair to the barracks, so the position cannot be confirmed as the barracks site rather than the town or another graphic."
+   },
+   "by": "Claude on the owner's instruction",
+   "date": "2026-11-20"
   }
  }
 }

@@ -1,24 +1,24 @@
 {
- "at": "2026-11-19T11:28:41.429Z",
- "written": 192,
- "mergedDuplicates": 21,
+ "at": "2026-11-20T06:53:11.861Z",
+ "written": 191,
+ "mergedDuplicates": 19,
  "byRegion": {
   "sirte": 19,
   "cyrenaica": 30,
   "fezzan": 38,
-  "benghazi": 74,
+  "benghazi": 73,
   "tripolitania": 31
  },
  "byLayer": {
   "massacre": 7,
-  "landmark": 143,
-  "military": 31,
+  "landmark": 141,
+  "military": 32,
   "battle": 10,
   "airstrike": 1
  },
  "byLevel": {
   "suspected": 7,
-  "documented": 185
+  "documented": 184
  },
  "mergedEntries": [
   {
@@ -35,11 +35,6 @@
    "id": "c-456563cb66cc",
    "name": "Tubruq SA-6 SAM Support Facility",
    "merged": 2
-  },
-  {
-   "id": "c-16836d4945d6",
-   "name": "Benghazi, U.S. facility",
-   "merged": 3
   },
   {
    "id": "c-ef4bd8ecb59a",
@@ -64,6 +59,11 @@
   {
    "id": "c-fb1988e0f851",
    "name": "Ghadames East Airfield",
+   "merged": 1
+  },
+  {
+   "id": "c-46b12ad40d24",
+   "name": "Banghazi AW Radar Fac",
    "merged": 1
   },
   {
@@ -415,6 +415,26 @@
      "id": "f87a26c7f3cf",
      "region": "cyrenaica",
      "name": "Ashmawi captured by Libyan National Army forces (unit of the 106th Brigade) in a mountaino"
+    }
+   ]
+  },
+  "after 2011": {
+   "count": 3,
+   "items": [
+    {
+     "id": "16836d4945d6",
+     "region": "benghazi",
+     "name": "Benghazi, U.S. facility"
+    },
+    {
+     "id": "742b791c7f67",
+     "region": "benghazi",
+     "name": "Martyrs of February Stadium, Benghazi"
+    },
+    {
+     "id": "98a5dbd96fcd",
+     "region": "benghazi",
+     "name": "Racetrack near the U.S. facility, Benghazi"
     }
    ]
   },

@@ -29,17 +29,26 @@ for (const [id, c] of Object.entries(RD.check || {})) {
     if (c.verified) r.proposal = o; else if (r.proposal && String(r.proposal.method).startsWith('read-')) r.proposal = null; }
   else if (r.proposal && r.proposal.lat === c.lat && r.proposal.lon === c.lon) { r.proposal.verified = !!c.verified; r.proposal.verdict = c.verdict; }
 }
+// positions found by reading the documents in the session and checked against the stored texts by scripts/review-positions.mjs
+// (owner's instruction of 20 Nov 2026); only a record that passed is offered, and it becomes the entry's proposal
+const REV = 'archive/review/positions-reviewed.json', RV = fs.existsSync(REV) ? JSON.parse(fs.readFileSync(REV, 'utf8')) : { records: {} };
+for (const [id, rec] of Object.entries(RV.records || {})) {
+  const k = rec.checked; if (!k || !k.ok) continue;
+  const r = P.get(id) || (P.set(id, { id, region: k.region, town: k.town, name: k.name, options: [] }), P.get(id));
+  const o = { method: k.method, lat: k.lat, lon: k.lon, r: k.r, src: k.src, ...(k.printed ? { raw: k.printed } : {}), ...(k.named ? { named: k.named } : {}), reviewed: { by: RV.by, site: rec.site, quote: rec.quote, note: rec.note } };
+  r.options = [...r.options.filter((x) => !String(x.method).startsWith('reviewed-')), o]; r.proposal = o;
+}
 const ONLY_VERIFIED = args.includes('--verified-only'); if (ONLY_VERIFIED) args.splice(args.indexOf('--verified-only'), 1);
 const date = new Date().toISOString().slice(0, 10);
 let bad = 0;
 for (const a of args) {
   const [id, opt] = a.split(':'), r = P.get(id);
   if (!r) { console.log('not in the proposals: ' + id); bad++; continue; }
-  const choices = r.options.filter((o) => ['doc-coord', 'gazetteer', 'wikipedia', 'wikipedia-near', 'possible', 'read-coord', 'read-wikipedia'].includes(o.method) && (!String(o.method).startsWith('read-') || o.verified));
+  const choices = r.options.filter((o) => ['doc-coord', 'gazetteer', 'wikipedia', 'wikipedia-near', 'possible', 'read-coord', 'read-wikipedia', 'reviewed-coord', 'reviewed-wikipedia'].includes(o.method) && (!String(o.method).startsWith('read-') || o.verified));
   const o = opt ? choices[+opt - 1] : r.proposal;
   if (o && ONLY_VERIFIED && !o.verified) { console.log(id + ': not verified by both stages of scripts/read-positions.mjs; not approved'); bad++; continue; }
   if (!o) { console.log(id + ': ' + (opt ? 'no option ' + opt : 'no single proposal; pick one of ' + choices.length + ' with ' + id + ':<n>') + '; options:'); choices.forEach((c, i) => console.log('   ' + (i + 1) + '. ' + c.method + ' ' + c.lat + ', ' + c.lon + ' ' + c.src.t)); bad++; continue; }
-  store.approved[id] = { region: r.region, town: r.town, name: r.name, method: o.method, lat: o.lat, lon: o.lon, r: o.r || 1, posSrc: o.src, ...(o.raw ? { printed: o.raw } : {}), ...(o.named ? { named: o.named } : {}), ...(o.verdict ? { checked: { by: 'second reading, ' + (RD.model || 'model'), verdict: o.verdict.passage_places_entry + '/' + o.verdict.source_is_same_place, reason: o.verdict.reason } } : {}), by, date };
+  store.approved[id] = { region: r.region, town: r.town, name: r.name, method: o.method, lat: o.lat, lon: o.lon, r: o.r || 1, posSrc: o.src, ...(o.raw ? { printed: o.raw } : {}), ...(o.named ? { named: o.named } : {}), ...(o.reviewed ? { reviewed: o.reviewed } : {}), ...(o.verdict ? { checked: { by: 'second reading, ' + (RD.model || 'model'), verdict: o.verdict.passage_places_entry + '/' + o.verdict.source_is_same_place, reason: o.verdict.reason } } : {}), by, date };
   console.log('approved ' + id + ' -> ' + o.lat + ', ' + o.lon + ' (' + o.method + ', ' + o.src.t + ')');
   if (!id.startsWith('c-')) applyHand(id, store.approved[id]);
 }

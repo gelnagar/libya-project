@@ -1,10 +1,32 @@
 {
  "23_July_Avenue": null,
  "23_July_Avenue,_Benghazi": null,
+ "28_March_Stadium": {
+  "asked": "28 March Stadium",
+  "title": "Benghazi International Stadium",
+  "url": "https://en.wikipedia.org/wiki/Benghazi_International_Stadium",
+  "lat": 32.101806,
+  "lon": 20.072417,
+  "disamb": false,
+  "lead": "Benghazi International Stadium (Arabic: ملعب بنغازي الدولي) is a multi-purpose stadium in Benghazi, Libya, also known as Sports City Stadium. It is a part of Benghazi Sports City, used mostly for football matches and also has athletics facilities. The stadium holds 42,000 spectators. It is sometimes used by the Libya national football team, although it is not as popular as a football stadium as the Tripoli Stadium.",
+  "checksum": "ca587f20fd8f72f036c5862237e9d9a2",
+  "fetched": "2026-11-20"
+ },
  "7_April_Square": null,
  "AL_BUMBAH_AIRFIELD_NORTH": null,
  "AW_Radar": null,
  "AW_radar": null,
+ "Abyar,_Libya": {
+  "asked": "Abyar, Libya",
+  "title": "Abyar, Libya",
+  "url": "https://en.wikipedia.org/wiki/Abyar,_Libya",
+  "lat": 32.18889,
+  "lon": 20.59667,
+  "disamb": false,
+  "lead": "Abyar (al-Abyā) (Arabic: الأبيار Al Abyār) is a town in the Marj District, in northeastern Libya, roughly 50 km to the east of the city of Benghazi and 42 km southwest of the city of Marj. As of 2010[update], its estimated population was 32,563.",
+  "checksum": "163e65afbec935db6c93cf60f0ac8874",
+  "fetched": "2026-11-20"
+ },
  "Ahmad_Al-Na'Eb_Institute_For_Teachers_In_Terhouna": null,
  "Ahmad_al-Na'eb_institute_for_teachers_in_Terhouna": null,
  "Airfield": {
@@ -20,6 +42,18 @@
  "Ajdabiyah_Schools": null,
  "Ajdabiyah_schools": null,
  "Al-Kufrah_Oasis": null,
+ "Al_Abyar": {
+  "asked": "Al Abyar",
+  "title": "Abyar, Libya",
+  "url": "https://en.wikipedia.org/wiki/Abyar,_Libya",
+  "lat": 32.18889,
+  "lon": 20.59667,
+  "disamb": false,
+  "lead": "Abyar (al-Abyā) (Arabic: الأبيار Al Abyār) is a town in the Marj District, in northeastern Libya, roughly 50 km to the east of the city of Benghazi and 42 km southwest of the city of Marj. As of 2010[update], its estimated population was 32,563.",
+  "checksum": "74085bdeed141c24e652663d79314f8d",
+  "fetched": "2026-11-20"
+ },
+ "Al_Bumbah": null,
  "Al_Bumbah_Air_Base": null,
  "Al_Bumbah_Airbase": null,
  "Al_Bumbah_Airfield_North": null,
@@ -28,6 +62,7 @@
  "Al_Bumbah_airfield_North": null,
  "Al_Kufrah_Military_Site": null,
  "Al_Kufrah_military_site": null,
+ "Al_Mukhayla": null,
  "An_Air_Base": null,
  "An_Airbase": null,
  "An_Airport": null,
@@ -65,6 +100,28 @@
  "Benghazi_Coast_camp_and_Southwest_Farm": null,
  "Benghazi_International_Airport": null,
  "Benghazi_Military_College": null,
+ "Benghazi_Military_University_Academy": {
+  "asked": "Benghazi Military University Academy",
+  "title": "Benghazi Military University Academy",
+  "url": "https://en.wikipedia.org/wiki/Benghazi_Military_University_Academy",
+  "lat": null,
+  "lon": null,
+  "disamb": false,
+  "lead": "Benghazi Military University Academy is a military academy in Benghazi in Libya.",
+  "checksum": "550f85c2ab1ebbbb06c2bc2117a77cfa",
+  "fetched": "2026-11-20"
+ },
+ "Benghazi_University": {
+  "asked": "Benghazi University",
+  "title": "University of Benghazi",
+  "url": "https://en.wikipedia.org/wiki/University_of_Benghazi",
+  "lat": null,
+  "lon": null,
+  "disamb": false,
+  "lead": "The University of Benghazi (Arabic: جامعة بنغازي), formerly known as Garyounis University, is a public university in Benghazi, Libya, the country's second-largest city as well as one of the most prestigious institutes of higher education in the country. It was founded as the University of Libya on December 15, 1955.",
+  "checksum": "13b9dedcf579c97ea6fa85c9b769874d",
+  "fetched": "2026-11-20"
+ },
  "Benghazi_airport": {
   "asked": "Benghazi airport",
   "title": "Benina International Airport",
@@ -104,12 +161,46 @@
  "Beninah_Airbase": null,
  "Beninah_Airport": null,
  "Beninah_International_Airport": null,
+ "Brega_Airport": null,
  "Brega_Pipe_Manufacturing_Plant": null,
  "Brega_Plant": null,
  "Brega_pipe_manufacturing_plant": null,
  "Commando_Training_Facility": null,
  "Commando_Training_Facility,_Banghazi": null,
+ "El_Adem": {
+  "asked": "El Adem",
+  "title": "Gamal Abdel Nasser Airbase",
+  "url": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase",
+  "lat": 31.8613889,
+  "lon": 23.906778,
+  "disamb": false,
+  "lead": "Gamal Abdel Nasser Airbase (Arabic: قاعدة جمال عبد الناصر الجوية, romanized: Qāʿida Ǧamāl ʿAbd an-Nāṣir Ǧawwiyya) is a Libyan Air Force (Arabic: القوات الجوية الليبية, romanized: al-Quwwāt al-Ǧawwiyya al-Lībiyya, Berber: Adwas Alibyan Ujnna) base, located about 16 km south of Tobruk.",
+  "checksum": "8162ce6616eeed0afc0f42024b8d583f",
+  "fetched": "2026-11-20"
+ },
+ "Euesperides": {
+  "asked": "Euesperides",
+  "title": "History of Benghazi#Ancient Greek colony",
+  "url": "https://en.wikipedia.org/wiki/History_of_Benghazi#Ancient_Greek_colony",
+  "lat": null,
+  "lon": null,
+  "disamb": false,
+  "lead": "Libya's second largest city, Benghazi, has a history that dates back to the Greek colony of Euesperides founded in the 6th century BCE. Throughout its history, the city has been repeatedly conquered by different ancient and colonial forces.",
+  "checksum": "2a2f0811959e666823b9311a3cc5d5a4",
+  "fetched": "2026-11-20"
+ },
  "Euhesperides": null,
+ "Fist_Crushing_a_U.S._Fighter_Plane": {
+  "asked": "Fist Crushing a U.S. Fighter Plane",
+  "title": "Fist Crushing a U.S. Fighter Plane",
+  "url": "https://en.wikipedia.org/wiki/Fist_Crushing_a_U.S._Fighter_Plane",
+  "lat": 32.38116476,
+  "lon": 15.08571006,
+  "disamb": false,
+  "lead": "The Fist Crushing a U.S. Fighter Plane Sculpture is a gold-coloured monument located in Misrata, Libya. It was once located at the Bab al-Azizia compound in the Libyan capital of Tripoli. The sculpture was commissioned by the nation's leader, Colonel Muammar Gaddafi following the 1986 bombing of Libya by United States aircraft. It was built in the shape of an arm and hand squeezing a fighter plane. It may have been designed to symbolize the apparent downing of an F-111 by Libyan anti-air units in 1986 bombing.",
+  "checksum": "08626188fb1d09f1098dd85562e8eca1",
+  "fetched": "2026-11-20"
+ },
  "Fortress_of_Ghat": {
   "asked": "Fortress of Ghat",
   "title": "Fortress of Ghat",
@@ -120,6 +211,51 @@
   "lead": "The Fortress of Ghat is a fort on top of the hill of Koukemen in Ghat, Libya. It was started by the Military of the Ottoman Empire and rebuilt in 1930s after partial destruction caused by the Italian campaign against Libya.",
   "checksum": "69491473a156e3e7f664b6ecc922d029",
   "fetched": "2026-11-19"
+ },
+ "Gamal_Abdel_Nasser_Air_Base": null,
+ "Gamal_Abdel_Nasser_Airbase": {
+  "asked": "Gamal Abdel Nasser Airbase",
+  "title": "Gamal Abdel Nasser Airbase",
+  "url": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase",
+  "lat": 31.8613889,
+  "lon": 23.906778,
+  "disamb": false,
+  "lead": "Gamal Abdel Nasser Airbase (Arabic: قاعدة جمال عبد الناصر الجوية, romanized: Qāʿida Ǧamāl ʿAbd an-Nāṣir Ǧawwiyya) is a Libyan Air Force (Arabic: القوات الجوية الليبية, romanized: al-Quwwāt al-Ǧawwiyya al-Lībiyya, Berber: Adwas Alibyan Ujnna) base, located about 16 km south of Tobruk.",
+  "checksum": "3f34e625ad87a188a897c22297a173e2",
+  "fetched": "2026-11-20"
+ },
+ "Garyounis": {
+  "asked": "Garyounis",
+  "title": "Qar Yunis",
+  "url": "https://en.wikipedia.org/wiki/Qar_Yunis",
+  "lat": 32.0274,
+  "lon": 20.0412583,
+  "disamb": false,
+  "lead": "Qar Younis (Arabic: قاريونس, also spelled Qaryounis or Garyounis) is a southern neighbourhood of Benghazi, Libya. It lies to the west of the neighborhood of Al Qawarishah. It has a population of approximately 15,000 people.",
+  "checksum": "2b20f3c43fc2ba87fdd5538eafab92f6",
+  "fetched": "2026-11-20"
+ },
+ "Garyounis_University": {
+  "asked": "Garyounis University",
+  "title": "University of Benghazi",
+  "url": "https://en.wikipedia.org/wiki/University_of_Benghazi",
+  "lat": null,
+  "lon": null,
+  "disamb": false,
+  "lead": "The University of Benghazi (Arabic: جامعة بنغازي), formerly known as Garyounis University, is a public university in Benghazi, Libya, the country's second-largest city as well as one of the most prestigious institutes of higher education in the country. It was founded as the University of Libya on December 15, 1955.",
+  "checksum": "d9161e9bdedbef11605983abe75d33fa",
+  "fetched": "2026-11-20"
+ },
+ "Ghadames_Airport": {
+  "asked": "Ghadames Airport",
+  "title": "Ghadames Airport",
+  "url": "https://en.wikipedia.org/wiki/Ghadames_Airport",
+  "lat": 30.15056,
+  "lon": 9.7,
+  "disamb": false,
+  "lead": "Ghadames Airport (IATA: LTD, ICAO: HLTD), located 12.1 miles (19.5 km) east of Ghadames, is a civilian and military airport in Libya. Currently, Libyan Airlines uses the airport for scheduled service to Tripoli.[citation needed]",
+  "checksum": "84bd387f2993be1fa34a3f16fe5fdc4c",
+  "fetched": "2026-11-20"
  },
  "Ghadames_East_Air_Base": null,
  "Ghadames_East_Airbase": null,
@@ -228,6 +364,17 @@
   "fetched": "2026-11-18"
  },
  "Kufrah_oasis": null,
+ "Libyan_Iron_and_Steel_Company": {
+  "asked": "Libyan Iron and Steel Company",
+  "title": "Libyan Iron and Steel Company",
+  "url": "https://en.wikipedia.org/wiki/Libyan_Iron_and_Steel_Company",
+  "lat": 32.33694,
+  "lon": 15.22,
+  "disamb": false,
+  "lead": "The Libyan Iron and Steel Company (Lisco) is one of the largest iron and steelmaking companies operating in North Africa. Based in Misrata, it is subsidized and owned by the Libyan government. Lisco's foundation stone was officially laid on 18 September 1979. In 2004, the online magazine Arab Steel ranked Lisco third among the largest Arab iron and steel companies.",
+  "checksum": "5ce4b4b8b2b592e3e3fd539ea01f1136",
+  "fetched": "2026-11-20"
+ },
  "Martyrs_Of_February_Stadium": null,
  "Martyrs_Of_February_Stadium,_Benghazi": null,
  "Martyrs_Street": null,
@@ -305,6 +452,8 @@
  "Nasir_airfield": null,
  "New_Powerstation_In_Darna": null,
  "Oasis_Of_Sebha": null,
+ "Omar_Al-Mukhtar_Mausoleum": null,
+ "Omar_Mukhtar_Mausoleum": null,
  "People'S_Hall_At_Sabha": null,
  "People's_Hall_at_Sabha": null,
  "Popular_Reception_Held_In_The_(?Surt)_District": null,
@@ -316,8 +465,9 @@
   "lat": 32.10917,
   "lon": 20.0475,
   "disamb": false,
+  "lead": "The Port of Benghazi is a major seaport in the city of Benghazi, Libya, on the Mediterranean Sea coast within the Gulf of Sidra.",
   "checksum": "82ea46b3a4a7c416827ad2af3436a052",
-  "fetched": "2026-11-18"
+  "fetched": "2026-11-20"
  },
  "Port_of_Misrata": {
   "asked": "Port of Misrata",
@@ -331,14 +481,58 @@
   "fetched": "2026-11-19"
  },
  "Port_of_Misratah": null,
+ "Port_of_Tobruk": {
+  "asked": "Port of Tobruk",
+  "title": "Port of Tobruk",
+  "url": "https://en.wikipedia.org/wiki/Port_of_Tobruk",
+  "lat": 32.078,
+  "lon": 23.983,
+  "disamb": false,
+  "lead": "The Port of Tobruk (Arabic: ميناء طبرق) is a port located at Tobruk, Libya. Opened in 1986, it is located in Eastern Libya near the Egyptian border - about 450 km (280 mi) east of Benghazi. The entrance to the main channel into the port is between Tobruk point ( 32°04′N 024°01′E / 32.067°N 24.017°E / 32.067; 24.017 ) and the point of Marsa Ummash Shawush.",
+  "checksum": "3496eac2fc88eb50eddee874b6f8eab5",
+  "fetched": "2026-11-20"
+ },
  "Port_of_Zuwarah_Sea_Fishing": null,
  "President'S_Place_Of_Residence": null,
  "Project_In_Southwest_Benghazi": null,
  "Qadhafi'S_Benghazi_Camp": null,
  "Qadhafi's_Benghazi_camp": null,
+ "Qar_Yunis": {
+  "asked": "Qar Yunis",
+  "title": "Qar Yunis",
+  "url": "https://en.wikipedia.org/wiki/Qar_Yunis",
+  "lat": 32.0274,
+  "lon": 20.0412583,
+  "disamb": false,
+  "lead": "Qar Younis (Arabic: قاريونس, also spelled Qaryounis or Garyounis) is a southern neighbourhood of Benghazi, Libya. It lies to the west of the neighborhood of Al Qawarishah. It has a population of approximately 15,000 people.",
+  "checksum": "3874add9ea39c1a5a77bb985dbff8c9d",
+  "fetched": "2026-11-20"
+ },
  "Qar_Yunis_University": null,
  "Qaryunis_University": null,
+ "RAF_El_Adem": {
+  "asked": "RAF El Adem",
+  "title": "Gamal Abdel Nasser Airbase",
+  "url": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase",
+  "lat": 31.8613889,
+  "lon": 23.906778,
+  "disamb": false,
+  "lead": "Gamal Abdel Nasser Airbase (Arabic: قاعدة جمال عبد الناصر الجوية, romanized: Qāʿida Ǧamāl ʿAbd an-Nāṣir Ǧawwiyya) is a Libyan Air Force (Arabic: القوات الجوية الليبية, romanized: al-Quwwāt al-Ǧawwiyya al-Lībiyya, Berber: Adwas Alibyan Ujnna) base, located about 16 km south of Tobruk.",
+  "checksum": "25c7ca1e759bc01d3404cfaa89f6eeee",
+  "fetched": "2026-11-20"
+ },
  "Ras_Lanuf_Petrochemical_Complex": null,
+ "Ras_Lanuf_Refinery": {
+  "asked": "Ras Lanuf Refinery",
+  "title": "Ras Lanuf Refinery",
+  "url": "https://en.wikipedia.org/wiki/Ras_Lanuf_Refinery",
+  "lat": 30.47472,
+  "lon": 18.57361,
+  "disamb": false,
+  "lead": "The Ras Lanuf Refinery is a topping and reforming oil refinery in Ras Lanuf, Libya. It is part of a larger petrochemical complex also consisting of an ethylene plant, a polyethylene plant, plant utilities, and Ra's Lanuf Harbor. Until 9 March 2009, the complex was operated by the RASCO, a subsidiary of the National Oil Corporation. The current operator is the Libyan Emirates Oil Refining Company.",
+  "checksum": "97d0e0371a012bd4c4776be341649ace",
+  "fetched": "2026-11-20"
+ },
  "Ras_Lanuf_petrochemical_complex": {
   "asked": "Ras Lanuf petrochemical complex",
   "title": "Ras Lanuf Refinery",
@@ -407,8 +601,9 @@
   "lat": 31.86,
   "lon": 23.90611,
   "disamb": false,
+  "lead": "Tobruk International Airport (IATA: TOB, ICAO: HLTQ) is an airport serving the Mediterranean port city of Tobruk, capital of the Butnan District of Libya. The airport is 23 kilometres (14 mi) south of Tobruk, at the town of Al Adm.",
   "checksum": "407a4d2506fda9ba7fdb492c16078dec",
-  "fetched": "2026-11-18"
+  "fetched": "2026-11-20"
  },
  "Tobruk_Flour_Mill": null,
  "Tobruk_Naval_Base": null,
@@ -432,6 +627,17 @@
   "lead": "The University of Benghazi (Arabic: جامعة بنغازي), formerly known as Garyounis University, is a public university in Benghazi, Libya, the country's second-largest city as well as one of the most prestigious institutes of higher education in the country. It was founded as the University of Libya on December 15, 1955.",
   "checksum": "b5039cee577657a0b37330832364e0e9",
   "fetched": "2026-11-19"
+ },
+ "Zawiya_Refinery": {
+  "asked": "Zawiya Refinery",
+  "title": "Zawiya Refinery",
+  "url": "https://en.wikipedia.org/wiki/Zawiya_Refinery",
+  "lat": null,
+  "lon": null,
+  "disamb": false,
+  "lead": "The Zawia or Zawiya Refinery is an oil refinery located in Zawiya, Libya, which is about 40 kilometres (25 mi) west of Tripoli.",
+  "checksum": "6a9100e9d3ef62662e88171926d920c5",
+  "fetched": "2026-11-20"
  },
  "Zuwara_Or_Tunis-Area_Resort": null,
  "Zuwara_or_Tunis-area_resort": null,

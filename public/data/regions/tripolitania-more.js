@@ -399,17 +399,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 1982,
   "y1": 1982,
   "name": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and…",
-  "lat": 32.3775,
-  "lon": 15.092,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.33694,
+  "lon": 15.22,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Misrata",
-   "u": "https://en.wikipedia.org/wiki/Misrata"
+   "t": "Wikipedia: Libyan Iron and Steel Company",
+   "u": "https://en.wikipedia.org/wiki/Libyan_Iron_and_Steel_Company"
   },
   "period": "30 October 1982",
   "relevance": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and desalination plant at the Misrata iron and steel works.",
-  "text": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and desalination plant at the Misrata iron and steel works. 2 documents mention it (all from one publisher, archive.org). Mapped at the centre of Misrata: the document names the town, not the site.",
+  "text": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and desalination plant at the Misrata iron and steel works. 2 documents mention it (all from one publisher, archive.org). Mapped at the position of Libyan Iron and Steel Company given by Wikipedia, the place the entry names (\"Misrata iron and steel works\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "Near East/North Africa Report No. 2704",
@@ -637,17 +637,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "y0": 2011,
   "y1": 2011,
   "name": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down…",
-  "lat": 32.3775,
-  "lon": 15.092,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.32556,
+  "lon": 15.05972,
+  "r": 2,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Misrata",
-   "u": "https://en.wikipedia.org/wiki/Misrata"
+   "t": "Wikipedia: Misrata Airport",
+   "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
   },
   "period": "24 March 2011",
   "relevance": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down or destroyed on the runway by a French AASM missile after…",
-  "text": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down or destroyed on the runway by a French AASM missile after landing. This rests on one document: Misrata Airport (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
+  "text": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down or destroyed on the runway by a French AASM missile after landing. This rests on one document: Misrata Airport (Wikipedia). No second source is held for it. Mapped at the position of Misrata Airport given by Wikipedia, the place the entry names (\"Misrata airport\"), 2 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "Misrata Airport (Wikipedia)",
@@ -737,17 +737,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "landmark",
   "level": "documented",
   "name": "Misratah port",
-  "lat": 32.3775,
-  "lon": 15.092,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.35833,
+  "lon": 15.20583,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Misrata",
-   "u": "https://en.wikipedia.org/wiki/Misrata"
+   "t": "Wikipedia: Qasr Ahmad#Port of Misrata",
+   "u": "https://en.wikipedia.org/wiki/Qasr_Ahmad#Port_of_Misrata"
   },
   "period": "Date not given",
   "relevance": "Expected destination for transport of the HAZE A containers; delivery of such containers was observed here.",
-  "text": "Expected destination for transport of the HAZE A containers; delivery of such containers was observed here. The same place appears in 2 separate readings, also described as: Misratah port transshipment facility. 2 documents mention it (all from one publisher, cia.gov). Mapped at the centre of Misrata: the document names the town, not the site.",
+  "text": "Expected destination for transport of the HAZE A containers; delivery of such containers was observed here. The same place appears in 2 separate readings, also described as: Misratah port transshipment facility. 2 documents mention it (all from one publisher, cia.gov). Mapped at the position of Qasr Ahmad#Port of Misrata given by Wikipedia, the place the entry names (\"Misratah port\"), 1 km margin. approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "ARMS TRANSSHIPMENT TUBRUQ PORT FACILITIES, LIBYA",
@@ -765,17 +765,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "landmark",
   "level": "documented",
   "name": "Misrata War Museum",
-  "lat": 32.3775,
-  "lon": 15.092,
-  "r": 12,
-  "pos": "town",
+  "lat": 32.38116476,
+  "lon": 15.08571006,
+  "r": 0.5,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Misrata",
-   "u": "https://en.wikipedia.org/wiki/Misrata"
+   "t": "Wikipedia: Fist Crushing a U.S. Fighter Plane",
+   "u": "https://en.wikipedia.org/wiki/Fist_Crushing_a_U.S._Fighter_Plane"
   },
   "period": "Date not given",
   "relevance": "The sculpture is now displayed at the Misrata War Museum.",
-  "text": "The sculpture is now displayed at the Misrata War Museum. This rests on one document: Fist Crushing a U.S. Fighter Plane (Wikipedia). No second source is held for it. Mapped at the centre of Misrata: the document names the town, not the site.",
+  "text": "The sculpture is now displayed at the Misrata War Museum. This rests on one document: Fist Crushing a U.S. Fighter Plane (Wikipedia). No second source is held for it. Mapped at the position of Fist Crushing a U.S. Fighter Plane given by Wikipedia, the place the entry names (\"Misrata War Museum\"), 0.5 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "Fist Crushing a U.S. Fighter Plane (Wikipedia)",

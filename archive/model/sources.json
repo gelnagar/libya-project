@@ -3892,22 +3892,6 @@
   "grade_basis": "rule"
  },
  {
-  "id": "src-a598cd35142c",
-  "url": "https://www.cia.gov/readingroom/document/06398501",
-  "title": "SUBSTANTIVE REVISION: SITUATION REPORT AS OF 0630 12 SEPTEMBER 2012 (LOCAL TIME) IN BENGHAZI, LIBYA: UPDATE ON ATTACK TO U.S. FACILITY IN BENGHAZI,…",
-  "origin": "cia.gov",
-  "fetched": null,
-  "sha256": "1b3553136b22cd6315451d1a5bad7c73",
-  "archived": null,
-  "rights": null,
-  "stored": "archive/crest/docs.jsonl.gz#cia-readingroom-document-06398501",
-  "chars": 2862,
-  "copies": 1,
-  "reliability": "B",
-  "source_kind": "official record",
-  "grade_basis": "rule"
- },
- {
   "id": "src-4c32f8ba4fda",
   "url": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5",
   "title": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA",
@@ -3937,22 +3921,6 @@
   "copies": 1,
   "reliability": "B",
   "source_kind": "official record",
-  "grade_basis": "rule"
- },
- {
-  "id": "src-2431cfa98ff6",
-  "url": "https://en.wikipedia.org/wiki/Libya_national_football_team",
-  "title": "Libya national football team (Wikipedia)",
-  "origin": "en.wikipedia.org",
-  "fetched": "2026-10-17",
-  "sha256": "a331efa048d0d0ad352e4f6ff7270662",
-  "archived": null,
-  "rights": null,
-  "stored": "archive/wikipedia/en/Libya national football team.json",
-  "chars": 16710,
-  "copies": 2,
-  "reliability": "C",
-  "source_kind": "reference work",
   "grade_basis": "rule"
  },
  {

@@ -59,6 +59,13 @@ Ten pins mention a killing. Read one by one:
   testimony, rests on two opposition statements translated by JPRS and two Wikipedia articles, says so in its text,
   and names none of the students.
 
+## Later change
+
+20 November 2026: three undated generated entries describing events after 2011 were withdrawn (the 2012 attack on the U.S.
+facility in Benghazi, a racetrack named in a 2012 report on it, and a 2021 football match). They had passed because the
+after-2011 rule needs a date; `scripts/write-regional.mjs` now drops an undated entry when every year it mentions is after 2011.
+None of the three named a private person. 201 pins remain (Benghazi 73).
+
 ## Limits
 
 - This is a machine pass followed by my reading of what it flagged. It is not the independent check (C4), which needs

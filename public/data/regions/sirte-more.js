@@ -378,17 +378,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "military",
   "level": "documented",
   "name": "Surt AW Radar Fac",
-  "lat": 31.205,
-  "lon": 16.5886,
-  "r": 12,
-  "pos": "town",
+  "lat": 31.15583,
+  "lon": 16.99417,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Sirte",
-   "u": "https://en.wikipedia.org/wiki/Sirte"
+   "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+   "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
   },
   "period": "Date not given",
   "relevance": "Libyan AW radar site 113 near Surt, listed in Table 1.",
-  "text": "Libyan AW radar site 113 near Surt, listed in Table 1. This rests on one document: AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA. No second source is held for it. Mapped at the centre of Sirte: the document names the town, not the site.",
+  "text": "Libyan AW radar site 113 near Surt, listed in Table 1. This rests on one document: AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA. No second source is held for it. Mapped at the coordinates printed in AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (31-09-21 N 016-59-39E), 1 km margin. The site was found by reading the documents (Claude Opus 5.5), and the quotation and position were checked against the stored texts by script; approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA",
@@ -426,17 +426,17 @@ window.ATLAS_SITES = (window.ATLAS_SITES || []).concat([
   "layer": "landmark",
   "level": "documented",
   "name": "Ras Lanuf petrochemical complex",
-  "lat": 30.5867,
-  "lon": 18.4119,
-  "r": 12,
-  "pos": "town",
+  "lat": 30.47472,
+  "lon": 18.57361,
+  "r": 1,
+  "pos": "site",
   "posSrc": {
-   "t": "Wikipedia: Ras Lanuf",
-   "u": "https://en.wikipedia.org/wiki/Ras_Lanuf"
+   "t": "Wikipedia: Ras Lanuf Refinery",
+   "u": "https://en.wikipedia.org/wiki/Ras_Lanuf_Refinery"
   },
   "period": "Date not given",
   "relevance": "Visited by Senegalese President Diouf during his March 1989 trip to Libya.",
-  "text": "Visited by Senegalese President Diouf during his March 1989 trip to Libya. This rests on one document: DTIC ADA348497: JPRS Report, Near East & South Asia.. No second source is held for it. Mapped at the centre of Ras Lanuf: the document names the town, not the site.",
+  "text": "Visited by Senegalese President Diouf during his March 1989 trip to Libya. This rests on one document: DTIC ADA348497: JPRS Report, Near East & South Asia.. No second source is held for it. Mapped at the position of Ras Lanuf Refinery given by Wikipedia, the place the entry names (\"Ras Lanuf petrochemical complex\"), 1 km margin. approved by Claude on the owner's instruction on 2026-11-20.",
   "sources": [
    {
     "t": "DTIC ADA348497: JPRS Report, Near East & South Asia.",

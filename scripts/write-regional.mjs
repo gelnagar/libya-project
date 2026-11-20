@@ -24,6 +24,7 @@ const towns = {}; for (const r of JSON.parse(fs.readFileSync('archive/model/regi
 // who found and checked an approved position, in words. MODEL_NAME is the model of scripts/read-positions.mjs (owner's choice, 18 Nov 2026).
 const MODEL_NAME = 'Claude Haiku 5.5';
 const checkedBy = (ap) => (/^read-/.test(ap.method) ? `The site was found by a machine reading of the documents (${MODEL_NAME}) and confirmed by a second, separate reading; `
+  : ap.reviewed ? `The site was found by reading the documents (${ap.reviewed.by}), and the quotation and position were checked against the stored texts by script; `
   : ap.checked ? `The position was confirmed by a separate machine reading of the passage (${MODEL_NAME}); ` : '') + `approved by ${ap.by} on ${ap.date}.`;
 const APPROVED = fs.existsSync('archive/model/positions.json') ? JSON.parse(fs.readFileSync('archive/model/positions.json', 'utf8')).approved || {} : {};
 const flags = {}; for (const r of ['benghazi', 'cyrenaica', 'fezzan', 'sirte', 'tripolitania']) { const f = `archive/review/safety-${r}.json`; if (fs.existsSync(f)) for (const e of JSON.parse(fs.readFileSync(f, 'utf8')).entries) flags[e.id] = e.flags.map((x) => x.flag); }
@@ -66,6 +67,11 @@ for (const c of cands) {
   if (bad) { skip('safety flag: ' + bad, c); continue; }
   const year = (/^(\d{4})/.exec(c.date || '') || [])[1];
   if (year && +year > 2011) { skip('after 2011', c); continue; }
+  // an undated entry (a place) whose every year mentioned is after 2011 is of the later years too (found 20 Nov 2026: the 2012 attack on
+  // the U.S. facility in Benghazi, a racetrack named in a 2012 report on it, and a 2021 football match had been written up because they
+  // carry no date; the document titles count too)
+  if (!year) { const ys = [c.name, ...(c.items || []).flatMap((x) => [x.detail || '', x.title || ''])].join(' ').match(/\b(19\d\d|20\d\d)\b/g) || [];
+    if (ys.length && ys.every((y) => +y > 2011)) { skip('after 2011', c); continue; } }
   const yy = year || (/^(\d{4})/.exec((c.items[0] || {}).date || '') || [])[1];
   if (yy && +yy < 1969) { skip('before 1969 (the map is of the Gaddafi years)', c); continue; }
   const it = [...c.items].sort((a, b) => (b.rel || 0) - (a.rel || 0))[0]; if (!it) { skip('no document', c); continue; }

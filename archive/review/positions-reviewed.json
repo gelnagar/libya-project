@@ -1,0 +1,545 @@
+{
+ "note": "Positions of regional entries found by reading the entry's stored documents (Claude Opus 5.5, in the session, on the owner's instruction of 20 Nov 2026: 'You need to use your own AI budget here to figure this out'). Each record names the site, a quotation copied from a stored document that ties the entry to the site, and the position's source: either coordinates printed in a stored document (doc + printed, copied as printed, OCR slips included) or an English Wikipedia article whose page gives coordinates. No coordinate is typed in. node scripts/review-positions.mjs checks each record against the stored texts and the kept Wikipedia look-ups and writes 'checked'; only a record that passes can be approved (scripts/approve-positions.mjs).",
+ "by": "Claude Opus 5.5",
+ "date": "2026-11-20",
+ "records": {
+  "c-02cefa1fcdc4": {
+   "site": "Jamal 'Abd al-Nasir Air Base, Tobruk (former RAF El Adem)",
+   "quote": "at the Jamal ‘Abd al-Nasir Air Base in Tobruk",
+   "article": "Gamal Abdel Nasser Airbase",
+   "r": 2,
+   "note": "The speech was given at the base itself.",
+   "checked": {
+    "ok": true,
+    "region": "cyrenaica",
+    "name": "Qadhdhafi speech at rally marking the 18th anniversary of the evacuation of British troops from the base",
+    "method": "reviewed-wikipedia",
+    "lat": 31.8613889,
+    "lon": 23.906778,
+    "r": 2,
+    "fromTown": 24.4,
+    "town": "Tobruk",
+    "quoteDoc": "cia-readingroom-document-cia-rdp05-01559r000400430025-1",
+    "src": {
+     "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+     "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+    },
+    "named": "Jamal 'Abd al-Nasir Air Base, Tobruk (former RAF El Adem)"
+   }
+  },
+  "c-1cd2821cb585": {
+   "site": "Jamal 'Abd an-Nasir Base (formerly Al-Adem Base), Tobruk",
+   "quote": "the Jamal ‘Abd an-Nasir Base, formerely the Al-Adem Base",
+   "article": "Gamal Abdel Nasser Airbase",
+   "r": 2,
+   "note": "The document names the base by both names; the Wikipedia article is the same base (former RAF El Adem).",
+   "checked": {
+    "ok": true,
+    "region": "cyrenaica",
+    "name": "Qadhdhafi addresses public rally marking the 11th anniversary of the British base evacuation",
+    "method": "reviewed-wikipedia",
+    "lat": 31.8613889,
+    "lon": 23.906778,
+    "r": 2,
+    "fromTown": 24.4,
+    "town": "Tobruk",
+    "quoteDoc": "fbis-1981-03-30-0877",
+    "src": {
+     "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+     "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+    },
+    "named": "Jamal 'Abd an-Nasir Base (formerly Al-Adem Base), Tobruk"
+   }
+  },
+  "c-4c6c95e07393": {
+   "site": "Nasir airfield near Tobruk",
+   "quote": "C-130 flights to Nasir airfield near Tobruk",
+   "article": "Gamal Abdel Nasser Airbase",
+   "r": 2,
+   "note": "Nasir airfield near Tobruk is the Gamal Abdel Nasser air base.",
+   "checked": {
+    "ok": true,
+    "region": "cyrenaica",
+    "name": "At least eight Libyan C-130 flights reached Nasir airfield since August 17, with none detected in the…",
+    "method": "reviewed-wikipedia",
+    "lat": 31.8613889,
+    "lon": 23.906778,
+    "r": 2,
+    "fromTown": 24.4,
+    "town": "Tobruk",
+    "quoteDoc": "cia-readingroom-document-0006466837",
+    "src": {
+     "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+     "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+    },
+    "named": "Nasir airfield near Tobruk"
+   }
+  },
+  "c-b5aed7aebf81": {
+   "site": "Jamal 'Abd al-Nasir Air Base, Tobruk",
+   "quote": "At the Jamal ‘Abd al-Nasir Air Base, a",
+   "article": "Gamal Abdel Nasser Airbase",
+   "r": 2,
+   "note": "The parade and air display were held at the base.",
+   "checked": {
+    "ok": true,
+    "region": "cyrenaica",
+    "name": "Popular celebration of the 15th anniversary of the expulsion of British bases, with a military parade and…",
+    "method": "reviewed-wikipedia",
+    "lat": 31.8613889,
+    "lon": 23.906778,
+    "r": 2,
+    "fromTown": 24.4,
+    "town": "Tobruk",
+    "quoteDoc": "cia-readingroom-document-cia-rdp05-01559r000400390060-7",
+    "src": {
+     "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+     "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+    },
+    "named": "Jamal 'Abd al-Nasir Air Base, Tobruk"
+   }
+  },
+  "c-c6910e1b3964": {
+   "site": "Jamal 'Abd an-Nasir base, Tobruk",
+   "quote": "the Jamal ‘Abd an-Nasir base in Tobrug",
+   "article": "Gamal Abdel Nasser Airbase",
+   "r": 2,
+   "note": "The celebration and speech were held at the base.",
+   "checked": {
+    "ok": true,
+    "region": "cyrenaica",
+    "name": "Jamal 'Abd an-Nasir base, Tobruk",
+    "method": "reviewed-wikipedia",
+    "lat": 31.8613889,
+    "lon": 23.906778,
+    "r": 2,
+    "fromTown": 24.4,
+    "town": "Tobruk",
+    "quoteDoc": "fbis-1984-03-29-0382",
+    "src": {
+     "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+     "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+    },
+    "named": "Jamal 'Abd an-Nasir base, Tobruk"
+   }
+  },
+  "c-cea80e3aa2d3": {
+   "site": "Jamal 'Abd an-Nasir base, Tobruk",
+   "quote": "the Jamal ‘Abd an-Nasir base in Tobrug",
+   "article": "Gamal Abdel Nasser Airbase",
+   "r": 2,
+   "note": "The celebration was held at the base.",
+   "checked": {
+    "ok": true,
+    "region": "cyrenaica",
+    "name": "Gaddafi speech marking the 14th anniversary of the expulsion of British troops and closure of their bases in…",
+    "method": "reviewed-wikipedia",
+    "lat": 31.8613889,
+    "lon": 23.906778,
+    "r": 2,
+    "fromTown": 24.4,
+    "town": "Tobruk",
+    "quoteDoc": "fbis-1984-03-29-0382",
+    "src": {
+     "t": "Wikipedia: Gamal Abdel Nasser Airbase",
+     "u": "https://en.wikipedia.org/wiki/Gamal_Abdel_Nasser_Airbase"
+    },
+    "named": "Jamal 'Abd an-Nasir base, Tobruk"
+   }
+  },
+  "c-69054984a1c9": {
+   "site": "Benina airport, Benghazi",
+   "quote": "arrival at Ibinina Airport in Benghazi",
+   "article": "Benina International Airport",
+   "r": 2,
+   "note": "'Ibinina' is an OCR or transliteration form of Benina.",
+   "checked": {
+    "ok": true,
+    "region": "benghazi",
+    "name": "Qadhdhafi returned home after a twenty-day national action tour of Arab countries and was welcomed by…",
+    "method": "reviewed-wikipedia",
+    "lat": 32.09722,
+    "lon": 20.26944,
+    "r": 2,
+    "fromTown": 19.2,
+    "town": "Benghazi",
+    "quoteDoc": "fbis-1979-07-13-0396",
+    "src": {
+     "t": "Wikipedia: Benina International Airport",
+     "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+    },
+    "named": "Benina airport, Benghazi"
+   }
+  },
+  "c-6fd055e72693": {
+   "site": "Benina airport, Benghazi",
+   "quote": "arrived in Beninah Airport",
+   "article": "Benina International Airport",
+   "r": 2,
+   "note": "The arrival was at Benina airport.",
+   "checked": {
+    "ok": true,
+    "region": "benghazi",
+    "name": "PDRY leader 'Ali Nasir Muhammad arrived at Benina Airport in Benghazi on a visit to Libya",
+    "method": "reviewed-wikipedia",
+    "lat": 32.09722,
+    "lon": 20.26944,
+    "r": 2,
+    "fromTown": 19.2,
+    "town": "Benghazi",
+    "quoteDoc": "fbis-1981-09-18-1004",
+    "src": {
+     "t": "Wikipedia: Benina International Airport",
+     "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+    },
+    "named": "Benina airport, Benghazi"
+   }
+  },
+  "c-c129e91c4563": {
+   "site": "Benghazi airport (Benina)",
+   "quote": "were on hand at the airport to welcome him",
+   "article": "Benina International Airport",
+   "r": 2,
+   "note": "The document says the king arrived in Benghazi and was met at the airport; Benghazi's airport is Benina (the Wikipedia article: it serves Benghazi). The name Benina is not in the document.",
+   "checked": {
+    "ok": true,
+    "region": "benghazi",
+    "name": "King Khalid ibn Abd al-Aziz of Saudi Arabia arrives in Benghazi on a state visit to Libya",
+    "method": "reviewed-wikipedia",
+    "lat": 32.09722,
+    "lon": 20.26944,
+    "r": 2,
+    "fromTown": 19.2,
+    "town": "Benghazi",
+    "quoteDoc": "fbis-1979-10-01-0454",
+    "src": {
+     "t": "Wikipedia: Benina International Airport",
+     "u": "https://en.wikipedia.org/wiki/Benina_International_Airport"
+    },
+    "named": "Benghazi airport (Benina)"
+   }
+  },
+  "c-ead1502d3019": {
+   "site": "Misrata iron and steel works",
+   "quote": "iron and steel works under construction at the coastal town of Misrata",
+   "article": "Libyan Iron and Steel Company",
+   "r": 2,
+   "note": "The works under construction became the Libyan Iron and Steel Company plant at Misrata.",
+   "checked": {
+    "ok": true,
+    "region": "tripolitania",
+    "name": "Hyundai Engineering & Contracting signed a $520 million contract to build a 480 MW power station and…",
+    "method": "reviewed-wikipedia",
+    "lat": 32.33694,
+    "lon": 15.22,
+    "r": 2,
+    "fromTown": 12.8,
+    "town": "Misrata",
+    "quoteDoc": "gov-jprs-jprs-report_jprs-82820",
+    "src": {
+     "t": "Wikipedia: Libyan Iron and Steel Company",
+     "u": "https://en.wikipedia.org/wiki/Libyan_Iron_and_Steel_Company"
+    },
+    "named": "Misrata iron and steel works"
+   }
+  },
+  "c-f447fbcbbe6c": {
+   "site": "Misrata War Museum",
+   "quote": "Misrata War Museum",
+   "article": "Fist Crushing a U.S. Fighter Plane",
+   "r": 0.5,
+   "note": "The entry's own source is the article on the sculpture; its coordinates are where it is displayed, in Misrata.",
+   "checked": {
+    "ok": true,
+    "region": "tripolitania",
+    "name": "Misrata War Museum",
+    "method": "reviewed-wikipedia",
+    "lat": 32.38116476,
+    "lon": 15.08571006,
+    "r": 0.5,
+    "fromTown": 0.7,
+    "town": "Misrata",
+    "quoteDoc": "wiki-en-Fist Crushing a U.S. Fighter Plane",
+    "src": {
+     "t": "Wikipedia: Fist Crushing a U.S. Fighter Plane",
+     "u": "https://en.wikipedia.org/wiki/Fist_Crushing_a_U.S._Fighter_Plane"
+    },
+    "named": "Misrata War Museum"
+   }
+  },
+  "c-255c5c1acba6": {
+   "site": "Surt AW Radar Fac (NPIC no. 113)",
+   "quote": "Surt AW Radar Fac 113",
+   "doc": "cia-readingroom-document-cia-rdp80t00913a000100030001-5",
+   "printed": "31-09-21 N 016-59-39E",
+   "r": 1,
+   "far": 45,
+   "note": "Table 1 of the NPIC report prints the site's coordinates on the line after its name; they lie about 39 km east of Sirte.",
+   "checked": {
+    "ok": true,
+    "region": "sirte",
+    "name": "Surt AW Radar Fac",
+    "method": "reviewed-coord",
+    "lat": 31.15583,
+    "lon": 16.99417,
+    "r": 1,
+    "fromTown": 39,
+    "town": "Sirte",
+    "quoteDoc": "cia-readingroom-document-cia-rdp80t00913a000100030001-5",
+    "src": {
+     "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+    },
+    "printed": "31-09-21 N 016-59-39E"
+   }
+  },
+  "c-afaa74d2691b": {
+   "site": "Sabha AW Radar Fac (NPIC no. 112)",
+   "quote": "Sabha AW Radar Fac 112",
+   "doc": "cia-readingroom-document-cia-rdp80t00913a000100030001-5",
+   "printed": "26-49-29N 0O14-28-21E",
+   "r": 1,
+   "note": "Table 1 of the NPIC report; the longitude is printed '0O14' (an OCR slip for 014).",
+   "checked": {
+    "ok": true,
+    "region": "fezzan",
+    "name": "Sabha AW Radar Fac",
+    "method": "reviewed-coord",
+    "lat": 26.82472,
+    "lon": 14.4725,
+    "r": 1,
+    "fromTown": 24.3,
+    "town": "Sabha",
+    "quoteDoc": "cia-readingroom-document-cia-rdp80t00913a000100030001-5",
+    "src": {
+     "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+    },
+    "printed": "26-49-29N 0O14-28-21E"
+   }
+  },
+  "c-941a90e438cd": {
+   "site": "Tubruq AW Radar Facility",
+   "quote": "Tubruq AW Radar Facility, were under construction in June 1973",
+   "doc": "cia-readingroom-document-cia-rdp80t00913a000100030001-5",
+   "docQuote": "Tubrug AW Radar Fac 115",
+   "printed": "31-52-20N 023-57-15E",
+   "r": 1,
+   "note": "The entry's own 1973 report lost this site's coordinates in the scan (the locator's only option was the Gamal Abd-El-Nassar airfield radar on the line above, a different site). The 1980 NPIC report, a stored document, lists the same facility (Tubrug AW Radar Fac 115) with coordinates.",
+   "checked": {
+    "ok": true,
+    "region": "cyrenaica",
+    "name": "Tubruq AW Radar Facility",
+    "method": "reviewed-coord",
+    "lat": 31.87222,
+    "lon": 23.95417,
+    "r": 1,
+    "fromTown": 22.7,
+    "town": "Tobruk",
+    "quoteDoc": "cia-readingroom-document-cia-rdp78t05162a000300010053-0",
+    "src": {
+     "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+    },
+    "printed": "31-52-20N 023-57-15E"
+   }
+  },
+  "c-dfb01eb0384e": {
+   "site": "Al Bumbah Airfield North",
+   "quote": "AL BUMBAH AIRFIELD NORTH",
+   "doc": "cia-readingroom-document-cia-rdp84t00171r000201950001-5",
+   "printed": "32-27-13N 023-07-10E",
+   "r": 1,
+   "far": 95,
+   "note": "The airfield is 48 NM northwest of Tubruq (the document); it is filed under Tobruk because the document names it, and its own printed coordinates put it at Bomba.",
+   "checked": {
+    "ok": true,
+    "region": "cyrenaica",
+    "name": "Al Bumbah airfield North (Al Bumbah, near Tubruq)",
+    "method": "reviewed-coord",
+    "lat": 32.45361,
+    "lon": 23.11944,
+    "r": 1,
+    "fromTown": 56.9,
+    "town": "Derna",
+    "quoteDoc": "cia-readingroom-document-cia-rdp84t00171r000201950001-5",
+    "src": {
+     "t": "FLOGGER B WITH APEX MISSILES AL MUMBAH AIRFIELD NORTH, LIBYA (SANITIZED) (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp84t00171r000201950001-5"
+    },
+    "printed": "32-27-13N 023-07-10E"
+   }
+  },
+  "c-46b12ad40d24": {
+   "site": "Banghazi AW Radar Fac (NPIC no. 104)",
+   "quote": "Banghazi AW Radar Fac 104",
+   "doc": "cia-readingroom-document-cia-rdp80t00913a000100030001-5",
+   "printed": "32-05-34N 020-20-42E",
+   "r": 1,
+   "note": "Table 1 of the NPIC report prints the site's coordinates on the line after its name; about 25 km east of the centre of Benghazi.",
+   "far": 30,
+   "checked": {
+    "ok": true,
+    "region": "benghazi",
+    "name": "Banghazi AW Radar Fac",
+    "method": "reviewed-coord",
+    "lat": 32.09278,
+    "lon": 20.345,
+    "r": 1,
+    "fromTown": 26.3,
+    "town": "Benghazi",
+    "quoteDoc": "cia-readingroom-document-cia-rdp80t00913a000100030001-5",
+    "src": {
+     "t": "AIR WARNING RADAR FACILITIES IN EGYPT, THE SINAI, AND LIBYA (coordinates printed in the document)",
+     "u": "https://www.cia.gov/readingroom/document/cia-rdp80t00913a000100030001-5"
+    },
+    "printed": "32-05-34N 020-20-42E"
+   }
+  },
+  "c-d3c9e1e28706": {
+   "site": "Qaryunis University, Benghazi",
+   "quote": "at Qaryunis University in Ban- ghazi",
+   "article": "Qar Yunis",
+   "r": 1.5,
+   "note": "The session was held at Qaryunis (Garyounis) University, named after the Qar Yunis quarter of Benghazi where it stands; the position is the quarter's, from its Wikipedia article (the university's own article gives no coordinates), hence the 1.5 km margin.",
+   "checked": {
+    "ok": true,
+    "region": "benghazi",
+    "name": "Qadhdhafi addresses the General People's Congress at the ninth anniversary of the proclamation of people's…",
+    "method": "reviewed-wikipedia",
+    "lat": 32.0274,
+    "lon": 20.0412583,
+    "r": 1.5,
+    "fromTown": 10.2,
+    "town": "Benghazi",
+    "quoteDoc": "cia-readingroom-document-cia-rdp05-01559r000400410023-5",
+    "src": {
+     "t": "Wikipedia: Qar Yunis",
+     "u": "https://en.wikipedia.org/wiki/Qar_Yunis"
+    },
+    "named": "Qaryunis University, Benghazi"
+   }
+  },
+  "c-d59e96b87ecd": {
+   "site": "Qar Yunis University, Benghazi",
+   "quote": "will open at 0900 tomorrow in Qar Yunis University",
+   "article": "Qar Yunis",
+   "r": 1.5,
+   "note": "As above: the position is the Qar Yunis quarter's, where the university stands.",
+   "checked": {
+    "ok": true,
+    "region": "benghazi",
+    "name": "First international conference on Qadhdhafi's Green Book to open at Qar Yunis University, with about 1,000…",
+    "method": "reviewed-wikipedia",
+    "lat": 32.0274,
+    "lon": 20.0412583,
+    "r": 1.5,
+    "fromTown": 10.2,
+    "town": "Benghazi",
+    "quoteDoc": "fbis-1983-04-07-0126",
+    "src": {
+     "t": "Wikipedia: Qar Yunis",
+     "u": "https://en.wikipedia.org/wiki/Qar_Yunis"
+    },
+    "named": "Qar Yunis University, Benghazi"
+   }
+  },
+  "c-e4c690a4027c": {
+   "site": "Martyrs Street, Al-Abyar",
+   "quote": "in the Martyrs Street in Benghazi's Al-Abyar District",
+   "article": "Abyar, Libya",
+   "r": 2,
+   "far": 60,
+   "note": "Al-Abyar was then a district of the Benghazi municipality; the position is the town of Abyar's, from its Wikipedia article (the street itself has none).",
+   "checked": {
+    "ok": true,
+    "region": "benghazi",
+    "name": "Third batch of Libyan Armed Forces units returned from Chad",
+    "method": "reviewed-wikipedia",
+    "lat": 32.18889,
+    "lon": 20.59667,
+    "r": 2,
+    "fromTown": 50.5,
+    "town": "Benghazi",
+    "quoteDoc": "fbis-1981-06-24-0941",
+    "src": {
+     "t": "Wikipedia: Abyar, Libya",
+     "u": "https://en.wikipedia.org/wiki/Abyar,_Libya"
+    },
+    "named": "Martyrs Street, Al-Abyar"
+   }
+  },
+  "c-73cc89116d3b": {
+   "site": "Qar Yunis University, Benghazi",
+   "quote": "in Qar Yunis University ithe city of Bayan",
+   "article": "Qar Yunis",
+   "r": 1.5,
+   "note": "The congress met at Qar Yunis University (the scan reads 'ithe' for 'in the'); the position is the Qar Yunis quarter's, where the university stands.",
+   "checked": {
+    "ok": true,
+    "region": "benghazi",
+    "name": "General People's Congress begins its eleventh meeting at Qar Yunis University, Benghazi (JANA report)",
+    "method": "reviewed-wikipedia",
+    "lat": 32.0274,
+    "lon": 20.0412583,
+    "r": 1.5,
+    "fromTown": 10.2,
+    "town": "Benghazi",
+    "quoteDoc": "cia-readingroom-document-cia-rdp05-01559r000400410021-7",
+    "src": {
+     "t": "Wikipedia: Qar Yunis",
+     "u": "https://en.wikipedia.org/wiki/Qar_Yunis"
+    },
+    "named": "Qar Yunis University, Benghazi"
+   }
+  },
+  "c-c99a0c9d417d": {
+   "site": "Sebha airfield",
+   "quote": "THE NORTHEAST END OF SEBHA AIRFIELD",
+   "article": "Sabha Airport",
+   "r": 2,
+   "note": "The crash was at the northeast end of Sebha airfield (the NPIC note); the airfield is Sabha Airport.",
+   "checked": {
+    "ok": true,
+    "region": "fezzan",
+    "name": "Probable Mirage III/V crashed, apparently during takeoff (title gives 4 May 1982)",
+    "method": "reviewed-wikipedia",
+    "lat": 27,
+    "lon": 14.46111,
+    "r": 2,
+    "fromTown": 5.5,
+    "town": "Sabha",
+    "quoteDoc": "cia-readingroom-document-cia-rdp90t00784r000100220005-6",
+    "src": {
+     "t": "Wikipedia: Sabha Airport",
+     "u": "https://en.wikipedia.org/wiki/Sabha_Airport"
+    },
+    "named": "Sebha airfield"
+   }
+  },
+  "c-b74c0b1539e3": {
+   "site": "Misrata airport",
+   "quote": "the plane was destroyed on the runway",
+   "article": "Misrata Airport",
+   "r": 2,
+   "note": "The entry's own source is the airport's article: the aircraft took off from Misrata and was destroyed on the runway there.",
+   "checked": {
+    "ok": true,
+    "region": "tripolitania",
+    "name": "A Libyan Soko G-2 warplane taking off from Misrata challenged the no-fly zone and was reportedly shot down…",
+    "method": "reviewed-wikipedia",
+    "lat": 32.32556,
+    "lon": 15.05972,
+    "r": 2,
+    "fromTown": 6.5,
+    "town": "Misrata",
+    "quoteDoc": "wiki-en-Misrata Airport",
+    "src": {
+     "t": "Wikipedia: Misrata Airport",
+     "u": "https://en.wikipedia.org/wiki/Misrata_Airport"
+    },
+    "named": "Misrata airport"
+   }
+  }
+ }
+}

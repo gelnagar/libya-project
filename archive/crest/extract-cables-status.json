@@ -1,0 +1,22 @@
+{
+ "set": "cables",
+ "errors": [],
+ "at": "2026-11-21T05:50:06.131Z",
+ "mode": "batch",
+ "model": "claude-haiku-5-5",
+ "in": 701697,
+ "out": 313188,
+ "cw": 13298,
+ "cr": 5372392,
+ "n": 405,
+ "fail": 0,
+ "costUSD": 0.1411,
+ "perDocUSD": 0.00035,
+ "relevanceSoFar": {
+  "0": 10,
+  "1": 233,
+  "2": 146,
+  "3": 16
+ },
+ "remaining": 0
+}

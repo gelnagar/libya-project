@@ -6,8 +6,10 @@ import fs from 'node:fs'; import zlib from 'node:zlib'; import vm from 'node:vm'
 import { lebanonOnly } from './lib/fetcher.mjs';
 const KEY = process.env.ANTHROPIC_API_KEY; if (!KEY) { console.error('ANTHROPIC_API_KEY missing'); process.exit(2); }
 const MODEL = process.env.EXTRACT_MODEL || 'claude-haiku-5-5';
-const DIR = 'archive/crest', SET = process.env.SET === 'other' ? 'other' : 'crest';
-const OUT = `${DIR}/${SET === 'other' ? 'extract-other' : 'extract'}.jsonl`, DOCS = `${DIR}/${SET === 'other' ? 'docs-other' : 'docs'}.jsonl.gz`;
+// SET=other reads archive/crest/docs-other.jsonl.gz; SET=cables reads the Embassy Tripoli telegrams (archive/cables/docs.jsonl.gz, scripts/collect-cables.mjs)
+const DIR = 'archive/crest', SET = ['other', 'cables'].includes(process.env.SET) ? process.env.SET : 'crest';
+const SUF = SET === 'crest' ? '' : '-' + SET;
+const OUT = `${DIR}/extract${SUF}.jsonl`, DOCS = SET === 'cables' ? 'archive/cables/docs.jsonl.gz' : `${DIR}/docs${SUF}.jsonl.gz`;
 const args = process.argv.slice(2), SAMPLE = args.includes('--sample') ? +args[args.indexOf('--sample') + 1] || 30 : 0, BATCH = args.includes('--batch');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const H = { 'x-api-key': KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' };
@@ -17,7 +19,7 @@ const W = {}; for (const f of ['public/data/sites.js', 'public/data/areas.js']) 
 const known = [...(W.ATLAS_SITES || []).map((s) => `${s.id}: ${s.name}${s.aliases ? ' / ' + s.aliases.slice(0, 4).join(' / ') : ''}`),
   ...(W.ATLAS_AREAS || []).map((a) => `${a.id}: ${a.name}${a.aliases?.length ? ' / ' + a.aliases.slice(0, 4).join(' / ') : ''} [${a.kind}]`)].join('\n');
 
-const SYSTEM = `You read declassified U.S. government documents (CIA reading room/CREST, FBIS and JPRS translations, National Intelligence Surveys) for "Tripoli: Open Source", a historical map of Tripoli, Libya under Gaddafi (1969-2011): prisons, security and intelligence sites, military bases, weapons programs, the 1986 U.S. raid, killings and repression, landmarks, and the people involved.
+const SYSTEM = `You read declassified U.S. government documents (CIA reading room/CREST, FBIS and JPRS translations, National Intelligence Surveys, U.S. Embassy Tripoli telegrams) for "Tripoli: Open Source", a historical map of Tripoli, Libya under Gaddafi (1969-2011): prisons, security and intelligence sites, military bases, weapons programs, the 1986 U.S. raid, killings and repression, landmarks, and the people involved.
 
 Extract only what the document actually says. Never invent coordinates, dates, numbers or names. OCR errors are common: correct obvious spelling slips in names, but do not guess at illegible text. Prefer specifics (named buildings, units, streets, dates, death tolls) over generalities.
 
@@ -58,7 +60,7 @@ function trim(t, max = ONLY ? 16000 : 24000) { // keep the head + windows around
 const params = (d) => ({ model: MODEL, max_tokens: 1800,
   system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
   tools: [TOOL], tool_choice: { type: 'tool', name: 'record' },
-  messages: [{ role: 'user', content: `Title: ${d.title}\nDate (catalog): ${d.date || 'unknown'}\nSource: ${({ jprs: 'JPRS translation volume (Libya-related excerpts only)', 'jprs-old': 'JPRS translation volume (Libya sections)', nis: 'CIA National Intelligence Survey', wikipedia: 'Wikipedia article (background reference, not an eyewitness source)', fbis: 'FBIS Daily Report, translated Libyan and regional radio and press', frus: 'Foreign Relations of the United States (State Department document)', gov: 'U.S. presidential library document', countrystudy: 'Library of Congress Libya country study (1987)' })[d.src] || 'CIA reading room (CREST)'}\n\n<document>\n${trim(d.text)}\n</document>` }] });
+  messages: [{ role: 'user', content: `Title: ${d.title}\nDate (catalog): ${d.date || 'unknown'}\nSource: ${({ jprs: 'JPRS translation volume (Libya-related excerpts only)', 'jprs-old': 'JPRS translation volume (Libya sections)', nis: 'CIA National Intelligence Survey', wikipedia: 'Wikipedia article (background reference, not an eyewitness source)', fbis: 'FBIS Daily Report, translated Libyan and regional radio and press', frus: 'Foreign Relations of the United States (State Department document)', gov: 'U.S. presidential library document', countrystudy: 'Library of Congress Libya country study (1987)', cable: 'U.S. Embassy Tripoli telegram to the State Department (declassified cable)' })[d.src] || 'CIA reading room (CREST)'}\n\n<document>\n${trim(d.text)}\n</document>` }] });
 
 // Inputs
 // If the full fetch has not saved yet, sample mode fetches its own small set from the mirror list (polite, sequential).
@@ -90,7 +92,7 @@ if (SAMPLE) { const step = Math.max(1, Math.floor(todo.length / SAMPLE)); todo =
 console.log('docs', docs.length, 'done', done.size, 'skipped old JPRS', docs.filter((d) => d.src === 'jprs' && oldJ.has(d.id)).length, 'todo', todo.length);
 
 const usage = { in: 0, out: 0, cw: 0, cr: 0, n: 0, fail: 0 }; const errors = [];
-const writeStatus = (extra) => fs.writeFileSync(`${DIR}/${SET === 'other' ? 'extract-other-status' : 'extract-status'}.json`, JSON.stringify({ at: new Date().toISOString(), model: MODEL, docs: docs.length, todo: todo.length, ok: usage.n, failed: usage.fail, errors: errors.slice(0, 5), ...extra }, null, 1));
+const writeStatus = (extra) => fs.writeFileSync(`${DIR}/extract${SUF}-status.json`, JSON.stringify({ at: new Date().toISOString(), model: MODEL, docs: docs.length, todo: todo.length, ok: usage.n, failed: usage.fail, errors: errors.slice(0, 5), ...extra }, null, 1));
 process.on('uncaughtException', (e) => { errors.push('uncaught: ' + e.message); writeStatus({ crashed: true }); process.exit(1); });
 function keep(id, msg, batch) {
   const u = msg.usage || {}; usage.in += u.input_tokens || 0; usage.out += u.output_tokens || 0; usage.cw += u.cache_creation_input_tokens || 0; usage.cr += u.cache_read_input_tokens || 0;
@@ -118,4 +120,4 @@ if (!BATCH) {
 }
 const rel = {}; if (fs.existsSync(OUT)) for (const l of fs.readFileSync(OUT, 'utf8').split('\n').filter(Boolean)) { const x = JSON.parse(l); rel[x.relevance] = (rel[x.relevance] || 0) + 1; }
 const stat = { set: SET, errors: errors.slice(0, 5), at: new Date().toISOString(), mode: BATCH ? 'batch' : 'sample', model: MODEL, ...usage, costUSD: +cost(BATCH).toFixed(4), perDocUSD: usage.n ? +(cost(BATCH) / usage.n).toFixed(5) : null, relevanceSoFar: rel, remaining: docs.length - done.size - usage.n };
-fs.writeFileSync(`${DIR}/${SET === 'other' ? 'extract-other-status' : 'extract-status'}.json`, JSON.stringify(stat, null, 1)); console.log(stat);
+fs.writeFileSync(`${DIR}/extract${SUF}-status.json`, JSON.stringify(stat, null, 1)); console.log(stat);

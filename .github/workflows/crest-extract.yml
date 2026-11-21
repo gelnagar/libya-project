@@ -4,7 +4,7 @@ on:
     inputs:
       mode: { description: 'sample, batch, or positions (the two-stage position reading, scripts/read-positions.mjs)', default: 'sample' }
       n: { description: 'sample size', default: '30' }
-      set: { description: 'crest or other', default: 'crest' }
+      set: { description: 'crest, other, or cables (Embassy Tripoli telegrams)', default: 'crest' }
       only: { description: 'tripoli = read only documents that name a Tripoli place', default: '' }
 permissions: { contents: write }
 concurrency: { group: crest-extract, cancel-in-progress: false }

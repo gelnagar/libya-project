@@ -20,14 +20,14 @@ for (const pf of [`public/data/regions/${region}.js`, `public/data/regions/${reg
   const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(pf, 'utf8'), ctx); pins.push(...Object.values(ctx.window).flat().filter((x) => x && x.region === region)); }
 // a pin's documents, from its source links, looked up in the stored documents' own addresses, so the people check reaches pins too
 const BYURL = new Map(), key = (u) => String(u || '').replace(/^https?:\/\/(www\.)?/, '').replace(/[?#].*$/, '').replace(/\/+$/, '');
-for (const f of ['archive/crest/docs.jsonl.gz', 'archive/crest/docs-other.jsonl.gz']) { if (!fs.existsSync(f)) continue;
+for (const f of ['archive/crest/docs.jsonl.gz', 'archive/crest/docs-other.jsonl.gz', 'archive/cables/docs.jsonl.gz']) { if (!fs.existsSync(f)) continue;
   for (const l of zlib.gunzipSync(fs.readFileSync(f)).toString().split('\n')) { if (!l) continue; let d; try { d = JSON.parse(l); } catch { continue; }
     for (const u of [d.url, d.ia, d.cia]) if (u) BYURL.set(key(u), d.id); } }
 const docOf = (u) => BYURL.get(key(u)) || null;
 
 // people per document, as the reading model listed them
 const people = new Map();
-for (const f of ['archive/crest/extract.jsonl', 'archive/crest/extract-other.jsonl']) { if (!fs.existsSync(f)) continue;
+for (const f of ['archive/crest/extract.jsonl', 'archive/crest/extract-other.jsonl', 'archive/crest/extract-cables.jsonl']) { if (!fs.existsSync(f)) continue;
   for (const l of fs.readFileSync(f, 'utf8').split('\n')) { if (!l) continue; let d; try { d = JSON.parse(l); } catch { continue; } if (d.people && d.people.length) people.set(d.id, d.people); } }
 
 const PUBLIC = /\b(leader|head of state|president|king|queen|crown prince|emir|sultan|prime minister|premier|minister|secretary|ambassador|consul|envoy|chargé|charge d'affaires|chairman|spokesman|governor|mayor|general|admiral|colonel|lieutenant colonel|major|commander|chief of staff|member of the rcc|revolutionary command council|deputy|senator|congressman|pope|official|delegat|foreign|party|movement leader|press|journalist|author|scholar|historian)\b/i;

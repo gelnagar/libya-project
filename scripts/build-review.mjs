@@ -20,7 +20,7 @@ const NAME = {}; SITES.forEach((s) => { NAME[s.id] = s.name; }); AREAS.forEach((
 const onMap = new Set([...SITES, ...AREAS].flatMap((x) => [x.name, ...(x.aliases || [])]).map(fold));
 
 const docs = new Map();
-for (const f of ['docs', 'docs-other']) { const p = `${DIR}/${f}.jsonl.gz`; if (!fs.existsSync(p)) continue;
+for (const f of ['docs', 'docs-other', '../cables/docs']) { const p = `${DIR}/${f}.jsonl.gz`; if (!fs.existsSync(p)) continue;
   for (const l of zlib.gunzipSync(fs.readFileSync(p)).toString().split('\n')) { if (!l) continue; const d = JSON.parse(l); docs.set(d.id, d); } }
 
 const STOP = new Set('the of and in at near a an to for on by from with tripoli libya libyan city area district street road former new old al el'.split(' '));
@@ -54,7 +54,7 @@ function item(x, d, detail, phrase, extra) {
 
 const places = new Map(), events = new Map();
 let read = 0, extracted = 0, placeholders = 0, lebanon = 0, lebanonEv = 0; // read = rated relevant (relevance 1 or more); extracted = every row in the extraction files
-for (const f of ['extract', 'extract-other']) { const p = `${DIR}/${f}.jsonl`; if (!fs.existsSync(p)) continue;
+for (const f of ['extract', 'extract-other', 'extract-cables']) { const p = `${DIR}/${f}.jsonl`; if (!fs.existsSync(p)) continue;
   for (const l of fs.readFileSync(p, 'utf8').split('\n')) { if (!l) continue; let x; try { x = JSON.parse(l); } catch { continue; }
     extracted++; if (x.summary === 'placeholder') placeholders++;
     if (!(x.relevance >= 1)) continue; read++;

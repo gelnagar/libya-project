@@ -1,5 +1,6 @@
 [
  { "date": "2026-10-18", "what": "CIA reading room and JPRS, first reading run", "documents": 1568, "usd": 0.7311 },
  { "date": "2026-10-18", "what": "Wikipedia, country study and other texts", "documents": 2657, "usd": 1.0346 },
- { "date": "2026-11-13", "what": "CIA reading room: unread documents naming a Tripoli place", "documents": 1738, "usd": 0.7116 }
+ { "date": "2026-11-13", "what": "CIA reading room: unread documents naming a Tripoli place", "documents": 1738, "usd": 0.7116 },
+ { "date": "2026-11-21", "what": "Embassy Tripoli cables (State Department telegrams, 1973-79), batch reading", "documents": 405, "usd": 0.1411 }
 ]

@@ -1,30 +1,30 @@
 {
- "at": "2026-11-19T16:26:09.329Z",
+ "at": "2026-11-21T05:51:04.822Z",
  "collected": 15214,
  "listedNotFetched": 4494,
- "read": 5856,
- "rated": 5627,
- "lebanonOnly": 128,
+ "read": 6258,
+ "rated": 6022,
+ "lebanonOnly": 129,
  "lebanonEvents": 24,
- "extracted": 5991,
- "placeholders": 135,
- "candidates": 2248,
+ "extracted": 6396,
+ "placeholders": 138,
+ "candidates": 2433,
  "byRegion": {
-  "tripoli": 1952,
-  "benghazi": 110,
+  "tripoli": 2107,
+  "benghazi": 132,
   "fezzan": 57,
-  "sirte": 28,
-  "tripolitania": 51,
-  "cyrenaica": 50
+  "sirte": 31,
+  "tripolitania": 53,
+  "cyrenaica": 53
  },
- "places": 366,
- "events": 1817,
+ "places": 389,
+ "events": 1979,
  "speeches": 65,
- "twoOrMore": 314,
- "notFound": 180,
- "newSinceLastRun": 0,
- "previousRunAt": "2026-11-16",
- "costUsd": 2.48,
+ "twoOrMore": 348,
+ "notFound": 188,
+ "newSinceLastRun": 185,
+ "previousRunAt": "2026-11-19",
+ "costUsd": 2.62,
  "runs": [
   {
    "date": "2026-10-18",
@@ -43,6 +43,12 @@
    "what": "CIA reading room: unread documents naming a Tripoli place",
    "documents": 1738,
    "usd": 0.7116
+  },
+  {
+   "date": "2026-11-21",
+   "what": "Embassy Tripoli cables (State Department telegrams, 1973-79), batch reading",
+   "documents": 405,
+   "usd": 0.1411
   }
  ]
 }

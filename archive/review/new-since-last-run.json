@@ -1,8 +1,1489 @@
 {
- "at": "2026-11-19T16:26:09.307Z",
- "previousRun": "2026-11-16",
+ "at": "2026-11-21T05:51:04.787Z",
+ "previousRun": "2026-11-19",
  "baseline": false,
- "candidates": 2248,
- "newCount": 0,
- "new": []
+ "candidates": 2433,
+ "newCount": 185,
+ "new": [
+  {
+   "id": "646558e48388",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Government-organized demonstration against the US Embassy; demonstrators climbed onto the roof and raised Palestinian flags; no damage to persons or …",
+   "date": "1979-03-21",
+   "docs": 5
+  },
+  {
+   "id": "d552b8397320",
+   "kind": "place",
+   "region": "benghazi",
+   "name": "Benghazi University",
+   "date": "1976-01-11",
+   "docs": 2
+  },
+  {
+   "id": "b4b9dd2d7014",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy assessment that no imminent threat to embassy personnel is expected, but that an officially inspired mob attack is a risk the police could no…",
+   "date": "1979-11-21",
+   "docs": 3
+  },
+  {
+   "id": "dd365a46fa83",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Disturbance at Tripoli University; two students died of head injuries reportedly caused by blunt instruments, possibly lead pipes; about 120 other st…",
+   "date": "1976-04-07",
+   "docs": 1
+  },
+  {
+   "id": "316a3f84e189",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Large demonstration against the Camp David results; speakers mainly targeted Sadat, with occasional mention of Carter and Begin.",
+   "date": "1978-09-18",
+   "docs": 2
+  },
+  {
+   "id": "cafca1c8425f",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Guinean President Ahmed Sekou Toure visited Libya April 17-23, met at Tripoli airport by Colonel Qadhafi and most major civilian and military leaders.",
+   "date": "1978-04-17",
+   "docs": 3
+  },
+  {
+   "id": "54c8240db05f",
+   "kind": "event",
+   "region": "tripolitania",
+   "name": "Camp guards fired automatic weapons on a group of trainee fedayeen, mostly Yemenis and Palestinians, who had refused for two days to leave the camp; …",
+   "date": "1973-04-01",
+   "docs": 1
+  },
+  {
+   "id": "df86006ae891",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Large organized mass demonstration with four hours of speeches and chanting to promote the Green Book's second part; no main keynote speaker appeared.",
+   "date": "1978-04-12",
+   "docs": 1
+  },
+  {
+   "id": "14e6cc2cae4a",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan authorities bring local employees out for a public rally, seen by US as part of setting up revolutionary committees; embassy on alert against …",
+   "date": "1979-11-29",
+   "docs": 1
+  },
+  {
+   "id": "badf20719c0f",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Police loudspeaker truck led about 150 secondary schoolgirls in military uniforms and men to the chancery; police stationed themselves at the entranc…",
+   "date": "1979-12-01",
+   "docs": 1
+  },
+  {
+   "id": "e75fc9f782a8",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Thousands of students gathered at Green Square with pro-Khomeini, anti-US banners before the attack on the embassy.",
+   "date": "1979-12-02",
+   "docs": 1
+  },
+  {
+   "id": "d548189c4e5b",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Central Prison, Tripoli",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "19ca3d760a96",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Chinese Embassy, Tripoli",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "52bd132da381",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Tripoli Branch of the Mbahath (detention centre)",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "ea972bdbfddb",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Qadhafi's headquarters",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "c87a08479f67",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Amoseas called to Ministry of Petroleum; Undersecretary Muntassir demands 51 percent nationalization; Amoseas production limited to 100,000 barrels a…",
+   "date": "1973-08-12",
+   "docs": 2
+  },
+  {
+   "id": "0478469c2fc8",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan official comment on the nationalization of three U.S. oil companies read to a VOA correspondent by the Arab Revolution News Agency",
+   "date": "1974-02-11",
+   "docs": 2
+  },
+  {
+   "id": "0627bd7a505f",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "US Embassy informed Director General of Civil Aviation Abuzakuk of FAA training availability for three radio engineers during FY 1979.",
+   "date": "1978-07-03",
+   "docs": 2
+  },
+  {
+   "id": "9a3f275d30c8",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Tripoli airport (new)",
+   "date": "1978-07-20",
+   "docs": 1
+  },
+  {
+   "id": "67cbc00843f5",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Iraqi Embassy employee slain in Tripoli (per cable subject line; body text not included in the document provided)",
+   "date": "1978-08-20",
+   "docs": 1
+  },
+  {
+   "id": "f4d85d661bce",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan security authorities detained FSN cashier Bashir Dultz during a bank trip for payroll funds and took him to an undisclosed destination, presum…",
+   "date": "1979-12-13",
+   "docs": 2
+  },
+  {
+   "id": "421446d332c0",
+   "kind": "place",
+   "region": "tripolitania",
+   "name": "Misrata new port",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "e22cd2bb0ee5",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Revolutionary Security Court (Mahkamat Amn al-Thawra), Tripoli",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "a0544a728017",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Qadhafi reportedly received Congo's foreign minister Henri Lopez and OAU administrative secretary-general Nzo Ekangaki after about a week out of publ…",
+   "date": "1973-03-14",
+   "docs": 1
+  },
+  {
+   "id": "dc99a148f71b",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Qadhafi meets university students to explain compulsory military training; he walks out after students begin shouting.",
+   "date": "1975-02-20",
+   "docs": 1
+  },
+  {
+   "id": "30be92017c8c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Explosion in Tripoli port; the regime later published a West German expert report attributing it to a WWII bomb.",
+   "date": "1975-06-11",
+   "docs": 1
+  },
+  {
+   "id": "a04ab46eb981",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy officer finds university calm; students attending classes after a strike in sympathy with Benghazi students that seems to have ended around 1…",
+   "date": "1976-01-14",
+   "docs": 1
+  },
+  {
+   "id": "23f292c8d562",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Reported shootout at a checkpoint in which escaping officers reportedly killed several security personnel before being recaptured; accounts vary on l…",
+   "date": "1976-01-21",
+   "docs": 1
+  },
+  {
+   "id": "c494f3d3ae38",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Marches and student rallies continue in Tripoli; students pass the US Embassy",
+   "date": "1976-04-04",
+   "docs": 1
+  },
+  {
+   "id": "09a8b42f6243",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Clash between university students and police in Benghazi; at least two bystanders shot, police made scores of arrests that evening; reportedly an ant…",
+   "date": "1976-04-09",
+   "docs": 1
+  },
+  {
+   "id": "23e31a887972",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Staged pro-Qadhafi 'spontaneous' demonstration with banners condemning Sadat, Syria, Numeiri, Jordan's King Hussein and the West; rain and poor turno…",
+   "date": "1976-07-15",
+   "docs": 1
+  },
+  {
+   "id": "67ba6faf624d",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Letter bomb reported to the embassy via diplomatic note; the note says the device would have exploded when the envelope was opened.",
+   "date": "1977-04-19",
+   "docs": 1
+  },
+  {
+   "id": "74f8fcec0e2d",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Warnings of possible demonstrations against the US Embassy; embassy reduced operations and took precautions.",
+   "date": "1978-09-18",
+   "docs": 1
+  },
+  {
+   "id": "e3b136902879",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "American-registered Boeing 720 detained at Tripoli airport; crew apparently left Tripoli",
+   "date": "1978-12-04",
+   "docs": 1
+  },
+  {
+   "id": "2e63ce9ae67c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Orderly demonstration by several hundred Tunisian workers, reportedly carrying placards calling for the release of Habib Ashour",
+   "date": "1979-01-26",
+   "docs": 1
+  },
+  {
+   "id": "69c87c6856d7",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Rally in support of Khomeini; workers and students gathered in response to broadcast summons, some schools and businesses closed, and extra crowds bu…",
+   "date": "1979-02-06",
+   "docs": 1
+  },
+  {
+   "id": "2c99cb6e4f91",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Third demonstration against the embassy, about 1,000 mostly Palestinian protesters, against the Egyptian-Israeli treaty; a petition was planned for t…",
+   "date": "1979-03-27",
+   "docs": 1
+  },
+  {
+   "id": "8c13562428d4",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Posters and photos of Wheelus Air Base pasted on the chancery on American Evacuation Day; a Libyan guard took an embassy officer's camera, which was …",
+   "date": "1979-06-11",
+   "docs": 1
+  },
+  {
+   "id": "69b7aede2b92",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Department permits voluntary evacuation of embassy dependents; no one at post elects to leave at present, with the embassy to monitor the situation c…",
+   "date": "1979-11-27",
+   "docs": 1
+  },
+  {
+   "id": "0c55b52fc08a",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Economic officer Moyle left Tripoli for Rome via Tunis on a Thursday, and Sapp left by the same route on the Friday morning, as part of staff reducti…",
+   "date": "1979-12-06",
+   "docs": 1
+  },
+  {
+   "id": "2d9ac219d93f",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Large numbers of security officers seized about 3,700 volumes from Bashir Dultz's library without a search warrant, leaving a receipt.",
+   "date": "1979-12-16",
+   "docs": 1
+  },
+  {
+   "id": "1db97e2b08ef",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "RSO Jenkins arrived in Tripoli to inspect damage to the US Embassy chancery and advise on security.",
+   "date": "1979-12-19",
+   "docs": 1
+  },
+  {
+   "id": "1a98e2958e17",
+   "kind": "place",
+   "region": "benghazi",
+   "name": "Benghazi port",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "902a27dd905c",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "People's Place",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "46cf6baa318e",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Al-Fatih Political Training Camp, Tripoli",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "86e9e5344b4e",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Police Academy, Tripoli",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "1506e1e9bc1c",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Tripoli Main Post Office",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "25840658c480",
+   "kind": "place",
+   "region": "cyrenaica",
+   "name": "West of Derna",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "7f702a0bb2c2",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Mobil Oil Company building, Tripoli",
+   "date": "1973-04-23",
+   "docs": 1
+  },
+  {
+   "id": "1a27882ca942",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Libyan Civil Aviation Institute",
+   "date": "1977-12-05",
+   "docs": 1
+  },
+  {
+   "id": "35587feb6c9d",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Disturbances in Tunis; AFP reported at least 100 killed, carried by Libyan media without comment. Tripoli TV showed pictorial coverage on January 29 …",
+   "date": "1978-01-29",
+   "docs": 1
+  },
+  {
+   "id": "8c33d3cfaa9c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Official dinner for visiting Vietnamese Vice President Nguyen Huu Tho, where Jallud gave an off-the-cuff speech on liberation and the Camp David Acco…",
+   "date": "1978-09-18",
+   "docs": 2
+  },
+  {
+   "id": "e52a38565561",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Tripoli PLO office",
+   "date": "1979-03-28",
+   "docs": 1
+  },
+  {
+   "id": "61618434b787",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "military camp near Tripoli",
+   "date": "1979-05-10",
+   "docs": 1
+  },
+  {
+   "id": "44175c8b4536",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Ministry of Foreign Affairs, Tripoli",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "483e49973c60",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Tunis and Cairo media reported that PLO leader Yasser Arafat transited Cairo on 13 March en route to Beirut 'from Tripoli'; local media did not menti…",
+   "date": "1973-03-13",
+   "docs": 1
+  },
+  {
+   "id": "e553964c8517",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Social occasion where French Ambassador Georgy discussed his talks with PM Jallud on Arabic in passports",
+   "date": "1973-03-15",
+   "docs": 1
+  },
+  {
+   "id": "0f4ec8500c1e",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Expected speech by Qadhafi or an RCC member in Tripoli, on the local holiday commemorating the 1970 evacuation of UK forces",
+   "date": "1973-03-28",
+   "docs": 1
+  },
+  {
+   "id": "696bf00a9273",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Lockheed manager Rooker met an embassy economic officer to ask about US-Libya relations after the C-130 incident.",
+   "date": "1973-04-02",
+   "docs": 1
+  },
+  {
+   "id": "0c36bba7e0a0",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Planned signing date for the Lockheed contract, which Rooker hoped to secure.",
+   "date": "1973-04-03",
+   "docs": 1
+  },
+  {
+   "id": "b3f4bc3c7345",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "U.S. embassy economic officer Countryman was detained by five civilians and a uniformed policeman, ordered to open his briefcase, and searched under …",
+   "date": "1973-04-22",
+   "docs": 1
+  },
+  {
+   "id": "149a35f75d17",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Maltese embassy officer arrives at a US Embassy social function reporting he is under 24-hour surveillance",
+   "date": "1973-05-23",
+   "docs": 1
+  },
+  {
+   "id": "0e6162aeecd4",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Immigration officer tells Habayeb he must leave Libya by 14 June on an expulsion order from the Ministry of Interior; the embassy raises the case wit…",
+   "date": "1973-06-10",
+   "docs": 1
+  },
+  {
+   "id": "fc53b4767348",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Embassy officer hears businessmen's accounts of Libya's move against Bunker Hunt (discussions 15-17 June 1973)",
+   "date": "1973-06-15",
+   "docs": 1
+  },
+  {
+   "id": "8d29cd8c9c7b",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "U.S. note (No. 59) on the Bunker Hunt nationalization delivered to Libya's Ministry of Foreign Affairs",
+   "date": "1973-07-08",
+   "docs": 1
+  },
+  {
+   "id": "dbe919723269",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Charge d'affaires presented the note to Najib Shaybani, MFA Director of Political Affairs, who said 'I do not accept the protest'",
+   "date": "1973-07-09",
+   "docs": 1
+  },
+  {
+   "id": "519e545acdc4",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Conoco's local president was embroiled in a dispute over LARG inventory and audit committees, which sought to include the assets of Conoco's Tripoli …",
+   "date": "1973-08-19",
+   "docs": 1
+  },
+  {
+   "id": "f869e2f2b481",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Petroleum Minister Mabruk gives managers of AMOSEAS, Esso and Mobil the RCC nationalization decree, which transfers 51 percent of their operations to…",
+   "date": "1973-09-01",
+   "docs": 1
+  },
+  {
+   "id": "40a7eee3b5d4",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Newsweek editor de Borchgrave interviews Qadhafi for about an hour in Libya; Qadhafi's press secretary later demands to see the story",
+   "date": "1973-09-11",
+   "docs": 1
+  },
+  {
+   "id": "84f20f004d75",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Oil Ministry Under Secretary Muntasser told Esso's Cox that LARG was waiting for a response; Cox refused to propose anything new and said Esso would …",
+   "date": "1973-09-15",
+   "docs": 1
+  },
+  {
+   "id": "cccd20aeab23",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Prime Minister Jallud met Cox and set out two conditions for continued lifting of crude; Cox rejected both. The other majors' managers also rejected …",
+   "date": "1973-09-16",
+   "docs": 1
+  },
+  {
+   "id": "44962d7a4041",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Unconfirmed rumors of numerous arrests of military officers, with Prime Minister Jallud reportedly going to Benghazi to preside over trials.",
+   "date": "1974-01-31",
+   "docs": 1
+  },
+  {
+   "id": "eaf811f4e125",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "People's Court announces verdicts in the case of former army officers accused of corruption under the old regime; 17 guilty, 36 found innocent",
+   "date": "1975-05-10",
+   "docs": 1
+  },
+  {
+   "id": "8b05a898c86a",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Jallud gave the opening speech at a seminar marking 'Palestine Usurpation Day' and called for a 'Revolutionary Palestinian Government' based in Libya…",
+   "date": "1975-05-15",
+   "docs": 1
+  },
+  {
+   "id": "8cb77ad22732",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Qadhafi met Arafat, Faruq Qaddumi and Abu Iyad before their departure for Damascus.",
+   "date": "1975-05-16",
+   "docs": 1
+  },
+  {
+   "id": "d16ec910da05",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Qadhafi spoke at the closing session of the seminar and repeated the call for a Palestinian government based in Libya.",
+   "date": "1975-05-17",
+   "docs": 1
+  },
+  {
+   "id": "b5b1d288aa46",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Egyptian press reported a coup attempt in Benghazi; an embassy officer visiting July 25-26 saw no evidence of it.",
+   "date": "1975-07-25",
+   "docs": 1
+  },
+  {
+   "id": "4f3da4b1abc3",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "US Embassy pressed Libyan Foreign Ministry and Interior Ministry for consular access to American citizen William Thomas held in Central Prison; acces…",
+   "date": "1975-08-28",
+   "docs": 1
+  },
+  {
+   "id": "48500d359a72",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Several senior Libyan employees of Occidental Petroleum arrested late last week on apparent political charges; two American citizens also arrested th…",
+   "date": "1975-08-29",
+   "docs": 1
+  },
+  {
+   "id": "89a65a0f5126",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Chargé complains to MFA Deputy Undersecretary Turayki about the prolonged imprisonment of American citizen William Thomas; Turayki promises to seek f…",
+   "date": "1975-10-21",
+   "docs": 1
+  },
+  {
+   "id": "f73653c72a41",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Chargé meets Chief Prosecutor Umar al-Baruni on the investigation of American citizen William Thomas, who has been held for three months",
+   "date": "1975-10-27",
+   "docs": 1
+  },
+  {
+   "id": "f2ddbef1fa78",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy reports William Thomas still held; prosecutor says end of investigation is in sight; embassy requests MFA arrange new consular visit",
+   "date": "1975-10-30",
+   "docs": 1
+  },
+  {
+   "id": "1b112675df6c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan Foreign Ministry note to the Japanese Embassy in Tripoli saying a search found no passports stolen by the Japanese Red Army during the Kuala L…",
+   "date": "1975-11-06",
+   "docs": 1
+  },
+  {
+   "id": "35ab399995a0",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Letter from Mrs. William Thomas to her husband in a Tripoli prison received by the Embassy and sent to the Libyan Ministry of Foreign Affairs for del…",
+   "date": "1975-11-11",
+   "docs": 1
+  },
+  {
+   "id": "175cf8cc7cbd",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Qadhafi gives a speech to Bedouin tribesmen bused to Benghazi, attacking the urban commercial establishment and the RCC members he says were exploite…",
+   "date": "1975-11-12",
+   "docs": 1
+  },
+  {
+   "id": "1127d6bbecb6",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy advises against forwarding a wife's appeal to Qadhafi over the detention of Elliam Thomas",
+   "date": "1975-11-26",
+   "docs": 1
+  },
+  {
+   "id": "7576fa132a51",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Austrian ambassador to Libya tried to contact the hijackers of the DC-9 after the OPEC attack, was refused access, removed from the VIP lounge and pl…",
+   "date": "1975-12-22",
+   "docs": 1
+  },
+  {
+   "id": "3c63cbf4987a",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Violent incidents involving students; party headquarters broken into and property destroyed. Qadhafi said blood had been shed but gave no details.",
+   "date": "1976-01-04",
+   "docs": 1
+  },
+  {
+   "id": "a5dc374d7c98",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Student violence and demonstrations at Benghazi University over selection of the student union; reports of six to ten killed, which the Education Min…",
+   "date": "1976-01-05",
+   "docs": 1
+  },
+  {
+   "id": "6e8235698a4c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Qadhafi explains the intelligence budget to a televised session of the National Congress",
+   "date": "1976-01-06",
+   "docs": 1
+  },
+  {
+   "id": "e02d62e3397c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Qadhafi refers again to Benghazi student demonstrations at an evening session of the National Congress; delegates stage a chaotic demonstration shout…",
+   "date": "1976-01-12",
+   "docs": 1
+  },
+  {
+   "id": "05362580f82c",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Student violence and shooting at Benghazi University; Qadhafi claimed no one was killed, while rumours spoke of ten or twenty dead.",
+   "date": "1976-01-14",
+   "docs": 1
+  },
+  {
+   "id": "59bb79512287",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan Labor Federation march of a few hundred people protesting the World Jewish Congress meeting in Brussels; speeches made and written protest pre…",
+   "date": "1976-02-16",
+   "docs": 1
+  },
+  {
+   "id": "13fd8725f71d",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Jallud speaks in Benghazi at a newly opened government housing project, attacking 'bourgeois reactionaries'",
+   "date": "1976-04-01",
+   "docs": 1
+  },
+  {
+   "id": "42c636455ff8",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Chief of Staff Abu Bakr Yunis speaks to a rural crowd from Jamayl in front of RCC headquarters in Benghazi",
+   "date": "1976-04-03",
+   "docs": 1
+  },
+  {
+   "id": "ef0cf85f4b04",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Qadhafi gave a long speech to a tribal audience, in which he discussed Muhayshi's defection, said the university must be cleaned out by force, and pr…",
+   "date": "1976-04-05",
+   "docs": 1
+  },
+  {
+   "id": "b424fed6a3cc",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Qadhafi visited the Benghazi campus; violence followed.",
+   "date": "1976-04-07",
+   "docs": 1
+  },
+  {
+   "id": "f58bc69a35b9",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Widespread violence between students and armed forces/police, spreading to downtown Benghazi as students tried to repeat a January move against Arab …",
+   "date": "1976-04-11",
+   "docs": 1
+  },
+  {
+   "id": "697f3f4d6026",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "An apparent Libyan official took five men with Kuwaiti passports, who looked like Palestinians and carried no baggage, to the head of the passport li…",
+   "date": "1976-08-11",
+   "docs": 1
+  },
+  {
+   "id": "a320688f9743",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy presented the Secretariat of Foreign Affairs with a diplomatic note requesting the post office crime and investigation unit's report and retu…",
+   "date": "1977-04-03",
+   "docs": 1
+  },
+  {
+   "id": "9ef8cd40a398",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Anti-Egyptian demonstrations by Libyan students; Egyptian consulate building broken into and files and furniture damaged, no injuries reported.",
+   "date": "1977-04-09",
+   "docs": 1
+  },
+  {
+   "id": "ba2becbe9429",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Meeting between US embassy officers and Director General of Civil Aviation Abuzakuk, who raised a new program of up to 120 civil aviation students fo…",
+   "date": "1977-10-31",
+   "docs": 1
+  },
+  {
+   "id": "f1dc433e657f",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan media proclaim the establishment in Tripoli of a Revolutionary Committee, to give new impetus to People's Conferences at a forthcoming meeting…",
+   "date": "1977-11-07",
+   "docs": 1
+  },
+  {
+   "id": "56a35f7871f4",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy officer presents FAA contract letter to Yusef Gaid, director of the Civil Aviation Training Institute, who objects to the cost",
+   "date": "1977-11-29",
+   "docs": 1
+  },
+  {
+   "id": "94fcde880bfd",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan Civil Aviation Institute director Yusif Gaid tells the Embassy he has signed FAA training contracts and that 130,000 dollars was transferred t…",
+   "date": "1977-12-04",
+   "docs": 1
+  },
+  {
+   "id": "fa230d1b31c1",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Tunisian workers demonstrate in front of the Tunisian embassy in support of fellow workers and hand a note calling for release of those arrested in r…",
+   "date": "1978-02-02",
+   "docs": 1
+  },
+  {
+   "id": "79ed15aa5876",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan Foreign Office Director for Americas Taj al-Jarbi summons the US chargé over delayed US visas for LAEC-sponsored Libyan students",
+   "date": "1978-04-26",
+   "docs": 1
+  },
+  {
+   "id": "3c61572510db",
+   "kind": "event",
+   "region": "sirte",
+   "name": "Qadhafi, as supreme commander, opened a new air base during national celebrations of the 1970 American evacuation of Wheelus; no speech was given and…",
+   "date": "1978-06-09",
+   "docs": 1
+  },
+  {
+   "id": "ce766f6fae48",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Acting Foreign Secretary Issa Baba summons the U.S. chargé to the Foreign Office at 2100 local time, complaining of a U.S. conspiracy with Egypt to a…",
+   "date": "1978-06-24",
+   "docs": 1
+  },
+  {
+   "id": "ea8460f14732",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Greek destroyers Panthir and Ierax visit Tripoli with 190 cadets, including four U.S. midshipmen and five Libyans; a shipboard reception for Libyan n…",
+   "date": "1978-07-08",
+   "docs": 1
+  },
+  {
+   "id": "088b3bdc170f",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "The four U.S. midshipmen visit the chargé's residence for drinks and a chat with embassy personnel.",
+   "date": "1978-07-09",
+   "docs": 1
+  },
+  {
+   "id": "25f7d5e73ec4",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Director of Civil Aviation Training Institute El-Gaid said the three students could leave Tripoli about early October for three or four months of Eng…",
+   "date": "1978-07-20",
+   "docs": 1
+  },
+  {
+   "id": "a23b002afc1e",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "US Embassy officers met Director General of Civil Aviation Abuzakuk and read him a State Department cable about FAA training of Libyan students, incl…",
+   "date": "1978-10-05",
+   "docs": 1
+  },
+  {
+   "id": "59009bb1a5cd",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Planned start of the Arab-American Dialogue in Tripoli, organized by the Foreign Liaison Bureau of the General People's Congress; about 100 Americans…",
+   "date": "1978-10-08",
+   "docs": 1
+  },
+  {
+   "id": "ea0b93a33f89",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Chinese ambassador Tsai Pa sent an urgent message to Taipei saying the Libyan Foreign Office refused an office in Tripoli and asked him to leave the …",
+   "date": "1978-10-14",
+   "docs": 1
+  },
+  {
+   "id": "2155cd998381",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Chinese embassy scheduled to close; the ambassador and his wife planned to leave for Rome the next day.",
+   "date": "1978-10-22",
+   "docs": 1
+  },
+  {
+   "id": "1f200c7304fd",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Alvarez explained to an Embassy officer that he and the employees could not leave Libya because they lacked exit visas.",
+   "date": "1978-12-21",
+   "docs": 1
+  },
+  {
+   "id": "c960a8553a99",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy staff met Director General of Civil Aviation Abuzakuk and staff to deliver the message that ILS/VOR/DME training was unavailable until the ne…",
+   "date": "1979-04-19",
+   "docs": 1
+  },
+  {
+   "id": "e720b2142d64",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy officer conveyed FAA training information to Libyan CAA officials, including Director General Abuzakuk; Libyans said they would prefer mixed …",
+   "date": "1979-06-03",
+   "docs": 1
+  },
+  {
+   "id": "3a4eb5e888f4",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Sharafeddine told US embassy staff he planned a mid-November 1979 visit to the U.S.",
+   "date": "1979-10-23",
+   "docs": 1
+  },
+  {
+   "id": "98fc47f2e79c",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Tripoli branch of the Mbahath (security organization)",
+   "date": "1979-12-18",
+   "docs": 1
+  },
+  {
+   "id": "bbe74058fe46",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Palestinian demonstration near the Embassy; US staff closed communications and left the chancery until the crowd dispersed.",
+   "date": "1979-12-20",
+   "docs": 1
+  },
+  {
+   "id": "bec8f941c4c6",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Bashir Dultz, a US embassy locally employed staff member, is detained by the Jamahiriya Security Organization; the family's intermediary reports the …",
+   "date": "1979-12-23",
+   "docs": 1
+  },
+  {
+   "id": "b64a53fd48b3",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan Foreign Ministry receives US démarche on Arab government support for Black September; US Embassy officer meets Acting Under Secretary Adham",
+   "date": "1973-03-12",
+   "docs": 1
+  },
+  {
+   "id": "507813db3d5b",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "UK ambassador Tripp tells US Embassy Tripoli that UK is delaying visas for ordinary Libyan applicants three or four days and for Libyan holders of di…",
+   "date": "1973-03-19",
+   "docs": 1
+  },
+  {
+   "id": "42431dc14d90",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan attack on a U.S. C-130 aircraft, with firing about 80 nautical miles off the coast east of Tripoli according to the embassy's reading of the p…",
+   "date": "1973-04-01",
+   "docs": 1
+  },
+  {
+   "id": "ddc30705a835",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "US note to Libyan Ministry of Foreign Affairs on oil nationalizations; no media reference to it yet as of the cable",
+   "date": "1973-09-14",
+   "docs": 1
+  },
+  {
+   "id": "41419c4fe333",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Al-Fajr al-Jadid editorial, read as the lead item on the Libyan Arab Republic domestic news programme, attacks the USG over threatened oil boycott an…",
+   "date": "1973-09-22",
+   "docs": 1
+  },
+  {
+   "id": "55ac5d5b517c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "French charge Jeantelot tells the U.S. Embassy that a French démarche on Libyan oil nationalization was delayed because Ambassador Georgy had left Li…",
+   "date": "1973-10-01",
+   "docs": 1
+  },
+  {
+   "id": "ee9764bc3e56",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy Tripoli cable on the investigation of the Rome attack, referencing an earlier Cairo cable (CAIRO 4237)",
+   "date": "1973-12-30",
+   "docs": 1
+  },
+  {
+   "id": "92696ba80acd",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "AMOSEAS officials report Libyan Petroleum Minister refuses compromise; phased departure of AMOSEAS employees to begin under Umm al-Jawabi Co.",
+   "date": "1974-04-22",
+   "docs": 1
+  },
+  {
+   "id": "9629a0b306d0",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "MFA Director of Cultural Affairs Ali Gadamsi called the US chargé to protest FBI questioning of Libyan students in the US",
+   "date": "1974-07-14",
+   "docs": 1
+  },
+  {
+   "id": "0be417ae09d6",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Trial begins of a Japanese terrorist and companions over the destruction of a Japan Airlines plane at Benghazi in 1973; trial interrupted and due to …",
+   "date": "1974-07-18",
+   "docs": 1
+  },
+  {
+   "id": "55be05e0a169",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Charge d'affaires talks to MFA Cultural Director Gadamsi about FBI questioning of Libyan students in the U.S.",
+   "date": "1974-08-08",
+   "docs": 1
+  },
+  {
+   "id": "51f1ce3eee70",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Boeing 747 demonstration in Tripoli attended by few senior Libyans because a Higher Planning Council session chaired by Qadhafi, with RCC members and…",
+   "date": "1975-01-26",
+   "docs": 1
+  },
+  {
+   "id": "e73ad4fbb91c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Somali Foreign Minister Ghaleb leaves Tripoli after a short visit during which he met Prime Minister Jallud",
+   "date": "1975-02-04",
+   "docs": 1
+  },
+  {
+   "id": "4722520df960",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Front-page editorial in the Libyan daily Al-Jihad attacks Sadat and Egyptian policy",
+   "date": "1975-02-21",
+   "docs": 1
+  },
+  {
+   "id": "40661d260033",
+   "kind": "event",
+   "region": "cyrenaica",
+   "name": "Syrian President Asad arrives in Tobruk for celebrations marking the fifth anniversary of the British forces' evacuation; talks with Qadhafi and Jall…",
+   "date": "1975-03-27",
+   "docs": 1
+  },
+  {
+   "id": "ca9c9fe91910",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Fajr al-Jadid publishes a violent anti-Sadat editorial on the day of Asad's arrival, accusing Sadat of corruption and saying Libyan money is still go…",
+   "date": "1975-03-27",
+   "docs": 1
+  },
+  {
+   "id": "e4bc21eead7e",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Qadhafi presided over a ceremony commemorating the 1931 capture of Omar al-Mukhtar by the Italians and gave a speech attacking former King Idris.",
+   "date": "1975-05-09",
+   "docs": 1
+  },
+  {
+   "id": "7850a4403aba",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Agent 'Waterpark' departed Tripoli for Lagos with a stopover at Sebha, Libya, according to the embassy's contact.",
+   "date": "1975-07-04",
+   "docs": 1
+  },
+  {
+   "id": "69e0ce11823c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Proposed ten-day meeting of veterinary experts in Tripoli, 'around 15-25 Oct.' per the cable",
+   "date": "1975-10-15",
+   "docs": 1
+  },
+  {
+   "id": "13a67872ae99",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Classes at the University of Benghazi resumed.",
+   "date": "1976-01-17",
+   "docs": 1
+  },
+  {
+   "id": "361b0d2dcdd2",
+   "kind": "event",
+   "region": "cyrenaica",
+   "name": "Jallud claims in a speech in Derna that Tunisia requested a ceasefire in the propaganda war",
+   "date": "1976-04-27",
+   "docs": 1
+  },
+  {
+   "id": "0b710d9bf1ed",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Reported demonstration of forty to fifty persons against the Syrian Embassy (per title only; body text unavailable)",
+   "date": "1976-06-09",
+   "docs": 1
+  },
+  {
+   "id": "208bbfaa3f47",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan foreign ministry statement denies complicity in the Sudanese coup attempt",
+   "date": "1976-07-05",
+   "docs": 1
+  },
+  {
+   "id": "be73f94e7586",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Holbrook arrived in Tripoli at 0300 as scheduled",
+   "date": "1976-07-17",
+   "docs": 1
+  },
+  {
+   "id": "090471bc87de",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Press conference by Under Secretary Durdah of the Foreign Ministry attacking the US, held for about 100 journalists on the seventh anniversary of the…",
+   "date": "1976-09-04",
+   "docs": 1
+  },
+  {
+   "id": "3d5ba546557f",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy messenger receives a letter addressed to the U.S. Ambassador to Libya; postal staff warn it may be dangerous and it is returned to postal aut…",
+   "date": "1977-03-22",
+   "docs": 1
+  },
+  {
+   "id": "4f56eedf5611",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Tripoli press publishes photographs of Israeli Uzi machine guns allegedly captured from Egyptian prisoners",
+   "date": "1977-07-26",
+   "docs": 1
+  },
+  {
+   "id": "93fa7d47d2f3",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "September 1 festivities in Tripoli attended by Moroccan opposition delegations, to whom Qadhafi made remarks",
+   "date": "1977-09-01",
+   "docs": 1
+  },
+  {
+   "id": "5e5082b11b2f",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "US Embassy informs Director General of Civil Aviation Abuzakuk that FAA training beyond the 16 students now in the US is not in prospect",
+   "date": "1977-10-17",
+   "docs": 1
+  },
+  {
+   "id": "973185de414d",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "US Embassy informs Director of Training El Gaid of the same decision; he displays irritation, saying it conflicts with earlier FAA signals that air t…",
+   "date": "1977-10-18",
+   "docs": 1
+  },
+  {
+   "id": "835166cae0e4",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy officer discusses FAA training with Civil Aviation Training Director Yusif El-Gaid; Libya requests training of two groups to start as soon as…",
+   "date": "1978-01-15",
+   "docs": 1
+  },
+  {
+   "id": "2d8ac5c1bcc1",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Soviet charge Jouravlev comments on Qadhafi's speech to the African Liberation Conference at a Foreign Ministry dinner for delegates",
+   "date": "1978-02-14",
+   "docs": 1
+  },
+  {
+   "id": "7dad0678c9b0",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Opening session of the OAU conference in Tripoli, to which Tripoli-based diplomats were invited",
+   "date": "1978-02-20",
+   "docs": 1
+  },
+  {
+   "id": "068bbbbc9071",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Fourth General Conference of Arab Oil, Mineral and Chemical Workers held in Tripoli (April 6-10, 1978)",
+   "date": "1978-04-06",
+   "docs": 1
+  },
+  {
+   "id": "ebcf34f76b2a",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Kuwait Cultural Week held in Tripoli April 16-22.",
+   "date": "1978-04-16",
+   "docs": 1
+  },
+  {
+   "id": "7865a7644cd9",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Working conference on solidarity with Chile held in Benghazi April 17-19.",
+   "date": "1978-04-17",
+   "docs": 1
+  },
+  {
+   "id": "0247504e501c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Afghan ambassador to Libya Pacha Gul discusses the Afghan coup with the U.S. chargé in Tripoli; Libyan government reaction so far is silent",
+   "date": "1978-05-04",
+   "docs": 1
+  },
+  {
+   "id": "a02add3ed8cd",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Package bomb explosion at Tripoli's main post office (per telegram subject line)",
+   "date": "1978-05-18",
+   "docs": 1
+  },
+  {
+   "id": "4a0bc0eb5c4a",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Afghan Planning Minister Sultan Ali Keshtmand arrives in Tripoli at the head of the first Afghan delegation to visit Libya since the April change of …",
+   "date": "1978-07-04",
+   "docs": 1
+  },
+  {
+   "id": "810ddfa8c0bc",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "US embassy economic/commercial officer paid call on Mufta'h Sayed Sharif, new head of the Foreign Office economic division, discussing Boeing 727 and…",
+   "date": "1978-08-22",
+   "docs": 1
+  },
+  {
+   "id": "63cf2e425fa6",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Daily demonstrations continued in Tripoli and other cities in celebration of the September 1 Revolution Day, focused on domestic issues.",
+   "date": "1978-09-01",
+   "docs": 1
+  },
+  {
+   "id": "0f2afb8e715c",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Foreign Ministry American Department director Tajuddin Jarbi expressed pessimism about Sadat's position after Camp David",
+   "date": "1978-09-23",
+   "docs": 1
+  },
+  {
+   "id": "6f63cac2de71",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Qadhafi returned from Damascus, stopped in Benghazi, and had made no public appearance or statement yet",
+   "date": "1978-09-24",
+   "docs": 1
+  },
+  {
+   "id": "505d1e946e95",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "FAA proposal letter for three Libyan radio engineers signed by Director General Abuzakuk of the Civil Aviation Administration",
+   "date": "1978-09-26",
+   "docs": 1
+  },
+  {
+   "id": "cdc1fed2f183",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy staff meet Director General of Civil Aviation Abuzakuk, give him a list of worst troublemaking students and a $114,153 invoice; he agrees to …",
+   "date": "1978-10-16",
+   "docs": 1
+  },
+  {
+   "id": "ab1b5ba424a3",
+   "kind": "place",
+   "region": "tripoli",
+   "name": "Permanent Secretariat of the Arab Peoples Conference, Tripoli",
+   "date": "1978-10-24",
+   "docs": 1
+  },
+  {
+   "id": "d7ee117390fc",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "US Embassy Tripoli gives Libyan Foreign Ministry American Department head Jarbi a copy of the reply to King Hussein's questions on the Camp David Agr…",
+   "date": "1978-10-26",
+   "docs": 1
+  },
+  {
+   "id": "477e3afb7463",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Arrests reported in Libya following the arrest of an American (per cable subject line; body text not included)",
+   "date": "1978-10-29",
+   "docs": 1
+  },
+  {
+   "id": "2ca732f5855a",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan media reported a large demonstration of Pakistanis in Tripoli urging clemency for Bhutto; an embassy officer said local authorities orchestrat…",
+   "date": "1979-02-13",
+   "docs": 1
+  },
+  {
+   "id": "a67d0239a0e9",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Director General of Civil Aviation Abuzakuk confirms three Libyan students will attend an FAA course commencing April 16",
+   "date": "1979-03-15",
+   "docs": 1
+  },
+  {
+   "id": "a2fb094c8634",
+   "kind": "event",
+   "region": "benghazi",
+   "name": "Oil company source in Benghazi reports that American pilots Richard Johnson and Bill Morris, who reportedly crashed a C-47 carrying munitions into Ch…",
+   "date": "1979-05-02",
+   "docs": 1
+  },
+  {
+   "id": "06cc55720640",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Official Chadian delegation expelled from Kigali conference; Tripoli media broadcast satisfaction with the decision",
+   "date": "1979-05-24",
+   "docs": 1
+  },
+  {
+   "id": "a7b5cb445147",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Embassy officer conveyed to Acting Director of Civil Aviation Musa Ali Issa that FAA training for foreign students was curtailed until a new facility…",
+   "date": "1979-07-04",
+   "docs": 1
+  },
+  {
+   "id": "1702606c00bc",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Dr. Fituri, an Al-Fateh University English department chairman, visited the embassy to obtain a visa and privately told an FSN that Libya was conside…",
+   "date": "1979-07-15",
+   "docs": 1
+  },
+  {
+   "id": "50db08c20969",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Jallud met with revolutionary committees representing Libyan students studying in the U.S. and Canada and urged them to defend the revolution's thoug…",
+   "date": "1979-07-28",
+   "docs": 1
+  },
+  {
+   "id": "5ea2001d9929",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Students were received by Qadhafi, who reviewed the regime's achievements, according to the cable (two days after the Jallud meeting).",
+   "date": "1979-07-30",
+   "docs": 1
+  },
+  {
+   "id": "8f394b5334a9",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "The consular section received over twenty visa applications from scholarship students in one day.",
+   "date": "1979-08-07",
+   "docs": 1
+  },
+  {
+   "id": "9bbeef3a45b8",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "US diplomat Eagleton paid a courtesy call on the new Chinese ambassador Pei Jianzhang",
+   "date": "1979-09-19",
+   "docs": 1
+  },
+  {
+   "id": "e3df09f88767",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Emperor Bokassa makes a brief unofficial visit to Tripoli (not mentioned by Libyan media)",
+   "date": "1979-09-21",
+   "docs": 1
+  },
+  {
+   "id": "aef5cf65d607",
+   "kind": "event",
+   "region": "tripoli",
+   "name": "Libyan Foreign Ministry's Director of the Americas Department, Taj ud-Din Jarbi, briefs the US chargé on Libya's position on the French intervention …",
+   "date": "1979-09-26",
+   "docs": 1
+  },
+  {
+   "id": "f4906059e0ff",
+   "kind": "place",
+   "region": "sirte",
+   "name": "Ras Lanuf and Sidra terminals",
+   "date": "",
+   "docs": 1
+  },
+  {
+   "id": "1f2051eb5416",
+   "kind": "place",
+   "region": "sirte",
+   "name": "Brega terminal",
+   "date": "",
+   "docs": 1
+  }
+ ]
 }

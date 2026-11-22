@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="Consolas, Menlo, monospace">
+<rect width="900" height="400" fill="#0b0f14"/>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#5fb3b3"/></marker></defs>
+<text x="20" y="28" fill="#5fb3b3" font-size="12">THE TRIPOLI ONTOLOGY · ONE FACT, FOLLOWED FROM DOCUMENT TO PIN</text>
+<g stroke="#5fb3b3" stroke-width="1.5" marker-end="url(#a)"><line x1="218" y1="190" x2="238" y2="190"/><line x1="448" y1="190" x2="468" y2="190"/><line x1="678" y1="190" x2="698" y2="190"/></g>
+
+<g fill="#111922" stroke="#5fb3b3" stroke-width="1.2">
+<rect x="20" y="50" width="198" height="250"><animate attributeName="stroke" values="#2a3642;#e0b252;#5fb3b3;#5fb3b3" keyTimes="0;0.05;0.2;1" dur="12s" repeatCount="indefinite"/></rect>
+<rect x="250" y="50" width="198" height="250"><animate attributeName="stroke" values="#2a3642;#2a3642;#e0b252;#5fb3b3;#5fb3b3" keyTimes="0;0.2;0.25;0.4;1" dur="12s" repeatCount="indefinite"/></rect>
+<rect x="480" y="50" width="198" height="250"><animate attributeName="stroke" values="#2a3642;#2a3642;#e0b252;#5fb3b3;#5fb3b3" keyTimes="0;0.4;0.45;0.6;1" dur="12s" repeatCount="indefinite"/></rect>
+<rect x="710" y="50" width="170" height="250" stroke="#e0b252"><animate attributeName="opacity" values="0.35;0.35;1;1" keyTimes="0;0.6;0.65;1" dur="12s" repeatCount="indefinite"/></rect>
+</g>
+
+<g fill="#c9d6df" font-size="11">
+<text x="34" y="72" fill="#5fb3b3" font-size="12">SOURCE</text>
+<text x="34" y="98">src-edde81b75ce4</text>
+<text x="34" y="122" fill="#7f8c97">title</text><text x="34" y="137">Arabic Wikipedia:</text><text x="34" y="151">Liberation of Tripoli</text>
+<text x="34" y="175" fill="#7f8c97">fetched</text><text x="34" y="190">2026-10-17</text>
+<text x="34" y="214" fill="#7f8c97">sha256 (fingerprint)</text><text x="34" y="229">89ea2d0a…</text>
+<text x="34" y="253" fill="#7f8c97">archived copy</text><text x="34" y="268">web.archive.org</text>
+<text x="34" y="289" fill="#7f8c97">reliability  C</text>
+
+<text x="264" y="72" fill="#5fb3b3" font-size="12">CLAIM</text>
+<text x="264" y="98">c-2f63c030f1a7</text>
+<text x="264" y="122" fill="#7f8c97">"this source says this</text><text x="264" y="136" fill="#7f8c97">about that subject"</text>
+<text x="264" y="162" fill="#7f8c97">exact passage, stored</text>
+<text x="264" y="180">"...rebels freed 500</text><text x="264" y="194">detainees from Jdeida</text><text x="264" y="208">prison"</text>
+<text x="264" y="232" fill="#7f8c97">(Arabic original kept)</text>
+<text x="264" y="256" fill="#e0b252">CHECK: passage is in</text><text x="264" y="270" fill="#e0b252">the stored text  ✓</text>
+<text x="264" y="289" fill="#7f8c97">credibility  1</text>
+
+<text x="494" y="72" fill="#5fb3b3" font-size="12">SUBJECT</text>
+<text x="494" y="98">site:jdeida</text>
+<text x="494" y="122" fill="#7f8c97">class</text><text x="494" y="136">place</text>
+<text x="494" y="160" fill="#7f8c97">layer</text><text x="494" y="174">detention</text>
+<text x="494" y="198" fill="#7f8c97">level</text><text x="494" y="212">documented</text>
+<text x="494" y="236" fill="#7f8c97">in use</text><text x="494" y="250">1979 - 2011</text>
+<text x="494" y="274" fill="#7f8c97">32.73 N  13.10 E</text><text x="494" y="289" fill="#7f8c97">doubt: 3.5 km</text>
+
+<text x="724" y="72" fill="#e0b252" font-size="12">THE PIN</text>
+<circle cx="795" cy="140" r="38" fill="none" stroke="#b36ac7" stroke-dasharray="4 4"/>
+<circle cx="795" cy="140" r="6" fill="#b36ac7"/>
+<text x="795" y="205" text-anchor="middle">Jdeida prison</text>
+<text x="795" y="223" text-anchor="middle" fill="#7f8c97">Confirmed</text>
+<text x="795" y="241" text-anchor="middle" fill="#7f8c97">1979-2011</text>
+<text x="795" y="259" text-anchor="middle" fill="#7f8c97">± 3.5 km</text>
+<text x="795" y="283" text-anchor="middle" fill="#e0b252">sources in its panel</text></g>
+
+<circle r="5" fill="#e0b252"><animateMotion dur="12s" repeatCount="indefinite" keyPoints="0;0.6;1" keyTimes="0;0.6;1" calcMode="linear" path="M119,320 L349,320 L579,320 L795,320"/><animate attributeName="opacity" values="1;1;0" keyTimes="0;0.6;0.7" dur="12s" repeatCount="indefinite"/></circle>
+<line x1="119" y1="320" x2="795" y2="320" stroke="#2a3642" stroke-dasharray="3 5"/>
+<text x="450" y="352" fill="#c9d6df" font-size="12" text-anchor="middle">A fact moves left to right. If the claim's passage is not in the stored source, it stops here and never reaches the map.</text>
+<text x="450" y="376" fill="#7f8c97" font-size="11" text-anchor="middle">Data model: archive/model/ · rebuilt and checked by build-claims.mjs and check-model.mjs</text>
+</svg>

@@ -1,6 +1,17 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # Tripoli: Open Source — notes for Claude
 
-An interactive map of Tripoli under Gaddafi (1969–2011) for older relatives. A static Leaflet app in `public/`, served by Cloudflare (`worker/worker.js`, name `tripoli-atlas-ai`). The map is public and read-only and served straight from static files; the family password (at `/login`) unlocks the AI and adding to the map, and the Worker enforces that on `/api` (visitors may only read non-home family reports and their media). Cloudflare Workers Builds redeploys on every push to `main`, so a broken file on `main` goes live. See `README.md` and `SETUP-AI.md` for setup and secrets (never commit secrets).
+An interactive map of Tripoli under Gaddafi (1969–2011) for older relatives. A static Leaflet app in `public/`, served by Cloudflare (`worker/worker.js`, name `tripoli-atlas-ai`). The map is public and read-only and served straight from static files; the family password (at `/login`) unlocks the AI and adding to the map, and the Worker enforces that on `/api` (visitors may only read non-home family reports and their media). Cloudflare Workers Builds redeploys on every push to `main`, so a broken file on `main` goes live. See `README.md` (plain overview), `ARCHITECTURE.md` (technical) and `SETUP-AI.md` for setup and secrets (never commit secrets).
+
+## Commands
+No package.json and no build step: the site is static files in `public/`, the scripts are plain Node (`.mjs`) and Python.
+- One-command check before any push to `main`: `node scripts/preflight.mjs` (about two minutes; must end `0 FAIL`). It runs `node --check` on every JS file and all the tests below. It rewrites `archive/model/{check.json,model.sql,subjects.json}` and `archive/review/rule8.json`; discard those with `git checkout` if nothing else changed.
+- Single tests (each prints `N passed, M failed`): `node scripts/test-worker.mjs`, `test-timeline`, `test-search`, `test-text`, `test-lebanon`, `test-positions`, `test-sw`; checks: `check-panels`, `check-model`, `check-evidence`, `check-secrets`, `build-claims.mjs --check`.
+- Paid AI reading runs only in GitHub Actions, only on the owner's go-ahead: `gh workflow run crest-extract.yml --ref <branch> -f mode=sample|batch|positions -f set=crest|other|cables`. Results are committed back to that branch by the workflow.
+- Deploy: Workers Builds redeploys on every push to `main` (`wrangler.jsonc`, Worker `tripoli-atlas-ai`); check with `gh api repos/gelnagar/libya-project/commits/<sha>/check-runs`.
 
 ## Layout
 - `public/` — the only folder ever served. `index.html`, `app.js` (map, drawers, filters, chat guide), `i18n.js` (Arabic strings), `unknown.js` (the **Intelligence** link graph; type glyphs, no drawn pictures since 19 Nov 2026; it was called "The Unknown" before, so older notes may use that name).
@@ -46,11 +57,11 @@ An interactive map of Tripoli under Gaddafi (1969–2011) for older relatives. A
 - Automatic pushes to `main`: the USGS workflow (`.github/workflows/usgs.yml`, daily 15:50 UTC) commits `archive/maps/usgs-declass.json`, and every push to `main` redeploys the site. The research-slice tasks of 19 Oct 2026 pushed the same way. Always `git pull --rebase` before pushing, and keep unrelated work (for example USGS imagery tooling) in new files so it does not collide with `sites.js`.
 - Commit messages end with the attribution lines the session gives you.
 
-## Research schedule (set up 2026-10-19)
-Seven slices, each adds sourced Tripoli events: 1) 1969–79, 2) 1980–84, 3) 1985–92, 4) 1993–2010, 5) before 1969 (including splitting the combined 1945/1948/1967 riots pin `mk-riots`), 6) deep archive pass, 7) final verification (runs `build-quotes.py`, a browser regression check, and reports before/after counts). Slices 1–3 yielded few pins because Tripoli places are rarely named; most findings sit in `ATLAS_UNPLACED`.
+## Research history
+The October 2026 research slices (1969–2010 by period, then before 1969, an archive pass and a verification pass) found few pins because Tripoli places are rarely named; most findings sit in `ATLAS_UNPLACED`.
 
 ## Open ideas
-- USGS Earthexplorer M2M access was granted for the owner. Declassified CORONA/KH-4/KH-9 and Landsat scenes could become overlay layers or help correct pin positions. Needs `m2m.cr.usgs.gov` and `earthexplorer.usgs.gov` allowed in the cloud environment; keep the token out of the repo.
+- More declassified frames (CORONA/KH-4, other KH-9 dates) could become layers or help correct pin positions; see the satellite section below for the pipeline. USGS M2M credentials stay in GitHub Actions secrets, never in the repo.
 - Offshore OSM points (for example mill 9234919317) could be hidden or flagged; some NPIC boards and Scud garrisons are not yet pinned.
 
 ## Declassified satellite layers (USGS KH-7 / KH-9)
@@ -73,11 +84,12 @@ Old spy-satellite film (Feb 1966 GAMBIT; Nov 1972, 1976 north and south, 1983 HE
 - `AUDIT.md` (git-ignored, the repo is public) lists open security and research findings.
 
 ## Review queue (2026-11)
-- `node scripts/build-review.mjs --sql out.sql` turns the extraction output (`archive/crest/extract*.jsonl`) into ranked candidates: places not on the map and dated Tripoli events, each with every document that mentions it and the passage found in the stored text (no AI calls). Load with `npx wrangler d1 execute tripoli-atlas-stats --remote --file out.sql -y`; reloading keeps decisions (separate `decision` table).
+- `node scripts/build-review.mjs --sql out.sql` turns the extraction output (`archive/crest/extract*.jsonl`: CIA/JPRS, other texts, and since 21 Nov 2026 the Embassy Tripoli cables, `extract-cables.jsonl`) into ranked candidates: places not on the map and dated Tripoli events, each with every document that mentions it and the passage found in the stored text (no AI calls). Load with `npx wrangler d1 execute tripoli-atlas-stats --remote --file out.sql -y`; reloading keeps decisions (separate `decision` table).
 - `public/review.html` (owner password) lists them; the owner approves (place it / no location), rejects with a reason, or puts off. Worker: `ownerReview` behind `{owner:true, review:{...}}`; `review:{export:true}` returns the approved ones.
 - Approval is not publication. Approved items still need a written entry with fetched sources, and a position only where a source gives one.
 
 ## All-Libya build (2026-11, branch `libya`)
+- Work happens on branch `libya`; it reaches `main` only on the owner's explicit "Push", which covers only what existed when it was said. Push with `git pull --rebase origin main`, preflight, then `git push origin libya:main`.
 - Before any push to `main`: `node scripts/preflight.mjs` (must end `0 FAIL`) and follow `PUSH-CHECKLIST.md`. `node scripts/check-secrets.mjs` refuses a secret in any tracked file; a local `pre-push` hook runs it. Never write a password, key or token in any tracked file or message (the repo is public); `.secret-words` is git-ignored and lists words that must never appear.
 - `LIBYA-PROGRESS.md` is the chunk list and hand-over file; read it first.
 - Claim model: `node scripts/build-claims.mjs --check` writes `archive/model/` (subjects, sources, claims, model.sql), `public/data/grades.js`, and proves public/data can be rebuilt from the model. `node scripts/check-model.mjs` confirms every stored quotation is in its stored source. See `archive/model/README.md`.
@@ -89,4 +101,4 @@ Old spy-satellite film (Feb 1966 GAMBIT; Nov 1972, 1976 north and south, 1983 HE
 - Regional entries: hand-written ones in `public/data/regions/<id>.js`; `node scripts/write-regional.mjs` generates `<id>-more.js` from the review candidates (skips safety-flagged, after-2011, before-1969, Tripoli-naming ones; each entry says how many documents it rests on). Do not edit the generated files. Every regional pin carries `pos`: 'town' when the sources name only the town (drawn as one marker per town with a count and a list, `TOWNS` / `openTown` in app.js) or 'site' when a source gives the site's own position (`posSrc`). `node scripts/test-positions.mjs` checks this and fails if site-level pins stack again. Positions of their own: `node scripts/locate-regional.mjs` proposes (printed coordinates in the documents, gazetteer, exact Wikipedia titles; sheet `archive/review/positions-sheet.md`), a person approves with `node scripts/approve-positions.mjs --by <initials> <id>` (`archive/model/positions.json`), then `node scripts/write-regional.mjs` applies it. Approve only on the owner's word. On 19 Nov 2026 the owner had positions approved by Claude, but only those that passed both stages of the paid reading `node scripts/read-positions.mjs` (a reader, checks without a model, and a separate checker; results in `archive/review/positions-read.json`; runs in Actions with `-f mode=positions`): use `--verified-only`. `node scripts/test-text.mjs` checks that pin panels show their whole text.
 - Safety and sample checks per region: `node scripts/safety-check.mjs <region>`, `node scripts/sample-check.mjs <region>`; the written check goes in `archive/regions/<region>-safety.md`.
 - Evidence rule 8 (two independent publishers for a documented killing): `node scripts/check-evidence.mjs` lists the entries that break it.
-- Worker tests: `node scripts/test-worker.mjs` (66 checks; run before any push that touches worker/worker.js). New family reports are held (`held: true`) until the owner approves them on requests.html. This, the corrections route, the daily AI ceiling and the other A6 changes exist on branch `libya` only; the live Worker (last built from main on 14 Nov 2026) still has the old behaviour until the owner pushes.
+- Worker tests: `node scripts/test-worker.mjs` (66 checks; run before any push that touches worker/worker.js). New family reports are held (`held: true`) until the owner approves them on requests.html. This, the corrections route and the daily AI ceiling went live with the push of 19 Nov 2026.

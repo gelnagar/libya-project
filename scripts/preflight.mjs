@@ -92,9 +92,9 @@ try { const lay = load('public/data/sites.js').ATLAS_LAYERS, ic = (() => { const
 try {
   const sites = load('public/data/sites.js'), areas = load('public/data/areas.js'), links = load('public/data/links.js');
   const want = { 'Site \\(curated event or place\\)[^|]*\\|[^|]*\\|\\s*(\\d+)': sites.ATLAS_SITES.length, 'Area \\(profile[^|]*\\|[^|]*\\|\\s*(\\d+)': areas.ATLAS_AREAS.length, 'Connection \\(evidence-based[^|]*\\|[^|]*\\|\\s*(\\d+)': links.ATLAS_CONNECTIONS.length };
-  const readme = fs.readFileSync('README.md', 'utf8');
-  for (const [re, n] of Object.entries(want)) { const g = (readme.match(new RegExp(re)) || [])[1]; say(g && +g === n ? 'PASS' : 'FAIL', `README count ${re.split('[')[0].replace(/\\\(/g, '(').replace(/\\\)/g, ')')}: says ${g || '?'}, data has ${n}`); }
-} catch (e) { say('FAIL', 'could not compare README counts to the data', e.message); }
+  const readme = fs.readFileSync('ARCHITECTURE.md', 'utf8');
+  for (const [re, n] of Object.entries(want)) { const g = (readme.match(new RegExp(re)) || [])[1]; say(g && +g === n ? 'PASS' : 'FAIL', `ARCHITECTURE.md count ${re.split('[')[0].replace(/\\\(/g, '(').replace(/\\\)/g, ')')}: says ${g || '?'}, data has ${n}`); }
+} catch (e) { say('FAIL', 'could not compare ARCHITECTURE.md counts to the data', e.message); }
 const prog = fs.readFileSync('LIBYA-PROGRESS.md', 'utf8');
 say(/free-plan limit|about 16,300 files.*cap|caps the site at about 16,300/i.test(prog + claude) ? 'FAIL' : 'PASS', 'documents no longer present the old free-plan file cap as a limit');
 

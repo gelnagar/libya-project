@@ -1,150 +1,60 @@
-# Tripoli: Open Source
+# TRIPOLI: OPEN SOURCE
 
-A record of Gaddafi's Tripoli, built from declassified files and the accounts of people who lived there. It maps prisons, security sites, military bases, the 1986 raid and the regime's killings, and backs them with 4,000+ documents (4,290 records on the map's side; 15,214 collected for research). Open read-only to anyone with the link; family members sign in to ask the AI about any place and to add their own notes.
+**A sourced map of Libya under Gaddafi, 1969–2011.** Every pin says what happened, when, and exactly which document says so. It was built for one family looking for the truth about their country, and it is open to anyone.
 
-## System
+![how it works](docs/how-it-works.svg)
 
-```mermaid
-flowchart LR
-  U[Browser / phone] -->|pages, data, tiles| A[Static site<br/>public/, served directly]
-  U -->|/login /logout /api only| W[Cloudflare Worker<br/>worker/worker.js]
-  W -->|family cookie| C[Claude API<br/>+ web search]
-  W <--> K[(KV: reports,<br/>requests, spend)]
-  W <--> S[(D1: visits, costs, review queue,<br/>corrections, sign-in failures)]
-  A --> D[(public/data/*.js<br/>public/maps/ tiles)]
-```
+## In one minute (no computer science needed)
 
-## Data model
+Imagine a huge pile of old paper: American intelligence files, translated Libyan radio, human-rights reports, survivors' interviews. Nobody can read it all.
 
-```mermaid
-erDiagram
-  SITE ||--o{ RECORD : "tagged in (places)"
-  AREA ||--o{ RECORD : "tagged in (places)"
-  AREA ||--o{ SITE : "contains (distance)"
-  SITE }o--o{ SITE : LINK
-  REPORT }o--o| SITE : "note about (target)"
-  REPORT }o--o| AREA : "note about (target)"
-  ERA ||--o{ SITE : "filters (y0..y1)"
-  OVERLAY }o--|| ERA : "dated (year)"
-  SITE {
-    string id
-    string layer
-    string level
-    float lat
-    float lon
-    float r_km
-    int y0
-    int y1
-  }
-  AREA {
-    string id
-    string kind
-    string summary
-    string history
-    string era
-    string today
-    list sources
-  }
-  RECORD {
-    string i
-    string y_type
-    string d_date
-    string s_source
-    string r_rights
-    list p_places
-  }
-  REPORT {
-    string id
-    string cat
-    string title
-    string text
-    string how
-    float lat
-    float lon
-    string target
-  }
-  OVERLAY {
-    string id
-    int year
-    string tiles
-    bbox bounds
-  }
-  OSM_FEATURE {
-    int id
-    string k_kind
-    map t_tags
-    geom g
-  }
-```
+This project does four plain things with that pile:
 
-| Entity | File | Count |
-|---|---|---|
-| Site (curated event or place) | `public/data/sites.js` | 103 (+ 115 unplaced items) |
-| Area (profile of a neighbourhood, building or camp) | `archive/areas/*` → `public/data/areas.js` | 172 (incl. 58 without coordinates) |
-| Record (document or event) | `archive/*` → `public/data/records.js` | 4,290 |
-| Connection (evidence-based link between two places) | `archive/research/links*.json` → `public/data/links.js` (`scripts/build-links.mjs`, `scripts/auto-links.py`) | 172 |
-| Unknown entity (person, group or outside place linked in the files) | `archive/crest/extract*.jsonl` → `public/data/unknown.js` (`scripts/build-unknown.py`; free pictures via `scripts/unknown-photos.mjs`) | 259 entities, 247 links |
-| Report (added by family) | Cloudflare KV `reports:v1` | live |
-| OSM feature (today's map data) | `public/data/osm/*.json` | ~3,700 items in 14 files |
-| Overlay (old map or satellite image) | `public/data/overlays.js` + `public/maps/` | 10 |
+1. **Reads it** with a small AI that fills in a form: *where, when, what, and the exact sentence that proves it.*
+2. **Checks the AI** with ordinary code. If the "exact sentence" is not really in the document, the finding is thrown out.
+3. **Admits doubt.** Every pin carries an evidence level and a grade. If only the town is known, the pin sits on the town with a wide circle, not a falsely precise dot.
+4. **Puts it on a map**, laid over declassified spy-satellite film from 1966, 1972, 1976 and 1983, so you can see the same ground then and now.
 
-Evidence level is one of `documented`, `testimony`, `suspected` or `context`. Record rights is `public-domain` (full text shown), `cc-by-sa` (full text shown), or `link-only` (summary and link only).
+## What you can do with it
 
-## Pipeline
+| You want to… | Use… |
+|---|---|
+| See what happened where | A pin. Layers: detention, security, military, airstrikes, battles, killings and repression, power, landmarks |
+| See the city as it was | The old-film layers (1966 · 1972 · 1976 · 1983) against today's imagery |
+| Follow events in order | The timeline: drag the year and pins appear and fade |
+| Know how sure we are | The grade beside each source (A–F) and each entry (1–6) |
+| See who is linked to whom | The link view of people, places and organisations |
+| Search | English or Arabic |
 
-```mermaid
-flowchart LR
-  D["Documents<br/>FRUS · FBIS/JPRS · Wikipedia<br/>LoC · Amnesty/HRW/UN · Reagan/Bush"] -->|GitHub Actions| AR[(archive/)]
-  AR -->|build-archive.mjs| R[records.js + docs]
-  AR -->|build-areas.py| AA[areas.js]
-  O["OpenStreetMap"] -->|fetch-osm.mjs| OJ[osm/*.json]
-  M["Old maps<br/>AMS 1962 · Landsat"] -->|warp → WebP tiles| T[maps/*]
-```
+## Reading one pin
 
-## Algorithms
+![one pin](docs/one-pin.svg)
 
-**Asking about a place** (`contextFor` → Worker → Claude):
+Where sources disagree, the pin says so and keeps both versions.
 
-```mermaid
-flowchart LR
-  P[place] --> N["nearby: area, profiles ≤2.5 km,<br/>sites ≤4 km, family notes ≤1.5 km"]
-  N --> R[matching archive records]
-  R --> C[context ≤15k chars]
-  C --> W["Claude + 3 web searches<br/>+ last 5 questions and answers"]
-  W --> A[answer + 3 follow-ups + sources]
-```
+## Why you can trust it (and where you cannot)
 
-**Search ranking (Encyclopedia):** each query word scores +3 if it is in the title and +1 if it is in the body, plus +4 if the whole phrase is in the title. A year or year range filters results. Ties break by kind (place, then area, then event, then document) and then by date.
+![trust](docs/trust.svg)
 
-**Time filter:** a site is shown if it falls inside the selected era. If a year cursor is set, the site is shown if it starts on or before that year. It is bright while active (`y0 ≤ year ≤ y1`, or ±1 year for one-year events) and faded otherwise.
+- **Documents are kept**, so every check runs on the real text, not on a model's memory.
+- **Locations** come only from coordinates printed in a document or from a published reference. A model never supplies a coordinate.
+- **Private people** named only in diplomatic cables are not published by name.
+- **Limits, stated plainly.** The checks prove a quotation is real, not that its source is right. Most sources are American or translated Libyan state media. Where one publisher alone reports a killing, the pin says "reported, not confirmed".
 
-**Labels:** after each zoom or pan, labels are placed in priority order (sites, then districts), and any label whose box overlaps one already placed is hidden.
+## What is in this repository
 
-**Overlays:** IIIF scan → ground control points from the map's corner coordinates (ED50) → `gdalwarp` → WebP tiles, zoom 12–17.
+| Folder | Plain meaning |
+|---|---|
+| `public/` | The website itself: map, pins, panels, icons |
+| `scripts/` | The checking and building tools. `node scripts/preflight.mjs` runs every check before anything is published |
+| `worker/` | The small server that keeps the family sign-in and AI guide private |
+| `.claude/agents/` | Seven narrow AI helpers that propose reviews. None can publish |
+| `ARCHITECTURE.md` | The technical reference, for engineers |
 
-## All-Libya work
+## Keys and secrets
 
-The plan to extend this to the whole country is the PRD named in `LIBYA-PROGRESS.md`, which is also the hand-over file (what is done, what was run to check it, what waits for the owner).
+None are in this repository. The AI guide needs three secrets (`ANTHROPIC_API_KEY`, `FAMILY_CODE`, `OWNER_CODE`) that live only in the hosting dashboard. See `SETUP-AI.md`. `node scripts/check-secrets.mjs` scans every tracked file and runs in preflight.
 
-## Run
+## Sources and rights
 
-Deploy: see `SETUP-AI.md`. Cloudflare builds from `wrangler.jsonc`, and the Worker needs the secrets `ANTHROPIC_API_KEY`, `FAMILY_CODE` and `OWNER_CODE`.
-
-Rebuild the data locally:
-
-```sh
-node scripts/build-archive.mjs   # rebuilds records.js
-python3 scripts/build-areas.py   # rebuilds areas.js
-node scripts/fetch-osm.mjs       # refreshes osm/*.json
-```
-
-Rights: U.S. government works are public domain. Wikipedia text is CC BY-SA. Everything else is shown as a summary with a link.
-
-
-## The Unknown
-
-A map style that swaps the city for a black plane: the people, organisations and places beyond Tripoli that the declassified files connect
-(for example the Edwin Wilson and Frank Terpil arms network). Names and links come from the Claude Haiku extractions; spellings are merged in
-`scripts/build-unknown.py`. Where Wikimedia Commons has a freely licensed photo or drawing of the same entity (checked against a Wikipedia
-article that mentions Libya), it is shown with its credit; everything else gets a drawn stand-in, never a likeness.
-Rebuild with `python3 scripts/build-unknown.py`; refresh pictures by running the "Find free pictures for The Unknown" workflow.
+U.S. government works are public domain. Wikipedia text is CC BY-SA. Everything else is shown as a short summary with a link to the original.

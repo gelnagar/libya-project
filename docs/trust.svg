@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" font-family="Consolas, Menlo, monospace"><rect width="900" height="260" fill="#0b0f14"/>
+<g fill="#111922" stroke-width="1.2"><rect x="20" y="30" width="270" height="190" stroke="#5fb3b3"/><rect x="315" y="30" width="270" height="190" stroke="#5fb3b3"/><rect x="610" y="30" width="270" height="190" stroke="#e0b252"/></g>
+<g fill="#c9d6df" font-size="12"><text x="36" y="55" fill="#5fb3b3" font-size="11">THE AI IS NEVER TRUSTED ALONE</text>
+<text x="36" y="90">It must quote its evidence.</text><text x="36" y="110">It may never invent a place,</text><text x="36" y="130">date, number or name.</text>
+<text x="331" y="55" fill="#5fb3b3" font-size="11">PLAIN CODE CHECKS THE AI</text>
+<text x="331" y="90">Is the quote word-for-word</text><text x="331" y="110">in the stored file?</text><text x="331" y="130">Are coordinates printed there?</text><text x="331" y="150">Are dates in order?</text>
+<text x="626" y="55" fill="#e0b252" font-size="11">A SECOND AI CHECKS THE FIRST</text>
+<text x="626" y="90">It never sees the first answer.</text><text x="626" y="110">If the two disagree, the pin</text><text x="626" y="130">stays at the town centre with</text><text x="626" y="150">a wide ring of doubt.</text></g>
+<text x="450" y="245" fill="#7f8c97" font-size="11" text-anchor="middle">A person decides what is published. The AI only proposes.</text></svg>

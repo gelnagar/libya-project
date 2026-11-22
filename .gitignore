@@ -13,3 +13,18 @@ archive/review/sample-*.md
 
 .secret-words
 archive/cited-cache/
+
+# reports written by the agents in .claude/agents (may name private people from the documents)
+archive/review/agents/
+
+# source documents: kept on the owner's computer only, never in the public repo
+archive/fbis/
+archive/fulltext/
+archive/countrystudy/
+archive/wikipedia/
+archive/cables/docs.jsonl.gz
+archive/crest/docs*.jsonl.gz
+archive/crest/test/
+archive/gov/*
+!archive/gov/catalog.json
+public/data/docs/

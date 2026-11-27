@@ -138,7 +138,7 @@
      h('span', { class: 'nm', text: 'Intelligence' }), h('small', { text: 'Entity graph: people, groups, places' })]));
 
   /* ---------- state ---------- */
-  var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, battle: true, massacre: true, power: true, landmark: true, districts: true, rings: true, labels: true, grid: true, timeline: true };
+  var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, battle: true, massacre: true, power: true, landmark: true, districts: true, rings: true, labels: true, grid: true, timeline: false };
   var active = Object.assign({}, DEFAULT_ON, store.get('layers3', {}));
   var PERIODS = { pre: 'Before 1969', main: '1969–2011', post: 'After 2011' };
   var periods = Object.assign({ pre: true, main: true, post: true }, store.get('periods', {}));
@@ -1623,8 +1623,8 @@
     if (!AI_ON) return null;
     var list = (qs || []).slice(), idx = list.length ? Math.floor(Math.random() * list.length) : 0, history = [];
     var q = h('textarea', { 'aria-label': 'Your question', placeholder: 'Or type your own question' });
-    var pw = h('input', { type: 'password', autocomplete: 'off', autocapitalize: 'none', 'aria-label': 'Family password' });
-    var pwWrap = h('div', { class: 'field' }, [h('label', { text: 'Family password' }), pw, h('small', { text: 'Only needed once on this device.' })]);
+    var pw = h('input', { type: 'password', autocomplete: 'off', autocapitalize: 'none', 'aria-label': 'AI password' });
+    var pwWrap = h('div', { class: 'field' }, [h('label', { text: 'AI password' }), pw, h('small', { text: 'Only needed once on this device.' })]);
     pwWrap.hidden = !!store.get('code', '');
     var log = h('div', { class: 'ai-log', 'aria-live': 'polite' });
     var btn = h('button', { class: 'btn primary', text: 'Ask' });
@@ -1985,8 +1985,8 @@
     m.appendChild(box);
   }
   function codeCard(after) {
-    var input = h('input', { type: 'password', autocomplete: 'off', autocapitalize: 'none', 'aria-label': 'Family password' });
-    var card = h('div', { class: 'msg bot' }, [h('p', { text: 'Type the family password first. You only need to do this once.' }), h('div', { class: 'field' }, [input]),
+    var input = h('input', { type: 'password', autocomplete: 'off', autocapitalize: 'none', 'aria-label': 'AI password' });
+    var card = h('div', { class: 'msg bot' }, [h('p', { text: 'Type the AI password first. You only need to do this once.' }), h('div', { class: 'field' }, [input]),
       h('button', { class: 'btn primary', text: 'Continue', onclick: function () { var c = input.value.trim(); if (!c) { input.focus(); return; } store.set('code', c); card.remove(); after(); } })]);
     $('chat-log').appendChild(card); scrollChat(); input.focus();
   }
@@ -2429,6 +2429,15 @@
     $('chat-input').addEventListener('focus', openChat);
     $('chat-close').onclick = closeChat;
     $('chat-suggest').onclick = function () { openChat(); requestCard('', ''); };
+  } else if (PUBLIC_VIEW) {
+    // visitors see the question box switched off; the button takes them to AI Password Access
+    $('chat').hidden = false;
+    document.documentElement.classList.add('has-chat');
+    $('chat-input').disabled = true;
+    $('chat-input').placeholder = 'AI guide off. Enter the AI password to ask.';
+    $('chat-send').textContent = 'Off';
+    $('chat-send').title = 'AI Password Access';
+    $('chat-form').addEventListener('submit', function (e) { e.preventDefault(); location.href = '/login'; });
   }
 
   if (GATED) store.set('code', 'session');
@@ -2467,6 +2476,14 @@
     if ($('credit') && !$('credit').hidden) fitBanner();
   }
   document.querySelectorAll('#sizes button').forEach(function (b) { b.addEventListener('click', function () { setSize(b.dataset.size); }); });
+  // Settings: the timeline is off unless switched on here; pins show one by one unless grouped by neighbourhood
+  function syncSetSegs() {
+    document.querySelectorAll('#tl-seg button').forEach(function (b) { b.setAttribute('aria-pressed', (b.dataset.tl === 'on') === !!active.timeline ? 'true' : 'false'); });
+    document.querySelectorAll('#hood-seg button').forEach(function (b) { b.setAttribute('aria-pressed', (b.dataset.hood === 'on') === !!store.get('hoods', false) ? 'true' : 'false'); });
+  }
+  document.querySelectorAll('#tl-seg button').forEach(function (b) { b.addEventListener('click', function () { setInput('timeline', b.dataset.tl === 'on'); syncSetSegs(); }); });
+  document.querySelectorAll('#hood-seg button').forEach(function (b) { b.addEventListener('click', function () { store.set('hoods', b.dataset.hood === 'on'); refresh(); syncSetSegs(); }); });
+  setTimeout(syncSetSegs, 0);
   function openSettings() {
     $('settings').hidden = false;
     $('code-field').hidden = !CFG.aiEndpoint || GATED;
@@ -3143,13 +3160,14 @@
   }
   function doorMain() {
     var box = door.querySelector('.door-box'); box.innerHTML = '';
-    box.appendChild(h('div', { class: 'door-head' }, [h('h2', { text: 'Tripoli under Gaddafi, 1969–2011' }), h('p', { text: 'Places, events and documents, gathered for the family. Where would you like to start?' })]));
+    box.appendChild(h('div', { class: 'door-head' }, [h('h2', { text: 'Tripoli under Gaddafi, 1969–2011' }), h('p', { text: 'Places, events and documents, gathered for the family. Where would you like to start?' }),
+      h('p', { class: 'door-note' }, [h('b', { text: 'Developer’s note. ' }), document.createTextNode('Dear user, places inside Tripoli are mapped to their own sites. Outside Tripoli we are still geotagging each event to the place where it happened, so for now many of them sit together at the town centre.')])]));
     box.appendChild(h('div', { class: 'door-grid' }, [
       doorChoice(IC.walk, 'Walk me through it', 'Short guided stories, one place at a time', doorStories),
       doorChoice(IC.find, 'Find a place I knew', 'A street, school, prison or neighbourhood', function () { closeDoor(); openTerm(''); }),
       doorChoice(IC.year, 'Pick a year', 'See only what happened that year', function () { closeDoor(); showYear(1986); }),
       doorChoice(IC.home, 'Where did you live?', 'Mark your old home and see what happened nearby', function () { closeDoor(); pickHome(); }),
-      doorChoice(IC.ask, 'Ask a question', 'In your own words, English or Arabic', function () { closeDoor(); openChat(); setTimeout(function () { $('chat-input').focus(); }, 60); })
+      doorChoice(IC.ask, 'Ask a question', 'In your own words, English or Arabic', function () { closeDoor(); if (!AI_ON && PUBLIC_VIEW) { location.href = '/login'; return; } openChat(); setTimeout(function () { $('chat-input').focus(); }, 60); })
     ]));
     box.appendChild(h('div', { class: 'door-foot' }, [
       h('label', { class: 'door-off' }, [h('input', { type: 'checkbox', id: 'door-off' }), ' Don’t show this again']),
@@ -3247,7 +3265,7 @@
   }
   function hoodMode() {
     var vis = SITES.filter(function (s) { return siteLayer.hasLayer(markers[s.id]) || (s._hoodHidden && visible(s)); });
-    return map.getZoom() < HOOD_Z && !timeRange && timeYear == null && !storyOn && vis.length > 50;
+    return store.get('hoods', false) && map.getZoom() < HOOD_Z && !timeRange && timeYear == null && !storyOn && vis.length > 50;
   }
   function syncHoods() {
     var on = hoodMode();

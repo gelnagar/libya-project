@@ -605,11 +605,12 @@ small { color: #abb3bf; }
   <h1>Tripoli: Open Source</h1>
   <p>Leveraging AI to Map Gaddafi’s Capital of Terror</p>
   ${msg ? `<p class="msg" role="alert">${escHtml(msg)}</p>` : ''}
-  <label for="code">Family password</label>
+  <label for="code">AI Password Access</label>
   <input id="code" name="code" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required autofocus>
   <input type="hidden" name="next" value="${escHtml(safeNext(next))}">
-  <button type="submit">Family sign-in</button>
-  <small>The password turns on the AI guide and adding to the map. You only need to do this once on each device. Ask ${owner} if you don’t have it. <a href="/" style="color:inherit">Or keep browsing the map without it.</a></small>
+  <button type="submit">Unlock the AI guide</button>
+  <small>The password switches on the AI guide and adding to the map. You only need to enter it once on each device. Ask ${owner} if you don’t have it.</small>
+  <small><strong>No password needed to view the map.</strong> Every place, document and timeline is open to everyone. <a href="/" style="color:inherit">Continue to the map</a></small>
 </form></body></html>`;
   return new Response(html, { status: status || 200, headers: { ...SECURITY, 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } });
 }

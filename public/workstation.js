@@ -89,8 +89,8 @@
   $('btn-user').onclick = function () {
     if (menuEl) { closeMenu(); return; }
     openMenu([
-      { hd: !A.gated ? 'Local copy of the map' : A.publicView ? 'Visitor: read-only, no AI guide' : 'Signed in with the family password' },
-      A.gated ? (A.publicView ? ['Family sign-in', '', '/login'] : ['Sign out on this device', '', '/logout']) : null,
+      { hd: !A.gated ? 'Local copy of the map' : A.publicView ? 'Visitor: full map, AI guide off' : 'AI password access: on' },
+      A.gated ? (A.publicView ? ['AI Password Access', '', '/login'] : ['Sign out on this device', '', '/logout']) : null,
       '-',
       ['Settings', ',', A.openSettings],
       [isDark() ? 'Light theme' : 'Dark theme', 'D', toggleTheme],

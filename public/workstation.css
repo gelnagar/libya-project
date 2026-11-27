@@ -695,3 +695,10 @@ html[data-theme] .un-links .un-mini svg { border: 0; }
   html[data-theme] #unknown .un-legend button { width: auto; flex: none; grid-template-columns: 16px auto auto; }
   html[data-theme] #unknown .un-sep { display: none; }
 }
+
+/* start screen: keep the four choices inside the box; developer's note about positions outside Tripoli */
+html[data-theme] .door-box { overflow-x: hidden; }
+html[data-theme] .door-grid > * { min-width: 0; }
+html[data-theme] .door-head p.door-note { max-width: none; margin: 0 0 12px; padding: 8px 10px; font-size: 12px; line-height: 1.45; color: var(--text); background: var(--bg-raised); border-left: 2px solid var(--accent); }
+html[data-theme] .door-choice > * { min-width: 0; overflow-wrap: anywhere; }
+html[data-theme] .door-choice small, html[data-theme] .door-choice b { white-space: normal; }

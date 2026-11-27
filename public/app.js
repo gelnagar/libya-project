@@ -2444,7 +2444,7 @@
 
   /* ---------- welcome password ---------- */
   function showTipNow() { if (!store.get('tipSeen', false)) $('tip').hidden = false; }
-  function showTip() { if (!store.get('doorOff', false)) { setTimeout(openDoor, 0); return; } showTipNow(); }
+  function showTip() { showTipNow(); }   // the start menu no longer opens by itself; the first-visit tip carries the developer's note
   function closeWelcome() { $('welcome').hidden = true; showTip(); }
   function maybeWelcome() {
     if (!AI_ON || store.get('code', '') || session.get('skip')) { showTip(); return; }

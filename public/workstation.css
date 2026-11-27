@@ -702,3 +702,7 @@ html[data-theme] .door-grid > * { min-width: 0; }
 html[data-theme] .door-head p.door-note { max-width: none; margin: 0 0 12px; padding: 8px 10px; font-size: 12px; line-height: 1.45; color: var(--text); background: var(--bg-raised); border-left: 2px solid var(--accent); }
 html[data-theme] .door-choice > * { min-width: 0; overflow-wrap: anywhere; }
 html[data-theme] .door-choice small, html[data-theme] .door-choice b { white-space: normal; }
+html[data-theme] .tip { flex-direction: column; align-items: stretch; }
+html[data-theme] .tip p { margin: 0; }
+html[data-theme] .tip .tip-note { line-height: 1.45; }
+html[data-theme] .tip #tip-ok { align-self: flex-end; }

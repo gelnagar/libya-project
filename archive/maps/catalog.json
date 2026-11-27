@@ -1,6 +1,6 @@
 {
- "fetched": "2026-10-18",
- "all": 529,
+ "fetched": "2026-11-20",
+ "all": 526,
  "maps": [
   {
    "id": "wmc-4457516",
@@ -17,9 +17,24 @@
    "usage": "Public domain",
    "description": "workshop sur Tripoli IAU 2008",
    "categories": "Maps of Tripoli, Lebanon|Self-published work|PD-self|Workshops (seminars)|People in front of maps",
-   "reusable": true,
-   "file": "wmc-4457516.jpg",
-   "bytes": 84790
+   "reusable": true
+  },
+  {
+   "id": "wmc-10262740",
+   "source": "Wikimedia Commons",
+   "title": "Tripoli souk backstreet.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Tripoli_souk_backstreet.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Tripoli_souk_backstreet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/63/Tripoli_souk_backstreet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 768,
+   "height": 1024,
+   "date": "2009-02-04 19:01",
+   "author": "bob rayner from UK",
+   "license": "CC BY 2.0",
+   "usage": "Creative Commons Attribution 2.0",
+   "description": "Backstreet behind the souk, 'Old Town' Medina, Tripoli, Libya",
+   "categories": "Souqs in Tripoli|Flickr images reviewed by File Upload Bot (Magnus Manske)|Tripoli Old Town|Files with coordinates missing SDC location of creation|Streets in Tripoli",
+   "reusable": true
   },
   {
    "id": "wmc-14526447",
@@ -36,9 +51,7 @@
    "usage": "Creative Commons Attribution-Share Alike 2.0",
    "description": "Map of Tripoli\nGeographic limits of the map:\n\nN: 32.9197°\nS: 32.8006°\nW: 13.1345°\nE: 13.2562°\n\n This file is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license.\nYou are free:\nto share – to copy, distribute and transmit the work\nto remix – to adapt the work\nUnder the following conditions:\nattribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nshare alike – If you remix, transform, or build upon the",
    "categories": "Maps of Tripoli|OpenStreetMap maps of Libya",
-   "reusable": true,
-   "file": "wmc-14526447.png",
-   "bytes": 531654
+   "reusable": true
   },
   {
    "id": "wmc-14526625",
@@ -157,7 +170,9 @@
    "usage": "Public domain",
    "description": "map of Tripoli in Barbary",
    "categories": "PD-old-70-expired|History of Benghazi|National Geographic Maps|Old maps of Libya|1911 maps|CC-PD-Mark|National Geographic Magazine, 1911|Tripoli in the 1910s",
-   "reusable": true
+   "reusable": true,
+   "file": "wmc-24215959.png",
+   "bytes": 568156
   },
   {
    "id": "wmc-24878693",
@@ -281,25 +296,6 @@
    "bytes": 50513
   },
   {
-   "id": "wmc-84030299",
-   "source": "Wikimedia Commons",
-   "title": "Admiralty Chart No 246 Tripoli Ras Makhabez to Benghazi, Published 1880.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Admiralty_Chart_No_246_Tripoli_Ras_Makhabez_to_Benghazi,_Published_1880.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Admiralty_Chart_No_246_Tripoli_Ras_Makhabez_to_Benghazi%2C_Published_1880.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Admiralty_Chart_No_246_Tripoli_Ras_Makhabez_to_Benghazi%2C_Published_1880.jpg/3840px-Admiralty_Chart_No_246_Tripoli_Ras_Makhabez_to_Benghazi%2C_Published_1880.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "width": 11883,
-   "height": 8147,
-   "date": "1880-05-03",
-   "author": "United Kingdom Hydrographic Office",
-   "license": "Public domain",
-   "usage": "Public domain",
-   "description": "Nautical chart of the Coast of Libya from Ras Makhabez to Benghazi including Tripoli. Not current - not to be used for navigation!",
-   "categories": "Gulf of Sirte|Maps of Benghazi|UK Government artistic works|Old maps of Libya|Large images|Old maps of Tripoli|Admiralty Charts Region F: Eastern Mediterranean Black Sea|Admiralty Charts 201-400",
-   "reusable": true,
-   "file": "wmc-84030299.jpg",
-   "bytes": 2179368
-  },
-  {
    "id": "wmc-88921274",
    "source": "Wikimedia Commons",
    "title": "Ca. 1770 view of Tripoli Harbor.jpg",
@@ -400,7 +396,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Tripoli in 1914",
-   "categories": "PD-old-100-expired|CC-PD-Mark|PD-old missing SDC copyright status|Old maps of Tripoli",
+   "categories": "PD-old-100-expired|CC-PD-Mark|Old maps of Tripoli",
    "reusable": true
   },
   {
@@ -434,7 +430,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Tripoli 1581 Pantaleon",
-   "categories": "History of Tripoli|PD-old-100-expired|CC-PD-Mark|PD-old missing SDC copyright status|Old maps of Tripoli",
+   "categories": "History of Tripoli|PD-old-100-expired|CC-PD-Mark|Old maps of Tripoli",
    "reusable": true
   },
   {
@@ -498,7 +494,7 @@
    "width": 638,
    "height": 928,
    "date": "2022-06-19",
-   "author": "DescriptionTripoli (Liban) OSM 02.png\n\n\nThis map  was created from OpenStreetMap project data, collected by the community. This map may be incomplete, and may contain errors. Don't rely solely on it for navigation.\n\n\n\nDate\n\n(see file history)\n\n\n\nSource\n\nOpenStreetMap.org\n\n\n\nCreator\n\n\nOpenStreetMap contributors\n\n\n\nPermission(Reusing this file)\n\nOpenStreetMap data is available under the Open Database License (details). Map tiles are licensed under the Creative Commons Attribution-ShareAlike 2.0 license (CC-BY-SA 2.0). \n\n\n\n\n\n\n\n\nThis work contains information from OpenStreetMap, which is made available under the Open Database License (ODbL).\n\nThe ODbL does not require any particular license for maps produced from ODbL data. Prior to 1 August 2020, map tiles produced by the OpenStreetMap Foundation were licensed under the CC-BY-SA-2.0 license. Maps produced by other people may be subject to other licences.Open Database LicenseODbLhttp://opendatacommons.org/licenses/odbl/1.0/true\n\n \n This file is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license.\nYou are free:\nto share – to copy, distribute and transmit the work\nto remix – to adapt the work\nUnder the following conditions:\nattribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nshare alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original.https://creativecommons.org/licenses/by-sa/2.0CC BY-SA 2.0 Creative Commons Attribution-Share Alike 2.0 truetrue\n\n\n\nGeoreferencing\n\nGeoreference the map in Wikimaps Warper If inappropriate please set warp_status = skip to hide.",
+   "author": "DescriptionTripoli (Liban) OSM 02.png\n\n\nThis map  was created from OpenStreetMap project data, collected by the OpenStreetMap community. This map may be incomplete, and may contain errors. Do not rely solely on it for navigation.\n\n\n\nDate\n\n(see file history)\n\n\n\nSource\n\nOpenStreetMap.org\n\n\n\nCreator\n\n\nOpenStreetMap contributors\n\n\n\nPermission(Reusing this file)\n\nOpenStreetMap data is available under the Open Database License (details). Map tiles are licensed under the Creative Commons Attribution-ShareAlike 2.0 license (CC-BY-SA 2.0). \n\n\n\n\n\n\n\n\nThis work contains information from OpenStreetMap, which is made available under the Open Database License (ODbL).\n\nThe ODbL does not require any particular license for maps produced from ODbL data. Prior to 1 August 2020, map tiles produced by the OpenStreetMap Foundation were licensed under the CC-BY-SA-2.0 license. Maps produced by other people may be subject to other licences.Open Database LicenseODbLhttp://opendatacommons.org/licenses/odbl/1.0/true\n\n \n This file is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license.\nYou are free:\nto share – to copy, distribute and transmit the work\nto remix – to adapt the work\nUnder the following conditions:\nattribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nshare alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original.https://creativecommons.org/licenses/by-sa/2.0CC BY-SA 2.0 Creative Commons Attribution-Share Alike 2.0 truetrue\n\n\n\nGeoreferencing\n\nGeoreference the map in Wikimaps Warper If inappropriate please set warp_status = skip to hide.",
    "license": "CC BY-SA 4.0",
    "usage": "Creative Commons Attribution-Share Alike 4.0",
    "description": "Carte OSM de Tripoli (Liban)",
@@ -558,9 +554,7 @@
    "usage": "Public domain",
    "description": "SOURCE: https://archive.org/details/desaintlouistrip00monteil/page/n429/mode/2up\nDe Saint-Louis a Tripoli par le Lac Tchad : voyage au travers du Soudan et du Sahara accompli pendant les années 1890-91-92\n\nby en:Parfait-Louis Monteil , 1855-1925",
    "categories": "Maps of Libya|Lake Chad|Sahara|Tripoli|French-language maps|PD US expired|1895 maps",
-   "reusable": true,
-   "file": "wmc-123516216.jpg",
-   "bytes": 389487
+   "reusable": true
   },
   {
    "id": "wmc-123516217",
@@ -666,6 +660,23 @@
    "usage": "Public domain",
    "description": "Map. AF*236802.",
    "categories": "PD-author|Maps of Tripoli|Collections of the National Museum of American History",
+   "reusable": true
+  },
+  {
+   "id": "wmc-202233245",
+   "source": "Wikimedia Commons",
+   "title": "Map of Tripoli 1850 showing Si'an tribe.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Map_of_Tripoli_1850_showing_Si%27an_tribe.png",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Map_of_Tripoli_1850_showing_Si%27an_tribe.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Map_of_Tripoli_1850_showing_Si%27an_tribe.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "width": 1087,
+   "height": 528,
+   "date": "1850",
+   "author": "Prax &amp; Renou",
+   "license": "Public domain",
+   "usage": "Public domain",
+   "description": "\"Carte de la Régence de Tripoli, Prax &amp; Renou, 1850\"",
+   "categories": "Author died more than 70 years ago public domain images|CC-PD-Mark|PD-old missing SDC copyright status|Maps of Tripolitania",
    "reusable": true
   },
   {
@@ -866,7 +877,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Sujet : Sondages sous-marins\nFortifications\nTripoli\nTripoli, Pachalik autonome de -- Côtes\nÉchelle(s) : [Echelle non mentionnée]\nCouverture : Mer Méditerranée – Bassin Est\nLibye\n\nLangue : français",
-   "categories": "Files with no machine-readable author|Artworks without Wikidata item|Maps from Gallica (Bibliothèque nationale de France) uploaded by Gzen92Bot|PD US expired|PD France|CC-PD-Mark|Files from Gallica|PD Old (assumed)|PD-old missing SDC copyright status|PD-US missing SDC copyright status|Plan du port et de la ville de Tripoli - btv1b53235478d",
+   "categories": "Files with no machine-readable author|Artworks without Wikidata item|Maps from Gallica (Bibliothèque nationale de France) uploaded by Gzen92Bot|PD US expired|PD France|CC-PD-Mark|Files from Gallica|PD Old (assumed)|Plan du port et de la ville de Tripoli - btv1b53235478d",
    "reusable": true,
    "file": "wmc-120541203.jpg",
    "bytes": 2219765
@@ -885,7 +896,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Sujet : Sondages sous-marins\nFortifications\nTripoli\nTripoli, Pachalik autonome de -- Côtes\nÉchelle(s) : [Echelle non mentionnée]\nCouverture : Mer Méditerranée – Bassin Est\nLibye\n\nLangue : français",
-   "categories": "Files with no machine-readable author|Artworks without Wikidata item|Maps from Gallica (Bibliothèque nationale de France) uploaded by Gzen92Bot|PD US expired|PD France|CC-PD-Mark|Files from Gallica|PD Old (assumed)|PD-old missing SDC copyright status|PD-US missing SDC copyright status|Plan du port et de la ville de Tripoli - btv1b53235478d",
+   "categories": "Files with no machine-readable author|Artworks without Wikidata item|Maps from Gallica (Bibliothèque nationale de France) uploaded by Gzen92Bot|PD US expired|PD France|CC-PD-Mark|Files from Gallica|PD Old (assumed)|Plan du port et de la ville de Tripoli - btv1b53235478d",
    "reusable": true
   },
   {
@@ -1084,7 +1095,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Sujet : Sondages sous-marins\nMéditerranée, Mer\nTripoli\nLiban\nÉchelle(s) : Echelle de mille toises [= 10,4 cm]\nCouverture : Mer Méditerranée – Bassin Est\nLiban\n\nLangue : français",
-   "categories": "Files with no machine-readable author|Artworks without Wikidata item|Maps from Gallica (Bibliothèque nationale de France) uploaded by Gzen92Bot|Large images|PD US expired|PD France|CC-PD-Mark|Files from Gallica|PD Old (assumed)|Maps from Gallica|PD-old missing SDC copyright status|PD-US missing SDC copyright status|Maps from Gallica needing categories",
+   "categories": "Files with no machine-readable author|Artworks without Wikidata item|Maps from Gallica (Bibliothèque nationale de France) uploaded by Gzen92Bot|Large images|PD US expired|PD France|CC-PD-Mark|Files from Gallica|PD Old (assumed)|Maps from Gallica|Maps from Gallica needing categories",
    "reusable": true,
    "file": "wmc-121658632.jpg",
    "bytes": 2631631
@@ -1160,7 +1171,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Sujet : Fortifications\nTripoli\nTripoli, Pachalik autonome de -- Côtes\nÉchelle(s) : [Echelle non mentionnée]\nCouverture : Mer Méditerranée – Bassin Est\nLibye\n\nLangue : français",
-   "categories": "Files with no machine-readable author|Artworks without Wikidata item|Maps from Gallica (Bibliothèque nationale de France) uploaded by Gzen92Bot|PD US expired|PD France|CC-PD-Mark|Files from Gallica|PD Old (assumed)|Maps from Gallica|PD-old missing SDC copyright status|PD-US missing SDC copyright status|Maps from Gallica needing categories",
+   "categories": "Files with no machine-readable author|Artworks without Wikidata item|Maps from Gallica (Bibliothèque nationale de France) uploaded by Gzen92Bot|PD US expired|PD France|CC-PD-Mark|Files from Gallica|PD Old (assumed)|Maps from Gallica|Maps from Gallica needing categories",
    "reusable": true,
    "file": "wmc-121721541.jpg",
    "bytes": 2113379
@@ -1380,18 +1391,18 @@
   {
    "id": "wmc-156873402",
    "source": "Wikimedia Commons",
-   "title": "Fonds André Raymond (1925-2011) - Libye - Tripoli - Plan de la Mosquée Sidi Darghut, côté de la rue Darghut (MédiHAL 4403683).jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Fonds_Andr%C3%A9_Raymond_(1925-2011)_-_Libye_-_Tripoli_-_Plan_de_la_Mosqu%C3%A9e_Sidi_Darghut,_c%C3%B4t%C3%A9_de_la_rue_Darghut_(M%C3%A9diHAL_4403683).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Fonds_Andr%C3%A9_Raymond_%281925-2011%29_-_Libye_-_Tripoli_-_Plan_de_la_Mosqu%C3%A9e_Sidi_Darghut%2C_c%C3%B4t%C3%A9_de_la_rue_Darghut_%28M%C3%A9diHAL_4403683%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/86/Fonds_Andr%C3%A9_Raymond_%281925-2011%29_-_Libye_-_Tripoli_-_Plan_de_la_Mosqu%C3%A9e_Sidi_Darghut%2C_c%C3%B4t%C3%A9_de_la_rue_Darghut_%28M%C3%A9diHAL_4403683%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "Fonds André Raymond (1925-2011) - Libye - Tripoli - Plan de la Mosquée Gurgi (MédiHAL 4403683).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fonds_Andr%C3%A9_Raymond_(1925-2011)_-_Libye_-_Tripoli_-_Plan_de_la_Mosqu%C3%A9e_Gurgi_(M%C3%A9diHAL_4403683).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Fonds_Andr%C3%A9_Raymond_%281925-2011%29_-_Libye_-_Tripoli_-_Plan_de_la_Mosqu%C3%A9e_Gurgi_%28M%C3%A9diHAL_4403683%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/10/Fonds_Andr%C3%A9_Raymond_%281925-2011%29_-_Libye_-_Tripoli_-_Plan_de_la_Mosqu%C3%A9e_Gurgi_%28M%C3%A9diHAL_4403683%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "width": 2136,
    "height": 3152,
    "date": "Taken in 1950",
    "author": "Maison Méditerranéenne Des Sciences de l'Homme Phonothèque, André Raymond",
    "license": "Licence Ouverte",
    "usage": "Licence Ouverte",
-   "description": "Plan of the Sidi Darghut Mosque (or Jama Sidi Darghut) photographed by André Raymond.",
-   "categories": "Files with coordinates missing SDC location of creation|1950 photographs of Libya|MédiHAL files uploaded by OptimusPrimeBot|1950 in Tripoli|Fonds André Raymond|Photographs of Libya by André Raymond|Sidi Darghut Mosque floor plans|Licence Ouverte 2.0",
+   "description": "Plan of the Gurgi Mosque photographed by André Raymond.",
+   "categories": "Gurgi Mosque|Files with coordinates missing SDC location of creation|1950 photographs of Libya|MédiHAL files uploaded by OptimusPrimeBot|1950 in Tripoli|Fonds André Raymond|Photographs of Libya by André Raymond|Floor plans of mosques in Tripoli|Licence Ouverte 2.0",
    "reusable": false
   },
   {
@@ -1565,7 +1576,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Attuale via tripoli nella pianta del buonsignori",
-   "categories": "Images with annotations|Map of Florence by Stefano Buonsignori|PD-old-100-expired|PD-Art (PD-old-100-expired)|Artworks with Wikidata item|CC-PD-Mark|Photographs of graphics by User:Sailko|Artworks with Wikidata item missing genre|Artworks digital representation of unknown type of work|Artworks digital representation of 2D work|Via Tripoli (Florence)",
+   "categories": "Images with annotations|PD-old-100-expired|PD-Art (PD-old-100-expired)|Artworks with Wikidata item|CC-PD-Mark|Photographs of graphics by User:Sailko|Artworks with Wikidata item missing genre|Artworks digital representation of unknown type of work|Artworks digital representation of 2D work|Via Tripoli (Florence)|Croppings from Map of Florence by Stefano Buonsignori",
    "reusable": true
   },
   {
@@ -1692,7 +1703,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Map of Western Asia circa 1190 CE, including the Empire of Saladin (the Ayyubid Sultanate), the Seljuk Sultanate of Rûm (Rum), and the remaining territory of the Byzantine Empire",
-   "categories": "Saladin|PD-old-100-expired|Images with extracted images|Maps of the Seljuk Empire|CC-PD-Mark|Maps of the Byzantine Empire in the 12th century|Maps of Asia in the 12th century|Maps of the Levant in the 12th century|Maps of the Ayyubid dynasty|Maps of the County of Tripoli|Maps of the Principality of Antioch|Maps of the Sultanate of Rum|Historical Atlas of Modern Europe|Maps of the Crusader states",
+   "categories": "Saladin|PD-old-100-expired|Images with extracted images|Maps of the Seljuk Empire|CC-PD-Mark|Maps of the Byzantine Empire in the 12th century|Maps of Asia in the 12th century|Maps of the Levant in the 12th century|Maps of the Ayyubid dynasty|Maps of the County of Tripoli|Maps of the Principality of Antioch|Maps of the Sultanate of Rum|Historical Atlas of Modern Europe|Maps of the Eldiguzid dynasty",
    "reusable": true,
    "file": "wmc-150978558.jpg",
    "bytes": 4084290
@@ -2276,7 +2287,7 @@
    "author": "Unknown authorUnknown author or not provided",
    "license": "Public domain",
    "usage": "Public domain",
-   "description": "Scope and content:  The original database describes this as:\n\nDescription: Apollo Soyuz Test Project (ASTP),Mediterranean Sea,Cyprus,Cape Greco,Lebanon,Tripoli. Image taken on Revolution 71. Greenwich Mean Time (GMT) of Photo 201:10:42,Ground Elapsed Time (GET) 110:52,Altitude 225.Original Film Magazine: CT-04,Laboratory Roll 16; Camera Data: Hasselblad,70-mm,Data with 1-cm Reseau,Model 500EL,NASA Modified; Film Data: 70mm Ektachrome,High Definition Aerial,Type SO-242,ASA = 10 (Approximate); Lens 60mm.\n\nSubject Terms: Apollo Soyuz Test Project, Earth Observations (From Space), Mediterranean Se",
+   "description": "Scope and content:  The original database describes this as:\nDescription: Apollo Soyuz Test Project (ASTP),Mediterranean Sea,Cyprus,Cape Greco,Lebanon,Tripoli. Image taken on Revolution 71. Greenwich Mean Time (GMT) of Photo 201:10:42,Ground Elapsed Time (GET) 110:52,Altitude 225.Original Film Magazine: CT-04,Laboratory Roll 16; Camera Data: Hasselblad,70-mm,Data with 1-cm Reseau,Model 500EL,NASA Modified; Film Data: 70mm Ektachrome,High Definition Aerial,Type SO-242,ASA = 10 (Approximate); Lens 60mm.\nSubject Terms: Apollo Soyuz Test Project, Earth Observations (From Space), Mediterranean Sea,",
    "categories": "PD NASA|Images from the National Archives and Records Administration|Media contributed by the National Archives and Records Administration|Artworks without Wikidata item|Template Unknown (author)|Earth photography during the Apollo-Soyuz Test Project|US National Archives series: Photographs of the Apollo-Soyuz Test Project|Files from NASA with known IDs|US National Archives location: other",
    "reusable": true,
    "file": "wmc-80097103.jpg",
@@ -2402,7 +2413,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "The British Army in North Africa 1943\nA soldier takes a break during the approach to Tripoli beside a swastika and the name 'Hitler' that have been carved into a rocky hillside, 27 January 1943.",
-   "categories": "People of Tripoli|Nazi Swastikas|Images uploaded by Fæ|Artworks without Wikidata item|UK Government artistic works|PD-scan (PD-UKGov)|Taken on missing SDC inception|No. 1 Army Film and Photographic Unit|Photographs taken on 1943-01-27|Photographs by James Mapham|War Office Second World War Official Collection|British Army 1939-1945 images from the Imperial War Museum (1943)",
+   "categories": "People of Tripoli|Images uploaded by Fæ|Artworks without Wikidata item|UK Government artistic works|PD-scan (PD-UKGov)|Taken on missing SDC inception|No. 1 Army Film and Photographic Unit|Photographs taken on 1943-01-27|Photographs by James Mapham|War Office Second World War Official Collection|British Army 1939-1945 images from the Imperial War Museum (1943)|Nazi swastikas in Libya",
    "reusable": true
   },
   {
@@ -3400,7 +3411,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Zoomable full resolution image available at davidrumsey.com.This image 0890.114 is a part of image group 0890.000.Engraved map. Relief shown by hachures. Boundaries hand col. Sources: Shaw, Smyth, Temple, Beechey &amp;c.The SDUK, as the Society was known, produced inexpensive maps to encourage broad use in education. The maps in these two volumes were issued in parts over several years. The city plans are of particular interest, with vignettes and great detail. The gnomonic star maps were issued separately in this edition in their own covers. This is the second edition, the first being by Bald",
-   "categories": "David Rumsey Historical Map Collection|PD-old-100-expired|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|PD-old missing SDC copyright status|Images dezoomed by Fæ",
+   "categories": "David Rumsey Historical Map Collection|PD-old-100-expired|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|1830s maps of Tunisia|PD-old missing SDC copyright status|Images dezoomed by Fæ|Maps of the Society for the Diffusion of Useful Knowledge, Vol. 1",
    "reusable": true,
    "file": "wmc-194215875.jpg",
    "bytes": 4346101
@@ -3419,7 +3430,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Zoomable full resolution image available at davidrumsey.com.This image 0890.115 is a part of image group 0890.000.Engraved map. Relief shown by hachures. Boundaries hand col. Sources: Smyth 1817, Lyon 1819, Denham &amp;c. 1824, Horneman 1798, Della Cella 1817, Beechey 1822, Pacho &amp;c. 1825.The SDUK, as the Society was known, produced inexpensive maps to encourage broad use in education. The maps in these two volumes were issued in parts over several years. The city plans are of particular interest, with vignettes and great detail. The gnomonic star maps were issued separately in this editio",
-   "categories": "David Rumsey Historical Map Collection|PD-old-100-expired|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|PD-old missing SDC copyright status|Images dezoomed by Fæ",
+   "categories": "David Rumsey Historical Map Collection|PD-old-100-expired|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|1830s maps of Libya|PD-old missing SDC copyright status|Images dezoomed by Fæ|Maps of the Society for the Diffusion of Useful Knowledge, Vol. 1",
    "reusable": true,
    "file": "wmc-194215880.jpg",
    "bytes": 3780735
@@ -3438,7 +3449,7 @@
    "license": "Public domain",
    "usage": "Public domain",
    "description": "Zoomable full resolution image available at davidrumsey.com.This image 0890.116 is a part of image group 0890.000.Engraved map. Relief shown by hachures. Boundaries hand col. Sources: Browne 1792, Horneman 1798, Smith 1817, Pacho 1825, &amp;c.The SDUK, as the Society was known, produced inexpensive maps to encourage broad use in education. The maps in these two volumes were issued in parts over several years. The city plans are of particular interest, with vignettes and great detail. The gnomonic star maps were issued separately in this edition in their own covers. This is the second edition, ",
-   "categories": "David Rumsey Historical Map Collection|PD-old-100-expired|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|PD-old missing SDC copyright status|Images dezoomed by Fæ",
+   "categories": "David Rumsey Historical Map Collection|PD-old-100-expired|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|PD-old missing SDC copyright status|Images dezoomed by Fæ|Maps of the Society for the Diffusion of Useful Knowledge, Vol. 1",
    "reusable": true,
    "file": "wmc-194215888.jpg",
    "bytes": 3686111
@@ -3712,9 +3723,7 @@
    "usage": "Public domain",
    "description": "A circa 1950-1960 image of Independence Square (1950s-1960s) - on the harbour in downtown Tripoli, during the Libyan monarchy era.\nThe present day Martyrs' Square or \"Maidan Al Shohdaa\" , in independent Libya.\nAerial view is to the southwest, with Tripoli Bay in the foreground of the corniche and the two monument columns (before 1960s landfills extended land far into the harbour-bay).\nThe Ottoman era Red Castle (Tripoli Castle museum) is on the upper right, and former Teatro Miramareon the square's lower left.\nAlso formerly named Italian colonial Piazza Italia (1930s-1950s), and Green Square o",
    "categories": "Tripoli Castle|Images with annotations|Teatro Miramare|PD-Libya|Arecaceae in Libya|PD-old missing SDC copyright status|Tripoli in the 1950s|Coasts of Tripoli|Martyrs' Square, Tripoli",
-   "reusable": true,
-   "file": "wmc-6890970.jpg",
-   "bytes": 55179
+   "reusable": true
   },
   {
    "id": "wmc-24337717",
@@ -3869,7 +3878,7 @@
    "categories": "Aerial photographs of Libya|Views of Tripoli|Ports and harbours|Port of Tripoli|Panoramio files uploaded by Panoramio upload bot|Panoramio images reviewed by trusted users|Photos from Panoramio|2012 in water transport in Libya|Files with coordinates missing SDC location of creation|Libya photographs taken on 2012-12-24|2012 in Tripoli|Photos from Panoramio ID 108875",
    "reusable": true,
    "file": "wmc-56044246.jpg",
-   "bytes": 1131870
+   "bytes": 1131922
   },
   {
    "id": "wmc-60774458",
@@ -4015,7 +4024,7 @@
    "categories": "Aerial photographs of Libya|Images with annotations|Self-published work|Images from Wiki Loves Monuments 2024|Files with coordinates missing SDC location of creation|Images from Wiki Loves Monuments missing SDC depicts|Images from Wiki Loves Monuments missing SDC location of creation|Images from Wiki Loves Monuments 2024 in Libya|Uploaded via Campaign:wlm-ly|Algeria Square, Tripoli",
    "reusable": true,
    "file": "wmc-153967365.jpg",
-   "bytes": 3066551
+   "bytes": 3066499
   },
   {
    "id": "wmc-160947984",
@@ -4073,25 +4082,6 @@
    "reusable": true,
    "file": "wmc-185487025.jpg",
    "bytes": 1299918
-  },
-  {
-   "id": "wmc-185487028",
-   "source": "Wikimedia Commons",
-   "title": "CLB-31 Showcase TRUAS (9539792).jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:CLB-31_Showcase_TRUAS_(9539792).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/CLB-31_Showcase_TRUAS_%289539792%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/CLB-31_Showcase_TRUAS_%289539792%29.jpg/3840px-CLB-31_Showcase_TRUAS_%289539792%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "width": 3870,
-   "height": 2580,
-   "date": "Taken on 26 February 2026",
-   "author": "U.S. Marine Corps photo by Cpl. Eric Reyes",
-   "license": "Public domain",
-   "usage": "Public domain",
-   "description": "Members of the French Armed Forces, British Armed Forces, Australian Defence Force, and the Japan Self-Defense Force, observe spare parts of a Tactical Resupply Unmanned Aircraft System during a static display and capabilities demonstration at Camp Hansen, Okinawa, Japan, Feb. 26, 2026. The TRUAS is a Class 3 unmanned aerial vehicle that can deliver supplies to remote and inaccessible areas. The 31st Marine Expeditionary Unit is a persistent, combat credible force operating aboard the ships of the Tripoli Amphibious Ready Group in the U.S. 7th fleet area of operations, routinely interacting an",
-   "categories": "PD US Marines|Files created by the United States Marine Corps with known IDs|DVIDS files uploaded by OptimusPrimeBot|Milimedia files, Japan (review needed)|Japan photographs taken on 2026-02-26",
-   "reusable": true,
-   "file": "wmc-185487028.jpg",
-   "bytes": 1308117
   },
   {
    "id": "wmc-185487045",
@@ -4281,7 +4271,7 @@
    "categories": "31st Marine Expeditionary Unit|PD US Marines|Files created by the United States Marine Corps with known IDs|DVIDS files uploaded by OptimusPrimeBot|Aboard USS Tripoli (LHA-7)|Photographs taken on 2026-05-31",
    "reusable": true,
    "file": "wmc-195285316.jpg",
-   "bytes": 1950188
+   "bytes": 1950240
   },
   {
    "id": "wmc-195285323",
@@ -4301,6 +4291,44 @@
    "reusable": true,
    "file": "wmc-195285323.jpg",
    "bytes": 1168627
+  },
+  {
+   "id": "wmc-203092762",
+   "source": "Wikimedia Commons",
+   "title": "31st MEU - BLT 1-1 conducts sUAS training (10087180).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:31st_MEU_-_BLT_1-1_conducts_sUAS_training_(10087180).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/31st_MEU_-_BLT_1-1_conducts_sUAS_training_%2810087180%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/31st_MEU_-_BLT_1-1_conducts_sUAS_training_%2810087180%29.jpg/3840px-31st_MEU_-_BLT_1-1_conducts_sUAS_training_%2810087180%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 4262,
+   "height": 2841,
+   "date": "Taken on 8 November 2026",
+   "author": "U.S. Marine Corps photo by Cpl. Tucker Mocan",
+   "license": "Public domain",
+   "usage": "Public domain",
+   "description": "A U.S. Marine with Battalion Landing Team, 1st Battalion, 1st Marine Regiment, 31st Marine Expeditionary Unit, launches an RQ-20B Puma small unmanned aerial system during a sUAS training event on Camp Hansen, Okinawa, Japan, Nov. 9, 2026. This training event increased the unit's proficiency and lethality when deploying sUAS in littoral environments. The 31st MEU is a persistent, combat credible force operating aboard the ships of the Tripoli Amphibious Ready Group in the U.S. 7th Fleet area of operations, routinely interacting and operating with our allies and partners to contribute to deterre",
+   "categories": "31st Marine Expeditionary Unit|1st Battalion 1st Marines|PD US Marines|Files created by the United States Marine Corps with known IDs|DVIDS files uploaded by OptimusPrimeBot|Japan photographs taken on 2026-11-08",
+   "reusable": true,
+   "file": "wmc-203092762.jpg",
+   "bytes": 1295572
+  },
+  {
+   "id": "wmc-203092767",
+   "source": "Wikimedia Commons",
+   "title": "31st MEU - BLT 1-1 conducts sUAS training (10087181).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:31st_MEU_-_BLT_1-1_conducts_sUAS_training_(10087181).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/31st_MEU_-_BLT_1-1_conducts_sUAS_training_%2810087181%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/31st_MEU_-_BLT_1-1_conducts_sUAS_training_%2810087181%29.jpg/3840px-31st_MEU_-_BLT_1-1_conducts_sUAS_training_%2810087181%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "width": 5998,
+   "height": 3374,
+   "date": "Taken on 8 November 2026",
+   "author": "U.S. Marine Corps photo by Cpl. Tucker Mocan",
+   "license": "Public domain",
+   "usage": "Public domain",
+   "description": "A U.S. Marine with Battalion Landing Team, 1st Battalion, 1st Marine Regiment, 31st Marine Expeditionary Unit, looks at an RQ-20B Puma small unmanned aerial system during a sUAS training event on Camp Hansen, Okinawa, Japan, Nov. 9, 2026. This training event increased the unit's proficiency and lethality when deploying sUAS in littoral environments. The 31st MEU is a persistent, combat credible force operating aboard the ships of the Tripoli Amphibious Ready Group in the U.S. 7th Fleet area of operations, routinely interacting and operating with our allies and partners to contribute to deterre",
+   "categories": "31st Marine Expeditionary Unit|1st Battalion 1st Marines|PD US Marines|Files created by the United States Marine Corps with known IDs|DVIDS files uploaded by OptimusPrimeBot|Japan photographs taken on 2026-11-08",
+   "reusable": true,
+   "file": "wmc-203092767.jpg",
+   "bytes": 1677312
   },
   {
    "id": "wmc-156865557",
@@ -4556,7 +4584,7 @@
    "license": "CC0",
    "usage": "Creative Commons Zero, Public Domain Dedication",
    "description": "Portolan from Sentuzo Pongeto (1404) kept at the National Library of Egypt, Tunisian Lybian coastline with a realistic representation of a building in Tripoli",
-   "categories": "CC-Zero|North Africa|Portolan charts|Egyptian National Library|Self-published work|Ocean|Files with coordinates missing SDC location of creation",
+   "categories": "CC-Zero|North Africa|Portolan charts|Self-published work|Ocean|Files with coordinates missing SDC location of creation|Cairo, National Library manuscripts",
    "reusable": true,
    "file": "wmc-158501210.jpg",
    "bytes": 1292717
@@ -4605,40 +4633,8 @@
    "author": "de krafft, f. c.",
    "license": "No known restrictions on publication (check)",
    "description": "Relief shown pictorially. Depths shown by fathoms. Sketch map showing the positions of the labeled vessels of the United States squadron. Pen-and-ink and watercolor on 3 sheets pasted together, sectioned in 3 and mounted on cloth. Title supplied by cataloger. Includes explanatory list of \"References\" and an inset of \"A view of Tripoli in Barbary.\" Imperfect: Stained, mounted on cloth, losses and discoloration along the margins. Available also through the Library of Congress Web site as a raster image.",
-   "subjects": "maps, manuscript; ships; libya; tripoli; maps; tripoli (libya); aerial views",
-   "reusable": true,
-   "file": "loc-2008621589.jpg",
-   "bytes": 1269844
-  },
-  {
-   "id": "loc-2017589623",
-   "source": "Library of Congress",
-   "title": "Nuova pianta geografica della Tripolitania e Cirenaica con le conquiste italiane",
-   "page": "http://www.loc.gov/item/2017589623/",
-   "url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd8:g8263:g8263t:ct011307/full/pct:25/0/default.jpg#h=922&w=2651",
-   "date": "1912",
-   "author": "",
-   "license": "No known restrictions on publication (check)",
-   "description": "Relief shown by hachures. \"Supplemento straordinario della rivista mondiale \"Settimana illustrata\".\" Includes 7 portraits of Italian military figures, flags showing cities held by Turkey and Italy, and 1912 calendar showing saints' days. Available also through the Library of Congress Web site as a raster image. Change call number date to 1912.",
-   "subjects": "libya; cyrenaica; cyrenaica (libya); maps; turco-italian war; ṭarābulus; ṭarābulus (libya : province)",
-   "reusable": true,
-   "file": "loc-2017589623.jpg",
-   "bytes": 420914
-  },
-  {
-   "id": "loc-2017589624",
-   "source": "Library of Congress",
-   "title": "Il tricolore Italiano in Tripolitania e Cirenacia : diario illustrato della guerra Italo-Turca",
-   "page": "http://www.loc.gov/item/2017589624/",
-   "url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd8:g8263:g8263t:pm020555/full/pct:25/0/default.jpg#h=1185&w=1731",
-   "date": "1911",
-   "author": "stabilimento d'arti grafiche l. teodoro & frigè",
-   "license": "No known restrictions on publication (check)",
-   "description": "Italian propaganda map of the Italo-Turco war in Libya in 1912.",
-   "subjects": "libya; cyrenaica; cyrenaica (libya); maps; turco-italian war; history; ṭarābulus; aerial views; pictorial maps; ṭarābulus (libya : province)",
-   "reusable": true,
-   "file": "loc-2017589624.jpg",
-   "bytes": 403607
+   "subjects": "maps; aerial views; tripoli; ships; tripoli (libya); libya; maps, manuscript",
+   "reusable": true
   }
  ]
 }

@@ -21,10 +21,11 @@ archive/review/agents/
 archive/fbis/
 archive/fulltext/
 archive/countrystudy/
-archive/wikipedia/
+archive/wikipedia/*
 archive/cables/docs.jsonl.gz
 archive/crest/docs*.jsonl.gz
 archive/crest/test/
 archive/gov/*
 !archive/gov/catalog.json
 public/data/docs/
+!archive/wikipedia/sources.txt

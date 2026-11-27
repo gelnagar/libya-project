@@ -140,9 +140,10 @@
   /* ---------- state ---------- */
   var DEFAULT_ON = { detention: true, security: true, military: true, airstrike: true, battle: true, massacre: true, power: true, landmark: true, districts: true, rings: true, labels: true, grid: true, timeline: false };
   var active = Object.assign({}, DEFAULT_ON, store.get('layers3', {}));
+  active.timeline = store.get('timeline2', false);   // hidden by default; an older saved 'on' is ignored, only the Settings switch turns it on
   var PERIODS = { pre: 'Before 1969', main: '1969–2011', post: 'After 2011' };
   var periods = Object.assign({ pre: true, main: true, post: true }, store.get('periods', {}));
-  function save() { store.set('layers3', active); store.set('periods', periods); }
+  function save() { store.set('layers3', active); store.set('periods', periods); store.set('timeline2', !!active.timeline); }
 
   function span(s) {
     var a = s.y0 == null ? 1969 : s.y0, b = s.y1 == null ? (s.y0 == null ? 2011 : s.y0) : s.y1;

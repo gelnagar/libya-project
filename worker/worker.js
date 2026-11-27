@@ -610,7 +610,7 @@ small { color: #abb3bf; }
   <input type="hidden" name="next" value="${escHtml(safeNext(next))}">
   <button type="submit">Unlock the AI guide</button>
   <small>The password switches on the AI guide and adding to the map. You only need to enter it once on each device. Ask ${owner} if you don’t have it.</small>
-  <small><strong>No password needed to view the map.</strong> Every place, document and timeline is open to everyone. <a href="/" style="color:inherit">Continue to the map</a></small>
+  <small><strong>No password needed to view the map.</strong> Every place, document and timeline is open to everyone. <a href="/" style="color:inherit">Use AI later</a></small>
 </form></body></html>`;
   return new Response(html, { status: status || 200, headers: { ...SECURITY, 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } });
 }
